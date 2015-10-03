@@ -1,3 +1,3 @@
-# PMX Wiki
+# PMX 
 
-[PMX/wiki](/pmrobotix/PMX/wiki)
+Please click on this link [PMX/wiki](/pmrobotix/PMX/wiki)
