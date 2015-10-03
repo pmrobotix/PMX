@@ -1,3 +1,3 @@
 # PMX Wiki
 
-https://github.com/pmrobotix/PMX/wiki
+[PMX/wiki](/pmrobotix/PMX/wiki)
