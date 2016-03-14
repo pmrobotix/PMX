@@ -1,0 +1,7 @@
+
+#ifndef LegoEV3_ASSERVEXTENDED_HPP_
+#define LegoEV3_ASSERVEXTENDED_HPP_
+
+
+
+#endif

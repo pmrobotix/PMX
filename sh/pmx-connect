@@ -1,0 +1,121 @@
+#! /bin/bash
+
+view_doc()
+{
+    firefox doc/html/index.html >/dev/null 2>&1 &
+}
+
+all()
+{
+	scp src/apf-test/sh/*.sh PMXArmadeusBinaries/* root@192.168.7.253:/pmx/
+}
+
+conf()
+{
+	scp PMXArmadeusBinaries/*.conf.txt root@192.168.7.253:/pmx/
+}
+
+tsh()
+{
+	scp src/apf-test/sh/*.sh root@192.168.7.253:/pmx/
+}
+
+robottest()
+{
+	scp PMXArmadeusBinaries/ROBOT_TEST root@192.168.7.253:/pmx/
+}
+
+pmx()
+{
+    ssh root@192.168.7.253 "killall pmx"
+	scp "PMXArmadeusBinaries/PMX" root@192.168.7.253:/pmx/
+}
+
+devtest()
+{
+	scp PMXArmadeusBinaries/DEV_TEST root@192.168.7.253:/pmx/
+}
+
+apftest()
+{
+	scp PMXArmadeusBinaries/APF_TEST root@192.168.7.253:/pmx/
+}
+
+recupcsvhost()
+{
+    #recup sur le PC Host
+	scp root@192.168.7.253:/pmx/*.* /mnt/hgfs/pmx_xls/
+}
+
+recupcsv()
+{
+        scp root@192.168.7.253:/pmx/*.* /home/pmx/Arecup/.
+}
+
+recupsvg()
+{
+        scp root@192.168.7.253:/pmx/*.svg /home/pmx/workspace/ARM/SVG/.
+}
+
+connect()
+{
+	ssh root@192.168.7.253
+}
+
+case "$1" in
+	view-doc)
+		view_doc
+	;;
+
+	all)
+		all
+	;;
+
+	conf)
+		conf
+	;;
+
+	tsh)
+		tsh
+	;;
+
+	pmx)
+		pmx
+	;;
+	
+        robottest)
+		robottest
+	;;
+
+	
+        apftest)
+		apftest
+	;;
+
+	devtest)
+		devtest
+	;;
+
+	connect)
+		connect
+	;;
+        
+        recupcsv)
+		recupcsv
+	;;
+
+        recupsvg)
+		recupsvg
+	;;
+
+        recupcsvhost)
+		recupcsvhost
+	;;
+
+	*)
+		echo "Usage: $0 {connect|pmx|devtest|robottest|apftest|all|conf|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		exit 1
+	;;
+esac
+
+exit 0

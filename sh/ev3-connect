@@ -1,0 +1,55 @@
+#! /bin/bash
+
+#IP="192.168.7.252"
+IP="192.168.2.111"
+
+all()
+{
+    #ssh root@$IP "killall Bot-SmallPMX-EV3"
+	scp "../Bot-SmallPMX-EV3/Debug/Bot-SmallPMX-EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" user@192.168.7.252:/home/user/
+	
+}
+
+main()
+{
+	scp "../Bot-SmallPMX-EV3/Debug/Bot-SmallPMX-EV3" user@$IP:/home/user/	
+}
+
+driver()
+{
+	scp "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" user@$IP:/home/user/	
+}
+
+
+user()
+{
+	ssh user@$IP
+}
+
+root()
+{
+	ssh root@$IP
+}
+
+case "$1" in
+	view-doc)
+		view_doc;;
+	all)
+		all;;
+	driver)
+		driver;;
+	main)
+		main;;
+	
+	user)
+		user;;
+	root)
+		root;;
+
+	*)
+		echo "Usage: $0 {user|root|all|main|driver}" >&2
+		exit 1
+	;;
+esac
+
+exit 0
