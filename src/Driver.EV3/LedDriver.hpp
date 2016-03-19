@@ -1,5 +1,5 @@
-#ifndef EV3_LEDDRIVER_EV3_HPP_
-#define EV3_LEDDRIVER_EV3_HPP_
+#ifndef EV3_LEDDRIVER_HPP_
+#define EV3_LEDDRIVER_HPP_
 
 #include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Common/Utils/Macro.hpp"

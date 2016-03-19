@@ -28,7 +28,7 @@ LedDriver::LedDriver(std::string botname, int nb)
 
 	nb_leddriver++; //increment nb of instances of robot
 
-	logger().error() << "increment nb of robot" << nb_leddriver << logs::end;
+	logger().debug() << "increment nb of robot" << nb_leddriver << logs::end;
 
 	height_display_ = (nb_leddriver * 50) + 30; //dynamic height
 	botId_ = botname;

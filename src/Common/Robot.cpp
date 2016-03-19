@@ -6,22 +6,20 @@
 
 #include "Robot.hpp"
 
-#include <cstdio>
 #include <cstdlib>
-#include <string>
 
-#include "../Bot-LegoEV3/LegoEV3State1.hpp"
 #include "../Log/Logger.hpp"
 #include "Action/Actions.hpp"
-#include "State/Automate.hpp"
-#include "State/Data.hpp"
+#include "Asserv/Asserv.hpp"
 
 using namespace std;
 
 Robot::Robot() :
-		myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX DEMO", "-/")
+		myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "-/")
 {
 	actions_default = new Actions();
+
+	asserv_default = new Asserv();
 
 	configureDefaultConsoleArgs();
 }

@@ -17,27 +17,19 @@ void logs::LoggerFactory::initialize()
 
 	add(logs::Level::ERROR, "", "console");
 
-	add(logs::Level::INFO, "LedBarTest", "console");
-	add(logs::Level::INFO, "ButtonBarTest", "console");
-
 	add(logs::Level::INFO, "Robot", "console");
-
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
 	add(logs::Level::INFO, "LegoEV3State1", "console");
+
+	//TESTS
 	add(logs::Level::INFO, "LegoEV3LedBarTest", "console");
+	add(logs::Level::INFO, "LegoEV3ButtonBarTest", "console");
+	add(logs::Level::INFO, "LegoEV3SoundBarTest", "console");
 
 
-	//DEBUG
-
-	//add(logs::Level::DEBUG, "MotorControl", "console");
-	//add(logs::Level::DEBUG, "ActionManager", "console");
-	//add(logs::Level::DEBUG, "Actions", "console");
-	//add(logs::Level::INFO, "Asserv", "console");
-
-	//DRIVER
+	//DRIVERS
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
-	//add(logs::Level::INFO, "SoundDriver.SIMU", "console");
-	//add(logs::Level::INFO, "MotorDeviceDriver.EV3", "console");
-	//add(logs::Level::INFO, "AsservDriver.EV3", "console");
+	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
+	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
 
 }

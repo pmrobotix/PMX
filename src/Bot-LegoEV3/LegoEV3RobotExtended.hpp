@@ -2,8 +2,10 @@
 #define LegoEV3_ROBOTEXTENDED_HPP_
 
 #include "../Common/Robot.hpp"
+#include "../Log/Logger.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "LegoEV3ActionsExtended.hpp"
+#include "LegoEV3AsservExtended.hpp"
 
 class Arguments;
 
@@ -28,6 +30,12 @@ public:
 		return r_actions;
 	}
 
+	inline LegoEV3AsservExtended& asserv()
+	{
+		LegoEV3AsservExtended& r_asserv = *asserv_;
+		return r_asserv;
+	}
+
 	void stop();
 
 	void begin();
@@ -41,6 +49,8 @@ private:
 	}
 
 	LegoEV3ActionsExtended* actions_;
+
+	LegoEV3AsservExtended* asserv_;
 
 	LegoEV3RobotExtended();
 };

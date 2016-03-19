@@ -13,7 +13,6 @@
 #include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
-
 using namespace std;
 
 void LegoEV3ButtonBarTest::run(Arguments *)
@@ -28,6 +27,17 @@ void LegoEV3ButtonBarTest::run(Arguments *)
 	logger().info() << "Please press BACK" << logs::end;
 	robot.actions().buttonBar().waitPressed(BUTTON_BACK_KEY);
 
+	logger().info() << "Please press UP" << logs::end;
+	robot.actions().buttonBar().waitPressed(BUTTON_UP_KEY);
+
+	logger().info() << "Please press DOWN" << logs::end;
+	robot.actions().buttonBar().waitPressed(BUTTON_DOWN_KEY);
+
+	logger().info() << "Please press LEFT" << logs::end;
+	robot.actions().buttonBar().waitPressed(BUTTON_LEFT_KEY);
+
+	logger().info() << "Please press RIGHT" << logs::end;
+	robot.actions().buttonBar().waitPressed(BUTTON_RIGHT_KEY);
 
 	logger().info() << "Happy End." << logs::end;
 }

@@ -16,6 +16,8 @@ logs::MemoryAppender::~MemoryAppender()
 {
 	this->flush();
 }
+
+
 void logs::MemoryAppender::lockMessages()
 {
 	this->lock();

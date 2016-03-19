@@ -1,12 +1,16 @@
 #ifndef COMMON_ROBOT_HPP_
 #define COMMON_ROBOT_HPP_
 
+#include <string>
+
 #include "../Log/LoggerFactory.hpp"
 #include "Arguments.hpp"
 #include "ConsoleManager.hpp"
 #include "State/Automate.hpp"
 #include "State/Data.hpp"
 #include "Utils/Chronometer.hpp"
+
+class Asserv;
 
 class Actions;
 class Arguments;
@@ -54,9 +58,11 @@ public:
 	//Action => RobotElement
 	Actions * actions_default;
 
-	//Asserv
+	//Asserv => asservissement
+	Asserv * asserv_default;
 
 	//IA
+	//TODO IA
 
 	/*!
 	 * \brief Constructeur de la classe.

@@ -62,6 +62,6 @@ void LegoEV3LedBarTest::run(Arguments *)
 	//robot.actions().ledBar().k2mil(4, 70000, LED_RED);
 	robot.actions().ledBar().resetAll();
 
-	logger().info() << "LegoEV3LedBarTest Happy End." << logs::end;
+	logger().info() << "Happy End." << logs::end;
 }
 

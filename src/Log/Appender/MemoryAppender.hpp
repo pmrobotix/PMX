@@ -47,6 +47,14 @@ public:
 	virtual ~MemoryAppender();
 
 	/*!
+	 * \return Liste des messages enregistrés.
+	 */
+	inline const std::list<std::string> & messages() const
+	{
+		return messages_;
+	}
+
+	/*!
 	 * \brief Méthode générique de trace d'un message. Ajoute le nom du log devant chaque entrée.
 	 * \param logger
 	 *        Logger de référence du message.
@@ -55,8 +63,7 @@ public:
 	 * \param message
 	 *        Message à tracer.
 	 */
-	virtual void writeMessage(const logs::Logger & logger, const logs::Level & level,
-			const std::string & message);
+	virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message);
 
 	/*!
 	 * \brief Méthode générique de trace d'un message.

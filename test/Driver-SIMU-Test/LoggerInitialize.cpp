@@ -13,7 +13,7 @@
 void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
-	add("memory", new MemoryAppender());
+	//add("memory", new MemoryAppender());
 
 	add(logs::Level::ERROR, "", "console");
 

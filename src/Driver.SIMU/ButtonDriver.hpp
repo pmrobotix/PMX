@@ -17,6 +17,9 @@ private:
 		return instance;
 	}
 
+	char cInput;
+	int lindex;
+
 public:
 
 	/*!

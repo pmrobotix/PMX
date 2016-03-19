@@ -1,13 +1,19 @@
 #include <iostream>
 
+#include "../Suite/DevUnitTestSuite.hpp"
+#include "LedDriverTest.hpp"
+
 using namespace std;
 
 int main()
 {
-	cout << "!!!Hello TssEST World!!!" << endl; // prints !!!Hello World!!!
+	cout << "!!!Driver-SIMU-Test!!!" << endl;
 
+	DevUnitTestSuite suite;
 
+	suite.addTest(new test::LedDriverTest());
 
-	//Assert/fail
+	suite.run();
+
 	return 0;
 }

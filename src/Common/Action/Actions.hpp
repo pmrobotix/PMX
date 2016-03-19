@@ -12,12 +12,11 @@ class Actions
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref Actions.
+	 * \brief Return \ref Logger linked to \ref Actions.
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger(
-				"Actions");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("Actions");
 		return instance;
 	}
 

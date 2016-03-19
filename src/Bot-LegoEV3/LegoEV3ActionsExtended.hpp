@@ -1,10 +1,18 @@
 #ifndef LEGOEV3_ACTIONSEXTENDED_HPP_
 #define LEGOEV3_ACTIONSEXTENDED_HPP_
 
+#include <cstdio>
+#include <string>
+
 #include "../Common/Action/Actions.hpp"
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/LedBar.hpp"
+#include "../Common/Action/SoundBar.hpp"
+#include "../Common/Action/Tirette.hpp"
 
+/*
+ * Contains all specific robot element parts.
+ */
 class LegoEV3ActionsExtended: public Actions
 {
 private:
@@ -19,9 +27,19 @@ private:
 	 */
 	ButtonBar buttonbar_;
 
+	/*!
+	 * \brief Sound Bar.
+	 */
+	SoundBar soundbar_;
+
+	/*!
+	 * \brief Tirette.
+	 */
+	Tirette tirette_;
+
 public:
 	LegoEV3ActionsExtended(std::string botId)
-			: ledbar_(botId, *this, 2), buttonbar_(*this)
+			: ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this)
 	{
 	}
 
@@ -46,6 +64,24 @@ public:
 	ButtonBar & buttonBar()
 	{
 		return buttonbar_;
+	}
+
+	/*!
+	 * \brief Cette methode retourne l'objet soundBar.
+	 * \return soundbar_.
+	 */
+	SoundBar & soundBar()
+	{
+		return soundbar_;
+	}
+
+	/*!
+	 * \brief Cette methode retourne l'objet tirette.
+	 * \return tirette_.
+	 */
+	Tirette & tirette()
+	{
+		return tirette_;
 	}
 
 	void stop()
