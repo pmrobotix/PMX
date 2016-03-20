@@ -12,6 +12,7 @@
 void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
+	add("legoEV3svg", new SvgAppender("./resources/svg/LegoEV3Robot.svg"));
 	//add("memory", new MemoryAppender());
 	//add("file", new FileAppender("log.txt"));
 
@@ -21,10 +22,15 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
 	add(logs::Level::INFO, "LegoEV3State1", "console");
 
+	//SVG
+	add(logs::Level::INFO, "Svg4LegoEV3Robot", "legoEV3svg");
+
 	//TESTS
 	add(logs::Level::INFO, "LegoEV3LedBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3ButtonBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3SoundBarTest", "console");
+	add(logs::Level::INFO, "LegoEV3TiretteTest", "console");
+	add(logs::Level::INFO, "LegoEV3MovingBaseTest", "console");
 
 
 	//DRIVERS

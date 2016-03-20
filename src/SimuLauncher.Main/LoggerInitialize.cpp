@@ -12,11 +12,12 @@
 void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
-	//add("memory", new MemoryAppender());
+	add("legoEV3svg", new SvgAppender("./resources/svg/LegoEV3Robot.svg"));
+	add("APF9328svg", new SvgAppender("./resources/svg/APF9328Robot.svg"));
+		//add("memory", new MemoryAppender());
 
 	add(logs::Level::ERROR, "", "console");
 
-	//add(logs::Level::INFO, "Robot", "console");
 	add(logs::Level::INFO, "BotManager", "console");
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
 	add(logs::Level::INFO, "LegoEV3LedBarTest", "console");
@@ -24,6 +25,10 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "APF9328RobotExtended", "console");
 	add(logs::Level::INFO, "APF9328LedBarTest", "console");
 	add(logs::Level::INFO, "APF9328State1", "console");
+
+	add(logs::Level::INFO, "Svg4LegoEV3Robot", "legoEV3svg");
+	add(logs::Level::INFO, "Svg4APF9328Robot", "APF9328svg");
+
 
 
 }

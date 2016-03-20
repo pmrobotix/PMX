@@ -24,7 +24,7 @@ public:
 
 	~LegoEV3AsservExtended()
 	{
-		printf("~LegoEV3AsservExtended()\n");
+		//printf("~LegoEV3AsservExtended()\n");
 	}
 
 	/*!

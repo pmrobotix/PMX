@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "../Log/Logger.hpp"
+#include "../Common/State/Data.hpp"
 #include "LegoEV3State1.hpp"
 
 LegoEV3RobotExtended::LegoEV3RobotExtended()
@@ -18,13 +18,19 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	asserv_ = new LegoEV3AsservExtended(id_);
 	asserv_default = asserv_;
 
-	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3RobotExtended");
+	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
+
+	psvg_ = new LegoEV3SvgWriterExtended(id_);
+	psvg_->beginHeader();
 }
 
 void LegoEV3RobotExtended::stop()
 {
+
 	Robot::stop();
 	this->actions().stop(); //extra devices
+
+	psvg_->endHeader();
 }
 
 void LegoEV3RobotExtended::begin()

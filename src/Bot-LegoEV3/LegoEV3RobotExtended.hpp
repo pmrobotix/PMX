@@ -6,6 +6,7 @@
 #include "../Log/LoggerFactory.hpp"
 #include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3AsservExtended.hpp"
+#include "LegoEV3SvgWriterExtended.hpp"
 
 class Arguments;
 
@@ -36,6 +37,12 @@ public:
 		return r_asserv;
 	}
 
+	inline LegoEV3SvgWriterExtended& svg()
+	{
+		LegoEV3SvgWriterExtended& r_svg = *psvg_;
+		return r_svg;
+	}
+
 	void stop();
 
 	void begin();
@@ -48,9 +55,11 @@ private:
 		return instance;
 	}
 
-	LegoEV3ActionsExtended* actions_;
+	LegoEV3ActionsExtended * actions_;
 
-	LegoEV3AsservExtended* asserv_;
+	LegoEV3AsservExtended * asserv_;
+
+	LegoEV3SvgWriterExtended * psvg_;
 
 	LegoEV3RobotExtended();
 };

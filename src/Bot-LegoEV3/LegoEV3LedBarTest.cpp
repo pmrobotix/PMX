@@ -6,6 +6,7 @@
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Log/Logger.hpp"
+#include "../Log/SvgWriter.hpp"
 #include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
@@ -16,6 +17,9 @@ void LegoEV3LedBarTest::run(Arguments *)
 	logger().info() << "Executing - " << this->desc() << logs::end;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+
+	robot.svg().logger().info() << "test LegoEV3LedBarTest" << logs::end;
+	robot.svg().writePosition(200, 300, 0, LEGOEV3_SVG_POS_ROBOT);
 
 	robot.actions().ledBar().resetAll();
 	/*
@@ -61,6 +65,8 @@ void LegoEV3LedBarTest::run(Arguments *)
 
 	//robot.actions().ledBar().k2mil(4, 70000, LED_RED);
 	robot.actions().ledBar().resetAll();
+
+	robot.stop();
 
 	logger().info() << "Happy End." << logs::end;
 }

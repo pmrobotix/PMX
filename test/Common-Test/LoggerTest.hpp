@@ -39,6 +39,11 @@ public:
 	void testLogger();
 
 	/*!
+	 * \brief Teste la classe \ref Logger (tests visuels svg).
+	 */
+	void testLoggerSvg();
+
+	/*!
 	 * \brief Execute les tests associés à la classe \ref LoggerTest.
 	 */
 	virtual void suite();

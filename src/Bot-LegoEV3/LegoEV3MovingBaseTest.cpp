@@ -13,9 +13,10 @@ void LegoEV3MovingBaseTest::run(Arguments *)
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.asserv().base().setCollisionDetected(0);
 	robot.asserv().base().moveForward(520, 800);
 
+
+	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }
 

@@ -2,6 +2,7 @@
 
 #include "../Bot-LegoEV3/LegoEV3ButtonBarTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3LedBarTest.hpp"
+#include "../Bot-LegoEV3/LegoEV3MovingBaseTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3RobotExtended.hpp"
 #include "../Bot-LegoEV3/LegoEV3SoundBarTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3TiretteTest.hpp"
@@ -19,6 +20,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new LegoEV3ButtonBarTest());
 	robot.getConsoleManager().add(new LegoEV3SoundBarTest());
 	robot.getConsoleManager().add(new LegoEV3TiretteTest());
+	robot.getConsoleManager().add(new LegoEV3MovingBaseTest());
 
 	/*
 	 //Pour debug

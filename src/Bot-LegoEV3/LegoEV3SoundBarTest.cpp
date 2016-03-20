@@ -37,6 +37,7 @@ void LegoEV3SoundBarTest::run(Arguments *)
 
 	logger().info() << this->name() << " - Happy End." << logs::end;
 	robot.actions().soundBar().beep(5);
+	robot.stop();
 
 }
 

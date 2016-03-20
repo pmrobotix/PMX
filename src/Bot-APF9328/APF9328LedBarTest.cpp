@@ -22,6 +22,8 @@ void APF9328LedBarTest::run(Arguments *)
 	//SRobotExtended robot;
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
+	robot.svg().writePosition(500, 500, 0, APF9328_SVG_POS_ROBOT);
+
 	robot.actions().ledBar().resetAll();
 	/*
 	 robot.actions().ledBar().setOff(0);
@@ -64,6 +66,7 @@ void APF9328LedBarTest::run(Arguments *)
 //	robot.actions().ledBar().k2mil(4, 70000, LED_RED);
 	robot.actions().ledBar().resetAll();
 
+	robot.stop();
 	logger().info() << "APF9328LedBarTest Happy End." << logs::end;
 }
 

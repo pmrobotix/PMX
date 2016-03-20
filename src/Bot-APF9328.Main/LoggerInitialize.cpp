@@ -12,13 +12,16 @@
 void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
-	add("memory", new MemoryAppender());
+	//add("memory", new MemoryAppender());
+	add("APF9328svg", new SvgAppender("./resources/svg/APF9328Robot.svg"));
 
 	add(logs::Level::ERROR, "", "console");
 
+	//SVG
+	add(logs::Level::INFO, "Svg4APF9328Robot", "APF9328svg");
+
+	//TESTS
 	add(logs::Level::INFO, "LedBarTest", "console");
-	add(logs::Level::DEBUG, "LedBar", "console");
-	add(logs::Level::DEBUG, "LedBarAction", "console");
 
 	//DRIVER
 	add(logs::Level::DEBUG, "LedDriver.SIMU", "console");

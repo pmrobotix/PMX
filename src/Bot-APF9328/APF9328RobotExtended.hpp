@@ -4,6 +4,7 @@
 #include "../Common/Robot.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "APF9328ActionsExtended.hpp"
+#include "APF9328SvgWriterExtended.hpp"
 
 class APF9328RobotExtended: public Robot
 {
@@ -25,6 +26,12 @@ public:
 		return r_actions;
 	}
 
+	inline APF9328SvgWriterExtended& svg()
+	{
+		APF9328SvgWriterExtended& r_svg = *psvg_;
+		return r_svg;
+	}
+
 	void begin();
 
 	void stop();
@@ -38,6 +45,8 @@ private:
 	}
 
 	APF9328ActionsExtended* actions_;
+
+	APF9328SvgWriterExtended * psvg_;
 
 	APF9328RobotExtended();
 };

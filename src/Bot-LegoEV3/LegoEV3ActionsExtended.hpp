@@ -45,7 +45,7 @@ public:
 
 	~LegoEV3ActionsExtended()
 	{
-		printf("~LegoEV3ActionsExtended()\n");
+		//printf("~LegoEV3ActionsExtended()\n");
 	}
 
 	/*!

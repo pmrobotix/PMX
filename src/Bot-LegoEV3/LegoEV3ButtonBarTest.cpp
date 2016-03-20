@@ -39,6 +39,7 @@ void LegoEV3ButtonBarTest::run(Arguments *)
 	logger().info() << "Please press RIGHT" << logs::end;
 	robot.actions().buttonBar().waitPressed(BUTTON_RIGHT_KEY);
 
+	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }
 
