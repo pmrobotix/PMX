@@ -74,7 +74,7 @@ long MovingBase::moveDWaitTrajectory()
 			return (distTicks_ - m);
 		}
 
-		usleep(100000);
+		usleep(10000);
 	}
 
 	//TODO use external encoders if needed

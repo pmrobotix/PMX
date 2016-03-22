@@ -28,7 +28,7 @@ public:
 	virtual void setMotorLeftPosition(long tick, int power) = 0;
 	virtual void setMotorRightPosition(long tick, int power) = 0;
 
-	virtual void setMotorLeftPower(int power, int timems) = 0;
+	virtual void setMotorLeftPower(int power, int timems) = 0; //TODO power à definir !!!
 	virtual void setMotorRightPower(int power, int timems) = 0;
 
 	virtual long getLeftExternalEncoder() = 0;

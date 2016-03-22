@@ -38,7 +38,7 @@ void APF9328RobotExtended::begin()
 	logger().info() << "APF9328RobotExtended::start" << logs::end;
 
 	//specific match case and strategies
-	if (cArgs_["type"] == "m")
+	if (cArgs_["type"] == "m" or cArgs_["type"] == "M")
 	{
 		data_.isEmpty(true);
 		IAutomateState* state1 = new APF9328State1();

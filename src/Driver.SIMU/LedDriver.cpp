@@ -82,6 +82,4 @@ void LedDriver::setBytes(uint hex, LedColor color)
 		ost << gpio[i];
 	}
 	logger().info() << ost.str() << logs::end;
-
-	//logger().info() << "LED " << std::bitset<8>(hexa) << logs::end;
 }

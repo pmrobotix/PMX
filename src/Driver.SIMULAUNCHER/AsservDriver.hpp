@@ -1,5 +1,5 @@
-#ifndef SIMU_ASSERVDRIVER_HPP_
-#define SIMU_ASSERVDRIVER_HPP_
+#ifndef SIMULAUNCHER_ASSERVDRIVER_HPP_
+#define SIMULAUNCHER_ASSERVDRIVER_HPP_
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -12,11 +12,11 @@ class AsservDriver: public AAsservDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriver(SIMU).
+	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriver(SIMULAUNCHER).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMULAUNCHER");
 		return instance;
 	}
 

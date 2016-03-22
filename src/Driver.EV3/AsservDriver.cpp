@@ -18,8 +18,8 @@ AAsservDriver * AAsservDriver::create()
 	return instance;
 }
 
-AsservDriver::AsservDriver() :
-		connectedLeft_(0), connectedRight_(0)
+AsservDriver::AsservDriver()
+		: connectedLeft_(0), connectedRight_(0)
 {
 	logger().debug() << "AsservDriver()" << logs::end;
 
@@ -30,8 +30,7 @@ AsservDriver::AsservDriver() :
 		if (m.port_name() == OUTPUT_A)
 		{
 			_motor_right = OUTPUT_A;
-			logger().debug() << m.type() << " motor on port " << m.port_name()
-					<< " - Connected (RIGHT)" << logs::end;
+			logger().debug() << m.type() << " motor on port " << m.port_name() << " - Connected (RIGHT)" << logs::end;
 			connectedRight_++;
 		}
 	}
@@ -46,8 +45,7 @@ AsservDriver::AsservDriver() :
 		if (m2.port_name() == OUTPUT_D)
 		{
 			_motor_left = OUTPUT_D;
-			logger().debug() << m2.type() << " motor on port " << m2.port_name()
-					<< " - Connected (LEFT)" << logs::end;
+			logger().debug() << m2.type() << " motor on port " << m2.port_name() << " - Connected (LEFT)" << logs::end;
 			connectedLeft_++;
 		}
 	}
@@ -64,6 +62,10 @@ AsservDriver::AsservDriver() :
 
 		enableRightHardRegulation(true);
 	}
+	else
+	{
+		logger().error() << "Right motor not connected !" << logs::end;
+	}
 	if (connectedLeft_) //if both motors are connected, then initialize each motor.
 	{
 		_motor_left.reset();
@@ -71,6 +73,10 @@ AsservDriver::AsservDriver() :
 		_motor_left.set_stop_mode(motor::stop_mode_brake);
 
 		enableLeftHardRegulation(true);
+	}
+	else
+	{
+		logger().error() << "Left motor not connected !" << logs::end;
 	}
 
 }
@@ -92,13 +98,16 @@ void AsservDriver::setMotorLeftPosition(long ticks, int power) // TODO faire un 
 		_motor_left.set_ramp_down_sp(0);
 		_motor_left.start();
 	}
+	else
+	{
+		logger().error() << "Left motor not connected !" << logs::end;
+	}
 }
 
 void AsservDriver::setMotorRightPosition(long ticks, int power)
 {
 	if (connectedRight_)
 	{
-
 		enableRightHardRegulation(true);
 		_motor_right.set_stop_mode(motor::stop_mode_brake);
 		_motor_right.set_position_mode(motor::position_mode_absolute);
@@ -109,6 +118,10 @@ void AsservDriver::setMotorRightPosition(long ticks, int power)
 		_motor_right.set_ramp_up_sp(0);
 		_motor_right.set_ramp_down_sp(0);
 		_motor_right.start();
+	}
+	else
+	{
+		logger().error() << "Right motor not connected !" << logs::end;
 	}
 }
 
@@ -154,6 +167,9 @@ void AsservDriver::setMotorLeftPower(int power, int timems)
 
 			_motor_left.start();
 		}
+	}else
+	{
+		logger().error() << "Left motor not connected !" << logs::end;
 	}
 }
 void AsservDriver::setMotorRightPower(int power, int timems)
@@ -195,6 +211,9 @@ void AsservDriver::setMotorRightPower(int power, int timems)
 			}
 			_motor_right.start();
 		}
+	}else
+	{
+		logger().error() << "Right motor not connected !" << logs::end;
 	}
 }
 

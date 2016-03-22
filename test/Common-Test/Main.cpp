@@ -14,8 +14,8 @@ int main()
 	DevUnitTestSuite suite;
 
 	suite.addTest(new test::LoggerTest());
-	//suite.addTest(new test::ChronometerTest());
-	//suite.addTest(new test::ActionManagerTest());
+	suite.addTest(new test::ChronometerTest());
+	suite.addTest(new test::ActionManagerTest());
 
 	suite.run();
 

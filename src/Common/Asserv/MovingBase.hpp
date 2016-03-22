@@ -1,7 +1,7 @@
 #ifndef MOVINGBASE_HPP_
 #define MOVINGBASE_HPP_
 
-#include <string>
+#include <string.h>
 
 #include "../../Log/LoggerFactory.hpp"
 #include "EncoderControl.hpp"
@@ -19,7 +19,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Base");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("MovingBase");
 		return instance;
 	}
 
@@ -49,10 +49,7 @@ private:
 
 	bool collisionDetected_;
 
-
-
 public:
-
 
 	/*!
 	 * \brief Constructor.
@@ -73,6 +70,15 @@ public:
 	inline EncoderControl & encoders()
 	{
 		return encoders_;
+	}
+
+	/*!
+	 * \brief Cette methode retourne l'objet EncoderControl.
+	 * \return extEncoders.
+	 */
+	inline EncoderControl & extEncoders()
+	{
+		return extEncoders_;
 	}
 
 	/*!

@@ -39,7 +39,7 @@ void LegoEV3RobotExtended::begin()
 	logger().debug() << "LegoEV3RobotExtended::start" << logs::end;
 
 	//specific match case and strategies
-	if (cArgs_["type"] == "m")
+	if (cArgs_["type"] == "m" or cArgs_["type"] == "M")
 	{
 		data_.isEmpty(true);
 		IAutomateState* state1 = new LegoEV3State1();

@@ -38,4 +38,9 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
 	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
 
+
+	//DEBUG
+	add(logs::Level::DEBUG, "MovingBase", "console");
+
+
 }

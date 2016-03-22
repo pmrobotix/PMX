@@ -35,12 +35,7 @@ public:
 	 */
 	~Asserv()
 	{
-		logger().debug() << "~Asserv()" << logs::end;
 	}
-
-	void startAsservInsa();
-
-	void stopAsservInsa();
 
 };
 

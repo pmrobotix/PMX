@@ -72,7 +72,7 @@ void Robot::begin()
 	{
 		color = cArgs_['c']["color"];
 		if (color == "green") this->setMyColor(PMXGREEN);
-		else if (color == "red") this->setMyColor(PMXRED);
+		else if (color == "red") this->setMyColor(PMXVIOLET);
 		else
 		{
 			this->setMyColor(PMXNOCOLOR);
@@ -94,7 +94,7 @@ void Robot::begin()
 		logger().debug() << "skip = " << (int) cArgs_['s'] << logs::end;
 	}
 
-	if (cArgs_["type"] != "m" && cArgs_["type"] != "t")
+	if (cArgs_["type"] != "m" && cArgs_["type"] != "t" && cArgs_["type"] != "T" && cArgs_["type"] != "M")
 	{
 		select = cmanager_.displayMenuFirstArgu();
 		if (select == "-")
@@ -106,7 +106,7 @@ void Robot::begin()
 	}
 
 	//functional test cases
-	if (cArgs_["type"] == "t")
+	if (cArgs_["type"] == "t" or cArgs_["type"] == "T")
 	{
 		if (num > 0)
 		{

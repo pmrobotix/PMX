@@ -8,8 +8,9 @@
 
 #include <cmath>
 
-#include "../../src/Log/Appender/SvgWriter.hpp"
+
 #include "../../src/Log/LoggerFactory.hpp"
+#include "../../src/Log/SvgWriter.hpp"
 
 void test::LoggerTest::testLogger()
 {
@@ -37,6 +38,7 @@ void test::LoggerTest::testLoggerSvg()
 
 	if (svg.isActive(logs::Level::INFO))
 	{
+		/*
 		SvgWriter::beginHeader();
 		svg.info() << "<circle cx=\""
 				<< 20
@@ -50,7 +52,7 @@ void test::LoggerTest::testLoggerSvg()
 		SvgWriter::writePosition(200, 500, (90 * M_PI) / 180, SVG_POS_ROBOT);
 
 		SvgWriter::writePosition(500, 800, (190 * M_PI) / 180, SVG_POS_ROBOT);
-		SvgWriter::endHeader();
+		SvgWriter::endHeader();*/
 	}
 
 }

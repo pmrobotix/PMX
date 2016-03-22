@@ -1,4 +1,4 @@
-//drivers...SIMU
+//drivers...SIMULAUNCHER
 
 #include "AsservDriver.hpp"
 

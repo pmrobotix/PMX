@@ -18,7 +18,7 @@ class ConsoleManager;
 
 enum RobotColor
 {
-	PMXNOCOLOR, PMXGREEN, PMXRED
+	PMXNOCOLOR, PMXGREEN, PMXVIOLET
 };
 
 class Robot
