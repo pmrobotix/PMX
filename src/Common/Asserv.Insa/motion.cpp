@@ -65,7 +65,7 @@ void AsservInsa::motion_configureRightPID(float p, float i, float d)
 	pid_Config(motors[LEFT_RIGHT][RIGHT_MOTOR].PIDSys, p, i, d);
 }
 
-void AsservInsa::motion_Init(MovingBase *base)
+void AsservInsa::motion_Init()
 {
 	int i, j;
 	RobotMotionState = DISABLE_PID;
@@ -95,11 +95,14 @@ void AsservInsa::motion_Init(MovingBase *base)
 
 	//create motion control task
 	//if (pthread_create(&thread, NULL, this->motion_ITTask(), NULL) < 0)
+	/*
 	if (startInternalThread() < 0)
 	{
 		fprintf(stderr, "pthread_create error for thread 1\n");
 		exit(1);
-	}
+	}*/
+	start("AsservInsa");
+
 
 	//motion_InitTimer(DEFAULT_SAMPLING_FREQ);
 	motion_InitTimer(defaultSamplingFreq);
@@ -133,7 +136,7 @@ void AsservInsa::signalEndOfTraj()
 void AsservInsa::motion_FreeMotion()
 {
 	RobotMotionState = FREE_MOTION;
-	//TODO setPWM(0, 0);
+	setPWM(0, 0);
 	//resetAllPIDErrors();
 
 	//printf("============> motion_FreeMotion setPWM(0, 0);\n");
@@ -149,7 +152,7 @@ void AsservInsa::motion_DisablePID()
 {
 	motion_FreeMotion();
 	RobotMotionState = DISABLE_PID;
-	//TODO setPWM(0, 0);
+	setPWM(0, 0);
 
 }
 void AsservInsa::checkRobotCommand(RobotCommand *cmd)
@@ -226,10 +229,9 @@ void AsservInsa::motion_SetCurrentCommand(RobotCommand *cmd)
 //Motion control main loop
 //implemented as an IT task, armed on a timer to provide
 //a constant and precise period between computation
-void AsservInsa::motion_ITTask()
+void AsservInsa::execute()
 {
-	//MovingBase *base = (MovingBase*) pbase;
-	//AsservInsa *asserv = (AsservInsa*) passerv;
+
 	/*
 	 #ifdef LOG_PID_APPENDER
 	 //pmx::Robot &logrobot = pmx::Robot::instance();
@@ -237,16 +239,16 @@ void AsservInsa::motion_ITTask()
 	 */
 //static int32 left, right;
 //static int32 alpha, delta;
-	static int32 dLeft, dRight;
-	static int32 dAlpha, dDelta;
+	int32 dLeft, dRight; //static
+	int32 dAlpha, dDelta; //static
 
 //static int32 dLeft2, dRight2;
 //static int32 dAlpha2, dDelta2;
 
-	static int32 ord0, ord1;
-	static BOOL fin0, fin1;
-	static int32 pwm0, pwm1;
-	static int32 pwm0b, pwm1b;
+	int32 ord0, ord1; //static
+	bool fin0, fin1; //static
+	int32 pwm0, pwm1; //static
+	int32 pwm0b, pwm1b; //static
 #ifdef DEBUG_MOTION
 	printf("motion.c : motion_ITTask start\n");
 #endif
@@ -458,6 +460,7 @@ void AsservInsa::motion_ITTask()
 
 		long stopTime = currentTimeInMillis();
 		long duration = stopTime - startTime;
+		printf("duration = %l\n", duration);
 		if (duration < loopDelayInMillis && duration >= 0)
 		{
 			int d = 1000 * (loopDelayInMillis - duration);
@@ -492,9 +495,9 @@ void AsservInsa::motion_InitTimer(int frequency)
 
 void AsservInsa::motion_StopTimer()
 {
-	stop_motion_ITTask = 1;
-	//TODO setPWM(0, 0);
-
+	stop_motion_ITTask = true;
+	setPWM(0, 0);
+	setPWM(0, 0);
 }
 
 void AsservInsa::initPWM()

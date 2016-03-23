@@ -34,7 +34,8 @@ int useExternalEncoders = 0;
 
 void AsservInsa::encoder_Init()
 {
-
+	base_->extEncoders().reset();
+	base_->encoders().reset();
 }
 
 void AsservInsa::encoder_SetDist(float dist)

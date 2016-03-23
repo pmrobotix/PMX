@@ -6,7 +6,7 @@
 #ifndef TEST_LOGGER_TEST_HPP
 #define TEST_LOGGER_TEST_HPP
 
-#include "../Suite/DevUnitTest.hpp"
+#include "../Suite/UnitTest.hpp"
 
 namespace test
 {
@@ -14,7 +14,7 @@ namespace test
 /*!
  * \brief Teste la classe \ref Logger.
  */
-class LoggerTest: public DevUnitTest
+class LoggerTest: public UnitTest
 {
 public:
 
@@ -22,7 +22,7 @@ public:
 	 * \brief Constructeur par défaut.
 	 */
 	LoggerTest()
-			: DevUnitTest("test::LoggerTest")
+			: UnitTest("test::LoggerTest")
 	{
 	}
 

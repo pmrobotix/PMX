@@ -10,7 +10,8 @@
 
 #include <pthread.h>
 #include <semaphore.h>
-#include <stddef.h>
+
+#include "../../Thread/Thread.hpp"
 
 class MovingBase;
 
@@ -269,41 +270,13 @@ typedef struct
 
 } RobotCommand;
 
-//eXAMPLE
-/*class MyThreadClass
- {
- public:
- MyThreadClass() {}
- virtual ~MyThreadClass() {}
 
- //Returns true if the thread was successfully started, false if there was an error starting the thread
- bool StartInternalThread()
- {
- return (pthread_create(&_thread, NULL, InternalThreadEntryFunc, this) == 0);
- }
-
- // Will not return until the internal thread has exited.
- void WaitForInternalThreadToExit()
- {
- (void) pthread_join(_thread, NULL);
- }
-
- protected:
- // Implement this method in your subclass with the code you want your thread to run.
- virtual void InternalThreadEntry() = 0;
-
- private:
- static void * InternalThreadEntryFunc(void * This) {((MyThreadClass *)This)->InternalThreadEntry(); return NULL;}
-
- pthread_t _thread;
- };
- */
-
-class AsservInsa
+class AsservInsa : public utils::Thread
 {
 public:
 	int stop_motion_ITTask;
 
+	/*
 	//Returns true if the thread was successfully started, false if there was an error starting the thread
 	bool startInternalThread()
 	{
@@ -324,16 +297,21 @@ private:
 	//You can't do it the way you've written it because C++ class member functions have a hidden
 	//this parameter passed in.  pthread_create() has no idea what value of this to use.
 	//this is the favorite way to handle a thread is to encapsulate it inside a C++ object
-	static void * internalThreadEntryFunc(void * This)
+	static void * internalThreadEntryFunc(void * pThis)
 	{
-		((AsservInsa *) This)->motion_ITTask();
+		((AsservInsa *) pThis)->motion_ITTask();
 		return NULL;
 	}
 
 	pthread_t _thread;
+*/
+
+protected:
+	virtual void execute();
 
 private:
 
+	//Base roulante de ce robot
 	MovingBase *base_;
 
 	MOTOR motors[MAX_MOTION_CONTROL_TYPE_NUMBER][MOTOR_PER_TYPE];
@@ -424,7 +402,6 @@ private:
 	void checkRobotCommand(RobotCommand *cmd);
 
 	//! Load motion control module
-	void motion_Init(MovingBase *base);
 	void motion_configureAlphaPID(float p, float i, float d);
 	void motion_configureDeltaPID(float p, float i, float d);
 	void motion_configureLeftPID(float p, float i, float d);
@@ -685,6 +662,8 @@ public:
 	{
 
 	}
+
+	void motion_Init();
 
 	void setMovingBase(MovingBase *base);
 

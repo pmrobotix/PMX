@@ -6,7 +6,7 @@
 #ifndef TEST_ACTIONMANAGERTEST_HPP
 #define TEST_ACTIONMANAGERTEST_HPP
 
-#include "../Suite/DevUnitTest.hpp"
+#include "../Suite/UnitTest.hpp"
 
 namespace test
 {
@@ -14,7 +14,7 @@ namespace test
 /*!
  * \brief Teste la classe \ref pmx::ActionManager.
  */
-class ActionManagerTest: public DevUnitTest
+class ActionManagerTest: public UnitTest
 {
 public:
 
@@ -22,7 +22,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	ActionManagerTest()
-			: DevUnitTest("ActionManagerTest")
+			: UnitTest("ActionManagerTest")
 	{
 	}
 

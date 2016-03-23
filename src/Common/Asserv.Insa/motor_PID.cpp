@@ -146,7 +146,6 @@ double AsservInsa::pid_Compute(PID_SYSTEM system, double setpoint, double input,
 }
 
 // RCVA
-
 int32 AsservInsa::pid_Compute_rcva_chaff(PID_SYSTEM system, int32 error, double vitesse)
 {
 	pidSystemValues * val;

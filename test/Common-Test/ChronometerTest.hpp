@@ -7,14 +7,14 @@
 #define	TEST_CHRONOMETER_TEST_HPP
 
 #include "../../src/Log/LoggerFactory.hpp"
-#include "../Suite/DevUnitTest.hpp"
+#include "../Suite/UnitTest.hpp"
 
 namespace test
 {
     /*!
      * \brief Teste la classe \ref ChronometerTest.
      */
-    class ChronometerTest : public DevUnitTest
+    class ChronometerTest : public UnitTest
     {
     private:
 
@@ -32,7 +32,7 @@ namespace test
         /*!
          * \brief Constructeur par défaut.
          */
-        ChronometerTest() : DevUnitTest("ChronometerTest")
+        ChronometerTest() : UnitTest("ChronometerTest")
         {
         }
 

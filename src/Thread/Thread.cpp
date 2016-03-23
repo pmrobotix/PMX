@@ -6,8 +6,6 @@
 #include "Thread.hpp"
 
 #include <sched.h>
-#include <syscall.h>
-#include <unistd.h>
 #include <iostream>
 
 #ifndef EAGAIN
@@ -18,6 +16,9 @@
 #define EINVAL 22
 #endif
 
+//You can't do it the way you've written it because C++ class member functions have a hidden
+//this parameter passed in.  pthread_create() has no idea what value of this to use.
+//this is the favorite way to handle a thread is to encapsulate it inside a C++ object
 void *
 utils::Thread::entryPoint(void *pthis)
 {
@@ -29,8 +30,8 @@ utils::Thread::entryPoint(void *pthis)
 	return NULL;
 }
 
-utils::Thread::Thread() :
-		threadId_(), state_(utils::CREATED)
+utils::Thread::Thread()
+		: threadId_(), state_(utils::CREATED)
 {
 }
 /*!
@@ -39,16 +40,17 @@ utils::Thread::Thread() :
  */
 void utils::Thread::yield()
 {
-	sched_yield(); //pthread_yield(); !!!!!!!!!!!!!!!!!!!!!!!!!!!!! pour arm-linux-g++
+	sched_yield(); //POSIX function instead of pthread_yield();
 }
+
 
 /*!
  * \brief Start thread
- * return false si aucun pb.
+ * return Returns false if the thread was successfully started, true if there was an error starting the thread
  */
 bool utils::Thread::start(std::string name)
 {
-	//printf("    utils::Thread::start()\n");
+	logger().debug() << "utils::Thread::start() with id=" << &threadId_ << " name=" << name << logs::end;
 	this->setState(utils::STARTING);
 
 	int code = pthread_create(&threadId_, NULL, utils::Thread::entryPoint, (void *) this);
@@ -57,18 +59,17 @@ bool utils::Thread::start(std::string name)
 	{
 		//log
 		/*
-		pid_t tid;
-		tid = syscall(SYS_gettid);
-		std::cout << "utils::Thread::start::started:" << &threadId_ << " : " << tid << " name="
-				<< name << std::endl;
-		*/
+		 pid_t tid;
+		 tid = syscall(SYS_gettid);
+		 std::cout << "utils::Thread::start::started:" << &threadId_ << " : " << tid << " name="
+		 << name << std::endl;
+		 */
 		//end log
 		return false;
 	}
 	else
 	{
-		std::cout << "utils::Thread::start::NOT started:" << &threadId_ << " : " << " name=" << name
-				<< std::endl;
+		std::cout << "utils::Thread::start::NOT started:" << &threadId_ << " : " << " name=" << name << std::endl;
 		std::cout << "utils::Thread::start::pthread_create: NOK \n" << std::endl;
 		switch (code)
 		{

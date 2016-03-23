@@ -41,6 +41,7 @@ public:
 	void startAsservInsa()
 	{
 
+		asservinsa_.motion_Init();
 		//logger().debug("AsservInsa is started");
 
 	}

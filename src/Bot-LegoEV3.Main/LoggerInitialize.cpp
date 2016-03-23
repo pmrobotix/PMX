@@ -31,6 +31,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "LegoEV3SoundBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3TiretteTest", "console");
 	add(logs::Level::INFO, "LegoEV3MovingBaseTest", "console");
+	add(logs::Level::INFO, "LegoEV3AsservInsaTest", "console");
 
 
 	//DRIVERS
