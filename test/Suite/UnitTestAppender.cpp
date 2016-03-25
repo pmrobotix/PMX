@@ -3,23 +3,22 @@
  * \brief Implémentation de la classe UnitTestAppender.
  */
 
-#include "DevUnitTestAppender.hpp"
-
 #include <list>
 #include <sstream>
 
 #include "../../src/Log/Level.hpp"
+#include "UnitTestAppender.hpp"
 
-DevUnitTestAppender::DevUnitTestAppender()
+UnitTestAppender::UnitTestAppender()
 {
 	this->indent_ = 0;
 }
 
-DevUnitTestAppender::~DevUnitTestAppender()
+UnitTestAppender::~UnitTestAppender()
 {
 }
 
-void DevUnitTestAppender::writeMessage(const logs::Logger & logger,
+void UnitTestAppender::writeMessage(const logs::Logger & logger,
 		const logs::Level & level,
 		const std::string & message)
 {
@@ -41,14 +40,14 @@ void DevUnitTestAppender::writeMessage(const logs::Logger & logger,
 	}
 }
 
-void DevUnitTestAppender::increaseIndent()
+void UnitTestAppender::increaseIndent()
 {
 	this->lock();
 	this->indent_++;
 	this->unlock();
 }
 
-void DevUnitTestAppender::decreaseIndent()
+void UnitTestAppender::decreaseIndent()
 {
 	this->lock();
 	this->indent_--;
@@ -59,7 +58,7 @@ void DevUnitTestAppender::decreaseIndent()
 	this->unlock();
 }
 
-bool DevUnitTestAppender::expectedError(const std::string& message)
+bool UnitTestAppender::expectedError(const std::string& message)
 {
 	this->lock();
 	for (std::list<std::string>::iterator it = messages_.begin(); it != messages_.end(); it++)
@@ -75,7 +74,7 @@ bool DevUnitTestAppender::expectedError(const std::string& message)
 	return false;
 }
 
-void DevUnitTestAppender::cleanMessages()
+void UnitTestAppender::cleanMessages()
 {
 	this->lock();
 	this->messages_.clear();

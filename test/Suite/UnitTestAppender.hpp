@@ -1,10 +1,10 @@
 /*!
  * \file
- * \brief Définition de la classe DevUnitTestAppender.
+ * \brief Définition de la classe UnitTestAppender.
  */
 
-#ifndef TEST_DEVUNITTESTAPPENDER_HPP
-#define TEST_DEVUNITTESTAPPENDER_HPP
+#ifndef SUITE_UNITTESTAPPENDER_HPP
+#define SUITE_UNITTESTAPPENDER_HPP
 
 #include <string>
 
@@ -14,7 +14,7 @@
  * \brief Implémente un appender spécifique à l'execution et au suivi des
  * tests unitaires.
  */
-class DevUnitTestAppender: public logs::MemoryAppender
+class UnitTestAppender: public logs::MemoryAppender
 {
 private:
 
@@ -28,12 +28,12 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	DevUnitTestAppender();
+	UnitTestAppender();
 
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~DevUnitTestAppender();
+	virtual ~UnitTestAppender();
 
 	/*!
 	 * \brief Méthode générique de trace d'un message.

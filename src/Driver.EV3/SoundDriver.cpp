@@ -3,9 +3,7 @@
 #include "SoundDriver.hpp"
 
 #include "ev3dev.h"
-
-#include <string>
-
+#include <vector>
 using namespace std;
 
 ASoundDriver * ASoundDriver::create()
@@ -21,32 +19,28 @@ SoundDriver::~SoundDriver()
 {
 }
 
-void SoundDriver::beep()
+void SoundDriver::beep(const std::string &args, bool bSynchronous = true)
 {
-	ev3dev::sound::beep();
+	ev3dev::sound::beep(args, bSynchronous);
 }
 
-void SoundDriver::tone(unsigned frequency, unsigned ms)
+void SoundDriver::tone(unsigned frequency, unsigned ms, bool bSynchronous = true)
 {
-	ev3dev::sound::tone(frequency, ms);
+	ev3dev::sound::tone(frequency, ms, bSynchronous);
 }
 
-void SoundDriver::play(const std::string &soundfile, bool bSynchronous = false)
+void SoundDriver::tone(const std::vector<std::vector<float> > &sequence, bool bSynchronous = true)
+{
+	ev3dev::sound::tone(sequence, bSynchronous);
+}
+
+void SoundDriver::play(const std::string &soundfile, bool bSynchronous = true)
 {
 	ev3dev::sound::play(soundfile, bSynchronous);
 }
 
-void SoundDriver::speak(const std::string &text, bool bSynchronous = false)
+void SoundDriver::speak(const std::string &text, bool bSynchronous = true)
 {
 	ev3dev::sound::speak(text, bSynchronous);
 }
 
-unsigned int SoundDriver::volume()
-{
-	return ev3dev::sound::volume();
-}
-
-void SoundDriver::set_volume(unsigned int vol)
-{
-	ev3dev::sound::set_volume(vol);
-}

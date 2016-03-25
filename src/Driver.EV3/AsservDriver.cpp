@@ -22,15 +22,15 @@ AsservDriver::AsservDriver()
 		: connectedLeft_(0), connectedRight_(0)
 {
 	logger().debug() << "AsservDriver()" << logs::end;
-
+/*
 	//TEST Motors if connected
 	motor m = motor(OUTPUT_A);
 	if (m.connected())
 	{
-		if (m.port_name() == OUTPUT_A)
+		if (m.address() == OUTPUT_A)
 		{
 			_motor_right = OUTPUT_A;
-			logger().debug() << m.type() << " motor on port " << m.port_name() << " - Connected (RIGHT)" << logs::end;
+			logger().debug() << m.type() << " motor on port " << m.address() << " - Connected (RIGHT)" << logs::end;
 			connectedRight_++;
 		}
 	}
@@ -42,10 +42,10 @@ AsservDriver::AsservDriver()
 	motor m2 = motor(OUTPUT_D);
 	if (m2.connected())
 	{
-		if (m2.port_name() == OUTPUT_D)
+		if (m2.address() == OUTPUT_D)
 		{
 			_motor_left = OUTPUT_D;
-			logger().debug() << m2.type() << " motor on port " << m2.port_name() << " - Connected (LEFT)" << logs::end;
+			logger().debug() << m2.type() << " motor on port " << m2.address() << " - Connected (LEFT)" << logs::end;
 			connectedLeft_++;
 		}
 	}
@@ -77,12 +77,12 @@ AsservDriver::AsservDriver()
 	else
 	{
 		logger().error() << "Left motor not connected !" << logs::end;
-	}
+	}*/
 
 }
 
 void AsservDriver::setMotorLeftPosition(long ticks, int power) // TODO faire un retour d'error de not connected
-{
+{/*
 	if (connectedLeft_)
 	{
 		logger().debug() << "ticks=" << ticks << " power=" << power << logs::end;
@@ -101,11 +101,11 @@ void AsservDriver::setMotorLeftPosition(long ticks, int power) // TODO faire un 
 	else
 	{
 		logger().error() << "Left motor not connected !" << logs::end;
-	}
+	}*/
 }
 
 void AsservDriver::setMotorRightPosition(long ticks, int power)
-{
+{/*
 	if (connectedRight_)
 	{
 		enableRightHardRegulation(true);
@@ -122,12 +122,13 @@ void AsservDriver::setMotorRightPosition(long ticks, int power)
 	else
 	{
 		logger().error() << "Right motor not connected !" << logs::end;
-	}
+	}*/
 }
 
 // -900 < power < +900
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
+	/*
 	if (connectedLeft_)
 	{
 		if ((power < -900))
@@ -171,9 +172,11 @@ void AsservDriver::setMotorLeftPower(int power, int timems)
 	{
 		logger().error() << "Left motor not connected !" << logs::end;
 	}
+	*/
 }
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
+	/*
 	if (connectedRight_)
 	{
 		if ((power < -900))
@@ -214,7 +217,7 @@ void AsservDriver::setMotorRightPower(int power, int timems)
 	}else
 	{
 		logger().error() << "Right motor not connected !" << logs::end;
-	}
+	}*/
 }
 
 long AsservDriver::getLeftExternalEncoder()
@@ -282,6 +285,7 @@ int AsservDriver::getMotorRightCurrent()
 
 void AsservDriver::enableLeftHardRegulation(bool enable)
 {
+	/*
 	if (enable)
 	{
 		_motor_left.set_regulation_mode(motor::mode_on);
@@ -289,11 +293,12 @@ void AsservDriver::enableLeftHardRegulation(bool enable)
 	else
 	{
 		_motor_left.set_regulation_mode(motor::mode_off);
-	}
+	}*/
 }
 
 void AsservDriver::enableRightHardRegulation(bool enable)
 {
+	/*
 	if (enable)
 	{
 		_motor_right.set_regulation_mode(motor::mode_on);
@@ -301,7 +306,7 @@ void AsservDriver::enableRightHardRegulation(bool enable)
 	else
 	{
 		_motor_right.set_regulation_mode(motor::mode_off);
-	}
+	}*/
 }
 
 void AsservDriver::enableHardRegulation(bool enable)

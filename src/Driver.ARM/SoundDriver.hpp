@@ -2,6 +2,7 @@
 #define ARM_SOUNDDRIVER_HPP_
 
 #include <string>
+#include <vector>
 
 #include "../Common/Action.Driver/ASoundDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -19,22 +20,17 @@ private:
 		return instance;
 	}
 
-	int vol_;
-
 public:
 
-	virtual void beep();
+	virtual void beep(const std::string &args, bool bSynchronous);
 
+	virtual void tone(unsigned frequency, unsigned ms, bool bSynchronous);
 
-	virtual void tone(unsigned frequency, unsigned ms);
+	virtual void tone(const std::vector<std::vector<float> > &sequence, bool bSynchronous);
 
 	virtual void play(const std::string &soundfile, bool bSynchronous);
 
 	virtual void speak(const std::string &text, bool bSynchronous);
-
-	virtual unsigned int volume();
-
-	virtual void set_volume(unsigned);
 
 	/*!
 	 * \brief Constructor.

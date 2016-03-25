@@ -6,7 +6,7 @@
 #ifndef TEST_LEDDRIVERTEST_HPP
 #define TEST_LEDDRIVERTEST_HPP
 
-#include "../Suite/DevUnitTest.hpp"
+#include "../Suite/UnitTest.hpp"
 
 namespace test
 {
@@ -14,7 +14,7 @@ namespace test
 /*!
  * \brief Teste la classe \ref LedDriverTest.
  */
-class LedDriverTest: public DevUnitTest
+class LedDriverTest: public UnitTest
 {
 public:
 
@@ -22,8 +22,9 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	LedDriverTest()
-			: DevUnitTest("LedDriverTest")
+			: UnitTest("LedDriverTest")
 	{
+
 	}
 
 	/*!

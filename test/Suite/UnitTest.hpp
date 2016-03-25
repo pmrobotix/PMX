@@ -3,8 +3,8 @@
  * \brief Définition de la classe DevUnitTest.
  */
 
-#ifndef TEST_DEVUNITTEST_HPP
-#define TEST_DEVUNITTEST_HPP
+#ifndef SUITE_UNITTEST_HPP
+#define SUITE_UNITTEST_HPP
 
 #include <string>
 
@@ -29,7 +29,7 @@
  * - Les méthodes de tests sont préfixées par \c test.
  * - Toutes les méthodes de tests sont appelées par la méthode \c suite().
  */
-class DevUnitTest
+class UnitTest
 {
 private:
 
@@ -39,7 +39,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("DevUnitTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("UnitTest");
 		return instance;
 	}
 
@@ -52,14 +52,14 @@ protected:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	DevUnitTest(const std::string & name);
+	UnitTest(const std::string & name);
 
 public:
 
 	/*!
 	 * \brief Destructeur.
 	 */
-	virtual inline ~DevUnitTest()
+	virtual inline ~UnitTest()
 	{
 	}
 

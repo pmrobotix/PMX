@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../Suite/DevUnitTestSuite.hpp"
+#include "../Suite/UnitTestSuite.hpp"
 #include "LedDriverTest.hpp"
 
 using namespace std;
@@ -9,7 +9,7 @@ int main()
 {
 	cout << "!!!Driver-SIMU-Test!!!" << endl;
 
-	DevUnitTestSuite suite;
+	UnitTestSuite suite;
 
 	suite.addTest(new test::LedDriverTest());
 

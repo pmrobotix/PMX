@@ -59,17 +59,17 @@ public:
 	/*!
 	 * \brief Prononce PMX.
 	 */
-	void speakPMX(int volume);
+	void speakPMX();
 
 	/*!
 	 * \brief Prononce un beep.
 	 */
-	void beep(int volume);
+	void beep();
 
 	/*!
 	 * \brief Lance l'action d'effecter un beep.
 	 */
-	void startBeep(int volume);
+	void startBeep();
 
 };
 
@@ -100,8 +100,6 @@ private:
 	 */
 	SoundBarActionName action_;
 
-	int volume_;
-
 public:
 
 	/*!
@@ -109,18 +107,13 @@ public:
 	 * \param ledBar
 	 *        Reference vers la SoundBar associée.
 	 */
-	SoundBarAction(SoundBar & soundBar, SoundBarActionName action, int volume);
+	SoundBarAction(SoundBar & soundBar, SoundBarActionName action);
 
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
 	virtual inline ~SoundBarAction()
 	{
-	}
-
-	inline int volume() const
-	{
-		return volume_;
 	}
 
 	/*!

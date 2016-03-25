@@ -1,21 +1,21 @@
 /*!
  * \file
- * \brief Définition de la classe DevUnitTestSuite.
+ * \brief Définition de la classe UnitTestSuite.
  */
 
-#ifndef TEST_DEVUNITTESTSUITE_H
-#define TEST_DEVUNITTESTSUITE_H
+#ifndef SUITE_UNITTESTSUITE_HPP
+#define SUITE_UNITTESTSUITE_HPP
 
 #include <list>
 
 #include "../../src/Common/Utils/PointerList.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
-#include "DevUnitTest.hpp"
+#include "UnitTest.hpp"
 
 /*!
  * \brief Cette classe assure la gestion d'une suite de tests unitaires.
  */
-class DevUnitTestSuite
+class UnitTestSuite
 {
 private:
 
@@ -25,25 +25,25 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("DevUnitTestSuite");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("UnitTestSuite");
 		return instance;
 	}
 
 	/*!
 	 * \brief Ensemble des tests associés à cette suite.
 	 */
-	utils::PointerList<DevUnitTest*> tests_;
+	utils::PointerList<UnitTest*> tests_;
 
 public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	DevUnitTestSuite();
+	UnitTestSuite();
 
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~DevUnitTestSuite()
+	virtual ~UnitTestSuite()
 	{
 	}
 
@@ -54,7 +54,7 @@ public:
 	 * \param unitTest
 	 *        Pointeur vers l'objet de test.
 	 */
-	inline void addTest(DevUnitTest * unitTest)
+	inline void addTest(UnitTest * unitTest)
 	{
 		tests_.push_back(unitTest);
 	}

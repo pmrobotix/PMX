@@ -19,32 +19,31 @@ SoundBar::~SoundBar()
 	delete sounddriver;
 }
 
-SoundBarAction::SoundBarAction(SoundBar & soundBar, SoundBarActionName action, int volume) :
-		soundBar_(soundBar), action_(action), volume_(volume)
+SoundBarAction::SoundBarAction(SoundBar & soundBar, SoundBarActionName action) :
+		soundBar_(soundBar), action_(action)
 {
 }
 
-void SoundBar::speakPMX(int volume)
+void SoundBar::speakPMX()
 {
-	sounddriver->set_volume(volume);
-	sounddriver->speak("Hello PMX");
+	sounddriver->speak("Hello PMX", true);
 	sleep(1);
 	sounddriver->speak("How are you today ?", true);
 }
 
-void SoundBar::beep(int volume)
+void SoundBar::beep()
 {
-	sounddriver->set_volume(volume);
-	sounddriver->beep();
-	usleep(300000); //TODO ajout un parametre wait pour supprimer ce usleep si besoin
+
+	sounddriver->beep("", true);
+
 }
 
-void SoundBar::startBeep(int volume)
+void SoundBar::startBeep()
 {
 	logger().debug() << "startBeep" << logs::end;
 	this->actionStopped_ = false;
 	//ajout de l'action de set dans la pile d'action
-	this->actions().addAction(new SoundBarAction(*this, SOUNDBARBEEP, volume));
+	this->actions().addAction(new SoundBarAction(*this, SOUNDBARBEEP));
 }
 
 bool SoundBarAction::execute()
@@ -54,7 +53,7 @@ bool SoundBarAction::execute()
 	{
 	case SOUNDBARBEEP:
 		logger().debug() << "SOUNDBARBEEP" << logs::end;
-		soundBar_.beep(this->volume());
+		soundBar_.beep();
 		return false; //suppression de l'action
 		break;
 

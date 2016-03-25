@@ -3,32 +3,35 @@
  * \brief Implementation de la classe UnitTestSuite.
  */
 
-#include "DevUnitTestSuite.hpp"
-
+#include <cstdio>
 #include <sstream>
 
+#include "../../src/Log/Appender/MemoryAppender.hpp"
 #include "../../src/Log/Exception.hpp"
 #include "../../src/Log/Logger.hpp"
-#include "DevUnitTestAppender.hpp"
+#include "UnitTestSuite.hpp"
+#include "UnitTestAppender.hpp"
 
-DevUnitTestSuite::DevUnitTestSuite()
+UnitTestSuite::UnitTestSuite()
 		: tests_()
 {
 }
 
-void DevUnitTestSuite::run()
+void UnitTestSuite::run()
 {
 	logger().info("Start Unit tests");
-	DevUnitTestAppender* appender = (DevUnitTestAppender*) &logger().appender();
+	UnitTestAppender* appender = (UnitTestAppender*) &logger().appender();
 
 	appender->flush();
-	utils::PointerList<DevUnitTest *>::iterator i = tests_.begin();
+	utils::PointerList<UnitTest *>::iterator i = tests_.begin();
 	for (; i != tests_.end(); i++)
 	{
+		UnitTest *test = *i;
+
 		appender->increaseIndent();
-		DevUnitTest * test = *i;
 
 		bool succeed = 0;
+
 		try
 		{
 			test->suite();

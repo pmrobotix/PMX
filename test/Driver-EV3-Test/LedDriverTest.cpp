@@ -5,7 +5,7 @@
 
 #include "LedDriverTest.hpp"
 
-#include "../../src/Common/Action/ActionManager.hpp"
+#include <unistd.h>
 
 void test::LedDriverTest::suite()
 {
@@ -15,6 +15,11 @@ void test::LedDriverTest::suite()
 
 void test::LedDriverTest::testSet()
 {
+	leddriver->setBit(0, LED_GREEN);
+	leddriver->setBit(1, LED_ORANGE);
+	usleep(1000000);
+	leddriver->setBit(0, LED_OFF);
+	leddriver->setBit(1, LED_OFF);
 
 	this->assert(true, "OK");
 }

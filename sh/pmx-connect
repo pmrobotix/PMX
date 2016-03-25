@@ -1,5 +1,9 @@
 #! /bin/bash
 
+#Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
+
+IP="192.168.2.150" #RJ45
+
 view_doc()
 {
     firefox doc/html/index.html >/dev/null 2>&1 &
@@ -7,59 +11,51 @@ view_doc()
 
 all()
 {
-	scp src/apf-test/sh/*.sh PMXArmadeusBinaries/* root@192.168.7.253:/pmx/
+	scp Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM/* root@$IP:/pmx/
 }
 
 conf()
 {
-	scp PMXArmadeusBinaries/*.conf.txt root@192.168.7.253:/pmx/
+	scp Bot_ArmadeusAPF9328_ARM/Release/*.conf.txt root@$IP:/pmx/
 }
 
 tsh()
 {
-	scp src/apf-test/sh/*.sh root@192.168.7.253:/pmx/
+	scp src/apf-test/sh/*.sh root@$IP:/pmx/
 }
 
-robottest()
-{
-	scp PMXArmadeusBinaries/ROBOT_TEST root@192.168.7.253:/pmx/
-}
 
 pmx()
 {
     ssh root@192.168.7.253 "killall pmx"
-	scp "PMXArmadeusBinaries/PMX" root@192.168.7.253:/pmx/
+	scp "Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" root@$IP:/pmx/
 }
 
-devtest()
+driver()
 {
-	scp PMXArmadeusBinaries/DEV_TEST root@192.168.7.253:/pmx/
+	scp Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest root@$IP:/pmx/
 }
 
-apftest()
-{
-	scp PMXArmadeusBinaries/APF_TEST root@192.168.7.253:/pmx/
-}
 
 recupcsvhost()
 {
     #recup sur le PC Host
-	scp root@192.168.7.253:/pmx/*.* /mnt/hgfs/pmx_xls/
+	scp root@$IP:/pmx/*.* /mnt/hgfs/pmx_xls/
 }
 
 recupcsv()
 {
-        scp root@192.168.7.253:/pmx/*.* /home/pmx/Arecup/.
+        scp root@$IP:/pmx/*.* /home/pmx/Arecup/.
 }
 
 recupsvg()
 {
-        scp root@192.168.7.253:/pmx/*.svg /home/pmx/workspace/ARM/SVG/.
+        scp root@$IP:/pmx/*.svg /home/pmx/workspace/ARM/SVG/.
 }
 
 connect()
 {
-	ssh root@192.168.7.253
+	ssh root@$IP
 }
 
 case "$1" in
@@ -82,18 +78,9 @@ case "$1" in
 	pmx)
 		pmx
 	;;
-	
-        robottest)
-		robottest
-	;;
 
-	
-        apftest)
-		apftest
-	;;
-
-	devtest)
-		devtest
+	driver)
+		driver
 	;;
 
 	connect)
@@ -113,7 +100,7 @@ case "$1" in
 	;;
 
 	*)
-		echo "Usage: $0 {connect|pmx|devtest|robottest|apftest|all|conf|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		echo "Usage: $0 {connect|pmx|driver|all|conf|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
 		exit 1
 	;;
 esac
