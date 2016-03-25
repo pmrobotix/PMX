@@ -1,6 +1,12 @@
 #include "LedDriver.hpp"
 
+#include <unistd.h>
+#include <string>
+
 #include "ev3dev.h"
+
+using namespace std;
+using namespace ev3dev;
 
 ALedDriver * ALedDriver::create(std::string, int nb)
 {
@@ -9,7 +15,6 @@ ALedDriver * ALedDriver::create(std::string, int nb)
 
 LedDriver::LedDriver(int nb)
 {
-
 	nb_ = nb; //Force number of leds.
 }
 
@@ -28,16 +33,19 @@ void LedDriver::setBit(int index, LedColor color)
 			ev3dev::led::red_right.off();
 			break;
 		case LED_GREEN: //green
-			ev3dev::led::green_right.on();
-			ev3dev::led::red_right.off();
+			led::set_color(led::right, led::green);
 			break;
 		case LED_RED: //red
-			ev3dev::led::green_right.off();
-			ev3dev::led::red_right.on();
+			led::set_color(led::right, led::red);
 			break;
 		case LED_ORANGE: //orange
-			ev3dev::led::green_right.on();
-			ev3dev::led::red_right.on();
+			led::set_color(led::right, led::orange);
+			break;
+		case LED_AMBER: //amber
+			led::set_color(led::right, led::amber);
+			break;
+		case LED_YELLOW: //yellow
+			led::set_color(led::right, led::yellow);
 			break;
 		default:
 			ev3dev::led::green_right.off();
@@ -55,16 +63,19 @@ void LedDriver::setBit(int index, LedColor color)
 			ev3dev::led::red_left.off();
 			break;
 		case LED_GREEN: //green
-			ev3dev::led::green_left.on();
-			ev3dev::led::red_left.off();
+			led::set_color(led::left, led::green);
 			break;
 		case LED_RED: //red
-			ev3dev::led::green_left.off();
-			ev3dev::led::red_left.on();
+			led::set_color(led::left, led::red);
 			break;
 		case LED_ORANGE: //orange
-			ev3dev::led::green_left.on();
-			ev3dev::led::red_left.on();
+			led::set_color(led::left, led::orange);
+			break;
+		case LED_AMBER: //amber
+			led::set_color(led::left, led::amber);
+			break;
+		case LED_YELLOW: //yellow
+			led::set_color(led::left, led::yellow);
 			break;
 		default:
 			ev3dev::led::green_left.off();

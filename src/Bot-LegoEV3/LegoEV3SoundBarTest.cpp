@@ -21,13 +21,16 @@ void LegoEV3SoundBarTest::run(Arguments *)
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
+	logger().info() << "BEEP" << logs::end;
 	robot.actions().soundBar().beep();
 
+	logger().info() << "speakPMX" << logs::end;
 	robot.actions().soundBar().speakPMX();
 
 
 	robot.actions().start();
 
+	logger().info() << "BEEP BEEP" << logs::end;
 	robot.actions().soundBar().startBeep();
 	robot.actions().soundBar().startBeep();
 
@@ -35,7 +38,10 @@ void LegoEV3SoundBarTest::run(Arguments *)
 
 	robot.actions().stop();
 
-	logger().info() << this->name() << " - Happy End." << logs::end;
+	logger().info() << "ImperialMarchDarthVader" << logs::end;
+	robot.actions().soundBar().toneImperialMarchDarthVader();
+
+	logger().info() << "BEEP Happy End." << logs::end;
 	robot.actions().soundBar().beep();
 	robot.stop();
 

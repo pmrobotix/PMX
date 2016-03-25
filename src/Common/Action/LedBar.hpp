@@ -230,6 +230,9 @@ public:
 	 */
 	void set(int position, LedColor color);
 
+
+	void rainbow(uint nb, uint timeus);
+
 	/*!
 	 * \brief Active une led spécifique.
 	 * \param position La position de la led.

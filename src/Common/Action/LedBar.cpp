@@ -9,17 +9,7 @@
 using namespace std;
 
 LedBar::LedBar(std::string botId, Actions & actions, int nbLed)
-		: AActionsElement(actions),
-				nbLed_(nbLed),
-				actionStopped_(false),
-				actionRunning_(false),
-				position_(0),
-				color_(LED_OFF),
-				nb_(0),
-				timeus_(0),
-				hex_(0),
-				hexNext_(0),
-				botId_(botId)
+		: AActionsElement(actions), nbLed_(nbLed), actionStopped_(false), actionRunning_(false), position_(0), color_(LED_OFF), nb_(0), timeus_(0), hex_(0), hexNext_(0), botId_(botId)
 {
 	leddriver = ALedDriver::create(botId, nbLed);
 }
@@ -39,6 +29,22 @@ LedBarAction::LedBarAction(LedBar & ledBar, LedBarActionName action)
 void LedBar::set(int pos, LedColor color)
 {
 	leddriver->setBit(pos, color);
+}
+
+void LedBar::rainbow(uint nb, uint timeus)
+{
+	for (uint i = 0; i < nb; i++)
+	{
+		for (int c = LED_OFF; c <= LED_END; c++)
+		{
+			for (int k = 0; k <= nbLed_ - 1; k++)
+			{
+				set(k, (LedColor) c);
+				set(k, (LedColor) c);
+			}
+			usleep(timeus);
+		}
+	}
 }
 
 void LedBar::blink(uint nb, uint timeus, LedColor color)
@@ -164,12 +170,7 @@ void LedBar::startFlashValue(uint hexValue)
 	this->actions().addAction(new LedBarAction(*this, LEDBARFLASHVALUE));
 }
 
-void LedBar::startAlternate(uint nb,
-		uint timeus,
-		uint hexValue,
-		uint hexValueNext,
-		LedColor color,
-		bool wait)
+void LedBar::startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color, bool wait)
 {
 	logger().debug() << "startAlternate" << logs::end;
 	while (this->actionRunning_)
@@ -279,152 +280,148 @@ bool LedBarAction::execute()
 {
 	switch (this->action_)
 	{
-		case LEDBARSET:
-			ledBar_.set(ledBar_.position(), ledBar_.color());
-			return 0; //suppression de l'action
-			break;
+	case LEDBARSET:
+		ledBar_.set(ledBar_.position(), ledBar_.color());
+		return 0; //suppression de l'action
+		break;
 
-		case LEDBARRESET:
-			ledBar_.resetAll();
-			return 0; //suppression de l'action
-			break;
+	case LEDBARRESET:
+		ledBar_.resetAll();
+		return 0; //suppression de l'action
+		break;
 
-		case LEDBARFLASH:
-			ledBar_.flashAll();
-			return 0; //suppression de l'action
-			break;
+	case LEDBARFLASH:
+		ledBar_.flashAll();
+		return 0; //suppression de l'action
+		break;
 
-		case LEDBARFLASHVALUE:
-			ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
-			return 0; //suppression de l'action
-			break;
+	case LEDBARFLASHVALUE:
+		ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
+		return 0; //suppression de l'action
+		break;
 
-		case LEDBARALTERNATE:
-			ledBar_.actionRunning(true);
-			if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus()
-					|| i_ == 1)
+	case LEDBARALTERNATE:
+		ledBar_.actionRunning(true);
+		if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1)
+		{
+			if ((i_ % 2))
 			{
-				if ((i_ % 2))
-				{
-					ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
-				}
-				else
-				{
-					ledBar_.flash(ledBar_.hexValueNext(), ledBar_.color());
-				}
-				i_++;
-				lastTime_ = chrono_.getElapsedTimeInMicroSec();
+				ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
 			}
-			if (i_ >= ledBar_.nb() + 1)
+			else
+			{
+				ledBar_.flash(ledBar_.hexValueNext(), ledBar_.color());
+			}
+			i_++;
+			lastTime_ = chrono_.getElapsedTimeInMicroSec();
+		}
+		if (i_ >= ledBar_.nb() + 1)
+		{
+			ledBar_.stop(true);
+			ledBar_.nb(0);
+		}
+		if (ledBar_.stop())
+			ledBar_.actionRunning(false);
+		return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+		break;
+
+	case LEDBARBLINK:
+		ledBar_.actionRunning(true);
+		if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1)
+		{
+			//ledBar_.flash((255 * (i_ % 2)), ledBar_.color());
+			ledBar_.flash(((std::pow(2, ledBar_.nbLed()) - 1) * (i_ % 2)), ledBar_.color());
+
+			i_++;
+			lastTime_ = chrono_.getElapsedTimeInMicroSec();
+		}
+		if (i_ >= ledBar_.nb() + 1)
+		{
+			ledBar_.stop(true);
+			ledBar_.nb(0);
+		}
+		if (ledBar_.stop())
+			ledBar_.actionRunning(false);
+		return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+		break;
+
+	case LEDBARBLINKPIN:
+		ledBar_.actionRunning(true);
+		if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1)
+		{
+			//pmx::LedIndicator::instance().set(ledBar_.position(), (i_ % 2));
+			//out->setValue(ledBar_.dm(), ledBar_.position(), (i_ % 2));
+			LedColor temp;
+			if (i_ % 2)
+				temp = ledBar_.color();
+			else
+				temp = LED_OFF;
+
+			ledBar_.set(ledBar_.position(), temp);
+			i_++;
+
+			lastTime_ = chrono_.getElapsedTimeInMicroSec();
+
+		}
+		if (i_ >= ledBar_.nb() + 1)
+		{
+			ledBar_.stop(true);
+			ledBar_.nb(0);
+		}
+		if (ledBar_.stop())
+			ledBar_.actionRunning(false);
+		return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+		break;
+
+	case LEDBARK2MIL:
+		ledBar_.actionRunning(true);
+		if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1)
+		{
+			if (i_ >= ledBar_.nb() + 2)
 			{
 				ledBar_.stop(true);
 				ledBar_.nb(0);
 			}
-			if (ledBar_.stop())
-				ledBar_.actionRunning(false);
-			return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-			break;
-
-		case LEDBARBLINK:
-			ledBar_.actionRunning(true);
-			if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus()
-					|| i_ == 1)
+			else
 			{
-				//ledBar_.flash((255 * (i_ % 2)), ledBar_.color());
-				ledBar_.flash(((std::pow(2, ledBar_.nbLed()) - 1) * (i_ % 2)), ledBar_.color());
+				ledBar_.set(k_, ledBar_.color());
+			}
 
+			ledBar_.setOff(j_);
+
+			if ((k_ == ledBar_.nbLed() - 1 && !inc_) || (k_ == 0 && inc_))
 				i_++;
-				lastTime_ = chrono_.getElapsedTimeInMicroSec();
-			}
-			if (i_ >= ledBar_.nb() + 1)
+			j_ = k_;
+			if (inc_)
 			{
-				ledBar_.stop(true);
-				ledBar_.nb(0);
+				k_++;
 			}
-			if (ledBar_.stop())
-				ledBar_.actionRunning(false);
-			return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-			break;
-
-		case LEDBARBLINKPIN:
-			ledBar_.actionRunning(true);
-			if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus()
-					|| i_ == 1)
+			else
 			{
-				//pmx::LedIndicator::instance().set(ledBar_.position(), (i_ % 2));
-				//out->setValue(ledBar_.dm(), ledBar_.position(), (i_ % 2));
-				LedColor temp;
-				if (i_ % 2)
-					temp = ledBar_.color();
-				else
-					temp = LED_OFF;
-
-				ledBar_.set(ledBar_.position(), temp);
-				i_++;
-
-				lastTime_ = chrono_.getElapsedTimeInMicroSec();
-
+				k_--;
 			}
-			if (i_ >= ledBar_.nb() + 1)
+			if (k_ >= ledBar_.nbLed() - 1)
 			{
-				ledBar_.stop(true);
-				ledBar_.nb(0);
+				k_ = ledBar_.nbLed() - 1;
+				inc_ = false;
 			}
-			if (ledBar_.stop())
-				ledBar_.actionRunning(false);
-			return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-			break;
-
-		case LEDBARK2MIL:
-			ledBar_.actionRunning(true);
-			if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus()
-					|| i_ == 1)
+			if (k_ <= 0)
 			{
-				if (i_ >= ledBar_.nb() + 2)
-				{
-					ledBar_.stop(true);
-					ledBar_.nb(0);
-				}
-				else
-				{
-					ledBar_.set(k_, ledBar_.color());
-				}
-
-				ledBar_.setOff(j_);
-
-				if ((k_ == ledBar_.nbLed() - 1 && !inc_) || (k_ == 0 && inc_))
-					i_++;
-				j_ = k_;
-				if (inc_)
-				{
-					k_++;
-				}
-				else
-				{
-					k_--;
-				}
-				if (k_ >= ledBar_.nbLed() - 1)
-				{
-					k_ = ledBar_.nbLed() - 1;
-					inc_ = false;
-				}
-				if (k_ <= 0)
-				{
-					k_ = 0;
-					inc_ = true;
-				}
-				lastTime_ = chrono_.getElapsedTimeInMicroSec();
+				k_ = 0;
+				inc_ = true;
 			}
+			lastTime_ = chrono_.getElapsedTimeInMicroSec();
+		}
 
-			if (ledBar_.stop())
-				ledBar_.actionRunning(false);
-			return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-			break;
+		if (ledBar_.stop())
+			ledBar_.actionRunning(false);
+		return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+		break;
 
-		default:
-			logger().error() << "Bad execute command !!" << logs::end;
-			return false;
-			break;
+	default:
+		logger().error() << "Bad execute command !!" << logs::end;
+		return false;
+		break;
 	}
 	return false;
 }

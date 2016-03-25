@@ -57,6 +57,11 @@ public:
 	}
 
 	/*!
+	 * \brief The Imperial March (Darth Vader's theme).
+	 */
+	void toneImperialMarchDarthVader();
+
+	/*!
 	 * \brief Prononce PMX.
 	 */
 	void speakPMX();

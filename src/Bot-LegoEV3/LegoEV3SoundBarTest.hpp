@@ -30,7 +30,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	LegoEV3SoundBarTest() :
-		FunctionalTest("SoundTest", "Play sounds")
+		FunctionalTest("LegoEV3SoundBarTest", "Play sounds")
 	{
 	}
 

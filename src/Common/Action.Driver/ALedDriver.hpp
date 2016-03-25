@@ -5,7 +5,6 @@
 
 #include "../Utils/Macro.hpp"
 
-
 /*!
  * \brief Enumeration of the different color of leds.
  */
@@ -26,10 +25,21 @@ enum LedColor
 	/*!
 	 * \brief led color orange.
 	 */
-	LED_ORANGE
+	LED_ORANGE,
+
+	/*!
+	 * \brief led color amber.
+	 */
+	LED_AMBER,
+
+	/*!
+	 * \brief led color yellow.
+	 */
+	LED_YELLOW,
+
+	LED_END
 
 };
-
 
 class ALedDriver
 {
