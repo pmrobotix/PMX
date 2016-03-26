@@ -21,8 +21,6 @@ private:
 		return instance;
 	}
 
-	int connectedLeft_;
-	int connectedRight_;
 	large_motor _motor_left;
 	large_motor _motor_right;
 
@@ -41,9 +39,14 @@ public:
 	{
 	}
 
+	void reset();
+	int limit(int power, int max);
+
 	virtual void setMotorLeftPosition(long ticks, int power);
 	virtual void setMotorRightPosition(long ticks, int power);
 
+	//regulation enabled  => power in ticks per second -860 / +860
+	//regulation disabled => power in percentage -100 / +100
 	virtual void setMotorLeftPower(int power, int time);
 	virtual void setMotorRightPower(int power, int time);
 
@@ -61,6 +64,12 @@ public:
 	virtual int getMotorLeftCurrent();
 	virtual int getMotorRightCurrent();
 
+	/*
+	 * speed_regulation
+	 (read/write) Turns speed regulation on or off. Valid values are:
+	 on: The motor controller will vary the power supplied to the motor to try to maintain the speed specified in speed_sp.
+	 off: The controller will drive the motor using the duty cycle specified in duty_cycle_sp.
+	 */
 	virtual void enableRightHardRegulation(bool enable);
 	virtual void enableLeftHardRegulation(bool enable);
 	virtual void enableHardRegulation(bool enable);

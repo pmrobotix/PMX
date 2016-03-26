@@ -1,6 +1,6 @@
 /*!
  * \file
- * \brief Implémentation de la classe ActionManagerTest.
+ * \brief Implémentation de la classe LedDriverTest.
  */
 
 #include "LedDriverTest.hpp"

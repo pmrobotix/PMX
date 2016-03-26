@@ -31,6 +31,8 @@ public:
 
 	virtual bool pressed(ButtonTouch button);
 
+	//virtual bool process(ButtonTouch button);
+
 };
 
 #endif

@@ -23,10 +23,11 @@ enum RobotColor
 
 class Robot
 {
-private:
+public:
 
 	/*!
 	 * \brief Retourne le \ref Logger associé à la classe \ref Robot.
+	 * public car utilisé dans Main.
 	 */
 	static inline const logs::Logger & logger()
 	{

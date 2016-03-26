@@ -1,6 +1,6 @@
 /*!
  * \file
- * \brief Définition de la classe LedDriverTest.
+ * \brief Définition de la classe SoundDriverTest.
  */
 
 #ifndef EV3TEST_SOUNDDRIVERTEST_HPP

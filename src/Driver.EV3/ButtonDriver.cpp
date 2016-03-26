@@ -14,6 +14,8 @@ AButtonDriver * AButtonDriver::create()
 
 ButtonDriver::ButtonDriver()
 {
+
+	//TODO test process and onclick funtions
 }
 
 ButtonDriver::~ButtonDriver()
@@ -45,3 +47,29 @@ bool ButtonDriver::pressed(ButtonTouch button)
 	}
 	return 0;
 }
+/*
+bool ButtonDriver::process(ButtonTouch button)
+{
+	switch (button)
+	{
+	case BUTTON_ENTER_KEY:
+		return button::enter.process();
+		break;
+	case BUTTON_BACK_KEY:
+		return button::back.process();
+		break;
+	case BUTTON_UP_KEY:
+		return button::up.process();
+		break;
+	case BUTTON_DOWN_KEY:
+		return button::down.process();
+		break;
+	case BUTTON_LEFT_KEY:
+		return button::left.process();
+		break;
+	case BUTTON_RIGHT_KEY:
+		return button::right.process();
+		break;
+	}
+	return 0;
+}*/

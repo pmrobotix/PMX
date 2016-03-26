@@ -29,7 +29,7 @@ void LegoEV3RobotExtended::stop()
 
 	Robot::stop();
 	this->actions().stop(); //extra devices
-
+	this->asserv().stop();
 	psvg_->endHeader();
 }
 

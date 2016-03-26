@@ -52,6 +52,11 @@ public:
 		//logger().debug("AsservInsa is stopped");
 
 	}
+
+	void stop()
+	{
+
+	}
 };
 
 #endif

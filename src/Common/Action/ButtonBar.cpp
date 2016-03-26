@@ -23,6 +23,12 @@ bool ButtonBar::pressed(ButtonTouch button)
 {
 	return buttondriver->pressed(button);
 }
+/*
+bool ButtonBar::process(ButtonTouch button)
+{
+	return buttondriver->process(button);
+
+}*/
 
 bool ButtonBar::waitPressed(ButtonTouch button)
 {

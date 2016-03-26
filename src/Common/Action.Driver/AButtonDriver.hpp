@@ -30,6 +30,11 @@ public:
 	 */
 	virtual bool pressed(ButtonTouch button) = 0;
 
+	/*
+	 *\brief process.
+	 */
+	//virtual bool process(ButtonTouch button) = 0;
+
 	/*!
 	 * \brief Destructor.
 	 */

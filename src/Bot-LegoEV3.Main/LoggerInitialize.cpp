@@ -35,9 +35,11 @@ void logs::LoggerFactory::initialize()
 
 
 	//DRIVERS
-	add(logs::Level::INFO, "LedDriver.SIMU", "console");
-	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
-	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
+	add(logs::Level::INFO, "LedDriver.EV3", "console");
+	add(logs::Level::INFO, "ButtonDriver.EV3", "console");
+	add(logs::Level::INFO, "SoundDriver.EV3", "console");
+	add(logs::Level::INFO, "SwitchDriver.EV3", "console");
+	add(logs::Level::INFO, "AsservDriver.EV3", "console");
 
 
 	//DEBUG

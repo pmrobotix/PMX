@@ -8,6 +8,8 @@ MotorControl::MotorControl(Asserv & asserv) :
 		AAsservElement(asserv)
 {
 	asservdriver = AAsservDriver::create();
+
+	asservdriver->enableHardRegulation(true);
 }
 
 MotorControl::~MotorControl()

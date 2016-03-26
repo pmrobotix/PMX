@@ -41,6 +41,8 @@ public:
 
 	bool pressed(ButtonTouch button);
 
+	//bool process(ButtonTouch button);
+
 	bool waitPressed(ButtonTouch button);
 
 };
