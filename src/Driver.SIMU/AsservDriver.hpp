@@ -1,7 +1,7 @@
 #ifndef SIMU_ASSERVDRIVER_HPP_
 #define SIMU_ASSERVDRIVER_HPP_
 
-#include "thread"
+#include <thread>
 #include <unistd.h>
 #include <iostream>
 
@@ -20,7 +20,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU ");
 		return instance;
 	}
 

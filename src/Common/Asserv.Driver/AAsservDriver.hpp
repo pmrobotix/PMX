@@ -28,8 +28,8 @@ public:
 	virtual void setMotorLeftPosition(int power, long ticks ) = 0;
 	virtual void setMotorRightPosition(int power, long ticks) = 0;
 
-	virtual void setMotorLeftPower(int power, int timems) = 0;
-	virtual void setMotorRightPower(int power, int timems) = 0;
+	virtual void setMotorLeftPower(int power, int time_ms) = 0;
+	virtual void setMotorRightPower(int power, int time_ms) = 0;
 
 	virtual long getLeftExternalEncoder() = 0;
 	virtual long getRightExternalEncoder() = 0;

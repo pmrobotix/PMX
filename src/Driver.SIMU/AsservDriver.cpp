@@ -1,9 +1,7 @@
-//drivers...SIMU
-
 #include "AsservDriver.hpp"
 
-#include <cstdio>
-#include "thread"
+#include "../Log/Logger.hpp"
+
 using namespace std;
 
 AAsservDriver * AAsservDriver::create()
