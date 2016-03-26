@@ -1,10 +1,6 @@
 #ifndef SIMU_ASSERVDRIVER_HPP_
 #define SIMU_ASSERVDRIVER_HPP_
 
-<<<<<<< HEAD
-=======
-#include <thread>
->>>>>>> refs/remotes/origin/master
 #include <unistd.h>
 #include <thread>
 
@@ -12,7 +8,8 @@
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-//using namespace std;
+
+using namespace std;
 
 class AsservDriver: public AAsservDriver
 {
@@ -38,7 +35,8 @@ private:
 	long currentRightCounter_;
 	long currentLeftCounter_;
 
-	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols]. Add the symbol : __cplusplus with the value 201103L
+	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols].
+	//Add the symbol : __cplusplus with the value 201103L
 
 	std::thread twLeft_;
 	std::thread twRight_;
