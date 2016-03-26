@@ -1,6 +1,10 @@
 #ifndef SIMU_ASSERVDRIVER_HPP_
 #define SIMU_ASSERVDRIVER_HPP_
 
+<<<<<<< HEAD
+=======
+#include <thread>
+>>>>>>> refs/remotes/origin/master
 #include <unistd.h>
 #include <thread>
 
@@ -19,7 +23,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU ");
 		return instance;
 	}
 
