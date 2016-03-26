@@ -1,15 +1,14 @@
 #ifndef SIMU_ASSERVDRIVER_HPP_
 #define SIMU_ASSERVDRIVER_HPP_
 
-#include "thread"
 #include <unistd.h>
-#include <iostream>
+#include <thread>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-using namespace std;
+//using namespace std;
 
 class AsservDriver: public AAsservDriver
 {
@@ -34,6 +33,8 @@ private:
 
 	long currentRightCounter_;
 	long currentLeftCounter_;
+
+	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols]. Add the symbol : __cplusplus with the value 201103L
 
 	std::thread twLeft_;
 	std::thread twRight_;
@@ -130,7 +131,7 @@ public:
 	void positionLeft(const char *arg1, long internal_ticks)
 	{
 		//stop when internal ticks is achieved..
-		while(asserv_->getLeftInternalEncoder() < internal_ticks)
+		while (asserv_->getLeftInternalEncoder() < internal_ticks)
 		{
 			usleep(500);
 		}
@@ -152,7 +153,7 @@ public:
 	std::thread positionLeftThread(const char *arg1, int internal_ticks)
 	{
 		return std::thread([=]
-				{	this->positionLeft(arg1, internal_ticks);});
+		{	this->positionLeft(arg1, internal_ticks);});
 	}
 };
 

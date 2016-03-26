@@ -1,9 +1,7 @@
-//drivers...SIMU
-
 #include "AsservDriver.hpp"
 
-#include <cstdio>
-#include "thread"
+#include "../Log/Logger.hpp"
+
 using namespace std;
 
 AAsservDriver * AAsservDriver::create()
@@ -23,6 +21,9 @@ AsservDriver::AsservDriver()
 	rightCounter_ = 0;
 	leftCounter_ = 0;
 	chrono_.start();
+
+
+
 }
 
 AsservDriver::~AsservDriver()
