@@ -44,18 +44,21 @@ void AsservDriver::computeCounterR()
 	currentRightCounter_ = (deltaT_ms * rightPower_ / 1000.0);
 }
 
-//TODO quelle est la référence pour les ticks internal ? or external ?
-void AsservDriver::setMotorLeftPosition(long internal_ticks, int power)
+void AsservDriver::setMotorLeftPosition(int power, long internal_ticks)
 {
+	if (twLeft_.joinable())
+			twLeft_.join();
+
 	computeCounterL();
 	leftPower_ = power;
 	tLeft_ms_ = chrono_.getElapsedTimeInMilliSec();
 
-	//todo arreter le motor une fois le nb de ticks
 
+	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
+	twLeft_ = w_->positionLeftThread("setMotorLeftPosition", internal_ticks);
 }
 
-void AsservDriver::setMotorRightPosition(long internal_ticks, int power)
+void AsservDriver::setMotorRightPosition(int power, long internal_ticks)
 {
 	computeCounterR();
 	rightPower_ = power;

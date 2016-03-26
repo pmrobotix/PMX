@@ -42,8 +42,11 @@ public:
 	void reset();
 	int limit(int power, int max);
 
-	virtual void setMotorLeftPosition(long ticks, int power);
-	virtual void setMotorRightPosition(long ticks, int power);
+	//regulation enabled  => power in ticks per second -860 / +860
+	//regulation disabled => power in percentage -100 / +100
+	//ticks : relative position to go
+	virtual void setMotorLeftPosition(int power, long ticks);
+	virtual void setMotorRightPosition(int power, long ticks);
 
 	//regulation enabled  => power in ticks per second -860 / +860
 	//regulation disabled => power in percentage -100 / +100

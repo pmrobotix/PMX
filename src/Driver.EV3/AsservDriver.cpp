@@ -91,10 +91,25 @@ AsservDriver::AsservDriver()
 	}
 }
 
-void AsservDriver::setMotorLeftPosition(long ticks, int power)
+void AsservDriver::setMotorLeftPosition(int power, long ticks)
 {
-	//set_duty_cycle_sp -100 to 100
-	//_motor_left.set_position_sp(ticks).set_duty_cycle_sp(50).run_to_rel_pos();
+	if (_motor_left.connected())
+	{
+		if (_motor_left.speed_regulation_enabled() == "on") //speed_sp
+		{
+			limit(power, 860); //real MAX speed of EV3
+			_motor_left.set_position_sp(ticks).set_speed_sp(power).run_to_rel_pos();
+
+		}
+		else if (_motor_left.speed_regulation_enabled() == "off") //duty_cycle_sp
+		{
+			limit(power, 100);
+			_motor_left.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
+		}
+	}
+
+//set_duty_cycle_sp -100 to 100
+//_motor_left.set_position_sp(ticks).set_duty_cycle_sp(50).run_to_rel_pos();
 
 	/*
 	 if (connectedLeft_)
@@ -118,7 +133,7 @@ void AsservDriver::setMotorLeftPosition(long ticks, int power)
 	 }*/
 }
 
-void AsservDriver::setMotorRightPosition(long ticks, int power)
+void AsservDriver::setMotorRightPosition(int power, long ticks)
 {/*
  if (connectedRight_)
  {
@@ -248,16 +263,15 @@ void AsservDriver::setMotorRightPower(int power, int timems)
 	{
 		logger().error() << "RIGHT motor not connected !" << logs::end;
 	}
-
 }
 
 long AsservDriver::getLeftExternalEncoder()
 {
-	return 0; //TODO getLeftExternalEncoder
+	return 0;
 }
 long AsservDriver::getRightExternalEncoder()
 {
-	return 0; //TODO getRightExternalEncoder
+	return 0;
 }
 
 long AsservDriver::getLeftInternalEncoder()

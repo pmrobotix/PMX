@@ -38,8 +38,8 @@ public:
 	void computeCounterL();
 	void computeCounterR();
 
-	virtual void setMotorLeftPosition(long ticks, int power);
-	virtual void setMotorRightPosition(long ticks, int power);
+	virtual void setMotorLeftPosition(int power, long ticks);
+	virtual void setMotorRightPosition(int power, long ticks);
 
 	virtual void setMotorLeftPower(int power, int time);
 	virtual void setMotorRightPower(int power, int time);

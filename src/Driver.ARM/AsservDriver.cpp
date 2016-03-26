@@ -19,13 +19,12 @@ AsservDriver::~AsservDriver()
 {
 }
 
-
-void AsservDriver::setMotorLeftPosition(long ticks, int power)
+void AsservDriver::setMotorLeftPosition(int power, long ticks)
 {
 
 }
 
-void AsservDriver::setMotorRightPosition(long ticks, int power)
+void AsservDriver::setMotorRightPosition(int power, long ticks)
 {
 
 }

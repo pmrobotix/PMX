@@ -33,17 +33,21 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "LegoEV3MovingBaseTest", "console");
 	add(logs::Level::INFO, "LegoEV3AsservInsaTest", "console");
 
+	//DRIVERS SIMU
+	add(logs::Level::INFO, "LedDriver.SIMU", "console");
+	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
+	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
+	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
+	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
 
-	//DRIVERS
+	//DRIVERS EV3
 	add(logs::Level::INFO, "LedDriver.EV3", "console");
 	add(logs::Level::INFO, "ButtonDriver.EV3", "console");
 	add(logs::Level::INFO, "SoundDriver.EV3", "console");
 	add(logs::Level::INFO, "SwitchDriver.EV3", "console");
 	add(logs::Level::INFO, "AsservDriver.EV3", "console");
 
-
 	//DEBUG
 	add(logs::Level::DEBUG, "MovingBase", "console");
-
 
 }

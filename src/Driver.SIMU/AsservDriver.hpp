@@ -47,8 +47,8 @@ public:
 	void computeCounterL();
 	void computeCounterR();
 
-	virtual void setMotorLeftPosition(long ticks, int power);
-	virtual void setMotorRightPosition(long ticks, int power);
+	virtual void setMotorLeftPosition(int power, long internal_ticks);
+	virtual void setMotorRightPosition(int power, long internal_ticks);
 
 	virtual void setMotorLeftPower(int power, int time);
 	virtual void setMotorRightPower(int power, int time);
@@ -105,26 +105,36 @@ public:
 	void member1left(const char *arg1, int timems)
 	{
 		/*
-		std::cout << "i am member1 and my first arg is ("
-				<< arg1
-				<< ") and second arg is ("
-				<< timems
-				<< ")"
-				<< std::endl;*/
+		 std::cout << "i am member1 and my first arg is ("
+		 << arg1
+		 << ") and second arg is ("
+		 << timems
+		 << ")"
+		 << std::endl;*/
 		usleep(timems * 1000);
 		asserv_->stopMotorLeft();
 	}
 	void member2right(const char *arg1, int timems)
 	{
 		/*
-		std::cout << "i am member2 and my first arg is ("
-				<< arg1
-				<< ") and second arg is ("
-				<< timems
-				<< ")"
-				<< std::endl;*/
+		 std::cout << "i am member2 and my first arg is ("
+		 << arg1
+		 << ") and second arg is ("
+		 << timems
+		 << ")"
+		 << std::endl;*/
 		usleep(timems * 1000);
 		asserv_->stopMotorRight();
+	}
+
+	void positionLeft(const char *arg1, long internal_ticks)
+	{
+		//stop when internal ticks is achieved..
+		while(asserv_->getLeftInternalEncoder() < internal_ticks)
+		{
+			usleep(500);
+		}
+		asserv_->stopMotorLeft();
 	}
 
 	std::thread memberLeftThread(const char *arg1, int timems)
@@ -137,6 +147,12 @@ public:
 	{
 		return std::thread([=]
 		{	this->member2right(arg1, timems);});
+	}
+
+	std::thread positionLeftThread(const char *arg1, int internal_ticks)
+	{
+		return std::thread([=]
+				{	this->positionLeft(arg1, internal_ticks);});
 	}
 };
 

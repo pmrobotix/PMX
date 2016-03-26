@@ -38,7 +38,7 @@ void AsservDriver::computeCounterR()
 	rightCounter_ += (deltaT_ms * rightPower_) / 25;
 }
 
-void AsservDriver::setMotorLeftPosition(long internal_ticks, int power) //TODO quelle est la référence pour les ticks internal ? or external ?
+void AsservDriver::setMotorLeftPosition(int power, long internal_ticks)
 {
 	computeCounterL();
 	leftPower_ = power;
@@ -47,7 +47,7 @@ void AsservDriver::setMotorLeftPosition(long internal_ticks, int power) //TODO q
 	//todo arreter le motor une fois le nb de ticks
 }
 
-void AsservDriver::setMotorRightPosition(long internal_ticks, int power)
+void AsservDriver::setMotorRightPosition(int power, long internal_ticks)
 {
 
 }

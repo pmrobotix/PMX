@@ -8,7 +8,6 @@
 
 class AAsservDriver;
 
-
 class MotorControl: public AAsservElement
 {
 private:
@@ -37,11 +36,15 @@ public:
 	~MotorControl();
 
 	/*!
-	 * \brief runMotorLeft by power -900/+900.
+	 * \brief runMotorLeft
+	 * if regulation enabled  => power in ticks per second -860 / +860 (depends on drivers)
+	 * if regulation disabled => power in percentage -100 / +100
 	 */
 	void runMotorLeft(int power, int timems);
 	/*!
-	 * \brief runMotorRight by power -900/+900.
+	 * \brief runMotorRight
+	 * if regulation enabled  => power in ticks per second -860 / +860 (depends on drivers)
+	 * if regulation disabled => power in percentage -100 / +100
 	 */
 	void runMotorRight(int power, int timems);
 
@@ -50,10 +53,9 @@ public:
 	 */
 	void stopMotors();
 
-	//runmotorLeft(speed)
 
-	void setMotorLeftPosition(long tick, int power);
-	void setMotorRightPosition(long tick, int power);
+	void setMotorLeftPosition(int power, long ticks);
+	void setMotorRightPosition(int power, long ticks);
 
 };
 

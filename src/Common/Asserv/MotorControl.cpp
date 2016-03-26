@@ -33,14 +33,14 @@ void MotorControl::stopMotors()
 }
 
 
-void MotorControl::setMotorLeftPosition(long tick, int power)
+void MotorControl::setMotorLeftPosition(int power, long ticks)
 {
-	asservdriver->setMotorLeftPosition(tick, power);
+	asservdriver->setMotorLeftPosition(power, ticks);
 }
 
-void MotorControl::setMotorRightPosition(long tick, int power)
+void MotorControl::setMotorRightPosition(int power, long ticks)
 {
-	asservdriver->setMotorRightPosition(tick, power);
+	asservdriver->setMotorRightPosition(power, ticks);
 }
 
 
