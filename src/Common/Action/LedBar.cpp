@@ -35,7 +35,7 @@ void LedBar::rainbow(uint nb, uint timeus)
 {
 	for (uint i = 0; i < nb; i++)
 	{
-		for (int c = LED_OFF; c <= LED_END; c++)
+		for (int c = LED_OFF; c < LED_END; c++)
 		{
 			for (int k = 0; k <= nbLed_ - 1; k++)
 			{

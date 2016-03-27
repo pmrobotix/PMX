@@ -14,8 +14,8 @@
 
 struct SDL_Renderer;
 
-SimLedBar::SimLedBar(int x, int y, int w, int h, int nb) :
-		Panel(x, y, w, h) //on appelle le constructeur pere
+SimLedBar::SimLedBar(int x, int y, int w, int h, int nb)
+		: Panel(x, y, w, h) //on appelle le constructeur pere
 {
 	nb_ = nb;
 	currentTexture_ = new LTexture[nb_];
@@ -33,6 +33,7 @@ void SimLedBar::setBit(int i, LedColor color)
 	switch (color)
 	{
 	case LED_OFF:
+	case LED_END:
 		currentTexture_[i] = offTexture_;
 		break;
 	case LED_GREEN:
@@ -43,6 +44,12 @@ void SimLedBar::setBit(int i, LedColor color)
 		break;
 	case LED_RED:
 		currentTexture_[i] = redTexture_;
+		break;
+	case LED_AMBER:
+		currentTexture_[i] = orangeTexture_;
+		break;
+	case LED_YELLOW:
+		currentTexture_[i] = orangeTexture_;
 		break;
 	default:
 		logger().error() << "Error SimLedBar::setBytes no color " << i << logs::end;
@@ -60,7 +67,10 @@ void SimLedBar::setBytes(uint hex, LedColor color)
 		{
 			switch (color)
 			{
-
+			case LED_OFF:
+			case LED_END:
+				currentTexture_[i] = offTexture_;
+				break;
 			case LED_GREEN:
 				currentTexture_[i] = greenTexture_;
 				break;
@@ -70,8 +80,11 @@ void SimLedBar::setBytes(uint hex, LedColor color)
 			case LED_RED:
 				currentTexture_[i] = redTexture_;
 				break;
-			case LED_OFF:
-				currentTexture_[i] = offTexture_;
+			case LED_AMBER:
+				currentTexture_[i] = orangeTexture_;
+				break;
+			case LED_YELLOW:
+				currentTexture_[i] = orangeTexture_;
 				break;
 			default:
 				logger().error() << "Error SimLedBar::setBytes no color " << i << logs::end;
@@ -86,7 +99,7 @@ void SimLedBar::setBytes(uint hex, LedColor color)
 	}
 }
 
-void SimLedBar::handleEvent(SDL_Event& , int , int )
+void SimLedBar::handleEvent(SDL_Event&, int, int)
 {
 }
 
@@ -98,8 +111,11 @@ void SimLedBar::render(SDL_Renderer * renderer)
 	}
 }
 
-bool SimLedBar::loadMedia(SDL_Renderer * renderer, std::string pathOff, std::string pathGreen,
-		std::string pathRed, std::string pathOrange)
+bool SimLedBar::loadMedia(SDL_Renderer * renderer,
+		std::string pathOff,
+		std::string pathGreen,
+		std::string pathRed,
+		std::string pathOrange)
 {
 	//Loading success flag
 	bool success = true;
