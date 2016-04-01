@@ -31,33 +31,6 @@ int main(int argc, char** argv)
 
 	robot.parseConsoleArgs(argc, argv);
 
-	//pause s'il n'y a pas tous les elements pour garder le log d'erreur
-	Arguments &args = robot.getArgs();
-	if (args["type"] == "0")
-	{
-		//------------- Pour debug
-		char cInput;
-		Robot::logger().info() << "Press Enter key to continue ..." << logs::end;
-		do
-		{
-			cInput = ConsoleKeyInput::mygetch();
-			switch (cInput)
-			{
-
-			case 10:
-				//printf("Enter key!\n");
-				break;
-			case 127:
-				cout << "Exit !\n" << endl;
-				//cout << default_console << endl;
-				exit(0);
-				break;
-			}
-			usleep(1000);
-		} while (cInput != 10);
-		//---------------fin Pour debug
-	}
-
 	//start the Robot (functional tests or match)
 	robot.begin();
 

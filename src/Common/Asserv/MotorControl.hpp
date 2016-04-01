@@ -53,7 +53,7 @@ public:
 	 */
 	void stopMotors();
 
-
+	//number of ticks to achieve using power.
 	void setMotorLeftPosition(int power, long ticks);
 	void setMotorRightPosition(int power, long ticks);
 

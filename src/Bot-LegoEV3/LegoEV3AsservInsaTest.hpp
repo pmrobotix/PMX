@@ -1,5 +1,5 @@
-#ifndef LEGOEV3ASSERVTEST_HPP_
-#define	LEGOEV3ASSERVTEST_HPP_
+#ifndef LEGOEV3ASSERVINSATEST_HPP_
+#define	LEGOEV3ASSERVINSATEST_HPP_
 
 #include "../Common/FunctionalTest.hpp"
 #include "../Log/LoggerFactory.hpp"

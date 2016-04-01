@@ -109,8 +109,6 @@ private:
 	 */
 	uint hexNext_;
 
-	utils::Mutex mutex_;
-
 public:
 
 	/*!
@@ -134,9 +132,7 @@ public:
 
 	inline void stop(bool value)
 	{
-		//mutex_.lock();
 		this->actionStopped_ = value;
-		//mutex_.unlock();
 	}
 	inline bool stop() const
 	{
@@ -145,13 +141,11 @@ public:
 
 	inline void stopAndWait(bool value)
 	{
-		//mutex_.lock();
 		this->actionStopped_ = value;
 		while (this->actionRunning_)
 		{
 			usleep(1000);
 		}
-		//mutex_.unlock();
 	}
 
 	inline void actionRunning(bool value)
@@ -229,7 +223,6 @@ public:
 	 * \param color La couleur de la led, 0:OFF, 1:GREEN, and optional 2:RED 3:ORANGE)
 	 */
 	void set(int position, LedColor color);
-
 
 	void rainbow(uint nb, uint timeus);
 
@@ -313,23 +306,23 @@ public:
 	 * \brief Lance l'action de faire alterner les leds selon les valeurs hexValue et hexValueNext.
 	 *
 	 */
-	void startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color =
-			LED_GREEN, bool wait = false);
+	void startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color = LED_GREEN, bool wait =
+			false);
 
 	/*!
 	 * \brief Lance l'action de faire clignoter toutes les leds nb fois tous les timeus.
 	 */
-	void startBlink(uint nb, uint timeus, LedColor color, bool wait);
+	void startBlink(uint nb, uint timeus, LedColor color = LED_GREEN, bool wait = false);
 
 	/*!
 	 * \brief Lance l'action de faire clignoter une led nb fois tous les timeus.
 	 */
-	void startBlinkPin(uint nb, uint timeus, int position, LedColor color, bool wait);
+	void startBlinkPin(uint nb, uint timeus, int position, LedColor color = LED_GREEN, bool wait = false);
 
 	/*!
 	 * \brief Lance l'action d'allumer alternativement les leds à la "K2000".
 	 */
-	void startK2mil(uint nb, uint timeus, LedColor color, bool wait);
+	void startK2mil(uint nb, uint timeus, LedColor color = LED_GREEN, bool wait = false);
 
 	/*!
 	 * \brief Active une led spécifique.

@@ -38,7 +38,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
 	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
 	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
-	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
+	add(logs::Level::DEBUG, "AsservDriver.SIMU", "console");
 
 	//DRIVERS EV3
 	add(logs::Level::INFO, "LedDriver.EV3", "console");
@@ -49,5 +49,7 @@ void logs::LoggerFactory::initialize()
 
 	//DEBUG
 	add(logs::Level::DEBUG, "MovingBase", "console");
+	add(logs::Level::DEBUG, "AsservInsa", "console");
+	add(logs::Level::DEBUG, "Asserv", "console");
 
 }

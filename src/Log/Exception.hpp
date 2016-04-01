@@ -3,12 +3,14 @@
  * \brief Définition de la classe Exception.
  */
 
-#ifndef UTILS_EXCEPTION_HPP
-#define	UTILS_EXCEPTION_HPP
+#ifndef LOGS_EXCEPTION_HPP
+#define	LOGS_EXCEPTION_HPP
 
 #include <exception>
 #include <string>
 
+namespace logs
+{
 /*!
  * \brief Implémentation d'une gestion des exceptions.
  */
@@ -56,5 +58,5 @@ public:
 		return this->message().c_str();
 	}
 };
-
+}
 #endif	/* UTILS_EXCEPTION_HPP */

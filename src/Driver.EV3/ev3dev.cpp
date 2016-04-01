@@ -905,7 +905,7 @@ std::vector<float> led::red{ static_cast<float>(1), static_cast<float>(0) };
 std::vector<float> led::green{ static_cast<float>(0), static_cast<float>(1) };
 std::vector<float> led::amber{ static_cast<float>(1), static_cast<float>(1) };
 std::vector<float> led::orange{ static_cast<float>(1), static_cast<float>(0.5) };
-std::vector<float> led::yellow{ static_cast<float>(0.5), static_cast<float>(1) };
+std::vector<float> led::yellow{ static_cast<float>(0.2), static_cast<float>(1) };
 
 //-----------------------------------------------------------------------------
 void led::all_off() {

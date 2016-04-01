@@ -1,16 +1,10 @@
-/*
- * AsservInsa.hpp
- *
- *  Created on: 21 mars 2016
- *      Author: pmx
- */
-
-#ifndef COMMON_ASSERV_INSA_ASSERVINSA_HPP_
-#define COMMON_ASSERV_INSA_ASSERVINSA_HPP_
+#ifndef COMMON_ASSERV_ASSERVINSA_HPP_
+#define COMMON_ASSERV_ASSERVINSA_HPP_
 
 #include <pthread.h>
 #include <semaphore.h>
 
+#include "../../Log/LoggerFactory.hpp"
 #include "../../Thread/Thread.hpp"
 
 class MovingBase;
@@ -47,21 +41,18 @@ class MovingBase;
 #define int32 int
 #define BOOL bool
 
-#ifndef NULL
-#define NULL 0
-#endif
 #define FALSE false
 #define TRUE true
 
-#define LWHEEL 0
-#define RWHEEL 1
 #define slippageThreshold 10
 
-#define FRONT_SHOCK 0
-#define BACK_SHOCK 1
-#define isSendErrorsEnabled 0
-
 #define MAX_PID_SYSTEM_NUMBER	6
+
+//every N period, we compute precise values for
+//cos and sin of the robot angle
+#define PRECISE_COMPUTATION_NTH_PERIOD		64
+
+#define MAX_PERIOD		128
 
 //LEFT - RIGHT
 #define LEFT_MOTOR		0
@@ -89,14 +80,16 @@ class MovingBase;
 //! BOUND_INT(i, 100) with i==-16 set i=-16
 #define BOUND_INT(value, max_abs) {if(value>max_abs)value=max_abs; else if(value<-max_abs)value=-max_abs;}
 
-//every N period, we compute precise values for
-//cos and sin of the robot angle
-#define PRECISE_COMPUTATION_NTH_PERIOD		64
-
-#define MAX_PERIOD		128
-
 //PID system are identified by a number
 typedef uint8 PID_SYSTEM;
+
+typedef enum
+{
+	TRAJECTORY_RUNNING,
+	ASSISTED_HANDLING,
+	FREE_MOTION,
+	DISABLE_PID,
+} MOTION_STATE;
 
 //! possible return state of a trajectory
 typedef enum
@@ -109,14 +102,6 @@ typedef enum
 	TRAJ_INTERRUPTED,		//trajectory interrupted by software
 	TRAJ_COLLISION_REAR
 } TRAJ_STATE;
-
-typedef enum
-{
-	TRAJECTORY_RUNNING,
-	ASSISTED_HANDLING,
-	FREE_MOTION,
-	DISABLE_PID,
-} MOTION_STATE;
 
 typedef struct RobotPosition
 {
@@ -151,18 +136,18 @@ typedef enum
 //structure used to stock configuration values of the PID system
 typedef struct
 {
-	double kP;
-	double kI;
-	double kD;
+	float kP;
+	float kI;
+	float kD;
 } pidConfig;
 
 typedef struct
 {
 	pidConfig conf;					//pid system configuration
 	unsigned long lastTime;
-	double lastInput;
-	double lastOutput;
-	double ITerm;
+	float lastInput;
+	float lastOutput;
+	float ITerm;
 } pidSystemValues;
 
 //possible phase of a position trajectory :
@@ -216,7 +201,7 @@ typedef struct
 	int32 period1;			//nb of period at end of acceleration (deceleration)
 	int32 period2;			//nb of period at end of trajectory
 
-	int32 Acceleration;	//acceleration used in movement in vTops/sample/sample
+	int32 Acceleration;		//acceleration used in movement in vTops/sample/sample
 
 	int32 V0;				//start speed in vTops/sample
 	int32 VGoal;			//goal speed in vTops/sample
@@ -230,9 +215,13 @@ typedef int32 StepCommand;
 //! structure used internally for stocking current value for each motors
 typedef struct
 {
-	PID_SYSTEM PIDSys;int32 lastPos;
+	PID_SYSTEM PIDSys;
 
-	int posIndex;int32 prevPos[MOTOR_SPEED_PERIOD_NB];		//previous value of position for speed computation
+	int32 lastPos;
+
+	int posIndex;
+
+	int32 prevPos[MOTOR_SPEED_PERIOD_NB];		//previous value of position for speed computation
 } MOTOR;
 
 typedef enum
@@ -270,51 +259,27 @@ typedef struct
 
 } RobotCommand;
 
-
-class AsservInsa : public utils::Thread
+class AsservInsa: public utils::Thread
 {
 public:
-	int stop_motion_ITTask;
-
-	/*
-	//Returns true if the thread was successfully started, false if there was an error starting the thread
-	bool startInternalThread()
-	{
-		return (pthread_create(&_thread, NULL, internalThreadEntryFunc, this) == 0);
-	}
-
-	// Will not return until the internal thread has exited.
-	void waitForInternalThreadToExit()
-	{
-		(void) pthread_join(_thread, NULL);
-	}
-
-protected:
-	// Implement this method in your subclass with the code you want your thread to run.
-	void motion_ITTask();
-
-private:
-	//You can't do it the way you've written it because C++ class member functions have a hidden
-	//this parameter passed in.  pthread_create() has no idea what value of this to use.
-	//this is the favorite way to handle a thread is to encapsulate it inside a C++ object
-	static void * internalThreadEntryFunc(void * pThis)
-	{
-		((AsservInsa *) pThis)->motion_ITTask();
-		return NULL;
-	}
-
-	pthread_t _thread;
-*/
 
 protected:
 	virtual void execute();
 
 private:
 
-	//Base roulante de ce robot
-	MovingBase *base_;
+	/*!
+	 * \brief Retourne le \ref Logger associé à la classe \ref AsservInsa.
+	 */
+	static inline const logs::Logger & logger()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservInsa");
+		return instance;
+	}
 
-	MOTOR motors[MAX_MOTION_CONTROL_TYPE_NUMBER][MOTOR_PER_TYPE];
+	int stop_motion_ITTask;
+
+	bool activate_;
 
 	//encoder.c
 	//ratio vTops/ticks for left encoder
@@ -326,36 +291,35 @@ private:
 	//distance between both encoder wheels in meters
 	float distEncoderMeter;
 
-	float valueVTops;
+	float valueVTops; // [meter/vTops]
 
 	int defaultSamplingFreq;
-	float valueSample;
-	int vtopsPerTicks;
-	int maxPwmValue;
+	//float valueSample; //[sec/sample] //remplacer par loopDelayInMillis
+	long loopDelayInMillis;
 
-	float defaultVmax;
+	//int SampleTime; //... millisec
+
+	int vtopsPerTicks; //Sample per ticks
+	int maxPwmValue_;
+
+	float defaultSpeed; //m/sec
 	float defaultAcc;
 	float defaultDec;
 
 	long long timeOffset;
-
-	MOTION_STATE RobotMotionState;
 
 	//nb of period since the beginning
 	uint32 periodNb; //static
 
 	//mutex protecting the currently executed command
 	pthread_mutex_t mtxMotionCommand; //static
-	pthread_t thread; //static
+	//pthread_t thread; //static
 	//the currently executed command
 	RobotCommand motionCommand;	//static
-
-	long loopDelayInMillis;
 
 	pidSystemValues systemValues[MAX_PID_SYSTEM_NUMBER];
 	//number of system created so far
 	PID_SYSTEM pid_Nb;
-	int SampleTime; //... millisec
 
 	//well, genericity isn't always optimisation-friendly...
 	long stopAt; //static
@@ -371,17 +335,21 @@ private:
 
 	int32 odoPeriodNb; //static
 
+	float pos_x; //static
+	float pos_y; //static
+	float pos_theta; //static
+
 	int32 slippage[MOTOR_PER_TYPE];				//current slippage //static
 	int32 values[MOTOR_PER_TYPE][MAX_PERIOD];				//all the previous values of slippage //static
 	int32 index[MOTOR_PER_TYPE];					//index in the values table //static
 
 	RobotCommand cmd; //static
 
-	float pos_x; //static
-	float pos_y; //static
-	float pos_theta; //static
+	MOTION_STATE RobotMotionState;
 
-
+	//Base roulante de ce robot
+	MovingBase *base_;
+	MOTOR motors[MAX_MOTION_CONTROL_TYPE_NUMBER][MOTOR_PER_TYPE];
 
 //---clothoid
 
@@ -398,30 +366,9 @@ private:
 	void CreateTwoSegmentTraj(float V0, float distD1, float distD2, float A0, float beta, float epsilon);
 
 //---motion
-
 	void checkRobotCommand(RobotCommand *cmd);
-
-	//! Load motion control module
-	void motion_configureAlphaPID(float p, float i, float d);
-	void motion_configureDeltaPID(float p, float i, float d);
-	void motion_configureLeftPID(float p, float i, float d);
-	void motion_configureRightPID(float p, float i, float d);
-	//! Stop motion control for a moment
-	void motion_FreeMotion(void);
-	//! Set a robot command and execute it
-	void motion_SetCurrentCommand(RobotCommand *cmd);
-	//! Stop motion control and disable PID
-	void motion_DisablePID(void);
-	//! Assisted movement mode =)
-	void motion_AssistedHandling(void);
-	//! Stop motion control timer, used to shutdown motion control
-	void motion_StopTimer(void);
-	//! Directly set the pwm for the motor (used both internally and for test)
-	void setPWM(int16 pwmLeft, int16 pwmRight);
 	void loadCommand(RobotCommand *cmd);
 	//motion control task
-	//void *motion_ITTask(void *);
-	void motion_InitTimer(int frequency);
 	void initPWM(void);
 	void signalEndOfTraj(void);
 
@@ -432,16 +379,18 @@ private:
 	//! \return The new system ID
 	PID_SYSTEM pid_Create(void);
 	//! \brief Configure kP value of the PID system
-	void pid_Config(PID_SYSTEM system, double kp, double ki, double kd);
+	void pid_Config(PID_SYSTEM system, float kp, float ki, float kd);
 	//! \brief Compute the PID sum of a system
 	//!
 	//! \param system The system on which we compute the PID
 	//! \param setpoint reference value to reach
 	//! \param input mesured value
 	//! \return The new command to apply on the system (% pwm) between -100 and +100
-	double pid_Compute(PID_SYSTEM system, double setpoint, double input, double speed);int32 pid_Compute_rcva_chaff(PID_SYSTEM system,
-			int32 error,
-			double vitesse);int32 pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse);
+	float pid_Compute(PID_SYSTEM system, float setpoint, float input, float speed);
+
+	int32 pid_Compute_rcva_chaff(PID_SYSTEM system, int32 error, double vitesse);
+
+	int32 pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse);
 
 //---motor_positionCommand
 
@@ -602,11 +551,13 @@ private:
 	//! \param dTheta displacement (rotation) of the robot in radian
 	//! \param dV displacement (forward) of the robot in vTops
 	void odo_Integration(float dTheta, float dV);
+
 	//! \brief Set robot position used by odometry
 	//!
 	//! \param dL vTops elapsed on left encoder since last integration
 	//! \param dR vTops elapsed on right encoder since last integration
 	void odo_SetPosition(float x, float y, float theta);
+
 	//! \brief Get current odometry robot position
 	//!
 	//! \param x [out] Robot position on x axis in meters
@@ -649,25 +600,46 @@ private:
 	//! \param accel The acceleration in meter/second^2 to convert
 	int32 convertAccelTovTopsPerPeriodSqd(float accel);
 
+	long currentTimeInMillis();
+
 public:
 
-	AsservInsa()
-	{
-		stop_motion_ITTask = 0;
-		SampleTime = 1; //... millisec //TODO
-		//int32 odoPeriodNb = 0;
-
-	}
-	~AsservInsa()
-	{
-
-	}
+	AsservInsa();
+	~AsservInsa();
 
 	void motion_Init();
 
+	void motion_SetSamplingFrequency(uint frequency);
+
 	void setMovingBase(MovingBase *base);
 
-	long currentTimeInMillis();
+	void activate(bool a);
+	//motion
+
+	float pos_getX_mm();
+	float pos_getY_mm();
+	float pos_getTheta(); // angle in radian
+	float pos_getThetaInDegree(); // angle in degrees
+
+	void motion_setMaxPwmValue(int maxPwmValue);
+
+	//! Load motion control module
+	void motion_configureAlphaPID(float p, float i, float d);
+	void motion_configureDeltaPID(float p, float i, float d);
+	void motion_configureLeftPID(float p, float i, float d);
+	void motion_configureRightPID(float p, float i, float d);
+	//! Stop motion control for a moment
+	void motion_FreeMotion(void);
+	//! Set a robot command and execute it
+	void motion_SetCurrentCommand(RobotCommand *cmd);
+	//! Stop motion control and disable PID
+	void motion_DisablePID(void);
+	//! Assisted movement mode =)
+	void motion_AssistedHandling(void);
+	//! Stop motion control timer, used to shutdown motion control
+	void motion_StopTimer(void);
+	//! Directly set the pwm for the motor (used both internally and for test)
+	void setPWM(int16 pwmLeft, int16 pwmRight);
 
 	//---encoder
 
@@ -679,7 +651,8 @@ public:
 	//! Set encoder resolution and recompute value of vTops etc...
 	//! \param leftTicksPerM left encoder resolution in ticks per meter
 	//! \param rightTicksPerM right encoder resolution in ticks per meter
-	void encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPerM);
+	//! \param entraxe dist Encoder distance in millimeters
+	void encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPerM, float entraxe_mm);
 	//! Get new encoders values
 	//!
 	//! \param dLeft left motor motion
@@ -832,10 +805,10 @@ public:
 	float motion_GetDefaultAccel();
 	float motion_GetDefaultDecel();
 
+	void motion_SetDefaultSpeed(float speed_m_sec); //en m/s
+	void motion_SetDefaultAccel(float accel);
+	void motion_SetDefaultDecel(float decel);
+
 };
 
-//#ifdef __cplusplus
-//}
-//#endif
-
-#endif /* COMMON_ASSERV_INSA_ASSERVINSA_HPP_ */
+#endif

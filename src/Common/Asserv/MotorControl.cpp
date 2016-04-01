@@ -32,7 +32,7 @@ void MotorControl::stopMotors()
 	asservdriver->stopMotorRight();
 }
 
-
+//number of ticks to add
 void MotorControl::setMotorLeftPosition(int power, long ticks)
 {
 	asservdriver->setMotorLeftPosition(power, ticks);

@@ -19,9 +19,8 @@
 //! \file motor_positionCommand.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <math.h>
@@ -41,9 +40,17 @@ int32 dist, int32 VMax, int32 Accel, int32 Decel)
 	Accel = abs(Accel);
 	Decel = abs(Decel);
 	VMax = abs(VMax);
-//	printf(
-//			"motor_positionCommand ComputePositionCommand dist %d , VMax %d, Accel %d, Decel %d\n",
-//			dist, VMax, Accel, Decel);
+
+	logger().debug() << "motor_positionCommand ComputePositionCommand dist="
+			<< dist
+			<< " VMax="
+			<< VMax
+			<< " Accel="
+			<< Accel
+			<< " Decel="
+			<< Decel
+			<< logs::end;
+
 	//avoid erroneous case
 	if (dist == 0 || VMax == 0 || Accel == 0 || Decel == 0)
 	{
@@ -121,6 +128,14 @@ int32 dist, int32 VMax, int32 Accel, int32 Decel)
 		}
 	}
 
+
+	logger().debug() << "motor_positionCommand ComputePositionCommand T01="
+				<< out_cmd->T01
+				<< " T12="
+				<< out_cmd->T12
+				<< " T23="
+				<< out_cmd->T23
+				<< logs::end;
 }
 
 void AsservInsa::LoadPositionCommand(PositionCommand *out_cmd, MOTOR *motor, int32 periodNb)
@@ -147,8 +162,8 @@ int32 *out_Order)
 	switch (posCommand->phase)
 	{
 	case TR_PRE_PHASE:
-		//robot.base().mlogger().debug() << "GetPositionOrder: TR_PRE_PHASE" << utils::end;
-//printf("GetPositionOrder TR_PRE_PHASE\n");
+
+//logger().debug() << "GetPositionOrder: TR_PRE_PHASE" << logs::end;
 		if (Tn >= posCommand->period0)
 		{
 			posCommand->phase = TR_ACCEL_PHASE;
@@ -161,8 +176,8 @@ int32 *out_Order)
 
 		//acceleration phase
 	case TR_ACCEL_PHASE:
-		//robot.base().mlogger().debug() << "GetPositionOrder: TR_ACCEL_PHASE" << utils::end;
-//printf("GetPositionOrder TR_ACCEL_PHASE\n");
+
+//logger().debug() << "GetPositionOrder: TR_ACCEL_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
 		if (Tn >= posCommand->T01)
@@ -183,8 +198,8 @@ int32 *out_Order)
 
 		//constant speed phase
 	case TR_CONSTANT_PHASE:
-		//robot.base().mlogger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << utils::end;
-//printf("GetPositionOrder TR_CONSTANT_PHASE\n");
+
+//logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
 		if (Tn >= posCommand->T12)
@@ -202,8 +217,8 @@ int32 *out_Order)
 
 		//deceleration phase
 	case TR_DECEL_PHASE:
-		//robot.base().mlogger().debug() << "GetPositionOrder: TR_DECEL_PHASE" << utils::end;
-//printf("GetPositionOrder TR_DECEL_PHASE\n");
+
+//logger().debug() << "GetPositionOrder: TR_DECEL_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
 		if (Tn >= posCommand->T23)
@@ -219,7 +234,8 @@ int32 *out_Order)
 		}
 
 	case TR_END_PHASE:
-//printf("GetPositionOrder TR_END_PHASE\n");
+
+//logger().debug() << "GetPositionOrder: TR_END_PHASE" << logs::end;
 		*out_Order = posCommand->order3;
 		finished = TRUE;
 		break;

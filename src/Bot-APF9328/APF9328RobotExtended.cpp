@@ -2,7 +2,6 @@
 
 #include <string>
 
-#include "../Bot-LegoEV3/LegoEV3SvgWriterExtended.hpp"
 #include "../Common/State/Data.hpp"
 #include "../Log/Logger.hpp"
 #include "APF9328State1.hpp"

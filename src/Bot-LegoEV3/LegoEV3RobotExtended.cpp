@@ -13,10 +13,14 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 
 	//on ecrase les versions par default avec la version extended
 	actions_ = new LegoEV3ActionsExtended(id_);
+	delete(actions_default);
 	actions_default = actions_;
 
 	asserv_ = new LegoEV3AsservExtended(id_);
+	delete(asserv_default);
 	asserv_default = asserv_;
+
+
 
 	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 

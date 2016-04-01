@@ -19,7 +19,7 @@ void LegoEV3LedBarTest::run(Arguments *)
 
 	robot.actions().ledBar().resetAll();
 
-	robot.actions().ledBar().rainbow(2, 500000);
+	robot.actions().ledBar().rainbow(2, 900000);
 
 	robot.actions().ledBar().setOff(0);
 	robot.actions().ledBar().setOff(1);
@@ -41,7 +41,7 @@ void LegoEV3LedBarTest::run(Arguments *)
 
 	robot.actions().ledBar().blink(5, 200000, LED_ORANGE);
 
-	robot.actions().ledBar().k2mil(4, 100000, LED_RED);
+	robot.actions().ledBar().k2mil(4, 100000, LED_YELLOW);
 
 	robot.actions().start();
 

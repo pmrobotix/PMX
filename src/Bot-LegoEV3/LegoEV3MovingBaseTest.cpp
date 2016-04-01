@@ -26,15 +26,15 @@ void LegoEV3MovingBaseTest::run(Arguments *)
 
 	utils::Chronometer chrono;
 
-	logger().info() << "runMotorLeft(100, 1000) " << logs::end;
-	robot.asserv().base().motors().runMotorLeft(200, 1000); //run 100 ticks per s pendant 1s
+	logger().info() << "runMotorLeft(200, 1000) " << logs::end;
+	robot.asserv().base().motors().runMotorLeft(128, 1000); //run (power 128) pendant 1s
 
 	chrono.start();
-	while (chrono.getElapsedTimeInMilliSec() < 2200.0)
+	while (chrono.getElapsedTimeInMilliSec() < 1500.0)
 	{
 		long left = robot.asserv().base().encoders().getLeftEncoder();
 		logger().debug() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left ticks= " << left << logs::end;
-		usleep(10000);
+		usleep(500000);
 	}
 
 	logger().info() << "STOPPED time= "
@@ -42,25 +42,26 @@ void LegoEV3MovingBaseTest::run(Arguments *)
 			<< "ms ; left ticks= "
 			<< robot.asserv().base().encoders().getLeftEncoder()
 			<< logs::end;
-	usleep(100000);
+	usleep(500000);
 
-	logger().info() << "runMotorLeft(10, 1000) " << logs::end;
-	robot.asserv().base().motors().runMotorLeft(-100, 1000); //run 100 ticks per s pendant 1s
+	logger().info() << "runMotorLeft(-100, 1000) " << logs::end;
+	robot.asserv().base().motors().runMotorLeft(-100, 1000); //run with power -100 pendant 1s
 	chrono.start();
-	while (chrono.getElapsedTimeInMilliSec() < 1200.0)
+	while (chrono.getElapsedTimeInMilliSec() < 1500.0)
 	{
 		long left = robot.asserv().base().encoders().getLeftEncoder();
 		logger().debug() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left ticks= " << left << logs::end;
-		usleep(10000);
+		usleep(500000);
 	}
 
-	robot.asserv().base().motors().setMotorLeftPosition(200, 360); //run until 360 ticks
+	logger().info() << "setMotorLeftPosition(200, 100) " << logs::end;
+	robot.asserv().base().motors().setMotorLeftPosition(128, 100); //run until 100 ticks
 	chrono.start();
-	while (chrono.getElapsedTimeInMilliSec() < 4000.0)
+	while (chrono.getElapsedTimeInMilliSec() < 1000.0)
 	{
 		long left = robot.asserv().base().encoders().getLeftEncoder();
 		logger().debug() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left ticks= " << left << logs::end;
-		usleep(10000);
+		usleep(500000);
 	}
 
 	logger().info() << "STOPPED time= "

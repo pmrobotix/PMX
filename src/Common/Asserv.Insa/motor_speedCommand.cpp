@@ -19,9 +19,8 @@
 //! \file motor_speedCommand.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <cstdlib>

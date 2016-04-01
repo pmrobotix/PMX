@@ -19,29 +19,14 @@
 //! \file robot_trajectory.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <cmath>
 #include <cstdio>
 
 #include "AsservInsa.hpp"
-
-// en m/s (d'apres Cho)
-float AsservInsa::motion_GetDefaultSpeed()
-{
-	return defaultVmax;
-}
-float AsservInsa::motion_GetDefaultAccel()
-{
-	return defaultAcc;
-}
-float AsservInsa::motion_GetDefaultDecel()
-{
-	return defaultDec;
-}
 
 void AsservInsa::motion_Line(RobotCommand *out_cmd, float dist)
 {
@@ -55,6 +40,7 @@ void AsservInsa::motion_LineSpeed(RobotCommand *out_cmd, float dist, float VMax)
 
 void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VMax, float Accel, float Decel)
 {
+
 	out_cmd->cmdType = POSITION_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;
 
@@ -321,13 +307,13 @@ void AsservInsa::motion_SpeedControlLRTime(RobotCommand *out_cmd,
 	//LEFT
 	ComputeSpeedCommandTime(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]),
 			convertSpeedTovTopsPerPeriod(V0Left),
-			(int32) (TLeft / valueSample),
+			(int32) (TLeft / (loopDelayInMillis/1000.0)),
 			convertAccelTovTopsPerPeriodSqd(accLeft));
 
 	//RIGHT
 	ComputeSpeedCommandTime(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]),
 			convertSpeedTovTopsPerPeriod(V0Right),
-			(int32) (TRight / valueSample),
+			(int32) (TRight / (loopDelayInMillis/1000.0)),
 			convertAccelTovTopsPerPeriodSqd(accRight));
 }
 

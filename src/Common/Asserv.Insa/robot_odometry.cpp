@@ -19,9 +19,8 @@
 //! \file robot_odometry.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <cmath>
@@ -76,10 +75,7 @@ void AsservInsa::odo_Integration(float dTheta, float dV)
 	//printf("odo_Integration %f,%f %f\n",xTops,yTops,Theta);
 	xTops += dV * cosTheta;
 	yTops += dV * sinTheta;
-//	if(xTops>10000000000.0){
-//	printf("odo_Integration -> %f,%f %f\n",xTops,yTops,Theta);
-//	exit(2);
-//	}
+
 }
 
 void AsservInsa::odo_SetPosition(float x, float y, float theta)

@@ -11,29 +11,29 @@ view_doc()
 
 all()
 {
-	scp Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM/* root@$IP:/pmx/
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/root/.
 }
 
 conf()
 {
-	scp Bot_ArmadeusAPF9328_ARM/Release/*.conf.txt root@$IP:/pmx/
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/*.conf.txt" root@$IP:/pmx/
 }
 
 tsh()
 {
-	scp src/apf-test/sh/*.sh root@$IP:/pmx/
+	scp ../sh/*.sh root@$IP:/pmx/
 }
 
 
 pmx()
 {
-    ssh root@192.168.7.253 "killall pmx"
-	scp "Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" root@$IP:/pmx/
+    #ssh root@$IP "killall pmx"
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" root@$IP:/root/.
 }
 
 driver()
 {
-	scp Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest root@$IP:/pmx/
+	scp "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/root/.
 }
 
 

@@ -19,32 +19,35 @@
 //! \file robot_unitConversion.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <cmath>
 
 #include "AsservInsa.hpp"
 
-int32 AsservInsa::convertDistTovTops(float dist)
+int32 AsservInsa::convertDistTovTops(float meters)
 {
-	float tmp = dist / valueVTops;
-	return round(tmp);
+	float vTops = meters / valueVTops;
+	//= m * vtops/m = vtops
+	return round(vTops);
 }
 
-int32 AsservInsa::convertSpeedTovTopsPerPeriod(float speed)
+int32 AsservInsa::convertSpeedTovTopsPerPeriod(float vMax)
 {
-	float tmp = valueSample * speed / valueVTops;
-	return round(tmp);
+	float vTops = (loopDelayInMillis / 1000.0) * vMax / valueVTops;
+	//=sec/period * m/sec / m/vtops
+	//=sec/period * m/sec * vtops/m = vtops/period
+	return round(vTops);
 }
 
 int32 AsservInsa::convertAccelTovTopsPerPeriodSqd(float accel)
 {
 	int32 result;
-	float tmp = valueSample * valueSample * accel / valueVTops;
-	result = round(tmp);
+	float vTops = (loopDelayInMillis / 1000.0) * (loopDelayInMillis / 1000.0) * accel / valueVTops;
+	//=sec/period * sec/period * m/s^2 * vtops/m = vtops/period^2
+	result = round(vTops);
 
 	//acceleration must be non-null
 	if (result == 0)

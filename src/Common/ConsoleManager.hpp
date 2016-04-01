@@ -58,6 +58,8 @@ public:
 	void displayMenuFunctionalTestsAndRun(Arguments *args);
 
 
+	std::string * displayAvailableTests(std::string color = "\033[0m", int selected = -1);
+
 	std::string displayMenuFirstArgu();
 
 

@@ -6,20 +6,22 @@
 
 #include "Robot.hpp"
 
+#include <unistd.h>
 #include <cstdlib>
+#include <iostream>
 
 #include "../Log/Logger.hpp"
 #include "Action/Actions.hpp"
 #include "Asserv/Asserv.hpp"
+#include "ConsoleKeyInput.hpp"
 
 using namespace std;
 
-Robot::Robot() :
-		myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "-/")
+Robot::Robot()
+		: myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "-/")
 {
 	actions_default = new Actions();
-
-	asserv_default = new Asserv();
+	asserv_default = new Asserv("RobotDefaultAsserv");
 
 	configureDefaultConsoleArgs();
 }
@@ -55,6 +57,8 @@ void Robot::parseConsoleArgs(int argc, char** argv)
 	if (cArgs_['h'])
 	{
 		cArgs_.usage();
+		std::cout << "Available functional tests: " << std::endl;
+		cmanager_.displayAvailableTests("", -1);
 		exit(0);
 	}
 }
@@ -65,14 +69,53 @@ void Robot::begin()
 	string select = "-";
 	string color = "-";
 
+
+	if (cArgs_["type"] == "0")
+	{
+		//display all functional tests
+		cmanager_.displayAvailableTests("", -1);
+
+		//------------- Pour debug
+		//pause s'il n'y a pas tous les elements pour garder le log d'erreur
+		char cInput;
+		Robot::logger().info() << "Press Enter key to continue ..." << logs::end;
+		//cout << "Press Enter key to continue ..." << endl;
+		//sleep(1);
+		do
+		{
+			cInput = ConsoleKeyInput::mygetch();
+			switch (cInput)
+			{
+
+			case 10:
+				//printf("Enter key!\n");
+				break;
+			case 127:
+				cout << "Exit !\n" << endl;
+				//cout << default_console << endl;
+				exit(0);
+				break;
+			}
+			usleep(1000);
+		} while (cInput != 10);
+		//---------------fin Pour debug
+	}
+
 	logger().debug() << "type = " << cArgs_["type"] << logs::end;
-	logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"] << logs::end;
+	logger().debug() << "Option c set "
+			<< (int) cArgs_['c']
+			<< ", color = "
+			<< " "
+			<< cArgs_['c']["color"]
+			<< logs::end;
 
 	if (cArgs_['c'])
 	{
 		color = cArgs_['c']["color"];
-		if (color == "green") this->setMyColor(PMXGREEN);
-		else if (color == "red") this->setMyColor(PMXVIOLET);
+		if (color == "green")
+			this->setMyColor(PMXGREEN);
+		else if (color == "red")
+			this->setMyColor(PMXVIOLET);
 		else
 		{
 			this->setMyColor(PMXNOCOLOR);
@@ -85,7 +128,7 @@ void Robot::begin()
 	if (cArgs_['n'])
 	{
 		num = atoi(cArgs_['n']["num"].c_str());
-		logger().debug() << "Option n set " << (int)cArgs_['n'] << ", num = " << num << logs::end;
+		logger().debug() << "Option n set " << (int) cArgs_['n'] << ", num = " << num << logs::end;
 	}
 
 	//skip state
@@ -123,6 +166,7 @@ void Robot::begin()
 
 void Robot::stop()
 {
- //TODO stop robot
+	//TODO stop robot
+
 }
 

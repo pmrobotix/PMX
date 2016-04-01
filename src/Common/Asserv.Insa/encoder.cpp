@@ -19,9 +19,8 @@
 //! \file encoder.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include "../Asserv/EncoderControl.hpp"
@@ -34,8 +33,15 @@ int useExternalEncoders = 0;
 
 void AsservInsa::encoder_Init()
 {
-	base_->extEncoders().reset();
-	base_->encoders().reset();
+	if (base_ != NULL)
+	{
+		base_->extEncoders().reset();
+		base_->encoders().reset();
+	}
+	else
+	{
+		logger().error() << "encoder_Init : Base is NULL !" << logs::end;
+	}
 }
 
 void AsservInsa::encoder_SetDist(float dist)
@@ -44,53 +50,35 @@ void AsservInsa::encoder_SetDist(float dist)
 	distEncoder = dist / valueVTops;
 }
 
-void AsservInsa::encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPerM)
+void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta)
 {
-
-	if (leftTicksPerM > rightTicksPerM)
+	int32 left = 0;
+	int32 right = 0;
+	if (base_ != NULL)
 	{
-		leftEncoderRatio = vtopsPerTicks;
-		rightEncoderRatio = vtopsPerTicks * rightTicksPerM / (float) leftTicksPerM;
-		valueVTops = 1 / (float) (vtopsPerTicks * leftTicksPerM);
+		//read encoder
+		if (useExternalEncoders)
+		{
+			left = base_->extEncoders().getLeftEncoder();
+		}
+		else
+		{
+			left = base_->encoders().getLeftEncoder();
+		}
+
+		if (useExternalEncoders)
+		{
+			right = base_->extEncoders().getRightEncoder();
+		}
+		else
+		{
+			right = base_->encoders().getRightEncoder();
+		}
+
 	}
 	else
 	{
-		leftEncoderRatio = vtopsPerTicks * leftTicksPerM / (float) rightTicksPerM;
-		rightEncoderRatio = vtopsPerTicks;
-		valueVTops = 1 / (float) (vtopsPerTicks * rightTicksPerM);
-	}
-#ifdef DEBUG_MOTION
-	printf("encoder_SetResolution   %d , %d \n", leftTicksPerM, rightTicksPerM);
-	printf("valueVTops %f = 1 / %f = 1 / %d x %d \n", valueVTops,
-			(float) (VTOPS_PER_TICKS * rightTicksPerM), VTOPS_PER_TICKS,
-			rightTicksPerM);
-#endif
-
-	//recompute values involving vTops
-	encoder_SetDist(distEncoderMeter);
-}
-
-void AsservInsa::encoder_ReadSensor( int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta)
-{
-	int32 left, right;
-
-	//read encoder
-	if (useExternalEncoders)
-	{
-		left = base_->extEncoders().getLeftEncoder();
-	}
-	else
-	{
-		left = base_->encoders().getLeftEncoder();
-	}
-
-	if (useExternalEncoders)
-	{
-		right = base_->extEncoders().getRightEncoder();
-	}
-	else
-	{
-		right = base_->encoders().getRightEncoder();
+		logger().error() << "encoder_ReadSensor : Base is NULL !" << logs::end;
 	}
 
 #ifdef DEBUG_ENCODER
@@ -130,6 +118,7 @@ void AsservInsa::encoder_ReadSensor( int32 *dLeft, int32 *dRight, int32 *dAlpha,
 //compute alpha and delta displacement
 	*dAlpha = (*dRight - *dLeft) / 2;
 	*dDelta = (*dRight + *dLeft) / 2;
+
 #ifdef DEBUG_ENCODER
 	printf("encoder.c encoder_ReadSensor l:%d r:%d alpha:%d delta:%d\n", *dLeft, *dRight, *dAlpha, *dDelta);
 	printf("%f %f\n", cc_getX(), cc_getY());

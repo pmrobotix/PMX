@@ -19,9 +19,8 @@
 //! \file robot_traj_wrappers.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <stddef.h>
@@ -29,31 +28,19 @@
 
 #include "AsservInsa.hpp"
 
-void AsservInsa::pos_SetPosition(float x, float y, float theta)
-{
-	//TODO Odometry... odo_SetPosition(float x, float y, float theta)
-	pos_x = x;
-	pos_y = y;
-	pos_theta = theta;
-}
 
-void AsservInsa::pos_GetPositionXYTheta(float *x, float *y, float *theta)
-{
-	//TODO Odometry... odo_GetPositionXYTheta(float *x, float *y, float *theta)
-	*x = pos_x;
-	*y = pos_y;
-	*theta = pos_theta;
-}
 
-TRAJ_STATE AsservInsa::motion_DoLine(float dist)
+TRAJ_STATE AsservInsa::motion_DoLine(float dist_meters)
 {
-	motion_Line(&cmd, dist);
+	checkRobotCommand(&cmd);
+	motion_Line(&cmd, dist_meters);
 	path_LaunchTrajectory(&cmd);
 	return path_WaitEndOfTrajectory();
 }
 
 TRAJ_STATE AsservInsa::motion_DoRotate(float angle)
 {
+	checkRobotCommand(&cmd);
 	motion_Rotate(&cmd, angle);
 	path_LaunchTrajectory(&cmd);
 	return path_WaitEndOfTrajectory();
@@ -61,6 +48,7 @@ TRAJ_STATE AsservInsa::motion_DoRotate(float angle)
 
 TRAJ_STATE AsservInsa::motion_DoArcRotate(float angle, float radius)
 {
+	checkRobotCommand(&cmd);
 	motion_ArcRotate(&cmd, angle, radius);
 	path_LaunchTrajectory(&cmd);
 	return path_WaitEndOfTrajectory();
@@ -147,6 +135,7 @@ TRAJ_STATE AsservInsa::motion_GoToSpeedPath(const Position *pos, int nb)
 			else if (spAlpha < -0.3f)
 				spAlpha = -0.3f;
 
+			checkRobotCommand(&cmd);
 			motion_SpeedControlADMaxTime(&cmd, spAlpha, 0.5f, spDelta, 0.5f, 50);
 			path_LaunchTrajectory(&cmd);
 

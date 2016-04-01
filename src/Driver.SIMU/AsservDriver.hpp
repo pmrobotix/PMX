@@ -7,11 +7,11 @@
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
-
+#include "../Thread/Mutex.hpp"
 
 using namespace std;
 
-class AsservDriver: public AAsservDriver
+class AsservDriver: public AAsservDriver, utils::Mutex
 {
 private:
 
@@ -20,14 +20,18 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU ");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
 		return instance;
 	}
 
+	Mutex mutexL_;
+
+	Mutex mutexR_;
+
 	utils::Chronometer chrono_;
 
-	double tLeft_ms_;
-	double tRight_ms_;
+	float tLeft_ms_;
+	float tRight_ms_;
 
 	long rightCounter_;
 	long leftCounter_;
@@ -44,8 +48,10 @@ private:
 protected:
 
 public:
-	int leftPower_;
-	int rightPower_;
+	float leftSpeed_; //m/s
+	float rightSpeed_;
+
+	float convertPowerToSpeed(int power);
 
 	void computeCounterL();
 	void computeCounterR();
@@ -105,7 +111,7 @@ public:
 
 	AsservDriver * asserv_;
 
-	void member1left(const char *arg1, int timems)
+	void member1left(const char *arg1, int time_ms)
 	{
 		/*
 		 std::cout << "i am member1 and my first arg is ("
@@ -114,10 +120,20 @@ public:
 		 << timems
 		 << ")"
 		 << std::endl;*/
-		usleep(timems * 1000);
+
+		//TODO asserv_->computeCounterL(); ??? à la place de le faire en high level ?
+		//usleep(timems * 1000);
+		utils::Chronometer chrono_member1left;
+		chrono_member1left.start();
+		while (chrono_member1left.getElapsedTimeInMilliSec() < time_ms)
+		{
+			asserv_->computeCounterL();
+			usleep(1000);
+		}
+
 		asserv_->stopMotorLeft();
 	}
-	void member2right(const char *arg1, int timems)
+	void member2right(const char *arg1, int time_ms)
 	{
 		/*
 		 std::cout << "i am member2 and my first arg is ("
@@ -126,18 +142,28 @@ public:
 		 << timems
 		 << ")"
 		 << std::endl;*/
-		usleep(timems * 1000);
+		usleep(time_ms * 1000);
 		asserv_->stopMotorRight();
 	}
 
-	void positionLeft(const char *arg1, long internal_ticks)
+	void positionLeft(const char *arg1, long internal_ticksToDo)
 	{
 		//stop when internal ticks is achieved..
-		while (asserv_->getLeftInternalEncoder() < internal_ticks)
+		while (asserv_->getLeftInternalEncoder() < internal_ticksToDo)
 		{
-			usleep(500);
+			asserv_->computeCounterL();
+			usleep(1000);
 		}
 		asserv_->stopMotorLeft();
+	}
+	void positionRight(const char *arg1, long internal_ticks)
+	{
+		//stop when internal ticks is achieved..
+		while (asserv_->getRightInternalEncoder() < internal_ticks)
+		{
+			asserv_->computeCounterR();
+		}
+		asserv_->stopMotorRight();
 	}
 
 	std::thread memberLeftThread(const char *arg1, int timems)
@@ -156,6 +182,12 @@ public:
 	{
 		return std::thread([=]
 		{	this->positionLeft(arg1, internal_ticks);});
+	}
+
+	std::thread positionRightThread(const char *arg1, int internal_ticks)
+	{
+		return std::thread([=]
+		{	this->positionRight(arg1, internal_ticks);});
 	}
 };
 

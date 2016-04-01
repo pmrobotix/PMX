@@ -19,15 +19,13 @@
 //! \file motor_PID.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <stdio.h>
 
 #include "AsservInsa.hpp"
-
 
 void AsservInsa::pid_Init()
 {
@@ -41,28 +39,45 @@ PID_SYSTEM AsservInsa::pid_Create()
 		return -1;
 
 	//init configuration variables by default
-	systemValues[pid_Nb].conf.kP = 0.0010;
-	systemValues[pid_Nb].conf.kI = 0.0008;
-	systemValues[pid_Nb].conf.kD = 0.000002;
+	systemValues[pid_Nb].conf.kP = 0.0;
+	systemValues[pid_Nb].conf.kI = 0.0;
+	systemValues[pid_Nb].conf.kD = 0.0;
 
-	//init current state variables
+//	logger().debug() << "pid_Create pid_Nb=" << (int) pid_Nb
+//			<< " systemValues[pid_Nb].conf.kP="
+//			<< systemValues[pid_Nb].conf.kP
+//			<< " systemValues[pid_Nb].conf.kI="
+//			<< systemValues[pid_Nb].conf.kI
+//			<< " systemValues[pid_Nb].conf.kD="
+//			<< systemValues[pid_Nb].conf.kD
+//			<< logs::end;
+
+//init current state variables
 
 	pid_Nb++;
 	return pid_Nb - 1;
 }
 
-
-
-void AsservInsa::pid_Config(PID_SYSTEM system, double kp, double ki, double kd)
+void AsservInsa::pid_Config(PID_SYSTEM system, float kp, float ki, float kd)
 {
 
-	double SampleTimeInSec = ((double) SampleTime) / 1000;
+	//double SampleTimeInSec = ((double) SampleTime) / 1000;
 	systemValues[system].lastTime = 0;
 	systemValues[system].lastOutput = 0.0;
 	systemValues[system].lastInput = 0.0;
 	systemValues[system].conf.kP = kp;
-	systemValues[system].conf.kI = ki * SampleTimeInSec;
-	systemValues[system].conf.kD = kd / SampleTimeInSec;
+	systemValues[system].conf.kI = ki * loopDelayInMillis / 1000.0;
+	systemValues[system].conf.kD = kd / (loopDelayInMillis / 1000.0);
+
+//	logger().debug() << "pid_Config system=" << (int) system
+//			<< " systemValues[system].conf.kP="
+//			<< systemValues[system].conf.kP
+//			<< " systemValues[system].conf.kI="
+//			<< systemValues[system].conf.kI
+//			<< " systemValues[system].conf.kD="
+//			<< systemValues[system].conf.kD
+//			<< logs::end;
+
 }
 
 //void SetOutputLimits(PID_SYSTEM system,double Min, double Max) {
@@ -91,36 +106,36 @@ void AsservInsa::pid_Config(PID_SYSTEM system, double kp, double ki, double kd)
  * Input : current value
  *
  * */
-double AsservInsa::pid_Compute(PID_SYSTEM system, double setpoint, double input, double speed)
+float AsservInsa::pid_Compute(PID_SYSTEM system, float setpoint, float input, float speed)
 {
-	double outMin = (-1.0 * maxPwmValue);
-	double outMax = (1.0 * maxPwmValue);
+	float outMin = (-1.0 * maxPwmValue_);
+	float outMax = (1.0 * maxPwmValue_);
 
 	pidSystemValues* val = &(systemValues[system]);
 	pidConfig conf = val->conf;
 
-	double outPut = val->lastOutput;
-	double lastInput = val->lastInput;
-	double ITerm = val->ITerm;
+	float outPut = val->lastOutput;
+	float lastInput = val->lastInput;
+	float ITerm = val->ITerm;
 
 	unsigned long now = currentTimeInMillis();
 	unsigned long lastTime = val->lastTime;
 
 	int timeChange = (now - lastTime);
-	if (timeChange >= SampleTime)
+	if (timeChange >= loopDelayInMillis) //necessaire ?
 	{
-		double kp = conf.kP;
-		double ki = conf.kI;
-		double kd = conf.kD;
+		float kp = conf.kP;
+		float ki = conf.kI;
+		float kd = conf.kD;
 
 		/*Compute all the working error variables*/
-		double error = setpoint - input;
+		float error = setpoint - input;
 		ITerm += (ki * error);
 		if (ITerm > outMax)
 			ITerm = outMax;
 		else if (ITerm < outMin)
 			ITerm = outMin;
-		double dInput = (input - lastInput);
+		float dInput = (input - lastInput);
 
 		/*Compute PID Output*/
 		outPut = kp * error + ITerm - kd * dInput;
@@ -136,10 +151,24 @@ double AsservInsa::pid_Compute(PID_SYSTEM system, double setpoint, double input,
 	}
 	else
 	{
-#ifdef DEBUG_PID
-		printf("conf.kP %f %f %f \n", conf.kP, conf.kI, conf.kD);
-		//printf("No pid calculation: %ld - %ld = %d ms\n", now, lastTime, timeChange);
-#endif
+		logger().debug() << "pid_Compute P="
+				<< conf.kP
+				<< " I="
+				<< conf.kI
+				<< " D="
+				<< conf.kD
+				<< " input="
+				<< input
+				<< " setpoint="
+				<< setpoint
+				<< " output="
+				<< outPut
+				<< logs::end;
+		/*
+		 #ifdef DEBUG_PID
+		 printf("conf.kP %f %f %f \n", conf.kP, conf.kI, conf.kD);
+		 //printf("No pid calculation: %ld - %ld = %d ms\n", now, lastTime, timeChange);
+		 #endif*/
 	}
 	val->lastOutput = outPut;
 	return outPut;
@@ -170,13 +199,13 @@ int32 AsservInsa::pid_Compute_rcva_chaff(PID_SYSTEM system, int32 error, double 
 	pwm /= 256.0f;
 	printf("motor_PID.c pid_Compute pid P:%f I:%f D:%f -> pwm:%f\n", P, I, D, pwm);
 	//bound the resulting pwm
-	if (pwm > maxPwmValue)
+	if (pwm > maxPwmValue_)
 	{
-		pwm = maxPwmValue;
+		pwm = maxPwmValue_;
 	}
-	else if (pwm < -maxPwmValue)
+	else if (pwm < -maxPwmValue_)
 	{
-		pwm = -maxPwmValue;
+		pwm = -maxPwmValue_;
 	}
 
 	return (int32) pwm;
@@ -204,11 +233,28 @@ int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse)
 // 		writeDebugStreamLine("cpid.c : before error=%d vitesse=%d", error, vitesse);
 // 	#endif
 
-	error /= vtopsPerTicks; //=[Ticks/sample]
+	float ferror = error / vtopsPerTicks; //=[Ticks/sample]
 	vitesse /= vtopsPerTicks; //=[Ticks/sample]
 
-	int32 cmd = error * val->conf.kP;
-	int32 pwm = cmd - val->conf.kD * vitesse;
+	float cmd = ferror * val->conf.kP;
+	float pwm = cmd - (val->conf.kD * vitesse);
+
+	logger().debug() << "pid_ComputeRcva error="
+			<< ferror
+			<< " cmd="
+			<< cmd
+			<< " vitesse="
+			<< vitesse
+			<< " pwm="
+			<< pwm
+			<< " vtopsPerTicks="
+			<< vtopsPerTicks
+			<< " val->conf.kP="
+			<< val->conf.kP
+			<< " val->conf.kD="
+			<< val->conf.kD
+
+			<< logs::end;
 
 // 	#if(LEVEL_PID <= DEBUG)
 // 		writeDebugStreamLine("cpid.c : during error=%d vitesse=%d pwm=%d", error, vitesse, pwm);
@@ -221,15 +267,15 @@ int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse)
 // 	#endif
 
 	//bound the resulting pwm
-	if (pwm > maxPwmValue)
+	if (pwm > maxPwmValue_)
 	{
-		pwm = maxPwmValue;
+		pwm = maxPwmValue_;
 	}
-	else if (pwm < -maxPwmValue)
+	else if (pwm < -maxPwmValue_)
 	{
-		pwm = -maxPwmValue;
+		pwm = -maxPwmValue_;
 	}
 
-	return pwm;
+	return (int32) pwm;
 }
 

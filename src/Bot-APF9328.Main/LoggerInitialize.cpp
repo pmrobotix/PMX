@@ -17,13 +17,34 @@ void logs::LoggerFactory::initialize()
 
 	add(logs::Level::ERROR, "", "console");
 
+	add(logs::Level::INFO, "Robot", "console");
+	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
+	add(logs::Level::INFO, "LegoEV3State1", "console");
+
 	//SVG
 	add(logs::Level::INFO, "Svg4APF9328Robot", "APF9328svg");
 
 	//TESTS
-	add(logs::Level::INFO, "LedBarTest", "console");
+	add(logs::Level::INFO, "APF9328LedBarTest", "console");
+	/*
+	add(logs::Level::INFO, "APF9328ButtonBarTest", "console");
+	add(logs::Level::INFO, "APF9328SoundBarTest", "console");
+	add(logs::Level::INFO, "APF9328TiretteTest", "console");
+	add(logs::Level::INFO, "APF9328MovingBaseTest", "console");
+	add(logs::Level::INFO, "APF9328AsservInsaTest", "console");
+*/
+	//DRIVERS SIMU
+	add(logs::Level::INFO, "LedDriver.SIMU", "console");
+	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
+	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
+	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
+	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
 
-	//DRIVER
-	add(logs::Level::DEBUG, "LedDriver.SIMU", "console");
+	//DRIVERS EV3
+	add(logs::Level::INFO, "LedDriver.ARM", "console");
+	add(logs::Level::INFO, "ButtonDriver.ARM", "console");
+	add(logs::Level::INFO, "SoundDriver.ARM", "console");
+	add(logs::Level::INFO, "SwitchDriver.ARM", "console");
+	add(logs::Level::INFO, "AsservDriver.ARM", "console");
 
 }

@@ -19,9 +19,8 @@
 //! \file motion.c
 //! \author Julien Rouviere <gmail address : julien.rouviere@...>
 //! \author ClubElek <http://clubelek.insa-lyon.fr>
-// svn :
-// $LastChangedBy$
-// $LastChangedDate$
+//
+// Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
 #include <pthread.h>
@@ -34,6 +33,68 @@
 #include "AsservInsa.hpp"
 
 class MovingBase;
+
+AsservInsa::AsservInsa()
+{
+	activate_ = false;
+	stop_motion_ITTask = false;
+	//SampleTime = 1; //... millisec //TODO
+
+	leftEncoderRatio = 0;
+	//ratio vTops/ticks for right encoder
+	rightEncoderRatio = 0;
+	//distance between both encoder wheels in vTops
+	distEncoder = 0;
+
+	//distance between both encoder wheels in meters
+	distEncoderMeter = 0.0;
+
+	//vTops is a virtual measure distance to avoid floating point computation
+	valueVTops = 0.0;
+
+	loopDelayInMillis = 0;
+
+	defaultSamplingFreq = 10; //1 fois par second pour eviter la division par zero.
+
+	vtopsPerTicks = 100; //1000 ?
+
+	maxPwmValue_ = 0;
+
+	defaultSpeed = 0.0;
+	defaultAcc = 0.0;
+	defaultDec = 0.0;
+
+	timeOffset = 0;
+
+	waitingSemaphore = false;
+
+	Theta = 0.0; //en radian
+	cosTheta = 0.0; //no unit //static
+	sinTheta = 0.0;
+	xTops = 0.0; //encoder vTops //static
+	yTops = 0.0;
+
+	pos_x = 0.0;
+	pos_y = 0.0;
+	pos_theta = 0.0;
+
+	odoPeriodNb = 0;
+	//nb of period since the beginning
+	periodNb = 0;
+
+	trajState = TRAJ_OK;
+
+	pid_Nb = 0;
+	stopAt = 0;
+
+	RobotMotionState = DISABLE_PID;
+
+	base_ = NULL;
+
+}
+AsservInsa::~AsservInsa()
+{
+}
 
 void AsservInsa::setMovingBase(MovingBase *base)
 {
@@ -48,25 +109,10 @@ long AsservInsa::currentTimeInMillis()
 	return (long) (milliseconds - timeOffset);
 }
 
-void AsservInsa::motion_configureAlphaPID(float p, float i, float d)
-{
-	pid_Config(motors[ALPHA_DELTA][ALPHA_MOTOR].PIDSys, p, i, d);
-}
-void AsservInsa::motion_configureDeltaPID(float p, float i, float d)
-{
-	pid_Config(motors[ALPHA_DELTA][DELTA_MOTOR].PIDSys, p, i, d);
-}
-void AsservInsa::motion_configureLeftPID(float p, float i, float d)
-{
-	pid_Config(motors[LEFT_RIGHT][LEFT_MOTOR].PIDSys, p, i, d);
-}
-void AsservInsa::motion_configureRightPID(float p, float i, float d)
-{
-	pid_Config(motors[LEFT_RIGHT][RIGHT_MOTOR].PIDSys, p, i, d);
-}
-
 void AsservInsa::motion_Init()
 {
+	logger().debug() << "motion_Init started" << logs::end;
+
 	int i, j;
 	RobotMotionState = DISABLE_PID;
 	periodNb = 0;
@@ -87,26 +133,15 @@ void AsservInsa::motion_Init()
 
 	motion_FreeMotion();
 
-	//timing semaphore : unlock the motion control task periodically
-	//sem_init(&semMotionIT, 0, 0);
-
 	//currently executed motion command protection mutex
 	pthread_mutex_init(&mtxMotionCommand, NULL);
 
-	//create motion control task
-	//if (pthread_create(&thread, NULL, this->motion_ITTask(), NULL) < 0)
-	/*
-	if (startInternalThread() < 0)
-	{
-		fprintf(stderr, "pthread_create error for thread 1\n");
-		exit(1);
-	}*/
+	motion_SetSamplingFrequency(defaultSamplingFreq); //Hz
+
+	//create motion control task thread
 	start("AsservInsa");
 
-
-	//motion_InitTimer(DEFAULT_SAMPLING_FREQ);
-	motion_InitTimer(defaultSamplingFreq);
-
+	//slippage init
 	slippage_Init();
 
 	//path manager initialisation
@@ -137,9 +172,6 @@ void AsservInsa::motion_FreeMotion()
 {
 	RobotMotionState = FREE_MOTION;
 	setPWM(0, 0);
-	//resetAllPIDErrors();
-
-	//printf("============> motion_FreeMotion setPWM(0, 0);\n");
 }
 
 void AsservInsa::motion_AssistedHandling()
@@ -172,7 +204,7 @@ void AsservInsa::checkRobotCommand(RobotCommand *cmd)
 }
 void AsservInsa::loadCommand(RobotCommand *cmd)
 {
-	checkRobotCommand(cmd);
+	this->checkRobotCommand(cmd);
 	switch (cmd->cmdType)
 	{
 	case POSITION_COMMAND:
@@ -246,49 +278,38 @@ void AsservInsa::execute()
 //static int32 dAlpha2, dDelta2;
 
 	int32 ord0, ord1; //static
-	bool fin0, fin1; //static
+	bool fin0 = false, fin1 = false; //static
 	int32 pwm0, pwm1; //static
 	int32 pwm0b, pwm1b; //static
-#ifdef DEBUG_MOTION
-	printf("motion.c : motion_ITTask start\n");
-#endif
 
-	while (!AsservInsa::stop_motion_ITTask)
+	logger().debug() << "AsservInsa execute started; stop_motion_ITTask=" << stop_motion_ITTask << logs::end;
+
+	while (!stop_motion_ITTask)
 	{
-		//sem_wait(&semMotionIT);
 
 		long startTime = currentTimeInMillis();
-		/*
-		 #ifdef DEBUG_MOTION
-		 printf("motion.c : ------  updating state ---- time : %ld ms [%d]\n",
-		 currentTimeInMillis(), RobotMotionState);
-		 #endif
-		 */
+		//logger().debug() << "AsservInsa execute startTime=" << startTime << logs::end;
+
 		periodNb++;
 
 		encoder_ReadSensor(&dLeft, &dRight, &dAlpha, &dDelta);
-
 		odo_Integration(2 * dAlpha / (float) distEncoder, (float) dDelta);
 
-		odo_GetPosition();
-
-		//	printf("ROBOT POS: %f,%f theta:%f\n", p.x, p.y, p.theta);
-		//send position
-		//	if ((periodNb & 0x3F) == 0) {
-//			pos_SendPosition();
-//		}
-
-		//update all motors
+		//odo_GetPosition();
+		//update all motors data
 		updateMotor(&motors[LEFT_RIGHT][LEFT_MOTOR], dLeft);
 		updateMotor(&motors[LEFT_RIGHT][RIGHT_MOTOR], dRight);
 		updateMotor(&motors[ALPHA_DELTA][ALPHA_MOTOR], dAlpha);
 		updateMotor(&motors[ALPHA_DELTA][DELTA_MOTOR], dDelta);
-		double dSpeed0 = 0;
-		double dSpeed1 = 0;
+
+		float dSpeed0 = 0;
+		float dSpeed1 = 0;
 		//order and pwm computation
 		switch (RobotMotionState)
 		{
 		case TRAJECTORY_RUNNING:
+			//logger().debug() << "AsservInsa TRAJECTORY_RUNNING" << logs::end;
+
 			//lock motionCommand
 			pthread_mutex_lock(&mtxMotionCommand);
 
@@ -359,38 +380,43 @@ void AsservInsa::execute()
 			//compute pwm for first motor
 			//	printf("motion.c : pid_Compute : ORDER 0 : %d current:%d\n", ord0,
 			//			motors[motionCommand.mcType][0].lastPos);
-			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-					ord0,
-					motors[motionCommand.mcType][0].lastPos,
-					dSpeed0);
+			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys, ord0, dSpeed0);
+//			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
+//					ord0,
+//					motors[motionCommand.mcType][0].lastPos,
+//					dSpeed0);
 			//	printf("motion.c : pid_Compute : ORDER 1 : %d current:%d\n", ord1,
 			//			motors[motionCommand.mcType][1].lastPos);
 			//compute pwm for second motor
-			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-					ord1,
-					motors[motionCommand.mcType][1].lastPos,
-					dSpeed1);
+			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys, ord1, dSpeed1);
+
+//			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
+//					ord1,
+//					motors[motionCommand.mcType][1].lastPos,
+//					dSpeed1);
 
 			//output pwm to motors
 			if (motionCommand.mcType == LEFT_RIGHT)
 			{
 				//	printf("motion.c : LEFT_RIGHT mode, pid result : %d %d \n",	pwm0, pwm1);
-				BOUND_INT(pwm0, maxPwmValue);
-				BOUND_INT(pwm1, maxPwmValue);
+				BOUND_INT(pwm0, maxPwmValue_);
+				BOUND_INT(pwm1, maxPwmValue_);
 				pwm0b = pwm0;
 				pwm1b = pwm1;
 				setPWM(pwm0b, pwm1b);
+
 			}
 			else if (motionCommand.mcType == ALPHA_DELTA)
 			{
 				// printf("motion.c : ALPHA_DELTA mode, pid result : %d %d \n", pwm0, pwm1);
 				pwm0b = pwm1 - pwm0;
-				BOUND_INT(pwm0b, maxPwmValue);
+				BOUND_INT(pwm0b, maxPwmValue_);
 
 				pwm1b = pwm1 + pwm0;
-				BOUND_INT(pwm1b, maxPwmValue);
+				BOUND_INT(pwm1b, maxPwmValue_);
 
 				setPWM(pwm0b, pwm1b);
+
 			}
 			/*
 			 #ifdef LOG_PID_APPENDER
@@ -402,6 +428,21 @@ void AsservInsa::execute()
 			 //logrobot.base().mlogger().debug() << "Motion.c p=" << periodNb << "\tdSpeed=" << dSpeed1 << "\tpwm=" << pwm1b << "\tord1=" << ord1 << utils::end;
 			 #endif
 			 */
+
+			logger().debug() << "execute dLeft="
+					<< dLeft
+					<< " dRight="
+					<< dRight
+					<< " dAlpha="
+					<< dAlpha
+					<< " dDelta="
+					<< dDelta
+					<< " pwm0b="
+					<< pwm0b
+					<< " pwm1b="
+					<< pwm1b
+					<< logs::end;
+
 			//test end of traj
 			if (fin0 && fin1)
 			{
@@ -420,24 +461,24 @@ void AsservInsa::execute()
 
 		case ASSISTED_HANDLING:
 		{
+			//logger().debug() << "AsservInsa ASSISTED_HANDLING" << logs::end;
 			//printf("motion_ITTask ASSISTED_HANDLING  \n");
 			dSpeed0 = dLeft;
 			dSpeed1 = dRight;
 			//compute pwm for first motor
-			//pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys, dLeft);
-			//pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys, dLeft, dSpeed0);
-			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-					0,
-					motors[motionCommand.mcType][0].lastPos,
-					dSpeed0);
+
+			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys, dLeft, dSpeed0);
+			/*pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
+			 0,
+			 motors[motionCommand.mcType][0].lastPos,
+			 dSpeed0);*/
 
 			//compute pwm for second motor
-			//pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys, dRight);
-			//pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys, dRight, dSpeed1);
-			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-					0,
-					motors[motionCommand.mcType][1].lastPos,
-					dSpeed1);
+			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys, dRight, dSpeed1);
+			/*pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
+			 0,
+			 motors[motionCommand.mcType][1].lastPos,
+			 dSpeed1);*/
 			printf("motion_ITTask ASSISTED_HANDLING  pwm0=%d pwm1=%d \n", pwm0, pwm1);
 			//write pwm in registers
 			setPWM(pwm0, pwm1);
@@ -446,11 +487,13 @@ void AsservInsa::execute()
 
 		case DISABLE_PID:
 		{
+			//logger().debug() << "AsservInsa DISABLE_PID" << logs::end;
 			//printf("motion_ITTask DISABLE_PID  \n");
 			break;
 		}
 		case FREE_MOTION:
 		{
+			//logger().debug() << "AsservInsa FREE_MOTION" << logs::end;
 			//printf("motion_ITTask FREE_MOTION  \n");
 			break;
 		}
@@ -460,18 +503,25 @@ void AsservInsa::execute()
 
 		long stopTime = currentTimeInMillis();
 		long duration = stopTime - startTime;
-		printf("duration = %l\n", duration);
+
+//		logger().debug() << "loopDelayInMillis= "
+//				<< loopDelayInMillis
+//				<< " stopTime="
+//				<< stopTime
+//				<< " startTime="
+//				<< startTime
+//				<< " task duration="
+//				<< duration
+//				<< logs::end;
+
 		if (duration < loopDelayInMillis && duration >= 0)
 		{
-			int d = 1000 * (loopDelayInMillis - duration);
-			usleep(d);
+			int t = 1000 * (loopDelayInMillis - duration);
+			usleep(t);
 		}
-
 	}
-#ifdef DEBUG_MOTION
-	printf("motion.c : motion_ITTask end exit()\n");
-#endif
 
+	logger().debug() << "motion_ITTask execute exit()" << logs::end;
 	/*
 	 #ifdef LOG_PID
 	 printf("closelog");
@@ -482,15 +532,12 @@ void AsservInsa::execute()
 	//return 0;
 }
 
-//Motion control main loop
-//implemented as an IT handler armed on a timer to provide
-//a constant and precise period between computation
-void AsservInsa::motion_InitTimer(int frequency)
+void AsservInsa::activate(bool a)
 {
-	loopDelayInMillis = 1000 / frequency;
-#ifdef DEBUG_MOTION
-	printf("motion.c : motion_InitTimer with pause of %ld us\n", loopDelayInMillis);
-#endif
+	activate_ = a;
+	if (!a)
+		setPWM(0, 0);
+
 }
 
 void AsservInsa::motion_StopTimer()
@@ -511,8 +558,15 @@ void AsservInsa::setPWM(int16 pwmLeft, int16 pwmRight)
 	printf("motion.c setPWM : left %d  right %d\n", pwmLeft, pwmRight);
 #endif
 
-	base_->motors().runMotorLeft(pwmLeft,0);
-	base_->motors().runMotorRight(pwmRight,0);
+	if (base_ != NULL)
+	{
+		base_->motors().runMotorLeft(pwmLeft, 0);
+		base_->motors().runMotorRight(pwmRight, 0);
+	}
+	else
+	{
+		logger().error() << "setPWM : Base is NULL !" << logs::end;
+	}
 
 }
 

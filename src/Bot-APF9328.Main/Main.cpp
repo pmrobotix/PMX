@@ -1,10 +1,14 @@
 #include <unistd.h>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 
 #include "../Bot-APF9328/APF9328LedBarTest.hpp"
 #include "../Bot-APF9328/APF9328RobotExtended.hpp"
+#include "../Common/ConsoleKeyInput.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
+#include "../Log/Logger.hpp"
 
 using namespace std;
 

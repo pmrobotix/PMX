@@ -14,8 +14,8 @@
 
 using namespace std;
 
-ConsoleManager::ConsoleManager() :
-		tests_()
+ConsoleManager::ConsoleManager()
+		: tests_()
 {
 }
 
@@ -24,37 +24,70 @@ void ConsoleManager::add(FunctionalTest * test)
 	this->tests_.push_back(test);
 }
 
-void ConsoleManager::displayMenuFunctionalTestsAndRun(Arguments *args) //char *argv0
+std::string * ConsoleManager::displayAvailableTests(std::string color, int selected)
 {
-	char cInput;
-	int lindex = 0;
-	std::string color = "\033[7;32m";
-	std::string default_console = "\033[0m";
+	//int lindex = 0;
+	//std::string default_console = "\033[0m";
+	std::string* tab = new std::string[tests_.size() + 1];
 
-	std::string tab[tests_.size() + 1];
-	ConsoleKeyInput::clearScreen();
-	ConsoleKeyInput::setPrintPos(1, 1);
 	//display unit tests
 	for (data_type::size_type i = 0; i < tests_.size(); i++)
 	{
 		std::cout << std::flush;
-		if (lindex == (int) i)
+		/*
+		 if (lindex == (int) i)
+		 std::cout << color << std::flush;
+		 else
+		 std::cout << default_console << std::flush;
+		 */
+		if ((int) i <= selected && color != "")
 			std::cout << color << std::flush;
 		else
-			std::cout << default_console << std::flush;
-
+			std::cout << "\033[0m" << std::flush;
 		std::cout << "  " << i + 1 << ". " << tests_[i]->name() << std::endl;
 		ostringstream out;
 		out << "  " << i + 1 << ". " << tests_[i]->name();
 		tab[i + 1] = out.str();
 	}
+	return tab;
+}
 
+void ConsoleManager::displayMenuFunctionalTestsAndRun(Arguments *args)
+{
+	char cInput;
+
+	ConsoleKeyInput::clearScreen();
+	ConsoleKeyInput::setPrintPos(1, 1);
+
+	std::string color = "\033[7;32m";
+	std::string default_console = "\033[0m";
+	int lindex = 0;
+
+	std::string *tab = displayAvailableTests(color, 0);
+	/*
+	 *
+	 std::string tab[tests_.size() + 1];
+	 //display unit tests
+	 for (data_type::size_type i = 0; i < tests_.size(); i++)
+	 {
+	 std::cout << std::flush;
+	 if (lindex == (int) i)
+	 std::cout << color << std::flush;
+	 else
+	 std::cout << default_console << std::flush;
+
+	 std::cout << "  " << i + 1 << ". " << tests_[i]->name() << std::endl;
+	 ostringstream out;
+	 out << "  " << i + 1 << ". " << tests_[i]->name();
+	 tab[i + 1] = out.str();
+	 }
+	 */
 	do
 	{
 		cInput = ConsoleKeyInput::mygetch();
 		switch (cInput)
 		{
-			case 65:
+		case 65:
 			//printf("Up arrow key!\n");
 			if (lindex > 0)
 			{
@@ -65,7 +98,7 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(Arguments *args) //char *a
 				std::cout << color << "> " << tab[lindex + 1] << std::flush;
 			}
 			break;
-			case 66:
+		case 66:
 			if (lindex < (int) tests_.size() - 1)
 			{
 				//printf("Down arrow key!\n");
@@ -83,10 +116,10 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(Arguments *args) //char *a
 			 case 68:
 			 printf("Left arrow key!\n");
 			 break;*/
-			case 10:
+		case 10:
 			//printf("Enter key!\n");
 			break;
-			case 127:
+		case 127:
 			//printf("BACK key!\n");
 			cout << default_console << endl;
 			exit(0);
