@@ -25,6 +25,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "APF9328RobotExtended", "console");
 	add(logs::Level::INFO, "APF9328LedBarTest", "console");
 	add(logs::Level::INFO, "APF9328State1", "console");
+	add(logs::Level::DEBUG, "Robot", "console");
 
 	add(logs::Level::INFO, "Svg4LegoEV3Robot", "legoEV3svg");
 	add(logs::Level::INFO, "Svg4APF9328Robot", "APF9328svg");

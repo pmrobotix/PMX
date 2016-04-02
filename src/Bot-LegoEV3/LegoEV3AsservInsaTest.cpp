@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void LegoEV3AsservInsaTest::run(Arguments *)
+void LegoEV3AsservInsaTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 
@@ -20,13 +20,18 @@ void LegoEV3AsservInsaTest::run(Arguments *)
 	long right;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-
 	robot.asserv().startMotionTimerAndOdo();
-	chrono.start();
-	robot.asserv().cc_move(100);
 
-	left = robot.asserv().base().encoders().getLeftEncoder();
-	right = robot.asserv().base().encoders().getRightEncoder();
+	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+				robot.asserv().pos_getY_mm(),
+				robot.asserv().pos_getTheta(),
+				LEGOEV3_SVG_POS_ROBOT);
+
+	chrono.start();
+	robot.asserv().cc_move(1000);
+
+	left = robot.asserv().base()->encoders().getLeftEncoder();
+	right = robot.asserv().base()->encoders().getRightEncoder();
 	logger().info() << "time= "
 			<< chrono.getElapsedTimeInMilliSec()
 			<< "ms ; left= "
@@ -41,6 +46,10 @@ void LegoEV3AsservInsaTest::run(Arguments *)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
+	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+				robot.asserv().pos_getY_mm(),
+				robot.asserv().pos_getTheta(),
+				LEGOEV3_SVG_POS_ROBOT);
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }

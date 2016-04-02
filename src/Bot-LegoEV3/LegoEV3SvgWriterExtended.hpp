@@ -24,7 +24,7 @@ public:
 	{
 	}
 
-	void writePosition(double x, double y, double angle, LegoEv3SvgSymbol symbol);
+	void writePosition(double x, double y, double a_rad, LegoEv3SvgSymbol symbol);
 
 };
 

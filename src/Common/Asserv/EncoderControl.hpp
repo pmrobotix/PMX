@@ -6,7 +6,7 @@
 
 class AAsservDriver;
 
-class EncoderControl: public AAsservElement
+class EncoderControl//: public AAsservElement
 {
 private:
 
@@ -26,7 +26,7 @@ public:
 	/*!
 	 * \brief Constructor.
 	 */
-	EncoderControl(Asserv & asserv);
+	EncoderControl(); //Asserv & asserv
 
 	/*!
 	 * \brief Destructor.

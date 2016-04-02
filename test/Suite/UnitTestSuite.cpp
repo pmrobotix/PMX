@@ -36,7 +36,7 @@ void UnitTestSuite::run()
 		{
 			test->suite();
 			succeed = appender->messages().size() == 0;
-		} catch (Exception* exception)
+		} catch (logs::Exception* exception)
 		{
 			std::ostringstream oss;
 			oss << "Le test à généré une exception: " << exception->what();

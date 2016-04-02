@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void LegoEV3TiretteTest::run(Arguments *)
+void LegoEV3TiretteTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

@@ -40,7 +40,17 @@ void AsservInsa::odo_Integration(float dTheta, float dV)
 		Theta -= M_2PI;
 	else if (Theta <= -M_PI)
 		Theta += M_2PI;
+	/*
+	 newSinTheta = sinTheta + cosTheta * (dTheta);
+	 sinTheta = newSinTheta;
+	 //compute precise values for cos theta
+	 cosTheta = cosf(Theta);
 
+	 newCosTheta = cosTheta - sinTheta * (dTheta);
+	 cosTheta = newCosTheta;
+	 //compute precise values for sin theta
+	 sinTheta = sinf(Theta);
+	 */
 	tempo = odoPeriodNb++ & 0x7F;
 
 	//optimisation of the cos/sin computation :
@@ -72,6 +82,7 @@ void AsservInsa::odo_Integration(float dTheta, float dV)
 		cosTheta = newCosTheta;
 		sinTheta = newSinTheta;
 	}
+
 	//printf("odo_Integration %f,%f %f\n",xTops,yTops,Theta);
 	xTops += dV * cosTheta;
 	yTops += dV * sinTheta;
@@ -80,7 +91,7 @@ void AsservInsa::odo_Integration(float dTheta, float dV)
 
 void AsservInsa::odo_SetPosition(float x, float y, float theta)
 {
-	printf("odo_SetPosition %f,%f %f\n", x, y, theta);
+	//printf("odo_SetPosition %f,%f %f\n", x, y, theta);
 	//convert position from meters to ticks
 	xTops = x / valueVTops;
 	yTops = y / valueVTops;

@@ -1,8 +1,9 @@
 #ifndef EV3_LEDDRIVER_HPP_
 #define EV3_LEDDRIVER_HPP_
 
+#include <sys/types.h>
+
 #include "../Common/Action.Driver/ALedDriver.hpp"
-#include "../Common/Utils/Macro.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 class LedDriver: public ALedDriver

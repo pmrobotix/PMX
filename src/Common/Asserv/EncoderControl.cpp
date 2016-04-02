@@ -1,12 +1,11 @@
 #include "EncoderControl.hpp"
 
 #include "../Asserv.Driver/AAsservDriver.hpp"
-#include "AAsservElement.hpp"
+//#include "AAsservElement.hpp"
 
 using namespace std;
 
-EncoderControl::EncoderControl(Asserv & asserv) :
-		AAsservElement(asserv)
+EncoderControl::EncoderControl()//Asserv & asserv) :	AAsservElement(asserv)
 {
 	asservdriver = AAsservDriver::create();
 }

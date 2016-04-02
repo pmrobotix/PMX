@@ -1,10 +1,10 @@
 #ifndef SIMULAUNCHER_LEDDRIVER_HPP_
 #define SIMULAUNCHER_LEDDRIVER_HPP_
 
+#include <sys/types.h>
 #include <string>
 
 #include "../Common/Action.Driver/ALedDriver.hpp"
-#include "../Common/Utils/Macro.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../SimuLauncher.Main/ISDLTask.hpp"
 

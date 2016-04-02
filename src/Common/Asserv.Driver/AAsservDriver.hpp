@@ -1,5 +1,5 @@
-#ifndef AASSERVDRIVER_HPP_
-#define AASSERVDRIVER_HPP_
+#ifndef COMMON_ASSERVDRIVER_AASSERVDRIVER_HPP_
+#define COMMON_ASSERVDRIVER_AASSERVDRIVER_HPP_
 
 class AAsservDriver
 {
@@ -25,7 +25,7 @@ public:
 	{
 	}
 
-	virtual void setMotorLeftPosition(int power, long ticks ) = 0;
+	virtual void setMotorLeftPosition(int power, long ticks) = 0;
 	virtual void setMotorRightPosition(int power, long ticks) = 0;
 
 	virtual void setMotorLeftPower(int power, int time_ms) = 0;

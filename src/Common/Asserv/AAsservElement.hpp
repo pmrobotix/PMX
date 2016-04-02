@@ -3,8 +3,8 @@
  * \brief Définition de la classe AAsservElement.
  */
 
-#ifndef AASSERVELEMENT_HPP_
-#define AASSERVELEMENT_HPP_
+#ifndef COMMON_AASSERVELEMENT_HPP_
+#define COMMON_AASSERVELEMENT_HPP_
 
 // Prédéclaration de la classe Asserv.
 /*!

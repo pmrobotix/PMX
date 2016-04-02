@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void LegoEV3ButtonBarTest::run(Arguments *)
+void LegoEV3ButtonBarTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

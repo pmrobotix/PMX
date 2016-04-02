@@ -127,7 +127,7 @@ public:
 	/*!
 	 * \brief Start the robot (console for tests or main program)..
 	 */
-	virtual void begin();
+	virtual void begin(int argc, char** argv);
 
 	virtual void stop();
 

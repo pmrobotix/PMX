@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 	robot.parseConsoleArgs(argc, argv);
 
 	//start the Robot (functional tests or match)
-	robot.begin();
+	robot.begin(argc, argv);
 
 	sleep(1); //TODO wait and verify end of logger ?
 	//cout << "End BigPMX." << endl;

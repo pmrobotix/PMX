@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void LegoEV3SoundBarTest::run(Arguments *)
+void LegoEV3SoundBarTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

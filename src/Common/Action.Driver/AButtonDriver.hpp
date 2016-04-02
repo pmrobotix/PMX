@@ -1,8 +1,6 @@
 #ifndef ABUTTONDRIVER_HPP_
 #define ABUTTONDRIVER_HPP_
 
-#include "../Utils/Macro.hpp"
-
 /*!
  * \brief Enumération des touches.
  */
@@ -34,7 +32,6 @@ public:
 	 *\brief process.
 	 */
 	//virtual bool process(ButtonTouch button) = 0;
-
 	/*!
 	 * \brief Destructor.
 	 */

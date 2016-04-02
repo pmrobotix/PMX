@@ -23,13 +23,13 @@
 // Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
+#include <stddef.h>
+
+#include "../../Log/Logger.hpp"
 #include "../Asserv/EncoderControl.hpp"
 #include "../Asserv/MovingBase.hpp"
 #include "AsservInsa.hpp"
 
-int32 lastLeft = 0;
-int32 lastRight = 0;
-int useExternalEncoders = 0;
 
 void AsservInsa::encoder_Init()
 {
@@ -37,6 +37,8 @@ void AsservInsa::encoder_Init()
 	{
 		base_->extEncoders().reset();
 		base_->encoders().reset();
+		lastRight_ = 0;
+		lastLeft_ = 0;
 	}
 	else
 	{
@@ -50,29 +52,29 @@ void AsservInsa::encoder_SetDist(float dist)
 	distEncoder = dist / valueVTops;
 }
 
-void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta)
+void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta, int32 *left, int32 *right)
 {
-	int32 left = 0;
-	int32 right = 0;
+	//int32 left = 0;
+	//int32 right = 0;
 	if (base_ != NULL)
 	{
 		//read encoder
-		if (useExternalEncoders)
+		if (useExternalEncoders_)
 		{
-			left = base_->extEncoders().getLeftEncoder();
+			*left = base_->extEncoders().getLeftEncoder();
 		}
 		else
 		{
-			left = base_->encoders().getLeftEncoder();
+			*left = base_->encoders().getLeftEncoder();
 		}
 
-		if (useExternalEncoders)
+		if (useExternalEncoders_)
 		{
-			right = base_->extEncoders().getRightEncoder();
+			*right = base_->extEncoders().getRightEncoder();
 		}
 		else
 		{
-			right = base_->encoders().getRightEncoder();
+			*right = base_->encoders().getRightEncoder();
 		}
 
 	}
@@ -82,18 +84,18 @@ void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, 
 	}
 
 #ifdef DEBUG_ENCODER
-	printf("encoder.c encoder_ReadSensor l:%d r:%d\n", left, right);
+	printf("encoder.c encoder_ReadSensor l:%d r:%d\n", *left, *right);
 #endif
 
 //convert units and save position
-	left *= leftEncoderRatio;
-	right *= rightEncoderRatio;
+	*left *= leftEncoderRatio;
+	*right *= rightEncoderRatio;
 
 //compute delta for left wheel
 	//if (abs(left - lastLeft) < 1000000) //ajout de chaff
 	//{
-	*dLeft = left - lastLeft;
-	lastLeft = left;
+	*dLeft = *left - lastLeft_;
+	lastLeft_ = *left;
 	//}
 	//else
 	//{
@@ -105,8 +107,8 @@ void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, 
 //compute delta for right wheel
 	//if (abs(right - lastRight) < 1000000)
 	//{
-	//*dRight = right - lastRight;
-	//lastRight = right;
+	*dRight = *right - lastRight_;
+	lastRight_ = *right;
 	//}
 	//else
 	//{
@@ -119,9 +121,6 @@ void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, 
 	*dAlpha = (*dRight - *dLeft) / 2;
 	*dDelta = (*dRight + *dLeft) / 2;
 
-#ifdef DEBUG_ENCODER
-	printf("encoder.c encoder_ReadSensor l:%d r:%d alpha:%d delta:%d\n", *dLeft, *dRight, *dAlpha, *dDelta);
-	printf("%f %f\n", cc_getX(), cc_getY());
-#endif
 }
+
 

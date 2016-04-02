@@ -8,11 +8,11 @@
 #ifndef SIMULAUNCHER_MAIN_SIMLEDBAR_HPP_
 #define SIMULAUNCHER_MAIN_SIMLEDBAR_HPP_
 
+#include <sys/types.h>
 #include <SDL2/SDL_rect.h>
 #include <string>
 
 #include "../Common/Action.Driver/ALedDriver.hpp"
-#include "../Common/Utils/Macro.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "LTexture.hpp"
 #include "Panel.hpp"

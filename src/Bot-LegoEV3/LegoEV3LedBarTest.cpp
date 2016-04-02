@@ -11,8 +11,10 @@
 
 using namespace std;
 
-void LegoEV3LedBarTest::run(Arguments *)
+void LegoEV3LedBarTest::run(int argc, char** argv)
 {
+	configureConsoleArgs(argc, argv);
+
 	logger().info() << "Executing - " << this->desc() << logs::end;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -64,4 +66,5 @@ void LegoEV3LedBarTest::run(Arguments *)
 
 	logger().info() << "Happy End." << logs::end;
 }
+
 

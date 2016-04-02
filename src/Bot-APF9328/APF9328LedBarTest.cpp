@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void APF9328LedBarTest::run(Arguments *)
+void APF9328LedBarTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

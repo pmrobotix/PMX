@@ -239,28 +239,28 @@ int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse)
 	float cmd = ferror * val->conf.kP;
 	float pwm = cmd - (val->conf.kD * vitesse);
 
-	logger().debug() << "pid_ComputeRcva error="
-			<< ferror
-			<< " cmd="
-			<< cmd
-			<< " vitesse="
-			<< vitesse
-			<< " pwm="
-			<< pwm
-			<< " vtopsPerTicks="
-			<< vtopsPerTicks
-			<< " val->conf.kP="
-			<< val->conf.kP
-			<< " val->conf.kD="
-			<< val->conf.kD
-
-			<< logs::end;
+//	logger().debug() << "pid_ComputeRcva error="
+//			<< ferror
+//			<< " cmd="
+//			<< cmd
+//			<< " vitesse="
+//			<< vitesse
+//			<< " pwm="
+//			<< pwm
+//			<< " vtopsPerTicks="
+//			<< vtopsPerTicks
+//			<< " val->conf.kP="
+//			<< val->conf.kP
+//			<< " val->conf.kD="
+//			<< val->conf.kD
+//
+//			<< logs::end;
 
 // 	#if(LEVEL_PID <= DEBUG)
 // 		writeDebugStreamLine("cpid.c : during error=%d vitesse=%d pwm=%d", error, vitesse, pwm);
 // 	#endif
 
-	pwm /= 256; //2048 ou 1024 ou 256??
+	pwm /= 256.0f; //2048 ou 1024 ou 256??
 
 // 	#if(LEVEL_PID <= DEBUG)
 // 		writeDebugStreamLine("cpid.c : after  error=%d vitesse=%d pwm=%d", error, vitesse, pwm);

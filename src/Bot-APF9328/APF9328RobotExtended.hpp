@@ -32,7 +32,7 @@ public:
 		return r_svg;
 	}
 
-	void begin();
+	void begin(int argc, char** argv);
 
 	void stop();
 

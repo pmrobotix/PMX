@@ -13,33 +13,32 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 
 	//on ecrase les versions par default avec la version extended
 	actions_ = new LegoEV3ActionsExtended(id_);
-	delete(actions_default);
+	delete (actions_default);
 	actions_default = actions_;
 
 	asserv_ = new LegoEV3AsservExtended(id_);
-	delete(asserv_default);
+	delete (asserv_default);
 	asserv_default = asserv_;
-
-
 
 	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 
 	psvg_ = new LegoEV3SvgWriterExtended(id_);
 	psvg_->beginHeader();
+
+
 }
 
 void LegoEV3RobotExtended::stop()
 {
-
 	Robot::stop();
 	this->actions().stop(); //extra devices
-	this->asserv().stop();
+
 	psvg_->endHeader();
 }
 
-void LegoEV3RobotExtended::begin()
+void LegoEV3RobotExtended::begin(int argc, char** argv)
 {
-	Robot::begin();
+	Robot::begin(argc, argv);
 	logger().debug() << "LegoEV3RobotExtended::start" << logs::end;
 
 	//specific match case and strategies

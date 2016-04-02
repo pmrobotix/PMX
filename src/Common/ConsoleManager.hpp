@@ -10,7 +10,7 @@
 #include <vector>
 
 #include "FunctionalTest.hpp"
-#include "Utils/Macro.hpp"
+
 
 /*!
  * \brief Classe de gestion de l'ensemble des tests de fonctionnement du
@@ -55,7 +55,7 @@ public:
 	/*!
 	 * \brief Affiche un menu de sélection des tests.
 	 */
-	void displayMenuFunctionalTestsAndRun(Arguments *args);
+	void displayMenuFunctionalTestsAndRun(int argc, char** argv);
 
 
 	std::string * displayAvailableTests(std::string color = "\033[0m", int selected = -1);
@@ -67,7 +67,7 @@ public:
 	 * \brief Détermine un test a lancer en fonction des paramètres
 	 * de la ligne de commande.
 	 */
-	void run(uint nTest, Arguments *args);
+	void run(uint nTest, int argc, char** argv);
 
 protected:
 
@@ -78,7 +78,7 @@ protected:
 	 * \param args
 	 *        Tableau d'argument.
 	 */
-	void executeTest(uint nTest, Arguments *args);
+	void executeTest(uint nTest, int argc, char** argv);
 
 };
 

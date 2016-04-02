@@ -2,6 +2,8 @@
 #define SIMU_ASSERVDRIVER_HPP_
 
 #include <unistd.h>
+#include <cstdio>
+#include <cstdlib>
 #include <thread>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
@@ -13,14 +15,24 @@ using namespace std;
 
 class AsservDriver: public AAsservDriver, utils::Mutex
 {
-private:
 
+public:
 	/*!
 	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriver(SIMU).
 	 */
 	static inline const logs::Logger & logger()
 	{
 		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
+		return instance;
+	}
+
+private:
+	/*!
+	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverMemory(SIMU).
+	 */
+	static inline const logs::Logger & loggerM()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriverMemory.SIMU");
 		return instance;
 	}
 
@@ -56,8 +68,8 @@ public:
 	void computeCounterL();
 	void computeCounterR();
 
-	virtual void setMotorLeftPosition(int power, long internal_ticks);
-	virtual void setMotorRightPosition(int power, long internal_ticks);
+	virtual void setMotorLeftPosition(int power, long ticks);
+	virtual void setMotorRightPosition(int power, long ticks);
 
 	virtual void setMotorLeftPower(int power, int time);
 	virtual void setMotorRightPower(int power, int time);
@@ -120,18 +132,27 @@ public:
 		 << timems
 		 << ")"
 		 << std::endl;*/
-
-		//TODO asserv_->computeCounterL(); ??? à la place de le faire en high level ?
-		//usleep(timems * 1000);
-		utils::Chronometer chrono_member1left;
-		chrono_member1left.start();
-		while (chrono_member1left.getElapsedTimeInMilliSec() < time_ms)
+		float lastspeed = asserv_->leftSpeed_;
+		if (time_ms > 0) //stop using thread
 		{
-			asserv_->computeCounterL();
-			usleep(1000);
-		}
+			utils::Chronometer chrono_member1left;
+			chrono_member1left.start();
+			while (chrono_member1left.getElapsedTimeInMilliSec() < time_ms)
+			{
+				asserv_->computeCounterL();
+				usleep(500);
+			}
 
-		asserv_->stopMotorLeft();
+			asserv_->stopMotorLeft();
+		}
+		else
+		{
+			while (asserv_->leftSpeed_ != lastspeed)
+			{
+				asserv_->computeCounterL();
+				usleep(500);
+			}
+		}
 	}
 	void member2right(const char *arg1, int time_ms)
 	{
@@ -142,27 +163,79 @@ public:
 		 << timems
 		 << ")"
 		 << std::endl;*/
-		usleep(time_ms * 1000);
-		asserv_->stopMotorRight();
+
+		float lastspeed = asserv_->rightSpeed_;
+		if (time_ms > 0) //stop using thread
+		{
+			utils::Chronometer chrono_member1right;
+			chrono_member1right.start();
+			while (chrono_member1right.getElapsedTimeInMilliSec() < time_ms)
+			{
+				asserv_->computeCounterR();
+				usleep(500);
+			}
+			asserv_->stopMotorRight();
+		}
+		else
+		{
+			while (asserv_->rightSpeed_ != lastspeed)
+			{
+				asserv_->computeCounterR();
+				usleep(500);
+			}
+		}
 	}
 
-	void positionLeft(const char *arg1, long internal_ticksToDo)
+	void positionLeft(const char *arg1, long internal_ticksToDo) //tick encoder à atteindre
 	{
-		//stop when internal ticks is achieved..
-		while (asserv_->getLeftInternalEncoder() < internal_ticksToDo)
-		{
-			asserv_->computeCounterL();
-			usleep(1000);
-		}
+		//float lastspeed = ;
+		printf("positionLeft internal_ticksToDo=%ld   lastspeed=%f\n", internal_ticksToDo, asserv_->leftSpeed_);
+
+		long ticks = std::abs(asserv_->getLeftInternalEncoder());
+
+		if (asserv_->leftSpeed_ > 0)
+			//stop when internal ticks is achieved..
+			while (ticks < internal_ticksToDo)
+			{
+				asserv_->computeCounterL();
+				ticks = std::abs(asserv_->getLeftInternalEncoder());
+				//usleep(5);
+			}
+		else
+			while (ticks > internal_ticksToDo)
+			{
+				asserv_->computeCounterL();
+				ticks= std::abs(asserv_->getLeftInternalEncoder());
+				//usleep(5);
+			}
+
+		printf("AFTER positionLeft internal_ticksToDo=%ld   ticks=%d\n", internal_ticksToDo, ticks);
 		asserv_->stopMotorLeft();
 	}
-	void positionRight(const char *arg1, long internal_ticks)
+	void positionRight(const char *arg1, long internal_ticksToDo)
 	{
-		//stop when internal ticks is achieved..
-		while (asserv_->getRightInternalEncoder() < internal_ticks)
-		{
-			asserv_->computeCounterR();
-		}
+
+		printf("positionRight internal_ticksToDo=%ld lastspeed=%f\n", internal_ticksToDo, asserv_->rightSpeed_);
+
+		long ticks = std::abs(asserv_->getRightInternalEncoder());
+		if (asserv_->rightSpeed_ > 0)
+			//stop when internal ticks is achieved..
+			while (ticks < internal_ticksToDo)
+			{
+				asserv_->computeCounterR();
+				ticks = std::abs(asserv_->getRightInternalEncoder());
+				//usleep(5);
+			}
+		else
+			while (ticks > internal_ticksToDo)
+			{
+				asserv_->computeCounterR();
+				ticks = std::abs(asserv_->getRightInternalEncoder());
+				//usleep(5);
+			}
+
+		printf("AFTER positionRight internal_ticksToDo=%ld   ticks=%d\n", internal_ticksToDo, ticks);
+
 		asserv_->stopMotorRight();
 	}
 

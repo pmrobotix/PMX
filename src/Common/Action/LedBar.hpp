@@ -8,7 +8,6 @@
 #include "../../Thread/Mutex.hpp"
 #include "../Action.Driver/ALedDriver.hpp"
 #include "../Utils/Chronometer.hpp"
-#include "../Utils/Macro.hpp"
 #include "AActionsElement.hpp"
 #include "IAction.hpp"
 

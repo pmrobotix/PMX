@@ -1,11 +1,10 @@
-#ifndef ASSERV_HPP_
-#define ASSERV_HPP_
+#ifndef COMMON_ASSERV_HPP_
+#define COMMON_ASSERV_HPP_
 
-#include <stdlib.h>
+#include <string>
 
 #include "../../Log/LoggerFactory.hpp"
 #include "../Asserv.Insa/AsservInsa.hpp"
-#include "MovingBase.hpp"
 
 /*!
  * Asservissement of the robot.It contains default elements.
@@ -26,9 +25,9 @@ protected:
 	/*!
 	 * \brief motorisation = motors + encoders
 	 */
-	MovingBase movingBase_;
+	MovingBase * pMovingBase_;
 
-	AsservInsa asservinsa_;
+	AsservInsa * pAsservInsa_;
 
 	bool ignoreRearCollision_;
 	bool ignoreFrontCollision_;
@@ -39,15 +38,7 @@ public:
 	 * \brief Constructor.
 	 *
 	 */
-	Asserv(std::string botId)
-			: movingBase_(botId, *this), asservinsa_()
-	{
-
-		//asservinsa_.setMovingBase(&movingBase_); //doit etre surchargé
-
-		ignoreRearCollision_ = false;
-		ignoreFrontCollision_ = false;
-	}
+	Asserv(std::string botId);
 
 	/*!
 	 * \brief Destructor.
@@ -60,10 +51,7 @@ public:
 	 * \brief return objet movingBase.
 	 * \return movingBase_.
 	 */
-	MovingBase & base()
-	{
-		return movingBase_;
-	}
+	MovingBase * base();
 
 	virtual void startMotionTimerAndOdo();
 
@@ -74,15 +62,18 @@ public:
 	// if distance <0, move backward
 	TRAJ_STATE cc_move(float distance_mm);
 
+	void findPidAD(float degrees, int mm, int sec);
+
+	void configureAlphaPID(float Ap, float Ai, float Ad);
+
+	void configureDeltaPID(float Dp, float Di, float Dd);
+
 	float pos_getX_mm();
 	float pos_getY_mm();
 	// angle in radian
 	float pos_getTheta();
 	// angle in degrees
 	float pos_getThetaInDegree();
-
-
-	void stop();
 
 };
 

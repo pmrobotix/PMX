@@ -37,12 +37,12 @@ void AsservInsa::initMotor(MOTOR *motor) {
 	}
 }
 
-void AsservInsa::motors_ConfigAllIMax(int32 imax) {
+//void AsservInsa::motors_ConfigAllIMax(int32 imax) {
 //	int i, j;
 //	for (i = 0; i < MAX_MOTION_CONTROL_TYPE_NUMBER; i++)
 //		for (j = 0; j < MOTOR_PER_TYPE; j++)
 //			pid_ConfigIMax(motors[i][j].PIDSys, imax);
-}
+//}
 
 void AsservInsa::updateMotor(MOTOR *motor, int32 delta) {
 	//update position

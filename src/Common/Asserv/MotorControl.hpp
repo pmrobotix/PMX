@@ -4,11 +4,14 @@
 #define COMMON_ASSERV_MOTORCONTROL_HPP_
 
 #include "../../Log/LoggerFactory.hpp"
-#include "AAsservElement.hpp"
+//#include "AAsservElement.hpp"
+//#include "Asserv.hpp"
 
 class AAsservDriver;
 
-class MotorControl: public AAsservElement
+
+
+class MotorControl//: public AAsservElement
 {
 private:
 
@@ -28,7 +31,7 @@ public:
 	/*!
 	 * \brief Constructor.
 	 */
-	MotorControl(Asserv & asserv);
+	MotorControl();//Asserv & asserv
 
 	/*!
 	 * \brief Destructor.

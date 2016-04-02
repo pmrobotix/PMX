@@ -13,8 +13,8 @@ void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
 	add("legoEV3svg", new SvgAppender("./resources/svg/LegoEV3Robot.svg"));
-	//add("memory", new MemoryAppender());
-	//add("file", new FileAppender("log.txt"));
+	add("memory", new MemoryAppender());
+	add("file", new FileAppender("log.txt"));
 
 	add(logs::Level::ERROR, "", "console");
 
@@ -24,21 +24,28 @@ void logs::LoggerFactory::initialize()
 
 	//SVG
 	add(logs::Level::INFO, "Svg4LegoEV3Robot", "legoEV3svg");
+	add(logs::Level::INFO, "Svg4AsservInsa", "legoEV3svg");
+
+	//File
+	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
+
 
 	//TESTS
 	add(logs::Level::INFO, "LegoEV3LedBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3ButtonBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3SoundBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3TiretteTest", "console");
-	add(logs::Level::INFO, "LegoEV3MovingBaseTest", "console");
+	add(logs::Level::DEBUG, "LegoEV3MovingBaseTest", "console");
 	add(logs::Level::INFO, "LegoEV3AsservInsaTest", "console");
+	add(logs::Level::DEBUG, "LegoEV3FindPIDTest", "console");
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
 	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
 	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
 	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
-	add(logs::Level::DEBUG, "AsservDriver.SIMU", "console");
+	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
+	add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
 
 	//DRIVERS EV3
 	add(logs::Level::INFO, "LedDriver.EV3", "console");

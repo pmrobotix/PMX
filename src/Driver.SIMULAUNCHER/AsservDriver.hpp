@@ -1,9 +1,12 @@
 #ifndef SIMULAUNCHER_ASSERVDRIVER_HPP_
 #define SIMULAUNCHER_ASSERVDRIVER_HPP_
 
+#include <sys/types.h>
+
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
+
 
 using namespace std;
 

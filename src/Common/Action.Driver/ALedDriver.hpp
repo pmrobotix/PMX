@@ -1,9 +1,9 @@
 #ifndef ALEDDRIVER_HPP_
 #define ALEDDRIVER_HPP_
 
+#include <sys/types.h>
 #include <string>
 
-#include "../Utils/Macro.hpp"
 
 /*!
  * \brief Enumeration of the different color of leds.

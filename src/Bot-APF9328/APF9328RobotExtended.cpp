@@ -30,9 +30,9 @@ void APF9328RobotExtended::stop()
 	psvg_->endHeader();
 }
 
-void APF9328RobotExtended::begin()
+void APF9328RobotExtended::begin(int argc, char** argv)
 {
-	Robot::begin();
+	Robot::begin(argc, argv);
 
 	logger().info() << "APF9328RobotExtended::start" << logs::end;
 

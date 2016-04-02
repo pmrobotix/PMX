@@ -1,8 +1,6 @@
 #ifndef ASWITCHDRIVER_HPP_
 #define ASWITCHDRIVER_HPP_
 
-#include "../Utils/Macro.hpp"
-
 
 class ASwitchDriver
 {

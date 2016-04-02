@@ -41,7 +41,9 @@ public:
 	/*!
 	 * \brief Execute le test.
 	 */
-	virtual void run(Arguments *args);
+	virtual void run(int argc, char** argv);
+
+
 };
 
 #endif

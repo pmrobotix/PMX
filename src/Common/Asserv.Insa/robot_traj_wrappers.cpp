@@ -29,6 +29,13 @@
 #include "AsservInsa.hpp"
 
 
+TRAJ_STATE AsservInsa::motion_findPidAD(float angle_rad, float meters, int sec)
+{
+	checkRobotCommand(&cmd);
+	motion_StepOrderAD(&cmd, convertDistTovTops(angle_rad * distEncoderMeter / 2.0f), (int32)(meters / valueVTops), sec);
+	path_LaunchTrajectory(&cmd);
+	return path_WaitEndOfTrajectory();
+}
 
 TRAJ_STATE AsservInsa::motion_DoLine(float dist_meters)
 {

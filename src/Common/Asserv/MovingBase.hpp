@@ -1,16 +1,18 @@
-#ifndef MOVINGBASE_HPP_
-#define MOVINGBASE_HPP_
+#ifndef COMMON_ASSERV_MOVINGBASE_HPP_
+#define COMMON_ASSERV_MOVINGBASE_HPP_
 
-#include <string.h>
+#include <string>
 
 #include "../../Log/LoggerFactory.hpp"
 #include "EncoderControl.hpp"
 #include "MotorControl.hpp"
 
+//#include "AAsservElement.hpp"
+
 /*
  * Base roulante du robot
  */
-class MovingBase: public AAsservElement
+class MovingBase //: public AAsservElement
 {
 private:
 
@@ -27,6 +29,11 @@ private:
 
 	float diam_mm;  //en mm
 
+	/*
+	 * current distance for Moving.
+	 */
+	long distTicks_;
+
 	/*!
 	 * \brief Left and Right Motor Encoders.
 	 */
@@ -42,11 +49,6 @@ private:
 	 */
 	MotorControl motors_;
 
-	/*
-	 * current distance for Moving.
-	 */
-	long distTicks_;
-
 	bool collisionDetected_;
 
 public:
@@ -54,7 +56,7 @@ public:
 	/*!
 	 * \brief Constructor.
 	 */
-	MovingBase(std::string botId, Asserv & asserv);
+	MovingBase(std::string botId); //, Asserv * asserv
 
 	/*!
 	 * \brief Destructor.
@@ -88,6 +90,7 @@ public:
 	inline MotorControl & motors()
 	{
 		return motors_;
+
 	}
 
 	inline void setCollisionDetected(bool b)

@@ -45,16 +45,16 @@ public:
 
 	void stop();
 
-	void begin();
+	void begin(int argc, char** argv);
 
-private:
+
 
 	static inline const logs::Logger & logger()
 	{
 		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3RobotExtended");
 		return instance;
 	}
-
+private:
 	LegoEV3ActionsExtended * actions_;
 
 	LegoEV3AsservExtended * asserv_;
@@ -62,6 +62,7 @@ private:
 	LegoEV3SvgWriterExtended * psvg_;
 
 	LegoEV3RobotExtended();
+
 };
 
 #endif

@@ -7,11 +7,9 @@
 
 #include "Arguments.hpp"
 
-#include <cstdio>
+#include <sys/types.h>
 #include <iterator>
 #include <utility>
-
-#include "Utils/Macro.hpp"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -22,9 +20,8 @@ using namespace std;
 Arguments::Option Arguments::Option::Empty(_T('\0'));
 tstring Arguments::UnknownArgument(_T("<UnKnOwN>"));
 
-Arguments::Arguments(tstring strCommandName, tstring strDescription, tstring strOptionmarkers) :
-		m_strCommandName(strCommandName), m_strDescription(strDescription), m_strOptionmarkers(
-				strOptionmarkers)
+Arguments::Arguments(tstring strCommandName, tstring strDescription, tstring strOptionmarkers)
+		: m_strCommandName(strCommandName), m_strDescription(strDescription), m_strOptionmarkers(strOptionmarkers)
 {
 }
 
@@ -34,7 +31,8 @@ Arguments::~Arguments()
 
 bool Arguments::parse(int argc, TCHAR *argv[])
 {
-	if (m_strCommandName.empty()) m_strCommandName = argv[0];
+	if (m_strCommandName.empty())
+		m_strCommandName = argv[0];
 
 	uint nArg = 0;
 
@@ -62,25 +60,26 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 				i++;
 				{
 					uint nNonOptionalArgs = 0;
-
 					{
 						for (ArgVector::iterator itOptArg = it->second.m_vArguments.begin();
 								itOptArg != it->second.m_vArguments.end(); itOptArg++)
 						{
-							if (!itOptArg->m_bOptional) nNonOptionalArgs++;
+							if (!itOptArg->m_bOptional)
+								nNonOptionalArgs++;
 						}
 					}
 
 					for (uint nOptArg = 0; nOptArg < it->second.m_vArguments.size(); i++, nOptArg++)
 					{
-						if (i >= argc
-								|| m_strOptionmarkers.find(tstring(argv[i]).substr(0, 1))
-										!= tstring::npos)
+						if (i >= argc || m_strOptionmarkers.find(tstring(argv[i]).substr(0, 1)) != tstring::npos)
 						{
 							if (nOptArg < nNonOptionalArgs)
 							{
-								cerr << m_strCommandName << " error: Too few arguments for option "
-										<< strArgument << "." << endl;
+								cerr << m_strCommandName
+										<< " error: Too few arguments for option "
+										<< strArgument
+										<< "."
+										<< endl;
 								usage();
 								return false;
 							}
@@ -98,14 +97,17 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 		}
 		else	// ...oder Argument
 		{
+
 			if (nArg >= m_vArguments.size())
 			{
-				cerr << m_strCommandName << " error: Too much arguments. " << endl;
-				usage();
-				return false;
-			}
+				//DO Nothing - let many arguments for further functional tests
 
-			m_vArguments[nArg++].m_strValue = strArgument;
+				//cerr << m_strCommandName << " error: Too much arguments. " << endl;
+				//usage();
+				//return false;
+			}
+			else
+				m_vArguments[nArg++].m_strValue = strArgument;
 		}
 	}
 
@@ -114,7 +116,8 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 		{
 			for (ArgVector::iterator it = m_vArguments.begin(); it != m_vArguments.end(); it++)
 			{
-				if (!it->m_bOptional) nNonOptionalArgs++;
+				if (!it->m_bOptional)
+					nNonOptionalArgs++;
 			}
 		}
 
@@ -125,6 +128,7 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 			return false;
 		}
 	}
+
 	return true;
 }
 
@@ -151,47 +155,53 @@ bool Arguments::usage()
 	{
 		cerr << " [" << m_strOptionmarkers[0] << it->second.getName();
 
-		for (ArgVector::iterator itArg = it->second.m_vArguments.begin();
-				itArg != it->second.m_vArguments.end(); itArg++)
+		for (ArgVector::iterator itArg = it->second.m_vArguments.begin(); itArg != it->second.m_vArguments.end();
+				itArg++)
 		{
-			if (itArg->m_bOptional) cerr << " [" << itArg->m_strName << "]";
-			else cerr << " " << itArg->m_strName;
+			if (itArg->m_bOptional)
+				cerr << " [" << itArg->m_strName << "]";
+			else
+				cerr << " " << itArg->m_strName;
 		}
 		cerr << "]";
 	}
 
 	for (ArgVector::iterator itArg = m_vArguments.begin(); itArg != m_vArguments.end(); itArg++)
 	{
-		if (itArg->m_bOptional) cerr << " [" << itArg->m_strName << "]";
-		else cerr << " " << itArg->m_strName;
+		if (itArg->m_bOptional)
+			cerr << " [" << itArg->m_strName << "]";
+		else
+			cerr << " " << itArg->m_strName;
 	}
 
 	cerr << endl;
 
-	if (!m_mOptions.empty()) cerr << endl << "Options:" << endl;
+	if (!m_mOptions.empty())
+		cerr << endl << "Options:" << endl;
 
 	for (OptionMap::iterator it = m_mOptions.begin(); it != m_mOptions.end(); it++)
 	{
 		cerr << "\t-" << it->second.getName() << "\t  " << it->second.m_strDescription << endl;
 
-		for (ArgVector::iterator itArg = it->second.m_vArguments.begin();
-				itArg != it->second.m_vArguments.end(); itArg++)
+		for (ArgVector::iterator itArg = it->second.m_vArguments.begin(); itArg != it->second.m_vArguments.end();
+				itArg++)
 		{
 			cerr << "\t " << itArg->m_strName << "\t= " << itArg->m_strDescription << endl;
 
-			if (itArg->m_bOptional) cerr << "\t\t  optional argument (default='"
-					<< itArg->m_strDefault << "')" << endl;
+			if (itArg->m_bOptional)
+				cerr << "\t\t  optional argument (default='" << itArg->m_strDefault << "')" << endl;
 		}
 	}
 
-	if (!m_vArguments.empty()) cerr << endl << "Arguments:" << endl;
+	if (!m_vArguments.empty())
+		cerr << endl << "Arguments:" << endl;
 
 	for (ArgVector::iterator itArg = m_vArguments.begin(); itArg != m_vArguments.end(); itArg++)
 	{
 		cerr << "\t" << itArg->m_strName << "\t= " << itArg->m_strDescription << endl;
 
-		if (itArg->m_bOptional) cerr << "\t\t  optional argument (default='" << itArg->m_strDefault
-				<< "')" << endl;
+		if (itArg->m_bOptional)
+			cerr << "\t\t  optional argument (default='" << itArg->m_strDefault << "')" << endl;
 	}
 
 	cerr << endl;
@@ -201,8 +211,8 @@ bool Arguments::usage()
 	return true;
 }
 
-Arguments::Option::Option(TCHAR chName, tstring strDescription) :
-		m_chName(chName), m_strDescription(strDescription), m_bSet(false)
+Arguments::Option::Option(TCHAR chName, tstring strDescription)
+		: m_chName(chName), m_strDescription(strDescription), m_bSet(false)
 {
 }
 
@@ -218,9 +228,8 @@ bool Arguments::Option::addArgument(tstring strName, tstring strDescription, tst
 	return true;
 }
 
-Arguments::Argument::Argument(tstring strName, tstring strDescription, tstring strDefault) :
-		m_strName(strName), m_strDescription(strDescription), m_strValue(strDefault), m_strDefault(
-				strDefault), m_bOptional(!strDefault.empty())
+Arguments::Argument::Argument(tstring strName, tstring strDescription, tstring strDefault)
+		: m_strName(strName), m_strDescription(strDescription), m_strValue(strDefault), m_strDefault(strDefault), m_bOptional(!strDefault.empty())
 {
 
 }
@@ -229,8 +238,10 @@ bool Arguments::isOption(TCHAR chOptionName)
 {
 	OptionMap::iterator it = m_mOptions.find(chOptionName);
 
-	if (it == m_mOptions.end()) return false;
-	else return it->second.m_bSet;
+	if (it == m_mOptions.end())
+		return false;
+	else
+		return it->second.m_bSet;
 }
 
 Arguments::Option::operator bool()
@@ -252,7 +263,8 @@ tstring &Arguments::operator[](tstring strArgumentName)
 {
 	for (ArgVector::iterator it = m_vArguments.begin(); it != m_vArguments.end(); it++)
 	{
-		if (it->m_strName == strArgumentName) return it->m_strValue;
+		if (it->m_strName == strArgumentName)
+			return it->m_strValue;
 	}
 
 	return UnknownArgument;
@@ -272,7 +284,8 @@ tstring &Arguments::Option::operator[](tstring strArgumentName)
 {
 	for (ArgVector::iterator it = m_vArguments.begin(); it != m_vArguments.end(); it++)
 	{
-		if (it->m_strName == strArgumentName) return it->m_strValue;
+		if (it->m_strName == strArgumentName)
+			return it->m_strValue;
 	}
 
 	return UnknownArgument;
@@ -282,8 +295,10 @@ Arguments::Option &Arguments::operator[](TCHAR chOptionName)
 {
 	OptionMap::iterator it = m_mOptions.find(chOptionName);
 
-	if (it == m_mOptions.end()) return Option::Empty;
-	else return it->second;
+	if (it == m_mOptions.end())
+		return Option::Empty;
+	else
+		return it->second;
 }
 
 tstring Arguments::Option::getName()

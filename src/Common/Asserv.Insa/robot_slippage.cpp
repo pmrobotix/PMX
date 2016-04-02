@@ -27,17 +27,13 @@
 
 void AsservInsa::slippage_Init()
 {
-	int i;
-
-	for (i = 0; i < MOTOR_PER_TYPE; i++)
+	for (int i = 0; i < MOTOR_PER_TYPE; i++)
 		resetSlippage(i);
-
 }
 
 void AsservInsa::resetSlippage(int motor)
 {
-	int i;
-	for (i = 0; i < MAX_PERIOD; i++)
+	for (int i = 0; i < MAX_PERIOD; i++)
 		values[motor][i] = 0;
 
 	slippage[motor] = 0;

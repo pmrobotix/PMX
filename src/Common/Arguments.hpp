@@ -2,6 +2,7 @@
 //
 // (C) 2001 NOVACOM GmbH, Berlin, www.novacom.net
 // Author: Patrick Hoffmann, 03/21/2001
+// http://www.codeproject.com/Articles/1242/Managing-argc-and-argv-with-STL-in-a-simple-way
 //
 //////////////////////////////////////////////////////////////////////
 

@@ -22,6 +22,9 @@ ConsoleManager::ConsoleManager()
 void ConsoleManager::add(FunctionalTest * test)
 {
 	this->tests_.push_back(test);
+
+	//add args from func test.
+	//test->configureConsoleArgs();
 }
 
 std::string * ConsoleManager::displayAvailableTests(std::string color, int selected)
@@ -52,7 +55,7 @@ std::string * ConsoleManager::displayAvailableTests(std::string color, int selec
 	return tab;
 }
 
-void ConsoleManager::displayMenuFunctionalTestsAndRun(Arguments *args)
+void ConsoleManager::displayMenuFunctionalTestsAndRun(int argc, char** argv)
 {
 	char cInput;
 
@@ -82,6 +85,7 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(Arguments *args)
 	 tab[i + 1] = out.str();
 	 }
 	 */
+
 	do
 	{
 		cInput = ConsoleKeyInput::mygetch();
@@ -132,7 +136,7 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(Arguments *args)
 	cout << default_console << flush;
 	ConsoleKeyInput::clearScreen();
 
-	executeTest(lindex + 1, args);
+	executeTest(lindex + 1, argc, argv);
 }
 
 string ConsoleManager::displayMenuFirstArgu()
@@ -193,17 +197,17 @@ string ConsoleManager::displayMenuFirstArgu()
 	return select;
 }
 
-void ConsoleManager::run(uint nTest, Arguments *args)
+void ConsoleManager::run(uint nTest, int argc, char** argv)
 {
-	executeTest(nTest, args);
+	executeTest(nTest, argc, argv);
 }
 
-void ConsoleManager::executeTest(uint nTest, Arguments *args)
+void ConsoleManager::executeTest(uint nTest, int argc, char** argv)
 {
 
 	if (nTest > 0 && nTest <= tests_.size())
 	{
-		tests_[nTest - 1]->run(args);
+		tests_[nTest - 1]->run(argc, argv);
 	}
 	else
 	{

@@ -6,7 +6,6 @@
 
 #include "../Action.Driver/ASwitchDriver.hpp"
 
-#include "../Utils/Macro.hpp"
 
 class Tirette: public AActionsElement
 {

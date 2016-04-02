@@ -4,8 +4,7 @@
 
 using namespace std;
 
-MotorControl::MotorControl(Asserv & asserv) :
-		AAsservElement(asserv)
+MotorControl::MotorControl()//Asserv & asserv) : AAsservElement(asserv)
 {
 	asservdriver = AAsservDriver::create();
 
@@ -32,15 +31,14 @@ void MotorControl::stopMotors()
 	asservdriver->stopMotorRight();
 }
 
-//number of ticks to add
-void MotorControl::setMotorLeftPosition(int power, long ticks)
+void MotorControl::setMotorLeftPosition(int power, long ticks) //tick à parcourir
 {
-	asservdriver->setMotorLeftPosition(power, ticks);
+	asservdriver->setMotorLeftPosition(power, ticks); //tick à parcourir
 }
 
-void MotorControl::setMotorRightPosition(int power, long ticks)
+void MotorControl::setMotorRightPosition(int power, long ticks) //tick à parcourir
 {
-	asservdriver->setMotorRightPosition(power, ticks);
+	asservdriver->setMotorRightPosition(power, ticks); //tick à parcourir
 }
 
 

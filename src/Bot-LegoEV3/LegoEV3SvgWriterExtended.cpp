@@ -28,7 +28,7 @@ LegoEV3SvgWriterExtended::LegoEV3SvgWriterExtended(std::string botId)
 }
 
 //angle en radian
-void LegoEV3SvgWriterExtended::writePosition(double x, double y, double angle, LegoEv3SvgSymbol svgcolor)
+void LegoEV3SvgWriterExtended::writePosition(double x, double y, double angle_rad, LegoEv3SvgSymbol svgcolor)
 {
 	if (logger().isActive(logs::Level::INFO))
 	{
@@ -44,7 +44,7 @@ void LegoEV3SvgWriterExtended::writePosition(double x, double y, double angle, L
 					<< "\" y=\""
 					<< -y - 150
 					<< "\" xlink:href=\"#bot-legoev3\" transform=\"rotate("
-					<< -((angle * 180) / M_PI)
+					<< -((angle_rad * 180) / M_PI)
 					<< ","
 					<< x
 					<< ","
@@ -56,8 +56,8 @@ void LegoEV3SvgWriterExtended::writePosition(double x, double y, double angle, L
 		default:
 			// inversion du y pour affichage dans le bon sens dans le SVG
 			logger().info() << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\"1\" fill=\"green\" />" << logs::end;
-			delta_y = 25.0 * sin(angle);
-			delta_x = 25.0 * cos(angle);
+			delta_y = 25.0 * sin(angle_rad);
+			delta_x = 25.0 * cos(angle_rad);
 			logger().info() << "<line x1=\""
 					<< x
 					<< "\" y1=\""

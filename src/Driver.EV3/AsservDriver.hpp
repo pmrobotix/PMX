@@ -1,6 +1,8 @@
 #ifndef EV3_ASSERVDRIVER_HPP_
 #define EV3_ASSERVDRIVER_HPP_
 
+#include <sys/types.h>
+
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "ev3dev.h"

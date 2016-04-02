@@ -1,8 +1,9 @@
-#ifndef COMMON_ASSERV_ASSERVINSA_HPP_
-#define COMMON_ASSERV_ASSERVINSA_HPP_
+#ifndef COMMON_ASSERVINSA_ASSERVINSA_HPP_
+#define COMMON_ASSERVINSA_ASSERVINSA_HPP_
 
 #include <pthread.h>
 #include <semaphore.h>
+#include <sys/types.h>
 
 #include "../../Log/LoggerFactory.hpp"
 #include "../../Thread/Thread.hpp"
@@ -277,9 +278,29 @@ private:
 		return instance;
 	}
 
+	/*!
+	 * \brief Retourne le \ref Logger svg associé à la classe \ref AsservInsa.
+	 */
+	static inline const logs::Logger & loggerSvg()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("Svg4AsservInsa");
+		return instance;
+	}
+
+	/*!
+		 * \brief Retourne le \ref Logger file associé à la classe \ref AsservInsa.
+		 */
+		static inline const logs::Logger & loggerFile()
+		{
+			static const logs::Logger & instance = logs::LoggerFactory::logger("logFileAsservInsa");
+			return instance;
+		}
+
 	int stop_motion_ITTask;
 
 	bool activate_;
+
+	int useExternalEncoders_;int32 lastLeft_;int32 lastRight_;
 
 	//encoder.c
 	//ratio vTops/ticks for left encoder
@@ -348,8 +369,10 @@ private:
 	MOTION_STATE RobotMotionState;
 
 	//Base roulante de ce robot
-	MovingBase *base_;
+
 	MOTOR motors[MAX_MOTION_CONTROL_TYPE_NUMBER][MOTOR_PER_TYPE];
+
+	MovingBase *base_;
 
 //---clothoid
 
@@ -509,7 +532,7 @@ private:
 	//! initialisation of the motor structure
 	void initMotor(MOTOR *motor);
 	//config iMax for all motors
-	void motors_ConfigAllIMax(int32 imax);
+	//void motors_ConfigAllIMax(int32 imax);
 	//! update motor position and store value for speed computation
 	void updateMotor(MOTOR *motor, int32 delta);
 	//! Compute current motor speed
@@ -659,9 +682,11 @@ public:
 	//! \param dRight right motor motion
 	//! \param dAlpha alpha motor motion
 	//! \param dDelta delta motor motion
-	void encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta);
+	void encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta, int32 *left, int32 *right);
 
 	//---robot_traj_wrappers
+
+	TRAJ_STATE motion_findPidAD(float angle_rad, float meters, int sec);
 
 	//! This module provide higher level control on the motion control module
 	//! AI and strategy software can use this primitives directly

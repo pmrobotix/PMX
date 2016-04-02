@@ -30,8 +30,8 @@ protected:
 	 * \param name
 	 *        Nom du test.
 	 */
-	FunctionalTest(const std::string & name, const std::string & desc) :
-			name_(name), description_(desc)
+	FunctionalTest(const std::string & name, const std::string & desc)
+			: name_(name), description_(desc)
 	{
 	}
 
@@ -63,7 +63,11 @@ public:
 	/*!
 	 * Méthode exécutant le test associé.
 	 */
-	virtual void run(Arguments *args) = 0;
+	virtual void run(int argc, char** argv) = 0;
+
+	virtual void configureConsoleArgs(int , char** )
+	{
+	}
 };
 
 #endif

@@ -24,11 +24,14 @@
 /******************************************************************************/
 
 #include <pthread.h>
-#include <stdio.h>
 #include <sys/time.h>
 #include <unistd.h>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 
+#include "../../Log/Logger.hpp"
+#include "../Asserv/MotorControl.hpp"
 #include "../Asserv/MovingBase.hpp"
 #include "AsservInsa.hpp"
 
@@ -38,25 +41,25 @@ AsservInsa::AsservInsa()
 {
 	activate_ = false;
 	stop_motion_ITTask = false;
-	//SampleTime = 1; //... millisec //TODO
 
 	leftEncoderRatio = 0;
-	//ratio vTops/ticks for right encoder
-	rightEncoderRatio = 0;
-	//distance between both encoder wheels in vTops
-	distEncoder = 0;
+	rightEncoderRatio = 0; //ratio vTops/ticks for right encoder
 
-	//distance between both encoder wheels in meters
-	distEncoderMeter = 0.0;
+	useExternalEncoders_ = 0;
 
-	//vTops is a virtual measure distance to avoid floating point computation
-	valueVTops = 0.0;
+	lastLeft_ = 0;
+	lastRight_ = 0;
+
+	distEncoder = 0; //distance between both encoder wheels in vTops
+	distEncoderMeter = 0.0; //distance between both encoder wheels in meters
+
+	valueVTops = 0.0; //vTops is a virtual measure distance to avoid floating point computation
 
 	loopDelayInMillis = 0;
 
-	defaultSamplingFreq = 10; //1 fois par second pour eviter la division par zero.
+	defaultSamplingFreq = 100; //10 fois par second par defaut (pour eviter la division par zero).
 
-	vtopsPerTicks = 100; //1000 ?
+	vtopsPerTicks = 1000; //1000 ?  ; 1 => 1 vtops = 1 ticks
 
 	maxPwmValue_ = 0;
 
@@ -79,8 +82,8 @@ AsservInsa::AsservInsa()
 	pos_theta = 0.0;
 
 	odoPeriodNb = 0;
-	//nb of period since the beginning
-	periodNb = 0;
+
+	periodNb = 0; //nb of period since the beginning
 
 	trajState = TRAJ_OK;
 
@@ -111,15 +114,15 @@ long AsservInsa::currentTimeInMillis()
 
 void AsservInsa::motion_Init()
 {
-	logger().debug() << "motion_Init started" << logs::end;
+	//logger().debug() << "motion_Init started" << logs::end;
 
 	int i, j;
 	RobotMotionState = DISABLE_PID;
+
 	periodNb = 0;
 
-	initPWM();
-
 	pid_Init();
+
 	//motor initialisation
 	for (i = 0; i < MAX_MOTION_CONTROL_TYPE_NUMBER; i++)
 	{
@@ -263,44 +266,68 @@ void AsservInsa::motion_SetCurrentCommand(RobotCommand *cmd)
 //a constant and precise period between computation
 void AsservInsa::execute()
 {
-
-	/*
-	 #ifdef LOG_PID_APPENDER
-	 //pmx::Robot &logrobot = pmx::Robot::instance();
-	 #endif
-	 */
-//static int32 left, right;
-//static int32 alpha, delta;
 	int32 dLeft, dRight; //static
 	int32 dAlpha, dDelta; //static
-
-//static int32 dLeft2, dRight2;
-//static int32 dAlpha2, dDelta2;
+	int32 left, right;
 
 	int32 ord0, ord1; //static
 	bool fin0 = false, fin1 = false; //static
 	int32 pwm0, pwm1; //static
 	int32 pwm0b, pwm1b; //static
 
-	logger().debug() << "AsservInsa execute started; stop_motion_ITTask=" << stop_motion_ITTask << logs::end;
+	float delta_y = 0.0;
+	float delta_x = 0.0;
+
+	float x_mm = 0.0;
+	float y_mm = 0.0;
+	float angle_rad = 0.0;
+
+	long startTime = currentTimeInMillis();
+	long currentTime = startTime;
+	logger().debug() << "execute started; loopDelayInMillis=" << loopDelayInMillis << " ms" << logs::end;
+
+	loggerFile().debug() << "NbPeriod, currentTime, Lencoder, Rencoder, speed0, speed1, pwm0, pwm1, ord0, ord1" << logs::end;
 
 	while (!stop_motion_ITTask)
 	{
+		currentTime = currentTimeInMillis();
+		//logger().debug() << "AsservInsa execute currentTime=" << currentTime << logs::end;
 
-		long startTime = currentTimeInMillis();
-		//logger().debug() << "AsservInsa execute startTime=" << startTime << logs::end;
 
-		periodNb++;
 
-		encoder_ReadSensor(&dLeft, &dRight, &dAlpha, &dDelta);
+		//TODO use external or internl encoders !!
+		encoder_ReadSensor(&dLeft, &dRight, &dAlpha, &dDelta, &left, &right);
 		odo_Integration(2 * dAlpha / (float) distEncoder, (float) dDelta);
+		RobotPosition p = odo_GetPosition();
 
-		//odo_GetPosition();
 		//update all motors data
 		updateMotor(&motors[LEFT_RIGHT][LEFT_MOTOR], dLeft);
 		updateMotor(&motors[LEFT_RIGHT][RIGHT_MOTOR], dRight);
 		updateMotor(&motors[ALPHA_DELTA][ALPHA_MOTOR], dAlpha);
 		updateMotor(&motors[ALPHA_DELTA][DELTA_MOTOR], dDelta);
+
+		//TODO accéder au robot.svg pour utiliser un symbol ???
+		x_mm = p.x * 1000.0;
+		y_mm = p.y * 1000.0;
+		angle_rad = p.theta;
+		loggerSvg().info() << "<circle cx=\""
+				<< x_mm
+				<< "\" cy=\""
+				<< -y_mm
+				<< "\" r=\"1\" fill=\"blue\" />"
+				<< logs::end;
+		delta_y = 25.0 * sin(angle_rad);
+		delta_x = 25.0 * cos(angle_rad);
+		loggerSvg().info() << "<line x1=\""
+				<< x_mm
+				<< "\" y1=\""
+				<< -y_mm
+				<< "\" x2=\""
+				<< x_mm + delta_x
+				<< "\" y2=\""
+				<< -y_mm - delta_y
+				<< "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+				<< logs::end;
 
 		float dSpeed0 = 0;
 		float dSpeed1 = 0;
@@ -308,7 +335,7 @@ void AsservInsa::execute()
 		switch (RobotMotionState)
 		{
 		case TRAJECTORY_RUNNING:
-			//logger().debug() << "AsservInsa TRAJECTORY_RUNNING" << logs::end;
+			//logger().debug() << "execute TRAJECTORY_RUNNING" << logs::end;
 
 			//lock motionCommand
 			pthread_mutex_lock(&mtxMotionCommand);
@@ -372,11 +399,7 @@ void AsservInsa::execute()
 			 motors[motionCommand.mcType][1].lastPos, p.x, p.y, p.theta);
 			 #endif
 			 */
-			/*
-			 #ifdef LOG_SVG_APPENDER
-			 apf_svg_writePosition(p.x, p.y, p.theta);
-			 #endif
-			 */
+
 			//compute pwm for first motor
 			//	printf("motion.c : pid_Compute : ORDER 0 : %d current:%d\n", ord0,
 			//			motors[motionCommand.mcType][0].lastPos);
@@ -418,30 +441,36 @@ void AsservInsa::execute()
 				setPWM(pwm0b, pwm1b);
 
 			}
-			/*
-			 #ifdef LOG_PID_APPENDER
 
-			 apf_log(currentTimeInMillis(), dSpeed0, dSpeed1, pwm0b, pwm1b, ord0, ord1,
-			 motors[motionCommand.mcType][0].lastPos, motors[motionCommand.mcType][1].lastPos, p.x, p.y,
-			 p.theta);
+//			logger().debug() << "execute dLeft="
+//					<< dLeft
+//					<< " dRight="
+//					<< dRight
+//					<< " dAlpha="
+//					<< dAlpha
+//					<< " dDelta="
+//					<< dDelta
+//					<< " pwm0b="
+//					<< pwm0b
+//					<< " pwm1b="
+//					<< pwm1b
+//					<< logs::end;
 
-			 //logrobot.base().mlogger().debug() << "Motion.c p=" << periodNb << "\tdSpeed=" << dSpeed1 << "\tpwm=" << pwm1b << "\tord1=" << ord1 << utils::end;
-			 #endif
-			 */
+			loggerFile().debug() << periodNb
+					<< ", " << currentTime - startTime
+					<< ", " << left / leftEncoderRatio
+					<< ", " << right / rightEncoderRatio
 
-			logger().debug() << "execute dLeft="
-					<< dLeft
-					<< " dRight="
-					<< dRight
-					<< " dAlpha="
-					<< dAlpha
-					<< " dDelta="
-					<< dDelta
-					<< " pwm0b="
-					<< pwm0b
-					<< " pwm1b="
-					<< pwm1b
-					<< logs::end;
+					<< ", " << dSpeed0 / leftEncoderRatio
+					<< ", " << dSpeed1 / rightEncoderRatio
+					<< ", " << pwm0
+					<< ", " << pwm1
+
+					<< ", " << ord0 / leftEncoderRatio
+					<< ", " << ord1 / rightEncoderRatio
+
+
+			<< logs::end;
 
 			//test end of traj
 			if (fin0 && fin1)
@@ -502,14 +531,14 @@ void AsservInsa::execute()
 		};
 
 		long stopTime = currentTimeInMillis();
-		long duration = stopTime - startTime;
+		long duration = stopTime - currentTime;
 
 //		logger().debug() << "loopDelayInMillis= "
 //				<< loopDelayInMillis
 //				<< " stopTime="
 //				<< stopTime
-//				<< " startTime="
-//				<< startTime
+//				<< " currentTime="
+//				<< currentTime
 //				<< " task duration="
 //				<< duration
 //				<< logs::end;
@@ -521,7 +550,7 @@ void AsservInsa::execute()
 		}
 	}
 
-	logger().debug() << "motion_ITTask execute exit()" << logs::end;
+	//logger().debug() << "motion_ITTask execute exit()" << logs::end;
 	/*
 	 #ifdef LOG_PID
 	 printf("closelog");
@@ -530,6 +559,8 @@ void AsservInsa::execute()
 	 #endif*/
 //exit(2);
 	//return 0;
+
+	periodNb++;
 }
 
 void AsservInsa::activate(bool a)
@@ -554,9 +585,7 @@ void AsservInsa::initPWM()
 
 void AsservInsa::setPWM(int16 pwmLeft, int16 pwmRight)
 {
-#ifdef DEBUG_MOTION
-	printf("motion.c setPWM : left %d  right %d\n", pwmLeft, pwmRight);
-#endif
+	//logger().debug() << "setPWM left=" << pwmLeft << " right=" << pwmRight << logs::end;
 
 	if (base_ != NULL)
 	{

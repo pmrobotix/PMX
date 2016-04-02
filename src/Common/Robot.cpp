@@ -47,6 +47,7 @@ void Robot::configureDefaultConsoleArgs()
 
 void Robot::parseConsoleArgs(int argc, char** argv)
 {
+
 	if (!cArgs_.parse(argc, argv))
 	{
 		logger().error() << "Error parsing" << logs::end;
@@ -63,45 +64,49 @@ void Robot::parseConsoleArgs(int argc, char** argv)
 	}
 }
 
-void Robot::begin()
+void Robot::begin(int argc, char** argv)
 {
 	int num = -1;
 	string select = "-";
 	string color = "-";
-
 
 	if (cArgs_["type"] == "0")
 	{
 		//display all functional tests
 		cmanager_.displayAvailableTests("", -1);
 
-		//------------- Pour debug
-		//pause s'il n'y a pas tous les elements pour garder le log d'erreur
-		char cInput;
-		Robot::logger().info() << "Press Enter key to continue ..." << logs::end;
-		//cout << "Press Enter key to continue ..." << endl;
-		//sleep(1);
-		do
+		if (!cArgs_['s'])
 		{
-			cInput = ConsoleKeyInput::mygetch();
-			switch (cInput)
+			//------------- Pour debug
+			//pause s'il n'y a pas tous les elements pour garder le log d'erreur
+			char cInput;
+			Robot::logger().info() << "Press Enter key to continue ..." << logs::end;
+			//cout << "Press Enter key to continue ..." << endl;
+			//sleep(1);
+			do
 			{
+				cInput = ConsoleKeyInput::mygetch();
+				switch (cInput)
+				{
 
-			case 10:
-				//printf("Enter key!\n");
-				break;
-			case 127:
-				cout << "Exit !\n" << endl;
-				//cout << default_console << endl;
-				exit(0);
-				break;
-			}
-			usleep(1000);
-		} while (cInput != 10);
-		//---------------fin Pour debug
+				case 10:
+					//printf("Enter key!\n");
+					break;
+				case 127:
+					cout << "Exit !\n" << endl;
+					//cout << default_console << endl;
+					exit(0);
+					break;
+				}
+				usleep(1000);
+			} while (cInput != 10);
+			//---------------fin Pour debug
+		}
 	}
-
+	logger().debug() << "" << logs::end;
+	logger().debug() << "" << logs::end;
 	logger().debug() << "type = " << cArgs_["type"] << logs::end;
+
 	logger().debug() << "Option c set "
 			<< (int) cArgs_['c']
 			<< ", color = "
@@ -154,19 +159,20 @@ void Robot::begin()
 		if (num > 0)
 		{
 			//execute defined test
-			cmanager_.run(num, &cArgs_);
+			//cmanager_.run(num, &cArgs_);
+			cmanager_.run(num, argc, argv);
 		}
 		else
 		{
 			//ask param
-			cmanager_.displayMenuFunctionalTestsAndRun(&cArgs_);
+			cmanager_.displayMenuFunctionalTestsAndRun(argc, argv);
 		}
 	}
 }
 
 void Robot::stop()
 {
-	//TODO stop robot
+	this->asserv_default->stopMotionTimerAndOdo();
 
 }
 

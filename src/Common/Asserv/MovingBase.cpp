@@ -12,8 +12,9 @@ using namespace std;
 /*!
  * \brief Constructor.
  */
-MovingBase::MovingBase(std::string botId, Asserv & asserv)
-		: AAsservElement(asserv), entraxe_m(0.145), diam_mm(31.7), encoders_(asserv), extEncoders_(asserv), motors_(asserv), distTicks_(0)
+MovingBase::MovingBase(std::string botId)
+		: entraxe_m(0.145), diam_mm(31.7), distTicks_(0), encoders_(), extEncoders_(), motors_()
+
 //TODO Fichier de configuration pour distinction entre robot dans le simulateur + remonter info sur extended + ajouter info encoder
 {
 	collisionDetected_ = false;

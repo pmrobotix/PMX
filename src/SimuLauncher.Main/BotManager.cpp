@@ -28,8 +28,7 @@ int threadLegoEV3RobotExtended(void* data)
 
 	LegoEV3RobotExtended &robotlegoev3 = LegoEV3RobotExtended::instance();
 
-	botm->logger().debug() << "Starting threadLegoEV3RobotExtended... " << botm->start()
-			<< logs::end;
+	botm->logger().debug() << "Starting threadLegoEV3RobotExtended... " << botm->start() << logs::end;
 
 	while (!botm->start())
 	{
@@ -39,12 +38,26 @@ int threadLegoEV3RobotExtended(void* data)
 	botm->logger().debug() << "Running threadLegoEV3RobotExtended " << botm->start() << logs::end;
 
 	//add specific tests for this robot
-	robotlegoev3.getConsoleManager().add(new LegoEV3LedBarTest());
-	Arguments &args = robotlegoev3.getArgs();
-	args["type"] = "m";
+	//robotlegoev3.getConsoleManager().add(new LegoEV3LedBarTest());
+	/*
+	 Arguments &args = robotlegoev3.getArgs();
+
+	 args['c'].set(true);
+	 args['c']["color"].empty(); // = "green";
+
+	 args['s'].set(true);
+	 args["type"] = "tt";*/
+
+	char *ptest[4];
+	ptest[0] = "LegoEV3";
+	ptest[1] = "m";
+	ptest[2] = "-c";
+	ptest[3] = "green";
+	ptest[4] = "-s";
+	robotlegoev3.parseConsoleArgs(4, ptest);
 
 	//launch automate
-	robotlegoev3.begin();
+	robotlegoev3.begin(0, 0);
 
 	while (!botm->stop())
 	{
@@ -62,8 +75,7 @@ int threadAPF9328RobotExtended(void* data)
 
 	APF9328RobotExtended &robotapf = APF9328RobotExtended::instance();
 
-	botm->logger().info() << "Starting threadAPF9328RobotExtended... " << botm->start()
-			<< logs::end;
+	botm->logger().info() << "Starting threadAPF9328RobotExtended... " << botm->start() << logs::end;
 	while (!botm->start())
 	{
 		usleep(100000);
@@ -85,33 +97,59 @@ int threadLedBarLegoEV3(void* data)
 
 	//add specific tests for this robot
 	robotlegoev3.getConsoleManager().add(new LegoEV3LedBarTest());
-	{
-		Arguments &args = robotlegoev3.getArgs();
-		args["type"] = "t";
-		args['n'].set(true);
-		args['n']["num"] = "1"; //LegoEV3LedBarTest
-	}
+
+	/*
+	 Arguments &args = robotlegoev3.getArgs();
+	 args["type"] = "t";
+	 args['n'].set(true);
+	 args['n']["num"] = "1"; //LegoEV3LedBarTest
+
+	 args['c'].set(true);
+	 args['c']["color"] = "green";
+
+	 args['s'].set(true);
+	 */
+//		char *ptest[7];
+//		ptest[0] = "LegoEV3";
+//		ptest[1] = "t";
+//		ptest[2] = "-n";
+//		ptest[3] = "1";
+//		ptest[4] = "-s";
+//		ptest[5] = "-c";
+//		ptest[6] = "green";
+	char *ptest[] =
+	{ "LegoEV3", "t", "-n", "1", "-s", "-c", "green", NULL };
+	robotlegoev3.parseConsoleArgs(7, ptest);
 
 	//launch automate
-	robotlegoev3.begin();
+	robotlegoev3.begin(7, ptest);
 
 	return 0;
 }
 
 int threadLedBarAPF(void* data)
 {
+
 	BotManager* botm = (BotManager*) data;
 	APF9328RobotExtended &robotapf = APF9328RobotExtended::instance();
 
 	robotapf.getConsoleManager().add(new APF9328LedBarTest());
-	{
-		Arguments &args = robotapf.getArgs();
-		args["type"] = "t";
-		args['n'].set(true);
-		args['n']["num"] = "1"; //APF9328LedBarTest
-	}
+
+	//		 Arguments &args = robotapf.getArgs();
+	//		 args["type"] = "t";
+	//		 args['n'].set(true);
+	//		 args['n']["num"] = "1"; //APF9328LedBarTest
+	//
+	//		 args['c'].set(true);
+	//		 args['c']["color"] = "green";
+	//
+	//		 args['s'].set(true);
+
+	char *ptest[] =
+	{ "APF9328", "t", "-n", "1", "-s", "-c", "green", NULL };
+	robotapf.parseConsoleArgs(7, ptest);
 	//launch automate
-	robotapf.begin();
+	robotapf.begin(7, ptest);
 
 	return 0;
 }
@@ -146,19 +184,16 @@ BotManager::~BotManager()
 void BotManager::launchRobotThreads()
 {
 	SDLTool::checkThread(__PRETTY_FUNCTION__);
-	//Run the threads with different robots
-	idthread = SDL_CreateThread(&threadLegoEV3RobotExtended, "threadLegoEV3RobotExtended",
-			(void*) this);
+//Run the threads with different robots
+	idthread = SDL_CreateThread(&threadLegoEV3RobotExtended, "threadLegoEV3RobotExtended", (void*) this);
 
-	idthread1 = SDL_CreateThread(&threadAPF9328RobotExtended, "threadAPF9328RobotExtended",
-			(void*) this);
+	idthread1 = SDL_CreateThread(&threadAPF9328RobotExtended, "threadAPF9328RobotExtended", (void*) this);
 }
 
 void BotManager::launchLedBarTest()
 {
 	SDLTool::checkThread(__PRETTY_FUNCTION__);
-	idthreadLedBarLegoEV3 = SDL_CreateThread(&threadLedBarLegoEV3, "threadLedBarLegoEV3",
-			(void*) this);
+	idthreadLedBarLegoEV3 = SDL_CreateThread(&threadLedBarLegoEV3, "threadLedBarLegoEV3", (void*) this);
 
 	idthreadLedBarAPF = SDL_CreateThread(&threadLedBarAPF, "threadLedBarAPF", (void*) this);
 
