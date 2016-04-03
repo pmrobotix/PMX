@@ -4,7 +4,6 @@
 #include "MovingBase.hpp"
 
 Asserv::Asserv(std::string botId)
-//: movingbase_(botId, *this), asservinsa_()
 {
 	pMovingBase_ = new MovingBase(botId);
 
@@ -22,21 +21,7 @@ MovingBase * Asserv::base()
 
 void Asserv::startMotionTimerAndOdo() //todo à surcharger
 {
-	/*
-	 asservinsa_.encoder_SetResolution(1000, 1000, 200);
-	 asservinsa_.motion_SetDefaultSpeed(0.1);
-	 asservinsa_.motion_SetDefaultAccel(0.1);
-	 asservinsa_.motion_SetDefaultDecel(0.1);
 
-	 asservinsa_.motion_setMaxPwmValue(128);
-	 asservinsa_.motion_Init();
-	 asservinsa_.motion_FreeMotion();
-	 asservinsa_.motion_configureAlphaPID(300.0, 0.0, 0.0);
-	 asservinsa_.motion_configureDeltaPID(300.0, 0.0, 0.0);
-	 asservinsa_.motion_configureLeftPID(10.0, 0.0, 0.0);
-	 asservinsa_.motion_configureRightPID(10.0, 0.0, 0.0);
-	 asservinsa_.motion_SetSamplingFrequency(100);
-	 */
 }
 
 void Asserv::freeMotion()
@@ -62,13 +47,11 @@ TRAJ_STATE Asserv::cc_move(float distance_mm)
 		ignoreFrontCollision_ = true;
 	}
 
-	//RobotCommand* cmd = (RobotCommand*) malloc(sizeof(RobotCommand));
 	float meters = distance_mm / 1000.0f;
 
-	logger().debug() << "motion_GetDefaultSpeed=" << pAsservInsa_->motion_GetDefaultSpeed() << logs::end;
+	logger().debug() << "motion_GetDefaultVmax=" << pAsservInsa_->motion_GetDefaultVmax() << logs::end;
 
 	return pAsservInsa_->motion_DoLine(meters);
-
 }
 
 void Asserv::configureAlphaPID(float Ap, float Ai, float Ad)
@@ -89,6 +72,29 @@ void Asserv::findPidAD(float degrees, int mm, int sec)
 
 }
 
+void Asserv::setPosition(float x_mm, float y_mm, float degrees)
+{
+
+//	if (matchColor != 0) { //TODO set color
+//	 //yMM = -yMM;
+//	 xMM = 3000 - xMM;
+//	 thetaDegrees = 180.0 - thetaDegrees;
+//	 }
+	pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, degrees * M_PI / 180.0);
+}
+
+/*
+ void cc_setPosition(float xMM, float yMM, float thetaDegrees, int matchColor) {
+ if (matchColor != 0) {
+ //yMM = -yMM;
+ xMM = 3000 - xMM;
+ thetaDegrees = 180.0 - thetaDegrees;
+ }
+
+ odo_SetPosition(xMM / 1000.0, yMM / 1000.0, thetaDegrees * M_PI / 180.0);
+ }
+ */
+
 // position x,x in mm
 float Asserv::pos_getX_mm()
 {
@@ -107,5 +113,20 @@ float Asserv::pos_getTheta()
 float Asserv::pos_getThetaInDegree()
 {
 	return pAsservInsa_->pos_getThetaInDegree();
+}
+
+void Asserv::setVmax(float vmax)
+{
+	pAsservInsa_->motion_SetDefaultVmax(vmax);
+}
+
+void Asserv::setAccel(float acc)
+{
+	pAsservInsa_->motion_SetDefaultAccel(acc);
+}
+
+void Asserv::setDecel(float dec)
+{
+	pAsservInsa_->motion_SetDefaultDecel(dec);
 }
 

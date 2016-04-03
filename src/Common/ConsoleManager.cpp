@@ -22,9 +22,6 @@ ConsoleManager::ConsoleManager()
 void ConsoleManager::add(FunctionalTest * test)
 {
 	this->tests_.push_back(test);
-
-	//add args from func test.
-	//test->configureConsoleArgs();
 }
 
 std::string * ConsoleManager::displayAvailableTests(std::string color, int selected)

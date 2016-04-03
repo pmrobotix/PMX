@@ -17,5 +17,5 @@ void logs::LoggerFactory::initialize()
 
 	add(logs::Level::ERROR, "", "console");
 
-
+	add(logs::Level::DEBUG, "AsservDriver.SIMU", "console");
 }

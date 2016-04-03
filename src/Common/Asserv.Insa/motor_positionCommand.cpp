@@ -163,7 +163,7 @@ int32 *out_Order)
 	{
 	case TR_PRE_PHASE:
 
-//logger().debug() << "GetPositionOrder: TR_PRE_PHASE" << logs::end;
+logger().debug() << "GetPositionOrder: TR_PRE_PHASE period0="  << posCommand->period0 << logs::end;
 		if (Tn >= posCommand->period0)
 		{
 			posCommand->phase = TR_ACCEL_PHASE;
@@ -177,7 +177,10 @@ int32 *out_Order)
 		//acceleration phase
 	case TR_ACCEL_PHASE:
 
-//logger().debug() << "GetPositionOrder: TR_ACCEL_PHASE" << logs::end;
+logger().debug() << "GetPositionOrder: TR_ACCEL_PHASE period0="  << posCommand->period0
+<< " TO1=" << posCommand->T01
+<< " Tn="  << Tn
+<< logs::end;
 		Tn -= posCommand->period0;
 
 		if (Tn >= posCommand->T01)
@@ -199,7 +202,7 @@ int32 *out_Order)
 		//constant speed phase
 	case TR_CONSTANT_PHASE:
 
-//logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
+logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
 		if (Tn >= posCommand->T12)
@@ -218,7 +221,7 @@ int32 *out_Order)
 		//deceleration phase
 	case TR_DECEL_PHASE:
 
-//logger().debug() << "GetPositionOrder: TR_DECEL_PHASE" << logs::end;
+logger().debug() << "GetPositionOrder: TR_DECEL_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
 		if (Tn >= posCommand->T23)
@@ -235,7 +238,7 @@ int32 *out_Order)
 
 	case TR_END_PHASE:
 
-//logger().debug() << "GetPositionOrder: TR_END_PHASE" << logs::end;
+logger().debug() << "GetPositionOrder: TR_END_PHASE" << logs::end;
 		*out_Order = posCommand->order3;
 		finished = TRUE;
 		break;

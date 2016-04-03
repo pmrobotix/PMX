@@ -1,7 +1,8 @@
+#include <sys/types.h>
+#include <cmath>
+
+#include "../../Log/Logger.hpp"
 #include "AsservInsa.hpp"
-
-
-
 
 void AsservInsa::encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPerM, float entraxe_mm)
 {
@@ -20,20 +21,20 @@ void AsservInsa::encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPe
 		valueVTops = 1 / (float) (vtopsPerTicks * rightTicksPerM);
 	}
 
-/*
-	printf("encoder_SetResolution   %d , %d \n", leftTicksPerM, rightTicksPerM);
-	printf("valueVTops %f = 1 / %f = 1 / %d x %d \n",
-			valueVTops,
-			(float) (vtopsPerTicks * rightTicksPerM),
-			vtopsPerTicks,
-			rightTicksPerM);*/
-
 	//recompute values involving vTops
 	encoder_SetDist(entraxe_mm / 1000.0);
 
-	logger().debug() << "encoder_SetResolution  leftTicksPerM=" << leftTicksPerM
-			<< " rightTicksPerM=" << rightTicksPerM
-			<< " valueVTops=" << valueVTops
+	logger().debug() << "encoder_SetResolution  leftTicksPerM="
+			<< leftTicksPerM
+			<< " rightTicksPerM="
+			<< rightTicksPerM
+			<< " leftEncoderRatio="
+			<< leftEncoderRatio
+			<< " rightEncoderRatio="
+			<< rightEncoderRatio
+
+			<< " valueVTops="
+			<< valueVTops
 
 			<< logs::end;
 }
@@ -55,31 +56,27 @@ void AsservInsa::motion_SetSamplingFrequency(uint frequency)
 
 }
 
-void AsservInsa::pos_SetPosition(float x, float y, float theta)	//TODO add match color
+void AsservInsa::odo_SetPosition(float x_m, float y_m, float theta_rad)
 {
-	//TODO Odometry... odo_SetPosition(float x, float y, float theta)
-	pos_x = x;
-	pos_y = y;
-	pos_theta = theta;
+	//printf("odo_SetPosition %f,%f %f\n", x, y, theta);
+	//convert position from meters to vtops
+	xTops = x_m / valueVTops;
+	yTops = y_m / valueVTops;
+	Theta = theta_rad;
+	cosTheta = cosf(Theta);
+	sinTheta = sinf(Theta);
 }
-/*
- void cc_setPosition(float xMM, float yMM, float thetaDegrees, int matchColor) {
- if (matchColor != 0) {
- //yMM = -yMM;
- xMM = 3000 - xMM;
- thetaDegrees = 180.0 - thetaDegrees;
- }
 
- odo_SetPosition(xMM / 1000.0, yMM / 1000.0, thetaDegrees * M_PI / 180.0);
- }
- */
-
-void AsservInsa::pos_GetPositionXYTheta(float *x, float *y, float *theta)
+RobotPosition AsservInsa::odo_GetPosition()
 {
-	//TODO Odometry... odo_GetPositionXYTheta(float *x, float *y, float *theta)
-	*x = pos_x;
-	*y = pos_y;
-	*theta = pos_theta;
+	RobotPosition pos;
+
+	//convert position from ticks to meter
+	pos.x = xTops * (float) valueVTops;
+	pos.y = yTops * (float) valueVTops;
+	pos.theta = Theta;
+
+	return pos;
 }
 
 // position x,x in mm
@@ -107,9 +104,9 @@ float AsservInsa::pos_getThetaInDegree()
 }
 
 // en m/s
-float AsservInsa::motion_GetDefaultSpeed()
+float AsservInsa::motion_GetDefaultVmax()
 {
-	return defaultSpeed; //TODO replace by speed
+	return defaultVmax;
 }
 float AsservInsa::motion_GetDefaultAccel()
 {
@@ -119,9 +116,9 @@ float AsservInsa::motion_GetDefaultDecel()
 {
 	return defaultDec;
 }
-void AsservInsa::motion_SetDefaultSpeed(float speed_m_sec)
+void AsservInsa::motion_SetDefaultVmax(float speed_m_sec)
 {
-	defaultSpeed = speed_m_sec;
+	defaultVmax = speed_m_sec;
 }
 void AsservInsa::motion_SetDefaultAccel(float accel)
 {

@@ -8,6 +8,7 @@
 #include "Arguments.hpp"
 
 #include <sys/types.h>
+#include <unistd.h>
 #include <iterator>
 #include <utility>
 
@@ -79,6 +80,10 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 										<< " error: Too few arguments for option "
 										<< strArgument
 										<< "."
+										<< " nOptArg="
+										<< nOptArg
+										<< " < nNonOptionalArgs="
+										<< nNonOptionalArgs
 										<< endl;
 								usage();
 								return false;
@@ -97,7 +102,6 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 		}
 		else	// ...oder Argument
 		{
-
 			if (nArg >= m_vArguments.size())
 			{
 				//DO Nothing - let many arguments for further functional tests
@@ -121,12 +125,19 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 			}
 		}
 
-		if (nNonOptionalArgs > nArg)
-		{
-			cerr << m_strCommandName << " error: Too few arguments." << endl;
-			usage();
-			return false;
-		}
+		if (nArg != 0 && nNonOptionalArgs != 0)
+			if (nNonOptionalArgs >= nArg)
+			{
+				cerr << m_strCommandName
+						<< " error: Too few arguments."
+						<< " nNonOptionalArgs="
+						<< nNonOptionalArgs
+						<< " >= nArg="
+						<< nArg
+						<< endl;
+				usage();
+				return false;
+			}
 	}
 
 	return true;
@@ -148,7 +159,7 @@ bool Arguments::addOption(Option &option)
 
 bool Arguments::usage()
 {
-
+	sleep(1); //pour laisser les messages d'erreurs s'afficher auparavant.
 	cerr << "Usage: " << m_strCommandName;
 
 	for (OptionMap::iterator it = m_mOptions.begin(); it != m_mOptions.end(); it++)

@@ -30,7 +30,7 @@
 
 void AsservInsa::motion_Line(RobotCommand *out_cmd, float dist)
 {
-	motion_LineSpeedAcc(out_cmd, dist, motion_GetDefaultSpeed(), motion_GetDefaultAccel(), motion_GetDefaultDecel());
+	motion_LineSpeedAcc(out_cmd, dist, motion_GetDefaultVmax(), motion_GetDefaultAccel(), motion_GetDefaultDecel());
 }
 
 void AsservInsa::motion_LineSpeed(RobotCommand *out_cmd, float dist, float VMax)
@@ -40,7 +40,6 @@ void AsservInsa::motion_LineSpeed(RobotCommand *out_cmd, float dist, float VMax)
 
 void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VMax, float Accel, float Decel)
 {
-
 	out_cmd->cmdType = POSITION_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;
 
@@ -57,7 +56,7 @@ void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VM
 
 void AsservInsa::motion_Rotate(RobotCommand *out_cmd, float angle)
 {
-	motion_RotateSpeedAcc(out_cmd, angle, motion_GetDefaultSpeed(), motion_GetDefaultAccel(), motion_GetDefaultDecel());
+	motion_RotateSpeedAcc(out_cmd, angle, motion_GetDefaultVmax(), motion_GetDefaultAccel(), motion_GetDefaultDecel());
 }
 
 void AsservInsa::motion_RotateSpeed(RobotCommand *out_cmd, float angle, float VMax)
@@ -86,7 +85,7 @@ void AsservInsa::motion_ArcRotate(RobotCommand *out_cmd, float angle, float radi
 	motion_ArcRotateSpeedAcc(out_cmd,
 			angle,
 			radius,
-			motion_GetDefaultSpeed(),
+			motion_GetDefaultVmax(),
 			motion_GetDefaultAccel(),
 			motion_GetDefaultDecel());
 }

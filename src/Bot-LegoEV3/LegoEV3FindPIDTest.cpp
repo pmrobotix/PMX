@@ -19,9 +19,9 @@ void LegoEV3FindPIDTest::configureConsoleArgs(int argc, char** argv) //surcharge
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.getArgs().addArgument("sec", "Time (sec) for test");
 
-	robot.getArgs().addArgument("distmm", "Distance (mm) for test");
+	robot.getArgs().addArgument("mm", "Distance (mm) for test");
 
-	robot.getArgs().addArgument("Dp", "value(float) of p for Delta", "0.0");
+	robot.getArgs().addArgument("Dpp", "value(float) of p for Delta", "0.0");
 	robot.getArgs().addArgument("Dd", "value(float) of d for Delta", "0.0");
 
 	robot.getArgs().addArgument("angle", "Angle (degrees) for test", "0.0");
@@ -45,7 +45,7 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	float Dd = 0.0;
 	float Ap = 0.0;
 	float Ad = 0.0;
-	int distmm = 0;
+	int mm = 0;
 	int sec = 0;
 	float angle = 0.0;
 
@@ -56,8 +56,8 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	}
 	if (args["distmm"] != "0")
 	{
-		distmm = atoi(args["distmm"].c_str());
-		logger().debug() << "Arg Distmm set " << args["distmm"] << ", distmm = " << distmm << logs::end;
+		mm = atoi(args["distmm"].c_str());
+		logger().debug() << "Arg Distmm set " << args["distmm"] << ", distmm = " << mm << logs::end;
 	}
 	if (args["Dp"] != "0")
 	{
@@ -92,12 +92,11 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 
 
 	robot.asserv().startMotionTimerAndOdo();
+	robot.asserv().configureAlphaPID(Ap, 0.0, Ad); //surcharge
+	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
+	robot.asserv().setPosition(0.0, 300.0, 0.0);
 	chrono.start();
-
-	robot.asserv().configureAlphaPID(Dp, 0.0, Dd);
-	robot.asserv().configureDeltaPID(Ap, 0.0, Ad);
-
-	robot.asserv().findPidAD(angle, distmm, sec);
+	robot.asserv().findPidAD(angle, mm, sec);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();

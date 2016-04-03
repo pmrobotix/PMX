@@ -22,6 +22,10 @@ driver()
 	scp "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/	
 }
 
+recup()
+{
+        scp "robot@$IP:/home/robot/*.csv /home/robot/*.svg" /home/pmx/recup/.
+}
 
 wifi()
 {
@@ -43,14 +47,15 @@ case "$1" in
 		driver;;
 	main)
 		main;;
-	
+	recup)
+		recup;;
 	wifi)
 		wifi;;
 	usb)
 		usb;;
 
 	*)
-		echo "Usage: $0 {wifi|usb|all|main|driver}" >&2
+		echo "Usage: $0 {wifi|usb|all|main|driver|recup}" >&2
 		exit 1
 	;;
 esac

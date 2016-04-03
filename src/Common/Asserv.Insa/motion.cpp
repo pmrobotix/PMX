@@ -59,11 +59,11 @@ AsservInsa::AsservInsa()
 
 	defaultSamplingFreq = 100; //10 fois par second par defaut (pour eviter la division par zero).
 
-	vtopsPerTicks = 1000; //1000 ?  ; 1 => 1 vtops = 1 ticks
+	vtopsPerTicks = 2000; //1000 ?  ; 1 => 1 vtops = 1 ticks
 
 	maxPwmValue_ = 0;
 
-	defaultSpeed = 0.0;
+	defaultVmax = 0.0;
 	defaultAcc = 0.0;
 	defaultDec = 0.0;
 
@@ -76,10 +76,6 @@ AsservInsa::AsservInsa()
 	sinTheta = 0.0;
 	xTops = 0.0; //encoder vTops //static
 	yTops = 0.0;
-
-	pos_x = 0.0;
-	pos_y = 0.0;
-	pos_theta = 0.0;
 
 	odoPeriodNb = 0;
 
@@ -286,14 +282,15 @@ void AsservInsa::execute()
 	long currentTime = startTime;
 	logger().debug() << "execute started; loopDelayInMillis=" << loopDelayInMillis << " ms" << logs::end;
 
-	loggerFile().debug() << "NbPeriod, currentTime, Lencoder, Rencoder, speed0, speed1, pwm0, pwm1, ord0, ord1" << logs::end;
+	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(ticks), Rencoder(ticks), speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
+			<< logs::end;
 
 	while (!stop_motion_ITTask)
 	{
+		periodNb++;
+
 		currentTime = currentTimeInMillis();
 		//logger().debug() << "AsservInsa execute currentTime=" << currentTime << logs::end;
-
-
 
 		//TODO use external or internl encoders !!
 		encoder_ReadSensor(&dLeft, &dRight, &dAlpha, &dDelta, &left, &right);
@@ -389,34 +386,26 @@ void AsservInsa::execute()
 				fin1 = GetStepOrder(&motionCommand.cmd.stepCmd[1], &ord1);
 				break;
 			}
-			/*
-			 #ifdef LOG_PID
 
-			 log_status(currentTimeInMillis(), encoder_getLeftCounter(),
-			 encoder_getRightCounter(), robot_getLeftPower(),
-			 robot_getRightPower(), ord0, ord1,
-			 motors[motionCommand.mcType][0].lastPos,
-			 motors[motionCommand.mcType][1].lastPos, p.x, p.y, p.theta);
-			 #endif
-			 */
 
 			//compute pwm for first motor
-			//	printf("motion.c : pid_Compute : ORDER 0 : %d current:%d\n", ord0,
-			//			motors[motionCommand.mcType][0].lastPos);
-			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys, ord0, dSpeed0);
-//			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-//					ord0,
-//					motors[motionCommand.mcType][0].lastPos,
+//			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
+//					(float)(ord0 - motors[motionCommand.mcType][0].lastPos),
 //					dSpeed0);
-			//	printf("motion.c : pid_Compute : ORDER 1 : %d current:%d\n", ord1,
-			//			motors[motionCommand.mcType][1].lastPos);
-			//compute pwm for second motor
-			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys, ord1, dSpeed1);
+			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
+					(float)ord0,
+					(float)motors[motionCommand.mcType][0].lastPos,
+					dSpeed0);
 
-//			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-//					ord1,
-//					motors[motionCommand.mcType][1].lastPos,
+			//compute pwm for second motor
+//			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
+//					(float)(ord1 - motors[motionCommand.mcType][1].lastPos),
 //					dSpeed1);
+
+			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
+					(float)ord1,
+					(float)motors[motionCommand.mcType][1].lastPos,
+					dSpeed1);
 
 			//output pwm to motors
 			if (motionCommand.mcType == LEFT_RIGHT)
@@ -457,20 +446,75 @@ void AsservInsa::execute()
 //					<< logs::end;
 
 			loggerFile().debug() << periodNb
-					<< ", " << currentTime - startTime
-					<< ", " << left / leftEncoderRatio
-					<< ", " << right / rightEncoderRatio
+					<< ", "
+					<< currentTime - startTime
+					<< ", "
+					<< left / leftEncoderRatio
+					<< ", "
+					<< right / rightEncoderRatio
 
-					<< ", " << dSpeed0 / leftEncoderRatio
-					<< ", " << dSpeed1 / rightEncoderRatio
-					<< ", " << pwm0
-					<< ", " << pwm1
+					<< ", "
+					<< dSpeed0 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< ", "
+					<< dSpeed1 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< ", "
+					<< pwm0
+					<< ", "
+					<< pwm1
 
-					<< ", " << ord0 / leftEncoderRatio
-					<< ", " << ord1 / rightEncoderRatio
+					<< ", "
+					<< motors[motionCommand.mcType][0].lastPos / leftEncoderRatio
+					<< ", "
+					<< motors[motionCommand.mcType][1].lastPos / leftEncoderRatio
+
+					<< ", "
+					<< (float) (ord0 / leftEncoderRatio)
+					<< ", "
+					<< (float) (ord1 / rightEncoderRatio)
+					<< ", "
+					<< x_mm
+					<< ", "
+					<< y_mm
+					<< ", "
+					<< angle_rad
+
+					<< logs::end;
+
+			logger().info() << periodNb
+					<< ", "
+					<< currentTime - startTime
+					<< ", "
+					<< left / leftEncoderRatio
+					<< ", "
+					<< right / rightEncoderRatio
 
 
-			<< logs::end;
+					<< ", "
+					<< dSpeed0 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< ", "
+					<< dSpeed1 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< ", "
+					<< pwm0
+					<< ", "
+					<< pwm1
+
+					<< ", "
+					<< motors[motionCommand.mcType][0].lastPos / leftEncoderRatio
+					<< ", "
+					<< motors[motionCommand.mcType][1].lastPos / leftEncoderRatio
+
+					<< ", "
+					<< (float)(ord0 / leftEncoderRatio)
+					<< ", "
+					<< (float)(ord1 / rightEncoderRatio)
+					<< ", "
+					<< x_mm
+					<< ", "
+					<< y_mm
+					<< ", "
+					<< angle_rad
+
+					<< logs::end;
 
 			//test end of traj
 			if (fin0 && fin1)
@@ -560,7 +604,6 @@ void AsservInsa::execute()
 //exit(2);
 	//return 0;
 
-	periodNb++;
 }
 
 void AsservInsa::activate(bool a)

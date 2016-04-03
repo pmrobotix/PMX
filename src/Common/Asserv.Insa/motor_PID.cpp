@@ -69,14 +69,15 @@ void AsservInsa::pid_Config(PID_SYSTEM system, float kp, float ki, float kd)
 	systemValues[system].conf.kI = ki * loopDelayInMillis / 1000.0;
 	systemValues[system].conf.kD = kd / (loopDelayInMillis / 1000.0);
 
-//	logger().debug() << "pid_Config system=" << (int) system
-//			<< " systemValues[system].conf.kP="
-//			<< systemValues[system].conf.kP
-//			<< " systemValues[system].conf.kI="
-//			<< systemValues[system].conf.kI
-//			<< " systemValues[system].conf.kD="
-//			<< systemValues[system].conf.kD
-//			<< logs::end;
+	logger().debug() << "pid_Config system="
+			<< (int) system
+			<< " systemValues[system].conf.kP="
+			<< systemValues[system].conf.kP
+			<< " systemValues[system].conf.kI="
+			<< systemValues[system].conf.kI
+			<< " systemValues[system].conf.kD="
+			<< systemValues[system].conf.kD
+			<< logs::end;
 
 }
 
@@ -121,55 +122,58 @@ float AsservInsa::pid_Compute(PID_SYSTEM system, float setpoint, float input, fl
 	unsigned long now = currentTimeInMillis();
 	unsigned long lastTime = val->lastTime;
 
-	int timeChange = (now - lastTime);
-	if (timeChange >= loopDelayInMillis) //necessaire ?
-	{
-		float kp = conf.kP;
-		float ki = conf.kI;
-		float kd = conf.kD;
+//	int timeChange = (now - lastTime);
+//	if (timeChange >= loopDelayInMillis) //necessaire ?
+//	{
+	float kp = conf.kP;
+	float ki = conf.kI;
+	float kd = conf.kD;
 
-		/*Compute all the working error variables*/
-		float error = setpoint - input;
-		ITerm += (ki * error);
-		if (ITerm > outMax)
-			ITerm = outMax;
-		else if (ITerm < outMin)
-			ITerm = outMin;
-		float dInput = (input - lastInput);
+	/*Compute all the working error variables*/
+	float error = setpoint - input;
+	ITerm += (ki * error);
+	if (ITerm > outMax)
+		ITerm = outMax;
+	else if (ITerm < outMin)
+		ITerm = outMin;
+	float dInput = (input - lastInput);
 
-		/*Compute PID Output*/
-		outPut = kp * error + ITerm - kd * dInput;
-		if (outPut > outMax)
-			outPut = outMax;
-		else if (outPut < outMin)
-			outPut = outMin;
+	/*Compute PID Output*/
+	outPut = kp * error + ITerm - kd * dInput;
+	if (outPut > outMax)
+		outPut = outMax;
+	else if (outPut < outMin)
+		outPut = outMin;
 
-		/*Remember some variables for next time*/
-		val->lastInput = input;
-		val->lastTime = now;
-		val->ITerm = ITerm;
-	}
-	else
-	{
-		logger().debug() << "pid_Compute P="
-				<< conf.kP
-				<< " I="
-				<< conf.kI
-				<< " D="
-				<< conf.kD
-				<< " input="
-				<< input
-				<< " setpoint="
-				<< setpoint
-				<< " output="
-				<< outPut
-				<< logs::end;
-		/*
-		 #ifdef DEBUG_PID
-		 printf("conf.kP %f %f %f \n", conf.kP, conf.kI, conf.kD);
-		 //printf("No pid calculation: %ld - %ld = %d ms\n", now, lastTime, timeChange);
-		 #endif*/
-	}
+	/*Remember some variables for next time*/
+	val->lastInput = input;
+	val->lastTime = now;
+	val->ITerm = ITerm;
+
+//	}
+//	else
+//	{
+	logger().debug() << "pid_Compute - P="
+			<< conf.kP
+			<< " D="
+			<< conf.kD
+			<< " error="
+			<< error
+			<< " input="
+			<< input
+			<< " setpoint="
+			<< setpoint
+			<< " speed="
+			<< speed
+			<< " outPut="
+			<< outPut
+			<< logs::end;
+	/*
+	 #ifdef DEBUG_PID
+	 printf("conf.kP %f %f %f \n", conf.kP, conf.kI, conf.kD);
+	 //printf("No pid calculation: %ld - %ld = %d ms\n", now, lastTime, timeChange);
+	 #endif*/
+	//}
 	val->lastOutput = outPut;
 	return outPut;
 }
@@ -217,7 +221,7 @@ int32 AsservInsa::pid_Compute_rcva_chaff(PID_SYSTEM system, int32 error, double 
 //! \param error The difference between measured and reference values in ticks/sample
 //! \param vitesse The vitesse in vTops/sample
 //! \return The new command to apply on the system (pwm)
-int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse)
+int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, float error, float vitesse)
 {
 	//http://www.rcva.fr/index.php?option=com_content&view=article&id=27&Itemid=42&limitstart=8
 	/*
@@ -233,38 +237,30 @@ int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse)
 // 		writeDebugStreamLine("cpid.c : before error=%d vitesse=%d", error, vitesse);
 // 	#endif
 
-	float ferror = error / vtopsPerTicks; //=[Ticks/sample]
-	vitesse /= vtopsPerTicks; //=[Ticks/sample]
+	float ferror = ((float) (error)) / (float) vtopsPerTicks; //=[Ticks/sample]
+	vitesse /= (float) vtopsPerTicks; //=[Ticks/sample]
 
 	float cmd = ferror * val->conf.kP;
 	float pwm = cmd - (val->conf.kD * vitesse);
+	pwm /= 256.0f; //donne la pente de décélération du PID !!
+	logger().debug() << "pid_ComputeRcva error="
+			<< error
+			<< " ferror="
+			<< ferror
+			<< " cmd="
+			<< cmd
+			<< " vitesse="
+			<< vitesse
+			<< " pwm="
+			<< pwm
+			<< " vtopsPerTicks="
+			<< vtopsPerTicks
+			<< " val->conf.kP="
+			<< val->conf.kP
+			<< " val->conf.kD="
+			<< val->conf.kD
 
-//	logger().debug() << "pid_ComputeRcva error="
-//			<< ferror
-//			<< " cmd="
-//			<< cmd
-//			<< " vitesse="
-//			<< vitesse
-//			<< " pwm="
-//			<< pwm
-//			<< " vtopsPerTicks="
-//			<< vtopsPerTicks
-//			<< " val->conf.kP="
-//			<< val->conf.kP
-//			<< " val->conf.kD="
-//			<< val->conf.kD
-//
-//			<< logs::end;
-
-// 	#if(LEVEL_PID <= DEBUG)
-// 		writeDebugStreamLine("cpid.c : during error=%d vitesse=%d pwm=%d", error, vitesse, pwm);
-// 	#endif
-
-	pwm /= 256.0f; //2048 ou 1024 ou 256??
-
-// 	#if(LEVEL_PID <= DEBUG)
-// 		writeDebugStreamLine("cpid.c : after  error=%d vitesse=%d pwm=%d", error, vitesse, pwm);
-// 	#endif
+			<< logs::end;
 
 	//bound the resulting pwm
 	if (pwm > maxPwmValue_)
@@ -275,7 +271,82 @@ int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse)
 	{
 		pwm = -maxPwmValue_;
 	}
-
 	return (int32) pwm;
 }
 
+/*
+ EXPORTED_FUNCTION int32 pid_Compute(PID_SYSTEM system, int32 error)
+ {
+ pidSystemValues *val;
+ int32 P,I,D;
+ int32 pwm;
+ int32 errDif;
+ int last;
+
+ error /= VTOPS_PER_TICKS;
+
+ val = &(systemValues[system]);
+
+ //stock last values of the error, so we can
+ //differentiate over a custom period
+ val->curDiff++;
+ if(val->curDiff >= MAX_D_PERIOD)
+ {
+ val->curDiff = 0; //restart at the beginning of the buffer
+ }
+
+ //modif test :
+ //sum of all errors of the MAX_D_PERIOD previous period
+ val->errSum -= val->dValues[val->curDiff];
+ val->errSum += error;
+
+ //bound integration values
+ if(val->errSum > val->conf.iMax)
+ {
+ val->errSum = val->conf.iMax;
+ signalErrorOverflow(system);
+ }
+ else if(val->errSum < -val->conf.iMax)
+ {
+ val->errSum = -val->conf.iMax;
+ signalErrorOverflow(system);
+ }
+
+ //fill the rotating buffer
+ val->dValues[val->curDiff] = error;
+
+ //if we are at the begining of the rotating buffer
+ //we have to take a value at the end of it
+ if(val->conf.dPeriod > val->curDiff)
+ {
+ last = MAX_D_PERIOD + val->curDiff - val->conf.dPeriod;
+ }
+ else
+ {
+ last = val->curDiff - val->conf.dPeriod;
+ }
+
+ //differential of the error over the period
+ errDif = error - val->dValues[last];
+
+ P = error * val->conf.kP;
+ I = val->errSum * val->conf.kI;
+ D = errDif * val->conf.kD;
+
+ pwm = P + I + D;
+
+ pwm /= 256;
+
+ //bound the resulting pwm
+ if(pwm > MAX_PWM_VALUE)
+ {
+ pwm = MAX_PWM_VALUE;
+ }
+ else if(pwm < -MAX_PWM_VALUE)
+ {
+ pwm = -MAX_PWM_VALUE;
+ }
+
+ return pwm;
+ }
+ */

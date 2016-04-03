@@ -34,7 +34,9 @@ TRAJ_STATE AsservInsa::motion_findPidAD(float angle_rad, float meters, int sec)
 	checkRobotCommand(&cmd);
 	motion_StepOrderAD(&cmd, convertDistTovTops(angle_rad * distEncoderMeter / 2.0f), (int32)(meters / valueVTops), sec);
 	path_LaunchTrajectory(&cmd);
-	return path_WaitEndOfTrajectory();
+	TRAJ_STATE result= path_WaitEndOfTrajectory();
+	//printf("----path_WaitEndOfTrajectory returned : %d : %d\n", result, TRAJ_OK);
+	return result;
 }
 
 TRAJ_STATE AsservInsa::motion_DoLine(float dist_meters)
@@ -121,7 +123,7 @@ TRAJ_STATE AsservInsa::motion_GoToSpeedPath(const Position *pos, int nb)
 		return TRAJ_OK;
 
 	//compute displacement needed from current position
-	pos_GetPositionXYTheta(&x1, &y1, &theta1);
+	odo_GetPositionXYTheta(&x1, &y1, &theta1);
 	computeAlphaDelta(x1, y1, theta1, pos[i].x, pos[i].y, &angle, &dist);
 
 	while (i < nb)
@@ -147,7 +149,7 @@ TRAJ_STATE AsservInsa::motion_GoToSpeedPath(const Position *pos, int nb)
 			path_LaunchTrajectory(&cmd);
 
 			//compute displacement needed from current position during waiting time
-			pos_GetPositionXYTheta(&x1, &y1, &theta1);
+			odo_GetPositionXYTheta(&x1, &y1, &theta1);
 			computeAlphaDelta(x1, y1, theta1, pos[i].x, pos[i].y, &angle, &dist);
 
 			state = path_WaitEndOfTrajectory();
@@ -164,7 +166,7 @@ TRAJ_STATE AsservInsa::motion_GoToSpeedPath(const Position *pos, int nb)
 			if (i < nb)
 			{
 				//compute displacement
-				pos_GetPositionXYTheta(&x1, &y1, &theta1);
+				odo_GetPositionXYTheta(&x1, &y1, &theta1);
 				computeAlphaDelta(x1, y1, theta1, pos[i].x, pos[i].y, &angle, &dist);
 			}
 		}
@@ -199,7 +201,7 @@ TRAJ_STATE AsservInsa::motion_GoToTSL(float x, float y)
 	float y1;
 	float theta1;
 
-	pos_GetPositionXYTheta(&x1, &y1, &theta1);
+	odo_GetPositionXYTheta(&x1, &y1, &theta1);
 
 	return motion_GoToTSLFrom(x1, y1, theta1, x, y);
 }
@@ -208,7 +210,7 @@ TRAJ_STATE AsservInsa::motion_OrientTo(float angle)
 {
 	float theta, dTheta;
 
-	pos_GetPositionXYTheta(NULL, NULL, &theta);
+	odo_GetPositionXYTheta(NULL, NULL, &theta);
 
 	dTheta = angle - theta;
 

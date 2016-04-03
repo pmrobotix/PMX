@@ -6,7 +6,7 @@
 #ifndef UTILS_MUTEX_HPP
 #define	UTILS_MUTEX_HPP
 
-#include "pthread.h"
+#include <pthread.h>
 
 namespace utils
 {

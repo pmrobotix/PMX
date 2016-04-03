@@ -1,0 +1,15 @@
+/*
+ * LegoEv3AsservSetResolutionTest.hpp
+ *
+ *  Created on: 4 avr. 2016
+ *      Author: pmx
+ */
+
+#ifndef BOT_LEGOEV3_LEGOEV3ASSERVSETRESOLUTIONTEST_HPP_
+#define BOT_LEGOEV3_LEGOEV3ASSERVSETRESOLUTIONTEST_HPP_
+
+
+
+
+
+#endif /* BOT_LEGOEV3_LEGOEV3ASSERVSETRESOLUTIONTEST_HPP_ */

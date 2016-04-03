@@ -1,6 +1,8 @@
 #ifndef COMMON_ASSERVINSA_ASSERVINSA_HPP_
 #define COMMON_ASSERVINSA_ASSERVINSA_HPP_
 
+//#define DEBUG_MOTION 1
+
 #include <pthread.h>
 #include <semaphore.h>
 #include <sys/types.h>
@@ -288,27 +290,29 @@ private:
 	}
 
 	/*!
-		 * \brief Retourne le \ref Logger file associé à la classe \ref AsservInsa.
-		 */
-		static inline const logs::Logger & loggerFile()
-		{
-			static const logs::Logger & instance = logs::LoggerFactory::logger("logFileAsservInsa");
-			return instance;
-		}
+	 * \brief Retourne le \ref Logger file associé à la classe \ref AsservInsa.
+	 */
+	static inline const logs::Logger & loggerFile()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("logFileAsservInsa");
+		return instance;
+	}
 
 	int stop_motion_ITTask;
 
 	bool activate_;
 
-	int useExternalEncoders_;int32 lastLeft_;int32 lastRight_;
+	int useExternalEncoders_;
+	int32 lastLeft_;
+	int32 lastRight_;
 
 	//encoder.c
 	//ratio vTops/ticks for left encoder
-	uint32 leftEncoderRatio;
+	int32 leftEncoderRatio;
 	//ratio vTops/ticks for right encoder
-	uint32 rightEncoderRatio;
+	int32 rightEncoderRatio;
 	//distance between both encoder wheels in vTops
-	uint32 distEncoder;
+	int32 distEncoder;
 	//distance between both encoder wheels in meters
 	float distEncoderMeter;
 
@@ -320,10 +324,10 @@ private:
 
 	//int SampleTime; //... millisec
 
-	int vtopsPerTicks; //Sample per ticks
+	int32 vtopsPerTicks; //Sample per ticks
 	int maxPwmValue_;
 
-	float defaultSpeed; //m/sec
+	float defaultVmax; //m/sec
 	float defaultAcc;
 	float defaultDec;
 
@@ -354,11 +358,11 @@ private:
 	float cosTheta, sinTheta;	//no unit //static
 	float xTops, yTops;		//encoder vTops //static
 
-	int32 odoPeriodNb; //static
+	//float pos_x; //static
+	//float pos_y; //static
+	//float pos_theta; //static
 
-	float pos_x; //static
-	float pos_y; //static
-	float pos_theta; //static
+	int32 odoPeriodNb; //static
 
 	int32 slippage[MOTOR_PER_TYPE];				//current slippage //static
 	int32 values[MOTOR_PER_TYPE][MAX_PERIOD];				//all the previous values of slippage //static
@@ -413,7 +417,7 @@ private:
 
 	int32 pid_Compute_rcva_chaff(PID_SYSTEM system, int32 error, double vitesse);
 
-	int32 pid_ComputeRcva(PID_SYSTEM system, int32 error, int32 vitesse);
+	int32 pid_ComputeRcva(PID_SYSTEM system, float error, float vitesse);
 
 //---motor_positionCommand
 
@@ -575,22 +579,12 @@ private:
 	//! \param dV displacement (forward) of the robot in vTops
 	void odo_Integration(float dTheta, float dV);
 
-	//! \brief Set robot position used by odometry
-	//!
-	//! \param dL vTops elapsed on left encoder since last integration
-	//! \param dR vTops elapsed on right encoder since last integration
-	void odo_SetPosition(float x, float y, float theta);
-
-	//! \brief Get current odometry robot position
 	//!
 	//! \param x [out] Robot position on x axis in meters
 	//! \param y [out] Robot position on y axis in meters
 	//! \param theta [out] Robot orientation in radians ]-Pi..Pi]
 	void odo_GetPositionXYTheta(float *x, float *y, float *theta);
-	//! \brief Get current odometry robot position
-	//!
-	//! \return Robot position in meters and angle in radian
-	RobotPosition odo_GetPosition(void);
+
 
 //---robot_slippage
 
@@ -638,6 +632,17 @@ public:
 
 	void activate(bool a);
 	//motion
+
+	//! \brief Set robot position used by odometry
+	//!
+	void odo_SetPosition(float x, float y, float theta);
+
+	//! \brief Get current odometry robot position
+
+	//! \brief Get current odometry robot position
+	//!
+	//! \return Robot position in meters and angle in radian
+	RobotPosition odo_GetPosition(void);
 
 	float pos_getX_mm();
 	float pos_getY_mm();
@@ -822,15 +827,15 @@ public:
 	//! \param out_cmd Resulting command that will be interpreted by path_manager
 	void motion_StepOrderAD(RobotCommand *out_cmd, int32 posAlpha, int32 posDelta, int seconds);
 
-	void pos_SetPosition(float x, float y, float theta);
+	//void pos_SetPosition(float x, float y, float theta);
 
-	void pos_GetPositionXYTheta(float *x, float *y, float *theta);
 
-	float motion_GetDefaultSpeed();
+
+	float motion_GetDefaultVmax();
 	float motion_GetDefaultAccel();
 	float motion_GetDefaultDecel();
 
-	void motion_SetDefaultSpeed(float speed_m_sec); //en m/s
+	void motion_SetDefaultVmax(float speed_m_sec); //en m/s
 	void motion_SetDefaultAccel(float accel);
 	void motion_SetDefaultDecel(float decel);
 

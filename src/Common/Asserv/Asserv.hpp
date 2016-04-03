@@ -68,12 +68,18 @@ public:
 
 	void configureDeltaPID(float Dp, float Di, float Dd);
 
+	void setPosition(float x_mm, float y_mm, float degrees);
+
 	float pos_getX_mm();
 	float pos_getY_mm();
 	// angle in radian
 	float pos_getTheta();
 	// angle in degrees
 	float pos_getThetaInDegree();
+
+	void setVmax(float vmax);
+	void setAccel(float acc);
+	void setDecel(float dec);
 
 };
 

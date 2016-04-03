@@ -24,7 +24,6 @@
 /******************************************************************************/
 
 #include <cmath>
-#include <cstdio>
 
 #include "AsservInsa.hpp"
 
@@ -83,22 +82,13 @@ void AsservInsa::odo_Integration(float dTheta, float dV)
 		sinTheta = newSinTheta;
 	}
 
+	//mise à jour des valeurs de référence
 	//printf("odo_Integration %f,%f %f\n",xTops,yTops,Theta);
 	xTops += dV * cosTheta;
 	yTops += dV * sinTheta;
-
 }
 
-void AsservInsa::odo_SetPosition(float x, float y, float theta)
-{
-	//printf("odo_SetPosition %f,%f %f\n", x, y, theta);
-	//convert position from meters to ticks
-	xTops = x / valueVTops;
-	yTops = y / valueVTops;
-	Theta = theta;
-	cosTheta = cosf(Theta);
-	sinTheta = sinf(Theta);
-}
+
 
 void AsservInsa::odo_GetPositionXYTheta(float *x, float *y, float *theta)
 {
@@ -120,14 +110,4 @@ void AsservInsa::odo_GetPositionXYTheta(float *x, float *y, float *theta)
 	}
 }
 
-RobotPosition AsservInsa::odo_GetPosition()
-{
-	RobotPosition pos;
 
-	//convert position from ticks to meter
-	pos.x = xTops * (float) valueVTops;
-	pos.y = yTops * (float) valueVTops;
-	pos.theta = Theta;
-
-	return pos;
-}

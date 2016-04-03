@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <cstdio>
 #include <cstdlib>
-#include <thread>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -45,23 +44,26 @@ private:
 	float tLeft_ms_;
 	float tRight_ms_;
 
-	long rightCounter_;
-	long leftCounter_;
+	float rightCounter_;
+	float leftCounter_;
 
-	long currentRightCounter_;
-	long currentLeftCounter_;
+	float currentRightCounter_;
+	float currentLeftCounter_;
 
 	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols].
 	//Add the symbol : __cplusplus with the value 201103L
 
-	std::thread twLeft_;
-	std::thread twRight_;
+	//std::thread twLeft_;
+	//std::thread twRight_;
 
 protected:
 
 public:
-	float leftSpeed_; //m/s
+	float leftSpeed_; //real speed in m/s
 	float rightSpeed_;
+
+	float wantedRightSpeed_;
+	float wantedLeftSpeed_;
 
 	float convertPowerToSpeed(int power);
 
@@ -209,7 +211,7 @@ public:
 				//usleep(5);
 			}
 
-		printf("AFTER positionLeft internal_ticksToDo=%ld   ticks=%d\n", internal_ticksToDo, ticks);
+		printf("AFTER positionLeft internal_ticksToDo=%ld   ticks=%ld\n", internal_ticksToDo, ticks);
 		asserv_->stopMotorLeft();
 	}
 	void positionRight(const char *arg1, long internal_ticksToDo)
@@ -234,11 +236,11 @@ public:
 				//usleep(5);
 			}
 
-		printf("AFTER positionRight internal_ticksToDo=%ld   ticks=%d\n", internal_ticksToDo, ticks);
+		printf("AFTER positionRight internal_ticksToDo=%ld   ticks=%ld\n", internal_ticksToDo, ticks);
 
 		asserv_->stopMotorRight();
 	}
-
+/*
 	std::thread memberLeftThread(const char *arg1, int timems)
 	{
 		return std::thread([=]
@@ -262,6 +264,7 @@ public:
 		return std::thread([=]
 		{	this->positionRight(arg1, internal_ticks);});
 	}
+	*/
 };
 
 #endif

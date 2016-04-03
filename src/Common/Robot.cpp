@@ -28,8 +28,10 @@ Robot::Robot()
 
 void Robot::configureDefaultConsoleArgs()
 {
+
 	// Add option "-h" with explanation...
 	cArgs_.addOption('h', "Display usage help");
+
 	cArgs_.addOption('s', "skip setup");
 
 	cArgs_.addArgument("type", "Type of match (t)est/(m)atch", "0");
@@ -38,9 +40,10 @@ void Robot::configureDefaultConsoleArgs()
 		cOpt.addArgument("num", "number of the functional test");
 		cArgs_.addOption(cOpt);
 	}
+
 	{
 		Arguments::Option cOpt('c', "");
-		cOpt.addArgument("color", "color of robot green/red", "red");
+		cOpt.addArgument("color", "color of robot green/violet", "violet");
 		cArgs_.addOption(cOpt);
 	}
 }
@@ -104,7 +107,7 @@ void Robot::begin(int argc, char** argv)
 		}
 	}
 	logger().debug() << "" << logs::end;
-	logger().debug() << "" << logs::end;
+
 	logger().debug() << "type = " << cArgs_["type"] << logs::end;
 
 	logger().debug() << "Option c set "
