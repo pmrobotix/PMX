@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	LegoEV3FindPIDTest()
-			: FunctionalTest("LegoEV3FindPIDTest", "trouver les PID")
+			: FunctionalTest("FindPIDTest", "trouver les PID")
 	{
 	}
 

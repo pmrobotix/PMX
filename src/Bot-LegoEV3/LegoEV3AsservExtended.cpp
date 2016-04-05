@@ -11,11 +11,11 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	pAsservInsa_->motion_SetDefaultDecel(0.2);
 	pAsservInsa_->motion_setMaxPwmValue(860); //max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
-	pAsservInsa_->motion_DisablePID();
 	pAsservInsa_->motion_configureAlphaPID(0.0, 0.0, 0.0);
-	pAsservInsa_->motion_configureDeltaPID(0.0, 0.0, 0.0);
+	pAsservInsa_->motion_configureDeltaPID(0.007, 0.0, 0.0);
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
+	pAsservInsa_->motion_DisablePID();
 
 	//f=20 Hz =>every 50ms
 	//f=100 Hz =>every 10ms

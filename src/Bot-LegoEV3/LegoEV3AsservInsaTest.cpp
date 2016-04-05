@@ -16,11 +16,11 @@ void LegoEV3AsservInsaTest::configureConsoleArgs(int argc, char** argv) //surcha
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.getArgs().addArgument("mm", "Distance (mm) for test");
+	robot.getArgs().addArgument("Acc", "Acceleration(float)");
+	robot.getArgs().addArgument("Vmax", "MaxSpeed(float)");
+	robot.getArgs().addArgument("Dec", "Deceleration(float)");
 
-	robot.getArgs().addArgument("Acc", "Acceleration(float)", "0.5");
-	robot.getArgs().addArgument("Vmax", "MaxSpeed(float)", "0.5");
-	robot.getArgs().addArgument("Dec", "Deceleration(float)", "0.5");
+	robot.getArgs().addArgument("mm", "Distance (mm) for test", "0.0");
 
 	robot.getArgs().addArgument("Dp", "value(float) of p for Delta", "0.0");
 	robot.getArgs().addArgument("Dd", "value(float) of d for Delta", "0.0");
@@ -55,6 +55,7 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 	float Vmax = 0.0;
 	float Dec = 0.0;
 
+	logger().debug()  << logs::end;logger().debug()  << logs::end;logger().debug()  << logs::end;
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	Arguments args = robot.getArgs();
 	if (args["mm"] != "0")
@@ -109,7 +110,7 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 
 	robot.asserv().configureAlphaPID(Ap, 0.0, Ad); //surcharge
 	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
-	robot.asserv().setPosition(0.0, 300.0, 0.0);
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor()!=PMXGREEN));
 	robot.asserv().setVmax(Vmax);
 	robot.asserv().setAccel(Acc);
 	robot.asserv().setDecel(Dec);
@@ -120,8 +121,12 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 			LEGOEV3_SVG_POS_ROBOT);
 
 	chrono.start();
-	robot.asserv().cc_move(distmm);
+	if (distmm != 0)
+		robot.asserv().doLineAbs(distmm);
 
+	/*if (angle != 0)
+		robot.asserv().;rotate(angle);
+*/
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
 	logger().info() << "time= "

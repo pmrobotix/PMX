@@ -44,6 +44,8 @@ AsservInsa::AsservInsa()
 
 	leftEncoderRatio = 0;
 	rightEncoderRatio = 0; //ratio vTops/ticks for right encoder
+	rightTicksPerM_ = 0;
+	leftTicksPerM_ = 0;
 
 	useExternalEncoders_ = 0;
 
@@ -59,6 +61,7 @@ AsservInsa::AsservInsa()
 
 	defaultSamplingFreq = 100; //10 fois par second par defaut (pour eviter la division par zero).
 
+	//Ajoute plus de précision dans les calculs de trajectoire (en vtops par ticks)
 	vtopsPerTicks = 2000; //1000 ?  ; 1 => 1 vtops = 1 ticks
 
 	maxPwmValue_ = 0;

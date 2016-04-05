@@ -18,7 +18,7 @@
 using namespace std;
 
 Robot::Robot()
-		: myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "-/")
+		: myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "_/") // use "_" instead of "-" for arguments
 {
 	actions_default = new Actions();
 	asserv_default = new Asserv("RobotDefaultAsserv");

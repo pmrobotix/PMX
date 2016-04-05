@@ -5,7 +5,10 @@
 
 #include "AsservDriverTest.hpp"
 
-#include "../../src/Common/Asserv.Driver/AAsservDriver.hpp"
+#include <unistd.h>
+
+#include "../../src/Common/Utils/Chronometer.hpp"
+#include "../../src/Log/Logger.hpp"
 
 void test::AsservDriverTest::suite()
 {
@@ -15,20 +18,27 @@ void test::AsservDriverTest::suite()
 
 void test::AsservDriverTest::testSet()
 {
-
-	AAsservDriver* asservdriver;
-	asservdriver = AAsservDriver::create();
+	logger().debug() << "Starting..." << logs::end;
 
 	asservdriver->enableHardRegulation(true);
 
-	int power = 860;
-	asservdriver->setMotorLeftPower(power, 0);
-	/*
-	 sleep(3);
-	 asservdriver->stopMotorLeft();
-	 asservdriver->stopMotorRight();
+	int power = 30;
+	int timems = 3000;
+	utils::Chronometer chrono;
 
-	 */
+	asservdriver->resetEncoder();
+	long left = asservdriver->getLeftInternalEncoder();
+	//long lastL = left;
+
+	asservdriver->setMotorLeftPower(power, timems);
+	chrono.start();
+	while (chrono.getElapsedTimeInMilliSec() < timems + 2000)
+	{
+		left = asservdriver->getLeftInternalEncoder();
+		logger().debug() << "left=" << left << " timems=" << chrono.getElapsedTimeInMilliSec() << logs::end;
+	//	lastL = left;
+		usleep(9000);
+	}
 
 	this->assert(true, "OK");
 }

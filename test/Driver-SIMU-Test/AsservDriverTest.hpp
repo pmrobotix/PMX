@@ -6,6 +6,8 @@
 #ifndef TEST_ASSERVDRIVERTEST_HPP
 #define TEST_ASSERVDRIVERTEST_HPP
 
+#include "../../src/Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
 namespace test
@@ -16,7 +18,20 @@ namespace test
  */
 class AsservDriverTest: public UnitTest
 {
+private:
+
+	/*!
+	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverTest.SIMU.
+	 */
+	static inline const logs::Logger & logger()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriverTest.SIMU");
+		return instance;
+	}
+
 public:
+
+	AAsservDriver* asservdriver;
 
 	/*!
 	 * \brief Constructeur de la classe.
@@ -24,7 +39,7 @@ public:
 	AsservDriverTest()
 			: UnitTest("AsservDriverTest")
 	{
-
+		asservdriver = AAsservDriver::create();
 	}
 
 	/*!

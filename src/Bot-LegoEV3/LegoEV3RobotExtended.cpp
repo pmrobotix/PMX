@@ -8,8 +8,8 @@
 LegoEV3RobotExtended::LegoEV3RobotExtended()
 {
 	id_ = "LegoEV3Robot";
-
 	myColor_ = PMXNOCOLOR;
+	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 
 	//on ecrase les versions par default avec la version extended
 	actions_ = new LegoEV3ActionsExtended(id_);
@@ -20,11 +20,9 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	delete (asserv_default);
 	asserv_default = asserv_;
 
-	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 
 	psvg_ = new LegoEV3SvgWriterExtended(id_);
 	psvg_->beginHeader();
-
 
 }
 

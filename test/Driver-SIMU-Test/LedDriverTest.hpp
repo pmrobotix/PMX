@@ -6,6 +6,7 @@
 #ifndef TEST_LEDDRIVERTEST_HPP
 #define TEST_LEDDRIVERTEST_HPP
 
+#include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
 namespace test
@@ -16,6 +17,16 @@ namespace test
  */
 class LedDriverTest: public UnitTest
 {
+private:
+
+	/*!
+	 * \brief Retourne le \ref Logger associé à la classe \ref LedDriverTest.SIMU.
+	 */
+	static inline const logs::Logger & logger()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("LedDriverTest.SIMU");
+		return instance;
+	}
 public:
 
 	/*!

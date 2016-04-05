@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <cstdio>
 #include <cstdlib>
+#include <thread>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -52,8 +53,7 @@ private:
 
 	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols].
 	//Add the symbol : __cplusplus with the value 201103L
-
-	//std::thread twLeft_;
+	std::thread twLeft_; //TODO use pthread
 	//std::thread twRight_;
 
 protected:
@@ -142,17 +142,23 @@ public:
 			while (chrono_member1left.getElapsedTimeInMilliSec() < time_ms)
 			{
 				asserv_->computeCounterL();
-				usleep(500);
-			}
 
+				usleep(50000);
+			}
 			asserv_->stopMotorLeft();
+
+//			std::cout << "End member1left left="
+//					<< left
+//					<< " timems="
+//					<< chrono_member1left.getElapsedTimeInMilliSec()
+//					<< std::endl;
 		}
 		else
 		{
-			while (asserv_->leftSpeed_ != lastspeed)
+			while (asserv_->leftSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterL();
-				usleep(500);
+				//usleep(500);
 			}
 		}
 	}
@@ -174,16 +180,16 @@ public:
 			while (chrono_member1right.getElapsedTimeInMilliSec() < time_ms)
 			{
 				asserv_->computeCounterR();
-				usleep(500);
+				//usleep(500);
 			}
 			asserv_->stopMotorRight();
 		}
 		else
 		{
-			while (asserv_->rightSpeed_ != lastspeed)
+			while (asserv_->rightSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterR();
-				usleep(500);
+				//usleep(500);
 			}
 		}
 	}
@@ -207,7 +213,7 @@ public:
 			while (ticks > internal_ticksToDo)
 			{
 				asserv_->computeCounterL();
-				ticks= std::abs(asserv_->getLeftInternalEncoder());
+				ticks = std::abs(asserv_->getLeftInternalEncoder());
 				//usleep(5);
 			}
 
@@ -240,18 +246,18 @@ public:
 
 		asserv_->stopMotorRight();
 	}
-/*
+
 	std::thread memberLeftThread(const char *arg1, int timems)
 	{
 		return std::thread([=]
 		{	this->member1left(arg1, timems);});
 	}
 
-	std::thread memberRightThread(const char *arg1, int timems)
-	{
-		return std::thread([=]
-		{	this->member2right(arg1, timems);});
-	}
+//	std::thread memberRightThread(const char *arg1, int timems)
+//	{
+//		return std::thread([=]
+//		{	this->member2right(arg1, timems);});
+//	}
 
 	std::thread positionLeftThread(const char *arg1, int internal_ticks)
 	{
@@ -259,12 +265,12 @@ public:
 		{	this->positionLeft(arg1, internal_ticks);});
 	}
 
-	std::thread positionRightThread(const char *arg1, int internal_ticks)
-	{
-		return std::thread([=]
-		{	this->positionRight(arg1, internal_ticks);});
-	}
-	*/
+//	std::thread positionRightThread(const char *arg1, int internal_ticks)
+//	{
+//		return std::thread([=]
+//		{	this->positionRight(arg1, internal_ticks);});
+//	}
+
 };
 
 #endif

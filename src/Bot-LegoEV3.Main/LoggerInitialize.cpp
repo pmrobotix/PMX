@@ -39,6 +39,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::DEBUG, "LegoEV3MovingBaseTest", "console");
 	add(logs::Level::DEBUG, "LegoEV3AsservInsaTest", "console");
 	add(logs::Level::DEBUG, "LegoEV3FindPIDTest", "console");
+	add(logs::Level::DEBUG, "LegoEV3AsservSetResolutionTest", "console");
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");

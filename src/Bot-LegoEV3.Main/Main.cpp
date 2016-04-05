@@ -1,6 +1,7 @@
 #include <unistd.h>
 
 #include "../Bot-LegoEV3/LegoEV3AsservInsaTest.hpp"
+#include "../Bot-LegoEV3/LegoEV3AsservSetResolutionTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3ButtonBarTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3FindPIDTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3LedBarTest.hpp"
@@ -23,8 +24,9 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new LegoEV3SoundBarTest());
 	robot.getConsoleManager().add(new LegoEV3TiretteTest());
 	robot.getConsoleManager().add(new LegoEV3MovingBaseTest());
-	robot.getConsoleManager().add(new LegoEV3AsservInsaTest());
+	robot.getConsoleManager().add(new LegoEV3AsservSetResolutionTest());
 	robot.getConsoleManager().add(new LegoEV3FindPIDTest());
+	robot.getConsoleManager().add(new LegoEV3AsservInsaTest());
 
 	robot.parseConsoleArgs(argc, argv);
 

@@ -15,6 +15,7 @@ void test::LedDriverTest::suite()
 
 void test::LedDriverTest::testSet()
 {
+	logger().debug() << "Starting..." << logs::end;
 
 	this->assert(true, "OK");
 }

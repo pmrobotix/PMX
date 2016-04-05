@@ -1,5 +1,7 @@
 #include "AsservDriver.hpp"
 
+#include <cmath>
+
 #include "../Log/Logger.hpp"
 
 using namespace std;
@@ -33,19 +35,19 @@ AsservDriver::AsservDriver()
 
 AsservDriver::~AsservDriver()
 {
-//	if (twLeft_.joinable())
-//		twLeft_.join();
+	if (twLeft_.joinable())
+		twLeft_.join();
 //	if (twRight_.joinable())
 //		twRight_.join();
 }
 
 float AsservDriver::convertPowerToSpeed(int power)
 {
-	//30cm/s= 0.300m/s => 128 de power
+
 	if (power < 15 && power > -15)
 		return 0.0;
 
-	float speed = ((float) power * 0.3f) / 860.0f; //vitesse max = 300mm/s pour 860 de power
+	float speed = ((float) power * 0.25f) / 860.0f; //vitesse max = 250mm/s pour 860 de power
 	return speed;
 
 }
@@ -54,26 +56,28 @@ void AsservDriver::computeCounterL()
 {
 	// MAJ real speed
 	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2;
+	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001)
+		leftSpeed_ = 0.0;
+	//leftSpeed_ = wantedLeftSpeed_;
 
 	// utilise la real speed
 	float deltaT_ms = chrono_.getElapsedTimeInMilliSec() - tLeft_ms_;
 	float currentLeftMeters = (deltaT_ms * leftSpeed_) / 1000.0f; //1mm = 1tick //TODO ramener la config de l'asserv !!
 	mutexL_.lock();
-
 	currentLeftCounter_ = (currentLeftMeters * 1000.0f); //conversion 1 meter = 1000ticks
 	leftCounter_ += currentLeftCounter_;
 	mutexL_.unlock();
 
 //	logger().debug() << "computeCounterL "
-//			<< " deltaT_ms="
+//			<< " d_ms="
 //			<< deltaT_ms
 //			<< " leftSpeed_="
 //			<< leftSpeed_
-//			<< " wantedLeftSpeed_="
+//			<< " wantedLSpeed_="
 //			<< wantedLeftSpeed_
-//			<< " leftCounter_="
+//			<< " LCounter_="
 //			<< leftCounter_
-//			<< " currentLeftCounter_="
+//			<< " currentLCounter_="
 //			<< currentLeftCounter_
 //			<< logs::end;
 //
@@ -136,8 +140,8 @@ void AsservDriver::computeCounterR()
 
 void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
 {
-//	if (twLeft_.joinable())
-//		twLeft_.join();
+	if (twLeft_.joinable())
+		twLeft_.join();
 
 	int sens = 0;
 	if (power < 0)
@@ -153,8 +157,8 @@ void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
 
 	logger().debug() << "setMotorLeftPosition    power=" << power << " leftSpeed_=" << leftSpeed_ << logs::end;
 
-//	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-//	twLeft_ = w_->positionLeftThread("setMotorLeftPosition", leftCounter_ + (ticksToDo * sens));
+	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
+	twLeft_ = w_->positionLeftThread("setMotorLeftPosition", leftCounter_ + (ticksToDo * sens));
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
@@ -180,10 +184,10 @@ void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
 
 void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 {
-	/*
-	 if (twLeft_.joinable())
-	 twLeft_.join();
-	 */
+
+	if (twLeft_.joinable())
+		twLeft_.join();
+
 	computeCounterL();
 	mutexL_.lock();
 	wantedLeftSpeed_ = convertPowerToSpeed(power);
@@ -191,12 +195,12 @@ void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 	mutexL_.unlock();
 	//logger().debug() << "setMotorLeftPower power=" << power << " leftSpeed_=" << leftSpeed_ << logs::end;
 	computeCounterL();
-	/*
-	 if (time_ms > 0)
-	 {
-	 AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-	 twLeft_ = w_->memberLeftThread("setMotorLeftPower", time_ms);
-	 }*/
+
+	if (time_ms > 0)
+	{
+		AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
+		twLeft_ = w_->memberLeftThread("setMotorLeftPower", time_ms);
+	}
 }
 void AsservDriver::setMotorRightPower(int power, int time_ms)
 {
@@ -247,11 +251,13 @@ void AsservDriver::resetEncoder()
 	mutexL_.lock();
 	leftCounter_ = 0.0;
 	currentLeftCounter_ = 0.0;
+
 	mutexL_.unlock();
 
 	mutexR_.lock();
 	rightCounter_ = 0.0;
 	currentRightCounter_ = 0.0;
+
 	mutexR_.unlock();
 }
 
@@ -259,21 +265,21 @@ void AsservDriver::stopMotorLeft()
 {
 	computeCounterL();
 	mutexL_.lock();
-	//leftCounter_ += currentLeftCounter_;
 	currentLeftCounter_ = 0;
-	leftSpeed_ = 0;
+	//leftSpeed_ = 0;
+	wantedLeftSpeed_ = 0.0;
 	mutexL_.unlock();
 	computeCounterL();
-	logger().debug() << "stopMotorLeft !!!!!" << logs::end;
+	logger().debug() << "stopMotorLeft !!!!!" << logs::end; //TODO plante
 }
 
 void AsservDriver::stopMotorRight()
 {
 	computeCounterR();
 	mutexR_.lock();
-	//rightCounter_ += currentRightCounter_;
 	currentRightCounter_ = 0;
-	rightSpeed_ = 0;
+	//rightSpeed_ = 0;
+	wantedRightSpeed_ = 0.0;
 	mutexR_.unlock();
 	computeCounterR();
 	logger().debug() << "stopMotorRight !!!!!" << logs::end;

@@ -6,6 +6,8 @@
 
 void AsservInsa::encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPerM, float entraxe_mm)
 {
+	leftTicksPerM_ = leftTicksPerM;
+	rightTicksPerM_ = rightTicksPerM;
 
 	if (leftTicksPerM > rightTicksPerM)
 	{
@@ -37,6 +39,16 @@ void AsservInsa::encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPe
 			<< valueVTops
 
 			<< logs::end;
+}
+
+uint32 AsservInsa::encoder_GetLeftResolution()
+{
+	return leftTicksPerM_;
+}
+
+uint32 AsservInsa::encoder_GetRightResolution()
+{
+	return rightTicksPerM_;
 }
 
 void AsservInsa::motion_SetSamplingFrequency(uint frequency)

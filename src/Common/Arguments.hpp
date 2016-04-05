@@ -4,6 +4,7 @@
 // Author: Patrick Hoffmann, 03/21/2001
 // http://www.codeproject.com/Articles/1242/Managing-argc-and-argv-with-STL-in-a-simple-way
 //
+// Modified by pmx
 //////////////////////////////////////////////////////////////////////
 
 #ifndef COMMON_ARGUMENTS_HPP_

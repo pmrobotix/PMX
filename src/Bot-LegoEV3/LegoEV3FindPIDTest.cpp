@@ -21,7 +21,7 @@ void LegoEV3FindPIDTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 	robot.getArgs().addArgument("mm", "Distance (mm) for test");
 
-	robot.getArgs().addArgument("Dpp", "value(float) of p for Delta", "0.0");
+	robot.getArgs().addArgument("Dp", "value(float) of p for Delta", "0.0");
 	robot.getArgs().addArgument("Dd", "value(float) of d for Delta", "0.0");
 
 	robot.getArgs().addArgument("angle", "Angle (degrees) for test", "0.0");
@@ -38,8 +38,6 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
 
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	Arguments args = robot.getArgs();
 	//PID values
 	float Dp = 0.0;
 	float Dd = 0.0;
@@ -47,17 +45,20 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	float Ad = 0.0;
 	int mm = 0;
 	int sec = 0;
-	float angle = 0.0;
+	float angle_degrees = 0.0;
+
+	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	Arguments args = robot.getArgs();
 
 	if (args["sec"] != "0")
 	{
 		sec = atoi(args["sec"].c_str());
 		logger().debug() << "Arg sec set " << args["sec"] << ", sec = " << sec << logs::end;
 	}
-	if (args["distmm"] != "0")
+	if (args["mm"] != "0")
 	{
-		mm = atoi(args["distmm"].c_str());
-		logger().debug() << "Arg Distmm set " << args["distmm"] << ", distmm = " << mm << logs::end;
+		mm = atoi(args["mm"].c_str());
+		logger().debug() << "Arg mm set " << args["mm"] << ", distmm = " << mm << logs::end;
 	}
 	if (args["Dp"] != "0")
 	{
@@ -71,8 +72,8 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	}
 	if (args["angle"] != "0")
 	{
-		angle = atof(args["angle"].c_str());
-		logger().debug() << "Arg angle set " << args["angle"] << ", angle = " << angle << logs::end;
+		angle_degrees = atof(args["angle"].c_str());
+		logger().debug() << "Arg angle set " << args["angle"] << ", angle = " << angle_degrees << logs::end;
 	}
 	if (args["Ap"] != "0")
 	{
@@ -90,13 +91,12 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	long left;
 	long right;
 
-
 	robot.asserv().startMotionTimerAndOdo();
 	robot.asserv().configureAlphaPID(Ap, 0.0, Ad); //surcharge
 	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
-	robot.asserv().setPosition(0.0, 300.0, 0.0);
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, false);
 	chrono.start();
-	robot.asserv().findPidAD(angle, mm, sec);
+	robot.asserv().findPidAD(angle_degrees, mm, sec);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();

@@ -1,6 +1,7 @@
 #include "Asserv.hpp"
 
-#include "../../Log/Logger.hpp"
+#include <cmath>
+
 #include "MovingBase.hpp"
 
 Asserv::Asserv(std::string botId)
@@ -12,11 +13,17 @@ Asserv::Asserv(std::string botId)
 
 	ignoreRearCollision_ = false;
 	ignoreFrontCollision_ = false;
+	matchColorPosition_ = false;
 }
 
 MovingBase * Asserv::base()
 {
 	return pMovingBase_;
+}
+
+AsservInsa * Asserv::insa()
+{
+	return pAsservInsa_;
 }
 
 void Asserv::startMotionTimerAndOdo() //todo à surcharger
@@ -29,15 +36,19 @@ void Asserv::freeMotion()
 	pAsservInsa_->motion_FreeMotion();
 }
 
+void Asserv::assistedHandling()
+{
+	pAsservInsa_->motion_AssistedHandling();
+}
+
 void Asserv::stopMotionTimerAndOdo()
 {
 	pAsservInsa_->motion_StopTimer();
 }
 
 // if distance <0, move backward
-TRAJ_STATE Asserv::cc_move(float distance_mm)
+TRAJ_STATE Asserv::doLineAbs(float distance_mm)
 {
-
 	if (distance_mm > 0)
 	{
 		ignoreRearCollision_ = true;
@@ -48,11 +59,123 @@ TRAJ_STATE Asserv::cc_move(float distance_mm)
 	}
 
 	float meters = distance_mm / 1000.0f;
-
-	logger().debug() << "motion_GetDefaultVmax=" << pAsservInsa_->motion_GetDefaultVmax() << logs::end;
-
 	return pAsservInsa_->motion_DoLine(meters);
 }
+
+TRAJ_STATE Asserv::doRotateAbs(float degrees)
+{
+	float radians = (degrees * M_PI) / 180.0f;
+	int f = ignoreFrontCollision_;
+	int r = ignoreRearCollision_;
+	ignoreRearCollision_ = true;
+	ignoreFrontCollision_ = true;
+
+	if (matchColorPosition_ != 0)
+	{
+		degrees = -degrees;
+	}
+	//reduction sur une plage de [0 à 360]
+	if (degrees > 360)
+	{
+		degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
+	}
+	if (degrees < -360)
+	{
+		int d = (int) -(degrees * 1000.0f);
+		d = d % 360000;
+		degrees = -d / 1000.0f;
+	}
+
+	// OPTIMISER la rotation -PI < a < PI
+	if (degrees >= 180)
+		degrees -= 360;
+	if (degrees < -180)
+		degrees += 360;
+
+	TRAJ_STATE ts = pAsservInsa_->motion_DoRotate(radians);
+
+	ignoreRearCollision_ = f;
+	ignoreFrontCollision_ = r;
+	return ts;
+}
+
+//rotate to an absolute angle
+TRAJ_STATE Asserv::doRotateLeft(float degrees)
+{
+	return doRotateAbs(degrees);
+}
+TRAJ_STATE Asserv::doRotateRight(float degrees)
+{
+	return doRotateAbs(-degrees);
+}
+
+
+
+
+//rotate from current to an angle thetaInDegree (terrain landmark and matchcolor = 0), we think all in the x,y landmark.
+TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
+{
+	float currentThetaInDegree = pos_getThetaInDegree();
+	float delta = getRelativeAngle(thetaInDegree) - currentThetaInDegree;
+	float turn = ((int) (delta * 1000.0f) % 360000) / 1000.0f;
+
+	if (matchColorPosition_ != 0)
+	{
+		turn = -turn;
+	}
+	TRAJ_STATE ts = doRotateAbs(turn); //cho use Abs not left!!
+
+	return ts;
+}
+
+TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM)
+{
+	float dx = getRelativeX(xMM) - pos_getX_mm();
+	float dy = yMM - pos_getY_mm();
+	float aRadian = atan2(dy, dx);
+	doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
+	float dist = sqrt(dx * dx + dy * dy);
+	return doLineAbs(dist);
+}
+TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
+{
+	TRAJ_STATE ts;
+	ts = doMoveForwardTo(xMM, yMM);
+	if (ts != TRAJ_OK)
+		return ts;
+
+	ts = doRotateTo(thetaInDegree);
+	return ts;
+}
+TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
+{
+	xMM = getRelativeX(xMM);
+
+	float dx = xMM - pos_getX_mm();
+	float dy = yMM - pos_getY_mm();
+	float aRadian = atan2(dy, dx);
+
+	doRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI)); //TODO angle au plus court ?
+
+	float dist = sqrt(dx * dx + dy * dy);
+	return doLineAbs(-dist);
+}
+TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
+{
+	TRAJ_STATE ts;
+	ts = doMoveBackwardTo(xMM, yMM);
+	if (ts != TRAJ_OK)
+		return ts;
+	ts = doRotateTo(thetaInDegree);
+	return ts;
+}
+
+TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
+{
+	return pAsservInsa_->motion_DoArcRotate(degrees * M_PI / 180.0, radiusMM / 1000.0);
+}
+
+
 
 void Asserv::configureAlphaPID(float Ap, float Ai, float Ad)
 {
@@ -72,28 +195,17 @@ void Asserv::findPidAD(float degrees, int mm, int sec)
 
 }
 
-void Asserv::setPosition(float x_mm, float y_mm, float degrees)
+void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor = 0)
 {
+	setMatchColorPosition(matchColor);
 
-//	if (matchColor != 0) { //TODO set color
-//	 //yMM = -yMM;
-//	 xMM = 3000 - xMM;
-//	 thetaDegrees = 180.0 - thetaDegrees;
-//	 }
-	pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, degrees * M_PI / 180.0);
+	if (matchColor != 0)
+	{
+		x_mm = getRelativeX(x_mm);
+		thetaInDegrees = getRelativeAngle(thetaInDegrees);
+	}
+	pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
 }
-
-/*
- void cc_setPosition(float xMM, float yMM, float thetaDegrees, int matchColor) {
- if (matchColor != 0) {
- //yMM = -yMM;
- xMM = 3000 - xMM;
- thetaDegrees = 180.0 - thetaDegrees;
- }
-
- odo_SetPosition(xMM / 1000.0, yMM / 1000.0, thetaDegrees * M_PI / 180.0);
- }
- */
 
 // position x,x in mm
 float Asserv::pos_getX_mm()

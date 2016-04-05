@@ -302,6 +302,9 @@ private:
 
 	bool activate_;
 
+	int32 rightTicksPerM_;
+	int32 leftTicksPerM_;
+
 	int useExternalEncoders_;
 	int32 lastLeft_;
 	int32 lastRight_;
@@ -670,6 +673,11 @@ public:
 	void setPWM(int16 pwmLeft, int16 pwmRight);
 
 	//---encoder
+
+
+	uint32 encoder_GetLeftResolution();
+
+	uint32 encoder_GetRightResolution();
 
 	//! Initialisation
 	void encoder_Init(void);
