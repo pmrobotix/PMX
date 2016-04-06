@@ -22,22 +22,46 @@ void test::AsservDriverTest::testSet()
 
 	asservdriver->enableHardRegulation(true);
 
-	int power = 30;
+	int power = 800;
 	int timems = 3000;
 	utils::Chronometer chrono;
 
 	asservdriver->resetEncoder();
 	long left = asservdriver->getLeftInternalEncoder();
-	//long lastL = left;
+	long right = asservdriver->getRightInternalEncoder();
 
 	asservdriver->setMotorLeftPower(power, timems);
+	asservdriver->setMotorRightPower(power, timems);
+	chrono.start();
+	while (chrono.getElapsedTimeInMilliSec() < timems + 1000)
+	{
+		left = asservdriver->getLeftInternalEncoder();
+		right = asservdriver->getRightInternalEncoder();
+		logger().debug() << "left="
+				<< left
+				<< " right="
+				<< right
+				<< " timems="
+				<< chrono.getElapsedTimeInMilliSec()
+				<< logs::end;
+		usleep(90000);
+	}
+
+	asservdriver->setMotorLeftPosition(power, 300);
+	asservdriver->setMotorRightPosition(power, 300);
 	chrono.start();
 	while (chrono.getElapsedTimeInMilliSec() < timems + 2000)
 	{
 		left = asservdriver->getLeftInternalEncoder();
-		logger().debug() << "left=" << left << " timems=" << chrono.getElapsedTimeInMilliSec() << logs::end;
-	//	lastL = left;
-		usleep(9000);
+		right = asservdriver->getRightInternalEncoder();
+		logger().debug() << "left="
+				<< left
+				<< " right="
+				<< right
+				<< " timems="
+				<< chrono.getElapsedTimeInMilliSec()
+				<< logs::end;
+		usleep(90000);
 	}
 
 	this->assert(true, "OK");

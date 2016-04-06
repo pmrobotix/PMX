@@ -64,6 +64,8 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm)
 
 TRAJ_STATE Asserv::doRotateAbs(float degrees)
 {
+	logger().debug() << "doRotateAbs=" << degrees << logs::end;
+
 	float radians = (degrees * M_PI) / 180.0f;
 	int f = ignoreFrontCollision_;
 	int r = ignoreRearCollision_;
@@ -135,6 +137,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM)
 	float aRadian = atan2(dy, dx);
 	doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
 	float dist = sqrt(dx * dx + dy * dy);
+	//logger().debug() << "dist=" << dist << logs::end;
 	return doLineAbs(dist);
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)

@@ -13,6 +13,7 @@ void logs::LoggerFactory::initialize()
 {
 	this->add("console", new ConsoleAppender());
 	this->add("unittestconsole", new UnitTestAppender());
+	this->add("memory", new MemoryAppender());
 
 	add(logs::Level::INFO, "", "unittestconsole");
 
@@ -20,6 +21,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::DEBUG, "AsservDriver.SIMU", "console");
 	add(logs::Level::DEBUG, "AsservDriverTest.SIMU", "console");
 	add(logs::Level::DEBUG, "LedDriverTest.SIMU", "console");
+	add(logs::Level::DEBUG, "AsservDriverMemory.SIMU", "memory");
 
 
 }

@@ -107,10 +107,10 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 	}
 
 	robot.asserv().startMotionTimerAndOdo();
-
-	robot.asserv().configureAlphaPID(Ap, 0.0, Ad); //surcharge
+	//surcharge des valeurs
+	robot.asserv().configureAlphaPID(Ap, 0.0, Ad);
 	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
-	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor()!=PMXGREEN));
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor()==PMXGREEN));
 	robot.asserv().setVmax(Vmax);
 	robot.asserv().setAccel(Acc);
 	robot.asserv().setDecel(Dec);
@@ -124,9 +124,9 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 	if (distmm != 0)
 		robot.asserv().doLineAbs(distmm);
 
-	/*if (angle != 0)
-		robot.asserv().;rotate(angle);
-*/
+	if (angle != 0)
+		robot.asserv().doRotateAbs(angle);
+
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
 	logger().info() << "time= "

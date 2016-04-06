@@ -40,6 +40,11 @@ void AsservInsa::motion_LineSpeed(RobotCommand *out_cmd, float dist, float VMax)
 
 void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VMax, float Accel, float Decel)
 {
+	logger().error() << "motion_LineSpeedAcc dist=" << dist
+			<< " VMax=" << VMax
+			<< " Accel=" << Accel
+			<< " Decel=" << Decel
+			<< logs::end;
 	out_cmd->cmdType = POSITION_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;
 
@@ -52,6 +57,12 @@ void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VM
 			convertSpeedTovTopsPerPeriod(VMax),
 			convertAccelTovTopsPerPeriodSqd(Accel),
 			convertAccelTovTopsPerPeriodSqd(Decel));
+
+	logger().error() << " dist=" << convertDistTovTops(dist)
+				<< " VMax=" << convertSpeedTovTopsPerPeriod(VMax)
+				<< " Accel=" << convertAccelTovTopsPerPeriodSqd(Accel)
+				<< " Decel=" << convertAccelTovTopsPerPeriodSqd(Decel)
+				<< logs::end;
 }
 
 void AsservInsa::motion_Rotate(RobotCommand *out_cmd, float angle)
@@ -66,6 +77,11 @@ void AsservInsa::motion_RotateSpeed(RobotCommand *out_cmd, float angle, float VM
 
 void AsservInsa::motion_RotateSpeedAcc(RobotCommand *out_cmd, float angle, float VMax, float Accel, float Decel)
 {
+	logger().error() << "motion_RotateSpeedAcc distEncoderMeter=" << distEncoderMeter
+				<< " angle=" << angle
+				<< " run=" << angle * distEncoderMeter / 2.0f
+
+				<< logs::end;
 	out_cmd->cmdType = POSITION_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;
 

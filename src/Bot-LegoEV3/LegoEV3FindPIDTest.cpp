@@ -91,10 +91,17 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	long left;
 	long right;
 
+
 	robot.asserv().startMotionTimerAndOdo();
 	robot.asserv().configureAlphaPID(Ap, 0.0, Ad); //surcharge
 	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, false);
+
+	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+				robot.asserv().pos_getY_mm(),
+				robot.asserv().pos_getTheta(),
+				LEGOEV3_SVG_POS_ROBOT);
+
 	chrono.start();
 	robot.asserv().findPidAD(angle_degrees, mm, sec);
 
@@ -107,6 +114,11 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 			<< " ; right= "
 			<< right
 			<< logs::end;
+
+	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+				robot.asserv().pos_getY_mm(),
+				robot.asserv().pos_getTheta(),
+				LEGOEV3_SVG_POS_ROBOT);
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;

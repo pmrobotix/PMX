@@ -62,7 +62,7 @@ AsservInsa::AsservInsa()
 	defaultSamplingFreq = 100; //10 fois par second par defaut (pour eviter la division par zero).
 
 	//Ajoute plus de précision dans les calculs de trajectoire (en vtops par ticks)
-	vtopsPerTicks = 2000; //1000 ?  ; 1 => 1 vtops = 1 ticks
+	vtopsPerTicks = 1000; //1000 ?  ; 1 => 1 vtops = 1 ticks
 
 	maxPwmValue_ = 0;
 
@@ -285,7 +285,7 @@ void AsservInsa::execute()
 	long currentTime = startTime;
 	logger().debug() << "execute started; loopDelayInMillis=" << loopDelayInMillis << " ms" << logs::end;
 
-	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(ticks), Rencoder(ticks), speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
+	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
 			<< logs::end;
 
 	while (!stop_motion_ITTask)
@@ -390,14 +390,13 @@ void AsservInsa::execute()
 				break;
 			}
 
-
 			//compute pwm for first motor
 //			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
 //					(float)(ord0 - motors[motionCommand.mcType][0].lastPos),
 //					dSpeed0);
 			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-					(float)ord0,
-					(float)motors[motionCommand.mcType][0].lastPos,
+					(float) ord0,
+					(float) motors[motionCommand.mcType][0].lastPos,
 					dSpeed0);
 
 			//compute pwm for second motor
@@ -406,8 +405,8 @@ void AsservInsa::execute()
 //					dSpeed1);
 
 			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-					(float)ord1,
-					(float)motors[motionCommand.mcType][1].lastPos,
+					(float) ord1,
+					(float) motors[motionCommand.mcType][1].lastPos,
 					dSpeed1);
 
 			//output pwm to motors
@@ -455,11 +454,14 @@ void AsservInsa::execute()
 					<< left / leftEncoderRatio
 					<< ", "
 					<< right / rightEncoderRatio
-
 					<< ", "
-					<< dSpeed0 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< dSpeed0
 					<< ", "
-					<< dSpeed1 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< dSpeed1
+					<< ", "
+					<< dSpeed0 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< ", "
+					<< dSpeed1 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
 					<< ", "
 					<< pwm0
 					<< ", "
@@ -491,11 +493,14 @@ void AsservInsa::execute()
 					<< ", "
 					<< right / rightEncoderRatio
 
-
 					<< ", "
-					<< dSpeed0 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< dSpeed0
 					<< ", "
-					<< dSpeed1 * valueVTops / ((float)loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< dSpeed1
+					<< ", "
+					<< dSpeed0 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< ", "
+					<< dSpeed1 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
 					<< ", "
 					<< pwm0
 					<< ", "
@@ -507,9 +512,9 @@ void AsservInsa::execute()
 					<< motors[motionCommand.mcType][1].lastPos / leftEncoderRatio
 
 					<< ", "
-					<< (float)(ord0 / leftEncoderRatio)
+					<< (float) (ord0 / leftEncoderRatio)
 					<< ", "
-					<< (float)(ord1 / rightEncoderRatio)
+					<< (float) (ord1 / rightEncoderRatio)
 					<< ", "
 					<< x_mm
 					<< ", "
@@ -606,7 +611,6 @@ void AsservInsa::execute()
 	 #endif*/
 //exit(2);
 	//return 0;
-
 }
 
 void AsservInsa::activate(bool a)

@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <cstdio>
 #include <cstdlib>
+#include <iostream>
 #include <thread>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
@@ -45,8 +46,8 @@ private:
 	float tLeft_ms_;
 	float tRight_ms_;
 
-	float rightCounter_;
-	float leftCounter_;
+	float rightCounter_; //real ticks
+	float leftCounter_; //real ticks
 
 	float currentRightCounter_;
 	float currentLeftCounter_;
@@ -54,7 +55,7 @@ private:
 	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols].
 	//Add the symbol : __cplusplus with the value 201103L
 	std::thread twLeft_; //TODO use pthread
-	//std::thread twRight_;
+	std::thread twRight_;
 
 protected:
 
@@ -66,6 +67,7 @@ public:
 	float wantedLeftSpeed_;
 
 	float convertPowerToSpeed(int power);
+	float convertMetersToTicks(float meters);
 
 	void computeCounterL();
 	void computeCounterR();
@@ -127,14 +129,8 @@ public:
 
 	void member1left(const char *arg1, int time_ms)
 	{
-		/*
-		 std::cout << "i am member1 and my first arg is ("
-		 << arg1
-		 << ") and second arg is ("
-		 << timems
-		 << ")"
-		 << std::endl;*/
 		float lastspeed = asserv_->leftSpeed_;
+
 		if (time_ms > 0) //stop using thread
 		{
 			utils::Chronometer chrono_member1left;
@@ -142,108 +138,107 @@ public:
 			while (chrono_member1left.getElapsedTimeInMilliSec() < time_ms)
 			{
 				asserv_->computeCounterL();
-
-				usleep(50000);
+				usleep(1);
 			}
 			asserv_->stopMotorLeft();
-
-//			std::cout << "End member1left left="
-//					<< left
-//					<< " timems="
-//					<< chrono_member1left.getElapsedTimeInMilliSec()
-//					<< std::endl;
 		}
 		else
 		{
-			while (asserv_->leftSpeed_ != lastspeed) //stop when speed has changed
+			while (asserv_->wantedLeftSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterL();
-				//usleep(500);
+				usleep(1);
 			}
 		}
 	}
 	void member2right(const char *arg1, int time_ms)
 	{
-		/*
-		 std::cout << "i am member2 and my first arg is ("
-		 << arg1
-		 << ") and second arg is ("
-		 << timems
-		 << ")"
-		 << std::endl;*/
-
 		float lastspeed = asserv_->rightSpeed_;
+
 		if (time_ms > 0) //stop using thread
 		{
-			utils::Chronometer chrono_member1right;
-			chrono_member1right.start();
-			while (chrono_member1right.getElapsedTimeInMilliSec() < time_ms)
+			utils::Chronometer chrono_member2right;
+			chrono_member2right.start();
+			while (chrono_member2right.getElapsedTimeInMilliSec() < time_ms)
 			{
 				asserv_->computeCounterR();
-				//usleep(500);
+				usleep(1);
 			}
 			asserv_->stopMotorRight();
 		}
 		else
 		{
-			while (asserv_->rightSpeed_ != lastspeed) //stop when speed has changed
+			while (asserv_->wantedRightSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterR();
-				//usleep(500);
+				usleep(1);
 			}
 		}
 	}
 
 	void positionLeft(const char *arg1, long internal_ticksToDo) //tick encoder à atteindre
 	{
-		//float lastspeed = ;
-		printf("positionLeft internal_ticksToDo=%ld   lastspeed=%f\n", internal_ticksToDo, asserv_->leftSpeed_);
+		//printf("positionLeft internal_ticksToDo=%ld   leftSpeed_=%f wanted=%f\n", internal_ticksToDo, asserv_->leftSpeed_, asserv_->wantedLeftSpeed_);
 
 		long ticks = std::abs(asserv_->getLeftInternalEncoder());
-
 		if (asserv_->leftSpeed_ > 0)
+		{
 			//stop when internal ticks is achieved..
 			while (ticks < internal_ticksToDo)
 			{
-				asserv_->computeCounterL();
 				ticks = std::abs(asserv_->getLeftInternalEncoder());
-				//usleep(5);
+				usleep(500);
 			}
-		else
+		}
+		else if (asserv_->leftSpeed_ < 0)
+		{
 			while (ticks > internal_ticksToDo)
 			{
-				asserv_->computeCounterL();
 				ticks = std::abs(asserv_->getLeftInternalEncoder());
-				//usleep(5);
+				usleep(500);
 			}
+		}
+		else
+		{
+			printf("positionLeft rightSpeed_=0 !! STOP");
+		}
 
-		printf("AFTER positionLeft internal_ticksToDo=%ld   ticks=%ld\n", internal_ticksToDo, ticks);
+		//printf("AFTER positionLeft internal_ticksToDo=%ld   ticks=%ld\n", internal_ticksToDo, ticks);
 		asserv_->stopMotorLeft();
 	}
+
 	void positionRight(const char *arg1, long internal_ticksToDo)
 	{
-
-		printf("positionRight internal_ticksToDo=%ld lastspeed=%f\n", internal_ticksToDo, asserv_->rightSpeed_);
+		//printf("positionRight internal_ticksToDo=%ld rightSpeed_=%f wanted=%f\n", internal_ticksToDo, asserv_->rightSpeed_, asserv_->wantedRightSpeed_);
 
 		long ticks = std::abs(asserv_->getRightInternalEncoder());
 		if (asserv_->rightSpeed_ > 0)
+		{
 			//stop when internal ticks is achieved..
 			while (ticks < internal_ticksToDo)
 			{
-				asserv_->computeCounterR();
 				ticks = std::abs(asserv_->getRightInternalEncoder());
-				//usleep(5);
+				usleep(500);
 			}
-		else
+			printf("> positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks, internal_ticksToDo);
+
+		}
+		else if (asserv_->rightSpeed_ < 0)
+		{
 			while (ticks > internal_ticksToDo)
 			{
-				asserv_->computeCounterR();
 				ticks = std::abs(asserv_->getRightInternalEncoder());
-				//usleep(5);
+				usleep(500);
 			}
+			printf("< positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks, internal_ticksToDo);
+		}
+		else
+		{
+			printf("positionRight rightSpeed_=0 !! STOP");
 
-		printf("AFTER positionRight internal_ticksToDo=%ld   ticks=%ld\n", internal_ticksToDo, ticks);
+		}
 
+		//printf("AFTER positionRight internal_ticksToDo=%ld   ticks=%ld\n", internal_ticksToDo, ticks);
 		asserv_->stopMotorRight();
 	}
 
@@ -253,11 +248,11 @@ public:
 		{	this->member1left(arg1, timems);});
 	}
 
-//	std::thread memberRightThread(const char *arg1, int timems)
-//	{
-//		return std::thread([=]
-//		{	this->member2right(arg1, timems);});
-//	}
+	std::thread memberRightThread(const char *arg1, int timems)
+	{
+		return std::thread([=]
+		{	this->member2right(arg1, timems);});
+	}
 
 	std::thread positionLeftThread(const char *arg1, int internal_ticks)
 	{
@@ -265,11 +260,11 @@ public:
 		{	this->positionLeft(arg1, internal_ticks);});
 	}
 
-//	std::thread positionRightThread(const char *arg1, int internal_ticks)
-//	{
-//		return std::thread([=]
-//		{	this->positionRight(arg1, internal_ticks);});
-//	}
+	std::thread positionRightThread(const char *arg1, int internal_ticks)
+	{
+		return std::thread([=]
+		{	this->positionRight(arg1, internal_ticks);});
+	}
 
 };
 
