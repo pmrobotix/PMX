@@ -22,11 +22,13 @@ void LegoEV3FindPIDTest::configureConsoleArgs(int argc, char** argv) //surcharge
 	robot.getArgs().addArgument("mm", "Distance (mm) for test");
 
 	robot.getArgs().addArgument("Dp", "value(float) of p for Delta", "0.0");
+	robot.getArgs().addArgument("Di", "value(float) of i for Delta", "0.0");
 	robot.getArgs().addArgument("Dd", "value(float) of d for Delta", "0.0");
 
 	robot.getArgs().addArgument("angle", "Angle (degrees) for test", "0.0");
 
 	robot.getArgs().addArgument("Ap", "value(float) of p for Alpha", "0.0");
+	robot.getArgs().addArgument("Ai", "value(float) of i for Alpha", "0.0");
 	robot.getArgs().addArgument("Ad", "value(float) of d for Alpha", "0.0");
 
 	//reparse arguments
@@ -40,8 +42,10 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 
 	//PID values
 	float Dp = 0.0;
+	float Di = 0.0;
 	float Dd = 0.0;
 	float Ap = 0.0;
+	float Ai = 0.0;
 	float Ad = 0.0;
 	int mm = 0;
 	int sec = 0;
@@ -65,6 +69,11 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 		Dp = atof(args["Dp"].c_str());
 		logger().debug() << "Arg Dp set " << args["Dp"] << ", Dp = " << Dp << logs::end;
 	}
+	if (args["Di"] != "0")
+	{
+		Di = atof(args["Di"].c_str());
+		logger().debug() << "Arg Di set " << args["Di"] << ", Di = " << Di << logs::end;
+	}
 	if (args["Dd"] != "0")
 	{
 		Dd = atof(args["Dd"].c_str());
@@ -80,7 +89,11 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 		Ap = atof(args["Ap"].c_str());
 		logger().debug() << "Arg Ap set " << args["Ap"] << ", Ap = " << Ap << logs::end;
 	}
-
+	if (args["Ai"] != "0")
+	{
+		Ai = atof(args["Ai"].c_str());
+		logger().debug() << "Arg Ai set " << args["Ai"] << ", Ai = " << Ai << logs::end;
+	}
 	if (args["Ad"] != "0")
 	{
 		Ad = atof(args["Ad"].c_str());
@@ -91,16 +104,15 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	long left;
 	long right;
 
-
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().configureAlphaPID(Ap, 0.0, Ad); //surcharge
-	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
+	robot.asserv().configureAlphaPID(Ap, Ai, Ad); //surcharge
+	robot.asserv().configureDeltaPID(Dp, Di, Dd);
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, false);
 
 	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-				robot.asserv().pos_getY_mm(),
-				robot.asserv().pos_getTheta(),
-				LEGOEV3_SVG_POS_ROBOT);
+			robot.asserv().pos_getY_mm(),
+			robot.asserv().pos_getTheta(),
+			LEGOEV3_SVG_POS_ROBOT);
 
 	chrono.start();
 	robot.asserv().findPidAD(angle_degrees, mm, sec);
@@ -113,12 +125,18 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 			<< left
 			<< " ; right= "
 			<< right
+			<< " x="
+			<< robot.asserv().pos_getX_mm()
+			<< " y="
+			<< robot.asserv().pos_getY_mm()
+			<< " a="
+			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
 	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-				robot.asserv().pos_getY_mm(),
-				robot.asserv().pos_getTheta(),
-				LEGOEV3_SVG_POS_ROBOT);
+			robot.asserv().pos_getY_mm(),
+			robot.asserv().pos_getTheta(),
+			LEGOEV3_SVG_POS_ROBOT);
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;

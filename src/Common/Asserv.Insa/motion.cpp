@@ -43,7 +43,7 @@ AsservInsa::AsservInsa()
 	stop_motion_ITTask = false;
 
 	leftEncoderRatio = 0;
-	rightEncoderRatio = 0; //ratio vTops/ticks for right encoder
+	rightEncoderRatio = 0; //ratio [vTops/ticks] for right encoder
 	rightTicksPerM_ = 0;
 	leftTicksPerM_ = 0;
 
@@ -52,17 +52,17 @@ AsservInsa::AsservInsa()
 	lastLeft_ = 0;
 	lastRight_ = 0;
 
-	distEncoder = 0; //distance between both encoder wheels in vTops
-	distEncoderMeter = 0.0; //distance between both encoder wheels in meters
+	distEncoder = 0; //distance between both encoder wheels in [vTops]
+	distEncoderMeter = 0.0; //distance between both encoder wheels in [meters]
 
-	valueVTops = 0.0; //vTops is a virtual measure distance to avoid floating point computation
+	valueVTops = 0.0; //vTops in [meter/vtops] is a virtual measure distance to avoid floating point computation
 
 	loopDelayInMillis = 0;
 
-	defaultSamplingFreq = 100; //10 fois par second par defaut (pour eviter la division par zero).
+	defaultSamplingFreq = 20; //5 fois par second par defaut (pour eviter la division par zero).
 
 	//Ajoute plus de précision dans les calculs de trajectoire (en vtops par ticks)
-	vtopsPerTicks = 1000; //1000 ?  ; 1 => 1 vtops = 1 ticks
+	vtopsPerTicks = 100; //100 semble le meilleur compromis
 
 	maxPwmValue_ = 0;
 
@@ -74,10 +74,10 @@ AsservInsa::AsservInsa()
 
 	waitingSemaphore = false;
 
-	Theta = 0.0; //en radian
-	cosTheta = 0.0; //no unit //static
+	Theta = 0.0; //en [radian]
+	cosTheta = 0.0; //no unit
 	sinTheta = 0.0;
-	xTops = 0.0; //encoder vTops //static
+	xTops = 0.0; //encoder [vTops]
 	yTops = 0.0;
 
 	odoPeriodNb = 0;
@@ -167,7 +167,6 @@ void AsservInsa::signalEndOfTraj()
 #endif
 		path_TriggerWaypoint(TRAJ_OK);
 	}
-
 }
 
 void AsservInsa::motion_FreeMotion()
@@ -187,7 +186,6 @@ void AsservInsa::motion_DisablePID()
 	motion_FreeMotion();
 	RobotMotionState = DISABLE_PID;
 	setPWM(0, 0);
-
 }
 void AsservInsa::checkRobotCommand(RobotCommand *cmd)
 {
@@ -285,7 +283,7 @@ void AsservInsa::execute()
 	long currentTime = startTime;
 	logger().debug() << "execute started; loopDelayInMillis=" << loopDelayInMillis << " ms" << logs::end;
 
-	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
+	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
 			<< logs::end;
 
 	while (!stop_motion_ITTask)
@@ -297,7 +295,8 @@ void AsservInsa::execute()
 
 		//TODO use external or internl encoders !!
 		encoder_ReadSensor(&dLeft, &dRight, &dAlpha, &dDelta, &left, &right);
-		odo_Integration(2 * dAlpha / (float) distEncoder, (float) dDelta);
+		float temp = (2.0 * (float) dAlpha) / (float) distEncoder;
+		odo_Integration(temp, (float) dDelta);
 		RobotPosition p = odo_GetPosition();
 
 		//update all motors data
@@ -316,8 +315,8 @@ void AsservInsa::execute()
 				<< -y_mm
 				<< "\" r=\"1\" fill=\"blue\" />"
 				<< logs::end;
-		delta_y = 25.0 * sin(angle_rad);
-		delta_x = 25.0 * cos(angle_rad);
+		delta_y = 50.0 * sin(angle_rad);
+		delta_x = 50.0 * cos(angle_rad);
 		loggerSvg().info() << "<line x1=\""
 				<< x_mm
 				<< "\" y1=\""
@@ -391,23 +390,25 @@ void AsservInsa::execute()
 			}
 
 			//compute pwm for first motor
-//			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
-//					(float)(ord0 - motors[motionCommand.mcType][0].lastPos),
+//			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
+//					(float) ord0,
+//					(float) motors[motionCommand.mcType][0].lastPos,
 //					dSpeed0);
-			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-					(float) ord0,
-					(float) motors[motionCommand.mcType][0].lastPos,
-					dSpeed0);
-
-			//compute pwm for second motor
-//			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
-//					(float)(ord1 - motors[motionCommand.mcType][1].lastPos),
+//			//compute pwm for second motor
+//			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
+//					(float) ord1,
+//					(float) motors[motionCommand.mcType][1].lastPos,
 //					dSpeed1);
 
-			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-					(float) ord1,
-					(float) motors[motionCommand.mcType][1].lastPos,
+			//RCVA only for speed ? not position ?
+			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
+					(float) (ord0 - motors[motionCommand.mcType][0].lastPos),
+					dSpeed0);
+
+			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
+					(float) (ord1 - motors[motionCommand.mcType][1].lastPos),
 					dSpeed1);
+
 
 			//output pwm to motors
 			if (motionCommand.mcType == LEFT_RIGHT)
@@ -451,6 +452,10 @@ void AsservInsa::execute()
 					<< ", "
 					<< currentTime - startTime
 					<< ", "
+					<< left
+					<< ", "
+					<< right
+					<< ", "
 					<< left / leftEncoderRatio
 					<< ", "
 					<< right / rightEncoderRatio
@@ -485,53 +490,52 @@ void AsservInsa::execute()
 
 					<< logs::end;
 
-			logger().info() << periodNb
-					<< ", "
-					<< currentTime - startTime
-					<< ", "
-					<< left / leftEncoderRatio
-					<< ", "
-					<< right / rightEncoderRatio
-
-					<< ", "
-					<< dSpeed0
-					<< ", "
-					<< dSpeed1
-					<< ", "
-					<< dSpeed0 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
-					<< ", "
-					<< dSpeed1 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
-					<< ", "
-					<< pwm0
-					<< ", "
-					<< pwm1
-
-					<< ", "
-					<< motors[motionCommand.mcType][0].lastPos / leftEncoderRatio
-					<< ", "
-					<< motors[motionCommand.mcType][1].lastPos / leftEncoderRatio
-
-					<< ", "
-					<< (float) (ord0 / leftEncoderRatio)
-					<< ", "
-					<< (float) (ord1 / rightEncoderRatio)
-					<< ", "
-					<< x_mm
-					<< ", "
-					<< y_mm
-					<< ", "
-					<< angle_rad
-
-					<< logs::end;
+//			logger().info() << periodNb
+//					<< ", "
+//					<< currentTime - startTime
+//					<< ", "
+//					<< left
+//					<< ", "
+//					<< right
+//					<< ", "
+//					<< left / leftEncoderRatio
+//					<< ", "
+//					<< right / rightEncoderRatio
+//
+//					<< ", "
+//					<< dSpeed0
+//					<< ", "
+//					<< dSpeed1
+//					<< ", "
+//					<< dSpeed0 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+//					<< ", "
+//					<< dSpeed1 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+//					<< ", "
+//					<< pwm0
+//					<< ", "
+//					<< pwm1
+//
+//					<< ", "
+//					<< motors[motionCommand.mcType][0].lastPos / leftEncoderRatio
+//					<< ", "
+//					<< motors[motionCommand.mcType][1].lastPos / leftEncoderRatio
+//
+//					<< ", "
+//					<< (float) (ord0 / leftEncoderRatio)
+//					<< ", "
+//					<< (float) (ord1 / rightEncoderRatio)
+//					<< ", "
+//					<< x_mm
+//					<< ", "
+//					<< y_mm
+//					<< ", "
+//					<< angle_rad
+//
+//					<< logs::end;
 
 			//test end of traj
 			if (fin0 && fin1)
 			{
-				/*
-				 #ifdef LOG_PID
-				 closeLog();
-				 #endif
-				 */
 				signalEndOfTraj();
 			}
 

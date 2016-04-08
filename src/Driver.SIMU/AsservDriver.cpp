@@ -14,6 +14,12 @@ AAsservDriver * AAsservDriver::create()
 
 AsservDriver::AsservDriver()
 {
+	//CONFIGURATION SIMULATEUR --------------------------------------------
+	simuTicksPerMeter_ = 3640.0; //3000.0; //nb ticks for 1000mm
+	simuMaxSpeed_ = 0.25; //m/s
+	simuMaxPower_ = 860.0;
+	//CONFIGURATION SIMULATEUR --------------------------------------------
+
 	tLeft_ms_ = 0.0;
 	tRight_ms_ = 0.0;
 
@@ -40,30 +46,35 @@ AsservDriver::~AsservDriver()
 	if (twRight_.joinable())
 		twRight_.join();
 }
+
 float AsservDriver::convertMetersToTicks(float meters)
 {
-	 //conversion 1 meter = 1000ticks
-	float ticks = meters * 3640.0;
+	//conversion 1 meter = 3640 ticks
+	float ticks = std::round(meters * simuTicksPerMeter_);
+	//logger().error() << " meters=" << meters << " ticks=" << ticks << logs::end;
 	return ticks;
 }
 
 float AsservDriver::convertPowerToSpeed(int power)
 {
-	if (power < 15 && power > -15)
+	if (power < 15 && power > -15) //simule que le robot n'avance pas à tres faible puissance
 		return 0.0;
 
-	float speed = ((float) power * 0.25f) / 860.0f; //vitesse max = 250mm/s pour 860 de power
+	float speed = ((float) power * simuMaxSpeed_) / simuMaxPower_; //vitesse max = 250mm/s pour 860 de power
+
+	//logger().error() << " power=" << power << " speed=" << speed << logs::end;
+
 	return speed;
 }
 
 void AsservDriver::computeCounterL()
 {
 	// MAJ real speed
-//	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
-//	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
-//		leftSpeed_ = 0.0;
+	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
+	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
+		leftSpeed_ = wantedLeftSpeed_;
 	//or
-	leftSpeed_ = wantedLeftSpeed_;
+	//leftSpeed_ = wantedLeftSpeed_;
 
 	// utilise la real speed
 	float tps = chrono_.getElapsedTimeInMilliSec();
@@ -72,10 +83,9 @@ void AsservDriver::computeCounterL()
 
 	float currentLeftMeters = (deltaT_ms * leftSpeed_) / 1000.0f;
 	mutexL_.lock();
-	currentLeftCounter_ = convertMetersToTicks(currentLeftMeters); //conversion Metre 3640Ticks/metres
+	currentLeftCounter_ = convertMetersToTicks(currentLeftMeters); //conversion Metre  n Ticks/metres
 	leftCounter_ += currentLeftCounter_;
 	mutexL_.unlock();
-
 
 //	loggerM().debug() << "computeCounterL "
 //			<< " ms="
@@ -101,15 +111,14 @@ void AsservDriver::computeCounterL()
 
 }
 
-
 void AsservDriver::computeCounterR()
 {
 	// MAJ real speed
-//	rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
-//	if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
-//		rightSpeed_ = 0.0;
+	rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
+	if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
+		rightSpeed_ = wantedRightSpeed_;
 	//or
-	rightSpeed_ = wantedRightSpeed_;
+	//rightSpeed_ = wantedRightSpeed_;
 
 	float tps = chrono_.getElapsedTimeInMilliSec();
 	float deltaT_ms = tps - tRight_ms_;
@@ -117,8 +126,7 @@ void AsservDriver::computeCounterR()
 	float currentRightMeters = (deltaT_ms * rightSpeed_) / 1000.0f;
 
 	mutexR_.lock();
-	//1mm = 1tick //TODO ramener la config de l'asserv !!
-	currentRightCounter_ = convertMetersToTicks(currentRightMeters); //conversion 1 meter = 3640ticks
+	currentRightCounter_ = convertMetersToTicks(currentRightMeters); //conversion 1 meter = n ticks
 	rightCounter_ += currentRightCounter_;
 	mutexR_.unlock();
 
@@ -157,15 +165,18 @@ void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
 	else if (power > 0)
 		sens = 1;
 
-
 	computeCounterL();
 	mutexL_.lock();
 	wantedLeftSpeed_ = convertPowerToSpeed(power);
 	tLeft_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexL_.unlock();
 
-	logger().debug() << "setMotorLeftPosition    power=" << power << " ticksToDo=" << ticksToDo
-			<< " wantedLeftSpeed_=" << wantedLeftSpeed_
+	logger().debug() << "setMotorLeftPosition    power="
+			<< power
+			<< " ticksToDo="
+			<< ticksToDo
+			<< " wantedLeftSpeed_="
+			<< wantedLeftSpeed_
 			<< logs::end;
 
 	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
@@ -189,8 +200,12 @@ void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
 	tRight_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexR_.unlock();
 
-	logger().debug() << "setMotorRightPosition    power=" << power << " ticksToDo=" << ticksToDo
-			<< " wantedRightSpeed_=" << wantedRightSpeed_
+	logger().debug() << "setMotorRightPosition    power="
+			<< power
+			<< " ticksToDo="
+			<< ticksToDo
+			<< " wantedRightSpeed_="
+			<< wantedRightSpeed_
 			<< logs::end;
 
 	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);

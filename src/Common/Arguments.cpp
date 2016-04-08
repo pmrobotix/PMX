@@ -36,7 +36,6 @@ bool Arguments::parse(int argc, TCHAR *argv[])
 		m_strCommandName = argv[0];
 
 	uint nArg = 0;
-printf("m_strOptionmarkers =%c \n\n", m_strOptionmarkers[0]);
 
 	for (int i = 1; i < argc; i++)
 	{
@@ -81,10 +80,6 @@ printf("m_strOptionmarkers =%c \n\n", m_strOptionmarkers[0]);
 										<< " error: Too few arguments for option "
 										<< strArgument
 										<< "."
-										<< " nOptArg="
-										<< nOptArg
-										<< " < nNonOptionalArgs="
-										<< nNonOptionalArgs
 										<< endl;
 								usage();
 								return false;
@@ -116,7 +111,6 @@ printf("m_strOptionmarkers =%c \n\n", m_strOptionmarkers[0]);
 		}
 	}
 
-
 	{
 		uint nNonOptionalArgs = 0;
 		{
@@ -130,13 +124,7 @@ printf("m_strOptionmarkers =%c \n\n", m_strOptionmarkers[0]);
 		if (nArg != 0 && nNonOptionalArgs != 0)
 			if (nNonOptionalArgs >= nArg)
 			{
-				cerr << m_strCommandName
-						<< " error: Too few arguments."
-						<< " nNonOptionalArgs="
-						<< nNonOptionalArgs
-						<< " >= nArg="
-						<< nArg
-						<< endl;
+				cerr << m_strCommandName << " error: Too few arguments." << endl;
 				usage();
 				return false;
 			}
@@ -159,13 +147,10 @@ bool Arguments::addOption(Option &option)
 	return true;
 }
 
-
 bool Arguments::usage()
 {
 	sleep(1); //pour laisser les messages d'erreurs s'afficher auparavant.
 	cerr << "Usage: " << m_strCommandName;
-
-	printf("usage m_strOptionmarkers =%c \n\n", m_strOptionmarkers[0]);
 
 	for (OptionMap::iterator it = m_mOptions.begin(); it != m_mOptions.end(); it++)
 	{
@@ -197,7 +182,7 @@ bool Arguments::usage()
 
 	for (OptionMap::iterator it = m_mOptions.begin(); it != m_mOptions.end(); it++)
 	{
-		cerr << "\t"<< m_strOptionmarkers[0] << it->second.getName() << "\t  " << it->second.m_strDescription << endl;
+		cerr << "\t" << m_strOptionmarkers[0] << it->second.getName() << "\t  " << it->second.m_strDescription << endl;
 
 		for (ArgVector::iterator itArg = it->second.m_vArguments.begin(); itArg != it->second.m_vArguments.end();
 				itArg++)
@@ -208,8 +193,6 @@ bool Arguments::usage()
 				cerr << "\t\t  optional argument (default='" << itArg->m_strDefault << "')" << endl;
 		}
 	}
-
-
 
 	if (!m_vArguments.empty())
 		cerr << endl << "Arguments:" << endl;

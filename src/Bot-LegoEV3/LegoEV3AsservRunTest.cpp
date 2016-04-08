@@ -41,26 +41,26 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 	float y = 0.0;
 	float a = 0.0;
 
-	logger().debug() << logs::end;
-	logger().debug() << logs::end;
-	logger().debug() << logs::end;
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.setMyColor(PMXVIOLET);
+	robot.setMyColor(PMXGREEN);
 
 	Arguments args = robot.getArgs();
 
 	if (args["x"] != "0")
 	{
 		x = atof(args["x"].c_str());
+		logger().debug() << "Arg x set " << args["x"] << ", x = " << x << logs::end;
 	}
 	if (args["y"] != "0")
 	{
 		y = atof(args["y"].c_str());
+		logger().debug() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
 	}
 	if (args["a"] != "0")
 	{
 		a = atof(args["a"].c_str());
+		logger().debug() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
 	}
 
 	robot.asserv().startMotionTimerAndOdo();
@@ -74,8 +74,29 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 
 	chrono.start();
 
+	robot.asserv().doMoveForwardAndRotateTo(x, y, a);
 
-	/*
+	left = robot.asserv().base()->encoders().getLeftEncoder();
+	right = robot.asserv().base()->encoders().getRightEncoder();
+	logger().info() << "time= "
+			<< chrono.getElapsedTimeInMilliSec()
+			<< "ms ; left= "
+			<< left
+			<< " ; right= "
+			<< right
+			<< " x="
+			<< robot.asserv().pos_getX_mm()
+			<< " y="
+			<< robot.asserv().pos_getY_mm()
+			<< " a="
+			<< robot.asserv().pos_getThetaInDegree()
+			<< logs::end;
+
+	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+			robot.asserv().pos_getY_mm(),
+			robot.asserv().pos_getTheta(),
+			LEGOEV3_SVG_POS_ROBOT);
+
 	robot.asserv().doMoveForwardTo(400, 300);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
@@ -121,8 +142,8 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 			robot.asserv().pos_getY_mm(),
 			robot.asserv().pos_getTheta(),
 			LEGOEV3_SVG_POS_ROBOT);
-*/
-	robot.asserv().doMoveForwardTo(0, 1000);
+
+	robot.asserv().doMoveForwardTo(100, 1000);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -140,6 +161,11 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
+	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+			robot.asserv().pos_getY_mm(),
+			robot.asserv().pos_getTheta(),
+			LEGOEV3_SVG_POS_ROBOT);
+	sleep(2);
 	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
 			robot.asserv().pos_getY_mm(),
 			robot.asserv().pos_getTheta(),

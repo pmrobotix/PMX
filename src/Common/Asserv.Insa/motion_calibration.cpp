@@ -24,7 +24,7 @@ void AsservInsa::encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPe
 	}
 
 	//recompute values involving vTops
-	encoder_SetDist(entraxe_mm / 1000.0);
+	encoder_SetDist(entraxe_mm / 1000.0f);
 
 	logger().debug() << "encoder_SetResolution  leftTicksPerM="
 			<< leftTicksPerM
@@ -59,7 +59,7 @@ void AsservInsa::motion_SetSamplingFrequency(uint frequency)
 		frequency = 1;
 	}
 
-	loopDelayInMillis = 1000.0 / (float) frequency;
+	loopDelayInMillis = 1000.0f / (float) frequency;
 	logger().debug() << "loopDelayInMillis= " << loopDelayInMillis << logs::end;
 
 	//need a recomputation of all values involving sampling time

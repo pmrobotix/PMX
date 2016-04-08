@@ -38,8 +38,11 @@ private:
 	}
 
 	Mutex mutexL_;
-
 	Mutex mutexR_;
+
+	float simuTicksPerMeter_;
+	float simuMaxSpeed_;
+	float simuMaxPower_;
 
 	utils::Chronometer chrono_;
 

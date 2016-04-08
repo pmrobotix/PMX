@@ -122,58 +122,57 @@ float AsservInsa::pid_Compute(PID_SYSTEM system, float setpoint, float input, fl
 	unsigned long now = currentTimeInMillis();
 	unsigned long lastTime = val->lastTime;
 
-//	int timeChange = (now - lastTime);
-//	if (timeChange >= loopDelayInMillis) //necessaire ?
-//	{
-	float kp = conf.kP;
-	float ki = conf.kI;
-	float kd = conf.kD;
+	long timeChange = (now - lastTime);
+	//printf("go timeChange=%ld loopDelayInMillis=%ld\n", timeChange, loopDelayInMillis);
+	if (timeChange >= loopDelayInMillis) //necessaire ?
+	{
+		float kp = conf.kP;
+		float ki = conf.kI;
+		float kd = conf.kD;
 
-	/*Compute all the working error variables*/
-	float error = setpoint - input;
-	ITerm += (ki * error);
-	if (ITerm > outMax)
-		ITerm = outMax;
-	else if (ITerm < outMin)
-		ITerm = outMin;
-	float dInput = (input - lastInput);
+		/*Compute all the working error variables*/
+		float error = setpoint - input;
+		ITerm += (ki * error);
+		if (ITerm > outMax)
+			ITerm = outMax;
+		else if (ITerm < outMin)
+			ITerm = outMin;
+		float dInput = (input - lastInput);
 
-	/*Compute PID Output*/
-	outPut = kp * error + ITerm - kd * dInput;
-	if (outPut > outMax)
-		outPut = outMax;
-	else if (outPut < outMin)
-		outPut = outMin;
+		/*Compute PID Output*/
+		outPut = kp * error + ITerm - kd * dInput;
+		if (outPut > outMax)
+			outPut = outMax;
+		else if (outPut < outMin)
+			outPut = outMin;
 
-	/*Remember some variables for next time*/
-	val->lastInput = input;
-	val->lastTime = now;
-	val->ITerm = ITerm;
+		/*Remember some variables for next time*/
+		val->lastInput = input;
+		val->lastTime = now;
+		val->ITerm = ITerm;
 
-//	}
-//	else
-//	{
-	logger().debug() << "pid_Compute - P="
-			<< conf.kP
-			<< " D="
-			<< conf.kD
-			<< " error="
-			<< error
-			<< " input="
-			<< input
-			<< " setpoint="
-			<< setpoint
-			<< " speed="
-			<< speed
-			<< " outPut="
-			<< outPut
-			<< logs::end;
-	/*
-	 #ifdef DEBUG_PID
-	 printf("conf.kP %f %f %f \n", conf.kP, conf.kI, conf.kD);
-	 //printf("No pid calculation: %ld - %ld = %d ms\n", now, lastTime, timeChange);
-	 #endif*/
-	//}
+	}
+	else
+	{
+		logger().debug() << "pid_Compute - P="
+				<< conf.kP
+				<< " D="
+				<< conf.kD
+				<< " input="
+				<< input
+				<< " setpoint="
+				<< setpoint
+				<< " speed="
+				<< speed
+				<< " outPut="
+				<< outPut
+				<< logs::end;
+		/*
+		 #ifdef DEBUG_PID
+		 printf("conf.kP %f %f %f \n", conf.kP, conf.kI, conf.kD);
+		 //printf("No pid calculation: %ld - %ld = %d ms\n", now, lastTime, timeChange);
+		 #endif*/
+	}
 	val->lastOutput = outPut;
 	return outPut;
 }

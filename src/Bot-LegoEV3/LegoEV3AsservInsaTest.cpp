@@ -23,11 +23,13 @@ void LegoEV3AsservInsaTest::configureConsoleArgs(int argc, char** argv) //surcha
 	robot.getArgs().addArgument("mm", "Distance (mm) for test", "0.0");
 
 	robot.getArgs().addArgument("Dp", "value(float) of p for Delta", "0.0");
+	robot.getArgs().addArgument("Di", "value(float) of i for Delta", "0.0");
 	robot.getArgs().addArgument("Dd", "value(float) of d for Delta", "0.0");
 
 	robot.getArgs().addArgument("angle", "Angle (degrees) for test", "0.0");
 
 	robot.getArgs().addArgument("Ap", "value(float) of p for Alpha", "0.0");
+	robot.getArgs().addArgument("Ai", "value(float) of i for Alpha", "0.0");
 	robot.getArgs().addArgument("Ad", "value(float) of d for Alpha", "0.0");
 
 	//reparse arguments
@@ -45,8 +47,10 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 
 	//PID values
 	float Dp = 0.0;
+	float Di = 0.0;
 	float Dd = 0.0;
 	float Ap = 0.0;
+	float Ai = 0.0;
 	float Ad = 0.0;
 	int distmm = 0;
 	float angle = 0.0;
@@ -55,7 +59,6 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 	float Vmax = 0.0;
 	float Dec = 0.0;
 
-	logger().debug()  << logs::end;logger().debug()  << logs::end;logger().debug()  << logs::end;
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	Arguments args = robot.getArgs();
 	if (args["mm"] != "0")
@@ -84,6 +87,11 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 		Dp = atof(args["Dp"].c_str());
 		logger().debug() << "Arg Dp set " << args["Dp"] << ", Dp = " << Dp << logs::end;
 	}
+	if (args["Di"] != "0")
+	{
+		Di = atof(args["Di"].c_str());
+		logger().debug() << "Arg Di set " << args["Di"] << ", Di = " << Di << logs::end;
+	}
 	if (args["Dd"] != "0")
 	{
 		Dd = atof(args["Dd"].c_str());
@@ -99,6 +107,11 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 		Ap = atof(args["Ap"].c_str());
 		logger().debug() << "Arg Ap set " << args["Ap"] << ", Ap = " << Ap << logs::end;
 	}
+	if (args["Ai"] != "0")
+	{
+		Ai = atof(args["Ai"].c_str());
+		logger().debug() << "Arg Ai set " << args["Ai"] << ", Ai = " << Ai << logs::end;
+	}
 
 	if (args["Ad"] != "0")
 	{
@@ -108,9 +121,9 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 
 	robot.asserv().startMotionTimerAndOdo();
 	//surcharge des valeurs
-	robot.asserv().configureAlphaPID(Ap, 0.0, Ad);
-	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
-	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor()==PMXGREEN));
+	robot.asserv().configureAlphaPID(Ap, Ai, Ad);
+	robot.asserv().configureDeltaPID(Dp, Di, Dd);
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.asserv().setVmax(Vmax);
 	robot.asserv().setAccel(Acc);
 	robot.asserv().setDecel(Dec);
@@ -120,12 +133,12 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 			robot.asserv().pos_getTheta(),
 			LEGOEV3_SVG_POS_ROBOT);
 
+	if (angle != 0)
+		robot.asserv().doRotateAbs(angle);
+
 	chrono.start();
 	if (distmm != 0)
 		robot.asserv().doLineAbs(distmm);
-
-	if (angle != 0)
-		robot.asserv().doRotateAbs(angle);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -147,6 +160,7 @@ void LegoEV3AsservInsaTest::run(int argc, char** argv)
 			robot.asserv().pos_getY_mm(),
 			robot.asserv().pos_getTheta(),
 			LEGOEV3_SVG_POS_ROBOT);
+
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }

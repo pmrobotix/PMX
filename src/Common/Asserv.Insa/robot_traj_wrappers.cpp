@@ -32,10 +32,19 @@
 TRAJ_STATE AsservInsa::motion_findPidAD(float angle_rad, float meters, int sec)
 {
 	checkRobotCommand(&cmd);
-	motion_StepOrderAD(&cmd, convertDistTovTops(angle_rad * distEncoderMeter / 2.0f), (int32)(meters / valueVTops), sec);
+	motion_StepOrderAD(&cmd, convertDistTovTops(angle_rad * distEncoderMeter / 2.0f), convertDistTovTops(meters), sec);
 	path_LaunchTrajectory(&cmd);
 	TRAJ_STATE result= path_WaitEndOfTrajectory();
 	//printf("----path_WaitEndOfTrajectory returned : %d : %d\n", result, TRAJ_OK);
+	return result;
+}
+
+TRAJ_STATE AsservInsa::motion_findPidLR(float posl, float posr, int sec)
+{
+	checkRobotCommand(&cmd);
+	motion_StepOrderLR(&cmd, convertDistTovTops(posl), convertDistTovTops(posr), sec);
+	path_LaunchTrajectory(&cmd);
+	TRAJ_STATE result= path_WaitEndOfTrajectory();
 	return result;
 }
 

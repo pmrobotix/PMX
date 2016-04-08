@@ -32,8 +32,8 @@ protected:
 	bool ignoreRearCollision_;
 	bool ignoreFrontCollision_;
 
-	//0=>LEFT with coordinate x, y
-	//1=>RIGHT with coordinate 3000-x, y
+	//0=>LEFT with coordinate x, y, angle
+	//1=>RIGHT with coordinate 3000-x, y , -angle
 	bool matchColorPosition_;
 
 public:
@@ -82,6 +82,7 @@ public:
 
 
 	void findPidAD(float degrees, int mm, int sec);
+	void findPidLR(float posl, int posr, int sec);
 
 	void configureAlphaPID(float Ap, float Ai, float Ad);
 	void configureDeltaPID(float Dp, float Di, float Dd);

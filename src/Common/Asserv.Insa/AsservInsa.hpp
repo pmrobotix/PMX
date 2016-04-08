@@ -700,6 +700,7 @@ public:
 	//---robot_traj_wrappers
 
 	TRAJ_STATE motion_findPidAD(float angle_rad, float meters, int sec);
+	TRAJ_STATE motion_findPidLR(float posl, float posr, int sec);
 
 	//! This module provide higher level control on the motion control module
 	//! AI and strategy software can use this primitives directly

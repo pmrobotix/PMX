@@ -16,7 +16,6 @@ void logs::LoggerFactory::initialize()
 	add("memory", new MemoryAppender());
 	add("file", new FileAppender("logEV3.csv"));
 
-
 	add(logs::Level::ERROR, "", "console");
 
 	add(logs::Level::INFO, "Robot", "console");
@@ -30,16 +29,17 @@ void logs::LoggerFactory::initialize()
 	//File
 	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
 
-
 	//TESTS
 	add(logs::Level::INFO, "LegoEV3LedBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3ButtonBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3SoundBarTest", "console");
 	add(logs::Level::INFO, "LegoEV3TiretteTest", "console");
-	add(logs::Level::DEBUG, "LegoEV3MovingBaseTest", "console");
-	add(logs::Level::DEBUG, "LegoEV3AsservInsaTest", "console");
+	add(logs::Level::INFO, "LegoEV3MovingBaseTest", "console");
+
 	add(logs::Level::DEBUG, "LegoEV3FindPIDTest", "console");
 	add(logs::Level::DEBUG, "LegoEV3AsservSetResolutionTest", "console");
+	add(logs::Level::DEBUG, "LegoEV3AsservInsaTest", "console");
+	add(logs::Level::DEBUG, "LegoEV3AsservRunTest", "console");
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
