@@ -36,47 +36,18 @@ LedDriver::LedDriver(int nb)
 		paths[5]->openIoctl('A', 7);
 		paths[6]->openIoctl('A', 10);
 		paths[7]->openIoctl('A', 11);
+
 		for (int i = 0; i < 8; i++)
 		{
 			paths[i]->setDirIoctl(1);
-
 			paths[i]->setValueIoctl(0);
-
 		}
 
 	} catch (logs::Exception * e)
 	{
 		logger().error() << "Exception : " << e->what() << logs::end;
 	}
-	/*
-	 sleep(1);
-	 for (int i = 0; i < 8; i++)
-	 {
 
-	 paths[i]->setValueIoctl(1);
-	 }
-	 sleep(1);
-	 for (int i = 0; i < 8; i++)
-	 {
-
-	 paths[i]->setValueIoctl(0);
-	 }*/
-
-	//logger().error() << "Begin" << logs::end;
-	/*
-	 try
-	 {
-	 paths_as[0] = new HostGpioPort();
-	 logger().error() << "openas" << logs::end;
-	 paths_as[0]->openAs(4);
-	 //paths_as[0]->setDirectionAs(1);
-	 //paths_as[0]->setValueAs(1);
-
-	 } catch (logs::Exception * e)
-	 {
-	 logger().error() << "Exception : " << e->what() << logs::end;
-	 }
-	 */
 }
 
 LedDriver::~LedDriver()

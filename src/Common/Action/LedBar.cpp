@@ -349,8 +349,6 @@ bool LedBarAction::execute()
 		ledBar_.actionRunning(true);
 		if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1)
 		{
-			//pmx::LedIndicator::instance().set(ledBar_.position(), (i_ % 2));
-			//out->setValue(ledBar_.dm(), ledBar_.position(), (i_ % 2));
 			LedColor temp;
 			if (i_ % 2)
 				temp = ledBar_.color();

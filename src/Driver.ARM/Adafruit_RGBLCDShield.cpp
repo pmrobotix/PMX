@@ -81,6 +81,9 @@ Adafruit_RGBLCDShield::Adafruit_RGBLCDShield()
 	_button_pins[3] = 3;
 	_button_pins[4] = 4;
 
+
+	begin(16, 2);
+
 }
 
 void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //cols, lines, dotsize
@@ -352,7 +355,7 @@ void Adafruit_RGBLCDShield::createChar(uint8_t location, uint8_t charmap[])
 	command(LCD_SETCGRAMADDR | (location << 3));
 	for (int i = 0; i < 8; i++)
 	{
-		write(charmap[i]);
+		write__(charmap[i]);
 	}
 	command(LCD_SETDDRAMADDR);  // unfortunately resets the location to 0,0
 }
@@ -370,7 +373,7 @@ inline void Adafruit_RGBLCDShield::command(uint8_t value)
  return 1;
  }
  #else*/
-inline size_t Adafruit_RGBLCDShield::write(uint8_t value)
+size_t Adafruit_RGBLCDShield::write__(uint8_t value)
 {
 	if (!connected_)
 	{

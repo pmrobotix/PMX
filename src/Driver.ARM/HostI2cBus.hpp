@@ -13,10 +13,6 @@
 #include "../Log/Exception.hpp"
 #include "../Thread/Mutex.hpp"
 
-class AsI2c;
-
-
-
 
 /*!
  * \brief Exception lancée s'il y a une erreur avec l'I2C.
@@ -48,25 +44,17 @@ public:
 	}
 };
 
-
-
 //new class using cpp
 class HostI2cBus: public utils::Mutex
 {
 
 private:
 
-
-	/*!
-	 * \brief Stored i2c parameters.
+protected:
+	/**
+	 * I2C bus device C structure
 	 */
-	//struct as_i2c_device *device_;
-	static AsI2c *asI2c;
-
-	/*!
-	 * \brief true if the i2c is opened.
-	 */
-	int opened_;
+	mutable struct as_i2c_device *mDev;
 
 public:
 	/*!
@@ -77,37 +65,94 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~HostI2cBus()
-	{
-	}
+	virtual ~HostI2cBus();
 
+	/** @brief Set chip's I2C slave address
+	 *
+	 * @param aAddr		slave's address
+	 *
+	 * @return error if negative
+	 */
 	long setSlaveAddr(unsigned char aAddr);
 
+	/** @brief Get chip's I2C slave address
+	 *
+	 * @return slave's address
+	 */
 	long getSlaveAddr() const;
 
+	/** @brief Read several bytes (ioctl() method) from given chip.
+	 *
+	 * @param aData		read data
+	 * @param aSize		data size
+	 *
+	 * @return error if negative
+	 */
 	long read(unsigned char *aData, size_t aSize) const;
 
+	/** @brief Write several bytes (ioctl() method) to given chip.
+	 *
+	 * @param aData		data to write
+	 * @param aSize		data size
+	 *
+	 * @return error if negative
+	 */
 	long write(unsigned char *aData, size_t aSize);
 
+	/** @brief Read from given chip at a given register address (ioctl() method).
+	 *
+	 * @param aReg		register address
+	 * @param aData		read data
+	 * @param aSize		data size
+	 *
+	 * @return error if negative
+	 */
 	long readReg(unsigned char aReg, unsigned char *aData, size_t aSize) const;
 
+	/** @brief Write to given chip at a given register address (ioctl() method).
+	 *
+	 * @param aReg		register address
+	 * @param aData		data to write
+	 * @param aSize		data size
+	 *
+	 * @return error if negative
+	 */
 	long writeReg(unsigned char aReg, unsigned char *aData, size_t aSize);
 
+	/** @brief forge a read message like this:
+	 * S Addr[W] wdata0 [A] wdata1 [A] ... RS Addr R [rdata0] A [rdata1] A ... P
+	 *
+	 * @param aWData	    data to write
+	 * @param aWriteSize    written data size
+	 * @param aRData	    read data
+	 * @param aReadSize	    read data size
+	 *
+	 * @return error if negative
+	 */
 	long readMsg(unsigned char *aWData, unsigned char aWriteSize, unsigned char *aRData, size_t aReadSize);
 
+	/** @brief Read a byte from the given register.
+	 *
+	 * @param aReg		register address
+	 *
+	 * @return read byte
+	 */
 	long readRegByte(unsigned char aReg) const;
 
+	/** @brief Write a byte to the given register.
+	 *
+	 * @param aReg		register address
+	 * @param aVal		byte to write
+	 *
+	 * @return error if negative
+	 */
 	long writeRegByte(unsigned char aReg, unsigned char aVal);
-
-
-
-
 
 };
 
 
 
-
+//______________________________________
 
 class HostI2cBusOld: public utils::Mutex
 {
@@ -140,8 +185,7 @@ public:
 		} catch (logs::Exception * e)
 		{
 
-			std::cout << "HostI2cBusOld()::Exception - close_i2c :" << e->what()
-					<< std::endl;
+			std::cout << "HostI2cBusOld()::Exception - close_i2c :" << e->what() << std::endl;
 		}
 	}
 
@@ -155,7 +199,7 @@ public:
 	 *
 	 * \return return 0 on success, -1 on write error (\e reg byte), -2 on read error.
 	 */
-	int readRegValue(unsigned char  slave_addr, unsigned char  reg, unsigned char * data);
+	int readRegValue(unsigned char slave_addr, unsigned char reg, unsigned char * data);
 
 	/*!
 	 * \brief Write a byte to the I2C given register.
@@ -165,11 +209,11 @@ public:
 	 *
 	 * \return 0 on success, -1 on error.
 	 */
-	int writeRegValue(unsigned char  slave_addr, unsigned char  reg, unsigned char  value);
+	int writeRegValue(unsigned char slave_addr, unsigned char reg, unsigned char value);
 
-	int readI2cSize(unsigned char  slave_addr, char *buf, size_t size);
+	int readI2cSize(unsigned char slave_addr, char *buf, size_t size);
 
-	int writeI2cSize(unsigned char  slave_addr, const char *buf, size_t size);
+	int writeI2cSize(unsigned char slave_addr, const char *buf, size_t size);
 
 	/*!
 	 * \brief Read 4 bytes from the given register.
@@ -183,7 +227,7 @@ public:
 	/*!
 	 * \brief Open i2c.
 	 */
-	void open(unsigned char  slave_addr);
+	void open(unsigned char slave_addr);
 
 	/*!
 	 * \brief Close i2c.
@@ -195,9 +239,8 @@ private:
 	 * \brief Set the slave by his address.
 	 * \param   slaveAddr	slave address.
 	 */
-	void setSlave(unsigned char  slaveAddr);
+	void setSlave(unsigned char slaveAddr);
 
 };
-
 
 #endif

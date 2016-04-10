@@ -26,7 +26,7 @@
 #include <stdint.h>
 #include <cstring>
 
-#include "../Common/Utils/WString.hpp"
+#include "Utils/WString.hpp"
 
 class __FlashStringHelper;
 
@@ -67,6 +67,8 @@ public:
 	}
 
 	virtual size_t write(uint8_t) = 0;
+
+
 	size_t write(const char *str)
 	{
 		if (str == NULL)

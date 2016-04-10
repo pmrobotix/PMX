@@ -11,7 +11,11 @@ enum ButtonTouch
 	BUTTON_UP_KEY,
 	BUTTON_DOWN_KEY,
 	BUTTON_LEFT_KEY,
-	BUTTON_RIGHT_KEY
+	BUTTON_RIGHT_KEY,
+	/*!
+	 * \brief end of button or eon (end of enum).
+	 */
+	BUTTON_NONE
 };
 
 class AButtonDriver

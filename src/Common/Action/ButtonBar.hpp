@@ -43,6 +43,8 @@ public:
 
 	bool waitPressed(ButtonTouch button);
 
+	ButtonTouch waitOneOfAllPressed();
+
 };
 
 

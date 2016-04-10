@@ -15,9 +15,8 @@
 //#include <avr/pgmspace.h>
 #include "Adafruit_MCP23017.hpp"
 
-#include <stdlib.h>
-
-
+#include "../Log/Exception.hpp"
+#include "../Log/Logger.hpp"
 
 /*
  #ifdef __AVR__
@@ -32,49 +31,43 @@
  #include "WProgram.h"
  #endif*/
 /*
-// minihelper
-static inline void wiresend(uint8_t x)
-{
+ // minihelper
+ static inline void wiresend(uint8_t x)
+ {
 
-	 #if ARDUINO >= 100
-	 WIRE.write((uint8_t)x);
-	 #else
-	 WIRE.send(x);
-	 #endif
-}
+ #if ARDUINO >= 100
+ WIRE.write((uint8_t)x);
+ #else
+ WIRE.send(x);
+ #endif
+ }
 
-static inline uint8_t wirerecv(void)
-{
+ static inline uint8_t wirerecv(void)
+ {
 
-	 #if ARDUINO >= 100
-	 return WIRE.read();
-	 #else
-	 return WIRE.receive();
-	 #endif
-}
-*/
+ #if ARDUINO >= 100
+ return WIRE.read();
+ #else
+ return WIRE.receive();
+ #endif
+ }
+ */
 ////////////////////////////////////////////////////////////////////////////////
-
-
 void Adafruit_MCP23017::begin(void)
 {
-
-
-	//try
-	//{
+	try
+	{
 		//open i2c and setslave
-		MCP_i2c_.open(MCP23017_ADDRESS);
-
+		MCP_i2c_.setSlaveAddr(MCP23017_ADDRESS);
 		//setup
 		write_i2c(MCP23017_IODIRA, 0xFF); // all inputs on port A
 		write_i2c(MCP23017_IODIRB, 0xFF); // all inputs on port B
 
-	/*} catch (utils::Exception * e)
+	} catch (logs::Exception * e)
 	{
 
-		logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! (... test) " //<< e->what()
-				<< utils::end;
-	}*/
+		logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! " << e->what() << logs::end;
+	}
 }
 
 void Adafruit_MCP23017::pinMode(uint8_t p, uint8_t d)
@@ -141,7 +134,7 @@ uint16_t Adafruit_MCP23017::readGPIOAB()
 	 ba |= a;
 	 */
 
-	a = read_i2c(MCP23017_GPIOA); // TODO use readI2c_2Byte ??
+	a = read_i2c(MCP23017_GPIOA); // TODO use readI2c_2Bytes ??
 	ba = read_i2c(MCP23017_GPIOA + 1);
 	ba <<= 8;
 	ba |= a;
@@ -158,7 +151,7 @@ void Adafruit_MCP23017::writeGPIOAB(uint16_t ba)
 	 wiresend(ba >> 8);
 	 WIRE.endTransmission();*/
 
-	char buf[3];
+	unsigned char buf[3];
 	buf[0] = MCP23017_GPIOA;
 	buf[1] = ba & 0xFF;
 	buf[2] = ba >> 8;
@@ -293,27 +286,59 @@ uint8_t Adafruit_MCP23017::digitalRead(uint8_t p)
 
 }
 
-void Adafruit_MCP23017::write_i2c(unsigned char command, unsigned char value)
+long Adafruit_MCP23017::write_i2c(unsigned char command, unsigned char value)
 {
-	MCP_i2c_.writeRegValue(MCP23017_ADDRESS, command, value);
+	long ret = -1;
+	try
+	{
+		//MCP_i2c_.writeRegValue(MCP23017_ADDRESS, command, value);
+		ret = MCP_i2c_.writeRegByte(command, value);
+	} catch (logs::Exception * e)
+	{
+		logger().error() << "write_i2c()::Exception - writeRegByte !!! " << e->what() << logs::end;
+	}
+	return ret;
 }
 
-int Adafruit_MCP23017::read_i2c(unsigned char command)
+long Adafruit_MCP23017::read_i2c(unsigned char command)
 {
-	unsigned char receivedVal = 0;
-	MCP_i2c_.readRegValue(MCP23017_ADDRESS, command, &receivedVal);
-	return receivedVal;
+	long ret = -1;
+	try
+	{
+		//MCP_i2c_.readRegValue(MCP23017_ADDRESS, command, &receivedVal);
+		ret = MCP_i2c_.readRegByte(command);
+	} catch (logs::Exception * e)
+	{
+		logger().error() << "read_i2c()::Exception - readRegByte !!! " << e->what() << logs::end;
+	}
+	return ret;
 }
 
-void Adafruit_MCP23017::writeI2c_3Bytes(const char *buf)
+long Adafruit_MCP23017::writeI2c_3Bytes(unsigned char *buf)
 {
-	MCP_i2c_.writeI2cSize(MCP23017_ADDRESS, buf, 3);
+	long ret = -1;
+	try
+	{
+		//MCP_i2c_.writeI2cSize(MCP23017_ADDRESS, buf, 3);
+		ret = MCP_i2c_.write(buf, 3);
+
+	} catch (logs::Exception * e)
+	{
+		logger().error() << "writeI2c_3Bytes()::Exception - write !!! " << e->what() << logs::end;
+	}
+	return ret;
 }
 
-char* Adafruit_MCP23017::readI2c_2Byte()
+long Adafruit_MCP23017::readI2c_2Bytes(unsigned char *buf)
 {
-	//char buf[2];
-	char *buf = (char *)calloc(2, sizeof(char));
-	MCP_i2c_.readI2cSize(MCP23017_ADDRESS, buf, 2);
-	return buf;
+	long ret = -1;
+	try
+	{
+		//unsigned char *buf = (unsigned char *) calloc(2, sizeof(unsigned char));
+		ret = MCP_i2c_.read(buf, 2);
+	} catch (logs::Exception * e)
+	{
+		logger().error() << "readI2c_2Byte()::Exception - read !!! " << e->what() << logs::end;
+	}
+	return ret;
 }

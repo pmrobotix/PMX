@@ -4,7 +4,6 @@
 #include <sys/types.h>
 #include <string>
 
-
 /*!
  * \brief Enumeration of the different color of leds.
  */
@@ -37,6 +36,9 @@ enum LedColor
 	 */
 	LED_YELLOW,
 
+	/*!
+	 * \brief end/eon (end of num) of colors.
+	 */
 	LED_END
 
 };

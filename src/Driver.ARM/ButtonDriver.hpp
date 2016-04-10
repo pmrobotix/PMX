@@ -3,6 +3,7 @@
 
 #include "../Common/Action.Driver/AButtonDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "Adafruit_RGBLCDShield.hpp"
 
 class ButtonDriver: public AButtonDriver
 {
@@ -16,6 +17,7 @@ private:
 		static const logs::Logger & instance = logs::LoggerFactory::logger("ButtonDriver.SIMU");
 		return instance;
 	}
+
 
 public:
 

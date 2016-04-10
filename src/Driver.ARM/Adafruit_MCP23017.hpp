@@ -80,10 +80,13 @@ public:
 	void writeGPIOAB(uint16_t);
 	uint16_t readGPIOAB();
 
-	void write_i2c(unsigned char command, unsigned char value);
-	int read_i2c(unsigned char command);
-	char* readI2c_2Byte();
-	void writeI2c_3Bytes(const char *buf);
+	long write_i2c(unsigned char command, unsigned char value);
+	long read_i2c(unsigned char command);
+
+	long writeI2c_3Bytes(unsigned char *buf);
+
+	//TODO inutilisé pour le moment
+	long readI2c_2Bytes(unsigned char *buf);
 
 };
 

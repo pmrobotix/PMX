@@ -7,8 +7,8 @@
 
 using namespace std;
 
-ButtonBar::ButtonBar(Actions & actions) :
-		AActionsElement(actions)
+ButtonBar::ButtonBar(Actions & actions)
+		: AActionsElement(actions)
 
 {
 	buttondriver = AButtonDriver::create();
@@ -23,18 +23,24 @@ bool ButtonBar::pressed(ButtonTouch button)
 {
 	return buttondriver->pressed(button);
 }
-/*
-bool ButtonBar::process(ButtonTouch button)
-{
-	return buttondriver->process(button);
-
-}*/
 
 bool ButtonBar::waitPressed(ButtonTouch button)
 {
-	while(!pressed(button))
+	while (!pressed(button))
 	{
 		usleep(1000);
 	}
 	return true;
+}
+
+ButtonTouch ButtonBar::waitOneOfAllPressed() //TODO create same with actionmanager
+{
+	while (1)
+	{
+		for (int b = BUTTON_ENTER_KEY; b < BUTTON_NONE; b++)
+		{
+			if (pressed((ButtonTouch)b))
+				return (ButtonTouch)b;
+		}
+	}
 }
