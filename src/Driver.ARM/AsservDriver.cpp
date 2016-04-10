@@ -12,7 +12,9 @@ AAsservDriver * AAsservDriver::create()
 
 AsservDriver::AsservDriver()
 {
-
+	md25_.begin();
+	float volts = md25_.getBatteryVolts();
+	logger().error() << "volts=" << volts << logs::end;
 }
 
 AsservDriver::~AsservDriver()
@@ -31,11 +33,12 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
-
+	md25_.setSpeedReg(power, MD25_SPEED1_REG);
 }
+
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
-
+	md25_.setSpeedReg(power, MD25_SPEED2_REG);
 }
 
 long AsservDriver::getLeftExternalEncoder()
@@ -49,27 +52,28 @@ long AsservDriver::getRightExternalEncoder()
 
 long AsservDriver::getLeftInternalEncoder()
 {
-	//+/- 2,147,483,648
-	return 0;
+//+/- 2,147,483,648
+
+	return md25_.ensureGetEncoder(0, MD25_ENCODER1_REG);
 
 }
 long AsservDriver::getRightInternalEncoder()
 {
-	return 0;
+	return md25_.ensureGetEncoder(0, MD25_ENCODER2_REG);
 }
 
 void AsservDriver::resetEncoder()
 {
-
+	md25_.resetEncoders();
 }
 
 void AsservDriver::stopMotorLeft()
 {
-
+	md25_.stopMotor(MD25_SPEED1_REG);
 }
 void AsservDriver::stopMotorRight()
 {
-
+	md25_.stopMotor(MD25_SPEED2_REG);
 }
 
 int AsservDriver::getMotorLeftCurrent()

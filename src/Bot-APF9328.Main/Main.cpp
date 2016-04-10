@@ -3,6 +3,7 @@
 
 #include "../Bot-APF9328/APF9328LcdBoardTest.hpp"
 #include "../Bot-APF9328/APF9328LedBarTest.hpp"
+#include "../Bot-APF9328/APF9328MovingBaseTest.hpp"
 #include "../Bot-APF9328/APF9328RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
@@ -19,6 +20,7 @@ int main(int argc, char** argv)
 	//add specific tests for this robot
 	robot.getConsoleManager().add(new APF9328LedBarTest());
 	robot.getConsoleManager().add(new APF9328LcdBoardTest());
+	robot.getConsoleManager().add(new APF9328MovingBaseTest());
 
 	robot.parseConsoleArgs(argc, argv);
 

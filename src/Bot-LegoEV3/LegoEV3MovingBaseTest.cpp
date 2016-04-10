@@ -40,8 +40,8 @@ void LegoEV3MovingBaseTest::run(int argc, char** argv)
 	chrono.start();
 	while (chrono.getElapsedTimeInMilliSec() < 1500.0)
 	{
-		long left = robot.asserv().base()->encoders().getLeftEncoder();
-		long right = robot.asserv().base()->encoders().getRightEncoder();
+		left = robot.asserv().base()->encoders().getLeftEncoder();
+		right = robot.asserv().base()->encoders().getRightEncoder();
 		logger().debug() << "time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< " Lticks= "
@@ -83,8 +83,8 @@ void LegoEV3MovingBaseTest::run(int argc, char** argv)
 	chrono.start();
 	while (chrono.getElapsedTimeInMilliSec() < 1500.0)
 	{
-		long left = robot.asserv().base()->encoders().getLeftEncoder();
-		long right = robot.asserv().base()->encoders().getRightEncoder();
+		left = robot.asserv().base()->encoders().getLeftEncoder();
+		right = robot.asserv().base()->encoders().getRightEncoder();
 		logger().debug() << "time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< " Lticks= "

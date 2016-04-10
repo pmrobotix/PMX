@@ -80,7 +80,7 @@
 #define BUTTON_RIGHT 0x02
 #define BUTTON_SELECT 0x01
 
-class Adafruit_RGBLCDShield //: public Print
+class Adafruit_RGBLCDShield : public utils::Mutex //: public Print
 {
 private:
 	/*!
@@ -92,6 +92,7 @@ private:
 		return instance;
 	}
 
+	utils::Mutex mutex_;
 	bool connected_;
 
 	uint8_t _rs_pin; // LOW: command.  HIGH: character.

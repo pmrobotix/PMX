@@ -3,6 +3,7 @@
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "Md25.hpp"
 
 using namespace std;
 
@@ -18,6 +19,8 @@ private:
 		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.ARM");
 		return instance;
 	}
+
+	Md25 md25_;
 protected:
 
 public:

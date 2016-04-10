@@ -1,9 +1,10 @@
-#ifndef PMX_BOTBIGPMX_ROBOTEXTENDED_HPP_
-#define PMX_BOTBIGPMX_ROBOTEXTENDED_HPP_
+#ifndef APF9328_ROBOTEXTENDED_HPP_
+#define APF9328_ROBOTEXTENDED_HPP_
 
 #include "../Common/Robot.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "APF9328ActionsExtended.hpp"
+#include "APF9328AsservExtended.hpp"
 #include "APF9328SvgWriterExtended.hpp"
 
 class APF9328RobotExtended: public Robot
@@ -26,6 +27,12 @@ public:
 		return r_actions;
 	}
 
+	inline APF9328AsservExtended& asserv()
+	{
+		APF9328AsservExtended& r_asserv = *asserv_;
+		return r_asserv;
+	}
+
 	inline APF9328SvgWriterExtended& svg()
 	{
 		APF9328SvgWriterExtended& r_svg = *psvg_;
@@ -45,6 +52,8 @@ private:
 	}
 
 	APF9328ActionsExtended* actions_;
+
+	APF9328AsservExtended * asserv_;
 
 	APF9328SvgWriterExtended * psvg_;
 

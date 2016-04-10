@@ -8,8 +8,6 @@
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3SvgWriterExtended.hpp"
 
-class Arguments;
-
 class LegoEV3RobotExtended: public Robot
 {
 public:

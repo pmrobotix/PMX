@@ -26,11 +26,12 @@ void logs::LoggerFactory::initialize()
 
 	//TESTS
 	add(logs::Level::INFO, "APF9328LedBarTest", "console");
+	add(logs::Level::INFO, "APF9328MovingBaseTest", "console");
+	add(logs::Level::INFO, "APF9328LcdBoardTest", "console");
 	/*
 	add(logs::Level::INFO, "APF9328ButtonBarTest", "console");
 	add(logs::Level::INFO, "APF9328SoundBarTest", "console");
 	add(logs::Level::INFO, "APF9328TiretteTest", "console");
-	add(logs::Level::INFO, "APF9328MovingBaseTest", "console");
 	add(logs::Level::INFO, "APF9328AsservInsaTest", "console");
 */
 	//DRIVERS SIMU

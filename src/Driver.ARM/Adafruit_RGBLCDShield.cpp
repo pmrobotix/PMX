@@ -56,6 +56,7 @@
 // RGBLCDShield constructor is called).
 Adafruit_RGBLCDShield::Adafruit_RGBLCDShield()
 {
+
 	_displaycontrol = 0;
 	_displaymode = 0;
 	_numlines = 0;
@@ -89,6 +90,7 @@ Adafruit_RGBLCDShield::Adafruit_RGBLCDShield()
 void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //cols, lines, dotsize
 {
 
+	//mutex_.lock();
 	try
 	{
 		_i2c.begin();
@@ -205,6 +207,7 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
 		logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! (begin test) " //<< e->what()
 				<< logs::end;
 	}
+	//mutex_.unlock();
 }
 
 /********** high level commands, for the user! */
@@ -215,8 +218,10 @@ void Adafruit_RGBLCDShield::clear()
 		logger().error() << "clear() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	command(LCD_CLEARDISPLAY);  // clear display, set cursor position to zero
 	usleep(2000);  // this command takes a long time!
+	mutex_.unlock();
 }
 
 void Adafruit_RGBLCDShield::home()
@@ -226,8 +231,10 @@ void Adafruit_RGBLCDShield::home()
 		logger().error() << "home() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	command(LCD_RETURNHOME);  // set cursor position to zero
 	usleep(2000);  // this command takes a long time!
+	mutex_.unlock();
 }
 
 void Adafruit_RGBLCDShield::setCursor(uint8_t col, uint8_t row)
@@ -237,7 +244,7 @@ void Adafruit_RGBLCDShield::setCursor(uint8_t col, uint8_t row)
 		logger().error() << "setCursor() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
-
+	mutex_.lock();
 	int row_offsets[] =
 	{ 0x00, 0x40, 0x14, 0x54 };
 	if (row > _numlines)
@@ -246,42 +253,55 @@ void Adafruit_RGBLCDShield::setCursor(uint8_t col, uint8_t row)
 	}
 
 	command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
+	mutex_.unlock();
 }
 
 // Turn the display on/off (quickly)
 void Adafruit_RGBLCDShield::noDisplay()
 {
+	mutex_.lock();
 	_displaycontrol &= ~LCD_DISPLAYON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
+	mutex_.unlock();
 }
 void Adafruit_RGBLCDShield::display()
 {
+	mutex_.lock();
 	_displaycontrol |= LCD_DISPLAYON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
+	mutex_.unlock();
 }
 
 // Turns the underline cursor on/off
 void Adafruit_RGBLCDShield::noCursor()
 {
+	mutex_.lock();
 	_displaycontrol &= ~LCD_CURSORON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
+	mutex_.unlock();
 }
 void Adafruit_RGBLCDShield::cursor()
 {
+	mutex_.lock();
 	_displaycontrol |= LCD_CURSORON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
+	mutex_.unlock();
 }
 
 // Turn on and off the blinking cursor
 void Adafruit_RGBLCDShield::noBlink()
 {
+	mutex_.lock();
 	_displaycontrol &= ~LCD_BLINKON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
+	mutex_.unlock();
 }
 void Adafruit_RGBLCDShield::blink()
 {
+	mutex_.lock();
 	_displaycontrol |= LCD_BLINKON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
+	mutex_.unlock();
 }
 
 // These commands scroll the display without changing the RAM
@@ -292,7 +312,9 @@ void Adafruit_RGBLCDShield::scrollDisplayLeft(void)
 		logger().error() << "scrollDisplayLeft() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVELEFT);
+	mutex_.unlock();
 }
 void Adafruit_RGBLCDShield::scrollDisplayRight(void)
 {
@@ -301,21 +323,27 @@ void Adafruit_RGBLCDShield::scrollDisplayRight(void)
 		logger().error() << "scrollDisplayLeft() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVERIGHT);
+	mutex_.unlock();
 }
 
 // This is for text that flows Left to Right
 void Adafruit_RGBLCDShield::leftToRight(void)
 {
+	mutex_.lock();
 	_displaymode |= LCD_ENTRYLEFT;
 	command(LCD_ENTRYMODESET | _displaymode);
+	mutex_.unlock();
 }
 
 // This is for text that flows Right to Left
 void Adafruit_RGBLCDShield::rightToLeft(void)
 {
+	mutex_.lock();
 	_displaymode &= ~LCD_ENTRYLEFT;
 	command(LCD_ENTRYMODESET | _displaymode);
+	mutex_.unlock();
 }
 
 // This will 'right justify' text from the cursor
@@ -326,8 +354,10 @@ void Adafruit_RGBLCDShield::autoscroll(void)
 		logger().error() << "autoscroll() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	_displaymode |= LCD_ENTRYSHIFTINCREMENT;
 	command(LCD_ENTRYMODESET | _displaymode);
+	mutex_.unlock();
 }
 
 // This will 'left justify' text from the cursor
@@ -338,8 +368,10 @@ void Adafruit_RGBLCDShield::noAutoscroll(void)
 		logger().error() << "noAutoscroll() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	_displaymode &= ~LCD_ENTRYSHIFTINCREMENT;
 	command(LCD_ENTRYMODESET | _displaymode);
+	mutex_.unlock();
 }
 
 // Allows us to fill the first 8 CGRAM locations
@@ -351,6 +383,7 @@ void Adafruit_RGBLCDShield::createChar(uint8_t location, uint8_t charmap[])
 		logger().error() << "createChar() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	location &= 0x7; // we only have 8 locations 0-7
 	command(LCD_SETCGRAMADDR | (location << 3));
 	for (int i = 0; i < 8; i++)
@@ -358,7 +391,12 @@ void Adafruit_RGBLCDShield::createChar(uint8_t location, uint8_t charmap[])
 		write__(charmap[i]);
 	}
 	command(LCD_SETDDRAMADDR);  // unfortunately resets the location to 0,0
+	mutex_.unlock();
 }
+
+
+
+
 
 /*********** mid level commands, for sending data/cmds */
 
@@ -417,10 +455,12 @@ void Adafruit_RGBLCDShield::setBacklight(uint8_t status)
 		logger().error() << "setBacklight() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
+	mutex_.lock();
 	// check if i2c or SPI
 	_i2c.digitalWrite(8, ~(status >> 2) & 0x1);
 	_i2c.digitalWrite(7, ~(status >> 1) & 0x1);
 	_i2c.digitalWrite(6, ~status & 0x1);
+	mutex_.unlock();
 }
 
 // little wrapper for i/o directions
@@ -469,12 +509,14 @@ void Adafruit_RGBLCDShield::send(uint8_t value, uint8_t mode)
 
 void Adafruit_RGBLCDShield::pulseEnable(void)
 {
+	mutex_.lock();
 	_digitalWrite(_enable_pin, 0);    //LOW
 	usleep(1);
 	_digitalWrite(_enable_pin, 1);    //HIGH
 	usleep(1);    // enable pulse must be >450ns
 	_digitalWrite(_enable_pin, 0);    //LOW
 	usleep(100);   // commands need > 37us to settle
+	mutex_.unlock();
 }
 
 void Adafruit_RGBLCDShield::write4bits(uint8_t value)
@@ -536,11 +578,13 @@ uint8_t Adafruit_RGBLCDShield::readButtons(void)
 		logger().error() << "readButtons() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return 0;
 	}
+	mutex_.lock();
 	uint8_t reply = 0x1F;
 
 	for (uint8_t i = 0; i < 5; i++)
 	{
 		reply &= ~((_i2c.digitalRead(_button_pins[i])) << i);
 	}
+	mutex_.unlock();
 	return reply;
 }
