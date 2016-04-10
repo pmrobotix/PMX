@@ -17,7 +17,7 @@ private:
 	LedBar ledbar_;
 
 	/*!
-	 * \brief LcdShield 2x16.
+	 * \brief LcdShield 2x16 characters.
 	 */
 	LcdShield lcd2x16_;
 
