@@ -1,4 +1,4 @@
-#include "LegoEV3FindPIDTest.hpp"
+#include "L_Asserv_FindPIDTest.hpp"
 
 #include <cstdlib>
 #include <string>
@@ -11,10 +11,11 @@
 #include "../Log/Logger.hpp"
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
+#include "LegoEV3SvgWriterExtended.hpp"
 
 using namespace std;
 
-void LegoEV3FindPIDTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void L_Asserv_FindPIDTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.getArgs().addArgument("sec", "Time (sec) for test");
@@ -35,7 +36,7 @@ void LegoEV3FindPIDTest::configureConsoleArgs(int argc, char** argv) //surcharge
 	robot.parseConsoleArgs(argc, argv);
 }
 
-void LegoEV3FindPIDTest::run(int argc, char** argv)
+void L_Asserv_FindPIDTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
@@ -82,7 +83,11 @@ void LegoEV3FindPIDTest::run(int argc, char** argv)
 	if (args["angle"] != "0")
 	{
 		angle_degrees = atof(args["angle"].c_str());
-		logger().debug() << "Arg angle set " << args["angle"] << ", angle = " << angle_degrees << logs::end;
+		logger().debug() << "Arg angle set "
+				<< args["angle"]
+				<< ", angle = "
+				<< angle_degrees
+				<< logs::end;
 	}
 	if (args["Ap"] != "0")
 	{

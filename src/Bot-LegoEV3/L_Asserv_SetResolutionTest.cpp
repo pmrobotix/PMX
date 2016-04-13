@@ -1,11 +1,13 @@
-#include "LegoEV3AsservSetResolutionTest.hpp"
+#include "L_Asserv_SetResolutionTest.hpp"
 
 #include <cstdlib>
 #include <string>
 
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
+#include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
+#include "../Common/Asserv.Insa/AsservInsa.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
@@ -15,7 +17,7 @@
 
 using namespace std;
 
-void LegoEV3AsservSetResolutionTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void L_Asserv_SetResolutionTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
@@ -25,7 +27,7 @@ void LegoEV3AsservSetResolutionTest::configureConsoleArgs(int argc, char** argv)
 	robot.parseConsoleArgs(argc, argv);
 }
 
-void LegoEV3AsservSetResolutionTest::run(int argc, char** argv)
+void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
@@ -46,7 +48,11 @@ void LegoEV3AsservSetResolutionTest::run(int argc, char** argv)
 	if (args["distTicks"] != "0")
 	{
 		distTicks = atoi(args["distTicks"].c_str());
-		logger().debug() << "Arg distTicks set " << args["distTicks"] << ", distTicks = " << distTicks << logs::end;
+		logger().debug() << "Arg distTicks set "
+				<< args["distTicks"]
+				<< ", distTicks = "
+				<< distTicks
+				<< logs::end;
 	}
 
 	robot.asserv().startMotionTimerAndOdo();
@@ -98,8 +104,7 @@ void LegoEV3AsservSetResolutionTest::run(int argc, char** argv)
 			robot.asserv().pos_getTheta(),
 			LEGOEV3_SVG_POS_ROBOT);
 
-	float setR = 1000.0 * (float) distTicks ;// / robot.asserv().pos_getX_mm();
-
+	float setR = 1000.0 * (float) distTicks;	// / robot.asserv().pos_getX_mm();
 
 	logger().info() << "current setResolutionLEFT = "
 			<< robot.asserv().insa()->encoder_GetLeftResolution()
@@ -107,7 +112,8 @@ void LegoEV3AsservSetResolutionTest::run(int argc, char** argv)
 			<< robot.asserv().insa()->encoder_GetRightResolution()
 
 			<< logs::end;
-	logger().info() << "RESULT: setResolution (nb ticks pour 1m) = 1000* distT / mesure" << logs::end;
+	logger().info() << "RESULT: setResolution (nb ticks pour 1m) = 1000* distT / mesure"
+			<< logs::end;
 	logger().info() << "RESULT: setResolution = " << setR << " / mesure_mm" << logs::end;
 
 	robot.stop();

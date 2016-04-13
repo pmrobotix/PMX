@@ -8,16 +8,16 @@
 /*!
  * \brief Effectue un test sur la tirette.
  */
-class LegoEV3TiretteTest: public FunctionalTest
+class L_TiretteTest: public FunctionalTest
 {
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LegoEV3TiretteTest.
+	 * \brief Retourne le \ref Logger associé à la classe \ref L_TiretteTest.
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3TiretteTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("L_TiretteTest");
 		return instance;
 	}
 public:
@@ -25,7 +25,7 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	LegoEV3TiretteTest()
+	L_TiretteTest()
 			: FunctionalTest("TiretteTest", "test de la tirette")
 	{
 	}
@@ -33,7 +33,7 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~LegoEV3TiretteTest()
+	virtual ~L_TiretteTest()
 	{
 	}
 

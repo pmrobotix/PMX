@@ -1,11 +1,11 @@
 #ifndef LEGOEV3_ACTIONSEXTENDED_HPP_
 #define LEGOEV3_ACTIONSEXTENDED_HPP_
 
-#include <cstdio>
 #include <string>
 
 #include "../Common/Action/Actions.hpp"
 #include "../Common/Action/ButtonBar.hpp"
+#include "../Common/Action/FunnyAction.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/SoundBar.hpp"
 #include "../Common/Action/Tirette.hpp"
@@ -37,9 +37,15 @@ private:
 	 */
 	Tirette tirette_;
 
+	/*!
+	 * \brief Tirette.
+	 */
+	FunnyAction parasol_;
+
 public:
-	LegoEV3ActionsExtended(std::string botId)
-			: ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this)
+	LegoEV3ActionsExtended(std::string botId) :
+	ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(
+			*this), parasol_(*this)
 	{
 	}
 
@@ -84,9 +90,21 @@ public:
 		return tirette_;
 	}
 
+	/*!
+	 * \brief Cette methode retourne l'objet FunnyAction.
+	 * \return parasol_.
+	 */
+	FunnyAction & parasol()
+	{
+		return parasol_;
+	}
+
 	void stop()
 	{
 		ledbar_.resetAll();
+		ledbar_.stop();
+		parasol_.release();
+		soundbar_.stop();
 		Actions::stop(); //stop devices and wait manager to finish
 	}
 

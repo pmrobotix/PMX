@@ -31,7 +31,8 @@ public:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Robot");
+		static const logs::Logger & instance = logs::LoggerFactory::logger(
+				"Robot");
 		return instance;
 	}
 
@@ -55,6 +56,15 @@ protected:
 	std::string id_;
 
 public:
+#ifdef SIMU
+	int CLEF_REQUETES = 0x00012345;
+
+	struct msgform2
+	{
+		long mtype;
+		char mtext[ 512];
+	} msg_ipc;
+#endif
 
 	//Action => RobotElement
 	Actions * actions_default;
@@ -115,7 +125,6 @@ public:
 	{
 		this->myColor_ = color;
 	}
-
 
 	void configureDefaultConsoleArgs();
 

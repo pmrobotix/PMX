@@ -1,6 +1,6 @@
 
-#ifndef BOT_LEGOEV3_LEGOEV3ASSERVSETRESOLUTIONTEST_HPP_
-#define BOT_LEGOEV3_LEGOEV3ASSERVSETRESOLUTIONTEST_HPP_
+#ifndef BOT_LEGOEV3_L_ASSERV_SETRESOLUTIONTEST_HPP_
+#define BOT_LEGOEV3_L_ASSERV_SETRESOLUTIONTEST_HPP_
 
 
 #include "../Common/FunctionalTest.hpp"
@@ -9,16 +9,16 @@
 /*!
  * \brief Effectue un test de l'asservissement pour trouver les valeurs pour les encoders.
  */
-class LegoEV3AsservSetResolutionTest: public FunctionalTest
+class L_Asserv_SetResolutionTest: public FunctionalTest
 {
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LegoEV3AsservSetResolutionTest.
+	 * \brief Retourne le \ref Logger associé à la classe \ref L_Asserv_SetResolutionTest.
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3AsservSetResolutionTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("L_Asserv_SetResolutionTest");
 		return instance;
 	}
 
@@ -27,7 +27,7 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	LegoEV3AsservSetResolutionTest()
+	L_Asserv_SetResolutionTest()
 			: FunctionalTest("AsservSetResolutionTest", "Asservissement - trouver le nombre de ticks pour 1 metre.")
 	{
 	}
@@ -35,7 +35,7 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~LegoEV3AsservSetResolutionTest()
+	virtual ~L_Asserv_SetResolutionTest()
 	{
 	}
 

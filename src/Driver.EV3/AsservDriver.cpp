@@ -33,52 +33,42 @@ AsservDriver::AsservDriver()
 	if (mright.connected())
 	{
 		_motor_right = OUTPUT_A;
-		logger().info() << "EV3 Motor (RIGHT) - "
-				<< mright.address()
-				<< " connected (CountPerRot:"
-				<< mright.count_per_rot()
-				<< " DriverName:"
-				<< mright.driver_name()
-				<< " Polarity:"
-				<< mright.polarity()
-				<< " EncoderPolarity:"
-				<< mright.encoder_polarity()
-				<< ")"
-				<< logs::end;
+		logger().info() << "EV3 Motor (RIGHT) - " << mright.address()
+				<< " connected (CountPerRot:" << mright.count_per_rot()
+				<< " DriverName:" << mright.driver_name() << " Polarity:"
+				<< mright.polarity() << " EncoderPolarity:"
+				<< mright.encoder_polarity() << ")" << logs::end;
 	}
 	else
 	{
 		_motor_right = OUTPUT_A;
-		logger().error() << "ERROR OUTPUT_A - Motor (RIGHT) " << "not connected !!" << logs::end;
+		logger().error() << "ERROR OUTPUT_A - Motor (RIGHT) "
+				<< "not connected !!" << logs::end;
 	}
 
 	motor mleft = motor(OUTPUT_D);
 	if (mleft.connected())
 	{
 		_motor_left = OUTPUT_D;
-		logger().info() << "EV3 Motor (LEFT) - "
-				<< mleft.address()
-				<< " connected (CountPerRot:"
-				<< mleft.count_per_rot()
-				<< " DriverName:"
-				<< mleft.driver_name()
-				<< " Polarity:"
-				<< mleft.polarity()
-				<< " EncoderPolarity:"
-				<< mleft.encoder_polarity()
-				<< ")"
-				<< logs::end;
+		logger().info() << "EV3 Motor (LEFT) - " << mleft.address()
+				<< " connected (CountPerRot:" << mleft.count_per_rot()
+				<< " DriverName:" << mleft.driver_name() << " Polarity:"
+				<< mleft.polarity() << " EncoderPolarity:"
+				<< mleft.encoder_polarity() << ")" << logs::end;
 
 	}
 	else
 	{
 		_motor_left = OUTPUT_D;
-		logger().error() << "ERROR OUTPUT_D - Motor (LEFT) " << "not connected !!" << logs::end;
+		logger().error() << "ERROR OUTPUT_D - Motor (LEFT) "
+				<< "not connected !!" << logs::end;
 	}
 
 	if (_motor_right.connected()) //if both motors are connected, then initialize each motor.
 	{
 		_motor_right.reset();
+		_motor_right.set_ramp_down_sp(0);
+		_motor_right.set_ramp_up_sp(0);
 		_motor_right.set_stop_command(motor::stop_command_brake);
 		enableRightHardRegulation(true);
 	}
@@ -86,6 +76,8 @@ AsservDriver::AsservDriver()
 	if (_motor_left.connected()) //if both motors are connected, then initialize each motor.
 	{
 		_motor_left.reset();
+		_motor_left.set_ramp_down_sp(0);
+		_motor_left.set_ramp_up_sp(0);
 		_motor_left.set_stop_command(motor::stop_command_brake);
 		enableLeftHardRegulation(true);
 	}
@@ -97,61 +89,52 @@ void AsservDriver::setMotorLeftPosition(int power, long ticks)
 	{
 		if (_motor_left.speed_regulation_enabled() == "on") //speed_sp
 		{
-			limit(power, 860); //real MAX speed of EV3
+			limit(power, MAXVALUE_speed_sp); //real MAX speed of EV3
 			_motor_left.set_position_sp(ticks).set_speed_sp(power).run_to_rel_pos();
 
 		}
 		else if (_motor_left.speed_regulation_enabled() == "off") //duty_cycle_sp
 		{
-			limit(power, 100);
+			limit(power, MAXVALUE_duty_cycle_sp);
 			_motor_left.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
 		}
 	}
-
-//set_duty_cycle_sp -100 to 100
-//_motor_left.set_position_sp(ticks).set_duty_cycle_sp(50).run_to_rel_pos();
-
-	/*
-	 if (connectedLeft_)
-	 {
-	 logger().debug() << "ticks=" << ticks << " power=" << power << logs::end;
-
-	 enableLeftHardRegulation(true);
-	 _motor_left.set_stop_mode(motor::stop_mode_brake);
-	 _motor_left.set_position_mode(motor::position_mode_absolute);
-	 _motor_left.set_run_mode(motor::run_mode_position);
-
-	 _motor_left.set_position_sp(ticks);
-	 _motor_left.set_pulses_per_second_sp(power);
-	 _motor_left.set_ramp_up_sp(0);
-	 _motor_left.set_ramp_down_sp(0);
-	 _motor_left.start();
-	 }
-	 else
-	 {
-	 logger().error() << "Left motor not connected !" << logs::end;
-	 }*/
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticks)
-{/*
- if (connectedRight_)
- {
- enableRightHardRegulation(true);
- _motor_right.set_stop_mode(motor::stop_mode_brake);
- _motor_right.set_position_mode(motor::position_mode_absolute);
- _motor_right.set_run_mode(motor::run_mode_position);
+{
+	if (_motor_right.connected())
+	{
+		if (_motor_right.speed_regulation_enabled() == "on") //speed_sp
+		{
+			limit(power, MAXVALUE_speed_sp); //real MAX speed of EV3
+			_motor_right.set_position_sp(ticks).set_speed_sp(power).run_to_rel_pos();
 
- _motor_right.set_position_sp(ticks);
- _motor_right.set_pulses_per_second_sp(power);
- _motor_right.set_ramp_up_sp(0);
- _motor_right.set_ramp_down_sp(0);
- _motor_right.start();
- }
- else
- {
- logger().error() << "Right motor not connected !" << logs::end;
- }*/
+		}
+		else if (_motor_right.speed_regulation_enabled() == "off") //duty_cycle_sp
+		{
+			limit(power, MAXVALUE_duty_cycle_sp);
+			_motor_right.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
+		}
+	}
+	/*
+	 if (connectedRight_)
+	 {
+	 enableRightHardRegulation(true);
+	 _motor_right.set_stop_mode(motor::stop_mode_brake);
+	 _motor_right.set_position_mode(motor::position_mode_absolute);
+	 _motor_right.set_run_mode(motor::run_mode_position);
+
+	 _motor_right.set_position_sp(ticks);
+	 _motor_right.set_pulses_per_second_sp(power);
+	 _motor_right.set_ramp_up_sp(0);
+	 _motor_right.set_ramp_down_sp(0);
+	 _motor_right.start();
+	 }
+	 else
+	 {
+	 logger().error() << "Right motor not connected !" << logs::end;
+	 }*/
 }
 
 //regulation enabled  => power in ticks per second -860 / +860
@@ -163,21 +146,19 @@ void AsservDriver::setMotorLeftPower(int power, int timems)
 		//with time
 		if (_motor_left.speed_regulation_enabled() == "on") //speed_sp
 		{
-			limit(power, 860);
+			limit(power, MAXVALUE_speed_sp);
 
 			//Writing sets the target speed in tacho counts per second used when `speed_regulation`
 			// is on. Reading returns the current value.
 			_motor_left.set_speed_sp(power);
 
 			logger().debug() << "LEFT current motor speed in ticks per second:"
-					<< _motor_left.speed()
-					<< " count_per_rot:"
-					<< _motor_left.count_per_rot()
-					<< logs::end;
+					<< _motor_left.speed() << " count_per_rot:"
+					<< _motor_left.count_per_rot() << logs::end;
 		}
 		else if (_motor_left.speed_regulation_enabled() == "off") //duty_cycle_sp
 		{
-			limit(power, 100);
+			limit(power, MAXVALUE_duty_cycle_sp);
 
 			//Units are in percent. Valid values are -100 to 100. A negative value causes
 			// the motor to rotate in reverse. This value is only used when `speed_regulation`
@@ -206,12 +187,14 @@ int AsservDriver::limit(int power, int max)
 {
 	if ((power < -max))
 	{
-		logger().info() << "ERROR Motor power " << power << " exceeded minimum " << -max << "!!" << logs::end;
+		logger().info() << "ERROR Motor power " << power << " exceeded minimum "
+				<< -max << "!!" << logs::end;
 		power = -max;
 	}
 	else if (power > max)
 	{
-		logger().info() << "ERROR Motor power " << power << "exceeded maximum " << max << "!!" << logs::end;
+		logger().info() << "ERROR Motor power " << power << "exceeded maximum "
+				<< max << "!!" << logs::end;
 		power = max;
 	}
 	return power;
@@ -222,25 +205,21 @@ void AsservDriver::setMotorRightPower(int power, int timems)
 	if (_motor_right.connected())
 	{
 		//with time
-		if (_motor_right.speed_regulation_enabled() == "on")			//speed_sp
+		if (_motor_right.speed_regulation_enabled() == "on")		//speed_sp
 		{
-			//TODO limit 860 ticks per second
-			limit(power, 860);
+			limit(power, MAXVALUE_speed_sp);
 
 			//Writing sets the target speed in tacho counts per second used when `speed_regulation`
 			// is on. Reading returns the current value.
 			_motor_right.set_speed_sp(power);
 
 			logger().debug() << "RIGHT current motor speed in ticks per second:"
-					<< _motor_right.speed()
-					<< " count_per_rot:"
-					<< _motor_right.count_per_rot()
-					<< logs::end;
+					<< _motor_right.speed() << " count_per_rot:"
+					<< _motor_right.count_per_rot() << logs::end;
 		}
 		else if (_motor_right.speed_regulation_enabled() == "off") //duty_cycle_sp
 		{
-			//TODO limit percentage
-			limit(power, 100);
+			limit(power, MAXVALUE_duty_cycle_sp);
 
 			//Units are in percent. Valid values are -100 to 100. A negative value causes
 			// the motor to rotate in reverse. This value is only used when `speed_regulation`
@@ -302,7 +281,7 @@ void AsservDriver::stopMotorLeft()
 	{
 		_motor_left.stop();
 	}
-	logger().error() << "stopMotorLeft" << logs::end;
+	logger().debug() << "stopMotorLeft" << logs::end;
 
 }
 void AsservDriver::stopMotorRight()
@@ -313,7 +292,7 @@ void AsservDriver::stopMotorRight()
 	{
 		_motor_right.stop();
 	}
-	logger().error() << "stopMotorRight" << logs::end;
+	logger().debug() << "stopMotorRight" << logs::end;
 }
 
 void AsservDriver::resetEncoder()

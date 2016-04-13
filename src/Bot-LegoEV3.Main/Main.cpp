@@ -1,15 +1,16 @@
 #include <unistd.h>
 
-#include "../Bot-LegoEV3/LegoEV3AsservInsaTest.hpp"
-#include "../Bot-LegoEV3/LegoEV3AsservRunTest.hpp"
-#include "../Bot-LegoEV3/LegoEV3AsservSetResolutionTest.hpp"
-#include "../Bot-LegoEV3/LegoEV3ButtonBarTest.hpp"
-#include "../Bot-LegoEV3/LegoEV3FindPIDTest.hpp"
-#include "../Bot-LegoEV3/LegoEV3LedBarTest.hpp"
-#include "../Bot-LegoEV3/LegoEV3MovingBaseTest.hpp"
+#include "../Bot-LegoEV3/L_Asserv_FindPIDTest.hpp"
+#include "../Bot-LegoEV3/L_Asserv_SetResolutionTest.hpp"
+#include "../Bot-LegoEV3/L_AsservInsaTest.hpp"
+#include "../Bot-LegoEV3/L_AsservRunTest.hpp"
+#include "../Bot-LegoEV3/L_ButtonBarTest.hpp"
+#include "../Bot-LegoEV3/L_LedBarTest.hpp"
+#include "../Bot-LegoEV3/L_MovingBaseTest.hpp"
+#include "../Bot-LegoEV3/L_ServoUsingMotorTest.hpp"
+#include "../Bot-LegoEV3/L_SoundBarTest.hpp"
+#include "../Bot-LegoEV3/L_TiretteTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3RobotExtended.hpp"
-#include "../Bot-LegoEV3/LegoEV3SoundBarTest.hpp"
-#include "../Bot-LegoEV3/LegoEV3TiretteTest.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
 
@@ -20,15 +21,16 @@ int main(int argc, char** argv)
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
 	//add specific tests for this robot
-	robot.getConsoleManager().add(new LegoEV3LedBarTest());
-	robot.getConsoleManager().add(new LegoEV3ButtonBarTest());
-	robot.getConsoleManager().add(new LegoEV3SoundBarTest());
-	robot.getConsoleManager().add(new LegoEV3TiretteTest());
-	robot.getConsoleManager().add(new LegoEV3MovingBaseTest());
-	robot.getConsoleManager().add(new LegoEV3AsservSetResolutionTest());
-	robot.getConsoleManager().add(new LegoEV3FindPIDTest());
-	robot.getConsoleManager().add(new LegoEV3AsservInsaTest());
-	robot.getConsoleManager().add(new LegoEV3AsservRunTest());
+	robot.getConsoleManager().add(new L_LedBarTest());
+	robot.getConsoleManager().add(new L_ButtonBarTest());
+	robot.getConsoleManager().add(new L_SoundBarTest());
+	robot.getConsoleManager().add(new L_TiretteTest());
+	robot.getConsoleManager().add(new L_MovingBaseTest());
+	robot.getConsoleManager().add(new L_Asserv_SetResolutionTest());
+	robot.getConsoleManager().add(new L_Asserv_FindPIDTest());
+	robot.getConsoleManager().add(new L_AsservInsaTest());
+	robot.getConsoleManager().add(new L_AsservRunTest());
+	robot.getConsoleManager().add(new L_ServoUsingMotorTest());
 
 	robot.parseConsoleArgs(argc, argv);
 

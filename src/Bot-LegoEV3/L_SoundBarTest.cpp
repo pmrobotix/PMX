@@ -3,7 +3,7 @@
  * \brief Implémentation de la classe LegoEV3SoundBarTest.
  */
 
-#include "LegoEV3SoundBarTest.hpp"
+#include "L_SoundBarTest.hpp"
 
 #include <unistd.h>
 #include <string>
@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void LegoEV3SoundBarTest::run(int argc, char** argv)
+void L_SoundBarTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 
@@ -26,7 +26,6 @@ void LegoEV3SoundBarTest::run(int argc, char** argv)
 
 	logger().info() << "speakPMX" << logs::end;
 	robot.actions().soundBar().speakPMX();
-
 
 	robot.actions().start();
 
