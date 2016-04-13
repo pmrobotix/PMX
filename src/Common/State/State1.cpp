@@ -1,13 +1,15 @@
 
 #include "State1.hpp"
 
+#include <unistd.h>
+
 #include "../../Log/Logger.hpp"
 
 
 IAutomateState*
 State1::execute(Robot& , void *)
 {
-	logger().info() << "Start 1" << logs::end;
+	logger().info() << "State1" << logs::end;
 
 
 
