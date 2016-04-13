@@ -20,7 +20,10 @@ void logs::LoggerFactory::initialize()
 
 	add(logs::Level::INFO, "Robot", "console");
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
-	add(logs::Level::INFO, "LegoEV3State1", "console");
+
+
+	add(logs::Level::INFO, "L_State1", "console");
+	add(logs::Level::INFO, "Wait90SecAction", "console");
 
 	//SVG
 	add(logs::Level::INFO, "Svg4LegoEV3Robot", "legoEV3svg");

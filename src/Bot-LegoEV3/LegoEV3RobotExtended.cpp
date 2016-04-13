@@ -3,7 +3,7 @@
 #include <string>
 
 #include "../Common/State/Data.hpp"
-#include "LegoEV3State1.hpp"
+#include "L_State1.hpp"
 
 LegoEV3RobotExtended::LegoEV3RobotExtended()
 {
@@ -37,18 +37,18 @@ void LegoEV3RobotExtended::stop()
 void LegoEV3RobotExtended::begin(int argc, char** argv)
 {
 	Robot::begin(argc, argv);
-	logger().debug() << "LegoEV3RobotExtended::start" << logs::end;
+	logger().debug() << "begin()" << logs::end;
 
 	//specific match case and strategies
 	if (cArgs_["type"] == "m" or cArgs_["type"] == "M")
 	{
 		data_.isEmpty(true);
-		IAutomateState* state1 = new LegoEV3State1();
+		IAutomateState* state1 = new L_State1();
 
 		// Start the automate and wait for its return
 		automate_.run(*this, state1, &data_);
 	}
 
-	logger().debug() << "PMX LegoEV3RobotExtended - Happy End" << logs::end;
+	logger().debug() << "PMX LegoEV3Robot - Happy End" << logs::end;
 }
 

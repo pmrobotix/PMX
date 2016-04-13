@@ -7,13 +7,13 @@
 #include "../Log/LoggerFactory.hpp"
 
 
-class LegoEV3State1: public State1
+class L_State1: public State1
 {
 private:
 
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3State1");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("L_State1");
 		return instance;
 	}
 
@@ -21,7 +21,7 @@ private:
 
 	std::string name()
 	{
-		return "LegoEV3State1";
+		return "L_State1";
 	}
 };
 
