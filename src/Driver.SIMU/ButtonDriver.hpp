@@ -86,7 +86,7 @@ public:
 	void checkButton(const char *arg1, int)
 	{
 
-		int res, i;
+		int res;
 		int frequete;
 		int CLEF_REQUETES = 0x00012345;
 
@@ -137,61 +137,6 @@ public:
 			}
 			usleep(2000);
 		}
-
-
-		/*
-		 char cInput;
-		 while (!buttondriver_->stop_)
-		 {
-
-		 buttondriver_->enter_ = false;
-		 buttondriver_->back_ = false;
-		 buttondriver_->up_ = false;
-		 buttondriver_->down_ = false;
-		 buttondriver_->left_ = false;
-		 buttondriver_->right_ = false;
-
-		 cInput = ConsoleKeyInput::mygetch(); //wait a user action
-
-		 //printf("button= %d<\n", cInput);
-		 if (cInput == 27) // if ch is the escape sequence with num code 27, k turns 1 to signal the next
-		 {
-		 cInput = ConsoleKeyInput::mygetch();
-		 if (cInput == 91) // if the previous char was 27, and the current 91, k turns 2 for further use
-		 {
-		 cInput = ConsoleKeyInput::mygetch();
-		 }
-		 }
-
-		 printf("final button= %d\n", cInput);
-
-		 switch (cInput)
-		 {
-		 case 10:
-		 buttondriver_->enter_ = true;
-		 break;
-		 case 127:
-		 buttondriver_->back_ = true;
-		 break;
-		 case 65:
-		 buttondriver_->up_ = true;
-		 break;
-		 case 66:
-		 buttondriver_->down_ = true;
-		 break;
-		 case 67:
-		 buttondriver_->right_ = true;
-		 break;
-		 case 68:
-		 buttondriver_->left_ = true;
-		 break;
-
-		 default:
-		 break;
-		 }
-		 usleep(5000);
-		 }
-		 printf("STOPPPPPPP");*/
 	}
 
 	std::thread buttonThread(const char *arg1, int args)
