@@ -80,7 +80,7 @@ public:
 		_os.fill(tmp);
 	}
 
-//convert integer to a string
+//convert integer to a string //TODO voir itoa.hpp ?
 //Doesn't work for a<=0
 	static std::string itoa(int a)
 	{

@@ -1,10 +1,10 @@
 /* pour les moteurs utilisés en mode servomotor.
  *
  */
-#ifndef ASERVOWITHMOTORDRIVER_HPP_
-#define ASERVOWITHMOTORDRIVER_HPP_
+#ifndef ASERVOUSINGMOTORDRIVER_HPP_
+#define ASERVOUSINGMOTORDRIVER_HPP_
 
-class AServoWithMotorDriver
+class AServoUsingMotorDriver
 {
 
 public:
@@ -12,25 +12,23 @@ public:
 	/*!
 	 * \brief single instance creation.
 	 */
-	static AServoWithMotorDriver * create();
+	static AServoUsingMotorDriver * create();
 
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~AServoWithMotorDriver()
+	virtual ~AServoUsingMotorDriver()
 	{
 	}
 
 	/*!
 	 * \brief Constructor.
 	 */
-	AServoWithMotorDriver()
+	AServoUsingMotorDriver()
 	{
 	}
 
-	virtual void setMotorPosition(int power, int pos, int rampTime_ms) = 0;
-
-	virtual void setMotorLeftPower(int power, int time_ms) = 0;
+	virtual void setMotorPosition(int power, int pos, int ramptimems) = 0;
 
 	virtual long getInternalEncoder()= 0;
 

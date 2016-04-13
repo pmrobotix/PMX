@@ -1,13 +1,15 @@
-#include "LegoEV3TiretteTest.hpp"
+#include "L_TiretteTest.hpp"
 
 #include <string>
 
+#include "../Common/Action/Tirette.hpp"
 #include "../Log/Logger.hpp"
+#include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
 using namespace std;
 
-void LegoEV3TiretteTest::run(int argc, char** argv)
+void L_TiretteTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

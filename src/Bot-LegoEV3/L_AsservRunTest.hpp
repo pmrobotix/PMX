@@ -7,7 +7,7 @@
 /*!
  * \brief Effectue un test de l'asservissement sur plusieurs positions.
  */
-class LegoEV3AsservRunTest: public FunctionalTest
+class L_AsservRunTest: public FunctionalTest
 {
 private:
 
@@ -16,7 +16,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3AsservRunTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("L_AsservRunTest");
 		return instance;
 	}
 public:
@@ -24,7 +24,7 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	LegoEV3AsservRunTest()
+	L_AsservRunTest()
 			: FunctionalTest("AsservRunTest", "test de l'asservissement sur plusieurs positions")
 	{
 	}
@@ -32,7 +32,7 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~LegoEV3AsservRunTest()
+	virtual ~L_AsservRunTest()
 	{
 	}
 

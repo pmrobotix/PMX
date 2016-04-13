@@ -30,20 +30,22 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
 
 	//TESTS
-	add(logs::Level::INFO, "LegoEV3LedBarTest", "console");
-	add(logs::Level::INFO, "LegoEV3ButtonBarTest", "console");
-	add(logs::Level::INFO, "LegoEV3SoundBarTest", "console");
-	add(logs::Level::INFO, "LegoEV3TiretteTest", "console");
-	add(logs::Level::INFO, "LegoEV3MovingBaseTest", "console");
+	add(logs::Level::INFO, "L_LedBarTest", "console");
+	add(logs::Level::INFO, "L_ServoUsingMotorTest", "console");
+	add(logs::Level::INFO, "L_ButtonBarTest", "console");
+	add(logs::Level::INFO, "L_SoundBarTest", "console");
+	add(logs::Level::INFO, "L_TiretteTest", "console");
+	add(logs::Level::INFO, "L_MovingBaseTest", "console");
 
-	add(logs::Level::DEBUG, "LegoEV3FindPIDTest", "console");
-	add(logs::Level::DEBUG, "LegoEV3AsservSetResolutionTest", "console");
-	add(logs::Level::DEBUG, "LegoEV3AsservInsaTest", "console");
-	add(logs::Level::DEBUG, "LegoEV3AsservRunTest", "console");
+
+	add(logs::Level::DEBUG, "L_Asserv_FindPIDTest", "console");
+	add(logs::Level::DEBUG, "L_Asserv_SetResolutionTest", "console");
+	add(logs::Level::DEBUG, "L_AsservInsaTest", "console");
+	add(logs::Level::DEBUG, "L_AsservRunTest", "console");
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
-	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
+	add(logs::Level::DEBUG, "ButtonDriver.SIMU", "console");
 	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
 	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
 	add(logs::Level::INFO, "AsservDriver.SIMU", "console");

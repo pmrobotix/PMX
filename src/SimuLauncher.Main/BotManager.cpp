@@ -10,13 +10,11 @@
 #include <SDL2/SDL_thread.h>
 #include <unistd.h>
 #include <cstdio>
-#include <string>
 
 #include "../Bot-APF9328/APF9328LedBarTest.hpp"
 #include "../Bot-APF9328/APF9328RobotExtended.hpp"
-#include "../Bot-LegoEV3/LegoEV3LedBarTest.hpp"
+#include "../Bot-LegoEV3/L_LedBarTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3RobotExtended.hpp"
-#include "../Common/Arguments.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"
@@ -96,7 +94,7 @@ int threadLedBarLegoEV3(void* data)
 	LegoEV3RobotExtended &robotlegoev3 = LegoEV3RobotExtended::instance();
 
 	//add specific tests for this robot
-	robotlegoev3.getConsoleManager().add(new LegoEV3LedBarTest());
+	robotlegoev3.getConsoleManager().add(new L_LedBarTest());
 
 	/*
 	 Arguments &args = robotlegoev3.getArgs();

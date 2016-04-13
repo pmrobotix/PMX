@@ -1,5 +1,6 @@
-#include "LegoEV3AsservRunTest.hpp"
+#include "L_AsservRunTest.hpp"
 
+#include <unistd.h>
 #include <cstdlib>
 #include <string>
 
@@ -15,7 +16,7 @@
 
 using namespace std;
 
-void LegoEV3AsservRunTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void L_AsservRunTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
@@ -28,7 +29,7 @@ void LegoEV3AsservRunTest::configureConsoleArgs(int argc, char** argv) //surchar
 	robot.parseConsoleArgs(argc, argv);
 }
 
-void LegoEV3AsservRunTest::run(int argc, char** argv)
+void L_AsservRunTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
@@ -78,18 +79,9 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
-	logger().info() << "time= "
-			<< chrono.getElapsedTimeInMilliSec()
-			<< "ms ; left= "
-			<< left
-			<< " ; right= "
-			<< right
-			<< " x="
-			<< robot.asserv().pos_getX_mm()
-			<< " y="
-			<< robot.asserv().pos_getY_mm()
-			<< " a="
-			<< robot.asserv().pos_getThetaInDegree()
+	logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
+			<< " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
+			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
 	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
@@ -101,18 +93,9 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
-	logger().info() << "time= "
-			<< chrono.getElapsedTimeInMilliSec()
-			<< "ms ; left= "
-			<< left
-			<< " ; right= "
-			<< right
-			<< " x="
-			<< robot.asserv().pos_getX_mm()
-			<< " y="
-			<< robot.asserv().pos_getY_mm()
-			<< " a="
-			<< robot.asserv().pos_getThetaInDegree()
+	logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
+			<< " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
+			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
 	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
@@ -124,18 +107,9 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
-	logger().info() << "time= "
-			<< chrono.getElapsedTimeInMilliSec()
-			<< "ms ; left= "
-			<< left
-			<< " ; right= "
-			<< right
-			<< " x="
-			<< robot.asserv().pos_getX_mm()
-			<< " y="
-			<< robot.asserv().pos_getY_mm()
-			<< " a="
-			<< robot.asserv().pos_getThetaInDegree()
+	logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
+			<< " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
+			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
 	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
@@ -147,18 +121,9 @@ void LegoEV3AsservRunTest::run(int argc, char** argv)
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
-	logger().info() << "time= "
-			<< chrono.getElapsedTimeInMilliSec()
-			<< "ms ; left= "
-			<< left
-			<< " ; right= "
-			<< right
-			<< " x="
-			<< robot.asserv().pos_getX_mm()
-			<< " y="
-			<< robot.asserv().pos_getY_mm()
-			<< " a="
-			<< robot.asserv().pos_getThetaInDegree()
+	logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
+			<< " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
+			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
 	robot.svg().writePosition(robot.asserv().pos_getX_mm(),

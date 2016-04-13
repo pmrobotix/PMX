@@ -1,17 +1,16 @@
-#include "LegoEV3LedBarTest.hpp"
-
 #include <unistd.h>
 #include <string>
 
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Log/Logger.hpp"
+#include "L_LedBarTest.hpp"
 #include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
 using namespace std;
 
-void LegoEV3LedBarTest::run(int argc, char** argv)
+void L_LedBarTest::run(int argc, char** argv)
 {
 	configureConsoleArgs(argc, argv);
 

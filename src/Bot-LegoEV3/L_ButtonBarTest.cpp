@@ -3,7 +3,7 @@
  * \brief Implémentation de la classe LedBarTest.
  */
 
-#include "LegoEV3ButtonBarTest.hpp"
+#include "L_ButtonBarTest.hpp"
 
 #include <string>
 
@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void LegoEV3ButtonBarTest::run(int argc, char** argv)
+void L_ButtonBarTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

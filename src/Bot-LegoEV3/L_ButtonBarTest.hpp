@@ -9,16 +9,16 @@
 /*!
  * \brief Effectue un test sur les buttons.
  */
-class LegoEV3ButtonBarTest: public FunctionalTest
+class L_ButtonBarTest: public FunctionalTest
 {
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LegoEV3ButtonBarTest.
+	 * \brief Retourne le \ref Logger associé à la classe \ref L_ButtonBarTest.
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3ButtonBarTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("L_ButtonBarTest");
 		return instance;
 	}
 public:
@@ -26,15 +26,15 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	LegoEV3ButtonBarTest() :
-		FunctionalTest("LegoEV3ButtonBarTest","Button test")
+	L_ButtonBarTest() :
+		FunctionalTest("ButtonBarTest","Button test")
 	{
 	}
 
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~LegoEV3ButtonBarTest()
+	virtual ~L_ButtonBarTest()
 	{
 	}
 

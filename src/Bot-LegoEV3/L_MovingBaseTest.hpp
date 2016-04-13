@@ -7,16 +7,16 @@
 /*!
  * \brief Effectue un test de la base roulante.
  */
-class LegoEV3MovingBaseTest: public FunctionalTest
+class L_MovingBaseTest: public FunctionalTest
 {
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LegoEV3MovingBaseTest.
+	 * \brief Retourne le \ref Logger associé à la classe \ref L_MovingBaseTest.
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3MovingBaseTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("L_MovingBaseTest");
 		return instance;
 	}
 public:
@@ -24,7 +24,7 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	LegoEV3MovingBaseTest()
+	L_MovingBaseTest()
 			: FunctionalTest("MovingBaseTest", "test de la base roulante")
 	{
 	}
@@ -32,7 +32,7 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~LegoEV3MovingBaseTest()
+	virtual ~L_MovingBaseTest()
 	{
 	}
 

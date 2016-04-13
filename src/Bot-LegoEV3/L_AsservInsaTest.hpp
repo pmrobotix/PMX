@@ -7,16 +7,16 @@
 /*!
  * \brief Effectue un test de l'asservissement.
  */
-class LegoEV3AsservInsaTest: public FunctionalTest
+class L_AsservInsaTest: public FunctionalTest
 {
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LegoEV3AsservInsaTest.
+	 * \brief Retourne le \ref Logger associé à la classe \ref L_AsservInsaTest.
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3AsservInsaTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("L_AsservInsaTest");
 		return instance;
 	}
 public:
@@ -24,7 +24,7 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	LegoEV3AsservInsaTest()
+	L_AsservInsaTest()
 			: FunctionalTest("AsservInsaTest", "test de l'asservissement")
 	{
 	}
@@ -32,7 +32,7 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~LegoEV3AsservInsaTest()
+	virtual ~L_AsservInsaTest()
 	{
 	}
 

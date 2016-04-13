@@ -6,8 +6,14 @@
 
 #include "Robot.hpp"
 
+#ifdef SIMU
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#endif
 #include <unistd.h>
+#include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
 
 #include "../Log/Logger.hpp"
@@ -28,7 +34,9 @@ Robot::Robot()
 
 void Robot::configureDefaultConsoleArgs()
 {
-
+#ifdef SIMU
+	cArgs_.addOption('z', "Simulate linux console button");
+#endif
 	// Add option "-h" with explanation...
 	cArgs_.addOption('h', "Display usage help");
 
@@ -73,6 +81,76 @@ void Robot::begin(int argc, char** argv)
 	string select = "-";
 	string color = "-";
 
+#ifdef SIMU
+	//http://jean-luc.massat.perso.luminy.univ-amu.fr/ens/docs/IPC.html
+	//only for SIMU to simulate a non blocking getch() in a separate window console
+	if (cArgs_['z'])
+	{
+		int res;
+		int frequete;
+		printf("Send button from keyboard : BACK ENTER UP DOWN LEFT RIGHT\n");
+		frequete = msgget(CLEF_REQUETES, 0700 | IPC_CREAT);
+		if (frequete == -1)
+		{
+			perror("msgget");
+			exit(0);
+		}
+		while (1)
+		{
+			char cInput;
+			cInput = ConsoleKeyInput::mygetch(); //wait a user action
+			//printf("button= %d<\n", cInput);
+			if (cInput == 27) // if ch is the escape sequence with num code 27, k turns 1 to signal the next
+			{
+				cInput = ConsoleKeyInput::mygetch();
+				if (cInput == 91) // if the previous char was 27, and the current 91, k turns 2 for further use
+				{
+					cInput = ConsoleKeyInput::mygetch();
+				}
+			}
+
+			printf("final button= %d \n", cInput);
+
+			switch (cInput)
+			{
+			case 10:
+				strcpy(msg_ipc.mtext, "enter");
+				break;
+			case 127:
+				strcpy(msg_ipc.mtext, "back");
+				break;
+			case 65:
+				strcpy(msg_ipc.mtext, "up");
+				break;
+			case 66:
+				strcpy(msg_ipc.mtext, "down");
+				break;
+			case 67:
+				strcpy(msg_ipc.mtext, "right");
+				break;
+			case 68:
+				strcpy(msg_ipc.mtext, "left");
+				break;
+
+			default:
+				break;
+
+				usleep(1000);
+			}
+
+			msg_ipc.mtype = getpid();
+			//strcpy(msg_ipc.mtext, "Hello");
+
+			res = msgsnd(frequete, &msg_ipc, strlen(msg_ipc.mtext) + 1, 0);
+			if (res == -1)
+			{
+				perror("msgsnd");
+				exit(0);
+			}
+		}
+	}
+#endif
+
 	if (cArgs_["type"] == "0")
 	{
 		//display all functional tests
@@ -81,7 +159,7 @@ void Robot::begin(int argc, char** argv)
 		if (!cArgs_['s'])
 		{
 			//------------- Pour debug
-			//pause s'il n'y a pas tous les elements pour garder le log d'erreur
+			//pause s'il n'y a pas tous les elements pour visualiser le log d'erreur
 			char cInput;
 			Robot::logger().info() << "Press Enter key to continue ..." << logs::end;
 			//cout << "Press Enter key to continue ..." << endl;
@@ -110,11 +188,7 @@ void Robot::begin(int argc, char** argv)
 
 	logger().debug() << "type = " << cArgs_["type"] << logs::end;
 
-	logger().debug() << "Option c set "
-			<< (int) cArgs_['c']
-			<< ", color = "
-			<< " "
-			<< cArgs_['c']["color"]
+	logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"]
 			<< logs::end;
 
 	if (cArgs_['c'])

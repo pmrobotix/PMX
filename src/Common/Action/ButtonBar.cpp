@@ -35,12 +35,24 @@ bool ButtonBar::waitPressed(ButtonTouch button)
 
 ButtonTouch ButtonBar::waitOneOfAllPressed() //TODO create same with actionmanager
 {
-	while (1)
+	ButtonTouch bt = BUTTON_NONE;
+
+	while (bt == BUTTON_NONE)
 	{
 		for (int b = BUTTON_ENTER_KEY; b < BUTTON_NONE; b++)
 		{
+
 			if (pressed((ButtonTouch)b))
-				return (ButtonTouch)b;
+			{
+				//return (ButtonTouch)b;
+				bt = (ButtonTouch)b;
+			}
+
 		}
+		//return BUTTON_NONE;
+		usleep(200);
 	}
+
+	return bt;
+
 }
