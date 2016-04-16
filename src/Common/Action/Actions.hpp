@@ -1,8 +1,13 @@
 #ifndef ACTIONS_HPP_
 #define ACTIONS_HPP_
 
+#include <string>
+
+#include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
-#include "ActionManager.hpp"
+#include "ActionManagerTimer.hpp"
+
+class IAction;
 
 /*!
  * List of robot actions. It contains all common RobotElement.
@@ -21,9 +26,9 @@ private:
 	}
 
 	/*!
-	 * \brief Assure la gestion des actions du robot en mode asynchrone.
+	 * \brief Assure la gestion des actions/timers du robot en mode asynchrone.
 	 */
-	ActionManager actionManager_;
+	ActionManagerTimer actionManagerTimer_;
 
 public:
 
@@ -50,7 +55,18 @@ public:
 	 */
 	inline void addAction(IAction * action)
 	{
-		actionManager_.addAction(action);
+		//actionManager_.addAction(action);
+		actionManagerTimer_.addAction(action);
+	}
+
+	inline void addTimer(ITimerListener * timer)
+	{
+		actionManagerTimer_.addTimer(timer);
+	}
+
+	inline void stopTimer(std::string name)
+	{
+		actionManagerTimer_.stopTimer(name);
 	}
 
 	/*!

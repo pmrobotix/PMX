@@ -49,9 +49,9 @@ int threadLegoEV3RobotExtended(void* data)
 	char *ptest[4];
 	ptest[0] = "LegoEV3";
 	ptest[1] = "m";
-	ptest[2] = "-c";
+	ptest[2] = "_c";
 	ptest[3] = "green";
-	ptest[4] = "-s";
+	ptest[4] = "_s";
 	robotlegoev3.parseConsoleArgs(4, ptest);
 
 	//launch automate
@@ -116,7 +116,7 @@ int threadLedBarLegoEV3(void* data)
 //		ptest[5] = "-c";
 //		ptest[6] = "green";
 	char *ptest[] =
-	{ "LegoEV3", "t", "-n", "1", "-s", "-c", "green", NULL };
+	{ "LegoEV3", "t", "_n", "1", "_s", "_c", "green", NULL };
 	robotlegoev3.parseConsoleArgs(7, ptest);
 
 	//launch automate
@@ -144,7 +144,7 @@ int threadLedBarAPF(void* data)
 	//		 args['s'].set(true);
 
 	char *ptest[] =
-	{ "APF9328", "t", "-n", "1", "-s", "-c", "green", NULL };
+	{ "APF9328", "t", "_n", "1", "_s", "_c", "green", NULL };
 	robotapf.parseConsoleArgs(7, ptest);
 	//launch automate
 	robotapf.begin(7, ptest);

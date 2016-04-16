@@ -94,6 +94,7 @@ public:
 	{
 		matchColorPosition_ = c;
 	}
+
 	float getRelativeX(float x)
 	{
 		if (matchColorPosition_ != 0)
@@ -121,6 +122,7 @@ public:
 	void setVmax(float vmax);
 	void setAccel(float acc);
 	void setDecel(float dec);
+
 
 };
 

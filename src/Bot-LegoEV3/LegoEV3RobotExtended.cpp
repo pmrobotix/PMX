@@ -4,6 +4,7 @@
 
 #include "../Common/State/Data.hpp"
 #include "L_State1.hpp"
+#include "LegoEV3IAExtended.hpp"
 
 LegoEV3RobotExtended::LegoEV3RobotExtended()
 {
@@ -20,6 +21,7 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	delete (asserv_default);
 	asserv_default = asserv_;
 
+	ia_= new LegoEV3IAExtended(id_, asserv_);
 
 	psvg_ = new LegoEV3SvgWriterExtended(id_);
 	psvg_->beginHeader();

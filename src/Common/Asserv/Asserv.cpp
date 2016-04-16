@@ -250,3 +250,4 @@ void Asserv::setDecel(float dec)
 	pAsservInsa_->motion_SetDefaultDecel(dec);
 }
 
+
