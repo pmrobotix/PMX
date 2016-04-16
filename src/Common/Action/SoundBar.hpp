@@ -6,7 +6,8 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "AActionsElement.hpp"
 #include "IAction.hpp"
-#include "../Action.Driver/ASoundDriver.hpp"
+
+class ASoundDriver;
 
 /*!
  * \brief Enumération des libellés des actions de la barre de son.

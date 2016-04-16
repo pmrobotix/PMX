@@ -14,7 +14,7 @@ public:
 	LegoEV3AsservExtended(std::string botId)
 			: Asserv(botId) //on appelle le constructeur pere
 	{
-		//pMovingBase_->setMovingBase(&movingBase_); //surcharge
+		//pMovingBase_->setMovingBase(&movingBase_); //surcharge ??
 	}
 
 	~LegoEV3AsservExtended()

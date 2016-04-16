@@ -6,7 +6,7 @@
 
 void Actions::start()
 {
-	actionManager_.start("ActionManager");
+	actionManagerTimer_.start("ActionManagerTimer");
 	logger().debug("Actions is started");
 }
 
@@ -25,14 +25,19 @@ void Actions::stopDevices()
 void Actions::waitAndStopManagers()
 {
 	int time = 0;
-	while (actionManager_.count() > 0)
+	while (actionManagerTimer_.countActions() > 0)
 	{
-		logger().debug() << actionManager_.count() << logs::end;
-		usleep(50000);
+		logger().debug() << actionManagerTimer_.countActions() << logs::end;
+		//TODO parcourir les taches et les mettre à false ?
+		usleep(1000);
 		time++;
-		if (time >= 20) break; //10 secondes
+		if (time >= 20) break; //0.2 secondes
 	}
-	actionManager_.stop();
+
+	//TODO parcourir toutes les timers ??
+
+	actionManagerTimer_.stop();
 
 	usleep(5000); //TODO  créer une Attente avec timeout de la fin de l'actionManager à la place du usleep
 }
+

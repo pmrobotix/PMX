@@ -51,7 +51,7 @@ void Robot::configureDefaultConsoleArgs()
 
 	{
 		Arguments::Option cOpt('c', "");
-		cOpt.addArgument("color", "color of robot green/violet", "violet");
+		cOpt.addArgument("color", "color of robot [g]reen/[v]iolet", "violet");
 		cArgs_.addOption(cOpt);
 	}
 }
@@ -194,9 +194,9 @@ void Robot::begin(int argc, char** argv)
 	if (cArgs_['c'])
 	{
 		color = cArgs_['c']["color"];
-		if (color == "green")
+		if (color == "green" || color == "g")
 			this->setMyColor(PMXGREEN);
-		else if (color == "red")
+		else if (color == "violet"|| color == "v")
 			this->setMyColor(PMXVIOLET);
 		else
 		{

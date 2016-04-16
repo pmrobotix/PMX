@@ -10,6 +10,9 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../../Thread/Thread.hpp"
 
+#include "../../Common/Position.hpp"
+
+
 class MovingBase;
 
 //dupliquer de math.h car inexistant dans le compilo EV3
@@ -106,19 +109,7 @@ typedef enum
 	TRAJ_COLLISION_REAR
 } TRAJ_STATE;
 
-typedef struct RobotPosition
-{
-	float x;
-	float y;
-	float theta;
-} RobotPosition;
 
-typedef struct Position
-{
-	float x;
-	float y;
-
-} Position;
 
 //different kind of command generation
 typedef enum

@@ -39,10 +39,16 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "L_SoundBarTest", "console");
 	add(logs::Level::INFO, "L_TiretteTest", "console");
 	add(logs::Level::INFO, "L_MovingBaseTest", "console");
+	add(logs::Level::DEBUG, "L_ActionManagerTimerTest", "console");
+	add(logs::Level::DEBUG, "ActionManagerTimer", "console");
+	add(logs::Level::DEBUG, "TestAction", "console");
+	add(logs::Level::DEBUG, "TestTimer", "console");
+
 
 
 	add(logs::Level::DEBUG, "L_Asserv_FindPIDTest", "console");
 	add(logs::Level::DEBUG, "L_Asserv_SetResolutionTest", "console");
+	add(logs::Level::DEBUG, "L_Asserv_SquareTest", "console");
 	add(logs::Level::DEBUG, "L_AsservInsaTest", "console");
 	add(logs::Level::DEBUG, "L_AsservRunTest", "console");
 

@@ -8,6 +8,8 @@
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3SvgWriterExtended.hpp"
 
+class LegoEV3IAExtended;
+
 class LegoEV3RobotExtended: public Robot
 {
 public:
@@ -56,6 +58,8 @@ private:
 	LegoEV3ActionsExtended * actions_;
 
 	LegoEV3AsservExtended * asserv_;
+
+	LegoEV3IAExtended * ia_;
 
 	LegoEV3SvgWriterExtended * psvg_;
 
