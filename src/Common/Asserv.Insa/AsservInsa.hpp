@@ -10,7 +10,10 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../../Thread/Thread.hpp"
 
-#include "../../Common/Position.hpp"
+struct Position;
+class Robot;
+struct RobotPosition;
+
 
 
 class MovingBase;
@@ -291,7 +294,7 @@ private:
 
 	int stop_motion_ITTask;
 
-	bool activate_;
+	//bool activate_;
 
 	int32 rightTicksPerM_;
 	int32 leftTicksPerM_;
@@ -370,7 +373,8 @@ private:
 
 	MOTOR motors[MAX_MOTION_CONTROL_TYPE_NUMBER][MOTOR_PER_TYPE];
 
-	MovingBase *base_;
+	//MovingBase *base_;
+	Robot * robot_;
 
 //---clothoid
 
@@ -615,16 +619,20 @@ private:
 
 public:
 
-	AsservInsa();
+	AsservInsa(Robot * robot);
 	~AsservInsa();
 
 	void motion_Init();
 
 	void motion_SetSamplingFrequency(uint frequency);
 
-	void setMovingBase(MovingBase *base);
+	//void setMovingBase(MovingBase *base);
 
-	void activate(bool a);
+	//void setRobot(Robot *robot); //TODO replace setMovingBase
+
+	//void activate(bool a);
+
+
 	//motion
 
 	//! \brief Set robot position used by odometry

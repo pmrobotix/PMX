@@ -1,20 +1,23 @@
 #ifndef LegoEV3_IAEXTENDED_HPP_
 #define LegoEV3_IAEXTENDED_HPP_
 
-#include <string>
-
 #include "../Common/IA/IAbyZone.hpp"
 
 class LegoEV3IAExtended
 {
 private:
 
+	IAbyZone iaz_;
+
 public:
-	LegoEV3IAExtended(std::string botId, Asserv *asserv);
+	LegoEV3IAExtended(std::string botId, Robot *robot);
 
 	~LegoEV3IAExtended();
 
-	IAbyZone iaz_;
+	IAbyZone & iAbyZone()
+	{
+		return iaz_;
+	}
 
 };
 

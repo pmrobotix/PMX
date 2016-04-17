@@ -5,7 +5,8 @@
 #include "../Log/LoggerFactory.hpp"
 #include "APF9328ActionsExtended.hpp"
 #include "APF9328AsservExtended.hpp"
-#include "APF9328SvgWriterExtended.hpp"
+
+class APF9328SvgWriterExtended;
 
 class APF9328RobotExtended: public Robot
 {
@@ -23,20 +24,14 @@ public:
 
 	inline APF9328ActionsExtended& actions()
 	{
-		APF9328ActionsExtended& r_actions = *actions_;
+		APF9328ActionsExtended& r_actions = *p_actions_;
 		return r_actions;
 	}
 
 	inline APF9328AsservExtended& asserv()
 	{
-		APF9328AsservExtended& r_asserv = *asserv_;
+		APF9328AsservExtended& r_asserv = *p_asserv_;
 		return r_asserv;
-	}
-
-	inline APF9328SvgWriterExtended& svg()
-	{
-		APF9328SvgWriterExtended& r_svg = *psvg_;
-		return r_svg;
 	}
 
 	void begin(int argc, char** argv);
@@ -51,11 +46,12 @@ private:
 		return instance;
 	}
 
-	APF9328ActionsExtended* actions_;
+	APF9328ActionsExtended* p_actions_;
 
-	APF9328AsservExtended * asserv_;
+	APF9328AsservExtended * p_asserv_;
 
-	APF9328SvgWriterExtended * psvg_;
+	APF9328SvgWriterExtended * p_svg_;
+
 
 	APF9328RobotExtended();
 };

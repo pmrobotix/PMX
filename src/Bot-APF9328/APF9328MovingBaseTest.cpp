@@ -19,11 +19,11 @@ void APF9328MovingBaseTest::run(int argc, char** argv)
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo(); //just to give odometry
 
-	robot.svg().logger().info() << "test LegoEV3LedBarTest" << logs::end;
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+	robot.svgw().logger().info() << "test LegoEV3LedBarTest" << logs::end;
+	robot.svgw().writePosition(robot.asserv().pos_getX_mm(),
 			robot.asserv().pos_getY_mm(),
 			robot.asserv().pos_getTheta(),
-			APF9328_SVG_POS_ROBOT);
+			"bot");
 
 	utils::Chronometer chrono;
 	chrono.start();

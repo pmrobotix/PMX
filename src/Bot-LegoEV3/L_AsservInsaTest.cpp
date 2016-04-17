@@ -127,10 +127,7 @@ void L_AsservInsaTest::run(int argc, char** argv)
 	robot.asserv().setAccel(Acc);
 	robot.asserv().setDecel(Dec);
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	if (angle != 0)
 		robot.asserv().doRotateAbs(angle);
@@ -146,10 +143,7 @@ void L_AsservInsaTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;

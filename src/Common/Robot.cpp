@@ -27,10 +27,20 @@ Robot::Robot()
 		: myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "_/") // use "_" instead of "-" for arguments
 {
 	actions_default = new Actions();
-	asserv_default = new Asserv("RobotDefaultAsserv");
+	asserv_default = new Asserv("RobotDefaultAsserv", this);
 
 	configureDefaultConsoleArgs();
 }
+
+
+void Robot::svgPrintPosition()
+{
+	this->svgw().writePosition(this->asserv_default->pos_getX_mm(),
+			this->asserv_default->pos_getY_mm(),
+			this->asserv_default->pos_getTheta(),
+			"bot");
+}
+
 
 void Robot::configureDefaultConsoleArgs()
 {
@@ -188,7 +198,11 @@ void Robot::begin(int argc, char** argv)
 
 	logger().debug() << "type = " << cArgs_["type"] << logs::end;
 
-	logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"]
+	logger().debug() << "Option c set "
+			<< (int) cArgs_['c']
+			<< ", color = "
+			<< " "
+			<< cArgs_['c']["color"]
 			<< logs::end;
 
 	if (cArgs_['c'])
@@ -196,7 +210,7 @@ void Robot::begin(int argc, char** argv)
 		color = cArgs_['c']["color"];
 		if (color == "green" || color == "g")
 			this->setMyColor(PMXGREEN);
-		else if (color == "violet"|| color == "v")
+		else if (color == "violet" || color == "v")
 			this->setMyColor(PMXVIOLET);
 		else
 		{
@@ -219,7 +233,10 @@ void Robot::begin(int argc, char** argv)
 		logger().debug() << "skip = " << (int) cArgs_['s'] << logs::end;
 	}
 
-	if (cArgs_["type"] != "m" && cArgs_["type"] != "t" && cArgs_["type"] != "T" && cArgs_["type"] != "M")
+	if (cArgs_["type"] != "m"
+			&& cArgs_["type"] != "t"
+			&& cArgs_["type"] != "T"
+			&& cArgs_["type"] != "M")
 	{
 		select = cmanager_.displayMenuFirstArgu();
 		if (select == "-")

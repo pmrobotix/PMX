@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_AsservRunTest()
-			: FunctionalTest("AsservRunTest", "test de l'asservissement sur plusieurs positions")
+			: FunctionalTest("AsservRunTest", "Asservissement sur plusieurs positions.")
 	{
 	}
 

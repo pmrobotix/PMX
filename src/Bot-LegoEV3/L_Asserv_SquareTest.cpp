@@ -66,10 +66,8 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXGREEN));
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
+
 
 	chrono.start();
 
@@ -91,10 +89,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	robot.asserv().doMoveForwardTo(x + d, y);
 
@@ -114,10 +109,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	robot.asserv().doMoveForwardTo(x + d, y + d);
 
@@ -137,10 +129,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	robot.asserv().doMoveForwardTo(x, y + d);
 
@@ -160,10 +149,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	robot.asserv().doMoveForwardAndRotateTo(x, y, 0.0);
 
@@ -183,15 +169,9 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;

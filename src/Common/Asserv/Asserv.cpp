@@ -4,12 +4,14 @@
 
 #include "MovingBase.hpp"
 
-Asserv::Asserv(std::string botId)
+Asserv::Asserv(std::string botId, Robot * robot)
 {
 	pMovingBase_ = new MovingBase(botId);
 
-	pAsservInsa_ = new AsservInsa();
-	pAsservInsa_->setMovingBase(pMovingBase_); //doit etre surchargé
+	probot_ = robot;
+
+	pAsservInsa_ = new AsservInsa(robot);
+	//pAsservInsa_->setMovingBase(pMovingBase_);
 
 	ignoreRearCollision_ = false;
 	ignoreFrontCollision_ = false;

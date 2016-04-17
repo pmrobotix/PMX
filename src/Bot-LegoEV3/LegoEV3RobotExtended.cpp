@@ -12,20 +12,22 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	myColor_ = PMXNOCOLOR;
 	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 
+	p_svg_ = new LegoEV3SvgWriterExtended(id_);
+	delete (svg_);
+	svg_ = p_svg_;
+
 	//on ecrase les versions par default avec la version extended
-	actions_ = new LegoEV3ActionsExtended(id_);
+	p_actions_ = new LegoEV3ActionsExtended(id_);
 	delete (actions_default);
-	actions_default = actions_;
+	actions_default = p_actions_;
 
-	asserv_ = new LegoEV3AsservExtended(id_);
+	p_asserv_ = new LegoEV3AsservExtended(id_, this);
 	delete (asserv_default);
-	asserv_default = asserv_;
+	asserv_default = p_asserv_;
 
-	ia_= new LegoEV3IAExtended(id_, asserv_);
+	p_ia_ = new LegoEV3IAExtended(id_, this);
 
-	psvg_ = new LegoEV3SvgWriterExtended(id_);
-	psvg_->beginHeader();
-
+	svg_->beginHeader();
 }
 
 void LegoEV3RobotExtended::stop()
@@ -33,7 +35,7 @@ void LegoEV3RobotExtended::stop()
 	Robot::stop();
 	this->actions().stop(); //extra devices
 
-	psvg_->endHeader();
+	svg_->endHeader();
 }
 
 void LegoEV3RobotExtended::begin(int argc, char** argv)
@@ -51,6 +53,9 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
 		automate_.run(*this, state1, &data_);
 	}
 
-	logger().debug() << "PMX LegoEV3Robot - Happy End" << logs::end;
+	logger().debug() << "PMX LegoEV3Robot - Happy End - "
+			<< this->chrono().getElapsedTimeInSec()
+			<< " sec"
+			<< logs::end;
 }
 

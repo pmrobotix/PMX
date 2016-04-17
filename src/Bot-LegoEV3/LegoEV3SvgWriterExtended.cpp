@@ -28,17 +28,18 @@ LegoEV3SvgWriterExtended::LegoEV3SvgWriterExtended(std::string botId)
 }
 
 //angle en radian
-void LegoEV3SvgWriterExtended::writePosition(double x, double y, double angle_rad, LegoEv3SvgSymbol svgcolor)
+void LegoEV3SvgWriterExtended::writePosition(double x,
+		double y,
+		double angle_rad,
+		std::string symbol)
 {
 	if (logger().isActive(logs::Level::INFO))
 	{
 		double delta_y = 0.0;
 		double delta_x = 0.0;
 
-		switch (svgcolor)
+		if (symbol == "bot")
 		{
-
-		case LEGOEV3_SVG_POS_ROBOT:
 			logger().info() << "<use x=\""
 					<< x - 150
 					<< "\" y=\""
@@ -51,13 +52,18 @@ void LegoEV3SvgWriterExtended::writePosition(double x, double y, double angle_ra
 					<< -y
 					<< ")\" />"
 					<< logs::end;
-			break;
-		case LEGOEV3_SVG_POS_FOLLOWING:
-		default:
+		}
+		else if (symbol == "bot-pos")
+		{
 			// inversion du y pour affichage dans le bon sens dans le SVG
-			logger().info() << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\"1\" fill=\"green\" />" << logs::end;
-			delta_y = 25.0 * sin(angle_rad);
-			delta_x = 25.0 * cos(angle_rad);
+			logger().info() << "<circle cx=\""
+					<< x
+					<< "\" cy=\""
+					<< -y
+					<< "\" r=\"1\" fill=\"blue\" />"
+					<< logs::end;
+			delta_y = 50.0 * sin(angle_rad);
+			delta_x = 50.0 * cos(angle_rad);
 			logger().info() << "<line x1=\""
 					<< x
 					<< "\" y1=\""
@@ -68,7 +74,122 @@ void LegoEV3SvgWriterExtended::writePosition(double x, double y, double angle_ra
 					<< -y - delta_y
 					<< "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
 					<< logs::end;
-			break;
+		}
+		else
+		{
+			//TODO Error
 		}
 	}
 }
+
+void LegoEV3SvgWriterExtended::writeZone(const char* name,
+		float minX,
+		float minY,
+		float width,
+		float height,
+		float startX,
+		float startY,
+		float startAngle_rad)
+{
+	//ia
+	logger().info() << "<g transform=\"scale(1,-1) \">"
+			<< "<rect x=\""
+			<< minX
+			<< "\" y=\""
+			<< minY
+			<< "\" width=\""
+			<< width
+			<< "\" height=\""
+			<< height
+			<< "\" fill=\"none\" stroke=\"blue\" stroke-width=\"4\" />"
+			<< "<line x1 = \""
+			<< minX
+			<< "\" y1 = \""
+			<< minY
+			<< "\" x2 = \""
+			<< minX + width
+			<< "\" y2 = \""
+			<< minY
+			<< "\" stroke=\"blue\" stroke-width=\"4\"/>"
+
+//			<< "<line x1 = \""
+//			<< minX + width
+//			<< "\" y1 = \""
+//			<< minY
+//			<< "\" x2 = \""
+//			<< minX + width
+//			<< "\" y2 = \""
+//			<< minY + height
+//			<< "\" stroke=\"blue\" stroke-width=\"4\"/>"
+//
+//			<< "<line x1 = \""
+//			<< minX + width
+//			<< "\" y1 = \""
+//			<< minY + height
+//			<< "\" x2 = \""
+//			<< minX
+//			<< "\" y2 = \""
+//			<< minY + height
+//			<< "\" stroke=\"blue\" stroke-width=\"4\"/>"
+//
+//			<< "<line x1 = \""
+//			<< minX
+//			<< "\" y1 = \""
+//			<< minY + height
+//			<< "\" x2 = \""
+//			<< minX
+//			<< "\" y2 = \""
+//			<< minY
+//			<< "\" stroke=\"blue\" stroke-width=\"4\"/>"
+
+			<< "<circle cx='"
+			<< startX
+			<< "' cy='"
+			<< startY
+			<< "' r='3' fill='none' stroke='blue' />"
+			<< "<line x1 = \""
+			<< startX
+			<< "\" y1 = \""
+			<< startY
+			<< "\" x2 = \""
+			<< startX + 25 * cos(startAngle_rad)
+			<< "\" y2 = \""
+			<< startY + 25 * sin(startAngle_rad)
+			<< "\" stroke = \"blue\" stroke-width = \"4\"/>"
+			<< "</g>"
+
+			<< "<text x='"
+			<< startX + 20
+			<< "' y='"
+			<< -startY - 10
+			<< "' font-size='30' fill='blue'>"
+			<< name
+			<< "</text>"
+			<< logs::end;
+
+}
+
+void LegoEV3SvgWriterExtended::writeIaPath(const char* zone1Name,
+		const char* zone2Name,
+		float x_mm,
+		float y_mm)
+{
+
+	logger().info()
+			<< "<circle cx='"
+			<< x_mm
+			<< "' cy='"
+			<< -y_mm
+			<< "' r='15' fill='none' stroke='green' />"
+			<< "<text x='"
+			<< x_mm + 20
+			<< "' y='"
+			<< -y_mm + 20
+			<< "' font-size='30' fill='green'>"
+			<< zone1Name
+			<< "-"
+			<< zone2Name
+			<< "</text>"
+			<< logs::end;
+}
+

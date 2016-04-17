@@ -30,7 +30,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_IATest()
-			: FunctionalTest("IATest", "test ia")
+			: FunctionalTest("IATest", "test l'ia")
 	{
 	}
 
@@ -45,6 +45,8 @@ public:
 	 * \brief Execute le test.
 	 */
 	virtual void run(int argc, char** argv);
+
+	void IASetup();
 
 };
 

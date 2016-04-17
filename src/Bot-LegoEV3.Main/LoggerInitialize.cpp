@@ -12,7 +12,7 @@
 void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
-	add("legoEV3svg", new SvgAppender("svgEV3.svg"));
+	add("svg", new SvgAppender("svgEV3.svg"));
 	add("memory", new MemoryAppender());
 	add("file", new FileAppender("logEV3.csv"));
 
@@ -21,13 +21,11 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "Robot", "console");
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
 
-
 	add(logs::Level::INFO, "L_State1", "console");
 	add(logs::Level::INFO, "Wait90SecAction", "console");
 
 	//SVG
-	add(logs::Level::INFO, "Svg4LegoEV3Robot", "legoEV3svg");
-	add(logs::Level::INFO, "Svg4AsservInsa", "legoEV3svg");
+	add(logs::Level::INFO, "Svg4LegoEV3Robot", "svg");
 
 	//File
 	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
@@ -39,22 +37,20 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "L_SoundBarTest", "console");
 	add(logs::Level::INFO, "L_TiretteTest", "console");
 	add(logs::Level::INFO, "L_MovingBaseTest", "console");
-	add(logs::Level::DEBUG, "L_ActionManagerTimerTest", "console");
-	add(logs::Level::DEBUG, "ActionManagerTimer", "console");
-	add(logs::Level::DEBUG, "TestAction", "console");
-	add(logs::Level::DEBUG, "TestTimer", "console");
+	add(logs::Level::INFO, "L_ActionManagerTimerTest", "console");
+	add(logs::Level::INFO, "TestAction", "console");
+	add(logs::Level::INFO, "TestTimer", "console");
 
-
-
-	add(logs::Level::DEBUG, "L_Asserv_FindPIDTest", "console");
-	add(logs::Level::DEBUG, "L_Asserv_SetResolutionTest", "console");
-	add(logs::Level::DEBUG, "L_Asserv_SquareTest", "console");
-	add(logs::Level::DEBUG, "L_AsservInsaTest", "console");
-	add(logs::Level::DEBUG, "L_AsservRunTest", "console");
+	add(logs::Level::INFO, "L_Asserv_FindPIDTest", "console");
+	add(logs::Level::INFO, "L_Asserv_SetResolutionTest", "console");
+	add(logs::Level::INFO, "L_Asserv_SquareTest", "console");
+	add(logs::Level::INFO, "L_AsservInsaTest", "console");
+	add(logs::Level::INFO, "L_AsservRunTest", "console");
+	add(logs::Level::INFO, "L_IATest", "console");
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
-	add(logs::Level::DEBUG, "ButtonDriver.SIMU", "console");
+	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
 	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
 	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
 	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
@@ -68,8 +64,9 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "AsservDriver.EV3", "console");
 
 	//DEBUG
+	add(logs::Level::INFO, "ActionManagerTimer", "console");
 	add(logs::Level::INFO, "MovingBase", "console");
 	add(logs::Level::INFO, "AsservInsa", "console");
-	add(logs::Level::DEBUG, "Asserv", "console");
+	add(logs::Level::INFO, "Asserv", "console");
 
 }

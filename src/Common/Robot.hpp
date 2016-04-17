@@ -4,11 +4,14 @@
 #include <string>
 
 #include "../Log/LoggerFactory.hpp"
+#include "../Log/SvgWriter.hpp"
 #include "Arguments.hpp"
 #include "ConsoleManager.hpp"
 #include "State/Automate.hpp"
 #include "State/Data.hpp"
 #include "Utils/Chronometer.hpp"
+
+class SvgWriter;
 
 class Asserv;
 
@@ -18,7 +21,9 @@ class ConsoleManager;
 
 enum RobotColor
 {
-	PMXNOCOLOR, PMXGREEN, PMXVIOLET
+	PMXNOCOLOR,
+	PMXGREEN,
+	PMXVIOLET
 };
 
 class Robot
@@ -31,8 +36,7 @@ public:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger(
-				"Robot");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("Robot");
 		return instance;
 	}
 
@@ -62,7 +66,7 @@ public:
 	struct msgform2
 	{
 		long mtype;
-		char mtext[ 512];
+		char mtext[512];
 	} msg_ipc;
 #endif
 
@@ -71,6 +75,8 @@ public:
 
 	//Asserv => asservissement
 	Asserv * asserv_default;
+
+	SvgWriter * svg_;
 
 	//IA
 	//TODO IA
@@ -86,6 +92,14 @@ public:
 	virtual ~Robot()
 	{
 	}
+
+	inline SvgWriter& svgw()
+	{
+		SvgWriter & r_svg = *svg_;
+		return r_svg;
+	}
+
+	void svgPrintPosition();
 
 	void operator=(Robot const&); // Don't implement
 
