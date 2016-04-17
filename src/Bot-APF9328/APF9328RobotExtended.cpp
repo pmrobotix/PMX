@@ -4,8 +4,8 @@
 
 #include "../Common/State/Data.hpp"
 #include "../Log/Logger.hpp"
-#include "APF9328AsservExtended.hpp"
 #include "APF9328State1.hpp"
+#include "APF9328SvgWriterExtended.hpp"
 
 APF9328RobotExtended::APF9328RobotExtended()
 {
@@ -13,17 +13,21 @@ APF9328RobotExtended::APF9328RobotExtended()
 	myColor_ = PMXNOCOLOR;
 	cArgs_.setDescription("(c) PM-ROBOTIX APF9328Robot");
 
+	p_svg_ = new APF9328SvgWriterExtended(id_);
+	delete (svg_);
+	svg_ = p_svg_;
+
 	//on ecrase les versions par default avec la version extended
-	actions_ = new APF9328ActionsExtended(id_);
+	p_actions_ = new APF9328ActionsExtended(id_);
 	delete (actions_default);
-	actions_default = actions_;
+	actions_default = p_actions_;
 
-	asserv_ = new APF9328AsservExtended(id_);
+	p_asserv_ = new APF9328AsservExtended(id_, this);
 	delete (asserv_default);
-	asserv_default = asserv_;
+	asserv_default = p_asserv_;
 
-	psvg_ = new APF9328SvgWriterExtended(id_);
-	psvg_->beginHeader();
+
+	svg_->beginHeader();
 }
 
 void APF9328RobotExtended::stop()
@@ -31,7 +35,7 @@ void APF9328RobotExtended::stop()
 	Robot::stop();
 	this->actions().stop(); //extra devices
 	this->asserv().freeMotion();
-	psvg_->endHeader();
+	svg_->endHeader();
 }
 
 void APF9328RobotExtended::begin(int argc, char** argv)

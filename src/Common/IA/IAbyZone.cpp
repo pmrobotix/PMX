@@ -14,19 +14,14 @@
 
 #include "../../Log/Logger.hpp"
 #include "../Asserv/Asserv.hpp"
-#include "../Asserv.Insa/AsservInsa.hpp"
+#include "../Robot.hpp"
 
-class Asserv;
-
-IAbyZone::IAbyZone()
+IAbyZone::IAbyZone(Robot * robot)
 {
 	ia_clear();
-	asserv_ = NULL;
+	robot_ = robot;
 }
-void IAbyZone::ia_setAsserv(Asserv * asserv)
-{
-	asserv_ = asserv;
-}
+
 void IAbyZone::ia_clear()
 {
 	_zones_count = 0;
@@ -53,6 +48,7 @@ void IAbyZone::ia_createZone(const char* name,
 		float startAngleDeg)
 {
 	ZONE *z = (ZONE*) calloc(1, sizeof(ZONE));
+
 	z->minX = minX;
 	z->minY = minY;
 	z->width = width;
@@ -60,36 +56,31 @@ void IAbyZone::ia_createZone(const char* name,
 	z->startX = startX;
 	z->startY = startY;
 	z->startAngle = startAngleDeg;
-	/*
-	 if (cc_getMatchColor() != 0)
-	 {
-	 //yMM = -yMM;
-	 z->startX = 3000 - z->startX;
-	 z->minX = 3000 - z->width - z->minX;
-	 z->startAngle = 180.0 - z->startAngle;
-	 printf("ia_createZone %s RED\n", name);
-	 }
-	 else
-	 {
-	 printf("ia_createZone %s YELLOW\n", name);
-	 }*/
-	if (asserv_ != NULL)
+
+	if (robot_ != NULL)
 	{
-		z->startX = asserv_->getRelativeX(z->startX);
-		z->minX = asserv_->getRelativeX(z->width - z->minX);
-		z->startAngle = asserv_->getRelativeAngle(z->startAngle);
+		z->startX = robot_->asserv_default->getRelativeX(z->startX);
+		z->minX = robot_->asserv_default->getRelativeX(z->minX, z->width);
+		z->startAngle = robot_->asserv_default->getRelativeAngle(z->startAngle);
 	}
 	else
 	{
-		logger().error() << "asserv_ is NULL !" << logs::end;
+		logger().error() << "robot_ is NULL !" << logs::end;
 		exit(-1);
 	}
 	strcpy(z->name, name);
 	_zones[_zones_count] = z;
 	_zones_count++;
 
-	//log SVG
-	//////logs::SvgWriter::writeZone(z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY, z->startAngle* M_PI/180.0);
+	robot_->svgw().writeZone(z->name,
+			z->minX,
+			z->minY,
+			z->width,
+			z->height,
+			z->startX,
+			z->startY,
+			z->startAngle * M_PI / 180.0);
+	//ia_printZone(z);
 }
 
 void IAbyZone::ia_printZone(ZONE *z)
@@ -162,20 +153,20 @@ void IAbyZone::ia_setPath(const char* zone1Name, const char* zone2Name, float x,
 	 zp->x = 3000 - zp->x;
 	 }*/
 
-	if (asserv_ != NULL)
+	if (robot_ != NULL)
 	{
-		zp->x = asserv_->getRelativeX(zp->x);
+		zp->x = robot_->asserv_default->getRelativeX(zp->x);
 	}
 	else
 	{
-		logger().error() << "asserv_ is NULL !" << logs::end;
+		logger().error() << "robot_ is NULL !" << logs::end;
 		exit(-1);
 	}
 
 	_zones_path[_zones_path_count] = zp;
 	_zones_path_count++;
 
-//////logs::SvgWriter::writeIaPath(zone1Name, zone2Name, zp->x, zp->y);
+	robot_->svgw().writeIaPath(zone1Name, zone2Name, zp->x, zp->y);
 
 }
 
@@ -199,8 +190,7 @@ void IAbyZone::ia_start()
 	ia_checkZones();
 	if (_actions_count <= 0)
 	{
-		printf("%s (line %d) : Error : no actions defined\n", __FUNCTION__,
-		__LINE__);
+		printf("%s (line %d) : Error : no actions defined\n", __FUNCTION__, __LINE__);
 		exit(2);
 	}
 	bool allDone = false;
@@ -224,34 +214,36 @@ void IAbyZone::ia_start()
 				z->completed = done;
 				if (!done)
 				{
-					if (asserv_ != NULL)
-						printf("state after actions : %s : (%f,%f) %f FAILED\n",
+					if (robot_ != NULL)
+						printf("%s state after actions : %s : (%f,%f) %f FAILED\n",
+								__FUNCTION__,
 								z->name,
-								asserv_->pos_getX_mm(),
-								asserv_->pos_getY_mm(),
-								asserv_->pos_getThetaInDegree());
+								robot_->asserv_default->pos_getX_mm(),
+								robot_->asserv_default->pos_getY_mm(),
+								robot_->asserv_default->pos_getThetaInDegree());
 					else
 					{
-						logger().error() << "asserv_ is NULL !" << logs::end;
+						logger().error() << "robot_ is NULL !" << logs::end;
 						exit(-1);
 					}
 
 				}
-				if (asserv_ != NULL)
-					printf("state after actions : %s : (%f,%f) %f\n",
+				if (robot_ != NULL)
+					printf("%s state after actions : %s : (%f,%f) %f\n",
+							__FUNCTION__,
 							z->name,
-							asserv_->pos_getX_mm(),
-							asserv_->pos_getY_mm(),
-							asserv_->pos_getThetaInDegree());
+							robot_->asserv_default->pos_getX_mm(),
+							robot_->asserv_default->pos_getY_mm(),
+							robot_->asserv_default->pos_getThetaInDegree());
 				else
 				{
-					logger().error() << "asserv_ is NULL !" << logs::end;
+					logger().error() << "robot_ is NULL !" << logs::end;
 					exit(-1);
 				}
 			}
 
 		}
-		sleep(1);
+		//sleep(1);
 	}
 }
 
@@ -290,8 +282,8 @@ ZONE* IAbyZone::ia_getNearestZoneFrom(float x, float y)
 	{
 		printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n",
 				result->name,
-				asserv_->pos_getX_mm(),
-				asserv_->pos_getY_mm());
+				robot_->asserv_default->pos_getX_mm(),
+				robot_->asserv_default->pos_getY_mm());
 		return result;
 	}
 
@@ -320,7 +312,7 @@ ZONE* IAbyZone::ia_getNearestZoneFrom(float x, float y)
 	return result;
 }
 
-RobotPosition IAbyZone::goToZone(const char *zoneName)
+void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPosition *zone_p )
 {
 	ZONE* z = ia_getZone(zoneName);
 
@@ -332,7 +324,8 @@ RobotPosition IAbyZone::goToZone(const char *zoneName)
 		exit(-1);
 	}
 
-	ZONE *zCurrent = ia_getNearestZoneFrom(asserv_->pos_getX_mm(), asserv_->pos_getY_mm());
+	ZONE *zCurrent = ia_getNearestZoneFrom(robot_->asserv_default->pos_getX_mm(),
+			robot_->asserv_default->pos_getY_mm());
 	if (zCurrent == NULL)
 	{
 		printf("ERROR: cc_goToZone ia_getNearestZoneFrom return NULL !!");
@@ -361,6 +354,15 @@ RobotPosition IAbyZone::goToZone(const char *zoneName)
 	 return ts;
 	 */
 
+	path_p->x = robot_->asserv_default->getRelativeX(path->x);
+	path_p->y = path->y;
+
+	zone_p->x = robot_->asserv_default->getRelativeX(z->startX);
+	zone_p->y = z->startY;
+	zone_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
+
+
+	/*
 	RobotPosition pos;
 
 	//convert position from ticks to meter
@@ -368,6 +370,6 @@ RobotPosition IAbyZone::goToZone(const char *zoneName)
 	pos.y = path->y;
 	pos.theta = z->startAngle;
 
-	return pos;
+	return pos;*/
 }
 

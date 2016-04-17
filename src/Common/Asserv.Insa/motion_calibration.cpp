@@ -3,6 +3,7 @@
 
 #include "../../Log/Logger.hpp"
 #include "AsservInsa.hpp"
+#include "../Position.hpp"
 
 void AsservInsa::encoder_SetResolution(uint32 leftTicksPerM, uint32 rightTicksPerM, float entraxe_mm)
 {

@@ -9,11 +9,11 @@
 #define COMMON_IA_IABYZONE_HPP_
 
 #include "../../Log/LoggerFactory.hpp"
+#include "../Position.hpp"
 
-class Asserv;
+class Robot;
 
 struct RobotPosition;
-
 
 typedef bool (*RobotAction)(void);
 
@@ -58,7 +58,7 @@ private:
 		return instance;
 	}
 
-	Asserv *asserv_;
+	Robot * robot_;
 
 	int _zones_count;
 	ZONE* _zones[100];
@@ -70,13 +70,11 @@ private:
 	ACTIONS* _actions[200];
 
 public:
-	IAbyZone();
+	IAbyZone(Robot *robot);
 	~IAbyZone()
 	{
 
 	}
-
-	void ia_setAsserv(Asserv * asserv);
 
 	void ia_start();
 	void ia_clear();
@@ -100,7 +98,7 @@ public:
 	void ia_printZone(ZONE *z);
 	void ia_checkZones();
 
-	RobotPosition goToZone(const char *zoneName);
+	void goToZone(const char *zoneName, RobotPosition *path_p, RobotPosition *zone_p);
 
 };
 #endif /* COMMON_IA_IABYZONE_HPP_ */

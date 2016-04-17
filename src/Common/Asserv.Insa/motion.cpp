@@ -31,15 +31,24 @@
 #include <cstdlib>
 
 #include "../../Log/Logger.hpp"
+#include "../Asserv/Asserv.hpp"
 #include "../Asserv/MotorControl.hpp"
 #include "../Asserv/MovingBase.hpp"
+#include "../Robot.hpp"
+#include "../Position.hpp"
 #include "AsservInsa.hpp"
+
+
+class Robot;
 
 class MovingBase;
 
-AsservInsa::AsservInsa()
+AsservInsa::AsservInsa(Robot * robot)
 {
-	activate_ = false;
+	//Reference vers le robot
+	robot_ = robot;
+
+	//activate_ = false;
 	stop_motion_ITTask = false;
 
 	leftEncoderRatio = 0;
@@ -91,17 +100,17 @@ AsservInsa::AsservInsa()
 
 	RobotMotionState = DISABLE_PID;
 
-	base_ = NULL;
+	//base_ = NULL;
 
 }
 AsservInsa::~AsservInsa()
 {
 }
 
-void AsservInsa::setMovingBase(MovingBase *base)
-{
-	base_ = base;
-}
+//void AsservInsa::setMovingBase(MovingBase *base)
+//{
+//	base_ = base;
+//}
 
 long AsservInsa::currentTimeInMillis()
 {
@@ -281,7 +290,10 @@ void AsservInsa::execute()
 
 	long startTime = currentTimeInMillis();
 	long currentTime = startTime;
-	logger().debug() << "execute started; loopDelayInMillis=" << loopDelayInMillis << " ms" << logs::end;
+	logger().debug() << "execute started; loopDelayInMillis="
+			<< loopDelayInMillis
+			<< " ms"
+			<< logs::end;
 
 	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
 			<< logs::end;
@@ -305,10 +317,17 @@ void AsservInsa::execute()
 		updateMotor(&motors[ALPHA_DELTA][ALPHA_MOTOR], dAlpha);
 		updateMotor(&motors[ALPHA_DELTA][DELTA_MOTOR], dDelta);
 
-		//TODO accéder au robot.svg pour utiliser un symbol ???
+
 		x_mm = p.x * 1000.0;
 		y_mm = p.y * 1000.0;
 		angle_rad = p.theta;
+		robot_->svgw().writePosition(x_mm,
+				y_mm,
+				angle_rad,
+				"bot-pos");
+
+		/*
+
 		loggerSvg().info() << "<circle cx=\""
 				<< x_mm
 				<< "\" cy=\""
@@ -327,6 +346,8 @@ void AsservInsa::execute()
 				<< -y_mm - delta_y
 				<< "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
 				<< logs::end;
+*/
+
 
 		float dSpeed0 = 0;
 		float dSpeed1 = 0;
@@ -408,7 +429,6 @@ void AsservInsa::execute()
 			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
 					(float) (ord1 - motors[motionCommand.mcType][1].lastPos),
 					dSpeed1);
-
 
 			//output pwm to motors
 			if (motionCommand.mcType == LEFT_RIGHT)
@@ -616,14 +636,14 @@ void AsservInsa::execute()
 //exit(2);
 	//return 0;
 }
-
-void AsservInsa::activate(bool a)
-{
-	activate_ = a;
-	if (!a)
-		setPWM(0, 0);
-
-}
+//
+//void AsservInsa::activate(bool a)
+//{
+//	activate_ = a;
+//	if (!a)
+//		setPWM(0, 0);
+//
+//}
 
 void AsservInsa::motion_StopTimer()
 {
@@ -641,10 +661,12 @@ void AsservInsa::setPWM(int16 pwmLeft, int16 pwmRight)
 {
 	//logger().debug() << "setPWM left=" << pwmLeft << " right=" << pwmRight << logs::end;
 
-	if (base_ != NULL)
+	if (robot_ != NULL)
 	{
-		base_->motors().runMotorLeft(pwmLeft, 0);
-		base_->motors().runMotorRight(pwmRight, 0);
+		robot_->asserv_default->base()->motors().runMotorLeft(pwmLeft, 0);
+		robot_->asserv_default->base()->motors().runMotorRight(pwmRight, 0);
+//		base_->motors().runMotorLeft(pwmLeft, 0);
+//		base_->motors().runMotorRight(pwmRight, 0);
 	}
 	else
 	{

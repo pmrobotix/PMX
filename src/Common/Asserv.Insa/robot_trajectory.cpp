@@ -58,7 +58,7 @@ void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VM
 			convertAccelTovTopsPerPeriodSqd(Accel),
 			convertAccelTovTopsPerPeriodSqd(Decel));
 
-	logger().error() << " dist=" << convertDistTovTops(dist)
+	logger().debug() << " dist=" << convertDistTovTops(dist)
 				<< " VMax=" << convertSpeedTovTopsPerPeriod(VMax)
 				<< " Accel=" << convertAccelTovTopsPerPeriodSqd(Accel)
 				<< " Decel=" << convertAccelTovTopsPerPeriodSqd(Decel)
@@ -77,7 +77,7 @@ void AsservInsa::motion_RotateSpeed(RobotCommand *out_cmd, float angle, float VM
 
 void AsservInsa::motion_RotateSpeedAcc(RobotCommand *out_cmd, float angle, float VMax, float Accel, float Decel)
 {
-	logger().error() << "motion_RotateSpeedAcc distEncoderMeter=" << distEncoderMeter
+	logger().debug() << "motion_RotateSpeedAcc distEncoderMeter=" << distEncoderMeter
 				<< " angle=" << angle / M_PI * 180.0f
 				<< " run=" << convertDistTovTops(angle * distEncoderMeter / 2.0f)
 

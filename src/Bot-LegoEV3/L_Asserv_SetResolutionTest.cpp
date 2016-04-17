@@ -61,10 +61,10 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, false);
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+	robot.svgw().writePosition(robot.asserv().pos_getX_mm(),
 			robot.asserv().pos_getY_mm(),
 			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+			"bot");
 
 	chrono.start();
 
@@ -99,10 +99,7 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	float setR = 1000.0 * (float) distTicks;	// / robot.asserv().pos_getX_mm();
 

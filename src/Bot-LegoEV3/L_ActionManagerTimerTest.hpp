@@ -36,7 +36,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_ActionManagerTimerTest()
-			: FunctionalTest("ActionManagerTimer", "test action and timer")
+			: FunctionalTest("ActionManagerTimer", "test plusieurs actions et timers")
 	{
 	}
 

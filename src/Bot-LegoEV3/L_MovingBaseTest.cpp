@@ -23,11 +23,7 @@ void L_MovingBaseTest::run(int argc, char** argv)
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo(); //just to give odometry
 
-	robot.svg().logger().info() << "test LegoEV3LedBarTest" << logs::end;
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	utils::Chronometer chrono;
 
@@ -71,10 +67,7 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< " a="
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 	usleep(500000);
 
 	logger().info() << "runMotor(-100, 1000) " << logs::end;
@@ -115,10 +108,7 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	usleep(500000);
 
@@ -162,10 +152,7 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< " a="
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	usleep(1000000);
 
@@ -207,10 +194,7 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< " a="
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
