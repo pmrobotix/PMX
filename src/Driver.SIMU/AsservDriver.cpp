@@ -21,7 +21,7 @@ AsservDriver::AsservDriver(std::string botid)
 	{
 		//printf("--- AsservDriver - botid == APF9328Robot\n");
 		//CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
-		simuTicksPerMeter_ = 1433.0; //nb ticks for 1000mm
+		simuTicksPerMeter_ = 1440.0; //nb ticks for 1000mm
 		simuMaxSpeed_ = 0.5; //m/s
 		simuMaxPower_ = 127.0;
 		//CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
@@ -31,8 +31,8 @@ AsservDriver::AsservDriver(std::string botid)
 	{
 		//printf("--- AsservDriver - botid == LegoEV3Robot\n");
 		//CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
-		simuTicksPerMeter_ = 3640.0; //3000.0; //nb ticks for 1000mm
-		simuMaxSpeed_ = 0.25; //m/s
+		simuTicksPerMeter_ = 1395.0; //3000.0; //nb ticks for 1000mm
+		simuMaxSpeed_ = 0.6; //m/s
 		simuMaxPower_ = 860.0;
 		//CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
 
@@ -90,8 +90,8 @@ float AsservDriver::convertPowerToSpeed(int power)
 	}
 	else if (botid_ == "LegoEV3Robot")
 	{
-		if (power < 15 && power > -15) //simule que le robot n'avance pas à tres faible puissance
-			return 0.0;
+//		if (power < 15 && power > -15) //simule que le robot n'avance pas à tres faible puissance
+//			return 0.0;
 	}
 	else
 	{
@@ -113,11 +113,11 @@ float AsservDriver::convertPowerToSpeed(int power)
 void AsservDriver::computeCounterL()
 {
 	// MAJ real speed
-	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
-	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
-		leftSpeed_ = wantedLeftSpeed_;
+//	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
+//	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
+//		leftSpeed_ = wantedLeftSpeed_;
 	//or perfect virtual motor
-	//leftSpeed_ = wantedLeftSpeed_;
+	leftSpeed_ = wantedLeftSpeed_;
 
 	// utilise la real speed
 	float tps = chrono_.getElapsedTimeInMilliSec();
@@ -166,11 +166,11 @@ void AsservDriver::computeCounterL()
 void AsservDriver::computeCounterR()
 {
 	// MAJ real speed
-	rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
-	if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
-		rightSpeed_ = wantedRightSpeed_;
+//	rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
+//	if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
+//		rightSpeed_ = wantedRightSpeed_;
 	//or perfect virtual motor
-	//rightSpeed_ = wantedRightSpeed_;
+	rightSpeed_ = wantedRightSpeed_;
 
 	float tps = chrono_.getElapsedTimeInMilliSec();
 	float deltaT_ms = tps - tRight_ms_;
