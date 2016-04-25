@@ -11,7 +11,6 @@ Asserv::Asserv(std::string botId, Robot * robot)
 	probot_ = robot;
 
 	pAsservInsa_ = new AsservInsa(robot);
-	//pAsservInsa_->setMovingBase(pMovingBase_);
 
 	ignoreRearCollision_ = false;
 	ignoreFrontCollision_ = false;

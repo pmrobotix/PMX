@@ -50,6 +50,8 @@ private:
 
 	APF9328AsservExtended * p_asserv_;
 
+
+
 	APF9328SvgWriterExtended * p_svg_;
 
 

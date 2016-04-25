@@ -1,6 +1,8 @@
 #ifndef COMMON_ASSERVDRIVER_AASSERVDRIVER_HPP_
 #define COMMON_ASSERVDRIVER_AASSERVDRIVER_HPP_
 
+#include <string>
+
 class AAsservDriver
 {
 
@@ -9,7 +11,7 @@ public:
 	/*!
 	 * \brief single instance creation.
 	 */
-	static AAsservDriver * create();
+	static AAsservDriver * create(std::string botid);
 
 	/*!
 	 * \brief Destructor.

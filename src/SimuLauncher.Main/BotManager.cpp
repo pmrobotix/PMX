@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <cstdio>
 
-#include "../Bot-APF9328/APF9328LedBarTest.hpp"
+#include "../Bot-APF9328/A_LedBarTest.hpp"
 #include "../Bot-APF9328/APF9328RobotExtended.hpp"
 #include "../Bot-LegoEV3/L_LedBarTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3RobotExtended.hpp"
@@ -131,7 +131,7 @@ int threadLedBarAPF(void* data)
 	BotManager* botm = (BotManager*) data;
 	APF9328RobotExtended &robotapf = APF9328RobotExtended::instance();
 
-	robotapf.getConsoleManager().add(new APF9328LedBarTest());
+	robotapf.getConsoleManager().add(new A_LedBarTest());
 
 	//		 Arguments &args = robotapf.getArgs();
 	//		 args["type"] = "t";

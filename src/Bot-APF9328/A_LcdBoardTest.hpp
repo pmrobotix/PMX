@@ -1,10 +1,10 @@
 /*!
  * \file
- * \brief Définition de la classe LedBarTest.
+ * \brief Définition de la classe APF9328LcdBoardTest.
  */
 
-#ifndef APF9328_LEDBARTEST_HPP
-#define	APF9328_LEDBARTEST_HPP
+#ifndef APF9328_LCDBOARDTEST_HPP
+#define	APF9328_LCDBOARDTEST_HPP
 
 #include "../Common/FunctionalTest.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -12,16 +12,16 @@
 /*!
  * \brief Effectue un test de clignotement des LEDs du tableau d'affichage.
  */
-class APF9328LedBarTest: public FunctionalTest
+class A_LcdBoardTest: public FunctionalTest
 {
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LedBarTest.
+	 * \brief Retourne le \ref Logger associé à la classe \ref APF9328LcdBoardTest.
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("APF9328LedBarTest");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("A_LcdBoardTest");
 		return instance;
 	}
 public:
@@ -29,15 +29,15 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	APF9328LedBarTest() :
-		FunctionalTest("APF9328LedBarTest", "Blink Leds")
+	A_LcdBoardTest() :
+		FunctionalTest("LcdBoard", "Test LCD board")
 	{
 	}
 
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~APF9328LedBarTest()
+	virtual ~A_LcdBoardTest()
 	{
 	}
 

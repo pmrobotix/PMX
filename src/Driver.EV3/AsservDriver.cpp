@@ -10,7 +10,7 @@
 using namespace std;
 using namespace ev3dev;
 
-AAsservDriver * AAsservDriver::create()
+AAsservDriver * AAsservDriver::create(std::string )
 {
 	static AsservDriver *instance = new AsservDriver();
 	return instance;

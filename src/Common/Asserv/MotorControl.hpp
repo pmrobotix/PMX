@@ -31,7 +31,7 @@ public:
 	/*!
 	 * \brief Constructor.
 	 */
-	MotorControl();//Asserv & asserv
+	MotorControl(std::string botid);//Asserv & asserv
 
 	/*!
 	 * \brief Destructor.

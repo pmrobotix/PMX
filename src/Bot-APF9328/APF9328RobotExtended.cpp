@@ -3,6 +3,7 @@
 #include <string>
 
 #include "../Common/State/Data.hpp"
+#include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "APF9328State1.hpp"
 #include "APF9328SvgWriterExtended.hpp"
@@ -26,7 +27,6 @@ APF9328RobotExtended::APF9328RobotExtended()
 	delete (asserv_default);
 	asserv_default = p_asserv_;
 
-
 	svg_->beginHeader();
 }
 
@@ -35,6 +35,7 @@ void APF9328RobotExtended::stop()
 	Robot::stop();
 	this->actions().stop(); //extra devices
 	this->asserv().freeMotion();
+
 	svg_->endHeader();
 }
 
@@ -54,5 +55,8 @@ void APF9328RobotExtended::begin(int argc, char** argv)
 		automate_.run(*this, state1, &data_);
 	}
 
-	logger().info() << "PMX APF9328RobotExtended - Happy End" << logs::end;
+	logger().info() << "PMX APF9328RobotExtended - Happy End"
+			<< this->chrono().getElapsedTimeInSec()
+			<< " sec"
+			<< logs::end;
 }

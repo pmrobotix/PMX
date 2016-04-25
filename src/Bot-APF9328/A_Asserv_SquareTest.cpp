@@ -1,6 +1,5 @@
-#include "L_Asserv_SquareTest.hpp"
+#include "A_Asserv_SquareTest.hpp"
 
-#include <unistd.h>
 #include <cstdlib>
 #include <string>
 
@@ -10,15 +9,14 @@
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
-#include "LegoEV3AsservExtended.hpp"
-#include "LegoEV3RobotExtended.hpp"
-#include "LegoEV3SvgWriterExtended.hpp"
+#include "APF9328AsservExtended.hpp"
+#include "APF9328RobotExtended.hpp"
 
 using namespace std;
 
-void L_Asserv_SquareTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void A_Asserv_SquareTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	//match color
 
@@ -31,7 +29,7 @@ void L_Asserv_SquareTest::configureConsoleArgs(int argc, char** argv) //surcharg
 	robot.parseConsoleArgs(argc, argv);
 }
 
-void L_Asserv_SquareTest::run(int argc, char** argv)
+void A_Asserv_SquareTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
@@ -45,7 +43,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 	float d = 0.0;
 	int nb = 0;
 
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	Arguments args = robot.getArgs();
 

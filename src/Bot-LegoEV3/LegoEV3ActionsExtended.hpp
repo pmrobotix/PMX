@@ -7,6 +7,7 @@
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/FunnyAction.hpp"
 #include "../Common/Action/LedBar.hpp"
+#include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action/SoundBar.hpp"
 #include "../Common/Action/Tirette.hpp"
 
@@ -42,10 +43,19 @@ private:
 	 */
 	FunnyAction parasol_;
 
+	/*!
+	 * \brief Servo Objects.
+	 */
+	ServoObjectsSystem servoObjects_;
+
 public:
-	LegoEV3ActionsExtended(std::string botId) :
-	ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(
-			*this), parasol_(*this)
+	LegoEV3ActionsExtended(std::string botId)
+			: ledbar_(botId, *this, 2),
+					buttonbar_(*this),
+					soundbar_(*this),
+					tirette_(*this),
+					parasol_(*this),
+					servoObjects_(*this)
 	{
 	}
 
@@ -97,6 +107,11 @@ public:
 	FunnyAction & parasol()
 	{
 		return parasol_;
+	}
+
+	ServoObjectsSystem & servoObjects()
+	{
+		return servoObjects_;
 	}
 
 	void stop()

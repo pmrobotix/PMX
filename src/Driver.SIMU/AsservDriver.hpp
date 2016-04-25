@@ -51,9 +51,13 @@ private:
 
 	float rightCounter_; //real ticks
 	float leftCounter_; //real ticks
+	float rightMeters_;
+	float leftMeters_;
 
 	float currentRightCounter_;
 	float currentLeftCounter_;
+
+	std::string botid_;
 
 	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols].
 	//Add the symbol : __cplusplus with the value 201103L
@@ -100,7 +104,7 @@ public:
 	/*!
 	 * \brief Constructor.
 	 */
-	AsservDriver();
+	AsservDriver(std::string botid);
 
 	/*!
 	 * \brief Destructor.
@@ -138,10 +142,10 @@ public:
 		{
 			utils::Chronometer chrono_member1left;
 			chrono_member1left.start();
-			while (chrono_member1left.getElapsedTimeInMilliSec() < time_ms)
+			while (chrono_member1left.getElapsedTimeInMilliSec() < (double) time_ms)
 			{
 				asserv_->computeCounterL();
-				usleep(1);
+				usleep(500);
 			}
 			asserv_->stopMotorLeft();
 		}
@@ -150,7 +154,7 @@ public:
 			while (asserv_->wantedLeftSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterL();
-				usleep(1);
+				usleep(500);
 			}
 		}
 	}
@@ -162,10 +166,10 @@ public:
 		{
 			utils::Chronometer chrono_member2right;
 			chrono_member2right.start();
-			while (chrono_member2right.getElapsedTimeInMilliSec() < time_ms)
+			while (chrono_member2right.getElapsedTimeInMilliSec() < (double) time_ms)
 			{
 				asserv_->computeCounterR();
-				usleep(1);
+				usleep(500);
 			}
 			asserv_->stopMotorRight();
 		}
@@ -174,14 +178,14 @@ public:
 			while (asserv_->wantedRightSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterR();
-				usleep(1);
+				usleep(500);
 			}
 		}
 	}
 
 	void positionLeft(const char *arg1, long internal_ticksToDo) //tick encoder à atteindre
 	{
-		//printf("positionLeft internal_ticksToDo=%ld   leftSpeed_=%f wanted=%f\n", internal_ticksToDo, asserv_->leftSpeed_, asserv_->wantedLeftSpeed_);
+		printf("positionLeft internal_ticksToDo=%ld   leftSpeed_=%f wanted=%f\n", internal_ticksToDo, asserv_->leftSpeed_, asserv_->wantedLeftSpeed_);
 
 		long ticks = std::abs(asserv_->getLeftInternalEncoder());
 		if (asserv_->leftSpeed_ > 0)
@@ -189,6 +193,7 @@ public:
 			//stop when internal ticks is achieved..
 			while (ticks < internal_ticksToDo)
 			{
+				asserv_->computeCounterL();
 				ticks = std::abs(asserv_->getLeftInternalEncoder());
 				usleep(500);
 			}
@@ -197,6 +202,7 @@ public:
 		{
 			while (ticks > internal_ticksToDo)
 			{
+				asserv_->computeCounterL();
 				ticks = std::abs(asserv_->getLeftInternalEncoder());
 				usleep(500);
 			}
@@ -220,6 +226,7 @@ public:
 			//stop when internal ticks is achieved..
 			while (ticks < internal_ticksToDo)
 			{
+				asserv_->computeCounterR();
 				ticks = std::abs(asserv_->getRightInternalEncoder());
 				usleep(500);
 			}
@@ -230,6 +237,7 @@ public:
 		{
 			while (ticks > internal_ticksToDo)
 			{
+				asserv_->computeCounterR();
 				ticks = std::abs(asserv_->getRightInternalEncoder());
 				usleep(500);
 			}

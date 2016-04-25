@@ -47,6 +47,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "L_AsservInsaTest", "console");
 	add(logs::Level::INFO, "L_AsservRunTest", "console");
 	add(logs::Level::INFO, "L_IATest", "console");
+	add(logs::Level::INFO, "L_ServoObjectTest", "console");
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
@@ -62,6 +63,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SoundDriver.EV3", "console");
 	add(logs::Level::INFO, "SwitchDriver.EV3", "console");
 	add(logs::Level::INFO, "AsservDriver.EV3", "console");
+	add(logs::Level::INFO, "ServoDriver.EV3", "console");
 
 	//DEBUG
 	add(logs::Level::INFO, "ActionManagerTimer", "console");

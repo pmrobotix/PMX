@@ -3,19 +3,18 @@
  * \brief Implémentation de la classe LedBarTest.
  */
 
-#include "APF9328LedBarTest.hpp"
-
 #include <string>
 
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Log/Logger.hpp"
+#include "A_LedBarTest.hpp"
 #include "APF9328ActionsExtended.hpp"
 #include "APF9328RobotExtended.hpp"
 
 using namespace std;
 
-void APF9328LedBarTest::run(int argc, char** argv)
+void A_LedBarTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

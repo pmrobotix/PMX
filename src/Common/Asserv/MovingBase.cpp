@@ -13,7 +13,7 @@ using namespace std;
  * \brief Constructor.
  */
 MovingBase::MovingBase(std::string botId)
-		: entraxe_m(0.145), diam_mm(31.7), distTicks_(0), encoders_(), extEncoders_(), motors_()
+		: entraxe_m(0.145), diam_mm(31.7), distTicks_(0), encoders_(botId), extEncoders_(botId), motors_(botId)
 
 //TODO Fichier de configuration pour distinction entre robot dans le simulateur + remonter info sur extended + ajouter info encoder
 {
