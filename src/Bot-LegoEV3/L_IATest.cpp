@@ -96,16 +96,6 @@ void L_IATest::run(int argc, char** argv)
 	IASetup();
 	robot.ia().iAbyZone().ia_start(); //launch IA
 
-	/*
-	 //wait the execution Wait90
-	 while (!sharedData->end90s()) //&& robot.chronometerRobot().getElapsedTimeInSec() < 35)
-	 {
-	 logger().info() << "sharedData->end90s=" << sharedData->end90s() << " time="
-	 << robot.chronometerRobot().getElapsedTimeInSec() << utils::end;
-	 robot.base().stop();
-	 usleep(300000);
-	 }
-	 */
 
 	robot.stop();
 

@@ -10,6 +10,7 @@
 #include "../Bot-LegoEV3/L_IATest.hpp"
 #include "../Bot-LegoEV3/L_LedBarTest.hpp"
 #include "../Bot-LegoEV3/L_MovingBaseTest.hpp"
+#include "../Bot-LegoEV3/L_ServoObjectTest.hpp"
 #include "../Bot-LegoEV3/L_ServoUsingMotorTest.hpp"
 #include "../Bot-LegoEV3/L_SoundBarTest.hpp"
 #include "../Bot-LegoEV3/L_TiretteTest.hpp"
@@ -37,6 +38,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new L_ServoUsingMotorTest());
 	robot.getConsoleManager().add(new L_IATest());
 	robot.getConsoleManager().add(new L_ActionManagerTimerTest());
+	robot.getConsoleManager().add(new L_ServoObjectTest());
 
 	robot.parseConsoleArgs(argc, argv);
 

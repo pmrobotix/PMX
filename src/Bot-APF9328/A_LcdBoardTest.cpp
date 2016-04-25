@@ -1,21 +1,20 @@
 /*!
  * \file
- * \brief Implémentation de la classe APF9328LcdBoardTest.
+ * \brief Implémentation de la classe A_LcdBoardTest.
  */
-
-#include "APF9328LcdBoardTest.hpp"
 
 #include <unistd.h>
 #include <string>
 
 #include "../Driver.ARM/Adafruit_RGBLCDShield.hpp"
 #include "../Log/Logger.hpp"
+#include "A_LcdBoardTest.hpp"
 #include "APF9328ActionsExtended.hpp"
 #include "APF9328RobotExtended.hpp"
 
 using namespace std;
 
-void APF9328LcdBoardTest::run(int argc, char** argv)
+void A_LcdBoardTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 

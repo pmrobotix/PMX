@@ -26,8 +26,11 @@ using namespace std;
 Robot::Robot()
 		: myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "_/") // use "_" instead of "-" for arguments
 {
-	actions_default = new Actions();
-	asserv_default = new Asserv("RobotDefaultAsserv", this);
+//	actions_default = new Actions();
+//	asserv_default = new Asserv("RobotDefaultAsserv", this);
+
+	actions_default = NULL;
+	asserv_default = NULL;
 
 	configureDefaultConsoleArgs();
 }
@@ -35,10 +38,13 @@ Robot::Robot()
 
 void Robot::svgPrintPosition()
 {
+	if (asserv_default != NULL)
 	this->svgw().writePosition(this->asserv_default->pos_getX_mm(),
 			this->asserv_default->pos_getY_mm(),
 			this->asserv_default->pos_getTheta(),
 			"bot");
+	else
+		logger().error() << "asserv_default is NULL !" << logs::end;
 }
 
 
@@ -266,7 +272,10 @@ void Robot::begin(int argc, char** argv)
 
 void Robot::stop()
 {
-	this->asserv_default->stopMotionTimerAndOdo();
+	if (asserv_default != NULL)
+		this->asserv_default->stopMotionTimerAndOdo();
+	else
+		logger().error() << "asserv_default is NULL ! " << logs::end;
 
 }
 

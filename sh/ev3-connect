@@ -1,20 +1,24 @@
 #! /bin/bash
 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
-
-IPUSB="10.42.0.71" #USB
+#EV3 CHO
+#IPUSB="10.42.0.71" #USB LINUX
 IP="192.168.2.102" #WIFI
+
+
+#EV3 Christophe 
+#IP="192.168.2.103" #WIFI
 
 all()
 {
     #ssh root@$IP "killall Bot-SmallPMX-EV3"
-	scp "../Bot_Mindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/
+	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/
 	
 }
 
 main()
 {
-	scp "../Bot_Mindstorm_EV3/Release/Bot_LegoMindstorm_EV3" robot@$IP:/home/robot/	
+	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" robot@$IP:/home/robot/	
 }
 
 driver()

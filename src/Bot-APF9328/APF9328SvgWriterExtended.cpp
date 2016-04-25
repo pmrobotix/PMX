@@ -43,7 +43,7 @@ void APF9328SvgWriterExtended::writePosition(double x,
 					<< x - 150
 					<< "\" y=\""
 					<< -y - 150
-					<< "\" xlink:href=\"#bot-legoev3\" transform=\"rotate("
+					<< "\" xlink:href=\"#bot-apf9328\" transform=\"rotate("
 					<< -((angle_rad * 180) / M_PI)
 					<< ","
 					<< x
@@ -166,12 +166,28 @@ void APF9328SvgWriterExtended::writeZone(const char* name,
 			<< "</text>"
 			<< logs::end;
 
-	/*
-	 "<symbol id=\"iaZones"<< name << "\" ><rect x=\""<< minX << "\" y=\""<< minY <<"\" width=\""<< width<<"\" height=\""<< height <<"\" fill=\"none\" stroke=\"blue\" stroke-width=\"4\" />"
-	 "<circle cx='" << startX << "' cy='" << startY << "' r='3' fill='none' stroke='blue' />"
-	 << "<line x1 = \""<<startX<<"\" y1 = \""<<startY<<"\" x2 = \""<< startX + 25 * cos(startAngle)<<"\" y2 = \""<< startY + 25 * sin(startAngle)<< "\" stroke = \"blue\" stroke-width = \"4\"/>"
-	 << "<text x='" << startX + 30 << "' y='" << startY + 40<< "' font-size='30' fill='blue'>"
-	 << name << "</text>"
-	 << "</symbol>"
-	 */
+}
+
+void APF9328SvgWriterExtended::writeIaPath(const char* zone1Name,
+		const char* zone2Name,
+		float x_mm,
+		float y_mm)
+{
+
+	logger().info()
+			<< "<circle cx='"
+			<< x_mm
+			<< "' cy='"
+			<< -y_mm
+			<< "' r='15' fill='none' stroke='green' />"
+			<< "<text x='"
+			<< x_mm + 20
+			<< "' y='"
+			<< -y_mm + 20
+			<< "' font-size='30' fill='green'>"
+			<< zone1Name
+			<< "-"
+			<< zone2Name
+			<< "</text>"
+			<< logs::end;
 }

@@ -1,9 +1,11 @@
 #include <unistd.h>
-#include <iostream>
 
-#include "../Bot-APF9328/APF9328LcdBoardTest.hpp"
-#include "../Bot-APF9328/APF9328LedBarTest.hpp"
-#include "../Bot-APF9328/APF9328MovingBaseTest.hpp"
+#include "../Bot-APF9328/A_Asserv_FindPIDTest.hpp"
+#include "../Bot-APF9328/A_Asserv_SetResolutionTest.hpp"
+#include "../Bot-APF9328/A_Asserv_SquareTest.hpp"
+#include "../Bot-APF9328/A_LcdBoardTest.hpp"
+#include "../Bot-APF9328/A_LedBarTest.hpp"
+#include "../Bot-APF9328/A_MovingBaseTest.hpp"
 #include "../Bot-APF9328/APF9328RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
@@ -12,15 +14,16 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-	cout << "!!! Hello BigPMX !!!" << endl;
-
 	//Specific Robot BigPMX
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	//add specific tests for this robot
-	robot.getConsoleManager().add(new APF9328LedBarTest());
-	robot.getConsoleManager().add(new APF9328LcdBoardTest());
-	robot.getConsoleManager().add(new APF9328MovingBaseTest());
+	robot.getConsoleManager().add(new A_LedBarTest());
+	robot.getConsoleManager().add(new A_LcdBoardTest());
+	robot.getConsoleManager().add(new A_MovingBaseTest());
+	robot.getConsoleManager().add(new A_Asserv_SetResolutionTest());
+	robot.getConsoleManager().add(new A_Asserv_FindPIDTest());
+	robot.getConsoleManager().add(new A_Asserv_SquareTest());
 
 	robot.parseConsoleArgs(argc, argv);
 

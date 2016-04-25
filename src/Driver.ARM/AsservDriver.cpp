@@ -2,9 +2,13 @@
 
 #include "AsservDriver.hpp"
 
+#include <string>
+
+#include "../Log/Logger.hpp"
+
 using namespace std;
 
-AAsservDriver * AAsservDriver::create()
+AAsservDriver * AAsservDriver::create(std::string)
 {
 	static AsservDriver *instance = new AsservDriver();
 	return instance;

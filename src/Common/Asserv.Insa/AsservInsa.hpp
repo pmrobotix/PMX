@@ -277,11 +277,11 @@ private:
 	/*!
 	 * \brief Retourne le \ref Logger svg associé à la classe \ref AsservInsa.
 	 */
-	static inline const logs::Logger & loggerSvg()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Svg4AsservInsa");
-		return instance;
-	}
+//	static inline const logs::Logger & loggerSvg()
+//	{
+//		static const logs::Logger & instance = logs::LoggerFactory::logger("Svg4AsservInsa");
+//		return instance;
+//	}
 
 	/*!
 	 * \brief Retourne le \ref Logger file associé à la classe \ref AsservInsa.

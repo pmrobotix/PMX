@@ -13,16 +13,16 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 
 	p_svg_ = new LegoEV3SvgWriterExtended(id_);
-	delete (svg_);
+	//delete (svg_);
 	svg_ = p_svg_;
 
 	//on ecrase les versions par default avec la version extended
 	p_actions_ = new LegoEV3ActionsExtended(id_);
-	delete (actions_default);
+	//delete (actions_default);
 	actions_default = p_actions_;
 
 	p_asserv_ = new LegoEV3AsservExtended(id_, this);
-	delete (asserv_default);
+	//delete (asserv_default);
 	asserv_default = p_asserv_;
 
 	p_ia_ = new LegoEV3IAExtended(id_, this);
@@ -32,6 +32,8 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 
 void LegoEV3RobotExtended::stop()
 {
+	this->asserv().freeMotion();
+
 	Robot::stop();
 	this->actions().stop(); //extra devices
 

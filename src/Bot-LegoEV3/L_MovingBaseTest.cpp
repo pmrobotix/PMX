@@ -23,6 +23,8 @@ void L_MovingBaseTest::run(int argc, char** argv)
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo(); //just to give odometry
 
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXGREEN));
+
 	robot.svgPrintPosition();
 
 	utils::Chronometer chrono;
@@ -30,15 +32,15 @@ void L_MovingBaseTest::run(int argc, char** argv)
 	long left = 0;
 	long right = 0;
 
-	logger().info() << "runMotor(200, 1000) " << logs::end;
-	robot.asserv().base()->motors().runMotorLeft(128, 1000); //run (power 128) pendant 1s
-	robot.asserv().base()->motors().runMotorRight(128, 1000); //run (power 128) pendant 1s
+	logger().info() << "runMotor(500, 1000) " << logs::end;
+	robot.asserv().base()->motors().runMotorLeft(500, 2000); //run (power 128) pendant 1s
+	robot.asserv().base()->motors().runMotorRight(500, 2000); //run (power 128) pendant 1s
 	chrono.start();
-	while (chrono.getElapsedTimeInMilliSec() < 1500.0)
+	while (chrono.getElapsedTimeInMilliSec() < 2500.0)
 	{
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().debug() << "time= "
+		logger().info() << "time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< " Lticks= "
 				<< left
@@ -68,17 +70,20 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 	robot.svgPrintPosition();
-	usleep(500000);
 
-	logger().info() << "runMotor(-100, 1000) " << logs::end;
-	robot.asserv().base()->motors().runMotorLeft(-100, 1000); //run with power -100 pendant 1s
-	robot.asserv().base()->motors().runMotorRight(-100, 1000); //run with power -100 pendant 1s
+
+	usleep(1000000);
+
+
+	logger().info() << "runMotor(-300, 1000) " << logs::end;
+	robot.asserv().base()->motors().runMotorLeft(-300, 1400); //run with power -100 pendant 1s
+	robot.asserv().base()->motors().runMotorRight(-300, 1400); //run with power -100 pendant 1s
 	chrono.start();
 	while (chrono.getElapsedTimeInMilliSec() < 1500.0)
 	{
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().debug() << "time= "
+		logger().info() << "time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< " Lticks= "
 				<< left
@@ -110,12 +115,14 @@ void L_MovingBaseTest::run(int argc, char** argv)
 
 	robot.svgPrintPosition();
 
-	usleep(500000);
+	usleep(1000000);
+
+	//TODO setMotorLeftPosition ici c'est absolu, ajouter le relatif.
 
 	int dist_ticks = 1000;
-	logger().info() << "setMotorPosition(120, " << dist_ticks << ") " << logs::end;
-	robot.asserv().base()->motors().setMotorLeftPosition(120, dist_ticks); //run until 300 ticks
-	robot.asserv().base()->motors().setMotorRightPosition(120, dist_ticks); //run until 300 ticks
+	logger().info() << "setMotorPosition(220, " << dist_ticks << ") " << logs::end;
+	robot.asserv().base()->motors().setMotorLeftPosition(220, dist_ticks); //run until dist_ticks ticks
+	robot.asserv().base()->motors().setMotorRightPosition(220, dist_ticks); //run until dist_ticks ticks
 	chrono.start();
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -123,7 +130,7 @@ void L_MovingBaseTest::run(int argc, char** argv)
 	{
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().debug() << "time= "
+		logger().info() << "time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< " Lticks= "
 				<< left
@@ -138,7 +145,6 @@ void L_MovingBaseTest::run(int argc, char** argv)
 				<< logs::end;
 		usleep(200000);
 	}
-
 	logger().info() << "STOPPED time= "
 			<< chrono.getElapsedTimeInMilliSec()
 			<< " Lticks= "
@@ -153,19 +159,19 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 	robot.svgPrintPosition();
-
+/*
 	usleep(1000000);
 
 	int dist_ticks2 = 100;
 	logger().info() << "setMotorPosition(-50, " << dist_ticks2 << ") " << logs::end;
-	robot.asserv().base()->motors().setMotorLeftPosition(-50, dist_ticks2); //run until 100 ticks
-	robot.asserv().base()->motors().setMotorRightPosition(-50, dist_ticks2); //run until 100 ticks
+	robot.asserv().base()->motors().setMotorLeftPosition(-500, dist_ticks2); //run until dist_ticks2 ticks
+	robot.asserv().base()->motors().setMotorRightPosition(-500, dist_ticks2); //run until dist_ticks2 ticks
 	chrono.start();
 	while (left > dist_ticks - dist_ticks2)
 	{
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().debug() << "time= "
+		logger().info() << "time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< " Lticks= "
 				<< left
@@ -180,7 +186,6 @@ void L_MovingBaseTest::run(int argc, char** argv)
 				<< logs::end;
 		usleep(200000);
 	}
-
 	logger().info() << "STOPPED time= "
 			<< chrono.getElapsedTimeInMilliSec()
 			<< " Lticks= "
@@ -195,8 +200,10 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 	robot.svgPrintPosition();
+*/
 
 	robot.stop();
+
 	logger().info() << "Happy End." << logs::end;
 }
 
