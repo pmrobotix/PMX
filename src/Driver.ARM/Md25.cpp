@@ -47,7 +47,7 @@ void Md25::begin()
 
 void Md25::setup()
 {
-	setMode(MD25_MODE_1); //mode0 => 0-128-255   ;  mode1 => -128+127
+	setMode(MD25_MODE_0); //mode0 => 0-128-255   ;  mode1 => -128+127
 	setAccelerationRate(10); //Acc:1,2,3,5,10
 	setCommand(MD25_ENABLE_SPEED_REGULATION);
 	setCommand(MD25_RESET_ENCODERS);
@@ -60,7 +60,7 @@ void Md25::resetEncoders()
 
 int Md25::getSoftwareVersion(void)
 {
-	unsigned char val = 0;
+	long val = 0;
 	mutex_.lock();
 	val = read_i2c(MD25_SOFTWAREVER_REG);
 	mutex_.unlock();
@@ -102,14 +102,14 @@ int Md25::getMode(void)
 	return getValue(MD25_MODE_REG);
 }
 
-unsigned char Md25::getValue(unsigned char reg)
+long Md25::getValue(unsigned char reg)
 {
 	if (!connected_)
 	{
 		logger().error() << "Md25::getCommand : return 0; MD25 NOT CONNECTED !" << logs::end;
 		return 0;
 	}
-	unsigned char val = 0;
+	long val = 0;
 	try
 	{
 		mutex_.lock();
@@ -143,7 +143,7 @@ void Md25::getEncoder(long *pvalue, unsigned char MD25Register) //TODO void
 	 *pvalue = (encoder2 << 24) + (encoder3 << 16) + (encoder4 << 8) + encoder5;
 	 */
 
-	unsigned char buff[4];
+	long buff[4];
 	read_i2c_4Bytes(MD25Register, buff);
 
 	encoder2 = buff[0];
@@ -328,9 +328,9 @@ void Md25::setSpeedReg(int speed, unsigned char reg)
 	mutex_.lock();
 	write_i2c(reg, speed);
 	mutex_.unlock();
-	//Compare with the read register
+	//Compare with the read register ; Not possible using (current_mode_ == MD25_MODE_1) because negative values
 	unsigned char reading = getValue(reg);
-	if (speed != reading)
+	if (speed != (int)reading)
 	{
 		logger().error() << "=> ERROR COMPARAISON setSpeedReg"
 				<< (int) reg
@@ -380,16 +380,16 @@ void Md25::write_i2c(unsigned char command, unsigned char value)
 	md25_i2c_.writeRegByte(command, value);
 }
 
-unsigned char Md25::read_i2c(unsigned char command)
+long Md25::read_i2c(unsigned char command)
 {
-	unsigned char receivedVal = 0;
+	long receivedVal = 0;
 	//md25_i2c_.readRegValue(MD25_DEFAULT_ADDRESS, command, &receivedVal);
-	receivedVal = (unsigned char) md25_i2c_.readRegByte(command);
+	receivedVal = (long) md25_i2c_.readRegByte(command);
 	return receivedVal;
 }
 
 //TODO ne marche pas
-void Md25::read_i2c_4Bytes(unsigned char reg, unsigned char *data)
+void Md25::read_i2c_4Bytes(unsigned char reg, long *data)
 {
 	try
 	{
@@ -407,7 +407,7 @@ void Md25::read_i2c_4Bytes(unsigned char reg, unsigned char *data)
 //		usleep(1000);
 		mutex_.unlock();
 
-		logger().error() << "getEncoder: reg="
+		logger().debug() << "getEncoder: reg="
 				<< reinterpret_cast<void*>(reg)
 				<< " data[0]="
 				<< reinterpret_cast<void*>(data[0])

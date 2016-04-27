@@ -1,11 +1,14 @@
 #include <unistd.h>
+#include <iostream>
 
 #include "../Bot-APF9328/A_Asserv_FindPIDTest.hpp"
 #include "../Bot-APF9328/A_Asserv_SetResolutionTest.hpp"
 #include "../Bot-APF9328/A_Asserv_SquareTest.hpp"
+#include "../Bot-APF9328/A_AsservInsaTest.hpp"
 #include "../Bot-APF9328/A_LcdBoardTest.hpp"
 #include "../Bot-APF9328/A_LedBarTest.hpp"
 #include "../Bot-APF9328/A_MovingBaseTest.hpp"
+#include "../Bot-APF9328/A_TiretteTest.hpp"
 #include "../Bot-APF9328/APF9328RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
@@ -20,9 +23,11 @@ int main(int argc, char** argv)
 	//add specific tests for this robot
 	robot.getConsoleManager().add(new A_LedBarTest());
 	robot.getConsoleManager().add(new A_LcdBoardTest());
+	robot.getConsoleManager().add(new A_TiretteTest());
 	robot.getConsoleManager().add(new A_MovingBaseTest());
 	robot.getConsoleManager().add(new A_Asserv_SetResolutionTest());
 	robot.getConsoleManager().add(new A_Asserv_FindPIDTest());
+	robot.getConsoleManager().add(new A_AsservInsaTest());
 	robot.getConsoleManager().add(new A_Asserv_SquareTest());
 
 	robot.parseConsoleArgs(argc, argv);
@@ -31,6 +36,7 @@ int main(int argc, char** argv)
 	robot.begin(argc, argv);
 
 	sleep(1); //TODO wait and verify end of logger ?
-	//cout << "End BigPMX." << endl;
+
+	cout << "HappyEnd Bot-APF9328." << endl;
 	return 0;
 }

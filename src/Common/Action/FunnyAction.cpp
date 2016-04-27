@@ -23,7 +23,7 @@ void FunnyAction::reset()
 
 void FunnyAction::activate(int pos)
 {
-	servomotordriver->setMotorPosition(100, pos, 0);
+	servomotordriver->setMotorPosition(60, pos, 0);
 }
 
 void FunnyAction::release()

@@ -25,6 +25,7 @@ modprobe spidev
 
 modprobe servo
 
-i2cdetect -y -r 0
+i2cdetect -y -a 0
 
 
+cd /pmx

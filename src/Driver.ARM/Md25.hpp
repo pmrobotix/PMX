@@ -255,12 +255,12 @@ public:
 
 private:
 
-	unsigned char getValue(unsigned char reg);
+	long getValue(unsigned char reg);
 
 	void write_i2c(unsigned char command, unsigned char value);
 
-	unsigned char read_i2c(unsigned char command);
-	void read_i2c_4Bytes(unsigned char reg, unsigned char *data); //TODO à corriger
+	long read_i2c(unsigned char command);
+	void read_i2c_4Bytes(unsigned char reg, long *data); //TODO à corriger
 
 };
 

@@ -21,26 +21,31 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "Robot", "console");
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
 	add(logs::Level::INFO, "LegoEV3State1", "console");
+	add(logs::Level::INFO, "Tirette", "console");
+
 
 	//SVG
 	add(logs::Level::INFO, "Svg4APF9328Robot", "svg");
 
+
 	//File
-	add(logs::Level::INFO, "logFileAsservInsa", "file");
+	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
 
 	//TESTS
 	add(logs::Level::INFO, "A_LedBarTest", "console");
 	add(logs::Level::INFO, "A_MovingBaseTest", "console");
 	add(logs::Level::INFO, "A_LcdBoardTest", "console");
+	add(logs::Level::INFO, "A_tiretteTest", "console");
 	add(logs::Level::INFO, "A_Asserv_SetResolutionTest", "console");
 	add(logs::Level::INFO, "A_Asserv_FindPIDTest", "console");
+	add(logs::Level::INFO, "A_AsservInsaTest", "console");
 	add(logs::Level::INFO, "A_Asserv_SquareTest", "console");
-		/*
-	add(logs::Level::INFO, "APF9328ButtonBarTest", "console");
-	add(logs::Level::INFO, "APF9328SoundBarTest", "console");
-	add(logs::Level::INFO, "APF9328TiretteTest", "console");
-	add(logs::Level::INFO, "APF9328AsservInsaTest", "console");
-*/
+	/*
+	 add(logs::Level::INFO, "APF9328ButtonBarTest", "console");
+	 add(logs::Level::INFO, "APF9328SoundBarTest", "console");
+	 add(logs::Level::INFO, "APF9328TiretteTest", "console");
+	 add(logs::Level::INFO, "APF9328AsservInsaTest", "console");
+	 */
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
 	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
@@ -55,5 +60,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SoundDriver.ARM", "console");
 	add(logs::Level::INFO, "SwitchDriver.ARM", "console");
 	add(logs::Level::INFO, "AsservDriver.ARM", "console");
+	add(logs::Level::INFO, "GpioPCA9555", "console");
+
 
 }

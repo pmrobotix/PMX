@@ -12,9 +12,11 @@ public:
 	static ASwitchDriver * create();
 
 	/*
-	 *\brief pressed.
+	 *\brief pressed pour la tirette
 	 */
 	virtual int pressed() = 0;
+
+	virtual int pressed(unsigned char pin) = 0;
 
 	/*!
 	 * \brief Destructor.

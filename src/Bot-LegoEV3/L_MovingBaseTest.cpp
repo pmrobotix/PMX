@@ -21,8 +21,8 @@ void L_MovingBaseTest::configureConsoleArgs(int argc, char** argv) //surcharge
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
 	robot.getArgs().addArgument("LR", "L(0) or R(1) or LR(2)", "2");
-	robot.getArgs().addArgument("d", "distance ticks", "500");
 	robot.getArgs().addArgument("p", "power", "100");
+	robot.getArgs().addArgument("d", "distance ticks", "500");
 
 	//reparse arguments
 	robot.parseConsoleArgs(argc, argv);
@@ -40,20 +40,20 @@ void L_MovingBaseTest::run(int argc, char** argv)
 	int LR = 0;
 	int d = 0;
 	int p = 0;
-	if (args["d"] != "0")
+	if (args["LR"] != "0")
 	{
-		d = atoi(args["d"].c_str());
-		logger().info() << "Arg d set " << args["d"] << ", d = " << d << " ticks" << logs::end;
+		LR = atoi(args["LR"].c_str());
+		logger().info() << "Arg LR set " << args["LR"] << ", LR = " << LR << logs::end;
 	}
 	if (args["p"] != "0")
 	{
 		p = atoi(args["p"].c_str());
 		logger().info() << "Arg p set " << args["p"] << ", p = " << p << " power" << logs::end;
 	}
-	if (args["LR"] != "0")
+	if (args["d"] != "0")
 	{
-		LR = atoi(args["LR"].c_str());
-		logger().info() << "Arg LR set " << args["LR"] << ", LR = " << LR << logs::end;
+		d = atoi(args["d"].c_str());
+		logger().info() << "Arg d set " << args["d"] << ", d = " << d << " ticks" << logs::end;
 	}
 
 	robot.asserv().startMotionTimerAndOdo(); //just to give odometry
@@ -151,55 +151,55 @@ void L_MovingBaseTest::run(int argc, char** argv)
 			<< logs::end;
 
 	robot.svgPrintPosition();
-/*
-	usleep(1000000);
+	/*
+	 usleep(1000000);
 
-	//TODO setMotorLeftPosition ici c'est absolu, ajouter le relatif.
+	 //TODO setMotorLeftPosition ici c'est absolu, ajouter le relatif.
 
-	int dist_ticks = 1000;
-	logger().info() << "setMotorPosition(" << p << ", " << d << ") " << logs::end;
-	if (LR == 0 || LR == 2)
-		robot.asserv().base()->motors().setMotorLeftPosition(p, d); //run until dist_ticks ticks
+	 int dist_ticks = 1000;
+	 logger().info() << "setMotorPosition(" << p << ", " << d << ") " << logs::end;
+	 if (LR == 0 || LR == 2)
+	 robot.asserv().base()->motors().setMotorLeftPosition(p, d); //run until dist_ticks ticks
 
-	if (LR == 1 || LR == 2)
-		robot.asserv().base()->motors().setMotorRightPosition(p, d); //run until dist_ticks ticks
-	chrono.start();
-	left = robot.asserv().base()->encoders().getLeftEncoder();
-	right = robot.asserv().base()->encoders().getRightEncoder();
-	while (left < dist_ticks)
-	{
-		left = robot.asserv().base()->encoders().getLeftEncoder();
-		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().info() << "time= "
-				<< chrono.getElapsedTimeInMilliSec()
-				<< " Lticks= "
-				<< left
-				<< " Rticks= "
-				<< right
-				<< " x="
-				<< robot.asserv().pos_getX_mm()
-				<< " y="
-				<< robot.asserv().pos_getY_mm()
-				<< " a="
-				<< robot.asserv().pos_getThetaInDegree()
-				<< logs::end;
-		usleep(200000);
-	}
-	logger().info() << "STOPPED time= "
-			<< chrono.getElapsedTimeInMilliSec()
-			<< " Lticks= "
-			<< robot.asserv().base()->encoders().getLeftEncoder()
-			<< " Rticks= "
-			<< robot.asserv().base()->encoders().getRightEncoder()
-			<< " x="
-			<< robot.asserv().pos_getX_mm()
-			<< " y="
-			<< robot.asserv().pos_getY_mm()
-			<< " a="
-			<< robot.asserv().pos_getThetaInDegree()
-			<< logs::end;
-	robot.svgPrintPosition();
-	*/
+	 if (LR == 1 || LR == 2)
+	 robot.asserv().base()->motors().setMotorRightPosition(p, d); //run until dist_ticks ticks
+	 chrono.start();
+	 left = robot.asserv().base()->encoders().getLeftEncoder();
+	 right = robot.asserv().base()->encoders().getRightEncoder();
+	 while (left < dist_ticks)
+	 {
+	 left = robot.asserv().base()->encoders().getLeftEncoder();
+	 right = robot.asserv().base()->encoders().getRightEncoder();
+	 logger().info() << "time= "
+	 << chrono.getElapsedTimeInMilliSec()
+	 << " Lticks= "
+	 << left
+	 << " Rticks= "
+	 << right
+	 << " x="
+	 << robot.asserv().pos_getX_mm()
+	 << " y="
+	 << robot.asserv().pos_getY_mm()
+	 << " a="
+	 << robot.asserv().pos_getThetaInDegree()
+	 << logs::end;
+	 usleep(200000);
+	 }
+	 logger().info() << "STOPPED time= "
+	 << chrono.getElapsedTimeInMilliSec()
+	 << " Lticks= "
+	 << robot.asserv().base()->encoders().getLeftEncoder()
+	 << " Rticks= "
+	 << robot.asserv().base()->encoders().getRightEncoder()
+	 << " x="
+	 << robot.asserv().pos_getX_mm()
+	 << " y="
+	 << robot.asserv().pos_getY_mm()
+	 << " a="
+	 << robot.asserv().pos_getThetaInDegree()
+	 << logs::end;
+	 robot.svgPrintPosition();
+	 */
 	/*
 	 usleep(1000000);
 

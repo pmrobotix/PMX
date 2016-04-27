@@ -1,5 +1,6 @@
 #include "A_Asserv_SetResolutionTest.hpp"
 
+#include <unistd.h>
 #include <cstdlib>
 #include <string>
 
@@ -15,7 +16,6 @@
 #include "APF9328AsservExtended.hpp"
 #include "APF9328RobotExtended.hpp"
 
-
 using namespace std;
 
 void A_Asserv_SetResolutionTest::configureConsoleArgs(int argc, char** argv) //surcharge
@@ -23,6 +23,7 @@ void A_Asserv_SetResolutionTest::configureConsoleArgs(int argc, char** argv) //s
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	robot.getArgs().addArgument("distTicks", "Distance (ticks) for test");
+	robot.getArgs().addArgument("p", "power", "100");
 
 	//reparse arguments
 	robot.parseConsoleArgs(argc, argv);
@@ -43,17 +44,23 @@ void A_Asserv_SetResolutionTest::run(int argc, char** argv)
 	float Ap = 0.0;
 	float Ad = 0.0;
 	int distTicks = 0;
+	int p = 0;
 
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 	Arguments args = robot.getArgs();
 	if (args["distTicks"] != "0")
 	{
 		distTicks = atoi(args["distTicks"].c_str());
-		logger().debug() << "Arg distTicks set "
+		logger().info() << "Arg distTicks set "
 				<< args["distTicks"]
 				<< ", distTicks = "
 				<< distTicks
 				<< logs::end;
+	}
+	if (args["p"] != "0")
+	{
+		p = atoi(args["p"].c_str());
+		logger().info() << "Arg p set " << args["p"] << ", p = " << p << " power" << logs::end;
 	}
 
 	robot.asserv().startMotionTimerAndOdo();
@@ -69,13 +76,8 @@ void A_Asserv_SetResolutionTest::run(int argc, char** argv)
 
 	chrono.start();
 
-	//avancer d'un nombre de tick
-	//mesurer
-	//distT ticks = odo_mm mm
-	//donc setResolution (nb ticks pour 1m) = 1000* distT / odo_mm
-
-	robot.asserv().base()->motors().runMotorLeft(20, 0);
-	robot.asserv().base()->motors().runMotorRight(20, 0);
+	robot.asserv().base()->motors().runMotorLeft(p, 0);
+	robot.asserv().base()->motors().runMotorRight(p, 0);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -83,6 +85,20 @@ void A_Asserv_SetResolutionTest::run(int argc, char** argv)
 	{
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
+		logger().info() << "time= "
+				<< chrono.getElapsedTimeInMilliSec()
+				<< "ms ; left= "
+				<< left
+				<< " ; right= "
+				<< right
+				<< " x="
+				<< robot.asserv().pos_getX_mm()
+				<< " y="
+				<< robot.asserv().pos_getY_mm()
+				<< " a="
+				<< robot.asserv().pos_getThetaInDegree()
+				<< logs::end;
+		usleep(10000);
 	}
 	robot.asserv().base()->motors().stopMotors();
 
@@ -117,4 +133,3 @@ void A_Asserv_SetResolutionTest::run(int argc, char** argv)
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }
-

@@ -46,7 +46,7 @@ printf("---LegoEV3AsservExtended > Real EV3\n");
 	//f=40 Hz => every 25ms
 	//f=50 Hz => every 20ms
 	//f=100 Hz =>every 10ms
-	pAsservInsa_->motion_SetSamplingFrequency(50); //50ms pour EV3 pour avoir plus de step sur la vitesse
+	pAsservInsa_->motion_SetSamplingFrequency(50); //20ms pour EV3 pour avoir plus de step sur la vitesse
 
 }
 
