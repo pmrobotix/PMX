@@ -21,8 +21,8 @@ AsservDriver::AsservDriver(std::string botid)
 	{
 		//printf("--- AsservDriver - botid == APF9328Robot\n");
 		//CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
-		simuTicksPerMeter_ = 1440.0; //nb ticks for 1000mm
-		simuMaxSpeed_ = 0.5; //m/s
+		simuTicksPerMeter_ = 1470.0; //nb ticks for 1000mm
+		simuMaxSpeed_ = 0.6; //m/s
 		simuMaxPower_ = 127.0;
 		//CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
 

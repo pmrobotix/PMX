@@ -1,5 +1,5 @@
-#ifndef ARMA_LEDDRIVER_HPP_
-#define ARMA_LEDDRIVER_HPP_
+#ifndef ARM_LEDDRIVER_HPP_
+#define ARM_LEDDRIVER_HPP_
 
 #include <sys/types.h>
 

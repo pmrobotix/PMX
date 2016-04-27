@@ -33,7 +33,8 @@ public:
 	 */
 	virtual ~SwitchDriver();
 
-	virtual int pressed();
+	virtual int pressed(); //tirette
+	virtual int pressed(unsigned char pin);
 
 };
 

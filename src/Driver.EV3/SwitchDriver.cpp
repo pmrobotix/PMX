@@ -43,3 +43,8 @@ int SwitchDriver::pressed()
 {
 	return touch_.value();
 }
+
+int SwitchDriver::pressed(unsigned char pin)
+{
+	return 0;
+}

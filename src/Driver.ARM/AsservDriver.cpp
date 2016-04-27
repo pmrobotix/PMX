@@ -37,11 +37,13 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
+	power = power + 127;
 	md25_.setSpeedReg(power, MD25_SPEED1_REG);
 }
 
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
+	power = power + 127;
 	md25_.setSpeedReg(power, MD25_SPEED2_REG);
 }
 

@@ -37,6 +37,9 @@ public:
 
 	virtual int pressed();
 
+	virtual int pressed(unsigned char pin);
+
+
 };
 
 #endif

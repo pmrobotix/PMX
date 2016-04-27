@@ -1,5 +1,5 @@
-#ifndef SIMU_BUTTONDRIVER_HPP_
-#define SIMU_BUTTONDRIVER_HPP_
+#ifndef ARM_BUTTONDRIVER_HPP_
+#define ARM_BUTTONDRIVER_HPP_
 
 #include "../Common/Action.Driver/AButtonDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
