@@ -7,6 +7,7 @@
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/FunnyAction.hpp"
 #include "../Common/Action/LedBar.hpp"
+#include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action/SoundBar.hpp"
 #include "../Common/Action/Tirette.hpp"
@@ -39,6 +40,11 @@ private:
 	Tirette tirette_;
 
 	/*!
+	 * \brief capteurs IR/US.
+	 */
+	Sensors sensors_;
+
+	/*!
 	 * \brief Tirette.
 	 */
 	FunnyAction parasol_;
@@ -54,6 +60,7 @@ public:
 					buttonbar_(*this),
 					soundbar_(*this),
 					tirette_(*this),
+					sensors_(*this),
 					parasol_(*this),
 					servoObjects_(*this)
 	{
@@ -101,6 +108,15 @@ public:
 	}
 
 	/*!
+	 * \brief Cette methode retourne l'objet sensors.
+	 * \return sensors_.
+	 */
+	Sensors & sensors()
+	{
+		return sensors_;
+	}
+
+	/*!
 	 * \brief Cette methode retourne l'objet FunnyAction.
 	 * \return parasol_.
 	 */
@@ -116,10 +132,15 @@ public:
 
 	void stop()
 	{
+		servoObjects_.leftRelease();
+		servoObjects_.rightRelease();
+		servoObjects_.centreRelease();
+
 		ledbar_.resetAll();
 		ledbar_.stop();
 		parasol_.release();
 		soundbar_.stop();
+
 		Actions::stop(); //stop devices and wait manager to finish
 	}
 

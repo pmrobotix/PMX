@@ -29,10 +29,10 @@ bool ButtonDriver::pressed(ButtonTouch button)
 		switch (button)
 		{
 		case BUTTON_ENTER_KEY:
-			return (adafruit_buttons & BUTTON_SELECT);
+			return false;
 			break;
 		case BUTTON_BACK_KEY:
-			return false;
+			return (adafruit_buttons & BUTTON_SELECT);
 			break;
 		case BUTTON_UP_KEY:
 			return (adafruit_buttons & BUTTON_UP);

@@ -5,6 +5,22 @@
 #ifndef ASERVODRIVER_HPP_
 #define ASERVODRIVER_HPP_
 
+//#define LEFT_SERVO 0
+//#define CENTRE_SERVO 3
+//#define RIGHT_SERVO 1
+
+/*!
+ * \brief Enumération des libellés des servos.
+ */
+enum ServoLabel
+{
+	SERVO_LEFT,
+
+	SERVO_RIGHT,
+
+	SERVO_CENTRE
+};
+
 class AServoDriver
 {
 
@@ -29,11 +45,15 @@ public:
 	{
 	}
 
-	virtual void hold(int servoId) = 0;
 
-	virtual void setPosition(int servoId, int pos) = 0;
 
-	virtual void release(int servoId) = 0;
+	virtual void hold(ServoLabel) = 0;
+
+	virtual void setPosition(ServoLabel, double percent_pos) = 0;
+
+	virtual void release(ServoLabel) = 0;
+
+	virtual void setRate(ServoLabel, int millisec) = 0;
 
 private:
 

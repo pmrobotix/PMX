@@ -3,6 +3,7 @@
 
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "ServoMotorStd.hpp"
 
 
 using namespace std;
@@ -22,6 +23,9 @@ private:
 
 	int connected_;
 
+	ServoMotorStd left_;
+	ServoMotorStd right_;
+	ServoMotorStd centre_;
 
 protected:
 
@@ -38,11 +42,14 @@ public:
 	{
 	}
 
-	virtual void hold(int servoId);
+	virtual void hold(ServoLabel servo);
 
-	virtual void setPosition(int servoId, int pos);
+	//percentage pour EV3 , 0->4096 pour APF
+	virtual void setPosition(ServoLabel servo, double percent);
 
-	virtual void release(int servoId);
+	virtual void release(ServoLabel servo);
+
+	virtual void setRate(ServoLabel servo, int millisec);
 
 };
 

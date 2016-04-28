@@ -20,6 +20,7 @@ void logs::LoggerFactory::initialize()
 
 	add(logs::Level::INFO, "Robot", "console");
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
+	add(logs::Level::INFO, "Tirette", "console");
 
 	add(logs::Level::INFO, "L_State1", "console");
 	add(logs::Level::INFO, "Wait90SecAction", "console");
@@ -36,6 +37,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "L_ButtonBarTest", "console");
 	add(logs::Level::INFO, "L_SoundBarTest", "console");
 	add(logs::Level::INFO, "L_TiretteTest", "console");
+	add(logs::Level::INFO, "L_SensorsTest", "console");
+	add(logs::Level::INFO, "L_ServoStepTest", "console");
 	add(logs::Level::INFO, "L_MovingBaseTest", "console");
 	add(logs::Level::INFO, "L_ActionManagerTimerTest", "console");
 	add(logs::Level::INFO, "TestAction", "console");
@@ -64,6 +67,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SwitchDriver.EV3", "console");
 	add(logs::Level::INFO, "AsservDriver.EV3", "console");
 	add(logs::Level::INFO, "ServoDriver.EV3", "console");
+	add(logs::Level::INFO, "SensorsDriver.EV3", "console");
+
 
 	//DEBUG
 	add(logs::Level::INFO, "ActionManagerTimer", "console");

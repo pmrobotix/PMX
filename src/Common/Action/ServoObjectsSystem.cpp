@@ -7,8 +7,8 @@
 
 using namespace std;
 
-ServoObjectsSystem::ServoObjectsSystem(Actions & actions) :
-		AActionsElement(actions)
+ServoObjectsSystem::ServoObjectsSystem(Actions & actions)
+		: AActionsElement(actions)
 {
 	servodriver = AServoDriver::create();
 	releaseAll();
@@ -16,67 +16,78 @@ ServoObjectsSystem::ServoObjectsSystem(Actions & actions) :
 
 ServoObjectsSystem::~ServoObjectsSystem()
 {
-	servodriver->setPosition(LEFT_CARPET, 0);
-	servodriver->setPosition(RIGHT_CARPET, 0);
+	servodriver->setPosition(SERVO_LEFT, 0);
+	servodriver->setPosition(SERVO_CENTRE, 0);
+	servodriver->setPosition(SERVO_RIGHT, 0);
 	releaseAll();
 }
 
-void ServoObjectsSystem::leftDeploy(int debug)
+void ServoObjectsSystem::leftDeploy(double percent, bool keep)
 {
-	holdLeft();
-	servodriver->setPosition(LEFT_CARPET, 0);
-	usleep(400000);
-	servodriver->setPosition(LEFT_CARPET, 75);
-	sleep(1);
-	if (!debug)
+	leftHold();
+	servodriver->setPosition(SERVO_LEFT, percent); // percentage
+	//sleep(2);
+	if (!keep)
 	{
-		servodriver->setPosition(LEFT_CARPET, 0);
-		sleep(1);
+		leftRelease();
 	}
-	releaseLeft();
+}
+void ServoObjectsSystem::leftRelease()
+{
+	servodriver->release(SERVO_LEFT);
+}
+void ServoObjectsSystem::leftHold()
+{
+	servodriver->hold(SERVO_LEFT);
 }
 
-void ServoObjectsSystem::rightDeploy(int debug)
+void ServoObjectsSystem::centreDeploy(double percent, bool keep)
 {
-	holdRight();
-	servodriver->setPosition(RIGHT_CARPET, 0);
-	usleep(400000);
-	servodriver->setPosition(RIGHT_CARPET, 70);
-	sleep(1);
-	if (!debug)
+	centreHold();
+	servodriver->setPosition(SERVO_CENTRE, percent); // percentage
+	//sleep(2);
+	if (!keep)
 	{
-		servodriver->setPosition(RIGHT_CARPET, 0);
-		sleep(1);
+		centreRelease();
 	}
-	releaseRight();
+}
+void ServoObjectsSystem::centreRelease()
+{
+	servodriver->release(SERVO_CENTRE);
+}
+void ServoObjectsSystem::centreHold()
+{
+	servodriver->hold(SERVO_CENTRE);
 }
 
-void ServoObjectsSystem::releaseLeft()
+void ServoObjectsSystem::rightDeploy(double percent, bool keep)
 {
-	servodriver->release(LEFT_CARPET);
+	rightHold();
+	servodriver->setPosition(SERVO_RIGHT, percent); // percentage
+	//sleep(2);
+	if (!keep)
+	{
+		rightRelease();
+	}
 }
-
-void ServoObjectsSystem::releaseRight()
+void ServoObjectsSystem::rightRelease()
 {
-	servodriver->release(RIGHT_CARPET);
+	servodriver->release(SERVO_RIGHT);
 }
-
-void ServoObjectsSystem::holdLeft()
+void ServoObjectsSystem::rightHold()
 {
-	servodriver->hold(LEFT_CARPET);
-}
-void ServoObjectsSystem::holdRight()
-{
-	servodriver->hold(RIGHT_CARPET);
+	servodriver->hold(SERVO_RIGHT);
 }
 
 void ServoObjectsSystem::releaseAll()
 {
-	releaseLeft();
-	releaseRight();
+	leftRelease();
+	centreRelease();
+	rightRelease();
 }
 void ServoObjectsSystem::holdAll()
 {
-	holdLeft();
-	holdRight();
+	leftHold();
+	centreHold();
+	rightHold();
 }

@@ -33,10 +33,13 @@ void logs::LoggerFactory::initialize()
 
 	//TESTS
 	add(logs::Level::INFO, "A_LedBarTest", "console");
+	add(logs::Level::INFO, "A_ButtonBarTest", "console");
 	add(logs::Level::INFO, "A_MovingBaseTest", "console");
 	add(logs::Level::INFO, "A_LcdBoardTest", "console");
 	add(logs::Level::INFO, "A_TiretteTest", "console");
 	add(logs::Level::INFO, "A_SensorsTest", "console");
+	add(logs::Level::INFO, "A_ServoTest", "console");
+	add(logs::Level::INFO, "A_ServoStepTest", "console");
 	add(logs::Level::INFO, "A_Asserv_SetResolutionTest", "console");
 	add(logs::Level::INFO, "A_Asserv_FindPIDTest", "console");
 	add(logs::Level::INFO, "A_AsservInsaTest", "console");
