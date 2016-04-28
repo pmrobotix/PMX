@@ -4,9 +4,11 @@
 #include <string>
 
 #include "../Common/Action/Actions.hpp"
+#include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/LcdShield.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Sensors.hpp"
+#include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action/Tirette.hpp"
 
 class APF9328ActionsExtended: public Actions
@@ -19,6 +21,11 @@ private:
 	LedBar ledbar_;
 
 	/*!
+	 * \brief Button Bar.
+	 */
+	ButtonBar buttonbar_;
+
+	/*!
 	 * \brief LcdShield 2x16 characters.
 	 */
 	LcdShield lcd2x16_;
@@ -28,11 +35,21 @@ private:
 	 */
 	Tirette tirette_;
 
+	/*!
+	 * \brief capteurs IR/US.
+	 */
 	Sensors sensors_;
+
+	ServoObjectsSystem servoObjects_;
 
 public:
 	APF9328ActionsExtended(std::string botId)
-			: ledbar_(botId, *this, 8), lcd2x16_(botId, *this), tirette_(*this), sensors_(*this)
+			: ledbar_(botId, *this, 8),
+					buttonbar_(*this),
+					lcd2x16_(botId, *this),
+					tirette_(*this),
+					sensors_(*this),
+					servoObjects_(*this)
 
 	{
 		lcd2x16_.init();
@@ -45,6 +62,11 @@ public:
 	LedBar & ledBar()
 	{
 		return ledbar_;
+	}
+
+	ButtonBar & buttonBar()
+	{
+		return buttonbar_;
 	}
 
 	/*!
@@ -66,18 +88,27 @@ public:
 	}
 
 	/*!
-	 * \brief Cette methode retourne l'objet tirette.
-	 * \return tirette_.
+	 * \brief Cette methode retourne l'objet sensors.
+	 * \return sensors_.
 	 */
 	Sensors & sensors()
 	{
 		return sensors_;
 	}
 
+	ServoObjectsSystem & servoObjects()
+	{
+		return servoObjects_;
+	}
+
 	void stop()
 	{
 		ledbar_.resetAll();
 		lcd2x16_.reset();
+
+		servoObjects_.leftRelease();
+		servoObjects_.rightRelease();
+		servoObjects_.centreRelease();
 
 		Actions::stop(); //stop devices and wait manager to finish
 	}

@@ -27,6 +27,7 @@ private:
 
 	int connected_;
 	servo_motor sv1_;
+	servo_motor sv7_;
 	servo_motor sv8_;
 
 protected:
@@ -44,11 +45,14 @@ public:
 	{
 	}
 
-	virtual void hold(int servoId);
+	virtual void hold(ServoLabel servo);
 
-	virtual void setPosition(int servoId, int pos);
+	//pos : (-100% to 100%)
+	virtual void setPosition(ServoLabel servo, double pos);
 
-	virtual void release(int servoId);
+	virtual void release(ServoLabel servo);
+
+	virtual void setRate(ServoLabel servo, int millisec);
 
 };
 

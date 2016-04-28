@@ -6,8 +6,6 @@
 
 class AServoDriver;
 
-#define LEFT_CARPET 8
-#define RIGHT_CARPET 1
 
 class ServoObjectsSystem: public AActionsElement
 {
@@ -36,15 +34,17 @@ public:
 	 */
 	~ServoObjectsSystem();
 
-	void leftDeploy(int debug = 0);
+	void leftDeploy(double percent = 75, bool keep = false);
+	void leftRelease();
+	void leftHold();
 
-	void rightDeploy(int debug = 0);
+	void centreDeploy(double percent = 75, bool keep = false);
+	void centreRelease();
+	void centreHold();
 
-	void releaseLeft();
-	void releaseRight();
-
-	void holdLeft();
-	void holdRight();
+	void rightDeploy(double percent = 75, bool keep = false);
+	void rightRelease();
+	void rightHold();
 
 	void releaseAll();
 	void holdAll();

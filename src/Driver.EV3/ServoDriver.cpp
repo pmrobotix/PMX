@@ -2,12 +2,12 @@
 
 #include "ServoDriver.hpp"
 
+#include <string>
+
 #include "../Log/Logger.hpp"
 
 using namespace std;
 using namespace ev3dev;
-
-
 
 AServoDriver * AServoDriver::create()
 {
@@ -21,51 +21,87 @@ ServoDriver::ServoDriver()
 	logger().debug() << "ServoDriver()" << logs::end;
 
 	sv1_ = servo_motor("in4:i2c88:sv1");
+	sv7_ = servo_motor("in4:i2c88:sv7");
 	sv8_ = servo_motor("in4:i2c88:sv8");
 	sv8_.set_polarity(sv8_.polarity_inversed);
 
 }
 
-void ServoDriver::hold(int servoId) // 1 à 8
+void ServoDriver::hold(ServoLabel servo) // 1 à 8
 {
-	switch (servoId)
+	switch (servo)
 	{
-	case 1:
-		sv1_.set_command(servo_motor::command_run);
+	case SERVO_LEFT:
+		sv7_.set_command(servo_motor::command_run);
 		break;
-	case 8:
+
+	case SERVO_RIGHT:
 		sv8_.set_command(servo_motor::command_run);
 		break;
+
+	case SERVO_CENTRE:
+		sv1_.set_command(servo_motor::command_run);
+		break;
+
 	default:
 		break;
 	}
 }
 
-void ServoDriver::setPosition(int servoId, int pos)
+void ServoDriver::setPosition(ServoLabel servo, double pos)
 {
-	switch (servoId)
+	switch (servo)
 	{
-	case 1:
-		sv1_.set_position_sp(pos);
+	case SERVO_LEFT:
+		sv7_.set_position_sp(pos); //(-100% to 100%)
 		break;
-	case 8:
-		sv8_.set_position_sp(pos);
+
+	case SERVO_RIGHT:
+		sv8_.set_position_sp(pos); //(-100% to 100%)
 		break;
+
+	case SERVO_CENTRE:
+		sv1_.set_position_sp(pos); //(-100% to 100%)
+		break;
+
 	default:
 		break;
 	}
 }
 
-void ServoDriver::release(int servoId)
+void ServoDriver::release(ServoLabel servo)
 {
-	switch (servoId)
+	switch (servo)
 	{
-	case 1:
-		sv1_.set_command(servo_motor::command_float);
+	case SERVO_LEFT:
+		sv7_.set_command(servo_motor::command_float);
 		break;
-	case 8:
+
+	case SERVO_RIGHT:
 		sv8_.set_command(servo_motor::command_float);
 		break;
+
+	case SERVO_CENTRE:
+		sv1_.set_command(servo_motor::command_float);
+		break;
+	default:
+		break;
+	}
+}
+
+void ServoDriver::setRate(ServoLabel servo, int millisec)
+{
+	switch (servo)
+	{
+	case SERVO_LEFT:
+		break;
+
+	case SERVO_RIGHT:
+		break;
+
+	case SERVO_CENTRE:
+		break;
+
 	default:
 		break;
 	}
