@@ -15,10 +15,17 @@ AAsservDriver * AAsservDriver::create(std::string)
 }
 
 AsservDriver::AsservDriver()
+		: extRightEncoder_('D', 31), extLeftEncoder_('B', 17)
 {
 	md25_.begin();
 	float volts = md25_.getBatteryVolts();
 	logger().error() << "volts=" << volts << logs::end;
+
+	//encoderLeft_(*this, 'B', 17), encoderRight_(*this, 'D', 31),
+
+	unsigned char status = extRightEncoder_.readStatus();
+	logger().error() << "status spi=" << reinterpret_cast<void*>(status) << logs::end;
+	extRightEncoder_.clearCounter();
 }
 
 AsservDriver::~AsservDriver()
@@ -49,11 +56,14 @@ void AsservDriver::setMotorRightPower(int power, int timems)
 
 long AsservDriver::getLeftExternalEncoder()
 {
-	return 0; //TODO getLeftExternalEncoder
+	return extLeftEncoder_.readCounter();
 }
 long AsservDriver::getRightExternalEncoder()
 {
-	return 0; //TODO getRightExternalEncoder
+	long r = extRightEncoder_.readCounter();
+	logger().error() << " r=" << r << logs::end;
+
+	return r;
 }
 
 long AsservDriver::getLeftInternalEncoder()

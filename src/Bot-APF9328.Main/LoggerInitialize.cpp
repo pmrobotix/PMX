@@ -35,7 +35,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "A_LedBarTest", "console");
 	add(logs::Level::INFO, "A_MovingBaseTest", "console");
 	add(logs::Level::INFO, "A_LcdBoardTest", "console");
-	add(logs::Level::INFO, "A_tiretteTest", "console");
+	add(logs::Level::INFO, "A_TiretteTest", "console");
+	add(logs::Level::INFO, "A_SensorsTest", "console");
 	add(logs::Level::INFO, "A_Asserv_SetResolutionTest", "console");
 	add(logs::Level::INFO, "A_Asserv_FindPIDTest", "console");
 	add(logs::Level::INFO, "A_AsservInsaTest", "console");
@@ -61,6 +62,10 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SwitchDriver.ARM", "console");
 	add(logs::Level::INFO, "AsservDriver.ARM", "console");
 	add(logs::Level::INFO, "GpioPCA9555", "console");
+	add(logs::Level::INFO, "ExtEncoder", "console");
+	add(logs::Level::INFO, "SensorsDriver", "console");
+	add(logs::Level::DEBUG, "IrSensor", "console");
+	add(logs::Level::DEBUG, "as_adc", "console");
 
 
 }

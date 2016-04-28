@@ -3,6 +3,7 @@
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "ExtEncoder.hpp"
 #include "Md25.hpp"
 
 using namespace std;
@@ -21,7 +22,10 @@ private:
 	}
 
 	Md25 md25_;
-protected:
+
+	ExtEncoder extRightEncoder_;
+	ExtEncoder extLeftEncoder_;
+
 
 public:
 
