@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	A_Asserv_SquareTest()
-			: FunctionalTest("Asserv_SquareTest", "effectue un carré")
+			: FunctionalTest("Asserv_Square", "Effectuer un carré")
 	{
 	}
 

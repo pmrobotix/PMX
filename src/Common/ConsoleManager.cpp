@@ -5,10 +5,12 @@
 
 #include "ConsoleManager.hpp"
 
+#include <sys/types.h>
 #include <unistd.h>
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
+#include <iomanip>
 
 #include "ConsoleKeyInput.hpp"
 
@@ -44,9 +46,10 @@ std::string * ConsoleManager::displayAvailableTests(std::string color, int selec
 			std::cout << color << std::flush;
 		else
 			std::cout << "\033[0m" << std::flush;
-		std::cout << "  " << i + 1 << ". " << tests_[i]->name() << std::endl;
+
+		std::cout << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name() << std::setw(3) << "- " << tests_[i]->desc()<< std::endl;
 		ostringstream out;
-		out << "  " << i + 1 << ". " << tests_[i]->name();
+		out << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name() << std::setw(3) << "- " << tests_[i]->desc();
 		tab[i + 1] = out.str();
 	}
 	return tab;
