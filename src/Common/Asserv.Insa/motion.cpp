@@ -281,8 +281,8 @@ void AsservInsa::execute()
 	int32 pwm0, pwm1; //static
 	int32 pwm0b, pwm1b; //static
 
-	float delta_y = 0.0;
-	float delta_x = 0.0;
+	//float delta_y = 0.0;
+	//float delta_x = 0.0;
 
 	float x_mm = 0.0;
 	float y_mm = 0.0;

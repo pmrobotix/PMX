@@ -6,8 +6,6 @@
 #ifndef HOSTSPIBUS_HPP
 #define HOSTSPIBUS_HPP
 
-#include <stddef.h>
-#include <stdint.h>
 #include <iostream>
 #include <string>
 
@@ -92,12 +90,12 @@ public:
 	 * \brief Get SPI bus speed.
 	 */
 	long getSpeed();
-
+/*
 	unsigned long long as_spi_msg_pmx(int aFd,
 			unsigned long long aMsg,
 			size_t aLen,
 			uint32_t aSpeed);
-
+*/
 };
 
 #endif

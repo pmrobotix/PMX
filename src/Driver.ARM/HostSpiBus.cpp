@@ -6,9 +6,12 @@
 #include "HostSpiBus.hpp"
 
 #include <as_devices/as_spi.h>
+
+/*
+#include <as_devices/as_spi.h>
 #include <linux/spi/spidev.h>
 #include <sys/ioctl.h>
-#include <cstring>
+#include <cstring>*/
 
 HostSpiBus::HostSpiBus()
 		: fd_spi_(0), opened_(0)
@@ -40,11 +43,11 @@ long HostSpiBus::getSpeed(void)
 
 unsigned long long HostSpiBus::spiTransfer(char data)
 {
-	//unsigned long long result =0;
+
 	unsigned long long result = as_spi_msg(fd_spi_, (unsigned long long) data, 8, CLOCKSPEED);
 	return result;
 }
-
+/*
 unsigned long long HostSpiBus::as_spi_msg_pmx(int aFd,
 		unsigned long long aMsg,
 		size_t aLen,
@@ -100,3 +103,4 @@ unsigned long long HostSpiBus::as_spi_msg_pmx(int aFd,
 	}
 	return msg;
 }
+*/

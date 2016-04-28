@@ -6,6 +6,7 @@
 #include "../Common/Action/Actions.hpp"
 #include "../Common/Action/LcdShield.hpp"
 #include "../Common/Action/LedBar.hpp"
+#include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/Tirette.hpp"
 
 class APF9328ActionsExtended: public Actions
@@ -27,9 +28,11 @@ private:
 	 */
 	Tirette tirette_;
 
+	Sensors sensors_;
+
 public:
 	APF9328ActionsExtended(std::string botId)
-			: ledbar_(botId, *this, 8), lcd2x16_(botId, *this), tirette_(*this)
+			: ledbar_(botId, *this, 8), lcd2x16_(botId, *this), tirette_(*this), sensors_(*this)
 
 	{
 		lcd2x16_.init();
@@ -60,6 +63,15 @@ public:
 	Tirette & tirette()
 	{
 		return tirette_;
+	}
+
+	/*!
+	 * \brief Cette methode retourne l'objet tirette.
+	 * \return tirette_.
+	 */
+	Sensors & sensors()
+	{
+		return sensors_;
 	}
 
 	void stop()

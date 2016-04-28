@@ -8,6 +8,7 @@
 #include "../Bot-APF9328/A_LcdBoardTest.hpp"
 #include "../Bot-APF9328/A_LedBarTest.hpp"
 #include "../Bot-APF9328/A_MovingBaseTest.hpp"
+#include "../Bot-APF9328/A_SensorsTest.hpp"
 #include "../Bot-APF9328/A_TiretteTest.hpp"
 #include "../Bot-APF9328/APF9328RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
@@ -24,6 +25,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new A_LedBarTest());
 	robot.getConsoleManager().add(new A_LcdBoardTest());
 	robot.getConsoleManager().add(new A_TiretteTest());
+	robot.getConsoleManager().add(new A_SensorsTest());
 	robot.getConsoleManager().add(new A_MovingBaseTest());
 	robot.getConsoleManager().add(new A_Asserv_SetResolutionTest());
 	robot.getConsoleManager().add(new A_Asserv_FindPIDTest());
@@ -34,6 +36,7 @@ int main(int argc, char** argv)
 
 	//start the Robot (functional tests or match)
 	robot.begin(argc, argv);
+
 
 	sleep(1); //TODO wait and verify end of logger ?
 
