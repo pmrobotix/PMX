@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	A_ServoTest()
-			: FunctionalTest("Servo", "test des servomoteurs")
+			: FunctionalTest("Servo", "Tester les actions servomoteurs")
 	{
 	}
 
