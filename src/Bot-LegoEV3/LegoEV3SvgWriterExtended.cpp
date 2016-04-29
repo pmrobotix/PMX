@@ -101,7 +101,7 @@ void LegoEV3SvgWriterExtended::writeZone(const char* name,
 			<< width
 			<< "\" height=\""
 			<< height
-			<< "\" fill=\"none\" stroke=\"blue\" stroke-width=\"4\" />"
+			<< "\" fill=\"none\" stroke=\"#33cc33\" stroke-width=\"4\" />"
 			<< "<line x1 = \""
 			<< minX
 			<< "\" y1 = \""
@@ -110,7 +110,7 @@ void LegoEV3SvgWriterExtended::writeZone(const char* name,
 			<< minX + width
 			<< "\" y2 = \""
 			<< minY
-			<< "\" stroke=\"blue\" stroke-width=\"4\"/>"
+			<< "\" stroke=\"#33cc33\" stroke-width=\"4\"/>"
 
 //			<< "<line x1 = \""
 //			<< minX + width
@@ -146,7 +146,7 @@ void LegoEV3SvgWriterExtended::writeZone(const char* name,
 			<< startX
 			<< "' cy='"
 			<< startY
-			<< "' r='3' fill='none' stroke='blue' />"
+			<< "' r='3' fill='none' stroke='#33cc33' />"
 			<< "<line x1 = \""
 			<< startX
 			<< "\" y1 = \""
@@ -155,14 +155,14 @@ void LegoEV3SvgWriterExtended::writeZone(const char* name,
 			<< startX + 25 * cos(startAngle_rad)
 			<< "\" y2 = \""
 			<< startY + 25 * sin(startAngle_rad)
-			<< "\" stroke = \"blue\" stroke-width = \"4\"/>"
+			<< "\" stroke = \"#33cc33\" stroke-width = \"4\"/>"
 			<< "</g>"
 
 			<< "<text x='"
 			<< startX + 20
 			<< "' y='"
 			<< -startY - 10
-			<< "' font-size='30' fill='blue'>"
+			<< "' font-size='30' fill='#33cc33'>"
 			<< name
 			<< "</text>"
 			<< logs::end;

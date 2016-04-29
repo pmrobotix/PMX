@@ -19,17 +19,22 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::ERROR, "", "console");
 
 	add(logs::Level::INFO, "Robot", "console");
-	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
-	add(logs::Level::INFO, "LegoEV3State1", "console");
+	add(logs::Level::INFO, "APF9328RobotExtended", "console");
+
+	//COMMON
 	add(logs::Level::INFO, "Tirette", "console");
 
 
 	//SVG
 	add(logs::Level::INFO, "Svg4APF9328Robot", "svg");
 
-
 	//File
 	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
+
+	//State
+	add(logs::Level::INFO, "APF9328State1", "console");
+	add(logs::Level::INFO, "A_State_decisionMaker", "console");
+
 
 	//TESTS
 	add(logs::Level::INFO, "A_LedBarTest", "console");
@@ -44,6 +49,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "A_Asserv_FindPIDTest", "console");
 	add(logs::Level::INFO, "A_AsservInsaTest", "console");
 	add(logs::Level::INFO, "A_Asserv_SquareTest", "console");
+	add(logs::Level::INFO, "A_IATest", "console");
+
 	/*
 	 add(logs::Level::INFO, "APF9328ButtonBarTest", "console");
 	 add(logs::Level::INFO, "APF9328SoundBarTest", "console");

@@ -100,7 +100,7 @@ void APF9328SvgWriterExtended::writeZone(const char* name,
 			<< width
 			<< "\" height=\""
 			<< height
-			<< "\" fill=\"none\" stroke=\"blue\" stroke-width=\"4\" />"
+			<< "\" fill=\"none\" stroke=\"#cc00cc\" stroke-width=\"4\" />"
 			<< "<line x1 = \""
 			<< minX
 			<< "\" y1 = \""
@@ -109,7 +109,7 @@ void APF9328SvgWriterExtended::writeZone(const char* name,
 			<< minX + width
 			<< "\" y2 = \""
 			<< minY
-			<< "\" stroke=\"blue\" stroke-width=\"4\"/>"
+			<< "\" stroke=\"#cc00cc\" stroke-width=\"4\"/>"
 
 //			<< "<line x1 = \""
 //			<< minX + width
@@ -145,7 +145,7 @@ void APF9328SvgWriterExtended::writeZone(const char* name,
 			<< startX
 			<< "' cy='"
 			<< startY
-			<< "' r='3' fill='none' stroke='blue' />"
+			<< "' r='3' fill='none' stroke='#cc00cc' />"
 			<< "<line x1 = \""
 			<< startX
 			<< "\" y1 = \""
@@ -154,14 +154,14 @@ void APF9328SvgWriterExtended::writeZone(const char* name,
 			<< startX + 25 * cos(startAngle_rad)
 			<< "\" y2 = \""
 			<< startY + 25 * sin(startAngle_rad)
-			<< "\" stroke = \"blue\" stroke-width = \"4\"/>"
+			<< "\" stroke = \"#cc00cc\" stroke-width = \"4\"/>"
 			<< "</g>"
 
 			<< "<text x='"
 			<< startX + 20
 			<< "' y='"
 			<< -startY - 10
-			<< "' font-size='30' fill='blue'>"
+			<< "' font-size='30' fill='#cc00cc'>"
 			<< name
 			<< "</text>"
 			<< logs::end;

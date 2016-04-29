@@ -7,6 +7,7 @@
 #include "../Common/State/Data.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
+#include "A_State_DecisionMaker.hpp"
 #include "APF9328State1.hpp"
 #include "APF9328SvgWriterExtended.hpp"
 
@@ -17,17 +18,19 @@ APF9328RobotExtended::APF9328RobotExtended()
 	cArgs_.setDescription("(c) PM-ROBOTIX APF9328Robot");
 
 	p_svg_ = new APF9328SvgWriterExtended(id_);
-	delete (svg_);
+	//delete (svg_);
 	svg_ = p_svg_;
 
 	//on ecrase les versions par default avec la version extended
 	p_actions_ = new APF9328ActionsExtended(id_);
-	delete (actions_default);
+	//delete (actions_default);
 	actions_default = p_actions_;
 
 	p_asserv_ = new APF9328AsservExtended(id_, this);
-	delete (asserv_default);
+	//delete (asserv_default);
 	asserv_default = p_asserv_;
+
+	p_ia_ = new APF9328IAExtended(id_, this);
 
 	svg_->beginHeader();
 }
@@ -53,12 +56,15 @@ void APF9328RobotExtended::begin(int argc, char** argv)
 	{
 		data_.isEmpty(true);
 		IAutomateState* state1 = new APF9328State1();
+		IAutomateState* decisionMaker = new A_State_DecisionMaker();
+
+		state1->addState("decisionMaker", decisionMaker);
 
 		// Start the automate and wait for its return
 		automate_.run(*this, state1, &data_);
 	}
 
-	logger().info() << "PMX APF9328RobotExtended - Happy End"
+	logger().info() << "PMX APF9328RobotExtended - Happy End - "
 			<< this->chrono().getElapsedTimeInSec()
 			<< " sec"
 			<< logs::end;
