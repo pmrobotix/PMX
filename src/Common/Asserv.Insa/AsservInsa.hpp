@@ -616,6 +616,7 @@ private:
 	int32 convertAccelTovTopsPerPeriodSqd(float accel);
 
 	long currentTimeInMillis();
+	long long currentTimeInMicros();
 
 public:
 

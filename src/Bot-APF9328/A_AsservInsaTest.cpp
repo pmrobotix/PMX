@@ -148,7 +148,10 @@ void A_AsservInsaTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
+	robot.asserv().base()->motors().stopMotors();
+
 	robot.svgPrintPosition();
+	robot.asserv().base()->motors().stopMotors();
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
