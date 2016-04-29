@@ -2,9 +2,12 @@
 
 #include <string>
 
+#include "../Common/Asserv/MotorControl.hpp"
+#include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/State/Data.hpp"
+#include "../Common/Utils/Chronometer.hpp"
+#include "L_State_DecisionMaker.hpp"
 #include "L_State1.hpp"
-#include "LegoEV3IAExtended.hpp"
 
 LegoEV3RobotExtended::LegoEV3RobotExtended()
 {
@@ -33,9 +36,11 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 void LegoEV3RobotExtended::stop()
 {
 	this->asserv().freeMotion();
+	this->asserv().base()->motors().stopMotors();
 
 	Robot::stop();
 	this->actions().stop(); //extra devices
+
 
 	svg_->endHeader();
 }
@@ -50,6 +55,9 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
 	{
 		data_.isEmpty(true);
 		IAutomateState* state1 = new L_State1();
+		IAutomateState* decisionMaker = new L_State_DecisionMaker();
+
+		state1->addState("decisionMaker", decisionMaker);
 
 		// Start the automate and wait for its return
 		automate_.run(*this, state1, &data_);

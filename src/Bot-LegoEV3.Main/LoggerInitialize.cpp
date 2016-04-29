@@ -20,10 +20,14 @@ void logs::LoggerFactory::initialize()
 
 	add(logs::Level::INFO, "Robot", "console");
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
-	add(logs::Level::INFO, "Tirette", "console");
 
-	add(logs::Level::INFO, "L_State1", "console");
+	//COMMON
+	add(logs::Level::INFO, "Tirette", "console");
 	add(logs::Level::INFO, "Wait90SecAction", "console");
+
+	//STATE
+	add(logs::Level::INFO, "L_State1", "console");
+	add(logs::Level::INFO, "L_State_DecisionMaker", "console");
 
 	//SVG
 	add(logs::Level::INFO, "Svg4LegoEV3Robot", "svg");
