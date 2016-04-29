@@ -22,7 +22,7 @@ AsservDriver::AsservDriver(std::string botid)
 		//printf("--- AsservDriver - botid == APF9328Robot\n");
 		//CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
 		simuTicksPerMeter_ = 1470.0; //nb ticks for 1000mm
-		simuMaxSpeed_ = 0.6; //m/s
+		simuMaxSpeed_ = 1.0; //m/s
 		simuMaxPower_ = 127.0;
 		//CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
 
@@ -85,8 +85,8 @@ float AsservDriver::convertPowerToSpeed(int power)
 {
 	if (botid_ == "APF9328Robot")
 	{
-		if (power < 7 && power > -7) //simule que le robot n'avance pas à tres faible puissance
-			return 0.0;
+//		if (power < 7 && power > -7) //simule que le robot n'avance pas à tres faible puissance
+//			return 0.0;
 	}
 	else if (botid_ == "LegoEV3Robot")
 	{

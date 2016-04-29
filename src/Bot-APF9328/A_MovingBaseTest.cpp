@@ -24,7 +24,7 @@ void A_MovingBaseTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 	robot.getArgs().addArgument("LR", "L(0) or R(1) or LR(2)", "2");
 	robot.getArgs().addArgument("t", "time (ms)", "3000");
-	robot.getArgs().addArgument("p", "power", "100");
+	robot.getArgs().addArgument("p", "power", "10");
 	robot.getArgs().addArgument("d", "distance ticks", "500");
 
 	//reparse arguments

@@ -183,7 +183,7 @@ logger().debug() << "GetPositionOrder: TR_ACCEL_PHASE period0="  << posCommand->
 << logs::end;
 		Tn -= posCommand->period0;
 
-		if (Tn >= posCommand->T01)
+		if (Tn >= posCommand->T01 + 6 )
 		{
 			Tn += posCommand->period0;
 			posCommand->period0 += posCommand->T01;
@@ -205,7 +205,7 @@ logger().debug() << "GetPositionOrder: TR_ACCEL_PHASE period0="  << posCommand->
 logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
-		if (Tn >= posCommand->T12)
+		if (Tn >= posCommand->T12 + 6)
 		{
 			Tn += posCommand->period0;
 			posCommand->period0 += posCommand->T12;
@@ -224,7 +224,7 @@ logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
 logger().debug() << "GetPositionOrder: TR_DECEL_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
-		if (Tn >= posCommand->T23)
+		if (Tn >= posCommand->T23 + 6)
 		{
 			posCommand->phase = TR_END_PHASE;
 		}

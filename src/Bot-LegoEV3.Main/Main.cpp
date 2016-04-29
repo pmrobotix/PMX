@@ -41,7 +41,6 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new L_Asserv_SquareTest());
 	robot.getConsoleManager().add(new L_AsservInsaTest());
 	robot.getConsoleManager().add(new L_AsservRunTest());
-
 	robot.getConsoleManager().add(new L_IATest());
 	robot.getConsoleManager().add(new L_ActionManagerTimerTest());
 

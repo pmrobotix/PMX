@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "../Common/Asserv/MotorControl.hpp"
+#include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/State/Data.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
@@ -35,6 +37,7 @@ void APF9328RobotExtended::stop()
 	Robot::stop();
 	this->actions().stop(); //extra devices
 	this->asserv().freeMotion();
+	this->asserv().base()->motors().stopMotors();
 
 	svg_->endHeader();
 }

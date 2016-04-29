@@ -38,7 +38,6 @@
 #include "../Position.hpp"
 #include "AsservInsa.hpp"
 
-
 class Robot;
 
 class MovingBase;
@@ -107,17 +106,20 @@ AsservInsa::~AsservInsa()
 {
 }
 
-//void AsservInsa::setMovingBase(MovingBase *base)
-//{
-//	base_ = base;
-//}
-
 long AsservInsa::currentTimeInMillis()
 {
 	struct timeval te;
 	gettimeofday(&te, NULL); // get current time
 	long long milliseconds = (te.tv_sec * 1000LL + te.tv_usec / 1000); // calculate milliseconds
 	return (long) (milliseconds - timeOffset);
+}
+
+long long AsservInsa::currentTimeInMicros()
+{
+	struct timeval te;
+	gettimeofday(&te, NULL); // get current time
+	long long microseconds = (te.tv_sec * 1000000LL + te.tv_usec); // calculate milliseconds
+	return (long long) (microseconds - timeOffset);
 }
 
 void AsservInsa::motion_Init()
@@ -288,8 +290,11 @@ void AsservInsa::execute()
 	float y_mm = 0.0;
 	float angle_rad = 0.0;
 
-	long startTime = currentTimeInMillis();
-	long currentTime = startTime;
+	//long startTime = currentTimeInMillis();
+	//long currentTime = startTime;
+	long long startTime = currentTimeInMicros();
+	long long currentTime = startTime;
+
 	logger().debug() << "execute started; loopDelayInMillis="
 			<< loopDelayInMillis
 			<< " ms"
@@ -302,7 +307,8 @@ void AsservInsa::execute()
 	{
 		periodNb++;
 
-		currentTime = currentTimeInMillis();
+		//currentTime = currentTimeInMillis();
+		currentTime = currentTimeInMicros();
 		//logger().debug() << "AsservInsa execute currentTime=" << currentTime << logs::end;
 
 		//TODO use external or internl encoders !!
@@ -317,37 +323,32 @@ void AsservInsa::execute()
 		updateMotor(&motors[ALPHA_DELTA][ALPHA_MOTOR], dAlpha);
 		updateMotor(&motors[ALPHA_DELTA][DELTA_MOTOR], dDelta);
 
-
 		x_mm = p.x * 1000.0;
 		y_mm = p.y * 1000.0;
 		angle_rad = p.theta;
-		robot_->svgw().writePosition(x_mm,
-				y_mm,
-				angle_rad,
-				"bot-pos");
+		robot_->svgw().writePosition(x_mm, y_mm, angle_rad, "bot-pos");
 
 		/*
 
-		loggerSvg().info() << "<circle cx=\""
-				<< x_mm
-				<< "\" cy=\""
-				<< -y_mm
-				<< "\" r=\"1\" fill=\"blue\" />"
-				<< logs::end;
-		delta_y = 50.0 * sin(angle_rad);
-		delta_x = 50.0 * cos(angle_rad);
-		loggerSvg().info() << "<line x1=\""
-				<< x_mm
-				<< "\" y1=\""
-				<< -y_mm
-				<< "\" x2=\""
-				<< x_mm + delta_x
-				<< "\" y2=\""
-				<< -y_mm - delta_y
-				<< "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
-				<< logs::end;
-*/
-
+		 loggerSvg().info() << "<circle cx=\""
+		 << x_mm
+		 << "\" cy=\""
+		 << -y_mm
+		 << "\" r=\"1\" fill=\"blue\" />"
+		 << logs::end;
+		 delta_y = 50.0 * sin(angle_rad);
+		 delta_x = 50.0 * cos(angle_rad);
+		 loggerSvg().info() << "<line x1=\""
+		 << x_mm
+		 << "\" y1=\""
+		 << -y_mm
+		 << "\" x2=\""
+		 << x_mm + delta_x
+		 << "\" y2=\""
+		 << -y_mm - delta_y
+		 << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+		 << logs::end;
+		 */
 
 		float dSpeed0 = 0;
 		float dSpeed1 = 0;
@@ -606,8 +607,11 @@ void AsservInsa::execute()
 			break;
 		};
 
-		long stopTime = currentTimeInMillis();
-		long duration = stopTime - currentTime;
+//		long stopTime = currentTimeInMillis();
+//		long duration = stopTime - currentTime;
+
+		long long stopTime = currentTimeInMicros();
+		long long duration = stopTime - currentTime;
 
 //		logger().debug() << "loopDelayInMillis= "
 //				<< loopDelayInMillis
@@ -619,9 +623,15 @@ void AsservInsa::execute()
 //				<< duration
 //				<< logs::end;
 
-		if (duration < loopDelayInMillis && duration >= 0)
+//		if (duration < loopDelayInMillis && duration >= 0)
+//		{
+//			int t = 1000 * (loopDelayInMillis - duration);
+//			usleep(t);
+//		}
+
+		if ((duration < (loopDelayInMillis * 1000)) && duration >= 0)
 		{
-			int t = 1000 * (loopDelayInMillis - duration);
+			int t = ((loopDelayInMillis * 1000) - duration);
 			usleep(t);
 		}
 	}
@@ -665,8 +675,7 @@ void AsservInsa::setPWM(int16 pwmLeft, int16 pwmRight)
 	{
 		robot_->asserv_default->base()->motors().runMotorLeft(pwmLeft, 0);
 		robot_->asserv_default->base()->motors().runMotorRight(pwmRight, 0);
-//		base_->motors().runMotorLeft(pwmLeft, 0);
-//		base_->motors().runMotorRight(pwmRight, 0);
+
 	}
 	else
 	{
