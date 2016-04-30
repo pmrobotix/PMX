@@ -44,6 +44,10 @@ class MovingBase;
 
 AsservInsa::AsservInsa(Robot * robot)
 {
+
+	oldPwmLeft = 0;
+	oldPwmRight = 0;
+
 	//Reference vers le robot
 	robot_ = robot;
 
@@ -300,7 +304,7 @@ void AsservInsa::execute()
 			<< " ms"
 			<< logs::end;
 
-	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
+	loggerFile().debug() << "NbPeriod, currentTime(us), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
 			<< logs::end;
 
 	while (!stop_motion_ITTask)
@@ -412,24 +416,24 @@ void AsservInsa::execute()
 			}
 
 			//compute pwm for first motor
-//			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-//					(float) ord0,
-//					(float) motors[motionCommand.mcType][0].lastPos,
-//					dSpeed0);
-//			//compute pwm for second motor
-//			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-//					(float) ord1,
-//					(float) motors[motionCommand.mcType][1].lastPos,
-//					dSpeed1);
+			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
+					(float) ord0,
+					(float) motors[motionCommand.mcType][0].lastPos,
+					dSpeed0);
+			//compute pwm for second motor
+			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
+					(float) ord1,
+					(float) motors[motionCommand.mcType][1].lastPos,
+					dSpeed1);
 
 			//RCVA only for speed ? not position ?
-			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
-					(float) (ord0 - motors[motionCommand.mcType][0].lastPos),
-					dSpeed0);
-
-			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
-					(float) (ord1 - motors[motionCommand.mcType][1].lastPos),
-					dSpeed1);
+//			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
+//					(float) (ord0 - motors[motionCommand.mcType][0].lastPos),
+//					dSpeed0);
+//
+//			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
+//					(float) (ord1 - motors[motionCommand.mcType][1].lastPos),
+//					dSpeed1);
 
 			//output pwm to motors
 			if (motionCommand.mcType == LEFT_RIGHT)
@@ -446,11 +450,25 @@ void AsservInsa::execute()
 			{
 				// printf("motion.c : ALPHA_DELTA mode, pid result : %d %d \n", pwm0, pwm1);
 				pwm0b = pwm1 - pwm0;
+
+				//--------------------- patch du chaff inertie
+//				float inertie0 = dSpeed1 * dSpeed1;
+//				float temp0 = (6000000 - inertie0); // entre 5 997 500 et 3 750 000
+//				float add0 = temp0 / 800000;
+//				pwm0b += add0;
+				//---------------------
+
 				BOUND_INT(pwm0b, maxPwmValue_);
-
 				pwm1b = pwm1 + pwm0;
-				BOUND_INT(pwm1b, maxPwmValue_);
 
+				//---------------------patch du chaff inertie
+//				float inertie = dSpeed1 * dSpeed1;
+//				float temp = (6000000 - inertie); // entre 5 997 500 et 3 750 000
+//				float add = temp / 800000;
+//				pwm1b += add;
+				//---------------------
+
+				BOUND_INT(pwm1b, maxPwmValue_);
 				setPWM(pwm0b, pwm1b);
 
 			}
@@ -646,14 +664,6 @@ void AsservInsa::execute()
 //exit(2);
 	//return 0;
 }
-//
-//void AsservInsa::activate(bool a)
-//{
-//	activate_ = a;
-//	if (!a)
-//		setPWM(0, 0);
-//
-//}
 
 void AsservInsa::motion_StopTimer()
 {
@@ -669,7 +679,14 @@ void AsservInsa::initPWM()
 
 void AsservInsa::setPWM(int16 pwmLeft, int16 pwmRight)
 {
-	//logger().debug() << "setPWM left=" << pwmLeft << " right=" << pwmRight << logs::end;
+
+	//logger().error() << "setPWM left=" << pwmLeft << " right=" << pwmRight << logs::end;
+//	double deltL = pwmLeft - oldPwmLeft;
+//	double deltR = pwmRight - oldPwmRight;
+//	pwmLeft += deltL / 15.0f;
+//	pwmRight += deltR / 15.0f;
+//	oldPwmLeft = pwmLeft;
+//	oldPwmRight = pwmRight;
 
 	if (robot_ != NULL)
 	{

@@ -292,6 +292,9 @@ private:
 		return instance;
 	}
 
+	int oldPwmLeft;
+	int oldPwmRight;
+
 	int stop_motion_ITTask;
 
 	//bool activate_;

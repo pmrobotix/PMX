@@ -124,7 +124,7 @@ float AsservInsa::pid_Compute(PID_SYSTEM system, float setpoint, float input, fl
 
 	long timeChange = (now - lastTime);
 	//printf("go timeChange=%ld loopDelayInMillis=%ld\n", timeChange, loopDelayInMillis);
-	if (timeChange >= loopDelayInMillis) //necessaire ?
+	if (timeChange >= loopDelayInMillis)
 	{
 		float kp = conf.kP;
 		float ki = conf.kI;
@@ -236,13 +236,14 @@ int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, float error, float vitesse)
 // 		writeDebugStreamLine("cpid.c : before error=%d vitesse=%d", error, vitesse);
 // 	#endif
 
-	float ferror = ((float) (error)) / (float) vtopsPerTicks; //=[Ticks/sample]
+	float fferror = ((float) (error)) / (float) vtopsPerTicks; //=[Ticks/sample]
 	vitesse /= (float) vtopsPerTicks; //=[Ticks/sample]
 
-	float cmd = ferror * val->conf.kP;
+	float cmd = fferror * val->conf.kP;
+	//float cmd = error * val->conf.kP;
 	float pwm = cmd - (val->conf.kD * vitesse);
-	pwm /= 256.0f; //donne la pente de décélération du PID !!
-	logger().debug() << "pid_ComputeRcva error="
+	pwm /= 128.0f; //donne la pente de décélération du PID !!
+	logger().error() << "pid_ComputeRcva error="
 			<< error
 			<< " ferror="
 			<< ferror

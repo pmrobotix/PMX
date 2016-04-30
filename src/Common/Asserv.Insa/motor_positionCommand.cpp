@@ -156,7 +156,7 @@ void AsservInsa::LoadPositionCommand(PositionCommand *out_cmd, MOTOR *motor, int
 bool AsservInsa::GetPositionOrder(PositionCommand *posCommand, int32 Tn,
 int32 *out_Order)
 {
-
+	int delay_patch = 0;
 	bool finished = FALSE;
 
 	switch (posCommand->phase)
@@ -183,7 +183,7 @@ logger().debug() << "GetPositionOrder: TR_ACCEL_PHASE period0="  << posCommand->
 << logs::end;
 		Tn -= posCommand->period0;
 
-		if (Tn >= posCommand->T01 + 6 )
+		if (Tn >= posCommand->T01 + delay_patch )
 		{
 			Tn += posCommand->period0;
 			posCommand->period0 += posCommand->T01;
@@ -205,7 +205,7 @@ logger().debug() << "GetPositionOrder: TR_ACCEL_PHASE period0="  << posCommand->
 logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
-		if (Tn >= posCommand->T12 + 6)
+		if (Tn >= posCommand->T12 + delay_patch)
 		{
 			Tn += posCommand->period0;
 			posCommand->period0 += posCommand->T12;
@@ -224,7 +224,7 @@ logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
 logger().debug() << "GetPositionOrder: TR_DECEL_PHASE" << logs::end;
 		Tn -= posCommand->period0;
 
-		if (Tn >= posCommand->T23 + 6)
+		if (Tn >= posCommand->T23 + delay_patch)
 		{
 			posCommand->phase = TR_END_PHASE;
 		}

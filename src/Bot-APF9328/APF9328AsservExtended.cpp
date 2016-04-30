@@ -9,14 +9,19 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 	//SIMU CONSOLE pour APF !!!!Changer aussi le parametre dans les drivers SIMU !!!!
 	pAsservInsa_->encoder_SetResolution(1470, 1470, 187.5);
 	pAsservInsa_->motion_SetDefaultAccel(0.2);
-	pAsservInsa_->motion_SetDefaultVmax(0.4);
+	pAsservInsa_->motion_SetDefaultVmax(0.5);
 	pAsservInsa_->motion_SetDefaultDecel(0.2);
 	pAsservInsa_->motion_setMaxPwmValue(127);//max power md25 using hard regulation
 	pAsservInsa_->motion_Init();
 	//RCVA PID
-	pAsservInsa_->motion_configureAlphaPID(190.0, 0.0, 5.0);
-	pAsservInsa_->motion_configureDeltaPID(190.0, 0.0, 5.0);
+//	pAsservInsa_->motion_configureAlphaPID(190.0, 0.0, 5.0);
+//	pAsservInsa_->motion_configureDeltaPID(190.0, 0.0, 5.0);
+//	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
+//	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 
+	//PID STD
+	pAsservInsa_->motion_configureAlphaPID(0.0015, 0.0005, 0.0005);
+	pAsservInsa_->motion_configureDeltaPID(0.0015, 0.0005, 0.0005);
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 
@@ -24,18 +29,24 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 	//real APF
 	pAsservInsa_->encoder_SetResolution(1470, 1470, 187.5);
 	pAsservInsa_->motion_SetDefaultAccel(0.2);
-	pAsservInsa_->motion_SetDefaultVmax(0.4);
-	pAsservInsa_->motion_SetDefaultDecel(0.3);
+	pAsservInsa_->motion_SetDefaultVmax(0.5);
+	pAsservInsa_->motion_SetDefaultDecel(0.2);
 	pAsservInsa_->motion_setMaxPwmValue(127); //max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
 	//RCVA PID
-	pAsservInsa_->motion_configureAlphaPID(150.0, 0.0, 1.0);
-	pAsservInsa_->motion_configureDeltaPID(110.0, 0.0, 0.0);
+//	pAsservInsa_->motion_configureAlphaPID(150.0, 0.0, 1.0);
+//	pAsservInsa_->motion_configureDeltaPID(110.0, 0.0, 0.0);
+//	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
+//	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
+
+	//PID STD
+	//0.0015 0.0005 0.0004 // 0.0005 0.0008 0.0004
+	pAsservInsa_->motion_configureAlphaPID(0.0015, 0.0005, 0.0005);
+	pAsservInsa_->motion_configureDeltaPID(0.0015, 0.0005, 0.0005);
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 
 #endif
-
 
 	pAsservInsa_->motion_DisablePID();
 
