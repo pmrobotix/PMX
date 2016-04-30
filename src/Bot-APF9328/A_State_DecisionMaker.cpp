@@ -11,6 +11,52 @@
 #include "APF9328RobotExtended.hpp"
 
 
+bool A_tour2()
+{
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
+	robot.logger().info() << "start A_tour2." << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+	RobotPosition path, zone;
+
+	robot.ia().iAbyZone().goToZone("tour2", &path, &zone);
+	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+	if (ts != TRAJ_OK)
+		return false;
+
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "A_tour2 done." << logs::end;
+	return true; //return true si ok sinon false si interruption
+}
+
+bool A_porte2()
+{
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
+	robot.logger().info() << "start A_porte2." << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+	RobotPosition path, zone;
+
+	robot.ia().iAbyZone().goToZone("porte2", &path, &zone);
+	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+	if (ts != TRAJ_OK)
+		return false;
+
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "A_porte2 done." << logs::end;
+	return true; //return true si ok sinon false si interruption
+}
+
+
+
 bool A_action1()
 {
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
@@ -79,10 +125,8 @@ bool A_action3()
 	return true;
 }
 
-
-
 IAutomateState*
-A_State_DecisionMaker::execute(Robot & , void *)
+A_State_DecisionMaker::execute(Robot &, void *)
 {
 	logger().info() << "A_State_DecisionMaker" << logs::end;
 
@@ -92,9 +136,9 @@ A_State_DecisionMaker::execute(Robot & , void *)
 //	robot.asserv().setPositionAndColor(150, 1050, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();
 	robot.chrono().start();
-	IASetupDemo();
+	//IASetupDemo();
+	IASetupHomologation();
 	robot.ia().iAbyZone().ia_start(); //launch IA
-
 
 	robot.stop();
 	return NULL; //finish all state
@@ -102,7 +146,7 @@ A_State_DecisionMaker::execute(Robot & , void *)
 
 void A_State_DecisionMaker::IASetupDemo()
 {
-	logger().debug() << "IASetup" << logs::end;
+	logger().debug() << "IASetupDemo" << logs::end;
 
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
@@ -124,5 +168,22 @@ void A_State_DecisionMaker::IASetupDemo()
 
 }
 
+void A_State_DecisionMaker::IASetupHomologation()
+{
+	logger().debug() << "IASetupHomologation" << logs::end;
 
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
+
+	robot.ia().iAbyZone().ia_createZone("depart", 0, 1100, 300, 300, 300, 1250, 180);
+
+	robot.ia().iAbyZone().ia_createZone("tour2", 800, 1900, 100, 100, 900, 1600, 90);
+	robot.ia().iAbyZone().ia_createZone("porte2", 500, 1800, 200, 200, 600, 1800, 90);
+
+	robot.ia().iAbyZone().ia_setPath("depart", "tour2", 170, 1500);
+	robot.ia().iAbyZone().ia_setPath("depart", "porte2", 170, 1500); //ne sert pas
+	robot.ia().iAbyZone().ia_setPath("tour2", "porte2", 600, 1600);
+
+	robot.ia().iAbyZone().ia_addAction("tour2", &A_tour2);
+	robot.ia().iAbyZone().ia_addAction("porte2", &A_porte2);
+}
 

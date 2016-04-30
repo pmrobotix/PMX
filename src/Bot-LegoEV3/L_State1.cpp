@@ -1,5 +1,6 @@
 #include "L_State1.hpp"
 
+#include "../Common/Asserv/Asserv.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/State/AAutomateState.hpp"
 #include "../Common/State/Data.hpp"
@@ -18,8 +19,9 @@ L_State1::execute(Robot& r, void *data)
 	action->start("Wait90SecAction");
 
 
+
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(150, 1050, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(85, 1000, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();
 
 	return this->getState("decisionMaker");

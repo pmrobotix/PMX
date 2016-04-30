@@ -10,7 +10,86 @@
 #include "LegoEV3IAExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
+bool L_tour1()
+{
+	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	robot.logger().info() << "start L_tour1." << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+	RobotPosition path, zone;
 
+	robot.ia().iAbyZone().goToZone("tour1", &path, &zone);
+	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveForwardTo(robot.asserv().pos_getX_mm() + 800,
+			robot.asserv().pos_getY_mm());
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveBackwardTo(robot.asserv().pos_getX_mm() - 100,
+			robot.asserv().pos_getY_mm());
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "L_tour1 done." << logs::end;
+	return true; //return true si ok sinon false si interruption
+}
+
+bool L_peche1()
+{
+	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	robot.logger().info() << "start L_peche1." << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+	RobotPosition path, zone;
+
+	robot.ia().iAbyZone().goToZone("peche1", &path, &zone);
+	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	//RECALAGE
+
+	ts = robot.asserv().doMoveForwardTo(500, 75);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	robot.asserv().setPositionAndColor(robot.asserv().pos_getX_mm(),
+			85,
+			-90.0,
+			(robot.getMyColor() == PMXGREEN));
+	robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveForwardAndRotateTo(robot.asserv().pos_getX_mm(),
+			robot.asserv().pos_getY_mm() + 30,
+			0);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	//PECHE
+
+	ts = robot.asserv().doMoveForwardAndRotateTo(800, robot.asserv().pos_getY_mm(), 0);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "L_peche1 done." << logs::end;
+	return true; //return true si ok sinon false si interruption
+}
 
 bool L_action1()
 {
@@ -81,21 +160,19 @@ bool L_action3()
 }
 
 
-
 IAutomateState*
-L_State_DecisionMaker::execute(Robot & , void *)
+L_State_DecisionMaker::execute(Robot &, void *)
 {
 	logger().info() << "A_State_DecisionMaker" << logs::end;
-
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	//robot.asserv().startMotionTimerAndOdo();//
-//	robot.asserv().setPositionAndColor(150, 1050, 0.0, (robot.getMyColor() == PMXGREEN));
+	//IASetupDemo();
+	IASetupHomologation();
+
 	robot.svgPrintPosition();
 	robot.chrono().start();
-	IASetupDemo();
-	robot.ia().iAbyZone().ia_start(); //launch IA
 
+	robot.ia().iAbyZone().ia_start(); //launch IA
 
 	robot.stop();
 	return NULL; //finish all state
@@ -107,7 +184,7 @@ void L_State_DecisionMaker::IASetupDemo()
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.ia().iAbyZone().ia_createZone("depart", 0, 900, 300, 300, 400, 1050, 180);
+	robot.ia().iAbyZone().ia_createZone("depart", 0, 900, 200, 200, 300, 1000, 180);
 	robot.ia().iAbyZone().ia_createZone("zone1", 500, 1000, 300, 200, 500, 1100, 0);
 	robot.ia().iAbyZone().ia_createZone("zone2", 500, 1800, 200, 200, 600, 1800, 90);
 	robot.ia().iAbyZone().ia_createZone("zone3", 500, 0, 300, 200, 400, 250, 0);
@@ -125,5 +202,20 @@ void L_State_DecisionMaker::IASetupDemo()
 
 }
 
+void L_State_DecisionMaker::IASetupHomologation()
+{
+	logger().debug() << "IAHomologation" << logs::end;
 
+	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	robot.ia().iAbyZone().ia_createZone("depart", 0, 900, 200, 200, 300, 1000, 180);
+	robot.ia().iAbyZone().ia_createZone("tour1", 600, 1100, 20, 20, 400, 1100, 0);
+	robot.ia().iAbyZone().ia_createZone("peche1", 500, 0, 400, 200, 500, 200, -90);
+
+	robot.ia().iAbyZone().ia_setPath("depart", "tour1", 300, 1000);
+	robot.ia().iAbyZone().ia_setPath("depart", "peche1", 400, 1100);
+	robot.ia().iAbyZone().ia_setPath("tour1", "peche1", 1150, 550);
+
+	robot.ia().iAbyZone().ia_addAction("tour1", &L_tour1);
+	robot.ia().iAbyZone().ia_addAction("peche1", &L_peche1);
+}
 

@@ -35,6 +35,8 @@ public:
 	}
 
 	void IASetupDemo();
+
+	void IASetupHomologation();
 };
 
 #endif
