@@ -18,8 +18,8 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 //	pAsservInsa_->motion_configureAlphaPID(1200.0, 0.0, 0.0);
 //	pAsservInsa_->motion_configureDeltaPID(900.0, 0.0, 0.0);
 //	//NORMAL PID
-	pAsservInsa_->motion_configureAlphaPID(0.06, 0.001, 0.0005);//0.06 0.001 0.0005
-	pAsservInsa_->motion_configureDeltaPID(0.07, 0.001, 0.0);
+	pAsservInsa_->motion_configureAlphaPID(0.06, 0.002, 0.0005);//0.06 0.001 0.0005
+	pAsservInsa_->motion_configureDeltaPID(0.05, 0.002, 0.0005);
 
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);

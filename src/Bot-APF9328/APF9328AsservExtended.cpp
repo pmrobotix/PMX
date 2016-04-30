@@ -20,8 +20,8 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 //	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 
 	//PID STD
-	pAsservInsa_->motion_configureAlphaPID(0.0015, 0.0005, 0.0005);
-	pAsservInsa_->motion_configureDeltaPID(0.0015, 0.0005, 0.0005);
+	pAsservInsa_->motion_configureAlphaPID(0.02, 0.0, 0.0);
+	pAsservInsa_->motion_configureDeltaPID(0.02, 0.0, 0.0);
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 
