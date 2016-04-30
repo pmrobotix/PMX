@@ -14,7 +14,7 @@ APF9328State1::execute(Robot&, void *)
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(150, 1050, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(150, 1250, 90.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();
 
 	return this->getState("decisionMaker");
