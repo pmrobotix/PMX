@@ -19,13 +19,13 @@ AsservDriver::AsservDriver()
 {
 	md25_.begin();
 	float volts = md25_.getBatteryVolts();
-	logger().error() << "volts=" << volts << logs::end;
+	logger().info() << "volts=" << volts << logs::end;
 
 	//encoderLeft_(*this, 'B', 17), encoderRight_(*this, 'D', 31),
-
+/*
 	unsigned char status = extRightEncoder_.readStatus();
 	logger().error() << "status spi=" << reinterpret_cast<void*>(status) << logs::end;
-	extRightEncoder_.clearCounter();
+	extRightEncoder_.clearCounter();*/
 }
 
 AsservDriver::~AsservDriver()

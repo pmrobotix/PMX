@@ -125,6 +125,7 @@ bool A_action3()
 	return true;
 }
 
+
 IAutomateState*
 A_State_DecisionMaker::execute(Robot &, void *)
 {
@@ -132,8 +133,6 @@ A_State_DecisionMaker::execute(Robot &, void *)
 
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
-	//robot.asserv().startMotionTimerAndOdo();//
-//	robot.asserv().setPositionAndColor(150, 1050, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();
 	robot.chrono().start();
 	//IASetupDemo();
@@ -179,8 +178,8 @@ void A_State_DecisionMaker::IASetupHomologation()
 	robot.ia().iAbyZone().ia_createZone("tour2", 800, 1900, 100, 100, 900, 1600, 90);
 	robot.ia().iAbyZone().ia_createZone("porte2", 500, 1800, 200, 200, 600, 1800, 90);
 
-	robot.ia().iAbyZone().ia_setPath("depart", "tour2", 170, 1500);
-	robot.ia().iAbyZone().ia_setPath("depart", "porte2", 170, 1500); //ne sert pas
+	robot.ia().iAbyZone().ia_setPath("depart", "tour2", 350,1250);
+	robot.ia().iAbyZone().ia_setPath("depart", "porte2", 350,1250); //ne sert pas
 	robot.ia().iAbyZone().ia_setPath("tour2", "porte2", 600, 1600);
 
 	robot.ia().iAbyZone().ia_addAction("tour2", &A_tour2);

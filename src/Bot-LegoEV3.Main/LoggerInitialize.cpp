@@ -24,6 +24,7 @@ void logs::LoggerFactory::initialize()
 	//COMMON
 	add(logs::Level::INFO, "Tirette", "console");
 	add(logs::Level::INFO, "Wait90SecAction", "console");
+	add(logs::Level::INFO, "SensorsTimer", "console");
 
 	//STATE
 	add(logs::Level::INFO, "L_State1", "console");

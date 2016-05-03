@@ -17,18 +17,15 @@ APF9328RobotExtended::APF9328RobotExtended()
 	myColor_ = PMXNOCOLOR;
 	cArgs_.setDescription("(c) PM-ROBOTIX APF9328Robot");
 
+	//on ecrase les versions par default avec la version extended
 	p_svg_ = new APF9328SvgWriterExtended(id_);
-	//delete (svg_);
 	svg_ = p_svg_;
 
-	//on ecrase les versions par default avec la version extended
-	p_actions_ = new APF9328ActionsExtended(id_);
-	//delete (actions_default);
-	actions_default = p_actions_;
-
 	p_asserv_ = new APF9328AsservExtended(id_, this);
-	//delete (asserv_default);
 	asserv_default = p_asserv_;
+
+	p_actions_ = new APF9328ActionsExtended(id_, this);
+	actions_default = p_actions_;
 
 	p_ia_ = new APF9328IAExtended(id_, this);
 

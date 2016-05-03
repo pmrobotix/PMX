@@ -27,7 +27,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_LedBarTest() :
-		FunctionalTest("LedBarTest", "Blink Leds")
+		FunctionalTest("LedBar", "Blink Leds")
 	{
 	}
 

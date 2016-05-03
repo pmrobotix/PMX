@@ -55,12 +55,12 @@ private:
 	ServoObjectsSystem servoObjects_;
 
 public:
-	LegoEV3ActionsExtended(std::string botId)
+	LegoEV3ActionsExtended(std::string botId, Robot * robot)
 			: ledbar_(botId, *this, 2),
 					buttonbar_(*this),
 					soundbar_(*this),
 					tirette_(*this),
-					sensors_(*this),
+					sensors_(*this, robot),
 					parasol_(*this),
 					servoObjects_(*this)
 	{

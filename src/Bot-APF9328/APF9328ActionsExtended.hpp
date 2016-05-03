@@ -40,15 +40,18 @@ private:
 	 */
 	Sensors sensors_;
 
+	/*!
+	 * \brief objets avec servomotors.
+	 */
 	ServoObjectsSystem servoObjects_;
 
 public:
-	APF9328ActionsExtended(std::string botId)
+	APF9328ActionsExtended(std::string botId, Robot *robot)
 			: ledbar_(botId, *this, 8),
 					buttonbar_(*this),
 					lcd2x16_(botId, *this),
 					tirette_(*this),
-					sensors_(*this),
+					sensors_(*this, robot),
 					servoObjects_(*this)
 
 	{

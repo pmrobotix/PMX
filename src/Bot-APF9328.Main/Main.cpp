@@ -5,6 +5,7 @@
 #include "../Bot-APF9328/A_Asserv_SetResolutionTest.hpp"
 #include "../Bot-APF9328/A_Asserv_SquareTest.hpp"
 #include "../Bot-APF9328/A_AsservInsaTest.hpp"
+#include "../Bot-APF9328/A_AsservRunTest.hpp"
 #include "../Bot-APF9328/A_ButtonBarTest.hpp"
 #include "../Bot-APF9328/A_IATest.hpp"
 #include "../Bot-APF9328/A_LcdBoardTest.hpp"
@@ -37,6 +38,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new A_Asserv_SetResolutionTest());
 	robot.getConsoleManager().add(new A_Asserv_FindPIDTest());
 	robot.getConsoleManager().add(new A_AsservInsaTest());
+	robot.getConsoleManager().add(new A_AsservRunTest());
 	robot.getConsoleManager().add(new A_Asserv_SquareTest());
 	robot.getConsoleManager().add(new A_IATest());
 

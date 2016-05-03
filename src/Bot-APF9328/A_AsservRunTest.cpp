@@ -1,24 +1,25 @@
-#include "L_AsservRunTest.hpp"
+#include "A_AsservRunTest.hpp"
 
 #include <unistd.h>
 #include <cstdlib>
 #include <string>
 
+#include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
-#include "LegoEV3AsservExtended.hpp"
-#include "LegoEV3RobotExtended.hpp"
-#include "LegoEV3SvgWriterExtended.hpp"
+#include "APF9328ActionsExtended.hpp"
+#include "APF9328AsservExtended.hpp"
+#include "APF9328RobotExtended.hpp"
 
 using namespace std;
 
-void L_AsservRunTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void A_AsservRunTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	//match color
 	robot.getArgs().addArgument("x", "x mm");
@@ -29,7 +30,7 @@ void L_AsservRunTest::configureConsoleArgs(int argc, char** argv) //surcharge
 	robot.parseConsoleArgs(argc, argv);
 }
 
-void L_AsservRunTest::run(int argc, char** argv)
+void A_AsservRunTest::run(int argc, char** argv)
 {
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
@@ -42,7 +43,7 @@ void L_AsservRunTest::run(int argc, char** argv)
 	float y = 0.0;
 	float a = 0.0;
 
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	Arguments args = robot.getArgs();
 
@@ -56,11 +57,11 @@ void L_AsservRunTest::run(int argc, char** argv)
 	 y = atof(args["y"].c_str());
 	 logger().debug() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
 	 }
-	if (args["d"] != "0")
-	{
-		a = atof(args["d"].c_str());
-		logger().debug() << "Arg a set " << args["d"] << ", a = " << a << logs::end;
-	}*/
+	 if (args["d"] != "0")
+	 {
+	 a = atof(args["d"].c_str());
+	 logger().debug() << "Arg a set " << args["d"] << ", a = " << a << logs::end;
+	 }*/
 
 	robot.asserv().startMotionTimerAndOdo();
 
@@ -72,7 +73,7 @@ void L_AsservRunTest::run(int argc, char** argv)
 	robot.actions().start();
 	robot.actions().sensors().startSensors();
 
-	robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
+	TRAJ_STATE ts = robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -88,11 +89,13 @@ void L_AsservRunTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getY_mm()
 			<< " a="
 			<< robot.asserv().pos_getThetaInDegree()
+			<< " ts="
+			<< ts
 			<< logs::end;
 
 	robot.svgPrintPosition();
 
-	robot.asserv().doMoveBackwardTo(0, 300);
+	ts = robot.asserv().doMoveBackwardTo(0, 300);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -108,13 +111,15 @@ void L_AsservRunTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getY_mm()
 			<< " a="
 			<< robot.asserv().pos_getThetaInDegree()
+			<< " ts="
+			<< ts
 			<< logs::end;
 
 	robot.svgPrintPosition();
 
 	sleep(3);
 
-	robot.asserv().doMoveForwardTo(x, 300);
+	ts = robot.asserv().doMoveForwardTo(x, 300);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -134,7 +139,7 @@ void L_AsservRunTest::run(int argc, char** argv)
 
 	robot.svgPrintPosition();
 
-	robot.asserv().doMoveBackwardTo(0, 300);
+	ts = robot.asserv().doMoveBackwardTo(0, 300);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -150,6 +155,8 @@ void L_AsservRunTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getY_mm()
 			<< " a="
 			<< robot.asserv().pos_getThetaInDegree()
+			<< " ts="
+			<< ts
 			<< logs::end;
 
 	robot.svgPrintPosition();

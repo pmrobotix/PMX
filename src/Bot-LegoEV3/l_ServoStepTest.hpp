@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_ServoStepTest()
-			: FunctionalTest("Servo Step", "Servo moving step by step")
+			: FunctionalTest("ServoStep", "Servo step moving")
 	{
 	}
 

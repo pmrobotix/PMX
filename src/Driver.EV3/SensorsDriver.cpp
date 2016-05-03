@@ -71,26 +71,39 @@ SensorsDriver::~SensorsDriver()
 bool SensorsDriver::front()
 {
 	// as a percentage. 100% is approximately 70cm/27in.
-	int percent = ir_.value();
+	double percent = ir_.value();
+	double percent2 = ir_.value();
+	percent = (percent + percent2) / 2.0;
 
 	double distance_mm = percent * 6.0;
 
-	logger().info() << "front percent=" << percent << " mm=" << distance_mm << logs::end;
-	if (distance_mm < 200)
+	logger().debug() << "front percent=" << percent << " mm=" << distance_mm << logs::end;
+	if (distance_mm < 170)
+	{
+		logger().info() << "!! detected FRONT percent="
+				<< percent
+				<< " mm="
+				<< distance_mm
+				<< logs::end;
 		return 1;
+	}
 	else
 		return 0;
 }
 
 bool SensorsDriver::rear()
 {
-	double mm = 0;
+	double mm = us_.value() * 10.0;
+	double mm2 = us_.value() * 10.0;
+	mm = (mm + mm2) / 2.0;
 
-	mm = us_.value() * 10.0;
 
 	logger().info() << "rear mm=" << mm << logs::end;
-	if (mm < 200)
+	if (mm < 170)
+	{
+		logger().info() << "!! detected REAR mm=" << mm << logs::end;
 		return 1;
+	}
 	else
 		return 0;
 }

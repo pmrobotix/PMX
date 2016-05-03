@@ -13,14 +13,14 @@
 #include "as_devices/as_max1027.h"
 
 IrSensor::IrSensor(ushort adcPin, int type)
-		: adcPin_(adcPin), type_(type), voltage_(0), distanceMm_(9999.0)
+		: adcPin_(adcPin), type_(type), voltage_(0.0), distanceMm_(9999.0)
 {
 }
 
 void IrSensor::reset()
 {
 	logger().debug() << "              !! reset !! " << logs::end;
-	this->voltage_ = 0;
+	this->voltage_ = 0.0;
 	this->distanceMm_ = 9999.0;
 }
 
@@ -47,7 +47,15 @@ int IrSensor::getDistance()
 		voltage_ = getVoltage();
 		distanceMm_ = gp2Convert(type_, voltage_);
 
-		logger().debug() << "getDistance type=" << type_  << " " << adcPin_ << " dist=" << distanceMm_ << " v="<< voltage_ << logs::end;
+		logger().debug() << "getDistance type="
+				<< type_
+				<< " "
+				<< adcPin_
+				<< " dist="
+				<< distanceMm_
+				<< " v="
+				<< voltage_
+				<< logs::end;
 	} catch (logs::Exception * e)
 	{
 		logger().error() << "Exception IrSensor getDistance: " << e->what() << logs::end;
@@ -84,9 +92,22 @@ double IrSensor::gp2Convert(int type, int value)
 	}
 	if (type == 30)
 	{
-		//!\todo version 30cm
-		distanceMillimetre = 93620.1 * pow(value, -0.949);
-		//y = 9362,1x-0,949
+
+		if (value > 2500) //saturation
+		{
+			distanceMillimetre = 55;
+		}
+		else if (value < 150) //saturation
+		{
+			distanceMillimetre = 400;
+		}
+		else
+		{
+			distanceMillimetre = 93620.1 * pow(value, -0.949);
+			//y = 9362,1x-0,949
+		}
+
+
 	}
 	if (type == 150)
 	{

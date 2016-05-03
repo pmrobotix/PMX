@@ -125,6 +125,8 @@ void AsservInsa::path_CollisionOnTrajectory()
 	if (waitingSemaphore)
 	{
 		motion_FreeMotion();
+		motion_FreeMotion();
+		motion_FreeMotion();
 		usleep(1000000);
 		path_TriggerWaypoint(TRAJ_COLLISION);
 	}
@@ -135,7 +137,9 @@ void AsservInsa::path_CollisionRearOnTrajectory()
 	if (waitingSemaphore)
 	{
 		motion_FreeMotion();
-		usleep(500000);
+		motion_FreeMotion();
+		motion_FreeMotion();
+		usleep(1000000);
 		path_TriggerWaypoint(TRAJ_COLLISION_REAR);
 	}
 }

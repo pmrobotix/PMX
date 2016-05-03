@@ -28,9 +28,9 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 #else
 	//real APF
 	pAsservInsa_->encoder_SetResolution(1470, 1470, 187.5);
-	pAsservInsa_->motion_SetDefaultAccel(0.2);
-	pAsservInsa_->motion_SetDefaultVmax(0.5);
-	pAsservInsa_->motion_SetDefaultDecel(0.2);
+	pAsservInsa_->motion_SetDefaultAccel(0.3);
+	pAsservInsa_->motion_SetDefaultVmax(0.4);
+	pAsservInsa_->motion_SetDefaultDecel(0.3);
 	pAsservInsa_->motion_setMaxPwmValue(127); //max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
 	//RCVA PID
@@ -40,9 +40,11 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 //	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 
 	//PID STD
-	//0.0015 0.0005 0.0004 // 0.0005 0.0008 0.0004
-	pAsservInsa_->motion_configureAlphaPID(0.0015, 0.0005, 0.0005);
-	pAsservInsa_->motion_configureDeltaPID(0.0015, 0.0005, 0.0005);
+	//maison D 0.0015, 0.0005, 0.0005
+
+
+	pAsservInsa_->motion_configureAlphaPID(0.0025, 0.001, 0.0000005);
+	pAsservInsa_->motion_configureDeltaPID(0.0035, 0.0009, 0.00005);
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 

@@ -18,6 +18,7 @@ ExtEncoder::ExtEncoder(char slave_select_port_letter, int slave_select_pin)
 {
 	try
 	{
+		/*
 		gpio_ = new HostGpioPort();
 
 		logger().debug() << "ss_port_=" << ss_port_ << " ss_pin_=" << ss_pin_ << logs::end;
@@ -50,6 +51,7 @@ ExtEncoder::ExtEncoder(char slave_select_port_letter, int slave_select_pin)
 		//logger().error() << "RESETING ENCODER" << logs::end;
 		this->setup(mdr0, mdr1);
 		logger().error() << "RESETING ENCODER to " << readCounter() << logs::end;
+		*/
 	} catch (logs::Exception * e)
 	{
 		logger().error() << "Exception ExtEncoder::ExtEncoder: " << e->what() << logs::end;
@@ -59,21 +61,21 @@ ExtEncoder::ExtEncoder(char slave_select_port_letter, int slave_select_pin)
 }
 
 void ExtEncoder::ss_pin_set(int value)
-{
+{/*
 	try
 	{
 		gpio_->setValueIoctl(value);
 	} catch (logs::Exception * e)
 	{
 		logger().error() << "Exception ExtEncoder::ss_pin_set: " << e->what() << logs::end;
-	}
+	}*/
 }
 
 /*!
  Initialize the encoder to the SPI with your own desired parameters
  */
 void ExtEncoder::setup(int setup_mdr0, int setup_mdr1)
-{
+{/*
 	this->counterSize = (4 - (((BYTE) setup_mdr1) & 0x03)); //n-byte counter
 
 	logger().error() << "counterSize= " << reinterpret_cast<void*>(counterSize) << logs::end;
@@ -96,7 +98,7 @@ void ExtEncoder::setup(int setup_mdr0, int setup_mdr1)
 	//Clear LS7366
 	this->clearCounter(); //clear counter
 	//this->clearStatus(); //clear status
-
+*/
 }
 
 /*!
@@ -114,25 +116,26 @@ unsigned long long ExtEncoder::spiTransfer(char data)
 void ExtEncoder::clearCounter(void)
 {
 //printf("ExtEncoder::clearCounter\n");
+	/*
 	lock();
 	ss_pin_set(1);
 	ss_pin_set(0); //enable device
 	this->spiTransfer(CLEAR_COUNTER); //transmit clear opcode
 	ss_pin_set(1); //release device
-	unlock();
+	unlock();*/
 }
 
 /*!
  Used for clearing the Status
  */
 void ExtEncoder::clearStatus(void)
-{
+{/*
 	lock();
 	ss_pin_set(1);
 	ss_pin_set(0); //enable device
 	this->spiTransfer(CLEAR_STATUS); //transmit clear opcode
 	ss_pin_set(1); //release device
-	unlock();
+	unlock();*/
 }
 
 /*!

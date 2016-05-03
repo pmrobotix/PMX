@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_AsservInsaTest()
-			: FunctionalTest("AsservInsaTest", "Asservissement via PID sur un angle et distance.")
+			: FunctionalTest("Asserv_Insa", "Find PID (angle+dist)")
 	{
 	}
 
