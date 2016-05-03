@@ -14,8 +14,6 @@ struct Position;
 class Robot;
 struct RobotPosition;
 
-
-
 class MovingBase;
 
 //dupliquer de math.h car inexistant dans le compilo EV3
@@ -111,8 +109,6 @@ typedef enum
 	TRAJ_INTERRUPTED,		//trajectory interrupted by software
 	TRAJ_COLLISION_REAR
 } TRAJ_STATE;
-
-
 
 //different kind of command generation
 typedef enum
@@ -282,7 +278,6 @@ private:
 //		static const logs::Logger & instance = logs::LoggerFactory::logger("Svg4AsservInsa");
 //		return instance;
 //	}
-
 	/*!
 	 * \brief Retourne le \ref Logger file associé à la classe \ref AsservInsa.
 	 */
@@ -299,12 +294,9 @@ private:
 
 	//bool activate_;
 
-	int32 rightTicksPerM_;
-	int32 leftTicksPerM_;
+	int32 rightTicksPerM_;int32 leftTicksPerM_;
 
-	int useExternalEncoders_;
-	int32 lastLeft_;
-	int32 lastRight_;
+	int useExternalEncoders_;int32 lastLeft_;int32 lastRight_;
 
 	//encoder.c
 	//ratio vTops/ticks for left encoder
@@ -365,7 +357,7 @@ private:
 	int32 odoPeriodNb; //static
 
 	int32 slippage[MOTOR_PER_TYPE];				//current slippage //static
-	int32 values[MOTOR_PER_TYPE][MAX_PERIOD];				//all the previous values of slippage //static
+	int32 values[MOTOR_PER_TYPE][MAX_PERIOD];		//all the previous values of slippage //static
 	int32 index[MOTOR_PER_TYPE];					//index in the values table //static
 
 	RobotCommand cmd; //static
@@ -391,7 +383,12 @@ private:
 //! Create a clothoid trajectory made of two line segments, smoothly linked by
 //! an arc of clothoid
 //! This is a test function
-	void CreateTwoSegmentTraj(float V0, float distD1, float distD2, float A0, float beta, float epsilon);
+	void CreateTwoSegmentTraj(float V0,
+			float distD1,
+			float distD2,
+			float A0,
+			float beta,
+			float epsilon);
 
 //---motion
 	void checkRobotCommand(RobotCommand *cmd);
@@ -560,15 +557,7 @@ private:
 	void path_LaunchTrajectory(RobotCommand *traj);
 	//! Cancel the current trajectory and stop the robot
 	//!
-	//! Mostly needed for remote control, use collision function
-	//! when a collision is detected.
-	void path_CancelTrajectory(void);
-	//! Interrupt current trajectory and stop robot
-	//!
-	//! Used to stop on a particular event (for instance actuator event)
-	void path_InterruptTrajectory(void);
-	void path_CollisionOnTrajectory();
-	void path_CollisionRearOnTrajectory();
+
 	void path_Init(void);
 	void path_TriggerWaypoint(TRAJ_STATE state);
 
@@ -585,7 +574,6 @@ private:
 	//! \param y [out] Robot position on y axis in meters
 	//! \param theta [out] Robot orientation in radians ]-Pi..Pi]
 	void odo_GetPositionXYTheta(float *x, float *y, float *theta);
-
 
 //---robot_slippage
 
@@ -630,12 +618,15 @@ public:
 
 	void motion_SetSamplingFrequency(uint frequency);
 
-	//void setMovingBase(MovingBase *base);
-
-	//void setRobot(Robot *robot); //TODO replace setMovingBase
-
-	//void activate(bool a);
-
+	//! Mostly needed for remote control, use collision function
+	//! when a collision is detected.
+	void path_CancelTrajectory(void);
+	//! Interrupt current trajectory and stop robot
+	//!
+	//! Used to stop on a particular event (for instance actuator event)
+	void path_InterruptTrajectory(void);
+	void path_CollisionOnTrajectory();
+	void path_CollisionRearOnTrajectory();
 
 	//motion
 
@@ -677,7 +668,6 @@ public:
 
 	//---encoder
 
-
 	uint32 encoder_GetLeftResolution();
 
 	uint32 encoder_GetRightResolution();
@@ -698,7 +688,12 @@ public:
 	//! \param dRight right motor motion
 	//! \param dAlpha alpha motor motion
 	//! \param dDelta delta motor motion
-	void encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta, int32 *left, int32 *right);
+	void encoder_ReadSensor(int32 *dLeft,
+			int32 *dRight,
+			int32 *dAlpha,
+			int32 *dDelta,
+			int32 *left,
+			int32 *right);
 
 	//---robot_traj_wrappers
 
@@ -718,7 +713,13 @@ public:
 	TRAJ_STATE motion_DoArcRotate(float angle, float radius);
 	//! Compute the displacement needed on alpha and delta to reach the point x2, y2
 	//! from the point x1, y1 starting with the orientation theta1
-	void computeAlphaDelta(float x1, float y1, float theta1, float x2, float y2, float *out_angle, float *out_dist);
+	void computeAlphaDelta(float x1,
+			float y1,
+			float theta1,
+			float x2,
+			float y2,
+			float *out_angle,
+			float *out_dist);
 	//! macro that translate movement for arc circle trajectory
 #define motion_DoArcLeftForward(angle, radius) motion_DoArcRotate(fabs(angle), fabs(radius))
 #define motion_DoArcRightForward(angle, radius) motion_DoArcRotate(-fabs(angle), -fabs(radius))
@@ -752,7 +753,11 @@ public:
 	//! \param VMax Maximum goal speed of each encoder wheel in meter/second
 	//! \param Accel Acceleration used to attain the VMax speed in m/s/s
 	//! \param Decel Deceleration used to stop the movement in m/s/s
-	void motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VMax, float Accel, float Decel);
+	void motion_LineSpeedAcc(RobotCommand *out_cmd,
+			float dist,
+			float VMax,
+			float Accel,
+			float Decel);
 	//! Order a pure rotation movement of the specified angle
 	//! \param out_cmd Resulting command that will be interpreted by path_manager
 	//! \param angle Angle to run in radian
@@ -768,7 +773,11 @@ public:
 	//! \param VMax Maximum goal speed of each encoder wheel in meter/second
 	//! \param Accel Acceleration used to attain the VMax speed in m/s/s
 	//! \param Decel Deceleration used to stop the movement in m/s/s
-	void motion_RotateSpeedAcc(RobotCommand *out_cmd, float angle, float VMax, float Accel, float Decel);
+	void motion_RotateSpeedAcc(RobotCommand *out_cmd,
+			float angle,
+			float VMax,
+			float Accel,
+			float Decel);
 	//! Order a arc-circle curve movement of the specified angle and radius
 	//! \param out_cmd Resulting command that will be interpreted by path_manager
 	//! \param angle Angle of the arc-circle curve in radian (2*Pi make a complete circle)
@@ -840,8 +849,6 @@ public:
 	void motion_StepOrderAD(RobotCommand *out_cmd, int32 posAlpha, int32 posDelta, int seconds);
 
 	//void pos_SetPosition(float x, float y, float theta);
-
-
 
 	float motion_GetDefaultVmax();
 	float motion_GetDefaultAccel();

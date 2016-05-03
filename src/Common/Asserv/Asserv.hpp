@@ -130,6 +130,9 @@ public:
 	void setAccel(float acc);
 	void setDecel(float dec);
 
+	void setFrontCollision();
+	void setRearCollision();
+
 };
 
 #endif

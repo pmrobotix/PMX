@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_MovingBaseTest()
-			: FunctionalTest("MovingBaseTest", "test de la base roulante")
+			: FunctionalTest("MovingBase", "base roulante")
 	{
 	}
 

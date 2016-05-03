@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_SensorsTest()
-			: FunctionalTest("Sensors", "test des capteurs IR / US")
+			: FunctionalTest("Sensors", "capteurs IR/US")
 	{
 	}
 

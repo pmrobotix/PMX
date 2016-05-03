@@ -27,7 +27,7 @@ AsservInsa * Asserv::insa()
 	return pAsservInsa_;
 }
 
-void Asserv::startMotionTimerAndOdo() //todo à surcharger
+void Asserv::startMotionTimerAndOdo() //doit etre surchargé
 {
 }
 
@@ -97,8 +97,8 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 	float degrees = getRelativeAngle(thetaInDegree) - currentThetaInDegree;
 
 	// force it to be the positive remainder, so that 0 <= angle < 360
-		//degrees = (degrees + 360) % 360;
-		degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
+	//degrees = (degrees + 360) % 360;
+	degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
 
 	// reduce the angle
 	//reduction sur une plage de [0 à 360]
@@ -251,4 +251,15 @@ void Asserv::setDecel(float dec)
 	pAsservInsa_->motion_SetDefaultDecel(dec);
 }
 
+void Asserv::setFrontCollision()
+{
+	if (!ignoreFrontCollision_)
+		pAsservInsa_->path_CollisionOnTrajectory();
+}
+
+void Asserv::setRearCollision()
+{
+	if (!ignoreRearCollision_)
+		pAsservInsa_->path_CollisionRearOnTrajectory();
+}
 

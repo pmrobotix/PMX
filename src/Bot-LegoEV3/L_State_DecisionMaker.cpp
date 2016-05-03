@@ -27,14 +27,14 @@ bool L_tour1()
 		return false;
 	robot.svgPrintPosition();
 
-	ts = robot.asserv().doMoveForwardTo(robot.asserv().pos_getX_mm() + 800,
-			robot.asserv().pos_getY_mm());
+	ts = robot.asserv().doMoveForwardTo(1200, 1100);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
 
-	ts = robot.asserv().doMoveBackwardTo(robot.asserv().pos_getX_mm() - 100,
-			robot.asserv().pos_getY_mm());
+	//ts = robot.asserv().doMoveBackwardTo(robot.asserv().pos_getX_mm() - 100,
+	//		robot.asserv().pos_getY_mm());
+	ts = robot.asserv().doLineAbs(-100);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
@@ -60,22 +60,21 @@ bool L_peche1()
 		return false;
 	robot.svgPrintPosition();
 
-	//RECALAGE
+	//RECALAGE sur le devant
 
 	ts = robot.asserv().doMoveForwardTo(500, 75);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
-
-	robot.asserv().setPositionAndColor(robot.asserv().pos_getX_mm(),
+	//set pos
+	robot.asserv().setPositionAndColor(robot.asserv().getRelativeX(robot.asserv().pos_getX_mm()),
 			85,
 			-90.0,
 			(robot.getMyColor() == PMXGREEN));
+
 	robot.svgPrintPosition();
 
-	ts = robot.asserv().doMoveForwardAndRotateTo(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm() + 30,
-			0);
+	ts = robot.asserv().doLineAbs(-30);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
@@ -158,7 +157,6 @@ bool L_action3()
 	robot.logger().info() << "action3 done." << logs::end;
 	return true;
 }
-
 
 IAutomateState*
 L_State_DecisionMaker::execute(Robot &, void *)

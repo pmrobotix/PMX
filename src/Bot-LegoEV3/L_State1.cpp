@@ -18,8 +18,6 @@ L_State1::execute(Robot& r, void *data)
 	Wait90SecAction* action = new Wait90SecAction(robot, (void *) sharedData);
 	action->start("Wait90SecAction");
 
-
-
 	robot.asserv().startMotionTimerAndOdo();
 	robot.asserv().setPositionAndColor(85, 1000, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();

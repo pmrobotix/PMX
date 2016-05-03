@@ -12,13 +12,13 @@ APF9328SvgWriterExtended::APF9328SvgWriterExtended(std::string botId)
 	std::ostringstream symbol;
 
 	symbol << "<symbol id=\"bot-apf9328\">"
-			<< "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"blue\" />"
-			<< "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"blue\" />"
+			<< "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"slategray\" />"
+			<< "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"slategray\" />"
 			<< "<rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" style=\"fill:none;stroke:slategray;stroke-width:2px;\" />"
-			<< "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"300\" stroke=\"red\" stroke-width=\"4\"/>"
+			<< "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"300\" stroke=\"slategray\" stroke-width=\"4\"/>"
 			//arriere du robot en position 0,0
-			<< "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"red\" stroke-width=\"4\"/>"
-			<< "<line x1=\"0\" y1=\"270\" x2=\"50\" y2=\"300\" stroke=\"red\" stroke-width=\"4\"/>"
+			<< "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"slategray\" stroke-width=\"4\"/>"
+			<< "<line x1=\"0\" y1=\"270\" x2=\"50\" y2=\"300\" stroke=\"slategray\" stroke-width=\"4\"/>"
 			<< "<line x1=\"300\" y1=\"0\" x2=\"300\" y2=\"300\" stroke=\"blue\" stroke-width=\"4\"/>"
 			//devant du robot en position 300,0
 			<< "</symbol>";

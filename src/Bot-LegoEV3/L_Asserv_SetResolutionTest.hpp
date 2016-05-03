@@ -28,7 +28,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_Asserv_SetResolutionTest()
-			: FunctionalTest("Asserv_SetResol", "Asservissement - trouver nbr ticks pour 1m.")
+			: FunctionalTest("Asserv_SetResol", "trouver nbr ticks/m")
 	{
 	}
 

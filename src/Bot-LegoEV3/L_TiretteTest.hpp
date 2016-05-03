@@ -26,7 +26,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_TiretteTest()
-			: FunctionalTest("TiretteTest", "test de la tirette")
+			: FunctionalTest("Tirette", "La tirette")
 	{
 	}
 

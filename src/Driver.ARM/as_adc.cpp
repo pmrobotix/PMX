@@ -33,7 +33,7 @@ AsAdc::AsAdc()
 	int aVRef = 0;
 	mDev = as_adc_open(aAdcType, aDeviceNum, aVRef);
 
-	std::cout << "AsAdc mDev=" << mDev << std::endl;
+	//std::cout << "AsAdc mDev=" << mDev << std::endl;
 }
 
 AsAdc::~AsAdc()

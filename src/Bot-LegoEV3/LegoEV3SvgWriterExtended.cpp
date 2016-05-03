@@ -13,15 +13,15 @@ LegoEV3SvgWriterExtended::LegoEV3SvgWriterExtended(std::string botId)
 	std::ostringstream symbol;
 
 	symbol << "<symbol id=\"bot-legoev3\">"
-			<< "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"green\" />"
-			<< "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"green\" />"
-			<< "<rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" style=\"fill:none;stroke:slategray;stroke-width:2px;\" />"
-			<< "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"300\" stroke=\"red\" stroke-width=\"4\"/>"
+			<< "<circle cx=\"90\" cy=\"90\" r=\"90\" fill=\"none\" stroke=\"orange\" />"
+			<< "<circle cx=\"90\" cy=\"90\" r=\"10\" fill=\"none\" stroke=\"orange\" />"
+			<< "<rect x=\"0\" y=\"0\" width=\"180\" height=\"180\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
+			<< "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
 			//arriere du robot en position 0,0
-			<< "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"red\" stroke-width=\"4\"/>"
-			<< "<line x1=\"0\" y1=\"270\" x2=\"50\" y2=\"300\" stroke=\"red\" stroke-width=\"4\"/>"
-			<< "<line x1=\"300\" y1=\"0\" x2=\"300\" y2=\"300\" stroke=\"green\" stroke-width=\"4\"/>"
-			//devant du robot en position 300,0
+			<< "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"orange\" stroke-width=\"4\"/>"
+			<< "<line x1=\"0\" y1=\"150\" x2=\"50\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
+			<< "<line x1=\"180\" y1=\"0\" x2=\"180\" y2=\"180\" stroke=\"red\" stroke-width=\"4\"/>"
+			//devant du robot en position 180,0
 			<< "</symbol>";
 	addDefsSymbol(symbol.str());
 
@@ -41,9 +41,9 @@ void LegoEV3SvgWriterExtended::writePosition(double x,
 		if (symbol == "bot")
 		{
 			logger().info() << "<use x=\""
-					<< x - 150
+					<< x - 90
 					<< "\" y=\""
-					<< -y - 150
+					<< -y - 90
 					<< "\" xlink:href=\"#bot-legoev3\" transform=\"rotate("
 					<< -((angle_rad * 180) / M_PI)
 					<< ","

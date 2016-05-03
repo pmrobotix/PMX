@@ -48,15 +48,11 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "A_Asserv_SetResolutionTest", "console");
 	add(logs::Level::INFO, "A_Asserv_FindPIDTest", "console");
 	add(logs::Level::INFO, "A_AsservInsaTest", "console");
+	add(logs::Level::INFO, "A_AsservRunTest", "console");
 	add(logs::Level::INFO, "A_Asserv_SquareTest", "console");
 	add(logs::Level::INFO, "A_IATest", "console");
 
-	/*
-	 add(logs::Level::INFO, "APF9328ButtonBarTest", "console");
-	 add(logs::Level::INFO, "APF9328SoundBarTest", "console");
-	 add(logs::Level::INFO, "APF9328TiretteTest", "console");
-	 add(logs::Level::INFO, "APF9328AsservInsaTest", "console");
-	 */
+
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
 	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
@@ -73,9 +69,9 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "AsservDriver.ARM", "console");
 	add(logs::Level::INFO, "GpioPCA9555", "console");
 	add(logs::Level::INFO, "ExtEncoder", "console");
-	add(logs::Level::INFO, "SensorsDriver", "console");
-	add(logs::Level::DEBUG, "IrSensor", "console");
-	add(logs::Level::DEBUG, "as_adc", "console");
+	add(logs::Level::INFO, "SensorsDriver.ARM", "console");
+	add(logs::Level::INFO, "IrSensor", "console");
+	add(logs::Level::INFO, "as_adc", "console");
 
 
 }

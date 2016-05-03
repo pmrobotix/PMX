@@ -43,12 +43,12 @@ private:
 	/*!
 	 * \brief Voltage donné par le composant.
 	 */
-	int voltage_;
+	double voltage_;
 
 	/*!
 	 * \brief Distance mm donné par la conversion.
 	 */
-	int distanceMm_;
+	double distanceMm_;
 
 public:
 
