@@ -26,9 +26,9 @@ void ServoObjectsSystem::leftDeploy(double percent, bool keep)
 {
 	leftHold();
 	servodriver->setPosition(SERVO_LEFT, percent); // percentage
-	//sleep(2);
 	if (!keep)
 	{
+		sleep(2);
 		leftRelease();
 	}
 }
@@ -45,9 +45,9 @@ void ServoObjectsSystem::centreDeploy(double percent, bool keep)
 {
 	centreHold();
 	servodriver->setPosition(SERVO_CENTRE, percent); // percentage
-	//sleep(2);
 	if (!keep)
 	{
+		sleep(2);
 		centreRelease();
 	}
 }
@@ -64,9 +64,9 @@ void ServoObjectsSystem::rightDeploy(double percent, bool keep)
 {
 	rightHold();
 	servodriver->setPosition(SERVO_RIGHT, percent); // percentage
-	//sleep(2);
 	if (!keep)
 	{
+		sleep(2);
 		rightRelease();
 	}
 }

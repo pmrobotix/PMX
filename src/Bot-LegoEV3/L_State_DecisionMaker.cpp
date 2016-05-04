@@ -158,24 +158,6 @@ bool L_action3()
 	return true;
 }
 
-IAutomateState*
-L_State_DecisionMaker::execute(Robot &, void *)
-{
-	logger().info() << "A_State_DecisionMaker" << logs::end;
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-
-	//IASetupDemo();
-	IASetupHomologation();
-
-	robot.svgPrintPosition();
-	robot.chrono().start();
-
-	robot.ia().iAbyZone().ia_start(); //launch IA
-
-	robot.stop();
-	return NULL; //finish all state
-}
-
 void L_State_DecisionMaker::IASetupDemo()
 {
 	logger().debug() << "IASetup" << logs::end;
@@ -217,3 +199,29 @@ void L_State_DecisionMaker::IASetupHomologation()
 	robot.ia().iAbyZone().ia_addAction("peche1", &L_peche1);
 }
 
+IAutomateState*
+L_State_DecisionMaker::execute(Robot &, void * data)
+{
+	logger().info() << "L_State_DecisionMaker" << logs::end;
+	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	Data* sharedData = (Data*) data;
+
+	//IASetupDemo();
+	IASetupHomologation();
+
+	robot.svgPrintPosition();
+
+	//robot.ia().iAbyZone().ia_start(); //launch IA
+
+	//wait the execution Wait90
+	while (!sharedData->end90s()) //&& robot.chronometerRobot().getElapsedTimeInSec() < 35)
+	{
+		//			logger().info() << "sharedData->end90s=" << sharedData->end90s() << " time="
+		//					<< robot.chronometerRobot().getElapsedTimeInSec() << utils::end;
+		//			robot.base().stop();
+		usleep(100000);
+	}
+
+	robot.stop();
+	return NULL; //finish all state
+}

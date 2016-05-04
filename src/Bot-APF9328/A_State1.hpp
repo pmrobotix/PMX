@@ -1,29 +1,29 @@
-#ifndef SSTATE1_HPP
-#define	SSTATE1_HPP
+#ifndef A_STATE1_HPP
+#define	A_STATE1_HPP
 
 #include <string>
 
 #include "../Common/State/State1.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-
-class APF9328State1: public State1
+class A_State1: public State1
 {
 private:
 
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("APF9328State1");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("A_State1");
 		return instance;
 	}
+	void setPos();
 
 public:
 
-	APF9328State1()
+	A_State1()
 	{
 	}
 
-	~APF9328State1()
+	~A_State1()
 	{
 	}
 
@@ -31,7 +31,7 @@ public:
 
 	std::string name()
 	{
-		return "APF9328State1";
+		return "A_State1";
 	}
 };
 

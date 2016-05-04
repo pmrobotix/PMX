@@ -237,7 +237,9 @@ void Robot::begin(int argc, char** argv)
 	if (cArgs_['s'])
 	{
 		logger().debug() << "skip = " << (int) cArgs_['s'] << logs::end;
-	}
+		data_.skipSetup(true);
+	}else
+		data_.skipSetup(false);
 
 	if (cArgs_["type"] != "m"
 			&& cArgs_["type"] != "t"
