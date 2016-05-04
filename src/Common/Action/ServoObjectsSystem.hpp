@@ -34,15 +34,15 @@ public:
 	 */
 	~ServoObjectsSystem();
 
-	void leftDeploy(double percent = 75, bool keep = false);
+	void leftDeploy(double percent = 0, bool keep = false);
 	void leftRelease();
 	void leftHold();
 
-	void centreDeploy(double percent = 75, bool keep = false);
+	void centreDeploy(double percent = 0, bool keep = false);
 	void centreRelease();
 	void centreHold();
 
-	void rightDeploy(double percent = 75, bool keep = false);
+	void rightDeploy(double percent = 0, bool keep = false);
 	void rightRelease();
 	void rightHold();
 

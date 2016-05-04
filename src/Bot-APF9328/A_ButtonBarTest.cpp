@@ -20,8 +20,7 @@ void A_ButtonBarTest::run(int argc, char** argv)
 
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
-	logger().info() << "Please press ENTER" << logs::end;
-	robot.actions().buttonBar().waitPressed(BUTTON_ENTER_KEY);
+
 
 
 	logger().info() << "Please press UP" << logs::end;
@@ -36,8 +35,11 @@ void A_ButtonBarTest::run(int argc, char** argv)
 	logger().info() << "Please press RIGHT" << logs::end;
 	robot.actions().buttonBar().waitPressed(BUTTON_RIGHT_KEY);
 
-	//logger().info() << "Please press BACK" << logs::end;
-	//robot.actions().buttonBar().waitPressed(BUTTON_BACK_KEY);
+	logger().info() << "Please press BACK" << logs::end;
+	robot.actions().buttonBar().waitPressed(BUTTON_BACK_KEY);
+
+//	logger().info() << "Please press ENTER" << logs::end;
+//	robot.actions().buttonBar().waitPressed(BUTTON_ENTER_KEY);
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;

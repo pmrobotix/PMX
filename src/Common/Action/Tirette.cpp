@@ -49,7 +49,7 @@ bool Tirette::waitPressed()
 {
 	while (!pressed())
 	{
-		usleep(100000);
+		usleep(10000);
 	}
 	return true;
 }
@@ -58,7 +58,7 @@ bool Tirette::waitUnpressed()
 {
 	while (pressed())
 	{
-		usleep(100000);
+		usleep(10000);
 	}
 	return true;
 }

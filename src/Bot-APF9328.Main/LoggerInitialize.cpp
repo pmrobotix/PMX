@@ -32,8 +32,9 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
 
 	//State
-	add(logs::Level::INFO, "APF9328State1", "console");
+	add(logs::Level::INFO, "A_State1", "console");
 	add(logs::Level::INFO, "A_State_decisionMaker", "console");
+	add(logs::Level::DEBUG, "A_State_Wait90SecAction", "console");
 
 
 	//TESTS

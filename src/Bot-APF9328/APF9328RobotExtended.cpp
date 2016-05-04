@@ -8,7 +8,7 @@
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "A_State_DecisionMaker.hpp"
-#include "APF9328State1.hpp"
+#include "A_State1.hpp"
 #include "APF9328SvgWriterExtended.hpp"
 
 APF9328RobotExtended::APF9328RobotExtended()
@@ -52,7 +52,7 @@ void APF9328RobotExtended::begin(int argc, char** argv)
 	if (cArgs_["type"] == "m" or cArgs_["type"] == "M")
 	{
 		data_.isEmpty(true);
-		IAutomateState* state1 = new APF9328State1();
+		IAutomateState* state1 = new A_State1();
 		IAutomateState* decisionMaker = new A_State_DecisionMaker();
 
 		state1->addState("decisionMaker", decisionMaker);
