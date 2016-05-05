@@ -33,7 +33,7 @@ A_State1::execute(Robot&, void *data)
 
 	if (!sharedData->skipSetup())
 	{
-
+		logger().info() << "METTRE LA TIRETTE ! " << logs::end;
 		robot.actions().lcd2x16().home();
 		robot.actions().lcd2x16().print("METTRE LA TIRETTE ! ");
 		robot.actions().tirette().waitPressed();
@@ -120,6 +120,7 @@ A_State1::execute(Robot&, void *data)
 		usleep(500000);
 		setPos();
 	}
+
 	robot.actions().lcd2x16().clear();
 	robot.actions().lcd2x16().setBacklightOff();
 
@@ -140,7 +141,7 @@ void A_State1::setPos()
 {
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(150, 1250, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();
 
 }

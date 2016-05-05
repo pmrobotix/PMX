@@ -23,8 +23,9 @@ private:
 	}
 
 	infrared_sensor ir_;
+	infrared_sensor irrear_;
 
-	ultrasonic_sensor us_;
+	//ultrasonic_sensor us_;
 
 public:
 
