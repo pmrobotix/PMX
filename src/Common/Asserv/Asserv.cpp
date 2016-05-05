@@ -49,6 +49,8 @@ void Asserv::stopMotionTimerAndOdo()
 // if distance <0, move backward
 TRAJ_STATE Asserv::doLineAbs(float distance_mm)
 {
+	int f = ignoreFrontCollision_;
+	int r = ignoreRearCollision_;
 	if (distance_mm > 0)
 	{
 		ignoreRearCollision_ = true;
@@ -59,7 +61,10 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm)
 	}
 
 	float meters = distance_mm / 1000.0f;
-	return pAsservInsa_->motion_DoLine(meters);
+	TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
+	ignoreRearCollision_ = f;
+	ignoreFrontCollision_ = r;
+	return ts;
 }
 
 //permet de tourner sur un angle défini (inclus 2 ou 3 tours sur soi-même)
@@ -253,12 +258,19 @@ void Asserv::setDecel(float dec)
 
 void Asserv::setFrontCollision()
 {
+	logger().error() << "setFrontCollision ignoreFrontCollision_="
+			<< ignoreFrontCollision_
+			<< logs::end;
+
 	if (!ignoreFrontCollision_)
 		pAsservInsa_->path_CollisionOnTrajectory();
 }
 
 void Asserv::setRearCollision()
 {
+	logger().error() << "setRearCollision ignoreRearCollision_="
+			<< ignoreRearCollision_
+			<< logs::end;
 	if (!ignoreRearCollision_)
 		pAsservInsa_->path_CollisionRearOnTrajectory();
 }

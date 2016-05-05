@@ -27,6 +27,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 #else
 	//Real EV3
 	printf("---LegoEV3AsservExtended > Real EV3\n");
+
 	pAsservInsa_->encoder_SetResolution(1395, 1395, 135);
 	pAsservInsa_->motion_SetDefaultAccel(0.2);
 	pAsservInsa_->motion_SetDefaultVmax(0.4);

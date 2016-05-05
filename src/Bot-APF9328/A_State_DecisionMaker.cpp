@@ -45,13 +45,55 @@ bool A_porte2()
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
+
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
+	robot.svgPrintPosition();
 
+	ts = robot.asserv().doMoveForwardAndRotateTo(650, 1800, 90);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveBackwardTo(650, 1600);
+	if (ts != TRAJ_OK)
+		return false;
 	robot.svgPrintPosition();
 
 	robot.logger().info() << "A_porte2 done." << logs::end;
+	return true; //return true si ok sinon false si interruption
+}
+
+bool A_porte1()
+{
+	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
+	robot.logger().info() << "start A_porte1." << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+	RobotPosition path, zone;
+
+	robot.ia().iAbyZone().goToZone("porte1", &path, &zone);
+	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveForwardAndRotateTo(350, 1800, 90);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveBackwardTo(350, 1600);
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "A_porte1 done." << logs::end;
 	return true; //return true si ok sinon false si interruption
 }
 
@@ -154,16 +196,20 @@ void A_State_DecisionMaker::IASetupHomologation()
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	robot.ia().iAbyZone().ia_createZone("depart", 0, 1100, 300, 300, 300, 1250, 180);
-
+	robot.ia().iAbyZone().ia_createZone("porte2", 500, 1800, 200, 200, 600, 1600, 90);
+	robot.ia().iAbyZone().ia_createZone("porte1", 200, 1800, 200, 200, 300, 1600, 90);
 	robot.ia().iAbyZone().ia_createZone("tour2", 800, 1900, 100, 100, 900, 1600, 90);
-	robot.ia().iAbyZone().ia_createZone("porte2", 500, 1800, 200, 200, 600, 1800, 90);
 
 	robot.ia().iAbyZone().ia_setPath("depart", "tour2", 350, 1250);
 	robot.ia().iAbyZone().ia_setPath("depart", "porte2", 350, 1250); //ne sert pas
+	robot.ia().iAbyZone().ia_setPath("depart", "porte1", 350, 1250);
+	robot.ia().iAbyZone().ia_setPath("porte1", "porte2", 400, 1600);
+	robot.ia().iAbyZone().ia_setPath("porte1", "tour2", 600, 1600);
 	robot.ia().iAbyZone().ia_setPath("tour2", "porte2", 600, 1600);
 
-	robot.ia().iAbyZone().ia_addAction("tour2", &A_tour2);
 	robot.ia().iAbyZone().ia_addAction("porte2", &A_porte2);
+	robot.ia().iAbyZone().ia_addAction("porte1", &A_porte1);
+	robot.ia().iAbyZone().ia_addAction("tour2", &A_tour2);
 }
 
 IAutomateState*
@@ -179,7 +225,7 @@ A_State_DecisionMaker::execute(Robot &, void *data)
 	//IASetupDemo();
 	IASetupHomologation();
 
-
+	robot.actions().sensors().startSensors();
 	robot.ia().iAbyZone().ia_start(); //launch IA
 
 	//wait the execution Wait90
@@ -188,10 +234,10 @@ A_State_DecisionMaker::execute(Robot &, void *data)
 //			logger().info() << "sharedData->end90s=" << sharedData->end90s() << " time="
 //					<< robot.chronometerRobot().getElapsedTimeInSec() << utils::end;
 //			robot.base().stop();
-			usleep(500000);
+		usleep(500000);
 	}
 
-	robot.stop();
+	//robot.stop();
 	return NULL; //finish all state
 }
 

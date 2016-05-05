@@ -29,3 +29,5 @@ i2cdetect -y -a 0
 
 
 cd /pmx
+
+./Bot_ArmadeusAPF9328_ARM m

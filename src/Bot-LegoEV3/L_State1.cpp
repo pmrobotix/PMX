@@ -23,17 +23,24 @@ L_State1::execute(Robot& r, void *data)
 	logger().info() << "L_State1" << logs::end;
 	Data* sharedData = (Data*) data;
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+
+	robot.setMyColor(PMXNOCOLOR);
+
 	robot.actions().start();
 
-	begin:
-	if (!sharedData->skipSetup())
+	begin: if (!sharedData->skipSetup())
 	{
-		robot.actions().ledBar().startBlink(100000, 500000, LED_RED, false);
+
+		//robot.actions().ledBar().startBlink(100000, 500000, LED_RED, false);
+		robot.actions().ledBar().set(1, LED_RED);
+		robot.actions().ledBar().set(0, LED_RED);
 
 		robot.actions().tirette().waitPressed();
 
 		robot.actions().ledBar().stopAndWait(true);
-		robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
+		//robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
+		robot.actions().ledBar().set(1, LED_OFF);
+		robot.actions().ledBar().set(0, LED_OFF);
 
 		ButtonTouch b = BUTTON_NONE;
 		while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR)
@@ -62,15 +69,18 @@ L_State1::execute(Robot& r, void *data)
 			if (b == BUTTON_DOWN_KEY)
 			{
 				logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
-
+				robot.actions().parasol().reset();
+				robot.actions().parasol().activate(-20);
+				sleep(1);
 			}
+			usleep(10000);
 		}
 		robot.actions().ledBar().stopAndWait(true);
 
-		setPos();
-
 		//tirette
-		robot.actions().ledBar().startAlternate(100000, 100000, 0x00, 0x03, LED_YELLOW, false);
+		//robot.actions().ledBar().startAlternate(100000, 100000, 0x00, 0x03, LED_YELLOW, false);
+		robot.actions().ledBar().set(1, LED_YELLOW);
+		robot.actions().ledBar().set(0, LED_YELLOW);
 		bool bb = false;
 		//robot.actions().tirette().waitUnpressed();
 		while (robot.actions().tirette().pressed())
@@ -84,23 +94,28 @@ L_State1::execute(Robot& r, void *data)
 			}
 			usleep(100000);
 		}
+		robot.actions().ledBar().stopAndWait(true);
+
+		setPos(); //initialise color before!
 	}
 	else
 	{
+		logger().error() << "robot.getMyColor()=" << robot.getMyColor() << logs::end;
 		if (robot.getMyColor() == PMXNOCOLOR)
 		{
-			logger().error() << "NO COLOR SELECTED !!" << logs::end;
 			exit(0);
 		}
-
+		robot.actions().parasol().reset();
+		robot.actions().parasol().activate(-20);
 		usleep(500000);
-		setPos();
+		setPos(); //initialise color before!
 	}
 
 	robot.actions().ledBar().stopAndWait(true);
 
 	robot.actions().ledBar().startReset();
 	robot.actions().ledBar().stop(true);
+	robot.actions().ledBar().stopAndWait(true);
 
 	L_State_Wait90SecAction* action = new L_State_Wait90SecAction(robot, (void *) sharedData);
 	action->start("L_State_Wait90SecAction");
@@ -113,7 +128,7 @@ void L_State1::setPos()
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(85, 1000, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(85, 1007, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();
 
 }

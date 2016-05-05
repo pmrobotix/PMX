@@ -27,7 +27,12 @@ bool L_tour1()
 		return false;
 	robot.svgPrintPosition();
 
-	ts = robot.asserv().doMoveForwardTo(1200, 1100);
+	ts = robot.asserv().doMoveForwardTo(520, 1090);
+		if (ts != TRAJ_OK)
+			return false;
+		robot.svgPrintPosition();
+
+	ts = robot.asserv().doMoveForwardTo(1200, 1080);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
@@ -62,10 +67,10 @@ bool L_peche1()
 
 	//RECALAGE sur le devant
 
-	ts = robot.asserv().doMoveForwardTo(500, 75);
+	ts = robot.asserv().doMoveForwardTo(500, 55);
 	if (ts != TRAJ_OK)
 		return false;
-	robot.svgPrintPosition();
+	//robot.svgPrintPosition();
 	//set pos
 	robot.asserv().setPositionAndColor(robot.asserv().getRelativeX(robot.asserv().pos_getX_mm()),
 			85,
@@ -74,7 +79,7 @@ bool L_peche1()
 
 	robot.svgPrintPosition();
 
-	ts = robot.asserv().doLineAbs(-30);
+	ts = robot.asserv().doLineAbs(-100);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
@@ -211,7 +216,11 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 
 	robot.svgPrintPosition();
 
-	//robot.ia().iAbyZone().ia_start(); //launch IA
+	sleep(6);
+
+	robot.actions().sensors().startSensors();
+	robot.ia().iAbyZone().ia_start(); //launch IA
+
 
 	//wait the execution Wait90
 	while (!sharedData->end90s()) //&& robot.chronometerRobot().getElapsedTimeInSec() < 35)
@@ -222,6 +231,6 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 		usleep(100000);
 	}
 
-	robot.stop();
+	//robot.stop();
 	return NULL; //finish all state
 }

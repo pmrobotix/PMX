@@ -16,8 +16,7 @@ ASensorsDriver * ASensorsDriver::create()
 SensorsDriver::SensorsDriver()
 {
 
-	logger().debug() << "test" << logs::end;
-	ir_ = infrared_sensor(INPUT_AUTO);
+	ir_ = infrared_sensor(INPUT_2);
 	if (ir_.connected())
 	{
 		logger().info() << ir_.type_name()
@@ -36,6 +35,25 @@ SensorsDriver::SensorsDriver()
 		logger().error() << "INPUT_2 (IR) not Connected !!" << logs::end;
 	}
 
+	irrear_ = infrared_sensor(INPUT_3);
+		if (irrear_.connected())
+		{
+			logger().info() << irrear_.type_name()
+					<< " connected (device "
+					<< irrear_.driver_name()
+					<< ", port "
+					<< irrear_.address()
+					<< ", mode "
+					<< irrear_.mode()
+					<< ")"
+					<< logs::end;
+			irrear_.proximity();
+		}
+		else
+		{
+			logger().error() << "INPUT_3 (IR REAR) not Connected !!" << logs::end;
+		}
+/*
 	us_ = ultrasonic_sensor();
 	int value = 0;
 	if (us_.connected())
@@ -61,7 +79,7 @@ SensorsDriver::SensorsDriver()
 	else
 	{
 		logger().error() << "INPUT_3 in3:i2c1 (US) not Connected !!" << logs::end;
-	}
+	}*/
 }
 
 SensorsDriver::~SensorsDriver()
@@ -93,6 +111,26 @@ bool SensorsDriver::front()
 
 bool SensorsDriver::rear()
 {
+	// as a percentage. 100% is approximately 70cm/27in.
+		double percent = irrear_.value();
+		double percent2 = irrear_.value();
+		percent = (percent + percent2) / 2.0;
+
+		double distance_mm = percent * 6.0;
+
+		logger().debug() << "rear percent=" << percent << " mm=" << distance_mm << logs::end;
+		if (distance_mm < 170)
+		{
+			logger().info() << "!! detected REAR percent="
+					<< percent
+					<< " mm="
+					<< distance_mm
+					<< logs::end;
+			return 1;
+		}
+		else
+			return 0;
+	/*
 	double mm = us_.value() * 10.0;
 	double mm2 = us_.value() * 10.0;
 	mm = (mm + mm2) / 2.0;
@@ -105,5 +143,5 @@ bool SensorsDriver::rear()
 		return 1;
 	}
 	else
-		return 0;
+		return 0;*/
 }

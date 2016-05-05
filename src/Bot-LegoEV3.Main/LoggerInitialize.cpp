@@ -29,7 +29,7 @@ void logs::LoggerFactory::initialize()
 	//STATE
 	add(logs::Level::INFO, "L_State1", "console");
 	add(logs::Level::INFO, "L_State_DecisionMaker", "console");
-	add(logs::Level::DEBUG, "L_State_Wait90SecAction", "console");
+	add(logs::Level::INFO, "L_State_Wait90SecAction", "console");
 
 	//SVG
 	add(logs::Level::INFO, "Svg4LegoEV3Robot", "svg");

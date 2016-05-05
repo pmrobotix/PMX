@@ -29,11 +29,12 @@ void L_State_Wait90SecAction::execute()
 	robot.chrono().start();
 
 	//ARU and adversary
-	while (robot.chrono().getElapsedTimeInSec() <= 10)
+	while (robot.chrono().getElapsedTimeInSec() <= 90)
 	{
 		//test ARU
 		if (robot.actions().tirette().pressed())
 		{
+			logger().error() << "ARU pressed !!!!!!" << logs::end;
 			//stop all robot
 			robot.stop();
 
@@ -55,7 +56,11 @@ void L_State_Wait90SecAction::execute()
 	this->logger().info() << "FUNNY ACTION...start... "
 					<< robot.chrono().getElapsedTimeInSec()
 					<< logs::end;
-	sleep(5);
+
+		robot.actions().parasol().activate(300);
+		sleep(5);
+		robot.actions().parasol().activate(-150);
+		//sleep(1);
 
 	this->logger().info() << "FUNNY ACTION...stop... "
 				<< robot.chrono().getElapsedTimeInSec()
