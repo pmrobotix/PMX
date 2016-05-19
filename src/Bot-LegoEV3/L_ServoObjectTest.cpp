@@ -18,9 +18,24 @@ void L_ServoObjectTest::run(int argc, char** argv)
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.actions().servoObjects().leftDeploy(0);
-	robot.actions().servoObjects().rightDeploy(0);
+	//peche en green
+
+	robot.actions().servoObjects().centreDeploy(0);
+	robot.actions().servoObjects().leftDeploy(100);
+	robot.actions().servoObjects().rightDeploy(-100);
 	sleep(1);
+	robot.actions().servoObjects().centreDeploy(-0);
+	sleep(1);
+	robot.actions().servoObjects().centreDeploy(-60);
+
+
+	robot.actions().servoObjects().leftDeploy(-100);
+
+	sleep(1);
+	robot.actions().servoObjects().leftDeploy(100);
+	robot.actions().servoObjects().centreDeploy(0);
+
+
 	robot.actions().servoObjects().releaseAll();
 
 	logger().info() << "Happy End." << logs::end;

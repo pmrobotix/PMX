@@ -25,12 +25,13 @@ void A_State_Wait90SecAction::execute()
 	Data* sharedData = (Data*) data_;
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
+
 	//démarrage du chrono
 	logger().info() << "Start Chronometer" << logs::end;
 	robot.chrono().start();
 
 	//ARU and adversary
-	while (robot.chrono().getElapsedTimeInSec() <= 90)
+	while (robot.chrono().getElapsedTimeInSec() <= 90) //todo mettre en parametre
 	{
 
 		usleep(2000000);

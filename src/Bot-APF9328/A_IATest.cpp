@@ -17,7 +17,6 @@
 #include "APF9328IAExtended.hpp"
 #include "APF9328RobotExtended.hpp"
 
-
 using namespace std;
 
 bool ATEST_action1()
@@ -28,10 +27,13 @@ bool ATEST_action1()
 	RobotPosition path, zone;
 
 	robot.ia().iAbyZone().goToZone("zone1", &path, &zone);
-	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
+	if (&path != NULL)
+	{
+		ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+		if (ts != TRAJ_OK)
+			return false;
+		robot.svgPrintPosition();
+	}
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
@@ -51,10 +53,13 @@ bool ATEST_action2()
 	RobotPosition path, zone;
 
 	robot.ia().iAbyZone().goToZone("zone2", &path, &zone);
-	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
+	if (&path != NULL)
+	{
+		ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+		if (ts != TRAJ_OK)
+			return false;
+		robot.svgPrintPosition();
+	}
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
@@ -74,10 +79,13 @@ bool ATEST_action3()
 	RobotPosition path, zone;
 
 	robot.ia().iAbyZone().goToZone("zone3", &path, &zone);
-	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
+	if (&path != NULL)
+	{
+		ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+		if (ts != TRAJ_OK)
+			return false;
+		robot.svgPrintPosition();
+	}
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
@@ -100,7 +108,6 @@ void A_IATest::run(int argc, char** argv)
 	robot.chrono().start();
 	IASetup();
 	robot.ia().iAbyZone().ia_start(); //launch IA
-
 
 	robot.stop();
 

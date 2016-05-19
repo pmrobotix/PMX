@@ -7,7 +7,8 @@
 #include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3IAExtended.hpp"
-#include "LegoEV3SvgWriterExtended.hpp"
+
+class LegoEV3SvgWriterExtended;
 
 class LegoEV3IAExtended;
 
@@ -44,6 +45,8 @@ public:
 		LegoEV3IAExtended& r_ia = *p_ia_;
 		return r_ia;
 	}
+
+	Data* sharedData;
 
 	void stop();
 

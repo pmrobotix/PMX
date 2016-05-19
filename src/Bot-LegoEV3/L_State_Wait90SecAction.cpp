@@ -51,7 +51,9 @@ void L_State_Wait90SecAction::execute()
 			<< logs::end;
 
 	robot.asserv_default->freeMotion();
+	robot.actions().servoObjects().releaseAll();
 
+	sharedData->end90s(true); //indique que l'action est effectuée au prog princ
 	//FUNNY ACTION
 	this->logger().info() << "FUNNY ACTION...start... "
 					<< robot.chrono().getElapsedTimeInSec()
@@ -59,14 +61,17 @@ void L_State_Wait90SecAction::execute()
 
 		robot.actions().parasol().activate(300);
 		sleep(5);
-		robot.actions().parasol().activate(-150);
+		//robot.actions().parasol().activate(-150);
+		robot.actions().parasol().release();
 		//sleep(1);
+
+		robot.actions().servoObjects().releaseAll();
 
 	this->logger().info() << "FUNNY ACTION...stop... "
 				<< robot.chrono().getElapsedTimeInSec()
 				<< logs::end;
 
-	sharedData->end90s(true); //indique que l'action est effectuée au prog princ
+
 	robot.stop();
 	usleep(700000);
 	exit(0);

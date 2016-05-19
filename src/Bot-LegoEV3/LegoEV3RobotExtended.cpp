@@ -8,6 +8,7 @@
 #include "../Common/Utils/Chronometer.hpp"
 #include "L_State_DecisionMaker.hpp"
 #include "L_State1.hpp"
+#include "LegoEV3SvgWriterExtended.hpp"
 
 LegoEV3RobotExtended::LegoEV3RobotExtended()
 {
@@ -28,6 +29,8 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	p_ia_ = new LegoEV3IAExtended(id_, this);
 
 	svg_->beginHeader();
+	sharedData = NULL;
+
 }
 
 void LegoEV3RobotExtended::stop()

@@ -15,6 +15,7 @@ class Robot;
 
 struct RobotPosition;
 
+
 typedef bool (*RobotAction)(void);
 
 typedef struct

@@ -47,6 +47,8 @@ public:
 		return r_ia;
 	}
 
+	Data* sharedData;
+
 	void begin(int argc, char** argv);
 
 	void stop();

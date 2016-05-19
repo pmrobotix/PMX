@@ -30,6 +30,7 @@ APF9328RobotExtended::APF9328RobotExtended()
 	p_ia_ = new APF9328IAExtended(id_, this);
 
 	svg_->beginHeader();
+	sharedData = NULL;
 }
 
 void APF9328RobotExtended::stop()

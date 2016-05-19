@@ -4,6 +4,7 @@
 #include <cstdlib>
 
 #include "../Common/Action/ButtonBar.hpp"
+#include "../Common/Action/FunnyAction.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Tirette.hpp"
 #include "../Common/Action.Driver/AButtonDriver.hpp"
@@ -24,8 +25,6 @@ L_State1::execute(Robot& r, void *data)
 	Data* sharedData = (Data*) data;
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.setMyColor(PMXNOCOLOR);
-
 	robot.actions().start();
 
 	begin: if (!sharedData->skipSetup())
@@ -37,10 +36,13 @@ L_State1::execute(Robot& r, void *data)
 
 		robot.actions().tirette().waitPressed();
 
-		robot.actions().ledBar().stopAndWait(true);
+		//robot.actions().ledBar().stopAndWait(true);
 		//robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
 		robot.actions().ledBar().set(1, LED_OFF);
 		robot.actions().ledBar().set(0, LED_OFF);
+
+		robot.actions().servoObjects().leftDeploy(100);
+		robot.actions().servoObjects().rightDeploy(100);
 
 		ButtonTouch b = BUTTON_NONE;
 		while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR)
@@ -71,11 +73,30 @@ L_State1::execute(Robot& r, void *data)
 				logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
 				robot.actions().parasol().reset();
 				robot.actions().parasol().activate(-20);
+				//sleep(1);
+				if (robot.getMyColor() == PMXGREEN)
+				{
+					robot.actions().servoObjects().centreDeploy(10);
+					robot.actions().servoObjects().centreDeploy(-65); //on abaisse la canne
+					robot.actions().servoObjects().leftDeploy(-100); //on lache les poissons
+					robot.actions().servoObjects().leftDeploy(100);
+					robot.actions().servoObjects().centreDeploy(10);//on releve la canne
+				}
+				if (robot.getMyColor() == PMXVIOLET)
+				{
+					robot.actions().servoObjects().centreDeploy(10);
+					robot.actions().servoObjects().centreDeploy(85); //on abaisse la canne
+					robot.actions().servoObjects().rightDeploy(-100); //on lache les poissons
+					robot.actions().servoObjects().rightDeploy(100);
+					robot.actions().servoObjects().centreDeploy(10);//on releve la canne
+				}
+
 				sleep(1);
+				robot.actions().servoObjects().releaseAll();
 			}
 			usleep(10000);
 		}
-		robot.actions().ledBar().stopAndWait(true);
+		//robot.actions().ledBar().stopAndWait(true);
 
 		//tirette
 		//robot.actions().ledBar().startAlternate(100000, 100000, 0x00, 0x03, LED_YELLOW, false);
@@ -94,7 +115,7 @@ L_State1::execute(Robot& r, void *data)
 			}
 			usleep(100000);
 		}
-		robot.actions().ledBar().stopAndWait(true);
+		//robot.actions().ledBar().stopAndWait(true);
 
 		setPos(); //initialise color before!
 	}
@@ -107,15 +128,22 @@ L_State1::execute(Robot& r, void *data)
 		}
 		robot.actions().parasol().reset();
 		robot.actions().parasol().activate(-20);
-		usleep(500000);
+		robot.actions().servoObjects().leftDeploy(100);
+		robot.actions().servoObjects().rightDeploy(100);
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().centreDeploy(0);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().centreDeploy(35);
+
+		//usleep(500000);
 		setPos(); //initialise color before!
 	}
 
-	robot.actions().ledBar().stopAndWait(true);
+	//robot.actions().ledBar().stopAndWait(true);
 
-	robot.actions().ledBar().startReset();
-	robot.actions().ledBar().stop(true);
-	robot.actions().ledBar().stopAndWait(true);
+	//robot.actions().ledBar().startReset();
+	//robot.actions().ledBar().stop(true);
+	//robot.actions().ledBar().stopAndWait(true);
 
 	L_State_Wait90SecAction* action = new L_State_Wait90SecAction(robot, (void *) sharedData);
 	action->start("L_State_Wait90SecAction");
