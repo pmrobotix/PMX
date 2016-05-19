@@ -13,8 +13,8 @@ void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
 	add("svg", new SvgAppender("svgEV3.svg"));
-	add("memory", new MemoryAppender());
-	add("file", new FileAppender("logEV3.csv"));
+	//add("memory", new MemoryAppender());
+	//add("file", new FileAppender("logEV3.csv"));
 
 	add(logs::Level::ERROR, "", "console");
 
@@ -35,7 +35,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "Svg4LegoEV3Robot", "svg");
 
 	//File
-	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
+	//add(logs::Level::DEBUG, "logFileAsservInsa", "file");
+
 
 	//TESTS
 	add(logs::Level::INFO, "L_LedBarTest", "console");
@@ -64,7 +65,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SoundDriver.SIMU", "console");
 	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
 	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
-	add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
+	//add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
 
 	//DRIVERS EV3
 	add(logs::Level::INFO, "LedDriver.EV3", "console");

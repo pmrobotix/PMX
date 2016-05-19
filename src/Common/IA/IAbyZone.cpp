@@ -312,7 +312,7 @@ ZONE* IAbyZone::ia_getNearestZoneFrom(float x, float y)
 	return result;
 }
 
-void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPosition *zone_p )
+void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPosition *zone_p)
 {
 	ZONE* z = ia_getZone(zoneName);
 
@@ -331,8 +331,9 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
 		printf("ERROR: cc_goToZone ia_getNearestZoneFrom return NULL !!");
 		exit(-1);
 	}
-
+	//printf("01\n");
 	ZONE_PATH *path = ia_getZonePath(zCurrent, z);
+	//printf("02\n");
 	/*
 	 if (path != NULL)
 	 {
@@ -353,23 +354,33 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
 	 cc_getRelativeAngle(z->startAngle), cc_motion_GetDefaultSpeed(), cc_motion_GetDefaultAccel(), cc_motion_GetDefaultDecel());
 	 return ts;
 	 */
-
-	path_p->x = robot_->asserv_default->getRelativeX(path->x);
-	path_p->y = path->y;
-
+	if (path != NULL)
+	{
+		printf("%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__,
+			 zCurrent->name, z->name, path->x, path->y);
+		path_p->x = robot_->asserv_default->getRelativeX(path->x);
+		path_p->y = path->y;
+	}/*else
+	{
+		printf("%s (line %d) : goToZone FROM %s TO %s with NO path \n", __FUNCTION__, __LINE__,
+			 zCurrent->name, z->name);
+		path_p->x = robot_->asserv_default->getRelativeX(z->startX);
+		path_p->y = z->startY;
+		path_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
+	}*/
 	zone_p->x = robot_->asserv_default->getRelativeX(z->startX);
 	zone_p->y = z->startY;
 	zone_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
 
-
+	//printf("03\n");
 	/*
-	RobotPosition pos;
+	 RobotPosition pos;
 
-	//convert position from ticks to meter
-	pos.x = path->x;
-	pos.y = path->y;
-	pos.theta = z->startAngle;
+	 //convert position from ticks to meter
+	 pos.x = path->x;
+	 pos.y = path->y;
+	 pos.theta = z->startAngle;
 
-	return pos;*/
+	 return pos;*/
 }
 

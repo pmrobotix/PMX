@@ -133,6 +133,9 @@ public:
 	void setFrontCollision();
 	void setRearCollision();
 
+	void ignoreFrontCollision(bool ignore);
+
+	void ignoreRearCollision(bool ignore);
 };
 
 #endif

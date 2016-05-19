@@ -12,6 +12,7 @@
 
 bool L_tour1()
 {
+
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.logger().info() << "start L_tour1." << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
@@ -22,27 +23,31 @@ bool L_tour1()
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
+
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
 
+	robot.asserv().ignoreFrontCollision(true);
+	robot.asserv().ignoreRearCollision(true);
 	ts = robot.asserv().doMoveForwardTo(520, 1090);
-		if (ts != TRAJ_OK)
-			return false;
-		robot.svgPrintPosition();
+	if (ts != TRAJ_OK)
+		return false;
+	robot.svgPrintPosition();
 
 	ts = robot.asserv().doMoveForwardTo(1200, 1080);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
 
-	//ts = robot.asserv().doMoveBackwardTo(robot.asserv().pos_getX_mm() - 100,
-	//		robot.asserv().pos_getY_mm());
-	ts = robot.asserv().doLineAbs(-100);
+	ts = robot.asserv().doLineAbs(-150);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
+
+	robot.asserv().ignoreFrontCollision(false);
+	robot.asserv().ignoreRearCollision(false);
 
 	robot.logger().info() << "L_tour1 done." << logs::end;
 	return true; //return true si ok sinon false si interruption
@@ -66,32 +71,147 @@ bool L_peche1()
 	robot.svgPrintPosition();
 
 	//RECALAGE sur le devant
-
-	ts = robot.asserv().doMoveForwardTo(500, 55);
+	ts = robot.asserv().doMoveForwardTo(500, 35);
 	if (ts != TRAJ_OK)
 		return false;
-	//robot.svgPrintPosition();
 	//set pos
 	robot.asserv().setPositionAndColor(robot.asserv().getRelativeX(robot.asserv().pos_getX_mm()),
-			85,
+			100,
 			-90.0,
 			(robot.getMyColor() == PMXGREEN));
-
 	robot.svgPrintPosition();
 
-	ts = robot.asserv().doLineAbs(-100);
+	ts = robot.asserv().doLineAbs(-60);
 	if (ts != TRAJ_OK)
 		return false;
 	robot.svgPrintPosition();
 
-	//PECHE
+	for (int pp = 1; pp < 4; pp++)
+	{
+		//PECHE
+		//rotation
+		ts = robot.asserv().doRotateTo(0);
+		if (ts != TRAJ_OK)
+			return false;
 
-	ts = robot.asserv().doMoveForwardAndRotateTo(800, robot.asserv().pos_getY_mm(), 0);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
+		if (robot.sharedData->end90s())
+			break;
 
-	robot.logger().info() << "L_peche1 done." << logs::end;
+		//on abaisse la canne
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().centreDeploy(-65);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().centreDeploy(85);
+
+		if (robot.sharedData->end90s())
+			break;
+
+		ts = robot.asserv().doMoveForwardAndRotateTo(740, 85, 0);
+		if (ts != TRAJ_OK)
+			return false;
+		robot.svgPrintPosition();
+
+		if (robot.sharedData->end90s())
+					break;
+
+		//on remonte la canne à 45
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().centreDeploy(-10);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().centreDeploy(30);
+
+		if (robot.sharedData->end90s())
+			break;
+
+		//on va sur le filet
+		ts = robot.asserv().doMoveForwardAndRotateTo(950, 150, 0);
+		if (ts != TRAJ_OK)
+			return false;
+
+		if (robot.sharedData->end90s())
+			break;
+
+		ts = robot.asserv().doMoveForwardAndRotateTo(1140, 35, -30);
+		if (ts != TRAJ_OK)
+			return false;
+
+		if (robot.sharedData->end90s())
+			break;
+
+		//on abaisse la canne
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().centreDeploy(-65);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().centreDeploy(85);
+
+		if (robot.sharedData->end90s())
+			break;
+
+		//on lache les poissons
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().leftDeploy(-100);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().rightDeploy(-100);
+
+		if (robot.sharedData->end90s())
+			break;
+
+		//on délache les poissons
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().leftDeploy(100);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().rightDeploy(100);
+		/*
+		 //on lache les poissons
+		 if (robot.getMyColor() == PMXGREEN)
+		 robot.actions().servoObjects().leftDeploy(-100);
+		 if (robot.getMyColor() == PMXVIOLET)
+		 robot.actions().servoObjects().rightDeploy(-100);
+
+		 //on délache les poissons
+		 if (robot.getMyColor() == PMXGREEN)
+		 robot.actions().servoObjects().leftDeploy(100);
+		 if (robot.getMyColor() == PMXVIOLET)
+		 robot.actions().servoObjects().rightDeploy(100);
+		 */
+		//on releve la canne
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().centreDeploy(-10);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().centreDeploy(30);
+
+		if (robot.sharedData->end90s())
+			break;
+
+		//on recule
+		ts = robot.asserv().doMoveBackwardAndRotateTo(950, 150, 0);
+		if (ts != TRAJ_OK)
+			return false;
+
+		if (robot.sharedData->end90s())
+			break;
+
+		ts = robot.asserv().doMoveBackwardAndRotateTo(750, 120, 0);
+		if (ts != TRAJ_OK)
+			return false;
+
+		//on abaisse la canne
+		if (robot.getMyColor() == PMXGREEN)
+			robot.actions().servoObjects().centreDeploy(-65);
+		if (robot.getMyColor() == PMXVIOLET)
+			robot.actions().servoObjects().centreDeploy(85);
+
+		if (robot.sharedData->end90s())
+			break;
+
+		ts = robot.asserv().doMoveBackwardAndRotateTo(450, 85, 0);
+		if (ts != TRAJ_OK)
+			return false;
+
+		robot.logger().info() << "L_peche1 done: nb=" << pp << logs::end;
+	}
+
+	robot.actions().servoObjects().releaseAll();
 	return true; //return true si ok sinon false si interruption
 }
 
@@ -211,16 +331,17 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	Data* sharedData = (Data*) data;
 
+	robot.sharedData = (Data*) data;
+
 	//IASetupDemo();
 	IASetupHomologation();
 
 	robot.svgPrintPosition();
 
-	sleep(6);
+	sleep(5);
 
 	robot.actions().sensors().startSensors();
 	robot.ia().iAbyZone().ia_start(); //launch IA
-
 
 	//wait the execution Wait90
 	while (!sharedData->end90s()) //&& robot.chronometerRobot().getElapsedTimeInSec() < 35)
@@ -228,7 +349,7 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 		//			logger().info() << "sharedData->end90s=" << sharedData->end90s() << " time="
 		//					<< robot.chronometerRobot().getElapsedTimeInSec() << utils::end;
 		//			robot.base().stop();
-		usleep(100000);
+		usleep(5000000);
 	}
 
 	//robot.stop();

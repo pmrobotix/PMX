@@ -30,7 +30,7 @@ bool SensorsDriver::front()
 	double centredistmm = frontIR_.getDistance();
 	double centredistmm2 = frontIR_.getDistance();
 	centredistmm = (centredistmm + centredistmm2) / 2.0;
-	if (centredistmm < 250)
+	if (centredistmm < 220)
 	{
 		logger().info() << "!! detected FRONT centre=" << std::setw(5) << centredistmm << logs::end;
 		detect = true;

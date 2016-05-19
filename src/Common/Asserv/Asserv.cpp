@@ -60,10 +60,12 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm)
 		ignoreFrontCollision_ = true;
 	}
 
+
 	float meters = distance_mm / 1000.0f;
 	TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
-	ignoreRearCollision_ = f;
-	ignoreFrontCollision_ = r;
+
+	ignoreFrontCollision_ = f;
+	ignoreRearCollision_ = r;
 	return ts;
 }
 
@@ -80,8 +82,9 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
 
 	TRAJ_STATE ts = pAsservInsa_->motion_DoRotate(radians);
 
-	ignoreRearCollision_ = f;
-	ignoreFrontCollision_ = r;
+	ignoreFrontCollision_ = f;
+	ignoreRearCollision_ = r;
+
 	return ts;
 }
 
@@ -273,5 +276,15 @@ void Asserv::setRearCollision()
 			<< logs::end;
 	if (!ignoreRearCollision_)
 		pAsservInsa_->path_CollisionRearOnTrajectory();
+}
+
+void Asserv::ignoreFrontCollision(bool ignore)
+{
+	ignoreFrontCollision_ = ignore;
+}
+
+void Asserv::ignoreRearCollision(bool ignore)
+{
+	ignoreRearCollision_ = ignore;
 }
 

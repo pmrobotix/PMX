@@ -31,6 +31,8 @@ A_State1::execute(Robot&, void *data)
 	robot.actions().lcd2x16().setBacklightOn();
 	robot.actions().lcd2x16().clear();
 
+	sharedData->strategy("all");
+
 	if (!sharedData->skipSetup())
 	{
 		logger().info() << "METTRE LA TIRETTE ! " << logs::end;
@@ -68,14 +70,15 @@ A_State1::execute(Robot&, void *data)
 			if (b == BUTTON_UP_KEY)
 			{
 				logger().info() << "BUTTON_UP_KEY - IA" << logs::end;
+				sharedData->strategy("strat5");
 			}
 			if (b == BUTTON_DOWN_KEY)
 			{
 				logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
-				robot.actions().servoObjects().leftDeploy(15, false);
-				robot.actions().servoObjects().rightDeploy(15, false);
-				robot.actions().servoObjects().leftDeploy(-85, false);
-				robot.actions().servoObjects().rightDeploy(-85, false);
+				robot.actions().servoObjects().leftDeploy(15, false); //deploy
+				robot.actions().servoObjects().rightDeploy(15, false); //deploy
+				robot.actions().servoObjects().leftDeploy(-85, false); //retract
+				robot.actions().servoObjects().rightDeploy(-75, false); //retract
 
 			}
 		}
@@ -117,7 +120,9 @@ A_State1::execute(Robot&, void *data)
 
 		robot.actions().lcd2x16().home();
 		robot.actions().lcd2x16().print("Skip setup...");
-		usleep(500000);
+
+		sharedData->strategy("all");
+
 		setPos();
 	}
 

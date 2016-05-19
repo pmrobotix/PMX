@@ -6,6 +6,7 @@
 #include "../Common/State/AAutomateState.hpp"
 #include "../Log/LoggerFactory.hpp"
 
+class Data;
 
 class L_State_DecisionMaker: public AAutomateState
 {
@@ -17,10 +18,13 @@ private:
 		return instance;
 	}
 
+
+
 public:
 
 	L_State_DecisionMaker()
 	{
+
 	}
 
 	~L_State_DecisionMaker()

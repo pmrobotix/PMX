@@ -14,7 +14,7 @@ void logs::LoggerFactory::initialize()
 	add("console", new ConsoleAppender());
 	add("svg", new SvgAppender("svgAPF.svg"));
 	add("memory", new MemoryAppender());
-	add("file", new FileAppender("logAPF.csv"));
+	//add("file", new FileAppender("logAPF.csv"));
 
 	add(logs::Level::ERROR, "", "console");
 
@@ -28,13 +28,15 @@ void logs::LoggerFactory::initialize()
 	//SVG
 	add(logs::Level::INFO, "Svg4APF9328Robot", "svg");
 
+
 	//File
-	add(logs::Level::DEBUG, "logFileAsservInsa", "file");
+	//add(logs::Level::DEBUG, "logFileAsservInsa", "file");
+
 
 	//State
 	add(logs::Level::INFO, "A_State1", "console");
 	add(logs::Level::INFO, "A_State_decisionMaker", "console");
-	add(logs::Level::DEBUG, "A_State_Wait90SecAction", "console");
+	add(logs::Level::INFO, "A_State_Wait90SecAction", "console");
 
 
 	//TESTS
