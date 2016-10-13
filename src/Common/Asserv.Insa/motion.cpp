@@ -31,15 +31,27 @@
 #include <cstdlib>
 
 #include "../../Log/Logger.hpp"
+#include "../Asserv/Asserv.hpp"
 #include "../Asserv/MotorControl.hpp"
 #include "../Asserv/MovingBase.hpp"
+#include "../Robot.hpp"
+#include "../Position.hpp"
 #include "AsservInsa.hpp"
+
+class Robot;
 
 class MovingBase;
 
-AsservInsa::AsservInsa()
+AsservInsa::AsservInsa(Robot * robot)
 {
-	activate_ = false;
+
+	oldPwmLeft = 0;
+	oldPwmRight = 0;
+
+	//Reference vers le robot
+	robot_ = robot;
+
+	//activate_ = false;
 	stop_motion_ITTask = false;
 
 	leftEncoderRatio = 0;
@@ -91,16 +103,11 @@ AsservInsa::AsservInsa()
 
 	RobotMotionState = DISABLE_PID;
 
-	base_ = NULL;
+	//base_ = NULL;
 
 }
 AsservInsa::~AsservInsa()
 {
-}
-
-void AsservInsa::setMovingBase(MovingBase *base)
-{
-	base_ = base;
 }
 
 long AsservInsa::currentTimeInMillis()
@@ -109,6 +116,14 @@ long AsservInsa::currentTimeInMillis()
 	gettimeofday(&te, NULL); // get current time
 	long long milliseconds = (te.tv_sec * 1000LL + te.tv_usec / 1000); // calculate milliseconds
 	return (long) (milliseconds - timeOffset);
+}
+
+long long AsservInsa::currentTimeInMicros()
+{
+	struct timeval te;
+	gettimeofday(&te, NULL); // get current time
+	long long microseconds = (te.tv_sec * 1000000LL + te.tv_usec); // calculate milliseconds
+	return (long long) (microseconds - timeOffset);
 }
 
 void AsservInsa::motion_Init()
@@ -272,25 +287,32 @@ void AsservInsa::execute()
 	int32 pwm0, pwm1; //static
 	int32 pwm0b, pwm1b; //static
 
-	float delta_y = 0.0;
-	float delta_x = 0.0;
+	//float delta_y = 0.0;
+	//float delta_x = 0.0;
 
 	float x_mm = 0.0;
 	float y_mm = 0.0;
 	float angle_rad = 0.0;
 
-	long startTime = currentTimeInMillis();
-	long currentTime = startTime;
-	logger().debug() << "execute started; loopDelayInMillis=" << loopDelayInMillis << " ms" << logs::end;
+	//long startTime = currentTimeInMillis();
+	//long currentTime = startTime;
+	long long startTime = currentTimeInMicros();
+	long long currentTime = startTime;
 
-	loggerFile().debug() << "NbPeriod, currentTime(ms), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
+	logger().debug() << "execute started; loopDelayInMillis="
+			<< loopDelayInMillis
+			<< " ms"
+			<< logs::end;
+
+	loggerFile().debug() << "NbPeriod, currentTime(us), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
 			<< logs::end;
 
 	while (!stop_motion_ITTask)
 	{
 		periodNb++;
 
-		currentTime = currentTimeInMillis();
+		//currentTime = currentTimeInMillis();
+		currentTime = currentTimeInMicros();
 		//logger().debug() << "AsservInsa execute currentTime=" << currentTime << logs::end;
 
 		//TODO use external or internl encoders !!
@@ -305,28 +327,32 @@ void AsservInsa::execute()
 		updateMotor(&motors[ALPHA_DELTA][ALPHA_MOTOR], dAlpha);
 		updateMotor(&motors[ALPHA_DELTA][DELTA_MOTOR], dDelta);
 
-		//TODO accéder au robot.svg pour utiliser un symbol ???
 		x_mm = p.x * 1000.0;
 		y_mm = p.y * 1000.0;
 		angle_rad = p.theta;
-		loggerSvg().info() << "<circle cx=\""
-				<< x_mm
-				<< "\" cy=\""
-				<< -y_mm
-				<< "\" r=\"1\" fill=\"blue\" />"
-				<< logs::end;
-		delta_y = 50.0 * sin(angle_rad);
-		delta_x = 50.0 * cos(angle_rad);
-		loggerSvg().info() << "<line x1=\""
-				<< x_mm
-				<< "\" y1=\""
-				<< -y_mm
-				<< "\" x2=\""
-				<< x_mm + delta_x
-				<< "\" y2=\""
-				<< -y_mm - delta_y
-				<< "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
-				<< logs::end;
+		robot_->svgw().writePosition(x_mm, y_mm, angle_rad, "bot-pos");
+
+		/*
+
+		 loggerSvg().info() << "<circle cx=\""
+		 << x_mm
+		 << "\" cy=\""
+		 << -y_mm
+		 << "\" r=\"1\" fill=\"blue\" />"
+		 << logs::end;
+		 delta_y = 50.0 * sin(angle_rad);
+		 delta_x = 50.0 * cos(angle_rad);
+		 loggerSvg().info() << "<line x1=\""
+		 << x_mm
+		 << "\" y1=\""
+		 << -y_mm
+		 << "\" x2=\""
+		 << x_mm + delta_x
+		 << "\" y2=\""
+		 << -y_mm - delta_y
+		 << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+		 << logs::end;
+		 */
 
 		float dSpeed0 = 0;
 		float dSpeed1 = 0;
@@ -390,25 +416,24 @@ void AsservInsa::execute()
 			}
 
 			//compute pwm for first motor
-//			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-//					(float) ord0,
-//					(float) motors[motionCommand.mcType][0].lastPos,
-//					dSpeed0);
-//			//compute pwm for second motor
-//			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-//					(float) ord1,
-//					(float) motors[motionCommand.mcType][1].lastPos,
-//					dSpeed1);
-
-			//RCVA only for speed ? not position ?
-			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
-					(float) (ord0 - motors[motionCommand.mcType][0].lastPos),
+			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
+					(float) ord0,
+					(float) motors[motionCommand.mcType][0].lastPos,
 					dSpeed0);
-
-			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
-					(float) (ord1 - motors[motionCommand.mcType][1].lastPos),
+			//compute pwm for second motor
+			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
+					(float) ord1,
+					(float) motors[motionCommand.mcType][1].lastPos,
 					dSpeed1);
 
+			//RCVA only for speed ? not position ?
+//			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
+//					(float) (ord0 - motors[motionCommand.mcType][0].lastPos),
+//					dSpeed0);
+//
+//			pwm1 = pid_ComputeRcva(motors[motionCommand.mcType][1].PIDSys,
+//					(float) (ord1 - motors[motionCommand.mcType][1].lastPos),
+//					dSpeed1);
 
 			//output pwm to motors
 			if (motionCommand.mcType == LEFT_RIGHT)
@@ -425,11 +450,25 @@ void AsservInsa::execute()
 			{
 				// printf("motion.c : ALPHA_DELTA mode, pid result : %d %d \n", pwm0, pwm1);
 				pwm0b = pwm1 - pwm0;
+
+				//--------------------- patch du chaff inertie
+//				float inertie0 = dSpeed1 * dSpeed1;
+//				float temp0 = (6000000 - inertie0); // entre 5 997 500 et 3 750 000
+//				float add0 = temp0 / 800000;
+//				pwm0b += add0;
+				//---------------------
+
 				BOUND_INT(pwm0b, maxPwmValue_);
-
 				pwm1b = pwm1 + pwm0;
-				BOUND_INT(pwm1b, maxPwmValue_);
 
+				//---------------------patch du chaff inertie
+//				float inertie = dSpeed1 * dSpeed1;
+//				float temp = (6000000 - inertie); // entre 5 997 500 et 3 750 000
+//				float add = temp / 800000;
+//				pwm1b += add;
+				//---------------------
+
+				BOUND_INT(pwm1b, maxPwmValue_);
 				setPWM(pwm0b, pwm1b);
 
 			}
@@ -586,8 +625,11 @@ void AsservInsa::execute()
 			break;
 		};
 
-		long stopTime = currentTimeInMillis();
-		long duration = stopTime - currentTime;
+//		long stopTime = currentTimeInMillis();
+//		long duration = stopTime - currentTime;
+
+		long long stopTime = currentTimeInMicros();
+		long long duration = stopTime - currentTime;
 
 //		logger().debug() << "loopDelayInMillis= "
 //				<< loopDelayInMillis
@@ -599,9 +641,15 @@ void AsservInsa::execute()
 //				<< duration
 //				<< logs::end;
 
-		if (duration < loopDelayInMillis && duration >= 0)
+//		if (duration < loopDelayInMillis && duration >= 0)
+//		{
+//			int t = 1000 * (loopDelayInMillis - duration);
+//			usleep(t);
+//		}
+
+		if ((duration < (loopDelayInMillis * 1000)) && duration >= 0)
 		{
-			int t = 1000 * (loopDelayInMillis - duration);
+			int t = ((loopDelayInMillis * 1000) - duration);
 			usleep(t);
 		}
 	}
@@ -615,14 +663,6 @@ void AsservInsa::execute()
 	 #endif*/
 //exit(2);
 	//return 0;
-}
-
-void AsservInsa::activate(bool a)
-{
-	activate_ = a;
-	if (!a)
-		setPWM(0, 0);
-
 }
 
 void AsservInsa::motion_StopTimer()
@@ -639,12 +679,20 @@ void AsservInsa::initPWM()
 
 void AsservInsa::setPWM(int16 pwmLeft, int16 pwmRight)
 {
-	//logger().debug() << "setPWM left=" << pwmLeft << " right=" << pwmRight << logs::end;
 
-	if (base_ != NULL)
+	//logger().error() << "setPWM left=" << pwmLeft << " right=" << pwmRight << logs::end;
+//	double deltL = pwmLeft - oldPwmLeft;
+//	double deltR = pwmRight - oldPwmRight;
+//	pwmLeft += deltL / 15.0f;
+//	pwmRight += deltR / 15.0f;
+//	oldPwmLeft = pwmLeft;
+//	oldPwmRight = pwmRight;
+
+	if (robot_ != NULL)
 	{
-		base_->motors().runMotorLeft(pwmLeft, 0);
-		base_->motors().runMotorRight(pwmRight, 0);
+		robot_->asserv_default->base()->motors().runMotorLeft(pwmLeft, 0);
+		robot_->asserv_default->base()->motors().runMotorRight(pwmRight, 0);
+
 	}
 	else
 	{

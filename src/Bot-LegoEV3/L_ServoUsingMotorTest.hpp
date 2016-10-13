@@ -30,7 +30,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_ServoUsingMotorTest() :
-		FunctionalTest("L_ServoUsingMotorTest", "motor as servo +/-")
+		FunctionalTest("ServoUsingMotor", "Motor as servo +/-")
 	{
 	}
 

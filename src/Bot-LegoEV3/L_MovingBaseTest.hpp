@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_MovingBaseTest()
-			: FunctionalTest("MovingBaseTest", "test de la base roulante")
+			: FunctionalTest("MovingBase", "base roulante")
 	{
 	}
 
@@ -40,6 +40,8 @@ public:
 	 * \brief Execute le test.
 	 */
 	virtual void run(int argc, char** argv);
+
+	virtual void configureConsoleArgs(int argc, char** argv);
 
 };
 

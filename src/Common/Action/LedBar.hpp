@@ -1,11 +1,12 @@
 #ifndef LEDBAR_HPP_
 #define LEDBAR_HPP_
 
+#include <sys/types.h>
 #include <unistd.h>
 #include <string>
 
+#include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
-#include "../../Thread/Mutex.hpp"
 #include "../Action.Driver/ALedDriver.hpp"
 #include "../Utils/Chronometer.hpp"
 #include "AActionsElement.hpp"

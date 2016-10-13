@@ -24,3 +24,8 @@ int SwitchDriver::pressed()
 
  return 0;
 }
+
+int SwitchDriver::pressed(unsigned char pin)
+{
+	return 0;
+}

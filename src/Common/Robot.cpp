@@ -26,11 +26,27 @@ using namespace std;
 Robot::Robot()
 		: myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "_/") // use "_" instead of "-" for arguments
 {
-	actions_default = new Actions();
-	asserv_default = new Asserv("RobotDefaultAsserv");
+//	actions_default = new Actions();
+//	asserv_default = new Asserv("RobotDefaultAsserv", this);
+
+	actions_default = NULL;
+	asserv_default = NULL;
 
 	configureDefaultConsoleArgs();
 }
+
+
+void Robot::svgPrintPosition()
+{
+	if (asserv_default != NULL)
+	this->svgw().writePosition(this->asserv_default->pos_getX_mm(),
+			this->asserv_default->pos_getY_mm(),
+			this->asserv_default->pos_getTheta(),
+			"bot");
+	else
+		logger().error() << "asserv_default is NULL !" << logs::end;
+}
+
 
 void Robot::configureDefaultConsoleArgs()
 {
@@ -51,7 +67,7 @@ void Robot::configureDefaultConsoleArgs()
 
 	{
 		Arguments::Option cOpt('c', "");
-		cOpt.addArgument("color", "color of robot green/violet", "violet");
+		cOpt.addArgument("color", "color of robot [g]reen/[v]iolet", "violet");
 		cArgs_.addOption(cOpt);
 	}
 }
@@ -188,15 +204,19 @@ void Robot::begin(int argc, char** argv)
 
 	logger().debug() << "type = " << cArgs_["type"] << logs::end;
 
-	logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"]
+	logger().debug() << "Option c set "
+			<< (int) cArgs_['c']
+			<< ", color = "
+			<< " "
+			<< cArgs_['c']["color"]
 			<< logs::end;
 
 	if (cArgs_['c'])
 	{
 		color = cArgs_['c']["color"];
-		if (color == "green")
+		if (color == "green" || color == "g")
 			this->setMyColor(PMXGREEN);
-		else if (color == "red")
+		else if (color == "violet" || color == "v")
 			this->setMyColor(PMXVIOLET);
 		else
 		{
@@ -217,9 +237,14 @@ void Robot::begin(int argc, char** argv)
 	if (cArgs_['s'])
 	{
 		logger().debug() << "skip = " << (int) cArgs_['s'] << logs::end;
-	}
+		data_.skipSetup(true);
+	}else
+		data_.skipSetup(false);
 
-	if (cArgs_["type"] != "m" && cArgs_["type"] != "t" && cArgs_["type"] != "T" && cArgs_["type"] != "M")
+	if (cArgs_["type"] != "m"
+			&& cArgs_["type"] != "t"
+			&& cArgs_["type"] != "T"
+			&& cArgs_["type"] != "M")
 	{
 		select = cmanager_.displayMenuFirstArgu();
 		if (select == "-")
@@ -249,7 +274,10 @@ void Robot::begin(int argc, char** argv)
 
 void Robot::stop()
 {
-	this->asserv_default->stopMotionTimerAndOdo();
+	if (asserv_default != NULL)
+		this->asserv_default->stopMotionTimerAndOdo();
+	else
+		logger().error() << "asserv_default is NULL ! " << logs::end;
 
 }
 

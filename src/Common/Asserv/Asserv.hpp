@@ -6,6 +6,8 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../Asserv.Insa/AsservInsa.hpp"
 
+class Robot;
+
 /*!
  * Asservissement of the robot.It contains default elements.
  */
@@ -27,6 +29,9 @@ protected:
 	 */
 	MovingBase * pMovingBase_;
 
+	/*!
+	 * \brief asservissement utilisé
+	 */
 	AsservInsa * pAsservInsa_;
 
 	bool ignoreRearCollision_;
@@ -36,13 +41,15 @@ protected:
 	//1=>RIGHT with coordinate 3000-x, y , -angle
 	bool matchColorPosition_;
 
+	Robot * probot_; //reference du parent
+
 public:
 
 	/*!
 	 * \brief Constructor.
 	 *
 	 */
-	Asserv(std::string botId);
+	Asserv(std::string botId, Robot * robot);
 
 	/*!
 	 * \brief Destructor.
@@ -79,30 +86,31 @@ public:
 	TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
 	TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
-
-
 	void findPidAD(float degrees, int mm, int sec);
 	void findPidLR(float posl, int posr, int sec);
 
 	void configureAlphaPID(float Ap, float Ai, float Ad);
 	void configureDeltaPID(float Dp, float Di, float Dd);
 
+	/*!
+	 * Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot
+	 */
 	void setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor);
-
 
 	void setMatchColorPosition(bool c)
 	{
 		matchColorPosition_ = c;
 	}
-	float getRelativeX(float x)
+
+	inline float getRelativeX(float x, float width = 0.0)
 	{
 		if (matchColorPosition_ != 0)
 		{
-			return 3000 - x;
+			return 3000 - x - width;
 		}
 		return x;
 	}
-	float getRelativeAngle(float degrees)
+	inline float getRelativeAngle(float degrees)
 	{
 		if (matchColorPosition_ != 0)
 		{
@@ -122,6 +130,12 @@ public:
 	void setAccel(float acc);
 	void setDecel(float dec);
 
+	void setFrontCollision();
+	void setRearCollision();
+
+	void ignoreFrontCollision(bool ignore);
+
+	void ignoreRearCollision(bool ignore);
 };
 
 #endif

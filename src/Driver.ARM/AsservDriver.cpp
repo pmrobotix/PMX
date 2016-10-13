@@ -2,19 +2,30 @@
 
 #include "AsservDriver.hpp"
 
+#include <string>
+
+#include "../Log/Logger.hpp"
+
 using namespace std;
 
-AAsservDriver * AAsservDriver::create()
+AAsservDriver * AAsservDriver::create(std::string)
 {
 	static AsservDriver *instance = new AsservDriver();
 	return instance;
 }
 
 AsservDriver::AsservDriver()
+		: extRightEncoder_('D', 31), extLeftEncoder_('B', 17)
 {
 	md25_.begin();
 	float volts = md25_.getBatteryVolts();
-	logger().error() << "volts=" << volts << logs::end;
+	logger().info() << "volts=" << volts << logs::end;
+
+	//encoderLeft_(*this, 'B', 17), encoderRight_(*this, 'D', 31),
+/*
+	unsigned char status = extRightEncoder_.readStatus();
+	logger().error() << "status spi=" << reinterpret_cast<void*>(status) << logs::end;
+	extRightEncoder_.clearCounter();*/
 }
 
 AsservDriver::~AsservDriver()
@@ -33,21 +44,26 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
+	power = power + 128;
 	md25_.setSpeedReg(power, MD25_SPEED1_REG);
 }
 
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
+	power = power + 128;
 	md25_.setSpeedReg(power, MD25_SPEED2_REG);
 }
 
 long AsservDriver::getLeftExternalEncoder()
 {
-	return 0; //TODO getLeftExternalEncoder
+	return extLeftEncoder_.readCounter();
 }
 long AsservDriver::getRightExternalEncoder()
 {
-	return 0; //TODO getRightExternalEncoder
+	long r = extRightEncoder_.readCounter();
+	logger().error() << " r=" << r << logs::end;
+
+	return r;
 }
 
 long AsservDriver::getLeftInternalEncoder()

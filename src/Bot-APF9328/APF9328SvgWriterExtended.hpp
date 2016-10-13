@@ -3,14 +3,7 @@
 
 #include <string>
 
-#include "../Common/Asserv/MovingBase.hpp"
 #include "../Log/SvgWriter.hpp"
-
-enum APF9328SvgSymbol
-{
-	APF9328_SVG_POS_ROBOT,
-	APF9328_SVG_POS_FOLLOWING
-};
 
 class APF9328SvgWriterExtended: public SvgWriter
 {
@@ -24,8 +17,21 @@ public:
 	{
 	}
 
-	void writePosition(double x, double y, double angle, APF9328SvgSymbol symbol);
+	void writePosition(double x_mm, double y_mm, double angle_rad, std::string symbol);
 
+	void writeZone(const char* name,
+			float minX,
+			float minY,
+			float width,
+			float height,
+			float startX,
+			float startY,
+			float startAngle_rad);
+
+	void writeIaPath(const char* zone1Name,
+			const char* zone2Name,
+			float x_mm,
+			float y_mm);
 };
 
 #endif

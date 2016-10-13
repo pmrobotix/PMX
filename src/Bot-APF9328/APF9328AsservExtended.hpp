@@ -10,8 +10,8 @@ class APF9328AsservExtended: public Asserv
 private:
 
 public:
-	APF9328AsservExtended(std::string botId)
-			: Asserv(botId) //on appelle le constructeur pere
+	APF9328AsservExtended(std::string botId, Robot * robot)
+			: Asserv(botId, robot) //on appelle le constructeur pere
 	{
 
 	}

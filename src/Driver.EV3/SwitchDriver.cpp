@@ -16,7 +16,7 @@ ASwitchDriver * ASwitchDriver::create()
 
 SwitchDriver::SwitchDriver()
 {
-	touch_ = touch_sensor(INPUT_1);
+	touch_ = touch_sensor(INPUT_AUTO);
 
 	if (touch_.connected())
 	{
@@ -42,4 +42,9 @@ SwitchDriver::~SwitchDriver()
 int SwitchDriver::pressed()
 {
 	return touch_.value();
+}
+
+int SwitchDriver::pressed(unsigned char pin)
+{
+	return 0;
 }

@@ -30,7 +30,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_SoundBarTest() :
-		FunctionalTest("SoundBarTest", "Play sounds")
+		FunctionalTest("SoundBar", "Play sounds")
 	{
 	}
 

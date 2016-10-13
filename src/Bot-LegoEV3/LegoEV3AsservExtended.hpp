@@ -11,10 +11,9 @@ class LegoEV3AsservExtended: public Asserv
 private:
 
 public:
-	LegoEV3AsservExtended(std::string botId)
-			: Asserv(botId) //on appelle le constructeur pere
+	LegoEV3AsservExtended(std::string botId, Robot * robot)
+			: Asserv(botId, robot) //on appelle le constructeur pere
 	{
-		//pMovingBase_->setMovingBase(&movingBase_); //surcharge
 	}
 
 	~LegoEV3AsservExtended()

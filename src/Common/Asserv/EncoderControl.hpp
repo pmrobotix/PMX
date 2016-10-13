@@ -26,7 +26,7 @@ public:
 	/*!
 	 * \brief Constructor.
 	 */
-	EncoderControl(); //Asserv & asserv
+	EncoderControl(std::string botid); //Asserv & asserv
 
 	/*!
 	 * \brief Destructor.

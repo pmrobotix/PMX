@@ -10,7 +10,7 @@
 using namespace std;
 using namespace ev3dev;
 
-AAsservDriver * AAsservDriver::create()
+AAsservDriver * AAsservDriver::create(std::string )
 {
 	static AsservDriver *instance = new AsservDriver();
 	return instance;
@@ -34,10 +34,9 @@ AsservDriver::AsservDriver()
 	{
 		_motor_right = OUTPUT_A;
 		logger().info() << "EV3 Motor (RIGHT) - " << mright.address()
-				<< " connected (CountPerRot:" << mright.count_per_rot()
-				<< " DriverName:" << mright.driver_name() << " Polarity:"
-				<< mright.polarity() << " EncoderPolarity:"
-				<< mright.encoder_polarity() << ")" << logs::end;
+				<< " connected ;CPR=" << mright.count_per_rot()
+				<< " Name=" << mright.driver_name() << " Pol="
+				<< mright.polarity() << logs::end;
 	}
 	else
 	{
@@ -51,10 +50,9 @@ AsservDriver::AsservDriver()
 	{
 		_motor_left = OUTPUT_D;
 		logger().info() << "EV3 Motor (LEFT) - " << mleft.address()
-				<< " connected (CountPerRot:" << mleft.count_per_rot()
-				<< " DriverName:" << mleft.driver_name() << " Polarity:"
-				<< mleft.polarity() << " EncoderPolarity:"
-				<< mleft.encoder_polarity() << ")" << logs::end;
+				<< " connected ;CPR=" << mleft.count_per_rot()
+				<< " Name=" << mleft.driver_name() << " Pol="
+				<< mleft.polarity() << logs::end;
 
 	}
 	else
@@ -85,6 +83,7 @@ AsservDriver::AsservDriver()
 
 void AsservDriver::setMotorLeftPosition(int power, long ticks)
 {
+	power = -power;
 	if (_motor_left.connected())
 	{
 		if (_motor_left.speed_regulation_enabled() == "on") //speed_sp
@@ -103,6 +102,7 @@ void AsservDriver::setMotorLeftPosition(int power, long ticks)
 
 void AsservDriver::setMotorRightPosition(int power, long ticks)
 {
+	power = -power;
 	if (_motor_right.connected())
 	{
 		if (_motor_right.speed_regulation_enabled() == "on") //speed_sp
@@ -117,30 +117,13 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 			_motor_right.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
 		}
 	}
-	/*
-	 if (connectedRight_)
-	 {
-	 enableRightHardRegulation(true);
-	 _motor_right.set_stop_mode(motor::stop_mode_brake);
-	 _motor_right.set_position_mode(motor::position_mode_absolute);
-	 _motor_right.set_run_mode(motor::run_mode_position);
-
-	 _motor_right.set_position_sp(ticks);
-	 _motor_right.set_pulses_per_second_sp(power);
-	 _motor_right.set_ramp_up_sp(0);
-	 _motor_right.set_ramp_down_sp(0);
-	 _motor_right.start();
-	 }
-	 else
-	 {
-	 logger().error() << "Right motor not connected !" << logs::end;
-	 }*/
 }
 
 //regulation enabled  => power in ticks per second -860 / +860
 //regulation disabled => power in percentage -100 / +100
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
+	power = -power;
 	if (_motor_left.connected())
 	{
 		//with time
@@ -202,6 +185,7 @@ int AsservDriver::limit(int power, int max)
 
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
+	power = -power;
 	if (_motor_right.connected())
 	{
 		//with time
@@ -258,7 +242,7 @@ long AsservDriver::getLeftInternalEncoder()
 	if (_motor_left.connected())
 	{
 		//+/- 2,147,483,648
-		return _motor_left.position();
+		return -1 * _motor_left.position();
 	}
 	else
 		return 0;
@@ -268,7 +252,7 @@ long AsservDriver::getRightInternalEncoder()
 {
 	if (_motor_right.connected())
 	{
-		return _motor_right.position();
+		return -1 * _motor_right.position();
 	}
 	else
 		return 0;

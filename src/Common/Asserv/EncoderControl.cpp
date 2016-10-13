@@ -5,9 +5,9 @@
 
 using namespace std;
 
-EncoderControl::EncoderControl()//Asserv & asserv) :	AAsservElement(asserv)
+EncoderControl::EncoderControl(std::string botid)//Asserv & asserv) :	AAsservElement(asserv)
 {
-	asservdriver = AAsservDriver::create();
+	asservdriver = AAsservDriver::create(botid);
 }
 
 EncoderControl::~EncoderControl()

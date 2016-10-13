@@ -7,6 +7,8 @@
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/FunnyAction.hpp"
 #include "../Common/Action/LedBar.hpp"
+#include "../Common/Action/Sensors.hpp"
+#include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action/SoundBar.hpp"
 #include "../Common/Action/Tirette.hpp"
 
@@ -38,14 +40,29 @@ private:
 	Tirette tirette_;
 
 	/*!
+	 * \brief capteurs IR/US.
+	 */
+	Sensors sensors_;
+
+	/*!
 	 * \brief Tirette.
 	 */
 	FunnyAction parasol_;
 
+	/*!
+	 * \brief Servo Objects.
+	 */
+	ServoObjectsSystem servoObjects_;
+
 public:
-	LegoEV3ActionsExtended(std::string botId) :
-	ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(
-			*this), parasol_(*this)
+	LegoEV3ActionsExtended(std::string botId, Robot * robot)
+			: ledbar_(botId, *this, 2),
+					buttonbar_(*this),
+					soundbar_(*this),
+					tirette_(*this),
+					sensors_(*this, robot),
+					parasol_(*this),
+					servoObjects_(*this)
 	{
 	}
 
@@ -91,6 +108,15 @@ public:
 	}
 
 	/*!
+	 * \brief Cette methode retourne l'objet sensors.
+	 * \return sensors_.
+	 */
+	Sensors & sensors()
+	{
+		return sensors_;
+	}
+
+	/*!
 	 * \brief Cette methode retourne l'objet FunnyAction.
 	 * \return parasol_.
 	 */
@@ -99,12 +125,22 @@ public:
 		return parasol_;
 	}
 
+	ServoObjectsSystem & servoObjects()
+	{
+		return servoObjects_;
+	}
+
 	void stop()
 	{
+		servoObjects_.leftRelease();
+		servoObjects_.rightRelease();
+		servoObjects_.centreRelease();
+
 		ledbar_.resetAll();
 		ledbar_.stop();
 		parasol_.release();
 		soundbar_.stop();
+
 		Actions::stop(); //stop devices and wait manager to finish
 	}
 

@@ -5,7 +5,9 @@
 #include "../Log/LoggerFactory.hpp"
 #include "APF9328ActionsExtended.hpp"
 #include "APF9328AsservExtended.hpp"
-#include "APF9328SvgWriterExtended.hpp"
+#include "APF9328IAExtended.hpp"
+
+class APF9328SvgWriterExtended;
 
 class APF9328RobotExtended: public Robot
 {
@@ -17,27 +19,35 @@ public:
 		return instance;
 	}
 
+	static inline const logs::Logger & logger()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("APF9328RobotExtended");
+		return instance;
+	}
+
 	~APF9328RobotExtended()
 	{
 	}
 
 	inline APF9328ActionsExtended& actions()
 	{
-		APF9328ActionsExtended& r_actions = *actions_;
+		APF9328ActionsExtended& r_actions = *p_actions_;
 		return r_actions;
 	}
 
 	inline APF9328AsservExtended& asserv()
 	{
-		APF9328AsservExtended& r_asserv = *asserv_;
+		APF9328AsservExtended& r_asserv = *p_asserv_;
 		return r_asserv;
 	}
 
-	inline APF9328SvgWriterExtended& svg()
+	inline APF9328IAExtended& ia()
 	{
-		APF9328SvgWriterExtended& r_svg = *psvg_;
-		return r_svg;
+		APF9328IAExtended& r_ia = *p_ia_;
+		return r_ia;
 	}
+
+	Data* sharedData;
 
 	void begin(int argc, char** argv);
 
@@ -45,17 +55,13 @@ public:
 
 private:
 
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("APF9328RobotExtended");
-		return instance;
-	}
+	APF9328ActionsExtended* p_actions_;
 
-	APF9328ActionsExtended* actions_;
+	APF9328AsservExtended * p_asserv_;
 
-	APF9328AsservExtended * asserv_;
+	APF9328IAExtended * p_ia_;
 
-	APF9328SvgWriterExtended * psvg_;
+	APF9328SvgWriterExtended * p_svg_;
 
 	APF9328RobotExtended();
 };

@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_Asserv_FindPIDTest()
-			: FunctionalTest("FindPIDTest", "trouver les PID")
+			: FunctionalTest("Asserv_FindPID", "find param PID")
 	{
 	}
 

@@ -2,6 +2,8 @@
 
 #include "ServoUsingMotorDriver.hpp"
 
+#include <string>
+
 #include "../Log/Logger.hpp"
 
 using namespace std;
@@ -13,8 +15,8 @@ AServoUsingMotorDriver * AServoUsingMotorDriver::create()
 	return instance;
 }
 
-ServoUsingMotorDriver::ServoUsingMotorDriver() :
-		connected_(0)
+ServoUsingMotorDriver::ServoUsingMotorDriver()
+		: connected_(0)
 {
 	logger().debug() << "ServoDeviceDriver()" << logs::end;
 
@@ -22,20 +24,27 @@ ServoUsingMotorDriver::ServoUsingMotorDriver() :
 	if (m.connected())
 	{
 		_servo_device = OUTPUT_C;
-		logger().info() << "EV3 Motor as SERVO - " << m.address()
-				<< " connected (CountPerRot:" << m.count_per_rot()
-				<< " DriverName:" << m.driver_name() << " Polarity:"
-				<< m.polarity() << " EncoderPolarity:" << m.encoder_polarity()
-				<< ")" << logs::end;
+		logger().info() << "EV3 Motor as SERVO - "
+				<< m.address()
+				<< " connected (CountPerRot:"
+				<< m.count_per_rot()
+				<< " DriverName:"
+				<< m.driver_name()
+				<< " Polarity:"
+				<< m.polarity()
+				<< " EncoderPolarity:"
+				<< m.encoder_polarity()
+				<< ")"
+				<< logs::end;
+		connected_ = 1;
 	}
 	else
 	{
 		_servo_device = OUTPUT_C;
-		logger().error() << "ERROR OUTPUT_C - Motor as SERVO "
-				<< "not connected !!" << logs::end;
+		logger().error() << "ERROR OUTPUT_C - Motor as SERVO " << "not connected !!" << logs::end;
 	}
 
-	if (connected_ == 1) //if both motors are connected, then initialize each motor.
+	if (connected_ == 1)
 	{
 		_servo_device.reset();
 		_servo_device.set_stop_command(motor::stop_command_brake);
@@ -43,8 +52,7 @@ ServoUsingMotorDriver::ServoUsingMotorDriver() :
 	}
 }
 
-void ServoUsingMotorDriver::setMotorPosition(int power, int ticks,
-		int ramptimems)
+void ServoUsingMotorDriver::setMotorPosition(int power, int ticks, int ramptimems)
 {
 	if (_servo_device.connected())
 	{
@@ -52,16 +60,18 @@ void ServoUsingMotorDriver::setMotorPosition(int power, int ticks,
 		_servo_device.set_ramp_up_sp(ramptimems);
 		if (_servo_device.speed_regulation_enabled() == "on") //speed_sp
 		{
-			limit(power, MAXVALUE_speed_sp); //real MAX speed of EV3
+			power = limit(power, MAXVALUE_speed_sp); //real MAX speed of EV3
 			_servo_device.set_position_sp(ticks).set_speed_sp(power).run_to_rel_pos();
 		}
 		else if (_servo_device.speed_regulation_enabled() == "off") //duty_cycle_sp
 		{
-			limit(power, MAXVALUE_duty_cycle_sp);
+			power = limit(power, MAXVALUE_duty_cycle_sp);
 			_servo_device.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
 		}
+		logger().error() << "ticks = " << ticks << logs::end;
 	}
 }
+
 
 long ServoUsingMotorDriver::getInternalEncoder()
 {
@@ -114,14 +124,22 @@ int ServoUsingMotorDriver::limit(int power, int max)
 {
 	if ((power < -max))
 	{
-		logger().info() << "ERROR Motor power " << power << " exceeded minimum "
-				<< -max << "!!" << logs::end;
+		logger().error() << "ERROR Motor power "
+				<< power
+				<< " exceeded minimum "
+				<< -max
+				<< "!!"
+				<< logs::end;
 		power = -max;
 	}
 	else if (power > max)
 	{
-		logger().info() << "ERROR Motor power " << power << "exceeded maximum "
-				<< max << "!!" << logs::end;
+		logger().error() << "ERROR Motor power "
+				<< power
+				<< "exceeded maximum "
+				<< max
+				<< "!!"
+				<< logs::end;
 		power = max;
 	}
 	return power;

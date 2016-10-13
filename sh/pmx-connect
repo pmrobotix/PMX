@@ -11,12 +11,7 @@ view_doc()
 
 all()
 {
-	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/root/.
-}
-
-conf()
-{
-	scp "../Bot_ArmadeusAPF9328_ARM/Release/*.conf.txt" root@$IP:/pmx/
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/pmx/.
 }
 
 tsh()
@@ -27,30 +22,29 @@ tsh()
 
 pmx()
 {
-    #ssh root@$IP "killall pmx"
-	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" root@$IP:/root/.
+    ssh root@$IP "killall Bot_ArmadeusAPF9328_ARM"
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" root@$IP:/pmx/.
 }
 
 driver()
 {
-	scp "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/root/.
+	scp "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/pmx/.
 }
-
 
 recupcsvhost()
 {
     #recup sur le PC Host
-	scp root@$IP:/pmx/*.* /mnt/hgfs/pmx_xls/
+	scp root@$IP:/pmx/*.* /mnt/hgfs/pmx_xls/.
 }
 
 recupcsv()
 {
-        scp root@$IP:/pmx/*.* /home/pmx/Arecup/.
+        scp root@$IP:/pmx/*.csv /home/pmx/recup/.
 }
 
 recupsvg()
 {
-        scp root@$IP:/pmx/*.svg /home/pmx/workspace/ARM/SVG/.
+        scp root@$IP:/pmx/*.svg /home/pmx/recup/.
 }
 
 connect()
@@ -65,10 +59,6 @@ case "$1" in
 
 	all)
 		all
-	;;
-
-	conf)
-		conf
 	;;
 
 	tsh)
@@ -100,7 +90,7 @@ case "$1" in
 	;;
 
 	*)
-		echo "Usage: $0 {connect|pmx|driver|all|conf|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		echo "Usage: $0 {connect|pmx|driver|alltsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
 		exit 1
 	;;
 esac

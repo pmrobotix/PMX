@@ -24,8 +24,8 @@ void L_ServoUsingMotorTest::configureConsoleArgs(int argc, char** argv) //surcha
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	//match color
-	robot.getArgs().addArgument("step", "number for steps [10]", "10");
+
+	robot.getArgs().addArgument("step", "number for steps [1]", "1");
 
 	//reparse arguments
 	robot.parseConsoleArgs(argc, argv);
@@ -47,7 +47,14 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
 
 	int pos = 0;
 	robot.actions().parasol().reset();
-	robot.actions().parasol().activate(pos);
+	//sleep(1);
+	robot.actions().parasol().activate(-20);
+	sleep(1);
+	robot.actions().parasol().activate(300);
+	sleep(6);
+	robot.actions().parasol().activate(-150);
+	sleep(1);
+	/*
 	ButtonTouch touch = BUTTON_NONE;
 
 	while (touch != BUTTON_BACK_KEY)
@@ -58,19 +65,21 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
 		{
 			pos += step;
 			logger().info() << "+" << step << " " << pos << logs::end;
-			robot.actions().parasol().activate(pos);
+			robot.actions().parasol().activate(step);
+			usleep(50000);
 		}
 
 		if (touch == BUTTON_DOWN_KEY)
 		{
 			pos -= step;
 			logger().info() << "-" << step << " " << pos << logs::end;
-			robot.actions().parasol().activate(pos);
+			robot.actions().parasol().activate(-step);
+			usleep(50000);
 		}
-
-		usleep(100000);
+		//robot.actions().parasol().activate(pos);
+		//usleep(10000);
 	}
-
+*/
 	robot.actions().parasol().release();
 
 	robot.stop();

@@ -26,17 +26,20 @@
 #include <stddef.h>
 
 #include "../../Log/Logger.hpp"
+#include "../Asserv/Asserv.hpp"
 #include "../Asserv/EncoderControl.hpp"
 #include "../Asserv/MovingBase.hpp"
+#include "../Robot.hpp"
 #include "AsservInsa.hpp"
 
 
 void AsservInsa::encoder_Init()
 {
-	if (base_ != NULL)
+	if (robot_ != NULL)
 	{
-		base_->extEncoders().reset();
-		base_->encoders().reset();
+
+		robot_->asserv_default->base()->extEncoders().reset();
+		robot_->asserv_default->base()->encoders().reset();
 		lastRight_ = 0;
 		lastLeft_ = 0;
 	}
@@ -56,25 +59,34 @@ void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, 
 {
 	//int32 left = 0;
 	//int32 right = 0;
-	if (base_ != NULL)
+
+//	if (robot_ != NULL)
+//	{
+//		robot_->asserv_default->base()->encoders().getLeftEncoder();
+//	}
+	if (robot_ != NULL)
 	{
 		//read encoder
 		if (useExternalEncoders_)
 		{
-			*left = base_->extEncoders().getLeftEncoder();
+			*left = robot_->asserv_default->base()->extEncoders().getLeftEncoder();
+			//*left = base_->extEncoders().getLeftEncoder();
 		}
 		else
 		{
-			*left = base_->encoders().getLeftEncoder();
+			*left = robot_->asserv_default->base()->encoders().getLeftEncoder();
+			//*left = base_->encoders().getLeftEncoder();
 		}
 
 		if (useExternalEncoders_)
 		{
-			*right = base_->extEncoders().getRightEncoder();
+			*right = robot_->asserv_default->base()->extEncoders().getRightEncoder();
+			//*right = base_->extEncoders().getRightEncoder();
 		}
 		else
 		{
-			*right = base_->encoders().getRightEncoder();
+			*right = robot_->asserv_default->base()->encoders().getRightEncoder();
+			//*right = base_->encoders().getRightEncoder();
 		}
 
 	}

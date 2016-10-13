@@ -4,12 +4,13 @@
 
 #include "MovingBase.hpp"
 
-Asserv::Asserv(std::string botId)
+Asserv::Asserv(std::string botId, Robot * robot)
 {
 	pMovingBase_ = new MovingBase(botId);
 
-	pAsservInsa_ = new AsservInsa();
-	pAsservInsa_->setMovingBase(pMovingBase_); //doit etre surchargé
+	probot_ = robot;
+
+	pAsservInsa_ = new AsservInsa(robot);
 
 	ignoreRearCollision_ = false;
 	ignoreFrontCollision_ = false;
@@ -26,7 +27,7 @@ AsservInsa * Asserv::insa()
 	return pAsservInsa_;
 }
 
-void Asserv::startMotionTimerAndOdo() //todo à surcharger
+void Asserv::startMotionTimerAndOdo() //doit etre surchargé
 {
 }
 
@@ -48,6 +49,8 @@ void Asserv::stopMotionTimerAndOdo()
 // if distance <0, move backward
 TRAJ_STATE Asserv::doLineAbs(float distance_mm)
 {
+	int f = ignoreFrontCollision_;
+	int r = ignoreRearCollision_;
 	if (distance_mm > 0)
 	{
 		ignoreRearCollision_ = true;
@@ -57,8 +60,13 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm)
 		ignoreFrontCollision_ = true;
 	}
 
+
 	float meters = distance_mm / 1000.0f;
-	return pAsservInsa_->motion_DoLine(meters);
+	TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
+
+	ignoreFrontCollision_ = f;
+	ignoreRearCollision_ = r;
+	return ts;
 }
 
 //permet de tourner sur un angle défini (inclus 2 ou 3 tours sur soi-même)
@@ -74,8 +82,9 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
 
 	TRAJ_STATE ts = pAsservInsa_->motion_DoRotate(radians);
 
-	ignoreRearCollision_ = f;
-	ignoreFrontCollision_ = r;
+	ignoreFrontCollision_ = f;
+	ignoreRearCollision_ = r;
+
 	return ts;
 }
 
@@ -96,8 +105,8 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 	float degrees = getRelativeAngle(thetaInDegree) - currentThetaInDegree;
 
 	// force it to be the positive remainder, so that 0 <= angle < 360
-		//degrees = (degrees + 360) % 360;
-		degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
+	//degrees = (degrees + 360) % 360;
+	degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
 
 	// reduce the angle
 	//reduction sur une plage de [0 à 360]
@@ -248,5 +257,34 @@ void Asserv::setAccel(float acc)
 void Asserv::setDecel(float dec)
 {
 	pAsservInsa_->motion_SetDefaultDecel(dec);
+}
+
+void Asserv::setFrontCollision()
+{
+	logger().error() << "setFrontCollision ignoreFrontCollision_="
+			<< ignoreFrontCollision_
+			<< logs::end;
+
+	if (!ignoreFrontCollision_)
+		pAsservInsa_->path_CollisionOnTrajectory();
+}
+
+void Asserv::setRearCollision()
+{
+	logger().error() << "setRearCollision ignoreRearCollision_="
+			<< ignoreRearCollision_
+			<< logs::end;
+	if (!ignoreRearCollision_)
+		pAsservInsa_->path_CollisionRearOnTrajectory();
+}
+
+void Asserv::ignoreFrontCollision(bool ignore)
+{
+	ignoreFrontCollision_ = ignore;
+}
+
+void Asserv::ignoreRearCollision(bool ignore)
+{
+	ignoreRearCollision_ = ignore;
 }
 

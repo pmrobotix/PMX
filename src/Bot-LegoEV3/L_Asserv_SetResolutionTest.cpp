@@ -22,6 +22,7 @@ void L_Asserv_SetResolutionTest::configureConsoleArgs(int argc, char** argv) //s
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
 	robot.getArgs().addArgument("distTicks", "Distance (ticks) for test");
+	robot.getArgs().addArgument("p", "power", "100");
 
 	//reparse arguments
 	robot.parseConsoleArgs(argc, argv);
@@ -42,17 +43,23 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 	float Ap = 0.0;
 	float Ad = 0.0;
 	int distTicks = 0;
+	int p = 0;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	Arguments args = robot.getArgs();
 	if (args["distTicks"] != "0")
 	{
 		distTicks = atoi(args["distTicks"].c_str());
-		logger().debug() << "Arg distTicks set "
+		logger().info() << "Arg distTicks set "
 				<< args["distTicks"]
 				<< ", distTicks = "
 				<< distTicks
 				<< logs::end;
+	}
+	if (args["p"] != "0")
+	{
+		p = atoi(args["p"].c_str());
+		logger().info() << "Arg p set " << args["p"] << ", p = " << p << " power" << logs::end;
 	}
 
 	robot.asserv().startMotionTimerAndOdo();
@@ -61,20 +68,15 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, false);
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
+	robot.svgw().writePosition(robot.asserv().pos_getX_mm(),
 			robot.asserv().pos_getY_mm(),
 			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+			"bot");
 
 	chrono.start();
 
-	//avancer d'un nombre de tick
-	//mesurer
-	//distT ticks = odo_mm mm
-	//donc setResolution (nb ticks pour 1m) = 1000* distT / odo_mm
-
-	robot.asserv().base()->motors().runMotorLeft(200, 0);
-	robot.asserv().base()->motors().runMotorRight(200, 0);
+	robot.asserv().base()->motors().runMotorLeft(p, 0);
+	robot.asserv().base()->motors().runMotorRight(p, 0);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();
@@ -82,6 +84,20 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 	{
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
+		logger().info() << "time= "
+				<< chrono.getElapsedTimeInMilliSec()
+				<< "ms ; left= "
+				<< left
+				<< " ; right= "
+				<< right
+				<< " x="
+				<< robot.asserv().pos_getX_mm()
+				<< " y="
+				<< robot.asserv().pos_getY_mm()
+				<< " a="
+				<< robot.asserv().pos_getThetaInDegree()
+				<< logs::end;
+		usleep(10000);
 	}
 	robot.asserv().base()->motors().stopMotors();
 
@@ -99,10 +115,7 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
 
-	robot.svg().writePosition(robot.asserv().pos_getX_mm(),
-			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			LEGOEV3_SVG_POS_ROBOT);
+	robot.svgPrintPosition();
 
 	float setR = 1000.0 * (float) distTicks;	// / robot.asserv().pos_getX_mm();
 

@@ -5,6 +5,7 @@
 
 #include "../../Log/LoggerFactory.hpp"
 #include "EncoderControl.hpp"
+#include "ExtEncoderControl.hpp"
 #include "MotorControl.hpp"
 
 //#include "AAsservElement.hpp"
@@ -42,7 +43,7 @@ private:
 	/*!
 	 * \brief Left and Right Motor external Encoders.
 	 */
-	EncoderControl extEncoders_;
+	ExtEncoderControl extEncoders_;
 
 	/*!
 	 * \brief Left and Right Motors.
@@ -78,7 +79,7 @@ public:
 	 * \brief Cette methode retourne l'objet EncoderControl.
 	 * \return extEncoders.
 	 */
-	inline EncoderControl & extEncoders()
+	inline ExtEncoderControl & extEncoders()
 	{
 		return extEncoders_;
 	}

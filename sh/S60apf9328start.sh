@@ -14,3 +14,20 @@ echo -ne "\x01" > /dev/gpio/PA4
 # { 240,  0x0F } = 375 000 kHz
 # { 256,  0x33 } = 400 000 kHz
 imxregs IFDR 0x33
+imxregs IFDR
+
+
+modprobe max1027
+export ADC_SPI="spi1.0"
+
+
+modprobe spidev
+
+modprobe servo
+
+i2cdetect -y -a 0
+
+
+cd /pmx
+
+./Bot_ArmadeusAPF9328_ARM m

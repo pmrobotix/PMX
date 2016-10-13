@@ -27,7 +27,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_ButtonBarTest() :
-		FunctionalTest("ButtonBarTest","Button test")
+		FunctionalTest("ButtonBar","test les buttons.")
 	{
 	}
 

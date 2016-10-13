@@ -55,24 +55,31 @@ public:
 
 	void endHeader();
 
-	void writeText(double x, double y, std::string text);
+	void writeText(double x_mm, double y_mm, std::string text);
 
-	void writeTextCustom(double x, double y, std::string text, std::string color, std::string fontsize);
+	void writeTextCustom(double x_mm,
+			double y_mm,
+			std::string text,
+			std::string color,
+			std::string fontsize);
 
-	/*
-	 //TODO deprecated
-	 void writePawn(double x, double y);
+	virtual void writePosition(double x_mm, double y_mm, double angle_rad, std::string symbol) = 0;
 
-	 void writeZone(const char* name,
-	 float minX,
-	 float minY,
-	 float width,
-	 float height,
-	 float startX,
-	 float startY,
-	 float startAngle);
+	virtual void writeZone(const char* name,
+			float minX_mm,
+			float minY_mm,
+			float width_mm,
+			float height_mm,
+			float startX_mm,
+			float startY_mm,
+			float startAngle_rad) = 0;
 
-	 void writeIaPath(const char* zone1Name, const char* zone2Name, float x, float y);*/
+	virtual void writeIaPath(const char* zone1Name,
+			const char* zone2Name,
+			float x_mm,
+			float y_mm) = 0;
+
+
 };
 
 #endif
