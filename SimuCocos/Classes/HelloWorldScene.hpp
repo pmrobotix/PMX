@@ -1,0 +1,31 @@
+#ifndef __HELLOWORLD_SCENE_H__
+#define __HELLOWORLD_SCENE_H__
+
+#include "cocos2d.h"
+#include "Log/LoggerFactory.hpp"
+
+class HelloWorld: public cocos2d::Layer {
+public:
+	/*!
+	 * \brief Retourne le \ref Logger associé à la classe \ref Robot.
+	 * public car utilisé dans Main.
+	 */
+	static inline const logs::Logger & logger() {
+		static const logs::Logger & instance = logs::LoggerFactory::logger(
+				"HelloWorld");
+		return instance;
+	}
+
+	static cocos2d::Scene* createScene();
+
+	virtual bool init();
+
+	// a selector callback
+	void menuCloseCallback(cocos2d::Ref* pSender);
+
+	// implement the "static create()" method manually
+	CREATE_FUNC(HelloWorld)
+	;
+};
+
+#endif // __HELLOWORLD_SCENE_H__

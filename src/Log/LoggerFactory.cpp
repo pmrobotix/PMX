@@ -5,10 +5,12 @@
 
 #include "LoggerFactory.hpp"
 
+
 #include <utility>
 
 #include "../Thread/Mutex.hpp"
 #include "Level.hpp"
+
 
 logs::LoggerFactory::LoggerFactory()
 : appenders_(), loggers_(), rootLogger_()
