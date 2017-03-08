@@ -21,14 +21,23 @@ class ITimerListener
 {
 public:
 
+	/*!
+	 * \brief Getter sur les infos permettant d'identifier le timer.
+	 */
 	virtual void onTimer(utils::Chronometer chrono) = 0;
 
+	/*!
+	 * \brief Getter sur les infos permettant d'identifier le timer.
+	 */
 	virtual void onTimerEnd(utils::Chronometer chrono) = 0;
 
 	/*!
 	 * \brief Getter sur les infos permettant d'identifier le timer.
 	 */
-	virtual std::string info() = 0;
+	virtual std::string info()
+	{
+		return name_;
+	}
 
 	inline int timeSpan()
 	{
@@ -68,7 +77,7 @@ protected:
 	{
 		timeSpan_ms_ = 0;
 		lasttime_ = 0;
-		name_ = "default";
+		name_ = "iTimerListener_default";
 	}
 };
 

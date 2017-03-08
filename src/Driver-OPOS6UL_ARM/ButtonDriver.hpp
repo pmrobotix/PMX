@@ -1,5 +1,5 @@
-#ifndef ARM_BUTTONDRIVER_HPP_
-#define ARM_BUTTONDRIVER_HPP_
+#ifndef OPOS_BUTTONDRIVER_HPP_
+#define OPOS_BUTTONDRIVER_HPP_
 
 #include "../Common/Action.Driver/AButtonDriver.hpp"
 #include "../Log/LoggerFactory.hpp"

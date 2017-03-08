@@ -57,7 +57,6 @@ public:
 
 };
 
-
 /*!
  * \brief Le timer associé
  *
@@ -82,7 +81,6 @@ private:
 
 	utils::Chronometer chrono_;
 
-
 public:
 
 	/*!
@@ -104,13 +102,9 @@ public:
 
 	virtual void onTimerEnd(utils::Chronometer chrono);
 
-	/*!
-	 * \brief Retourne la description du timer.
-	 */
-	virtual inline std::string info()
-	{
-		return name_;
-	}
+	virtual std::string info();
+
+
 };
 
 #endif

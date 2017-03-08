@@ -8,14 +8,6 @@
 #include <sched.h>
 #include <iostream>
 
-#ifndef EAGAIN
-#define EAGAIN 11
-#endif
-
-#ifndef EINVAL
-#define EINVAL 22
-#endif
-
 //You can't do it the way you've written it because C++ class member functions have a hidden
 //this parameter passed in.  pthread_create() has no idea what value of this to use.
 //this is the favorite way to handle a thread is to encapsulate it inside a C++ object
@@ -30,20 +22,17 @@ utils::Thread::entryPoint(void *pthis)
 	return NULL;
 }
 
-utils::Thread::Thread()
-		: threadId_(), state_(utils::CREATED)
+utils::Thread::Thread() :
+		threadId_(), state_(utils::CREATED)
 {
 }
 /*!
- * \brief rend la main. Cette fonction ne doit pas être utilisée.
- * \deprecated
+ * \brief Donne la main à un autre thread.
  */
 void utils::Thread::yield()
 {
-	//sched_yield(); //POSIX function instead of pthread_yield();
 	pthread_yield();
 }
-
 
 /*!
  * \brief Start thread
@@ -51,12 +40,10 @@ void utils::Thread::yield()
  */
 bool utils::Thread::start(std::string name)
 {
-	logger().debug() << "utils::Thread::start() with id=" << &threadId_ << " name=" << name << logs::end;
+	logger().debug() << "start() with id=" << &threadId_ << " name=" << name << logs::end;
 	this->setState(utils::STARTING);
 
 	int code = pthread_create(&threadId_, NULL, utils::Thread::entryPoint, (void *) this);
-	//if (pthread_create(&thread1, &thread1_attr, thread_func, NULL) != 0)
-
 	if (code == 0)
 	{
 		//log
@@ -71,7 +58,8 @@ bool utils::Thread::start(std::string name)
 	}
 	else
 	{
-		std::cout << "utils::Thread::start::NOT started:" << &threadId_ << " : " << " name=" << name << std::endl;
+		std::cout << "utils::Thread::start::NOT started:" << &threadId_ << " : " << " name=" << name
+				<< std::endl;
 		std::cout << "utils::Thread::start::pthread_create: NOK \n" << std::endl;
 		switch (code)
 		{
@@ -79,22 +67,22 @@ bool utils::Thread::start(std::string name)
 			// The  system lacked the necessary resources to create another
 			// thread, or the system-imposed limit on the total number of
 			// threads in a process {PTHREAD_THREADS_MAX} would be exceeded.
-			std::cout << "utils::Thread::start::ERROR:EAGAIN \n" << std::endl;
+			std::cout << "utils::Thread::start::ERROR: EAGAIN \n" << std::endl;
 			break;
 
 		case EINVAL:
 			// The value specified by attr is invalid.
-			std::cout << "utils::Thread::start::ERROR:EINVAL \n" << std::endl;
+			std::cout << "utils::Thread::start::ERROR: EINVAL \n" << std::endl;
 			break;
-			/*
-			 case EPERM :
-			 // The caller does not have appropriate permission to set the
-			 // required scheduling parameters or scheduling policy.
-			 std::cout << "Thread::ERROR:EAGAIN \n" << &threadId_ << std::endl;
-			 break;*/
+
+		case EPERM:
+			// The caller does not have appropriate permission to set the
+			// required scheduling parameters or scheduling policy.
+			std::cout << "utils::Thread::start::ERROR:: EPERM \n" << &threadId_ << std::endl;
+			break;
 
 		default:
-			std::cout << "utils::Thread::start::ERROR:default \n" << std::endl;
+			std::cout << "utils::Thread::start::ERROR: default \n" << std::endl;
 		}
 		return true;
 	}

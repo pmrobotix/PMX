@@ -1,5 +1,5 @@
-#ifndef SIMU_ASSERVDRIVER_HPP_
-#define SIMU_ASSERVDRIVER_HPP_
+#ifndef SIMUCOCOS_ASSERVDRIVER_HPP_
+#define SIMUCOCOS_ASSERVDRIVER_HPP_
 
 #include <unistd.h>
 #include <cstdio>
@@ -37,8 +37,8 @@ private:
 		return instance;
 	}
 
-	Mutex mutexL_;
-	Mutex mutexR_;
+	 utils::Mutex mutexL_;
+	 utils::Mutex mutexR_;
 
 	float simuTicksPerMeter_;
 	float simuMaxSpeed_;
@@ -91,7 +91,7 @@ public:
 	virtual long getLeftInternalEncoder();
 	virtual long getRightInternalEncoder();
 
-	virtual void resetEncoder();
+	virtual void resetEncoders();
 
 	virtual void stopMotorLeft();
 	virtual void stopMotorRight();

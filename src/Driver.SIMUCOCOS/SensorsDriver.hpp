@@ -1,5 +1,5 @@
-#ifndef SIMU_SENSORSDRIVER_HPP_
-#define SIMU_SENSORSDRIVER_HPP_
+#ifndef SIMUCOCOS_SENSORSDRIVER_HPP_
+#define SIMUCOCOS_SENSORSDRIVER_HPP_
 
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"

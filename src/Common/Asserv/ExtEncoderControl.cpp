@@ -27,5 +27,5 @@ long ExtEncoderControl::getRightEncoder()
 
 void ExtEncoderControl::reset()
 {
-	return asservdriver->resetEncoder(); //todo reset Extencoder
+	return asservdriver->resetEncoders(); //todo reset Extencoder
 }

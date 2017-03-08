@@ -1,5 +1,5 @@
-#ifndef SIMU_SOUNDDRIVER_HPP_
-#define SIMU_SOUNDDRIVER_HPP_
+#ifndef SIMUCOCOS_SOUNDDRIVER_HPP_
+#define SIMUCOCOS_SOUNDDRIVER_HPP_
 
 #include <string>
 #include <vector>

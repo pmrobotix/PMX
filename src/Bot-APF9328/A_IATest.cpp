@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "../Common/Asserv.Insa/AsservInsa.hpp"
+#include "../Asserv.Insa/AsservInsa.hpp"
 #include "../Common/IA/IAbyZone.hpp"
 #include "../Common/Position.hpp"
 #include "../Common/Robot.hpp"

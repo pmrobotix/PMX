@@ -1,10 +1,8 @@
-#ifndef ARM_ASSERVDRIVER_HPP_
-#define ARM_ASSERVDRIVER_HPP_
+#ifndef OPOS_ASSERVDRIVER_HPP_
+#define OPOS_ASSERVDRIVER_HPP_
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "ExtEncoder.hpp"
-#include "Md25.hpp"
 
 using namespace std;
 
@@ -21,10 +19,7 @@ private:
 		return instance;
 	}
 
-	Md25 md25_;
 
-	ExtEncoder extRightEncoder_;
-	ExtEncoder extLeftEncoder_;
 
 
 public:
@@ -41,7 +36,7 @@ public:
 	virtual long getLeftInternalEncoder();
 	virtual long getRightInternalEncoder();
 
-	virtual void resetEncoder();
+	virtual void resetEncoders();
 
 	virtual void stopMotorLeft();
 	virtual void stopMotorRight();

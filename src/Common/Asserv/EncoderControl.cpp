@@ -26,5 +26,5 @@ long EncoderControl::getRightEncoder()
 
 void EncoderControl::reset()
 {
-	return asservdriver->resetEncoder();
+	return asservdriver->resetEncoders();
 }

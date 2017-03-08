@@ -279,7 +279,7 @@ void AsservDriver::stopMotorRight()
 	logger().debug() << "stopMotorRight" << logs::end;
 }
 
-void AsservDriver::resetEncoder()
+void AsservDriver::resetEncoders()
 {
 	if (_motor_left.connected())
 	{

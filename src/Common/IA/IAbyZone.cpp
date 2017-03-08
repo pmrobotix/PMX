@@ -7,12 +7,13 @@
 
 #include "IAbyZone.hpp"
 
-#include <unistd.h>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <math.h>
 
 #include "../../Log/Logger.hpp"
+#include "../../Log/SvgWriter.hpp"
 #include "../Asserv/Asserv.hpp"
 #include "../Robot.hpp"
 

@@ -10,7 +10,7 @@
 
 HostI2cBus::HostI2cBus()
 {
-	int i2c_id = 0; //Bus I2C disponible sur la carte APF9328
+	int i2c_id = 1; //Bus I2C disponible sur la carte OPOS6UL (UART5)
 
 	mDev = as_i2c_open(i2c_id);
 	if (mDev == NULL)

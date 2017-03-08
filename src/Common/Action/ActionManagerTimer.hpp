@@ -17,7 +17,6 @@
 #include "IAction.hpp"
 #include "ITimerListener.hpp"
 
-
 /*!
  * \brief Classe de gestion des actions du robot et des actions par timer
  */
@@ -45,10 +44,16 @@ private:
 	utils::PointerList<ITimerListener*> timers_;
 
 	/*!
-	 * \brief Vaut \c true si le système doit s'arréter.
+	 * \brief Vaut \c true si les actions doivent s'arréter.
 	 * \sa ::stop()
 	 */
 	bool stop_;
+
+	/*!
+	 * \brief Vaut \c true si les actions doivent se mettre en pause.
+	 * \sa ::pause()
+	 */
+	bool pause_;
 
 	/*!
 	 *\brief Chronomètre lié au Minuteur.
@@ -114,9 +119,9 @@ public:
 	}
 
 	/*!
-	 * \brief Ajout d'une action en timer.
-	 * \param action
-	 *        L'action à ajouter.
+	 * \brief Ajout d'une action en mode timer.
+	 * \param timer
+	 *        le timer à ajouter.
 	 */
 	inline void addTimer(ITimerListener * timer)
 	{
@@ -128,16 +133,21 @@ public:
 		}
 	}
 
-	inline void stopTimer(std::string name)
+	/*!
+	 * \brief arrete un timer spécifique. Permet d'executer son action de fin puis le supprime de la liste.
+	 * \param name
+	 *        Le label du timer.
+	 */
+	inline void stopTimer(std::string timerName) //TODO Move in the loop
 	{
-		mtimer_.lock();
 		bool found = false;
 		utils::PointerList<ITimerListener *>::iterator save;
 		utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
+		mtimer_.lock();
 		while (i != timers_.end())
 		{
 			ITimerListener * timer = *i;
-			if (timer->info() == name)
+			if (timer->info() == timerName)
 			{
 				save = i;
 				found = true;
@@ -148,7 +158,7 @@ public:
 		if (found)
 			timers_.erase(save);
 		else
-			logger().error() << "Timer " << name << " not found !!" << logs::end;
+			logger().error() << "Timer " << timerName << " not found !!" << logs::end;
 
 		mtimer_.unlock();
 	}
@@ -159,7 +169,16 @@ public:
 	inline void clearActions()
 	{
 		maction_.lock();
-		actions_.clear();
+		maction_.unlock();
+	}
+
+	/*!
+	 * \brief Vide la liste des actions actuellement enregistrées.
+	 */
+	inline void clearTimers()
+	{
+		maction_.lock();
+		timers_.clear();
 		maction_.unlock();
 	}
 
@@ -172,14 +191,22 @@ public:
 	 */
 	inline void stop()
 	{
+		logger().debug() << "stop true" << logs::end;
 		this->stop_ = true;
+	}
+
+	inline void pause(bool value)
+	{
+		logger().debug() << "pause " << value << logs::end;
+		this->pause_ = value;
 	}
 
 	/*!
 	 * \brief Affiche via le logger les différentes actions en cours.
 	 */
 	void debugActions();
-};
 
+	void debugTimers();
+};
 
 #endif

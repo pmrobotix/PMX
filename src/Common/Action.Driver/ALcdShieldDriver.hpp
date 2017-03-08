@@ -5,9 +5,7 @@
 #include <cstdint>
 #include <string>
 
-
-
-class ALcdShieldDriver//: public Print
+class ALcdShieldDriver
 {
 
 public:
@@ -18,7 +16,6 @@ public:
 	 *
 	 */
 	static ALcdShieldDriver * create(std::string botName);
-
 
 	/*!
 	 * \brief Destructor.

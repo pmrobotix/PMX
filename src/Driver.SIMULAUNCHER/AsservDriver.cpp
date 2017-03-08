@@ -276,7 +276,7 @@ long AsservDriver::getRightInternalEncoder()
 	return (long) getRightExternalEncoder();
 }
 
-void AsservDriver::resetEncoder()
+void AsservDriver::resetEncoders()
 {
 	mutexL_.lock();
 	leftCounter_ = 0.0;

@@ -1,5 +1,7 @@
 #include "Sensors.hpp"
 
+#include <sstream>
+
 #include "../Action.Driver/ASensorsDriver.hpp"
 #include "../Asserv/Asserv.hpp"
 #include "../Robot.hpp"
@@ -7,8 +9,8 @@
 
 using namespace std;
 
-Sensors::Sensors(Actions & actions, Robot * robot)
-		: AActionsElement(actions), robot_(robot)
+Sensors::Sensors(Actions & actions, Robot * robot) :
+		AActionsElement(actions), robot_(robot)
 
 {
 	sensorsdriver = ASensorsDriver::create();
@@ -18,8 +20,8 @@ Sensors::~Sensors()
 {
 }
 
-SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name)
-		: sensors_(sensors)
+SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name) :
+		sensors_(sensors)
 {
 	name_ = name;
 	lasttime_ = 0;
@@ -52,12 +54,8 @@ void Sensors::stopSensors()
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-	logger().debug() << "onTimer() "
-			<< this->info()
-			<< "="
-			<< chrono.getElapsedTimeInMicroSec()
-			<< " us"
-			<< logs::end;
+	logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
+			<< " us" << logs::end;
 
 	bool front = sensors_.front();
 
@@ -78,11 +76,15 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 
 void SensorsTimer::onTimerEnd(utils::Chronometer chrono)
 {
-	logger().debug() << "onTimerEnd() "
-			<< this->info()
-			<< "="
-			<< chrono.getElapsedTimeInMicroSec()
-			<< " us"
-			<< logs::end;
+	logger().debug() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
+			<< " us" << logs::end;
 
 }
+
+std::string SensorsTimer::info()
+{
+	std::ostringstream oss;
+	oss << "SensorsTimer for " << sensors_.robot()->getID();
+	return oss.str();
+}
+

@@ -9,7 +9,7 @@
 
 #include "../Log/Exception.hpp"
 #include "../Log/Logger.hpp"
-#include "as_adc.hpp"
+
 #include "as_devices/as_max1027.h"
 
 IrSensor::IrSensor(ushort adcPin, int type)
@@ -30,7 +30,7 @@ int IrSensor::getVoltage()
 	{
 		//voltage_ = utils::HostAdcPort::instance().readMillivolt(adcPin_);
 
-		voltage_ = AsAdc::instance().getValueInMillivolts(adcPin_);
+		//voltage_ = AsAdc::instance().getValueInMillivolts(adcPin_);
 		//logger().debug() << "getAdcValue" << adcPin_ << " = " << voltage_ << logs::end;
 
 	} catch (logs::Exception * e)

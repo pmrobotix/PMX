@@ -1,5 +1,5 @@
-#ifndef SIMU_BUTTONDRIVER_HPP_
-#define SIMU_BUTTONDRIVER_HPP_
+#ifndef SIMUCOCOS_BUTTONDRIVER_HPP_
+#define SIMUCOCOS_BUTTONDRIVER_HPP_
 
 #include <sys/ipc.h>
 #include <sys/msg.h>

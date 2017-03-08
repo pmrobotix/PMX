@@ -1,19 +1,20 @@
 #include "L_Asserv_SetResolutionTest.hpp"
 
+#include <unistd.h>
 #include <cstdlib>
 #include <string>
 
+#include "../Asserv.Insa/AsservInsa.hpp"
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
 #include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
-#include "../Common/Asserv.Insa/AsservInsa.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
+#include "../Log/SvgWriter.hpp"
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
-#include "LegoEV3SvgWriterExtended.hpp"
 
 using namespace std;
 

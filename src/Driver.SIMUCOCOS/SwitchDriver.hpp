@@ -1,5 +1,5 @@
-#ifndef SIMU_SWITCHDRIVER_HPP_
-#define SIMU_SWITCHDRIVER_HPP_
+#ifndef SIMUCOCOS_SWITCHDRIVER_HPP_
+#define SIMUCOCOS_SWITCHDRIVER_HPP_
 
 #include "../Common/Action.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"

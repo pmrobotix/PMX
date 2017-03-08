@@ -3,6 +3,7 @@
 
 #include <sys/types.h>
 #include <unistd.h>
+#include <sstream>
 #include <string>
 
 #include "../../Log/Logger.hpp"
@@ -409,7 +410,9 @@ public:
 	 */
 	virtual inline std::string info()
 	{
-		return "LedBarAction";
+		std::ostringstream oss;
+		oss << "LedBarAction for "<< ledBar_.botId_;
+		return oss.str();
 	}
 };
 

@@ -2,12 +2,16 @@
 
 #include <unistd.h>
 
-#include "../Common/Asserv/Asserv.hpp"
-#include "../Common/Asserv.Insa/AsservInsa.hpp"
+#include "../Asserv.Insa/AsservInsa.hpp"
+#include "../Common/Action/Sensors.hpp"
+#include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/IA/IAbyZone.hpp"
 #include "../Common/Position.hpp"
+#include "../Common/Robot.hpp"
 #include "../Common/State/Data.hpp"
 #include "../Log/Logger.hpp"
+#include "APF9328ActionsExtended.hpp"
+#include "APF9328AsservExtended.hpp"
 #include "APF9328IAExtended.hpp"
 #include "APF9328RobotExtended.hpp"
 

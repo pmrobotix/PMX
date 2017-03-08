@@ -1,5 +1,5 @@
-#ifndef SIMU_SERVODRIVER_HPP_
-#define SIMU_SERVODRIVER_HPP_
+#ifndef SIMUCOCOS_SERVODRIVER_HPP_
+#define SIMUCOCOS_SERVODRIVER_HPP_
 
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"

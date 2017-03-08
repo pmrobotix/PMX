@@ -1,5 +1,5 @@
-#ifndef SIMU_LEDDRIVER_HPP_
-#define SIMU_LEDDRIVER_HPP_
+#ifndef SIMUCOCOS_LEDDRIVER_HPP_
+#define SIMUCOCOS_LEDDRIVER_HPP_
 
 #include <sys/types.h>
 

@@ -21,9 +21,7 @@ class ConsoleManager;
 
 enum RobotColor
 {
-	PMXNOCOLOR,
-	PMXGREEN,
-	PMXVIOLET
+	PMXNOCOLOR, PMXGREEN, PMXVIOLET
 };
 
 class Robot
@@ -67,7 +65,7 @@ public:
 	{
 		long mtype;
 		char mtext[512];
-	} msg_ipc;
+	}msg_ipc;
 #endif
 
 	//Action => RobotElement
@@ -91,6 +89,11 @@ public:
 	 */
 	virtual ~Robot()
 	{
+	}
+
+	std::string getID()
+	{
+		return id_;
 	}
 
 	inline SvgWriter& svgw()

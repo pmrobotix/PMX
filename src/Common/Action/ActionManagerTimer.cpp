@@ -5,10 +5,10 @@
 
 #include "ActionManagerTimer.hpp"
 
+#include <unistd.h>
 
-
-ActionManagerTimer::ActionManagerTimer()
-		: stop_(false)
+ActionManagerTimer::ActionManagerTimer() :
+		stop_(false), pause_(false)
 {
 }
 
@@ -16,26 +16,31 @@ void ActionManagerTimer::execute()
 {
 	logger().info() << "ActionManagerTimer is started stop_=" << stop_ << logs::end;
 
-	int size = 0;
+	int sizeT = 0;
+	int sizeA = 0;
 	long tps = 0;
 	long starttime = 0;
 
 	chronoTimer_.start();
 	while (!stop_)
 	{
-		//on traite les timers
+		/*while (pause_)
+		{
+			//this->yield();
+			usleep(10);
+		}*/
 
+		//on traite les timers
 		mtimer_.lock();
-		size = timers_.size();
-		if (size > 0)
+
+		sizeT = timers_.size();
+		if (sizeT > 0)
 		{
 			starttime = chronoTimer_.getElapsedTimeInMicroSec();
-
 			utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
-			while (i != timers_.end())
+			while (i != timers_.end() && !stop_)
 			{
 				ITimerListener * timer = *i;
-
 				tps = starttime - timer->getLastTime();
 //				logger().debug() <<  " size=" << size << " - " << timer->info()
 //						<< " tps=" << tps
@@ -51,15 +56,19 @@ void ActionManagerTimer::execute()
 			}
 		}
 		mtimer_.unlock();
+		/*while (pause_)
+		{
+			//this->yield();
+			usleep(10);
+		}*/
 
 		//on traite les actions
 		maction_.lock();
-		size = actions_.size();
+		sizeA = actions_.size();
 
-		//logger().debug() << "size : " << size << logs::end;
-		if (size > 0)
+		if (sizeA > 0 && !stop_)
 		{
-
+			//logger().debug() << "sizeA = " << sizeA << logs::end;
 			IAction * action = actions_.front();
 			if (action == NULL)
 			{
@@ -75,24 +84,18 @@ void ActionManagerTimer::execute()
 			{
 				actions_.push_back(action);
 			}
-			else
-			{
-				delete action;
-			}
 
 		}
-
 		maction_.unlock();
 	}
-
-	stop_ = false;
-	logger().debug("ActionManagerTimer is stopped");
+	stop_ = false; //on reinitialise le stop.
+	logger().debug("ActionManagerTimer is stopped and finished");
 }
 
 void ActionManagerTimer::debugActions()
 {
 	maction_.lock();
-	//logger().info() << "Defined actions" << logs::end;
+	logger().debug() << "Defined actions" << logs::end;
 	utils::PointerList<IAction *>::iterator i = actions_.begin();
 	while (i != actions_.end())
 	{
@@ -101,5 +104,21 @@ void ActionManagerTimer::debugActions()
 		i++;
 	}
 	maction_.unlock();
-	//logger().info() << "End of defined actions" << logs::end;
+	logger().debug() << "End of defined actions" << logs::end;
 }
+
+void ActionManagerTimer::debugTimers()
+{
+	mtimer_.lock();
+	logger().debug() << "Defined timers" << logs::end;
+	utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
+	while (i != timers_.end())
+	{
+		ITimerListener * timer = *i;
+		logger().debug() << " - " << timer->info() << logs::end;
+		i++;
+	}
+	mtimer_.unlock();
+	logger().debug() << "End of defined timers" << logs::end;
+}
+

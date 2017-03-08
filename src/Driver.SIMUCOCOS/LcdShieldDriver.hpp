@@ -1,5 +1,5 @@
-#ifndef SIMU_LCDSHIELDDRIVER_HPP_
-#define SIMU_LCDSHIELDDRIVER_HPP_
+#ifndef SIMUCOCOS_LCDSHIELDDRIVER_HPP_
+#define SIMUCOCOS_LCDSHIELDDRIVER_HPP_
 
 #include <stddef.h>
 #include <cstdint>

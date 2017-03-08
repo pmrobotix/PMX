@@ -23,11 +23,9 @@
 
 using namespace std;
 
-Robot::Robot()
-		: myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "_/") // use "_" instead of "-" for arguments
+Robot::Robot() :
+		myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "_/") // use "_" instead of "-" for arguments
 {
-//	actions_default = new Actions();
-//	asserv_default = new Asserv("RobotDefaultAsserv", this);
 
 	actions_default = NULL;
 	asserv_default = NULL;
@@ -35,18 +33,14 @@ Robot::Robot()
 	configureDefaultConsoleArgs();
 }
 
-
 void Robot::svgPrintPosition()
 {
 	if (asserv_default != NULL)
-	this->svgw().writePosition(this->asserv_default->pos_getX_mm(),
-			this->asserv_default->pos_getY_mm(),
-			this->asserv_default->pos_getTheta(),
-			"bot");
+		this->svgw().writePosition(this->asserv_default->pos_getX_mm(),
+				this->asserv_default->pos_getY_mm(), this->asserv_default->pos_getTheta(), "bot");
 	else
 		logger().error() << "asserv_default is NULL !" << logs::end;
 }
-
 
 void Robot::configureDefaultConsoleArgs()
 {
@@ -116,7 +110,7 @@ void Robot::begin(int argc, char** argv)
 			char cInput;
 			cInput = ConsoleKeyInput::mygetch(); //wait a user action
 			//printf("button= %d<\n", cInput);
-			if (cInput == 27) // if ch is the escape sequence with num code 27, k turns 1 to signal the next
+			if (cInput == 27)// if ch is the escape sequence with num code 27, k turns 1 to signal the next
 			{
 				cInput = ConsoleKeyInput::mygetch();
 				if (cInput == 91) // if the previous char was 27, and the current 91, k turns 2 for further use
@@ -129,26 +123,26 @@ void Robot::begin(int argc, char** argv)
 
 			switch (cInput)
 			{
-			case 10:
+				case 10:
 				strcpy(msg_ipc.mtext, "enter");
 				break;
-			case 127:
+				case 127:
 				strcpy(msg_ipc.mtext, "back");
 				break;
-			case 65:
+				case 65:
 				strcpy(msg_ipc.mtext, "up");
 				break;
-			case 66:
+				case 66:
 				strcpy(msg_ipc.mtext, "down");
 				break;
-			case 67:
+				case 67:
 				strcpy(msg_ipc.mtext, "right");
 				break;
-			case 68:
+				case 68:
 				strcpy(msg_ipc.mtext, "left");
 				break;
 
-			default:
+				default:
 				break;
 
 				usleep(1000);
@@ -204,12 +198,8 @@ void Robot::begin(int argc, char** argv)
 
 	logger().debug() << "type = " << cArgs_["type"] << logs::end;
 
-	logger().debug() << "Option c set "
-			<< (int) cArgs_['c']
-			<< ", color = "
-			<< " "
-			<< cArgs_['c']["color"]
-			<< logs::end;
+	logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " "
+			<< cArgs_['c']["color"] << logs::end;
 
 	if (cArgs_['c'])
 	{
@@ -238,12 +228,11 @@ void Robot::begin(int argc, char** argv)
 	{
 		logger().debug() << "skip = " << (int) cArgs_['s'] << logs::end;
 		data_.skipSetup(true);
-	}else
+	}
+	else
 		data_.skipSetup(false);
 
-	if (cArgs_["type"] != "m"
-			&& cArgs_["type"] != "t"
-			&& cArgs_["type"] != "T"
+	if (cArgs_["type"] != "m" && cArgs_["type"] != "t" && cArgs_["type"] != "T"
 			&& cArgs_["type"] != "M")
 	{
 		select = cmanager_.displayMenuFirstArgu();

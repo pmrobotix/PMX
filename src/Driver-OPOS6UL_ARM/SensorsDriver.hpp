@@ -20,11 +20,7 @@ private:
 		return instance;
 	}
 
-	IrSensor frontIR_; //centre
-	IrSensor frontIRRight_;
-	IrSensor frontIRLeft_;
 
-	IrSensor rearIR_;
 
 public:
 

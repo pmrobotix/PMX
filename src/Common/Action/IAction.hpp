@@ -9,8 +9,7 @@
 #include <string>
 
 /*!
- * \brief Cette interface représente une action executée sur la base
- * électronique du moteur.
+ * \brief Cette interface représente une action executée.
  */
 class IAction
 {
@@ -28,7 +27,10 @@ public:
 	/*!
 	 * \brief Getter sur les infos permettant d'identifier l'action.
 	 */
-	virtual std::string info() = 0;
+	virtual std::string info()
+	{
+		return name_;
+	}
 
 	/*!
 	 * \brief Destructeur de la classe.
@@ -39,11 +41,14 @@ public:
 
 protected:
 
+	std::string name_;
+
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
 	IAction()
 	{
+		name_ = "iAction_default";
 	}
 };
 

@@ -139,6 +139,7 @@ file(GLOB_RECURSE GAME_SRC
 	Classes/*.cpp
 	Classes/Log/*.cpp
 	Classes/Thread/*.cpp
+	Classes/Asserv.Insa/*.cpp
 	Classes/Common/*.cpp
 	Classes/Driver.SIMUCOCOS/*.cpp
 	Classes/Bot-LegoEV3/*.cpp
@@ -150,6 +151,7 @@ file(GLOB_RECURSE GAME_HEADERS
 	Classes/*.hpp
 	Classes/Log/*.hpp
 	Classes/Thread/*.hpp
+	Classes/Asserv.Insa/*.hpp
 	Classes/Common/*.hpp
 	Classes/Driver.SIMUCOCOS/*.hpp
 	Classes/Bot-LegoEV3/*.hpp

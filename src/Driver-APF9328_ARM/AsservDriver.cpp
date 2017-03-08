@@ -78,7 +78,7 @@ long AsservDriver::getRightInternalEncoder()
 	return md25_.ensureGetEncoder(0, MD25_ENCODER2_REG);
 }
 
-void AsservDriver::resetEncoder()
+void AsservDriver::resetEncoders()
 {
 	md25_.resetEncoders();
 }
