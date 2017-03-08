@@ -104,7 +104,6 @@ public:
 	 */
 	ClassThreadTest()
 	{
-
 	}
 
 	/*!
