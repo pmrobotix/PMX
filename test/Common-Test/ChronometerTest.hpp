@@ -16,16 +16,17 @@ namespace test
      */
     class ChronometerTest : public UnitTest
     {
-    private:
+private:
 
-        /*!
-         * \brief Retourne le \ref Logger associé à la classe \ref ChronometerTest.
-         */
-        static const logs::Logger & logger()
-        {
-            static const logs::Logger & instance = logs::LoggerFactory::logger("test::ChronometerTest");
-            return instance;
-        }
+	/*!
+	 * \brief Retourne le \ref Logger associé à la classe \ref ChronometerTest.
+	 */
+	static const logs::Logger & logger()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger(
+				"test::ChronometerTest");
+		return instance;
+	}
 
     public:
 

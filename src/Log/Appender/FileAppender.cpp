@@ -22,7 +22,7 @@ void logs::FileAppender::execute()
 		printData();
 		usleep(20000);
 
-		if (ofs_ == NULL)
+		if (!ofs_)
 		{
 			break;
 		}

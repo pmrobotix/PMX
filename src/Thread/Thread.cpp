@@ -1,6 +1,6 @@
 /*!
  * \file
- * \brief Implémentation de la classe Thread.
+ * \brief Implémentation de la classe Thread using linuxthreads.
  */
 
 #include "Thread.hpp"
@@ -40,7 +40,8 @@ utils::Thread::Thread()
  */
 void utils::Thread::yield()
 {
-	sched_yield(); //POSIX function instead of pthread_yield();
+	//sched_yield(); //POSIX function instead of pthread_yield();
+	pthread_yield();
 }
 
 
@@ -54,6 +55,7 @@ bool utils::Thread::start(std::string name)
 	this->setState(utils::STARTING);
 
 	int code = pthread_create(&threadId_, NULL, utils::Thread::entryPoint, (void *) this);
+	//if (pthread_create(&thread1, &thread1_attr, thread_func, NULL) != 0)
 
 	if (code == 0)
 	{

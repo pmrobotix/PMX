@@ -114,15 +114,15 @@ void test::ChronometerTest::testTimerNanosleep()
 	if (clock_getres( CLOCK_REALTIME, &res) == -1)
 	{
 		//perror( "clock get resolution" );
-		logger().error() << "clock get resolution" << logs::end;
+		logger().error() << "ERROR clock get resolution" << logs::end;
 	}
 	//printf( "\n",res.tv_nsec / 1000 );
 	logger().info() << "clock_getres() : Resolution minimum is "
-			<< res.tv_nsec / 1000
-			<< " micro seconds."
-			<< logs::end;
+			<< res.tv_nsec / 1000 << " micro seconds." << logs::end;
 
-	logger().info() << ":testTimerNanosleep : Comparaision d'attente avec nanosleep/usleep" << logs::end;
+	logger().info()
+			<< " testTimerNanosleep : Comparaison d'attente avec nanosleep/usleep"
+			<< logs::end;
 
 	struct sigaction sa;
 	sa.sa_handler = &sigfunc;
@@ -135,44 +135,53 @@ void test::ChronometerTest::testTimerNanosleep()
 	chrono.start();
 	_usleep(1000);
 	chrono.stop();
-	logger().info() << "Wait 1 ms with nanosleep() : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "Wait 1 ms with nanosleep() : "
+			<< chrono.getElapsedTimeInMicroSec() << logs::end;
 
 	chrono.start(); //reset
 	_usleep(10000);
 	chrono.stop();
-	logger().info() << "Wait 10 ms with nanosleep() : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "Wait 10 ms with nanosleep() : "
+			<< chrono.getElapsedTimeInMicroSec() << logs::end;
 
 	chrono.start(); //reset
 	_usleep(75000);
 	chrono.stop();
-	logger().info() << "Wait 75 ms with nanosleep() : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "Wait 75 ms with nanosleep() : "
+			<< chrono.getElapsedTimeInMicroSec() << logs::end;
 
 	chrono.start(); //reset
 	_usleep(300000);
 	chrono.stop();
-	logger().info() << "Wait 300 ms with nanosleep() : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "Wait 300 ms with nanosleep() : "
+			<< chrono.getElapsedTimeInMicroSec() << logs::end;
 
 	chrono.start(); //reset
 	usleep(1000);
 	chrono.stop();
-	logger().info() << "usleep(1000) : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "usleep(1000) : " << chrono.getElapsedTimeInMicroSec()
+			<< logs::end;
 
 	chrono.start(); //reset
 	usleep(10000);
 	chrono.stop();
-	logger().info() << "usleep(10000) : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "usleep(10000) : " << chrono.getElapsedTimeInMicroSec()
+			<< logs::end;
 
 	chrono.start(); //reset
 	usleep(75000);
 	chrono.stop();
-	logger().info() << "usleep(75000) : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "usleep(75000) : " << chrono.getElapsedTimeInMicroSec()
+			<< logs::end;
 
 	chrono.start(); //reset
 	usleep(300000);
 	chrono.stop();
-	logger().info() << "usleep(300000) : " << chrono.getElapsedTimeInMicroSec() << logs::end;
+	logger().info() << "usleep(300000) : " << chrono.getElapsedTimeInMicroSec()
+			<< logs::end;
 
-	logger().info() << "Conclusion : nanosleep n'est pas plus précis. Le parametre High Res Timer doit etre activé à la compilation du noyau."
+	logger().info()
+			<< "Conclusion : nanosleep n'est pas plus précis. Le parametre High Res Timer doit etre activé à la compilation du noyau."
 			<< logs::end;
 
 	//todo : test clock_nanosleep et setitimer à faire
@@ -181,7 +190,9 @@ void test::ChronometerTest::testTimerNanosleep()
 
 void test::ChronometerTest::testTimerCheck()
 {
-	logger().info() << ":testTimerCheck : Attente de 1ms par wait system (while)" << logs::end;
+	logger().info()
+			<< ":testTimerCheck : Attente de 1ms par wait system (while)"
+			<< logs::end;
 
 	utils::Chronometer chrono;
 	chrono.setTimer(1000);
@@ -191,7 +202,8 @@ void test::ChronometerTest::testTimerCheck()
 	{
 		if (chrono.checkTimer() == 1)
 		{
-			logger().info() << "endtime:" << chrono.getElapsedTimeInMicroSec() << logs::end;
+			logger().info() << "endtime:" << chrono.getElapsedTimeInMicroSec()
+					<< logs::end;
 			break;
 		}
 	}
@@ -203,7 +215,6 @@ void test::ChronometerTest::testTimerCheck()
  */
 void test::ChronometerTest::testWithClock()
 {
-	logger().info() << ":testWithClock: Resolution minimum avec Clock():" << logs::end;
 
 	clock_t t1, t2;
 	t1 = t2 = clock();
@@ -215,10 +226,12 @@ void test::ChronometerTest::testWithClock()
 	}
 
 	// print resolution of clock()
-	logger().info() << (double) (t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms." << logs::end;
+	logger().info() << "testWithClock: Resolution minimum avec fct Clock():"
+			<< (double) (t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms."
+			<< logs::end;
 
-	logger().info() << "CLOCKS_PER_SEC: " << CLOCKS_PER_SEC << logs::end;
-	logger().info() << "CLOCK() : " << clock() << logs::end;
+	logger().info() << "CLOCKS_PER_SEC: " << CLOCKS_PER_SEC << " ; CLOCK() : "
+			<< clock() << logs::end;
 }
 
 /*!
@@ -226,7 +239,6 @@ void test::ChronometerTest::testWithClock()
  */
 void test::ChronometerTest::testWithGettimeofday()
 {
-	logger().info() << ":testWithGettimeofday: Resolution minimum avec gettimeofday():" << logs::end;
 
 	timeval t1, t2;
 	double elapsedTime;
@@ -242,19 +254,25 @@ void test::ChronometerTest::testWithGettimeofday()
 	// compute and print the elapsed time in millisec
 	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; // sec to ms
 	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
-	logger().info() << elapsedTime << " ms." << logs::end;
 
-	logger().info() << ":testWithGettimeofday: Resolution 1000us avec gettimeofday():" << logs::end;
+	logger().info()
+			<< "testWithGettimeofday: Resolution minimum avec fct gettimeofday(): "
+			<< elapsedTime << " ms." << logs::end;
+
 	gettimeofday(&t1, NULL);
 	gettimeofday(&t2, NULL);
-	while ((t2.tv_sec * 1000000 + t2.tv_usec) < t1.tv_sec * 1000000 + t1.tv_usec + 1000)
+
+	while ((t2.tv_sec * 1000000 + t2.tv_usec)
+			< t1.tv_sec * 1000000 + t1.tv_usec + 1000)
 	{
 		gettimeofday(&t2, NULL);
 	}
 
 	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; // sec to ms
 	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
-	logger().info() << elapsedTime << " ms." << logs::end;
+	logger().info()
+			<< ":testWithGettimeofday: Resolution 1000us avec fct gettimeofday(): "
+			<< elapsedTime << " ms." << logs::end;
 }
 
 /*!
@@ -262,10 +280,11 @@ void test::ChronometerTest::testWithGettimeofday()
  */
 void test::ChronometerTest::testTimer()
 {
-	logger().info() << ":testTimer: utilisation des fonctions start,stop,get." << logs::end;
-
+	logger().info()
+			<< "testTimer: utilisation des fonctions du Chronometer start usleep stop"
+			<< logs::end;
 	utils::Chronometer chrono;
-	logger().info() << "Wait 1000us with usleep()" << logs::end;
+
 	// start timer
 	chrono.start();
 	// do something
@@ -273,25 +292,26 @@ void test::ChronometerTest::testTimer()
 	// stop timer
 	chrono.stop();
 	// print the elapsed time
-	logger().info() << chrono.getElapsedTimeInSec() << " s." << logs::end;
-	logger().info() << chrono.getElapsedTimeInMilliSec() << " ms." << logs::end;
-	logger().info() << chrono.getElapsedTimeInMicroSec() << " us." << logs::end;
+	logger().info() << "Wait 1000us with usleep(): "
+			<< chrono.getElapsedTimeInSec() << " s. "
+			<< chrono.getElapsedTimeInMilliSec() << " ms. "
+			<< chrono.getElapsedTimeInMicroSec() << " us. " << logs::end;
 
-	logger().info() << "Wait 10000us with usleep()" << logs::end;
 	chrono.start();
 	usleep(10000);
 	chrono.stop();
-	logger().info() << chrono.getElapsedTimeInSec() << " s." << logs::end;
-	logger().info() << chrono.getElapsedTimeInMilliSec() << " ms." << logs::end;
-	logger().info() << chrono.getElapsedTimeInMicroSec() << " us." << logs::end;
+	logger().info() << "Wait 10000us with usleep(): "
+			<< chrono.getElapsedTimeInSec() << " s. "
+			<< chrono.getElapsedTimeInMilliSec() << " ms. "
+			<< chrono.getElapsedTimeInMicroSec() << " us. " << logs::end;
 
-	logger().info() << "Wait 75000us with usleep()" << logs::end;
 	chrono.start();
 	usleep(75000);
 	chrono.stop();
-	logger().info() << chrono.getElapsedTimeInSec() << " s." << logs::end;
-	logger().info() << chrono.getElapsedTimeInMilliSec() << " ms." << logs::end;
-	logger().info() << chrono.getElapsedTimeInMicroSec() << " us." << logs::end;
+	logger().info() << "Wait 75000us with usleep(): "
+			<< chrono.getElapsedTimeInSec() << " s. "
+			<< chrono.getElapsedTimeInMilliSec() << " ms. "
+			<< chrono.getElapsedTimeInMicroSec() << " us." << logs::end;
 
 }
 
@@ -301,22 +321,26 @@ void test::ChronometerTest::testTimer()
 void test::ChronometerTest::testTimerTickMin()
 {
 	//std::cout.sync_with_stdio (false);
-	logger().info() << ":testTimerTickMin: Ticks pendant 1 milliseconde " << logs::end;
+	logger().info()
+			<< " testTimerTickMin: Check Chronometer.getElapsedTimeInMicroSec toutes les millisecondes "
+			<< logs::end;
 
 	utils::Chronometer timer;
+	std::ostringstream oss;
 
 	timer.start();
 
-	double tick1 = timer.getElapsedTimeInMilliSec();
+	double tick1 = timer.getElapsedTimeInMicroSec();
 	double tick2 = tick1;
 
 	while (timer.getElapsedTimeInMilliSec() < 1) // boucle sur 1 ms
 	{
-		logger().info() << (tick2 - tick1) << "ms." << logs::end;
+		oss << (tick2 - tick1) << " ";
 		tick1 = tick2;
-		tick2 = timer.getElapsedTimeInMilliSec();
+		tick2 = timer.getElapsedTimeInMicroSec();
 	}
 
+	logger().info() << oss.str() << " (en us)" << logs::end;
 }
 
 /*!
@@ -325,7 +349,9 @@ void test::ChronometerTest::testTimerTickMin()
 void test::ChronometerTest::testTimerMiPeriodCount()
 {
 	//std::cout.sync_with_stdio(false);
-	logger().info() << ":testTimerMiPeriodCount: Min,Max,Moy de la periode generee " << logs::end;
+	logger().info()
+			<< " testTimerMiPeriodCount: Min,Max,Moy de la periode generee "
+			<< logs::end;
 	int tempsTotalEnMilliSec = 1000;
 	int tempsMiPeriodeEnMicroSec = 1000;
 
@@ -374,7 +400,7 @@ void test::ChronometerTest::testTimerMiPeriodCount()
 	long moy = tot / i;
 
 	// print the elapsed time in millisec
-	logger().info() << "\ntimerTotal:" << tot << " us." << logs::end;
+	logger().info() << "timerTotal:" << tot << " us." << logs::end;
 	logger().info() << "sommetot  :" << sommetot << logs::end;
 	logger().info() << "Nb        :" << i << logs::end;
 	logger().info() << "Max       :" << max << logs::end;

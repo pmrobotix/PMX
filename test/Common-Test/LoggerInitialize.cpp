@@ -10,19 +10,19 @@
 
 void logs::LoggerFactory::initialize()
 {
-	 this->add("console", new UnitTestAppender());
+	this->add("console", new UnitTestAppender());
 
-	add("test-svg", new SvgAppender("./svg/file.svg"));
+	//add("test-svg", new SvgAppender("./svg/file.svg"));
 
-	add(logs::Level::ERROR, "", "console");
-	add(logs::Level::INFO, "", "console");
+	//add(logs::Level::ERROR, "", "console");
+	//add(logs::Level::INFO, "", "console");
+	add(logs::Level::DEBUG, "", "console");
 
-	add(logs::Level::INFO, "test::LoggerTestSvg", "test-svg");
-	add(logs::Level::INFO, "SvgWriter::svg", "test-svg");
+	//add(logs::Level::INFO, "test::LoggerTestSvg", "test-svg");
+	//add(logs::Level::INFO, "SvgWriter::svg", "test-svg");
 
 	//LoggerTest
-	add(logs::Level::DEBUG, "test::LoggerTest", "console");
-	add(logs::Level::DEBUG, "utils::Timer", "console");
+	//add(logs::Level::DEBUG, "test::LoggerTest", "console");
 
 }
 

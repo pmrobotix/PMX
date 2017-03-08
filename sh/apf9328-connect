@@ -1,0 +1,107 @@
+#! /bin/bash
+
+#Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
+
+IP="192.168.0.150" #RJ45
+
+view_doc()
+{
+    firefox doc/html/index.html >/dev/null 2>&1 &
+}
+
+all()
+{
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/root/.
+}
+
+tsh()
+{
+	scp ../sh/*.sh root@$IP:/pmx/
+}
+
+
+pmx()
+{
+    ssh root@$IP "killall Bot_ArmadeusAPF9328_ARM"
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" root@$IP:/root/.
+}
+
+driver()
+{
+	scp "../Driver-UnitTest_ARM-APF9328/Debug/Driver-UnitTest_ARM-APF9328" root@$IP:/root/.
+}
+
+common()
+{
+	scp "../Common-UnitTest_ARM-APF9328/Debug/Common-UnitTest_ARM-APF9328" root@$IP:/root/.
+}
+
+recupcsvhost()
+{
+    #recup sur le PC Host
+	scp root@$IP:/pmx/*.* /mnt/hgfs/pmx_xls/.
+}
+
+recupcsv()
+{
+        scp root@$IP:/pmx/*.csv /home/pmx/recup/.
+}
+
+recupsvg()
+{
+        scp root@$IP:/pmx/*.svg /home/pmx/recup/.
+}
+
+connect()
+{
+	ssh root@$IP
+}
+
+case "$1" in
+	view-doc)
+		view_doc
+	;;
+
+	all)
+		all
+	;;
+
+	tsh)
+		tsh
+	;;
+
+	pmx)
+		pmx
+	;;
+
+	driver)
+		driver
+	;;
+
+	common)
+		common
+	;;
+
+	connect)
+		connect
+	;;
+        
+        recupcsv)
+		recupcsv
+	;;
+
+        recupsvg)
+		recupsvg
+	;;
+
+        recupcsvhost)
+		recupcsvhost
+	;;
+
+	*)
+		echo "Usage: $0 {connect|pmx|driver|common|alltsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		exit 1
+	;;
+esac
+
+exit 0

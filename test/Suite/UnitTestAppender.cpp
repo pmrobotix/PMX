@@ -22,7 +22,7 @@ void UnitTestAppender::writeMessage(const logs::Logger & logger,
 		const logs::Level & level,
 		const std::string & message)
 {
-	if (level == logs::Level::INFO)
+	if (level == logs::Level::INFO) //normal info pour les tests unitaires
 	{
 		this->lock();
 		std::ostringstream out;

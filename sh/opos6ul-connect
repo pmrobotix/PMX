@@ -2,7 +2,7 @@
 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
 
-IP="192.168.2.150" #RJ45
+IP="192.168.2.223" #WIFI
 
 view_doc()
 {
@@ -11,7 +11,7 @@ view_doc()
 
 all()
 {
-	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/pmx/.
+	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" "../Driver-UnitTest_ARM-OPOS6UL/Debug/Driver-UnitTest_ARM-OPOS6UL" "../Common-UnitTest_ARM-OPOS6UL/Debug/Common-UnitTest_ARM-OPOS6UL" root@$IP:/root/.
 }
 
 tsh()
@@ -22,13 +22,18 @@ tsh()
 
 pmx()
 {
-    ssh root@$IP "killall Bot_ArmadeusAPF9328_ARM"
-	scp "../Bot_ArmadeusAPF9328_ARM/Release/Bot_ArmadeusAPF9328_ARM" root@$IP:/pmx/.
+    ssh root@$IP "killall Bot_ArmadeusOPOS6UL_ARM"
+	scp "../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM" root@$IP:/root/.
 }
 
 driver()
 {
-	scp "../Driver-ARM-UnitTest/Debug/Driver-ARM-UnitTest" root@$IP:/pmx/.
+	scp "../Driver-UnitTest_ARM-OPOS6UL/Debug/Driver-UnitTest_ARM-OPOS6UL" "../Common-UnitTest_ARM-OPOS6UL/Debug/Common-UnitTest_ARM-OPOS6UL" root@$IP:/root/.
+}
+
+common()
+{
+	scp "../Common-UnitTest_ARM-OPOS6UL/Debug/Common-UnitTest_ARM-OPOS6UL" root@$IP:/root/.
 }
 
 recupcsvhost()
@@ -71,6 +76,10 @@ case "$1" in
 
 	driver)
 		driver
+	;;
+
+	common)
+		common
 	;;
 
 	connect)

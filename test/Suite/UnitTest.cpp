@@ -28,7 +28,7 @@ void UnitTest::fail(const std::string & message)
 
 void UnitTest::expectedError(const std::string & expected)
 {
-	this->expectedError(expected, "An error was expected byt was not raised");
+	this->expectedError(expected, "An error was expected but was not raised");
 }
 
 void UnitTest::expectedError(const std::string & expected, const std::string & message)

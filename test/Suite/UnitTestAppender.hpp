@@ -1,6 +1,6 @@
 /*!
  * \file
- * \brief Définition de la classe UnitTestAppender.
+ * \brief Définition de la classe UnitTestAppender utilisant le memory Appender.
  */
 
 #ifndef SUITE_UNITTESTAPPENDER_HPP

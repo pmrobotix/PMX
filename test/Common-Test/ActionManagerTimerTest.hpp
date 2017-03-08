@@ -1,6 +1,6 @@
 /*!
  * \file
- * \brief Définition de la classe ActionManagerTest.
+ * \brief Définition de la classe ActionManagerTimerTest.
  */
 
 #ifndef TEST_ACTIONMANAGERTEST_HPP
@@ -12,24 +12,24 @@ namespace test
 {
 
 /*!
- * \brief Teste la classe \ref pmx::ActionManager.
+ * \brief Teste la classe \ref pmx::ActionManagerTimerTest.
  */
-class ActionManagerTest: public UnitTest
+class ActionManagerTimerTest: public UnitTest
 {
 public:
 
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	ActionManagerTest()
-			: UnitTest("ActionManagerTest")
+	ActionManagerTimerTest() :
+			UnitTest("ActionManagerTimerTest - Actions + Timer")
 	{
 	}
 
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual ~ActionManagerTest()
+	virtual ~ActionManagerTimerTest()
 	{
 	}
 
@@ -38,7 +38,7 @@ public:
 	/*!
 	 * \brief Teste la méthode \ref ActionManager::count.
 	 */
-	void testCount();
+	void testCountActions();
 
 	/*!
 	 * \brief Teste la méthode \ref ActionManager::addAction.
@@ -54,6 +54,11 @@ public:
 	 * \brief Teste la méthode \ref ActionManager::execute.
 	 */
 	void testExecute();
+
+	/*!
+	 * \brief Teste la méthode \ref ActionManager::count.
+	 */
+	void testCountTimers();
 };
 }
 

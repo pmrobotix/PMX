@@ -224,16 +224,13 @@ void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
 	tLeft_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexL_.unlock();
 
-	logger().debug() << "setMotorLeftPosition    power="
-			<< power
-			<< " ticksToDo="
-			<< ticksToDo
-			<< " wantedLeftSpeed_="
-			<< wantedLeftSpeed_
-			<< logs::end;
+	logger().debug() << "setMotorLeftPosition    power=" << power
+			<< " ticksToDo=" << ticksToDo << " wantedLeftSpeed_="
+			<< wantedLeftSpeed_ << logs::end;
 
 	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-	twLeft_ = w_->positionLeftThread("setMotorLeftPosition", leftCounter_ + (ticksToDo * sens));
+	twLeft_ = w_->positionLeftThread("setMotorLeftPosition",
+			leftCounter_ + (ticksToDo * sens));
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
@@ -253,16 +250,13 @@ void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
 	tRight_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexR_.unlock();
 
-	logger().debug() << "setMotorRightPosition    power="
-			<< power
-			<< " ticksToDo="
-			<< ticksToDo
-			<< " wantedRightSpeed_="
-			<< wantedRightSpeed_
-			<< logs::end;
+	logger().debug() << "setMotorRightPosition    power=" << power
+			<< " ticksToDo=" << ticksToDo << " wantedRightSpeed_="
+			<< wantedRightSpeed_ << logs::end;
 
 	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-	twRight_ = w_->positionRightThread("setMotorRightPosition", rightCounter_ + (ticksToDo * sens));
+	twRight_ = w_->positionRightThread("setMotorRightPosition",
+			rightCounter_ + (ticksToDo * sens));
 }
 
 void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
@@ -272,11 +266,8 @@ void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 	wantedLeftSpeed_ = convertPowerToSpeed(power);
 	tLeft_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexL_.unlock();
-	logger().debug() << "setMotorLeftPower power="
-			<< power
-			<< " leftSpeed_="
-			<< leftSpeed_
-			<< logs::end;
+	logger().debug() << "setMotorLeftPower power=" << power << " leftSpeed_="
+			<< leftSpeed_ << logs::end;
 	//computeCounterL();
 
 	if (time_ms > 0)
@@ -294,11 +285,8 @@ void AsservDriver::setMotorRightPower(int power, int time_ms)
 	wantedRightSpeed_ = convertPowerToSpeed(power);
 	tRight_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexR_.unlock();
-	logger().debug() << "setMotorRightPower power="
-			<< power
-			<< " rightSpeed_="
-			<< rightSpeed_
-			<< logs::end;
+	logger().debug() << "setMotorRightPower power=" << power << " rightSpeed_="
+			<< rightSpeed_ << logs::end;
 
 	//computeCounterR();
 	if (time_ms > 0)

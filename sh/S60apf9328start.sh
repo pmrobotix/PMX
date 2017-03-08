@@ -27,6 +27,8 @@ modprobe servo
 
 i2cdetect -y -a 0
 
+#thread info linuxthreads/NPTL
+getconf GNU_LIBPTHREAD_VERSION
 
 cd /pmx
 

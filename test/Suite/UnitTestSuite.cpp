@@ -12,8 +12,8 @@
 #include "UnitTestSuite.hpp"
 #include "UnitTestAppender.hpp"
 
-UnitTestSuite::UnitTestSuite()
-		: tests_()
+UnitTestSuite::UnitTestSuite() :
+		tests_()
 {
 }
 
@@ -30,6 +30,9 @@ void UnitTestSuite::run()
 
 		appender->increaseIndent();
 
+		logger().info() << "Début d'éxecution de <" << test->name() << "> "
+						<< logs::end;
+		appender->increaseIndent();
 		bool succeed = 0;
 
 		try
@@ -39,18 +42,20 @@ void UnitTestSuite::run()
 		} catch (logs::Exception* exception)
 		{
 			std::ostringstream oss;
-			oss << "Le test à généré une exception: " << exception->what();
+			oss << "Le test a généré une exception: " << exception->what();
 			test->fail(oss.str());
 			succeed = false;
 		} catch (std::exception* exception)
 		{
 			std::ostringstream oss;
-			oss << "Le test à généré une exception: " << exception->what();
+			oss << "Le test a généré une exception: " << exception->what();
 			test->fail(oss.str());
 			succeed = false;
 		}
-
-		logger().info() << (succeed ? "[OK]   " : "[FAIL] ") << "Execution de <" << test->name() << ">" << logs::end;
+		appender->decreaseIndent();
+		logger().info() << "Fin d'éxecution de <" << test->name() << "> "
+				//<< (succeed ? "[OK]   " : "[FAIL] ")
+				<< logs::end;
 
 		appender->decreaseIndent();
 		appender->flush();
