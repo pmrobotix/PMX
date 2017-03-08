@@ -41,7 +41,7 @@ public:
 	AsservDriverTest()
 			: UnitTest("AsservDriverTest")
 	{
-		asservdriver = AAsservDriver::create();
+		asservdriver = AAsservDriver::create("AsservDriverTest");
 	}
 
 	/*!

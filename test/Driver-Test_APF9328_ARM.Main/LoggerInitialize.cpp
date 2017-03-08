@@ -5,6 +5,7 @@
 
 #include "../../src/Log/Level.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
+#include "../Suite/UnitTestAppender.hpp"
 
 void logs::LoggerFactory::initialize()
 {
