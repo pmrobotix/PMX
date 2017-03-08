@@ -145,8 +145,8 @@ long long ExtEncoder::readCounter(void)
 {
 	readStatus(); //read status before read otherwise it doesn't work
 	long long counter = 0;
-	unsigned long long data = 0;
-	unsigned long long fulldata = 0;
+	//unsigned long long data = 0;
+	//unsigned long long fulldata = 0;
 unsigned char cmd = 0x00;
 
 	lock();

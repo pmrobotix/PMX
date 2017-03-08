@@ -6,7 +6,6 @@
 #include <unistd.h>
 #include <string>
 
-#include "../Driver.ARM/Adafruit_RGBLCDShield.hpp"
 #include "../Log/Logger.hpp"
 #include "A_LcdBoardTest.hpp"
 #include "APF9328ActionsExtended.hpp"

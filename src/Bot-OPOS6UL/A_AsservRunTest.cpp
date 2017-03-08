@@ -40,8 +40,8 @@ void A_AsservRunTest::run(int argc, char** argv)
 	long right;
 
 	float x = 0.0;
-	float y = 0.0;
-	float a = 0.0;
+	//float y = 0.0;
+	//float a = 0.0;
 
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
