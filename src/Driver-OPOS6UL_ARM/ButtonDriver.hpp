@@ -1,5 +1,5 @@
-#ifndef OPOS_BUTTONDRIVER_HPP_
-#define OPOS_BUTTONDRIVER_HPP_
+#ifndef OPOS6UL_BUTTONDRIVER_HPP_
+#define OPOS6UL_BUTTONDRIVER_HPP_
 
 #include "../Common/Action.Driver/AButtonDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -10,11 +10,11 @@ class ButtonDriver: public AButtonDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ButtonDriver(SIMU).
+	 * \brief Retourne le \ref Logger associé à la classe \ref ButtonDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ButtonDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("ButtonDriver.OPO");
 		return instance;
 	}
 

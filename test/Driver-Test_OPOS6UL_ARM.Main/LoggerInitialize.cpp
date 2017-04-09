@@ -9,7 +9,7 @@
 
 void logs::LoggerFactory::initialize()
 {
-	this->add("console", new UnitTestAppender());
+	add("console", new UnitTestAppender());
 
 	add(logs::Level::ERROR, "", "console");
 	add(logs::Level::INFO, "", "console");

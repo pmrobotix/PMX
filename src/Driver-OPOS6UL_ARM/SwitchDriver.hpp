@@ -1,5 +1,5 @@
-#ifndef ARM_SWITCHDRIVER_HPP_
-#define ARM_SWITCHDRIVER_HPP_
+#ifndef OPOS6UL_SWITCHDRIVER_HPP_
+#define OPOS6UL_SWITCHDRIVER_HPP_
 
 #include "../Common/Action.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -13,11 +13,11 @@ class SwitchDriver: public ASwitchDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SwitchDriver(ARM).
+	 * \brief Retourne le \ref Logger associé à la classe \ref SwitchDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.ARM");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.OPO");
 		return instance;
 	}
 

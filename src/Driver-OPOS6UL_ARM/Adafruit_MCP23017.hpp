@@ -11,13 +11,13 @@
  BSD license, all text above must be included in any redistribution
  ****************************************************/
 
-#ifndef _Adafruit_MCP23017_H_
-#define _Adafruit_MCP23017_H_
+#ifndef OPOS6UL_Adafruit_MCP23017_H_
+#define OPOS6UL_Adafruit_MCP23017_H_
 
 #include <stdint.h>
-
+#include <as_devices/cpp/as_i2c.hpp>
+#include <as_devices/as_i2c.h>
 #include "../Log/LoggerFactory.hpp"
-#include "HostI2cBus.hpp"
 
 #define INPUT 0x01
 #define OUTPUT 0x00
@@ -49,7 +49,6 @@
 #define MCP23017_GPIOB 0x13
 #define MCP23017_OLATB 0x15
 
-
 class Adafruit_MCP23017
 {
 
@@ -59,18 +58,23 @@ private:
 	 */
 	static const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_MCP23017");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_MCP23017.OPO");
 		return instance;
 	}
 
-	bool connected_;
+	//bool connected_;
 
-	uint8_t i2caddr;
-	HostI2cBus MCP_i2c_;
+	//uint8_t i2caddr;
+	//HostI2cBus MCP_i2c_;
+	AsI2c MCP_i2c_;
 
 public:
+	Adafruit_MCP23017();
+	~Adafruit_MCP23017()
+	{
+	}
 
-	void begin(void);
+	int begin(void);
 
 	void pinMode(uint8_t p, uint8_t d);
 	void digitalWrite(uint8_t p, uint8_t d);
@@ -89,6 +93,5 @@ public:
 	long readI2c_2Bytes(unsigned char *buf);
 
 };
-
 
 #endif

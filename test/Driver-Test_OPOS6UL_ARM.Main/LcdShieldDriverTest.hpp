@@ -6,7 +6,6 @@
 #ifndef OPOS6UL_LCDSHIELDDRIVERTEST_HPP
 #define OPOS6UL_LCDSHIELDDRIVERTEST_HPP
 
-
 #include <stddef.h>
 
 #include "../../src/Common/Action.Driver/ALcdShieldDriver.hpp"
@@ -29,7 +28,8 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriverTest.OPO");
+		static const logs::Logger & instance = logs::LoggerFactory::logger(
+				"LcdShieldDriverTest.OPO");
 		return instance;
 	}
 
@@ -40,8 +40,8 @@ public:
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
-	LcdShieldDriverTest()
-			: UnitTest("LcdShieldDriverTest")
+	LcdShieldDriverTest() :
+			UnitTest("LcdShieldDriverTest")
 	{
 		lcdshielddriver = ALcdShieldDriver::create("LcdShieldDriverTest");
 	}

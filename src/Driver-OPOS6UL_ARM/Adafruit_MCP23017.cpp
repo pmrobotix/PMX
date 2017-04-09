@@ -15,9 +15,6 @@
 //#include <avr/pgmspace.h>
 #include "Adafruit_MCP23017.hpp"
 
-#include "../Log/Exception.hpp"
-#include "../Log/Logger.hpp"
-
 /*
  #ifdef __AVR__
  #define WIRE Wire
@@ -52,22 +49,36 @@
  #endif
  }
  */
-////////////////////////////////////////////////////////////////////////////////
-void Adafruit_MCP23017::begin(void)
+
+Adafruit_MCP23017::Adafruit_MCP23017() :
+		MCP_i2c_(1)
 {
-	try
-	{
-		//open i2c and setslave
-		MCP_i2c_.setSlaveAddr(MCP23017_ADDRESS);
-		//setup
-		write_i2c(MCP23017_IODIRA, 0xFF); // all inputs on port A
-		write_i2c(MCP23017_IODIRB, 0xFF); // all inputs on port B
+}
+////////////////////////////////////////////////////////////////////////////////
+int Adafruit_MCP23017::begin(void)
+{
 
-	} catch (logs::Exception * e)
-	{
+	int ret = -1;
+	/*try
+	 {*/
 
-		logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! " << e->what() << logs::end;
-	}
+	//open i2c and setslave
+	ret = MCP_i2c_.setSlaveAddr(MCP23017_ADDRESS);
+	if (ret == -1) return ret;
+
+	//setup
+	ret = write_i2c(MCP23017_IODIRA, 0xFF); // all inputs on port A
+	if (ret == -1) return ret;
+	ret = write_i2c(MCP23017_IODIRB, 0xFF); // all inputs on port B
+	if (ret == -1) return ret;
+
+	/*} catch (logs::Exception * e)
+	 {
+
+	 printf("\nerror!!!!!!!!!!!!!!!!!!");
+	 logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! " << e->what()
+	 << logs::end;
+	 }*/
 }
 
 void Adafruit_MCP23017::pinMode(uint8_t p, uint8_t d)
@@ -76,8 +87,7 @@ void Adafruit_MCP23017::pinMode(uint8_t p, uint8_t d)
 	uint8_t iodiraddr;
 
 	// only 16 bits!
-	if (p > 15)
-		return;
+	if (p > 15) return;
 
 	if (p < 8)
 		iodiraddr = MCP23017_IODIRA;
@@ -165,8 +175,7 @@ void Adafruit_MCP23017::digitalWrite(uint8_t p, uint8_t d)
 	uint8_t gpioaddr, olataddr;
 
 	// only 16 bits!
-	if (p > 15)
-		return;
+	if (p > 15) return;
 
 	if (p < 8)
 	{
@@ -216,8 +225,7 @@ void Adafruit_MCP23017::pullUp(uint8_t p, uint8_t d)
 	uint8_t gppuaddr;
 
 	// only 16 bits!
-	if (p > 15)
-		return;
+	if (p > 15) return;
 
 	if (p < 8)
 		gppuaddr = MCP23017_GPPUA;
@@ -262,8 +270,7 @@ uint8_t Adafruit_MCP23017::digitalRead(uint8_t p)
 	uint8_t gpioaddr;
 
 	// only 16 bits!
-	if (p > 15)
-		return 0;
+	if (p > 15) return 0;
 
 	if (p < 8)
 		gpioaddr = MCP23017_GPIOA;
@@ -289,56 +296,28 @@ uint8_t Adafruit_MCP23017::digitalRead(uint8_t p)
 long Adafruit_MCP23017::write_i2c(unsigned char command, unsigned char value)
 {
 	long ret = -1;
-	try
-	{
-		//MCP_i2c_.writeRegValue(MCP23017_ADDRESS, command, value);
-		ret = MCP_i2c_.writeRegByte(command, value);
-	} catch (logs::Exception * e)
-	{
-		logger().error() << "write_i2c()::Exception - writeRegByte !!! " << e->what() << logs::end;
-	}
+	ret = MCP_i2c_.writeRegByte(command, value);
 	return ret;
 }
 
 long Adafruit_MCP23017::read_i2c(unsigned char command)
 {
 	long ret = -1;
-	try
-	{
-		//MCP_i2c_.readRegValue(MCP23017_ADDRESS, command, &receivedVal);
-		ret = MCP_i2c_.readRegByte(command);
-	} catch (logs::Exception * e)
-	{
-		logger().error() << "read_i2c()::Exception - readRegByte !!! " << e->what() << logs::end;
-	}
+	ret = MCP_i2c_.readRegByte(command); //TODO  si la valeur vaut reelement -1 ?????
 	return ret;
 }
 
 long Adafruit_MCP23017::writeI2c_3Bytes(unsigned char *buf)
 {
 	long ret = -1;
-	try
-	{
-		//MCP_i2c_.writeI2cSize(MCP23017_ADDRESS, buf, 3);
-		ret = MCP_i2c_.write(buf, 3);
-
-	} catch (logs::Exception * e)
-	{
-		logger().error() << "writeI2c_3Bytes()::Exception - write !!! " << e->what() << logs::end;
-	}
+	ret = MCP_i2c_.write(buf, 3);
 	return ret;
 }
 
 long Adafruit_MCP23017::readI2c_2Bytes(unsigned char *buf)
 {
 	long ret = -1;
-	try
-	{
-		//unsigned char *buf = (unsigned char *) calloc(2, sizeof(unsigned char));
-		ret = MCP_i2c_.read(buf, 2);
-	} catch (logs::Exception * e)
-	{
-		logger().error() << "readI2c_2Byte()::Exception - read !!! " << e->what() << logs::end;
-	}
+	//unsigned char *buf = (unsigned char *) calloc(2, sizeof(unsigned char));
+	ret = MCP_i2c_.read(buf, 2);
 	return ret;
 }

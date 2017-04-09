@@ -6,8 +6,8 @@
  * http://www.denkovi.com/product/21/16-relay-board-for-your-pic-avr-project-12v.html
  */
 
-#ifndef GPIO_PCA9555_HPP
-#define GPIO_PCA9555_HPP
+#ifndef OPOS6UL_GPIO_PCA9555_HPP
+#define OPOS6UL_GPIO_PCA9555_HPP
 
 #include "../Log/LoggerFactory.hpp"
 #include "HostI2cBus.hpp"
@@ -39,11 +39,11 @@ class GpioPCA9555
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref GpioPCA9555.
+	 * \brief Retourne le \ref Logger associé à la classe \ref GpioPCA9555 (OPOS6UL).
 	 */
 	static const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("GpioPCA9555");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("GpioPCA9555.OPO");
 		return instance;
 	}
 

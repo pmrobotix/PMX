@@ -13,8 +13,8 @@
  BSD license, all text above must be included in any redistribution
  ****************************************************/
 
-#ifndef Adafruit_RGBLCDShield_h
-#define Adafruit_RGBLCDShield_h
+#ifndef OPOS6UL_Adafruit_RGBLCDShield_h
+#define OPOS6UL_Adafruit_RGBLCDShield_h
 
 //#include <inttypes.h>
 
@@ -22,6 +22,7 @@
 #include <stdint.h>
 
 #include "../Log/LoggerFactory.hpp"
+#include "../Thread/Mutex.hpp"
 #include "Adafruit_MCP23017.hpp"
 
 //COLOR LCD
@@ -84,11 +85,11 @@ class Adafruit_RGBLCDShield : public utils::Mutex //: public Print
 {
 private:
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref Adafruit_RGBLCDShield.
+	 * \brief Retourne le \ref Logger associé à la classe \ref Adafruit_RGBLCDShield (OPOS6UL).
 	 */
 	static const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_RGBLCDShield");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_RGBLCDShield.OPO");
 		return instance;
 	}
 

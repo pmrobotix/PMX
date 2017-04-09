@@ -4,8 +4,8 @@
  * http://wiki.seeed.cc/Grove-I2C_Color_Sensor/
  */
 
-#ifndef GROVECOLORSENSOR_HPP
-#define GROVECOLORSENSOR_HPP
+#ifndef OPOS6UL_GROVECOLORSENSOR_HPP
+#define OPOS6UL_GROVECOLORSENSOR_HPP
 
 #include "../Log/LoggerFactory.hpp"
 #include "HostI2cBus.hpp"
@@ -23,11 +23,11 @@ class GroveColorSensor
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref GroveColorSensor.
+	 * \brief Retourne le \ref Logger associé à la classe \ref GroveColorSensor (OPOS6UL).
 	 */
 	static const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("GroveColorSensor");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("GroveColorSensor.OPO");
 		return instance;
 	}
 
@@ -167,7 +167,7 @@ private:
 	/*!
 	 * \brief read using a command on i2c abd using automatic slave address.
 	 */
-	unsigned char  read_i2c(unsigned char  command);
+	unsigned char read_i2c(unsigned char  command);
 
 };
 

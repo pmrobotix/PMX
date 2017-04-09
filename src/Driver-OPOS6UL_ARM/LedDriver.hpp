@@ -1,5 +1,5 @@
-#ifndef ARM_LEDDRIVER_HPP_
-#define ARM_LEDDRIVER_HPP_
+#ifndef OPOS6UL_LEDDRIVER_HPP_
+#define OPOS6UL_LEDDRIVER_HPP_
 
 #include <sys/types.h>
 
@@ -15,11 +15,11 @@ class HostGpioPort;
 class LedDriver: public ALedDriver
 {
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LedDriver(ARM).
+	 * \brief Retourne le \ref Logger associé à la classe \ref LedDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LedDriver.ARM");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("LedDriver.OPO");
 		return instance;
 	}
 

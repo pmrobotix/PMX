@@ -1,5 +1,10 @@
-#ifndef OPOS_ASSERVDRIVER_HPP_
-#define OPOS_ASSERVDRIVER_HPP_
+/*!
+ * \file
+ * \brief Définition de la classe AsservDriver (OPOS6UL).
+ */
+
+#ifndef OPOS6UL_ASSERVDRIVER_HPP_
+#define OPOS6UL_ASSERVDRIVER_HPP_
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -11,21 +16,18 @@ class AsservDriver: public AAsservDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriver(ARM).
+	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.ARM");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.OPO");
 		return instance;
 	}
 
-
-
-
 public:
 
-	virtual void setMotorLeftPosition(int power,long ticks);
-	virtual void setMotorRightPosition(int power,long ticks);
+	virtual void setMotorLeftPosition(int power, long ticks);
+	virtual void setMotorRightPosition(int power, long ticks);
 
 	virtual void setMotorLeftPower(int power, int time);
 	virtual void setMotorRightPower(int power, int time);

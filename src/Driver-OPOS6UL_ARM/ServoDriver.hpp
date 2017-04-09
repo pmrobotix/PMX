@@ -1,5 +1,5 @@
-#ifndef ARM_SERVODRIVER_HPP_
-#define ARM_SERVODRIVER_HPP_
+#ifndef OPOS6UL_SERVODRIVER_HPP_
+#define OPOS6UL_SERVODRIVER_HPP_
 
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -13,11 +13,11 @@ class ServoDriver: public AServoDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(ARM).
+	 * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.ARM");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.OPO");
 		return instance;
 	}
 

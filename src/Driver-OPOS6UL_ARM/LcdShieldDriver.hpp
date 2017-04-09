@@ -1,5 +1,5 @@
-#ifndef ARM_LCDSHIELDDRIVER_HPP_
-#define ARM_LCDSHIELDDRIVER_HPP_
+#ifndef OPOS6UL_LCDSHIELDDRIVER_HPP_
+#define OPOS6UL_LCDSHIELDDRIVER_HPP_
 
 #include <stddef.h>
 #include <cstdint>
@@ -14,11 +14,11 @@ class LcdShieldDriver: public ALcdShieldDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LcdShieldDriver(ARM).
+	 * \brief Retourne le \ref Logger associé à la classe \ref LcdShieldDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriver.ARM");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriver.OPO");
 		return instance;
 	}
 

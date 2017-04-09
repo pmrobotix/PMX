@@ -5,8 +5,8 @@
  * 
  */
 
-#ifndef ARM_SERVOMOTORSTD_HPP
-#define	ARM_SERVOMOTORSTD_HPP
+#ifndef OPOS6UL_SERVOMOTORSTD_HPP
+#define	OPOS6UL_SERVOMOTORSTD_HPP
 
 #include <string>
 
@@ -24,8 +24,7 @@
 #define NbMaxServo 10 //32
 
 /*!
- * \brief Cette classe représente l'un des servomoteurs fonctionnant sur
- * n positions du robot et utilisant le "motion system" du FPGA.
+ * \brief Cette classe représente l'un des servomoteurs.
  *
  */
 class ServoMotorStd
@@ -33,11 +32,11 @@ class ServoMotorStd
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ServoMotorStd.
+	 * \brief Retourne le \ref Logger associé à la classe \ref ServoMotorStd (OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoMotorStd");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoMotorStd.OPO");
 		return instance;
 	}
 

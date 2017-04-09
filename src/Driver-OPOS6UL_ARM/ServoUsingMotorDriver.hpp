@@ -1,5 +1,5 @@
-#ifndef SIMU_SERVOUSINGMOTORDRIVER_HPP_
-#define SIMU_SERVOUSINGMOTORDRIVER_HPP_
+#ifndef OPOS6UL_SERVOUSINGMOTORDRIVER_HPP_
+#define OPOS6UL_SERVOUSINGMOTORDRIVER_HPP_
 
 #include "../Common/Action.Driver/AServoUsingMotorDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -11,12 +11,12 @@ class ServoUsingMotorDriver: public AServoUsingMotorDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ServoUsingMotorDriver(SIMU).
+	 * \brief Retourne le \ref Logger associé à la classe \ref ServoUsingMotorDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
 		static const logs::Logger & instance = logs::LoggerFactory::logger(
-				"ServoUsingMotorDriver.SIMU");
+				"ServoUsingMotorDriver.OPO");
 		return instance;
 	}
 

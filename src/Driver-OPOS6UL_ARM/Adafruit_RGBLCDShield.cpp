@@ -20,8 +20,6 @@
 #include "../Log/Exception.hpp"
 #include "../Log/Logger.hpp"
 
-
-
 /*
  #include <Wire.h>
  #ifdef __AVR__
@@ -82,7 +80,7 @@ Adafruit_RGBLCDShield::Adafruit_RGBLCDShield()
 	_button_pins[3] = 3;
 	_button_pins[4] = 4;
 
-
+	//configuration LCD 16 colonnes x 2 lignes
 	begin(16, 2);
 
 }
@@ -91,122 +89,128 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
 {
 
 	//mutex_.lock();
-	try
+	/*try
+	 {*/
+	int err = _i2c.begin();
+	if (err == -1)
 	{
-		_i2c.begin();
+		connected_ = false;
+		logger().error() << "Adafruit_RGBLCDShield::begin() : NOT CONNECTED !" << logs::end;
+		return;
+	}
+	else
 		connected_ = true;
 
-		// check if i2c
-		//if (_i2cAddr != 255)
-		//{
-		//_i2c.begin(_i2cAddr);
-		//WIRE.begin();
-		//_i2c.begin();
+	// check if i2c
+	//if (_i2cAddr != 255)
+	//{
+	//_i2c.begin(_i2cAddr);
+	//WIRE.begin();
+	//_i2c.begin();
 
-		_i2c.pinMode(8, OUTPUT);
-		_i2c.pinMode(6, OUTPUT);
-		_i2c.pinMode(7, OUTPUT);
-		setBacklight(0x7);
+	_i2c.pinMode(8, OUTPUT);
+	_i2c.pinMode(6, OUTPUT);
+	_i2c.pinMode(7, OUTPUT);
+	setBacklight(0x7);
 
-		if (_rw_pin)
-			_i2c.pinMode(_rw_pin, OUTPUT);
+	if (_rw_pin) _i2c.pinMode(_rw_pin, OUTPUT);
 
-		_i2c.pinMode(_rs_pin, OUTPUT);
-		_i2c.pinMode(_enable_pin, OUTPUT);
-		for (uint8_t i = 0; i < 4; i++)
-			_i2c.pinMode(_data_pins[i], OUTPUT);
+	_i2c.pinMode(_rs_pin, OUTPUT);
+	_i2c.pinMode(_enable_pin, OUTPUT);
+	for (uint8_t i = 0; i < 4; i++)
+		_i2c.pinMode(_data_pins[i], OUTPUT);
 
-		for (uint8_t i = 0; i < 5; i++)
-		{
-			_i2c.pinMode(_button_pins[i], INPUT);
-			_i2c.pullUp(_button_pins[i], 1);
-		}
-		//}
-
-		if (lines > 1)
-		{
-			_displayfunction |= LCD_2LINE;
-		}
-		_numlines = lines;
-		_currline = 0;
-
-		// for some 1 line displays you can select a 10 pixel high font
-		if ((dotsize != 0) && (lines == 1))
-		{
-			_displayfunction |= LCD_5x10DOTS;
-		}
-
-		// SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
-		// according to datasheet, we need at least 40ms after power rises above 2.7V
-		// before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
-		usleep(50000);
-
-		// Now we pull both RS and R/W low to begin commands
-		_digitalWrite(_rs_pin, 0);  //LOW
-		_digitalWrite(_enable_pin, 0);  //LOW
-		if (_rw_pin != 255)
-		{
-			_digitalWrite(_rw_pin, 0);  //LOW
-		}
-
-		//put the LCD into 4 bit or 8 bit mode
-		if (!(_displayfunction & LCD_8BITMODE))
-		{
-			// this is according to the hitachi HD44780 datasheet
-			// figure 24, pg 46
-
-			// we start in 8bit mode, try to set 4 bit mode
-			write4bits(0x03);
-			usleep(4500); // wait min 4.1ms
-
-			// second try
-			write4bits(0x03);
-			usleep(4500); // wait min 4.1ms
-
-			// third go!
-			write4bits(0x03);
-			usleep(150);
-
-			// finally, set to 8-bit interface
-			write4bits(0x02);
-		}
-		else
-		{
-			// this is according to the hitachi HD44780 datasheet
-			// page 45 figure 23
-
-			// Send function set command sequence
-			command(LCD_FUNCTIONSET | _displayfunction);
-			usleep(4500);  // wait more than 4.1ms
-
-			// second try
-			command(LCD_FUNCTIONSET | _displayfunction);
-			usleep(150);
-
-			// third go
-			command(LCD_FUNCTIONSET | _displayfunction);
-		}
-
-		// finally, set # lines, font size, etc.
-		command(LCD_FUNCTIONSET | _displayfunction);
-
-		// turn the display on with no cursor or blinking default
-		_displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
-		display();
-
-		// clear it off
-		clear();
-
-		// Initialize to default text direction (for romance languages)
-		_displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
-		// set the entry mode
-		command(LCD_ENTRYMODESET | _displaymode);
-	} catch (logs::Exception * e)
+	for (uint8_t i = 0; i < 5; i++)
 	{
-
-		logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! (begin test) " //<< e->what()
-				<< logs::end;
+		_i2c.pinMode(_button_pins[i], INPUT);
+		_i2c.pullUp(_button_pins[i], 1);
 	}
+	//}
+
+	if (lines > 1)
+	{
+		_displayfunction |= LCD_2LINE;
+	}
+	_numlines = lines;
+	_currline = 0;
+
+	// for some 1 line displays you can select a 10 pixel high font
+	if ((dotsize != 0) && (lines == 1))
+	{
+		_displayfunction |= LCD_5x10DOTS;
+	}
+
+	// SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
+	// according to datasheet, we need at least 40ms after power rises above 2.7V
+	// before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
+	usleep(50000);
+
+	// Now we pull both RS and R/W low to begin commands
+	_digitalWrite(_rs_pin, 0);  //LOW
+	_digitalWrite(_enable_pin, 0);  //LOW
+	if (_rw_pin != 255)
+	{
+		_digitalWrite(_rw_pin, 0);  //LOW
+	}
+
+	//put the LCD into 4 bit or 8 bit mode
+	if (!(_displayfunction & LCD_8BITMODE))
+	{
+		// this is according to the hitachi HD44780 datasheet
+		// figure 24, pg 46
+
+		// we start in 8bit mode, try to set 4 bit mode
+		write4bits(0x03);
+		usleep(4500); // wait min 4.1ms
+
+		// second try
+		write4bits(0x03);
+		usleep(4500); // wait min 4.1ms
+
+		// third go!
+		write4bits(0x03);
+		usleep(150);
+
+		// finally, set to 8-bit interface
+		write4bits(0x02);
+	}
+	else
+	{
+		// this is according to the hitachi HD44780 datasheet
+		// page 45 figure 23
+
+		// Send function set command sequence
+		command(LCD_FUNCTIONSET | _displayfunction);
+		usleep(4500);  // wait more than 4.1ms
+
+		// second try
+		command(LCD_FUNCTIONSET | _displayfunction);
+		usleep(150);
+
+		// third go
+		command(LCD_FUNCTIONSET | _displayfunction);
+	}
+
+	// finally, set # lines, font size, etc.
+	command(LCD_FUNCTIONSET | _displayfunction);
+
+	// turn the display on with no cursor or blinking default
+	_displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
+	display();
+
+	// clear it off
+	clear();
+
+	// Initialize to default text direction (for romance languages)
+	_displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
+	// set the entry mode
+	command(LCD_ENTRYMODESET | _displaymode);
+	/*} catch (logs::Exception * e)
+	 {
+
+	 logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! (begin test) " //<< e->what()
+	 << logs::end;
+	 }*/
 	//mutex_.unlock();
 }
 
@@ -215,7 +219,7 @@ void Adafruit_RGBLCDShield::clear()
 {
 	if (!connected_)
 	{
-		logger().error() << "clear() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "clear() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -228,7 +232,7 @@ void Adafruit_RGBLCDShield::home()
 {
 	if (!connected_)
 	{
-		logger().error() << "home() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "home() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -241,7 +245,7 @@ void Adafruit_RGBLCDShield::setCursor(uint8_t col, uint8_t row)
 {
 	if (!connected_)
 	{
-		logger().error() << "setCursor() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "setCursor() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -259,6 +263,11 @@ void Adafruit_RGBLCDShield::setCursor(uint8_t col, uint8_t row)
 // Turn the display on/off (quickly)
 void Adafruit_RGBLCDShield::noDisplay()
 {
+	if (!connected_)
+	{
+		logger().debug() << "noDisplay() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaycontrol &= ~LCD_DISPLAYON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
@@ -266,6 +275,11 @@ void Adafruit_RGBLCDShield::noDisplay()
 }
 void Adafruit_RGBLCDShield::display()
 {
+	if (!connected_)
+	{
+		logger().debug() << "display() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaycontrol |= LCD_DISPLAYON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
@@ -275,6 +289,11 @@ void Adafruit_RGBLCDShield::display()
 // Turns the underline cursor on/off
 void Adafruit_RGBLCDShield::noCursor()
 {
+	if (!connected_)
+	{
+		logger().debug() << "noCursor() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaycontrol &= ~LCD_CURSORON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
@@ -282,6 +301,11 @@ void Adafruit_RGBLCDShield::noCursor()
 }
 void Adafruit_RGBLCDShield::cursor()
 {
+	if (!connected_)
+	{
+		logger().debug() << "cursor() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaycontrol |= LCD_CURSORON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
@@ -291,6 +315,11 @@ void Adafruit_RGBLCDShield::cursor()
 // Turn on and off the blinking cursor
 void Adafruit_RGBLCDShield::noBlink()
 {
+	if (!connected_)
+	{
+		logger().debug() << "noBlink() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaycontrol &= ~LCD_BLINKON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
@@ -298,6 +327,11 @@ void Adafruit_RGBLCDShield::noBlink()
 }
 void Adafruit_RGBLCDShield::blink()
 {
+	if (!connected_)
+	{
+		logger().debug() << "blink() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaycontrol |= LCD_BLINKON;
 	command(LCD_DISPLAYCONTROL | _displaycontrol);
@@ -309,7 +343,8 @@ void Adafruit_RGBLCDShield::scrollDisplayLeft(void)
 {
 	if (!connected_)
 	{
-		logger().error() << "scrollDisplayLeft() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "scrollDisplayLeft() : Adafruit_RGBLCDShield NOT CONNECTED !"
+				<< logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -320,7 +355,8 @@ void Adafruit_RGBLCDShield::scrollDisplayRight(void)
 {
 	if (!connected_)
 	{
-		logger().error() << "scrollDisplayLeft() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "scrollDisplayRight() : Adafruit_RGBLCDShield NOT CONNECTED !"
+				<< logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -331,6 +367,11 @@ void Adafruit_RGBLCDShield::scrollDisplayRight(void)
 // This is for text that flows Left to Right
 void Adafruit_RGBLCDShield::leftToRight(void)
 {
+	if (!connected_)
+	{
+		logger().debug() << "leftToRight() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaymode |= LCD_ENTRYLEFT;
 	command(LCD_ENTRYMODESET | _displaymode);
@@ -340,6 +381,11 @@ void Adafruit_RGBLCDShield::leftToRight(void)
 // This is for text that flows Right to Left
 void Adafruit_RGBLCDShield::rightToLeft(void)
 {
+	if (!connected_)
+	{
+		logger().debug() << "rightToLeft() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		return;
+	}
 	mutex_.lock();
 	_displaymode &= ~LCD_ENTRYLEFT;
 	command(LCD_ENTRYMODESET | _displaymode);
@@ -351,7 +397,7 @@ void Adafruit_RGBLCDShield::autoscroll(void)
 {
 	if (!connected_)
 	{
-		logger().error() << "autoscroll() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "autoscroll() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -365,7 +411,7 @@ void Adafruit_RGBLCDShield::noAutoscroll(void)
 {
 	if (!connected_)
 	{
-		logger().error() << "noAutoscroll() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "noAutoscroll() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -380,7 +426,7 @@ void Adafruit_RGBLCDShield::createChar(uint8_t location, uint8_t charmap[])
 {
 	if (!connected_)
 	{
-		logger().error() << "createChar() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "createChar() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -393,10 +439,6 @@ void Adafruit_RGBLCDShield::createChar(uint8_t location, uint8_t charmap[])
 	command(LCD_SETDDRAMADDR);  // unfortunately resets the location to 0,0
 	mutex_.unlock();
 }
-
-
-
-
 
 /*********** mid level commands, for sending data/cmds */
 
@@ -415,7 +457,7 @@ size_t Adafruit_RGBLCDShield::write__(uint8_t value)
 {
 	if (!connected_)
 	{
-		logger().error() << "write() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "write() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return 0;
 	}
 	send(value, 1); //HIGH
@@ -430,7 +472,7 @@ void Adafruit_RGBLCDShield::_digitalWrite(uint8_t p, uint8_t d)
 {
 	if (!connected_)
 	{
-		logger().error() << "_digitalWrite() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "_digitalWrite() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	/*
@@ -452,7 +494,7 @@ void Adafruit_RGBLCDShield::setBacklight(uint8_t status)
 {
 	if (!connected_)
 	{
-		logger().error() << "setBacklight() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "setBacklight() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -468,7 +510,7 @@ void Adafruit_RGBLCDShield::_pinMode(uint8_t p, uint8_t d)
 {
 	if (!connected_)
 	{
-		logger().error() << "_pinMode() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "_pinMode() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return;
 	}
 	/*
@@ -575,7 +617,7 @@ uint8_t Adafruit_RGBLCDShield::readButtons(void)
 {
 	if (!connected_)
 	{
-		logger().error() << "readButtons() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
+		logger().debug() << "readButtons() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
 		return 0;
 	}
 	mutex_.lock();

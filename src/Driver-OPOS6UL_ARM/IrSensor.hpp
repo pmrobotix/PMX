@@ -3,8 +3,8 @@
  * \brief Définition de la classe IrSensor.
  */
 
-#ifndef ARM_IRSENSOR_HPP
-#define	ARM_IRSENSOR_HPP
+#ifndef OPOS6UL_IRSENSOR_HPP
+#define	OPOS6UL_IRSENSOR_HPP
 
 #include <sys/types.h>
 
@@ -21,11 +21,11 @@ class IrSensor
 
 private:
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref IrSensor.
+	 * \brief Retourne le \ref Logger associé à la classe \ref IrSensor (OPOS6UL).
 	 */
 	static const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("IrSensor");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("IrSensor (OPO)");
 		return instance;
 	}
 

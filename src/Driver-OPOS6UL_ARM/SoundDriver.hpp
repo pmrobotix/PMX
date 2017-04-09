@@ -1,5 +1,5 @@
-#ifndef ARM_SOUNDDRIVER_HPP_
-#define ARM_SOUNDDRIVER_HPP_
+#ifndef OPOS6UL_SOUNDDRIVER_HPP_
+#define OPOS6UL_SOUNDDRIVER_HPP_
 
 #include <string>
 #include <vector>
@@ -12,11 +12,11 @@ class SoundDriver: public ASoundDriver
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SoundDriver(ARM).
+	 * \brief Retourne le \ref Logger associé à la classe \ref SoundDriver(OPOS6UL).
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SoundDriver.ARM");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("SoundDriver.OPO");
 		return instance;
 	}
 
