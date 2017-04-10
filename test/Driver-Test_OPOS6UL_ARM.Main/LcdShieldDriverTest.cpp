@@ -21,6 +21,7 @@ void test::LcdShieldDriverTest::test()
 	lcdshielddriver->home();
 	print("PMX");
 	sleep(2);
+	lcdshielddriver->clear();
 	lcdshielddriver->setBacklightOff();
 
 	this->assert(true, "OK");

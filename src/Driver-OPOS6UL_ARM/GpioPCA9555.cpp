@@ -11,7 +11,7 @@
 #include "../Log/Logger.hpp"
 
 GpioPCA9555::GpioPCA9555()
-		: connected_(false), port0Value_(0), port1Value_(0)
+		: i2cGB_(1), connected_(false), port0Value_(0), port1Value_(0)
 {
 	begin();
 }

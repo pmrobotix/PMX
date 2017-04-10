@@ -7,9 +7,7 @@
 #include <unistd.h>
 #include <string>
 
-#include "../Log/Exception.hpp"
 #include "../Log/Logger.hpp"
-#include "HostGpioPort.hpp"
 
 ALedDriver * ALedDriver::create(std::string, int nb)
 {
@@ -21,65 +19,58 @@ LedDriver::LedDriver(int nb)
 
 	nb_ = 8; //Force number of leds.
 
-	try
+	// OPOS6UL: ((Bank number - 1) x 32) + pin number
+	//Example : GPIO1_2 = (0 x 32) + 2 = 2
+	//GPIO5_8 = (4 x 32) + 8 = 136
+	//GPIO5_7 = (4 x 32) + 7 = 135
+	//GPIO5_6 = (4 x 32) + 6 = 134
+	//GPIO5_5 = (4 x 32) + 5 = 133
+	//GPIO5_4 = (4 x 32) + 4 = 132
+	//GPIO5_3 = (4 x 32) + 3 = 131
+	//GPIO5_2 = (4 x 32) + 2 = 130
+	//GPIO5_1 = (4 x 32) + 1 = 129
+	gpio[0] = new AsGpio(136);
+	gpio[1] = new AsGpio(135);
+	gpio[2] = new AsGpio(134);
+	gpio[3] = new AsGpio(133);
+	gpio[4] = new AsGpio(132);
+	gpio[5] = new AsGpio(131);
+	gpio[6] = new AsGpio(130);
+	gpio[7] = new AsGpio(129);
+
+	for (int i = 0; i < 8; i++)
 	{
-		for (int i = 0; i < 8; i++)
+		if (gpio[i] != NULL)
 		{
-			paths[i] = new HostGpioPort();
+			gpio[i]->setPinDirection("out");
+			gpio[i]->setIrqMode("none");
+			gpio[i]->setPinValue(0);
 		}
-
-		paths[0]->openIoctl('A', 4);
-		paths[1]->openIoctl('A', 5);
-		paths[2]->openIoctl('A', 6);
-		paths[3]->openIoctl('A', 9);
-		paths[4]->openIoctl('A', 8);
-		paths[5]->openIoctl('A', 7);
-		paths[6]->openIoctl('A', 10);
-		paths[7]->openIoctl('A', 11);
-
-		for (int i = 0; i < 8; i++)
-		{
-			paths[i]->setDirIoctl(1);
-			paths[i]->setValueIoctl(0);
-		}
-
-	} catch (logs::Exception * e)
-	{
-		logger().error() << "Exception : " << e->what() << logs::end;
 	}
-
 }
 
 LedDriver::~LedDriver()
 {
-	for (int i = 0; i < 8; i++)
-	{
-		paths[i]->closeIoctl();
-	}
 }
 
 void LedDriver::setBit(int index, LedColor color)
 {
 	int c = 0;
-	if (color != LED_OFF)
-		c = 1;
-	paths[index]->setValueIoctl(c);
+	if (color != LED_OFF) c = 1;
+	gpio[index]->setPinValue(c);
 }
 
 void LedDriver::setBytes(uint hex, LedColor color)
 {
-	int c = 0;
-	if (color != LED_OFF)
-		c = 1;
 	for (int i = 0; i < nb_; i++)
 	{
 		if (((hex >> i) & 0x01) == 1)
 		{
-			paths[i]->setValueIoctl(c);
+			setBit(i, color);
 		}
 		else
 		{
-			paths[i]->setValueIoctl(0);
+			setBit(i, LED_OFF);
 		}
 	}
 }

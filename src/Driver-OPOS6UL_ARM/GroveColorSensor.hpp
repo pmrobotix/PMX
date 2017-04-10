@@ -7,8 +7,10 @@
 #ifndef OPOS6UL_GROVECOLORSENSOR_HPP
 #define OPOS6UL_GROVECOLORSENSOR_HPP
 
+#include <as_devices/cpp/as_i2c.hpp>
+
 #include "../Log/LoggerFactory.hpp"
-#include "HostI2cBus.hpp"
+
 
 #define	GROVE_COLOR_DEFAULT_ADDRESS    0x39 // Address of the grove Color Sensor 0x39
 
@@ -31,7 +33,7 @@ private:
 		return instance;
 	}
 
-	HostI2cBus grovei2c_;
+	AsI2c grovei2c_;
 
 	bool connected_;
 

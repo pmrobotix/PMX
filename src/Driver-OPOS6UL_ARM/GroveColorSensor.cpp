@@ -8,10 +8,11 @@
 #include <unistd.h>
 #include <cmath>
 
+#include "../Log/Exception.hpp"
 #include "../Log/Logger.hpp"
 
 GroveColorSensor::GroveColorSensor()
-		:  connected_(false), integrationtime_(12), loopdelay_(12), percentageEnabled_(false), compensateEnabled_(
+		:  grovei2c_(1), connected_(false), integrationtime_(12), loopdelay_(12), percentageEnabled_(false), compensateEnabled_(
 				false), colorTemperature_(false)
 {
 }

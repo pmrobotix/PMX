@@ -9,8 +9,9 @@
 #ifndef OPOS6UL_GPIO_PCA9555_HPP
 #define OPOS6UL_GPIO_PCA9555_HPP
 
+#include <as_devices/cpp/as_i2c.hpp>
+
 #include "../Log/LoggerFactory.hpp"
-#include "HostI2cBus.hpp"
 
 //  with no jumpers the full address is   1 0 0 1 1 1    1 0 0 A2 A1 A0  0x27 is the default address for the DFR0013 board with no jumpers.
 // 0x27 is default address for the DFR0013 board with no jumpers.
@@ -47,9 +48,9 @@ private:
 		return instance;
 	}
 
-	bool connected_;
+	AsI2c i2cGB_;
 
-	HostI2cBus i2cGB_;
+	bool connected_;
 
 	int port0Value_;
 	int port1Value_;
