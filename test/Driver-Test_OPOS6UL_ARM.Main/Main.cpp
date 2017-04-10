@@ -1,6 +1,8 @@
 #include <iostream>
+
 #include "../Suite/UnitTestSuite.hpp"
 #include "AsservDriverTest.hpp"
+#include "ColorDriverTest.hpp"
 #include "LcdShieldDriverTest.hpp"
 #include "LedDriverTest.hpp"
 
@@ -13,9 +15,11 @@ int main()
 	//Assert/fail
 	UnitTestSuite suite;
 
+	suite.addTest(new test::ColorDriverTest());
 	suite.addTest(new test::LcdShieldDriverTest());
-	suite.addTest(new test::LedDriverTest());
-	suite.addTest(new test::AsservDriverTest());
+	//suite.addTest(new test::LedDriverTest());
+
+	//suite.addTest(new test::AsservDriverTest());
 
 	suite.run();
 

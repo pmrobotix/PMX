@@ -9,18 +9,17 @@
 
 #include <as_devices/cpp/as_i2c.hpp>
 
+#include "../Common/Action.Driver/AColorDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-
 
 #define	GROVE_COLOR_DEFAULT_ADDRESS    0x39 // Address of the grove Color Sensor 0x39
 
 #define 	REG_ID 	0x94 //Part Number /RevID
 
-
 /*!
  * \brief Implémentation du détecteur de couleur Grove associée au robot.
  */
-class GroveColorSensor
+class GroveColorSensor: public AColorDriver
 {
 private:
 
@@ -71,7 +70,11 @@ public:
 		return connected_;
 	}
 
-	void begin();
+	int begin();
+
+	void readRGB();
+	float getTX();
+	float getTY();
 
 	/*!
 	 * \brief TCS3414 Turns on the sensor and sets integration time.
@@ -122,56 +125,55 @@ private:
 	/*!
 	 * \brief retrieve all colors.
 	 */
-	void TSC3414All(unsigned char  allcolors[]);
+	void TSC3414All(unsigned char allcolors[]);
 	/*!
 	 * \brief retrieve red color.
 	 */
-	unsigned char  TSC3414Red();
+	unsigned char TSC3414Red();
 	/*!
 	 * \brief retrieve green color.
 	 */
-	unsigned char  TSC3414Green();
+	unsigned char TSC3414Green();
 	/*!
 	 * \brief retrieve blue color.
 	 */
-	unsigned char  TSC3414Blue();
+	unsigned char TSC3414Blue();
 	/*!
 	 * \brief retrieve clear color.
 	 */
-	unsigned char  TSC3414Clear();
+	unsigned char TSC3414Clear();
 
 	/*!
 	 * \brief Keeps a running average of 4 values per color.
 	 */
-	void calculateMedium(float med[], unsigned char  value[], float divider);
+	void calculateMedium(float med[], unsigned char value[], float divider);
 
 	/*!
 	 * \brief calculates percentages for R,G,B channels, if enabled.
 	 */
-	void makePercentage(unsigned char  allcolors[], float allmedium[]);
+	void makePercentage(unsigned char allcolors[], float allmedium[]);
 
 	/*!
 	 * \brief enable/disable color compensation of the sensor sensitivity per color.
 	 */
-	void colorCompensator(unsigned char  allcolors[]);
+	void colorCompensator(unsigned char allcolors[]);
 
 	/*!
 	 * \brief Takes the raw values from the sensors and converts them to Correlated Color Temperature.
 	 * \return Returns a float with CCT.
 	 */
-	float CCTCalc(unsigned char  allcolors[]);
+	float CCTCalc(unsigned char allcolors[]);
 
 	/*!
 	 * \brief write a command on i2c with automatic slave address.
 	 */
-	void write_i2c(unsigned char  command, unsigned char  value);
+	long write_i2c(unsigned char command, unsigned char value);
 
 	/*!
 	 * \brief read using a command on i2c abd using automatic slave address.
 	 */
-	unsigned char read_i2c(unsigned char  command);
+	unsigned char read_i2c(unsigned char command);
 
 };
-
 
 #endif

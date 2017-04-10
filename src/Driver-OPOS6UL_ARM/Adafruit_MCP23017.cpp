@@ -57,10 +57,7 @@ Adafruit_MCP23017::Adafruit_MCP23017() :
 ////////////////////////////////////////////////////////////////////////////////
 int Adafruit_MCP23017::begin(void)
 {
-
 	int ret = -1;
-	/*try
-	 {*/
 
 	//open i2c and setslave
 	ret = MCP_i2c_.setSlaveAddr(MCP23017_ADDRESS);
@@ -72,13 +69,8 @@ int Adafruit_MCP23017::begin(void)
 	ret = write_i2c(MCP23017_IODIRB, 0xFF); // all inputs on port B
 	if (ret == -1) return ret;
 
-	/*} catch (logs::Exception * e)
-	 {
+	return 0;
 
-	 printf("\nerror!!!!!!!!!!!!!!!!!!");
-	 logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! " << e->what()
-	 << logs::end;
-	 }*/
 }
 
 void Adafruit_MCP23017::pinMode(uint8_t p, uint8_t d)
