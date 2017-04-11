@@ -61,7 +61,7 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual inline ~GroveColorSensor()
+	~GroveColorSensor()
 	{
 	}
 

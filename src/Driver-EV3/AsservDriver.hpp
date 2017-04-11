@@ -40,7 +40,7 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual inline ~AsservDriver()
+	inline ~AsservDriver()
 	{
 	}
 
@@ -50,27 +50,29 @@ public:
 	//regulation enabled  => power in ticks per second -860 / +860
 	//regulation disabled => power in percentage -100 / +100
 	//ticks : relative position to go
-	virtual void setMotorLeftPosition(int power, long ticks);
-	virtual void setMotorRightPosition(int power, long ticks);
+	void setMotorLeftPosition(int power, long ticks);
+	void setMotorRightPosition(int power, long ticks);
 
 	//regulation enabled  => power in ticks per second -860 / +860
 	//regulation disabled => power in percentage -100 / +100
-	virtual void setMotorLeftPower(int power, int time);
-	virtual void setMotorRightPower(int power, int time);
+	void setMotorLeftPower(int power, int time);
+	void setMotorRightPower(int power, int time);
 
-	virtual long getLeftExternalEncoder();
-	virtual long getRightExternalEncoder();
+	long getLeftExternalEncoder();
+	long getRightExternalEncoder();
 
-	virtual long getLeftInternalEncoder();
-	virtual long getRightInternalEncoder();
+	long getLeftInternalEncoder();
+	long getRightInternalEncoder();
 
-	virtual void resetEncoders();
+	void resetEncoders();
+	void resetInternalEncoders();
+	void resetExternalEncoders();
 
-	virtual void stopMotorLeft();
-	virtual void stopMotorRight();
+	void stopMotorLeft();
+	void stopMotorRight();
 
-	virtual int getMotorLeftCurrent();
-	virtual int getMotorRightCurrent();
+	int getMotorLeftCurrent();
+	int getMotorRightCurrent();
 
 	/*
 	 * speed_regulation
@@ -78,9 +80,9 @@ public:
 	 on: The motor controller will vary the power supplied to the motor to try to maintain the speed specified in speed_sp.
 	 off: The controller will drive the motor using the duty cycle specified in duty_cycle_sp.
 	 */
-	virtual void enableRightHardRegulation(bool enable);
-	virtual void enableLeftHardRegulation(bool enable);
-	virtual void enableHardRegulation(bool enable);
+	void enableRightHardRegulation(bool enable);
+	void enableLeftHardRegulation(bool enable);
+	void enableHardRegulation(bool enable);
 
 };
 

@@ -66,6 +66,15 @@ void AsservDriver::resetEncoders()
 
 }
 
+void AsservDriver::resetInternalEncoders()
+{
+	//TODO
+}
+void AsservDriver::resetExternalEncoders()
+{
+	//TODO
+}
+
 void AsservDriver::stopMotorLeft()
 {
 

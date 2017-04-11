@@ -32,19 +32,19 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~LcdShieldDriver();
+	~LcdShieldDriver();
 
-	virtual void clear();
+	void clear();
 
-	virtual void home();
+	void home();
 
-	virtual void setBacklightOn();
+	void setBacklightOn();
 
-	virtual void setBacklightOff();
+	void setBacklightOff();
 
-	virtual void setCursor(uint8_t, uint8_t);
+	void setCursor(uint8_t, uint8_t);
 
-	virtual size_t write(uint8_t value);
+	size_t write(uint8_t value);
 
 };
 

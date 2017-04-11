@@ -82,6 +82,14 @@ void AsservDriver::resetEncoders()
 {
 	md25_.resetEncoders();
 }
+void AsservDriver::resetInternalEncoders()
+{
+	//TODO
+}
+void AsservDriver::resetExternalEncoders()
+{
+	//TODO
+}
 
 void AsservDriver::stopMotorLeft()
 {

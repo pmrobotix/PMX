@@ -56,9 +56,9 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~ButtonDriver();
+	~ButtonDriver();
 
-	virtual bool pressed(ButtonTouch button);
+	bool pressed(ButtonTouch button);
 
 };
 

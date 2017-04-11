@@ -9,7 +9,12 @@
 #include "../../src/Common/Action.Driver/ASoundDriver.hpp"
 #include "../../src/Common/Action.Driver/ASwitchDriver.hpp"
 #include "../../src/Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../../src/Common/Action.Driver/AColorDriver.hpp"
 
+AColorDriver * AColorDriver::create(std::string botid)
+{
+	return 0;
+}
 
 AAsservDriver * AAsservDriver::create(std::string botid)
 {

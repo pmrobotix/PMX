@@ -109,6 +109,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
 	float meters = distance_mm / 1000.0f;
 	//TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
+	//TRAJ_STATE ts =
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;

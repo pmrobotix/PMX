@@ -291,6 +291,15 @@ void AsservDriver::resetEncoders()
 	computeCounterR();
 }
 
+void AsservDriver::resetInternalEncoders()
+{
+	//TODO
+}
+void AsservDriver::resetExternalEncoders()
+{
+	//TODO
+}
+
 void AsservDriver::stopMotorLeft()
 {
 	computeCounterL();

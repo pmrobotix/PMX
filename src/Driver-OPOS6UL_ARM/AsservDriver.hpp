@@ -26,27 +26,31 @@ private:
 
 public:
 
-	virtual void setMotorLeftPosition(int power, long ticks);
-	virtual void setMotorRightPosition(int power, long ticks);
+	//commandes directes concernant les moteurs
+	void setMotorLeftPosition(int power, long ticks);
+	void setMotorRightPosition(int power, long ticks);
+	void setMotorLeftPower(int power, int time);
+	void setMotorRightPower(int power, int time);
+	void stopMotorLeft();
+	void stopMotorRight();
+	int getMotorLeftCurrent();
+	int getMotorRightCurrent();
 
-	virtual void setMotorLeftPower(int power, int time);
-	virtual void setMotorRightPower(int power, int time);
+	//commandes concernant les codeurs
+	long getLeftExternalEncoder();
+	long getRightExternalEncoder();
+	long getLeftInternalEncoder();
+	long getRightInternalEncoder();
+	void resetEncoders();
+	void resetInternalEncoders();
+	void resetExternalEncoders();
 
-	virtual long getLeftExternalEncoder();
-	virtual long getRightExternalEncoder();
+	//commandes optionnelles de gestion externe
+	void enableHardRegulation(bool enable);
 
-	virtual long getLeftInternalEncoder();
-	virtual long getRightInternalEncoder();
 
-	virtual void resetEncoders();
 
-	virtual void stopMotorLeft();
-	virtual void stopMotorRight();
 
-	virtual int getMotorLeftCurrent();
-	virtual int getMotorRightCurrent();
-
-	virtual void enableHardRegulation(bool enable);
 
 	/*!
 	 * \brief Constructor.
@@ -56,7 +60,7 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~AsservDriver();
+	~AsservDriver();
 
 };
 

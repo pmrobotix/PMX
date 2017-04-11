@@ -77,7 +77,7 @@ public:
 	/*!
 	 * \brief Destructeur de la classe.
 	 */
-	virtual inline ~ServoMotorStd()
+	inline ~ServoMotorStd()
 	{
 	}
 
@@ -86,37 +86,37 @@ public:
 	 * \param servoID : identifiant du servomoteur.
 	 * \param value : prend la valeur 0:desactivé ou 1:activé.
 	 */
-	virtual void setServoEnable(int value);
+	void setServoEnable(int value);
 
 	/*!
 	 * \brief Mets à jour la valeur d'offset du servo associé.
 	 */
-	virtual void setServoOffset(int);
+	void setServoOffset(int);
 
 	/*!
 	 * \brief Tourne le servo à la valeur de position demandée.
 	 */
-	virtual void setServoPosition(int);
+	void setServoPosition(int);
 
 	/*!
 	 * \brief Change la vitesse.
 	 */
-	virtual void setServoSpeed(int);
+	void setServoSpeed(int);
 
 	/*!
 	 * \brief indique l'identifiant du servomoteur.
 	 */
-	virtual int getServoId();
+	int getServoId();
 
 	/*!
 	 * \brief indique la valeur courante de la position du servo.
 	 */
-	virtual int getServoCurrentPosition();
+	int getServoCurrentPosition();
 
 	/*!
 	 * \brief indique si le servo doit etre inversé.
 	 */
-	virtual void isInverted();
+	void isInverted();
 
 private:
 

@@ -72,14 +72,15 @@ public:
 	 */
 	MovingBase * base();
 
+	//Gestion de l'asservissement
 	virtual void startMotionTimerAndOdo();
-
 	virtual void stopMotionTimerAndOdo();
 
+	//modes d'arret de l'asservissement
 	virtual void freeMotion();
 	virtual void assistedHandling();
 
-	//alsolute motion
+	//absolute motion
 	virtual TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
 	virtual TRAJ_STATE doRotateAbs(float degrees);
 	virtual TRAJ_STATE doRotateLeft(float degrees);
@@ -93,9 +94,9 @@ public:
 	virtual TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
 	virtual TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
+
 	//void findPidAD(float degrees, int mm, int sec);
 	//void findPidLR(float posl, int posr, int sec);
-
 	//void configureAlphaPID(float Ap, float Ai, float Ad);
 	//void configureDeltaPID(float Dp, float Di, float Dd);
 

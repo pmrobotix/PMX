@@ -7,9 +7,6 @@
 #define COMMON_AASSERVELEMENT_HPP_
 
 // Prédéclaration de la classe Asserv.
-/*!
- * \todo Trouver une méthode plus "standardisé" pour la résolution des noms. ne sert plus ?
- */
 class Asserv;
 
 /*!

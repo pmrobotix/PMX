@@ -49,16 +49,16 @@ public:
 	 */
 	LedDriver(std::string botname, int nb);
 
-	virtual void setBit(int position, LedColor color);
+	void setBit(int position, LedColor color);
 
-	virtual void setBytes(uint hexPosition, LedColor color);
+	void setBytes(uint hexPosition, LedColor color);
 
 	void load();
 
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~LedDriver();
+	~LedDriver();
 
 };
 

@@ -34,17 +34,17 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual inline ~ServoDriver()
+	inline ~ServoDriver()
 	{
 	}
 
-	virtual void hold(ServoLabel servo);
+	void hold(ServoLabel servo);
 
-	virtual void setPosition(ServoLabel servo, double percent);
+	void setPosition(ServoLabel servo, double percent);
 
-	virtual void release(ServoLabel servo);
+	void release(ServoLabel servo);
 
-	virtual void setRate(ServoLabel servo, int millisec);
+	void setRate(ServoLabel servo, int millisec);
 
 };
 

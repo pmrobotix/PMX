@@ -23,9 +23,9 @@ private:
 
 public:
 
-	virtual void setBit(int index, LedColor color);
+	void setBit(int index, LedColor color);
 
-	virtual void setBytes(uint hex, LedColor color);
+	void setBytes(uint hex, LedColor color);
 
 	/*!
 	 * \brief Constructor.
@@ -35,7 +35,7 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~LedDriver();
+	~LedDriver();
 
 };
 

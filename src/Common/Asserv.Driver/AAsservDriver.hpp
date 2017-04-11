@@ -40,6 +40,8 @@ public:
 	virtual long getRightInternalEncoder() = 0;
 
 	virtual void resetEncoders() = 0;
+	virtual void resetInternalEncoders() = 0;
+	virtual void resetExternalEncoders() = 0;
 
 	virtual void stopMotorLeft() = 0;
 	virtual void stopMotorRight() = 0;

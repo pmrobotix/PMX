@@ -38,21 +38,21 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual inline ~ServoUsingMotorDriver()
+	inline ~ServoUsingMotorDriver()
 	{
 	}
 
-	virtual void setMotorPosition(int power, int pos, int ramptimems);
+	void setMotorPosition(int power, int pos, int ramptimems);
 
-	virtual long getInternalEncoder();
+	long getInternalEncoder();
 
-	virtual void resetEncoder(int pos);
+	void resetEncoder(int pos);
 
-	virtual void stopMotor();
+	void stopMotor();
 
-	virtual int getMotorCurrent();
+	int getMotorCurrent();
 
-	virtual void enableHardRegulation(bool enable);
+	void enableHardRegulation(bool enable);
 
 	int limit(int power, int max);
 

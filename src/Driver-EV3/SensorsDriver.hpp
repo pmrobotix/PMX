@@ -37,10 +37,10 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~SensorsDriver();
+	~SensorsDriver();
 
-	virtual bool front();
-	virtual bool rear();
+	bool front();
+	bool rear();
 
 };
 

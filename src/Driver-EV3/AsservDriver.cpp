@@ -291,6 +291,15 @@ void AsservDriver::resetEncoders()
 	}
 }
 
+void AsservDriver::resetInternalEncoders()
+{
+	//TODO
+}
+void AsservDriver::resetExternalEncoders()
+{
+	//TODO
+}
+
 int AsservDriver::getMotorLeftCurrent()
 {
 	return 0;

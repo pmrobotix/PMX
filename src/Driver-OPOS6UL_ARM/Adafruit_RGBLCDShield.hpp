@@ -129,7 +129,7 @@ public:
 		return instance;
 	}
 
-	virtual ~Adafruit_RGBLCDShield()
+	~Adafruit_RGBLCDShield()
 	{
 	}
 

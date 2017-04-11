@@ -13,9 +13,9 @@ int main() {
 
 	UnitTestSuite suite;
 
-	//suite.addTest(new test::LoggerTest()); //utilise ici uniquement les logs avec Memory Appender
-	//suite.addTest(new test::ThreadTest());
-	//suite.addTest(new test::ChronometerTest());
+	suite.addTest(new test::LoggerTest()); //utilise ici uniquement les logs avec Memory Appender
+	suite.addTest(new test::ThreadTest());
+	suite.addTest(new test::ChronometerTest());
 	suite.addTest(new test::ActionManagerTimerTest()); //utilise les chronos et les threads
 
 

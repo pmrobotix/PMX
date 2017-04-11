@@ -33,7 +33,8 @@ private:
 	 */
 	static inline const logs::Logger & loggerM()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriverMemory.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger(
+				"AsservDriverMemory.SIMU");
 		return instance;
 	}
 
@@ -75,27 +76,29 @@ public:
 	void computeCounterL();
 	void computeCounterR();
 
-	virtual void setMotorLeftPosition(int power, long ticks);
-	virtual void setMotorRightPosition(int power, long ticks);
+	void setMotorLeftPosition(int power, long ticks);
+	void setMotorRightPosition(int power, long ticks);
 
-	virtual void setMotorLeftPower(int power, int time);
-	virtual void setMotorRightPower(int power, int time);
+	void setMotorLeftPower(int power, int time);
+	void setMotorRightPower(int power, int time);
 
-	virtual long getLeftExternalEncoder();
-	virtual long getRightExternalEncoder();
+	long getLeftExternalEncoder();
+	long getRightExternalEncoder();
 
-	virtual long getLeftInternalEncoder();
-	virtual long getRightInternalEncoder();
+	long getLeftInternalEncoder();
+	long getRightInternalEncoder();
 
-	virtual void resetEncoders();
+	void resetEncoders();
+	void resetInternalEncoders();
+	void resetExternalEncoders();
 
-	virtual void stopMotorLeft();
-	virtual void stopMotorRight();
+	void stopMotorLeft();
+	void stopMotorRight();
 
-	virtual int getMotorLeftCurrent();
-	virtual int getMotorRightCurrent();
+	int getMotorLeftCurrent();
+	int getMotorRightCurrent();
 
-	virtual void enableHardRegulation(bool enable);
+	void enableHardRegulation(bool enable);
 
 	/*!
 	 * \brief Constructor.
@@ -105,7 +108,7 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~AsservDriver();
+	~AsservDriver();
 
 };
 
@@ -223,7 +226,8 @@ public:
 				ticks = std::abs(asserv_->getRightInternalEncoder());
 				usleep(500);
 			}
-			printf("> positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks, internal_ticksToDo);
+			printf("> positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks,
+					internal_ticksToDo);
 
 		}
 		else if (asserv_->rightSpeed_ < 0)
@@ -233,7 +237,8 @@ public:
 				ticks = std::abs(asserv_->getRightInternalEncoder());
 				usleep(500);
 			}
-			printf("< positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks, internal_ticksToDo);
+			printf("< positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks,
+					internal_ticksToDo);
 		}
 		else
 		{

@@ -34,11 +34,11 @@ public:
 	/*!
 	 * \brief Destructor.
 	 */
-	virtual ~SwitchDriver();
+	~SwitchDriver();
 
-	virtual int pressed();
+	int pressed();
 
-	virtual int pressed(unsigned char pin);
+	int pressed(unsigned char pin);
 
 };
 
