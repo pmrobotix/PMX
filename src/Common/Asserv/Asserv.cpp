@@ -1,12 +1,13 @@
 #include "Asserv.hpp"
 
 #include "../../Log/Logger.hpp"
+#include "../Asserv.Driver/AAsservDriver.hpp"
 #include "MovingBase.hpp"
 
 Asserv::Asserv(std::string botId, Robot * robot)
 {
 	pMovingBase_ = new MovingBase(botId);
-
+	asservdriver = AAsservDriver::create(botId);
 	probot_ = robot;
 
 	ignoreRearCollision_ = false;
@@ -109,7 +110,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
 	float meters = distance_mm / 1000.0f;
 	//TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
-	//TRAJ_STATE ts =
+	//TRAJ_STATE ts = asservdriver->motion_DoLine(meters);
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;

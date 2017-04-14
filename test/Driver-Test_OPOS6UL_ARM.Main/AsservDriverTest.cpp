@@ -17,7 +17,9 @@ void test::AsservDriverTest::suite()
 void test::AsservDriverTest::firstTest()
 {
 
-
+	asservdriver->setMotorLeftPower(10,10);
+	//usleep(2000);
+	//asservdriver->setMotorLeftPower(0,0);
 	this->assert(true, "OK");
 }
 

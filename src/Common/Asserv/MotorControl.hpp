@@ -3,9 +3,10 @@
 #ifndef COMMON_ASSERV_MOTORCONTROL_HPP_
 #define COMMON_ASSERV_MOTORCONTROL_HPP_
 
+#include <string>
+
 #include "../../Log/LoggerFactory.hpp"
 //#include "AAsservElement.hpp"
-//#include "Asserv.hpp"
 
 class AAsservDriver;
 

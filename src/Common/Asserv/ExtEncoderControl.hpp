@@ -2,7 +2,7 @@
 #define COMMON_ASSERV_EXTENCODERCONTROL_HPP_
 
 #include "../../Log/LoggerFactory.hpp"
-#include "AAsservElement.hpp"
+//#include "AAsservElement.hpp"
 
 class AAsservDriver;
 

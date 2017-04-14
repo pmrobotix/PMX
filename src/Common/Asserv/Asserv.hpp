@@ -4,21 +4,14 @@
 #include <string>
 
 #include "../../Log/LoggerFactory.hpp"
+#include "../Asserv.Driver/AAsservDriver.hpp"
+
+class AAsservDriver;
 
 class MovingBase;
 
 class Robot;
 
-enum TRAJ_STATE
-{
-	TRAJ_OK,				//trajectory successfully completed
-	TRAJ_ERROR,				//unknown error (not implemented !)
-	TRAJ_COLLISION,			//trajectory interrupted because of a collision
-	TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision
-	TRAJ_CANCELLED,			//trajectory cancelled by remote user (for debug only)
-	TRAJ_INTERRUPTED,		//trajectory interrupted by software
-	TRAJ_COLLISION_REAR
-};
 
 /*!
  * Asservissement of the robot.It contains default elements.
@@ -72,6 +65,9 @@ public:
 	 */
 	MovingBase * base();
 
+	AAsservDriver* asservdriver;
+
+
 	//Gestion de l'asservissement
 	virtual void startMotionTimerAndOdo();
 	virtual void stopMotionTimerAndOdo();
@@ -79,13 +75,11 @@ public:
 	//modes d'arret de l'asservissement
 	virtual void freeMotion();
 	virtual void assistedHandling();
-
 	//absolute motion
 	virtual TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
 	virtual TRAJ_STATE doRotateAbs(float degrees);
 	virtual TRAJ_STATE doRotateLeft(float degrees);
 	virtual TRAJ_STATE doRotateRight(float degrees);
-
 	//relative motion (depends on current position of the robot)
 	virtual TRAJ_STATE doRotateTo(float thetaInDegree);
 	virtual TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
@@ -94,16 +88,16 @@ public:
 	virtual TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
 	virtual TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
-
 	//void findPidAD(float degrees, int mm, int sec);
 	//void findPidLR(float posl, int posr, int sec);
 	//void configureAlphaPID(float Ap, float Ai, float Ad);
 	//void configureDeltaPID(float Dp, float Di, float Dd);
 
+
 	/*!
 	 * Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot
 	 */
-	virtual void setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor);
+	virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor);
 
 	void setMatchColorPosition(bool c)
 	{

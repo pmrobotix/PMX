@@ -8,8 +8,6 @@
 #include "ExtEncoderControl.hpp"
 #include "MotorControl.hpp"
 
-//#include "AAsservElement.hpp"
-
 /*
  * Base roulante du robot
  */

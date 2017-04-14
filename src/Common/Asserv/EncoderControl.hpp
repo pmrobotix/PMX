@@ -1,8 +1,10 @@
 #ifndef COMMON_ASSERV_ENCODERCONTROL_HPP_
 #define COMMON_ASSERV_ENCODERCONTROL_HPP_
 
+#include <string>
+
 #include "../../Log/LoggerFactory.hpp"
-#include "AAsservElement.hpp"
+//#include "AAsservElement.hpp"
 
 class AAsservDriver;
 

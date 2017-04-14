@@ -11,7 +11,6 @@ AAsservDriver * AAsservDriver::create(std::string botid)
 {
 	static AsservDriver *instance = new AsservDriver(botid);
 	return instance;
-	//return new AsservDriver(botid);
 }
 
 AsservDriver::AsservDriver(std::string botid)
@@ -64,10 +63,8 @@ AsservDriver::AsservDriver(std::string botid)
 
 AsservDriver::~AsservDriver()
 {
-	if (twLeft_.joinable())
-		twLeft_.join();
-	if (twRight_.joinable())
-		twRight_.join();
+	if (twLeft_.joinable()) twLeft_.join();
+	if (twRight_.joinable()) twRight_.join();
 }
 
 //conversion 1 meter = n ticks
@@ -209,14 +206,12 @@ void AsservDriver::computeCounterR()
 
 void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
 {
-	if (twLeft_.joinable())
-		twLeft_.join();
+	if (twLeft_.joinable()) twLeft_.join();
 
 	int sens = 0;
 	if (power < 0)
 		sens = -1;
-	else if (power > 0)
-		sens = 1;
+	else if (power > 0) sens = 1;
 
 	computeCounterL();
 	mutexL_.lock();
@@ -224,25 +219,21 @@ void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
 	tLeft_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexL_.unlock();
 
-	logger().debug() << "setMotorLeftPosition    power=" << power
-			<< " ticksToDo=" << ticksToDo << " wantedLeftSpeed_="
-			<< wantedLeftSpeed_ << logs::end;
+	logger().debug() << "setMotorLeftPosition    power=" << power << " ticksToDo=" << ticksToDo
+			<< " wantedLeftSpeed_=" << wantedLeftSpeed_ << logs::end;
 
 	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-	twLeft_ = w_->positionLeftThread("setMotorLeftPosition",
-			leftCounter_ + (ticksToDo * sens));
+	twLeft_ = w_->positionLeftThread("setMotorLeftPosition", leftCounter_ + (ticksToDo * sens));
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
 {
-	if (twRight_.joinable())
-		twRight_.join();
+	if (twRight_.joinable()) twRight_.join();
 
 	int sens = 0;
 	if (power < 0)
 		sens = -1;
-	else if (power > 0)
-		sens = 1;
+	else if (power > 0) sens = 1;
 
 	computeCounterR();
 	mutexR_.lock();
@@ -250,13 +241,11 @@ void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
 	tRight_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexR_.unlock();
 
-	logger().debug() << "setMotorRightPosition    power=" << power
-			<< " ticksToDo=" << ticksToDo << " wantedRightSpeed_="
-			<< wantedRightSpeed_ << logs::end;
+	logger().debug() << "setMotorRightPosition    power=" << power << " ticksToDo=" << ticksToDo
+			<< " wantedRightSpeed_=" << wantedRightSpeed_ << logs::end;
 
 	AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-	twRight_ = w_->positionRightThread("setMotorRightPosition",
-			rightCounter_ + (ticksToDo * sens));
+	twRight_ = w_->positionRightThread("setMotorRightPosition", rightCounter_ + (ticksToDo * sens));
 }
 
 void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
@@ -266,14 +255,13 @@ void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 	wantedLeftSpeed_ = convertPowerToSpeed(power);
 	tLeft_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexL_.unlock();
-	logger().debug() << "setMotorLeftPower power=" << power << " leftSpeed_="
-			<< leftSpeed_ << logs::end;
+	logger().debug() << "setMotorLeftPower power=" << power << " leftSpeed_=" << leftSpeed_
+			<< logs::end;
 	//computeCounterL();
 
 	if (time_ms > 0)
 	{
-		if (twLeft_.joinable())
-			twLeft_.join();
+		if (twLeft_.joinable()) twLeft_.join();
 		AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
 		twLeft_ = w_->memberLeftThread("setMotorLeftPower", time_ms);
 	}
@@ -285,14 +273,13 @@ void AsservDriver::setMotorRightPower(int power, int time_ms)
 	wantedRightSpeed_ = convertPowerToSpeed(power);
 	tRight_ms_ = chrono_.getElapsedTimeInMilliSec();
 	mutexR_.unlock();
-	logger().debug() << "setMotorRightPower power=" << power << " rightSpeed_="
-			<< rightSpeed_ << logs::end;
+	logger().debug() << "setMotorRightPower power=" << power << " rightSpeed_=" << rightSpeed_
+			<< logs::end;
 
 	//computeCounterR();
 	if (time_ms > 0)
 	{
-		if (twRight_.joinable())
-			twRight_.join();
+		if (twRight_.joinable()) twRight_.join();
 		AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
 		twRight_ = w_->memberRightThread("setMotorRightPower", time_ms);
 	}
@@ -384,3 +371,69 @@ int AsservDriver::getMotorRightCurrent()
 void AsservDriver::enableHardRegulation(bool enable)
 {
 }
+
+
+
+
+
+
+
+float AsservDriver::odo_GetX_mm()
+{
+	return 0.0;
+}
+float AsservDriver::odo_GetY_mm()
+{
+}
+float AsservDriver::odo_GetTheta_Rad()
+{
+}
+float AsservDriver::odo_GetTheta_Degree()
+{
+}
+void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
+{
+}
+RobotPosition AsservDriver::odo_GetPosition()
+{
+}
+int AsservDriver::path_GetLastCommandStatus()
+{
+}
+void AsservDriver::path_InterruptTrajectory()
+{
+}
+void AsservDriver::path_CollisionOnTrajectory()
+{
+}
+void AsservDriver::path_CollisionRearOnTrajectory()
+{
+}
+void AsservDriver::path_CancelTrajectory()
+{
+}
+void AsservDriver::path_ResetEmergencyStop()
+{
+}
+TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
+{
+}
+TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
+{
+}
+TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
+{
+}
+void AsservDriver::motion_FreeMotion(void)
+{
+}
+void AsservDriver::motion_DisablePID(void)
+{
+}
+void AsservDriver::motion_AssistedHandling(void)
+{
+}
+void AsservDriver::motion_StopManager(void)
+{
+}
+

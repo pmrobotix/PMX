@@ -91,14 +91,14 @@ class MovingBase;
 
 //PID system are identified by a number
 typedef uint8 PID_SYSTEM;
-
+/*
 typedef enum
 {
 	TRAJECTORY_RUNNING,
 	ASSISTED_HANDLING,
 	FREE_MOTION,
 	DISABLE_PID,
-} MOTION_STATE;
+} MOTION_STATE;*/
 
 /*
 //! possible return state of a trajectory

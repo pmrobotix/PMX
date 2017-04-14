@@ -27,6 +27,7 @@ GroveColorSensor::GroveColorSensor() :
 
 int GroveColorSensor::begin()
 {
+
 	//open i2c and setslave
 	int ret = grovei2c_.setSlaveAddr(GROVE_COLOR_DEFAULT_ADDRESS);
 	if (ret == -1) return ret;
@@ -320,7 +321,7 @@ unsigned char * GroveColorSensor::TCS3414GetColor()
 			<< logs::end;
 
 	//pause
-	usleep(loopdelay_ * 1000); //delays by the integration time between measurements
+	//usleep(loopdelay_ * 1000); //delays by the integration time between measurements
 
 	return TCS3414values_;
 }

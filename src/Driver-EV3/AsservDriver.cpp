@@ -345,3 +345,69 @@ void AsservDriver::enableHardRegulation(bool enable)
 	enableLeftHardRegulation(enable);
 	enableRightHardRegulation(enable);
 }
+
+
+
+
+
+
+float AsservDriver::odo_GetX_mm()
+{
+	return 0.0;
+}
+float AsservDriver::odo_GetY_mm()
+{
+}
+float AsservDriver::odo_GetTheta_Rad()
+{
+}
+float AsservDriver::odo_GetTheta_Degree()
+{
+}
+void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
+{
+}
+RobotPosition AsservDriver::odo_GetPosition()
+{
+}
+int AsservDriver::path_GetLastCommandStatus()
+{
+}
+void AsservDriver::path_InterruptTrajectory()
+{
+}
+void AsservDriver::path_CollisionOnTrajectory()
+{
+}
+void AsservDriver::path_CollisionRearOnTrajectory()
+{
+}
+void AsservDriver::path_CancelTrajectory()
+{
+}
+void AsservDriver::path_ResetEmergencyStop()
+{
+}
+TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
+{
+}
+TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
+{
+}
+TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
+{
+}
+void AsservDriver::motion_FreeMotion(void)
+{
+}
+void AsservDriver::motion_DisablePID(void)
+{
+}
+void AsservDriver::motion_AssistedHandling(void)
+{
+}
+void AsservDriver::motion_StopManager(void)
+{
+}
+
+

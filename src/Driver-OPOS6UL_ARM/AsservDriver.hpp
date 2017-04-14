@@ -6,10 +6,27 @@
 #ifndef OPOS6UL_ASSERVDRIVER_HPP_
 #define OPOS6UL_ASSERVDRIVER_HPP_
 
+#include <as_devices/cpp/as_i2c.hpp>
+
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 using namespace std;
+
+#define	MBED_ADDRESS    0x05
+
+// convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
+union float2bytes_t   // union consists of one variable represented in a number of different ways
+{
+	float f;
+	unsigned char bytes[sizeof(float)];
+
+	float2bytes_t() :
+			bytes
+			{ }
+	{
+	} //initialisation
+};
 
 class AsservDriver: public AAsservDriver
 {
@@ -23,6 +40,13 @@ private:
 		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.OPO");
 		return instance;
 	}
+	AsI2c mbedI2c_;
+	bool connected_;
+
+	void i2cExample();
+	int mbed_ack();
+	void mbed_readI2c(unsigned char, unsigned char, unsigned char*);
+	void mbed_writeI2c();
 
 public:
 
@@ -50,7 +74,26 @@ public:
 
 
 
-
+	//fonctions asservissements externe par defaut
+	float odo_GetX_mm();
+	float odo_GetY_mm();
+	float odo_GetTheta_Rad();		// angle in radian
+	float odo_GetTheta_Degree();		// angle in degrees
+	void odo_SetPosition(float x_m, float y_m, float angle_rad);
+	RobotPosition odo_GetPosition();
+	int path_GetLastCommandStatus();
+	void path_InterruptTrajectory();
+	void path_CollisionOnTrajectory();
+	void path_CollisionRearOnTrajectory();
+	void path_CancelTrajectory();
+	void path_ResetEmergencyStop();
+	TRAJ_STATE motion_DoLine(float dist_meters);
+	TRAJ_STATE motion_DoRotate(float angle_radians);
+	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
+	void motion_FreeMotion(void);
+	void motion_DisablePID(void);		//! Stop motion control and disable PID
+	void motion_AssistedHandling(void);		//! Assisted movement mode =)
+	void motion_StopManager(void);
 
 	/*!
 	 * \brief Constructor.

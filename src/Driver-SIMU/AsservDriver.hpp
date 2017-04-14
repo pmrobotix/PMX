@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <cstdio>
 #include <cstdlib>
-#include <iostream>
+#include <string>
 #include <thread>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
@@ -33,7 +33,8 @@ private:
 	 */
 	static inline const logs::Logger & loggerM()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriverMemory.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger(
+				"AsservDriverMemory.SIMU");
 		return instance;
 	}
 
@@ -102,6 +103,29 @@ public:
 	int getMotorRightCurrent();
 
 	void enableHardRegulation(bool enable);
+
+
+	//fonctions asservissements externe par defaut
+	float odo_GetX_mm();
+	float odo_GetY_mm();
+	float odo_GetTheta_Rad();		// angle in radian
+	float odo_GetTheta_Degree();		// angle in degrees
+	void odo_SetPosition(float x_m, float y_m, float angle_rad);
+	RobotPosition odo_GetPosition();
+	int path_GetLastCommandStatus();
+	void path_InterruptTrajectory();
+	void path_CollisionOnTrajectory();
+	void path_CollisionRearOnTrajectory();
+	void path_CancelTrajectory();
+	void path_ResetEmergencyStop();
+	TRAJ_STATE motion_DoLine(float dist_meters);
+	TRAJ_STATE motion_DoRotate(float angle_radians);
+	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
+	void motion_FreeMotion(void);
+	void motion_DisablePID(void);		//! Stop motion control and disable PID
+	void motion_AssistedHandling(void);		//! Assisted movement mode =)
+	void motion_StopManager(void);
+
 
 	/*!
 	 * \brief Constructor.
@@ -187,7 +211,8 @@ public:
 
 	void positionLeft(const char *arg1, long internal_ticksToDo) //tick encoder à atteindre
 	{
-		printf("positionLeft internal_ticksToDo=%ld   leftSpeed_=%f wanted=%f\n", internal_ticksToDo, asserv_->leftSpeed_, asserv_->wantedLeftSpeed_);
+		printf("positionLeft internal_ticksToDo=%ld   leftSpeed_=%f wanted=%f\n",
+				internal_ticksToDo, asserv_->leftSpeed_, asserv_->wantedLeftSpeed_);
 
 		long ticks = std::abs(asserv_->getLeftInternalEncoder());
 		if (asserv_->leftSpeed_ > 0)
@@ -232,7 +257,8 @@ public:
 				ticks = std::abs(asserv_->getRightInternalEncoder());
 				usleep(500);
 			}
-			printf("> positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks, internal_ticksToDo);
+			printf("> positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks,
+					internal_ticksToDo);
 
 		}
 		else if (asserv_->rightSpeed_ < 0)
@@ -243,7 +269,8 @@ public:
 				ticks = std::abs(asserv_->getRightInternalEncoder());
 				usleep(500);
 			}
-			printf("< positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks, internal_ticksToDo);
+			printf("< positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks,
+					internal_ticksToDo);
 		}
 		else
 		{
