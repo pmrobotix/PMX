@@ -19,10 +19,10 @@ using namespace std;
 union float2bytes_t   // union consists of one variable represented in a number of different ways
 {
 	float f;
-	unsigned char bytes[sizeof(float)];
+	unsigned char b[sizeof(float)];
 
 	float2bytes_t() :
-			bytes
+			b
 			{ }
 	{
 	} //initialisation
@@ -43,10 +43,11 @@ private:
 	AsI2c mbedI2c_;
 	bool connected_;
 
-	void i2cExample();
+	void i2cExample(); //TODO to be removed
 	int mbed_ack();
-	void mbed_readI2c(unsigned char, unsigned char, unsigned char*);
-	void mbed_writeI2c();
+	int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
+	int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write,
+			unsigned char* data);
 
 public:
 
@@ -79,7 +80,7 @@ public:
 	float odo_GetY_mm();
 	float odo_GetTheta_Rad();		// angle in radian
 	float odo_GetTheta_Degree();		// angle in degrees
-	void odo_SetPosition(float x_m, float y_m, float angle_rad);
+	void odo_SetPosition(double x_m, double y_m, float angle_rad);
 	RobotPosition odo_GetPosition();
 	int path_GetLastCommandStatus();
 	void path_InterruptTrajectory();
@@ -93,7 +94,7 @@ public:
 	void motion_FreeMotion(void);
 	void motion_DisablePID(void);		//! Stop motion control and disable PID
 	void motion_AssistedHandling(void);		//! Assisted movement mode =)
-	void motion_StopManager(void);
+	void motion_ManagerActivate(bool enable);
 
 	/*!
 	 * \brief Constructor.

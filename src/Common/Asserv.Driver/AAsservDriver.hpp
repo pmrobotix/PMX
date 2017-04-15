@@ -3,7 +3,6 @@
 
 #include <string>
 
-struct RobotPosition;
 
 enum TRAJ_STATE
 {
@@ -23,9 +22,9 @@ enum MOTION_STATE
 
 typedef struct RobotPosition
 {
-	float x;
-	float y;
-	float theta;
+	float x; //mm
+	float y; //mm
+	float theta; //radians
 } RobotPosition;
 
 class AAsservDriver
@@ -80,7 +79,7 @@ public:
 	virtual float odo_GetY_mm() = 0;
 	virtual float odo_GetTheta_Rad() = 0;		// angle in radian
 	virtual float odo_GetTheta_Degree() = 0;		// angle in degrees
-	virtual void odo_SetPosition(float x_m, float y_m, float angle_rad) = 0;
+	virtual void odo_SetPosition(double x_m, double y_m, float angle_rad) = 0;
 	virtual RobotPosition odo_GetPosition() = 0;
 
 	virtual int path_GetLastCommandStatus() = 0;
@@ -96,7 +95,7 @@ public:
 	virtual void motion_FreeMotion(void) = 0;
 	virtual void motion_DisablePID(void) = 0;		//! Stop motion control and disable PID
 	virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =)
-	virtual void motion_StopManager(void) = 0;//! Stop motion control timer, used to shutdown motion control
+	virtual void motion_ManagerActivate(bool enable) = 0;//! Enable or Stop motion control timer, used to shutdown motion control
 };
 
 #endif

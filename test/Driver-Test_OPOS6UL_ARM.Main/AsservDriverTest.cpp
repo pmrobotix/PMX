@@ -6,7 +6,8 @@
 #include "AsservDriverTest.hpp"
 
 #include <unistd.h>
-#include <cstdint>
+
+#include "../../src/Log/Logger.hpp"
 
 void test::AsservDriverTest::suite()
 {
@@ -16,10 +17,16 @@ void test::AsservDriverTest::suite()
 
 void test::AsservDriverTest::firstTest()
 {
+//while (1)
 
-	asservdriver->setMotorLeftPower(10,10);
-	//usleep(2000);
-	//asservdriver->setMotorLeftPower(0,0);
+	//asservdriver->motion_ManagerActivate(false);
+	//sleep(3);
+	//asservdriver->motion_ManagerActivate(true);
+
+	asservdriver->odo_SetPosition(2.999840, 0.5535, 45.023f);
+	RobotPosition p = asservdriver->odo_GetPosition();
+
+	logger().debug() << p.x << " " << p.y << " " << p.theta << logs::end;
 	this->assert(true, "OK");
 }
 
