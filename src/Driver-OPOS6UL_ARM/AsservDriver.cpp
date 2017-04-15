@@ -251,14 +251,14 @@ void AsservDriver::motion_AssistedHandling(void)
 }
 void AsservDriver::motion_ManagerActivate(bool enable)
 {
-	//unsigned char cmd[1];
+
 	if (enable)
 	{
-		mbed_writeI2c('A', 0, NULL);
+		mbed_writeI2c('I', 0, NULL);
 	}
 	else
 	{
-		mbed_writeI2c('Q', 0, NULL);
+		mbed_writeI2c('!', 0, NULL);
 	}
 
 }
@@ -284,12 +284,6 @@ int AsservDriver::mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write,
 int AsservDriver::mbed_readI2c(unsigned char command, unsigned char nbBytes2Read,
 		unsigned char* data)
 {
-	/*if (sizeof(data) != nbBytes2Read)
-	 {
-	 printf("mbed_readI2c > sizeof(data) != nbBytes2Read > %c%d > error!\n", command,
-	 nbBytes2Read);
-	 return;
-	 }*/
 
 	if (mbedI2c_.writeRegByte(command, nbBytes2Read) < 0)
 	{

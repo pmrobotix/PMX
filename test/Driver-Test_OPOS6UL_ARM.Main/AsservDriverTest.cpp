@@ -17,16 +17,21 @@ void test::AsservDriverTest::suite()
 
 void test::AsservDriverTest::firstTest()
 {
-//while (1)
+//while(1)
 
-	//asservdriver->motion_ManagerActivate(false);
-	//sleep(3);
 	//asservdriver->motion_ManagerActivate(true);
+	asservdriver->motion_ManagerActivate(true);
+
+
+
+
 
 	asservdriver->odo_SetPosition(2.999840, 0.5535, 45.023f);
 	RobotPosition p = asservdriver->odo_GetPosition();
 
 	logger().debug() << p.x << " " << p.y << " " << p.theta << logs::end;
+	sleep(1);
+	asservdriver->motion_ManagerActivate(false);
 	this->assert(true, "OK");
 }
 

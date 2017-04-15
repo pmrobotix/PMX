@@ -17,7 +17,7 @@ void test::ColorDriverTest::suite()
 
 void test::ColorDriverTest::firstTest()
 {
-	for (int i = 0; i < 1000; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		colordriver->readRGB();
 		//logger().info() << "x: " << colordriver->getTX() << " \ty: " << colordriver->getTY()
