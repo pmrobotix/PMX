@@ -116,9 +116,12 @@ void AsservDriver::enableHardRegulation(bool enable)
 {
 
 }
-
+/*
 float AsservDriver::odo_GetX_mm()
 {
+
+
+
 	return 0.0;
 }
 float AsservDriver::odo_GetY_mm()
@@ -129,7 +132,7 @@ float AsservDriver::odo_GetTheta_Rad()
 }
 float AsservDriver::odo_GetTheta_Degree()
 {
-}
+}*/
 void AsservDriver::odo_SetPosition(double x_m, double y_m, float angle_rad)
 {
 	if (!connected_) return;
@@ -215,41 +218,78 @@ RobotPosition AsservDriver::odo_GetPosition() //en metre
 }
 int AsservDriver::path_GetLastCommandStatus()
 {
+	//TODO
+	return 0;
 }
 void AsservDriver::path_InterruptTrajectory()
 {
+	mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
+	mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_CollisionRearOnTrajectory()
 {
+	mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_CancelTrajectory()
 {
+	mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_ResetEmergencyStop()
 {
+	mbed_writeI2c('r', 0, NULL);
 }
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
 {
+	unsigned char d[4];
+	float2bytes_t mm;
+	mm.f = (dist_meters / 1000.0);
+	d[0] = mm.b[0];
+	d[1] = mm.b[1];
+	d[2] = mm.b[2];
+	d[3] = mm.b[3];
+	mbed_writeI2c('v', 4, d);
+	return TRAJ_OK; //TODO gerer le statut
 }
-TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
+TRAJ_STATE AsservDriver::motion_DoRotate(float angle_degrees)
 {
+	unsigned char d[4];
+	float2bytes_t deg;
+	deg.f = angle_degrees;
+	d[0] = deg.b[0];
+	d[1] = deg.b[1];
+	d[2] = deg.b[2];
+	d[3] = deg.b[3];
+	mbed_writeI2c('t', 4, d);
+	return TRAJ_OK;
 }
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 {
+//TODO
+	return TRAJ_ERROR;
 }
 void AsservDriver::motion_FreeMotion(void)
 {
+	motion_ActivateManager(false);
 }
-void AsservDriver::motion_DisablePID(void)
+void AsservDriver::motion_DisablePID(bool enable)
 {
+	if (enable)
+	{
+		mbed_writeI2c('K', 0, NULL);
+	}
+	else
+	{
+		mbed_writeI2c('J', 0, NULL);
+	}
 }
 void AsservDriver::motion_AssistedHandling(void)
 {
+	motion_ActivateManager(true);
 }
-void AsservDriver::motion_ManagerActivate(bool enable)
+void AsservDriver::motion_ActivateManager(bool enable)
 {
 
 	if (enable)
@@ -291,7 +331,7 @@ int AsservDriver::mbed_readI2c(unsigned char command, unsigned char nbBytes2Read
 		return -1;
 	}
 
-	//Read the data back from the slave
+//Read the data back from the slave
 	if (mbedI2c_.read(data, nbBytes2Read) < 0)
 	{
 		printf("mbed_readI2c > read > %c%d > error!\n", command, nbBytes2Read);
@@ -304,7 +344,7 @@ int AsservDriver::mbed_ack()
 {
 	unsigned char ack[1];
 
-	//ACK
+//ACK
 	memset(ack, 0, sizeof(ack));
 	if (int r = mbedI2c_.read(ack, 1) < 0)
 	{
@@ -338,7 +378,7 @@ void AsservDriver::i2cExample()
 	float2bytes_t t;
 	t.f = 3.55221f;
 
-	//while (1)
+//while (1)
 	{
 
 		//P12

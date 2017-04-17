@@ -60,7 +60,7 @@ private:
 	 */
 	GpioPCA9555();
 
-	void write_i2c(unsigned char command, unsigned char value);
+	long write_i2c(unsigned char command, unsigned char value);
 	long read_i2c(unsigned char command);
 
 public:

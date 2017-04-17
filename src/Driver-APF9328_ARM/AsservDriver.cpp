@@ -129,7 +129,7 @@ float AsservDriver::odo_GetTheta_Rad()
 float AsservDriver::odo_GetTheta_Degree()
 {
 }
-void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
+void AsservDriver::odo_SetPosition(double x_m, double y_m, float angle_rad)
 {
 }
 RobotPosition AsservDriver::odo_GetPosition()
@@ -162,15 +162,15 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 {
 }
-void AsservDriver::motion_FreeMotion(void)
+void AsservDriver::motion_FreeMotion()
 {
 }
-void AsservDriver::motion_DisablePID(void)
+void AsservDriver::motion_DisablePID(bool enable)
 {
 }
-void AsservDriver::motion_AssistedHandling(void)
+void AsservDriver::motion_AssistedHandling()
 {
 }
-void AsservDriver::motion_StopManager(void)
+void AsservDriver::motion_ActivateManager(bool enable)
 {
 }
