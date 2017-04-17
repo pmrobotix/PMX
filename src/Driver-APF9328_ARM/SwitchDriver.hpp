@@ -4,9 +4,7 @@
 #include "../Common/Action.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-
 using namespace std;
-
 
 class SwitchDriver: public ASwitchDriver
 {
@@ -33,7 +31,9 @@ public:
 	 */
 	~SwitchDriver();
 
-	int pressed(); //tirette
+	int tirettePressed();
+	int backLeftPressed();
+	int backRightPressed();
 	int pressed(unsigned char pin);
 
 };

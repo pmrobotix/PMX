@@ -16,23 +16,25 @@ AColorDriver * AColorDriver::create(std::string)
 }
 
 GroveColorSensor::GroveColorSensor() :
-		grovei2c_(1), connected_(false), integrationtime_(12), loopdelay_(12), percentageEnabled_(
+		grovei2c_(1), connected_(true), integrationtime_(12), loopdelay_(12), percentageEnabled_(
 				false), compensateEnabled_(false), colorTemperature_(false)
 {
-	int r = begin();
-	if (r == -1)
-		logger().error() << "GroveColorSensor::begin() : TCS3414 is NOT CONNECTED !" << logs::end;
+
+	if(!begin());
+		logger().error() << "GroveColorSensor::GroveColorSensor() : TCS3414 is NOT CONNECTED !" << logs::end;
 
 }
 
-int GroveColorSensor::begin()
+bool GroveColorSensor::begin()
 {
+	connected_ = true;
 
 	//open i2c and setslave
 	int ret = grovei2c_.setSlaveAddr(GROVE_COLOR_DEFAULT_ADDRESS);
 	if (ret == -1) return ret;
 	//0x80 1000 0000 //write to Control register
 	//0x01 0000 0001 //Turn the device on (does not enable ADC yet)
+
 	ret = write_i2c(0x80, 0x01);
 	if (ret == -1) return ret;
 
@@ -40,30 +42,35 @@ int GroveColorSensor::begin()
 	unsigned char ID = 0;
 	//0x84 1000 0100 //get information from ID register (04h)
 	ID = read_i2c(0x84); //ID 0001 0000 (first byte == 0001 (TCS: 3413,3414,3415,3416) or 0000 (TCS: 3404).
+
 	if (ID == 17) //0000 0001 || 0001 0001
 	{
-		logger().debug() << "TCS3414 is now ON : id=" << (int) ID << logs::end;
+		logger().info() << "TCS3414 is now ON : id=" << (int) ID << logs::end;
 		connected_ = true;
 		TCS3414Setup(10, 100); 	//setup and enable the grove sensor
-		return 0;
+		return connected_;
 	}
 	else
 	{
-		logger().error() << "GroveColorSensor::begin() : TCS3414 is NOT CONNECTED !, ID="
+		logger().error() << "GroveColorSensor::begin() : TCS3414 is NOT CONNECTED !!!!, ID="
 				<< (int) ID << " not eq 17 !" << logs::end;
-		return -1;
+		connected_ = false;
+		return connected_;
 	}
 
 }
 
-void GroveColorSensor::readRGB()
+bool GroveColorSensor::readRGB()
 {
 	if (!connected_)
 	{
-		logger().debug() << "readRGB() : GroveColorSensor NOT CONNECTED !" << logs::end;
-		return;
-	}else
+		logger().error() << "readRGB() : GroveColorSensor NOT CONNECTED !" << logs::end;
+	}
+	else
+	{
 		TCS3414GetColor();
+	}
+	return connected_;
 }
 float GroveColorSensor::getTX()
 {
@@ -316,9 +323,9 @@ unsigned char * GroveColorSensor::TCS3414GetColor()
 		makePercentage(TCS3414values_, TCS3414medium_);
 	}
 
-	logger().debug() << "Clear: " << (int) TCS3414values_[0] << " \tRed: " << (int) TCS3414values_[1]
-			<< " \tGreen: " << (int) TCS3414values_[2] << " \tBlue:  " << (int) TCS3414values_[3]
-			<< logs::end;
+	logger().debug() << "Clear: " << (int) TCS3414values_[0] << " \tRed: "
+			<< (int) TCS3414values_[1] << " \tGreen: " << (int) TCS3414values_[2] << " \tBlue:  "
+			<< (int) TCS3414values_[3] << logs::end;
 
 	//pause
 	//usleep(loopdelay_ * 1000); //delays by the integration time between measurements

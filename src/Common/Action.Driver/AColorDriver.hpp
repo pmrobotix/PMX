@@ -20,7 +20,8 @@ public:
 	{
 	}
 
-	virtual void readRGB() = 0;
+	//return connected or not
+	virtual bool readRGB() = 0;
 	virtual float getTX() = 0;
 	virtual float getTY() = 0;
 
@@ -31,7 +32,6 @@ protected:
 	 */
 	AColorDriver()
 	{
-
 	}
 
 };

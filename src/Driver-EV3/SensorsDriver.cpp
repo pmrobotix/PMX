@@ -2,13 +2,13 @@
 
 #include "SensorsDriver.hpp"
 
-#include <cstdio>
+#include <string>
 
 #include "../Log/Logger.hpp"
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create()
+ASensorsDriver * ASensorsDriver::create(std::string botName)
 {
 	return new SensorsDriver();
 }

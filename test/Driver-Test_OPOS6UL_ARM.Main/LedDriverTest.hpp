@@ -23,7 +23,7 @@ class LedDriverTest: public UnitTest
 private:
 
 	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverTest(OPO).
+	 * \brief Retourne le \ref Logger associé à la classe \ref LedDriverTest(OPO).
 	 */
 	static inline const logs::Logger & logger()
 	{

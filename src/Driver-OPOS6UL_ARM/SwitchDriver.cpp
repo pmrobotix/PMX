@@ -7,9 +7,8 @@
 
 using namespace std;
 
-ASwitchDriver * ASwitchDriver::create()
+ASwitchDriver * ASwitchDriver::create(std::string)
 {
-
 	return new SwitchDriver();
 }
 
@@ -19,7 +18,7 @@ SwitchDriver::SwitchDriver()
 	bool c = GpioPCA9555::instance().isConnected();
 	if (c)
 	{
-		//logger().error() << "GpioPCA9555 CONNECTED !" << logs::end;
+		//logger().debug() << "GpioPCA9555 CONNECTED !" << logs::end;
 		GpioPCA9555::instance().setOnP0(0);
 	}
 	else
@@ -30,12 +29,21 @@ SwitchDriver::~SwitchDriver()
 {
 }
 
-int SwitchDriver::pressed()
-{
-	return GpioPCA9555::instance().getValueP1(7);
-}
-
 int SwitchDriver::pressed(unsigned char pin)
 {
 	return GpioPCA9555::instance().getValueP1(pin);
+}
+
+int SwitchDriver::tirettePressed()
+{
+	return pressed(7);
+}
+
+int SwitchDriver::backLeftPressed()
+{
+	return pressed(0);
+}
+int SwitchDriver::backRightPressed()
+{
+	return pressed(1);
 }

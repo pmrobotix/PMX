@@ -1,15 +1,13 @@
-//drivers...ARM
+//drivers...OPO
 
 #include "SensorsDriver.hpp"
 
-#include <unistd.h>
-#include <iomanip>
+#include <string>
 
-#include "../Log/Logger.hpp"
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create()
+ASensorsDriver * ASensorsDriver::create(std::string)
 {
 	return new SensorsDriver();
 }

@@ -2,12 +2,14 @@
 
 #include "SwitchDriver.hpp"
 
+#include <string>
+
 #include "../Log/Logger.hpp"
 #include "GpioPCA9555.hpp"
 
 using namespace std;
 
-ASwitchDriver * ASwitchDriver::create()
+ASwitchDriver * ASwitchDriver::create(std::string)
 {
 
 	return new SwitchDriver();
@@ -30,9 +32,17 @@ SwitchDriver::~SwitchDriver()
 {
 }
 
-int SwitchDriver::pressed()
+int SwitchDriver::tirettePressed()
 {
 	return GpioPCA9555::instance().getValueP1(7);
+}
+int SwitchDriver::backLeftPressed()
+{
+	return 0;
+}
+int SwitchDriver::backRightPressed()
+{
+	return 0;
 }
 
 int SwitchDriver::pressed(unsigned char pin)

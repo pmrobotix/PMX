@@ -23,6 +23,7 @@ public:
 
 	/*!
 	 * \brief Constructor.
+	 * Bouton de selection.
 	 */
 	ButtonDriver();
 

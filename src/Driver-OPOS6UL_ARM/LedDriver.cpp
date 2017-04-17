@@ -1,5 +1,5 @@
 /*!
- * drivers...ARM
+ * drivers...OPO
  */
 
 #include "LedDriver.hpp"

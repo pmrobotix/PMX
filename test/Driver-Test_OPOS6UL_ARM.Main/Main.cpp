@@ -5,6 +5,8 @@
 #include "ColorDriverTest.hpp"
 #include "LcdShieldDriverTest.hpp"
 #include "LedDriverTest.hpp"
+#include "SwitchDriverTest.hpp"
+#include "SensorDriverTest.hpp"
 
 using namespace std;
 
@@ -18,8 +20,9 @@ int main()
 	//suite.addTest(new test::ColorDriverTest());
 	//suite.addTest(new test::LcdShieldDriverTest());
 	//suite.addTest(new test::LedDriverTest());
-	suite.addTest(new test::AsservDriverTest());
-
+	//suite.addTest(new test::AsservDriverTest());
+	//suite.addTest(new test::SwitchDriverTest());
+	suite.addTest(new test::SensorDriverTest());
 
 	suite.run();
 

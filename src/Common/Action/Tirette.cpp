@@ -1,6 +1,9 @@
 #include "Tirette.hpp"
 
 #include <unistd.h>
+#include <string>
+
+#include "../../Log/Logger.hpp"
 
 using namespace std;
 
@@ -8,7 +11,7 @@ Tirette::Tirette(Actions & actions)
 		: AActionsElement(actions)
 
 {
-	switchdriver = ASwitchDriver::create();
+	switchdriver = ASwitchDriver::create("tirette");
 }
 
 Tirette::~Tirette()
@@ -17,7 +20,7 @@ Tirette::~Tirette()
 
 int Tirette::pressed()
 {
-	int temp = switchdriver->pressed();
+	int temp = switchdriver->tirettePressed();
 	logger().debug() << "pressed = " << temp << logs::end;
 
 	return temp;

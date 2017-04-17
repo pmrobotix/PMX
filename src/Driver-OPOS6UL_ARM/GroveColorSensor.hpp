@@ -70,9 +70,9 @@ public:
 		return connected_;
 	}
 
-	int begin();
+	bool begin();
 
-	void readRGB();
+	bool readRGB();
 	float getTX();
 	float getTY();
 

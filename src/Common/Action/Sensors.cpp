@@ -13,7 +13,7 @@ Sensors::Sensors(Actions & actions, Robot * robot) :
 		AActionsElement(actions), robot_(robot)
 
 {
-	sensorsdriver = ASensorsDriver::create();
+	sensorsdriver = ASensorsDriver::create(robot->getID());
 }
 
 Sensors::~Sensors()

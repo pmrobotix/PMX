@@ -1,6 +1,8 @@
 #ifndef OPOS6UL_SWITCHDRIVER_HPP_
 #define OPOS6UL_SWITCHDRIVER_HPP_
 
+#include <string>
+
 #include "../Common/Action.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
@@ -33,8 +35,11 @@ public:
 	 */
 	~SwitchDriver();
 
-	int pressed(); //tirette
+
 	int pressed(unsigned char pin);
+	int tirettePressed();
+	int backLeftPressed();
+	int backRightPressed();
 
 };
 

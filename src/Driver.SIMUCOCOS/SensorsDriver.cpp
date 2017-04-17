@@ -2,11 +2,13 @@
 
 #include "SensorsDriver.hpp"
 
+#include <string>
+
 
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create()
+ASensorsDriver * ASensorsDriver::create(std::string)
 {
 
 	return new SensorsDriver();

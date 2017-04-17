@@ -4,9 +4,7 @@
 #include "../Common/Action.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-
 using namespace std;
-
 
 class SwitchDriver: public ASwitchDriver
 {
@@ -17,13 +15,12 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.SIMULAUNCHER");
+		static const logs::Logger & instance = logs::LoggerFactory::logger(
+				"SwitchDriver.SIMULAUNCHER");
 		return instance;
 	}
 
-
 public:
-
 
 	/*!
 	 * \brief Constructor.
@@ -35,7 +32,9 @@ public:
 	 */
 	~SwitchDriver();
 
-	int pressed();
+	int tirettePressed();
+	int backLeftPressed();
+	int backRightPressed();
 
 	int pressed(unsigned char pin);
 

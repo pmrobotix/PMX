@@ -25,7 +25,6 @@ private:
 
 public:
 
-
 	/*!
 	 * \brief Constructor.
 	 */
@@ -36,7 +35,9 @@ public:
 	 */
 	~SwitchDriver();
 
-	int pressed();
+	int tirettePressed();
+	int backLeftPressed();
+	int backRightPressed();
 
 	int pressed(unsigned char pin);
 

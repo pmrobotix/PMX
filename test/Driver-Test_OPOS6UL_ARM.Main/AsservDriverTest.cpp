@@ -26,12 +26,12 @@ void test::AsservDriverTest::firstTest()
 	RobotPosition p = asservdriver->odo_GetPosition();
 	logger().debug() << p.x << " " << p.y << " " << p.theta << logs::end;
 
-	asservdriver->motion_DoLine(0.010);
+	//asservdriver->motion_DoLine(0.010);
 
-	asservdriver->motion_FreeMotion();
+	//asservdriver->motion_FreeMotion();
 
 
-	sleep(1);
+	sleep(3);
 	asservdriver->motion_ActivateManager(false);
 	this->assert(true, "OK");
 }

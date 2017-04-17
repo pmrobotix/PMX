@@ -4,9 +4,7 @@
 #include "../Common/Action.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-
 using namespace std;
-
 
 class SwitchDriver: public ASwitchDriver
 {
@@ -21,9 +19,7 @@ private:
 		return instance;
 	}
 
-
 public:
-
 
 	/*!
 	 * \brief Constructor.
@@ -35,10 +31,11 @@ public:
 	 */
 	~SwitchDriver();
 
-	int pressed();
+	int tirettePressed();
+	int backLeftPressed();
+	int backRightPressed();
 
 	int pressed(unsigned char pin);
-
 
 };
 

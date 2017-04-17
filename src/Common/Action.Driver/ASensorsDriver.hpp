@@ -1,6 +1,8 @@
 #ifndef ASENSORSDRIVER_HPP_
 #define ASENSORSDRIVER_HPP_
 
+#include <string>
+
 
 class ASensorsDriver
 {
@@ -9,7 +11,7 @@ public:
 	/*!
 	 * \brief ASensorsDriver instance creation.
 	 */
-	static ASensorsDriver * create();
+	static ASensorsDriver * create(std::string botName);
 
 
 	virtual bool front() = 0;
