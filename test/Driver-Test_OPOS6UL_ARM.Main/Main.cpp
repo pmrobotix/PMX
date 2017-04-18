@@ -7,6 +7,7 @@
 #include "LedDriverTest.hpp"
 #include "SwitchDriverTest.hpp"
 #include "SensorDriverTest.hpp"
+#include "ServoDriverTest.hpp"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ int main()
 	//suite.addTest(new test::AsservDriverTest());
 	//suite.addTest(new test::SwitchDriverTest());
 	suite.addTest(new test::SensorDriverTest());
+	suite.addTest(new test::ServoDriverTest());
 
 	suite.run();
 

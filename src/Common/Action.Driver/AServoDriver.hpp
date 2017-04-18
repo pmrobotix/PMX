@@ -5,9 +5,6 @@
 #ifndef ASERVODRIVER_HPP_
 #define ASERVODRIVER_HPP_
 
-//#define LEFT_SERVO 0
-//#define CENTRE_SERVO 3
-//#define RIGHT_SERVO 1
 
 /*!
  * \brief Enumération des libellés des servos.

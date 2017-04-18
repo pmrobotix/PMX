@@ -15,13 +15,14 @@ AServoDriver * AServoDriver::create()
 }
 
 ServoDriver::ServoDriver()
-		: connected_(0), left_(4), right_(0), centre_(1)
+		: connected_(0)
 {
-	logger().debug() << "ServoDriver()" << logs::end;
+	logger().error() << "ServoDriver()" << logs::end;
 
-	right_.isInverted();
+	CCAx12Adc::instance().begin();
 
-	//TODO set default rate ?
+
+
 }
 
 void ServoDriver::hold(ServoLabel servo)
@@ -29,15 +30,15 @@ void ServoDriver::hold(ServoLabel servo)
 	switch (servo)
 	{
 	case SERVO_LEFT:
-		left_.setServoEnable(1);
+
 		break;
 
 	case SERVO_RIGHT:
-		right_.setServoEnable(1);
+
 		break;
 
 	case SERVO_CENTRE:
-		centre_.setServoEnable(1);
+
 		break;
 
 	default:
@@ -63,15 +64,15 @@ void ServoDriver::setPosition(ServoLabel servo, double percent)
 	switch (servo)
 	{
 	case SERVO_LEFT:
-		left_.setServoPosition((int) pos);
+
 		break;
 
 	case SERVO_RIGHT:
-		right_.setServoPosition((int) pos);
+
 		break;
 
 	case SERVO_CENTRE:
-		centre_.setServoPosition((int) pos);
+
 		break;
 
 	default:
@@ -84,15 +85,15 @@ void ServoDriver::release(ServoLabel servo)
 	switch (servo)
 	{
 	case SERVO_LEFT:
-		left_.setServoEnable(0);
+
 		break;
 
 	case SERVO_RIGHT:
-		right_.setServoEnable(0);
+
 		break;
 
 	case SERVO_CENTRE:
-		centre_.setServoEnable(0);
+
 		break;
 
 	default:

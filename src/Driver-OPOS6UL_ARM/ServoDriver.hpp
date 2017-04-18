@@ -3,7 +3,8 @@
 
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "ServoMotorStd.hpp"
+#include "CCAx12Adc.hpp"
+
 
 
 using namespace std;
@@ -23,9 +24,7 @@ private:
 
 	int connected_;
 
-	ServoMotorStd left_;
-	ServoMotorStd right_;
-	ServoMotorStd centre_;
+
 
 protected:
 
