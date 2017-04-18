@@ -1,11 +1,16 @@
 #ifndef OPOS6UL_SENSORSDRIVER_HPP_
 #define OPOS6UL_SENSORSDRIVER_HPP_
 
+#include <as_devices/cpp/as_i2c.hpp>
+
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "IrSensor.hpp"
 
 using namespace std;
+
+#define ADDRESS_gp2y0e02b       0x40 //0x80 >> 1  // Arduino uses 7 bit addressing so we shift address right one bit
+#define DISTANCE_REG_gp2y0e02b  0x5E
+#define SHIFT_gp2y0e02b         0x35
 
 class SensorsDriver: public ASensorsDriver
 {
@@ -20,7 +25,16 @@ private:
 		return instance;
 	}
 
+	AsI2c i2c_gp2y0e02b_;
 
+	//long write_i2c(unsigned char command, unsigned char value);
+
+	int read_i2c(unsigned char command);
+	int read_i2c_2bytes_optimised(unsigned char command);
+	int read_i2c_2bytes(unsigned char command);
+
+	bool connected_gp2y0e02b_;
+	long shift_;
 
 public:
 
@@ -36,6 +50,8 @@ public:
 
 	bool front();
 	bool rear();
+
+
 
 };
 
