@@ -7,8 +7,8 @@
 
 using namespace std;
 
-ServoObjectsSystem::ServoObjectsSystem(Actions & actions)
-		: AActionsElement(actions)
+ServoObjectsSystem::ServoObjectsSystem(Actions & actions) :
+		AActionsElement(actions)
 {
 	servodriver = AServoDriver::create();
 	releaseAll();
@@ -16,10 +16,61 @@ ServoObjectsSystem::ServoObjectsSystem(Actions & actions)
 
 ServoObjectsSystem::~ServoObjectsSystem()
 {
-	servodriver->setPosition(SERVO_LEFT, 0);
-	servodriver->setPosition(SERVO_CENTRE, 0);
-	servodriver->setPosition(SERVO_RIGHT, 0);
-	releaseAll();
+
+	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
+	{
+		ServoLabel foo = static_cast<ServoLabel>(fooInt);
+		servodriver->setPosition(foo, 0);
+		release(foo);
+	}
+	//servodriver->setPosition(SERVO_LEFT, 0);
+	//servodriver->setPosition(SERVO_CENTRE, 0);
+	//servodriver->setPosition(SERVO_RIGHT, 0);
+	//releaseAll();
+}
+
+void ServoObjectsSystem::deploy(ServoLabel servo, double percent, int keep_sec)
+{
+	hold(servo);
+	servodriver->setPosition(servo, percent); // percentage
+	if (keep_sec != 0)
+	{
+		sleep(keep_sec);
+		release(servo);
+	}
+}
+
+void ServoObjectsSystem::release(ServoLabel servo)
+{
+	servodriver->release(servo);
+}
+
+void ServoObjectsSystem::hold(ServoLabel servo)
+{
+	servodriver->hold(servo);
+}
+
+void ServoObjectsSystem::releaseAll()
+{
+	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
+	{
+		ServoLabel foo = static_cast<ServoLabel>(fooInt);
+		release(foo);
+	}
+	/*leftRelease();
+	 centreRelease();
+	 rightRelease();*/
+}
+void ServoObjectsSystem::holdAll()
+{
+	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
+	{
+		ServoLabel foo = static_cast<ServoLabel>(fooInt);
+		hold(foo);
+	}
+	/*leftHold();
+	 centreHold();
+	 rightHold();*/
 }
 
 void ServoObjectsSystem::leftDeploy(double percent, bool keep)
@@ -79,15 +130,3 @@ void ServoObjectsSystem::rightHold()
 	servodriver->hold(SERVO_RIGHT);
 }
 
-void ServoObjectsSystem::releaseAll()
-{
-	leftRelease();
-	centreRelease();
-	rightRelease();
-}
-void ServoObjectsSystem::holdAll()
-{
-	leftHold();
-	centreHold();
-	rightHold();
-}

@@ -13,11 +13,10 @@ int main()
 
 	UnitTestSuite suite;
 	suite.addTest(new test::AsservDriverTest());
-	//suite.addTest(new test::LedDriverTest());
-	//suite.addTest(new test::SoundDriverTest());
+	suite.addTest(new test::LedDriverTest());
+	suite.addTest(new test::SoundDriverTest());
 
 	suite.run();
-
 
 
 	//Assert/fail

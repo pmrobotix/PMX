@@ -50,18 +50,18 @@ L_State1::execute(Robot& r, void *data)
 			b = robot.actions().buttonBar().waitOneOfAllPressed();
 			if (b == BUTTON_LEFT_KEY)
 			{
-				logger().info() << "BUTTON_LEFT_KEY - VIOLET" << logs::end;
+				logger().info() << "BUTTON_LEFT_KEY - BLUE" << logs::end;
 				robot.actions().ledBar().stopAndWait(true);
-				robot.actions().ledBar().set(1, LED_RED);
+				robot.actions().ledBar().set(1, LED_GREEN);
 				robot.actions().ledBar().set(0, LED_OFF);
-				robot.setMyColor(PMXVIOLET);
+				robot.setMyColor(PMXBLUE);
 			}
 			if (b == BUTTON_RIGHT_KEY)
 			{
 				logger().info() << "BUTTON_RIGHT_KEY - GREEN" << logs::end;
 				robot.actions().ledBar().stopAndWait(true);
 				robot.actions().ledBar().set(1, LED_OFF);
-				robot.actions().ledBar().set(0, LED_GREEN);
+				robot.actions().ledBar().set(0, LED_YELLOW);
 				robot.setMyColor(PMXGREEN);
 			}
 			if (b == BUTTON_UP_KEY)
@@ -71,24 +71,24 @@ L_State1::execute(Robot& r, void *data)
 			if (b == BUTTON_DOWN_KEY)
 			{
 				logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
-				robot.actions().parasol().reset();
-				robot.actions().parasol().activate(-20);
+				//robot.actions().funnyAction().reset();
+				//robot.actions().funnyAction().activate(-20);
 				//sleep(1);
 				if (robot.getMyColor() == PMXGREEN)
 				{
-					robot.actions().servoObjects().centreDeploy(10);
+					/*robot.actions().servoObjects().centreDeploy(10);
 					robot.actions().servoObjects().centreDeploy(-65); //on abaisse la canne
 					robot.actions().servoObjects().leftDeploy(-100); //on lache les poissons
 					robot.actions().servoObjects().leftDeploy(100);
-					robot.actions().servoObjects().centreDeploy(10);//on releve la canne
+					robot.actions().servoObjects().centreDeploy(10);//on releve la canne*/
 				}
-				if (robot.getMyColor() == PMXVIOLET)
+				if (robot.getMyColor() == PMXBLUE)
 				{
-					robot.actions().servoObjects().centreDeploy(10);
+					/*robot.actions().servoObjects().centreDeploy(10);
 					robot.actions().servoObjects().centreDeploy(85); //on abaisse la canne
 					robot.actions().servoObjects().rightDeploy(-100); //on lache les poissons
 					robot.actions().servoObjects().rightDeploy(100);
-					robot.actions().servoObjects().centreDeploy(10);//on releve la canne
+					robot.actions().servoObjects().centreDeploy(10);//on releve la canne*/
 				}
 
 				sleep(1);
@@ -126,13 +126,13 @@ L_State1::execute(Robot& r, void *data)
 		{
 			exit(0);
 		}
-		robot.actions().parasol().reset();
-		robot.actions().parasol().activate(-20);
+		/*robot.actions().funnyAction().reset();
+		robot.actions().funnyAction().activate(-20);*/
 		robot.actions().servoObjects().leftDeploy(100);
 		robot.actions().servoObjects().rightDeploy(100);
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().centreDeploy(0);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().centreDeploy(35);
 
 		//usleep(500000);
@@ -156,7 +156,7 @@ void L_State1::setPos()
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(85, 1007, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(100.0, 150.0, 0.0, (robot.getMyColor() == PMXGREEN));
 	robot.svgPrintPosition();
 
 }

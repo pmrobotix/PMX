@@ -16,6 +16,7 @@ AAsservDriver * AAsservDriver::create(std::string botid)
 AsservDriver::AsservDriver(std::string botid)
 {
 	botid_ = botid;
+
 	if (botid == "APF9328Robot")
 	{
 		//printf("--- AsservDriver - botid == APF9328Robot\n");
@@ -36,11 +37,27 @@ AsservDriver::AsservDriver(std::string botid)
 		//CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
 
 	}
+	else if (botid == "OPOS6UL_Robot")
+	{
+		//printf("--- AsservDriver - botid == OPOS6UL_Robot\n");
+		//CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
+		simuTicksPerMeter_ = 1470.0; //nb ticks for 1000mm
+		simuMaxSpeed_ = 0.5; //m/s
+		simuMaxPower_ = 127.0;
+		//CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
+	}
 	else
 	{
 		logger().error() << "NO BOT ID!!  botid_=" << botid_ << logs::end;
 		exit(-1);
 	}
+
+	resetEncoders();
+
+	//reset position
+	p_.x = 0.0;
+	p_.y = 0.0;
+	p_.theta = 0.0;
 
 	tLeft_ms_ = 0.0;
 	tRight_ms_ = 0.0;
@@ -372,30 +389,30 @@ void AsservDriver::enableHardRegulation(bool enable)
 {
 }
 
+/*
+ float AsservDriver::odo_GetX_mm()
+ {
+ return 0.0;
+ }
+ float AsservDriver::odo_GetY_mm()
+ {
+ }
+ float AsservDriver::odo_GetTheta_Rad()
+ {
+ }
+ float AsservDriver::odo_GetTheta_Degree()
+ {
+ }*/
 
-
-
-
-
-
-float AsservDriver::odo_GetX_mm()
-{
-	return 0.0;
-}
-float AsservDriver::odo_GetY_mm()
-{
-}
-float AsservDriver::odo_GetTheta_Rad()
-{
-}
-float AsservDriver::odo_GetTheta_Degree()
-{
-}
 void AsservDriver::odo_SetPosition(double x_m, double y_m, float angle_rad)
 {
+	p_.x = x_m;
+	p_.y = y_m;
+	p_.theta = angle_rad;
 }
 RobotPosition AsservDriver::odo_GetPosition()
 {
+	return p_;
 }
 int AsservDriver::path_GetLastCommandStatus()
 {
@@ -417,6 +434,8 @@ void AsservDriver::path_ResetEmergencyStop()
 }
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
 {
+
+	return TRAJ_OK;
 }
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 {

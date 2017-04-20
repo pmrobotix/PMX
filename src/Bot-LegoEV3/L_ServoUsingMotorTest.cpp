@@ -44,16 +44,16 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
 	step = atoi(args["step"].c_str());
 	logger().debug() << "Arg step set " << args["step"] << ", step = " << step
 			<< logs::end;
-
+/*
 	int pos = 0;
-	robot.actions().parasol().reset();
+	robot.actions().funnyAction().reset();
 	//sleep(1);
-	robot.actions().parasol().activate(-20);
+	robot.actions().funnyAction().activate(-20);
 	sleep(1);
-	robot.actions().parasol().activate(300);
+	robot.actions().funnyAction().activate(300);
 	sleep(6);
-	robot.actions().parasol().activate(-150);
-	sleep(1);
+	robot.actions().funnyAction().activate(-150);
+	sleep(1);*/
 	/*
 	ButtonTouch touch = BUTTON_NONE;
 
@@ -80,7 +80,7 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
 		//usleep(10000);
 	}
 */
-	robot.actions().parasol().release();
+	//robot.actions().funnyAction().release();
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;

@@ -13,7 +13,6 @@
 
 #define AX12ADC_ADDR		 0x08
 
-
 // Commands, first byte sent
 #define CMD_SET_LED_ON		10
 #define CMD_SET_LED_OFF		11
@@ -61,7 +60,6 @@
 #define P_LOCK						47
 #define P_PUNCH						48
 
-
 /*!
  * \brief Implementation for CCAx12Adc card.
  */
@@ -89,11 +87,15 @@ private:
 
 	int getAddressSize(int address);
 
+	int write3_readI2c(unsigned char command, unsigned char value, unsigned char addr,
+			unsigned char nbBytes2Read, unsigned char* data);
+	int write_readI2c(unsigned char command, unsigned char value, unsigned char nbBytes2Read,
+			unsigned char* data);
 
 	int write_i2c(unsigned char command, unsigned char value);
+	/*
 	int read_i2c(unsigned char command);
-	int read_i2c_nbytes(unsigned char *data, int size);
-
+	int read_i2c_nbytes(unsigned char *data, int size);*/
 
 public:
 
@@ -146,8 +148,6 @@ public:
 	{
 		return connected_;
 	}
-
-
 
 };
 

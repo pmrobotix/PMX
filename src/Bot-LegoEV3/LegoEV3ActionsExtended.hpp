@@ -45,9 +45,9 @@ private:
 	Sensors sensors_;
 
 	/*!
-	 * \brief Tirette.
+	 * \brief Funny action
 	 */
-	FunnyAction parasol_;
+	FunnyAction funnyAction_;
 
 	/*!
 	 * \brief Servo Objects.
@@ -61,7 +61,7 @@ public:
 					soundbar_(*this),
 					tirette_(*this),
 					sensors_(*this, robot),
-					parasol_(*this),
+					funnyAction_(*this),
 					servoObjects_(*this)
 	{
 	}
@@ -118,11 +118,11 @@ public:
 
 	/*!
 	 * \brief Cette methode retourne l'objet FunnyAction.
-	 * \return parasol_.
+	 * \return funnyAction_.
 	 */
-	FunnyAction & parasol()
+	FunnyAction & funnyAction()
 	{
-		return parasol_;
+		return funnyAction_;
 	}
 
 	ServoObjectsSystem & servoObjects()
@@ -132,13 +132,12 @@ public:
 
 	void stop()
 	{
-		servoObjects_.leftRelease();
-		servoObjects_.rightRelease();
-		servoObjects_.centreRelease();
+		funnyAction_.release();
+		servoObjects_.releaseAll();
 
 		ledbar_.resetAll();
 		ledbar_.stop();
-		parasol_.release();
+
 		soundbar_.stop();
 
 		Actions::stop(); //stop devices and wait manager to finish

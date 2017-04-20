@@ -53,18 +53,18 @@ A_State1::execute(Robot&, void *data)
 			b = robot.actions().buttonBar().waitOneOfAllPressed();
 			if (b == BUTTON_LEFT_KEY)
 			{
-				logger().info() << "BUTTON_LEFT_KEY - VIOLET" << logs::end;
+				logger().info() << "BUTTON_LEFT_KEY - BLUE" << logs::end;
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
-				robot.actions().lcd2x16().print("VIOLET");
-				robot.setMyColor(PMXVIOLET);
+				robot.actions().lcd2x16().print("BLUE  ");
+				robot.setMyColor(PMXBLUE);
 			}
 			if (b == BUTTON_RIGHT_KEY)
 			{
 				logger().info() << "BUTTON_RIGHT_KEY - GREEN" << logs::end;
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
-				robot.actions().lcd2x16().print("GREEN ");
+				robot.actions().lcd2x16().print("YELLOW");
 				robot.setMyColor(PMXGREEN);
 			}
 			if (b == BUTTON_UP_KEY)

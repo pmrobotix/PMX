@@ -105,7 +105,7 @@ bool L_peche1()
 		//on abaisse la canne
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().centreDeploy(-65);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().centreDeploy(85);
 
 		if (robot.sharedData->end90s())
@@ -122,7 +122,7 @@ bool L_peche1()
 		//on remonte la canne à 45
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().centreDeploy(-10);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().centreDeploy(30);
 
 		if (robot.sharedData->end90s())
@@ -146,7 +146,7 @@ bool L_peche1()
 		//on abaisse la canne
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().centreDeploy(-65);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().centreDeploy(85);
 
 		if (robot.sharedData->end90s())
@@ -155,7 +155,7 @@ bool L_peche1()
 		//on lache les poissons
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().leftDeploy(-100);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().rightDeploy(-100);
 
 		if (robot.sharedData->end90s())
@@ -164,7 +164,7 @@ bool L_peche1()
 		//on délache les poissons
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().leftDeploy(100);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().rightDeploy(100);
 		/*
 		 //on lache les poissons
@@ -176,13 +176,13 @@ bool L_peche1()
 		 //on délache les poissons
 		 if (robot.getMyColor() == PMXGREEN)
 		 robot.actions().servoObjects().leftDeploy(100);
-		 if (robot.getMyColor() == PMXVIOLET)
+		 if (robot.getMyColor() == PMXBLUE)
 		 robot.actions().servoObjects().rightDeploy(100);
 		 */
 		//on releve la canne
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().centreDeploy(-10);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().centreDeploy(30);
 
 		if (robot.sharedData->end90s())
@@ -203,7 +203,7 @@ bool L_peche1()
 		//on abaisse la canne
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().centreDeploy(-65);
-		if (robot.getMyColor() == PMXVIOLET)
+		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().centreDeploy(85);
 
 		if (robot.sharedData->end90s())
@@ -338,14 +338,13 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 
 	robot.sharedData = (Data*) data;
 
-	//IASetupDemo();
 	IASetupHomologation();
 
 	robot.svgPrintPosition();
 
-	sleep(5);
 
-	robot.actions().sensors().startSensors();
+
+	//robot.actions().sensors().startSensors();
 	robot.ia().iAbyZone().ia_start(); //launch IA
 
 	//wait the execution Wait90
@@ -354,7 +353,7 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 		//			logger().info() << "sharedData->end90s=" << sharedData->end90s() << " time="
 		//					<< robot.chronometerRobot().getElapsedTimeInSec() << utils::end;
 		//			robot.base().stop();
-		usleep(5000000);
+		usleep(2000000);
 	}
 
 	//robot.stop();

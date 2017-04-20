@@ -23,7 +23,7 @@ int main()
 	//suite.addTest(new test::LedDriverTest());
 	//suite.addTest(new test::AsservDriverTest());
 	//suite.addTest(new test::SwitchDriverTest());
-	suite.addTest(new test::SensorDriverTest());
+	//suite.addTest(new test::SensorDriverTest());
 	suite.addTest(new test::ServoDriverTest());
 
 	suite.run();

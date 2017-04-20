@@ -11,11 +11,21 @@
  */
 enum ServoLabel
 {
+	SERVO_FUNNY_ACTION,
+
+	SERVO_HERCULE, //puissance pince
+
+	SERVO_BASCULE,
+
+	SERVO_PINCE,
+
 	SERVO_LEFT,
 
 	SERVO_RIGHT,
 
-	SERVO_CENTRE
+	SERVO_CENTRE,
+
+	SERVO_enumTypeEnd
 };
 
 class AServoDriver

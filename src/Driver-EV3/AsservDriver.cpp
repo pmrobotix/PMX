@@ -83,7 +83,8 @@ AsservDriver::AsservDriver()
 
 void AsservDriver::setMotorLeftPosition(int power, long ticks)
 {
-	power = -power;
+	//power = -power;
+
 	if (_motor_left.connected())
 	{
 		if (_motor_left.speed_regulation_enabled() == "on") //speed_sp
@@ -98,11 +99,12 @@ void AsservDriver::setMotorLeftPosition(int power, long ticks)
 			_motor_left.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
 		}
 	}
+
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticks)
 {
-	power = -power;
+	//power = -power;
 	if (_motor_right.connected())
 	{
 		if (_motor_right.speed_regulation_enabled() == "on") //speed_sp
@@ -123,7 +125,7 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 //regulation disabled => power in percentage -100 / +100
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
-	power = -power;
+	//power = -power;
 	if (_motor_left.connected())
 	{
 		//with time
@@ -185,7 +187,7 @@ int AsservDriver::limit(int power, int max)
 
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
-	power = -power;
+	//power = -power;
 	if (_motor_right.connected())
 	{
 		//with time
@@ -242,7 +244,7 @@ long AsservDriver::getLeftInternalEncoder()
 	if (_motor_left.connected())
 	{
 		//+/- 2,147,483,648
-		return -1 * _motor_left.position();
+		return  _motor_left.position();
 	}
 	else
 		return 0;
@@ -252,7 +254,7 @@ long AsservDriver::getRightInternalEncoder()
 {
 	if (_motor_right.connected())
 	{
-		return -1 * _motor_right.position();
+		return  _motor_right.position();
 	}
 	else
 		return 0;
@@ -350,7 +352,7 @@ void AsservDriver::enableHardRegulation(bool enable)
 
 
 
-
+/*
 float AsservDriver::odo_GetX_mm()
 {
 	return 0.0;
@@ -363,7 +365,7 @@ float AsservDriver::odo_GetTheta_Rad()
 }
 float AsservDriver::odo_GetTheta_Degree()
 {
-}
+}*/
 void AsservDriver::odo_SetPosition(double x_m, double y_m, float angle_rad)
 {
 }
@@ -390,12 +392,15 @@ void AsservDriver::path_ResetEmergencyStop()
 }
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
 {
+	return TRAJ_ERROR;
 }
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 {
+	return TRAJ_ERROR;
 }
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 {
+	return TRAJ_ERROR;
 }
 void AsservDriver::motion_FreeMotion()
 {

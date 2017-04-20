@@ -148,9 +148,9 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 				<< chrono.getElapsedTimeInMilliSec()
 				<< "ms ; left= "
 				<< left
-				<< " ; right= "
+				<< " right= "
 				<< right
-				<< " x="
+				<< " ; x="
 				<< robot.asserv().pos_getX_mm()
 				<< " y="
 				<< robot.asserv().pos_getY_mm()
@@ -168,9 +168,9 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 				<< chrono.getElapsedTimeInMilliSec()
 				<< "ms ; left= "
 				<< left
-				<< " ; right= "
+				<< " right= "
 				<< right
-				<< " x="
+				<< " ; x="
 				<< robot.asserv().pos_getX_mm()
 				<< " y="
 				<< robot.asserv().pos_getY_mm()

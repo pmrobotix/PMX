@@ -24,12 +24,14 @@ private:
 	 */
 	AsservInsa * pAsservInsa_;
 
+	//dernière puissance pour chaque motor.
+	int last_sens_left_; //1:AV 0:AR
+	int last_sens_right_; //1:AV 0:AR
+	float motorwheel_patch_m;
+	float motorwheel_patch_rad;
+
 public:
-	LegoEV3AsservExtended(std::string botId, Robot * robot) :
-			Asserv(botId, robot) //on appelle le constructeur pere
-	{
-		pAsservInsa_ = new AsservInsa(robot);
-	}
+	LegoEV3AsservExtended(std::string botId, Robot * robot);
 
 	~LegoEV3AsservExtended()
 	{

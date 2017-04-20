@@ -44,12 +44,12 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, b
 	thetaInDegrees = getRelativeAngle(thetaInDegrees);
 }
 
-void Asserv::ignoreFrontCollision(bool ignore)
+void Asserv::ignoreFrontCollision(bool ignore) //TODO rename setIgnoreFrontCollision
 {
 	ignoreFrontCollision_ = ignore;
 }
 
-void Asserv::ignoreRearCollision(bool ignore)
+void Asserv::ignoreRearCollision(bool ignore)//TODO rename setIgnoreRearCollision
 {
 	ignoreRearCollision_ = ignore;
 }
@@ -57,11 +57,13 @@ void Asserv::ignoreRearCollision(bool ignore)
 // position x,y in mm
 float Asserv::pos_getX_mm()
 {
-	return 0;
+	RobotPosition p = asservdriver->odo_GetPosition();
+	return p.x;
 }
 float Asserv::pos_getY_mm()
 {
-	return 0;
+	RobotPosition p = asservdriver->odo_GetPosition();
+	return p.y;
 }
 // angle in radian
 float Asserv::pos_getTheta()
@@ -82,6 +84,7 @@ void Asserv::setFrontCollision()
 	if (!ignoreFrontCollision_)
 	{
 		//pAsservInsa_->path_CollisionOnTrajectory();
+		asservdriver->path_CollisionOnTrajectory();
 	}
 }
 
@@ -92,6 +95,7 @@ void Asserv::setRearCollision()
 	if (!ignoreRearCollision_)
 	{
 		//pAsservInsa_->path_CollisionRearOnTrajectory();
+		asservdriver->path_CollisionRearOnTrajectory();
 	}
 }
 
@@ -110,11 +114,11 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
 	float meters = distance_mm / 1000.0f;
 	//TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
-	//TRAJ_STATE ts = asservdriver->motion_DoLine(meters);
+	TRAJ_STATE ts = asservdriver->motion_DoLine(meters);
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;
-	//return ts;
+	return ts;
 }
 
 TRAJ_STATE Asserv::doRotateAbs(float degrees)

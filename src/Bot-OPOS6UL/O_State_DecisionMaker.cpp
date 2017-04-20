@@ -351,7 +351,7 @@ O_State_DecisionMaker::execute(Robot &, void *data)
 //	robot.svgPrintPosition();
 	//clotho
 
-	if (robot.getMyColor() == PMXVIOLET)
+	if (robot.getMyColor() == PMXBLUE)
 		robot.asserv().doMoveArcRotate(55, 450); //todo gerer dans l'autre couleur
 	if (robot.getMyColor() == PMXGREEN)
 		robot.asserv().doMoveArcRotate(-55, -450);

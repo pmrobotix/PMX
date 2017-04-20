@@ -22,8 +22,8 @@ enum MOTION_STATE
 
 typedef struct RobotPosition
 {
-	float x; //mm
-	float y; //mm
+	float x; //metres
+	float y; //metres
 	float theta; //radians
 } RobotPosition;
 
@@ -81,7 +81,7 @@ public:
 	virtual float odo_GetTheta_Degree() = 0;		// angle in degrees
 	*/
 	virtual void odo_SetPosition(double x_m, double y_m, float angle_rad) = 0;
-	virtual RobotPosition odo_GetPosition() = 0;
+	virtual RobotPosition odo_GetPosition() = 0; //pos in metre/radian
 
 	virtual int path_GetLastCommandStatus() = 0;
 	virtual void path_InterruptTrajectory() = 0;

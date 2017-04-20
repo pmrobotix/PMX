@@ -3,11 +3,22 @@
 #include <cmath>
 #include <cstdio>
 
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/Logger.hpp"
 
 AsservInsa * LegoEV3AsservExtended::insa()
 {
 	return pAsservInsa_;
+}
+
+LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, Robot * robot) :
+		Asserv(botId, robot) //on appelle le constructeur pere
+{
+	pAsservInsa_ = new AsservInsa(robot);
+	last_sens_left_ = 0;
+	last_sens_right_ = 0;
+	motorwheel_patch_m = 0.0; //metres
+	motorwheel_patch_rad = 0.0; //radians
 }
 
 void LegoEV3AsservExtended::startMotionTimerAndOdo()
@@ -17,20 +28,22 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	//SIMU EV3
 	printf("---LegoEV3AsservExtended > SIMU EV3\n");
 	pAsservInsa_->encoder_SetResolution(1395, 1395, 135);
-	pAsservInsa_->motion_SetDefaultAccel(0.4);
+	pAsservInsa_->motion_SetDefaultAccel(0.2);
 	pAsservInsa_->motion_SetDefaultVmax(0.5);
-	pAsservInsa_->motion_SetDefaultDecel(0.4);
+	pAsservInsa_->motion_SetDefaultDecel(0.3);
 	pAsservInsa_->motion_setMaxPwmValue(860); //max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
 	//RCVA PI
 //	pAsservInsa_->motion_configureAlphaPID(1200.0, 0.0, 0.0);
 //	pAsservInsa_->motion_configureDeltaPID(900.0, 0.0, 0.0);
 //	//NORMAL PID
-	pAsservInsa_->motion_configureAlphaPID(0.06, 0.001, 0.0005); //0.06 0.001 0.0005
-	pAsservInsa_->motion_configureDeltaPID(0.04, 0.0002, 0.0005);
+	pAsservInsa_->motion_configureAlphaPID(0.25, 0.001, 0.00005); //(2017) 0.25, 0.001, 0.00005 //(2016)0.06 0.001 0.0005
+	pAsservInsa_->motion_configureDeltaPID(0.3, 0.001, 0.00005); //(2017) 0.3, 0.001, 0.00005
 
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
+	motorwheel_patch_m = 0.0; //metres
+	motorwheel_patch_rad = 0.0; //radians
 
 #else
 	//Real EV3
@@ -38,9 +51,9 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	printf("---LegoEV3AsservExtended > Real EV3\n");
 
 	pAsservInsa_->encoder_SetResolution(1395, 1395, 135);
-	pAsservInsa_->motion_SetDefaultAccel(0.4);
+	pAsservInsa_->motion_SetDefaultAccel(0.3);
 	pAsservInsa_->motion_SetDefaultVmax(0.5);
-	pAsservInsa_->motion_SetDefaultDecel(0.4);
+	pAsservInsa_->motion_SetDefaultDecel(0.3);
 	pAsservInsa_->motion_setMaxPwmValue(860);//max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
 
@@ -50,11 +63,15 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 //	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 //	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 	//	//NORMAL PID
-	pAsservInsa_->motion_configureAlphaPID(0.06, 0.002, 0.0005);//0.05 0.002 0.0005
-	pAsservInsa_->motion_configureDeltaPID(0.05, 0.002, 0.0005);//0.05 0.002 0.0005
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
+	//pAsservInsa_->motion_configureAlphaPID(0.06, 0.002, 0.0005);//0.05 0.002 0.0005 (2016)
+	//pAsservInsa_->motion_configureDeltaPID(0.05, 0.002, 0.0005);//0.05 0.002 0.0005 (2016)
+	pAsservInsa_->motion_configureAlphaPID(0.06, 0.002, 0.0005);//(2017) 0.25, 0.001, 0.00005
+	pAsservInsa_->motion_configureDeltaPID(0.05, 0.002, 0.0005);//(2017) 0.3, 0.001, 0.00005
 
+	motorwheel_patch_m = 0.005;//metres
+	motorwheel_patch_rad = 0.1;//radians
 #endif
 
 	pAsservInsa_->motion_DisablePID();
@@ -63,7 +80,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	//f=40 Hz => every 25ms
 	//f=50 Hz => every 20ms
 	//f=100 Hz =>every 10ms
-	pAsservInsa_->motion_SetSamplingFrequency(50); //20ms pour EV3 pour avoir plus de step sur la vitesse
+	pAsservInsa_->motion_SetSamplingFrequency(100); //(2016 50 =>20ms pour EV3 pour avoir plus de step sur la vitesse
 
 }
 
@@ -97,7 +114,45 @@ TRAJ_STATE LegoEV3AsservExtended::doLineAbs(float distance_mm)
 	}
 
 	float meters = distance_mm / 1000.0f;
+
+	int sens_left = 0;
+	int sens_right = 0;
+
+	if (distance_mm >= 0)
+	{
+		sens_left = 1;
+		if (sens_left != last_sens_left_)
+		{
+			meters = meters + (motorwheel_patch_m);
+			logger().debug() << "change sens_left m=" << meters << logs::end;
+		}
+		sens_right = 1;
+		if (sens_right != last_sens_right_)
+		{
+			meters = meters + (motorwheel_patch_m);
+			logger().debug() << "change sens_right m=" << meters << logs::end;
+		}
+	}
+	else
+	{
+		sens_left = 0;
+		if (sens_left != last_sens_left_)
+		{
+			meters = meters - (motorwheel_patch_m);
+		}
+		sens_right = 0;
+		if (sens_right != last_sens_right_)
+		{
+			meters = meters - (motorwheel_patch_m);
+		}
+	}
+
 	TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
+
+	//*********************************
+	last_sens_left_ = sens_left;
+	last_sens_right_ = sens_right;
+	//*********************************
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;
@@ -115,7 +170,47 @@ TRAJ_STATE LegoEV3AsservExtended::doRotateAbs(float degrees)
 	ignoreRearCollision_ = true;
 	ignoreFrontCollision_ = true;
 
+	int sens_left = 0;
+	int sens_right = 0;
+
+	if (degrees > 0)
+	{
+		sens_left = 0;
+		if (sens_left != last_sens_left_)
+		{
+			radians = radians + motorwheel_patch_rad;
+			logger().error() << "doRotateAbs > change sens_left + rad=" << radians << logs::end;
+		}
+		sens_right = 1;
+		if (sens_right != last_sens_right_)
+		{
+			radians = radians + motorwheel_patch_rad;
+			logger().error() << "doRotateAbs > change sens_right + rad=" << radians << logs::end;
+		}
+
+	}
+	else if (degrees < 0)
+	{
+		sens_left = 1;
+		if (sens_left != last_sens_left_)
+		{
+			radians = radians - motorwheel_patch_rad;
+			logger().error() << "doRotateAbs > change sens_left - rad=" << radians << logs::end;
+		}
+		sens_right = 0;
+		if (sens_right != last_sens_right_)
+		{
+			radians = radians - motorwheel_patch_rad;
+			logger().error() << "doRotateAbs > change sens_right - rad=" << radians << logs::end;
+		}
+	}
+
 	TRAJ_STATE ts = pAsservInsa_->motion_DoRotate(radians);
+
+	//*********************************
+	last_sens_left_ = sens_left;
+	last_sens_right_ = sens_right;
+	//*********************************
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;
@@ -158,8 +253,7 @@ TRAJ_STATE LegoEV3AsservExtended::doRotateTo(float thetaInDegree)
 	}
 
 	// force into the minimum absolute value residue class, so that -180 < angle <= 180
-	if (degrees > 180)
-		degrees -= 360;
+	if (degrees > 180) degrees -= 360;
 
 	logger().debug() << "doRotateTo degrees=" << degrees << "degrees " << logs::end;
 	TRAJ_STATE ts = doRotateAbs(degrees);
@@ -185,8 +279,7 @@ TRAJ_STATE LegoEV3AsservExtended::doMoveForwardAndRotateTo(float xMM, float yMM,
 {
 	TRAJ_STATE ts;
 	ts = doMoveForwardTo(xMM, yMM);
-	if (ts != TRAJ_OK)
-		return ts;
+	if (ts != TRAJ_OK) return ts;
 
 	ts = doRotateTo(thetaInDegree);
 	return ts;
@@ -209,8 +302,7 @@ TRAJ_STATE LegoEV3AsservExtended::doMoveBackwardAndRotateTo(float xMM, float yMM
 {
 	TRAJ_STATE ts;
 	ts = doMoveBackwardTo(xMM, yMM);
-	if (ts != TRAJ_OK)
-		return ts;
+	if (ts != TRAJ_OK) return ts;
 	ts = doRotateTo(thetaInDegree);
 	return ts;
 }
@@ -275,16 +367,14 @@ void LegoEV3AsservExtended::setFrontCollision()
 	logger().error() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_
 			<< logs::end;
 
-	if (!ignoreFrontCollision_)
-		pAsservInsa_->path_CollisionOnTrajectory();
+	if (!ignoreFrontCollision_) pAsservInsa_->path_CollisionOnTrajectory();
 }
 
 void LegoEV3AsservExtended::setRearCollision()
 {
 	logger().error() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_
 			<< logs::end;
-	if (!ignoreRearCollision_)
-		pAsservInsa_->path_CollisionRearOnTrajectory();
+	if (!ignoreRearCollision_) pAsservInsa_->path_CollisionRearOnTrajectory();
 }
 
 // position x,x in mm

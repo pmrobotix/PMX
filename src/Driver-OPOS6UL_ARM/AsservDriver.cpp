@@ -52,9 +52,7 @@ void AsservDriver::setMotorLeftPower(int power, int timems)
 {
 	if (!connected_) return;
 
-	//i2cExample();
-	unsigned char cmd[12];
-	mbed_readI2c('P', 12, cmd);
+
 }
 
 void AsservDriver::setMotorRightPower(int power, int timems)
@@ -114,7 +112,8 @@ int AsservDriver::getMotorRightCurrent()
 
 void AsservDriver::enableHardRegulation(bool enable)
 {
-
+	motion_ActivateManager(enable);
+	motion_DisablePID(enable);
 }
 /*
  float AsservDriver::odo_GetX_mm()
@@ -211,7 +210,7 @@ RobotPosition AsservDriver::odo_GetPosition() //en metre
 		logger().info() << "odo_GetPosition P12 " << x_mm.f << " " << y_mm.f << " " << rad.f
 				<< logs::end;
 
-		RobotPosition p;
+		RobotPosition p; //in m
 		p.x = x_mm.f / 1000.0;
 		p.y = y_mm.f / 1000.0;
 		p.theta = rad.f;
@@ -365,96 +364,3 @@ int AsservDriver::mbed_ack()
 		return -1;
 }
 
-void AsservDriver::i2cExample()
-{
-
-	unsigned char cmd[12];
-	unsigned char ack[1];
-	/*
-	 //ACK
-	 memset(ack, 0, sizeof(ack));
-	 if (int r = mbedI2c_.read(ack, 1) < 0)
-	 {
-	 printf("ack1  error! %d\n", r);
-	 }
-	 printf("ack 0x%02hhX\n", *ack); // hh pour indiquer que c'est un char (pas int)
-	 */
-	float2bytes_t x;
-	x.f = 100.1230f;
-	float2bytes_t y;
-	y.f = 99990000.0f;
-	float2bytes_t t;
-	t.f = 3.55221f;
-
-//while (1)
-	{
-
-		//P12
-		if (mbedI2c_.writeRegByte('P', 12) < 0)
-		{
-			printf("writeRegByte error!\n");
-		}
-		//Read the data back from the slave
-		memset(cmd, 0, sizeof(cmd));
-		if (mbedI2c_.read(cmd, sizeof(cmd)) < 0)
-		{
-			printf("Read error!\n");
-		}
-		float2bytes_t rx;
-		rx.b[0] = cmd[0];
-		rx.b[1] = cmd[1];
-		rx.b[2] = cmd[2];
-		rx.b[3] = cmd[3];
-
-		float2bytes_t ry;
-		ry.b[0] = cmd[4];
-		ry.b[1] = cmd[5];
-		ry.b[2] = cmd[6];
-		ry.b[3] = cmd[7];
-
-		float2bytes_t rt;
-		rt.b[0] = cmd[8];
-		rt.b[1] = cmd[9];
-		rt.b[2] = cmd[10];
-		rt.b[3] = cmd[11];
-		printf("P12: %f %f %f\n", rx.f, ry.f, rt.f);
-
-		//ACK
-		memset(ack, 0, sizeof(ack));
-		if (int r = mbedI2c_.read(ack, 1) < 0)
-		{
-			printf("ack1  error! %d\n", r);
-		}
-		printf("ack 0x%02hhX\n", *ack); // hh pour indiquer que c'est un char (pas int)
-
-		//S12
-		if (int r = mbedI2c_.writeRegByte('S', 12) < 0)
-		{
-			printf("S12 writeRegByte error %d !\n", r);
-		}
-		memset(cmd, 0, sizeof(cmd));
-		printf("S12 %f %f %f \n", x.f, y.f, t.f);
-		//printf("%d %d %d %d\n", x.bytes[0], x.bytes[1], x.bytes[2], x.bytes[3]);
-		cmd[0] = x.b[0];
-		cmd[1] = x.b[1];
-		cmd[2] = x.b[2];
-		cmd[3] = x.b[3];
-
-		cmd[4] = y.b[0];
-		cmd[5] = y.b[1];
-		cmd[6] = y.b[2];
-		cmd[7] = y.b[3];
-
-		cmd[8] = t.b[0];
-		cmd[9] = t.b[1];
-		cmd[10] = t.b[2];
-		cmd[11] = t.b[3];
-
-		if (int r = mbedI2c_.write(cmd, sizeof(cmd)) < 0)
-		{
-			printf("S12.Write data error %d !\n", r);
-		}
-
-	}
-
-}

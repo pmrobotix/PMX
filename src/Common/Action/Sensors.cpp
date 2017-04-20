@@ -43,7 +43,7 @@ void Sensors::startSensors()
 {
 	logger().debug() << "startSensors" << logs::end;
 
-	this->actions().addTimer(new SensorsTimer(*this, 200, "sensors"));
+	this->actions().addTimer(new SensorsTimer(*this, 300, "sensors"));
 
 }
 
@@ -62,6 +62,8 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 	if (front)
 	{
 		//send collision to asserv
+		//sensors_.robot()->asserv_default->setFrontCollision();
+		//setFrontCollision
 		sensors_.robot()->asserv_default->setFrontCollision();
 	}
 

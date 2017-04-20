@@ -17,24 +17,48 @@ void L_ServoObjectTest::run(int argc, char** argv)
 	logger().info() << "Executing - " << this->desc() << logs::end;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	/*
+	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, -10);
+	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, -70);
+	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, -10);
 
-	//peche en green
+	 */
+	/*
+	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 0);
+	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 60);
+	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 0);
+	 */
 
-	robot.actions().servoObjects().centreDeploy(0);
-	robot.actions().servoObjects().leftDeploy(100);
-	robot.actions().servoObjects().rightDeploy(-100);
-	sleep(1);
-	robot.actions().servoObjects().centreDeploy(-0);
-	sleep(1);
-	robot.actions().servoObjects().centreDeploy(-60);
+	/*
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 70); // vertical
+	 sleep(1);
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, -100, 3); //90 degree //horizontal
+	 sleep(1);
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 70);
+	 sleep(1);
+	 */
+	/*
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15);//ouvert
+	 sleep(1);
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, 50); //fermé
+	 sleep(4);
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15);
+	 sleep(1);*/
+
+	robot.actions().servoObjects().deploy(SERVO_HERCULE, 0,2);
+	robot.actions().servoObjects().deploy(SERVO_BASCULE, 80,0); // vertical
+	robot.actions().servoObjects().deploy(SERVO_HERCULE, 85,3);
+	//robot.actions().servoObjects().deploy(SERVO_BASCULE, 90); // vertical
+	robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
+
+	robot.actions().servoObjects().deploy(SERVO_PINCE, 50); //fermé
+
+	robot.actions().servoObjects().deploy(SERVO_BASCULE, -100, 3); //90 degree //horizontal
+
+	robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
 
 
-	robot.actions().servoObjects().leftDeploy(-100);
-
-	sleep(1);
-	robot.actions().servoObjects().leftDeploy(100);
-	robot.actions().servoObjects().centreDeploy(0);
-
+	robot.actions().servoObjects().deploy(SERVO_BASCULE, 90,2); // vertical
 
 	robot.actions().servoObjects().releaseAll();
 

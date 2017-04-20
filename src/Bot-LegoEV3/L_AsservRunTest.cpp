@@ -69,8 +69,8 @@ void L_AsservRunTest::run(int argc, char** argv)
 	robot.svgPrintPosition();
 
 	chrono.start();
-	robot.actions().start();
-	robot.actions().sensors().startSensors();
+	//robot.actions().start();
+	//robot.actions().sensors().startSensors();
 
 	robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
 
@@ -92,6 +92,7 @@ void L_AsservRunTest::run(int argc, char** argv)
 
 	robot.svgPrintPosition();
 
+	/*
 	robot.asserv().doMoveBackwardTo(0, 300);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
@@ -153,7 +154,7 @@ void L_AsservRunTest::run(int argc, char** argv)
 			<< logs::end;
 
 	robot.svgPrintPosition();
-
+*/
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }

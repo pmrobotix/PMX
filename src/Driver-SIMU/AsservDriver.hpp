@@ -62,8 +62,11 @@ private:
 
 	//Go to Project -> Properties -> C/C++ General -> Path and Symbols -> Tab [Symbols].
 	//Add the symbol : __cplusplus with the value 201103L
-	std::thread twLeft_; //TODO use pthread
+	std::thread twLeft_;
 	std::thread twRight_;
+
+
+	RobotPosition p_; //position SIMU du robot
 
 protected:
 
@@ -105,10 +108,10 @@ public:
 	void enableHardRegulation(bool enable);
 
 	//fonctions asservissements externe par defaut
-	float odo_GetX_mm();
+	/*float odo_GetX_mm();
 	float odo_GetY_mm();
 	float odo_GetTheta_Rad();		// angle in radian
-	float odo_GetTheta_Degree();		// angle in degrees
+	float odo_GetTheta_Degree();		// angle in degrees*/
 	void odo_SetPosition(double x_m, double y_m, float angle_rad);
 	RobotPosition odo_GetPosition();
 	int path_GetLastCommandStatus();

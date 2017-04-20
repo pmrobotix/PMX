@@ -43,7 +43,6 @@ private:
 	AsI2c mbedI2c_;
 	bool connected_;
 
-	void i2cExample(); //TODO to be removed
 	int mbed_ack();
 	int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
 	int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write,

@@ -59,10 +59,10 @@ void L_State_Wait90SecAction::execute()
 					<< robot.chrono().getElapsedTimeInSec()
 					<< logs::end;
 
-		robot.actions().parasol().activate(300);
+		//robot.actions().funnyAction().activate(300);
 		sleep(5);
 		//robot.actions().parasol().activate(-150);
-		robot.actions().parasol().release();
+		//robot.actions().funnyAction().release();
 		//sleep(1);
 
 		robot.actions().servoObjects().releaseAll();

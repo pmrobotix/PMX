@@ -15,15 +15,19 @@ AServoDriver * AServoDriver::create()
 	return instance;
 }
 
-ServoDriver::ServoDriver()
-		: connected_(0)
+ServoDriver::ServoDriver() :
+		connected_(0)
 {
 	logger().debug() << "ServoDriver()" << logs::end;
 
-	sv1_ = servo_motor("in4:i2c88:sv1");
-	sv7_ = servo_motor("in4:i2c88:sv7");
-	sv8_ = servo_motor("in4:i2c88:sv8");
-	sv8_.set_polarity(sv8_.polarity_inversed);
+	sv1_ = servo_motor("in4:i2c88:sv1"); //funny action
+	//sv1_.set_polarity(sv1_.polarity_inversed);
+	sv2_ = servo_motor("in4:i2c88:sv2"); //pince puissance
+	sv3_ = servo_motor("in4:i2c88:sv3");
+	sv4_ = servo_motor("in4:i2c88:sv4");
+
+	//sv7_ = servo_motor("in4:i2c88:sv7");
+	//sv8_ = servo_motor("in4:i2c88:sv8");
 
 }
 
@@ -32,14 +36,26 @@ void ServoDriver::hold(ServoLabel servo) // 1 à 8
 	switch (servo)
 	{
 	case SERVO_LEFT:
-		sv7_.set_command(servo_motor::command_run);
+		//sv7_.set_command(servo_motor::command_run);
 		break;
 
 	case SERVO_RIGHT:
-		sv8_.set_command(servo_motor::command_run);
+		//sv8_.set_command(servo_motor::command_run);
 		break;
 
-	case SERVO_CENTRE:
+	case SERVO_PINCE:
+		sv4_.set_command(servo_motor::command_run);
+		break;
+
+	case SERVO_BASCULE:
+		sv3_.set_command(servo_motor::command_run);
+		break;
+
+	case SERVO_HERCULE:
+		sv2_.set_command(servo_motor::command_run);
+		break;
+
+	case SERVO_FUNNY_ACTION:
 		sv1_.set_command(servo_motor::command_run);
 		break;
 
@@ -53,15 +69,27 @@ void ServoDriver::setPosition(ServoLabel servo, double pos)
 	switch (servo)
 	{
 	case SERVO_LEFT:
-		sv7_.set_position_sp(pos); //(-100% to 100%)
+		//sv7_.set_position_sp(pos); //(-100% to 100%)
 		break;
 
 	case SERVO_RIGHT:
-		sv8_.set_position_sp(pos); //(-100% to 100%)
+		//sv8_.set_position_sp(pos); //(-100% to 100%)
 		break;
 
-	case SERVO_CENTRE:
+	case SERVO_FUNNY_ACTION:
 		sv1_.set_position_sp(pos); //(-100% to 100%)
+		break;
+
+	case SERVO_HERCULE:
+		sv2_.set_position_sp(pos); //(-100% to 100%)
+		break;
+
+	case SERVO_BASCULE:
+		sv3_.set_position_sp(pos); //(-100% to 100%)
+		break;
+
+	case SERVO_PINCE:
+		sv4_.set_position_sp(pos); //(-100% to 100%)
 		break;
 
 	default:
@@ -74,16 +102,29 @@ void ServoDriver::release(ServoLabel servo)
 	switch (servo)
 	{
 	case SERVO_LEFT:
-		sv7_.set_command(servo_motor::command_float);
+		//sv7_.set_command(servo_motor::command_float);
 		break;
 
 	case SERVO_RIGHT:
-		sv8_.set_command(servo_motor::command_float);
+		//sv8_.set_command(servo_motor::command_float);
 		break;
 
-	case SERVO_CENTRE:
+	case SERVO_FUNNY_ACTION:
 		sv1_.set_command(servo_motor::command_float);
 		break;
+
+	case SERVO_HERCULE:
+		sv2_.set_command(servo_motor::command_float);
+		break;
+
+	case SERVO_BASCULE:
+		sv3_.set_command(servo_motor::command_float);
+		break;
+
+	case SERVO_PINCE:
+		sv4_.set_command(servo_motor::command_float);
+		break;
+
 	default:
 		break;
 	}
@@ -93,14 +134,6 @@ void ServoDriver::setRate(ServoLabel servo, int millisec)
 {
 	switch (servo)
 	{
-	case SERVO_LEFT:
-		break;
-
-	case SERVO_RIGHT:
-		break;
-
-	case SERVO_CENTRE:
-		break;
 
 	default:
 		break;

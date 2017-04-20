@@ -4,7 +4,7 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "AActionsElement.hpp"
 
-class AServoUsingMotorDriver;
+class AServoDriver;
 
 
 class FunnyAction: public AActionsElement
@@ -21,7 +21,7 @@ private:
 	}
 
 public:
-	AServoUsingMotorDriver* servomotordriver;
+	AServoDriver* servodriver;
 
 	/*!
 	 * \brief Constructor.

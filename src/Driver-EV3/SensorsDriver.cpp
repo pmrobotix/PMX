@@ -96,7 +96,7 @@ bool SensorsDriver::front()
 	double distance_mm = percent * 6.0;
 
 	logger().debug() << "front percent=" << percent << " mm=" << distance_mm << logs::end;
-	if (distance_mm < 170)
+	if (distance_mm < 220)
 	{
 		logger().info() << "!! detected FRONT percent="
 				<< percent
