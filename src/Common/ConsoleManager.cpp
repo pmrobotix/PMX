@@ -8,16 +8,16 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <iomanip>
 
-#include "ConsoleKeyInput.hpp"
+#include "Utils/ConsoleKeyInput.hpp"
 
 using namespace std;
 
-ConsoleManager::ConsoleManager()
-		: tests_()
+ConsoleManager::ConsoleManager() :
+		tests_()
 {
 }
 
@@ -47,9 +47,11 @@ std::string * ConsoleManager::displayAvailableTests(std::string color, int selec
 		else
 			std::cout << "\033[0m" << std::flush;
 
-		std::cout << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name() << std::setw(3) << "- " << tests_[i]->desc()<< std::endl;
+		std::cout << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name()
+				<< std::setw(3) << "- " << tests_[i]->desc() << std::endl;
 		ostringstream out;
-		out << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name() << std::setw(3) << "- " << tests_[i]->desc();
+		out << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name() << std::setw(3)
+				<< "- " << tests_[i]->desc();
 		tab[i + 1] = out.str();
 	}
 	return tab;

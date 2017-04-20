@@ -65,7 +65,7 @@ public:
 	 */
 	virtual void run(int argc, char** argv) = 0;
 
-	virtual void configureConsoleArgs(int , char** )
+	virtual void configureConsoleArgs(int , char** ) // A surcharger par le test en question pour ajouter ses parametres specifiques
 	{
 	}
 };

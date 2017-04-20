@@ -19,10 +19,7 @@ private:
 		return instance;
 	}
 
-	/*!
-	 * \brief asservissement utilisé
-	 */
-	AsservInsa * pAsservInsa_;
+
 
 	//dernière puissance pour chaque motor.
 	int last_sens_left_; //1:AV 0:AR

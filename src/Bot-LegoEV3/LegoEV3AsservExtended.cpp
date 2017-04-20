@@ -14,7 +14,7 @@ AsservInsa * LegoEV3AsservExtended::insa()
 LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, Robot * robot) :
 		Asserv(botId, robot) //on appelle le constructeur pere
 {
-	pAsservInsa_ = new AsservInsa(robot);
+
 	last_sens_left_ = 0;
 	last_sens_right_ = 0;
 	motorwheel_patch_m = 0.0; //metres
@@ -28,8 +28,8 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	//SIMU EV3
 	printf("---LegoEV3AsservExtended > SIMU EV3\n");
 	pAsservInsa_->encoder_SetResolution(1395, 1395, 135);
-	pAsservInsa_->motion_SetDefaultAccel(0.2);
-	pAsservInsa_->motion_SetDefaultVmax(0.5);
+	pAsservInsa_->motion_SetDefaultAccel(0.3);
+	pAsservInsa_->motion_SetDefaultVmax(0.4);
 	pAsservInsa_->motion_SetDefaultDecel(0.3);
 	pAsservInsa_->motion_setMaxPwmValue(860); //max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
@@ -52,7 +52,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 
 	pAsservInsa_->encoder_SetResolution(1395, 1395, 135);
 	pAsservInsa_->motion_SetDefaultAccel(0.3);
-	pAsservInsa_->motion_SetDefaultVmax(0.5);
+	pAsservInsa_->motion_SetDefaultVmax(0.4);
 	pAsservInsa_->motion_SetDefaultDecel(0.3);
 	pAsservInsa_->motion_setMaxPwmValue(860);//max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();

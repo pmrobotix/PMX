@@ -46,7 +46,7 @@ public:
 		return r_ia;
 	}
 
-	Data* sharedData;
+	Data* sharedData; //surcharge ?
 
 	void stop();
 

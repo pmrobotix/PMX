@@ -6,6 +6,7 @@
 #ifndef TEST_LEDDRIVERTEST_HPP
 #define TEST_LEDDRIVERTEST_HPP
 
+#include "../../src/Common/Action.Driver/ALedDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
@@ -29,13 +30,15 @@ private:
 	}
 public:
 
+	ALedDriver* leddriver;
+
 	/*!
 	 * \brief Constructeur de la classe.
 	 */
 	LedDriverTest()
 			: UnitTest("LedDriverTest")
 	{
-
+		leddriver = ALedDriver::create("LedDriverTest",8);
 	}
 
 	/*!

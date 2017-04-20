@@ -28,7 +28,7 @@ bool ButtonBar::waitPressed(ButtonTouch button)
 {
 	while (!pressed(button))
 	{
-		usleep(1000);
+		usleep(200000);
 	}
 	return true;
 }
@@ -47,10 +47,9 @@ ButtonTouch ButtonBar::waitOneOfAllPressed() //TODO create same with actionmanag
 				//return (ButtonTouch)b;
 				bt = (ButtonTouch)b;
 			}
-
 		}
 		//return BUTTON_NONE;
-		usleep(2000);
+		usleep(200000);
 	}
 
 	return bt;

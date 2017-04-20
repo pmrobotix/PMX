@@ -1,11 +1,9 @@
 /*!
  * \file
- * \brief Implémentation de la classe ActionManagerTest.
+ * \brief Implémentation de la classe LedDriverTest.
  */
 
 #include "LedDriverTest.hpp"
-
-//#include "../../src/Common/Action/ActionManagerTimer.hpp"
 
 void test::LedDriverTest::suite()
 {

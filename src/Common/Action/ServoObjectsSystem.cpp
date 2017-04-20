@@ -16,17 +16,12 @@ ServoObjectsSystem::ServoObjectsSystem(Actions & actions) :
 
 ServoObjectsSystem::~ServoObjectsSystem()
 {
-
 	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
 	{
 		ServoLabel foo = static_cast<ServoLabel>(fooInt);
 		servodriver->setPosition(foo, 0);
 		release(foo);
 	}
-	//servodriver->setPosition(SERVO_LEFT, 0);
-	//servodriver->setPosition(SERVO_CENTRE, 0);
-	//servodriver->setPosition(SERVO_RIGHT, 0);
-	//releaseAll();
 }
 
 void ServoObjectsSystem::deploy(ServoLabel servo, double percent, int keep_sec)
@@ -57,9 +52,7 @@ void ServoObjectsSystem::releaseAll()
 		ServoLabel foo = static_cast<ServoLabel>(fooInt);
 		release(foo);
 	}
-	/*leftRelease();
-	 centreRelease();
-	 rightRelease();*/
+
 }
 void ServoObjectsSystem::holdAll()
 {
@@ -68,11 +61,9 @@ void ServoObjectsSystem::holdAll()
 		ServoLabel foo = static_cast<ServoLabel>(fooInt);
 		hold(foo);
 	}
-	/*leftHold();
-	 centreHold();
-	 rightHold();*/
-}
 
+}
+/*
 void ServoObjectsSystem::leftDeploy(double percent, bool keep)
 {
 	leftHold();
@@ -128,5 +119,5 @@ void ServoObjectsSystem::rightRelease()
 void ServoObjectsSystem::rightHold()
 {
 	servodriver->hold(SERVO_RIGHT);
-}
+}*/
 

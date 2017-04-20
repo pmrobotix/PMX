@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_ServoStepTest()
-			: FunctionalTest("ServoStep", "Servo step moving")
+			: FunctionalTest("ServoStep", "Servo moving step by step.")
 	{
 	}
 
@@ -41,6 +41,8 @@ public:
 	 */
 	virtual void run(int argc, char** argv);
 
+
+	void configureConsoleArgs(int argc, char** argv);
 };
 
 #endif

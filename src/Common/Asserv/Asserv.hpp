@@ -6,12 +6,13 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../Asserv.Driver/AAsservDriver.hpp"
 
+class AsservInsa;
+
 class AAsservDriver;
 
 class MovingBase;
 
 class Robot;
-
 
 /*!
  * Asservissement of the robot.It contains default elements.
@@ -34,6 +35,13 @@ protected:
 	 * \brief motorisation = motors + encoders
 	 */
 	MovingBase * pMovingBase_;
+
+	/*!
+	 * \brief asservissement interne. il peut etre remplacé par un asserv externe
+	 */
+	AsservInsa * pAsservInsa_;
+
+	bool useInternalAsserv_; //permet de choisir entre l'utilisattion d'un asserv interne (type insa) ou ext (en utilisant les asserdriver).
 
 	bool ignoreRearCollision_;
 	bool ignoreFrontCollision_;
@@ -67,7 +75,6 @@ public:
 
 	AAsservDriver* asservdriver;
 
-
 	//Gestion de l'asservissement
 	virtual void startMotionTimerAndOdo();
 	virtual void stopMotionTimerAndOdo();
@@ -92,7 +99,6 @@ public:
 	//void findPidLR(float posl, int posr, int sec);
 	//void configureAlphaPID(float Ap, float Ai, float Ad);
 	//void configureDeltaPID(float Dp, float Di, float Dd);
-
 
 	/*!
 	 * Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot

@@ -63,6 +63,10 @@ public:
 };
 
 /*
+ * http://jean-luc.massat.perso.luminy.univ-amu.fr/ens/docs/IPC.html
+ * only for SIMU to simulate a non blocking getch() in a separate window console
+ *
+ *How to use thread
  // http://stackoverflow.com/questions/10673585/start-thread-with-member-function
  Wrapper *w = new Wrapper();
  //std::thread tw1 = w->member1Thread();
@@ -122,7 +126,6 @@ public:
 				std::string str(msg.mtext);
 				if (str == "enter")
 					buttondriver_->enter_ = true;
-
 				if (str == "back")
 					buttondriver_->back_ = true;
 				if (str == "up")
@@ -135,7 +138,7 @@ public:
 					buttondriver_->left_ = true;
 
 			}
-			usleep(2000);
+			usleep(5000);
 		}
 	}
 

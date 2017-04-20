@@ -19,6 +19,7 @@ bool L_tour1()
 {
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	/*
 	robot.logger().info() << "start L_tour1." << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
@@ -53,177 +54,23 @@ bool L_tour1()
 
 	robot.asserv().ignoreFrontCollision(false);
 	robot.asserv().ignoreRearCollision(false);
-
+*/
 	robot.logger().info() << "L_tour1 done." << logs::end;
 	return true; //return true si ok sinon false si interruption
 }
 
 bool L_peche1()
 {
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	robot.logger().info() << "start L_peche1." << logs::end;
-	TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
 
-	robot.ia().iAbyZone().goToZone("peche1", &path, &zone);
-	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	//RECALAGE sur le devant
-	ts = robot.asserv().doMoveForwardTo(500, 35);
-	if (ts != TRAJ_OK)
-		return false;
-	//set pos
-	robot.asserv().setPositionAndColor(robot.asserv().getRelativeX(robot.asserv().pos_getX_mm()),
-			100,
-			-90.0,
-			(robot.getMyColor() == PMXGREEN));
-	robot.svgPrintPosition();
-
-	ts = robot.asserv().doLineAbs(-60);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	for (int pp = 1; pp < 4; pp++)
-	{
-		//PECHE
-		//rotation
-		ts = robot.asserv().doRotateTo(0);
-		if (ts != TRAJ_OK)
-			return false;
-
-		if (robot.sharedData->end90s())
-			break;
-
-		//on abaisse la canne
-		if (robot.getMyColor() == PMXGREEN)
-			robot.actions().servoObjects().centreDeploy(-65);
-		if (robot.getMyColor() == PMXBLUE)
-			robot.actions().servoObjects().centreDeploy(85);
-
-		if (robot.sharedData->end90s())
-			break;
-
-		ts = robot.asserv().doMoveForwardAndRotateTo(740, 85, 0);
-		if (ts != TRAJ_OK)
-			return false;
-		robot.svgPrintPosition();
-
-		if (robot.sharedData->end90s())
-					break;
-
-		//on remonte la canne à 45
-		if (robot.getMyColor() == PMXGREEN)
-			robot.actions().servoObjects().centreDeploy(-10);
-		if (robot.getMyColor() == PMXBLUE)
-			robot.actions().servoObjects().centreDeploy(30);
-
-		if (robot.sharedData->end90s())
-			break;
-
-		//on va sur le filet
-		ts = robot.asserv().doMoveForwardAndRotateTo(950, 150, 0);
-		if (ts != TRAJ_OK)
-			return false;
-
-		if (robot.sharedData->end90s())
-			break;
-
-		ts = robot.asserv().doMoveForwardAndRotateTo(1140, 35, -30);
-		if (ts != TRAJ_OK)
-			return false;
-
-		if (robot.sharedData->end90s())
-			break;
-
-		//on abaisse la canne
-		if (robot.getMyColor() == PMXGREEN)
-			robot.actions().servoObjects().centreDeploy(-65);
-		if (robot.getMyColor() == PMXBLUE)
-			robot.actions().servoObjects().centreDeploy(85);
-
-		if (robot.sharedData->end90s())
-			break;
-
-		//on lache les poissons
-		if (robot.getMyColor() == PMXGREEN)
-			robot.actions().servoObjects().leftDeploy(-100);
-		if (robot.getMyColor() == PMXBLUE)
-			robot.actions().servoObjects().rightDeploy(-100);
-
-		if (robot.sharedData->end90s())
-			break;
-
-		//on délache les poissons
-		if (robot.getMyColor() == PMXGREEN)
-			robot.actions().servoObjects().leftDeploy(100);
-		if (robot.getMyColor() == PMXBLUE)
-			robot.actions().servoObjects().rightDeploy(100);
-		/*
-		 //on lache les poissons
-		 if (robot.getMyColor() == PMXGREEN)
-		 robot.actions().servoObjects().leftDeploy(-100);
-		 if (robot.getMyColor() == PMXVIOLET)
-		 robot.actions().servoObjects().rightDeploy(-100);
-
-		 //on délache les poissons
-		 if (robot.getMyColor() == PMXGREEN)
-		 robot.actions().servoObjects().leftDeploy(100);
-		 if (robot.getMyColor() == PMXBLUE)
-		 robot.actions().servoObjects().rightDeploy(100);
-		 */
-		//on releve la canne
-		if (robot.getMyColor() == PMXGREEN)
-			robot.actions().servoObjects().centreDeploy(-10);
-		if (robot.getMyColor() == PMXBLUE)
-			robot.actions().servoObjects().centreDeploy(30);
-
-		if (robot.sharedData->end90s())
-			break;
-
-		//on recule
-		ts = robot.asserv().doMoveBackwardAndRotateTo(950, 150, 0);
-		if (ts != TRAJ_OK)
-			return false;
-
-		if (robot.sharedData->end90s())
-			break;
-
-		ts = robot.asserv().doMoveBackwardAndRotateTo(750, 120, 0);
-		if (ts != TRAJ_OK)
-			return false;
-
-		//on abaisse la canne
-		if (robot.getMyColor() == PMXGREEN)
-			robot.actions().servoObjects().centreDeploy(-65);
-		if (robot.getMyColor() == PMXBLUE)
-			robot.actions().servoObjects().centreDeploy(85);
-
-		if (robot.sharedData->end90s())
-			break;
-
-		ts = robot.asserv().doMoveBackwardAndRotateTo(450, 85, 0);
-		if (ts != TRAJ_OK)
-			return false;
-
-		robot.logger().info() << "L_peche1 done: nb=" << pp << logs::end;
-	}
-
-	robot.actions().servoObjects().releaseAll();
 	return true; //return true si ok sinon false si interruption
 }
 
 bool L_action1()
 {
+
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	robot.logger().info() << "start action1." << logs::end;
+	/*
+	 robot.logger().info() << "start action1." << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
 
@@ -237,14 +84,16 @@ bool L_action1()
 		return false;
 
 	robot.svgPrintPosition();
-
+*/
 	robot.logger().info() << "action1 done." << logs::end;
 	return true; //return true si ok sinon false si interruption
 }
 
 bool L_action2()
 {
+
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	/*
 	robot.logger().info() << "start action2." << logs::end;
 
 	TRAJ_STATE ts = TRAJ_OK;
@@ -259,7 +108,7 @@ bool L_action2()
 	if (ts != TRAJ_OK)
 		return false;
 
-	robot.svgPrintPosition();
+	robot.svgPrintPosition();*/
 
 	robot.logger().info() << "action2 done." << logs::end;
 	return true;
@@ -267,7 +116,9 @@ bool L_action2()
 
 bool L_action3()
 {
+
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	/*
 	robot.logger().info() << "start action3." << logs::end;
 
 	TRAJ_STATE ts = TRAJ_OK;
@@ -283,7 +134,7 @@ bool L_action3()
 		return false;
 
 	robot.svgPrintPosition();
-
+*/
 	robot.logger().info() << "action3 done." << logs::end;
 	return true;
 }
@@ -293,7 +144,7 @@ void L_State_DecisionMaker::IASetupDemo()
 	logger().debug() << "IASetup" << logs::end;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-
+/*
 	robot.ia().iAbyZone().ia_createZone("depart", 0, 900, 200, 200, 300, 1000, 180);
 	robot.ia().iAbyZone().ia_createZone("zone1", 500, 1000, 300, 200, 500, 1100, 0);
 	robot.ia().iAbyZone().ia_createZone("zone2", 500, 1800, 200, 200, 600, 1800, 90);
@@ -308,7 +159,7 @@ void L_State_DecisionMaker::IASetupDemo()
 
 	robot.ia().iAbyZone().ia_addAction("action1", &L_action1);
 	robot.ia().iAbyZone().ia_addAction("action2", &L_action2);
-	robot.ia().iAbyZone().ia_addAction("action3", &L_action3);
+	robot.ia().iAbyZone().ia_addAction("action3", &L_action3);*/
 
 }
 
@@ -317,6 +168,8 @@ void L_State_DecisionMaker::IASetupHomologation()
 	logger().debug() << "IAHomologation" << logs::end;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+
+	/*
 	robot.ia().iAbyZone().ia_createZone("depart", 0, 900, 200, 200, 300, 1000, 180);
 	robot.ia().iAbyZone().ia_createZone("tour1", 600, 1100, 20, 20, 400, 1100, 0);
 	robot.ia().iAbyZone().ia_createZone("peche1", 500, 0, 400, 200, 500, 200, -90);
@@ -326,7 +179,7 @@ void L_State_DecisionMaker::IASetupHomologation()
 	robot.ia().iAbyZone().ia_setPath("tour1", "peche1", 1150, 550);
 
 	robot.ia().iAbyZone().ia_addAction("tour1", &L_tour1);
-	robot.ia().iAbyZone().ia_addAction("peche1", &L_peche1);
+	robot.ia().iAbyZone().ia_addAction("peche1", &L_peche1);*/
 }
 
 IAutomateState*
@@ -334,8 +187,10 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 {
 	logger().info() << "L_State_DecisionMaker" << logs::end;
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	Data* sharedData = (Data*) data;
 
+
+	//Simplifier l'utilisation de data par robot
+	Data* sharedData = (Data*) data;
 	robot.sharedData = (Data*) data;
 
 	IASetupHomologation();
@@ -343,8 +198,8 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 	robot.svgPrintPosition();
 
 
+	//robot.actions().sensors().startSensors(); //Activation de la detection adverse
 
-	//robot.actions().sensors().startSensors();
 	robot.ia().iAbyZone().ia_start(); //launch IA
 
 	//wait the execution Wait90

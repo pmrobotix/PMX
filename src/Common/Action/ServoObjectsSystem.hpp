@@ -45,6 +45,7 @@ public:
 	void holdAll();
 
 	//deprecated
+	/*
 	void leftDeploy(double percent = 0, bool keep = false);
 	void leftRelease();
 	void leftHold();
@@ -53,7 +54,7 @@ public:
 	void centreHold();
 	void rightDeploy(double percent = 0, bool keep = false);
 	void rightRelease();
-	void rightHold();
+	void rightHold();*/
 
 };
 

@@ -6,6 +6,8 @@
 
 #include "Robot.hpp"
 
+#include "Utils/ConsoleKeyInput.hpp"
+
 #ifdef SIMU
 #include <sys/ipc.h>
 #include <sys/msg.h>
@@ -19,12 +21,12 @@
 #include "../Log/Logger.hpp"
 #include "Action/Actions.hpp"
 #include "Asserv/Asserv.hpp"
-#include "ConsoleKeyInput.hpp"
+
 
 using namespace std;
 
 Robot::Robot() :
-		myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2016", "_/") // use "_" instead of "-" for arguments
+		myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2017", "/") // use character "/" instead of "-" for arguments
 {
 
 	actions_default = NULL;
@@ -45,7 +47,7 @@ void Robot::svgPrintPosition()
 void Robot::configureDefaultConsoleArgs()
 {
 #ifdef SIMU
-	cArgs_.addOption('z', "Simulate linux console button");
+	cArgs_.addOption('z', "Simulate button in a separate linux console, please execute this separately");
 #endif
 	// Add option "-h" with explanation...
 	cArgs_.addOption('h', "Display usage help");
@@ -61,7 +63,7 @@ void Robot::configureDefaultConsoleArgs()
 
 	{
 		Arguments::Option cOpt('c', "");
-		cOpt.addArgument("color", "color of robot [g]reen/[v]iolet", "violet");
+		cOpt.addArgument("color", "color of robot [b]lue/[y]ellow", "yellow");
 		cArgs_.addOption(cOpt);
 	}
 }
@@ -91,9 +93,9 @@ void Robot::begin(int argc, char** argv)
 	string select = "-";
 	string color = "-";
 
-#ifdef SIMU
+#ifdef SIMU //cas de la simulation sous linux
 	//http://jean-luc.massat.perso.luminy.univ-amu.fr/ens/docs/IPC.html
-	//only for SIMU to simulate a non blocking getch() in a separate window console
+	//only for SIMU to simulate a non blocking getch() in a separate window console with /z
 	if (cArgs_['z'])
 	{
 		int res;
@@ -143,9 +145,10 @@ void Robot::begin(int argc, char** argv)
 				break;
 
 				default:
+
 				break;
 
-				usleep(1000);
+				usleep(2000);
 			}
 
 			msg_ipc.mtype = getpid();
@@ -184,6 +187,7 @@ void Robot::begin(int argc, char** argv)
 					//printf("Enter key!\n");
 					break;
 				case 127:
+					//printf("Back key!\n");
 					cout << "Exit !\n" << endl;
 					//cout << default_console << endl;
 					exit(0);
@@ -250,7 +254,6 @@ void Robot::begin(int argc, char** argv)
 		if (num > 0)
 		{
 			//execute defined test
-			//cmanager_.run(num, &cArgs_);
 			cmanager_.run(num, argc, argv);
 		}
 		else

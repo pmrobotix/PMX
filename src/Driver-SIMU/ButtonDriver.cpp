@@ -49,42 +49,42 @@ bool ButtonDriver::pressed(ButtonTouch button)
 	case BUTTON_ENTER_KEY:
 		if (enter_)
 		{
-			logger().info() << "Enter key!" << logs::end;
+			logger().debug() << "Enter key!" << logs::end;
 			return true;
 		}
 		break;
 	case BUTTON_BACK_KEY:
 		if (back_)
 		{
-			logger().info() << "BACK key!" << logs::end;
+			logger().debug() << "BACK key!" << logs::end;
 			return true;
 		}
 		break;
 	case BUTTON_UP_KEY:
 		if (up_)
 		{
-			logger().info() << "UP arrow key!" << logs::end;
+			logger().debug() << "UP arrow key!" << logs::end;
 			return true;
 		}
 		break;
 	case BUTTON_DOWN_KEY:
 		if (down_)
 		{
-			logger().info() << "DOWN arrow key!" << logs::end;
+			logger().debug() << "DOWN arrow key!" << logs::end;
 			return true;
 		}
 		break;
 	case BUTTON_LEFT_KEY:
 		if (left_)
 		{
-			logger().info() << "LEFT arrow key!" << logs::end;
+			logger().debug() << "LEFT arrow key!" << logs::end;
 			return true;
 		}
 		break;
 	case BUTTON_RIGHT_KEY:
 		if (right_)
 		{
-			logger().info() << "RIGHT arrow key!" << logs::end;
+			logger().debug() << "RIGHT arrow key!" << logs::end;
 			return true;
 		}
 		break;

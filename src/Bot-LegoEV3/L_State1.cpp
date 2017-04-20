@@ -41,8 +41,8 @@ L_State1::execute(Robot& r, void *data)
 		robot.actions().ledBar().set(1, LED_OFF);
 		robot.actions().ledBar().set(0, LED_OFF);
 
-		robot.actions().servoObjects().leftDeploy(100);
-		robot.actions().servoObjects().rightDeploy(100);
+		//robot.actions().servoObjects().leftDeploy(100);
+		//robot.actions().servoObjects().rightDeploy(100);
 
 		ButtonTouch b = BUTTON_NONE;
 		while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR)
@@ -127,14 +127,14 @@ L_State1::execute(Robot& r, void *data)
 			exit(0);
 		}
 		/*robot.actions().funnyAction().reset();
-		robot.actions().funnyAction().activate(-20);*/
+		robot.actions().funnyAction().activate(-20);
 		robot.actions().servoObjects().leftDeploy(100);
 		robot.actions().servoObjects().rightDeploy(100);
 		if (robot.getMyColor() == PMXGREEN)
 			robot.actions().servoObjects().centreDeploy(0);
 		if (robot.getMyColor() == PMXBLUE)
 			robot.actions().servoObjects().centreDeploy(35);
-
+*/
 		//usleep(500000);
 		setPos(); //initialise color before!
 	}
