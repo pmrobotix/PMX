@@ -65,7 +65,7 @@ void A_AsservRunTest::run(int argc, char** argv)
 
 	robot.asserv().startMotionTimerAndOdo();
 
-	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXBLUE));
 
 	robot.svgPrintPosition();
 

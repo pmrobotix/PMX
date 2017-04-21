@@ -37,8 +37,8 @@ bool A_tour2()
 	robot.svgPrintPosition();
 
 	//ouvrir pinces
-	robot.actions().servoObjects().leftDeploy(80, false); //deploy
-	robot.actions().servoObjects().rightDeploy(80, false); //deploy
+	//robot.actions().servoObjects().leftDeploy(80, false); //deploy
+	//robot.actions().servoObjects().rightDeploy(80, false); //deploy
 
 	if (robot.sharedData->strategy() == "strat5")
 	{
@@ -63,8 +63,8 @@ bool A_tour2()
 	robot.svgPrintPosition();
 
 	//ouvrir pinces
-	robot.actions().servoObjects().leftDeploy(0, false); //deploy
-	robot.actions().servoObjects().rightDeploy(0, false); //deploy
+	//robot.actions().servoObjects().leftDeploy(0, false); //deploy
+	//robot.actions().servoObjects().rightDeploy(0, false); //deploy
 
 	ts = robot.asserv().doMoveForwardTo(200, 1000);
 	if (ts != TRAJ_OK)
@@ -72,8 +72,8 @@ bool A_tour2()
 	robot.svgPrintPosition();
 
 	//ouvrir pinces
-	robot.actions().servoObjects().leftDeploy(80, false); //deploy
-	robot.actions().servoObjects().rightDeploy(80, false); //deploy
+	//robot.actions().servoObjects().leftDeploy(80, false); //deploy
+	//robot.actions().servoObjects().rightDeploy(80, false); //deploy
 
 	ts = robot.asserv().doLineAbs(-250);
 	if (ts != TRAJ_OK)
@@ -356,7 +356,7 @@ A_State_DecisionMaker::execute(Robot &, void *data)
 
 	if (robot.getMyColor() == PMXBLUE)
 		robot.asserv().doMoveArcRotate(55, 450); //todo gerer dans l'autre couleur
-	if (robot.getMyColor() == PMXGREEN)
+	if (robot.getMyColor() == PMXYELLOW)
 		robot.asserv().doMoveArcRotate(-55, -450);
 	robot.svgPrintPosition();
 

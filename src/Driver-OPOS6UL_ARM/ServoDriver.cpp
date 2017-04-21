@@ -29,6 +29,7 @@ void ServoDriver::hold(ServoLabel servo)
 {
 	switch (servo)
 	{
+	/*
 	case SERVO_LEFT:
 
 		break;
@@ -40,7 +41,7 @@ void ServoDriver::hold(ServoLabel servo)
 	case SERVO_CENTRE:
 
 		break;
-
+*/
 	default:
 		break;
 	}
@@ -63,6 +64,7 @@ void ServoDriver::setPosition(ServoLabel servo, double percent)
 	logger().error() << "servo" << servo << " pos=" << (int) pos << logs::end;
 	switch (servo)
 	{
+	/*
 	case SERVO_LEFT:
 
 		break;
@@ -74,7 +76,7 @@ void ServoDriver::setPosition(ServoLabel servo, double percent)
 	case SERVO_CENTRE:
 
 		break;
-
+*/
 	default:
 		break;
 	}
@@ -84,6 +86,7 @@ void ServoDriver::release(ServoLabel servo)
 {
 	switch (servo)
 	{
+	/*
 	case SERVO_LEFT:
 
 		break;
@@ -95,7 +98,7 @@ void ServoDriver::release(ServoLabel servo)
 	case SERVO_CENTRE:
 
 		break;
-
+*/
 	default:
 		break;
 	}
@@ -105,6 +108,7 @@ void ServoDriver::setRate(ServoLabel servo, int millisec)
 {
 	switch (servo)
 	{
+	/*
 	case SERVO_LEFT:
 		break;
 
@@ -113,7 +117,7 @@ void ServoDriver::setRate(ServoLabel servo, int millisec)
 
 	case SERVO_CENTRE:
 		break;
-
+*/
 	default:
 		break;
 	}

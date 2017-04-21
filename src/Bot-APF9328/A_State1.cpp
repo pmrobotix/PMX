@@ -61,11 +61,11 @@ A_State1::execute(Robot&, void *data)
 			}
 			if (b == BUTTON_RIGHT_KEY)
 			{
-				logger().info() << "BUTTON_RIGHT_KEY - GREEN" << logs::end;
+				logger().info() << "BUTTON_RIGHT_KEY - YELLOW" << logs::end;
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
 				robot.actions().lcd2x16().print("YELLOW");
-				robot.setMyColor(PMXGREEN);
+				robot.setMyColor(PMXYELLOW);
 			}
 			if (b == BUTTON_UP_KEY)
 			{
@@ -75,11 +75,11 @@ A_State1::execute(Robot&, void *data)
 			if (b == BUTTON_DOWN_KEY)
 			{
 				logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
-				robot.actions().servoObjects().leftDeploy(15, false); //deploy
+				/*robot.actions().servoObjects().leftDeploy(15, false); //deploy
 				robot.actions().servoObjects().rightDeploy(15, false); //deploy
 				robot.actions().servoObjects().leftDeploy(-85, false); //retract
 				robot.actions().servoObjects().rightDeploy(-75, false); //retract
-
+*/
 			}
 		}
 
@@ -146,7 +146,7 @@ void A_State1::setPos()
 {
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXBLUE));
 	robot.svgPrintPosition();
 
 }

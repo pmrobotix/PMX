@@ -37,7 +37,7 @@ ALcdShieldDriver * ALcdShieldDriver::create(std::string botId)
 	return 0;
 }
 
-ASensorsDriver * ASensorsDriver::create()
+ASensorsDriver * ASensorsDriver::create(std::string)
 {
 	return 0;
 }
@@ -58,7 +58,7 @@ ASoundDriver * ASoundDriver::create()
 	return 0;
 }
 
-ASwitchDriver * ASwitchDriver::create()
+ASwitchDriver * ASwitchDriver::create(std::string)
 {
 	return 0;
 }

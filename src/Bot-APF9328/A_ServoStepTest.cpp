@@ -19,11 +19,11 @@ void A_ServoStepTest::run(int argc, char** argv)
 
 	int pos = 0;
 	int step = 2;
-
+/*
 	robot.actions().servoObjects().leftDeploy(0, true);
 	robot.actions().servoObjects().rightDeploy(0, true);
 	robot.actions().servoObjects().centreDeploy(0, true);
-
+*/
 	ButtonTouch touch = BUTTON_NONE;
 
 	while (touch != BUTTON_BACK_KEY)
@@ -36,8 +36,9 @@ void A_ServoStepTest::run(int argc, char** argv)
 			if (pos >= 100)
 				pos = 100;
 			logger().info() << "+" << step << " " << pos << logs::end;
+			/*
 			robot.actions().servoObjects().leftDeploy(pos, true);
-			robot.actions().servoObjects().rightDeploy(pos, true);
+			robot.actions().servoObjects().rightDeploy(pos, true);*/
 
 			usleep(50000);
 		}
@@ -48,14 +49,14 @@ void A_ServoStepTest::run(int argc, char** argv)
 			if (pos <= -100)
 				pos = -100;
 			logger().info() << "-" << step << " " << pos << logs::end;
-			robot.actions().servoObjects().leftDeploy(pos, true);
-			robot.actions().servoObjects().rightDeploy(pos, true);
+			/*robot.actions().servoObjects().leftDeploy(pos, true);
+			robot.actions().servoObjects().rightDeploy(pos, true);*/
 			usleep(50000);
 		}
 	}
-
+/*
 	robot.actions().servoObjects().leftRelease();
-	robot.actions().servoObjects().rightRelease();
+	robot.actions().servoObjects().rightRelease();*/
 
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
