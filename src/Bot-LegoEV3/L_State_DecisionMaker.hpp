@@ -40,6 +40,7 @@ public:
 
 	void IASetupDemo();
 	void IASetupHomologation();
+	void IASetupMatchesBelgique();
 };
 
 #endif

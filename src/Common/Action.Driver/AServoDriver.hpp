@@ -15,7 +15,7 @@ enum ServoLabel
 
 	SERVO_HERCULE, //puissance pince
 
-	SERVO_BASCULE,
+	SERVO_3,
 
 	SERVO_PINCE,
 
@@ -25,7 +25,7 @@ enum ServoLabel
 
 	SERVO_6,
 	SERVO_7,
-	SERVO_8,
+	SERVO_BASCULE,
 
 	SERVO_enumTypeEnd
 };

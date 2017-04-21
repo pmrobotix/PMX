@@ -6,6 +6,7 @@
 
 #include "SvgWriter.hpp"
 
+#include <unistd.h>
 #include <cstdlib>
 #include <list>
 
@@ -107,10 +108,12 @@ void SvgWriter::endHeader()
 {
 	if (!done_)
 	{
-		printf("\nendheader\n");
+		done_ = true;
+		usleep(100000);
+
 		logger().info() << "</g>" << logs::end;
 		logger().info() << "</svg>" << logs::end;
-		done_ = true;
+
 	}
 }
 

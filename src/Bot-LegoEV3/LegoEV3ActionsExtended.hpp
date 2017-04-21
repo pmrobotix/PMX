@@ -144,13 +144,14 @@ public:
 	//--------------------------------------------------------------
 	void funnyAction_Init()
 	{
-		servoObjects().deploy(SERVO_FUNNY_ACTION, -10);
+		servoObjects().deploy(SERVO_FUNNY_ACTION, 0);
 	}
 
 	void funnyAction_Activate()
 	{
-		servoObjects().deploy(SERVO_FUNNY_ACTION, -70);
+		servoObjects().deploy(SERVO_FUNNY_ACTION, 60);
 	}
+
 
 	void pince_HerculeDown()
 	{
@@ -159,7 +160,12 @@ public:
 
 	void pince_HerculeUp()
 	{
-		servoObjects().deploy(SERVO_HERCULE, 0,1);
+		servoObjects().deploy(SERVO_HERCULE, 0, 1);
+	}
+
+	void pince_HerculeUp8cm(int keep_sec)
+	{
+		servoObjects().deploy(SERVO_HERCULE, 50, keep_sec);
 	}
 
 	void pince_InitRotation()
@@ -168,7 +174,7 @@ public:
 	}
 	void pince_Rotate()
 	{
-		servoObjects().deploy(SERVO_BASCULE, 100, 3);
+		servoObjects().deploy(SERVO_BASCULE, 100, 2);
 	}
 
 	void pince_Open()

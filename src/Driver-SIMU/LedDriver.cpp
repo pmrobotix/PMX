@@ -54,7 +54,7 @@ void LedDriver::setBit(int index, LedColor color)
 			ost << "\033[0m" << gpio[i];
 	}
 	ost << " (POS=" << index << ")";
-	logger().info() << ost.str() << logs::end;
+	logger().debug() << ost.str() << logs::end;
 
 	//logger().info() << "LED " << std::bitset<8>(hexa) << " (POS=" << index << ")" << logs::end;
 }

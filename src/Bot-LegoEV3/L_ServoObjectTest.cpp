@@ -63,6 +63,7 @@ void L_ServoObjectTest::run(int argc, char** argv)
 
 	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 90,2); // vertical
 	 */
+	robot.actions().funnyAction_Init();
 	robot.actions().pince_Open();
 	robot.actions().pince_InitRotation();
 	robot.actions().pince_HerculeUp();
@@ -73,7 +74,9 @@ void L_ServoObjectTest::run(int argc, char** argv)
 	robot.actions().pince_Rotate();
 	//sleep(4);
 	robot.actions().pince_Open();
-
+	robot.actions().pince_InitRotation();
+	robot.actions().funnyAction_Activate();
+	robot.actions().funnyAction_Init();
 	robot.actions().servoObjects().releaseAll();
 
 	logger().info() << "Happy End." << logs::end;

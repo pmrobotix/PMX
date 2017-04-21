@@ -37,8 +37,8 @@ void ServoDriver::hold(ServoLabel servo) // 1 à 8
 {
 	switch (servo)
 	{
-	case SERVO_8:
-		sv8_.set_command(servo_motor::command_run);
+	case SERVO_3:
+		sv3_.set_command(servo_motor::command_run);
 		break;
 	case SERVO_7:
 		sv7_.set_command(servo_motor::command_run);
@@ -55,7 +55,7 @@ void ServoDriver::hold(ServoLabel servo) // 1 à 8
 		break;
 
 	case SERVO_BASCULE:
-		sv3_.set_command(servo_motor::command_run);
+		sv8_.set_command(servo_motor::command_run);
 		break;
 
 	case SERVO_HERCULE:
@@ -84,7 +84,7 @@ void ServoDriver::setPosition(ServoLabel servo, double pos)
 		sv2_.set_position_sp(pos); //(-100% to 100%)
 		break;
 
-	case SERVO_BASCULE:
+	case SERVO_3:
 		sv3_.set_position_sp(pos); //(-100% to 100%)
 		break;
 
@@ -100,7 +100,7 @@ void ServoDriver::setPosition(ServoLabel servo, double pos)
 	case SERVO_7:
 		sv7_.set_position_sp(pos); //(-100% to 100%)
 		break;
-	case SERVO_8:
+	case SERVO_BASCULE:
 		sv8_.set_position_sp(pos); //(-100% to 100%)
 		break;
 
@@ -122,7 +122,7 @@ void ServoDriver::release(ServoLabel servo)
 		sv2_.set_command(servo_motor::command_float);
 		break;
 
-	case SERVO_BASCULE:
+	case SERVO_3:
 		sv3_.set_command(servo_motor::command_float);
 		break;
 
@@ -139,7 +139,7 @@ void ServoDriver::release(ServoLabel servo)
 	case SERVO_7:
 		sv7_.set_command(servo_motor::command_float);
 		break;
-	case SERVO_8:
+	case SERVO_BASCULE:
 		sv8_.set_command(servo_motor::command_float);
 		break;
 

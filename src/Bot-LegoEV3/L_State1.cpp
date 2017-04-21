@@ -42,12 +42,14 @@ L_State1::execute(Robot& r, void *data)
 		robot.actions().ledBar().set(1, LED_OFF);
 		robot.actions().ledBar().set(0, LED_OFF);
 
-		//robot.actions().servoObjects().leftDeploy(100);
-		//robot.actions().servoObjects().rightDeploy(100);
+		robot.actions().pince_Open();
+		robot.actions().pince_HerculeUp();
+		robot.actions().funnyAction_Init();
+		robot.actions().pince_InitRotation();
 
 		logger().info() << "ATTENTE CHOIX COULEUR..." << logs::end;
 		ButtonTouch b = BUTTON_NONE;
-		while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR)
+		while (b != BUTTON_ENTER_KEY || robot.getMyColor() == PMXNOCOLOR)
 		{
 			b = robot.actions().buttonBar().waitOneOfAllPressed();
 			if (b == BUTTON_LEFT_KEY)
@@ -73,25 +75,15 @@ L_State1::execute(Robot& r, void *data)
 			if (b == BUTTON_DOWN_KEY)
 			{
 				logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
-				//robot.actions().funnyAction().reset();
-				//robot.actions().funnyAction().activate(-20);
-				//sleep(1);
-				if (robot.getMyColor() == PMXYELLOW)
-				{
-					/*robot.actions().servoObjects().centreDeploy(10);
-					robot.actions().servoObjects().centreDeploy(-65); //on abaisse la canne
-					robot.actions().servoObjects().leftDeploy(-100); //on lache les poissons
-					robot.actions().servoObjects().leftDeploy(100);
-					robot.actions().servoObjects().centreDeploy(10);//on releve la canne*/
-				}
-				if (robot.getMyColor() == PMXBLUE)
-				{
-					/*robot.actions().servoObjects().centreDeploy(10);
-					robot.actions().servoObjects().centreDeploy(85); //on abaisse la canne
-					robot.actions().servoObjects().rightDeploy(-100); //on lache les poissons
-					robot.actions().servoObjects().rightDeploy(100);
-					robot.actions().servoObjects().centreDeploy(10);//on releve la canne*/
-				}
+
+				robot.actions().pince_Open();
+				robot.actions().pince_HerculeDown();
+				robot.actions().pince_InitRotation();
+				robot.actions().pince_Rotate();
+				robot.actions().pince_Close(1);
+				robot.actions().pince_Open();
+				robot.actions().pince_InitRotation();
+				robot.actions().pince_HerculeUp();
 
 				usleep(1);
 				robot.actions().servoObjects().releaseAll();
@@ -102,12 +94,23 @@ L_State1::execute(Robot& r, void *data)
 
 		//tirette
 		//robot.actions().ledBar().startAlternate(100000, 100000, 0x00, 0x03, LED_YELLOW, false);
-		robot.actions().ledBar().set(1, LED_YELLOW);
-		robot.actions().ledBar().set(0, LED_YELLOW);
+
+		//on affiche la couleur sur les 2 leds
+		if (robot.getMyColor() == PMXBLUE)
+		{
+			robot.actions().ledBar().set(1, LED_GREEN);
+			robot.actions().ledBar().set(0, LED_GREEN);
+		}
+		else if (robot.getMyColor() == PMXYELLOW)
+		{
+			robot.actions().ledBar().set(1, LED_YELLOW);
+			robot.actions().ledBar().set(0, LED_YELLOW);
+		}
+
 		bool bb = false;
 
 		logger().info() << "ATTENTE  TIRETTE..." << logs::end;
-		while (0)//robot.actions().tirette().pressed()
+		while (robot.actions().tirette().pressed())
 		{
 			bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
 			if (bb)
@@ -154,7 +157,11 @@ void L_State1::setPos()
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(110.0, 225.0, 0.0, (robot.getMyColor() != PMXYELLOW));
+	//init avant bascule
+	//robot.asserv().setPositionAndColor(110.0, 225.0, 0.0, (robot.getMyColor() != PMXYELLOW));
+
+	//init après bascule
+	robot.asserv().setPositionAndColor(978.5, 110.0, 90.0, (robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
 
 }
