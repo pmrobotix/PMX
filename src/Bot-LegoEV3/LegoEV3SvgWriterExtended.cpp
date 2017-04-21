@@ -33,6 +33,7 @@ void LegoEV3SvgWriterExtended::writePosition(double x,
 		double angle_rad,
 		std::string symbol)
 {
+	if (!done_)
 	if (logger().isActive(logs::Level::INFO))
 	{
 		double delta_y = 0.0;
@@ -91,6 +92,7 @@ void LegoEV3SvgWriterExtended::writeZone(const char* name,
 		float startY,
 		float startAngle_rad)
 {
+	if (!done_)
 	//ia
 	logger().info() << "<g transform=\"scale(1,-1) \">"
 			<< "<rect x=\""
@@ -174,7 +176,7 @@ void LegoEV3SvgWriterExtended::writeIaPath(const char* zone1Name,
 		float x_mm,
 		float y_mm)
 {
-
+	if (!done_)
 	logger().info()
 			<< "<circle cx='"
 			<< x_mm

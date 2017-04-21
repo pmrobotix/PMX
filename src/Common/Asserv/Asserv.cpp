@@ -42,7 +42,7 @@ void Asserv::assistedHandling()
 void Asserv::stopMotionTimerAndOdo()
 {
 }
-
+//0 => en bas à gauche
 void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor = 0)
 {
 	setMatchColorPosition(matchColor);

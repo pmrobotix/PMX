@@ -18,7 +18,7 @@ void logs::LoggerFactory::initialize()
 
 	add(logs::Level::ERROR, "", "console");
 
-	add(logs::Level::INFO, "Robot", "console");
+	add(logs::Level::DEBUG, "Robot", "console");
 	add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
 
 	//COMMON
@@ -27,8 +27,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SensorsTimer", "console");
 
 	//STATE
-	add(logs::Level::INFO, "L_State1", "console");
-	add(logs::Level::INFO, "L_State_DecisionMaker", "console");
+	add(logs::Level::DEBUG, "L_State1", "console");
+	add(logs::Level::DEBUG, "L_State_DecisionMaker", "console");
 	add(logs::Level::INFO, "L_State_Wait90SecAction", "console");
 
 	//SVG

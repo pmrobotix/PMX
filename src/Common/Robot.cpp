@@ -209,7 +209,7 @@ void Robot::begin(int argc, char** argv)
 	{
 		color = cArgs_['c']["color"];
 		if (color == "yellow" || color == "y")
-			this->setMyColor(PMXGREEN);
+			this->setMyColor(PMXYELLOW);
 		else if (color == "blue" || color == "b")
 			this->setMyColor(PMXBLUE);
 		else

@@ -122,7 +122,7 @@ void L_AsservInsaTest::run(int argc, char** argv)
 	//surcharge des valeurs
 	robot.asserv().configureAlphaPID(Ap, Ai, Ad);
 	robot.asserv().configureDeltaPID(Dp, Di, Dd);
-	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 	robot.asserv().setVmax(Vmax);
 	robot.asserv().setAccel(Acc);
 	robot.asserv().setDecel(Dec);

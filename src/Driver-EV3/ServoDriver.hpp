@@ -30,9 +30,10 @@ private:
 	servo_motor sv2_;
 	servo_motor sv3_;
 	servo_motor sv4_;
-
-	//servo_motor sv7_;
-	//servo_motor sv8_;
+	servo_motor sv5_;
+	servo_motor sv6_;
+	servo_motor sv7_;
+	servo_motor sv8_;
 
 protected:
 

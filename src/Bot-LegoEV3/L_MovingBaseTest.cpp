@@ -58,7 +58,7 @@ void L_MovingBaseTest::run(int argc, char** argv)
 
 	robot.asserv().startMotionTimerAndOdo(); //just to give odometry
 
-	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
 	robot.svgPrintPosition();
 

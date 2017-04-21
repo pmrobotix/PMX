@@ -19,11 +19,13 @@ enum ServoLabel
 
 	SERVO_PINCE,
 
-	SERVO_LEFT,
+	SERVO_4,
 
-	SERVO_RIGHT,
+	SERVO_5,
 
-	SERVO_CENTRE,
+	SERVO_6,
+	SERVO_7,
+	SERVO_8,
 
 	SERVO_enumTypeEnd
 };

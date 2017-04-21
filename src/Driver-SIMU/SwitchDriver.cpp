@@ -14,7 +14,7 @@ ASwitchDriver * ASwitchDriver::create(std::string)
 
 SwitchDriver::SwitchDriver()
 {
-
+	state_ = 1;
 }
 
 SwitchDriver::~SwitchDriver()
@@ -24,6 +24,7 @@ SwitchDriver::~SwitchDriver()
 int SwitchDriver::tirettePressed()
 {
 	return 0;
+
 }
 int SwitchDriver::backLeftPressed()
 {

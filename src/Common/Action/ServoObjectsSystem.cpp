@@ -33,6 +33,7 @@ void ServoObjectsSystem::deploy(ServoLabel servo, double percent, int keep_sec)
 		sleep(keep_sec);
 		release(servo);
 	}
+	hold(servo);
 }
 
 void ServoObjectsSystem::release(ServoLabel servo)

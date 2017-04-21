@@ -45,20 +45,34 @@ void L_ServoObjectTest::run(int argc, char** argv)
 	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15);
 	 sleep(1);*/
 
-	robot.actions().servoObjects().deploy(SERVO_HERCULE, 0,2);
-	robot.actions().servoObjects().deploy(SERVO_BASCULE, 80,0); // vertical
-	robot.actions().servoObjects().deploy(SERVO_HERCULE, 85,3);
-	//robot.actions().servoObjects().deploy(SERVO_BASCULE, 90); // vertical
-	robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
+	/*
+	 * suite des actions
 
-	robot.actions().servoObjects().deploy(SERVO_PINCE, 50); //fermé
+	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 0,2);
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 80,0); // vertical
+	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 85,3);
+	 //robot.actions().servoObjects().deploy(SERVO_BASCULE, 90); // vertical
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
 
-	robot.actions().servoObjects().deploy(SERVO_BASCULE, -100, 3); //90 degree //horizontal
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, 50); //fermé
 
-	robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, -100, 3); //90 degree //horizontal
+
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
 
 
-	robot.actions().servoObjects().deploy(SERVO_BASCULE, 90,2); // vertical
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 90,2); // vertical
+	 */
+	robot.actions().pince_Open();
+	robot.actions().pince_InitRotation();
+	robot.actions().pince_HerculeUp();
+	robot.actions().pince_InitRotation();
+	robot.actions().pince_HerculeDown();
+
+	robot.actions().pince_Close(0);
+	robot.actions().pince_Rotate();
+	//sleep(4);
+	robot.actions().pince_Open();
 
 	robot.actions().servoObjects().releaseAll();
 

@@ -103,7 +103,7 @@ public:
 	/*!
 	 * Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot
 	 */
-	virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor);
+	virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
 
 	void setMatchColorPosition(bool c)
 	{

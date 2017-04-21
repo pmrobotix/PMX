@@ -32,16 +32,20 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	sharedData = NULL;
 
 }
-
-void LegoEV3RobotExtended::stop()
+void LegoEV3RobotExtended::baseStop()
 {
 	this->asserv().freeMotion();
 	this->asserv().base()->motors().stopMotors();
+printf ("\nsvg end header\n");
+	svg_->endHeader();
+}
+void LegoEV3RobotExtended::stop()
+{
 
 	Robot::stop();
 	this->actions().stop(); //extra devices
 
-	svg_->endHeader();
+	baseStop();
 }
 
 void LegoEV3RobotExtended::begin(int argc, char** argv)
@@ -62,9 +66,7 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
 		automate_.run(*this, state1, &data_);
 	}
 
-	logger().debug() << "PMX LegoEV3Robot - Happy End - "
-			<< this->chrono().getElapsedTimeInSec()
-			<< " sec"
-			<< logs::end;
+	logger().debug() << "PMX LegoEV3Robot - Happy End - " << this->chrono().getElapsedTimeInSec()
+			<< " sec" << logs::end;
 }
 

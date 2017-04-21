@@ -37,6 +37,8 @@ public:
 
 	int pressed(unsigned char pin);
 
+	int state_;
+
 };
 
 #endif

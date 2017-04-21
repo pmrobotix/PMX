@@ -48,6 +48,8 @@ public:
 
 	Data* sharedData; //surcharge ?
 
+
+	void baseStop();
 	void stop();
 
 	void begin(int argc, char** argv);

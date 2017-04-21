@@ -75,11 +75,11 @@ O_State1::execute(Robot&, void *data)
 			if (b == BUTTON_DOWN_KEY)
 			{
 				logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
-				robot.actions().servoObjects().leftDeploy(15, false); //deploy
+				/*robot.actions().servoObjects().leftDeploy(15, false); //deploy
 				robot.actions().servoObjects().rightDeploy(15, false); //deploy
 				robot.actions().servoObjects().leftDeploy(-85, false); //retract
 				robot.actions().servoObjects().rightDeploy(-75, false); //retract
-
+*/
 			}
 		}
 

@@ -34,8 +34,8 @@ bool O_tour2()
 	robot.svgPrintPosition();
 
 	//ouvrir pinces
-	robot.actions().servoObjects().leftDeploy(80, false); //deploy
-	robot.actions().servoObjects().rightDeploy(80, false); //deploy
+	//robot.actions().servoObjects().leftDeploy(80, false); //deploy
+	//robot.actions().servoObjects().rightDeploy(80, false); //deploy
 
 	if (robot.sharedData->strategy() == "strat5")
 	{
@@ -60,8 +60,8 @@ bool O_tour2()
 	robot.svgPrintPosition();
 
 	//ouvrir pinces
-	robot.actions().servoObjects().leftDeploy(0, false); //deploy
-	robot.actions().servoObjects().rightDeploy(0, false); //deploy
+	//robot.actions().servoObjects().leftDeploy(0, false); //deploy
+	//robot.actions().servoObjects().rightDeploy(0, false); //deploy
 
 	ts = robot.asserv().doMoveForwardTo(200, 1000);
 	if (ts != TRAJ_OK)
@@ -69,8 +69,8 @@ bool O_tour2()
 	robot.svgPrintPosition();
 
 	//ouvrir pinces
-	robot.actions().servoObjects().leftDeploy(80, false); //deploy
-	robot.actions().servoObjects().rightDeploy(80, false); //deploy
+	//robot.actions().servoObjects().leftDeploy(80, false); //deploy
+	//robot.actions().servoObjects().rightDeploy(80, false); //deploy
 
 	ts = robot.asserv().doLineAbs(-250);
 	if (ts != TRAJ_OK)

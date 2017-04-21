@@ -29,10 +29,10 @@ AsservDriver::AsservDriver()
 {
 	logger().debug() << "AsservDriver()" << logs::end;
 
-	motor mright = motor(OUTPUT_A);
+	motor mright = motor(OUTPUT_D);
 	if (mright.connected())
 	{
-		_motor_right = OUTPUT_A;
+		_motor_right = OUTPUT_D;
 		logger().info() << "EV3 Motor (RIGHT) - " << mright.address()
 				<< " connected ;CPR=" << mright.count_per_rot()
 				<< " Name=" << mright.driver_name() << " Pol="
@@ -40,24 +40,23 @@ AsservDriver::AsservDriver()
 	}
 	else
 	{
-		_motor_right = OUTPUT_A;
+		_motor_right = OUTPUT_D;
 		logger().error() << "ERROR OUTPUT_A - Motor (RIGHT) "
 				<< "not connected !!" << logs::end;
 	}
 
-	motor mleft = motor(OUTPUT_D);
+	motor mleft = motor(OUTPUT_A);
 	if (mleft.connected())
 	{
-		_motor_left = OUTPUT_D;
+		_motor_left = OUTPUT_A;
 		logger().info() << "EV3 Motor (LEFT) - " << mleft.address()
 				<< " connected ;CPR=" << mleft.count_per_rot()
 				<< " Name=" << mleft.driver_name() << " Pol="
 				<< mleft.polarity() << logs::end;
-
 	}
 	else
 	{
-		_motor_left = OUTPUT_D;
+		_motor_left = OUTPUT_A;
 		logger().error() << "ERROR OUTPUT_D - Motor (LEFT) "
 				<< "not connected !!" << logs::end;
 	}

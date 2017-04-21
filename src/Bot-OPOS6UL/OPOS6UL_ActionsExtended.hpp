@@ -109,9 +109,9 @@ public:
 		ledbar_.resetAll();
 		lcd2x16_.reset();
 
-		servoObjects_.leftRelease();
-		servoObjects_.rightRelease();
-		servoObjects_.centreRelease();
+		///servoObjects_.leftRelease();
+		///servoObjects_.rightRelease();
+		///servoObjects_.centreRelease();
 
 		Actions::stop(); //stop devices and wait manager to finish
 	}

@@ -26,6 +26,9 @@ private:
 
 	utils::PointerList<std::string> symbol_list_;
 
+protected:
+	bool done_;
+
 public:
 
 	/*!

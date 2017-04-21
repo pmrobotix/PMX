@@ -54,13 +54,13 @@ void L_State_Wait90SecAction::execute()
 	robot.actions().servoObjects().releaseAll();
 
 	sharedData->end90s(true); //indique que l'action est effectuée au prog princ
-	//FUNNY ACTION
+	/*//FUNNY ACTION
 	this->logger().info() << "FUNNY ACTION...start... "
 					<< robot.chrono().getElapsedTimeInSec()
 					<< logs::end;
 
-		//robot.actions().funnyAction().activate(300);
-		sleep(5);
+		robot.actions().funnyAction_Activate();
+		sleep(4);
 		//robot.actions().parasol().activate(-150);
 		//robot.actions().funnyAction().release();
 		//sleep(1);
@@ -71,8 +71,9 @@ void L_State_Wait90SecAction::execute()
 				<< robot.chrono().getElapsedTimeInSec()
 				<< logs::end;
 
-
-	robot.stop();
-	usleep(700000);
+*/
+	robot.baseStop();
+	usleep(5000000); //on laisse la funnyaction se faire.
+	robot.stop();//arret si le prog principal n'a pas fini
 	exit(0);
 }
