@@ -61,11 +61,11 @@ O_State1::execute(Robot&, void *data)
 			}
 			if (b == BUTTON_RIGHT_KEY)
 			{
-				logger().info() << "BUTTON_RIGHT_KEY - GREEN" << logs::end;
+				logger().info() << "BUTTON_RIGHT_KEY - YELLOW" << logs::end;
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
-				robot.actions().lcd2x16().print("GREEN ");
-				robot.setMyColor(PMXGREEN);
+				robot.actions().lcd2x16().print("YELLOW");
+				robot.setMyColor(PMXYELLOW);
 			}
 			if (b == BUTTON_UP_KEY)
 			{
@@ -146,7 +146,7 @@ void O_State1::setPos()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXGREEN));
+	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXYELLOW));
 	robot.svgPrintPosition();
 
 }

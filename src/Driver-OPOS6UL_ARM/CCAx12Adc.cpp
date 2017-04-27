@@ -24,20 +24,20 @@ void CCAx12Adc::begin()
 
 	int present7 = 0;
 	//present7 = pingAX(7);
-	setLedOff(3);
+	//setLedOff(3);
 while(1)
 	{
-
 		//writeAXData(7, P_GOAL_POSITION, 1000);
-		int d1 = readAXData(7, P_ID);
+		//int d1 = readAXData(7, P_ID);
 		//int d1 = getADC(1);
-		printf("d1: %d\n", d1);
+		//printf("d1: %d\n", d1);
 		//usleep(300000);
 
-		/*setLedOn(3);
-		 usleep(300000);
+		setLedOn(3);
+		 usleep(1000);
 		 setLedOff(3);
-		 usleep(300000);*/
+		 usleep(1000);
+
 
 	}
 	exit(0);
@@ -116,14 +116,14 @@ int CCAx12Adc::getADC(int adc)
 	////write_i2c(CMD_GET_ADC, adc);
 	//int low = wiringPiI2CRead(fd);
 	//int high = wiringPiI2CRead(fd);
-	unsigned char bytes[4];
+	unsigned char bytes[2];
 	//read_i2c_nbytes(bytes,2);
-	write_readI2c(CMD_GET_ADC, adc, 4, bytes);
+	write_readI2c(CMD_GET_ADC, adc, 2, bytes);
 	int low = bytes[0];
-	int low2 = bytes[1];
-	int high = bytes[2];
-	int high2 = bytes[3];
-	printf("low:%d, low2:%d high:%d high2:%d\n", low, high, low2, high2);
+	int high = bytes[1];
+	//int high = bytes[2];
+	//int high2 = bytes[3];
+	printf("low:%d, high:%d \n", low, high);
 	return high * 256 + low - 128;
 }
 
@@ -206,6 +206,7 @@ int CCAx12Adc::writeAXData(int id, int address, int data)
 	 }
 	 int error = wiringPiI2CRead(fd);
 	 return error;*/
+	return 0;
 }
 
 int CCAx12Adc::write3_readI2c(unsigned char command, unsigned char value, unsigned char addr,
@@ -271,12 +272,18 @@ int CCAx12Adc::write_readI2c(unsigned char command, unsigned char value, unsigne
 	printf("write_readI2c  > writeRegByte OK !\n");
 
 	//Read the data back from the slave
-	if (i2c_CCAx12Adc_.read(data, nbBytes2Read) < 0)
+	if (i2c_CCAx12Adc_.read(data, 1) < 0)
 	{
 		printf("write_readI2c  > read > cmd=%d nb=%d > error!\n", command, nbBytes2Read);
 		return -2;
 	}
 	printf("write_readI2c  > read OK !\n");
+	if (i2c_CCAx12Adc_.read(data, 1) < 0)
+	{
+		printf("write_readI2c  > read x2 > cmd=%d nb=%d > error!\n", command, nbBytes2Read);
+		return -3;
+	}
+	printf("write_readI2c  > read OK2 !\n");
 	return 0;
 }
 

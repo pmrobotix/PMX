@@ -63,7 +63,7 @@ void Robot::configureDefaultConsoleArgs()
 
 	{
 		Arguments::Option cOpt('c', "");
-		cOpt.addArgument("color", "color of robot [b]lue/[y]ellow", "yellow");
+		cOpt.addArgument("color", "color of robot [y]ellow/[b]lue", "y");
 		cArgs_.addOption(cOpt);
 	}
 }
@@ -95,7 +95,7 @@ void Robot::begin(int argc, char** argv)
 
 #ifdef SIMU //cas de la simulation sous linux
 	//http://jean-luc.massat.perso.luminy.univ-amu.fr/ens/docs/IPC.html
-	//only for SIMU to simulate a non blocking getch() in a separate window console with /z
+	//only for SIMU to simulate a non blocking getch() in a separate window colconsole with /z
 	if (cArgs_['z'])
 	{
 		int res;
@@ -152,7 +152,6 @@ void Robot::begin(int argc, char** argv)
 			}
 
 			msg_ipc.mtype = getpid();
-			//strcpy(msg_ipc.mtext, "Hello");
 
 			res = msgsnd(frequete, &msg_ipc, strlen(msg_ipc.mtext) + 1, 0);
 			if (res == -1)
@@ -208,7 +207,7 @@ void Robot::begin(int argc, char** argv)
 	if (cArgs_['c'])
 	{
 		color = cArgs_['c']["color"];
-		if (color == "yellow" || color == "y")
+		if (color == "yellow" || color == "y" )
 			this->setMyColor(PMXYELLOW);
 		else if (color == "blue" || color == "b")
 			this->setMyColor(PMXBLUE);
@@ -218,7 +217,14 @@ void Robot::begin(int argc, char** argv)
 			logger().error() << "setMyColor(NOCOLOR)" << logs::end;
 			exit(-1);
 		}
+	}else
+	{
+		//defaut si aucune couleur n'est specifiée
+		this->setMyColor(PMXYELLOW);
 	}
+
+
+	logger().debug() << "setMyColor done; getMyColor() = " << getMyColor() << logs::end;
 
 	//test number
 	if (cArgs_['n'])

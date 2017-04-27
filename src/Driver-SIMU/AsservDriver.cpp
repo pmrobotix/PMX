@@ -31,7 +31,7 @@ AsservDriver::AsservDriver(std::string botid)
 	{
 		//printf("--- AsservDriver - botid == LegoEV3Robot\n");
 		//CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
-		simuTicksPerMeter_ = 1395.0; //3000.0; //nb ticks for 1000mm
+		simuTicksPerMeter_ = 1398.0; //3000.0; //nb ticks for 1000mm
 		simuMaxSpeed_ = 0.6; //m/s
 		simuMaxPower_ = 860.0;
 		//CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------

@@ -27,9 +27,9 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 #ifdef SIMU
 	//SIMU EV3
 	printf("---LegoEV3AsservExtended > SIMU EV3\n");
-	pAsservInsa_->encoder_SetResolution(1395, 1395, 127);
-	pAsservInsa_->motion_SetDefaultAccel(0.3);
-	pAsservInsa_->motion_SetDefaultVmax(0.5);
+	pAsservInsa_->encoder_SetResolution(1398, 1398, 129);
+	pAsservInsa_->motion_SetDefaultAccel(0.4);
+	pAsservInsa_->motion_SetDefaultVmax(0.6);
 	pAsservInsa_->motion_SetDefaultDecel(0.3);
 	pAsservInsa_->motion_setMaxPwmValue(860); //max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
@@ -37,8 +37,8 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 //	pAsservInsa_->motion_configureAlphaPID(1200.0, 0.0, 0.0);
 //	pAsservInsa_->motion_configureDeltaPID(900.0, 0.0, 0.0);
 //	//NORMAL PID
-	pAsservInsa_->motion_configureAlphaPID(0.25, 0.001, 0.00005); //(2017) 0.25, 0.001, 0.00005 //(2016)0.06 0.001 0.0005
-	pAsservInsa_->motion_configureDeltaPID(0.3, 0.001, 0.00005); //(2017) 0.3, 0.001, 0.00005
+	pAsservInsa_->motion_configureAlphaPID(0.011, 0.0, 0.00005); //(2017) 0.25, 0.001, 0.00005 //(2016)0.06 0.001 0.0005
+	pAsservInsa_->motion_configureDeltaPID(0.011, 0.0, 0.0000); //(2017) 0.3, 0.001, 0.00005
 
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
@@ -82,7 +82,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	//f=40 Hz => every 25ms
 	//f=50 Hz => every 20ms
 	//f=100 Hz =>every 10ms
-	pAsservInsa_->motion_SetSamplingFrequency(100); //(2016 50 =>20ms pour EV3 pour avoir plus de step sur la vitesse
+	pAsservInsa_->motion_SetSamplingFrequency(100);
 
 }
 

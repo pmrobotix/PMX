@@ -44,6 +44,9 @@ class MovingBase;
 AsservInsa::AsservInsa(Robot * robot)
 {
 
+	//Ajoute plus de précision dans les calculs de trajectoire (en vtops par ticks)
+	vtopsPerTicks = 2000; //plus ce chiffre est grand, et plus les calculs seraont precis
+
 	oldPwmLeft = 0;
 	oldPwmRight = 0;
 
@@ -67,13 +70,8 @@ AsservInsa::AsservInsa(Robot * robot)
 	distEncoderMeter = 0.0; //distance between both encoder wheels in [meters]
 
 	valueVTops = 0.0; //vTops in [meter/vtops] is a virtual measure distance to avoid floating point computation
-
 	loopDelayInMillis = 0;
-
-	defaultSamplingFreq = 20; //5 fois par second par defaut (pour eviter la division par zero).
-
-	//Ajoute plus de précision dans les calculs de trajectoire (en vtops par ticks)
-	vtopsPerTicks = 100; //100 semble le meilleur compromis
+	defaultSamplingFreq = 50; //valeur par default : 20ms = 5 fois par second par defaut (pour eviter la division par zero lors la 1ere initialisation).
 
 	maxPwmValue_ = 0;
 
@@ -101,8 +99,6 @@ AsservInsa::AsservInsa(Robot * robot)
 	stopAt = 0;
 
 	RobotMotionState = DISABLE_PID;
-
-	//base_ = NULL;
 
 }
 AsservInsa::~AsservInsa()
@@ -286,33 +282,25 @@ void AsservInsa::execute()
 	int32 pwm0, pwm1; //static
 	int32 pwm0b, pwm1b; //static
 
-	//float delta_y = 0.0;
-	//float delta_x = 0.0;
-
 	float x_mm = 0.0;
 	float y_mm = 0.0;
 	float angle_rad = 0.0;
 
-	//long startTime = currentTimeInMillis();
-	//long currentTime = startTime;
 	long long startTime = currentTimeInMicros();
 	long long currentTime = startTime;
 
-	logger().debug() << "execute started; loopDelayInMillis="
-			<< loopDelayInMillis
-			<< " ms"
+	logger().debug() << "execute started; loopDelayInMillis=" << loopDelayInMillis << " ms"
 			<< logs::end;
 
-	loggerFile().debug() << "NbPeriod, currentTime(us), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
+	loggerFile().debug()
+			<< "NbPeriod, currentTime(us), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
 			<< logs::end;
 
 	while (!stop_motion_ITTask)
 	{
 		periodNb++;
 
-		//currentTime = currentTimeInMillis();
 		currentTime = currentTimeInMicros();
-		//logger().debug() << "AsservInsa execute currentTime=" << currentTime << logs::end;
 
 		//TODO use external or internl encoders !!
 		encoder_ReadSensor(&dLeft, &dRight, &dAlpha, &dDelta, &left, &right);
@@ -377,9 +365,7 @@ void AsservInsa::execute()
 			else
 			{
 				printf("motion.c : motion_ITTask : motionCommand error: %d (%d %d %d)\n",
-						motionCommand.mcType,
-						LEFT_RIGHT,
-						ALPHA_DELTA,
+						motionCommand.mcType, LEFT_RIGHT, ALPHA_DELTA,
 
 						MAX_MOTION_CONTROL_TYPE_NUMBER);
 				exit(1);
@@ -415,15 +401,11 @@ void AsservInsa::execute()
 			}
 
 			//compute pwm for first motor
-			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys,
-					(float) ord0,
-					(float) motors[motionCommand.mcType][0].lastPos,
-					dSpeed0);
+			pwm0 = pid_Compute(motors[motionCommand.mcType][0].PIDSys, (float) ord0,
+					(float) motors[motionCommand.mcType][0].lastPos, dSpeed0);
 			//compute pwm for second motor
-			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys,
-					(float) ord1,
-					(float) motors[motionCommand.mcType][1].lastPos,
-					dSpeed1);
+			pwm1 = pid_Compute(motors[motionCommand.mcType][1].PIDSys, (float) ord1,
+					(float) motors[motionCommand.mcType][1].lastPos, dSpeed1);
 
 			//RCVA only for speed ? not position ?
 //			pwm0 = pid_ComputeRcva(motors[motionCommand.mcType][0].PIDSys,
@@ -449,6 +431,8 @@ void AsservInsa::execute()
 			{
 				// printf("motion.c : ALPHA_DELTA mode, pid result : %d %d \n", pwm0, pwm1);
 				pwm0b = pwm1 - pwm0;
+
+				//TODO correction de CAP ?
 
 				//--------------------- patch du chaff inertie
 //				float inertie0 = dSpeed1 * dSpeed1;
@@ -486,44 +470,18 @@ void AsservInsa::execute()
 //					<< pwm1b
 //					<< logs::end;
 
-			loggerFile().debug() << periodNb
-					<< ", "
-					<< currentTime - startTime
-					<< ", "
-					<< left
-					<< ", "
-					<< right
-					<< ", "
-					<< left / leftEncoderRatio
-					<< ", "
-					<< right / rightEncoderRatio
-					<< ", "
-					<< dSpeed0
-					<< ", "
-					<< dSpeed1
-					<< ", "
+			loggerFile().debug() << periodNb << ", " << currentTime - startTime << ", " << left
+					<< ", " << right << ", " << left / leftEncoderRatio << ", "
+					<< right / rightEncoderRatio << ", " << dSpeed0 << ", " << dSpeed1 << ", "
 					<< dSpeed0 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
-					<< ", "
-					<< dSpeed1 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
-					<< ", "
-					<< pwm0
-					<< ", "
-					<< pwm1
+					<< ", " << dSpeed1 * valueVTops / ((float) loopDelayInMillis / 1000.0) * 1000.0 //= mm/s
+					<< ", " << pwm0 << ", " << pwm1
 
-					<< ", "
-					<< motors[motionCommand.mcType][0].lastPos / leftEncoderRatio
-					<< ", "
+					<< ", " << motors[motionCommand.mcType][0].lastPos / leftEncoderRatio << ", "
 					<< motors[motionCommand.mcType][1].lastPos / leftEncoderRatio
 
-					<< ", "
-					<< (float) (ord0 / leftEncoderRatio)
-					<< ", "
-					<< (float) (ord1 / rightEncoderRatio)
-					<< ", "
-					<< x_mm
-					<< ", "
-					<< y_mm
-					<< ", "
+					<< ", " << (float) (ord0 / leftEncoderRatio) << ", "
+					<< (float) (ord1 / rightEncoderRatio) << ", " << x_mm << ", " << y_mm << ", "
 					<< angle_rad
 
 					<< logs::end;
@@ -624,33 +582,54 @@ void AsservInsa::execute()
 			break;
 		};
 
-//		long stopTime = currentTimeInMillis();
-//		long duration = stopTime - currentTime;
+		/*
+		 long long stopTime = currentTimeInMicros();
+		 long long duration = stopTime - currentTime ;
 
-		long long stopTime = currentTimeInMicros();
-		long long duration = stopTime - currentTime;
+		 logger().error() << "loopDelayInMillis= "
+		 << loopDelayInMillis
+		 //<< " stopTime us ="
+		 //<< stopTime
+		 ///<< " currentTime us ="
+		 //<< currentTime
+		 << " task duration us =\t"
+		 << duration
+		 << " currentTime - startTime =\t"
+		 << (currentTime - startTime) / periodNb
+		 << logs::end;
 
-//		logger().debug() << "loopDelayInMillis= "
-//				<< loopDelayInMillis
-//				<< " stopTime="
-//				<< stopTime
-//				<< " currentTime="
-//				<< currentTime
-//				<< " task duration="
-//				<< duration
-//				<< logs::end;
 
-//		if (duration < loopDelayInMillis && duration >= 0)
-//		{
-//			int t = 1000 * (loopDelayInMillis - duration);
-//			usleep(t);
-//		}
 
-		if ((duration < (loopDelayInMillis * 1000)) && duration >= 0)
+		 if ((duration < (loopDelayInMillis * 1000)) && duration >= 0)
+		 {
+		 int t = ((loopDelayInMillis * 1000) - duration);
+		 usleep(t);
+		 }*/
+
+		long long nextTime = startTime + (loopDelayInMillis * 1000.0 * periodNb);
+
+		long long endTaskTime = currentTimeInMicros();
+
+
+		logger().debug() << "loopDelayInMillis= "
+				 << loopDelayInMillis
+				 << " task duration us =\t"
+				 << endTaskTime - currentTime
+				 << " usleep(nextTime-execTime) =\t"
+				 << nextTime - endTaskTime
+				 << " nextTime =\t"
+				 << nextTime
+				 << logs::end;
+
+		if(nextTime >=endTaskTime)
 		{
-			int t = ((loopDelayInMillis * 1000) - duration);
-			usleep(t);
+			int t = nextTime - endTaskTime;
+			usleep(t-200);
+		}else
+		{
+			printf("\nmotion_ITTask OVERFLOW !!\n");
 		}
+
 	}
 
 	//logger().debug() << "motion_ITTask execute exit()" << logs::end;

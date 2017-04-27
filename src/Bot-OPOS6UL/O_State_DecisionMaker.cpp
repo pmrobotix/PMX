@@ -353,7 +353,7 @@ O_State_DecisionMaker::execute(Robot &, void *data)
 
 	if (robot.getMyColor() == PMXBLUE)
 		robot.asserv().doMoveArcRotate(55, 450); //todo gerer dans l'autre couleur
-	if (robot.getMyColor() == PMXGREEN)
+	if (robot.getMyColor() == PMXYELLOW)
 		robot.asserv().doMoveArcRotate(-55, -450);
 	robot.svgPrintPosition();
 

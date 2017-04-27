@@ -44,9 +44,20 @@ int32 AsservInsa::convertSpeedTovTopsPerPeriod(float vMax)
 
 int32 AsservInsa::convertAccelTovTopsPerPeriodSqd(float accel)
 {
+
+	logger().debug() << "robot_unitConv > convertAccelTovTopsPerPeriodSqd accel="
+				<< accel
+				<< " valueVTops="
+				<< valueVTops
+				<< " loopDelayInMillis="
+				<< loopDelayInMillis
+				<< logs::end;
+
 	int32 result;
 	float vTops = (loopDelayInMillis / 1000.0) * (loopDelayInMillis / 1000.0) * accel / valueVTops;
 	//=sec/period * sec/period * m/s^2 * vtops/m = vtops/period^2
+
+	//0.0001 * 0.1 /7.15e-5 =
 	result = round(vTops);
 
 	//acceleration must be non-null
