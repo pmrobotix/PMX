@@ -30,7 +30,7 @@ void O_State_Wait90SecAction::execute()
 	logger().info() << "Start Chronometer" << logs::end;
 	robot.chrono().start();
 
-	//ARU and adversary
+	//ARU and adversary ?
 	while (robot.chrono().getElapsedTimeInSec() <= 90) //todo mettre en parametre
 	{
 

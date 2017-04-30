@@ -16,6 +16,7 @@ void test::LcdShieldDriverTest::suite()
 
 void test::LcdShieldDriverTest::test()
 {
+
 	lcdshielddriver->setBacklightOn();
 	lcdshielddriver->clear();
 	lcdshielddriver->home();

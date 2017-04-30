@@ -10,17 +10,11 @@ class OPOS6UL_AsservExtended: public Asserv
 private:
 
 public:
-	OPOS6UL_AsservExtended(std::string botId, Robot * robot)
-			: Asserv(botId, robot) //on appelle le constructeur pere
-	{
-
-	}
+	OPOS6UL_AsservExtended(std::string botId, Robot * robot);
 
 	~OPOS6UL_AsservExtended()
 	{
 	}
-
-	void startMotionTimerAndOdo();
 
 };
 

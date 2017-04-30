@@ -80,7 +80,7 @@ public:
 	virtual float odo_GetTheta_Rad() = 0;		// angle in radian
 	virtual float odo_GetTheta_Degree() = 0;		// angle in degrees
 	*/
-	virtual void odo_SetPosition(double x_m, double y_m, float angle_rad) = 0;
+	virtual void odo_SetPosition(double x_m, double y_m, double angle_rad) = 0;
 	virtual RobotPosition odo_GetPosition() = 0; //pos in metre/radian
 
 	virtual int path_GetLastCommandStatus() = 0;
@@ -94,8 +94,8 @@ public:
 	virtual TRAJ_STATE motion_DoRotate(float angle_radians) = 0;
 	virtual TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius) = 0;
 	virtual void motion_FreeMotion(void) = 0;
-	virtual void motion_DisablePID(bool enable) = 0;		//! Stop motion control and disable PID
-	virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =)
+	virtual void motion_DisablePID(void) = 0;		//! Stop motion control and disable PID
+	virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =) (activate PID)
 	virtual void motion_ActivateManager(bool enable) = 0;//! Enable or Stop motion control timer, used to shutdown motion control
 };
 

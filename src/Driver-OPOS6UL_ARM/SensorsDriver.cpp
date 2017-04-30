@@ -15,22 +15,22 @@ ASensorsDriver * ASensorsDriver::create(std::string)
 }
 
 SensorsDriver::SensorsDriver() :
-		i2c_gp2y0e02b_(1), connected_gp2y0e02b_(true), shift_(0)
+		i2c_gp2y0e02b_(1), connected_gp2y0e02b_(false), shift_(0)
 {
 
 	i2c_gp2y0e02b_.setSlaveAddr(ADDRESS_gp2y0e02b);
-
+/*
 	//read shift
 	shift_ = read_i2c(SHIFT_gp2y0e02b);
-	logger().error() << "shift = " << shift_ << logs::end;
-	if (shift_ < 0)
+
+	if (shift_ <= 0)
 	{
-		logger().error() << "setup() : GpioBoard NOT CONNECTED !" << logs::end;
+		logger().error() << "SensorsDriver() : gp2y0e02b NOT CONNECTED !" << logs::end;
 		connected_gp2y0e02b_ = false;
 	}
 	else
 		connected_gp2y0e02b_ = true;
-
+*/
 }
 
 SensorsDriver::~SensorsDriver()

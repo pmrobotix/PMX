@@ -18,19 +18,26 @@ AAsservDriver * AAsservDriver::create(std::string)
 
 AsservDriver::AsservDriver() :
 		mbedI2c_(1) //UART5=>1 ; UART4=>0
-				, connected_(false)
+				, connected_(false), asservStarted_(false)
 {
 	if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
 	{
-		printf("error setSlaveAddr");
-	}
-	if (mbed_ack() == 0)
-	{
-		connected_ = true;
+		//printf("error setSlaveAddr");
+		logger().error() << "AsservDriver() : ERROR setSlaveAddr !" << logs::end;
+		connected_ = false;
 	}
 	else
 	{
-		logger().error() << "AsservDriver() : MBED is NOT CONNECTED !" << logs::end;
+
+		if (mbed_ack() == 0)
+		{
+			connected_ = true;
+			asservStarted_ = true;
+		}
+		else
+		{
+			logger().error() << "AsservDriver() : MBED is NOT CONNECTED !" << logs::end;
+		}
 	}
 }
 
@@ -51,7 +58,6 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
 	if (!connected_) return;
-
 
 }
 
@@ -94,11 +100,11 @@ void AsservDriver::resetExternalEncoders()
 
 void AsservDriver::stopMotorLeft()
 {
-
+	//TODO
 }
 void AsservDriver::stopMotorRight()
 {
-
+	//TODO
 }
 
 int AsservDriver::getMotorLeftCurrent()
@@ -110,10 +116,11 @@ int AsservDriver::getMotorRightCurrent()
 	return 0;
 }
 
-void AsservDriver::enableHardRegulation(bool enable)
+//deprecated
+void AsservDriver::enableHardRegulation(bool enable) //legoEV3 configuration to be removed
 {
-	motion_ActivateManager(enable);
-	motion_DisablePID(enable);
+	//motion_ActivateManager(enable);
+	//motion_DisablePID(enable);
 }
 /*
  float AsservDriver::odo_GetX_mm()
@@ -132,7 +139,7 @@ void AsservDriver::enableHardRegulation(bool enable)
  float AsservDriver::odo_GetTheta_Degree()
  {
  }*/
-void AsservDriver::odo_SetPosition(double x_m, double y_m, float angle_rad)
+void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
 {
 	if (!connected_) return;
 	//P12
@@ -143,9 +150,7 @@ void AsservDriver::odo_SetPosition(double x_m, double y_m, float angle_rad)
 	y_mm.f = y_m * 1000.0f;
 	float2bytes_t a;
 	a.f = angle_rad;
-	//printf("S12 %lf %lf %lf \n", x_m, y_m, angle_rad);
-	//printf("S12 %lf %lf %lf \n", x_mm.f, y_mm.f, a.f);
-	//printf("%d %d %d %d\n", x_mm.b[0], x_mm.b[1], x_mm.b[2], x_mm.b[3]);
+
 	d[0] = x_mm.b[0];
 	d[1] = x_mm.b[1];
 	d[2] = x_mm.b[2];
@@ -225,76 +230,153 @@ int AsservDriver::path_GetLastCommandStatus()
 }
 void AsservDriver::path_InterruptTrajectory()
 {
-	mbed_writeI2c('h', 0, NULL);
+	if (!connected_) return;
+	if (!asservStarted_)
+		logger().error() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+	else
+		mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
-	mbed_writeI2c('h', 0, NULL);
+	if (!connected_) return;
+	if (!asservStarted_)
+		logger().error() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+	else
+		mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_CollisionRearOnTrajectory()
 {
-	mbed_writeI2c('h', 0, NULL);
+	if (!connected_) return;
+	if (!asservStarted_)
+		logger().error() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED "
+				<< asservStarted_ << logs::end;
+	else
+		mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_CancelTrajectory()
 {
-	mbed_writeI2c('h', 0, NULL);
+	if (!connected_) return;
+	if (!asservStarted_)
+		logger().error() << "path_CancelTrajectory() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+	else
+		mbed_writeI2c('h', 0, NULL);
 }
 void AsservDriver::path_ResetEmergencyStop()
 {
-	mbed_writeI2c('r', 0, NULL);
+	if (!connected_) return;
+	if (!asservStarted_)
+		logger().error() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+	else
+		mbed_writeI2c('r', 0, NULL);
 }
-TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
+TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 {
 	if (!connected_) return TRAJ_ERROR;
-	unsigned char d[4];
-	float2bytes_t mm;
-	mm.f = (dist_meters / 1000.0);
-	d[0] = mm.b[0];
-	d[1] = mm.b[1];
-	d[2] = mm.b[2];
-	d[3] = mm.b[3];
-	mbed_writeI2c('v', 4, d);
-	return TRAJ_OK; //TODO gerer le statut
+	if (!asservStarted_)
+	{
+		logger().error() << "motion_DoLine() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+		return TRAJ_ERROR;
+	}
+	else
+	{
+		unsigned char d[4];
+		float2bytes_t mm;
+		mm.f = (dist_meters / 1000.0);
+		d[0] = mm.b[0];
+		d[1] = mm.b[1];
+		d[2] = mm.b[2];
+		d[3] = mm.b[3];
+		mbed_writeI2c('v', 4, d);
+		return TRAJ_OK;
+	}
 }
-TRAJ_STATE AsservDriver::motion_DoRotate(float angle_degrees)
+
+TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) // f8 +x+y
 {
 	if (!connected_) return TRAJ_ERROR;
-	unsigned char d[4];
-	float2bytes_t deg;
-	deg.f = angle_degrees;
-	d[0] = deg.b[0];
-	d[1] = deg.b[1];
-	d[2] = deg.b[2];
-	d[3] = deg.b[3];
-	mbed_writeI2c('t', 4, d);
-	return TRAJ_OK;
+	if (!asservStarted_)
+	{
+		logger().error() << "motion_DoFace() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+		return TRAJ_ERROR;
+	}
+	else
+	{
+		unsigned char d[8];
+		float2bytes_t x, y;
+		x.f = x_mm;
+		d[0] = x.b[0];
+		d[1] = x.b[1];
+		d[2] = x.b[2];
+		d[3] = x.b[3];
+		y.f = y_mm;
+		d[4] = y.b[0];
+		d[5] = y.b[1];
+		d[6] = y.b[2];
+		d[7] = y.b[3];
+		mbed_writeI2c('f', 8, d);
+		return TRAJ_OK;
+	}
+}
+
+TRAJ_STATE AsservDriver::motion_DoRotate(float angle_degrees) //t4 +d
+{
+	if (!connected_) return TRAJ_ERROR;
+	if (!asservStarted_)
+	{
+		logger().error() << "motion_DoRotate() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+		return TRAJ_ERROR;
+	}
+	else
+	{
+		unsigned char d[4];
+		float2bytes_t deg;
+		deg.f = angle_degrees;
+		d[0] = deg.b[0];
+		d[1] = deg.b[1];
+		d[2] = deg.b[2];
+		d[3] = deg.b[3];
+		mbed_writeI2c('t', 4, d);
+		return TRAJ_OK;
+	}
 }
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 {
-//TODO
+//TODO motion_DoArcRotate
 	return TRAJ_ERROR;
 }
 void AsservDriver::motion_FreeMotion(void)
 {
 	if (!connected_) return;
-	motion_ActivateManager(false);
+	if (!asservStarted_)
+		logger().error() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+	else
+		mbed_writeI2c('K', 0, NULL);
 }
-void AsservDriver::motion_DisablePID(bool enable)
+void AsservDriver::motion_DisablePID() //TODO mm chose que Freemotion ???
 {
 	if (!connected_) return;
-	if (enable)
-	{
-		mbed_writeI2c('K', 0, NULL);
-	}
+	if (!asservStarted_)
+		logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
 	else
-	{
-		mbed_writeI2c('J', 0, NULL);
-	}
+		mbed_writeI2c('K', 0, NULL);
 }
 void AsservDriver::motion_AssistedHandling(void)
 {
 	if (!connected_) return;
-	motion_ActivateManager(true);
+	if (!asservStarted_)
+		logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED " << asservStarted_
+				<< logs::end;
+	else
+		mbed_writeI2c('J', 0, NULL);
 }
 void AsservDriver::motion_ActivateManager(bool enable)
 {
@@ -302,12 +384,13 @@ void AsservDriver::motion_ActivateManager(bool enable)
 	if (enable)
 	{
 		mbed_writeI2c('I', 0, NULL);
+		asservStarted_ = true;
 	}
 	else
 	{
 		mbed_writeI2c('!', 0, NULL);
+		asservStarted_ = false;
 	}
-
 }
 
 //------------------------------------------------------------------------
@@ -357,7 +440,7 @@ int AsservDriver::mbed_ack()
 		printf("ack1 read error! %d\n", r);
 		return -1;
 	}
-	printf("ack 0x%02hhX\n", ack[0]); // hh pour indiquer que c'est un char (pas int)
+//printf("mbed_ack 0x%02hhX\n", ack[0]); // hh pour indiquer que c'est un char (pas int)
 	if (ack[0] == MBED_ADDRESS)
 		return 0;
 	else

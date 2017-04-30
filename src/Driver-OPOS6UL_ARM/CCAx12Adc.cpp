@@ -12,40 +12,51 @@
 #include "../Log/Logger.hpp"
 
 CCAx12Adc::CCAx12Adc() :
-		i2c_CCAx12Adc_(1), connected_(true)
+		i2c_CCAx12Adc_(1), connected_(false)
 {
 	begin();
 }
 
 void CCAx12Adc::begin()
 {
-	//open i2c and setslave
-	i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
+	connected_ = false;
 
-	int present7 = 0;
-	//present7 = pingAX(7);
-	//setLedOff(3);
-while(1)
+	if (!connected_)
 	{
-		//writeAXData(7, P_GOAL_POSITION, 1000);
-		//int d1 = readAXData(7, P_ID);
-		//int d1 = getADC(1);
-		//printf("d1: %d\n", d1);
-		//usleep(300000);
-
-		setLedOn(3);
-		 usleep(1000);
-		 setLedOff(3);
-		 usleep(1000);
-
-
+		logger().error() << "CCAx12Adc::begin() : BOARD NOT CONNECTED !" << logs::end;
+		return;
 	}
-	exit(0);
 
-	present7 = pingAX(7);
-	int present180 = pingAX(180);
+	/*
+	 //open i2c and setslave
+	 i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
 
-	logger().error() << "present180 :" << present180 << " present7 :" << present7 << logs::end;
+	 int present7 = 0;
+	 //present7 = pingAX(7);
+	 //setLedOff(3);
+	 while(1)
+	 {
+	 //writeAXData(7, P_GOAL_POSITION, 1000);
+	 //int d1 = readAXData(7, P_ID);
+	 //int d1 = getADC(1);
+	 //printf("d1: %d\n", d1);
+	 //usleep(300000);
+
+	 setLedOn(3);
+	 usleep(1000);
+	 setLedOff(3);
+	 usleep(1000);
+
+
+	 }
+	 exit(0);
+
+	 present7 = pingAX(7);
+	 int present180 = pingAX(180);
+
+	 logger().error() << "present180 :" << present180 << " present7 :" << present7 << logs::end;
+
+	 */
 	/*
 	 long r = write_i2c(CONFIG_P0, 0x00); //defines all pins on Port0 are outputs
 	 if (r < 0)
@@ -92,6 +103,11 @@ int CCAx12Adc::getAddressSize(int address)
 // @param led :  1 - 10
 void CCAx12Adc::setLedOn(int led)
 {
+	if (!connected_)
+	{
+		logger().error() << "CCAx12Adc::setLedOn() : BOARD NOT CONNECTED !" << logs::end;
+		return;
+	}
 	//wiringPiI2CWrite(fd, CMD_SET_LED_ON);
 	//wiringPiI2CWrite(fd, led);
 	write_i2c(CMD_SET_LED_ON, led);
@@ -101,6 +117,11 @@ void CCAx12Adc::setLedOn(int led)
 // @param led :  1 - 10
 void CCAx12Adc::setLedOff(int led)
 {
+	if (!connected_)
+	{
+		logger().error() << "CCAx12Adc::setLedOff() : BOARD NOT CONNECTED !" << logs::end;
+		return;
+	}
 	//wiringPiI2CWrite(fd, CMD_SET_LED_OFF);
 	//wiringPiI2CWrite(fd, led);
 	write_i2c(CMD_SET_LED_OFF, led);
@@ -111,6 +132,11 @@ void CCAx12Adc::setLedOff(int led)
 // @returns value : 0 - 4095
 int CCAx12Adc::getADC(int adc)
 {
+	if (!connected_)
+	{
+		logger().error() << "CCAx12Adc::getADC() : BOARD NOT CONNECTED !" << logs::end;
+		return -1;
+	}
 	//wiringPiI2CWrite(fd, CMD_GET_ADC);
 	//wiringPiI2CWrite(fd, adc);
 	////write_i2c(CMD_GET_ADC, adc);
@@ -132,6 +158,11 @@ int CCAx12Adc::getADC(int adc)
 // @returns 1 is servo is found
 int CCAx12Adc::pingAX(int id)
 {
+	if (!connected_)
+	{
+		logger().error() << "CCAx12Adc::pingAX() : BOARD NOT CONNECTED !" << logs::end;
+		return -1;
+	}
 	struct timeval t1, t2, t3;
 	double elapsedTime1, elapsedTime2;
 	// start timer
@@ -165,7 +196,11 @@ int CCAx12Adc::pingAX(int id)
 // @returns the data
 int CCAx12Adc::readAXData(int id, int address)
 {
-
+	if (!connected_)
+	{
+		logger().error() << "CCAx12Adc::readAXData() : BOARD NOT CONNECTED !" << logs::end;
+		return -1;
+	}
 	//int size = getAddressSize(address);
 	//wiringPiI2CWrite(fd, CMD_READ_AX);
 	//wiringPiI2CWrite(fd, id);
@@ -188,6 +223,11 @@ int CCAx12Adc::readAXData(int id, int address)
 // @param address : address of the data
 int CCAx12Adc::writeAXData(int id, int address, int data)
 {
+	if (!connected_)
+	{
+		logger().error() << "CCAx12Adc::writeAXData() : BOARD NOT CONNECTED !" << logs::end;
+		return -1;
+	}
 	/*
 	 int size = getAddressSize(address);
 	 wiringPiI2CWrite(fd, CMD_WRITE_AX);

@@ -1,6 +1,10 @@
 #include <iostream>
 
+#include "../Bot-OPOS6UL/O_AsservTest.hpp"
+#include "../Bot-OPOS6UL/O_ButtonBarTest.hpp"
 #include "../Bot-OPOS6UL/O_GroveColorTest.hpp"
+#include "../Bot-OPOS6UL/O_LcdBoardTest.hpp"
+#include "../Bot-OPOS6UL/O_LedBarTest.hpp"
 #include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
@@ -13,18 +17,20 @@ int main(int argc, char** argv)
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
 	//add specific tests for this robot
-	//robot.getConsoleManager().add(new A_LedBarTest());
-	//robot.getConsoleManager().add(new A_ButtonBarTest());
-	//robot.getConsoleManager().add(new A_LcdBoardTest());
+	robot.getConsoleManager().add(new O_LedBarTest());
+	robot.getConsoleManager().add(new O_ButtonBarTest());
+	robot.getConsoleManager().add(new O_LcdBoardTest());
 	robot.getConsoleManager().add(new O_GroveColorTest());
+	robot.getConsoleManager().add(new O_AsservTest());
+
 
 	robot.parseConsoleArgs(argc, argv);
 
 	//start the Robot (functional tests or match)
 	robot.begin(argc, argv);
 
-	//usleep(500000); //TODO to wait and verify end of threads and logger ?
 
-	cout << "HappyEnd Bot-OPOS6UL." << endl;
+	//robot.stop();
+	//cout << "HappyEnd Bot-OPOS6UL." << endl;
 	return 0;
 }

@@ -109,7 +109,7 @@ void SvgWriter::endHeader()
 	if (!done_)
 	{
 		done_ = true;
-		usleep(100000);
+		//usleep(100000);
 
 		logger().info() << "</g>" << logs::end;
 		logger().info() << "</svg>" << logs::end;

@@ -627,7 +627,7 @@ void AsservInsa::execute()
 			usleep(t-200);
 		}else
 		{
-			printf("\nmotion_ITTask OVERFLOW !!\n");
+			printf("\nmotion_ITTask OVERFLOW periodNb=%d!!\n", periodNb);
 		}
 
 	}

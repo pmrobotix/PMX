@@ -78,6 +78,7 @@ public:
 	//Gestion de l'asservissement
 	virtual void startMotionTimerAndOdo();
 	virtual void stopMotionTimerAndOdo();
+	virtual void disablePID(); //TODO deprecated
 
 	//modes d'arret de l'asservissement
 	virtual void freeMotion();
@@ -130,6 +131,7 @@ public:
 	virtual void setFrontCollision();
 	virtual void setRearCollision();
 
+	virtual RobotPosition pos_getPosition();
 	virtual float pos_getX_mm();
 	virtual float pos_getY_mm();
 	// angle in radian

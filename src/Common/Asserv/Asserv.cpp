@@ -1,5 +1,7 @@
 #include "Asserv.hpp"
 
+#include <cmath>
+
 #include "../../Asserv.Insa/AsservInsa.hpp"
 #include "../../Log/Logger.hpp"
 #include "MovingBase.hpp"
@@ -27,28 +29,69 @@ MovingBase * Asserv::base()
 	return pMovingBase_;
 }
 
-void Asserv::startMotionTimerAndOdo() //doit etre surchargé
+void Asserv::startMotionTimerAndOdo()
+{
+	if (useInternalAsserv_)
+	{
+		pAsservInsa_->motion_Init();
+
+		//f=20 Hz =>every 50ms
+		//f=40 Hz => every 25ms
+		//f=50 Hz => every 20ms
+		//f=100 Hz =>every 10ms
+		//f=200 Hz =>every 5ms
+		pAsservInsa_->motion_SetSamplingFrequency(50); //20ms pour APF pour avoir plus de step sur la vitesse
+	}
+	else
+	{
+		asservdriver->motion_ActivateManager(true);
+		asservdriver->motion_FreeMotion();
+	}
+}
+
+void Asserv::disablePID() //deprecated TODO a remplacer par freemotion
 {
 }
 
 void Asserv::freeMotion()
 {
+	if (useInternalAsserv_)
+		pAsservInsa_->motion_FreeMotion();
+	else
+		asservdriver->motion_FreeMotion();
 }
 
 void Asserv::assistedHandling()
 {
+	if (useInternalAsserv_)
+		pAsservInsa_->motion_AssistedHandling();
+	else
+		asservdriver->motion_AssistedHandling();
 }
 
 void Asserv::stopMotionTimerAndOdo()
 {
+	if (useInternalAsserv_)
+		pAsservInsa_->motion_StopTimer();
+	else
+	{
+		asservdriver->path_InterruptTrajectory();
+		asservdriver->motion_ActivateManager(false);
+	}
 }
-//0 => en bas à gauche
+
+//matchColor = 0 => en bas à gauche
 void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor = 0)
 {
 	setMatchColorPosition(matchColor);
 
 	x_mm = getRelativeX(x_mm);
 	thetaInDegrees = getRelativeAngle(thetaInDegrees);
+
+	if (useInternalAsserv_)
+		pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
+	else
+		asservdriver->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
 }
 
 void Asserv::ignoreFrontCollision(bool ignore) //TODO rename setIgnoreFrontCollision
@@ -61,28 +104,48 @@ void Asserv::ignoreRearCollision(bool ignore) //TODO rename setIgnoreRearCollisi
 	ignoreRearCollision_ = ignore;
 }
 
-// position x,y in mm
+RobotPosition Asserv::pos_getPosition()
+{
+	RobotPosition p;
+	if (useInternalAsserv_)
+		p = pAsservInsa_->odo_GetPosition();
+	else
+		p = asservdriver->odo_GetPosition();
+	return p;
+}
 float Asserv::pos_getX_mm()
 {
-	RobotPosition p = asservdriver->odo_GetPosition();
+	RobotPosition p;
+	if (useInternalAsserv_)
+		p = pAsservInsa_->odo_GetPosition();
+	else
+		p = asservdriver->odo_GetPosition();
 	return p.x;
 }
 float Asserv::pos_getY_mm()
 {
-	RobotPosition p = asservdriver->odo_GetPosition();
+	RobotPosition p;
+	if (useInternalAsserv_)
+		p = pAsservInsa_->odo_GetPosition();
+	else
+		p = asservdriver->odo_GetPosition();
 	return p.y;
 }
 // angle in radian
 float Asserv::pos_getTheta()
 {
-	RobotPosition p = asservdriver->odo_GetPosition();
+	RobotPosition p;
+	if (useInternalAsserv_)
+		p = pAsservInsa_->odo_GetPosition();
+	else
+		p = asservdriver->odo_GetPosition();
 	return p.theta;
 }
+
 // angle in degrees
 float Asserv::pos_getThetaInDegree()
 {
-	RobotPosition p = asservdriver->odo_GetPosition();
-	return (p.theta * 180.0f) / M_PI;
+	return (pos_getTheta() * 180.0f) / M_PI;
 }
 
 void Asserv::setFrontCollision()
@@ -126,8 +189,11 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 	}
 
 	float meters = distance_mm / 1000.0f;
-	//TRAJ_STATE ts = pAsservInsa_->motion_DoLine(meters);
-	TRAJ_STATE ts = asservdriver->motion_DoLine(meters);
+	TRAJ_STATE ts;
+	if (useInternalAsserv_)
+		ts = pAsservInsa_->motion_DoLine(meters);
+	else
+		ts = asservdriver->motion_DoLine(meters);
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;
@@ -136,25 +202,78 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
 TRAJ_STATE Asserv::doRotateAbs(float degrees)
 {
-	return TRAJ_ERROR;
+	logger().debug() << "doRotateAbs degrees=" << degrees << logs::end;
+
+	float radians = (degrees * M_PI) / 180.0f;
+	int f = ignoreFrontCollision_;
+	int r = ignoreRearCollision_;
+	ignoreRearCollision_ = true;
+	ignoreFrontCollision_ = true;
+
+	TRAJ_STATE ts;
+	if (useInternalAsserv_)
+		ts = pAsservInsa_->motion_DoRotate(radians);
+	else
+		ts = asservdriver->motion_DoRotate(radians);
+
+	ignoreFrontCollision_ = f;
+	ignoreRearCollision_ = r;
+
+	return ts;
 }
 TRAJ_STATE Asserv::doRotateLeft(float degrees)
 {
-	return TRAJ_ERROR;
+	return doRotateAbs(degrees);
 }
 TRAJ_STATE Asserv::doRotateRight(float degrees)
 {
-	return TRAJ_ERROR;
+	return doRotateAbs(-degrees);
 }
 
 //relative motion (depends on current position of the robot)
 TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 {
-	return TRAJ_ERROR;
+	float currentThetaInDegree = pos_getThetaInDegree();
+	float degrees = getRelativeAngle(thetaInDegree) - currentThetaInDegree;
+
+// force it to be the positive remainder, so that 0 <= angle < 360
+//degrees = (degrees + 360) % 360;
+	degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
+
+// reduce the angle
+//reduction sur une plage de [0 à 360]
+	if (degrees >= 360.0)
+	{
+		degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
+
+	}
+	if (degrees < -360.0)
+	{
+		int d = (int) -(degrees * 1000.0f);
+		d = d % 360000;
+		degrees = -d / 1000.0f;
+	}
+
+// force into the minimum absolute value residue class, so that -180 < angle <= 180
+	if (degrees >= 180) degrees -= 360;
+
+	logger().debug() << "doRotateTo degrees=" << degrees << "degrees " << logs::end;
+	TRAJ_STATE ts = doRotateAbs(degrees);
+
+	return ts;
 }
 TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM)
 {
-	return TRAJ_ERROR;
+	float dx = getRelativeX(xMM) - pos_getX_mm();
+	float dy = yMM - pos_getY_mm();
+	float aRadian = atan2(dy, dx);
+	logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx="
+			<< dx << " dy=" << dy << " aRadian=" << ((aRadian * 180.0f) / M_PI) << " degrees. "
+			<< logs::end;
+	doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
+	float dist = sqrt(dx * dx + dy * dy);
+	logger().debug() << "doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+	return doLineAbs(dist);
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {

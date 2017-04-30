@@ -446,7 +446,7 @@ TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 void AsservDriver::motion_FreeMotion()
 {
 }
-void AsservDriver::motion_DisablePID(bool enable)
+void AsservDriver::motion_DisablePID()
 {
 }
 void AsservDriver::motion_AssistedHandling()

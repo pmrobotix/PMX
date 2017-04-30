@@ -19,7 +19,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::ERROR, "", "console");
 
 	add(logs::Level::INFO, "Robot", "console");
-	add(logs::Level::INFO, "APF9328RobotExtended", "console");
+	add(logs::Level::INFO, "OPOS6UL_RobotExtended", "console");
 
 	//COMMON
 	add(logs::Level::INFO, "Tirette", "console");
@@ -34,16 +34,20 @@ void logs::LoggerFactory::initialize()
 
 
 	//State
-	add(logs::Level::INFO, "A_State1", "console");
-	add(logs::Level::INFO, "A_State_decisionMaker", "console");
-	add(logs::Level::INFO, "A_State_Wait90SecAction", "console");
+	add(logs::Level::INFO, "O_State1", "console");
+	add(logs::Level::INFO, "O_State_decisionMaker", "console");
+	add(logs::Level::INFO, "O_State_Wait90SecAction", "console");
 
 
 	//TESTS
-	add(logs::Level::INFO, "A_LedBarTest", "console");
-	add(logs::Level::INFO, "A_ButtonBarTest", "console");
-	add(logs::Level::INFO, "A_MovingBaseTest", "console");
-	add(logs::Level::INFO, "A_LcdBoardTest", "console");
+	add(logs::Level::INFO, "O_LedBarTest", "console");
+	add(logs::Level::INFO, "O_ButtonBarTest", "console");
+	add(logs::Level::INFO, "O_LcdBoardTest", "console");
+	add(logs::Level::INFO, "O_GroveColorTest", "console");
+	add(logs::Level::INFO, "O_AsservTest", "console");
+
+
+	/*
 	add(logs::Level::INFO, "A_TiretteTest", "console");
 	add(logs::Level::INFO, "A_SensorsTest", "console");
 	add(logs::Level::INFO, "A_ServoTest", "console");
@@ -54,7 +58,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "A_AsservRunTest", "console");
 	add(logs::Level::INFO, "A_Asserv_SquareTest", "console");
 	add(logs::Level::INFO, "A_IATest", "console");
-
+	add(logs::Level::INFO, "O_MovingBaseTest", "console");
+*/
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
@@ -64,17 +69,18 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
 	add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
 
-	//DRIVERS EV3
+	//DRIVERS OPOS
 	add(logs::Level::INFO, "LedDriver.ARM", "console");
 	add(logs::Level::INFO, "ButtonDriver.ARM", "console");
 	add(logs::Level::INFO, "SoundDriver.ARM", "console");
 	add(logs::Level::INFO, "SwitchDriver.ARM", "console");
-	add(logs::Level::INFO, "AsservDriver.ARM", "console");
-	add(logs::Level::INFO, "GpioPCA9555", "console");
-	add(logs::Level::INFO, "ExtEncoder", "console");
 	add(logs::Level::INFO, "SensorsDriver.ARM", "console");
-	add(logs::Level::INFO, "IrSensor", "console");
-	add(logs::Level::INFO, "as_adc", "console");
+	add(logs::Level::INFO, "AsservDriver.ARM", "console");
+	//add(logs::Level::INFO, "GpioPCA9555", "console");
+	//add(logs::Level::INFO, "ExtEncoder", "console");
+
+	//add(logs::Level::INFO, "IrSensor", "console");
+	//add(logs::Level::INFO, "as_adc", "console");
 
 
 }

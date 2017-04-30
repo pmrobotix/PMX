@@ -99,119 +99,121 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
 		return;
 	}
 	else
+	{
 		connected_ = true;
 
-	// check if i2c
-	//if (_i2cAddr != 255)
-	//{
-	//_i2c.begin(_i2cAddr);
-	//WIRE.begin();
-	//_i2c.begin();
+		// check if i2c
+		//if (_i2cAddr != 255)
+		//{
+		//_i2c.begin(_i2cAddr);
+		//WIRE.begin();
+		//_i2c.begin();
 
-	_i2c.pinMode(8, OUTPUT);
-	_i2c.pinMode(6, OUTPUT);
-	_i2c.pinMode(7, OUTPUT);
-	setBacklight(0x7);
+		_i2c.pinMode(8, OUTPUT);
+		_i2c.pinMode(6, OUTPUT);
+		_i2c.pinMode(7, OUTPUT);
+		setBacklight(0x7);
 
-	if (_rw_pin) _i2c.pinMode(_rw_pin, OUTPUT);
+		if (_rw_pin) _i2c.pinMode(_rw_pin, OUTPUT);
 
-	_i2c.pinMode(_rs_pin, OUTPUT);
-	_i2c.pinMode(_enable_pin, OUTPUT);
-	for (uint8_t i = 0; i < 4; i++)
-		_i2c.pinMode(_data_pins[i], OUTPUT);
+		_i2c.pinMode(_rs_pin, OUTPUT);
+		_i2c.pinMode(_enable_pin, OUTPUT);
+		for (uint8_t i = 0; i < 4; i++)
+			_i2c.pinMode(_data_pins[i], OUTPUT);
 
-	for (uint8_t i = 0; i < 5; i++)
-	{
-		_i2c.pinMode(_button_pins[i], INPUT);
-		_i2c.pullUp(_button_pins[i], 1);
-	}
-	//}
+		for (uint8_t i = 0; i < 5; i++)
+		{
+			_i2c.pinMode(_button_pins[i], INPUT);
+			_i2c.pullUp(_button_pins[i], 1);
+		}
+		//}
 
-	if (lines > 1)
-	{
-		_displayfunction |= LCD_2LINE;
-	}
-	_numlines = lines;
-	_currline = 0;
+		if (lines > 1)
+		{
+			_displayfunction |= LCD_2LINE;
+		}
+		_numlines = lines;
+		_currline = 0;
 
-	// for some 1 line displays you can select a 10 pixel high font
-	if ((dotsize != 0) && (lines == 1))
-	{
-		_displayfunction |= LCD_5x10DOTS;
-	}
+		// for some 1 line displays you can select a 10 pixel high font
+		if ((dotsize != 0) && (lines == 1))
+		{
+			_displayfunction |= LCD_5x10DOTS;
+		}
 
-	// SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
-	// according to datasheet, we need at least 40ms after power rises above 2.7V
-	// before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
-	usleep(50000);
+		// SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
+		// according to datasheet, we need at least 40ms after power rises above 2.7V
+		// before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
+		usleep(50000);
 
-	// Now we pull both RS and R/W low to begin commands
-	_digitalWrite(_rs_pin, 0);  //LOW
-	_digitalWrite(_enable_pin, 0);  //LOW
-	if (_rw_pin != 255)
-	{
-		_digitalWrite(_rw_pin, 0);  //LOW
-	}
+		// Now we pull both RS and R/W low to begin commands
+		_digitalWrite(_rs_pin, 0);  //LOW
+		_digitalWrite(_enable_pin, 0);  //LOW
+		if (_rw_pin != 255)
+		{
+			_digitalWrite(_rw_pin, 0);  //LOW
+		}
 
-	//put the LCD into 4 bit or 8 bit mode
-	if (!(_displayfunction & LCD_8BITMODE))
-	{
-		// this is according to the hitachi HD44780 datasheet
-		// figure 24, pg 46
+		//put the LCD into 4 bit or 8 bit mode
+		if (!(_displayfunction & LCD_8BITMODE))
+		{
+			// this is according to the hitachi HD44780 datasheet
+			// figure 24, pg 46
 
-		// we start in 8bit mode, try to set 4 bit mode
-		write4bits(0x03);
-		usleep(4500); // wait min 4.1ms
+			// we start in 8bit mode, try to set 4 bit mode
+			write4bits(0x03);
+			usleep(4500); // wait min 4.1ms
 
-		// second try
-		write4bits(0x03);
-		usleep(4500); // wait min 4.1ms
+			// second try
+			write4bits(0x03);
+			usleep(4500); // wait min 4.1ms
 
-		// third go!
-		write4bits(0x03);
-		usleep(150);
+			// third go!
+			write4bits(0x03);
+			usleep(150);
 
-		// finally, set to 8-bit interface
-		write4bits(0x02);
-	}
-	else
-	{
-		// this is according to the hitachi HD44780 datasheet
-		// page 45 figure 23
+			// finally, set to 8-bit interface
+			write4bits(0x02);
+		}
+		else
+		{
+			// this is according to the hitachi HD44780 datasheet
+			// page 45 figure 23
 
-		// Send function set command sequence
+			// Send function set command sequence
+			command(LCD_FUNCTIONSET | _displayfunction);
+			usleep(4500);  // wait more than 4.1ms
+
+			// second try
+			command(LCD_FUNCTIONSET | _displayfunction);
+			usleep(150);
+
+			// third go
+			command(LCD_FUNCTIONSET | _displayfunction);
+		}
+
+		// finally, set # lines, font size, etc.
 		command(LCD_FUNCTIONSET | _displayfunction);
-		usleep(4500);  // wait more than 4.1ms
 
-		// second try
-		command(LCD_FUNCTIONSET | _displayfunction);
-		usleep(150);
+		// turn the display on with no cursor or blinking default
+		_displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
+		display();
 
-		// third go
-		command(LCD_FUNCTIONSET | _displayfunction);
+		// clear it off
+		clear();
+
+		// Initialize to default text direction (for romance languages)
+		_displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
+		// set the entry mode
+		command(LCD_ENTRYMODESET | _displaymode);
+		/*} catch (logs::Exception * e)
+		 {
+
+		 logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! (begin test) " //<< e->what()
+		 << logs::end;
+		 }*/
+		//mutex_.unlock();
 	}
-
-	// finally, set # lines, font size, etc.
-	command(LCD_FUNCTIONSET | _displayfunction);
-
-	// turn the display on with no cursor or blinking default
-	_displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
-	display();
-
-	// clear it off
-	clear();
-
-	// Initialize to default text direction (for romance languages)
-	_displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
-	// set the entry mode
-	command(LCD_ENTRYMODESET | _displaymode);
-	/*} catch (logs::Exception * e)
-	 {
-
-	 logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! (begin test) " //<< e->what()
-	 << logs::end;
-	 }*/
-	//mutex_.unlock();
 }
 
 /********** high level commands, for the user! */

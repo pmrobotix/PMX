@@ -62,7 +62,7 @@ public:
 	TRAJ_STATE motion_DoRotate(float angle_radians);
 	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
 	void motion_FreeMotion();
-	void motion_DisablePID(bool enable);		//! Stop motion control and disable PID
+	void motion_DisablePID();		//! Stop motion control and disable PID
 	void motion_AssistedHandling();		//! Assisted movement mode =)
 	void motion_ActivateManager(bool enable);
 

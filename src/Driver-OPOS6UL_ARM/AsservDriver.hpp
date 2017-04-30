@@ -43,6 +43,8 @@ private:
 	AsI2c mbedI2c_;
 	bool connected_;
 
+	bool asservStarted_;
+
 	int mbed_ack();
 	int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
 	int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write,
@@ -70,6 +72,7 @@ public:
 	void resetExternalEncoders();
 
 	//commandes optionnelles de gestion externe
+	//deprecated
 	void enableHardRegulation(bool enable);
 
 
@@ -79,7 +82,7 @@ public:
 	float odo_GetY_mm();
 	float odo_GetTheta_Rad();		// angle in radian
 	float odo_GetTheta_Degree();		// angle in degrees*/
-	void odo_SetPosition(double x_m, double y_m, float angle_rad);
+	void odo_SetPosition(double x_m, double y_m, double angle_rad);
 	RobotPosition odo_GetPosition();
 	int path_GetLastCommandStatus();
 	void path_InterruptTrajectory();
@@ -91,9 +94,11 @@ public:
 	TRAJ_STATE motion_DoRotate(float angle_deg);
 	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
 	void motion_FreeMotion(void);
-	void motion_DisablePID(bool enable);		//! Stop motion control and disable PID
+	void motion_DisablePID();		//! just disable PID
 	void motion_AssistedHandling(void);		//! Assisted movement mode =)
 	void motion_ActivateManager(bool enable);
+
+	TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
 
 	/*!
 	 * \brief Constructor.

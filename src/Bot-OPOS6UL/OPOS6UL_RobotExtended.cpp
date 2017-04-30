@@ -35,19 +35,22 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
 void OPOS6UL_RobotExtended::stop()
 {
-	Robot::stop();
-	this->actions().stop(); //extra devices
-	this->asserv().freeMotion();
-	this->asserv().base()->motors().stopMotors();
 
+	this->actions().stop(); //extra devices
+
+	this->asserv().base()->motors().stopMotors();
+	this->asserv().freeMotion();
+	//this->asserv().stopMotionTimerAndOdo();
+	Robot::stop();
 	svg_->endHeader();
+
 }
 
 void OPOS6UL_RobotExtended::begin(int argc, char** argv)
 {
 	Robot::begin(argc, argv);
 
-	logger().info() << "OPOS6UL_RobotExtended::start" << logs::end;
+	logger().debug() << "OPOS6UL_RobotExtended::start" << logs::end;
 
 	//specific match case and strategies
 	if (cArgs_["type"] == "m" or cArgs_["type"] == "M")

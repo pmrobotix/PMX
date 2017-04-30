@@ -17,11 +17,9 @@ AServoDriver * AServoDriver::create()
 ServoDriver::ServoDriver()
 		: connected_(0)
 {
-	logger().error() << "ServoDriver()" << logs::end;
+	logger().error() << "ServoDriver::ServoDriver() CCAx12Adc::instance().begin();" << logs::end;
 
-	CCAx12Adc::instance().begin();
-
-
+	//CCAx12Adc::instance().begin();
 
 }
 

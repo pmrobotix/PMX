@@ -72,7 +72,7 @@ void AsservInsa::odo_Integration(float dTheta, float dV)
 	}
 	else
 	{
-		//taylor decomposition of cos(x) and sin(x) at second order for x ~= a is :
+		//TODO taylor decomposition of cos(x) and sin(x) at second order for x ~= a is :
 		//cos(a)-sin(a)*(x-a)+O(x-a)^2
 		//sin(a)-cos(a)*(x-a)+O(x-a)^2
 		newCosTheta = cosTheta - sinTheta * (dTheta);

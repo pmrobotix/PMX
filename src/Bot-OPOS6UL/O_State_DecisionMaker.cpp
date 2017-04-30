@@ -2,209 +2,16 @@
 
 #include <unistd.h>
 
-#include "../Common/Asserv/Asserv.hpp"
-
+#include "../Common/Action/Sensors.hpp"
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyZone.hpp"
-#include "../Common/Position.hpp"
 #include "../Common/State/Data.hpp"
 #include "../Log/Logger.hpp"
+#include "OPOS6UL_ActionsExtended.hpp"
+#include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
-
-bool O_tour2()
-{
-	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_tour2." << logs::end;
-	TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
-
-	robot.ia().iAbyZone().goToZone("tour2", &path, &zone);
-	if (&path != NULL)
-	{
-		ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-		if (ts != TRAJ_OK)
-			return false;
-		robot.svgPrintPosition();
-	}
-
-	ts = robot.asserv().doMoveForwardAndRotateTo(600, 1000, -90);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	//ouvrir pinces
-	//robot.actions().servoObjects().leftDeploy(80, false); //deploy
-	//robot.actions().servoObjects().rightDeploy(80, false); //deploy
-
-	if (robot.sharedData->strategy() == "strat5")
-	{
-		robot.logger().info() << "strat5." << logs::end;
-		ts = robot.asserv().doMoveForwardAndRotateTo(700, 800, -90);
-		if (ts != TRAJ_OK)
-			return false;
-		robot.svgPrintPosition();
-	}
-	else
-	{
-		robot.logger().info() << "All." << logs::end;
-		ts = robot.asserv().doMoveForwardAndRotateTo(700, 550, -90);
-		if (ts != TRAJ_OK)
-			return false;
-		robot.svgPrintPosition();
-	}
-
-	ts = robot.asserv().doMoveForwardTo(400, 450);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	//ouvrir pinces
-	//robot.actions().servoObjects().leftDeploy(0, false); //deploy
-	//robot.actions().servoObjects().rightDeploy(0, false); //deploy
-
-	ts = robot.asserv().doMoveForwardTo(200, 1000);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	//ouvrir pinces
-	//robot.actions().servoObjects().leftDeploy(80, false); //deploy
-	//robot.actions().servoObjects().rightDeploy(80, false); //deploy
-
-	ts = robot.asserv().doLineAbs(-250);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	/*
-	 ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-	 if (ts != TRAJ_OK)
-	 return false;
-	 robot.svgPrintPosition();
-
-	 //ouvrir pinces
-	 robot.actions().servoObjects().leftDeploy(80, false); //deploy
-	 robot.actions().servoObjects().rightDeploy(80, false); //deploy
-
-	 ts = robot.asserv().doMoveForwardAndRotateTo(880, 1730, 90);
-	 if (ts != TRAJ_OK)
-	 return false;
-	 robot.svgPrintPosition();
-
-	 //fermer pinces
-	 robot.actions().servoObjects().leftDeploy(30, false); //retract
-	 robot.actions().servoObjects().rightDeploy(30, false); //retract
-
-	 //reculer de 30
-	 robot.asserv().ignoreFrontCollision(true);
-	 ts = robot.asserv().doLineAbs(-380);
-	 if (ts != TRAJ_OK)
-	 return false;
-	 robot.svgPrintPosition();
-	 robot.asserv().ignoreFrontCollision(false);
-
-	 ts = robot.asserv().doRotateTo(-180);
-	 if (ts != TRAJ_OK)
-	 return false;
-	 robot.svgPrintPosition();
-
-	 if (robot.getMyColor() == PMXVIOLET)
-	 robot.asserv().doMoveArcRotate(180, 400); //todo gerer dans l'autre couleur
-	 if (robot.getMyColor() == PMXGREEN)
-	 robot.asserv().doMoveArcRotate(-180, -400);
-	 robot.svgPrintPosition();
-	 */
-	robot.logger().info() << "O_tour2 done." << logs::end;
-	return true; //return true si ok sinon false si interruption
-}
-
-bool O_porte2()
-{
-	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_porte2." << logs::end;
-	TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
-
-	robot.ia().iAbyZone().goToZone("porte2", &path, &zone);
-	//if (path !=NULL)
-	//{
-//	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-//	if (ts != TRAJ_OK)
-//		return false;
-//	robot.svgPrintPosition();
-	//}
-	robot.asserv().ignoreRearCollision(true);
-	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	//tentative 01
-	ts = robot.asserv().doMoveBackwardAndRotateTo(550, 1970, -90);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	ts = robot.asserv().doMoveBackwardAndRotateTo(550, 1980, -110);
-
-	//tentative 02
-	robot.asserv().doLineAbs(100);
-	robot.asserv().doLineAbs(-110);
-
-	//move zone
-	ts = robot.asserv().doMoveForwardTo(zone.x, zone.y);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-	robot.asserv().ignoreRearCollision(false);
-
-	robot.logger().info() << "O_porte2 done." << logs::end;
-	return true; //return true si ok sinon false si interruption
-}
-
-bool O_porte1()
-{
-	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_porte1." << logs::end;
-	TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
-
-	robot.ia().iAbyZone().goToZone("porte1", &path, &zone);
-	if (&path != NULL)
-	{
-		ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-		if (ts != TRAJ_OK)
-			return false;
-		robot.svgPrintPosition();
-	}
-
-	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	robot.asserv().ignoreRearCollision(true);
-	ts = robot.asserv().doMoveBackwardAndRotateTo(300, 1980, -90);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-
-	ts = robot.asserv().doRotateTo(-110);
-
-	//tentative 02
-	robot.asserv().doLineAbs(100);
-	robot.asserv().doLineAbs(-110);
-
-	ts = robot.asserv().doMoveForwardTo(zone.x, zone.y);
-	if (ts != TRAJ_OK)
-		return false;
-	robot.svgPrintPosition();
-	robot.asserv().ignoreRearCollision(false);
-
-	robot.logger().info() << "O_porte1 done." << logs::end;
-	return true; //return true si ok sinon false si interruption
-}
 
 bool O_action1()
 {
@@ -311,30 +118,14 @@ void O_State_DecisionMaker::IASetupHomologation()
 {
 	logger().debug() << "IASetupHomologation" << logs::end;
 
-	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-	robot.ia().iAbyZone().ia_createZone("depart", 0, 1100, 300, 300, 300, 1250, 180);
-	robot.ia().iAbyZone().ia_createZone("porte2", 500, 1800, 200, 200, 550, 1600, -90);
-	robot.ia().iAbyZone().ia_createZone("porte1", 200, 1800, 200, 200, 300, 1600, -90);
-	robot.ia().iAbyZone().ia_createZone("tour2", 800, 1900, 100, 100, 880, 1450, 90);
-
-	robot.ia().iAbyZone().ia_setPath("depart", "tour2", 350, 1250);
-	robot.ia().iAbyZone().ia_setPath("depart", "porte2", 550, 1500); //ne sert pas
-	robot.ia().iAbyZone().ia_setPath("depart", "porte1", 550, 1450);
-	robot.ia().iAbyZone().ia_setPath("porte1", "porte2", 450, 1550);
-	robot.ia().iAbyZone().ia_setPath("porte1", "tour2", 600, 1600);
-	robot.ia().iAbyZone().ia_setPath("tour2", "porte2", 600, 1600);
-
-	robot.ia().iAbyZone().ia_addAction("porte2", &O_porte2);
-	robot.ia().iAbyZone().ia_addAction("porte1", &O_porte1);
-	robot.ia().iAbyZone().ia_addAction("tour2", &O_tour2);
 }
 
 IAutomateState*
 O_State_DecisionMaker::execute(Robot &, void *data)
 {
 	logger().info() << "O_State_DecisionMaker" << logs::end;
-	Data* sharedData = (Data*) data;
+	Data* sharedData = (Data*) data; //TODO objet sur robot.data ?
 
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
@@ -343,19 +134,8 @@ O_State_DecisionMaker::execute(Robot &, void *data)
 	robot.svgPrintPosition();
 
 	//choisir IA suivant sharedData->ia string
-	//IASetupDemo();
-	IASetupHomologation();
+	IASetupDemo();
 
-	//move 400
-//	robot.asserv().doLineAbs(400);
-//	robot.svgPrintPosition();
-	//clotho
-
-	if (robot.getMyColor() == PMXBLUE)
-		robot.asserv().doMoveArcRotate(55, 450); //todo gerer dans l'autre couleur
-	if (robot.getMyColor() == PMXYELLOW)
-		robot.asserv().doMoveArcRotate(-55, -450);
-	robot.svgPrintPosition();
 
 	robot.actions().sensors().startSensors();
 	robot.ia().iAbyZone().ia_start(); //launch IA
