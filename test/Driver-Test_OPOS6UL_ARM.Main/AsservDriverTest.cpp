@@ -20,7 +20,7 @@ void test::AsservDriverTest::firstTest()
 	asservdriver->motion_ActivateManager(true);
 	for (int n = 0; n < 5; n++)
 	{
-		asservdriver->odo_SetPosition(0.10, 0.55, 45.0);
+		asservdriver->odo_SetPosition(0.0, 0.0, 0.0);
 		//sleep(1);
 		RobotPosition p = asservdriver->odo_GetPosition();
 		logger().info() << p.x << " " << p.y << " " << p.theta << logs::end;
@@ -28,10 +28,15 @@ void test::AsservDriverTest::firstTest()
 
 	}
 
-	asservdriver->motion_DoLine(0.200);
+	logger().info() << "Go 300" << logs::end;
+	asservdriver->motion_DoLine(0.300);
 	sleep(3);
-
 	asservdriver->motion_FreeMotion();
+
+
+	RobotPosition p = asservdriver->odo_GetPosition();
+			logger().info() << p.x << " " << p.y << " " << p.theta << logs::end;
+
 	asservdriver->motion_ActivateManager(false);
 	this->assert(true, "OK");
 }

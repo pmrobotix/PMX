@@ -17,8 +17,8 @@
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="arm-2013.11-33" id="cdt.managedbuild.config.gnu.cross.exe.release.414689081" name="Release" parent="cdt.managedbuild.config.gnu.cross.exe.release" postbuildStep="pwd; cd ../../sh; pwd;  ./e.postbuild main ; echo &quot;Done&quot;;">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.release.414689081." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.release.245584524" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.release">
-							<option id="cdt.managedbuild.option.gnu.cross.prefix.1532213323" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="arm-none-linux-gnueabi-" valueType="string"/>
-							<option id="cdt.managedbuild.option.gnu.cross.path.1758215302" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="/install/arm-2013.11-33/bin" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.1532213323" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" useByScannerDiscovery="false" value="arm-none-linux-gnueabi-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.1758215302" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" useByScannerDiscovery="false" value="/install/arm-2013.11-33/bin" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1499016051" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/Bot_Lego_EV3}/Release" id="cdt.managedbuild.builder.gnu.cross.1803838196" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.builder.gnu.cross"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1655894733" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
@@ -49,15 +49,15 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1493139058" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.3415886" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
-								<option id="gnu.cpp.link.option.libs.1877843482" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+								<option id="gnu.cpp.link.option.libs.1877843482" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="simple-svg"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pmr-pathfinding"/>
 									<listOptionValue builtIn="false" value="stdc++"/>
 									<listOptionValue builtIn="false" value="pthread"/>
 								</option>
-								<option id="gnu.cpp.link.option.paths.1978807407" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/simple-svg/Release}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/pmr-pathfinding/Release}&quot;"/>
+								<option id="gnu.cpp.link.option.paths.1978807407" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/pmr-pathfinding/Lib_EV3}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/simple-svg/Lib_EV3}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1155496200" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -66,7 +66,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.661834950" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.672584412" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
-								<option id="gnu.both.asm.option.include.paths.74848258" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+								<option id="gnu.both.asm.option.include.paths.74848258" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/simple-svg}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/pmr-pathfinding}&quot;"/>
 								</option>
@@ -77,17 +77,18 @@
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
-				<externalSettings containerId="pmr-pathfinding;cdt.managedbuild.config.gnu.lib.release.2021573571" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier">
+				<externalSettings containerId="pmr-pathfinding;cdt.managedbuild.config.gnu.lib.release.2021573571.496787514.409868869" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier">
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/pmr-pathfinding"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/pmr-pathfinding/Release"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/pmr-pathfinding/LibEV3"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/pmr-pathfinding/Lib_EV3"/>
 						<entry flags="RESOLVED" kind="libraryFile" name="pmr-pathfinding" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
-				<externalSettings containerId="simple-svg;cdt.managedbuild.config.gnu.exe.release.335733983" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier">
+				<externalSettings containerId="simple-svg;cdt.managedbuild.config.gnu.exe.release.335733983.1103217908.954110466" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier">
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/simple-svg"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/simple-svg/Release"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/simple-svg/LibEV3"/>
 						<entry flags="RESOLVED" kind="libraryFile" name="simple-svg" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>

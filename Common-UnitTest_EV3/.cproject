@@ -28,6 +28,10 @@
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1508878721" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="GLIBCXX_USE_NANOSLEEP"/>
 								</option>
+								<option id="gnu.c.compiler.option.include.paths.1268246619" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/simple-svg}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/pmr-pathfinding}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.753844626" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.143837512" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
@@ -37,13 +41,23 @@
 								<option id="gnu.cpp.compiler.option.preprocessor.def.1252742511" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="GLIBCXX_USE_NANOSLEEP"/>
 								</option>
+								<option id="gnu.cpp.compiler.option.include.paths.1064053623" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/simple-svg}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/pmr-pathfinding}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.196235373" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1493139058" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.3415886" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
 								<option id="gnu.cpp.link.option.libs.1877843482" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="simple-svg"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pmr-pathfinding"/>
 									<listOptionValue builtIn="false" value="stdc++"/>
 									<listOptionValue builtIn="false" value="pthread"/>
+								</option>
+								<option id="gnu.cpp.link.option.paths.907290613" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/pmr-pathfinding/Lib_EV3}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/simple-svg/Lib_EV3}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1155496200" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -52,13 +66,34 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.661834950" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.672584412" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.include.paths.1159840796" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/simple-svg}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/pmr-pathfinding}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.938594418" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 				</configuration>
 			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="pmr-pathfinding;cdt.managedbuild.config.gnu.lib.release.2021573571.496787514.409868869" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier">
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/pmr-pathfinding"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/pmr-pathfinding/LibEV3"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/pmr-pathfinding/Lib_EV3"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="pmr-pathfinding" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<externalSettings containerId="simple-svg;cdt.managedbuild.config.gnu.exe.release.335733983.1103217908.954110466" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier">
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/simple-svg"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/simple-svg/LibEV3"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="simple-svg" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+			</storageModule>
+			<storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"/>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
