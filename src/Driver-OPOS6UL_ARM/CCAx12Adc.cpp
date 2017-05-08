@@ -21,58 +21,14 @@ void CCAx12Adc::begin()
 {
 	connected_ = false;
 
-	if (!connected_)
+	//open i2c and setslave
+	i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
+
+	int present = pingAX(6);
+	if (present)
 	{
-		logger().error() << "CCAx12Adc::begin() : BOARD NOT CONNECTED !" << logs::end;
-		return;
+		connected_ = true;
 	}
-
-	/*
-	 //open i2c and setslave
-	 i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
-
-	 int present7 = 0;
-	 //present7 = pingAX(7);
-	 //setLedOff(3);
-	 while(1)
-	 {
-	 //writeAXData(7, P_GOAL_POSITION, 1000);
-	 //int d1 = readAXData(7, P_ID);
-	 //int d1 = getADC(1);
-	 //printf("d1: %d\n", d1);
-	 //usleep(300000);
-
-	 setLedOn(3);
-	 usleep(1000);
-	 setLedOff(3);
-	 usleep(1000);
-
-
-	 }
-	 exit(0);
-
-	 present7 = pingAX(7);
-	 int present180 = pingAX(180);
-
-	 logger().error() << "present180 :" << present180 << " present7 :" << present7 << logs::end;
-
-	 */
-	/*
-	 long r = write_i2c(CONFIG_P0, 0x00); //defines all pins on Port0 are outputs
-	 if (r < 0)
-	 {
-	 connected_ = false;
-	 logger().error() << "setup() : GpioBoard NOT CONNECTED !" << logs::end;
-	 return;
-	 }
-	 else
-	 {
-	 write_i2c(OUT_P0, 0x00); //clears all relays
-	 write_i2c(CONFIG_P1, 0xFF); //defines all pins on Port1 are inputs
-	 write_i2c(IN_P1, 0x00); //clears all relays
-	 usleep(PAUSE);
-	 }
-	 */
 
 }
 
@@ -110,7 +66,9 @@ void CCAx12Adc::setLedOn(int led)
 	}
 	//wiringPiI2CWrite(fd, CMD_SET_LED_ON);
 	//wiringPiI2CWrite(fd, led);
-	write_i2c(CMD_SET_LED_ON, led);
+	//write_i2c(CMD_SET_LED_ON, led);
+	write(CMD_SET_LED_ON);
+	write(led);
 }
 
 // Set the led off
@@ -124,7 +82,10 @@ void CCAx12Adc::setLedOff(int led)
 	}
 	//wiringPiI2CWrite(fd, CMD_SET_LED_OFF);
 	//wiringPiI2CWrite(fd, led);
-	write_i2c(CMD_SET_LED_OFF, led);
+	//write_i2c(CMD_SET_LED_OFF, led);
+	write(CMD_SET_LED_OFF);
+	write(led);
+
 }
 
 // Get the ADC value (12bits)
@@ -137,20 +98,20 @@ int CCAx12Adc::getADC(int adc)
 		logger().error() << "CCAx12Adc::getADC() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
 	}
-	//wiringPiI2CWrite(fd, CMD_GET_ADC);
-	//wiringPiI2CWrite(fd, adc);
-	////write_i2c(CMD_GET_ADC, adc);
-	//int low = wiringPiI2CRead(fd);
-	//int high = wiringPiI2CRead(fd);
-	unsigned char bytes[2];
-	//read_i2c_nbytes(bytes,2);
-	write_readI2c(CMD_GET_ADC, adc, 2, bytes);
-	int low = bytes[0];
-	int high = bytes[1];
-	//int high = bytes[2];
-	//int high2 = bytes[3];
-	printf("low:%d, high:%d \n", low, high);
-	return high * 256 + low - 128;
+	if (adc >= 9 || adc < 0)
+	{
+		logger().error() << "CCAx12Adc::getADC() : bad number adc !" << logs::end;
+		return -2;
+	}
+
+	write(CMD_GET_ADC);
+	write(adc);
+	int low = read();
+	int high = read();
+	if (low < 0 || high < 0) return -3;
+
+	//printf("low:%d, high:%d \n", low, high);
+	return high * 256 + low;
 }
 
 // Ping a Dynamixel Servo
@@ -163,31 +124,12 @@ int CCAx12Adc::pingAX(int id)
 		logger().error() << "CCAx12Adc::pingAX() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
 	}
-	struct timeval t1, t2, t3;
-	double elapsedTime1, elapsedTime2;
-	// start timer
-	gettimeofday(&t1, NULL);
-	//wiringPiI2CWrite(fd, CMD_PING_AX);
-	//wiringPiI2CWrite(fd, id);
-	////write_i2c(CMD_PING_AX, id);
 
-	gettimeofday(&t2, NULL);
-	//int d2 = wiringPiI2CRead(fd);
-	unsigned char bytes[1];
-	//read_i2c_nbytes(bytes,1);
-	write_readI2c(CMD_PING_AX, id, 1, bytes);
-	int d2 = bytes[0];
-	// stop timer
-	gettimeofday(&t3, NULL);
-
-	// compute and print the elapsed time in millisec
-	elapsedTime1 = (t2.tv_sec - t1.tv_sec) * 1000.0;      // sec to ms
-	elapsedTime1 += (t2.tv_usec - t1.tv_usec) / 1000.0;   // us to ms
-	elapsedTime2 = (t3.tv_sec - t2.tv_sec) * 1000.0;      // sec to ms
-	elapsedTime2 += (t3.tv_usec - t2.tv_usec) / 1000.0;   // us to ms
-
-	printf("pingAX %d read1: %d w: %lf ms  r: %lf ms\n ", id, d2, elapsedTime1, elapsedTime2);
-	return d2;
+	write(CMD_PING_AX);
+	write(id);
+	int err = read();
+	if (err == 252) return -1;
+	return err;
 }
 
 // Read data (8bits or 16bits) at a specified address
@@ -201,20 +143,27 @@ int CCAx12Adc::readAXData(int id, int address)
 		logger().error() << "CCAx12Adc::readAXData() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
 	}
-	//int size = getAddressSize(address);
-	//wiringPiI2CWrite(fd, CMD_READ_AX);
-	//wiringPiI2CWrite(fd, id);
-	//wiringPiI2CWrite(fd, address);
-	//int low = wiringPiI2CRead(fd);
-	//int high = wiringPiI2CRead(fd);
+	int size = getAddressSize(address);
 
-	unsigned char bytes[4];
-	write3_readI2c(CMD_READ_AX, id, address, 4, bytes);
-	int low = bytes[0];
-	int high = bytes[1];
-
-	printf("readAXData low:%d high:%d %d %d\n", low, high, bytes[2], bytes[3]);
-	return high * 256 + low;
+	int err = 0;
+	err |= write(CMD_READ_AX);
+	err |= write(id);
+	err |= write(address);
+	if (err == -1) return -1;
+	int low = read();
+	if (low == 252) return -2;
+	if (size > 1)
+	{
+		int high = read();
+		//int high = bytes[1];
+		if (low == 252 && high == 252) return -3;
+		return high * 256 + low;
+	}
+	else
+	{
+		if (low == 252) return -1;
+		return low;
+	}
 
 }
 
@@ -228,137 +177,197 @@ int CCAx12Adc::writeAXData(int id, int address, int data)
 		logger().error() << "CCAx12Adc::writeAXData() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
 	}
-	/*
-	 int size = getAddressSize(address);
-	 wiringPiI2CWrite(fd, CMD_WRITE_AX);
-	 wiringPiI2CWrite(fd, id);
-	 wiringPiI2CWrite(fd, address);
-	 if (size == 1)
-	 {
-	 wiringPiI2CWrite(fd, data);
-	 }
-	 else
-	 {
-	 uint8_t xlow = data & 0xff;
-	 uint8_t xhigh = (data >> 8);
-	 wiringPiI2CWrite(fd, xlow);
-	 wiringPiI2CWrite(fd, xhigh);
-	 }
-	 int error = wiringPiI2CRead(fd);
-	 return error;*/
-	return 0;
+
+	int size = getAddressSize(address);
+
+	int err = 0;
+
+	err |= write(CMD_WRITE_AX);
+	err |= write(id);
+	err |= write(address);
+	if (err == -1) return -1;
+
+	uint8_t xlow = data & 0xff;
+	err |= write(xlow);
+	if (err == -1) return -2;
+
+	if (size == 2)
+	{
+		uint8_t xhigh = (data >> 8);
+		err |= write(xhigh);
+		if (err == -1) return -3;
+	}
+
+	int low = read();
+	if (low == 252) return -2;
+
+	return low;
 }
+/*
+ int CCAx12Adc::write5_readI2c(unsigned char command, unsigned char value, unsigned char addr,
+ unsigned char nbBytes2Write, unsigned char* data)
+ {
+ unsigned char writedata[1];
 
-int CCAx12Adc::write3_readI2c(unsigned char command, unsigned char value, unsigned char addr,
-		unsigned char nbBytes2Read, unsigned char* data)
-{
-	/*
-	 if (i2c_CCAx12Adc_.writeRegByte(command, value) < 0)
-	 {
-	 printf("write3_readI2c > writeRegByte > %c %d > error!\n", command, value);
-	 return -1;
-	 }
+ writedata[0] = command;
+ if (i2c_CCAx12Adc_.write(writedata, 1) < 0)
+ {
+ printf("write5_readI2c > write 1 > %d %d %d> error!\n", command, value, addr);
+ return -1;
+ }
+ writedata[0] = value;
+ if (i2c_CCAx12Adc_.write(writedata, 1) < 0)
+ {
+ printf("write5_readI2c > write 2 > %d %d %d> error!\n", command, value, addr);
+ return -2;
+ }
 
-	 //Read the data back from the slave
-	 if (i2c_CCAx12Adc_.readReg(addr, data, nbBytes2Read) < 0)
-	 {
-	 printf("write3_readI2c > readReg > %d %d %d > error!\n", addr, data, nbBytes2Read);
-	 return -1;
-	 }*/
-	unsigned char writedata[3];
+ writedata[0] = addr;
+ if (i2c_CCAx12Adc_.write(writedata, 1) < 0)
+ {
+ printf("write5_readI2c > write 3 > %d %d %d> error!\n", command, value, addr);
+ return -3;
+ }
+ //printf("write3_writeI2c > write 3bytes OK !\n");
 
-	writedata[0] = command;
-	writedata[1] = command;
-	if (i2c_CCAx12Adc_.write(writedata, 2) < 0)
-	{
-		printf("write3_readI2c > write > %d %d %d> error!\n", command, value, addr);
-		return -1;
-	}
-	writedata[0] = value;
-	writedata[1] = value;
-	if (i2c_CCAx12Adc_.write(writedata, 2) < 0)
-	{
-		printf("write3_readI2c > write > %d %d %d> error!\n", command, value, addr);
-		return -1;
-	}
+ int val = 0;
+ for (int n = 0; n < nbBytes2Write; n++)
+ {
+ //printf("write5_readI2c  > write > nbBytes2Write=%d data[%d]=%d > error!\n", nbBytes2Write, n, data[n]);
+ val = 0;
+ writedata[0] = data[n];
+ val = i2c_CCAx12Adc_.write(writedata, 1);
+ if (val < 0)
+ {
+ printf("write5_readI2c  > write n=%d > cmd=%d nb=%d > error!\n", n, command,
+ nbBytes2Write);
+ return -4;
+ }
+ }
 
-	writedata[0] = addr;
-	writedata[1] = addr;
-	if (i2c_CCAx12Adc_.write(writedata, 2) < 0)
-	{
-		printf("write3_readI2c > write > %d %d %d> error!\n", command, value, addr);
-		return -1;
-	}
+ val = 0;
+ unsigned char a[1];
+ val = i2c_CCAx12Adc_.read(a, 1);
+ if (val < 0)
+ {
+ printf("write5_readI2c  > read > error val=%d!\n", val);
+ return -5;
+ }
 
-	printf("write_readI2c > write 3bytes OK !\n");
-	//Read the data back from the slave
-	if (i2c_CCAx12Adc_.read(data, nbBytes2Read) < 0)
-	{
-		printf("write_readI2c  > read > nb=%d > error!\n", nbBytes2Read);
-		return -2;
-	}
-	printf("write_readI2c  > read OK !\n");
+ return 0;
+ }
 
-	return 0;
-}
-int CCAx12Adc::write_readI2c(unsigned char command, unsigned char value, unsigned char nbBytes2Read,
-		unsigned char* data)
-{
-	if (i2c_CCAx12Adc_.writeRegByte(command, value) < 0)
-	{
-		printf("write_readI2c > writeRegByte > cmd=%d val=%d > error!\n", command, value);
-		return -1;
-	}
-	printf("write_readI2c  > writeRegByte OK !\n");
+ int CCAx12Adc::write3_readI2c(unsigned char command, unsigned char value, unsigned char addr,
+ unsigned char nbBytes2Read, unsigned char* data)
+ {
 
-	//Read the data back from the slave
-	if (i2c_CCAx12Adc_.read(data, 1) < 0)
-	{
-		printf("write_readI2c  > read > cmd=%d nb=%d > error!\n", command, nbBytes2Read);
-		return -2;
-	}
-	printf("write_readI2c  > read OK !\n");
-	if (i2c_CCAx12Adc_.read(data, 1) < 0)
-	{
-		printf("write_readI2c  > read x2 > cmd=%d nb=%d > error!\n", command, nbBytes2Read);
-		return -3;
-	}
-	printf("write_readI2c  > read OK2 !\n");
-	return 0;
-}
+ unsigned char writedata[3];
 
+ writedata[0] = command;
+ if (i2c_CCAx12Adc_.write(writedata, 1) < 0)
+ {
+ printf("write3_readI2c > write 1 > %d %d %d> error!\n", command, value, addr);
+ return -1;
+ }
+ writedata[0] = value;
+ if (i2c_CCAx12Adc_.write(writedata, 1) < 0)
+ {
+ printf("write3_readI2c > write 2 > %d %d %d> error!\n", command, value, addr);
+ return -2;
+ }
+ writedata[0] = addr;
+ if (i2c_CCAx12Adc_.write(writedata, 1) < 0)
+ {
+ printf("write3_readI2c > write 3 > %d %d %d> error!\n", command, value, addr);
+ return -3;
+ }
+ //printf("write_readI2c > write 3bytes OK !\n");
+
+ int val = 0;
+ unsigned char a[1];
+ for (int n = 0; n < nbBytes2Read; n++)
+ {
+ val = 0;
+ a[0] = 0;
+ val = i2c_CCAx12Adc_.read(a, 1);
+ if (val < 0)
+ {
+ printf("write_readI2c  > read n=%d > cmd=%d nb=%d > error!\n", n, command,
+ nbBytes2Read);
+ return -4;
+ }
+ data[n] = a[0];
+ }
+
+ return 0;
+ }
+
+ int CCAx12Adc::write2_readI2c(unsigned char command, unsigned char value,
+ unsigned char nbBytes2Read, unsigned char* data)
+ {
+ unsigned char w1[1];
+ w1[0] = command;
+ unsigned char w2[1];
+ w2[0] = value;
+ if (i2c_CCAx12Adc_.write(w1, 1))
+ {
+ printf("write_readI2c > write 1 > cmd=%d val=%d > error!\n", command, value);
+ return -1;
+ }
+ if (i2c_CCAx12Adc_.write(w2, 1))
+ {
+ printf("write_readI2c > write 2 > cmd=%d val=%d > error!\n", command, value);
+ return -2;
+ }
+ //printf("write_readI2c  > writeRegByte OK !\n");
+
+ int val = 0;
+ unsigned char a[1];
+ for (int n = 0; n < nbBytes2Read; n++)
+ {
+ val = 0;
+ a[0] = 0;
+ val = i2c_CCAx12Adc_.read(a, 1);
+ if (val < 0)
+ {
+ printf("write_readI2c  > read n=%d > cmd=%d nb=%d > error!\n", n, command,
+ nbBytes2Read);
+ return -3;
+ }
+ data[n] = a[0];
+ }
+ //usleep(300);
+
+ return 0;
+ }
+ */
 int CCAx12Adc::write_i2c(unsigned char command, unsigned char value)
 {
 	return i2c_CCAx12Adc_.writeRegByte(command, value);
 }
-/*
- int CCAx12Adc::read_i2c(unsigned char command)
- {
- return i2c_CCAx12Adc_.readRegByte(command);
- }
 
- int CCAx12Adc::read_i2c_nbytes(unsigned char *data, int size)
- {
- if (i2c_CCAx12Adc_.read(data, size) < 0)
- {
- printf("read_i2c_2bytes > read > data=%d size=%d > error!\n", data[0], size);
- return -1;
- }
- else
- return 0;
- }*/
-/*
- int CCAx12Adc::read_i2c_2bytes(unsigned char command)
- {
- unsigned char data[2];
- long r = i2c_CCAx12Adc_.readReg(command, data, 2);
- if (r < 0) logger().error() << "ERROR read_i2c_2bytes*() " << logs::end;
- unsigned char high = data[0];
- unsigned char low = data[1];
+int CCAx12Adc::write(unsigned char command)
+{
 
- logger().error() << "high: " << (int) high << " \tlow: " << (int) low << logs::end;
- int distance = ((high * 16 + low) / 16) * 10 / (int) std::pow(2, shift_); // Calculate the range in CM
+	if (i2c_CCAx12Adc_.write(&command, 1))
+	{
+		printf("write > cmd=%d > error!\n", command);
+		return -1;
+	}
+	return 0;
+}
 
- return distance;
- }*/
+int CCAx12Adc::read()
+{
+
+	unsigned char a[1];
+	a[0] = 0;
+	if (i2c_CCAx12Adc_.read(a, 1) < 0)
+	{
+		printf("write_readI2c  > read  error!\n");
+		return -1;
+	}
+
+	return a[0];
+}
 

@@ -7,8 +7,6 @@ using namespace std;
 MotorControl::MotorControl(std::string botid)//Asserv & asserv) : AAsservElement(asserv)
 {
 	asservdriver = AAsservDriver::create(botid);
-
-	asservdriver->enableHardRegulation(true);
 }
 
 MotorControl::~MotorControl()

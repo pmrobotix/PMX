@@ -69,7 +69,7 @@ public:
 	virtual void stopMotorRight() = 0;
 	virtual int getMotorLeftCurrent() = 0;
 	virtual int getMotorRightCurrent() = 0;
-	virtual void enableHardRegulation(bool enable) = 0;
+	//virtual void enableHardRegulation(bool enable) = 0;
 
 	/*!
 	 * \brief Fonctions permettant d'utiliser un asservissement externe.

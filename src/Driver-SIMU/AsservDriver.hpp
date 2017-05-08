@@ -105,14 +105,14 @@ public:
 	int getMotorLeftCurrent();
 	int getMotorRightCurrent();
 
-	void enableHardRegulation(bool enable);
+	//void enableHardRegulation(bool enable);
 
 	//fonctions asservissements externe par defaut
 	/*float odo_GetX_mm();
 	float odo_GetY_mm();
 	float odo_GetTheta_Rad();		// angle in radian
 	float odo_GetTheta_Degree();		// angle in degrees*/
-	void odo_SetPosition(double x_m, double y_m, float angle_rad);
+	void odo_SetPosition(double x_m, double y_m, double angle_rad);
 	RobotPosition odo_GetPosition();
 	int path_GetLastCommandStatus();
 	void path_InterruptTrajectory();

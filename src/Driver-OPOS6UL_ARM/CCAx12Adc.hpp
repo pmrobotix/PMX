@@ -87,15 +87,10 @@ private:
 
 	int getAddressSize(int address);
 
-	int write3_readI2c(unsigned char command, unsigned char value, unsigned char addr,
-			unsigned char nbBytes2Read, unsigned char* data);
-	int write_readI2c(unsigned char command, unsigned char value, unsigned char nbBytes2Read,
-			unsigned char* data);
-
 	int write_i2c(unsigned char command, unsigned char value);
-	/*
-	int read_i2c(unsigned char command);
-	int read_i2c_nbytes(unsigned char *data, int size);*/
+
+	int write(unsigned char command);
+	int read();
 
 public:
 

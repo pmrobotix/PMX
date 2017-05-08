@@ -24,8 +24,6 @@ private:
 
 	int connected_;
 
-
-
 protected:
 
 public:

@@ -117,17 +117,12 @@ int AsservDriver::getMotorRightCurrent()
 }
 
 //deprecated
-void AsservDriver::enableHardRegulation(bool enable) //legoEV3 configuration to be removed
-{
-	//motion_ActivateManager(enable);
-	//motion_DisablePID(enable);
-}
+//void AsservDriver::enableHardRegulation(bool enable) //legoEV3 configuration to be removed
+//{
+//}
 /*
  float AsservDriver::odo_GetX_mm()
  {
-
-
-
  return 0.0;
  }
  float AsservDriver::odo_GetY_mm()
@@ -286,7 +281,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 	{
 		unsigned char d[4];
 		float2bytes_t mm;
-		mm.f = (dist_meters / 1000.0);
+		mm.f = (dist_meters * 1000.0);
 		d[0] = mm.b[0];
 		d[1] = mm.b[1];
 		d[2] = mm.b[2];

@@ -107,10 +107,7 @@ int AsservDriver::getMotorRightCurrent()
 	return 0;
 }
 
-void AsservDriver::enableHardRegulation(bool enable)
-{
 
-}
 
 
 
@@ -129,7 +126,7 @@ float AsservDriver::odo_GetTheta_Rad()
 float AsservDriver::odo_GetTheta_Degree()
 {
 }
-void AsservDriver::odo_SetPosition(double x_m, double y_m, float angle_rad)
+void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
 {
 }
 RobotPosition AsservDriver::odo_GetPosition()

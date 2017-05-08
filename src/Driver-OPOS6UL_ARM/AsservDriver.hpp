@@ -73,7 +73,7 @@ public:
 
 	//commandes optionnelles de gestion externe
 	//deprecated
-	void enableHardRegulation(bool enable);
+	//void enableHardRegulation(bool enable);
 
 
 

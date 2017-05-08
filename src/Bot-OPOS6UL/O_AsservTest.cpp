@@ -20,9 +20,13 @@ void O_AsservTest::run(int argc, char** argv)
 	logger().info() << "Start Asserv " << logs::end;
 	robot.asserv().startMotionTimerAndOdo();
 	//usleep(500000);
-	robot.asserv().setPositionAndColor(100.0, 300.0, 180.0, (robot.getMyColor() == PMXBLUE));
+	robot.asserv().setPositionAndColor(100.0, 100.0, 0.0, (robot.getMyColor() == PMXBLUE));
 	RobotPosition p = robot.asserv().pos_getPosition();
 	logger().info() << p.x << " " << p.y << " " << p.theta << logs::end;
+
+	robot.asserv().doLineAbs(100.0);
+
+	sleep(2);
 
 	logger().info() << "Stopping Robot... " << logs::end;
 	robot.asserv().stopMotionTimerAndOdo();

@@ -5,8 +5,6 @@
 
 #include "ServoDriverTest.hpp"
 
-#include <unistd.h>
-#include <cstdint>
 
 void test::ServoDriverTest::suite()
 {
@@ -17,7 +15,7 @@ void test::ServoDriverTest::suite()
 void test::ServoDriverTest::firstTest()
 {
 
-
+	servodriver->hold(SERVO_FUNNY_ACTION);
 
 	this->assert(true, "OK");
 }

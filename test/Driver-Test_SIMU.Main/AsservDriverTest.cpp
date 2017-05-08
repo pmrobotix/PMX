@@ -20,7 +20,7 @@ void test::AsservDriverTest::testSet()
 {
 	logger().debug() << "Starting..." << logs::end;
 
-	asservdriver->enableHardRegulation(true);
+	asservdriver->motion_ActivateManager(true);
 
 	int power = 800;
 	int timems = 3000;
