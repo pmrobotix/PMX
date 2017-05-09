@@ -3,7 +3,9 @@
 
 #include <string>
 
+#include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
+#include "../../Thread/Thread.hpp"
 #include "../Asserv.Driver/AAsservDriver.hpp"
 
 class AsservInsa;
@@ -30,6 +32,7 @@ private:
 		return instance;
 	}
 protected:
+
 
 	/*!
 	 * \brief motorisation = motors + encoders
@@ -76,7 +79,7 @@ public:
 	AAsservDriver* asservdriver;
 
 	//Gestion de l'asservissement
-	virtual void startMotionTimerAndOdo();
+	virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 	virtual void stopMotionTimerAndOdo();
 	virtual void disablePID(); //TODO deprecated
 

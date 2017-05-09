@@ -70,12 +70,12 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
 
 	//DRIVERS OPOS
-	add(logs::Level::INFO, "LedDriver.ARM", "console");
-	add(logs::Level::INFO, "ButtonDriver.ARM", "console");
-	add(logs::Level::INFO, "SoundDriver.ARM", "console");
-	add(logs::Level::INFO, "SwitchDriver.ARM", "console");
-	add(logs::Level::INFO, "SensorsDriver.ARM", "console");
-	add(logs::Level::INFO, "AsservDriver.ARM", "console");
+	add(logs::Level::INFO, "LedDriver.OPO", "console");
+	add(logs::Level::INFO, "ButtonDriver.OPO", "console");
+	add(logs::Level::INFO, "SoundDriver.OPO", "console");
+	add(logs::Level::INFO, "SwitchDriver.OPO", "console");
+	add(logs::Level::INFO, "SensorsDriver.OPO", "console");
+	add(logs::Level::INFO, "AsservDriver.OPO", "console");
 	//add(logs::Level::INFO, "GpioPCA9555", "console");
 	//add(logs::Level::INFO, "ExtEncoder", "console");
 

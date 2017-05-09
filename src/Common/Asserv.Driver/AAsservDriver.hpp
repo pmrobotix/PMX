@@ -25,6 +25,7 @@ typedef struct RobotPosition
 	float x; //metres
 	float y; //metres
 	float theta; //radians
+	int asservStatus;
 } RobotPosition;
 
 class AAsservDriver

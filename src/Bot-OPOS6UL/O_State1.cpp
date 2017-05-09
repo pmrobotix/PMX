@@ -141,7 +141,7 @@ O_State1::execute(Robot&, void *data)
 void O_State1::setPos()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.asserv().startMotionTimerAndOdo();
+	robot.asserv().startMotionTimerAndOdo(false);
 	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXYELLOW));
 	robot.svgPrintPosition();
 

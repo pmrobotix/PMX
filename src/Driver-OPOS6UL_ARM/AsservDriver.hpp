@@ -10,6 +10,7 @@
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "../Thread/Thread.hpp"
 
 using namespace std;
 
@@ -28,8 +29,10 @@ union float2bytes_t   // union consists of one variable represented in a number 
 	} //initialisation
 };
 
-class AsservDriver: public AAsservDriver
+class AsservDriver: public AAsservDriver, utils::Thread
 {
+
+
 private:
 
 	/*!
@@ -45,11 +48,20 @@ private:
 
 	bool asservStarted_;
 
+	TRAJ_STATE pathStatus_;
+	Mutex m_;
+
 	int mbed_ack();
 	int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
 	int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write,
 			unsigned char* data);
 
+	RobotPosition mbed_GetPosition();
+	TRAJ_STATE mbed_waitEndOfTraj();
+protected:
+
+	virtual void execute();
+	RobotPosition p_;
 public:
 
 	//commandes directes concernant les moteurs

@@ -18,15 +18,20 @@ void O_AsservTest::run(int argc, char** argv)
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
 	logger().info() << "Start Asserv " << logs::end;
-	robot.asserv().startMotionTimerAndOdo();
-	//usleep(500000);
+	robot.asserv().startMotionTimerAndOdo(true);
+
 	robot.asserv().setPositionAndColor(100.0, 100.0, 0.0, (robot.getMyColor() == PMXBLUE));
 	RobotPosition p = robot.asserv().pos_getPosition();
-	logger().info() << p.x << " " << p.y << " " << p.theta << logs::end;
+	logger().info() << "p= " << p.x << " " << p.y << " " << p.theta << " " << p.asservStatus
+			<< logs::end;
 
-	robot.asserv().doLineAbs(100.0);
-
-	sleep(2);
+	if (robot.asserv().doLineAbs(400.0) != TRAJ_OK)
+	{
+		logger().info() << "Interruption !!" << logs::end;
+	}
+	p = robot.asserv().pos_getPosition();
+	logger().info() << "p= " << p.x << " " << p.y << " " << p.theta << " " << p.asservStatus
+			<< logs::end;
 
 	logger().info() << "Stopping Robot... " << logs::end;
 	robot.asserv().stopMotionTimerAndOdo();

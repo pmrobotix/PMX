@@ -125,7 +125,7 @@ public:
 	 *
 	 * \return \c true si le thread est terminé ou simplement créé.
 	 */
-	inline bool finished()
+	inline bool isFinished()
 	{
 		// printf("Thread.hpp:  is finished()\n");
 		return (state() == utils::STOPPED || state() == utils::CREATED);

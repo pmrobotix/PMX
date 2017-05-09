@@ -117,7 +117,7 @@ long long AsservInsa::currentTimeInMicros()
 {
 	struct timeval te;
 	gettimeofday(&te, NULL); // get current time
-	long long microseconds = (te.tv_sec * 1000000LL + te.tv_usec); // calculate milliseconds
+	long long microseconds = (te.tv_sec * 1000000LL + te.tv_usec); // calculate microsec
 	return (long long) (microseconds - timeOffset);
 }
 

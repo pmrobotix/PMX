@@ -36,6 +36,8 @@ namespace utils
          */
         int stopped_;
         
+        unsigned int timerPeriod_us_;
+
         /*!
          * \brief Variable de comptage de début.
          */
@@ -51,6 +53,10 @@ namespace utils
          */
         timeval endSet_;
         
+        unsigned int endSetTime_us;
+        unsigned long long periodNb_;
+        unsigned long long timerStartTime_us_;
+
     public:
         
         /*!
@@ -86,17 +92,21 @@ namespace utils
         /*!
          * \brief Set un timer.
          */
-        int setTimer(int usec);
+        void setTimer(unsigned int usec);
 
         /*!
          * \brief Verifie un timer (après avoir effectué un SetTimer).
          * \return 1 si le timer est dépassé.
          */
-        int checkTimer();
+        //int checkTimer(unsigned int usec);
+
+
+
+        int waitTimer();
 
         /*!
          * \brief Un alias pour la méthode getElapsedTimeInSec().
-         * \return Le temps en seconde.
+         * \return Le nb de periodes ecoulées depuis le début.
          */
         double getElapsedTime();
         
@@ -113,7 +123,7 @@ namespace utils
         /*!
          * \return Le temps du chronomètre en microseconde.
          */
-        long getElapsedTimeInMicroSec();
+        unsigned long long getElapsedTimeInMicroSec();
     };
 }
 #endif

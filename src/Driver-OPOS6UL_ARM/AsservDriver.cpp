@@ -2,10 +2,12 @@
 
 #include "AsservDriver.hpp"
 
-#include <cstdio>
+#include <stdio.h>
+#include <unistd.h>
 #include <cstring>
 #include <string>
 
+#include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 
 using namespace std;
@@ -17,8 +19,9 @@ AAsservDriver * AAsservDriver::create(std::string)
 }
 
 AsservDriver::AsservDriver() :
-		mbedI2c_(1) //UART5=>1 ; UART4=>0
-				, connected_(false), asservStarted_(false)
+		mbedI2c_(1) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
+				, connected_(false), asservStarted_(false), pathStatus_(TRAJ_ERROR), p_(
+		{ 0.0, 0.0, 0.0, -1 })
 {
 	if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
 	{
@@ -32,7 +35,10 @@ AsservDriver::AsservDriver() :
 		if (mbed_ack() == 0)
 		{
 			connected_ = true;
-			asservStarted_ = true;
+
+			asservStarted_ = false;
+			//on demarre le thread
+			this->start("AsservDriver::motion_ActivateManager");
 		}
 		else
 		{
@@ -43,6 +49,23 @@ AsservDriver::AsservDriver() :
 
 AsservDriver::~AsservDriver()
 {
+}
+
+void AsservDriver::execute()
+{
+	int periodTime_us = 20000; //10ms minimum sans le debug MBED activé
+	utils::Chronometer chrono;
+	chrono.setTimer(periodTime_us);
+
+	while (1)
+	{
+		if (asservStarted_)
+		{
+			//logger().error() << "nb=" << nb << " chrono=" << chrono.getElapsedTimeInMicroSec()	<< logs::end;
+			p_ = mbed_GetPosition();
+		}
+		chrono.waitTimer();
+	}
 }
 
 void AsservDriver::setMotorLeftPosition(int power, long ticks)
@@ -165,11 +188,18 @@ void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
 		logger().error() << "odo_SetPosition - S12 - ERROR " << r << logs::end;
 	}
 	else
+	{
 		logger().info() << "odo_SetPosition S12 " << x_mm.f << " " << y_mm.f << " " << a.f
 				<< logs::end;
-
+		p_ = mbed_GetPosition();
+	}
 }
 RobotPosition AsservDriver::odo_GetPosition() //en metre
+{
+	return p_;
+}
+
+RobotPosition AsservDriver::mbed_GetPosition() //en metre
 {
 	RobotPosition p;
 	p.x = -1;
@@ -177,12 +207,13 @@ RobotPosition AsservDriver::odo_GetPosition() //en metre
 	p.theta = -1;
 	if (!connected_) return p;
 
-	unsigned char data[12];
+	int status = -1;
 
-	if (int r = mbed_readI2c('P', 12, data) < 0)
+	unsigned char data[13];
+
+	if (int r = mbed_readI2c('p', 13, data) < 0)
 	{
-		logger().error() << "odo_GetPosition - P12 - ERROR " << r << logs::end;
-
+		logger().error() << "mbed_GetPosition - p13 - ERROR " << r << logs::end;
 		return p;
 	}
 	else
@@ -206,18 +237,20 @@ RobotPosition AsservDriver::odo_GetPosition() //en metre
 		rad.b[2] = data[10];
 		rad.b[3] = data[11];
 
-		//printf("P12: %f %f %f\n", x_mm.f, y_mm.f, rad.f);
-		logger().info() << "odo_GetPosition P12 " << x_mm.f << " " << y_mm.f << " " << rad.f
-				<< logs::end;
+		status = data[12];
+
+		//logger().info() << "mbed_GetPosition p13 " << x_mm.f << " " << y_mm.f << " " << rad.f << " " << status << logs::end;
 
 		RobotPosition p; //in m
 		p.x = x_mm.f / 1000.0;
 		p.y = y_mm.f / 1000.0;
 		p.theta = rad.f;
+		p.asservStatus = status;
 
 		return p;
 	}
 }
+
 int AsservDriver::path_GetLastCommandStatus()
 {
 	//TODO
@@ -230,7 +263,10 @@ void AsservDriver::path_InterruptTrajectory()
 		logger().error() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservStarted_
 				<< logs::end;
 	else
+	{
 		mbed_writeI2c('h', 0, NULL);
+		pathStatus_ = TRAJ_INTERRUPTED;
+	}
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
@@ -239,7 +275,10 @@ void AsservDriver::path_CollisionOnTrajectory()
 		logger().error() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservStarted_
 				<< logs::end;
 	else
+	{
 		mbed_writeI2c('h', 0, NULL);
+		pathStatus_ = TRAJ_COLLISION;
+	}
 }
 void AsservDriver::path_CollisionRearOnTrajectory()
 {
@@ -248,7 +287,10 @@ void AsservDriver::path_CollisionRearOnTrajectory()
 		logger().error() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED "
 				<< asservStarted_ << logs::end;
 	else
+	{
 		mbed_writeI2c('h', 0, NULL);
+		pathStatus_ = TRAJ_COLLISION_REAR;
+	}
 }
 void AsservDriver::path_CancelTrajectory()
 {
@@ -257,7 +299,10 @@ void AsservDriver::path_CancelTrajectory()
 		logger().error() << "path_CancelTrajectory() ERROR MBED NOT STARTED " << asservStarted_
 				<< logs::end;
 	else
+	{
 		mbed_writeI2c('h', 0, NULL);
+		pathStatus_ = TRAJ_CANCELLED;
+	}
 }
 void AsservDriver::path_ResetEmergencyStop()
 {
@@ -287,8 +332,35 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 		d[2] = mm.b[2];
 		d[3] = mm.b[3];
 		mbed_writeI2c('v', 4, d);
-		return TRAJ_OK;
+		pathStatus_ = TRAJ_OK;
+		return mbed_waitEndOfTraj();
 	}
+}
+//asservStatus 0 = running
+//asservStatus 1 = tâche terminée
+//asservStatus 2 = emergency stop
+TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
+{
+	//logger().error() << "p_.asservStatus avant = " << p_.asservStatus	<< logs::end;
+	while (p_.asservStatus > 0)
+		{
+			//logger().error() << "p_.asservStatus boucle = " << p_.asservStatus	<< logs::end;
+			usleep(50000);
+		}
+	while (p_.asservStatus == 0)
+	{
+		//logger().error() << "p_.asservStatus boucle = " << p_.asservStatus	<< logs::end;
+		usleep(50000);
+	}
+	if (p_.asservStatus == 1) return TRAJ_OK;
+	if (p_.asservStatus == 2)
+	{
+		return pathStatus_;
+	}
+
+	//cas d'erreur
+	p_.asservStatus = -1;
+	return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) // f8 +x+y
@@ -315,7 +387,8 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) // f8 +x+y
 		d[6] = y.b[2];
 		d[7] = y.b[3];
 		mbed_writeI2c('f', 8, d);
-		return TRAJ_OK;
+		pathStatus_ = TRAJ_OK;
+		return mbed_waitEndOfTraj();
 	}
 }
 
@@ -338,7 +411,8 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_degrees) //t4 +d
 		d[2] = deg.b[2];
 		d[3] = deg.b[3];
 		mbed_writeI2c('t', 4, d);
-		return TRAJ_OK;
+		pathStatus_ = TRAJ_OK;
+		return mbed_waitEndOfTraj();
 	}
 }
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
@@ -353,16 +427,22 @@ void AsservDriver::motion_FreeMotion(void)
 		logger().error() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservStarted_
 				<< logs::end;
 	else
+	{
 		mbed_writeI2c('K', 0, NULL);
+		pathStatus_ = TRAJ_CANCELLED;
+	}
 }
-void AsservDriver::motion_DisablePID() //TODO mm chose que Freemotion ???
+void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotion ???
 {
 	if (!connected_) return;
 	if (!asservStarted_)
 		logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservStarted_
 				<< logs::end;
 	else
+	{
 		mbed_writeI2c('K', 0, NULL);
+		pathStatus_ = TRAJ_CANCELLED;
+	}
 }
 void AsservDriver::motion_AssistedHandling(void)
 {
@@ -371,7 +451,10 @@ void AsservDriver::motion_AssistedHandling(void)
 		logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED " << asservStarted_
 				<< logs::end;
 	else
+	{
 		mbed_writeI2c('J', 0, NULL);
+		pathStatus_ = TRAJ_CANCELLED;
+	}
 }
 void AsservDriver::motion_ActivateManager(bool enable)
 {
@@ -379,12 +462,16 @@ void AsservDriver::motion_ActivateManager(bool enable)
 	if (enable)
 	{
 		mbed_writeI2c('I', 0, NULL);
+		usleep(100000);
 		asservStarted_ = true;
+
 	}
 	else
 	{
-		mbed_writeI2c('!', 0, NULL);
 		asservStarted_ = false;
+		usleep(100000);
+		mbed_writeI2c('!', 0, NULL);
+
 	}
 }
 
@@ -393,48 +480,59 @@ void AsservDriver::motion_ActivateManager(bool enable)
 int AsservDriver::mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write,
 		unsigned char * data)
 {
+	m_.lock();
 	if (int r = mbedI2c_.writeRegByte(cmd, nbBytes2Write) < 0)
 	{
-		printf("ERROR mbed_writeI2c > writeRegByte > %c%d > %d!\n", cmd, nbBytes2Write, r);
+		printf("ERROR AsservDriver::mbed_writeI2c > writeRegByte > %c%d > %d!\n", cmd, nbBytes2Write, r);
+		m_.unlock();
 		return -1;
 	}
 	if (nbBytes2Write != 0) if (int r = mbedI2c_.write(data, nbBytes2Write) < 0)
 	{
-		printf("ERROR mbed_writeI2c > write > %c%d > %d!\n", cmd, nbBytes2Write, r);
+		printf("ERROR AsservDriver::mbed_writeI2c > write > %c%d > %d!\n", cmd, nbBytes2Write, r);
+		m_.unlock();
 		return -1;
 	}
+	m_.unlock();
 	return 0;
 }
 
 int AsservDriver::mbed_readI2c(unsigned char command, unsigned char nbBytes2Read,
 		unsigned char* data)
 {
+	m_.lock();
 	if (mbedI2c_.writeRegByte(command, nbBytes2Read) < 0)
 	{
-		printf("mbed_readI2c > writeRegByte > %c%d > error!\n", command, nbBytes2Read);
+		printf("ERROR AsservDriver::mbed_readI2c > writeRegByte > %c%d > error!\n", command, nbBytes2Read);
+		m_.unlock();
 		return -1;
 	}
 
 //Read the data back from the slave
 	if (mbedI2c_.read(data, nbBytes2Read) < 0)
 	{
-		printf("mbed_readI2c > read > %c%d > error!\n", command, nbBytes2Read);
+		printf("ERROR AsservDriver::mbed_readI2c > read > %c%d > error!\n", command, nbBytes2Read);
+		m_.unlock();
 		return -1;
 	}
+	m_.unlock();
 	return 0;
 }
 
 int AsservDriver::mbed_ack()
 {
+	m_.lock();
 	unsigned char ack[1];
 
 //ACK
 	memset(ack, 0, sizeof(ack));
 	if (int r = mbedI2c_.read(ack, 1) < 0)
 	{
-		printf("ack1 read error! %d\n", r);
+		printf("ERROR AsservDriver::mbed_ack() error! %d\n", r);
+		m_.unlock();
 		return -1;
 	}
+	m_.unlock();
 //printf("mbed_ack 0x%02hhX\n", ack[0]); // hh pour indiquer que c'est un char (pas int)
 	if (ack[0] == MBED_ADDRESS)
 		return 0;

@@ -1,9 +1,10 @@
 #include "Asserv.hpp"
 
+#include <unistd.h>
 #include <cmath>
 
 #include "../../Asserv.Insa/AsservInsa.hpp"
-#include "../../Log/Logger.hpp"
+#include "../Utils/Chronometer.hpp"
 #include "MovingBase.hpp"
 
 Asserv::Asserv(std::string botId, Robot * robot)
@@ -29,7 +30,8 @@ MovingBase * Asserv::base()
 	return pMovingBase_;
 }
 
-void Asserv::startMotionTimerAndOdo()
+
+void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 {
 	if (useInternalAsserv_)
 	{
@@ -44,8 +46,12 @@ void Asserv::startMotionTimerAndOdo()
 	}
 	else
 	{
-		asservdriver->motion_ActivateManager(true);
-		asservdriver->motion_FreeMotion();
+		asservdriver->motion_ActivateManager(true); //on active la carte d'asserv externe
+		if (assistedHandlingEnabled)
+			asservdriver->motion_AssistedHandling();
+		else
+			asservdriver->motion_FreeMotion();
+
 	}
 }
 
@@ -77,6 +83,7 @@ void Asserv::stopMotionTimerAndOdo()
 	{
 		asservdriver->path_InterruptTrajectory();
 		asservdriver->motion_ActivateManager(false);
+		//this->waitForEnd(); //TODO ?
 	}
 }
 
@@ -277,18 +284,22 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM)
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
+	//TODO
 	return TRAJ_ERROR;
 }
 TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
 {
+	//TODO
 	return TRAJ_ERROR;
 }
 TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
+	//TODO
 	return TRAJ_ERROR;
 }
 TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
 {
+	//TODO
 	return TRAJ_ERROR;
 }
 
