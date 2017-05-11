@@ -33,17 +33,22 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 	sharedData = NULL;
 }
 
+
+
+void OPOS6UL_RobotExtended::baseStop()
+{
+	this->asserv().freeMotion();
+	this->asserv().base()->motors().stopMotors();
+
+	svg_->endHeader();
+}
 void OPOS6UL_RobotExtended::stop()
 {
 
+	Robot::stop();
 	this->actions().stop(); //extra devices
 
-	this->asserv().base()->motors().stopMotors();
-	this->asserv().freeMotion();
-	//this->asserv().stopMotionTimerAndOdo();
-	Robot::stop();
-	svg_->endHeader();
-
+	baseStop();
 }
 
 void OPOS6UL_RobotExtended::begin(int argc, char** argv)

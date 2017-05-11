@@ -22,11 +22,14 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "OPOS6UL_RobotExtended", "console");
 
 	//COMMON
-	add(logs::Level::INFO, "Tirette", "console");
+	//add(logs::Level::INFO, "Tirette", "console");
+	add(logs::Level::INFO, "Asserv", "console");
 
 
 	//SVG
-	add(logs::Level::INFO, "Svg4APF9328Robot", "svg");
+	add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
+	add(logs::Level::INFO, "AsservDriver.OPO.SVG", "svg");
+	add(logs::Level::INFO, "AsservDriver.SIMU.SVG", "svg");
 
 
 	//File
@@ -45,6 +48,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "O_LcdBoardTest", "console");
 	add(logs::Level::INFO, "O_GroveColorTest", "console");
 	add(logs::Level::INFO, "O_AsservTest", "console");
+	add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
+
 
 
 	/*

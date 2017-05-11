@@ -10,11 +10,11 @@
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "../Thread/Mutex.hpp"
+#include "../Thread/Thread.hpp"
 
 using namespace std;
 
-class AsservDriver: public AAsservDriver, utils::Mutex
+class AsservDriver: public AAsservDriver, utils::Thread
 {
 
 public:
@@ -37,6 +37,15 @@ private:
 				"AsservDriverMemory.SIMU");
 		return instance;
 	}
+
+	static inline const logs::Logger & loggerSvg()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU.SVG");
+		return instance;
+	}
+
+	Mutex m_pos; //mutex pour la mise à jour de la position
+	bool asservStarted_;
 
 	Mutex mutexL_;
 	Mutex mutexR_;
@@ -65,10 +74,10 @@ private:
 	std::thread twLeft_;
 	std::thread twRight_;
 
-
-	RobotPosition p_; //position SIMU du robot
-
 protected:
+
+	virtual void execute();
+	RobotPosition p_; //position SIMU du robot
 
 public:
 	float leftSpeed_; //real speed in m/s
@@ -109,9 +118,9 @@ public:
 
 	//fonctions asservissements externe par defaut
 	/*float odo_GetX_mm();
-	float odo_GetY_mm();
-	float odo_GetTheta_Rad();		// angle in radian
-	float odo_GetTheta_Degree();		// angle in degrees*/
+	 float odo_GetY_mm();
+	 float odo_GetTheta_Rad();		// angle in radian
+	 float odo_GetTheta_Degree();		// angle in degrees*/
 	void odo_SetPosition(double x_m, double y_m, double angle_rad);
 	RobotPosition odo_GetPosition();
 	int path_GetLastCommandStatus();

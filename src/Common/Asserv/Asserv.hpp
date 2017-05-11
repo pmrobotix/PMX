@@ -33,7 +33,6 @@ private:
 	}
 protected:
 
-
 	/*!
 	 * \brief motorisation = motors + encoders
 	 */
@@ -91,6 +90,7 @@ public:
 	virtual TRAJ_STATE doRotateAbs(float degrees);
 	virtual TRAJ_STATE doRotateLeft(float degrees);
 	virtual TRAJ_STATE doRotateRight(float degrees);
+	virtual TRAJ_STATE doFaceTo(float x, float y);
 	//relative motion (depends on current position of the robot)
 	virtual TRAJ_STATE doRotateTo(float thetaInDegree);
 	virtual TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
@@ -114,6 +114,7 @@ public:
 		matchColorPosition_ = c;
 	}
 
+	//transformation suivant la couleur de match
 	inline float getRelativeX(float x, float width = 0.0)
 	{
 		if (matchColorPosition_ != 0)
@@ -122,11 +123,30 @@ public:
 		}
 		return x;
 	}
+	//transformation suivant la couleur de match
 	inline float getRelativeAngle(float degrees)
 	{
 		if (matchColorPosition_ != 0)
 		{
+			//TODO limitAngle()
 			return 180 - degrees;
+		}
+
+		return degrees;
+	}
+
+	//TODO a tester
+	inline float limitAngle(float degrees)
+	{
+		// On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
+		// Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
+		if (degrees >= 180)
+		{
+			degrees -= 2.0 * 180;
+		}
+		else if (degrees < -180)
+		{
+			degrees += 2.0 * 180;
 		}
 		return degrees;
 	}

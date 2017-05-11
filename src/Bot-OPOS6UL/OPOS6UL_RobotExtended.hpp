@@ -52,6 +52,7 @@ public:
 	void begin(int argc, char** argv);
 
 	void stop();
+	void baseStop();
 
 private:
 

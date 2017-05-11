@@ -16,7 +16,7 @@ all()
 
 tsh()
 {
-	scp ../sh/*.sh root@$IP:/pmx/
+	scp ../sh/*.sh root@$IP:/root/
 }
 
 
@@ -39,17 +39,17 @@ common()
 recupcsvhost()
 {
     #recup sur le PC Host
-	scp root@$IP:/pmx/*.* /mnt/hgfs/pmx_xls/.
+	scp root@$IP:/root/*.* /mnt/hgfs/pmx_xls/.
 }
 
 recupcsv()
 {
-        scp root@$IP:/pmx/*.csv /home/pmx/recup/.
+        scp root@$IP:/root/*.csv /home/pmx/recup/.
 }
 
 recupsvg()
 {
-        scp root@$IP:/pmx/*.svg /home/pmx/recup/.
+        scp root@$IP:/root/*.svg /home/pmx/recup/.
 }
 
 connect()

@@ -29,9 +29,8 @@ union float2bytes_t   // union consists of one variable represented in a number 
 	} //initialisation
 };
 
-class AsservDriver: public AAsservDriver, utils::Thread
+class AsservDriver: public AAsservDriver, utils::Thread, utils::Mutex
 {
-
 
 private:
 
@@ -43,18 +42,24 @@ private:
 		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.OPO");
 		return instance;
 	}
+	static inline const logs::Logger & loggerSvg()
+	{
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.OPO.SVG");
+		return instance;
+	}
+
 	AsI2c mbedI2c_;
 	bool connected_;
 
-	bool asservStarted_;
+	bool asservMbedStarted_;
 
 	TRAJ_STATE pathStatus_;
-	Mutex m_;
+	Mutex m_mbed; //mutex pour i2c mbed
+	Mutex m_pos; //mutex pour la mise à jour de la position
 
 	int mbed_ack();
 	int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
-	int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write,
-			unsigned char* data);
+	int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write, unsigned char* data);
 
 	RobotPosition mbed_GetPosition();
 	TRAJ_STATE mbed_waitEndOfTraj();
@@ -87,13 +92,7 @@ public:
 	//deprecated
 	//void enableHardRegulation(bool enable);
 
-
-
 	//fonctions asservissements externe par defaut
-	/*float odo_GetX_mm();
-	float odo_GetY_mm();
-	float odo_GetTheta_Rad();		// angle in radian
-	float odo_GetTheta_Degree();		// angle in degrees*/
 	void odo_SetPosition(double x_m, double y_m, double angle_rad);
 	RobotPosition odo_GetPosition();
 	int path_GetLastCommandStatus();
@@ -103,6 +102,7 @@ public:
 	void path_CancelTrajectory();
 	void path_ResetEmergencyStop();
 	TRAJ_STATE motion_DoLine(float dist_meters);
+	TRAJ_STATE motion_DoFace(float x_mm, float y_mm); //TODO rajouter dans les autres robotsl
 	TRAJ_STATE motion_DoRotate(float angle_deg);
 	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
 	void motion_FreeMotion(void);
@@ -110,7 +110,7 @@ public:
 	void motion_AssistedHandling(void);		//! Assisted movement mode =)
 	void motion_ActivateManager(bool enable);
 
-	TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+
 
 	/*!
 	 * \brief Constructor.

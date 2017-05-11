@@ -20,10 +20,12 @@ void O_AsservTest::run(int argc, char** argv)
 	logger().info() << "Start Asserv " << logs::end;
 	robot.asserv().startMotionTimerAndOdo(true);
 
+
 	robot.asserv().setPositionAndColor(100.0, 100.0, 0.0, (robot.getMyColor() == PMXBLUE));
 	RobotPosition p = robot.asserv().pos_getPosition();
 	logger().info() << "p= " << p.x << " " << p.y << " " << p.theta << " " << p.asservStatus
 			<< logs::end;
+	robot.svgPrintPosition();
 
 	if (robot.asserv().doLineAbs(400.0) != TRAJ_OK)
 	{
@@ -32,9 +34,11 @@ void O_AsservTest::run(int argc, char** argv)
 	p = robot.asserv().pos_getPosition();
 	logger().info() << "p= " << p.x << " " << p.y << " " << p.theta << " " << p.asservStatus
 			<< logs::end;
+	robot.svgPrintPosition();
 
 	logger().info() << "Stopping Robot... " << logs::end;
 	robot.asserv().stopMotionTimerAndOdo();
+	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }
 
