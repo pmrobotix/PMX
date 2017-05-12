@@ -30,7 +30,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	L_IATest()
-			: FunctionalTest("IA", "test l'ia demo")
+			: FunctionalTest("IAbyZone", "test l'ia demo par zone")
 	{
 	}
 

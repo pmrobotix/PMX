@@ -2,6 +2,7 @@
 #include "../Bot-OPOS6UL/O_AsservTest.hpp"
 #include "../Bot-OPOS6UL/O_ButtonBarTest.hpp"
 #include "../Bot-OPOS6UL/O_GroveColorTest.hpp"
+#include "../Bot-OPOS6UL/O_IAbyPathTest.hpp"
 #include "../Bot-OPOS6UL/O_LcdBoardTest.hpp"
 #include "../Bot-OPOS6UL/O_LedBarTest.hpp"
 #include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
@@ -22,7 +23,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new O_GroveColorTest());
 	robot.getConsoleManager().add(new O_AsservTest());
 	robot.getConsoleManager().add(new O_Asserv_SquareTest());
-
+	robot.getConsoleManager().add(new O_IAByPathTest());
 
 	robot.parseConsoleArgs(argc, argv);
 

@@ -95,7 +95,7 @@ bool L_plot1()
 	robot.asserv().ignoreFrontCollision(true);
 	robot.asserv().ignoreRearCollision(true);
 
-	TRAJ_STATE ts = TRAJ_OK;
+	//TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
 
 	robot.ia().iAbyZone().goToZone("zone_plot1", &path, &zone);
@@ -167,7 +167,7 @@ bool L_plot2()
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.logger().info() << "L_plot2" << logs::end;
 
-	TRAJ_STATE ts = TRAJ_OK;
+	//TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
 
 	robot.ia().iAbyZone().goToZone("zone_plot2", &path, &zone);
@@ -251,7 +251,7 @@ bool L_plot3()
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.logger().info() << "L_plot2" << logs::end;
 
-	TRAJ_STATE ts = TRAJ_OK;
+	//TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
 
 	robot.ia().iAbyZone().goToZone("zone_plot3", &path, &zone);

@@ -13,6 +13,7 @@ void logs::LoggerFactory::initialize()
 {
 	add("console", new ConsoleAppender());
 	add("svg", new SvgAppender("svgEV3.svg"));
+	add("svgia", new SvgAppender("svgIA.svg"));
 	//add("memory", new MemoryAppender());
 	//add("file", new FileAppender("logEV3.csv"));
 
@@ -33,6 +34,8 @@ void logs::LoggerFactory::initialize()
 
 	//SVG
 	add(logs::Level::INFO, "Svg4LegoEV3Robot", "svg");
+	add(logs::Level::INFO, "IAbyPath4LegoEV3Robot", "svgia");
+
 
 	//File
 	//add(logs::Level::DEBUG, "logFileAsservInsa", "file");

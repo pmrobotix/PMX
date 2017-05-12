@@ -39,8 +39,8 @@ void L_AsservRunTest::run(int argc, char** argv)
 	long right;
 
 	float x = 0.0;
-	float y = 0.0;
-	float a = 0.0;
+	//float y = 0.0;
+	//float a = 0.0;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 

@@ -9,28 +9,12 @@
 #define COMMON_IA_IABYZONE_HPP_
 
 #include "../../Log/LoggerFactory.hpp"
-#include "../Position.hpp"
+#include "IACommon.hpp"
 
 class Robot;
 
 struct RobotPosition;
 
-
-typedef bool (*RobotAction)(void);
-
-typedef struct
-{
-	char name[400];
-	// in mm
-	float minX;
-	float minY;
-	float width;
-	float height;
-	float startX;
-	float startY;
-	// in degrees
-	float startAngle;
-} ZONE;
 
 typedef struct
 {
@@ -40,12 +24,7 @@ typedef struct
 	float y;
 } ZONE_PATH;
 
-typedef struct
-{
-	char name[400];
-	RobotAction action;
-	bool completed;
-} ACTIONS;
+
 
 class IAbyZone
 {
