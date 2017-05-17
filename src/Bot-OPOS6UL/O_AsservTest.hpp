@@ -25,7 +25,7 @@ public:
 	 * \brief Constructeur de la classe.
 	 */
 	O_AsservTest()
-			: FunctionalTest("Asserv", "Tester la carte d'asserv")
+			: FunctionalTest("Asserv run dist/angle", "faire une distance d et tourner de a")
 	{
 	}
 
@@ -40,6 +40,8 @@ public:
 	 * \brief Execute le test.
 	 */
 	virtual void run(int argc, char** argv);
+
+	virtual void configureConsoleArgs(int argc, char** argv);
 
 };
 

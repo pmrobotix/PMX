@@ -75,7 +75,7 @@ AsservDriver::AsservDriver()
 
 void AsservDriver::setMotorLeftPosition(int power, long ticks)
 {
-	//power = -power;
+	power = -power;
 
 	if (_motor_left.connected())
 	{
@@ -96,7 +96,7 @@ void AsservDriver::setMotorLeftPosition(int power, long ticks)
 
 void AsservDriver::setMotorRightPosition(int power, long ticks)
 {
-	//power = -power;
+	power = -power;
 	if (_motor_right.connected())
 	{
 		if (_motor_right.speed_regulation_enabled() == "on") //speed_sp
@@ -117,7 +117,7 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 //regulation disabled => power in percentage -100 / +100
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
-	//power = -power;
+	power = -power;
 	if (_motor_left.connected())
 	{
 		//with time
@@ -179,7 +179,7 @@ int AsservDriver::limit(int power, int max)
 
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
-	//power = -power;
+	power = -power;
 	if (_motor_right.connected())
 	{
 		//with time
@@ -236,7 +236,7 @@ long AsservDriver::getLeftInternalEncoder()
 	if (_motor_left.connected())
 	{
 		//+/- 2,147,483,648
-		return _motor_left.position();
+		return -_motor_left.position();
 	}
 	else
 		return 0;
@@ -246,7 +246,7 @@ long AsservDriver::getRightInternalEncoder()
 {
 	if (_motor_right.connected())
 	{
-		return _motor_right.position();
+		return -_motor_right.position();
 	}
 	else
 		return 0;

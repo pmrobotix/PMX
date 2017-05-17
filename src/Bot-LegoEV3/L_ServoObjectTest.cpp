@@ -17,52 +17,31 @@ void L_ServoObjectTest::run(int argc, char** argv)
 	logger().info() << "Executing - " << this->desc() << logs::end;
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	/*
-	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, -10);
-	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, -70);
-	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, -10);
+/*
+	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, 0);
+	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, -45);
+	 robot.actions().servoObjects().deploy(SERVO_FUNNY_ACTION, 0);
 
-	 */
-	/*
+
 	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 0);
-	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 60);
+	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 75);
 	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 0);
-	 */
-
-	/*
-	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 70); // vertical
-	 sleep(1);
-	 robot.actions().servoObjects().deploy(SERVO_BASCULE, -100, 3); //90 degree //horizontal
-	 sleep(1);
-	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 70);
-	 sleep(1);
-	 */
-	/*
-	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15);//ouvert
-	 sleep(1);
-	 robot.actions().servoObjects().deploy(SERVO_PINCE, 50); //fermé
-	 sleep(4);
-	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15);
-	 sleep(1);*/
-
-	/*
-	 * suite des actions
-
-	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 0,2);
-	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 80,0); // vertical
-	 robot.actions().servoObjects().deploy(SERVO_HERCULE, 85,3);
-	 //robot.actions().servoObjects().deploy(SERVO_BASCULE, 90); // vertical
-	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
-
-	 robot.actions().servoObjects().deploy(SERVO_PINCE, 50); //fermé
-
-	 robot.actions().servoObjects().deploy(SERVO_BASCULE, -100, 3); //90 degree //horizontal
-
-	 robot.actions().servoObjects().deploy(SERVO_PINCE, -15); //ouvert
 
 
-	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 90,2); // vertical
-	 */
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, -100);  // cylindre vertical
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, 80, 2); //cylindre horizontal
+	 robot.actions().servoObjects().deploy(SERVO_BASCULE, -100);  // cylindre vertical
+
+
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, 0);//ouvert
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, 45, 2); //fermé
+	 robot.actions().servoObjects().deploy(SERVO_PINCE, 0);
+*/
+
+
+
+
+
 	robot.actions().funnyAction_Init();
 	robot.actions().pince_Open();
 	robot.actions().pince_InitRotation();

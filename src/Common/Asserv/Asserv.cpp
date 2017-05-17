@@ -195,6 +195,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 	}
 
 	float meters = distance_mm / 1000.0f;
+	logger().debug() << "Asserv::doLineAbs meters=" << meters << " mm=" << distance_mm<< logs::end;
 	TRAJ_STATE ts;
 	if (useInternalAsserv_)
 		ts = pAsservInsa_->motion_DoLine(meters);
@@ -271,7 +272,7 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 // force into the minimum absolute value residue class, so that -180 < angle <= 180
 	if (degrees >= 180) degrees -= 360;
 
-	logger().debug() << "doRotateTo degrees=" << degrees << "degrees " << logs::end;
+	logger().info() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
 	TRAJ_STATE ts = doRotateAbs(degrees);
 
 	return ts;

@@ -71,11 +71,15 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
 	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
 
+	//belgique param
+	//pAsservInsa_->motion_configureAlphaPID(0.005, 0.0005, 0.000005);
+	//pAsservInsa_->motion_configureDeltaPID(0.003, 0.0005, 0.000005);
+
 	pAsservInsa_->motion_configureAlphaPID(0.005, 0.0005, 0.000005);
 	pAsservInsa_->motion_configureDeltaPID(0.003, 0.0005, 0.000005);
 
 	motorwheel_patch_m = 0.0;//metres
-	motorwheel_patch_rad = -0.01;//radians
+	motorwheel_patch_rad = -0.006;//radians //-0.01 ?
 #endif
 
 	pAsservInsa_->motion_DisablePID();

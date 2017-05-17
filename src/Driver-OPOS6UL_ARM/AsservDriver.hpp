@@ -29,7 +29,7 @@ union float2bytes_t   // union consists of one variable represented in a number 
 	} //initialisation
 };
 
-class AsservDriver: public AAsservDriver, utils::Thread, utils::Mutex
+class AsservDriver: public AAsservDriver, utils::Thread
 {
 
 private:
@@ -103,7 +103,7 @@ public:
 	void path_ResetEmergencyStop();
 	TRAJ_STATE motion_DoLine(float dist_meters);
 	TRAJ_STATE motion_DoFace(float x_mm, float y_mm); //TODO rajouter dans les autres robotsl
-	TRAJ_STATE motion_DoRotate(float angle_deg);
+	TRAJ_STATE motion_DoRotate(float angle_radians);
 	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
 	void motion_FreeMotion(void);
 	void motion_DisablePID();		//! just disable PID

@@ -25,13 +25,11 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new O_Asserv_SquareTest());
 	robot.getConsoleManager().add(new O_IAByPathTest());
 
+
 	robot.parseConsoleArgs(argc, argv);
 
 	//start the Robot (functional tests or match)
 	robot.begin(argc, argv);
 
-
-	//robot.stop();
-	//cout << "HappyEnd Bot-OPOS6UL." << endl;
 	return 0;
 }

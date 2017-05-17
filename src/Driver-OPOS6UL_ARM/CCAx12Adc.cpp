@@ -12,7 +12,8 @@
 #include "../Log/Logger.hpp"
 
 CCAx12Adc::CCAx12Adc() :
-		i2c_CCAx12Adc_(1), connected_(false)
+		i2c_CCAx12Adc_(1)
+		, connected_(false)
 {
 	begin();
 }

@@ -69,7 +69,7 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 		logger().info() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
 	}
 
-	robot.setMyColor(PMXBLUE);
+	robot.setMyColor(PMXYELLOW);
 
 	robot.asserv().startMotionTimerAndOdo(true);
 
@@ -117,7 +117,7 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 				<< logs::end;
 
 		robot.svgPrintPosition();
-
+		/*
 		logger().info() << "doMoveForwardTo(" << x << ", " << y + d << ")" << logs::end;
 		robot.asserv().doMoveForwardTo(x, y + d);
 
@@ -139,7 +139,7 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 				<< " right= " << right << " ; x=" << robot.asserv().pos_getX_mm() << " y="
 				<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 				<< logs::end;
-
+*/
 		robot.svgPrintPosition();
 	}
 

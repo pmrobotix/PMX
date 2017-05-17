@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <cstring>
 #include <string>
+#include <cmath>
 
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
@@ -19,13 +20,13 @@ AAsservDriver * AAsservDriver::create(std::string)
 }
 
 AsservDriver::AsservDriver() :
-		mbedI2c_(1) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
+		mbedI2c_(0) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
 				, connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_ERROR), p_(
 		{ 0.0, 0.0, 0.0, -1 })
 {
 	if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
 	{
-		//printf("error setSlaveAddr");
+
 		logger().error() << "AsservDriver() : ERROR setSlaveAddr !" << logs::end;
 		connected_ = false;
 	}
@@ -337,6 +338,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 		d[1] = mm.b[1];
 		d[2] = mm.b[2];
 		d[3] = mm.b[3];
+		logger().debug() << "motion_DoLine() DISTmm=" << mm.f << " meters="<< dist_meters << logs::end;
 		mbed_writeI2c('v', 4, d);
 		pathStatus_ = TRAJ_OK;
 		return mbed_waitEndOfTraj();
@@ -351,7 +353,7 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
 	//logger().error() << "p_.asservStatus avant = " << p_.asservStatus	<< logs::end;
 	while (p_.asservStatus > 0)
 	{
-		//logger().error() << "p_.asservStatus boucle = " << p_.asservStatus	<< logs::end;
+		//logger().error() << "p_.asservStatus boucle 1 = " << p_.asservStatus	<< logs::end;
 		usleep(10000);
 		timeout++;
 		if(timeout > 50) break;
@@ -359,7 +361,7 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
 	timeout=0;
 	while (p_.asservStatus == 0)
 	{
-		//logger().error() << "p_.asservStatus boucle = " << p_.asservStatus	<< logs::end;
+		//logger().error() << "p_.asservStatus boucle 2 = " << p_.asservStatus	<< logs::end;
 		usleep(10000);
 		timeout++;
 		if(timeout > 50 && p_.asservStatus != 0) break;
@@ -404,7 +406,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) // f8 +x+y
 	}
 }
 
-TRAJ_STATE AsservDriver::motion_DoRotate(float angle_degrees) //t4 +d
+TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) //t4 +d
 {
 	if (!connected_) return TRAJ_ERROR;
 	if (!asservMbedStarted_)
@@ -415,6 +417,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_degrees) //t4 +d
 	}
 	else
 	{
+		float angle_degrees = (angle_radians * 180.0) / M_PI;
 		unsigned char d[4];
 		float2bytes_t deg;
 		deg.f = angle_degrees;

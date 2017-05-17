@@ -17,6 +17,8 @@ bool O_action1()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.logger().info() << "start action1." << logs::end;
+
+	/*
 	TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
 
@@ -31,7 +33,7 @@ bool O_action1()
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
-
+*/
 	robot.svgPrintPosition();
 
 	robot.logger().info() << "action1 done." << logs::end;
@@ -42,7 +44,7 @@ bool O_action2()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.logger().info() << "start action2." << logs::end;
-
+/*
 	TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
 
@@ -57,7 +59,7 @@ bool O_action2()
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
-
+*/
 	robot.svgPrintPosition();
 
 	robot.logger().info() << "action2 done." << logs::end;
@@ -68,7 +70,7 @@ bool O_action3()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.logger().info() << "start action3." << logs::end;
-
+/*
 	TRAJ_STATE ts = TRAJ_OK;
 	RobotPosition path, zone;
 
@@ -83,7 +85,7 @@ bool O_action3()
 	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 	if (ts != TRAJ_OK)
 		return false;
-
+*/
 	robot.svgPrintPosition();
 
 	robot.logger().info() << "action3 done." << logs::end;
@@ -96,6 +98,9 @@ void O_State_DecisionMaker::IASetupDemo()
 
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
+
+
+/*
 	robot.ia().iAbyZone().ia_createZone("depart", 0, 900, 300, 300, 400, 1050, 180);
 	robot.ia().iAbyZone().ia_createZone("zone1", 500, 1000, 300, 200, 500, 1100, 0);
 	robot.ia().iAbyZone().ia_createZone("zone2", 500, 1800, 200, 200, 600, 1800, 90);
@@ -111,7 +116,7 @@ void O_State_DecisionMaker::IASetupDemo()
 	robot.ia().iAbyZone().ia_addAction("action1", &O_action1);
 	robot.ia().iAbyZone().ia_addAction("action2", &O_action2);
 	robot.ia().iAbyZone().ia_addAction("action3", &O_action3);
-
+*/
 }
 
 void O_State_DecisionMaker::IASetupHomologation()
