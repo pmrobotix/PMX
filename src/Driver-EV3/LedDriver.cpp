@@ -16,6 +16,24 @@ ALedDriver * ALedDriver::create(std::string, int nb)
 LedDriver::LedDriver(int nb)
 {
 	nb_ = nb; //Force number of leds.
+
+	float volts = power_supply::battery.measured_volts();
+	logger().error() << "===> BAT = " << volts << logs::end;
+	if (volts <= 7.6 && volts >= 7.4)
+	{
+		setBytes(0xFF, LED_ORANGE);
+
+	}
+	if (volts < 7.4)
+	{
+		setBytes(0xFF, LED_RED);
+	}
+	if (volts > 7.6)
+	{
+		setBytes(0xFF, LED_GREEN);
+	}
+
+
 }
 
 LedDriver::~LedDriver()

@@ -18,19 +18,21 @@ CCAx12Adc::CCAx12Adc() :
 	begin();
 }
 
-void CCAx12Adc::begin()
+int CCAx12Adc::begin()
 {
-	connected_ = false;
+	connected_ = true;
 
 	//open i2c and setslave
 	i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
-
-	int present = pingAX(6);
+/*
+	int present = pingAX(5);
+	logger().error() << "CCAx12Adc::begin() : present=" << present<< logs::end;
 	if (present)
 	{
 		connected_ = true;
 	}
-
+*/
+	return connected_;
 }
 
 int CCAx12Adc::getAddressSize(int address)
@@ -65,11 +67,10 @@ void CCAx12Adc::setLedOn(int led)
 		logger().error() << "CCAx12Adc::setLedOn() : BOARD NOT CONNECTED !" << logs::end;
 		return;
 	}
-	//wiringPiI2CWrite(fd, CMD_SET_LED_ON);
-	//wiringPiI2CWrite(fd, led);
-	//write_i2c(CMD_SET_LED_ON, led);
+	mutex_.lock();
 	write(CMD_SET_LED_ON);
 	write(led);
+	mutex_.unlock();
 }
 
 // Set the led off
@@ -81,11 +82,10 @@ void CCAx12Adc::setLedOff(int led)
 		logger().error() << "CCAx12Adc::setLedOff() : BOARD NOT CONNECTED !" << logs::end;
 		return;
 	}
-	//wiringPiI2CWrite(fd, CMD_SET_LED_OFF);
-	//wiringPiI2CWrite(fd, led);
-	//write_i2c(CMD_SET_LED_OFF, led);
+	mutex_.lock();
 	write(CMD_SET_LED_OFF);
 	write(led);
+	mutex_.unlock();
 
 }
 
@@ -104,11 +104,12 @@ int CCAx12Adc::getADC(int adc)
 		logger().error() << "CCAx12Adc::getADC() : bad number adc !" << logs::end;
 		return -2;
 	}
-
+	mutex_.lock();
 	write(CMD_GET_ADC);
 	write(adc);
 	int low = read();
 	int high = read();
+	mutex_.unlock();
 	if (low < 0 || high < 0) return -3;
 
 	//printf("low:%d, high:%d \n", low, high);
@@ -117,18 +118,20 @@ int CCAx12Adc::getADC(int adc)
 
 // Ping a Dynamixel Servo
 // @param id : the id of the dynamixel
-// @returns 1 is servo is found
+// @returns 0 is servo is found
 int CCAx12Adc::pingAX(int id)
 {
+	/*
 	if (!connected_)
 	{
 		logger().error() << "CCAx12Adc::pingAX() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
-	}
-
+	}*/
+	mutex_.lock();
 	write(CMD_PING_AX);
 	write(id);
 	int err = read();
+	mutex_.unlock();
 	if (err == 252) return -1;
 	return err;
 }
@@ -147,6 +150,7 @@ int CCAx12Adc::readAXData(int id, int address)
 	int size = getAddressSize(address);
 
 	int err = 0;
+	mutex_.lock();
 	err |= write(CMD_READ_AX);
 	err |= write(id);
 	err |= write(address);
@@ -158,11 +162,13 @@ int CCAx12Adc::readAXData(int id, int address)
 		int high = read();
 		//int high = bytes[1];
 		if (low == 252 && high == 252) return -3;
+		mutex_.unlock();
 		return high * 256 + low;
 	}
 	else
 	{
 		if (low == 252) return -1;
+		mutex_.unlock();
 		return low;
 	}
 
@@ -183,6 +189,7 @@ int CCAx12Adc::writeAXData(int id, int address, int data)
 
 	int err = 0;
 
+	mutex_.lock();
 	err |= write(CMD_WRITE_AX);
 	err |= write(id);
 	err |= write(address);
@@ -200,8 +207,8 @@ int CCAx12Adc::writeAXData(int id, int address, int data)
 	}
 
 	int low = read();
+	mutex_.unlock();
 	if (low == 252) return -2;
-
 	return low;
 }
 

@@ -56,13 +56,13 @@ public:
 
 
 
-	virtual void hold(ServoLabel) = 0;
+	virtual void hold(int) = 0;
 
-	virtual void setPosition(ServoLabel, double percent_pos) = 0;
+	virtual void setPosition(int num, int pos) = 0;
 
-	virtual void release(ServoLabel) = 0;
+	virtual void release(int) = 0;
 
-	virtual void setRate(ServoLabel, int millisec) = 0;
+	virtual void setRate(int, int millisec) = 0;
 
 private:
 

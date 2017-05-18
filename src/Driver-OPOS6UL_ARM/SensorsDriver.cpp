@@ -31,6 +31,14 @@ SensorsDriver::SensorsDriver() :
 	else
 		connected_gp2y0e02b_ = true;
 */
+
+
+	/*
+			int adc1 = CCAx12Adc::instance().getADC(1);
+			int adc0 = CCAx12Adc::instance().getADC(0);
+			int adc7 = CCAx12Adc::instance().getADC(7);
+			logger().info() << "adc0=" << adc0 << " adc1=" << adc1 << " adc7=" << adc7 << logs::end;
+	*/
 }
 
 SensorsDriver::~SensorsDriver()

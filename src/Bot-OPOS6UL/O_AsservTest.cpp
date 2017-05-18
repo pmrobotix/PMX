@@ -49,12 +49,12 @@ void O_AsservTest::run(int argc, char** argv)
 	logger().info() << "p= " << p.x << " " << p.y << " " << p.theta << " " << p.asservStatus
 			<< logs::end;
 	robot.svgPrintPosition();
-/*
+
 	logger().info() << "GO distance mm=" << d << logs::end;
 	if (robot.asserv().doLineAbs(d) != TRAJ_OK)
 	{
 		logger().info() << "Interruption !!" << logs::end;
-	}*/
+	}
 
 	p = robot.asserv().pos_getPosition();
 	logger().info() << "p= " << p.x << " " << p.y << " " << p.theta << " " << p.asservStatus

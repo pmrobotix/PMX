@@ -3,7 +3,6 @@
 #include "ServoDriver.hpp"
 
 #include <unistd.h>
-#include <cmath>
 
 #include "../Log/Logger.hpp"
 
@@ -18,155 +17,110 @@ AServoDriver * AServoDriver::create()
 ServoDriver::ServoDriver() :
 		connected_(0)
 {
-	//logger().error() << "ServoDriver::ServoDriver() CCAx12Adc::instance().begin();" << logs::end;
+	logger().error() << "ServoDriver::ServoDriver() CCAx12Adc::instance().begin();" << logs::end;
 
-	CCAx12Adc::instance().begin();
+	connected_ = CCAx12Adc::instance().begin();
+
+	logger().error() << "connected=" << connected_ << logs::end;
+	if (connected_)
+	{
+		CCAx12Adc::instance().setLedOn(3);
+
+		int ping5 = CCAx12Adc::instance().pingAX(12);
+		logger().error() << "ping=" << ping5 << logs::end;
+		hold(8);
+		setPosition(8, 500);
+		sleep(2);
+		release(8);
+		release(5);
+	}
 
 }
 
-void ServoDriver::hold(ServoLabel servo)
+void ServoDriver::hold(int servo)
 {
-	int swap = 0;
-	for (int n = 0; n < 5; n++)
-	{
 
-		if (swap)
-		{
-			//usleep(100000);
-			CCAx12Adc::instance().setLedOn(2);
-		}
-		else
-			CCAx12Adc::instance().setLedOff(2);
+	int err = CCAx12Adc::instance().writeAXData(servo, P_TORQUE_ENABLE, 1);
+	logger().info() << "hold enableax=" << err << logs::end;
+	/*
+	 int swap = 0;
+	 for (int n = 0; n < 5; n++)
+	 {
 
-		swap = !swap;
+	 if (swap)
+	 {
+	 //usleep(100000);
+	 CCAx12Adc::instance().setLedOn(2);
+	 }
+	 else
+	 CCAx12Adc::instance().setLedOff(2);
 
-		int adc1 = CCAx12Adc::instance().getADC(1);
-		int adc0 = CCAx12Adc::instance().getADC(0);
-		int adc7 = CCAx12Adc::instance().getADC(7);
-		logger().info() << "adc0=" << adc0 << " adc1=" << adc1 << " adc7=" << adc7 << logs::end;
+	 swap = !swap;
 
-		int ping4 = CCAx12Adc::instance().pingAX(4);
-		logger().info() << "ping4=" << ping4 << logs::end;
-		int ping6 = CCAx12Adc::instance().pingAX(6);
-		logger().info() << "ping6=" << ping6 << logs::end;
+	 int ping4 = CCAx12Adc::instance().pingAX(4);
+	 logger().info() << "ping4=" << ping4 << logs::end;
+	 int ping6 = CCAx12Adc::instance().pingAX(6);
+	 logger().info() << "ping6=" << ping6 << logs::end;
 
-		int readax4 = CCAx12Adc::instance().readAXData(4, P_ID);
-		logger().info() << "readax4 P_ID =" << readax4 << logs::end;
-		int readax6 = CCAx12Adc::instance().readAXData(6, P_ID);
-		logger().info() << "readax6 P_ID =" << readax6 << logs::end;
+	 int readax4 = CCAx12Adc::instance().readAXData(4, P_ID);
+	 logger().info() << "readax4 P_ID =" << readax4 << logs::end;
+	 int readax6 = CCAx12Adc::instance().readAXData(6, P_ID);
+	 logger().info() << "readax6 P_ID =" << readax6 << logs::end;
 
-		int posax4 = CCAx12Adc::instance().readAXData(4, P_PRESENT_POSITION);
-		logger().info() << "posax4 P_PRESENT_POSITION=" << posax4 << logs::end;
-		int posax6 = CCAx12Adc::instance().readAXData(6, P_PRESENT_POSITION);
-		logger().info() << "posax6 P_PRESENT_POSITION=" << posax6 << logs::end;
+	 int posax4 = CCAx12Adc::instance().readAXData(4, P_PRESENT_POSITION);
+	 logger().info() << "posax4 P_PRESENT_POSITION=" << posax4 << logs::end;
+	 int posax6 = CCAx12Adc::instance().readAXData(6, P_PRESENT_POSITION);
+	 logger().info() << "posax6 P_PRESENT_POSITION=" << posax6 << logs::end;
 
-		int writeposax = CCAx12Adc::instance().writeAXData(4, P_GOAL_POSITION, 700);
-		logger().info() << "writeposax4 P_GOAL_POSITION =" << writeposax << logs::end;
+	 int writeposax = CCAx12Adc::instance().writeAXData(4, P_GOAL_POSITION, 700);
+	 logger().info() << "writeposax4 P_GOAL_POSITION =" << writeposax << logs::end;
 
-		int err = CCAx12Adc::instance().writeAXData(6, P_TORQUE_ENABLE, 1);
-		logger().info() << "torque6 enableax=" << err << logs::end;
+	 int err = CCAx12Adc::instance().writeAXData(6, P_TORQUE_ENABLE, 1);
+	 logger().info() << "torque6 enableax=" << err << logs::end;
 
-		int writeposax6 = CCAx12Adc::instance().writeAXData(6, P_GOAL_POSITION, 700);
-		logger().info() << "writeposax6 P_GOAL_POSITION 700 =" << writeposax6 << logs::end;
+	 int writeposax6 = CCAx12Adc::instance().writeAXData(6, P_GOAL_POSITION, 700);
+	 logger().info() << "writeposax6 P_GOAL_POSITION 700 =" << writeposax6 << logs::end;
 
-		int torqueax4 = CCAx12Adc::instance().writeAXData(4, P_TORQUE_ENABLE, 0);
-		logger().info() << "torque4 disableax=" << torqueax4 << logs::end;
-		int torqueax6 = CCAx12Adc::instance().writeAXData(6, P_TORQUE_ENABLE, 0);
-		logger().info() << "torque6 disableax=" << torqueax6 << logs::end;
+	 int torqueax4 = CCAx12Adc::instance().writeAXData(4, P_TORQUE_ENABLE, 0);
+	 logger().info() << "torque4 disableax=" << torqueax4 << logs::end;
+	 int torqueax6 = CCAx12Adc::instance().writeAXData(6, P_TORQUE_ENABLE, 0);
+	 logger().info() << "torque6 disableax=" << torqueax6 << logs::end;
 
-		logger().info() << "" << logs::end;
+	 logger().info() << "" << logs::end;
 
-	}
-
+	 }
+	 */
 	switch (servo)
 	{
-	/*
-	 case SERVO_LEFT:
 
-	 break;
-
-	 case SERVO_RIGHT:
-
-	 break;
-
-	 case SERVO_CENTRE:
-
-	 break;
-	 */
 	default:
 		break;
 	}
 }
 
-void ServoDriver::setPosition(ServoLabel servo, double percent)
+void ServoDriver::setPosition(int servo, int pos)
 {
-	if (percent >= 100) percent = 100;
-	if (percent <= -100) percent = -100;
-	//   0   -> 4096
-	//-100.0%-> 100.0% percent
+	if (pos >= 4096) pos = 4096;
+	if (pos <= -4096) pos = -4096;
 
-	double pos = round((percent) * 20.48) + 2048;
-	//double pos = percent;
+	int writeposax = CCAx12Adc::instance().writeAXData(servo, P_GOAL_POSITION, pos);
+	logger().info() << "setPosition P_GOAL_POSITION =" << writeposax << logs::end;
 
-//
+	logger().error() << "servo" << servo << " pos=" << pos << logs::end;
 
-	logger().error() << "servo" << servo << " pos=" << (int) pos << logs::end;
-	switch (servo)
-	{
-	/*
-	 case SERVO_LEFT:
-
-	 break;
-
-	 case SERVO_RIGHT:
-
-	 break;
-
-	 case SERVO_CENTRE:
-
-	 break;
-	 */
-	default:
-		break;
-	}
 }
 
-void ServoDriver::release(ServoLabel servo)
+void ServoDriver::release(int servo)
 {
-	switch (servo)
-	{
-	/*
-	 case SERVO_LEFT:
-
-	 break;
-
-	 case SERVO_RIGHT:
-
-	 break;
-
-	 case SERVO_CENTRE:
-
-	 break;
-	 */
-	default:
-		break;
-	}
+	int torqueax4 = CCAx12Adc::instance().writeAXData(servo, P_TORQUE_ENABLE, 0);
+	logger().info() << "release disableax=" << torqueax4 << logs::end;
 }
 
-void ServoDriver::setRate(ServoLabel servo, int millisec)
+void ServoDriver::setRate(int servo, int millisec)
 {
 	switch (servo)
 	{
-	/*
-	 case SERVO_LEFT:
-	 break;
 
-	 case SERVO_RIGHT:
-	 break;
-
-	 case SERVO_CENTRE:
-	 break;
-	 */
 	default:
 		break;
 	}

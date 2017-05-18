@@ -152,10 +152,14 @@ public:
 		servoObjects().deploy(SERVO_FUNNY_ACTION, -45);
 	}
 
-
 	void pince_HerculeDown()
 	{
 		servoObjects().deploy(SERVO_HERCULE, 80);
+	}
+
+	void pince_HerculeMiddle()
+	{
+		servoObjects().deploy(SERVO_HERCULE, 40);
 	}
 
 	void pince_HerculeUp()

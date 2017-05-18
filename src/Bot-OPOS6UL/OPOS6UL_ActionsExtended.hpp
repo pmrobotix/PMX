@@ -8,7 +8,7 @@
 #include "../Common/Action/LcdShield.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Sensors.hpp"
-#include "../Common/Action/ServoObjectsSystem.hpp"
+#include "../Common/Action/ServoObjectsAx12.hpp"
 #include "../Common/Action/Tirette.hpp"
 
 class OPOS6UL_ActionsExtended: public Actions
@@ -43,7 +43,7 @@ private:
 	/*!
 	 * \brief objets avec servomotors.
 	 */
-	ServoObjectsSystem servoObjects_;
+	ServoObjectsAx12 servoObjects_;
 
 public:
 	OPOS6UL_ActionsExtended(std::string botId, Robot *robot)
@@ -99,7 +99,7 @@ public:
 		return sensors_;
 	}
 
-	ServoObjectsSystem & servoObjects()
+	ServoObjectsAx12 & servoObjects()
 	{
 		return servoObjects_;
 	}
@@ -109,9 +109,6 @@ public:
 		ledbar_.resetAll();
 		lcd2x16_.reset();
 
-		///servoObjects_.leftRelease();
-		///servoObjects_.rightRelease();
-		///servoObjects_.centreRelease();
 
 		Actions::stop(); //stop devices and wait manager to finish
 	}

@@ -17,7 +17,6 @@
 #include "LegoEV3RobotExtended.hpp"
 
 int plotdepart_done = 0;
-
 bool L_plotdepart()
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -29,314 +28,402 @@ bool L_plotdepart()
 	robot.asserv().ignoreFrontCollision(true);
 	robot.asserv().ignoreRearCollision(true);
 
-	robot.ia().iAbyZone().goToZone("zone_plotdepart", &path, &zone);
-	ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	if (ts != TRAJ_OK) return false;
+	//abaisser un peu la pince
+	robot.actions().pince_HerculeMiddle();
+
+	//on avance
+	robot.asserv().setAccel(0.3);
+	robot.asserv().setVmax(0.4);
+	robot.asserv().setDecel(0.2);
+
+	ts = robot.asserv().doLineAbs(-770.0);
 	robot.svgPrintPosition();
+
+
+	robot.actions().pince_HerculeDown();
+	robot.actions().pince_HerculeMiddle();
+
+	//recalage bascule
+	robot.asserv().base()->moveDTime(160, 1500);
+	robot.asserv().setPositionAndColor((710.0+114.0), robot.asserv().pos_getY_mm(), robot.asserv().pos_getThetaInDegree(), (robot.getMyColor() != PMXYELLOW));
+	robot.svgPrintPosition();
+	ts = robot.asserv().doLineAbs(-30.0);
+	ts = robot.asserv().doRotateAbs(-90.0);
+
+	//recalage bordure
+	robot.asserv().base()->moveDTime(-200, 2500);
+	robot.asserv().setPositionAndColor(robot.asserv().pos_getX_mm(), 60.0, 90.0, (robot.getMyColor() != PMXYELLOW));
+	robot.svgPrintPosition();
+	//go
+	robot.actions().pince_HerculeDown();
+	ts = robot.asserv().doLineAbs(50.0);
+
+	ts = robot.asserv().doMoveForwardTo(1050, 600);
+
+	/*
+	 //on avance
+	 robot.asserv().setAccel(0.4);
+	 robot.asserv().setVmax(0.6);
+	 robot.asserv().setDecel(0.4);
+
+
+	 ts = robot.asserv().doLineAbs(-450.0);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
+
+
+	 //abaisser la pince
+	 robot.actions().pince_HerculeMiddle();
+
+	 robot.asserv().setAccel(0.4);
+	 robot.asserv().setVmax(0.7);
+	 robot.asserv().setDecel(0.4);
+
+	 ts = robot.asserv().doLineAbs(-450.0);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
+	 */
+
+	/*
+	 robot.svgPrintPosition();
+	 ts = robot.asserv().doLineAbs(-450.0);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
+
+	 robot.asserv().setVmax(0.2);
+	 robot.asserv().setAccel(0.2);
+	 //abaisser la pince
+	 robot.actions().pince_HerculeDown();
+	 sleep(1);
+	 ts = robot.asserv().doLineAbs(-150.0);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
+
+	 */
 
 	//abaisser la pince
-	robot.actions().pince_HerculeDown();
+	//robot.actions().pince_HerculeDown();
+	/*
+	 robot.asserv().setAccel(0.1);
+	 robot.asserv().setVmax(0.1);
+	 robot.asserv().setDecel(0.4);
+	 robot.ia().iAbyZone().goToZone("zone_plot1", &path, &zone);
+	 while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
+	 */
+	/*
+	 robot.ia().iAbyZone().goToZone("zone_plotdepart", &path, &zone);
+	 ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
 
-	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-	if (ts != TRAJ_OK) return false;
-	robot.svgPrintPosition();
+	 //abaisser la pince
+	 robot.actions().pince_HerculeDown();
 
-	//prendre le plot car on est deja dessus
-	robot.actions().pince_Close(0);
+	 ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
 
-	//avancer sur le plot de depart
-	ts = robot.asserv().doMoveForwardTo(1100.0, 300.0);
-	if (ts != TRAJ_OK) return false;
-	robot.svgPrintPosition();
+	 //prendre le plot car on est deja dessus
+	 robot.actions().pince_Close(0);
 
-	//prendre le plot car on est deja dessus
-	robot.actions().pince_Rotate();
+	 //avancer sur le plot de depart
+	 ts = robot.asserv().doMoveForwardTo(1100.0, 300.0);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
 
-	robot.asserv().ignoreFrontCollision(false);
+	 //prendre le plot car on est deja dessus
+	 robot.actions().pince_Rotate();
 
-	//aller à la zone de depose
-	robot.ia().iAbyZone().goToZone("zone_deposeplotdepart", &path, &zone);
-	while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 robot.asserv().ignoreFrontCollision(false);
 
-	while (robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 //aller à la zone de depose
+	 robot.ia().iAbyZone().goToZone("zone_deposeplotdepart", &path, &zone);
+	 while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	//lacher le plot
-	robot.actions().pince_Open();
+	 while (robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	robot.asserv().ignoreFrontCollision(true);
+	 //lacher le plot
+	 robot.actions().pince_Open();
 
-	//on recule de 10cm
-	while (robot.asserv().doLineAbs(-100) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 robot.asserv().ignoreFrontCollision(true);
 
-	//remettre la pince prete a prendre
-	robot.actions().pince_InitRotation();
-	robot.actions().pince_Open();
+	 //on recule de 10cm
+	 while (robot.asserv().doLineAbs(-100) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
+	 //remettre la pince prete a prendre
+	 robot.actions().pince_InitRotation();
+	 robot.actions().pince_Open();
+	 */
 	return true; //return true si ok sinon false si interruption
 }
 
 bool L_plot1()
 {
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	robot.logger().info() << "L_plotdepart" << logs::end;
+	/*
+	 LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	 robot.logger().info() << "L_plotdepart" << logs::end;
 
-	robot.asserv().ignoreFrontCollision(true);
-	robot.asserv().ignoreRearCollision(true);
+	 robot.asserv().ignoreFrontCollision(true);
+	 robot.asserv().ignoreRearCollision(true);
 
-	//TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
+	 //TRAJ_STATE ts = TRAJ_OK;
+	 RobotPosition path, zone;
 
-	robot.ia().iAbyZone().goToZone("zone_plot1", &path, &zone);
-	while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 robot.ia().iAbyZone().goToZone("zone_plot1", &path, &zone);
+	 while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	//abaisser la pince
-	robot.actions().pince_HerculeDown();
+	 //abaisser la pince
+	 robot.actions().pince_HerculeDown();
 
-	while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	robot.asserv().ignoreFrontCollision(false);
-	robot.asserv().ignoreRearCollision(false);
+	 robot.asserv().ignoreFrontCollision(false);
+	 robot.asserv().ignoreRearCollision(false);
 
-	while (robot.asserv().doMoveForwardTo(1000.0, 800.0) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 while (robot.asserv().doMoveForwardTo(1000.0, 800.0) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	//prendre le plot car on est deja dessus
-	robot.actions().pince_Close(0);
-	robot.actions().pince_Rotate();
+	 //prendre le plot car on est deja dessus
+	 robot.actions().pince_Close(0);
+	 robot.actions().pince_Rotate();
 
-	//aller à la zone de depose
-	robot.ia().iAbyZone().goToZone("zone_deposeplot", &path, &zone);
-	while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 //aller à la zone de depose
+	 robot.ia().iAbyZone().goToZone("zone_deposeplot", &path, &zone);
+	 while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	robot.asserv().ignoreFrontCollision(true);
+	 robot.asserv().ignoreFrontCollision(true);
 
-	while (robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 while (robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	//lacher le plot
-	robot.actions().pince_Open();
+	 //lacher le plot
+	 robot.actions().pince_Open();
 
-	//on recule de 10cm
-	while (robot.asserv().doLineAbs(-200) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+	 //on recule de 10cm
+	 while (robot.asserv().doLineAbs(-200) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	//remettre la pince prete a prendre
-	robot.actions().pince_InitRotation();
-	robot.actions().pince_Open();
+	 //remettre la pince prete a prendre
+	 robot.actions().pince_InitRotation();
+	 robot.actions().pince_Open();
 
-	robot.asserv().ignoreFrontCollision(false);
-
+	 robot.asserv().ignoreFrontCollision(false);
+	 */
 	return true; //return true si ok sinon false si interruption
 }
 
 bool L_plot2()
-{
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	robot.logger().info() << "L_plot2" << logs::end;
+{/*
+ LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+ robot.logger().info() << "L_plot2" << logs::end;
 
-	//TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
+ //TRAJ_STATE ts = TRAJ_OK;
+ RobotPosition path, zone;
 
-	robot.ia().iAbyZone().goToZone("zone_plot2", &path, &zone);
-	//ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	//if (ts != TRAJ_OK) return false;
-	//robot.svgPrintPosition();
-	while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ robot.ia().iAbyZone().goToZone("zone_plot2", &path, &zone);
+ //ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+ //if (ts != TRAJ_OK) return false;
+ //robot.svgPrintPosition();
+ while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	//prendre plot2
-	robot.actions().pince_Close(0);
-	robot.actions().pince_Rotate();
+ //prendre plot2
+ robot.actions().pince_Close(0);
+ robot.actions().pince_Rotate();
 
-	while (robot.asserv().doLineAbs(-250) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ while (robot.asserv().doLineAbs(-250) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	robot.ia().iAbyZone().goToZone("zone_deposeplot", &path, &zone);
-	// ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	//if (ts != TRAJ_OK) return false;
-	//robot.svgPrintPosition();
-	while (robot.asserv().doMoveForwardAndRotateTo(zone.x - 1.0, zone.y + 140.0, 180.0) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ robot.ia().iAbyZone().goToZone("zone_deposeplot", &path, &zone);
+ // ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+ //if (ts != TRAJ_OK) return false;
+ //robot.svgPrintPosition();
+ while (robot.asserv().doMoveForwardAndRotateTo(zone.x - 1.0, zone.y + 140.0, 180.0) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	//lacher plot2
-	robot.actions().pince_Open();
+ //lacher plot2
+ robot.actions().pince_Open();
 
-	//on recule de 10cm
-	while (robot.asserv().doLineAbs(-400) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ //on recule de 10cm
+ while (robot.asserv().doLineAbs(-400) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	//on va kicker!
-	if (robot.getMyColor() == PMXBLUE)
-	{
-		while (robot.asserv().doMoveForwardAndRotateTo(700, 1250, 45.0) != TRAJ_OK)
-		{
-			usleep(1000);
-		}
-		robot.svgPrintPosition();
-	}
-	else if (robot.getMyColor() == PMXYELLOW)
-	{
-		while (robot.asserv().doMoveForwardAndRotateTo(780, 1200, 45.0) != TRAJ_OK)
-		{
-			usleep(1000);
-		}
-		robot.svgPrintPosition();
-	}
+ //on va kicker!
+ if (robot.getMyColor() == PMXBLUE)
+ {
+ while (robot.asserv().doMoveForwardAndRotateTo(700, 1250, 45.0) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
+ }
+ else if (robot.getMyColor() == PMXYELLOW)
+ {
+ while (robot.asserv().doMoveForwardAndRotateTo(780, 1200, 45.0) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
+ }
 
-	robot.asserv().doLineAbs(200);
+ robot.asserv().doLineAbs(200);
 
-	robot.svgPrintPosition();
+ robot.svgPrintPosition();
 
-	//on recule de 10cm
-	while (robot.asserv().doLineAbs(-200) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ //on recule de 10cm
+ while (robot.asserv().doLineAbs(-200) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	//remettre la pince prete a prendre
-	robot.actions().pince_InitRotation();
-	robot.actions().pince_Open();
-
+ //remettre la pince prete a prendre
+ robot.actions().pince_InitRotation();
+ robot.actions().pince_Open();
+ */
 	return true; //return true si ok sinon false si interruption
 }
 
 bool L_plot3()
-{
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	robot.logger().info() << "L_plot2" << logs::end;
+{/*
+ LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+ robot.logger().info() << "L_plot2" << logs::end;
 
-	//TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
+ //TRAJ_STATE ts = TRAJ_OK;
+ RobotPosition path, zone;
 
-	robot.ia().iAbyZone().goToZone("zone_plot3", &path, &zone);
-	while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
-	if (robot.getMyColor() == PMXBLUE)
-	{
-		while (robot.asserv().doMoveForwardTo(750, 1770) != TRAJ_OK)
-		{
-			usleep(1000);
-		}
-		robot.svgPrintPosition();
-	}
-	else if (robot.getMyColor() == PMXYELLOW)
-	{
-		while (robot.asserv().doMoveForwardTo(795, 1750) != TRAJ_OK)
-		{
-			usleep(1000);
-		}
-		robot.svgPrintPosition();
+ robot.ia().iAbyZone().goToZone("zone_plot3", &path, &zone);
+ while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
+ if (robot.getMyColor() == PMXBLUE)
+ {
+ while (robot.asserv().doMoveForwardTo(750, 1770) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
+ }
+ else if (robot.getMyColor() == PMXYELLOW)
+ {
+ while (robot.asserv().doMoveForwardTo(795, 1750) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	}
+ }
 
-	//prendre plot3
-	robot.actions().pince_Close(0);
-	robot.actions().pince_Rotate();
+ //prendre plot3
+ robot.actions().pince_Close(0);
+ robot.actions().pince_Rotate();
 
-	while (robot.asserv().doLineAbs(-250) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ while (robot.asserv().doLineAbs(-250) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	//ON VA DEPOSER
-	robot.ia().iAbyZone().goToZone("zone_deposeplot", &path, &zone);
-	while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
-	while (robot.asserv().doMoveForwardAndRotateTo(zone.x - 1.0, zone.y + 300.0, 179.0) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ //ON VA DEPOSER
+ robot.ia().iAbyZone().goToZone("zone_deposeplot", &path, &zone);
+ while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
+ while (robot.asserv().doMoveForwardAndRotateTo(zone.x - 1.0, zone.y + 300.0, 179.0) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	while (robot.asserv().doRotateTo(179.0) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ while (robot.asserv().doRotateTo(179.0) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	//lacher plot3
-	robot.actions().pince_Open();
+ //lacher plot3
+ robot.actions().pince_Open();
 
-	//on recule en se positionnant
-	while (robot.asserv().doMoveBackwardTo(300, 900) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ //on recule en se positionnant
+ while (robot.asserv().doMoveBackwardTo(300, 900) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	if (robot.sharedData->end90s()) return true;
+ if (robot.sharedData->end90s()) return true;
 
-	//remettre la pince prete a prendre
-	robot.actions().pince_InitRotation();
-	robot.actions().pince_Open();
+ //remettre la pince prete a prendre
+ robot.actions().pince_InitRotation();
+ robot.actions().pince_Open();
 
-	//on prend le dernier plot
-	while (robot.asserv().doMoveForwardAndRotateTo(400, 1000, 45) != TRAJ_OK)
-	{
-		usleep(1000);
-	}
-	robot.svgPrintPosition();
+ //on prend le dernier plot
+ while (robot.asserv().doMoveForwardAndRotateTo(400, 1000, 45) != TRAJ_OK)
+ {
+ usleep(1000);
+ }
+ robot.svgPrintPosition();
 
-	if (robot.sharedData->end90s()) return true;
+ if (robot.sharedData->end90s()) return true;
 
-	//prendre plot4
-	robot.actions().pince_Close(0);
-	robot.actions().pince_Rotate();
+ //prendre plot4
+ robot.actions().pince_Close(0);
+ robot.actions().pince_Rotate();
 
-	if (robot.sharedData->end90s()) return true;
+ if (robot.sharedData->end90s()) return true;*/
 	/*
 	 while (robot.asserv().doMoveForwardTo(1250, 1100) != TRAJ_OK)
 	 {
@@ -352,66 +439,66 @@ bool L_plot3()
 	 }
 	 robot.svgPrintPosition();
 	 */
+	/*
+	 robot.asserv().ignoreFrontCollision(false);
 
-	robot.asserv().ignoreFrontCollision(false);
+	 if (robot.getMyColor() == PMXBLUE)
+	 {
+	 while (robot.asserv().doMoveForwardTo(1220, 1350) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
+	 }
+	 else if (robot.getMyColor() == PMXYELLOW)
+	 {
+	 while (robot.asserv().doMoveForwardTo(1250, 1350) != TRAJ_OK)
+	 {
+	 usleep(1000);
+	 }
+	 robot.svgPrintPosition();
 
-	if (robot.getMyColor() == PMXBLUE)
-	{
-		while (robot.asserv().doMoveForwardTo(1220, 1350) != TRAJ_OK)
-		{
-			usleep(1000);
-		}
-		robot.svgPrintPosition();
-	}
-	else if (robot.getMyColor() == PMXYELLOW)
-	{
-		while (robot.asserv().doMoveForwardTo(1250, 1350) != TRAJ_OK)
-		{
-			usleep(1000);
-		}
-		robot.svgPrintPosition();
+	 }
 
-	}
+	 if (robot.sharedData->end90s()) return true;
 
-	if (robot.sharedData->end90s()) return true;
-
-	//lacher plot4
-	robot.actions().pince_Open();
-
+	 //lacher plot4
+	 robot.actions().pince_Open();
+	 */
 	return true; //return true si ok sinon false si interruption
 }
 
 bool L_plot_renvers()
 {
+	/*
+	 LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+	 robot.logger().info() << "L_plot_renvers" << logs::end;
 
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	robot.logger().info() << "L_plot_renvers" << logs::end;
+	 TRAJ_STATE ts = TRAJ_OK;
+	 RobotPosition path, zone;
 
-	TRAJ_STATE ts = TRAJ_OK;
-	RobotPosition path, zone;
+	 robot.ia().iAbyZone().goToZone("zone_renvers", &path, &zone);
+	 //ts = robot.asserv().doMoveForwardTo(path.x, path.y);
+	 //if (ts != TRAJ_OK) return false;
+	 //robot.svgPrintPosition();
+	 ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
 
-	robot.ia().iAbyZone().goToZone("zone_renvers", &path, &zone);
-	//ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-	//if (ts != TRAJ_OK) return false;
-	//robot.svgPrintPosition();
-	ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-	if (ts != TRAJ_OK) return false;
-	robot.svgPrintPosition();
+	 ts = robot.asserv().doMoveForwardAndRotateTo(500, 1050, 50);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
 
-	ts = robot.asserv().doMoveForwardAndRotateTo(500, 1050, 50);
-	if (ts != TRAJ_OK) return false;
-	robot.svgPrintPosition();
+	 //fermer la pince
+	 robot.actions().pince_Close(0);
+	 sleep(1);
+	 //lever la pince
+	 robot.actions().pince_HerculeUp8cm(0);
 
-	//fermer la pince
-	robot.actions().pince_Close(0);
-	sleep(1);
-	//lever la pince
-	robot.actions().pince_HerculeUp8cm(0);
-
-	ts = robot.asserv().doMoveForwardTo(900, 1350);
-	if (ts != TRAJ_OK) return false;
-	robot.svgPrintPosition();
-
+	 ts = robot.asserv().doMoveForwardTo(900, 1350);
+	 if (ts != TRAJ_OK) return false;
+	 robot.svgPrintPosition();
+	 */
 	return true; //return true si ok sinon false si interruption
 }
 /*
@@ -477,6 +564,7 @@ void L_State_DecisionMaker::IASetupMatchesBelgique()
 	robot.ia().iAbyZone().ia_setPath("zone_plot2", "zone_plot3", 0.0, 460.0); //ne sert pas
 	robot.ia().iAbyZone().ia_setPath("zone_plot3", "zone_deposeplot", 300.0, 1250.0);
 
+	robot.ia().iAbyZone().ia_addAction("plotdepart", &L_plotdepart);
 	robot.ia().iAbyZone().ia_addAction("plot1", &L_plot1);
 	robot.ia().iAbyZone().ia_addAction("plot2", &L_plot2);
 	robot.ia().iAbyZone().ia_addAction("plot3", &L_plot3);
@@ -512,7 +600,7 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 		logger().info() << "robot.sharedData->end90s=" << robot.sharedData->end90s() << " time="
 				<< robot.chrono().getElapsedTimeInSec() << logs::end;
 		//			robot.base().stop();
-		usleep(200000);
+		usleep(500000);
 	}
 
 	//FUNNY ACTION

@@ -83,6 +83,8 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SwitchDriver.OPO", "console");
 	add(logs::Level::INFO, "SensorsDriver.OPO", "console");
 	add(logs::Level::INFO, "AsservDriver.OPO", "console");
+	add(logs::Level::INFO, "CCAx12Adc.OPO", "console");
+
 	//add(logs::Level::INFO, "GpioPCA9555", "console");
 	//add(logs::Level::INFO, "ExtEncoder", "console");
 

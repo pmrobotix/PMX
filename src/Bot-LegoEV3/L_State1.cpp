@@ -158,10 +158,11 @@ void L_State1::setPos()
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
 	//init avant bascule
-	//robot.asserv().setPositionAndColor(110.0, 225.0, 0.0, (robot.getMyColor() != PMXYELLOW));
+	//robot.asserv().setPositionAndColor(60.05, 223.0, 180.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(114, 223.0, 180.0, (robot.getMyColor() != PMXYELLOW));
 
 	//init après bascule
-	robot.asserv().setPositionAndColor(978.5, 110.0, 90.0, (robot.getMyColor() != PMXYELLOW));
+	//robot.asserv().setPositionAndColor(978.5, 110.0, 90.0, (robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
 
 }

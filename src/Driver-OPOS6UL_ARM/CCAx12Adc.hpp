@@ -10,6 +10,7 @@
 #include <as_devices/cpp/as_i2c.hpp>
 
 #include "../Log/LoggerFactory.hpp"
+#include "../Thread/Mutex.hpp"
 
 #define AX12ADC_ADDR		 0x08
 
@@ -63,7 +64,7 @@
 /*!
  * \brief Implementation for CCAx12Adc card.
  */
-class CCAx12Adc
+class CCAx12Adc: public utils::Mutex
 {
 private:
 
@@ -79,6 +80,7 @@ private:
 	AsI2c i2c_CCAx12Adc_;
 
 	bool connected_;
+	utils::Mutex mutex_;
 
 	/*!
 	 * \brief Constructeur de la classe.
@@ -108,7 +110,7 @@ public:
 	}
 
 	// configuration and initialisation
-	void begin();
+	int begin();
 
 	// Set the led on
 	// @param led :  1 - 10

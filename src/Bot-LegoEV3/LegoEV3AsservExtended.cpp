@@ -54,10 +54,10 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 
 	printf("---LegoEV3AsservExtended > Real EV3\n");
 
-	pAsservInsa_->encoder_SetResolution(1398, 1398, 129);//1395, 1395, 129
+	pAsservInsa_->encoder_SetResolution(1399, 1399, 134);//1395, 1395, 129
 	pAsservInsa_->motion_SetDefaultAccel(0.2);
 	pAsservInsa_->motion_SetDefaultVmax(0.3);
-	pAsservInsa_->motion_SetDefaultDecel(0.5);
+	pAsservInsa_->motion_SetDefaultDecel(0.4);
 	pAsservInsa_->motion_setMaxPwmValue(860);//max power ev3 using hardregulation
 	pAsservInsa_->motion_Init();
 
@@ -75,20 +75,21 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	//pAsservInsa_->motion_configureAlphaPID(0.005, 0.0005, 0.000005);
 	//pAsservInsa_->motion_configureDeltaPID(0.003, 0.0005, 0.000005);
 
-	pAsservInsa_->motion_configureAlphaPID(0.005, 0.0005, 0.000005);
+	pAsservInsa_->motion_configureAlphaPID(0.003, 0.0005, 0.000005);
 	pAsservInsa_->motion_configureDeltaPID(0.003, 0.0005, 0.000005);
 
 	motorwheel_patch_m = 0.0;//metres
-	motorwheel_patch_rad = -0.006;//radians //-0.01 ?
+	motorwheel_patch_rad = -0.01;//radians //-0.01 ?
 #endif
 
 	pAsservInsa_->motion_DisablePID();
 
-	//f=20 Hz =>every 50ms
+	//f=20 Hz => every 50ms
+	//f=30 Hz =>
 	//f=40 Hz => every 25ms
 	//f=50 Hz => every 20ms
-	//f=100 Hz =>every 10ms
-	pAsservInsa_->motion_SetSamplingFrequency(40);
+	//f=100Hz => every 10ms
+	pAsservInsa_->motion_SetSamplingFrequency(30);
 
 }
 
@@ -373,16 +374,14 @@ void LegoEV3AsservExtended::setDecel(float dec)
 
 void LegoEV3AsservExtended::setFrontCollision()
 {
-	logger().error() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_
-			<< logs::end;
+	//logger().error() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_	<< logs::end;
 
 	if (!ignoreFrontCollision_) pAsservInsa_->path_CollisionOnTrajectory();
 }
 
 void LegoEV3AsservExtended::setRearCollision()
 {
-	logger().error() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_
-			<< logs::end;
+	//logger().error() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_ << logs::end;
 	if (!ignoreRearCollision_) pAsservInsa_->path_CollisionRearOnTrajectory();
 }
 

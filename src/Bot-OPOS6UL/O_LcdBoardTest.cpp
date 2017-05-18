@@ -29,8 +29,7 @@ void O_LcdBoardTest::run(int argc, char** argv)
 	robot.actions().lcd2x16().print("PM-ROBOTIX");
 
 	sleep(2);
-//	robot.actions().lcd2x16().clear();
-//	robot.actions().lcd2x16().setBacklightOff();
+
 	robot.actions().stop();
 
 	robot.stop();

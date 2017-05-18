@@ -5,6 +5,7 @@
 #include "../Bot-OPOS6UL/O_IAbyPathTest.hpp"
 #include "../Bot-OPOS6UL/O_LcdBoardTest.hpp"
 #include "../Bot-OPOS6UL/O_LedBarTest.hpp"
+#include "../Bot-OPOS6UL/O_ServoStepTest.hpp"
 #include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
@@ -24,7 +25,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new O_AsservTest());
 	robot.getConsoleManager().add(new O_Asserv_SquareTest());
 	robot.getConsoleManager().add(new O_IAByPathTest());
-
+	robot.getConsoleManager().add(new O_ServoStepTest);
 
 	robot.parseConsoleArgs(argc, argv);
 

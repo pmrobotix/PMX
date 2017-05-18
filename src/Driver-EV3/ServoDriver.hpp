@@ -8,9 +8,10 @@
 using namespace std;
 using namespace ev3dev;
 
+/* deja dans ev3dev.h
 #ifndef FSTREAM_CACHE_SIZE
 #define FSTREAM_CACHE_SIZE 16
-#endif
+#endif*/
 
 class ServoDriver: public AServoDriver
 {
@@ -50,14 +51,14 @@ public:
 	{
 	}
 
-	void hold(ServoLabel servo);
+	void hold(int servo);
 
 	//pos : (-100% to 100%)
-	void setPosition(ServoLabel servo, double pos);
+	void setPosition(int servo, int pos);
 
-	void release(ServoLabel servo);
+	void release(int servo);
 
-	void setRate(ServoLabel servo, int millisec);
+	void setRate(int servo, int millisec);
 
 };
 

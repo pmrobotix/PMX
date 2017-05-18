@@ -18,8 +18,6 @@ void O_Asserv_SquareTest::configureConsoleArgs(int argc, char** argv) //surcharg
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-	//match color
-
 	robot.getArgs().addArgument("x", "x mm");
 	robot.getArgs().addArgument("y", "y mm");
 	robot.getArgs().addArgument("d", "segment mm");
@@ -117,7 +115,7 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 				<< logs::end;
 
 		robot.svgPrintPosition();
-		/*
+
 		logger().info() << "doMoveForwardTo(" << x << ", " << y + d << ")" << logs::end;
 		robot.asserv().doMoveForwardTo(x, y + d);
 
@@ -139,7 +137,7 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 				<< " right= " << right << " ; x=" << robot.asserv().pos_getX_mm() << " y="
 				<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 				<< logs::end;
-*/
+
 		robot.svgPrintPosition();
 	}
 

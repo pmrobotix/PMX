@@ -19,7 +19,7 @@ ServoDriver::ServoDriver()
 
 }
 
-void ServoDriver::hold(ServoLabel servo) // 1 à 8
+void ServoDriver::hold(int servo) // 1 à 8
 {
 	switch (servo)
 	{
@@ -30,7 +30,7 @@ void ServoDriver::hold(ServoLabel servo) // 1 à 8
 	}
 }
 
-void ServoDriver::setPosition(ServoLabel servo, double percent)
+void ServoDriver::setPosition(int servo, int percent)
 {
 	switch (servo)
 	{
@@ -40,7 +40,7 @@ void ServoDriver::setPosition(ServoLabel servo, double percent)
 	}
 }
 
-void ServoDriver::release(ServoLabel servo)
+void ServoDriver::release(int servo)
 {
 	switch (servo)
 	{
@@ -51,7 +51,7 @@ void ServoDriver::release(ServoLabel servo)
 	}
 }
 
-void ServoDriver::setRate(ServoLabel servo, int millisec)
+void ServoDriver::setRate(int servo, int millisec)
 {
 	switch (servo)
 	{
