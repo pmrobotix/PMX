@@ -12,31 +12,63 @@
 #include "../Log/Logger.hpp"
 
 CCAx12Adc::CCAx12Adc() :
-		i2c_CCAx12Adc_(1), connected_(false)
+		i2c_CCAx12Adc_(1), connected_(false), begin_(false)
 {
+	begin();
 }
 
 int CCAx12Adc::begin()
 {
-	connected_ = true;
-
-	//open i2c and setslave
-	i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
-	setLedOn(1);
-	int present = pingAX(51);
-
-	if (present == 0)
+	if (!begin_)
 	{
-		setLedOn(2);
+		begin_ = true;
 		connected_ = true;
-	}
-	else
-	{
-		logger().error() << "CCAx12Adc::begin() AX 51 NOT present !! " << present << logs::end;
-		setLedOff(2);
-		connected_ = false;
-	}
 
+		//open i2c and setslave
+		i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
+		setLedOn(1);
+		int present = pingAX(51);
+		if (present == 0)
+		{
+			setLedOn(2);
+			connected_ = true;
+		}
+		else
+		{
+			logger().error() << "CCAx12Adc::begin() AX 51 NOT present !! " << present << logs::end;
+			setLedOff(2);
+			connected_ = false;
+		}
+		/*
+		 //test read ax
+		 writeAXData(5, P_GOAL_SPEED, 20);
+		 int r = writeAXData(5, P_GOAL_POSITION, 512);
+		 while (1)
+		 {
+		 int moving = readAXData(5, P_MOVING);
+		 logger().error() << "moving =" << moving << logs::end;
+		 //usleep(100000);
+		 }
+		 */
+		/*
+		 int moving = 0;
+
+		 writeAXData(5, P_GOAL_SPEED, 40);
+
+		 int r = writeAXData(5, P_GOAL_POSITION, 512);
+		 logger().error() << "setPosition P_GOAL_POSITION =" << r << logs::end;
+
+		 moving = readAXData(5, P_MOVING);
+		 while (moving >= 1)
+		 {
+		 moving = readAXData(5, P_MOVING);
+		 logger().error() << "moving =" << moving << logs::end;
+		 //usleep(100000);
+		 }
+		 logger().error() << "end moving =" << moving << logs::end;
+		 writeAXData(5, P_TORQUE_ENABLE, 0);
+		 */
+	}
 	return connected_;
 }
 
@@ -69,7 +101,7 @@ void CCAx12Adc::setLedOn(int led)
 {
 	if (!connected_)
 	{
-		logger().error() << "CCAx12Adc::setLedOn() : BOARD NOT CONNECTED !" << logs::end;
+		//logger().error() << "CCAx12Adc::setLedOn() : BOARD NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -84,7 +116,7 @@ void CCAx12Adc::setLedOff(int led)
 {
 	if (!connected_)
 	{
-		logger().error() << "CCAx12Adc::setLedOff() : BOARD NOT CONNECTED !" << logs::end;
+		//logger().error() << "CCAx12Adc::setLedOff() : BOARD NOT CONNECTED !" << logs::end;
 		return;
 	}
 	mutex_.lock();
@@ -101,10 +133,10 @@ int CCAx12Adc::getADC(int adc)
 {
 	if (!connected_)
 	{
-		logger().error() << "CCAx12Adc::getADC() : BOARD NOT CONNECTED !" << logs::end;
+		//logger().error() << "CCAx12Adc::getADC() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
 	}
-	if (adc >= 9 || adc < 0)
+	if (adc >= 10 || adc <= 0)
 	{
 		logger().error() << "CCAx12Adc::getADC() : bad number adc !" << logs::end;
 		return -2;
@@ -118,7 +150,16 @@ int CCAx12Adc::getADC(int adc)
 	if (low < 0 || high < 0) return -3;
 
 	//printf("low:%d, high:%d \n", low, high);
-	return high * 256 + low;
+	return convertToVoltage(high * 256 + low);
+}
+
+int CCAx12Adc::convertToVoltage(int adc_value)
+{
+
+	double millivolts = adc_value * 5000.0/4095.0;
+
+	return (int) millivolts;
+
 }
 
 // Ping a Dynamixel Servo
@@ -149,7 +190,7 @@ int CCAx12Adc::readAXData(int id, int address)
 {
 	if (!connected_)
 	{
-		logger().error() << "CCAx12Adc::readAXData() : BOARD NOT CONNECTED !" << logs::end;
+		//logger().error() << "CCAx12Adc::readAXData() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
 	}
 	int size = getAddressSize(address);
@@ -172,7 +213,7 @@ int CCAx12Adc::readAXData(int id, int address)
 	}
 	else
 	{
-		if (low == 252) return -1;
+		if (low == 252) return -3;
 		mutex_.unlock();
 		return low;
 	}
@@ -186,7 +227,7 @@ int CCAx12Adc::writeAXData(int id, int address, int data)
 {
 	if (!connected_)
 	{
-		logger().error() << "CCAx12Adc::writeAXData() : BOARD NOT CONNECTED !" << logs::end;
+		//logger().error() << "CCAx12Adc::writeAXData() : BOARD NOT CONNECTED !" << logs::end;
 		return -1;
 	}
 

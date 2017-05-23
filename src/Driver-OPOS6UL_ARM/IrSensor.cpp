@@ -9,11 +9,10 @@
 
 #include "../Log/Exception.hpp"
 #include "../Log/Logger.hpp"
+#include "CCAx12Adc.hpp"
 
-#include "as_devices/as_max1027.h"
-
-IrSensor::IrSensor(ushort adcPin, int type)
-		: adcPin_(adcPin), type_(type), voltage_(0.0), distanceMm_(9999.0)
+IrSensor::IrSensor(ushort adcPin, int type) :
+		adcPin_(adcPin), type_(type), voltage_(0.0), distanceMm_(9999.0)
 {
 }
 
@@ -26,45 +25,30 @@ void IrSensor::reset()
 
 int IrSensor::getVoltage()
 {
-	try
-	{
-		//voltage_ = utils::HostAdcPort::instance().readMillivolt(adcPin_);
-
-		//voltage_ = AsAdc::instance().getValueInMillivolts(adcPin_);
-		//logger().debug() << "getAdcValue" << adcPin_ << " = " << voltage_ << logs::end;
-
-	} catch (logs::Exception * e)
-	{
-		logger().error() << "Exception IrSensor getAdcValue: " << e->what() << logs::end;
-	}
+	int voltage_ = CCAx12Adc::instance().getADC(adcPin_);
+	logger().debug() << "voltage_" << adcPin_ << " = " << voltage_ << logs::end;
 	return voltage_;
 }
 
 int IrSensor::getDistance()
 {
-	try
-	{
+
 		voltage_ = getVoltage();
 		distanceMm_ = gp2Convert(type_, voltage_);
+		int nb = 5;
+		float tab_[nb];
+		float moy = 0.0;
+		for (int i = 0; i < nb ; i++)
+		{
+			tab_[i] = gp2Convert(type_, getVoltage());
+			moy += tab_[i];
+		}
+		moy = (moy + distanceMm_) / (nb+1);
 
-		logger().debug() << "getDistance type="
-				<< type_
-				<< " "
-				<< adcPin_
-				<< " dist="
-				<< distanceMm_
-				<< " v="
-				<< voltage_
-				<< logs::end;
-	} catch (logs::Exception * e)
-	{
-		logger().error() << "Exception IrSensor getDistance: " << e->what() << logs::end;
-	}
-	if (distanceMm_ >= 9999.0)
-	{
-		distanceMm_ = 9999.0;
-	}
-	return (int) distanceMm_;
+		logger().debug() << "getDistance type=" << type_ << " " << adcPin_ << " dist="
+				<< distanceMm_ << " v=" << voltage_ << logs::end;
+
+	return (int) moy;
 }
 
 double IrSensor::gp2Convert(int type, int value)
@@ -99,14 +83,19 @@ double IrSensor::gp2Convert(int type, int value)
 		}
 		else if (value < 150) //saturation
 		{
-			distanceMillimetre = 400;
+			distanceMillimetre = 700;
 		}
 		else
 		{
-			distanceMillimetre = 93620.1 * pow(value, -0.949);
-			//y = 9362,1x-0,949
-		}
 
+			//old
+			//distanceMillimetre = 93620.1 * pow(value, -0.949);
+			//y = 9362,1x-0,949
+
+			distanceMillimetre = (1100.0 * 100.0) / (value - 11.0);
+			////Distance (cm) = 2076/(SensorValue - 11)
+
+		}
 
 	}
 	if (type == 150)

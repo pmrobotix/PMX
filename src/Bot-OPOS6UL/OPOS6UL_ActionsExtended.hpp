@@ -186,14 +186,25 @@ public:
 	{
 		servoObjects().deploy(7, 512, 0);
 	}
+	void servo_lowspeed()
+	{
+		servoObjects().setSpeedAll(80);
+	}
 
+	void servo_mediumspeed()
+	{
+		servoObjects().setSpeedAll(200);
+	}
 	void servo_init()
 	{
+		servo_lowspeed();
+
 		funnyAction_Init();
-		turn_nene_center();
 		nose_down();
 		arm_retract();
 		arm_center();
+		turn_nene_center();
+
 	}
 
 };

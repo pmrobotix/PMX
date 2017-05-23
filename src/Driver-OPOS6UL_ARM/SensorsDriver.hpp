@@ -5,6 +5,7 @@
 
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "IrSensor.hpp"
 
 using namespace std;
 
@@ -27,14 +28,16 @@ private:
 
 	AsI2c i2c_gp2y0e02b_;
 
-	//long write_i2c(unsigned char command, unsigned char value);
-
 	int read_i2c(unsigned char command);
 	int read_i2c_2bytes_optimised(unsigned char command);
 	int read_i2c_2bytes(unsigned char command);
 
 	bool connected_gp2y0e02b_;
 	long shift_;
+
+	IrSensor irLeft_;
+
+	IrSensor irRight_;
 
 public:
 

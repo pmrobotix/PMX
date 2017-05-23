@@ -25,13 +25,13 @@ private:
 	 */
 	static const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("IrSensor (OPO)");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("IrSensor.OPO");
 		return instance;
 	}
 
 
 	/*!
-	 * \brief Pin de l'ADC (0 à 6).
+	 * \brief Pin de l'ADC (0 à 9).
 	 */
 	ushort adcPin_;
 
@@ -43,12 +43,12 @@ private:
 	/*!
 	 * \brief Voltage donné par le composant.
 	 */
-	double voltage_;
+	float voltage_;
 
 	/*!
 	 * \brief Distance mm donné par la conversion.
 	 */
-	double distanceMm_;
+	float distanceMm_;
 
 public:
 

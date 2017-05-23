@@ -51,6 +51,10 @@ public:
 
 	void turn(int servo, int speed);
 
+	int getMoving(int servo);
+
+	int getPos(int servo);
+
 };
 
 #endif

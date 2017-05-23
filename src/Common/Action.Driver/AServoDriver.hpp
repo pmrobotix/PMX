@@ -55,7 +55,6 @@ public:
 	}
 
 
-
 	virtual void hold(int) = 0;
 
 	virtual void setPosition(int servo, int pos) = 0;
@@ -65,6 +64,10 @@ public:
 	virtual void setRate(int servo, int speed) = 0;
 
 	virtual void turn(int servo, int speed) = 0;
+
+	virtual int getMoving(int servo) = 0;
+
+	virtual int getPos(int servo) = 0;
 
 private:
 

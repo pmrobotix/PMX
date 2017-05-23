@@ -81,6 +81,7 @@ private:
 
 	bool connected_;
 	utils::Mutex mutex_;
+	bool begin_;
 
 	/*!
 	 * \brief Constructeur de la classe.
@@ -126,6 +127,8 @@ public:
 	// @param ADC :  0 - 9
 	// @returns value : 0 - 4095
 	int getADC(int adc);
+
+	int convertToVoltage(int adc);
 
 	// Ping a Dynamixel Servo
 	// @param id : the id of the dynamixel

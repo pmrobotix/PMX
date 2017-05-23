@@ -6,6 +6,7 @@
 #include <string>
 
 #include "../Log/Logger.hpp"
+#include "CCAx12Adc.hpp"
 
 using namespace std;
 
@@ -15,11 +16,11 @@ ASensorsDriver * ASensorsDriver::create(std::string)
 }
 
 SensorsDriver::SensorsDriver() :
-		i2c_gp2y0e02b_(1), connected_gp2y0e02b_(false), shift_(0)
+		i2c_gp2y0e02b_(1), connected_gp2y0e02b_(false), shift_(0), irLeft_(8, 30), irRight_(9, 30)
 {
 
 	i2c_gp2y0e02b_.setSlaveAddr(ADDRESS_gp2y0e02b);
-/*
+
 	//read shift
 	shift_ = read_i2c(SHIFT_gp2y0e02b);
 
@@ -30,15 +31,15 @@ SensorsDriver::SensorsDriver() :
 	}
 	else
 		connected_gp2y0e02b_ = true;
-*/
-
-
 	/*
-			int adc1 = CCAx12Adc::instance().getADC(1);
-			int adc0 = CCAx12Adc::instance().getADC(0);
-			int adc7 = CCAx12Adc::instance().getADC(7);
-			logger().info() << "adc0=" << adc0 << " adc1=" << adc1 << " adc7=" << adc7 << logs::end;
-	*/
+	 int adc8_left = CCAx12Adc::instance().getADC(8);
+	 logger().info() << "adc8_left=" << adc8_left << logs::end;
+	 //usleep(200000);
+	 int adc1 = CCAx12Adc::instance().getADC(1);
+	 int adc0 = CCAx12Adc::instance().getADC(0);
+	 int adc7 = CCAx12Adc::instance().getADC(7);
+	 logger().info() << "adc0=" << adc0 << " adc1=" << adc1 << " adc7=" << adc7 << logs::end;
+	 */
 }
 
 SensorsDriver::~SensorsDriver()
@@ -47,26 +48,46 @@ SensorsDriver::~SensorsDriver()
 
 bool SensorsDriver::front()
 {
-	if (!connected_gp2y0e02b_) return -1;
 
-	//read distance
-	int d = read_i2c_2bytes_optimised(DISTANCE_REG_gp2y0e02b);
-	if (d < 0)
+	bool front = false;
+
+	if (1)
 	{
-		logger().error() << "ERROR : front() : read_i2c_2bytes neg!" << logs::end;
+		if (irLeft_.getDistance() < 250)
+		{
+			logger().debug() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
+			front = true;
+		}
+
+		if (irRight_.getDistance() < 250)
+		{
+			logger().debug() << "adc_9_right " << " mm=" << irRight_.getDistance() << logs::end;
+			front = true;
+		}
+
 	}
-	else
+
+	if (connected_gp2y0e02b_)
 	{
-
-		logger().error() << "init dist=" << d << logs::end;
+		//read distance
+		int d = read_i2c_2bytes_optimised(DISTANCE_REG_gp2y0e02b);
+		if (d < 0)
+		{
+			logger().error() << "ERROR : front() : read_i2c_2bytes neg!" << logs::end;
+		}
+		else
+		{
+			logger().debug() << "gp2y0e02b dist=" << d << logs::end;
+			if (d < 250) front = true;
+		}
 	}
 
-	return false;
+	return front;
 }
 
 bool SensorsDriver::rear()
 {
-	if (!connected_gp2y0e02b_) return -1;
+	//if (!connected_gp2y0e02b_) return -1;
 	return false;
 }
 

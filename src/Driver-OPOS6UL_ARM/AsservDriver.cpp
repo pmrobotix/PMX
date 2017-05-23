@@ -267,7 +267,7 @@ void AsservDriver::path_InterruptTrajectory()
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().error() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
+		logger().debug() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
 				<< logs::end;
 	else
 	{
@@ -279,7 +279,7 @@ void AsservDriver::path_CollisionOnTrajectory()
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().error() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
+		logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
 				<< logs::end;
 	else
 	{
@@ -291,7 +291,7 @@ void AsservDriver::path_CollisionRearOnTrajectory()
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().error() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED "
+		logger().info() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED "
 				<< asservMbedStarted_ << logs::end;
 	else
 	{
@@ -303,7 +303,7 @@ void AsservDriver::path_CancelTrajectory()
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().error() << "path_CancelTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
+		logger().debug() << "path_CancelTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
 				<< logs::end;
 	else
 	{
@@ -315,7 +315,7 @@ void AsservDriver::path_ResetEmergencyStop()
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().error() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservMbedStarted_
+		logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservMbedStarted_
 				<< logs::end;
 	else
 		mbed_writeI2c('r', 0, NULL);
@@ -325,7 +325,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 	if (!connected_) return TRAJ_ERROR;
 	if (!asservMbedStarted_)
 	{
-		logger().error() << "motion_DoLine() ERROR MBED NOT STARTED " << asservMbedStarted_
+		logger().debug() << "motion_DoLine() ERROR MBED NOT STARTED " << asservMbedStarted_
 				<< logs::end;
 		return TRAJ_ERROR;
 	}
@@ -439,7 +439,7 @@ void AsservDriver::motion_FreeMotion(void)
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().error() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservMbedStarted_
+		logger().debug() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservMbedStarted_
 				<< logs::end;
 	else
 	{

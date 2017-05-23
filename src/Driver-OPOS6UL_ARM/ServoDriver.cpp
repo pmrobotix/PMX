@@ -17,29 +17,29 @@ AServoDriver * AServoDriver::create()
 ServoDriver::ServoDriver() :
 		connected_(0)
 {
-	logger().error() << "ServoDriver::ServoDriver() CCAx12Adc::instance().begin();" << logs::end;
+	logger().debug() << "ServoDriver::ServoDriver() CCAx12Adc::instance().begin();" << logs::end;
 
 	connected_ = CCAx12Adc::instance().begin();
 
-	logger().error() << "connected=" << connected_ << logs::end;
+	//logger().error() << "connected=" << connected_ << logs::end;
 	if (connected_)
 	{
 		CCAx12Adc::instance().setLedOn(3);
 
 		int ping12 = CCAx12Adc::instance().pingAX(12);
-		if (ping12<0) logger().error() << "ping12=" << ping12 << logs::end;
+		if (ping12 < 0) logger().error() << "ping12=" << ping12 << logs::end;
 		int ping8 = CCAx12Adc::instance().pingAX(8);
-		if (ping8<0) logger().error() << "ping8=" << ping8 << logs::end;
+		if (ping8 < 0) logger().error() << "ping8=" << ping8 << logs::end;
 		int ping6 = CCAx12Adc::instance().pingAX(6);
-		if (ping6<0) logger().error() << "ping6=" << ping6 << logs::end;
+		if (ping6 < 0) logger().error() << "ping6=" << ping6 << logs::end;
 		int ping3 = CCAx12Adc::instance().pingAX(3);
-		if (ping3<0) logger().error() << "ping3=" << ping3 << logs::end;
+		if (ping3 < 0) logger().error() << "ping3=" << ping3 << logs::end;
 		int ping5 = CCAx12Adc::instance().pingAX(5);
-		if (ping5<0) logger().error() << "ping5=" << ping5 << logs::end;
+		if (ping5 < 0) logger().error() << "ping5=" << ping5 << logs::end;
 		int ping7 = CCAx12Adc::instance().pingAX(7);
-		if (ping7<0) logger().error() << "ping7=" << ping7 << logs::end;
+		if (ping7 < 0) logger().error() << "ping7=" << ping7 << logs::end;
 		int ping51 = CCAx12Adc::instance().pingAX(51);
-		if (ping51<0) logger().error() << "ping51=" << ping51 << logs::end;
+		if (ping51 < 0) logger().error() << "ping51=" << ping51 << logs::end;
 
 	}
 }
@@ -137,5 +137,19 @@ void ServoDriver::setRate(int servo, int speed)
 	int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, speed);
 	logger().debug() << "setPosition P_GOAL_SPEED =" << r << logs::end;
 
+}
+//return 1 when moving
+int ServoDriver::getMoving(int servo)
+{
+	int r = CCAx12Adc::instance().readAXData(servo, P_MOVING);
+	logger().error() << "getMoving P_MOVING =" << r << logs::end;
+
+	return r;
+}
+
+int ServoDriver::getPos(int servo)
+{
+	int r = CCAx12Adc::instance().readAXData(servo, P_PRESENT_POSITION);
+	return r;
 }
 

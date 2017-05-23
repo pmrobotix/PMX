@@ -52,22 +52,10 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "O_AsservTest", "console");
 	add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
 	add(logs::Level::INFO, "O_ServoStepTest", "console");
+	add(logs::Level::INFO, "O_ServoObjectsTest", "console");
+	add(logs::Level::INFO, "O_SensorsTest", "console");
 
 
-
-	/*
-	add(logs::Level::INFO, "A_TiretteTest", "console");
-	add(logs::Level::INFO, "A_SensorsTest", "console");
-	add(logs::Level::INFO, "A_ServoTest", "console");
-	add(logs::Level::INFO, "A_ServoStepTest", "console");
-	add(logs::Level::INFO, "A_Asserv_SetResolutionTest", "console");
-	add(logs::Level::INFO, "A_Asserv_FindPIDTest", "console");
-	add(logs::Level::INFO, "A_AsservInsaTest", "console");
-	add(logs::Level::INFO, "A_AsservRunTest", "console");
-	add(logs::Level::INFO, "A_Asserv_SquareTest", "console");
-	add(logs::Level::INFO, "A_IATest", "console");
-	add(logs::Level::INFO, "O_MovingBaseTest", "console");
-*/
 
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
@@ -85,12 +73,10 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SensorsDriver.OPO", "console");
 	add(logs::Level::INFO, "AsservDriver.OPO", "console");
 	add(logs::Level::INFO, "CCAx12Adc.OPO", "console");
+	add(logs::Level::INFO, "SensorsDriver.OPO", "console");
+	add(logs::Level::INFO, "IrSensor.OPO", "console");
 
-	//add(logs::Level::INFO, "GpioPCA9555", "console");
-	//add(logs::Level::INFO, "ExtEncoder", "console");
 
-	//add(logs::Level::INFO, "IrSensor", "console");
-	//add(logs::Level::INFO, "as_adc", "console");
 
 
 }
