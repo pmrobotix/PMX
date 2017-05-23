@@ -41,14 +41,16 @@ public:
 	void freeMotion();
 	void assistedHandling();
 
-	TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
+	TRAJ_STATE doLineAbsGoal(float distanceMM, float xMM, float yMM);
+	TRAJ_STATE doLineAbs(float distanceMM); // if distance <0, move backward
 	TRAJ_STATE doRotateAbs(float degrees);
 	TRAJ_STATE doRotateLeft(float degrees);
 	TRAJ_STATE doRotateRight(float degrees);
+	TRAJ_STATE doFaceTo(float xMM, float yMM);
 
 	//relative motion (depends on current position of the robot)
 	TRAJ_STATE doRotateTo(float thetaInDegree);
-	TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
+	TRAJ_STATE doMoveForwardTo(float xMM, float yMM, float adjustment = 0.0);
 	TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
 	TRAJ_STATE doMoveBackwardTo(float xMM, float yMM);
 	TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);

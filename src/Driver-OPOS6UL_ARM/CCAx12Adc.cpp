@@ -12,10 +12,8 @@
 #include "../Log/Logger.hpp"
 
 CCAx12Adc::CCAx12Adc() :
-		i2c_CCAx12Adc_(1)
-		, connected_(false)
+		i2c_CCAx12Adc_(1), connected_(false)
 {
-	begin();
 }
 
 int CCAx12Adc::begin()
@@ -24,14 +22,21 @@ int CCAx12Adc::begin()
 
 	//open i2c and setslave
 	i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
-/*
-	int present = pingAX(5);
-	logger().error() << "CCAx12Adc::begin() : present=" << present<< logs::end;
-	if (present)
+	setLedOn(1);
+	int present = pingAX(51);
+
+	if (present == 0)
 	{
+		setLedOn(2);
 		connected_ = true;
 	}
-*/
+	else
+	{
+		logger().error() << "CCAx12Adc::begin() AX 51 NOT present !! " << present << logs::end;
+		setLedOff(2);
+		connected_ = false;
+	}
+
 	return connected_;
 }
 
@@ -122,11 +127,11 @@ int CCAx12Adc::getADC(int adc)
 int CCAx12Adc::pingAX(int id)
 {
 	/*
-	if (!connected_)
-	{
-		logger().error() << "CCAx12Adc::pingAX() : BOARD NOT CONNECTED !" << logs::end;
-		return -1;
-	}*/
+	 if (!connected_)
+	 {
+	 logger().error() << "CCAx12Adc::pingAX() : BOARD NOT CONNECTED !" << logs::end;
+	 return -1;
+	 }*/
 	mutex_.lock();
 	write(CMD_PING_AX);
 	write(id);

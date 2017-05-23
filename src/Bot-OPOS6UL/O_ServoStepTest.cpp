@@ -14,7 +14,6 @@
 #include "OPOS6UL_ActionsExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
-
 using namespace std;
 
 void O_ServoStepTest::configureConsoleArgs(int argc, char** argv) //surcharge
@@ -23,6 +22,8 @@ void O_ServoStepTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 	robot.getArgs().addArgument("num", "Numero du servo");
 	robot.getArgs().addArgument("step", "nombre à augmenter ou diminuer (en %)", "2");
+	robot.getArgs().addArgument("pos", "position initiale", "512");
+	robot.getArgs().addArgument("speed", "position initiale", "1023");
 
 	//reparse arguments
 	robot.parseConsoleArgs(argc, argv);
@@ -42,7 +43,7 @@ void O_ServoStepTest::run(int argc, char** argv)
 
 	int pos = 512;
 	int step = 5;
-
+	int speed = 1023;
 	int num = 0;
 
 	if (args["num"] != "0")
@@ -57,12 +58,28 @@ void O_ServoStepTest::run(int argc, char** argv)
 		logger().info() << "Arg step set " << args["step"] << ", step = " << step << logs::end;
 	}
 
+	if (args["pos"] != "0")
+	{
+		pos = atoi(args["pos"].c_str());
+		logger().info() << "Arg pos set " << args["pos"] << ", pos = " << pos << logs::end;
+	}
+
+	if (args["speed"] != "0")
+	{
+		speed = atoi(args["speed"].c_str());
+		logger().info() << "Arg speed set " << args["speed"] << ", speed = " << speed << logs::end;
+	}
+
 	robot.actions().lcd2x16().clear();
 	robot.actions().lcd2x16().home();
 	robot.actions().lcd2x16().print("SERVO n°");
 	robot.actions().lcd2x16().print(num);
 
-	robot.actions().servoObjects().deploy( num, 0.0, 0);
+	//robot.actions().servoObjects().turn(12, 1020, 5);
+
+	robot.actions().servoObjects().setSpeed(num, speed);
+
+	robot.actions().servoObjects().deploy(num, pos, 0);
 
 	ButtonTouch touch = BUTTON_NONE;
 
@@ -81,7 +98,7 @@ void O_ServoStepTest::run(int argc, char** argv)
 			pos += step;
 			if (pos >= 1023) pos = 1023;
 			logger().info() << "+" << step << " pos=" << pos << logs::end;
-			robot.actions().servoObjects().deploy( num, pos, 0);
+			robot.actions().servoObjects().deploy(num, pos, 0);
 		}
 
 		if (touch == BUTTON_DOWN_KEY)
@@ -89,41 +106,34 @@ void O_ServoStepTest::run(int argc, char** argv)
 			pos -= step;
 			if (pos <= 0) pos = 0;
 			logger().info() << "-" << step << " pos=" << pos << logs::end;
-			robot.actions().servoObjects().deploy( num, pos, 0);
-
-		}
-
-		if (touch == BUTTON_ENTER_KEY)
-		{
-			logger().info() << "-" << step << " pos=" << pos << logs::end;
-			robot.actions().servoObjects().release( num);
+			robot.actions().servoObjects().deploy(num, pos, 0);
 
 		}
 
 		if (touch == BUTTON_RIGHT_KEY)
 		{
 			pos = 512;
-			robot.actions().servoObjects().release( num);
+			robot.actions().servoObjects().release(num);
 			num = num + 1;
-			if (num >= SERVO_enumTypeEnd) num--;
+			if (num >= 254) num--;
 
 			logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-
+			usleep(20000);
 		}
 
 		if (touch == BUTTON_LEFT_KEY)
 		{
 			pos = 512;
-			robot.actions().servoObjects().release( num);
+			robot.actions().servoObjects().release(num);
 			num = num - 1;
 			if (num < 0) num++;
 
 			logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-
+			usleep(20000);
 		}
-		usleep(20000);
+		usleep(10000);
 	}
-
+	logger().info() << "RELEASE ALL " << logs::end;
 	robot.actions().servoObjects().releaseAll();
 
 	robot.stop();

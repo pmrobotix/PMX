@@ -2,6 +2,7 @@
 
 #include <cmath>
 
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/Logger.hpp"
 
 AsservInsa * APF9328AsservExtended::insa()
@@ -20,7 +21,7 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 	pAsservInsa_->motion_SetDefaultVmax(0.4);
 	pAsservInsa_->motion_SetDefaultDecel(0.2);
 	pAsservInsa_->motion_setMaxPwmValue(127); //max power md25 using hard regulation
-	pAsservInsa_->motion_Init();
+	pAsservInsa_->motion_Init(50);
 	//RCVA PID
 //	pAsservInsa_->motion_configureAlphaPID(190.0, 0.0, 5.0);
 //	pAsservInsa_->motion_configureDeltaPID(190.0, 0.0, 5.0);
@@ -46,7 +47,7 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 	pAsservInsa_->motion_SetDefaultVmax(0.4);
 	pAsservInsa_->motion_SetDefaultDecel(0.2);
 	pAsservInsa_->motion_setMaxPwmValue(127);//max power ev3 using hardregulation
-	pAsservInsa_->motion_Init();
+	pAsservInsa_->motion_Init(50);
 	//RCVA PID
 //	pAsservInsa_->motion_configureAlphaPID(150.0, 0.0, 1.0);
 //	pAsservInsa_->motion_configureDeltaPID(110.0, 0.0, 0.0);
@@ -77,7 +78,7 @@ void APF9328AsservExtended::startMotionTimerAndOdo()
 	//f=50 Hz => every 20ms
 	//f=100 Hz =>every 10ms
 	//f=200 Hz =>every 5ms
-	pAsservInsa_->motion_SetSamplingFrequency(50); //20ms pour APF pour avoir plus de step sur la vitesse
+	//pAsservInsa_->motion_SetSamplingFrequency(50); //20ms pour APF pour avoir plus de step sur la vitesse
 
 }
 

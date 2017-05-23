@@ -51,6 +51,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "L_ServoStepTest", "console");
 	add(logs::Level::INFO, "L_MovingBaseTest", "console");
 	add(logs::Level::INFO, "L_ActionManagerTimerTest", "console");
+	add(logs::Level::INFO, "L_AsservLineRotateTest", "console");
 	add(logs::Level::INFO, "TestAction", "console");
 	add(logs::Level::INFO, "TestTimer", "console");
 

@@ -40,7 +40,7 @@ void logs::LoggerFactory::initialize()
 
 	//State
 	add(logs::Level::INFO, "O_State1", "console");
-	add(logs::Level::INFO, "O_State_decisionMaker", "console");
+	add(logs::Level::INFO, "O_State_DecisionMaker", "console");
 	add(logs::Level::INFO, "O_State_Wait90SecAction", "console");
 
 
@@ -51,6 +51,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "O_GroveColorTest", "console");
 	add(logs::Level::INFO, "O_AsservTest", "console");
 	add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
+	add(logs::Level::INFO, "O_ServoStepTest", "console");
 
 
 

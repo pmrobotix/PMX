@@ -37,16 +37,19 @@ public:
 	 */
 	inline ~ServoDriver()
 	{
+
 	}
 
 	void hold(int servo);
 
-	//percentage pour EV3 , 0->4096 pour APF
+	//pos AX12 0->1023
 	void setPosition(int servo, int pos);
 
 	void release(int servo);
 
-	void setRate(int servo, int millisec);
+	void setRate(int servo, int speed);
+
+	void turn(int servo, int speed);
 
 };
 

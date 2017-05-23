@@ -39,10 +39,13 @@ public:
 	 * \param keep_sec : 1 sec par defaut et release, 0 (pas de release), ou n secondes et release
 	 */
 	void deploy(int servo, int pos, int keep_sec = 1);
+	void turn(int servo, int speed, int keep_sec);
 	void release(int servo);
 	void hold(int servo);
 	void releaseAll();
 	void holdAll();
+
+	void setSpeed(int servo, int speed);
 
 
 };

@@ -34,14 +34,13 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 {
 	if (useInternalAsserv_)
 	{
-		pAsservInsa_->motion_Init();
-
 		//f=20 Hz =>every 50ms
 		//f=40 Hz => every 25ms
 		//f=50 Hz => every 20ms
 		//f=100 Hz =>every 10ms
 		//f=200 Hz =>every 5ms
-		pAsservInsa_->motion_SetSamplingFrequency(50); //20ms pour APF, 50 pour EV3, pour avoir plus de step sur la vitesse
+		//pAsservInsa_->motion_SetSamplingFrequency(50); //20ms pour APF, 50 pour EV3, pour avoir plus de step sur la vitesse
+		pAsservInsa_->motion_Init(30);
 	}
 	else
 	{
@@ -89,6 +88,7 @@ void Asserv::stopMotionTimerAndOdo()
 //matchColor = 0 => en bas à gauche
 void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor = 0)
 {
+	printf("matchcolor%d\n",matchColor);
 	setMatchColorPosition(matchColor);
 
 	x_mm = getRelativeX(x_mm);

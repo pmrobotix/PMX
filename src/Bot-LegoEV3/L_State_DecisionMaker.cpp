@@ -28,37 +28,107 @@ bool L_plotdepart()
 	robot.asserv().ignoreFrontCollision(true);
 	robot.asserv().ignoreRearCollision(true);
 
-	//abaisser un peu la pince
+	robot.logger().info() << "abaisser un peu la pince" << logs::end;
 	robot.actions().pince_HerculeMiddle();
 
-	//on avance
+	robot.logger().info() << "on recule pour passer la bascule" << logs::end;
 	robot.asserv().setAccel(0.3);
 	robot.asserv().setVmax(0.4);
 	robot.asserv().setDecel(0.2);
 
-	ts = robot.asserv().doLineAbs(-770.0);
+	//ts = robot.asserv().doLineAbs(-770.0);
+	while (robot.asserv().doMoveBackwardTo(870, robot.asserv().pos_getY_mm()) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+
 	robot.svgPrintPosition();
 
+	robot.asserv().setAccel(0.2);
+	robot.asserv().setVmax(0.3);
+	robot.asserv().setDecel(0.4);
 
+	robot.logger().info() << "on claque la pince pour retirer les grosses roues" << logs::end;
 	robot.actions().pince_HerculeDown();
 	robot.actions().pince_HerculeMiddle();
 
-	//recalage bascule
-	robot.asserv().base()->moveDTime(160, 1500);
-	robot.asserv().setPositionAndColor((710.0+114.0), robot.asserv().pos_getY_mm(), robot.asserv().pos_getThetaInDegree(), (robot.getMyColor() != PMXYELLOW));
+	robot.logger().info() << "recalage sur bascule" << logs::end;
+	robot.asserv().base()->moveDTime(120, 1800);
+	robot.asserv().setPositionAndColor((700.0 + 114.0), robot.asserv().pos_getY_mm(), -180.0,
+			(robot.getMyColor() != PMXYELLOW)); //attention ici on pense en match jaune //TODO A MODIFIER
 	robot.svgPrintPosition();
-	ts = robot.asserv().doLineAbs(-30.0);
+	robot.logger().info() << "recalage sur bordure" << logs::end;
+	//ts = robot.asserv().doLineAbs(-50.0);
+	while (robot.asserv().doLineAbs(-50.0) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
 	ts = robot.asserv().doRotateAbs(-90.0);
+	robot.asserv().base()->moveDTime(-120, 1700);
+	robot.asserv().setPositionAndColor(robot.asserv().getRelativeX(robot.asserv().pos_getX_mm()),
+			60.0, robot.asserv().getRelativeAngle(90.0), (robot.getMyColor() != PMXYELLOW)); //attention ici on pense en match jaune
 
-	//recalage bordure
-	robot.asserv().base()->moveDTime(-200, 2500);
-	robot.asserv().setPositionAndColor(robot.asserv().pos_getX_mm(), 60.0, 90.0, (robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
-	//go
-	robot.actions().pince_HerculeDown();
-	ts = robot.asserv().doLineAbs(50.0);
 
-	ts = robot.asserv().doMoveForwardTo(1050, 600);
+	robot.logger().info() << "POSITION RECALEE x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm()<< logs::end;
+
+	robot.logger().info() << "on abaisse la pince "<< logs::end;
+	robot.actions().pince_HerculeDown();
+	robot.logger().info() << "on se decale de la bordure " << logs::end;
+	ts = robot.asserv().doLineAbs(250.0);
+
+	//robot.asserv().ignoreFrontCollision(false);
+
+	robot.logger().info() << "on va chercher le plot 1 " << logs::end;
+	while (robot.asserv().doMoveForwardTo(1030, 600, -100) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+
+	robot.logger().info() << "on ferme la pince " << logs::end;
+	robot.actions().pince_Close(0);
+
+	robot.logger().info() << "on pose le plot sur l'aire de depart " << logs::end;
+	//ts = robot.asserv().doMoveForwardTo(850,300,-200);
+	ts = robot.asserv().doRotateRight(180.0); //TODO changement cote bleu
+
+	//lacher le plot
+	robot.logger().info() << "on lache le plot " << logs::end;
+	robot.actions().pince_Open();
+
+	robot.logger().info() << "on se decale " << logs::end;
+	ts = robot.asserv().doLineAbs(-300);
+
+	//
+	robot.logger().info() << "aller à la zone de depose " << logs::end;
+	robot.ia().iAbyZone().goToZone("zone_plot2", &path, &zone);
+	while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+	robot.svgPrintPosition();
+
+	while (robot.asserv().doMoveForwardTo(zone.x, zone.y, -180) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+	robot.svgPrintPosition();
+
+	//robot.asserv().ignoreFrontCollision(true);
+
+	robot.logger().info() << "on ferme la pince " << logs::end;
+	robot.actions().pince_Close(0);
+	robot.actions().pince_Rotate();
+
+	while (robot.asserv().doMoveForwardTo(90, 750, -210) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+
+	robot.actions().pince_Open();
+
+	robot.logger().info() << "on se decale " << logs::end;
+	ts = robot.asserv().doLineAbs(-50);
 
 	/*
 	 //on avance
@@ -547,7 +617,7 @@ void L_State_DecisionMaker::IASetupMatchesBelgique()
 	else if (robot.getMyColor() == PMXYELLOW)
 	{
 		robot.ia().iAbyZone().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 840, 180);
-		robot.ia().iAbyZone().ia_createZone("zone_plot2", 100, 500, 200, 100, 250, 650, -135);
+		robot.ia().iAbyZone().ia_createZone("zone_plot2", 100, 500, 200, 100, 200, 600, -135);
 
 	}
 
@@ -557,8 +627,8 @@ void L_State_DecisionMaker::IASetupMatchesBelgique()
 	robot.ia().iAbyZone().ia_setPath("depart", "zone_deposeplot", 0.0, 400.0); //ne sert pas
 	robot.ia().iAbyZone().ia_setPath("depart", "zone_plot2", 0.0, 410.0); //ne sert pas
 	robot.ia().iAbyZone().ia_setPath("depart", "zone_plot3", 0.0, 440.0); //ne sert pas
-	robot.ia().iAbyZone().ia_setPath("zone_plot1", "zone_deposeplot", 500.0, 800.0);
-	robot.ia().iAbyZone().ia_setPath("zone_plot1", "zone_plot2", 0.0, 420.0); //ne sert pas
+	robot.ia().iAbyZone().ia_setPath("zone_plot1", "zone_deposeplot", 500.0, 800.0); //ne sert pas
+	robot.ia().iAbyZone().ia_setPath("zone_plot1", "zone_plot2", 650, 850.0);
 	robot.ia().iAbyZone().ia_setPath("zone_plot1", "zone_plot3", 0.0, 450.0); //ne sert pas
 	robot.ia().iAbyZone().ia_setPath("zone_plot2", "zone_deposeplot", 0.0, 430.0); //ne sert pas
 	robot.ia().iAbyZone().ia_setPath("zone_plot2", "zone_plot3", 0.0, 460.0); //ne sert pas

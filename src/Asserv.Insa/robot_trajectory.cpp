@@ -31,13 +31,12 @@
 
 void AsservInsa::motion_Line(RobotCommand *out_cmd, float dist)
 {
-	logger().debug() << "robot_trajectory > motion_Line > dist=" << dist
-					<< " VMax=" << motion_GetDefaultVmax()
-					<< " Accel=" << motion_GetDefaultAccel()
-					<< " Decel=" << motion_GetDefaultDecel()
-					<< logs::end;
+	logger().debug() << "robot_trajectory > motion_Line > dist=" << dist << " VMax="
+			<< motion_GetDefaultVmax() << " Accel=" << motion_GetDefaultAccel() << " Decel="
+			<< motion_GetDefaultDecel() << logs::end;
 
-	motion_LineSpeedAcc(out_cmd, dist, motion_GetDefaultVmax(), motion_GetDefaultAccel(), motion_GetDefaultDecel());
+	motion_LineSpeedAcc(out_cmd, dist, motion_GetDefaultVmax(), motion_GetDefaultAccel(),
+			motion_GetDefaultDecel());
 }
 
 void AsservInsa::motion_LineSpeed(RobotCommand *out_cmd, float dist, float VMax)
@@ -45,36 +44,42 @@ void AsservInsa::motion_LineSpeed(RobotCommand *out_cmd, float dist, float VMax)
 	motion_LineSpeedAcc(out_cmd, dist, VMax, motion_GetDefaultAccel(), motion_GetDefaultDecel());
 }
 
-void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VMax, float Accel, float Decel)
+void AsservInsa::motion_LineSpeedAcc(RobotCommand *out_cmd, float dist, float VMax, float Accel,
+		float Decel)
 {
-	logger().debug() << "robot_trajectory > motion_LineSpeedAcc > dist=" << dist
-			<< " VMax=" << VMax
-			<< " Accel=" << Accel
-			<< " Decel=" << Decel
-			<< logs::end;
+	logger().debug() << "robot_trajectory > motion_LineSpeedAcc > dist=" << dist << " VMax=" << VMax
+			<< " Accel=" << Accel << " Decel=" << Decel << logs::end;
 	out_cmd->cmdType = POSITION_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;
+
+	cap_enabled_line = true;
 
 	//ALPHA
 	ComputePositionCommand(&(out_cmd->cmd.posCmd[ALPHA_MOTOR]), 0, 0, 0, 0); //no move on alpha
 
 	//DELTA
-	ComputePositionCommand(&(out_cmd->cmd.posCmd[DELTA_MOTOR]),
-			convertDistTovTops(dist),
-			convertSpeedTovTopsPerPeriod(VMax),
-			convertAccelTovTopsPerPeriodSqd(Accel),
+	ComputePositionCommand(&(out_cmd->cmd.posCmd[DELTA_MOTOR]), convertDistTovTops(dist),
+			convertSpeedTovTopsPerPeriod(VMax), convertAccelTovTopsPerPeriodSqd(Accel),
 			convertAccelTovTopsPerPeriodSqd(Decel));
 
-	logger().debug() << "robot_trajectory > motion_LineSpeedAcc > convert dist=" << convertDistTovTops(dist)
-				<< " VMax=" << convertSpeedTovTopsPerPeriod(VMax)
-				<< " Accel=" << convertAccelTovTopsPerPeriodSqd(Accel)
-				<< " Decel=" << convertAccelTovTopsPerPeriodSqd(Decel)
-				<< logs::end;
+
+	logger().debug() << "robot_trajectory > motion_LineSpeedAcc > convert dist="
+			<< convertDistTovTops(dist) << " VMax=" << convertSpeedTovTopsPerPeriod(VMax)
+			<< " Accel=" << convertAccelTovTopsPerPeriodSqd(Accel) << " Decel="
+			<< convertAccelTovTopsPerPeriodSqd(Decel) << logs::end;
+}
+
+void AsservInsa::motion_setGoalPosition(float x_mm, float y_mm)
+{
+	cap_enabled_ = true; //todo activate here
+	goal_pos_x_m = x_mm / 1000.0;
+	goal_pos_y_m = y_mm / 1000.0;
 }
 
 void AsservInsa::motion_Rotate(RobotCommand *out_cmd, float angle)
 {
-	motion_RotateSpeedAcc(out_cmd, angle, motion_GetDefaultVmax(), motion_GetDefaultAccel(), motion_GetDefaultDecel());
+	motion_RotateSpeedAcc(out_cmd, angle, motion_GetDefaultVmax(), motion_GetDefaultAccel(),
+			motion_GetDefaultDecel());
 }
 
 void AsservInsa::motion_RotateSpeed(RobotCommand *out_cmd, float angle, float VMax)
@@ -82,22 +87,24 @@ void AsservInsa::motion_RotateSpeed(RobotCommand *out_cmd, float angle, float VM
 	motion_RotateSpeedAcc(out_cmd, angle, VMax, motion_GetDefaultAccel(), motion_GetDefaultDecel());
 }
 
-void AsservInsa::motion_RotateSpeedAcc(RobotCommand *out_cmd, float angle, float VMax, float Accel, float Decel)
+void AsservInsa::motion_RotateSpeedAcc(RobotCommand *out_cmd, float angle, float VMax, float Accel,
+		float Decel)
 {
-	logger().debug() << "robot_trajectory > motion_RotateSpeedAcc > distEncoderMeter=" << distEncoderMeter
-				<< " angle=" << angle / M_PI * 180.0f
-				<< " run=" << convertDistTovTops(angle * distEncoderMeter / 2.0f)
+	logger().debug() << "robot_trajectory > motion_RotateSpeedAcc > distEncoderMeter="
+			<< distEncoderMeter << " angle=" << angle / M_PI * 180.0f << " run="
+			<< convertDistTovTops(angle * distEncoderMeter / 2.0f)
 
-				<< logs::end;
+			<< logs::end;
+
+	cap_enabled_line = false;
+
 	out_cmd->cmdType = POSITION_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;
 
 	//ALPHA
 	ComputePositionCommand(&(out_cmd->cmd.posCmd[ALPHA_MOTOR]),
-			convertDistTovTops(angle * distEncoderMeter / 2.0f),
-			convertSpeedTovTopsPerPeriod(VMax),
-			convertAccelTovTopsPerPeriodSqd(Accel),
-			convertAccelTovTopsPerPeriodSqd(Decel));
+			convertDistTovTops(angle * distEncoderMeter / 2.0f), convertSpeedTovTopsPerPeriod(VMax),
+			convertAccelTovTopsPerPeriodSqd(Accel), convertAccelTovTopsPerPeriodSqd(Decel));
 
 	//DELTA
 	ComputePositionCommand(&(out_cmd->cmd.posCmd[DELTA_MOTOR]), 0, 0, 0, 0); //no move on delta
@@ -105,25 +112,18 @@ void AsservInsa::motion_RotateSpeedAcc(RobotCommand *out_cmd, float angle, float
 
 void AsservInsa::motion_ArcRotate(RobotCommand *out_cmd, float angle, float radius)
 {
-	motion_ArcRotateSpeedAcc(out_cmd,
-			angle,
-			radius,
-			motion_GetDefaultVmax(),
-			motion_GetDefaultAccel(),
-			motion_GetDefaultDecel());
+	motion_ArcRotateSpeedAcc(out_cmd, angle, radius, motion_GetDefaultVmax(),
+			motion_GetDefaultAccel(), motion_GetDefaultDecel());
 }
 
 void AsservInsa::motion_ArcRotateSpeed(RobotCommand *out_cmd, float angle, float radius, float VMax)
 {
-	motion_ArcRotateSpeedAcc(out_cmd, angle, radius, VMax, motion_GetDefaultAccel(), motion_GetDefaultDecel());
+	motion_ArcRotateSpeedAcc(out_cmd, angle, radius, VMax, motion_GetDefaultAccel(),
+			motion_GetDefaultDecel());
 }
 
-void AsservInsa::motion_ArcRotateSpeedAcc(RobotCommand *out_cmd,
-		float angle,
-		float radius,
-		float VMax,
-		float Accel,
-		float Decel)
+void AsservInsa::motion_ArcRotateSpeedAcc(RobotCommand *out_cmd, float angle, float radius,
+		float VMax, float Accel, float Decel)
 {
 	float dL, dR;
 	float ratio;
@@ -139,15 +139,12 @@ void AsservInsa::motion_ArcRotateSpeedAcc(RobotCommand *out_cmd,
 		ratio = dR / dL;
 
 		//LEFT
-		ComputePositionCommand(&(out_cmd->cmd.posCmd[LEFT_MOTOR]),
-				convertDistTovTops(dL),
-				convertSpeedTovTopsPerPeriod(VMax),
-				convertAccelTovTopsPerPeriodSqd(Accel),
+		ComputePositionCommand(&(out_cmd->cmd.posCmd[LEFT_MOTOR]), convertDistTovTops(dL),
+				convertSpeedTovTopsPerPeriod(VMax), convertAccelTovTopsPerPeriodSqd(Accel),
 				convertAccelTovTopsPerPeriodSqd(Decel));
 
 		//RIGHT
-		ComputePositionCommand(&(out_cmd->cmd.posCmd[RIGHT_MOTOR]),
-				convertDistTovTops(dR),
+		ComputePositionCommand(&(out_cmd->cmd.posCmd[RIGHT_MOTOR]), convertDistTovTops(dR),
 				convertSpeedTovTopsPerPeriod(VMax * ratio),
 				convertAccelTovTopsPerPeriodSqd(Accel * ratio),
 				convertAccelTovTopsPerPeriodSqd(Decel * ratio));
@@ -157,53 +154,37 @@ void AsservInsa::motion_ArcRotateSpeedAcc(RobotCommand *out_cmd,
 		ratio = dL / dR;
 
 		//LEFT
-		ComputePositionCommand(&(out_cmd->cmd.posCmd[LEFT_MOTOR]),
-				convertDistTovTops(dL),
+		ComputePositionCommand(&(out_cmd->cmd.posCmd[LEFT_MOTOR]), convertDistTovTops(dL),
 				convertSpeedTovTopsPerPeriod(VMax * ratio),
 				convertAccelTovTopsPerPeriodSqd(Accel * ratio),
 				convertAccelTovTopsPerPeriodSqd(Decel * ratio));
 
 		//RIGHT
-		ComputePositionCommand(&(out_cmd->cmd.posCmd[RIGHT_MOTOR]),
-				convertDistTovTops(dR),
-				convertSpeedTovTopsPerPeriod(VMax),
-				convertAccelTovTopsPerPeriodSqd(Accel),
+		ComputePositionCommand(&(out_cmd->cmd.posCmd[RIGHT_MOTOR]), convertDistTovTops(dR),
+				convertSpeedTovTopsPerPeriod(VMax), convertAccelTovTopsPerPeriodSqd(Accel),
 				convertAccelTovTopsPerPeriodSqd(Decel));
 	}
 }
 
-void AsservInsa::motion_SpeedControlLR(RobotCommand *out_cmd,
-		float spLeft,
-		float distLeft,
-		float accLeft,
-		float spRight,
-		float distRight,
-		float accRight)
+void AsservInsa::motion_SpeedControlLR(RobotCommand *out_cmd, float spLeft, float distLeft,
+		float accLeft, float spRight, float distRight, float accRight)
 {
 	out_cmd->cmdType = SPEED_COMMAND;
 	out_cmd->mcType = LEFT_RIGHT;
 
 	//LEFT
 	ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]),
-			getMotorSpeed(&motors[LEFT_RIGHT][LEFT_MOTOR]),
-			convertSpeedTovTopsPerPeriod(spLeft),
-			convertDistTovTops(distLeft),
-			convertAccelTovTopsPerPeriodSqd(accLeft));
+			getMotorSpeed(&motors[LEFT_RIGHT][LEFT_MOTOR]), convertSpeedTovTopsPerPeriod(spLeft),
+			convertDistTovTops(distLeft), convertAccelTovTopsPerPeriodSqd(accLeft));
 
 	//RIGHT
 	ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]),
-			getMotorSpeed(&motors[LEFT_RIGHT][RIGHT_MOTOR]),
-			convertSpeedTovTopsPerPeriod(spRight),
-			convertDistTovTops(distRight),
-			convertAccelTovTopsPerPeriodSqd(accRight));
+			getMotorSpeed(&motors[LEFT_RIGHT][RIGHT_MOTOR]), convertSpeedTovTopsPerPeriod(spRight),
+			convertDistTovTops(distRight), convertAccelTovTopsPerPeriodSqd(accRight));
 }
 
-void AsservInsa::motion_SpeedControlADMaxTime(RobotCommand *out_cmd,
-		float spAlpha,
-		float accAlpha,
-		float spDelta,
-		float accDelta,
-		int duringMs)
+void AsservInsa::motion_SpeedControlADMaxTime(RobotCommand *out_cmd, float spAlpha, float accAlpha,
+		float spDelta, float accDelta, int duringMs)
 {
 	int32 time;
 
@@ -214,26 +195,16 @@ void AsservInsa::motion_SpeedControlADMaxTime(RobotCommand *out_cmd,
 	time = (defaultSamplingFreq * duringMs) / 1000;
 
 	ComputeSpeedCommandMaxTime(&(out_cmd->cmd.speedCmd[ALPHA_MOTOR]),
-			getMotorSpeed(&motors[ALPHA_DELTA][ALPHA_MOTOR]),
-			convertSpeedTovTopsPerPeriod(spAlpha),
-			convertAccelTovTopsPerPeriodSqd(accAlpha),
-			time);
+			getMotorSpeed(&motors[ALPHA_DELTA][ALPHA_MOTOR]), convertSpeedTovTopsPerPeriod(spAlpha),
+			convertAccelTovTopsPerPeriodSqd(accAlpha), time);
 
 	ComputeSpeedCommandMaxTime(&(out_cmd->cmd.speedCmd[DELTA_MOTOR]),
-			getMotorSpeed(&motors[ALPHA_DELTA][DELTA_MOTOR]),
-			convertSpeedTovTopsPerPeriod(spDelta),
-			convertAccelTovTopsPerPeriodSqd(accDelta),
-			time);
+			getMotorSpeed(&motors[ALPHA_DELTA][DELTA_MOTOR]), convertSpeedTovTopsPerPeriod(spDelta),
+			convertAccelTovTopsPerPeriodSqd(accDelta), time);
 }
 
-void AsservInsa::motion_SpeedControlLRDecel(RobotCommand *out_cmd,
-		float spLeft,
-		float distLeft,
-		float accLeft,
-		float decLeft,
-		float spRight,
-		float distRight,
-		float accRight,
+void AsservInsa::motion_SpeedControlLRDecel(RobotCommand *out_cmd, float spLeft, float distLeft,
+		float accLeft, float decLeft, float spRight, float distRight, float accRight,
 		float decRight)
 {
 	int32 motorSpeed;
@@ -245,127 +216,92 @@ void AsservInsa::motion_SpeedControlLRDecel(RobotCommand *out_cmd,
 	motorSpeed = getMotorSpeed(&motors[LEFT_RIGHT][LEFT_MOTOR]);
 	goalSpeed = convertSpeedTovTopsPerPeriod(spLeft);
 
-	if (((motorSpeed < goalSpeed) && motorSpeed > 0) || ((motorSpeed > goalSpeed) && motorSpeed < 0))
+	if (((motorSpeed < goalSpeed) && motorSpeed > 0)
+			|| ((motorSpeed > goalSpeed) && motorSpeed < 0))
 	{
 		//LEFT
-		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]),
-				motorSpeed,
-				goalSpeed,
-				convertDistTovTops(distLeft),
-				convertAccelTovTopsPerPeriodSqd(accLeft));
+		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]), motorSpeed, goalSpeed,
+				convertDistTovTops(distLeft), convertAccelTovTopsPerPeriodSqd(accLeft));
 	}
 	else
 	{
 		//LEFT
-		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]),
-				motorSpeed,
-				goalSpeed,
-				convertDistTovTops(distLeft),
-				convertAccelTovTopsPerPeriodSqd(decLeft));
+		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]), motorSpeed, goalSpeed,
+				convertDistTovTops(distLeft), convertAccelTovTopsPerPeriodSqd(decLeft));
 	}
 
 	motorSpeed = getMotorSpeed(&motors[LEFT_RIGHT][RIGHT_MOTOR]);
 	goalSpeed = convertSpeedTovTopsPerPeriod(spRight);
 
-	if (((motorSpeed < goalSpeed) && motorSpeed > 0) || ((motorSpeed > goalSpeed) && motorSpeed < 0))
+	if (((motorSpeed < goalSpeed) && motorSpeed > 0)
+			|| ((motorSpeed > goalSpeed) && motorSpeed < 0))
 	{
 		//RIGHT
-		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]),
-				motorSpeed,
-				goalSpeed,
-				convertDistTovTops(distRight),
-				convertAccelTovTopsPerPeriodSqd(accRight));
+		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]), motorSpeed, goalSpeed,
+				convertDistTovTops(distRight), convertAccelTovTopsPerPeriodSqd(accRight));
 	}
 	else
 	{
 		//RIGHT
-		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]),
-				motorSpeed,
-				goalSpeed,
-				convertDistTovTops(distRight),
-				convertAccelTovTopsPerPeriodSqd(decRight));
+		ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]), motorSpeed, goalSpeed,
+				convertDistTovTops(distRight), convertAccelTovTopsPerPeriodSqd(decRight));
 	}
 }
 
-void AsservInsa::motion_SpeedControlLRV0(RobotCommand *out_cmd,
-		float V0Left,
-		float spLeft,
-		float distLeft,
-		float accLeft,
-		float V0Right,
-		float spRight,
-		float distRight,
+void AsservInsa::motion_SpeedControlLRV0(RobotCommand *out_cmd, float V0Left, float spLeft,
+		float distLeft, float accLeft, float V0Right, float spRight, float distRight,
 		float accRight)
 {
 	out_cmd->cmdType = SPEED_COMMAND;
 	out_cmd->mcType = LEFT_RIGHT;
 
 	//LEFT
-	ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]),
-			convertSpeedTovTopsPerPeriod(V0Left),
-			convertSpeedTovTopsPerPeriod(spLeft),
-			convertDistTovTops(distLeft),
+	ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]), convertSpeedTovTopsPerPeriod(V0Left),
+			convertSpeedTovTopsPerPeriod(spLeft), convertDistTovTops(distLeft),
 			convertAccelTovTopsPerPeriodSqd(accLeft));
 
 	//RIGHT
 	ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]),
-			convertSpeedTovTopsPerPeriod(V0Right),
-			convertSpeedTovTopsPerPeriod(spRight),
-			convertDistTovTops(distRight),
-			convertAccelTovTopsPerPeriodSqd(accRight));
+			convertSpeedTovTopsPerPeriod(V0Right), convertSpeedTovTopsPerPeriod(spRight),
+			convertDistTovTops(distRight), convertAccelTovTopsPerPeriodSqd(accRight));
 }
 
-void AsservInsa::motion_SpeedControlLRTime(RobotCommand *out_cmd,
-		float V0Left,
-		float TLeft,
-		float accLeft,
-		float V0Right,
-		float TRight,
-		float accRight)
+void AsservInsa::motion_SpeedControlLRTime(RobotCommand *out_cmd, float V0Left, float TLeft,
+		float accLeft, float V0Right, float TRight, float accRight)
 {
 	out_cmd->cmdType = SPEED_COMMAND;
 	out_cmd->mcType = LEFT_RIGHT;
 
 	//LEFT
 	ComputeSpeedCommandTime(&(out_cmd->cmd.speedCmd[LEFT_MOTOR]),
-			convertSpeedTovTopsPerPeriod(V0Left),
-			(int32) (TLeft / (loopDelayInMillis/1000.0)),
+			convertSpeedTovTopsPerPeriod(V0Left), (int32) (TLeft / (loopDelayInMillis / 1000.0)),
 			convertAccelTovTopsPerPeriodSqd(accLeft));
 
 	//RIGHT
 	ComputeSpeedCommandTime(&(out_cmd->cmd.speedCmd[RIGHT_MOTOR]),
-			convertSpeedTovTopsPerPeriod(V0Right),
-			(int32) (TRight / (loopDelayInMillis/1000.0)),
+			convertSpeedTovTopsPerPeriod(V0Right), (int32) (TRight / (loopDelayInMillis / 1000.0)),
 			convertAccelTovTopsPerPeriodSqd(accRight));
 }
 
-void AsservInsa::motion_SpeedControlAD(RobotCommand *out_cmd,
-		float spAlpha,
-		float distAlpha,
-		float accAlpha,
-		float spDelta,
-		float distDelta,
-		float accDelta)
+void AsservInsa::motion_SpeedControlAD(RobotCommand *out_cmd, float spAlpha, float distAlpha,
+		float accAlpha, float spDelta, float distDelta, float accDelta)
 {
 	out_cmd->cmdType = SPEED_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;
 
 	//ALPHA
 	ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[ALPHA_MOTOR]),
-			getMotorSpeed(&motors[ALPHA_DELTA][ALPHA_MOTOR]),
-			convertSpeedTovTopsPerPeriod(spAlpha),
-			convertDistTovTops(distAlpha),
-			convertAccelTovTopsPerPeriodSqd(accAlpha));
+			getMotorSpeed(&motors[ALPHA_DELTA][ALPHA_MOTOR]), convertSpeedTovTopsPerPeriod(spAlpha),
+			convertDistTovTops(distAlpha), convertAccelTovTopsPerPeriodSqd(accAlpha));
 
 	//DELTA
 	ComputeSpeedCommand(&(out_cmd->cmd.speedCmd[DELTA_MOTOR]),
-			getMotorSpeed(&motors[ALPHA_DELTA][DELTA_MOTOR]),
-			convertSpeedTovTopsPerPeriod(spDelta),
-			convertDistTovTops(distDelta),
-			convertAccelTovTopsPerPeriodSqd(accDelta));
+			getMotorSpeed(&motors[ALPHA_DELTA][DELTA_MOTOR]), convertSpeedTovTopsPerPeriod(spDelta),
+			convertDistTovTops(distDelta), convertAccelTovTopsPerPeriodSqd(accDelta));
 }
 
-void AsservInsa::motion_StepOrderLR(RobotCommand *out_cmd, int32 posLeft, int32 posRight, int seconds)
+void AsservInsa::motion_StepOrderLR(RobotCommand *out_cmd, int32 posLeft, int32 posRight,
+		int seconds)
 {
 	out_cmd->cmdType = STEP_COMMAND;
 	out_cmd->mcType = LEFT_RIGHT;
@@ -377,7 +313,8 @@ void AsservInsa::motion_StepOrderLR(RobotCommand *out_cmd, int32 posLeft, int32 
 	ComputeStepOrder(&(out_cmd->cmd.stepCmd[RIGHT_MOTOR]), posRight, seconds);
 }
 
-void AsservInsa::motion_StepOrderAD(RobotCommand *out_cmd, int32 posAlpha, int32 posDelta, int seconds)
+void AsservInsa::motion_StepOrderAD(RobotCommand *out_cmd, int32 posAlpha, int32 posDelta,
+		int seconds)
 {
 	out_cmd->cmdType = STEP_COMMAND;
 	out_cmd->mcType = ALPHA_DELTA;

@@ -74,7 +74,8 @@ void L_AsservRunTest::run(int argc, char** argv)
 
 	//robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
 
-	robot.asserv().doLineAbs(x);
+	robot.asserv().doLineAbsGoal(x, x, 300);
+	//robot.asserv().doLineAbs(x);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();

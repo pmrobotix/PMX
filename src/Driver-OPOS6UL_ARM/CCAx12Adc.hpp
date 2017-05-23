@@ -112,6 +112,8 @@ public:
 	// configuration and initialisation
 	int begin();
 
+	//todo get address i2c //ping de la carte à faire
+
 	// Set the led on
 	// @param led :  1 - 10
 	void setLedOn(int led);

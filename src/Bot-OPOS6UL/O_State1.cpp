@@ -43,6 +43,8 @@ O_State1::execute(Robot&, void *data)
 
 		robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
 
+		robot.actions().funnyAction_Init();
+
 		robot.actions().lcd2x16().clear();
 		robot.actions().lcd2x16().home();
 		robot.actions().lcd2x16().print("CHOISIR COULEUR + IA...");
@@ -117,6 +119,9 @@ O_State1::execute(Robot&, void *data)
 		robot.actions().lcd2x16().home();
 		robot.actions().lcd2x16().print("Skip setup...");
 
+		robot.actions().funnyAction_Init();
+
+
 		sharedData->strategy("all");
 
 		setPos();
@@ -142,7 +147,7 @@ void O_State1::setPos()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo(false);
-	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(710+70, 165, 0.0, (robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
 
 }

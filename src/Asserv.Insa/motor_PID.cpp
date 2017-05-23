@@ -243,7 +243,7 @@ int32 AsservInsa::pid_ComputeRcva(PID_SYSTEM system, float error, float vitesse)
 	//float cmd = error * val->conf.kP;
 	float pwm = cmd - (val->conf.kD * vitesse);
 	pwm /= 128.0f; //donne la pente de décélération du PID !!
-	logger().error() << "pid_ComputeRcva error="
+	logger().debug() << "pid_ComputeRcva error="
 			<< error
 			<< " ferror="
 			<< ferror

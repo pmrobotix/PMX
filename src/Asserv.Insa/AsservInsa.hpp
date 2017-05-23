@@ -375,6 +375,13 @@ private:
 	//MovingBase *base_;
 	Robot * robot_;
 
+	//cap correction
+	//float cap_theta_init_;
+	bool cap_enabled_;
+	bool cap_enabled_line;
+	float goal_pos_x_m;
+	float goal_pos_y_m;
+
 //---clothoid
 
 //! Taylor decomposition of FresnelC( sqrt(x/Pi) ) / FresnelS( sqrt(x/Pi) )
@@ -618,7 +625,7 @@ public:
 	AsservInsa(Robot * robot);
 	~AsservInsa();
 
-	void motion_Init();
+	void motion_Init(int freq);
 
 	void motion_SetSamplingFrequency(uint frequency);
 
@@ -633,6 +640,8 @@ public:
 	void path_CollisionRearOnTrajectory();
 
 	//motion
+
+	void motion_setGoalPosition(float x_mm, float y_mm); //to calculate cap position
 
 	//! \brief Set robot position used by odometry
 	//!

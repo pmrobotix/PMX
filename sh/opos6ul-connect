@@ -2,7 +2,9 @@
 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
 
-IP="192.168.0.223" #WIFI
+#IPWIFI="192.168.0.223" #WIFI HOME
+IP="192.168.2.107" #WIFI PMX
+IPETH0="192.168.2.105" #ETH0 PMX
 
 view_doc()
 {
@@ -57,6 +59,16 @@ connect()
 	ssh root@$IP
 }
 
+eth0()
+{
+	ssh root@$IPETH0
+}
+
+wifi()
+{
+	ssh root@$IPWIFI
+}
+
 case "$1" in
 	view-doc)
 		view_doc
@@ -84,6 +96,11 @@ case "$1" in
 
 	connect)
 		connect
+	;;
+     
+     
+    eth0)
+		eth0
 	;;
         
         recupcsv)

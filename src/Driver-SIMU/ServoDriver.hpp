@@ -46,6 +46,8 @@ public:
 
 	void setRate(int servo, int millisec);
 
+	void turn(int servo, int speed);
+
 };
 
 #endif

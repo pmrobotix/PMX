@@ -58,11 +58,13 @@ public:
 
 	virtual void hold(int) = 0;
 
-	virtual void setPosition(int num, int pos) = 0;
+	virtual void setPosition(int servo, int pos) = 0;
 
-	virtual void release(int) = 0;
+	virtual void release(int servo) = 0;
 
-	virtual void setRate(int, int millisec) = 0;
+	virtual void setRate(int servo, int speed) = 0;
+
+	virtual void turn(int servo, int speed) = 0;
 
 private:
 

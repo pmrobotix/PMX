@@ -38,13 +38,16 @@ public:
 	{
 	}
 
-	void hold(ServoLabel servo);
+	void hold(int servo);
 
-	void setPosition(ServoLabel servo, double percent);
+	void setPosition(int servo, int percent);
 
-	void release(ServoLabel servo);
+	void release(int servo);
 
-	void setRate(ServoLabel servo, int millisec);
+	void setRate(int servo, int millisec);
+
+	void turn(int servo, int speed);
+
 
 };
 

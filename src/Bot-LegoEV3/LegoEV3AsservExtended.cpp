@@ -1,8 +1,9 @@
 #include "LegoEV3AsservExtended.hpp"
 
 #include <cmath>
-#include <cstdio>
 
+#include "/usr/include/stdio.h"
+#include "/usr/include/unistd.h"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/Logger.hpp"
 
@@ -24,24 +25,37 @@ LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, Robot * robot) :
 void LegoEV3AsservExtended::startMotionTimerAndOdo()
 {
 
+
+	//on desactive par defaut l'asserv
+	pAsservInsa_->motion_DisablePID();
+
+
 #ifdef SIMU
 	//SIMU EV3
 	printf("---LegoEV3AsservExtended > SIMU EV3\n");
-	pAsservInsa_->encoder_SetResolution(1398, 1398, 129);
-	pAsservInsa_->motion_SetDefaultAccel(0.4);
-	pAsservInsa_->motion_SetDefaultVmax(0.6);
-	pAsservInsa_->motion_SetDefaultDecel(0.3);
+	pAsservInsa_->encoder_SetResolution(1399, 1399, 134);
+	pAsservInsa_->motion_SetDefaultAccel(0.2);
+	pAsservInsa_->motion_SetDefaultVmax(0.3);
+	pAsservInsa_->motion_SetDefaultDecel(0.4);
 	pAsservInsa_->motion_setMaxPwmValue(860); //max power ev3 using hardregulation
-	pAsservInsa_->motion_Init();
+	//f=20 Hz => every 50ms
+	//f=25 Hz => every 40ms
+	//f=30 Hz => every 33ms
+	//f=40 Hz => every 25ms
+	//f=50 Hz => every 20ms
+	//f=100Hz => every 10ms
+	//pAsservInsa_->motion_SetSamplingFrequency(10);
+	pAsservInsa_->motion_Init(25);
 	//RCVA PI
 //	pAsservInsa_->motion_configureAlphaPID(1200.0, 0.0, 0.0);
 //	pAsservInsa_->motion_configureDeltaPID(900.0, 0.0, 0.0);
 //	//NORMAL PID
-	pAsservInsa_->motion_configureAlphaPID(0.011, 0.0, 0.00005); //(2017) 0.25, 0.001, 0.00005 //(2016)0.06 0.001 0.0005
-	pAsservInsa_->motion_configureDeltaPID(0.011, 0.0, 0.0000); //(2017) 0.3, 0.001, 0.00005
-
-	pAsservInsa_->motion_configureLeftPID(0.0, 0.0, 0.0);
-	pAsservInsa_->motion_configureRightPID(0.0, 0.0, 0.0);
+	//pAsservInsa_->motion_configureAlphaPID(0.011, 0.0, 0.00005); //(belgique) 0.25, 0.001, 0.00005 //(2016)0.06 0.001 0.0005
+	//pAsservInsa_->motion_configureDeltaPID(0.011, 0.0, 0.0000); //(belgique) 0.3, 0.001, 0.00005
+	//pAsservInsa_->motion_configureAlphaPID(0.008, 0.0, 0.000005); //2017 0.008, 0.0, 0.000005
+	//pAsservInsa_->motion_configureDeltaPID(0.005, 0.0, 0.000005); //2017 0.005, 0.0, 0.000005
+	pAsservInsa_->motion_configureAlphaPID(1300.0, 0.0, 0.0);
+	pAsservInsa_->motion_configureDeltaPID(1100.0, 0.0, 0.0);
 	motorwheel_patch_m = 0.0; //metres
 	motorwheel_patch_rad = 0.0; //radians
 
@@ -50,16 +64,20 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 #else
 	//Real EV3
 
-	//t /n 14 0.2 0.4 0.8  800 0.003 0.0005 0.000005 0 0 0 0
-
 	printf("---LegoEV3AsservExtended > Real EV3\n");
 
-	pAsservInsa_->encoder_SetResolution(1399, 1399, 134);//1395, 1395, 129
+	pAsservInsa_->encoder_SetResolution(1398, 1398, 134);//1398, 1398, 134
 	pAsservInsa_->motion_SetDefaultAccel(0.2);
 	pAsservInsa_->motion_SetDefaultVmax(0.3);
-	pAsservInsa_->motion_SetDefaultDecel(0.4);
+	pAsservInsa_->motion_SetDefaultDecel(0.3);
 	pAsservInsa_->motion_setMaxPwmValue(860);//max power ev3 using hardregulation
-	pAsservInsa_->motion_Init();
+	//f=20 Hz => every 50ms
+	//f=25 Hz => every 40ms
+	//f=30 Hz => every 33ms
+	//f=40 Hz => every 25ms
+	//f=50 Hz => every 20ms
+	//f=100Hz => every 10ms
+	pAsservInsa_->motion_Init(25);
 
 	//RCVA PID
 //	pAsservInsa_->motion_configureAlphaPID(1200.0.0, 0.0, 0.0);
@@ -75,21 +93,15 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	//pAsservInsa_->motion_configureAlphaPID(0.005, 0.0005, 0.000005);
 	//pAsservInsa_->motion_configureDeltaPID(0.003, 0.0005, 0.000005);
 
-	pAsservInsa_->motion_configureAlphaPID(0.003, 0.0005, 0.000005);
-	pAsservInsa_->motion_configureDeltaPID(0.003, 0.0005, 0.000005);
+	//france param
+	//pAsservInsa_->motion_configureAlphaPID(0.005, 0.0005, 0.00005);
+	//pAsservInsa_->motion_configureDeltaPID(0.002, 0.0, 0.0);
+	pAsservInsa_->motion_configureAlphaPID(1400.0, 0.0, 1.0);
+	pAsservInsa_->motion_configureDeltaPID(700.0, 0.0, 1.0);
 
 	motorwheel_patch_m = 0.0;//metres
 	motorwheel_patch_rad = -0.01;//radians //-0.01 ?
 #endif
-
-	pAsservInsa_->motion_DisablePID();
-
-	//f=20 Hz => every 50ms
-	//f=30 Hz =>
-	//f=40 Hz => every 25ms
-	//f=50 Hz => every 20ms
-	//f=100Hz => every 10ms
-	pAsservInsa_->motion_SetSamplingFrequency(30);
 
 }
 
@@ -108,12 +120,18 @@ void LegoEV3AsservExtended::stopMotionTimerAndOdo()
 	pAsservInsa_->motion_StopTimer();
 }
 
+TRAJ_STATE LegoEV3AsservExtended::doLineAbsGoal(float distanceMM, float xMM, float yMM)
+{
+	pAsservInsa_->motion_setGoalPosition(xMM, yMM);
+	return doLineAbs(distanceMM);
+}
+
 // if distance <0, move backward
-TRAJ_STATE LegoEV3AsservExtended::doLineAbs(float distance_mm)
+TRAJ_STATE LegoEV3AsservExtended::doLineAbs(float distanceMM)
 {
 	int f = ignoreFrontCollision_;
 	int r = ignoreRearCollision_;
-	if (distance_mm > 0)
+	if (distanceMM > 0)
 	{
 		ignoreRearCollision_ = true;
 	}
@@ -122,12 +140,12 @@ TRAJ_STATE LegoEV3AsservExtended::doLineAbs(float distance_mm)
 		ignoreFrontCollision_ = true;
 	}
 
-	float meters = distance_mm / 1000.0f;
+	float meters = distanceMM / 1000.0f;
 
 	int sens_left = 0;
 	int sens_right = 0;
 
-	if (distance_mm >= 0)
+	if (distanceMM >= 0)
 	{
 		sens_left = 1;
 		if (sens_left != last_sens_left_)
@@ -168,6 +186,8 @@ TRAJ_STATE LegoEV3AsservExtended::doLineAbs(float distance_mm)
 	return ts;
 }
 
+
+
 //permet de tourner sur un angle défini (inclus 2 ou 3 tours sur soi-même)
 TRAJ_STATE LegoEV3AsservExtended::doRotateAbs(float degrees)
 {
@@ -188,13 +208,13 @@ TRAJ_STATE LegoEV3AsservExtended::doRotateAbs(float degrees)
 		if (sens_left != last_sens_left_)
 		{
 			radians = radians + motorwheel_patch_rad;
-			logger().error() << "doRotateAbs > change sens_left + rad=" << radians << logs::end;
+			logger().debug() << "doRotateAbs > change sens_left + rad=" << radians << logs::end;
 		}
 		sens_right = 1;
 		if (sens_right != last_sens_right_)
 		{
 			radians = radians + motorwheel_patch_rad;
-			logger().error() << "doRotateAbs > change sens_right + rad=" << radians << logs::end;
+			logger().debug() << "doRotateAbs > change sens_right + rad=" << radians << logs::end;
 		}
 
 	}
@@ -204,13 +224,13 @@ TRAJ_STATE LegoEV3AsservExtended::doRotateAbs(float degrees)
 		if (sens_left != last_sens_left_)
 		{
 			radians = radians - motorwheel_patch_rad;
-			logger().error() << "doRotateAbs > change sens_left - rad=" << radians << logs::end;
+			logger().debug() << "doRotateAbs > change sens_left - rad=" << radians << logs::end;
 		}
 		sens_right = 0;
 		if (sens_right != last_sens_right_)
 		{
 			radians = radians - motorwheel_patch_rad;
-			logger().error() << "doRotateAbs > change sens_right - rad=" << radians << logs::end;
+			logger().debug() << "doRotateAbs > change sens_right - rad=" << radians << logs::end;
 		}
 	}
 
@@ -270,7 +290,17 @@ TRAJ_STATE LegoEV3AsservExtended::doRotateTo(float thetaInDegree)
 	return ts;
 }
 
-TRAJ_STATE LegoEV3AsservExtended::doMoveForwardTo(float xMM, float yMM)
+
+TRAJ_STATE LegoEV3AsservExtended::doFaceTo(float xMM, float yMM)
+{
+	float dx = getRelativeX(xMM) - pos_getX_mm();
+	float dy = yMM - pos_getY_mm();
+	float aRadian = atan2(dy, dx);
+	return doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
+}
+
+
+TRAJ_STATE LegoEV3AsservExtended::doMoveForwardTo(float xMM, float yMM, float adjustment)
 {
 	float dx = getRelativeX(xMM) - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
@@ -281,7 +311,8 @@ TRAJ_STATE LegoEV3AsservExtended::doMoveForwardTo(float xMM, float yMM)
 	doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
 	float dist = sqrt(dx * dx + dy * dy);
 	logger().debug() << "doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
-	return doLineAbs(dist);
+
+	return doLineAbsGoal(dist + adjustment, getRelativeX(xMM), yMM);
 }
 TRAJ_STATE LegoEV3AsservExtended::doMoveForwardAndRotateTo(float xMM, float yMM,
 		float thetaInDegree)
@@ -295,16 +326,15 @@ TRAJ_STATE LegoEV3AsservExtended::doMoveForwardAndRotateTo(float xMM, float yMM,
 }
 TRAJ_STATE LegoEV3AsservExtended::doMoveBackwardTo(float xMM, float yMM)
 {
-	xMM = getRelativeX(xMM);
-
-	float dx = xMM - pos_getX_mm();
+	float xMM_ = getRelativeX(xMM);
+	float dx = xMM_ - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
 	float aRadian = atan2(dy, dx);
 
 	doRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI)); //TODO angle au plus court ?
 
 	float dist = sqrt(dx * dx + dy * dy);
-	return doLineAbs(-dist);
+	return doLineAbsGoal(-dist, xMM_, yMM);
 }
 TRAJ_STATE LegoEV3AsservExtended::doMoveBackwardAndRotateTo(float xMM, float yMM,
 		float thetaInDegree)

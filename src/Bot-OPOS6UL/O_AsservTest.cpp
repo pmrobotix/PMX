@@ -42,9 +42,9 @@ void O_AsservTest::run(int argc, char** argv)
 	}
 
 	logger().info() << "Start Asserv " << logs::end;
+	robot.setMyColor(PMXYELLOW);
 	robot.asserv().startMotionTimerAndOdo(true);
-	robot.setMyColor(PMXBLUE);
-	robot.asserv().setPositionAndColor(100.0, 100.0, 0.0, (robot.getMyColor() == PMXBLUE));
+	robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 	RobotPosition p = robot.asserv().pos_getPosition();
 	logger().info() << "p= " << p.x << " " << p.y << " " << p.theta << " " << p.asservStatus
 			<< logs::end;

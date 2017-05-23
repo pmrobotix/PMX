@@ -24,7 +24,7 @@ ServoDriver::ServoDriver()
 	//TODO set default rate ?
 }
 
-void ServoDriver::hold(ServoLabel servo)
+void ServoDriver::hold(int servo)
 {
 	switch (servo)
 	{
@@ -46,7 +46,7 @@ void ServoDriver::hold(ServoLabel servo)
 	}
 }
 
-void ServoDriver::setPosition(ServoLabel servo, double percent)
+void ServoDriver::setPosition(int servo, int percent)
 {
 	if (percent >= 100)
 		percent = 100;
@@ -81,7 +81,7 @@ void ServoDriver::setPosition(ServoLabel servo, double percent)
 	}
 }
 
-void ServoDriver::release(ServoLabel servo)
+void ServoDriver::release(int servo)
 {
 	switch (servo)
 	{
@@ -103,7 +103,7 @@ void ServoDriver::release(ServoLabel servo)
 	}
 }
 
-void ServoDriver::setRate(ServoLabel servo, int millisec)
+void ServoDriver::setRate(int servo, int millisec)
 {
 	switch (servo)
 	{
@@ -120,4 +120,10 @@ void ServoDriver::setRate(ServoLabel servo, int millisec)
 	default:
 		break;
 	}
+}
+
+
+void ServoDriver::turn(int servo, int speed)
+{
+
 }

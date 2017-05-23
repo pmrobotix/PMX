@@ -63,7 +63,7 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 	robot.asserv().startMotionTimerAndOdo();
 	logger().error() << "robot.getMyColor()  = "<< robot.getMyColor()  << logs::end;
 	logger().error() << "(robot.getMyColor() != PMXYELLOW) = "<< (robot.getMyColor() != PMXYELLOW) << logs::end;
-	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
 	robot.svgPrintPosition();
 
@@ -71,9 +71,9 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 	//robot.actions().start();
 	//robot.actions().sensors().startSensors();
 
-	//robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
+	robot.asserv().doMoveForwardTo(d, 300);
 
-	robot.asserv().doLineAbs(d);
+	//robot.asserv().doLineAbs(d);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();
 	right = robot.asserv().base()->encoders().getRightEncoder();

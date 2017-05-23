@@ -159,3 +159,9 @@ void ServoDriver::setRate(int servo, int millisec)
 		break;
 	}
 }
+
+
+void ServoDriver::turn(int servo, int speed)
+{
+
+}

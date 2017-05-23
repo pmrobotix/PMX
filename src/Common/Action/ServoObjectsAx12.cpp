@@ -35,6 +35,23 @@ void ServoObjectsAx12::deploy(int servo, int pos, int keep_sec)
 	hold(servo);
 }
 
+void ServoObjectsAx12::turn(int servo, int speed, int keep_sec)
+{
+	hold(servo);
+	servodriver->turn(servo, speed); // percentage
+	if (keep_sec != 0)
+	{
+		sleep(keep_sec);
+		release(servo);
+	}
+	hold(servo);
+}
+
+void ServoObjectsAx12::setSpeed(int servo, int speed)
+{
+	servodriver->setRate(servo, speed);
+}
+
 void ServoObjectsAx12::release(int servo)
 {
 	servodriver->release(servo);

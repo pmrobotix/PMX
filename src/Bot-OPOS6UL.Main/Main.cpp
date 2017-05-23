@@ -29,6 +29,7 @@ int main(int argc, char** argv)
 
 	robot.parseConsoleArgs(argc, argv);
 
+
 	//start the Robot (functional tests or match)
 	robot.begin(argc, argv);
 

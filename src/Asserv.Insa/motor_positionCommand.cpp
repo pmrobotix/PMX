@@ -221,7 +221,7 @@ logger().debug() << "GetPositionOrder: TR_CONSTANT_PHASE" << logs::end;
 		//deceleration phase
 	case TR_DECEL_PHASE:
 
-logger().debug() << "GetPositionOrder: TR_DECEL_PHASE" << logs::end;
+logger().debug() << "GetPositionOrder: TR_DECEL_PHASE tn=" << Tn << logs::end;
 		Tn -= posCommand->period0;
 
 		if (Tn >= posCommand->T23 + delay_patch)

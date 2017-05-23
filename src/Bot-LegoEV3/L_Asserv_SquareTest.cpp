@@ -21,7 +21,6 @@ void L_Asserv_SquareTest::configureConsoleArgs(int argc, char** argv) //surcharg
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
 	//match color
-
 	robot.getArgs().addArgument("x", "x mm");
 	robot.getArgs().addArgument("y", "y mm");
 	robot.getArgs().addArgument("d", "segment mm");
@@ -78,13 +77,14 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 	robot.svgPrintPosition();
 
 	chrono.start();
+
 	for (int n = 1; n <= nb; n++)
 	{
-		robot.asserv().doMoveForwardAndRotateTo(x, y, 0.0);
+		robot.asserv().doMoveForwardTo(x, y);
 
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().info() << "time= "
+		logger().info() << "doMoveForwardTo time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< "ms ; left= "
 				<< left
@@ -104,7 +104,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().info() << "time= "
+		logger().info() << "doMoveForwardTo time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< "ms ; left= "
 				<< left
@@ -124,7 +124,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().info() << "time= "
+		logger().info() << "doMoveForwardTo time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< "ms ; left= "
 				<< left
@@ -144,7 +144,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().info() << "time= "
+		logger().info() << "doMoveForwardTo time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< "ms ; left= "
 				<< left
@@ -164,7 +164,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
 		left = robot.asserv().base()->encoders().getLeftEncoder();
 		right = robot.asserv().base()->encoders().getRightEncoder();
-		logger().info() << "time= "
+		logger().info() << "end time= "
 				<< chrono.getElapsedTimeInMilliSec()
 				<< "ms ; left= "
 				<< left

@@ -26,15 +26,22 @@ ServoDriver::ServoDriver() :
 	{
 		CCAx12Adc::instance().setLedOn(3);
 
-		int ping5 = CCAx12Adc::instance().pingAX(12);
-		logger().error() << "ping=" << ping5 << logs::end;
-		hold(8);
-		setPosition(8, 500);
-		sleep(2);
-		release(8);
-		release(5);
-	}
+		int ping12 = CCAx12Adc::instance().pingAX(12);
+		if (ping12<0) logger().error() << "ping12=" << ping12 << logs::end;
+		int ping8 = CCAx12Adc::instance().pingAX(8);
+		if (ping8<0) logger().error() << "ping8=" << ping8 << logs::end;
+		int ping6 = CCAx12Adc::instance().pingAX(6);
+		if (ping6<0) logger().error() << "ping6=" << ping6 << logs::end;
+		int ping3 = CCAx12Adc::instance().pingAX(3);
+		if (ping3<0) logger().error() << "ping3=" << ping3 << logs::end;
+		int ping5 = CCAx12Adc::instance().pingAX(5);
+		if (ping5<0) logger().error() << "ping5=" << ping5 << logs::end;
+		int ping7 = CCAx12Adc::instance().pingAX(7);
+		if (ping7<0) logger().error() << "ping7=" << ping7 << logs::end;
+		int ping51 = CCAx12Adc::instance().pingAX(51);
+		if (ping51<0) logger().error() << "ping51=" << ping51 << logs::end;
 
+	}
 }
 
 void ServoDriver::hold(int servo)
@@ -90,38 +97,45 @@ void ServoDriver::hold(int servo)
 
 	 }
 	 */
-	switch (servo)
-	{
 
-	default:
-		break;
-	}
 }
 
 void ServoDriver::setPosition(int servo, int pos)
 {
-	if (pos >= 4096) pos = 4096;
-	if (pos <= -4096) pos = -4096;
+	if (pos >= 1023) pos = 1023;
+	if (pos <= 0) pos = 0;
 
-	int writeposax = CCAx12Adc::instance().writeAXData(servo, P_GOAL_POSITION, pos);
-	logger().info() << "setPosition P_GOAL_POSITION =" << writeposax << logs::end;
+	int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_POSITION, pos);
+	logger().debug() << "setPosition P_GOAL_POSITION =" << r << logs::end;
 
-	logger().error() << "servo" << servo << " pos=" << pos << logs::end;
+}
+
+void ServoDriver::turn(int servo, int speed)
+{
+	if (speed >= 1023) speed = 1023;
+	if (speed <= 0) speed = 0;
+
+	int rcw = CCAx12Adc::instance().writeAXData(servo, P_CW_ANGLE_LIMIT, 0);
+	int rccw = CCAx12Adc::instance().writeAXData(servo, P_CCW_ANGLE_LIMIT, 0);
+	int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, speed);
+	logger().debug() << "setPosition P_GOAL_SPEED =" << r << logs::end;
+	logger().debug() << "setPosition P_GOAL_POSITION =" << r << logs::end;
 
 }
 
 void ServoDriver::release(int servo)
 {
-	int torqueax4 = CCAx12Adc::instance().writeAXData(servo, P_TORQUE_ENABLE, 0);
-	logger().info() << "release disableax=" << torqueax4 << logs::end;
+	int r = CCAx12Adc::instance().writeAXData(servo, P_TORQUE_ENABLE, 0);
+	logger().debug() << "release servo=" << servo << " r=" << r << logs::end;
 }
 
-void ServoDriver::setRate(int servo, int millisec)
+void ServoDriver::setRate(int servo, int speed)
 {
-	switch (servo)
-	{
+	if (speed >= 1023) speed = 1023;
+	if (speed <= 0) speed = 0;
 
-	default:
-		break;
-	}
+	int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, speed);
+	logger().debug() << "setPosition P_GOAL_SPEED =" << r << logs::end;
+
 }
+
