@@ -25,7 +25,7 @@ L_State1::execute(Robot& r, void *data)
 	Data* sharedData = (Data*) data;
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.actions().start();
+	//robot.actions().start();
 
 	begin: if (!sharedData->skipSetup())
 	{
@@ -115,7 +115,7 @@ L_State1::execute(Robot& r, void *data)
 			bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
 			if (bb)
 			{
-				robot.actions().ledBar().stopAndWait(true);
+				//robot.actions().ledBar().stopAndWait(true);
 
 				goto begin;
 			}
@@ -149,6 +149,7 @@ L_State1::execute(Robot& r, void *data)
 	L_State_Wait90SecAction* action = new L_State_Wait90SecAction(robot, (void *) sharedData);
 	action->start("L_State_Wait90SecAction");
 
+	sleep(6);
 	return this->getState("decisionMaker");
 	//return NULL; //finish all state
 }
@@ -159,7 +160,7 @@ void L_State1::setPos()
 	robot.asserv().startMotionTimerAndOdo();
 	//init avant bascule
 	//robot.asserv().setPositionAndColor(60.05, 223.0, 180.0, (robot.getMyColor() != PMXYELLOW));
-	robot.asserv().setPositionAndColor(114, 223.0, 180.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(114, 140.0, 180.0, (robot.getMyColor() != PMXYELLOW));
 
 	//init après bascule
 	//robot.asserv().setPositionAndColor(978.5, 110.0, 90.0, (robot.getMyColor() != PMXYELLOW));

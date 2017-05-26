@@ -29,12 +29,16 @@ void O_State_Wait90SecAction::execute()
 	robot.chrono().start();
 
 	//ARU and adversary ?
-	while (robot.chrono().getElapsedTimeInSec() <= 10) //todo mettre en parametre
+	while (robot.chrono().getElapsedTimeInSec() <= 90) //todo mettre en parametre
 	{
 
-		usleep(2000000);
-		this->logger().debug() << "O_State_Wait90SecAction::execute chrono "
-				<< robot.chrono().getElapsedTimeInSec() << logs::end;
+		usleep(1000000);
+		long time = robot.chrono().getElapsedTimeInSec();
+		this->logger().info() << "O_State_Wait90SecAction::execute chrono "
+				<< time << logs::end;
+
+		robot.actions().ledBar().flash(time, LED_GREEN);
+
 	}
 
 	this->logger().info() << "O_State_Wait90SecAction::execute end90s...stop... "
@@ -48,6 +52,8 @@ void O_State_Wait90SecAction::execute()
 			<< logs::end;
 
 	robot.actions().funnyAction_Activate();
+
+	robot.actions().ledBar().flashAll();
 	sleep(4);
 	this->logger().info() << "FUNNY ACTION...stop... " << robot.chrono().getElapsedTimeInSec()
 			<< logs::end;

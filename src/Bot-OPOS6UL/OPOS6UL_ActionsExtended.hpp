@@ -118,7 +118,7 @@ public:
 	}
 	void funnyAction_Activate()
 	{
-		servoObjects().deploy(51, 812, 0);
+		servoObjects().deploy(51, 842, 0);
 	}
 
 	void turn_nene_left()
@@ -135,76 +135,169 @@ public:
 	}
 	void turn_nene_center_left()
 	{
+		servoObjects().setSpeed(5, 50);
 		servoObjects().deploy(5, 412, 0);
 	}
 	void turn_nene_center_right()
 	{
+		servoObjects().setSpeed(5, 50);
 		servoObjects().deploy(5, 620, 0);
+	}
+	void turn_nene_right_trembl()
+	{
+		servoObjects().setSpeed(5, 200);
+		servoObjects().deploy(5, 722, 300);
+		servoObjects().deploy(5, 812, 300);
+		servoObjects().deploy(5, 722, 300);
+		servoObjects().deploy(5, 812, 300);
+		servoObjects().deploy(5, 722, 300);
+		servoObjects().deploy(5, 812, 300);
+	}
+	void turn_nene_left_trembl()
+	{
+		servoObjects().setSpeed(5, 200);
+		servoObjects().deploy(5, 282, 300);
+		servoObjects().deploy(5, 212, 300);
+		servoObjects().deploy(5, 282, 300);
+		servoObjects().deploy(5, 212, 300);
+		servoObjects().deploy(5, 282, 300);
+		servoObjects().deploy(5, 212, 300);
 	}
 
 	void nose_init()
 	{
 		servoObjects().deploy(8, 412, 0);
 	}
-	void nose_up()
+	void nose_up(int speed)
 	{
+		servoObjects().setSpeed(8, speed);
 		servoObjects().deploy(8, 512, 0);
+		sleep(1);
 	}
-	void nose_down()
+	void nose_down(int speed)
 	{
-		servoObjects().deploy(8, 162, 0);
+		servoObjects().setSpeed(8, speed);
+		servoObjects().deploy(8, 170, 0);
+		sleep(1);
 	}
-	void nose_back()
+	void nose_back(int speed)
 	{
+		servoObjects().setSpeed(8, speed);
 		servoObjects().deploy(8, 712, 0);
+		sleep(1);
 	}
-	void nose_turn()
+	void nose_turn(int speed)
 	{
-		servoObjects().turn(12, 512, 0);
+		servoObjects().turn(12, speed, 0);
+	}
+	void arm_back_cylinder(int speed)
+	{
+		servoObjects().setSpeed(6, speed);
+		servoObjects().deploy(6, 812, 0);
 	}
 
-	void arm_retract()
+	void arm_kick(int speed)
 	{
+		servoObjects().setSpeed(6, speed);
+		servoObjects().deploy(6, 672, 0);
+	}
+	void arm_retract(int speed)
+	{
+		servoObjects().setSpeed(3, speed);
+		servoObjects().setSpeed(6, speed);
 		servoObjects().deploy(3, 832, 0);
 		servoObjects().deploy(6, 512, 0);
+		sleep(1);
 	}
-	void arm_deploy()
+	void arm_deploy(int speed)
 	{
-		servoObjects().deploy(3, 600, 0);
+		servoObjects().setSpeed(3, speed);
+		servoObjects().setSpeed(6, speed);
+		servoObjects().deploy(3, 500, 0);
 		servoObjects().deploy(6, 812, 0);
-		nose_back();
+		nose_back(speed);
+		sleep(1);
 	}
-	void arm_right()
+	void arm_semi_deploy(int speed)
 	{
-		servoObjects().deploy(7, 272, 0);
+		servoObjects().setSpeed(3, speed);
+
+		servoObjects().deploy(3, 680, 0);
+
+		sleep(1);
 	}
-	void arm_left()
+	void arm_right(int speed)
 	{
-		servoObjects().deploy(7, 692, 0);
+		servoObjects().setSpeed(7, speed);
+		servoObjects().deploy(7, 375, 0);
 	}
-	void arm_center()
+	void arm_right_full(int speed)
 	{
+		servoObjects().setSpeed(7, speed);
+		servoObjects().deploy(7, 215, 0);
+	}
+	void arm_left_full(int speed)
+	{
+		servoObjects().setSpeed(7, speed);
+		servoObjects().deploy(7, 715, 0);
+	}
+	void arm_left(int speed)
+	{
+		servoObjects().setSpeed(7, speed);
+		servoObjects().deploy(7, 672, 0);
+	}
+	void arm_center(int speed)
+	{
+		servoObjects().setSpeed(7, speed);
 		servoObjects().deploy(7, 512, 0);
 	}
 	void servo_lowspeed()
 	{
-		servoObjects().setSpeedAll(80);
+		servoObjects().setSpeedAll(100);
 	}
 
 	void servo_mediumspeed()
 	{
 		servoObjects().setSpeedAll(200);
 	}
+	void servo_maxspeed()
+	{
+		servoObjects().setSpeedAll(1023);
+	}
+
 	void servo_init()
 	{
 		servo_lowspeed();
 
 		funnyAction_Init();
-		nose_down();
-		arm_retract();
-		arm_center();
+		nose_down(150);
+		arm_retract(150);
+		arm_center(150);
 		turn_nene_center();
+		sleep(2);
+	}
 
+	void servo_init_end()
+	{
+
+	}
+	void servo_init_yellow()
+	{
+		servo_lowspeed();
+
+		arm_right(500);
+		turn_nene_right();
+		nose_up(150);
+		usleep(500000);
+	}
+	void servo_init_blue()
+	{
+		servo_lowspeed();
+
+		arm_left(500);
+		turn_nene_left();
+		nose_up(150);
+		usleep(500000);
 	}
 
 };

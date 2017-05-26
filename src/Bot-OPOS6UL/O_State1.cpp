@@ -27,9 +27,10 @@ O_State1::execute(Robot&, void *data)
 	Data* sharedData = (Data*) data;
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.actions().start();
-	begin:
-	robot.actions().lcd2x16().setBacklightOn();
+	begin: robot.actions().lcd2x16().setBacklightOn();
 	robot.actions().lcd2x16().clear();
+
+	robot.actions().servo_init();
 
 	sharedData->strategy("all");
 
@@ -42,8 +43,6 @@ O_State1::execute(Robot&, void *data)
 		robot.actions().lcd2x16().clear();
 
 		robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
-
-		robot.actions().funnyAction_Init();
 
 		robot.actions().lcd2x16().clear();
 		robot.actions().lcd2x16().home();
@@ -83,10 +82,15 @@ O_State1::execute(Robot&, void *data)
 
 		robot.actions().lcd2x16().clear();
 		robot.actions().lcd2x16().home();
-		robot.actions().lcd2x16().print("SET POSITION : OK");
+
 		robot.actions().ledBar().stopAndWait(true);
 
-		setPos();
+		//sortir pince
+		if (robot.getMyColor() == PMXYELLOW)
+			robot.actions().servo_init_yellow();
+		else
+			robot.actions().servo_init_blue();
+
 
 		//tirette
 		robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
@@ -106,9 +110,14 @@ O_State1::execute(Robot&, void *data)
 			}
 			usleep(100000);
 		}
+
+
+		setPos();
+
 	}
 	else
 	{
+		logger().error() << "SKIP SETUP...." << logs::end;
 		if (robot.getMyColor() == PMXNOCOLOR)
 		{
 			robot.actions().lcd2x16().home();
@@ -119,25 +128,29 @@ O_State1::execute(Robot&, void *data)
 		robot.actions().lcd2x16().home();
 		robot.actions().lcd2x16().print("Skip setup...");
 
-		robot.actions().funnyAction_Init();
-
+		robot.actions().servo_init();
 
 		sharedData->strategy("all");
+
+		//sortir pince
+		if (robot.getMyColor() == PMXYELLOW)
+			robot.actions().servo_init_yellow();
+		else
+			robot.actions().servo_init_blue();
+
 
 		setPos();
 	}
 
-	robot.actions().lcd2x16().clear();
-	robot.actions().lcd2x16().setBacklightOff();
-
 	robot.actions().ledBar().stopAndWait(true);
-
 	robot.actions().ledBar().startReset();
 	robot.actions().ledBar().stop(true);
 
 	//start waitFor90s
 	O_State_Wait90SecAction* action = new O_State_Wait90SecAction(robot, (void *) sharedData);
 	action->start("O_Wait90SecAction");
+	robot.actions().lcd2x16().clear();
+	robot.actions().lcd2x16().setBacklightOff();
 
 	return this->getState("decisionMaker");
 	//return NULL; //finish all state
@@ -146,8 +159,11 @@ O_State1::execute(Robot&, void *data)
 void O_State1::setPos()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+	robot.actions().lcd2x16().clear();
+	robot.actions().lcd2x16().print("SET POSITION : OK");
+
 	robot.asserv().startMotionTimerAndOdo(false);
-	robot.asserv().setPositionAndColor(710+70, 165, 0.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(921, 68, 90.0, (robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
 
 }

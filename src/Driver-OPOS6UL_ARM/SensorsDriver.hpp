@@ -39,6 +39,8 @@ private:
 
 	IrSensor irRight_;
 
+	IrSensor irRear_;
+
 public:
 
 	/*!

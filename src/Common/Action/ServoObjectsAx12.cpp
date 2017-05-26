@@ -31,7 +31,7 @@ void ServoObjectsAx12::deploy(int servo, int pos, int keep_millisec)
 	servodriver->setPosition(servo, pos); // percentage
 	if (keep_millisec > 0)
 	{
-		usleep(keep_millisec);
+		usleep(keep_millisec*1000.0);
 		release(servo);
 	}
 	else if (keep_millisec == -1)
@@ -67,7 +67,7 @@ void ServoObjectsAx12::turn(int servo, int speed, int keep_millisec)
 	servodriver->turn(servo, speed); // percentage
 	if (keep_millisec != 0)
 	{
-		usleep(keep_millisec * 1000);
+		usleep(keep_millisec * 1000.0);
 		release(servo);
 	}
 	hold(servo);
@@ -80,8 +80,9 @@ void ServoObjectsAx12::setSpeed(int servo, int speed)
 
 void ServoObjectsAx12::setSpeedAll(int speed)
 {
-	for (int fooInt = 0; fooInt < 254; fooInt++)
+	for (int fooInt = 0; fooInt < 52; fooInt++)
 	{
+		if (fooInt != 12)
 		setSpeed(fooInt, speed);
 	}
 }
@@ -98,7 +99,7 @@ void ServoObjectsAx12::hold(int servo)
 
 void ServoObjectsAx12::releaseAll()
 {
-	for (int fooInt = 0; fooInt < 254; fooInt++)
+	for (int fooInt = 0; fooInt < 52; fooInt++)
 	{
 		release(fooInt);
 	}
@@ -106,7 +107,7 @@ void ServoObjectsAx12::releaseAll()
 }
 void ServoObjectsAx12::holdAll()
 {
-	for (int fooInt = 0; fooInt < 254; fooInt++)
+	for (int fooInt = 0; fooInt < 52; fooInt++)
 	{
 		hold(fooInt);
 	}

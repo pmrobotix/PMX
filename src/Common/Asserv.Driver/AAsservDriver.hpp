@@ -91,6 +91,7 @@ public:
 	virtual void path_CancelTrajectory()= 0;
 	virtual void path_ResetEmergencyStop() = 0;
 
+	virtual TRAJ_STATE motion_DoFace(float x_mm, float y_mm) = 0;
 	virtual TRAJ_STATE motion_DoLine(float dist_meters) = 0;
 	virtual TRAJ_STATE motion_DoRotate(float angle_radians) = 0;
 	virtual TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius) = 0;
@@ -98,6 +99,7 @@ public:
 	virtual void motion_DisablePID(void) = 0;		//! Stop motion control and disable PID
 	virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =) (activate PID)
 	virtual void motion_ActivateManager(bool enable) = 0;//! Enable or Stop motion control timer, used to shutdown motion control
+	virtual void motion_setLowSpeed(bool enable)=0;
 };
 
 #endif

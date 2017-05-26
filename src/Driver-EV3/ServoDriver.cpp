@@ -165,3 +165,14 @@ void ServoDriver::turn(int servo, int speed)
 {
 
 }
+
+int ServoDriver::getMoving(int servo)
+{
+
+}
+
+
+int ServoDriver::getPos(int servo)
+{
+
+}

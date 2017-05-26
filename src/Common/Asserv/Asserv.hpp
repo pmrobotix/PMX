@@ -56,6 +56,8 @@ protected:
 
 public:
 
+
+
 	/*!
 	 * \brief Constructor.
 	 *
@@ -81,6 +83,7 @@ public:
 	virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 	virtual void stopMotionTimerAndOdo();
 	virtual void disablePID(); //TODO deprecated
+	virtual void setLowSpeed(bool enable);
 
 	//modes d'arret de l'asservissement
 	virtual void freeMotion();
@@ -90,7 +93,7 @@ public:
 	virtual TRAJ_STATE doRotateAbs(float degrees);
 	virtual TRAJ_STATE doRotateLeft(float degrees);
 	virtual TRAJ_STATE doRotateRight(float degrees);
-	virtual TRAJ_STATE doFaceTo(float x, float y);
+	virtual TRAJ_STATE doFaceTo(float xMM, float yMM);
 	//relative motion (depends on current position of the robot)
 	virtual TRAJ_STATE doRotateTo(float thetaInDegree);
 	virtual TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
@@ -129,7 +132,9 @@ public:
 		if (matchColorPosition_ != 0)
 		{
 			//TODO limitAngle()
-			return 180 - degrees;
+			float limit = (180 - degrees);
+			if (limit >= 360) limit -= 360;
+			return limit;
 		}
 
 		return degrees;
@@ -165,6 +170,11 @@ public:
 	void ignoreFrontCollision(bool ignore);
 
 	void ignoreRearCollision(bool ignore);
+
+	bool getIgnoreFrontCollision()
+	{
+		return ignoreFrontCollision_;
+	}
 };
 
 #endif

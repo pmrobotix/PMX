@@ -32,7 +32,7 @@ AsservDriver::AsservDriver() :
 	}
 	else
 	{
-
+/*
 		if (mbed_ack() == 0)
 		{
 			connected_ = true;
@@ -44,7 +44,11 @@ AsservDriver::AsservDriver() :
 		else
 		{
 			logger().error() << "AsservDriver() : MBED is NOT CONNECTED !" << logs::end;
-		}
+		}*/
+
+		//on demarre le check de positionnement...
+		this->start("AsservDriver::AsservDriver()");
+		connected_=true;
 	}
 }
 
@@ -67,7 +71,8 @@ void AsservDriver::execute()
 			p_ = mbed_GetPosition();
 			m_pos.unlock();
 			//log SVG
-			loggerSvg().info() << "<circle cx=\"10\" cy=\"-300\" r=\"1\" fill=\"blue\" />" << logs::end;
+			loggerSvg().info() << "<circle cx=\"10\" cy=\"-300\" r=\"1\" fill=\"blue\" />"
+					<< logs::end;
 		}
 		chrono.waitTimer();
 	}
@@ -267,8 +272,8 @@ void AsservDriver::path_InterruptTrajectory()
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().debug() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
-				<< logs::end;
+		logger().debug() << "path_InterruptTrajectory() ERROR MBED NOT STARTED "
+				<< asservMbedStarted_ << logs::end;
 	else
 	{
 		mbed_writeI2c('h', 0, NULL);
@@ -277,12 +282,14 @@ void AsservDriver::path_InterruptTrajectory()
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
-	if (!connected_) return;
+	//if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
-				<< logs::end;
+		logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED "
+				<< asservMbedStarted_ << logs::end;
 	else
 	{
+		logger().error() << "path_CollisionOnTrajectory() HALT "
+						<< asservMbedStarted_ << logs::end;
 		mbed_writeI2c('h', 0, NULL);
 		pathStatus_ = TRAJ_COLLISION;
 	}
@@ -315,8 +322,8 @@ void AsservDriver::path_ResetEmergencyStop()
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservMbedStarted_
-				<< logs::end;
+		logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED "
+				<< asservMbedStarted_ << logs::end;
 	else
 		mbed_writeI2c('r', 0, NULL);
 }
@@ -338,7 +345,8 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 		d[1] = mm.b[1];
 		d[2] = mm.b[2];
 		d[3] = mm.b[3];
-		logger().debug() << "motion_DoLine() DISTmm=" << mm.f << " meters="<< dist_meters << logs::end;
+		logger().debug() << "motion_DoLine() DISTmm=" << mm.f << " meters=" << dist_meters
+				<< logs::end;
 		mbed_writeI2c('v', 4, d);
 		pathStatus_ = TRAJ_OK;
 		return mbed_waitEndOfTraj();
@@ -349,22 +357,22 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 //asservStatus 2 = emergency stop
 TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
 {
-	int timeout=0;
+	int timeout = 0;
 	//logger().error() << "p_.asservStatus avant = " << p_.asservStatus	<< logs::end;
 	while (p_.asservStatus > 0)
 	{
 		//logger().error() << "p_.asservStatus boucle 1 = " << p_.asservStatus	<< logs::end;
 		usleep(10000);
 		timeout++;
-		if(timeout > 50) break;
+		if (timeout > 50) break;
 	}
-	timeout=0;
+	timeout = 0;
 	while (p_.asservStatus == 0)
 	{
 		//logger().error() << "p_.asservStatus boucle 2 = " << p_.asservStatus	<< logs::end;
 		usleep(10000);
 		timeout++;
-		if(timeout > 50 && p_.asservStatus != 0) break;
+		if (timeout > 50 && p_.asservStatus != 0) break;
 	}
 	if (p_.asservStatus == 1) return TRAJ_OK;
 	if (p_.asservStatus == 2)
@@ -435,6 +443,29 @@ TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 //TODO motion_DoArcRotate
 	return TRAJ_ERROR;
 }
+
+void AsservDriver::motion_setLowSpeed(bool enable)
+{
+	unsigned char d[4];
+	unsigned char back_div = 16;
+	unsigned char forw_div = 2;
+	if (enable)
+	{
+		d[0] = 1;
+		d[1] = back_div;
+		d[2] = forw_div;
+		d[3] = 0;
+	}
+	else
+	{
+		d[0] = 0;
+		d[1] = 0;
+		d[2] = 0;
+		d[3] = 0;
+	}
+	mbed_writeI2c('l', 4, d);
+}
+
 void AsservDriver::motion_FreeMotion(void)
 {
 	if (!connected_) return;
@@ -463,8 +494,8 @@ void AsservDriver::motion_AssistedHandling(void)
 {
 	if (!connected_) return;
 	if (!asservMbedStarted_)
-		logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED " << asservMbedStarted_
-				<< logs::end;
+		logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED "
+				<< asservMbedStarted_ << logs::end;
 	else
 	{
 		mbed_writeI2c('J', 0, NULL);

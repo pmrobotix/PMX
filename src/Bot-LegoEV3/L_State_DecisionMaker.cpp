@@ -37,7 +37,7 @@ bool L_plotdepart()
 	robot.asserv().setDecel(0.2);
 
 	//ts = robot.asserv().doLineAbs(-770.0);
-	while (robot.asserv().doMoveBackwardTo(870, robot.asserv().pos_getY_mm()) != TRAJ_OK)
+	while (robot.asserv().doMoveBackwardTo(980, robot.asserv().pos_getY_mm()) != TRAJ_OK)
 	{
 		usleep(20000);
 	}
@@ -53,76 +53,126 @@ bool L_plotdepart()
 	robot.actions().pince_HerculeMiddle();
 
 	robot.logger().info() << "recalage sur bascule" << logs::end;
-	robot.asserv().base()->moveDTime(120, 1800);
-	robot.asserv().setPositionAndColor((700.0 + 114.0), robot.asserv().pos_getY_mm(), -180.0,
-			(robot.getMyColor() != PMXYELLOW)); //attention ici on pense en match jaune //TODO A MODIFIER
+	robot.asserv().base()->moveDTime(100, 2000);
+	robot.asserv().setPositionAndColor(710.0 + 114.0, robot.asserv().pos_getY_mm(), -180.0,
+			(robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
+
 	robot.logger().info() << "recalage sur bordure" << logs::end;
-	//ts = robot.asserv().doLineAbs(-50.0);
-	while (robot.asserv().doLineAbs(-50.0) != TRAJ_OK)
-	{
-		usleep(20000);
-	}
-	ts = robot.asserv().doRotateAbs(-90.0);
-	robot.asserv().base()->moveDTime(-120, 1700);
-	robot.asserv().setPositionAndColor(robot.asserv().getRelativeX(robot.asserv().pos_getX_mm()),
-			60.0, robot.asserv().getRelativeAngle(90.0), (robot.getMyColor() != PMXYELLOW)); //attention ici on pense en match jaune
+	robot.asserv().doLineAbs(-60.0);
+	robot.svgPrintPosition();
+
+	if (robot.getMyColor() == PMXYELLOW)
+		ts = robot.asserv().doRotateAbs(-90.0);
+	else
+		ts = robot.asserv().doRotateAbs(90.0);
+	robot.svgPrintPosition();
+
+	robot.asserv().base()->moveDTime(-90, 2500);
+//	robot.asserv().setPositionAndColor(
+//			robot.asserv().getRelativeX(robot.asserv().pos_getX_mm()) - 30, 60.0 +30,
+//			90.0, (robot.getMyColor() != PMXYELLOW)); //attention ici on pense en match jaune
+	robot.asserv().setPositionAndColor(864.0, 60.0, 90.0, (robot.getMyColor() != PMXYELLOW)); //attention ici on pense en match jaune
 
 	robot.svgPrintPosition();
 
-	robot.logger().info() << "POSITION RECALEE x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm()<< logs::end;
+	robot.logger().info() << "POSITION RECALEE x=" << robot.asserv().pos_getX_mm() << " y="
+			<< robot.asserv().pos_getY_mm() << logs::end;
 
-	robot.logger().info() << "on abaisse la pince "<< logs::end;
+	robot.logger().info() << "on abaisse la pince " << logs::end;
 	robot.actions().pince_HerculeDown();
 	robot.logger().info() << "on se decale de la bordure " << logs::end;
 	ts = robot.asserv().doLineAbs(250.0);
 
-	//robot.asserv().ignoreFrontCollision(false);
+	robot.asserv().ignoreFrontCollision(false);
 
-	robot.logger().info() << "on va chercher le plot 1 " << logs::end;
-	while (robot.asserv().doMoveForwardTo(1030, 600, -100) != TRAJ_OK)
+	robot.logger().info() << "on ne va plus chercher le plot 1 " << logs::end;
+	while (robot.asserv().doMoveForwardTo(1000, 800, -180) != TRAJ_OK)
 	{
-		usleep(20000);
+		usleep(500000);
 	}
 
-	robot.logger().info() << "on ferme la pince " << logs::end;
-	robot.actions().pince_Close(0);
+	/*
 
-	robot.logger().info() << "on pose le plot sur l'aire de depart " << logs::end;
-	//ts = robot.asserv().doMoveForwardTo(850,300,-200);
-	ts = robot.asserv().doRotateRight(180.0); //TODO changement cote bleu
+	 robot.logger().info() << "on va chercher le plot 1 " << logs::end;
+	 while (robot.asserv().doMoveForwardTo(1000, 600, -180) != TRAJ_OK)
+	 {
+	 usleep(500000);
+	 }
+	 robot.logger().info() << "on ferme la pince " << logs::end;
+	 robot.actions().pince_Close(0);
 
-	//lacher le plot
-	robot.logger().info() << "on lache le plot " << logs::end;
-	robot.actions().pince_Open();
+	 robot.logger().info() << "on pose le plot sur l'aire de depart " << logs::end;
+	 //ts = robot.asserv().doMoveForwardTo(850,300,-200);
+	 if (robot.getMyColor() == PMXYELLOW)
+	 ts = robot.asserv().doRotateRight(180.0);
+	 else
+	 ts = robot.asserv().doRotateLeft(180.0);
+	 //lacher le plot
+	 robot.logger().info() << "on lache le plot " << logs::end;
+	 robot.actions().pince_Open();
 
-	robot.logger().info() << "on se decale " << logs::end;
-	ts = robot.asserv().doLineAbs(-300);
+	 robot.logger().info() << "on se decale " << logs::end;
+	 ts = robot.asserv().doLineAbs(-300);
+	 */
 
-	//
 	robot.logger().info() << "aller à la zone de depose " << logs::end;
 	robot.ia().iAbyZone().goToZone("zone_plot2", &path, &zone);
-	while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
+	if (robot.getMyColor() == PMXYELLOW)
 	{
-		usleep(20000);
+		while (robot.asserv().doMoveForwardTo(path.x, path.y) != TRAJ_OK)
+		{
+			usleep(500000);
+		}
+	}
+	else
+	{
+		while (robot.asserv().doMoveForwardTo(path.x, path.y + 50) != TRAJ_OK)
+		{
+			usleep(500000);
+		}
 	}
 	robot.svgPrintPosition();
 
-	while (robot.asserv().doMoveForwardTo(zone.x, zone.y, -180) != TRAJ_OK)
+	robot.logger().info() << "on prend le plot 2 " << logs::end;
+	if (robot.getMyColor() == PMXYELLOW)
 	{
-		usleep(20000);
+		while (robot.asserv().doMoveForwardTo(zone.x, zone.y + 60, -90) != TRAJ_OK)
+		{
+			usleep(500000);
+		}
+	}
+	else
+	{
+		while (robot.asserv().doMoveForwardTo(zone.x, zone.y + 100, -30) != TRAJ_OK)
+		{
+			usleep(500000);
+		}
 	}
 	robot.svgPrintPosition();
 
-	//robot.asserv().ignoreFrontCollision(true);
+	robot.asserv().ignoreFrontCollision(true);
 
 	robot.logger().info() << "on ferme la pince " << logs::end;
 	robot.actions().pince_Close(0);
 	robot.actions().pince_Rotate();
 
-	while (robot.asserv().doMoveForwardTo(90, 750, -210) != TRAJ_OK)
+	ts = robot.asserv().doLineAbs(-150);
+
+	robot.logger().info() << "zone de depose 1" << logs::end;
+	if (robot.getMyColor() == PMXYELLOW)
 	{
-		usleep(20000);
+		while (robot.asserv().doMoveForwardAndRotateTo(290, 900, -180) != TRAJ_OK)
+		{
+			usleep(20000);
+		}
+	}
+	else
+	{
+		while (robot.asserv().doMoveForwardAndRotateTo(280, 800, -180) != TRAJ_OK)
+		{
+			usleep(20000);
+		}
 	}
 
 	robot.actions().pince_Open();
@@ -130,6 +180,66 @@ bool L_plotdepart()
 	robot.logger().info() << "on se decale " << logs::end;
 	ts = robot.asserv().doLineAbs(-50);
 
+	while (robot.asserv().doMoveForwardTo(300, 1250) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+
+	robot.asserv().setDecel(0.50);
+	robot.asserv().setVmax(0.5);
+	robot.logger().info() << "on kick " << logs::end;
+	if (robot.getMyColor() == PMXYELLOW)
+	{
+		while (robot.asserv().doMoveForwardTo(850, 1470, -110) != TRAJ_OK)
+		{
+			usleep(20000);
+		}
+		ts = robot.asserv().doLineAbs(-100);
+		while (robot.asserv().doMoveForwardTo(900, 1470, -110) != TRAJ_OK)
+		{
+			usleep(20000);
+		}
+	}
+	else
+	{
+		while (robot.asserv().doMoveForwardTo(850, 1500, -110) != TRAJ_OK)
+		{
+			usleep(20000);
+		}
+		ts = robot.asserv().doLineAbs(-100);
+		while (robot.asserv().doMoveForwardTo(900, 1470, -110) != TRAJ_OK)
+		{
+			usleep(20000);
+		}
+	}
+
+	robot.asserv().setAccel(0.2);
+	robot.asserv().setVmax(0.3);
+	robot.asserv().setDecel(0.4);
+	ts = robot.asserv().doLineAbs(-80);
+
+	robot.actions().pince_InitRotation();
+	robot.actions().pince_Open();
+
+	while (robot.asserv().doMoveForwardTo(500, 1100, -120) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+
+	robot.actions().pince_Close(0);
+
+	while (robot.asserv().doMoveForwardTo(1000, 800) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+
+	while (robot.asserv().doMoveForwardTo(1000, 300, -220) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
+
+	robot.actions().pince_Open();
+	ts = robot.asserv().doLineAbs(-100);
 	/*
 	 //on avance
 	 robot.asserv().setAccel(0.4);

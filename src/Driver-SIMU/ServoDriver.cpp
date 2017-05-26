@@ -12,8 +12,8 @@ AServoDriver * AServoDriver::create()
 	return instance;
 }
 
-ServoDriver::ServoDriver()
-		: connected_(0)
+ServoDriver::ServoDriver() :
+		connected_(0)
 {
 	logger().debug() << "ServoDriver()" << logs::end;
 
@@ -23,7 +23,6 @@ void ServoDriver::hold(int servo) // 1 à 8
 {
 	switch (servo)
 	{
-
 
 	default:
 		break;
@@ -45,7 +44,6 @@ void ServoDriver::release(int servo)
 	switch (servo)
 	{
 
-
 	default:
 		break;
 	}
@@ -64,4 +62,13 @@ void ServoDriver::setRate(int servo, int millisec)
 void ServoDriver::turn(int servo, int speed)
 {
 
+}
+
+int ServoDriver::getMoving(int servo)
+{
+	return -1;
+}
+int ServoDriver::getPos(int servo)
+{
+	return -1;
 }

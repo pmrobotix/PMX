@@ -41,7 +41,7 @@ void logs::LoggerFactory::initialize()
 	//State
 	add(logs::Level::INFO, "O_State1", "console");
 	add(logs::Level::INFO, "O_State_DecisionMaker", "console");
-	add(logs::Level::INFO, "O_State_Wait90SecAction", "console");
+	add(logs::Level::DEBUG, "O_State_Wait90SecAction", "console");
 
 
 	//TESTS
@@ -70,7 +70,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "ButtonDriver.OPO", "console");
 	add(logs::Level::INFO, "SoundDriver.OPO", "console");
 	add(logs::Level::INFO, "SwitchDriver.OPO", "console");
-	add(logs::Level::INFO, "SensorsDriver.OPO", "console");
+	add(logs::Level::DEBUG, "SensorsDriver.OPO", "console");
 	add(logs::Level::INFO, "AsservDriver.OPO", "console");
 	add(logs::Level::INFO, "CCAx12Adc.OPO", "console");
 	add(logs::Level::INFO, "SensorsDriver.OPO", "console");

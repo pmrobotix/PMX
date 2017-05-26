@@ -17,20 +17,21 @@ udhcpc -n
 
 
 #WIFI
-modprobe -r brcmfmac
-sleep 1
+#modprobe -r brcmfmac
+#sleep 1
 #modprobe brcmfmac
-sleep 5
-modprobe -r brcmfmac
-sleep 1
-modprobe brcmfmac
-sleep 5
+#sleep 5
+#modprobe -r brcmfmac
+#sleep 1
+#modprobe brcmfmac
+#sleep 5
 
-iwconfig
-ifconfig wlan0 up
-iwlist wlan0 s 
-wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
-dhclient wlan0
+#WIFI CONF
+#iwconfig
+vifconfig wlan0 up
+#iwlist wlan0 s 
+#wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
+#dhclient wlan0
 
 ifconfig
 

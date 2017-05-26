@@ -20,8 +20,8 @@ Asserv::Asserv(std::string botId, Robot * robot)
 	else
 		pAsservInsa_ = NULL;
 
-	ignoreRearCollision_ = false;
-	ignoreFrontCollision_ = false;
+	ignoreRearCollision_ = true;
+	ignoreFrontCollision_ = true;
 	matchColorPosition_ = false;
 }
 
@@ -44,6 +44,7 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 	}
 	else
 	{
+
 		asservdriver->motion_ActivateManager(true); //on active la carte d'asserv externe
 		if (assistedHandlingEnabled)
 			asservdriver->motion_AssistedHandling();
@@ -52,7 +53,10 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 
 	}
 }
-
+void Asserv::setLowSpeed(bool enable)
+{
+	asservdriver->motion_setLowSpeed(enable);
+}
 void Asserv::disablePID() //deprecated TODO a remplacer par freemotion
 {
 }
@@ -88,7 +92,7 @@ void Asserv::stopMotionTimerAndOdo()
 //matchColor = 0 => en bas à gauche
 void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor = 0)
 {
-	printf("matchcolor%d\n",matchColor);
+	printf("matchcolor%d\n", matchColor);
 	setMatchColorPosition(matchColor);
 
 	x_mm = getRelativeX(x_mm);
@@ -195,12 +199,14 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 	}
 
 	float meters = distance_mm / 1000.0f;
-	logger().debug() << "Asserv::doLineAbs meters=" << meters << " mm=" << distance_mm<< logs::end;
+	logger().debug() << "Asserv::doLineAbs meters=" << meters << " mm=" << distance_mm << logs::end;
 	TRAJ_STATE ts;
 	if (useInternalAsserv_)
 		ts = pAsservInsa_->motion_DoLine(meters);
 	else
 		ts = asservdriver->motion_DoLine(meters);
+
+	logger().error() << "Asserv::doLineAbs f=" << f << " r=" << r << logs::end;
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;
@@ -226,7 +232,8 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
 	else
 		ts = asservdriver->motion_DoRotate(radians);
 
-	ignoreFrontCollision_ = f;
+
+	logger().error() << "Asserv::doRotateAbs f=" << f << " r=" << r << logs::end;ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;
 
 	return ts;
@@ -240,14 +247,37 @@ TRAJ_STATE Asserv::doRotateRight(float degrees)
 	return doRotateAbs(-degrees);
 }
 
-TRAJ_STATE Asserv::doFaceTo(float x, float y)
+TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 {
+	logger().debug() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
+
+	int f = ignoreFrontCollision_;
+	int r = ignoreRearCollision_;
+	ignoreRearCollision_ = true;
+	ignoreFrontCollision_ = true;
+
+	TRAJ_STATE ts;
+	if (useInternalAsserv_)
+	{
+		//TODO
+		logger().error() << "TODO A CODER !!!!!!!!!!!!" << logs::end;
+	}
+	else
+		ts = asservdriver->motion_DoFace(xMM, yMM);
+
+	ignoreFrontCollision_ = f;
+	ignoreRearCollision_ = r;
+
+	return ts;
 
 }
 
 //relative motion (depends on current position of the robot)
 TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 {
+	logger().info() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
+
+
 	float currentThetaInDegree = pos_getThetaInDegree();
 	float degrees = getRelativeAngle(thetaInDegree) - currentThetaInDegree;
 
@@ -283,7 +313,15 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM)
 	float dy = yMM - pos_getY_mm();
 	float aRadian = atan2(dy, dx);
 	logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx="
-			<< dx << " dy=" << dy << logs::end;
+			<< dx << " dy=" << dy
+			<< "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI
+		<< " get=" << getRelativeAngle((aRadian * 180.0f) / M_PI)
+		<< " xMM=" << xMM
+		<< " yMM=" << yMM
+	<< " getX=" << pos_getX_mm()
+	<< " getY=" << pos_getY_mm()
+		<< logs::end;
+
 	doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
 	float dist = sqrt(dx * dx + dy * dy);
 	logger().debug() << "doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;

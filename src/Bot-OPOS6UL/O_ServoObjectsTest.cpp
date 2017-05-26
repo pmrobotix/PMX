@@ -29,23 +29,35 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 
 	logger().info() << "Executing - " << this->desc() << logs::end;
 
-
 	//robot.actions().servo_init();
 
 	robot.actions().servo_lowspeed();
-	robot.actions().arm_retract();
+	robot.actions().arm_retract(150);
 	robot.actions().funnyAction_Init();
 	robot.actions().nose_init();
-	robot.actions().arm_center();
+	robot.actions().arm_center(150);
 	robot.actions().turn_nene_center();
-
-
 	sleep(5);
+
+	robot.actions().arm_right(150);
+	sleep(1);
+	robot.actions().turn_nene_right_trembl();
+
+	robot.actions().turn_nene_center_right();
+	sleep(1);
+
+	robot.actions().arm_left(150);
+	sleep(1);
+	robot.actions().turn_nene_left_trembl();
+
+	robot.actions().turn_nene_center_left();
+	sleep(1);
+
 	robot.actions().servo_mediumspeed();
-	logger().info() << "execute Funny action "<< logs::end;
+	logger().info() << "execute Funny action " << logs::end;
 	robot.actions().funnyAction_Activate();
 
-	logger().info() << "prepare blue match"<< logs::end;
+	logger().info() << "prepare blue match" << logs::end;
 	robot.actions().turn_nene_left();
 	sleep(2);
 

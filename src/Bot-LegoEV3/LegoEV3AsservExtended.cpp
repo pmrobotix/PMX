@@ -96,7 +96,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 	//france param
 	//pAsservInsa_->motion_configureAlphaPID(0.005, 0.0005, 0.00005);
 	//pAsservInsa_->motion_configureDeltaPID(0.002, 0.0, 0.0);
-	pAsservInsa_->motion_configureAlphaPID(1400.0, 0.0, 1.0);
+	pAsservInsa_->motion_configureAlphaPID(1300.0, 0.0, 1.0);
 	pAsservInsa_->motion_configureDeltaPID(700.0, 0.0, 1.0);
 
 	motorwheel_patch_m = 0.0;//metres
