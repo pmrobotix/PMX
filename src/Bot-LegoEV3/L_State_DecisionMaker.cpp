@@ -184,39 +184,45 @@ bool L_plotdepart()
 	{
 		usleep(20000);
 	}
+	/*
+	 robot.asserv().setDecel(0.50);
+	 robot.asserv().setVmax(0.5);
+	 robot.logger().info() << "on kick " << logs::end;
+	 if (robot.getMyColor() == PMXYELLOW)
+	 {
+	 while (robot.asserv().doMoveForwardTo(850, 1470, -110) != TRAJ_OK)
+	 {
+	 usleep(20000);
+	 }
+	 ts = robot.asserv().doLineAbs(-100);
+	 while (robot.asserv().doMoveForwardTo(900, 1470, -110) != TRAJ_OK)
+	 {
+	 usleep(20000);
+	 }
+	 }
+	 else
+	 {
+	 while (robot.asserv().doMoveForwardTo(850, 1500, -110) != TRAJ_OK)
+	 {
+	 usleep(20000);
+	 }
+	 ts = robot.asserv().doLineAbs(-100);
+	 while (robot.asserv().doMoveForwardTo(900, 1470, -110) != TRAJ_OK)
+	 {
+	 usleep(20000);
+	 }
+	 }
 
-	robot.asserv().setDecel(0.50);
-	robot.asserv().setVmax(0.5);
-	robot.logger().info() << "on kick " << logs::end;
-	if (robot.getMyColor() == PMXYELLOW)
-	{
-		while (robot.asserv().doMoveForwardTo(850, 1470, -110) != TRAJ_OK)
-		{
-			usleep(20000);
-		}
-		ts = robot.asserv().doLineAbs(-100);
-		while (robot.asserv().doMoveForwardTo(900, 1470, -110) != TRAJ_OK)
-		{
-			usleep(20000);
-		}
-	}
-	else
-	{
-		while (robot.asserv().doMoveForwardTo(850, 1500, -110) != TRAJ_OK)
-		{
-			usleep(20000);
-		}
-		ts = robot.asserv().doLineAbs(-100);
-		while (robot.asserv().doMoveForwardTo(900, 1470, -110) != TRAJ_OK)
-		{
-			usleep(20000);
-		}
-	}
+	 robot.asserv().setAccel(0.2);
+	 robot.asserv().setVmax(0.3);
+	 robot.asserv().setDecel(0.4);
+	 ts = robot.asserv().doLineAbs(-80);*/
 
-	robot.asserv().setAccel(0.2);
-	robot.asserv().setVmax(0.3);
-	robot.asserv().setDecel(0.4);
-	ts = robot.asserv().doLineAbs(-80);
+	//a la place de kicker
+	while (robot.asserv().doMoveForwardTo(850, 1470, -110) != TRAJ_OK)
+	{
+		usleep(20000);
+	}
 
 	robot.actions().pince_InitRotation();
 	robot.actions().pince_Open();

@@ -96,7 +96,7 @@ public:
 	virtual TRAJ_STATE doFaceTo(float xMM, float yMM);
 	//relative motion (depends on current position of the robot)
 	virtual TRAJ_STATE doRotateTo(float thetaInDegree);
-	virtual TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
+	virtual TRAJ_STATE doMoveForwardTo(float xMM, float yMM, float adjustment = 0);
 	virtual TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
 	virtual TRAJ_STATE doMoveBackwardTo(float xMM, float yMM);
 	virtual TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);

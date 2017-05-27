@@ -292,6 +292,8 @@ void AsservDriver::path_CollisionOnTrajectory()
 						<< asservMbedStarted_ << logs::end;
 		mbed_writeI2c('h', 0, NULL);
 		pathStatus_ = TRAJ_COLLISION;
+		usleep(300000);
+		mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
 	}
 }
 void AsservDriver::path_CollisionRearOnTrajectory()

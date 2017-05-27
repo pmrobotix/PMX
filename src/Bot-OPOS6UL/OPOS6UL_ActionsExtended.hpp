@@ -177,8 +177,8 @@ public:
 	void nose_down(int speed)
 	{
 		servoObjects().setSpeed(8, speed);
-		servoObjects().deploy(8, 170, 0);
-		sleep(1);
+		servoObjects().deploy(8, 150, 0);
+		usleep(1600000);
 	}
 	void nose_back(int speed)
 	{
@@ -201,6 +201,14 @@ public:
 		servoObjects().setSpeed(6, speed);
 		servoObjects().deploy(6, 672, 0);
 	}
+	void arm_pousser_plot(int speed)
+	{
+		servoObjects().setSpeed(6, speed);
+		servoObjects().setSpeed(3, speed);
+		servoObjects().deploy(6, 672, 0);
+		servoObjects().deploy(3, 650, 0);
+		sleep(1);
+	}
 	void arm_retract(int speed)
 	{
 		servoObjects().setSpeed(3, speed);
@@ -213,7 +221,7 @@ public:
 	{
 		servoObjects().setSpeed(3, speed);
 		servoObjects().setSpeed(6, speed);
-		servoObjects().deploy(3, 500, 0);
+		servoObjects().deploy(3, 495, 0);
 		servoObjects().deploy(6, 812, 0);
 		nose_back(speed);
 		sleep(1);

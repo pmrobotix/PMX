@@ -116,7 +116,7 @@ void O_State_DecisionMaker::IASetupDemo()
 	 */
 }
 
-bool O_take_tower1()
+bool O_take_dbu()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.logger().info() << "start O_take_tower1." << logs::end;
@@ -126,7 +126,7 @@ bool O_take_tower1()
 	robot.asserv().ignoreRearCollision(true);
 
 	robot.actions().arm_deploy(1000);
-	robot.actions().nose_back(1000);
+	//robot.actions().nose_back(1000);
 
 	robot.logger().info() << "GO" << logs::end;
 
@@ -147,14 +147,20 @@ bool O_take_tower1()
 //TABLE DE TEST
 	//robot.asserv().ignoreFrontCollision(true);
 
+	float x_depose_milieu;
+	float y_depose_milieu;
 //MATCH
-	while (robot.asserv().doMoveForwardAndRotateTo(1500, 900, 90) != TRAJ_OK)
+	x_depose_milieu = 1500;
+	y_depose_milieu = 900;
 //TABLE DE TEST
-	//while (robot.asserv().doMoveForwardAndRotateTo(1200, 900, 90) != TRAJ_OK)
+	x_depose_milieu = 1200;
+	y_depose_milieu = 900;
+
+	while (robot.asserv().doMoveForwardAndRotateTo(x_depose_milieu, y_depose_milieu, 90) != TRAJ_OK)
 	{
 		robot.logger().error() << "boucle !!!!! " << robot.asserv().getIgnoreFrontCollision()
 				<< logs::end;
-		usleep(100000);
+		usleep(300000);
 	}
 	robot.svgPrintPosition();
 
@@ -167,13 +173,9 @@ bool O_take_tower1()
 	else
 	{
 		robot.actions().nose_turn(1023);
-		usleep(1500000);
+		usleep(800000);
 		robot.actions().nose_turn(0);
 	}
-
-	//robot.actions().nose_turn(1023);
-	//sleep(1);
-	//robot.actions().nose_turn(0);
 
 	robot.actions().arm_center(150);
 	robot.actions().arm_retract(150);
@@ -181,14 +183,15 @@ bool O_take_tower1()
 
 	//bascule 45 deg
 	robot.actions().arm_semi_deploy(150);
-	sleep(1);
 	//lache le plot
 	robot.actions().nose_up(150);
-
 	robot.actions().arm_retract(150);
 
-	robot.asserv().doLineAbs(50);
-	robot.asserv().doLineAbs(-50);
+	robot.logger().info() << "on pousse, on avance et on recule" << logs::end;
+	robot.asserv().doLineAbs(85);
+	robot.svgPrintPosition();
+	robot.asserv().doLineAbs(-85);
+	robot.svgPrintPosition();
 
 	if (robot.getMyColor() == PMXYELLOW)
 	{
@@ -197,96 +200,282 @@ bool O_take_tower1()
 	else
 		robot.asserv().doRotateAbs(-90);
 
-	robot.actions().nose_down(200);
+	robot.svgPrintPosition();
+	/*
+	 robot.logger().info() << "danse du nez" << logs::end;
+	 robot.actions().nose_down(200);
+	 robot.actions().nose_up(150);
+	 robot.actions().nose_down(200);
+	 */
+
+	robot.logger().info() << "on va chercher le 2ème plot" << logs::end;
+	while (robot.asserv().doMoveForwardTo(900, 950) != TRAJ_OK)
+	{
+		usleep(500000);
+	}
+	robot.svgPrintPosition();
+
+	robot.asserv().doFaceTo(900, 1400);
+
+	robot.actions().arm_deploy(200);
+
+	while (robot.asserv().doMoveForwardTo(900, 1400, -330) != TRAJ_OK)
+	{
+		usleep(500000);
+	}
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "on prend le plot 2" << logs::end;
+	robot.actions().nose_down(150);
+	usleep(500000);
+	robot.actions().arm_retract(500);
+	robot.actions().arm_back_cylinder(500);
+	usleep(500000);
+
+	robot.logger().info() << "on recule" << logs::end;
+	robot.asserv().doLineAbs(-80);
+
+	robot.logger().info() << "on va le deposer au centre" << logs::end;
+	while (robot.asserv().doMoveForwardAndRotateTo(x_depose_milieu, y_depose_milieu - 50, 90)
+			!= TRAJ_OK)
+	{
+		usleep(300000);
+	}
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "on depose" << logs::end;
+
+	robot.actions().arm_center(150);
+	robot.actions().arm_retract(150);
+
+	robot.logger().info() << "mode on pousse" << logs::end;
+	robot.actions().arm_pousser_plot(100);
+
+	robot.logger().info() << "on pousse" << logs::end;
+	/*
+	 while (robot.asserv().doMoveForwardAndRotateTo(x_depose_milieu, y_depose_milieu + 75, 90)
+	 != TRAJ_OK)
+	 {
+	 usleep(300000);
+	 }*/
+	robot.asserv().doLineAbs(75);
+	robot.svgPrintPosition();
+
+
+	robot.actions().arm_retract(150);
+
+	robot.asserv().doLineAbs(-65);
+
+	//bascule 45 deg
+	robot.actions().arm_semi_deploy(150);
+	//lache le plot
 	robot.actions().nose_up(150);
-	robot.actions().nose_down(200);
+	robot.actions().arm_retract(150);
 
-	/*
+	robot.logger().info() << "on pousse, on avance et on recule" << logs::end;
+	robot.asserv().doLineAbs(80);
+	robot.svgPrintPosition();
+	robot.asserv().doLineAbs(-85);
+	robot.svgPrintPosition();
 
-	 robot.logger().info() << "doMoveForwardTo(700, 1200)" << logs::end;
-	 while (robot.asserv().doMoveForwardTo(700, 1200) != TRAJ_OK)
-	 {
-	 usleep(500000);
-	 }
-	 robot.asserv().ignoreFrontCollision(true);
-
-
-	 robot.asserv().doFaceTo(900, 1400);
-	 robot.svgPrintPosition();
-	 robot.asserv().doLineAbs(-100);
-	 robot.svgPrintPosition();
-
-	 robot.logger().info() << "on se prepare à kicker" << logs::end;
-	 robot.actions().arm_retract(150);
-	 robot.actions().arm_center(200);
-
-	 robot.logger().info() << "on kicke !!!" << logs::end;
-	 robot.actions().arm_kick(50);
-	 robot.asserv().doLineAbs(150);
-	 robot.svgPrintPosition();
-	 robot.asserv().doLineAbs(-150);
-	 robot.svgPrintPosition();
-	 */
-	/*
-	 robot.logger().info() << "sortir arm" << logs::end;
-	 robot.actions().arm_deploy();
-	 robot.actions().nose_back();
-
-	 robot.logger().info() << "GO" << logs::end;
-	 //avancer
-	 robot.asserv().doMoveForwardTo(950, 170);
-	 robot.svgPrintPosition();
-	 robot.logger().info() << "prendre le 1er" << logs::end;
-	 if (robot.getMyColor() == PMXYELLOW)
-	 robot.actions().arm_right_full();
-	 else
-	 robot.actions().arm_left_full();
-
-	 robot.actions().nose_down();
-	 usleep(1500000);
-	 robot.actions().arm_retract();
-	 robot.actions().arm_back_cylinder();
-	 usleep(1500000);
-
-	 //robot.asserv().setLowSpeed(true);
-
-	 if (robot.getMyColor() == PMXYELLOW)
-	 robot.asserv().doRotateLeft(5);
-	 else
-	 robot.asserv().doRotateRight(5);
-	 robot.asserv().doLineAbs(-20);
-	 robot.asserv().doMoveForwardTo(1000, 170);
-	 robot.svgPrintPosition();
-	 if (robot.getMyColor() == PMXYELLOW)
-	 robot.asserv().doRotateLeft(3);
-	 else
-	 robot.asserv().doRotateRight(3);
-
-	 robot.logger().info() << "faire trembler" << logs::end;
-	 if (robot.getMyColor() == PMXYELLOW)
-	 {
-	 robot.actions().turn_nene_right_trembl();
-	 }
-	 else
-	 {
-	 robot.actions().turn_nene_left_trembl();
-	 }
-
-	 robot.logger().info() << "on prend le 4ème" << logs::end;
-	 if (robot.getMyColor() == PMXYELLOW)
-	 {
-	 robot.actions().turn_nene_center_right();
-	 }
-	 else
-	 {
-	 robot.actions().turn_nene_center_left();
-	 }
-	 robot.svgPrintPosition();
-	 robot.asserv().doMoveForwardTo(1300, 600);
-	 robot.svgPrintPosition();
-	 */
 	robot.logger().info() << "O_take_tower1 done." << logs::end;
-	return true;
+	return true; //return true si ok sinon false si interruption
+}
+
+bool O_take_opposite()
+{
+
+	float x_depose_milieu;
+	float y_depose_milieu;
+	//MATCH
+	x_depose_milieu = 1500;
+	y_depose_milieu = 900;
+	//TABLE DE TEST
+	//x_depose_milieu = 1200;
+	//y_depose_milieu = 900;
+
+	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+	robot.logger().info() << "start O_take_opposite." << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+	RobotPosition path, zone;
+
+	robot.logger().info() << "aller zone opposite " << logs::end;
+	robot.ia().iAbyZone().goToZone("zone_take_opposite", &path, &zone);
+
+	robot.logger().info() << "do move to zone opposite " << logs::end;
+	int tried = 0;
+	while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
+	{
+		usleep(500000);
+		tried++;
+		if (tried == 3) return false;
+	}
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "faire face" << logs::end;
+	robot.asserv().doFaceTo(2100, 1400);
+
+	robot.actions().arm_deploy(200);
+	robot.logger().info() << "doMoveForwardTo to zone opposite " << logs::end;
+	tried = 0;
+
+	while (robot.asserv().doMoveForwardTo(2100, 1400, -330) != TRAJ_OK)
+	{
+		usleep(500000);
+		tried++;
+		if (tried == 3) return false;
+	}
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "on prend le plot adverse" << logs::end;
+	robot.actions().nose_down(150);
+	usleep(500000);
+	robot.actions().arm_retract(500);
+	robot.actions().arm_back_cylinder(500);
+	usleep(500000);
+
+	robot.actions().arm_center(150);
+	robot.actions().arm_retract(150);
+
+	robot.logger().info() << "mode on pousse" << logs::end;
+	robot.actions().arm_pousser_plot(100);
+	/*
+	 robot.logger().info() << "on pousse" << logs::end;
+	 while (robot.asserv().doMoveForwardAndRotateTo(x_depose_milieu, y_depose_milieu + 75, 90)
+	 != TRAJ_OK)
+	 {
+	 usleep(300000);
+	 }
+	 robot.svgPrintPosition();*/
+
+	robot.actions().arm_retract(150);
+
+	//robot.asserv().doLineAbs(-85);
+
+	//bascule 45 deg
+	robot.actions().arm_semi_deploy(150);
+	//lache le plot
+	robot.actions().nose_up(150);
+	robot.actions().arm_retract(150);
+
+	/*
+	 robot.logger().info() << "on recule" << logs::end;
+	 robot.asserv().doLineAbs(-80);
+
+
+
+	 //aller deposer
+
+
+	 robot.logger().info() << "on va le deposer au centre" << logs::end;
+	 while (robot.asserv().doMoveForwardAndRotateTo(x_depose_milieu, y_depose_milieu - 50, 90)
+	 != TRAJ_OK)
+	 {
+	 usleep(300000);
+	 }
+	 robot.svgPrintPosition();
+
+	 robot.logger().info() << "on depose" << logs::end;
+
+	 robot.actions().arm_center(150);
+	 robot.actions().arm_retract(150);
+
+	 robot.logger().info() << "mode on pousse" << logs::end;
+	 robot.actions().arm_pousser_plot(100);
+
+	 robot.logger().info() << "on pousse" << logs::end;
+	 while (robot.asserv().doMoveForwardAndRotateTo(x_depose_milieu, y_depose_milieu + 75, 90)
+	 != TRAJ_OK)
+	 {
+	 usleep(300000);
+	 }
+	 robot.svgPrintPosition();
+
+	 robot.actions().arm_retract(150);
+
+	 robot.asserv().doLineAbs(-85);
+
+	 //bascule 45 deg
+	 robot.actions().arm_semi_deploy(150);
+	 //lache le plot
+	 robot.actions().nose_up(150);
+	 robot.actions().arm_retract(150);
+
+	 robot.logger().info() << "on pousse, on avance et on recule" << logs::end;
+	 robot.asserv().doLineAbs(65);
+	 robot.svgPrintPosition();
+	 robot.asserv().doLineAbs(-65);
+	 robot.svgPrintPosition();
+
+	 */
+
+	robot.logger().info() << "O_take_opposite done." << logs::end;
+	return true; //return true si ok sinon false si interruption
+}
+
+bool O_take_lego()
+{
+	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+	robot.logger().info() << "start O_take_lego." << logs::end;
+
+	TRAJ_STATE ts = TRAJ_OK;
+	RobotPosition path, zone;
+
+	robot.logger().info() << "aller zone lego " << logs::end;
+	robot.ia().iAbyZone().goToZone("zone_take_lego", &path, &zone);
+
+	int tried = 0;
+	while (robot.asserv().doMoveForwardTo(zone.x, zone.y) != TRAJ_OK)
+	{
+		usleep(500000);
+	}
+
+	robot.actions().arm_deploy(200);
+
+	while (robot.asserv().doMoveForwardTo(500, 1100, -300) != TRAJ_OK)
+	{
+		usleep(500000);
+	}
+
+	robot.logger().info() << "on prend le plot" << logs::end;
+	robot.actions().nose_down(150);
+	usleep(500000);
+	robot.actions().arm_retract(500);
+	robot.actions().arm_back_cylinder(500);
+	usleep(500000);
+
+	//on se retourne
+	while (robot.asserv().doFaceTo(900, 1400) != TRAJ_OK)
+	{
+		usleep(500000);
+	}
+	while (robot.asserv().doMoveForwardTo(550, 1100) != TRAJ_OK)
+	{
+		usleep(500000);
+	}
+	while (robot.asserv().doMoveForwardTo(900, 1400, -300) != TRAJ_OK)
+	{
+		usleep(500000);
+	}
+
+	//on depose
+	robot.actions().arm_center(150);
+	robot.actions().arm_retract(150);
+
+	//bascule 45 deg
+	robot.actions().arm_semi_deploy(150);
+	//lache le plot
+	robot.actions().nose_up(150);
+	robot.actions().arm_retract(150);
+
+	robot.logger().info() << "on pousse, on avance et on recule" << logs::end;
+	robot.asserv().doLineAbs(95);
+	robot.svgPrintPosition();
+	robot.asserv().doLineAbs(-95);
+	robot.svgPrintPosition();
+
+	robot.logger().info() << "O_take_lego done." << logs::end;
+	return true; //return true si ok sinon false si interruption
 }
 
 void O_State_DecisionMaker::IASetupHomologation()
@@ -295,12 +484,21 @@ void O_State_DecisionMaker::IASetupHomologation()
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
 	robot.ia().iAbyZone().ia_createZone("depart", 0, 710, 100, 100, 710, 100, 180);
-	robot.ia().iAbyZone().ia_createZone("zone_depose", 1000, 1000, 300, 200, 1000, 1100, 90);
+	robot.ia().iAbyZone().ia_createZone("zone_take_dbu", 1000, 1000, 300, 200, 1000, 1100, 90); //ne sert pas
+	//robot.ia().iAbyZone().ia_createZone("zone_take_opposite", 2000, 1300, 200, 200, 2100, 900, 0);
+	robot.ia().iAbyZone().ia_createZone("zone_take_lego", 400, 1000, 200, 200, 900, 1000, 180);
 
-	robot.ia().iAbyZone().ia_setPath("depart", "zone_depose", 1000, 500);
+	robot.ia().iAbyZone().ia_setPath("depart", "zone_take_dbu", 1000, 500); //ne sert pas
+	//robot.ia().iAbyZone().ia_setPath("depart", "zone_take_opposite", 1000, 500); //ne sert pas
+	robot.ia().iAbyZone().ia_setPath("depart", "zone_take_lego", 1000, 500); //ne sert pas
 
-	robot.ia().iAbyZone().ia_addAction("take_tower1", &O_take_tower1);
-	//robot.ia().iAbyZone().ia_addAction("take_tower1", &O_action1);
+	robot.ia().iAbyZone().ia_setPath("zone_take_dbu", "zone_take_opposite", 1500, 900);
+	robot.ia().iAbyZone().ia_setPath("zone_take_dbu", "zone_take_lego", 1500, 900);
+	//robot.ia().iAbyZone().ia_setPath("zone_take_opposite", "zone_take_lego", 1500, 900);
+
+	robot.ia().iAbyZone().ia_addAction("take_dbu", &O_take_dbu);
+	//robot.ia().iAbyZone().ia_addAction("take_opposite", &O_take_opposite);
+	robot.ia().iAbyZone().ia_addAction("take_lego", &O_take_lego);
 }
 
 IAutomateState*

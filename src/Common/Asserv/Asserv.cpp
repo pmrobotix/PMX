@@ -206,7 +206,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 	else
 		ts = asservdriver->motion_DoLine(meters);
 
-	logger().error() << "Asserv::doLineAbs f=" << f << " r=" << r << logs::end;
+	logger().debug() << "Asserv::doLineAbs f=" << f << " r=" << r << logs::end;
 
 	ignoreFrontCollision_ = f;
 	ignoreRearCollision_ = r;
@@ -251,10 +251,6 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 {
 	logger().debug() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
 
-	int f = ignoreFrontCollision_;
-	int r = ignoreRearCollision_;
-	ignoreRearCollision_ = true;
-	ignoreFrontCollision_ = true;
 
 	TRAJ_STATE ts;
 	if (useInternalAsserv_)
@@ -264,9 +260,6 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 	}
 	else
 		ts = asservdriver->motion_DoFace(xMM, yMM);
-
-	ignoreFrontCollision_ = f;
-	ignoreRearCollision_ = r;
 
 	return ts;
 
@@ -307,7 +300,7 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 
 	return ts;
 }
-TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM)
+TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
 {
 	float dx = getRelativeX(xMM) - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
@@ -325,7 +318,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM)
 	doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
 	float dist = sqrt(dx * dx + dy * dy);
 	logger().debug() << "doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
-	return doLineAbs(dist);
+	return doLineAbs(dist+ adjustment);
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {

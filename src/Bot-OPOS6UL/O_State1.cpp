@@ -71,7 +71,7 @@ O_State1::execute(Robot&, void *data)
 			if (b == BUTTON_UP_KEY)
 			{
 				logger().info() << "BUTTON_UP_KEY - IA" << logs::end;
-				sharedData->strategy("strat5");
+				//sharedData->strategy("strat5");
 			}
 			if (b == BUTTON_DOWN_KEY)
 			{
@@ -91,14 +91,16 @@ O_State1::execute(Robot&, void *data)
 		else
 			robot.actions().servo_init_blue();
 
-
 		//tirette
 		robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
 		robot.actions().lcd2x16().clear();
 		robot.actions().lcd2x16().print("PMX...WAIT GO !");
 
+
+		setPos();
+
 		bool bb = false;
-		//robot.actions().tirette().waitUnpressed();
+
 		while (robot.actions().tirette().pressed())
 		{
 			bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
@@ -110,9 +112,6 @@ O_State1::execute(Robot&, void *data)
 			}
 			usleep(100000);
 		}
-
-
-		setPos();
 
 	}
 	else
@@ -138,9 +137,10 @@ O_State1::execute(Robot&, void *data)
 		else
 			robot.actions().servo_init_blue();
 
-
 		setPos();
 	}
+
+
 
 	robot.actions().ledBar().stopAndWait(true);
 	robot.actions().ledBar().startReset();
@@ -165,5 +165,12 @@ void O_State1::setPos()
 	robot.asserv().startMotionTimerAndOdo(false);
 	robot.asserv().setPositionAndColor(921, 68, 90.0, (robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
+
+	robot.asserv().ignoreFrontCollision(true);
+	robot.asserv().ignoreRearCollision(true);
+	robot.asserv().assistedHandling();
+	robot.asserv().doLineAbs(50);
+	robot.asserv().doLineAbs(-50);
+	robot.asserv().freeMotion();
 
 }

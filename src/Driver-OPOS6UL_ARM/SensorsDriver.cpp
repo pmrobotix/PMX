@@ -53,13 +53,13 @@ bool SensorsDriver::front()
 
 	if (1)
 	{
-		if (irLeft_.getDistance() < 250)
+		if (irLeft_.getDistance() < 290)
 		{
 			logger().info() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
 			front = true;
 		}
 
-		if (irRight_.getDistance() < 250)
+		if (irRight_.getDistance() < 290)
 		{
 			logger().info() << "adc_9_right " << " mm=" << irRight_.getDistance() << logs::end;
 			front = true;
@@ -81,7 +81,6 @@ bool SensorsDriver::front()
 			if (d < 250) front = true;
 		}
 	}
-
 	return front;
 }
 

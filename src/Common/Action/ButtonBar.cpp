@@ -49,7 +49,7 @@ ButtonTouch ButtonBar::waitOneOfAllPressed() //TODO create same with actionmanag
 			}
 		}
 		//return BUTTON_NONE;
-		usleep(100000);
+		usleep(150000);
 	}
 
 	return bt;
