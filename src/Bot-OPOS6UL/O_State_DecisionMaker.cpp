@@ -153,8 +153,9 @@ bool O_take_dbu()
 	x_depose_milieu = 1500;
 	y_depose_milieu = 900;
 //TABLE DE TEST
-	x_depose_milieu = 1200;
-	y_depose_milieu = 900;
+	//x_depose_milieu = 1200;
+	//y_depose_milieu = 900;
+
 
 	while (robot.asserv().doMoveForwardAndRotateTo(x_depose_milieu, y_depose_milieu, 90) != TRAJ_OK)
 	{
@@ -207,7 +208,7 @@ bool O_take_dbu()
 	 robot.actions().nose_up(150);
 	 robot.actions().nose_down(200);
 	 */
-
+	sleep(2);
 	robot.logger().info() << "on va chercher le 2ème plot" << logs::end;
 	while (robot.asserv().doMoveForwardTo(900, 950) != TRAJ_OK)
 	{

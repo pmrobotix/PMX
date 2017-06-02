@@ -149,7 +149,8 @@ L_State1::execute(Robot& r, void *data)
 	L_State_Wait90SecAction* action = new L_State_Wait90SecAction(robot, (void *) sharedData);
 	action->start("L_State_Wait90SecAction");
 
-	sleep(6);
+	sleep(5);
+
 	return this->getState("decisionMaker");
 	//return NULL; //finish all state
 }
