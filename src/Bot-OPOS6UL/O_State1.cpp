@@ -58,15 +58,15 @@ O_State1::execute(Robot&, void *data)
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
 				robot.actions().lcd2x16().print("BLUE");
-				robot.setMyColor(PMXBLUE);
+				robot.setMyColor(PMXGREEN);
 			}
 			if (b == BUTTON_RIGHT_KEY)
 			{
-				logger().info() << "BUTTON_RIGHT_KEY - YELLOW" << logs::end;
+				logger().info() << "BUTTON_RIGHT_KEY - ORANGE" << logs::end;
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
-				robot.actions().lcd2x16().print("YELLOW");
-				robot.setMyColor(PMXYELLOW);
+				robot.actions().lcd2x16().print("ORANGE");
+				robot.setMyColor(PMXORANGE);
 			}
 			if (b == BUTTON_UP_KEY)
 			{
@@ -86,10 +86,10 @@ O_State1::execute(Robot&, void *data)
 		robot.actions().ledBar().stopAndWait(true);
 
 		//sortir pince
-		if (robot.getMyColor() == PMXYELLOW)
-			robot.actions().servo_init_yellow();
+		if (robot.getMyColor() == PMXORANGE)
+			robot.actions().servo_init_orange();
 		else
-			robot.actions().servo_init_blue();
+			robot.actions().servo_init_green();
 
 		//tirette
 		robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
@@ -132,14 +132,13 @@ O_State1::execute(Robot&, void *data)
 		sharedData->strategy("all");
 
 		//sortir pince
-		if (robot.getMyColor() == PMXYELLOW)
-			robot.actions().servo_init_yellow();
+		if (robot.getMyColor() == PMXORANGE)
+			robot.actions().servo_init_orange();
 		else
-			robot.actions().servo_init_blue();
+			robot.actions().servo_init_green();
 
 		setPos();
 	}
-
 
 
 	robot.actions().ledBar().stopAndWait(true);
@@ -163,7 +162,7 @@ void O_State1::setPos()
 	robot.actions().lcd2x16().print("SET POSITION : OK");
 
 	robot.asserv().startMotionTimerAndOdo(false);
-	robot.asserv().setPositionAndColor(921, 68, 90.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(70, 500, 0.0, (robot.getMyColor() != PMXORANGE));
 	robot.svgPrintPosition();
 
 	robot.asserv().ignoreFrontCollision(true);

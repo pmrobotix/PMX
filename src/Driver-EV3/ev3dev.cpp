@@ -26,7 +26,7 @@
 //-----------------------------------------------------------------------------
 //~autogen autogen-header
 
-// Sections of the following code were auto-generated based on spec v0.9.3-pre, rev 2.
+// Sections of the following code were auto-generated based on spec v1.2.0.
 
 //~autogen
 //-----------------------------------------------------------------------------
@@ -138,17 +138,27 @@ private:
 };
 
 // A global cache of files.
-lru_cache<std::string, std::ifstream> ifstream_cache(FSTREAM_CACHE_SIZE);
-lru_cache<std::string, std::ofstream> ofstream_cache(FSTREAM_CACHE_SIZE);
-std::mutex ofstream_cache_lock;
-std::mutex ifstream_cache_lock;
+std::ifstream& ifstream_cache(const std::string &path) {
+  static lru_cache<std::string, std::ifstream> cache(FSTREAM_CACHE_SIZE);
+  static std::mutex mx;
+
+  std::lock_guard<std::mutex> lock(mx);
+  return cache[path];
+}
+
+std::ofstream& ofstream_cache(const std::string &path) {
+  static lru_cache<std::string, std::ofstream> cache(FSTREAM_CACHE_SIZE);
+  static std::mutex mx;
+
+  std::lock_guard<std::mutex> lock(mx);
+  return cache[path];
+}
 
 //-----------------------------------------------------------------------------
 
 std::ofstream &ofstream_open(const std::string &path)
 {
-  std::lock_guard<std::mutex> lock(ofstream_cache_lock);
-  std::ofstream &file = ofstream_cache[path];
+  std::ofstream &file = ofstream_cache(path);
   if (!file.is_open())
   {
     // Don't buffer writes to avoid latency. Also saves a bit of memory.
@@ -165,8 +175,7 @@ std::ofstream &ofstream_open(const std::string &path)
 
 std::ifstream &ifstream_open(const std::string &path)
 {
-  std::lock_guard<std::mutex> lock(ifstream_cache_lock);
-  std::ifstream &file = ifstream_cache[path];
+  std::ifstream &file = ifstream_cache(path);
   if (!file.is_open())
   {
     file.open(path);
@@ -254,6 +263,8 @@ int device::device_index() const
     _device_index = 0;
     for (auto it=_path.rbegin(); it!=_path.rend(); ++it)
     {
+      if(*it =='/')
+        continue;		
       if ((*it < '0') || (*it > '9'))
         break;
 
@@ -455,18 +466,17 @@ std::string device::get_attr_from_set(const std::string &name) const
 
 //-----------------------------------------------------------------------------
 
-const sensor::sensor_type sensor::ev3_touch       { "lego-ev3-touch" };
-const sensor::sensor_type sensor::ev3_color       { "lego-ev3-color" };
-const sensor::sensor_type sensor::ev3_ultrasonic  { "lego-ev3-us" };
-const sensor::sensor_type sensor::ev3_gyro        { "lego-ev3-gyro" };
-const sensor::sensor_type sensor::ev3_infrared    { "lego-ev3-ir" };
-
-const sensor::sensor_type sensor::nxt_touch       { "lego-nxt-touch" };
-const sensor::sensor_type sensor::nxt_light       { "lego-nxt-light" };
-const sensor::sensor_type sensor::nxt_sound       { "lego-nxt-sound" };
-const sensor::sensor_type sensor::nxt_ultrasonic  { "lego-nxt-us" };
-const sensor::sensor_type sensor::nxt_i2c_sensor  { "nxt-i2c-sensor" };
-const sensor::sensor_type sensor::nxt_analog      { "nxt-analog" };
+constexpr char sensor::ev3_touch[];
+constexpr char sensor::ev3_color[];
+constexpr char sensor::ev3_ultrasonic[];
+constexpr char sensor::ev3_gyro[];
+constexpr char sensor::ev3_infrared[];
+constexpr char sensor::nxt_touch[];
+constexpr char sensor::nxt_light[];
+constexpr char sensor::nxt_sound[];
+constexpr char sensor::nxt_ultrasonic[];
+constexpr char sensor::nxt_i2c_sensor[];
+constexpr char sensor::nxt_analog[];
 
 //-----------------------------------------------------------------------------
 
@@ -596,8 +606,8 @@ const std::vector<char>& sensor::bin_data() const
 
 //-----------------------------------------------------------------------------
 
-i2c_sensor::i2c_sensor(address_type address) :
-  sensor(address, { nxt_i2c_sensor })
+i2c_sensor::i2c_sensor(address_type address, const std::set<sensor_type> &types) :
+  sensor(address, types)
 {
 }
 
@@ -605,7 +615,7 @@ i2c_sensor::i2c_sensor(address_type address) :
 
 //~autogen generic-define-property-value specialSensorTypes.touchSensor>currentClass
 
-const std::string touch_sensor::mode_touch{ "TOUCH" };
+constexpr char touch_sensor::mode_touch[];
 
 //~autogen
 
@@ -618,11 +628,19 @@ touch_sensor::touch_sensor(address_type address) :
 
 //~autogen generic-define-property-value specialSensorTypes.colorSensor>currentClass
 
-const std::string color_sensor::mode_col_reflect{ "COL-REFLECT" };
-const std::string color_sensor::mode_col_ambient{ "COL-AMBIENT" };
-const std::string color_sensor::mode_col_color{ "COL-COLOR" };
-const std::string color_sensor::mode_ref_raw{ "REF-RAW" };
-const std::string color_sensor::mode_rgb_raw{ "RGB-RAW" };
+constexpr char color_sensor::mode_col_reflect[];
+constexpr char color_sensor::mode_col_ambient[];
+constexpr char color_sensor::mode_col_color[];
+constexpr char color_sensor::mode_ref_raw[];
+constexpr char color_sensor::mode_rgb_raw[];
+constexpr char color_sensor::color_nocolor[];
+constexpr char color_sensor::color_black[];
+constexpr char color_sensor::color_blue[];
+constexpr char color_sensor::color_green[];
+constexpr char color_sensor::color_yellow[];
+constexpr char color_sensor::color_red[];
+constexpr char color_sensor::color_white[];
+constexpr char color_sensor::color_brown[];
 
 //~autogen
 
@@ -635,11 +653,11 @@ color_sensor::color_sensor(address_type address) :
 
 //~autogen generic-define-property-value specialSensorTypes.ultrasonicSensor>currentClass
 
-const std::string ultrasonic_sensor::mode_us_dist_cm{ "US-DIST-CM" };
-const std::string ultrasonic_sensor::mode_us_dist_in{ "US-DIST-IN" };
-const std::string ultrasonic_sensor::mode_us_listen{ "US-LISTEN" };
-const std::string ultrasonic_sensor::mode_us_si_cm{ "US-SI-CM" };
-const std::string ultrasonic_sensor::mode_us_si_in{ "US-SI-IN" };
+constexpr char ultrasonic_sensor::mode_us_dist_cm[];
+constexpr char ultrasonic_sensor::mode_us_dist_in[];
+constexpr char ultrasonic_sensor::mode_us_listen[];
+constexpr char ultrasonic_sensor::mode_us_si_cm[];
+constexpr char ultrasonic_sensor::mode_us_si_in[];
 
 //~autogen
 
@@ -652,11 +670,11 @@ ultrasonic_sensor::ultrasonic_sensor(address_type address) :
 
 //~autogen generic-define-property-value specialSensorTypes.gyroSensor>currentClass
 
-const std::string gyro_sensor::mode_gyro_ang{ "GYRO-ANG" };
-const std::string gyro_sensor::mode_gyro_rate{ "GYRO-RATE" };
-const std::string gyro_sensor::mode_gyro_fas{ "GYRO-FAS" };
-const std::string gyro_sensor::mode_gyro_g_a{ "GYRO-G&A" };
-const std::string gyro_sensor::mode_gyro_cal{ "GYRO-CAL" };
+constexpr char gyro_sensor::mode_gyro_ang[];
+constexpr char gyro_sensor::mode_gyro_rate[];
+constexpr char gyro_sensor::mode_gyro_fas[];
+constexpr char gyro_sensor::mode_gyro_g_a[];
+constexpr char gyro_sensor::mode_gyro_cal[];
 
 //~autogen
 
@@ -669,11 +687,11 @@ gyro_sensor::gyro_sensor(address_type address) :
 
 //~autogen generic-define-property-value specialSensorTypes.infraredSensor>currentClass
 
-const std::string infrared_sensor::mode_ir_prox{ "IR-PROX" };
-const std::string infrared_sensor::mode_ir_seek{ "IR-SEEK" };
-const std::string infrared_sensor::mode_ir_remote{ "IR-REMOTE" };
-const std::string infrared_sensor::mode_ir_rem_a{ "IR-REM-A" };
-const std::string infrared_sensor::mode_ir_cal{ "IR-CAL" };
+constexpr char infrared_sensor::mode_ir_prox[];
+constexpr char infrared_sensor::mode_ir_seek[];
+constexpr char infrared_sensor::mode_ir_remote[];
+constexpr char infrared_sensor::mode_ir_rem_a[];
+constexpr char infrared_sensor::mode_ir_cal[];
 
 //~autogen
 
@@ -686,8 +704,8 @@ infrared_sensor::infrared_sensor(address_type address) :
 
 //~autogen generic-define-property-value specialSensorTypes.soundSensor>currentClass
 
-const std::string sound_sensor::mode_db{ "DB" };
-const std::string sound_sensor::mode_dba{ "DBA" };
+constexpr char sound_sensor::mode_db[];
+constexpr char sound_sensor::mode_dba[];
 
 //~autogen
 
@@ -714,8 +732,8 @@ sound_sensor::sound_sensor(address_type address) :
 
 //~autogen generic-define-property-value specialSensorTypes.lightSensor>currentClass
 
-const std::string light_sensor::mode_reflect{ "REFLECT" };
-const std::string light_sensor::mode_ambient{ "AMBIENT" };
+constexpr char light_sensor::mode_reflect[];
+constexpr char light_sensor::mode_ambient[];
 
 //~autogen
 
@@ -726,27 +744,30 @@ light_sensor::light_sensor(address_type address) :
 
 //-----------------------------------------------------------------------------
 
-const motor::motor_type motor::motor_large  { "lego-ev3-l-motor" };
-const motor::motor_type motor::motor_medium { "lego-ev3-m-motor" };
+constexpr char motor::motor_large[];
+constexpr char motor::motor_medium[];
 
 //~autogen generic-define-property-value classes.motor>currentClass
 
-const std::string motor::command_run_forever{ "run-forever" };
-const std::string motor::command_run_to_abs_pos{ "run-to-abs-pos" };
-const std::string motor::command_run_to_rel_pos{ "run-to-rel-pos" };
-const std::string motor::command_run_timed{ "run-timed" };
-const std::string motor::command_run_direct{ "run-direct" };
-const std::string motor::command_stop{ "stop" };
-const std::string motor::command_reset{ "reset" };
-const std::string motor::encoder_polarity_normal{ "normal" };
-const std::string motor::encoder_polarity_inversed{ "inversed" };
-const std::string motor::polarity_normal{ "normal" };
-const std::string motor::polarity_inversed{ "inversed" };
-const std::string motor::speed_regulation_on{ "on" };
-const std::string motor::speed_regulation_off{ "off" };
-const std::string motor::stop_command_coast{ "coast" };
-const std::string motor::stop_command_brake{ "brake" };
-const std::string motor::stop_command_hold{ "hold" };
+constexpr char motor::command_run_forever[];
+constexpr char motor::command_run_to_abs_pos[];
+constexpr char motor::command_run_to_rel_pos[];
+constexpr char motor::command_run_timed[];
+constexpr char motor::command_run_direct[];
+constexpr char motor::command_stop[];
+constexpr char motor::command_reset[];
+constexpr char motor::encoder_polarity_normal[];
+constexpr char motor::encoder_polarity_inversed[];
+constexpr char motor::polarity_normal[];
+constexpr char motor::polarity_inversed[];
+constexpr char motor::state_running[];
+constexpr char motor::state_ramping[];
+constexpr char motor::state_holding[];
+constexpr char motor::state_overloaded[];
+constexpr char motor::state_stalled[];
+constexpr char motor::stop_action_coast[];
+constexpr char motor::stop_action_brake[];
+constexpr char motor::stop_action_hold[];
 
 //~autogen
 
@@ -806,14 +827,14 @@ dc_motor::dc_motor(address_type address)
 
 //~autogen generic-define-property-value classes.dcMotor>currentClass
 
-const std::string dc_motor::command_run_forever{ "run-forever" };
-const std::string dc_motor::command_run_timed{ "run-timed" };
-const std::string dc_motor::command_run_direct{ "run-direct" };
-const std::string dc_motor::command_stop{ "stop" };
-const std::string dc_motor::polarity_normal{ "normal" };
-const std::string dc_motor::polarity_inversed{ "inversed" };
-const std::string dc_motor::stop_command_coast{ "coast" };
-const std::string dc_motor::stop_command_brake{ "brake" };
+constexpr char dc_motor::command_run_forever[];
+constexpr char dc_motor::command_run_timed[];
+constexpr char dc_motor::command_run_direct[];
+constexpr char dc_motor::command_stop[];
+constexpr char dc_motor::polarity_normal[];
+constexpr char dc_motor::polarity_inversed[];
+constexpr char dc_motor::stop_action_coast[];
+constexpr char dc_motor::stop_action_brake[];
 
 //~autogen
 
@@ -829,10 +850,10 @@ servo_motor::servo_motor(address_type address)
 
 //~autogen generic-define-property-value classes.servoMotor>currentClass
 
-const std::string servo_motor::command_run{ "run" };
-const std::string servo_motor::command_float{ "float" };
-const std::string servo_motor::polarity_normal{ "normal" };
-const std::string servo_motor::polarity_inversed{ "inversed" };
+constexpr char servo_motor::command_run[];
+constexpr char servo_motor::command_float[];
+constexpr char servo_motor::polarity_normal[];
+constexpr char servo_motor::polarity_inversed[];
 
 //~autogen
 
@@ -870,15 +891,16 @@ void led::flash(unsigned on_ms, unsigned off_ms)
 
 //-----------------------------------------------------------------------------
 
-#ifdef EV3DEV_PLATFORM_BRICKPI
+#if defined(EV3DEV_PLATFORM_BRICKPI)
 //~autogen leds-define platforms.brickpi.led>currentClass
 
-led led::blue_led1{"brickpi1:blue:ev3dev"};
-led led::blue_led2{"brickpi2:blue:ev3dev"};
+led led::blue_led1{"brickpi:led1:blue:ev3dev"};
+led led::blue_led2{"brickpi:led2:blue:ev3dev"};
 
 std::vector<led*> led::led1{ &led::blue_led1 };
 std::vector<led*> led::led2{ &led::blue_led2 };
 
+std::vector<float> led::black{ static_cast<float>(0) };
 std::vector<float> led::blue{ static_cast<float>(1) };
 
 //-----------------------------------------------------------------------------
@@ -886,6 +908,42 @@ void led::all_off() {
 
     blue_led1.off();
     blue_led2.off();
+
+}
+
+//~autogen
+#elif defined(EV3DEV_PLATFORM_PISTORMS)
+//~autogen leds-define platforms.pistorms.led>currentClass
+
+led led::red_left{"pistorms:BB:red:ev3dev"};
+led led::red_right{"pistorms:BA:red:ev3dev"};
+led led::green_left{"pistorms:BB:green:ev3dev"};
+led led::green_right{"pistorms:BA:green:ev3dev"};
+led led::blue_left{"pistorms:BB:blue:ev3dev"};
+led led::blue_right{"pistorms:BA:blue:ev3dev"};
+
+std::vector<led*> led::left{ &led::red_left, &led::green_left, &led::blue_left };
+std::vector<led*> led::right{ &led::red_right, &led::green_right, &led::blue_right };
+
+std::vector<float> led::black{ static_cast<float>(0), static_cast<float>(0), static_cast<float>(0) };
+std::vector<float> led::red{ static_cast<float>(1), static_cast<float>(0), static_cast<float>(0) };
+std::vector<float> led::green{ static_cast<float>(0), static_cast<float>(1), static_cast<float>(0) };
+std::vector<float> led::blue{ static_cast<float>(0), static_cast<float>(0), static_cast<float>(1) };
+std::vector<float> led::yellow{ static_cast<float>(1), static_cast<float>(1), static_cast<float>(0) };
+std::vector<float> led::purple{ static_cast<float>(1), static_cast<float>(0), static_cast<float>(1) };
+std::vector<float> led::cyan{ static_cast<float>(0), static_cast<float>(1), static_cast<float>(1) };
+std::vector<float> led::white{ static_cast<float>(1), static_cast<float>(1), static_cast<float>(1) };
+std::vector<float> led::orange{ static_cast<float>(1), static_cast<float>(0.5), static_cast<float>(0) };
+
+//-----------------------------------------------------------------------------
+void led::all_off() {
+
+    red_left.off();
+    red_right.off();
+    green_left.off();
+    green_right.off();
+    blue_left.off();
+    blue_right.off();
 
 }
 
@@ -901,11 +959,12 @@ led led::green_right{"ev3:right:green:ev3dev"};
 std::vector<led*> led::left{ &led::red_left, &led::green_left };
 std::vector<led*> led::right{ &led::red_right, &led::green_right };
 
+std::vector<float> led::black{ static_cast<float>(0), static_cast<float>(0) };
 std::vector<float> led::red{ static_cast<float>(1), static_cast<float>(0) };
 std::vector<float> led::green{ static_cast<float>(0), static_cast<float>(1) };
 std::vector<float> led::amber{ static_cast<float>(1), static_cast<float>(1) };
 std::vector<float> led::orange{ static_cast<float>(1), static_cast<float>(0.5) };
-std::vector<float> led::yellow{ static_cast<float>(0.2), static_cast<float>(1) };
+std::vector<float> led::yellow{ static_cast<float>(0.1), static_cast<float>(1) };
 
 //-----------------------------------------------------------------------------
 void led::all_off() {
@@ -973,8 +1032,7 @@ bool button::pressed() const
     // handle error
   }
 #endif
-  // bit in bytes is 1 when released and 0 when pressed
-  return !(_buf[_bit / bits_per_long] & 1 << (_bit % bits_per_long));
+  return (_buf[_bit / bits_per_long] & 1 << (_bit % bits_per_long));
 }
 
 //-----------------------------------------------------------------------------

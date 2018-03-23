@@ -32,9 +32,9 @@ bool L_plotdepart()
 	robot.actions().pince_HerculeMiddle();
 
 	robot.logger().info() << "on recule pour passer la bascule" << logs::end;
-	robot.asserv().setAccel(0.3);
+	/*robot.asserv().setAccel(0.3);
 	robot.asserv().setVmax(0.4);
-	robot.asserv().setDecel(0.2);
+	robot.asserv().setDecel(0.2);*/
 
 	//ts = robot.asserv().doLineAbs(-770.0);
 	while (robot.asserv().doMoveBackwardTo(980, robot.asserv().pos_getY_mm()) != TRAJ_OK)
@@ -44,9 +44,9 @@ bool L_plotdepart()
 
 	robot.svgPrintPosition();
 
-	robot.asserv().setAccel(0.2);
+	/*robot.asserv().setAccel(0.2);
 	robot.asserv().setVmax(0.3);
-	robot.asserv().setDecel(0.4);
+	robot.asserv().setDecel(0.4);*/
 
 	robot.logger().info() << "on claque la pince pour retirer les grosses roues" << logs::end;
 	robot.actions().pince_HerculeDown();

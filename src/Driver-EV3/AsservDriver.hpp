@@ -13,6 +13,8 @@
 using namespace std;
 using namespace ev3dev;
 
+
+
 class AsservDriver: public AAsservDriver
 {
 private:
@@ -26,9 +28,18 @@ private:
 		return instance;
 	}
 
-	large_motor _motor_left;
-	large_motor _motor_right;
+	motor _motor_left = { OUTPUT_A };
+	motor _motor_right = { OUTPUT_D };
 
+	large_motor     _motor_left_;
+	large_motor     _motor_right_;
+
+	motor arrMotors[4] = {
+	    { OUTPUT_A },
+	    { OUTPUT_B },
+	    { OUTPUT_C },
+	    { OUTPUT_D }
+	  };
 
 
 protected:
@@ -46,6 +57,7 @@ public:
 	{
 	}
 
+
 	void reset();
 	int limit(int power, int max);
 
@@ -55,8 +67,7 @@ public:
 	void setMotorLeftPosition(int power, long ticks);
 	void setMotorRightPosition(int power, long ticks);
 
-	//regulation enabled  => power in ticks per second -860 / +860
-	//regulation disabled => power in percentage -100 / +100
+
 	void setMotorLeftPower(int power, int time);
 	void setMotorRightPower(int power, int time);
 
@@ -76,21 +87,9 @@ public:
 	int getMotorLeftCurrent();
 	int getMotorRightCurrent();
 
-	/*
-	 * speed_regulation
-	 (read/write) Turns speed regulation on or off. Valid values are:
-	 on: The motor controller will vary the power supplied to the motor to try to maintain the speed specified in speed_sp.
-	 off: The controller will drive the motor using the duty cycle specified in duty_cycle_sp.
-	 */
-	void enableRightHardRegulation(bool enable);
-	void enableLeftHardRegulation(bool enable);
-	//void enableHardRegulation(bool enable);
+
 
 	//fonctions asservissements externe par defaut
-	/*float odo_GetX_mm();
-	float odo_GetY_mm();
-	float odo_GetTheta_Rad();		// angle in radian
-	float odo_GetTheta_Degree();	*/	// angle in degrees
 	void odo_SetPosition(double x_m, double y_m, double angle_rad);
 	RobotPosition odo_GetPosition();
 	int path_GetLastCommandStatus();
@@ -100,7 +99,7 @@ public:
 	void path_CancelTrajectory();
 	void path_ResetEmergencyStop();
 
-	TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+	TRAJ_STATE motion_DoFace(float x_m, float y_m);
 	TRAJ_STATE motion_DoLine(float dist_meters);
 	TRAJ_STATE motion_DoRotate(float angle_radians);
 	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);

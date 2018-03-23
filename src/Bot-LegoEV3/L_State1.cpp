@@ -158,7 +158,7 @@ L_State1::execute(Robot& r, void *data)
 void L_State1::setPos()
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-	robot.asserv().startMotionTimerAndOdo();
+	robot.asserv().startMotionTimerAndOdo(true);
 	//init avant bascule
 	//robot.asserv().setPositionAndColor(60.05, 223.0, 180.0, (robot.getMyColor() != PMXYELLOW));
 	robot.asserv().setPositionAndColor(114, 140.0, 180.0, (robot.getMyColor() != PMXYELLOW));

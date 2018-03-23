@@ -371,6 +371,10 @@ void AsservDriver::path_CancelTrajectory()
 void AsservDriver::path_ResetEmergencyStop()
 {
 }
+TRAJ_STATE AsservDriver::motion_DoFace(float x_m, float y_m)
+{
+
+}
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
 {
 }
@@ -391,5 +395,9 @@ void AsservDriver::motion_AssistedHandling()
 }
 void AsservDriver::motion_ActivateManager(bool enable)
 {
+}
+void AsservDriver::motion_setLowSpeed(bool enable)
+{
+
 }
 

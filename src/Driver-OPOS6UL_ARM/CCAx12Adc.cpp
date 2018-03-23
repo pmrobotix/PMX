@@ -156,7 +156,7 @@ int CCAx12Adc::getADC(int adc)
 int CCAx12Adc::convertToVoltage(int adc_value)
 {
 
-	double millivolts = adc_value * 5000.0/4095.0;
+	double millivolts = adc_value * 5000.0 / 4095.0;
 
 	return (int) millivolts;
 
@@ -200,20 +200,44 @@ int CCAx12Adc::readAXData(int id, int address)
 	err |= write(CMD_READ_AX);
 	err |= write(id);
 	err |= write(address);
-	if (err == -1) return -1;
+	if (err == -1)
+	{
+		mutex_.unlock();
+		return -1;
+	}
+	int error = read(); //bytes d'error
+	if (error != 0)
+	{
+		mutex_.unlock();
+		return -2;
+	}
 	int low = read();
-	if (low == 252) return -2;
+	/*
+	 if (low == 252)
+	 {
+	 mutex_.unlock();
+	 return -2;
+	 }*/
 	if (size > 1)
 	{
 		int high = read();
-		//int high = bytes[1];
-		if (low == 252 && high == 252) return -3;
+		/*
+		 //int high = bytes[1];
+		 if (low == 252 && high == 252)
+		 {
+		 mutex_.unlock();
+		 return -3;
+		 }*/
 		mutex_.unlock();
 		return high * 256 + low;
 	}
 	else
 	{
-		if (low == 252) return -3;
+		/*	if (low == 252)
+		 {
+		 mutex_.unlock();
+		 return -3;
+		 }*/
 		mutex_.unlock();
 		return low;
 	}

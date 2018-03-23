@@ -15,7 +15,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.SIMUCOCOS");
 		return instance;
 	}
 

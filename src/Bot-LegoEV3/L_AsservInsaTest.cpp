@@ -117,8 +117,9 @@ void L_AsservInsaTest::run(int argc, char** argv)
 		Ad = atof(args["Ad"].c_str());
 		logger().debug() << "Arg Ad set " << args["Ad"] << ", Ad = " << Ad << logs::end;
 	}
-
-	robot.asserv().startMotionTimerAndOdo();
+	//TODO DEPRECATED ?? utiliser que dans le cas asservInsa
+/*
+	robot.asserv().startMotionTimerAndOdo(true);
 	//surcharge des valeurs
 	robot.asserv().configureAlphaPID(Ap, Ai, Ad);
 	robot.asserv().configureDeltaPID(Dp, Di, Dd);
@@ -142,7 +143,7 @@ void L_AsservInsaTest::run(int argc, char** argv)
 			<< " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
 			<< robot.asserv().pos_getY_mm() << " degrees=" << robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
-
+*/
 	robot.svgPrintPosition();
 
 	robot.stop();

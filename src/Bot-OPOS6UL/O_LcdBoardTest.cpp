@@ -13,7 +13,6 @@
 #include "OPOS6UL_ActionsExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
-
 using namespace std;
 
 void O_LcdBoardTest::run(int argc, char** argv)
@@ -24,11 +23,11 @@ void O_LcdBoardTest::run(int argc, char** argv)
 
 	robot.actions().lcd2x16().clear();
 	robot.actions().lcd2x16().home();
-	robot.actions().lcd2x16().print("Start...");
+	robot.actions().lcd2x16().print("PM-ROBOTIX start");
 	robot.actions().lcd2x16().setCursor(0, 1);
-	robot.actions().lcd2x16().print("PM-ROBOTIX");
+	robot.actions().lcd2x16().print("Hi, I'm PMX.");
 
-	sleep(2);
+	sleep(3);
 
 	robot.actions().stop();
 

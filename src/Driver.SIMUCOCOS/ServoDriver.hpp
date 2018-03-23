@@ -16,7 +16,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.SIMUCOCOS");
 		return instance;
 	}
 
@@ -38,13 +38,19 @@ public:
 	{
 	}
 
-	void hold(ServoLabel servo);
+	void hold(int servo);
 
-	void setPosition(ServoLabel servo, double percent);
+	void setPosition(int servo, int pos);
 
-	void release(ServoLabel servo);
+	void release(int servo);
 
-	void setRate(ServoLabel servo, int millisec);
+	void setRate(int servo, int speed);
+
+	void turn(int servo, int speed);
+
+	int getMoving(int servo);
+
+	int getPos(int servo);
 
 };
 

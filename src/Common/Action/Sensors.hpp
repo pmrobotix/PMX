@@ -58,7 +58,7 @@ public:
 };
 
 /*!
- * \brief Le timer associé
+ * \brief Le timer associé aux sensors
  *
  */
 class SensorsTimer: public ITimerListener
@@ -85,8 +85,12 @@ public:
 
 	/*!
 	 * \brief Constructeur de la classe.
-	 * \param amt
+	 * \param sensors
 	 *        Reference vers l'objet associée.
+	 * \param timeSpan_ms
+	 *        Temps interval en millisecondes.
+	 * \param name
+	 *        Libellé du timer.
 	 */
 	SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name);
 

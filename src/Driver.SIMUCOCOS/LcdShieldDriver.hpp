@@ -18,7 +18,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriver.SIMUCOCOS");
 		return instance;
 	}
 

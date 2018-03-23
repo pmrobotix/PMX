@@ -25,6 +25,8 @@ ServoDriver::ServoDriver() :
 	if (connected_)
 	{
 		CCAx12Adc::instance().setLedOn(3);
+		CCAx12Adc::instance().setLedOn(4);
+		CCAx12Adc::instance().setLedOn(5);
 
 		int ping12 = CCAx12Adc::instance().pingAX(12);
 		if (ping12 < 0) logger().error() << "ping12=" << ping12 << logs::end;

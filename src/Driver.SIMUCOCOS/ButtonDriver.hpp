@@ -27,7 +27,7 @@ private:
 	static inline const logs::Logger & logger()
 	{
 		static const logs::Logger & instance = logs::LoggerFactory::logger(
-				"ButtonDriver.SIMU");
+				"ButtonDriver.SIMUCOCOS");
 		return instance;
 	}
 

@@ -277,35 +277,35 @@ public:
 	{
 		servo_lowspeed();
 
-		funnyAction_Init();
-		nose_down(150);
-		arm_retract(150);
-		arm_center(150);
-		turn_nene_center();
-		sleep(2);
+		//funnyAction_Init();
+		//nose_down(150);
+		//arm_retract(150);
+		//arm_center(150);
+		//turn_nene_center();
+		//sleep(2);
 	}
 
 	void servo_init_end()
 	{
 
 	}
-	void servo_init_yellow()
+	void servo_init_orange()
 	{
 		servo_lowspeed();
 
-		arm_right(500);
-		turn_nene_right();
-		nose_up(150);
-		usleep(500000);
+		//arm_right(500);
+		//turn_nene_right();
+		//nose_up(150);
+		//usleep(500000);
 	}
-	void servo_init_blue()
+	void servo_init_green()
 	{
 		servo_lowspeed();
 
-		arm_left(500);
-		turn_nene_left();
-		nose_up(150);
-		usleep(500000);
+		//arm_left(500);
+		//turn_nene_left();
+		//nose_up(150);
+		//usleep(500000);
 	}
 
 };

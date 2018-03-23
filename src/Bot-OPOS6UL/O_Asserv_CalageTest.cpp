@@ -1,4 +1,4 @@
-#include "O_AsservTest.hpp"
+#include "O_Asserv_CalageTest.hpp"
 
 #include <unistd.h>
 #include <cmath>
@@ -12,17 +12,17 @@
 
 using namespace std;
 
-void O_AsservTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void O_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.getArgs().addArgument("d", "dist en mm");
-    robot.getArgs().addArgument("a", "angle en degrees", "0");
+    //robot.getArgs().addArgument("d", "dist en mm");
+    //robot.getArgs().addArgument("a", "angle en degrees", "0");
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
 }
 
-void O_AsservTest::run(int argc, char** argv)
+void O_Asserv_CalageTest::run(int argc, char** argv)
 {
     logger().info() << "Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
@@ -49,16 +49,17 @@ void O_AsservTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     logger().info() << "GO distance mm=" << d << logs::end;
-    if (robot.asserv().doLineAbs(d) != TRAJ_OK) {
-        logger().info() << "Interruption !!" << logs::end;
-    }
-
-    p = robot.asserv().pos_getPosition();
+    robot.asserv().doCalage(-100, 3);
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
     robot.svgPrintPosition();
 
-    logger().info() << "GO turn angle=" << a << logs::end;
-    if (robot.asserv().doRotateAbs(a) != TRAJ_OK) {
+    robot.asserv().setPositionAndColor(200.0, 200.0, 45.0, (robot.getMyColor() != PMXORANGE));
+
+    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
+    robot.svgPrintPosition();
+
+    logger().info() << "GO distance mm=" << d << logs::end;
+    if (robot.asserv().doLineAbs(100) != TRAJ_OK) {
         logger().info() << "Interruption !!" << logs::end;
     }
 

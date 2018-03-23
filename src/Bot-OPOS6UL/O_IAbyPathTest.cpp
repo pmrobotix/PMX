@@ -141,7 +141,7 @@ void O_IAByPathTest::run(int argc, char** argv)
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
 	robot.asserv().startMotionTimerAndOdo(true);
-	robot.asserv().setPositionAndColor(800, 150, 0.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(800, 150, 0.0, (robot.getMyColor() != PMXORANGE));
 	robot.svgPrintPosition();
 	robot.chrono().start();
 	IASetup();
@@ -162,12 +162,12 @@ void O_IAByPathTest::IASetup()
 	robot.ia().iAbyPath().ia_createZone("depart", 710, 0, 300, 300, 800, 200, 90);
 	robot.ia().iAbyPath().ia_createZone("zone_plot1", 900, 500, 200, 100, 1000, 400, 90);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXGREEN)
 	{
 		robot.ia().iAbyPath().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 770, 180);
 		robot.ia().iAbyPath().ia_createZone("zone_plot2", 100, 500, 200, 100, 280, 600, -135);
 	}
-	else if (robot.getMyColor() == PMXYELLOW)
+	else if (robot.getMyColor() == PMXORANGE)
 	{
 		robot.ia().iAbyPath().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 840, 180);
 		robot.ia().iAbyPath().ia_createZone("zone_plot2", 100, 500, 200, 100, 250, 650, -135);

@@ -174,9 +174,12 @@ void IAbyZone::ia_setPath(const char* zone1Name, const char* zone2Name, float x,
 ZONE_PATH* IAbyZone::ia_getZonePath(ZONE *z1, ZONE *z2)
 {
 	int i;
+printf("z1 z2 %s - %s\n", z1->name, z2->name);
 	for (i = 0; i < _zones_path_count; i++)
 	{
 		ZONE_PATH *zp = _zones_path[i];
+
+printf("zp1 zp2 %s - %s\n", zp->z1->name, zp->z2->name);
 		if ((zp->z1 == z1 && zp->z2 == z2) || (zp->z1 == z2 && zp->z2 == z1))
 		{
 			return zp;
@@ -268,7 +271,7 @@ ZONE* IAbyZone::ia_getZoneAt(float x, float y)
 	for (i = 0; i < _zones_count; i++)
 	{
 		ZONE *z = _zones[i];
-		if (z->minX < x && z->minY < y && (z->minX + z->width) > x && (z->minY + z->height) > y)
+		if (z->minX <= x && z->minY <= y && (z->minX + z->width) >= x && (z->minY + z->height) >= y)
 		{
 			return z;
 		}
@@ -373,6 +376,9 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
 	zone_p->y = z->startY;
 	zone_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
 
+
+	printf("----%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__,
+	                               zCurrent->name, z->name, path->x, path->y);
 	//printf("03\n");
 	/*
 	 RobotPosition pos;

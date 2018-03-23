@@ -23,7 +23,7 @@ public:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMUCOCOS");
 		return instance;
 	}
 
@@ -117,6 +117,8 @@ public:
 	void path_CollisionRearOnTrajectory();
 	void path_CancelTrajectory();
 	void path_ResetEmergencyStop();
+
+	TRAJ_STATE motion_DoFace(float x_m, float y_m);
 	TRAJ_STATE motion_DoLine(float dist_meters);
 	TRAJ_STATE motion_DoRotate(float angle_radians);
 	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
@@ -124,6 +126,7 @@ public:
 	void motion_DisablePID();		//! Stop motion control and disable PID
 	void motion_AssistedHandling();		//! Assisted movement mode =)
 	void motion_ActivateManager(bool enable);
+	void motion_setLowSpeed(bool enable);
 
 	/*!
 	 * \brief Constructor.

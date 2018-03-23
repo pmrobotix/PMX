@@ -29,7 +29,7 @@ void O_State_Wait90SecAction::execute()
 	robot.chrono().start();
 
 	//ARU and adversary ?
-	while (robot.chrono().getElapsedTimeInSec() <= 90) //todo mettre en parametre
+	while (robot.chrono().getElapsedTimeInSec() <= 100) //todo mettre en parametre
 	{
 
 		usleep(1000000);
@@ -41,12 +41,12 @@ void O_State_Wait90SecAction::execute()
 
 	}
 
-	this->logger().info() << "O_State_Wait90SecAction::execute end90s...stop... "
+	this->logger().info() << "O_State_Wait90SecAction::execute end100s...stop... "
 			<< robot.chrono().getElapsedTimeInSec() << logs::end;
 	robot.asserv_default->freeMotion();
 
 	sharedData->end90s(true); //indique que l'action est effectuée au prog princ
-
+/*
 	//FUNNY ACTION
 	this->logger().info() << "FUNNY ACTION...start... " << robot.chrono().getElapsedTimeInSec()
 			<< logs::end;
@@ -57,7 +57,7 @@ void O_State_Wait90SecAction::execute()
 	sleep(4);
 	this->logger().info() << "FUNNY ACTION...stop... " << robot.chrono().getElapsedTimeInSec()
 			<< logs::end;
-
+*/
 	robot.actions().servoObjects().releaseAll();
 
 	robot.baseStop();

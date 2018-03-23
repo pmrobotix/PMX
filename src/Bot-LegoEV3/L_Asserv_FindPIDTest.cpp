@@ -108,7 +108,8 @@ void L_Asserv_FindPIDTest::run(int argc, char** argv)
 	utils::Chronometer chrono;
 	long left;
 	long right;
-
+	//utiliser que dans le cas asservInsa?
+/*
 	robot.asserv().startMotionTimerAndOdo();
 	robot.asserv().configureAlphaPID(Ap, Ai, Ad); //surcharge
 	robot.asserv().configureDeltaPID(Dp, Di, Dd);
@@ -134,7 +135,7 @@ void L_Asserv_FindPIDTest::run(int argc, char** argv)
 			<< " a="
 			<< robot.asserv().pos_getThetaInDegree()
 			<< logs::end;
-
+*/
 	robot.svgPrintPosition();
 
 	robot.stop();

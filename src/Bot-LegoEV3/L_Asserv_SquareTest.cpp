@@ -70,7 +70,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 		logger().info() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
 	}
 
-	robot.asserv().startMotionTimerAndOdo();
+	robot.asserv().startMotionTimerAndOdo(true);
 
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 

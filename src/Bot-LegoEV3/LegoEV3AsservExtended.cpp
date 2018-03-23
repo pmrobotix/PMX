@@ -6,22 +6,23 @@
 #include "/usr/include/unistd.h"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/Logger.hpp"
-
+/*
 AsservInsa * LegoEV3AsservExtended::insa()
 {
 	return pAsservInsa_;
 }
-
+*/
 LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, Robot * robot) :
 		Asserv(botId, robot) //on appelle le constructeur pere
 {
-
+	useInternalAsserv_ = false; //configuration pour utiliser une carte d'asserv externe (ici ev3dev en natif)
+/*
 	last_sens_left_ = 0;
 	last_sens_right_ = 0;
 	motorwheel_patch_m = 0.0; //metres
-	motorwheel_patch_rad = 0.0; //radians
+	motorwheel_patch_rad = 0.0; //radians*/
 }
-
+/*
 void LegoEV3AsservExtended::startMotionTimerAndOdo()
 {
 
@@ -31,7 +32,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 
 
 #ifdef SIMU
-	//SIMU EV3
+	//SIMU EV3 for ASSERVINSA
 	printf("---LegoEV3AsservExtended > SIMU EV3\n");
 	pAsservInsa_->encoder_SetResolution(1399, 1399, 134);
 	pAsservInsa_->motion_SetDefaultAccel(0.2);
@@ -62,7 +63,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo()
 
 
 #else
-	//Real EV3
+	//Real EV3 for ASSERVINSA
 
 	printf("---LegoEV3AsservExtended > Real EV3\n");
 
@@ -434,4 +435,4 @@ float LegoEV3AsservExtended::pos_getThetaInDegree()
 {
 	return pAsservInsa_->pos_getThetaInDegree();
 }
-
+*/

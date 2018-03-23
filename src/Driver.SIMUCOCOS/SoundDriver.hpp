@@ -16,7 +16,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SoundDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("SoundDriver.SIMUCOCOS");
 		return instance;
 	}
 

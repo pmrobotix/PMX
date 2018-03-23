@@ -60,7 +60,7 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 		logger().debug() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
 	}
 
-	robot.asserv().startMotionTimerAndOdo();
+	robot.asserv().startMotionTimerAndOdo(true);
 	logger().error() << "robot.getMyColor()  = "<< robot.getMyColor()  << logs::end;
 	logger().error() << "(robot.getMyColor() != PMXYELLOW) = "<< (robot.getMyColor() != PMXYELLOW) << logs::end;
 	robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));

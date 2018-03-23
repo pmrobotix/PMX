@@ -17,7 +17,7 @@ private:
 	 */
 	static inline const logs::Logger & logger()
 	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsDriver.SIMU");
+		static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsDriver.SIMUCOCOS");
 		return instance;
 	}
 

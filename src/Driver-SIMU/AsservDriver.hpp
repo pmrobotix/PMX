@@ -59,6 +59,8 @@ private:
 	float tLeft_ms_;
 	float tRight_ms_;
 
+	//float timesMultiplicator_;
+
 	float rightCounter_; //real ticks
 	float leftCounter_; //real ticks
 	float rightMeters_;
@@ -184,7 +186,7 @@ public:
 			while (chrono_member1left.getElapsedTimeInMilliSec() < (double) time_ms)
 			{
 				asserv_->computeCounterL();
-				usleep(500);
+				//usleep(500);
 			}
 			asserv_->stopMotorLeft();
 		}
@@ -193,7 +195,7 @@ public:
 			while (asserv_->wantedLeftSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterL();
-				usleep(500);
+				//usleep(500);
 			}
 		}
 	}
@@ -208,7 +210,7 @@ public:
 			while (chrono_member2right.getElapsedTimeInMilliSec() < (double) time_ms)
 			{
 				asserv_->computeCounterR();
-				usleep(500);
+				//usleep(500);
 			}
 			asserv_->stopMotorRight();
 		}
@@ -217,7 +219,7 @@ public:
 			while (asserv_->wantedRightSpeed_ != lastspeed) //stop when speed has changed
 			{
 				asserv_->computeCounterR();
-				usleep(500);
+				//usleep(500);
 			}
 		}
 	}
@@ -235,7 +237,7 @@ public:
 			{
 				asserv_->computeCounterL();
 				ticks = std::abs(asserv_->getLeftInternalEncoder());
-				usleep(500);
+				//usleep(500);
 			}
 		}
 		else if (asserv_->leftSpeed_ < 0)
@@ -244,7 +246,7 @@ public:
 			{
 				asserv_->computeCounterL();
 				ticks = std::abs(asserv_->getLeftInternalEncoder());
-				usleep(500);
+				//usleep(500);
 			}
 		}
 		else
@@ -268,7 +270,7 @@ public:
 			{
 				asserv_->computeCounterR();
 				ticks = std::abs(asserv_->getRightInternalEncoder());
-				usleep(500);
+				//usleep(500);
 			}
 			printf("> positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks,
 					internal_ticksToDo);
@@ -280,7 +282,7 @@ public:
 			{
 				asserv_->computeCounterR();
 				ticks = std::abs(asserv_->getRightInternalEncoder());
-				usleep(500);
+				//usleep(500);
 			}
 			printf("< positionRight while out ticks=%ld internal_ticksToDo=%ld \n", ticks,
 					internal_ticksToDo);

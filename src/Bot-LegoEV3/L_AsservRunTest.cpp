@@ -62,7 +62,7 @@ void L_AsservRunTest::run(int argc, char** argv)
 		logger().debug() << "Arg a set " << args["d"] << ", a = " << a << logs::end;
 	}*/
 
-	robot.asserv().startMotionTimerAndOdo();
+	robot.asserv().startMotionTimerAndOdo(true);
 
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
@@ -72,9 +72,9 @@ void L_AsservRunTest::run(int argc, char** argv)
 	//robot.actions().start();
 	//robot.actions().sensors().startSensors();
 
-	//robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
+	robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
 
-	robot.asserv().doLineAbsGoal(x, x, 300);
+	//robot.asserv().doLineAbsGoal(x, x, 300);
 	//robot.asserv().doLineAbs(x);
 
 	left = robot.asserv().base()->encoders().getLeftEncoder();

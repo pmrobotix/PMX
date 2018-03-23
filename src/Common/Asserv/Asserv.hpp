@@ -102,6 +102,8 @@ public:
 	virtual TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
 	virtual TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
+	virtual TRAJ_STATE doCalage(int d, int d2);
+
 	//void findPidAD(float degrees, int mm, int sec);
 	//void findPidLR(float posl, int posr, int sec);
 	//void configureAlphaPID(float Ap, float Ai, float Ad);

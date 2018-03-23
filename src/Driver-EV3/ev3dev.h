@@ -29,7 +29,7 @@
 //-----------------------------------------------------------------------------
 //~autogen autogen-header
 
-// Sections of the following code were auto-generated based on spec v0.9.3-pre, rev 2.
+// Sections of the following code were auto-generated based on spec v1.2.0.
 
 //~autogen
 //-----------------------------------------------------------------------------
@@ -37,6 +37,7 @@
 #include <map>
 #include <set>
 #include <string>
+#include <tuple>
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -58,26 +59,36 @@ typedef std::string         address_type;
 const address_type INPUT_AUTO;  //!< Automatic input selection
 const address_type OUTPUT_AUTO; //!< Automatic output selection
 
-#ifdef EV3DEV_PLATFORM_BRICKPI
-const address_type INPUT_1  { "ttyAMA0:in1" };  //!< Sensor port 1
-const address_type INPUT_2  { "ttyAMA0:in2" };  //!< Sensor port 2
-const address_type INPUT_3  { "ttyAMA0:in3" };  //!< Sensor port 3
-const address_type INPUT_4  { "ttyAMA0:in4" };  //!< Sensor port 4
+#if defined(EV3DEV_PLATFORM_BRICKPI)
+constexpr char INPUT_1[]  = "ttyAMA0:in1";  //!< Sensor port 1
+constexpr char INPUT_2[]  = "ttyAMA0:in2";  //!< Sensor port 2
+constexpr char INPUT_3[]  = "ttyAMA0:in3";  //!< Sensor port 3
+constexpr char INPUT_4[]  = "ttyAMA0:in4";  //!< Sensor port 4
 
-const address_type OUTPUT_A { "ttyAMA0:outA" }; //!< Motor port A
-const address_type OUTPUT_B { "ttyAMA0:outB" }; //!< Motor port B
-const address_type OUTPUT_C { "ttyAMA0:outC" }; //!< Motor port C
-const address_type OUTPUT_D { "ttyAMA0:outD" }; //!< Motor port D
-#else
-const address_type INPUT_1  { "in1" };  //!< Sensor port 1
-const address_type INPUT_2  { "in2" };  //!< Sensor port 2
-const address_type INPUT_3  { "in3" };  //!< Sensor port 3
-const address_type INPUT_4  { "in4" };  //!< Sensor port 4
+constexpr char OUTPUT_A[] = "ttyAMA0:outA"; //!< Motor port A
+constexpr char OUTPUT_B[] = "ttyAMA0:outB"; //!< Motor port B
+constexpr char OUTPUT_C[] = "ttyAMA0:outC"; //!< Motor port C
+constexpr char OUTPUT_D[] = "ttyAMA0:outD"; //!< Motor port D
+#elif defined(EV3DEV_PLATFORM_PISTORMS)
+constexpr char INPUT_1[]  = "pistorms:BAS1"; //!< Sensor port 1
+constexpr char INPUT_2[]  = "pistorms:BAS2"; //!< Sensor port 2
+constexpr char INPUT_3[]  = "pistorms:BBS1"; //!< Sensor port 3
+constexpr char INPUT_4[]  = "pistorms:BBS2"; //!< Sensor port 4
 
-const address_type OUTPUT_A { "outA" }; //!< Motor port A
-const address_type OUTPUT_B { "outB" }; //!< Motor port B
-const address_type OUTPUT_C { "outC" }; //!< Motor port C
-const address_type OUTPUT_D { "outD" }; //!< Motor port D
+constexpr char OUTPUT_A[] = "pistorms:BAM1"; //!< Motor port A
+constexpr char OUTPUT_B[] = "pistorms:BAM2"; //!< Motor port B
+constexpr char OUTPUT_C[] = "pistorms:BBM1"; //!< Motor port C
+constexpr char OUTPUT_D[] = "pistorms:BBM2"; //!< Motor port D
+#else // assume EV3DEV_PLATFORM_EV3
+constexpr char INPUT_1[]  = "in1";  //!< Sensor port 1
+constexpr char INPUT_2[]  = "in2";  //!< Sensor port 2
+constexpr char INPUT_3[]  = "in3";  //!< Sensor port 3
+constexpr char INPUT_4[]  = "in4";  //!< Sensor port 4
+
+constexpr char OUTPUT_A[] = "outA"; //!< Motor port A
+constexpr char OUTPUT_B[] = "outB"; //!< Motor port B
+constexpr char OUTPUT_C[] = "outC"; //!< Motor port C
+constexpr char OUTPUT_D[] = "outD"; //!< Motor port D
 #endif
 
 //-----------------------------------------------------------------------------
@@ -137,18 +148,18 @@ class sensor : protected device
 public:
   typedef device_type sensor_type;
 
-  static const sensor_type ev3_touch;
-  static const sensor_type ev3_color;
-  static const sensor_type ev3_ultrasonic;
-  static const sensor_type ev3_gyro;
-  static const sensor_type ev3_infrared;
+  static constexpr char ev3_touch[]      = "lego-ev3-touch";
+  static constexpr char ev3_color[]      = "lego-ev3-color";
+  static constexpr char ev3_ultrasonic[] = "lego-ev3-us";
+  static constexpr char ev3_gyro[]       = "lego-ev3-gyro";
+  static constexpr char ev3_infrared[]   = "lego-ev3-ir";
 
-  static const sensor_type nxt_touch;
-  static const sensor_type nxt_light;
-  static const sensor_type nxt_sound;
-  static const sensor_type nxt_ultrasonic;
-  static const sensor_type nxt_i2c_sensor;
-  static const sensor_type nxt_analog;
+  static constexpr char nxt_touch[]      = "lego-nxt-touch";
+  static constexpr char nxt_light[]      = "lego-nxt-light";
+  static constexpr char nxt_sound[]      = "lego-nxt-sound";
+  static constexpr char nxt_ultrasonic[] = "lego-nxt-us";
+  static constexpr char nxt_i2c_sensor[] = "nxt-i2c-sensor";
+  static constexpr char nxt_analog[]     = "nxt-analog";
 
   sensor(address_type);
   sensor(address_type, const std::set<sensor_type>&);
@@ -194,10 +205,15 @@ public:
   template <class T>
   void bin_data(T *buf) const {
       bin_data(); // fills _bin_data
-      std::copy_n(_bin_data.data(), _bin_data.size(), static_cast<char*>(buf));
+      std::copy_n(_bin_data.data(), _bin_data.size(), reinterpret_cast<char*>(buf));
   }
 
 //~autogen generic-get-set classes.sensor>currentClass
+
+  // Address: read-only
+  // Returns the name of the port that the sensor is connected to, e.g. `ev3:in1`.
+  // I2C sensors also include the I2C address (decimal), e.g. `ev3:in1:i2c8`.
+  std::string address() const { return get_attr_string("address"); }
 
   // Command: write-only
   // Sends a command to the sensor.
@@ -239,11 +255,6 @@ public:
   // for the current mode.
   int num_values() const { return get_attr_int("num_values"); }
 
-  // Address: read-only
-  // Returns the name of the port that the sensor is connected to, e.g. `ev3:in1`.
-  // I2C sensors also include the I2C address (decimal), e.g. `ev3:in1:i2c8`.
-  std::string address() const { return get_attr_string("address"); }
-
   // Units: read-only
   // Returns the units of the measured value for the current mode. May return
   // empty string
@@ -270,7 +281,10 @@ protected:
 class i2c_sensor : public sensor
 {
 public:
-  i2c_sensor(address_type address = INPUT_AUTO);
+  i2c_sensor(
+      address_type address = INPUT_AUTO,
+      const std::set<sensor_type> &types = {}
+      );
 
 //~autogen generic-get-set classes.i2cSensor>currentClass
 
@@ -305,13 +319,13 @@ public:
   touch_sensor(address_type address = INPUT_AUTO);
 
   // Button state
-  static const std::string mode_touch;
+  static constexpr char mode_touch[] = "TOUCH";
 
 
   // A boolean indicating whether the current touch sensor is being
   // pressed.
-  bool is_pressed() {
-    set_mode(mode_touch);
+  bool is_pressed(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_touch);
     return value(0);
   }
 
@@ -330,30 +344,54 @@ public:
   color_sensor(address_type address = INPUT_AUTO);
 
   // Reflected light. Red LED on.
-  static const std::string mode_col_reflect;
+  static constexpr char mode_col_reflect[] = "COL-REFLECT";
 
   // Ambient light. Red LEDs off.
-  static const std::string mode_col_ambient;
+  static constexpr char mode_col_ambient[] = "COL-AMBIENT";
 
   // Color. All LEDs rapidly cycling, appears white.
-  static const std::string mode_col_color;
+  static constexpr char mode_col_color[] = "COL-COLOR";
 
   // Raw reflected. Red LED on
-  static const std::string mode_ref_raw;
+  static constexpr char mode_ref_raw[] = "REF-RAW";
 
   // Raw Color Components. All LEDs rapidly cycling, appears white.
-  static const std::string mode_rgb_raw;
+  static constexpr char mode_rgb_raw[] = "RGB-RAW";
+
+  // No color.
+  static constexpr char color_nocolor[] = "NoColor";
+
+  // Black color.
+  static constexpr char color_black[] = "Black";
+
+  // Blue color.
+  static constexpr char color_blue[] = "Blue";
+
+  // Green color.
+  static constexpr char color_green[] = "Green";
+
+  // Yellow color.
+  static constexpr char color_yellow[] = "Yellow";
+
+  // Red color.
+  static constexpr char color_red[] = "Red";
+
+  // White color.
+  static constexpr char color_white[] = "White";
+
+  // Brown color.
+  static constexpr char color_brown[] = "Brown";
 
 
   // Reflected light intensity as a percentage. Light on sensor is red.
-  int reflected_light_intensity() {
-    set_mode(mode_col_reflect);
+  int reflected_light_intensity(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_col_reflect);
     return value(0);
   }
 
   // Ambient light intensity. Light on sensor is dimly lit blue.
-  int ambient_light_intensity() {
-    set_mode(mode_col_ambient);
+  int ambient_light_intensity(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_col_ambient);
     return value(0);
   }
 
@@ -366,26 +404,32 @@ public:
   //   - 5: Red
   //   - 6: White
   //   - 7: Brown
-  int color() {
-    set_mode(mode_col_color);
+  int color(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_col_color);
     return value(0);
   }
 
+  // Red, green, and blue components of the detected color, in the range 0-1020.
+  std::tuple<int, int, int> raw(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_rgb_raw);
+    return std::make_tuple( value(0), value(1), value(2) );
+  }
+
   // Red component of the detected color, in the range 0-1020.
-  int red() {
-    set_mode(mode_rgb_raw);
+  int red(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_rgb_raw);
     return value(0);
   }
 
   // Green component of the detected color, in the range 0-1020.
-  int green() {
-    set_mode(mode_rgb_raw);
+  int green(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_rgb_raw);
     return value(1);
   }
 
   // Blue component of the detected color, in the range 0-1020.
-  int blue() {
-    set_mode(mode_rgb_raw);
+  int blue(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_rgb_raw);
     return value(2);
   }
 
@@ -404,39 +448,39 @@ public:
   ultrasonic_sensor(address_type address = INPUT_AUTO);
 
   // Continuous measurement in centimeters.
-  static const std::string mode_us_dist_cm;
+  static constexpr char mode_us_dist_cm[] = "US-DIST-CM";
 
   // Continuous measurement in inches.
-  static const std::string mode_us_dist_in;
+  static constexpr char mode_us_dist_in[] = "US-DIST-IN";
 
   // Listen.
-  static const std::string mode_us_listen;
+  static constexpr char mode_us_listen[] = "US-LISTEN";
 
   // Single measurement in centimeters.
-  static const std::string mode_us_si_cm;
+  static constexpr char mode_us_si_cm[] = "US-SI-CM";
 
   // Single measurement in inches.
-  static const std::string mode_us_si_in;
+  static constexpr char mode_us_si_in[] = "US-SI-IN";
 
 
   // Measurement of the distance detected by the sensor,
   // in centimeters.
-  float distance_centimeters() {
-    set_mode(mode_us_dist_cm);
+  float distance_centimeters(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_us_dist_cm);
     return float_value(0);
   }
 
   // Measurement of the distance detected by the sensor,
   // in inches.
-  float distance_inches() {
-    set_mode(mode_us_dist_in);
+  float distance_inches(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_us_dist_in);
     return float_value(0);
   }
 
   // Value indicating whether another ultrasonic sensor could
   // be heard nearby.
-  bool other_sensor_present() {
-    set_mode(mode_us_listen);
+  bool other_sensor_present(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_us_listen);
     return value(0);
   }
 
@@ -455,32 +499,38 @@ public:
   gyro_sensor(address_type address = INPUT_AUTO);
 
   // Angle
-  static const std::string mode_gyro_ang;
+  static constexpr char mode_gyro_ang[] = "GYRO-ANG";
 
   // Rotational speed
-  static const std::string mode_gyro_rate;
+  static constexpr char mode_gyro_rate[] = "GYRO-RATE";
 
   // Raw sensor value
-  static const std::string mode_gyro_fas;
+  static constexpr char mode_gyro_fas[] = "GYRO-FAS";
 
   // Angle and rotational speed
-  static const std::string mode_gyro_g_a;
+  static constexpr char mode_gyro_g_a[] = "GYRO-G&A";
 
   // Calibration ???
-  static const std::string mode_gyro_cal;
+  static constexpr char mode_gyro_cal[] = "GYRO-CAL";
 
 
   // The number of degrees that the sensor has been rotated
   // since it was put into this mode.
-  int angle() {
-    set_mode(mode_gyro_ang);
+  int angle(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_gyro_ang);
     return value(0);
   }
 
   // The rate at which the sensor is rotating, in degrees/second.
-  int rate() {
-    set_mode(mode_gyro_rate);
+  int rate(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_gyro_rate);
     return value(0);
+  }
+
+  // Angle (degrees) and Rotational Speed (degrees/second).
+  std::tuple<int, int> rate_and_angle(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_gyro_g_a);
+    return std::make_tuple( value(0), value(1) );
   }
 
 };
@@ -498,25 +548,25 @@ public:
   infrared_sensor(address_type address = INPUT_AUTO);
 
   // Proximity
-  static const std::string mode_ir_prox;
+  static constexpr char mode_ir_prox[] = "IR-PROX";
 
   // IR Seeker
-  static const std::string mode_ir_seek;
+  static constexpr char mode_ir_seek[] = "IR-SEEK";
 
   // IR Remote Control
-  static const std::string mode_ir_remote;
+  static constexpr char mode_ir_remote[] = "IR-REMOTE";
 
   // IR Remote Control. State of the buttons is coded in binary
-  static const std::string mode_ir_rem_a;
+  static constexpr char mode_ir_rem_a[] = "IR-REM-A";
 
   // Calibration ???
-  static const std::string mode_ir_cal;
+  static constexpr char mode_ir_cal[] = "IR-CAL";
 
 
   // A measurement of the distance between the sensor and the remote,
   // as a percentage. 100% is approximately 70cm/27in.
-  int proximity() {
-    set_mode(mode_ir_prox);
+  int proximity(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_ir_prox);
     return value(0);
   }
 
@@ -535,23 +585,23 @@ public:
   sound_sensor(address_type address = INPUT_AUTO);
 
   // Sound pressure level. Flat weighting
-  static const std::string mode_db;
+  static constexpr char mode_db[] = "DB";
 
   // Sound pressure level. A weighting
-  static const std::string mode_dba;
+  static constexpr char mode_dba[] = "DBA";
 
 
   // A measurement of the measured sound pressure level, as a
   // percent. Uses a flat weighting.
-  float sound_pressure() {
-    set_mode(mode_db);
+  float sound_pressure(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_db);
     return float_value(0);
   }
 
   // A measurement of the measured sound pressure level, as a
   // percent. Uses A-weighting, which focuses on levels up to 55 dB.
-  float sound_pressure_low() {
-    set_mode(mode_dba);
+  float sound_pressure_low(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_dba);
     return float_value(0);
   }
 
@@ -570,21 +620,21 @@ public:
   light_sensor(address_type address = INPUT_AUTO);
 
   // Reflected light. LED on
-  static const std::string mode_reflect;
+  static constexpr char mode_reflect[] = "REFLECT";
 
   // Ambient light. LED off
-  static const std::string mode_ambient;
+  static constexpr char mode_ambient[] = "AMBIENT";
 
 
   // A measurement of the reflected light intensity, as a percentage.
-  float reflected_light_intensity() {
-    set_mode(mode_reflect);
+  float reflected_light_intensity(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_reflect);
     return float_value(0);
   }
 
   // A measurement of the ambient light intensity, as a percentage.
-  float ambient_light_intensity() {
-    set_mode(mode_ambient);
+  float ambient_light_intensity(bool do_set_mode = true) {
+    if (do_set_mode) set_mode(mode_ambient);
     return float_value(0);
   }
 
@@ -600,6 +650,11 @@ public:
 // positional and directional feedback such as the EV3 and NXT motors.
 // This feedback allows for precise control of the motors. This is the
 // most common type of motor, so we just call it `motor`.
+// 
+// The way to configure a motor is to set the '_sp' attributes when
+// calling a command or before. Only in 'run_direct' mode attribute
+// changes are processed immediately, in the other modes they only
+// take place when a new command is issued.
 
 //~autogen
 class motor : protected device
@@ -610,8 +665,8 @@ public:
   motor(address_type);
   motor(address_type, const motor_type&);
 
-  static const motor_type motor_large;
-  static const motor_type motor_medium;
+  static constexpr char motor_large[]  = "lego-ev3-l-motor";
+  static constexpr char motor_medium[] = "lego-ev3-m-motor";
 
   using device::connected;
   using device::device_index;
@@ -619,74 +674,86 @@ public:
 //~autogen generic-declare-property-value classes.motor>currentClass
 
   // Run the motor until another command is sent.
-  static const std::string command_run_forever;
+  static constexpr char command_run_forever[] = "run-forever";
 
   // Run to an absolute position specified by `position_sp` and then
-  // stop using the command specified in `stop_command`.
-  static const std::string command_run_to_abs_pos;
+  // stop using the action specified in `stop_action`.
+  static constexpr char command_run_to_abs_pos[] = "run-to-abs-pos";
 
   // Run to a position relative to the current `position` value.
   // The new position will be current `position` + `position_sp`.
   // When the new position is reached, the motor will stop using
-  // the command specified by `stop_command`.
-  static const std::string command_run_to_rel_pos;
+  // the action specified by `stop_action`.
+  static constexpr char command_run_to_rel_pos[] = "run-to-rel-pos";
 
   // Run the motor for the amount of time specified in `time_sp`
-  // and then stop the motor using the command specified by `stop_command`.
-  static const std::string command_run_timed;
+  // and then stop the motor using the action specified by `stop_action`.
+  static constexpr char command_run_timed[] = "run-timed";
 
   // Run the motor at the duty cycle specified by `duty_cycle_sp`.
   // Unlike other run commands, changing `duty_cycle_sp` while running *will*
   // take effect immediately.
-  static const std::string command_run_direct;
+  static constexpr char command_run_direct[] = "run-direct";
 
   // Stop any of the run commands before they are complete using the
-  // command specified by `stop_command`.
-  static const std::string command_stop;
+  // action specified by `stop_action`.
+  static constexpr char command_stop[] = "stop";
 
   // Reset all of the motor parameter attributes to their default value.
   // This will also have the effect of stopping the motor.
-  static const std::string command_reset;
+  static constexpr char command_reset[] = "reset";
 
   // Sets the normal polarity of the rotary encoder.
-  static const std::string encoder_polarity_normal;
+  static constexpr char encoder_polarity_normal[] = "normal";
 
   // Sets the inversed polarity of the rotary encoder.
-  static const std::string encoder_polarity_inversed;
+  static constexpr char encoder_polarity_inversed[] = "inversed";
 
   // With `normal` polarity, a positive duty cycle will
   // cause the motor to rotate clockwise.
-  static const std::string polarity_normal;
+  static constexpr char polarity_normal[] = "normal";
 
   // With `inversed` polarity, a positive duty cycle will
   // cause the motor to rotate counter-clockwise.
-  static const std::string polarity_inversed;
+  static constexpr char polarity_inversed[] = "inversed";
 
-  // The motor controller will vary the power supplied to the motor
-  // to try to maintain the speed specified in `speed_sp`.
-  static const std::string speed_regulation_on;
+  // Power is being sent to the motor.
+  static constexpr char state_running[] = "running";
 
-  // The motor controller will use the power specified in `duty_cycle_sp`.
-  static const std::string speed_regulation_off;
+  // The motor is ramping up or down and has not yet reached a constant output level.
+  static constexpr char state_ramping[] = "ramping";
+
+  // The motor is not turning, but rather attempting to hold a fixed position.
+  static constexpr char state_holding[] = "holding";
+
+  // The motor is turning, but cannot reach its `speed_sp`.
+  static constexpr char state_overloaded[] = "overloaded";
+
+  // The motor is not turning when it should be.
+  static constexpr char state_stalled[] = "stalled";
 
   // Power will be removed from the motor and it will freely coast to a stop.
-  static const std::string stop_command_coast;
+  static constexpr char stop_action_coast[] = "coast";
 
   // Power will be removed from the motor and a passive electrical load will
   // be placed on the motor. This is usually done by shorting the motor terminals
   // together. This load will absorb the energy from the rotation of the motors and
-  // cause the motor to stop more quickly than coasting.
-  static const std::string stop_command_brake;
+  // cause the motor to stop more quickly than csetspeoasting.
+  static constexpr char stop_action_brake[] = "brake";
 
   // Does not remove power from the motor. Instead it actively try to hold the motor
   // at the current position. If an external force tries to turn the motor, the motor
-  // will ``push back`` to maintain its position.
-  static const std::string stop_command_hold;
+  // will `push back` to maintain its position.
+  static constexpr char stop_action_hold[] = "hold";
 
 
 //~autogen
 
 //~autogen generic-get-set classes.motor>currentClass
+
+  // Address: read-only
+  // Returns the name of the port that this motor is connected to.
+  std::string address() const { return get_attr_string("address"); }
 
   // Command: write-only
   // Sends a command to the motor controller. See `commands` for a list of
@@ -703,17 +770,17 @@ public:
   // 
   // - `run-forever` will cause the motor to run until another command is sent.
   // - `run-to-abs-pos` will run to an absolute position specified by `position_sp`
-  //   and then stop using the command specified in `stop_command`.
+  //   and then stop using the action specified in `stop_action`.
   // - `run-to-rel-pos` will run to a position relative to the current `position` value.
   //   The new position will be current `position` + `position_sp`. When the new
-  //   position is reached, the motor will stop using the command specified by `stop_command`.
+  //   position is reached, the motor will stop using the action specified by `stop_action`.
   // - `run-timed` will run the motor for the amount of time specified in `time_sp`
-  //   and then stop the motor using the command specified by `stop_command`.
+  //   and then stop the motor using the action specified by `stop_action`.
   // - `run-direct` will run the motor at the duty cycle specified by `duty_cycle_sp`.
   //   Unlike other run commands, changing `duty_cycle_sp` while running *will*
   //   take effect immediately.
   // - `stop` will stop any of the run commands before they are complete using the
-  //   command specified by `stop_command`.
+  //   action specified by `stop_action`.
   // - `reset` will reset all of the motor parameter attributes to their default value.
   //   This will also have the effect of stopping the motor.
   mode_set commands() const { return get_attr_set("commands"); }
@@ -721,9 +788,14 @@ public:
   // Count Per Rot: read-only
   // Returns the number of tacho counts in one rotation of the motor. Tacho counts
   // are used by the position and speed attributes, so you can use this value
-  // to convert rotations or degrees to tacho counts. In the case of linear
-  // actuators, the units here will be counts per centimeter.
+  // to convert rotations or degrees to tacho counts. (rotation motors only)
   int count_per_rot() const { return get_attr_int("count_per_rot"); }
+
+  // Count Per M: read-only
+  // Returns the number of tacho counts in one meter of travel of the motor. Tacho
+  // counts are used by the position and speed attributes, so you can use this
+  // value to convert from distance to tacho counts. (linear motors only)
+  int count_per_m() const { return get_attr_int("count_per_m"); }
 
   // Driver Name: read-only
   // Returns the name of the driver that provides this tacho motor device.
@@ -737,25 +809,18 @@ public:
   // Duty Cycle SP: read/write
   // Writing sets the duty cycle setpoint. Reading returns the current value.
   // Units are in percent. Valid values are -100 to 100. A negative value causes
-  // the motor to rotate in reverse. This value is only used when `speed_regulation`
-  // is off.
+  // the motor to rotate in reverse.
   int duty_cycle_sp() const { return get_attr_int("duty_cycle_sp"); }
   auto set_duty_cycle_sp(int v) -> decltype(*this) {
     set_attr_int("duty_cycle_sp", v);
     return *this;
   }
 
-  // Encoder Polarity: read/write
-  // Sets the polarity of the rotary encoder. This is an advanced feature to all
-  // use of motors that send inversed encoder signals to the EV3. This should
-  // be set correctly by the driver of a device. It You only need to change this
-  // value if you are using a unsupported device. Valid values are `normal` and
-  // `inversed`.
-  std::string encoder_polarity() const { return get_attr_string("encoder_polarity"); }
-  auto set_encoder_polarity(std::string v) -> decltype(*this) {
-    set_attr_string("encoder_polarity", v);
-    return *this;
-  }
+  // Full Travel Count: read-only
+  // Returns the number of tacho counts in the full travel of the motor. When
+  // combined with the `count_per_m` atribute, you can use this value to
+  // calculate the maximum travel distance of the motor. (linear motors only)
+  int full_travel_count() const { return get_attr_int("full_travel_count"); }
 
   // Polarity: read/write
   // Sets the polarity of the motor. With `normal` polarity, a positive duty
@@ -767,10 +832,6 @@ public:
     set_attr_string("polarity", v);
     return *this;
   }
-
-  // Address: read-only
-  // Returns the name of the port that this motor is connected to.
-  std::string address() const { return get_attr_string("address"); }
 
   // Position: read/write
   // Returns the current position of the motor in pulses of the rotary
@@ -818,16 +879,25 @@ public:
     return *this;
   }
 
+  // Max Speed: read-only
+  // Returns the maximum value that is accepted by the `speed_sp` attribute. This
+  // may be slightly different than the maximum speed that a particular motor can
+  // reach - it's the maximum theoretical speed.
+  int max_speed() const { return get_attr_int("max_speed"); }
+
   // Speed: read-only
-  // Returns the current motor speed in tacho counts per second. Not, this is
+  // Returns the current motor speed in tacho counts per second. Note, this is
   // not necessarily degrees (although it is for LEGO motors). Use the `count_per_rot`
   // attribute to convert this value to RPM or deg/sec.
   int speed() const { return get_attr_int("speed"); }
 
   // Speed SP: read/write
-  // Writing sets the target speed in tacho counts per second used when `speed_regulation`
-  // is on. Reading returns the current value.  Use the `count_per_rot` attribute
-  // to convert RPM or deg/sec to tacho counts per second.
+  // Writing sets the target speed in tacho counts per second used for all `run-*`
+  // commands except `run-direct`. Reading returns the current value. A negative
+  // value causes the motor to rotate in reverse with the exception of `run-to-*-pos`
+  // commands where the sign is ignored. Use the `count_per_rot` attribute to convert
+  // RPM or deg/sec to tacho counts per second. Use the `count_per_m` attribute to
+  // convert m/s to tacho counts per second.
   int speed_sp() const { return get_attr_int("speed_sp"); }
   auto set_speed_sp(int v) -> decltype(*this) {
     set_attr_int("speed_sp", v);
@@ -836,10 +906,10 @@ public:
 
   // Ramp Up SP: read/write
   // Writing sets the ramp up setpoint. Reading returns the current value. Units
-  // are in milliseconds. When set to a value > 0, the motor will ramp the power
-  // sent to the motor from 0 to 100% duty cycle over the span of this setpoint
-  // when starting the motor. If the maximum duty cycle is limited by `duty_cycle_sp`
-  // or speed regulation, the actual ramp time duration will be less than the setpoint.
+  // are in milliseconds and must be positive. When set to a non-zero value, the
+  // motor speed will increase from 0 to 100% of `max_speed` over the span of this
+  // setpoint. The actual ramp time is the ratio of the difference between the
+  // `speed_sp` and the current `speed` and max_speed multiplied by `ramp_up_sp`.
   int ramp_up_sp() const { return get_attr_int("ramp_up_sp"); }
   auto set_ramp_up_sp(int v) -> decltype(*this) {
     set_attr_int("ramp_up_sp", v);
@@ -848,80 +918,68 @@ public:
 
   // Ramp Down SP: read/write
   // Writing sets the ramp down setpoint. Reading returns the current value. Units
-  // are in milliseconds. When set to a value > 0, the motor will ramp the power
-  // sent to the motor from 100% duty cycle down to 0 over the span of this setpoint
-  // when stopping the motor. If the starting duty cycle is less than 100%, the
-  // ramp time duration will be less than the full span of the setpoint.
+  // are in milliseconds and must be positive. When set to a non-zero value, the
+  // motor speed will decrease from 0 to 100% of `max_speed` over the span of this
+  // setpoint. The actual ramp time is the ratio of the difference between the
+  // `speed_sp` and the current `speed` and max_speed multiplied by `ramp_down_sp`.
   int ramp_down_sp() const { return get_attr_int("ramp_down_sp"); }
   auto set_ramp_down_sp(int v) -> decltype(*this) {
     set_attr_int("ramp_down_sp", v);
     return *this;
   }
 
-  // Speed Regulation Enabled: read/write
-  // Turns speed regulation on or off. If speed regulation is on, the motor
-  // controller will vary the power supplied to the motor to try to maintain the
-  // speed specified in `speed_sp`. If speed regulation is off, the controller
-  // will use the power specified in `duty_cycle_sp`. Valid values are `on` and
-  // `off`.
-  std::string speed_regulation_enabled() const { return get_attr_string("speed_regulation"); }
-  auto set_speed_regulation_enabled(std::string v) -> decltype(*this) {
-    set_attr_string("speed_regulation", v);
-    return *this;
-  }
-
-  // Speed Regulation P: read/write
+  // Speed P: read/write
   // The proportional constant for the speed regulation PID.
-  int speed_regulation_p() const { return get_attr_int("speed_pid/Kp"); }
-  auto set_speed_regulation_p(int v) -> decltype(*this) {
+  int speed_p() const { return get_attr_int("speed_pid/Kp"); }
+  auto set_speed_p(int v) -> decltype(*this) {
     set_attr_int("speed_pid/Kp", v);
     return *this;
   }
 
-  // Speed Regulation I: read/write
+  // Speed I: read/write
   // The integral constant for the speed regulation PID.
-  int speed_regulation_i() const { return get_attr_int("speed_pid/Ki"); }
-  auto set_speed_regulation_i(int v) -> decltype(*this) {
+  int speed_i() const { return get_attr_int("speed_pid/Ki"); }
+  auto set_speed_i(int v) -> decltype(*this) {
     set_attr_int("speed_pid/Ki", v);
     return *this;
   }
 
-  // Speed Regulation D: read/write
+  // Speed D: read/write
   // The derivative constant for the speed regulation PID.
-  int speed_regulation_d() const { return get_attr_int("speed_pid/Kd"); }
-  auto set_speed_regulation_d(int v) -> decltype(*this) {
+  int speed_d() const { return get_attr_int("speed_pid/Kd"); }
+  auto set_speed_d(int v) -> decltype(*this) {
     set_attr_int("speed_pid/Kd", v);
     return *this;
   }
 
   // State: read-only
   // Reading returns a list of state flags. Possible flags are
-  // `running`, `ramping` `holding` and `stalled`.
+  // `running`, `ramping`, `holding`, `overloaded` and `stalled`.
   mode_set state() const { return get_attr_set("state"); }
 
-  // Stop Command: read/write
-  // Reading returns the current stop command. Writing sets the stop command.
+  // Stop Action: read/write
+  // Reading returns the current stop action. Writing sets the stop action.
   // The value determines the motors behavior when `command` is set to `stop`.
   // Also, it determines the motors behavior when a run command completes. See
-  // `stop_commands` for a list of possible values.
-  std::string stop_command() const { return get_attr_string("stop_command"); }
-  auto set_stop_command(std::string v) -> decltype(*this) {
-    set_attr_string("stop_command", v);
+  // `stop_actions` for a list of possible values.
+  std::string stop_action() const { return get_attr_string("stop_action"); }
+  auto set_stop_action(std::string v) -> decltype(*this) {
+    set_attr_string("stop_action", v);
     return *this;
   }
 
-  // Stop Commands: read-only
-  // Returns a list of stop modes supported by the motor controller.
+  // Stop Actions: read-only
+  // Returns a list of stop actions supported by the motor controller.
   // Possible values are `coast`, `brake` and `hold`. `coast` means that power will
   // be removed from the motor and it will freely coast to a stop. `brake` means
   // that power will be removed from the motor and a passive electrical load will
   // be placed on the motor. This is usually done by shorting the motor terminals
   // together. This load will absorb the energy from the rotation of the motors and
   // cause the motor to stop more quickly than coasting. `hold` does not remove
-  // power from the motor. Instead it actively try to hold the motor at the current
+  // power from the motor. Instead it actively tries to hold the motor at the current
   // position. If an external force tries to turn the motor, the motor will 'push
   // back' to maintain its position.
-  mode_set stop_commands() const { return get_attr_set("stop_commands"); }
+  mode_set stop_actions() const { return get_attr_set("stop_actions"); }
 
   // Time SP: read/write
   // Writing specifies the amount of time the motor will run when using the
@@ -942,17 +1000,17 @@ public:
     void run_forever() { set_command("run-forever"); }
 
     // Run to an absolute position specified by `position_sp` and then
-    // stop using the command specified in `stop_command`.
+    // stop using the action specified in `stop_action`.
     void run_to_abs_pos() { set_command("run-to-abs-pos"); }
 
     // Run to a position relative to the current `position` value.
     // The new position will be current `position` + `position_sp`.
     // When the new position is reached, the motor will stop using
-    // the command specified by `stop_command`.
+    // the action specified by `stop_action`.
     void run_to_rel_pos() { set_command("run-to-rel-pos"); }
 
     // Run the motor for the amount of time specified in `time_sp`
-    // and then stop the motor using the command specified by `stop_command`.
+    // and then stop the motor using the action specified by `stop_action`.
     void run_timed() { set_command("run-timed"); }
 
     // Run the motor at the duty cycle specified by `duty_cycle_sp`.
@@ -961,7 +1019,7 @@ public:
     void run_direct() { set_command("run-direct"); }
 
     // Stop any of the run commands before they are complete using the
-    // command specified by `stop_command`.
+    // action specified by `stop_action`.
     void stop() { set_command("stop"); }
 
     // Reset all of the motor parameter attributes to their default value.
@@ -1015,42 +1073,46 @@ public:
 //~autogen generic-declare-property-value classes.dcMotor>currentClass
 
   // Run the motor until another command is sent.
-  static const std::string command_run_forever;
+  static constexpr char command_run_forever[] = "run-forever";
 
   // Run the motor for the amount of time specified in `time_sp`
-  // and then stop the motor using the command specified by `stop_command`.
-  static const std::string command_run_timed;
+  // and then stop the motor using the action specified by `stop_action`.
+  static constexpr char command_run_timed[] = "run-timed";
 
   // Run the motor at the duty cycle specified by `duty_cycle_sp`.
   // Unlike other run commands, changing `duty_cycle_sp` while running *will*
   // take effect immediately.
-  static const std::string command_run_direct;
+  static constexpr char command_run_direct[] = "run-direct";
 
   // Stop any of the run commands before they are complete using the
-  // command specified by `stop_command`.
-  static const std::string command_stop;
+  // action specified by `stop_action`.
+  static constexpr char command_stop[] = "stop";
 
   // With `normal` polarity, a positive duty cycle will
   // cause the motor to rotate clockwise.
-  static const std::string polarity_normal;
+  static constexpr char polarity_normal[] = "normal";
 
   // With `inversed` polarity, a positive duty cycle will
   // cause the motor to rotate counter-clockwise.
-  static const std::string polarity_inversed;
+  static constexpr char polarity_inversed[] = "inversed";
 
   // Power will be removed from the motor and it will freely coast to a stop.
-  static const std::string stop_command_coast;
+  static constexpr char stop_action_coast[] = "coast";
 
   // Power will be removed from the motor and a passive electrical load will
   // be placed on the motor. This is usually done by shorting the motor terminals
   // together. This load will absorb the energy from the rotation of the motors and
   // cause the motor to stop more quickly than coasting.
-  static const std::string stop_command_brake;
+  static constexpr char stop_action_brake[] = "brake";
 
 
 //~autogen
 
 //~autogen generic-get-set classes.dcMotor>currentClass
+
+  // Address: read-only
+  // Returns the name of the port that this motor is connected to.
+  std::string address() const { return get_attr_string("address"); }
 
   // Command: write-only
   // Sets the command for the motor. Possible values are `run-forever`, `run-timed` and
@@ -1094,10 +1156,6 @@ public:
     return *this;
   }
 
-  // Address: read-only
-  // Returns the name of the port that this motor is connected to.
-  std::string address() const { return get_attr_string("address"); }
-
   // Ramp Down SP: read/write
   // Sets the time in milliseconds that it take the motor to ramp down from 100%
   // to 0%. Valid values are 0 to 10000 (10 seconds). Default is 0.
@@ -1123,18 +1181,18 @@ public:
   // `duty_cycle_sp`.
   mode_set state() const { return get_attr_set("state"); }
 
-  // Stop Command: write-only
-  // Sets the stop command that will be used when the motor stops. Read
-  // `stop_commands` to get the list of valid values.
-  auto set_stop_command(std::string v) -> decltype(*this) {
-    set_attr_string("stop_command", v);
+  // Stop Action: write-only
+  // Sets the stop action that will be used when the motor stops. Read
+  // `stop_actions` to get the list of valid values.
+  auto set_stop_action(std::string v) -> decltype(*this) {
+    set_attr_string("stop_action", v);
     return *this;
   }
 
-  // Stop Commands: read-only
-  // Gets a list of stop commands. Valid values are `coast`
+  // Stop Actions: read-only
+  // Gets a list of stop actions. Valid values are `coast`
   // and `brake`.
-  mode_set stop_commands() const { return get_attr_set("stop_commands"); }
+  mode_set stop_actions() const { return get_attr_set("stop_actions"); }
 
   // Time SP: read/write
   // Writing specifies the amount of time the motor will run when using the
@@ -1155,7 +1213,7 @@ public:
     void run_forever() { set_command("run-forever"); }
 
     // Run the motor for the amount of time specified in `time_sp`
-    // and then stop the motor using the command specified by `stop_command`.
+    // and then stop the motor using the action specified by `stop_action`.
     void run_timed() { set_command("run-timed"); }
 
     // Run the motor at the duty cycle specified by `duty_cycle_sp`.
@@ -1164,7 +1222,7 @@ public:
     void run_direct() { set_command("run-direct"); }
 
     // Stop any of the run commands before they are complete using the
-    // command specified by `stop_command`.
+    // action specified by `stop_action`.
     void stop() { set_command("stop"); }
 
 
@@ -1193,23 +1251,27 @@ public:
 //~autogen generic-declare-property-value classes.servoMotor>currentClass
 
   // Drive servo to the position set in the `position_sp` attribute.
-  static const std::string command_run;
+  static constexpr char command_run[] = "run";
 
   // Remove power from the motor.
-  static const std::string command_float;
+  static constexpr char command_float[] = "float";
 
   // With `normal` polarity, a positive duty cycle will
   // cause the motor to rotate clockwise.
-  static const std::string polarity_normal;
+  static constexpr char polarity_normal[] = "normal";
 
   // With `inversed` polarity, a positive duty cycle will
   // cause the motor to rotate counter-clockwise.
-  static const std::string polarity_inversed;
+  static constexpr char polarity_inversed[] = "inversed";
 
 
 //~autogen
 
 //~autogen generic-get-set classes.servoMotor>currentClass
+
+  // Address: read-only
+  // Returns the name of the port that this motor is connected to.
+  std::string address() const { return get_attr_string("address"); }
 
   // Command: write-only
   // Sets the command for the servo. Valid values are `run` and `float`. Setting
@@ -1270,10 +1332,6 @@ public:
     set_attr_string("polarity", v);
     return *this;
   }
-
-  // Address: read-only
-  // Returns the name of the port that this motor is connected to.
-  std::string address() const { return get_attr_string("address"); }
 
   // Position SP: read/write
   // Reading returns the current position_sp of the servo. Writing instructs the
@@ -1418,7 +1476,7 @@ public:
   // provided values (in milliseconds).
   void flash(unsigned on_ms, unsigned off_ms);
 
-#ifdef EV3DEV_PLATFORM_BRICKPI
+#if defined(EV3DEV_PLATFORM_BRICKPI)
 //~autogen leds-declare platforms.brickpi.led>currentClass
 
     static led blue_led1;
@@ -1427,7 +1485,32 @@ public:
     static std::vector<led*> led1;
     static std::vector<led*> led2;
 
+    static std::vector<float> black;
     static std::vector<float> blue;
+
+//~autogen
+#elif defined(EV3DEV_PLATFORM_PISTORMS)
+//~autogen leds-declare platforms.pistorms.led>currentClass
+
+    static led red_left;
+    static led red_right;
+    static led green_left;
+    static led green_right;
+    static led blue_left;
+    static led blue_right;
+
+    static std::vector<led*> left;
+    static std::vector<led*> right;
+
+    static std::vector<float> black;
+    static std::vector<float> red;
+    static std::vector<float> green;
+    static std::vector<float> blue;
+    static std::vector<float> yellow;
+    static std::vector<float> purple;
+    static std::vector<float> cyan;
+    static std::vector<float> white;
+    static std::vector<float> orange;
 
 //~autogen
 #else
@@ -1441,6 +1524,7 @@ public:
     static std::vector<led*> left;
     static std::vector<led*> right;
 
+    static std::vector<float> black;
     static std::vector<float> red;
     static std::vector<float> green;
     static std::vector<float> amber;
@@ -1682,6 +1766,11 @@ public:
 
 //~autogen generic-get-set classes.legoPort>currentClass
 
+  // Address: read-only
+  // Returns the name of the port. See individual driver documentation for
+  // the name that will be returned.
+  std::string address() const { return get_attr_string("address"); }
+
   // Driver Name: read-only
   // Returns the name of the driver that loaded this device. You can find the
   // complete list of drivers in the [list of port drivers].
@@ -1701,11 +1790,6 @@ public:
     set_attr_string("mode", v);
     return *this;
   }
-
-  // Address: read-only
-  // Returns the name of the port. See individual driver documentation for
-  // the name that will be returned.
-  std::string address() const { return get_attr_string("address"); }
 
   // Set Device: write-only
   // For modes that support it, writing the name of a driver will cause a new

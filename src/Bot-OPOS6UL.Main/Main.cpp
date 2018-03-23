@@ -1,3 +1,4 @@
+#include "../Bot-OPOS6UL/O_Asserv_CalageTest.hpp"
 #include "../Bot-OPOS6UL/O_Asserv_SquareTest.hpp"
 #include "../Bot-OPOS6UL/O_AsservTest.hpp"
 #include "../Bot-OPOS6UL/O_ButtonBarTest.hpp"
@@ -26,6 +27,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new O_GroveColorTest());
 	robot.getConsoleManager().add(new O_AsservTest());
 	robot.getConsoleManager().add(new O_Asserv_SquareTest());
+	robot.getConsoleManager().add(new O_Asserv_CalageTest());
 	robot.getConsoleManager().add(new O_IAByPathTest());
 	robot.getConsoleManager().add(new O_ServoStepTest);
 	robot.getConsoleManager().add(new O_ServoObjectsTest);

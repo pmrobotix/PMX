@@ -9,32 +9,36 @@
 
 
 
-#set eth0 network
+
+echo set eth0 network
 ifconfig eth0 up
 udhcpc -n
 
 
 
 
-#WIFI
-#modprobe -r brcmfmac
-#sleep 1
-#modprobe brcmfmac
-#sleep 5
-#modprobe -r brcmfmac
-#sleep 1
-#modprobe brcmfmac
-#sleep 5
+echo activate WIFI module
+modprobe -r brcmfmac
+sleep 1
+modprobe brcmfmac
+sleep 5
+modprobe -r brcmfmac
+sleep 1
+modprobe brcmfmac
+sleep 5
 
-#WIFI CONF
-#iwconfig
-vifconfig wlan0 up
-#iwlist wlan0 s 
-#wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
-#dhclient wlan0
+echo set WIFI conf
+iwconfig
+ifconfig wlan0 up
+iwlist wlan0 s 
+wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
+#echo "nameserver 127.0.0.1" > /etc/resolv.conf
+dhclient wlan0
 
+echo ifconfig
 ifconfig
 
+echo check I2c address
 #I2C UART4
 i2cdetect -y -a 0
 #I2C UART5
@@ -46,3 +50,6 @@ i2cdetect -y -a 1
 #pour eviter une connexion à internet.. les DNS sont ajoutés après l'activation du wifi...
 echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
+
+#start PMX
+#/root/Bot_ArmadeusOPOS6UL_ARM m

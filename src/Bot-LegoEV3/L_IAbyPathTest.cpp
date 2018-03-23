@@ -140,7 +140,7 @@ void L_IAByPathTest::run(int argc, char** argv)
 
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	robot.asserv().startMotionTimerAndOdo();
+	robot.asserv().startMotionTimerAndOdo(true);
 	robot.asserv().setPositionAndColor(800, 150, 0.0, (robot.getMyColor() != PMXYELLOW));
 	robot.svgPrintPosition();
 	robot.chrono().start();

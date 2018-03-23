@@ -27,6 +27,7 @@ ServoObjectsAx12::~ServoObjectsAx12()
 //-1 => wait moving and hold
 void ServoObjectsAx12::deploy(int servo, int pos, int keep_millisec)
 {
+	printf ("deploy %i %i \n", servo, pos);
 	hold(servo);
 	servodriver->setPosition(servo, pos); // percentage
 	if (keep_millisec > 0)
@@ -36,8 +37,8 @@ void ServoObjectsAx12::deploy(int servo, int pos, int keep_millisec)
 	}
 	else if (keep_millisec == -1)
 	{
-		int b= 0;
-		/*
+		int b = 0;
+
 		while (int r = servodriver->getMoving(servo) >= 1)
 		{
 			if (r < 0)
@@ -46,17 +47,20 @@ void ServoObjectsAx12::deploy(int servo, int pos, int keep_millisec)
 			}
 
 			usleep(10000);
-		}*/
+		}
+/*
 		int p = servodriver->getPos(servo);
-		while ( !((p <= pos + 10) && (p >= pos - 10)))
+		printf ("first p=%d b=%d\n", p, b);
+		b++;
+		while ( !((p <= pos + 5) && (p >= pos - 5)))
 		{
 			p = servodriver->getPos(servo);
-			printf ("\n p=%d b=%d\n", p, b);
+			printf ("p=%d b=%d\n", p, b);
 			b++;
 			if (b>1000) break;
 			//usleep(100000);
 		}
-
+*/
 	}
 	hold(servo);
 }

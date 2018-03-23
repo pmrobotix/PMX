@@ -19,7 +19,7 @@ ServoUsingMotorDriver::ServoUsingMotorDriver()
 		: connected_(0)
 {
 	logger().debug() << "ServoDeviceDriver()" << logs::end;
-
+/*
 	motor m = motor(OUTPUT_C);
 	if (m.connected())
 	{
@@ -49,11 +49,11 @@ ServoUsingMotorDriver::ServoUsingMotorDriver()
 		_servo_device.reset();
 		_servo_device.set_stop_command(motor::stop_command_brake);
 		enableHardRegulation(false);
-	}
+	}*/
 }
 
 void ServoUsingMotorDriver::setMotorPosition(int power, int ticks, int ramptimems)
-{
+{/*
 	if (_servo_device.connected())
 	{
 		_servo_device.set_ramp_down_sp(ramptimems);
@@ -69,7 +69,7 @@ void ServoUsingMotorDriver::setMotorPosition(int power, int ticks, int ramptimem
 			_servo_device.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
 		}
 		logger().error() << "ticks = " << ticks << logs::end;
-	}
+	}*/
 }
 
 
@@ -106,7 +106,7 @@ int ServoUsingMotorDriver::getMotorCurrent()
 }
 
 void ServoUsingMotorDriver::enableHardRegulation(bool enable)
-{
+{/*
 	if (_servo_device.connected())
 	{
 		if (enable)
@@ -117,7 +117,7 @@ void ServoUsingMotorDriver::enableHardRegulation(bool enable)
 		{
 			_servo_device.set_speed_regulation_enabled("off"); //duty_cycle_sp
 		}
-	}
+	}*/
 }
 
 int ServoUsingMotorDriver::limit(int power, int max)

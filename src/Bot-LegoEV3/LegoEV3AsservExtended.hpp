@@ -20,12 +20,12 @@ private:
 	}
 
 
-
+/*
 	//dernière puissance pour chaque motor.
 	int last_sens_left_; //1:AV 0:AR
 	int last_sens_right_; //1:AV 0:AR
 	float motorwheel_patch_m;
-	float motorwheel_patch_rad;
+	float motorwheel_patch_rad;*/
 
 public:
 	LegoEV3AsservExtended(std::string botId, Robot * robot);
@@ -33,7 +33,7 @@ public:
 	~LegoEV3AsservExtended()
 	{
 	}
-
+/*
 	AsservInsa * insa();
 
 	void startMotionTimerAndOdo();
@@ -62,9 +62,9 @@ public:
 	void configureAlphaPID(float Ap, float Ai, float Ad);
 	void configureDeltaPID(float Dp, float Di, float Dd);
 
-	/*!
-	 * Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot
-	 */
+
+	//Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot
+
 	void setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor);
 
 	void setVmax(float vmax);
@@ -79,7 +79,7 @@ public:
 	// angle in radian
 	float pos_getTheta();
 	// angle in degrees
-	float pos_getThetaInDegree();
+	float pos_getThetaInDegree();*/
 
 };
 

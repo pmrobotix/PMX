@@ -62,7 +62,8 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 		p = atoi(args["p"].c_str());
 		logger().info() << "Arg p set " << args["p"] << ", p = " << p << " power" << logs::end;
 	}
-
+	//TODO deprecated ? a utiliser que pour asservInsa
+/*
 	robot.asserv().startMotionTimerAndOdo();
 
 	robot.asserv().configureAlphaPID(Ap, 0.0, Ad); //surcharge
@@ -129,7 +130,7 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 	logger().info() << "RESULT: setResolution (nb ticks pour 1m) = 1000* distT / mesure"
 			<< logs::end;
 	logger().info() << "RESULT: setResolution = " << setR << " / mesure_mm" << logs::end;
-
+*/
 	robot.stop();
 	logger().info() << "Happy End." << logs::end;
 }

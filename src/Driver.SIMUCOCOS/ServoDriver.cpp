@@ -12,85 +12,101 @@ AServoDriver * AServoDriver::create()
 	return instance;
 }
 
-ServoDriver::ServoDriver()
-		: connected_(0)
+ServoDriver::ServoDriver() :
+		connected_(0)
 {
 	logger().debug() << "ServoDriver()" << logs::end;
 
 }
 
-void ServoDriver::hold(ServoLabel servo) // 1 à 8
+void ServoDriver::hold(int servo) // 1 à 8
 {
 	switch (servo)
 	{
 	/*
-	case SERVO_LEFT:
-		break;
+	 case SERVO_LEFT:
+	 break;
 
-	case SERVO_RIGHT:
-		break;
+	 case SERVO_RIGHT:
+	 break;
 
-	case SERVO_CENTRE:
-		break;
-*/
+	 case SERVO_CENTRE:
+	 break;
+	 */
 	default:
 		break;
 	}
 }
 
-void ServoDriver::setPosition(ServoLabel servo, double percent)
+void ServoDriver::setPosition(int servo, int pos)
 {
 	switch (servo)
 	{
 	/*
-	case SERVO_LEFT:
-		break;
+	 case SERVO_LEFT:
+	 break;
 
-	case SERVO_RIGHT:
-		break;
+	 case SERVO_RIGHT:
+	 break;
 
-	case SERVO_CENTRE:
-		break;
-*/
+	 case SERVO_CENTRE:
+	 break;
+	 */
 	default:
 		break;
 	}
 }
 
-void ServoDriver::release(ServoLabel servo)
+void ServoDriver::release(int servo)
 {
 	switch (servo)
 	{
 	/*
-	case SERVO_LEFT:
-		break;
+	 case SERVO_LEFT:
+	 break;
 
-	case SERVO_RIGHT:
-		break;
+	 case SERVO_RIGHT:
+	 break;
 
-	case SERVO_CENTRE:
-		break;
-*/
+	 case SERVO_CENTRE:
+	 break;
+	 */
 	default:
 		break;
 	}
 }
 
-void ServoDriver::setRate(ServoLabel servo, int millisec)
+void ServoDriver::setRate(int servo, int speed)
 {
 	switch (servo)
 	{
 	/*
-	case SERVO_LEFT:
-		break;
+	 case SERVO_LEFT:
+	 break;
 
-	case SERVO_RIGHT:
-		break;
+	 case SERVO_RIGHT:
+	 break;
 
-	case SERVO_CENTRE:
-		break;
-*/
+	 case SERVO_CENTRE:
+	 break;
+	 */
 	default:
 		break;
 	}
 }
+
+void ServoDriver::turn(int servo, int speed)
+{
+
+}
+
+int ServoDriver::getMoving(int servo)
+{
+	return 0;
+}
+
+int ServoDriver::getPos(int servo)
+{
+	return 0;
+}
+
