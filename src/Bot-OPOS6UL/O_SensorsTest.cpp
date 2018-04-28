@@ -13,26 +13,26 @@ using namespace std;
 
 void O_SensorsTest::run(int argc, char** argv)
 {
-	logger().info() << "Executing - " << this->desc() << logs::end;
+    logger().info() << "Executing - " << this->desc() << logs::end;
 
-	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-	bool front;
-	bool rear;
-	utils::Chronometer chrono;
-	chrono.start();
-	while (chrono.getElapsedTimeInSec() < 100)
-	{
-		front = robot.actions().sensors().front();
+    //execution sans le actionTimer
+    bool front;
+    bool rear;
+    utils::Chronometer chrono;
+    chrono.start();
+    while (chrono.getElapsedTimeInSec() < 100) {
+        front = robot.actions().sensors().front();
 
-		rear = robot.actions().sensors().rear();
+        rear = robot.actions().sensors().rear();
 
-		usleep(400000);
-		logger().info() << " front=" << front << " rear=" << rear << logs::end;
-	}
+        usleep(400000);
+        logger().info() << " front=" << front << " rear=" << rear << logs::end;
+    }
 
-
-	robot.stop();
-	logger().info() << "Happy End." << logs::end;
+    robot.stopActions();
+    robot.stopAll();
+    logger().info() << "Happy End." << logs::end;
 }
 

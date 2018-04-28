@@ -13,6 +13,44 @@
 
 using namespace std;
 
+
+//TODO change float2bytes_t to int32 converter
+/*
+For readability and simplicity, why don't we use a union?
+
+union converter {
+    char    c[4];
+    int32_t i;
+}
+Now, to convert, it's as simple as this:
+
+union converter conv;
+conv.i = yourInt32Value;
+char *cString = conv.c;
+or
+
+union converter conv;
+conv.c = yourCStringValue;
+int32_t i = conv.i;
+Remember to pay attention to your endianness, however.
+
+union converter {
+    char    c[4];
+    int32_t i;
+};
+
+int main(int argc, const char * argv[]) {
+    union converter conv;
+    conv.c[0] = 0xFF;
+    conv.c[1] = 0xEE;
+    conv.c[2] = 0xDD;
+    conv.c[3] = 0xCC;
+
+    std::cout << std::hex << conv.i << std::endl;
+
+    return 0;
+}*/
+
 AAsservDriver * AAsservDriver::create(std::string)
 {
     static AsservDriver *instance = new AsservDriver();
@@ -66,7 +104,8 @@ void AsservDriver::execute()
             p_ = mbed_GetPosition();
             m_pos.unlock();
             //log SVG
-            loggerSvg().info() << "<circle cx=\"10\" cy=\"-300\" r=\"1\" fill=\"blue\" />" << logs::end;
+            //TODO PB log SVG a faire ici sauf si fin d'ecriture pb avec </g>
+            //loggerSvg().info() << "<circle cx=\"10\" cy=\"-300\" r=\"1\" fill=\"blue\" />" << logs::end;
         }
         chrono.waitTimer();
     }
@@ -523,7 +562,7 @@ void AsservDriver::motion_FreeMotion(void)
     if (!asservMbedStarted_)
         logger().debug() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
-        mbed_writeI2c('K', 0, NULL);
+        mbed_writeI2c('K', 0, NULL); //stop mbed managers
         pathStatus_ = TRAJ_CANCELLED;
     }
 }
@@ -534,7 +573,7 @@ void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotio
     if (!asservMbedStarted_)
         logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
-        mbed_writeI2c('K', 0, NULL);
+        mbed_writeI2c('K', 0, NULL); //stop mbed managers
         pathStatus_ = TRAJ_CANCELLED;
     }
 }

@@ -15,9 +15,10 @@ void O_GroveColorTest::run(int argc, char** argv)
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
 
+	//TODO
 
 
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

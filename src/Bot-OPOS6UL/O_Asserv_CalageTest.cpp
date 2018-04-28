@@ -72,8 +72,7 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     logger().info() << "Stopping Robot... " << logs::end;
-    robot.asserv().stopMotionTimerAndOdo();
-    robot.stop();
+    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

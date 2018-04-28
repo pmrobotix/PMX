@@ -29,9 +29,9 @@ void O_LcdBoardTest::run(int argc, char** argv)
 
 	sleep(3);
 
-	robot.actions().stop();
+	robot.stopActions();
 
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "OPOS6UL_RobotExtended Happy End." << logs::end;
 }
 

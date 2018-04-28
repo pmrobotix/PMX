@@ -793,12 +793,12 @@ void L_State_DecisionMaker::IASetupMatchesBelgique()
 	robot.ia().iAbyZone().ia_createZone("depart", 710, 0, 300, 300, 800, 200, 90);
 	robot.ia().iAbyZone().ia_createZone("zone_plot1", 900, 500, 200, 100, 1000, 400, 90);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXGREEN)
 	{
 		robot.ia().iAbyZone().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 770, 180);
 		robot.ia().iAbyZone().ia_createZone("zone_plot2", 100, 500, 200, 100, 280, 600, -135);
 	}
-	else if (robot.getMyColor() == PMXYELLOW)
+	else if (robot.getMyColor() == PMXORANGE)
 	{
 		robot.ia().iAbyZone().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 840, 180);
 		robot.ia().iAbyZone().ia_createZone("zone_plot2", 100, 500, 200, 100, 200, 600, -135);

@@ -50,7 +50,7 @@ void LcdShield::init()
 void LcdShield::reset()
 {
 	clear();
-	setBacklightOff();
+	setCursor(0,0);
 }
 
 

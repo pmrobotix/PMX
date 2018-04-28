@@ -2,9 +2,10 @@
 
 set force_conservative 1; 
 set timeout -1
-set cmd [lindex $argv 0]
+set cmd1 [lindex $argv 0]
+set cmd2 [lindex $argv 1]
 
-spawn ./opos6ul-connect $cmd 
+spawn ./opos6ul-connect $cmd1 $cmd2
 
 expect {
 password: {

@@ -446,109 +446,109 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 //motion_DoRotate(x_init +);
     //TODO
 
-return TRAJ_OK;
+    return TRAJ_OK;
 }
 
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
 {
 
 //calcul du point d'arrivé
-m_pos.lock();
-float x_init = p_.x;
-float y_init = p_.y;
-float t_init = p_.theta;
-m_pos.unlock();
+    m_pos.lock();
+    float x_init = p_.x;
+    float y_init = p_.y;
+    float t_init = p_.theta;
+    m_pos.unlock();
 
 //le delta
-double deltaXm = cos(t_init) * dist_meters;
-if (abs(deltaXm) < 0.0001)
-    deltaXm = 0;
+    double deltaXm = cos(t_init) * dist_meters;
+    if (abs(deltaXm) < 0.0001)
+        deltaXm = 0;
 
-double deltaYm = sin(t_init) * dist_meters;
-if (abs(deltaYm) < 0.0001)
-    deltaYm = 0;
+    double deltaYm = sin(t_init) * dist_meters;
+    if (abs(deltaYm) < 0.0001)
+        deltaYm = 0;
 
 //Ax+b
-double a = 0, b = 0;
-if (deltaXm != 0) //cas droite verticale
-        {
-    a = deltaYm / deltaXm;
-    b = y_init - (a * x_init);
-}
+    double a = 0, b = 0;
+    if (deltaXm != 0) //cas droite verticale
+            {
+        a = deltaYm / deltaXm;
+        b = y_init - (a * x_init);
+    }
 
-logger().debug() << "dist_meters=" << dist_meters << "deltaXm=" << deltaXm << " deltaYm=" << deltaYm << " a=" << a << " b=" << b << "  !!!!!" << logs::end;
+    logger().debug() << "dist_meters=" << dist_meters << "deltaXm=" << deltaXm << " deltaYm=" << deltaYm << " a=" << a << " b=" << b << "  !!!!!" << logs::end;
 
 //While à une certaine vitesse
 //set des valeurs
 //TODO break si path_collision
-float speedms = 0.3; //m/s
-int increment_time_us = 5000;
-double tps_sec = abs(dist_meters / speedms);
-float increment_m = ((increment_time_us / 1000000.0) * speedms);
-int nb_increment = dist_meters / increment_m;
+    float speedms = 0.3; //m/s
+    int increment_time_us = 5000;
+    double tps_sec = abs(dist_meters / speedms);
+    float increment_m = ((increment_time_us / 1000000.0) * speedms);
+    int nb_increment = dist_meters / increment_m;
 
-logger().debug() << "tps=" << tps_sec << " increment_m=" << increment_m << "  !!!!!" << logs::end;
+    logger().debug() << "tps=" << tps_sec << " increment_m=" << increment_m << "  !!!!!" << logs::end;
 
-asservStarted_ = true;
-for (int nb = 0; nb < nb_increment; nb++) {
+    asservStarted_ = true;
+    for (int nb = 0; nb < nb_increment; nb++) {
+
+        m_pos.lock();
+        if (deltaXm == 0) //cas droite verticale
+                {
+            if (deltaYm > 0)
+                p_.y += increment_m;
+            else if (deltaYm < 0)
+                p_.y -= increment_m;
+        } else {
+            float x_increment_m = cos(t_init) * increment_m;
+            p_.x += x_increment_m;
+            p_.y = (a * p_.x) + b;
+        }
+        m_pos.unlock();
+        usleep(increment_time_us);
+    }
 
     m_pos.lock();
     if (deltaXm == 0) //cas droite verticale
             {
-        if (deltaYm > 0)
-            p_.y += increment_m;
-        else if (deltaYm < 0)
-            p_.y -= increment_m;
+        p_.y = y_init + deltaYm;
     } else {
-        float x_increment_m = cos(t_init) * increment_m;
-        p_.x += x_increment_m;
-        p_.y = (a * p_.x) + b;
+        p_.x = x_init + deltaXm;
+        p_.y = y_init + deltaYm;
     }
     m_pos.unlock();
-    usleep(increment_time_us);
-}
+    usleep(increment_time_us * 5);
 
-m_pos.lock();
-if (deltaXm == 0) //cas droite verticale
-        {
-    p_.y = y_init + deltaYm;
-} else {
-    p_.x = x_init + deltaXm;
-    p_.y = y_init + deltaYm;
-}
-m_pos.unlock();
-usleep(increment_time_us * 5);
+    asservStarted_ = false;
 
-asservStarted_ = false;
-
-return TRAJ_OK;
+    return TRAJ_OK;
 }
 
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 {
-int increment_time_us = 5000;
+    int increment_time_us = 5000;
 
-m_pos.lock();
-float temp = p_.theta + angle_radians;
+    m_pos.lock();
+    float temp = p_.theta + angle_radians;
 
 //logger().error() << "angle_radians=" << angle_radians << " p_.theta=" << p_.theta << " temp= " << temp << "  !!!!!"	<< logs::end;
 
-if (temp >= M_PI) {
-    temp -= 2.0 * M_PI;
-} else if (temp < -M_PI) {
-    temp += 2.0 * M_PI;
-}
+    if (temp >= M_PI) {
+        temp -= 2.0 * M_PI;
+    } else if (temp < -M_PI) {
+        temp += 2.0 * M_PI;
+    }
 
-p_.theta = temp;
-m_pos.unlock();
+    p_.theta = temp;
+    m_pos.unlock();
 //logger().error() <<  " temp= " << temp << "  !!!!!"	<< logs::end;
-usleep(increment_time_us * 7);
-return TRAJ_OK;
+    usleep(increment_time_us * 7);
+    return TRAJ_OK;
 }
 
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 {
-return TRAJ_ERROR;
+    return TRAJ_ERROR;
 }
 void AsservDriver::motion_FreeMotion()
 {
@@ -568,3 +568,23 @@ void AsservDriver::motion_setLowSpeed(bool enable)
 
 }
 
+void AsservDriver::motion_ActivateReguDist(bool enable)
+{
+
+}
+void AsservDriver::motion_ActivateReguAngle(bool enable)
+{
+
+}
+void AsservDriver::motion_ResetReguDist()
+{
+
+}
+void AsservDriver::motion_ResetReguAngle()
+{
+
+}
+TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
+{
+
+}

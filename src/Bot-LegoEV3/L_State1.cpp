@@ -161,7 +161,7 @@ void L_State1::setPos()
 	robot.asserv().startMotionTimerAndOdo(true);
 	//init avant bascule
 	//robot.asserv().setPositionAndColor(60.05, 223.0, 180.0, (robot.getMyColor() != PMXYELLOW));
-	robot.asserv().setPositionAndColor(114, 140.0, 180.0, (robot.getMyColor() != PMXYELLOW));
+	robot.asserv().setPositionAndColor(114, 140.0, 180.0, (robot.getMyColor() != PMXORANGE));
 
 	//init après bascule
 	//robot.asserv().setPositionAndColor(978.5, 110.0, 90.0, (robot.getMyColor() != PMXYELLOW));

@@ -2,7 +2,7 @@
 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
 
-IP="192.168.0.212" #WIFI HOME CHO
+IPHOME="192.168.0.212" #WIFI HOME CHO
 IPWIFI="192.168.2.107" #WIFI PMX
 IPETH0="192.168.2.105" #ETH0 PMX
 
@@ -21,6 +21,10 @@ tsh()
 	scp ../sh/*.sh root@$IP:/root/
 }
 
+kill()
+{
+    ssh root@$IP "killall Bot_ArmadeusOPOS6UL_ARM"
+}
 
 pmx()
 {
@@ -59,17 +63,25 @@ connect()
 	ssh root@$IP
 }
 
-eth0()
-{
-	ssh root@$IPETH0
-}
-
-wifi()
-{
-	ssh root@$IPWIFI
-}
 
 case "$1" in
+	eth0)
+		IP=$IPETH0
+	;;
+	wifi)
+		IP=$IPWIFI
+	;;
+	
+	home)
+		IP=$IPHOME
+	;;
+	
+	*)
+		IP=$IPETH0
+	;;
+esac
+
+case "$2" in
 	view-doc)
 		view_doc
 	;;
@@ -84,6 +96,10 @@ case "$1" in
 
 	pmx)
 		pmx
+	;;
+
+	kill)
+		kill
 	;;
 
 	driver)
@@ -102,6 +118,10 @@ case "$1" in
     eth0)
 		eth0
 	;;
+	
+	wifi)
+		wifi
+	;;
         
         recupcsv)
 		recupcsv
@@ -116,7 +136,7 @@ case "$1" in
 	;;
 
 	*)
-		echo "Usage: $0 {connect|pmx|common|driver|alltsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		echo "Usage: $0 {connect|eth0|wifi} {connect|pmx|kill|common|driver|alltsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
 		exit 1
 	;;
 esac

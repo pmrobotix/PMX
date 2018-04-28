@@ -21,14 +21,14 @@ OPOS6UL_IAExtended::~OPOS6UL_IAExtended()
 void OPOS6UL_IAExtended::initPlayground()
 {
 
-	//PlaygroundObjectID area_start_yellow = Playground::INVALID;
-	//PlaygroundObjectID area_balls_yellow = Playground::INVALID;
-	//PlaygroundObjectID area_centre_depose = Playground::INVALID;
+	PlaygroundObjectID area_start_yellow = Playground::INVALID;
+	PlaygroundObjectID area_balls_yellow = Playground::INVALID;
+	PlaygroundObjectID area_centre_depose = Playground::INVALID;
 
 	//yellow parts
-	//p_->add_rectangle(area_start_yellow, 360, 380, 750.0, 80.0, 0);
-	//p_->add_circle(area_balls_yellow, 650.0, 530.0, 180.0, 8);
-	//p_->add_rectangle(area_centre_depose, 1500.0, 1400.0, 200.0, 400.0, 0);
+	p_->add_rectangle(area_start_yellow, 360, 380, 750.0, 80.0, 0);
+	p_->add_circle(area_balls_yellow, 650.0, 530.0, 180.0, 8);
+	p_->add_rectangle(area_centre_depose, 1500.0, 1400.0, 200.0, 400.0, 0);
 
 	p_->compute_edges();
 

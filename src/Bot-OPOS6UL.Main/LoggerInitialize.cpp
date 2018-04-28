@@ -39,9 +39,9 @@ void logs::LoggerFactory::initialize()
 
 
 	//State
-	add(logs::Level::INFO, "O_State1", "console");
-	add(logs::Level::INFO, "O_State_DecisionMaker", "console");
-	add(logs::Level::INFO, "O_State_Wait90SecAction", "console");
+	add(logs::Level::INFO, "O_State_Init", "console");
+	add(logs::Level::INFO, "O_State_DecisionMakerIA", "console");
+	add(logs::Level::INFO, "O_State_WaitEndOfMatch", "console");
 
 
 	//TESTS

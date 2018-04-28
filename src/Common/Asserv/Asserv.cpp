@@ -355,12 +355,10 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
         asservdriver->motion_ResetReguAngle();
         asservdriver->motion_ResetReguDist();
 
-
         //reactive
         asservdriver->motion_ActivateReguAngle(true);
         asservdriver->motion_setLowSpeed(false);
     }
-
 
     return TRAJ_ERROR;
 }

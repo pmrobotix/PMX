@@ -8,7 +8,6 @@
 #include "Arguments.hpp"
 #include "ConsoleManager.hpp"
 #include "State/Automate.hpp"
-#include "State/Data.hpp"
 #include "Utils/Chronometer.hpp"
 
 class SvgWriter;
@@ -21,141 +20,198 @@ class ConsoleManager;
 
 enum RobotColor
 {
-	PMXNOCOLOR, PMXORANGE, PMXGREEN
+    PMXNOCOLOR, PMXORANGE, PMXGREEN
 };
 
 class Robot
 {
 public:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref Robot.
-	 * public car utilisé dans Main.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Robot");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref Robot.
+     * public car utilisé dans Main.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("Robot");
+        return instance;
+    }
 
 protected:
 
-	utils::Chronometer chrono_;
+    utils::Chronometer chrono_;
 
-	RobotColor myColor_;
+    RobotColor myColor_;
 
-	Arguments cArgs_;
+    Arguments cArgs_;
 
-	ConsoleManager cmanager_;
+    ConsoleManager cmanager_;
 
-	// Create the data used to run the automate
-	Data data_;
+    // Create the data used to run the automate
+    //Data data_;
 
-	// Create the automate associated to the robot
-	Automate automate_;
+    // Create the automate associated to the robot
+    Automate automate_;
 
-	//id of the robot
-	std::string id_;
+    //id of the robot
+    std::string id_;
+
+    //DATA
+    bool empty_;
+    int useExternalEncoder_;
+    int skipSetup_;
+    bool end90s_;
+    std::string strategy_;
 
 public:
 #ifdef SIMU
-	int CLEF_REQUETES = 0x00012345;
+    int CLEF_REQUETES = 0x00012345;
 
-	struct msgform2
-	{
-		long mtype;
-		char mtext[512];
-	}msg_ipc;
+    struct msgform2
+    {
+        long mtype;
+        char mtext[512];
+    } msg_ipc;
 #endif
 
-	//Action => RobotElement
-	Actions * actions_default;
+    //Action => RobotElement
+    Actions * actions_default;
 
-	//Asserv => asservissement
-	Asserv * asserv_default;
+    //Asserv => asservissement
+    Asserv * asserv_default;
 
-	SvgWriter * svg_;
+    SvgWriter * svg_;
 
-	//IA
-	//TODO IA
+    //IA
+    //TODO IA
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	Robot();
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    Robot();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	virtual ~Robot()
-	{
-	}
+    /*!
+     * \brief Destructor.
+     */
+    virtual ~Robot()
+    {
+    }
 
-	std::string getID()
-	{
-		return id_;
-	}
+    //DATA
+    bool end90s() const
+    {
+        return this->end90s_;
+    }
+    void end90s(bool end)
+    {
+        this->end90s_ = end;
+    }
 
-	inline SvgWriter& svgw()
-	{
-		SvgWriter & r_svg = *svg_;
-		return r_svg;
-	}
+    bool isEmpty() const
+    {
+        return this->empty_;
+    }
+    void isEmpty(bool empty)
+    {
+        this->empty_ = empty;
+    }
 
-	void svgPrintPosition();
+    std::string strategy() const
+    {
+        return this->strategy_;
+    }
+    void strategy(std::string str)
+    {
+        this->strategy_ = str;
+    }
 
-	void operator=(Robot const&); // Don't implement
+    int useExternalEncoder() const
+    {
+        return this->useExternalEncoder_;
+    }
+    void useExternalEncoder(int useEncoder)
+    {
+        this->useExternalEncoder_ = useEncoder;
+    }
 
-	inline ConsoleManager& getConsoleManager()
-	{
-		ConsoleManager& r_cmanager = cmanager_;
-		return r_cmanager;
-	}
+    int skipSetup() const
+    {
+        return this->skipSetup_;
+    }
+    void skipSetup(int skip)
+    {
+        this->skipSetup_ = skip;
+    }
 
-	inline Arguments& getArgs()
-	{
-		Arguments& r_cargs = cArgs_;
-		return r_cargs;
-	}
+    ///DATA
 
-	/*!
-	 * \brief Cette methode retourne l'objet de manipulation du chronometer.
-	 * \return Le chronometer.
-	 */
-	utils::Chronometer & chrono()
-	{
-		return chrono_;
-	}
+    std::string getID()
+    {
+        return id_;
+    }
 
-	/*!
-	 * \brief Retourne la couleur du robot.
-	 */
-	RobotColor getMyColor() const
-	{
-		return myColor_;
-	}
+    inline SvgWriter& svgw()
+    {
+        SvgWriter & r_svg = *svg_;
+        return r_svg;
+    }
 
-	/*!
-	 * \brief Enregistre la couleur du robot.
-	 */
-	void setMyColor(RobotColor color)
-	{
-		this->myColor_ = color;
-	}
+    void svgPrintPosition();
 
-	void configureDefaultConsoleArgs();
+    void operator=(Robot const&); // Don't implement
 
-	/*!
-	 * \brief Parse console parameters (console for tests or main program)..
-	 */
-	void parseConsoleArgs(int argc, char** argv);
+    inline ConsoleManager& getConsoleManager()
+    {
+        ConsoleManager& r_cmanager = cmanager_;
+        return r_cmanager;
+    }
 
-	/*!
-	 * \brief Start the robot (console for tests or main program)..
-	 */
-	virtual void begin(int argc, char** argv);
+    inline Arguments& getArgs()
+    {
+        Arguments& r_cargs = cArgs_;
+        return r_cargs;
+    }
 
-	virtual void stop();
+    /*!
+     * \brief Cette methode retourne l'objet de manipulation du chronometer.
+     * \return Le chronometer.
+     */
+    utils::Chronometer & chrono()
+    {
+        return chrono_;
+    }
+
+    /*!
+     * \brief Retourne la couleur du robot.
+     */
+    RobotColor getMyColor() const
+    {
+        return myColor_;
+    }
+
+    /*!
+     * \brief Enregistre la couleur du robot.
+     */
+    void setMyColor(RobotColor color)
+    {
+        this->myColor_ = color;
+    }
+
+    void configureDefaultConsoleArgs();
+
+    /*!
+     * \brief Parse console parameters (console for tests or main program)..
+     */
+    void parseConsoleArgs(int argc, char** argv);
+
+    /*!
+     * \brief Start the robot (console for tests or main program)..
+     */
+    virtual void begin(int argc, char** argv);
+
+    virtual void stopAll();
+
+    virtual void freeMotion();
 
 };
 

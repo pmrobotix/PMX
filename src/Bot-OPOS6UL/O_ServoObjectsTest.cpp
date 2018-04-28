@@ -61,7 +61,8 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 	robot.actions().turn_nene_left();
 	sleep(2);
 
-	robot.stop();
+	robot.stopActions();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

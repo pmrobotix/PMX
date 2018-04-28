@@ -3,8 +3,8 @@
  * \brief Définition de la classe SvgWriter.
  */
 
-#ifndef SVGWRITER_HPP_
-#define	SVGWRITER_HPP_
+#ifndef LOG_SVGWRITER_HPP_
+#define	LOG_SVGWRITER_HPP_
 
 #include <sstream>
 #include <string>

@@ -80,6 +80,7 @@ public:
 	 * \brief Arrete le robot et libère les ressources associés.
 	 */
 	void stop();
+	void emergencyStop();
 
 	/*!
 	 * \brief Arrete le thread sensorManager et actionManager.
@@ -87,9 +88,9 @@ public:
 	void waitAndStopManagers();
 
 	/*!
-	 * \brief Arrete les composant du robot.
+	 * \brief Annule le thread en cours.
 	 */
-	void stopDevices();
+	void cancel();
 
 };
 

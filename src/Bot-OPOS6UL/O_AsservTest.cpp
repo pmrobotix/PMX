@@ -42,11 +42,14 @@ void O_AsservTest::run(int argc, char** argv)
 
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXORANGE);
-    robot.asserv().startMotionTimerAndOdo(true);
+    robot.asserv().startMotionTimerAndOdo(true); //assistedHandling is enabled with "true" !
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXORANGE));
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
     robot.svgPrintPosition();
+
+    //robot.asserv().freeMotion();
+    //robot.asserv().assistedHandling();
 
     logger().info() << "GO distance mm=" << d << logs::end;
     if (robot.asserv().doLineAbs(d) != TRAJ_OK) {
@@ -70,9 +73,9 @@ void O_AsservTest::run(int argc, char** argv)
 
     robot.svgPrintPosition();
 
+    robot.asserv().freeMotion();
     logger().info() << "Stopping Robot... " << logs::end;
-    robot.asserv().stopMotionTimerAndOdo();
-    robot.stop();
+    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 
