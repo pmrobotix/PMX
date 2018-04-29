@@ -44,18 +44,17 @@ void O_State_DecisionMakerIA::IASetupHomologation()
 
 void O_State_DecisionMakerIA::execute()
 {
-    logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    while (!robot.chrono().started()) {
+        usleep(10000);
+    }
+    logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
+
     robot.svgPrintPosition();
 
-
     //robot.actions().ledBar().k2mil(100, 100000, LED_GREEN);
-    robot.actions().start();
-    robot.actions().ledBar().startK2mil(100, 100000, LED_GREEN);
 
-    while (1) {
-usleep(1000);
-    }
+    robot.actions().ledBar().startK2mil(100, 100000, LED_GREEN);
 
     logger().info() << "O_State_DecisionMakerIA executed" << logs::end;
 }

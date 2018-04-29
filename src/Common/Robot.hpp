@@ -57,11 +57,11 @@ protected:
     std::string id_;
 
     //DATA
-    bool empty_;
-    int useExternalEncoder_;
-    int skipSetup_;
-    bool end90s_;
-    std::string strategy_;
+    bool empty_ = true;
+    int useExternalEncoder_ = 1;
+    int skipSetup_ = 0;
+    bool end90s_ = false;
+    std::string strategy_ = "all";
 
 public:
 #ifdef SIMU
@@ -71,7 +71,7 @@ public:
     {
         long mtype;
         char mtext[512];
-    } msg_ipc;
+    }msg_ipc;
 #endif
 
     //Action => RobotElement
