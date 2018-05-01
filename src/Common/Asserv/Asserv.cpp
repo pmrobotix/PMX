@@ -222,7 +222,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
     } else
         ts = asservdriver->motion_DoRotate(radians);
 
-    logger().error() << "Asserv::doRotateAbs f=" << f << " r=" << r << logs::end;
+    logger().debug() << "Asserv::doRotateAbs f=" << f << " r=" << r << logs::end;
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
 
@@ -255,7 +255,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 //relative motion (depends on current position of the robot)
 TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 {
-    logger().info() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
+    logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
 
     float currentThetaInDegree = pos_getThetaInDegree();
     float degrees = getRelativeAngle(thetaInDegree) - currentThetaInDegree;
@@ -280,7 +280,7 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
     if (degrees >= 180)
         degrees -= 360;
 
-    logger().info() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
+    logger().debug() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
     TRAJ_STATE ts = doRotateAbs(degrees);
 
     return ts;

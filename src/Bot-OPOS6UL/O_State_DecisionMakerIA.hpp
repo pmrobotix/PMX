@@ -1,14 +1,13 @@
 #ifndef O_STATE_DECISIONMAKERIA_HPP
 #define	O_STATE_DECISIONMAKERIA_HPP
 
+#include <src/pmr_playground.h>
 #include <string>
 
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
 
 class Robot;
-
-
 
 class O_State_DecisionMakerIA: public utils::Thread
 {
@@ -24,6 +23,8 @@ private:
      * \brief Référence vers le robot.
      */
     Robot & robot_;
+
+    Playground *p_; //for new ia
 
 public:
 
@@ -43,7 +44,8 @@ public:
         return "O_State_DecisionMakerIA";
     }
 
-    void IASetupHomologation();
+    void IASetupActivitiesZone();
+    void initPlayground();
 
 };
 

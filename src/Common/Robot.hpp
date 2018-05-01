@@ -158,6 +158,9 @@ public:
 
     void svgPrintPosition();
 
+    void svgPrintEndOfFile();
+
+
     void operator=(Robot const&); // Don't implement
 
     inline ConsoleManager& getConsoleManager()

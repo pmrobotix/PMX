@@ -37,6 +37,7 @@ Robot::Robot() :
     end90s_ = 0;
 
     configureDefaultConsoleArgs();
+
 }
 
 void Robot::svgPrintPosition()
@@ -45,6 +46,12 @@ void Robot::svgPrintPosition()
         this->svgw().writePosition(this->asserv_default->pos_getX_mm(), this->asserv_default->pos_getY_mm(), this->asserv_default->pos_getTheta(), "bot");
     else
         logger().error() << "asserv_default is NULL !" << logs::end;
+}
+
+void Robot::svgPrintEndOfFile()
+{
+    //end SVG file
+    svg_->endHeader();
 }
 
 void Robot::configureDefaultConsoleArgs()
@@ -249,17 +256,17 @@ void Robot::begin(int argc, char** argv)
 
 void Robot::stopAll()
 {
-    if (asserv_default != NULL)
+    if (asserv_default != NULL) {
+
         this->asserv_default->stopMotionTimerAndOdo();
-    else
+        svgPrintEndOfFile();
+    } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
-    if (actions_default != NULL)
-    {
+    if (actions_default != NULL) {
         this->actions_default->stop();
         this->actions_default->emergencyStop();			//stop devices and wait manager to finish
 
-    }
-    else
+    } else
         logger().error() << "actions_default is NULL ! " << logs::end;
 
 }

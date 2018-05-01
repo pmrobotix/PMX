@@ -12,40 +12,39 @@ class LedDriver: public ALedDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LedDriver(SIMU).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LedDriver.SIMU");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref LedDriver(SIMU).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("LedDriver.SIMU");
+        return instance;
+    }
 
-	int nb_;
+    int nb_;
 
 public:
 
-	/*!
-	 * \brief Liste des gpio à utiliser pour ce robot.
-	 */
-	int *gpio;
+    /*!
+     * \brief Liste des gpio à utiliser pour ce robot.
+     */
+    int *gpio;
 
-	uint hexa;
+    uint hexa;
 
+    void setBit(int position, LedColor color);
 
-	void setBit(int position, LedColor color);
+    void setBytes(uint hexPosition, LedColor color);
 
-	void setBytes(uint hexPosition, LedColor color);
+    /*!
+     * \brief Constructor.
+     */
+    LedDriver(int nb);
 
-	/*!
-	 * \brief Constructor.
-	 */
-	LedDriver(int nb);
-
-	/*!
-	 * \brief Destructor.
-	 */
-	~LedDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~LedDriver();
 
 };
 

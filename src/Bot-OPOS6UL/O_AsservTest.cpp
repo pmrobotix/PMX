@@ -43,7 +43,7 @@ void O_AsservTest::run(int argc, char** argv)
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXORANGE);
     robot.asserv().startMotionTimerAndOdo(true); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXORANGE));
+    robot.asserv().setPositionAndColor(200.0, 300.0, 0.0, (robot.getMyColor() != PMXORANGE));
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
     robot.svgPrintPosition();

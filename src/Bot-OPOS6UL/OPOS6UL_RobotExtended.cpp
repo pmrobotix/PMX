@@ -33,16 +33,14 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
     decisionMaker_ = NULL;
 
+    //init SVG log file
     svg_->beginHeader();
-
 }
 
 void OPOS6UL_RobotExtended::stopActions()
 {
     this->actions().stop(); //extra devices
 
-    //end SVG file
-    //svg_->endHeader();
 }
 
 void OPOS6UL_RobotExtended::begin(int argc, char** argv)

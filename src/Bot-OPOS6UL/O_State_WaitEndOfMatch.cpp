@@ -41,18 +41,22 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.decisionMaker_->cancel();
     //init robot for end
     robot.freeMotion(); //stop the robot
+
     robot.stopActions(); //stop specific actions, can take time for servos...
 
-
+    robot.svgPrintEndOfFile();
 
     logger().info() << "print lcd during sec" << logs::end;
+
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().setBacklightOn();
     robot.actions().lcd2x16().print("Yeahhh OK");
     robot.actions().ledBar().flashAll(LED_GREEN);
 
-    robot.actions().ledBar().startK2mil(10, 50000, LED_GREEN, false);
-    sleep(5);
+
+    robot.actions().ledBar().k2mil(2, 50000, LED_GREEN);
+    //robot.actions().ledBar().startK2mil(10, 50000, LED_GREEN, false); //TODO pb a corriger
+    sleep(2);
     logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec" << logs::end;
 
     robot.stopAll(); //stop asserv and actionManagerTimer

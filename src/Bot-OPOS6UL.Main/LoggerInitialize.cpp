@@ -25,13 +25,14 @@ void logs::LoggerFactory::initialize()
 	//COMMON
 	//add(logs::Level::INFO, "Tirette", "console");
 	add(logs::Level::INFO, "Asserv", "console");
+	add(logs::Level::INFO, "IAbyPath", "console");
 
 
 	//SVG
 	add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
-	add(logs::Level::INFO, "IAbyPath4OPOS6UL_Robot", "svgia");
 	add(logs::Level::INFO, "AsservDriver.OPO.SVG", "svg");
 	add(logs::Level::INFO, "AsservDriver.SIMU.SVG", "svg");
+	add(logs::Level::INFO, "IAbyPath4OPOS6UL_Robot", "svgia");
 
 
 	//File
@@ -65,6 +66,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
 	add(logs::Level::INFO, "AsservDriver.SIMU", "console");
 	add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
+	add(logs::Level::INFO, "LcdShieldDriver.SIMU", "memory");
 
 	//DRIVERS OPOS
 	add(logs::Level::INFO, "LedDriver.OPO", "console");

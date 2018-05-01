@@ -5,11 +5,11 @@
 
 enum TRAJ_STATE
 {
-    TRAJ_OK,				//trajectory successfully completed
-    TRAJ_ERROR,				//unknown error (not implemented !)
+    TRAJ_OK,			//trajectory successfully completed
+    TRAJ_ERROR,			//unknown error (not implemented !)
     TRAJ_COLLISION,			//trajectory interrupted because of a collision
     TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision
-    TRAJ_CANCELLED,			//trajectory cancelled by remote user (for debug only)
+    TRAJ_CANCELLED,			//trajectory cancelled by remote user or not found
     TRAJ_INTERRUPTED,		//trajectory interrupted by software
     TRAJ_COLLISION_REAR
 };
