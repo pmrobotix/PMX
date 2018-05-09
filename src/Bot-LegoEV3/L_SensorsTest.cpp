@@ -29,7 +29,7 @@ void L_SensorsTest::run(int argc, char** argv)
 	}
 
 
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

@@ -131,7 +131,7 @@ void L_Asserv_SetResolutionTest::run(int argc, char** argv)
 			<< logs::end;
 	logger().info() << "RESULT: setResolution = " << setR << " / mesure_mm" << logs::end;
 */
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

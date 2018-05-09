@@ -5,17 +5,20 @@ class Robot;
 OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
         iaz_(robot), iap_(robot)
 {
-    opponent_1 = Playground::INVALID;
-    opponent_2 = Playground::INVALID;
+    //opponent_1 = Playground::INVALID;
+    //opponent_2 = Playground::INVALID;
     oarea_cube1 = Playground::INVALID;
     oarea_cube2high = Playground::INVALID;
     oarea_cube3left = Playground::INVALID;
     oarea_distribadverse = Playground::INVALID;
+    oarea_buildzone = Playground::INVALID;
+
     garea_cube1 = Playground::INVALID;
     garea_cube2high = Playground::INVALID;
     garea_cube3left = Playground::INVALID;
     garea_distribadverse = Playground::INVALID;
     area_stations = Playground::INVALID;
+    garea_buildzone = Playground::INVALID;
 }
 
 OPOS6UL_IAExtended::~OPOS6UL_IAExtended()

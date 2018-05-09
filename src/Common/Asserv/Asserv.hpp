@@ -5,8 +5,9 @@
 
 #include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
-#include "../../Thread/Thread.hpp"
 #include "../Asserv.Driver/AAsservDriver.hpp"
+
+class Robot;
 
 class AsservInsa;
 
@@ -14,7 +15,6 @@ class AAsservDriver;
 
 class MovingBase;
 
-class Robot;
 
 /*!
  * Asservissement of the robot.It contains default elements.
@@ -60,7 +60,7 @@ public:
      * \brief Constructor.
      *
      */
-    Asserv(std::string botId, Robot * robot);
+    Asserv(std::string botId, Robot * robot); //TODO robot is deprecated
 
     /*!
      * \brief Destructor.
@@ -120,6 +120,8 @@ public:
     //transformation suivant la couleur de match
     inline float getRelativeX(float x, float width = 0.0)
     {
+        //printf("matchcolor:%d", matchColorPosition_);
+        //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
         if (matchColorPosition_ != 0) {
             return 3000 - x - width;
         }

@@ -61,6 +61,7 @@ protected:
     int useExternalEncoder_ = 1;
     int skipSetup_ = 0;
     bool end90s_ = false;
+    bool waitForInit_ = false;
     std::string strategy_ = "all";
 
 public:
@@ -71,7 +72,7 @@ public:
     {
         long mtype;
         char mtext[512];
-    }msg_ipc;
+    } msg_ipc;
 #endif
 
     //Action => RobotElement
@@ -143,6 +144,15 @@ public:
         this->skipSetup_ = skip;
     }
 
+    bool waitForInit() const
+    {
+        return this->waitForInit_;
+    }
+    void waitForInit(bool init)
+    {
+        this->waitForInit_ = init;
+    }
+
     ///DATA
 
     std::string getID()
@@ -159,7 +169,6 @@ public:
     void svgPrintPosition();
 
     void svgPrintEndOfFile();
-
 
     void operator=(Robot const&); // Don't implement
 

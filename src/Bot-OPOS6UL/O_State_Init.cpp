@@ -22,6 +22,9 @@ O_State_Init::execute(Robot&)
 
     robot.strategy("all");
 
+
+
+
     if (!robot.skipSetup()) {
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd2x16().home();
@@ -76,6 +79,8 @@ O_State_Init::execute(Robot&)
         robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
 
         setPos();
+        robot.waitForInit(true);
+
 
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().print("PMX...WAIT TIRETTE !");
@@ -118,7 +123,10 @@ O_State_Init::execute(Robot&)
         else
             robot.actions().servo_init_green();
 
+
         setPos();
+        robot.waitForInit(true);
+        usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
     }
 
     robot.actions().ledBar().stopAndWait(true);
@@ -129,6 +137,7 @@ O_State_Init::execute(Robot&)
 
     logger().info() << "O_StateInit executed" << logs::end;
     return this->getState("WaitEndOfMatch"); //return NULL; //finish all state
+
 }
 
 void O_State_Init::setPos()
@@ -138,14 +147,15 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(70, 500, 0.0, (robot.getMyColor() != PMXORANGE));
-    robot.svgPrintPosition();
+    robot.asserv().setPositionAndColor(70, 190, 0.0, (robot.getMyColor() != PMXORANGE));
+    //robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
     robot.asserv().assistedHandling();
-    robot.asserv().doLineAbs(50);
-    robot.asserv().doLineAbs(-50);
-    robot.actions().lcd2x16().print("SET POSITION : OK");
+    robot.asserv().doLineAbs(155);
+    //robot.asserv().doLineAbs(-50);
 
+
+    robot.actions().lcd2x16().print("SET POSITION : OK");
 }

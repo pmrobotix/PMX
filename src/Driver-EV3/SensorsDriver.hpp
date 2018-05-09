@@ -5,7 +5,6 @@
 #include "../Log/LoggerFactory.hpp"
 #include "ev3dev.h"
 
-
 using namespace std;
 using namespace ev3dev;
 
@@ -13,34 +12,34 @@ class SensorsDriver: public ASensorsDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SensorsDriver(EV3).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsDriver.EV3");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref SensorsDriver(EV3).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsDriver.EV3");
+        return instance;
+    }
 
-	infrared_sensor ir_;
-	infrared_sensor irrear_;
+    infrared_sensor ir_;
+    infrared_sensor irrear_;
 
-	//ultrasonic_sensor us_;
+    //ultrasonic_sensor us_;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	SensorsDriver();
+    /*!
+     * \brief Constructor.
+     */
+    SensorsDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~SensorsDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~SensorsDriver();
 
-	bool front();
-	bool rear();
+    bool front();
+    bool rear();
 
 };
 

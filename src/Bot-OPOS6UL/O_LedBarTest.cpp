@@ -5,13 +5,15 @@
 
 #include "O_LedBarTest.hpp"
 
-#include <unistd.h>
 #include <string>
 
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action.Driver/ALedDriver.hpp"
+#include "../Common/Robot.hpp"
+#include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "OPOS6UL_ActionsExtended.hpp"
+#include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
 using namespace std;
@@ -21,9 +23,14 @@ void O_LedBarTest::run(int argc, char** argv)
     logger().info() << "Executing - " << this->desc() << logs::end;
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+
+
     robot.chrono().start();
     int wait = 100000;
     robot.actions().ledBar().resetAll();
+
+
+
 /*
     robot.actions().ledBar().setOff(0);
     robot.actions().ledBar().setOff(1);
@@ -46,7 +53,11 @@ void O_LedBarTest::run(int argc, char** argv)
 
     robot.actions().ledBar().k2mil(4, 100000, LED_GREEN);
 /*
+
+    //START ActionTimer
     robot.actions().start(); //start ActionTimer
+
+
 
     robot.actions().ledBar().startSet(0, LED_RED);
     sleep(1);
@@ -60,7 +71,7 @@ void O_LedBarTest::run(int argc, char** argv)
     sleep(1);
     */
     logger().info() << "actions End." << logs::end;
-    robot.stopActions();
+
     robot.stopAll();
 
     logger().info() << "O_LedBarTest Happy End." << logs::end;

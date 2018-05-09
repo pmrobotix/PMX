@@ -37,6 +37,8 @@ private:
 
 	IrSensor irLeft_;
 
+	IrSensor irCenter_;
+
 	IrSensor irRight_;
 
 	IrSensor irRear_;

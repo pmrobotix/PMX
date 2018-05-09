@@ -42,7 +42,7 @@ void L_SoundBarTest::run(int argc, char** argv)
 
 	logger().info() << "BEEP Happy End." << logs::end;
 	robot.actions().soundBar().beep();
-	robot.stop();
+	robot.stopAll();
 
 }
 

@@ -59,7 +59,7 @@ void L_ServoObjectTest::run(int argc, char** argv)
 	robot.actions().servoObjects().releaseAll();
 
 	logger().info() << "Happy End." << logs::end;
-	robot.stop();
+	robot.stopAll();
 
 }
 

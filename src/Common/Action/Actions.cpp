@@ -7,21 +7,21 @@
 void Actions::start()
 {
     actionManagerTimer_.start("ActionManagerTimer");
+    started_ = true;
     logger().debug("Actions is started");
 }
 
 
 void Actions::emergencyStop()
 {
+    if(!started_) return;
     actionManagerTimer_.cancel();
     //actionManagerTimer_.waitForEnd();
 }
 
 void Actions::stop()
 {
-    //this->waitAndStopManagers(); // wait end of tasks in managers
-
-    //actionManagerTimer_.stop();
+    if(!started_) return;
     actionManagerTimer_.clearActions();
     actionManagerTimer_.clearTimers();
 
@@ -31,11 +31,13 @@ void Actions::stop()
 
 void Actions::cancel()
 {
+    if(!started_) return;
     actionManagerTimer_.cancel();
 }
 
 void Actions::waitAndStopManagers() //ne fct pas
 {
+    if(!started_) return;
     /*
     int time = 0;
     while (actionManagerTimer_.countActions() > 0) {

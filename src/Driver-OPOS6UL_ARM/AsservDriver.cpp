@@ -13,43 +13,42 @@
 
 using namespace std;
 
-
 //TODO change float2bytes_t to int32 converter
 /*
-For readability and simplicity, why don't we use a union?
+ For readability and simplicity, why don't we use a union?
 
-union converter {
-    char    c[4];
-    int32_t i;
-}
-Now, to convert, it's as simple as this:
+ union converter {
+ char    c[4];
+ int32_t i;
+ }
+ Now, to convert, it's as simple as this:
 
-union converter conv;
-conv.i = yourInt32Value;
-char *cString = conv.c;
-or
+ union converter conv;
+ conv.i = yourInt32Value;
+ char *cString = conv.c;
+ or
 
-union converter conv;
-conv.c = yourCStringValue;
-int32_t i = conv.i;
-Remember to pay attention to your endianness, however.
+ union converter conv;
+ conv.c = yourCStringValue;
+ int32_t i = conv.i;
+ Remember to pay attention to your endianness, however.
 
-union converter {
-    char    c[4];
-    int32_t i;
-};
+ union converter {
+ char    c[4];
+ int32_t i;
+ };
 
-int main(int argc, const char * argv[]) {
-    union converter conv;
-    conv.c[0] = 0xFF;
-    conv.c[1] = 0xEE;
-    conv.c[2] = 0xDD;
-    conv.c[3] = 0xCC;
+ int main(int argc, const char * argv[]) {
+ union converter conv;
+ conv.c[0] = 0xFF;
+ conv.c[1] = 0xEE;
+ conv.c[2] = 0xDD;
+ conv.c[3] = 0xCC;
 
-    std::cout << std::hex << conv.i << std::endl;
+ std::cout << std::hex << conv.i << std::endl;
 
-    return 0;
-}*/
+ return 0;
+ }*/
 
 AAsservDriver * AAsservDriver::create(std::string)
 {
@@ -59,7 +58,7 @@ AAsservDriver * AAsservDriver::create(std::string)
 
 AsservDriver::AsservDriver() :
         mbedI2c_(0) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
-                , connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_ERROR), p_( { 0.0, 0.0, 0.0, -1 })
+                , connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1 })
 {
     if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
             {
@@ -280,7 +279,8 @@ RobotPosition AsservDriver::mbed_GetPosition() //en metre
 
         status = data[12];
 
-        //logger().info() << "mbed_GetPosition p13 " << x_mm.f << " " << y_mm.f << " " << rad.f << " " << status << logs::end;
+        logger().debug() << "mbed_GetPosition p13 " << x_mm.f << " " << y_mm.f << " " << rad.f << " " << status
+                << logs::end;
 
         RobotPosition p; //in m
         p.x = x_mm.f / 1000.0;
@@ -326,10 +326,13 @@ void AsservDriver::path_CollisionRearOnTrajectory()
     if (!connected_)
         return;
     if (!asservMbedStarted_)
-        logger().info() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
+        logger().info() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
+                << logs::end;
     else {
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_COLLISION_REAR;
+        usleep(300000);
+        mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_CancelTrajectory()
@@ -341,6 +344,8 @@ void AsservDriver::path_CancelTrajectory()
     else {
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_CANCELLED;
+        usleep(300000);
+        mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_ResetEmergencyStop()
@@ -349,8 +354,10 @@ void AsservDriver::path_ResetEmergencyStop()
         return;
     if (!asservMbedStarted_)
         logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
-    else
+    else {
         mbed_writeI2c('r', 0, NULL);
+        pathStatus_ = TRAJ_OK;
+    }
 }
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 {
@@ -360,6 +367,11 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
         logger().debug() << "motion_DoLine() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
         return TRAJ_ERROR;
     } else {
+        /*
+         //resetEmergencyStop à faire
+         if(pathStatus_ != TRAJ_OK)
+         return pathStatus_;*/
+
         unsigned char d[4];
         float2bytes_t mm;
         mm.f = (dist_meters * 1000.0);
@@ -373,37 +385,73 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
         return mbed_waitEndOfTraj();
     }
 }
+
+//0 idle
+//1 running
+//2 emergency stop
+//3 blocked //TODO à coder
+
+//old
 //asservStatus 0 = running
 //asservStatus 1 = tâche terminée
 //asservStatus 2 = emergency stop
 TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
 {
+
     int timeout = 0;
-    //logger().error() << "p_.asservStatus avant = " << p_.asservStatus	<< logs::end;
-    while (p_.asservStatus > 0) {
-        //logger().error() << "p_.asservStatus boucle 1 = " << p_.asservStatus	<< logs::end;
+    //attente du running status
+    while (p_.asservStatus != 1) {
         usleep(10000);
         timeout++;
         if (timeout > 50)
             break;
     }
+
     timeout = 0;
-    while (p_.asservStatus == 0) {
-        //logger().error() << "p_.asservStatus boucle 2 = " << p_.asservStatus	<< logs::end;
+    //attente de l'interruption ou fin de trajectoire
+    while (p_.asservStatus == 1) {
         usleep(10000);
         timeout++;
-        if (timeout > 50 && p_.asservStatus != 0)
+        if (timeout > 50 && p_.asservStatus != 1)
             break;
     }
-    if (p_.asservStatus == 1)
-        return TRAJ_OK;
-    if (p_.asservStatus == 2) {
-        return pathStatus_;
-    }
 
-    //cas d'erreur
-    p_.asservStatus = -1;
-    return TRAJ_ERROR;
+    if (p_.asservStatus == 3) {
+        return TRAJ_ERROR;
+    }
+    return pathStatus_;
+
+    /*
+     //OLD
+     int timeout = 0;
+     //logger().error() << "p_.asservStatus avant = " << p_.asservStatus	<< logs::end;
+     //attente du running status
+     while (p_.asservStatus > 0) {
+     //logger().error() << "p_.asservStatus boucle 1 = " << p_.asservStatus	<< logs::end;
+     usleep(10000);
+     timeout++;
+     if (timeout > 50)
+     break;
+     }
+     timeout = 0;
+     //attente de l'interruption ou fin de trajectoire
+     while (p_.asservStatus == 0) {
+     //logger().error() << "p_.asservStatus boucle 2 = " << p_.asservStatus	<< logs::end;
+     usleep(10000);
+     timeout++;
+     if (timeout > 50 && p_.asservStatus != 0) //TODO  pourquoi pas || ?????? if (timeout > 50 && p_.asservStatus != 0)
+     break;
+     }
+     if (p_.asservStatus == 1)
+     return TRAJ_OK;
+     if (p_.asservStatus == 2) {
+     return pathStatus_;
+     }
+
+     //cas d'erreur
+     p_.asservStatus = -1;
+     return TRAJ_ERROR;
+     */
 }
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_m, float y_m) // f8 +x+y
@@ -464,7 +512,7 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
     if (!connected_)
         return TRAJ_ERROR;
     if (!asservMbedStarted_) {
-        logger().debug() << "motion_DoLine() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
+        logger().debug() << "motion_DoDirectLine() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
         return TRAJ_ERROR;
     } else {
         unsigned char d[4];
@@ -474,7 +522,7 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
         d[1] = mm.b[1];
         d[2] = mm.b[2];
         d[3] = mm.b[3];
-        logger().debug() << "motion_DoLine() DISTmm=" << mm.f << " meters=" << dist_meters << logs::end;
+        logger().debug() << "motion_DoDirectLine() DISTmm=" << mm.f << " meters=" << dist_meters << logs::end;
         mbed_writeI2c('V', 4, d);
         pathStatus_ = TRAJ_OK;
         return mbed_waitEndOfTraj();
@@ -484,7 +532,7 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
 void AsservDriver::motion_setLowSpeed(bool enable)
 {
     unsigned char d[4];
-    unsigned char back_div = 12;
+    unsigned char back_div = 6;
     unsigned char forw_div = 8;
     if (enable) {
         d[0] = 1;
@@ -563,7 +611,7 @@ void AsservDriver::motion_FreeMotion(void)
         logger().debug() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('K', 0, NULL); //stop mbed managers
-        pathStatus_ = TRAJ_CANCELLED;
+        //pathStatus_ = TRAJ_CANCELLED;
     }
 }
 void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotion ???
@@ -574,7 +622,7 @@ void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotio
         logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('K', 0, NULL); //stop mbed managers
-        pathStatus_ = TRAJ_CANCELLED;
+        //pathStatus_ = TRAJ_CANCELLED;
     }
 }
 void AsservDriver::motion_AssistedHandling(void)
@@ -585,7 +633,7 @@ void AsservDriver::motion_AssistedHandling(void)
         logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('J', 0, NULL);
-        pathStatus_ = TRAJ_CANCELLED;
+        //pathStatus_ = TRAJ_INTERRUPTED;
     }
 }
 void AsservDriver::motion_ActivateManager(bool enable)

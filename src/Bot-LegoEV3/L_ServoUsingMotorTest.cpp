@@ -82,7 +82,7 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
 */
 	//robot.actions().funnyAction().release();
 
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

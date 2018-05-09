@@ -12,34 +12,34 @@ class SwitchDriver: public ASwitchDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SwitchDriver(EV3).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.EV3");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref SwitchDriver(EV3).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.EV3");
+        return instance;
+    }
 
-	touch_sensor touch_;
+    touch_sensor touch_;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	SwitchDriver();
+    /*!
+     * \brief Constructor.
+     */
+    SwitchDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~SwitchDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~SwitchDriver();
 
-	int tirettePressed();
-	int backLeftPressed();
-	int backRightPressed();
+    int tirettePressed();
+    int backLeftPressed();
+    int backRightPressed();
 
-	int pressed(unsigned char pin);
+    int pressed(unsigned char pin);
 
 };
 

@@ -206,13 +206,14 @@ void Robot::begin(int argc, char** argv)
         color = cArgs_['c']["color"];
         if (color == "orange" || color == "o")
             this->setMyColor(PMXORANGE);
-        else if (color == "green" || color == "g" || color == "v")
+        else if (color == "green" || color == "vert" || color == "g" || color == "v")
             this->setMyColor(PMXGREEN);
         else {
             this->setMyColor(PMXNOCOLOR);
             logger().error() << "setMyColor(NOCOLOR)" << logs::end;
             exit(-1);
         }
+        logger().error() << "setMyColor DONE : " << this->getMyColor() << logs::end;
     } else {
         //defaut si aucune couleur n'est specifiée
         this->setMyColor(PMXORANGE);
@@ -256,16 +257,17 @@ void Robot::begin(int argc, char** argv)
 
 void Robot::stopAll()
 {
-    if (asserv_default != NULL) {
 
+    if (asserv_default != NULL) {
         this->asserv_default->stopMotionTimerAndOdo();
         svgPrintEndOfFile();
     } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
+
+
     if (actions_default != NULL) {
         this->actions_default->stop();
-        this->actions_default->emergencyStop();			//stop devices and wait manager to finish
-
+        this->actions_default->cancel();			//stop devices and wait manager to finish
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
 

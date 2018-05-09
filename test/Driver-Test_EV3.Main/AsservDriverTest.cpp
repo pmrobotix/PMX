@@ -9,26 +9,27 @@
 
 void test::AsservDriverTest::suite()
 {
-	this->test();
+    this->test();
 
 }
 
 void test::AsservDriverTest::test()
 {
 
-	//run forever with 360
-	asservdriver->setMotorLeftPower(360, 0);
-	sleep(4);
-	asservdriver->setMotorLeftPower(200, 10000);
+    /*
+     //run forever with 360
+     asservdriver->setMotorLeftPower(360, 0);
+     sleep(4);
+     asservdriver->setMotorLeftPower(200, 10000);
 
-	asservdriver->setMotorLeftPower(800, 3000);
-	sleep(2);
+     asservdriver->setMotorLeftPower(800, 3000);
+     sleep(2);
 
-	asservdriver->setMotorLeftPower(800, 1000);
-	asservdriver->setMotorLeftPower(800, 1000);
-	asservdriver->setMotorLeftPower(800, 5000);
+     asservdriver->setMotorLeftPower(800, 1000);
+     asservdriver->setMotorLeftPower(800, 1000);
+     asservdriver->setMotorLeftPower(800, 5000);
+     */
 
-
-	this->assert(true, "OK");
+    this->assert(true, "OK");
 }
 

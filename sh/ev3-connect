@@ -2,13 +2,14 @@
 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
 #EV3 CHO
-#IPUSB="10.42.0.71" #USB LINUX
-#IP="192.168.2.102" #WIFI
-
+IPUSB="10.42.0.71" #USB LINUX
+IPWIFI="192.168.2.102" #WIFI
+IPHOME="192.168.0.212" #WIFI HOME CHO
 
 #EV3 ChristopheD
-#IP="192.168.2.103" #WIFI
-IP="192.168.0.212" #WIFI HOME CHO
+#IPWIFI="192.168.2.102" #WIFI
+
+
 
 all()
 {
@@ -25,6 +26,13 @@ main()
 driver()
 {
 	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/	
+	
+}
+
+tests()
+{
+	scp "../../ev3dev-lang-cpp/build/tests/api_tests" "../../ev3dev-lang-cpp/build/demos/button-test"  "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-demo" "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-test" "../../ev3dev-lang-cpp/build/demos/sound-test" robot@$IP:/home/robot/	
+	
 }
 
 recup()
@@ -32,20 +40,33 @@ recup()
         scp "robot@$IP:/home/robot/*.csv /home/robot/*.svg" /home/pmx/recup/.
 }
 
-wifi()
+connect()
 {
 	ssh robot@$IP
 }
 
-usb()
-{
-	ssh robot@$IPUSB
-}
-
-
 case "$1" in
+	usb)
+		IP=$IPUSB
+	;;
+	wifi)
+		IP=$IPWIFI
+	;;
+	
+	home)
+		IP=$IPHOME
+	;;
+	
+	*)
+		IP=$IPUSB
+	;;
+esac
+
+case "$2" in
 	view-doc)
 		view_doc;;
+	connect)
+		connect;;
 	all)
 		all;;
 	driver)
@@ -54,13 +75,11 @@ case "$1" in
 		main;;
 	recup)
 		recup;;
-	wifi)
-		wifi;;
-	usb)
-		usb;;
+	tests)
+		tests;;
 
 	*)
-		echo "Usage: $0 {wifi|usb|all|main|driver|recup}" >&2
+		echo "Usage: $0 {usb|wifi|home} {connect|all|main|driver|tests|recup|view-doc}" >&2
 		exit 1
 	;;
 esac

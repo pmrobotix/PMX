@@ -61,7 +61,7 @@ void L_LedBarTest::run(int argc, char** argv)
 	//robot.actions().ledBar().k2mil(4, 70000, LED_RED);
 	robot.actions().ledBar().resetAll();
 
-	robot.stop();
+	robot.stopAll();
 
 	logger().info() << "Happy End." << logs::end;
 }

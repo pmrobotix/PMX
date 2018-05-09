@@ -88,10 +88,12 @@ void Asserv::stopMotionTimerAndOdo()
     }
 }
 
-//matchColor = 0 => en bas à gauche
+//WARNING matchColor = 0 => en bas à gauche
 void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor = 0)
 {
-    printf("matchcolor%d\n", matchColor);
+    //printf("matchcolor ORANGE=0 GREEN=1 : %d\n", matchColor);
+    logger().error() << "matchcolor ORANGE=0 GREEN=1 : " << matchColor << logs::end;
+
     setMatchColorPosition(matchColor);
 
     x_mm = getRelativeX(x_mm);
@@ -182,6 +184,11 @@ void Asserv::setRearCollision()
 
 TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 {
+    //TODO test si l'adversaire est toujours present, si oui on ne cherche pas à avancer
+    //if(asservdriver->path_CollisionOnTrajectory())
+    //    return TRAJ_COLLISION;
+
+
     int f = ignoreFrontCollision_;
     int r = ignoreRearCollision_;
     if (distance_mm > 0) {
@@ -255,7 +262,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 //relative motion (depends on current position of the robot)
 TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 {
-    logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
+    //logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
 
     float currentThetaInDegree = pos_getThetaInDegree();
     float degrees = getRelativeAngle(thetaInDegree) - currentThetaInDegree;
@@ -280,7 +287,7 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
     if (degrees >= 180)
         degrees -= 360;
 
-    logger().debug() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
+    //logger().debug() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
     TRAJ_STATE ts = doRotateAbs(degrees);
 
     return ts;
@@ -296,7 +303,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
 
     doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
     float dist = sqrt(dx * dx + dy * dy);
-    logger().debug() << "doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+    logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment);
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
@@ -347,7 +354,7 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
 
         // On recule 5sec sans régulateur d'angle
         asservdriver->motion_ActivateReguAngle(false);
-        asservdriver->motion_DoDirectLine(dist);
+        asservdriver->motion_DoDirectLine(dist); //sans asservissement L/R
         sleep(tempo);
         assistedHandling();
 

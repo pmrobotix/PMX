@@ -47,7 +47,8 @@ private:
 
 public:
     OPOS6UL_ActionsExtended(std::string botId, Robot *robot) :
-            ledbar_(botId, *this, 8), buttonbar_(*this), lcd2x16_(botId, *this), tirette_(*this), sensors_(*this, robot), servoObjects_(*this)
+            ledbar_(botId, *this, 8), buttonbar_(*this), lcd2x16_(botId, *this), tirette_(*this), sensors_(*this,
+                    robot), servoObjects_(*this)
 
     {
         lcd2x16_.init();
@@ -101,8 +102,6 @@ public:
 
     void stop()
     {
-        //stop all current task in the actionManagerTimer
-        Actions::stop();
 
         ledbar_.stop(true);
         ledbar_.resetAll();
@@ -111,6 +110,8 @@ public:
 
         //sensors stop...
 
+        //stop all current task in the actionManagerTimer
+        Actions::stop();
     }
 
     //--------------------------------------------------------------

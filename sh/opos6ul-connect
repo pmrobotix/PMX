@@ -26,7 +26,7 @@ kill()
     ssh root@$IP "killall Bot_ArmadeusOPOS6UL_ARM"
 }
 
-pmx()
+main()
 {
     ssh root@$IP "killall Bot_ArmadeusOPOS6UL_ARM"
 	scp "../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM" root@$IP:/root/.
@@ -94,8 +94,8 @@ case "$2" in
 		tsh
 	;;
 
-	pmx)
-		pmx
+	main)
+		main
 	;;
 
 	kill)
@@ -113,15 +113,6 @@ case "$2" in
 	connect)
 		connect
 	;;
-     
-     
-    eth0)
-		eth0
-	;;
-	
-	wifi)
-		wifi
-	;;
         
         recupcsv)
 		recupcsv
@@ -136,7 +127,7 @@ case "$2" in
 	;;
 
 	*)
-		echo "Usage: $0 {connect|eth0|wifi} {connect|pmx|kill|common|driver|alltsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		echo "Usage: $0 {eth0|wifi|home} {connect|main|kill|common|driver|all|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
 		exit 1
 	;;
 esac

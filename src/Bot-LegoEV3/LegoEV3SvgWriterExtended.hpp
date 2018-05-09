@@ -30,6 +30,8 @@ public:
 			float startAngle_rad);
 
 	void writeIaPath(const char* zone1Name, const char* zone2Name, float x_mm, float y_mm);
+
+	void pathPolyline(std::string points);
 };
 
 #endif

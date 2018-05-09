@@ -112,7 +112,7 @@ void L_ServoStepTest::run(int argc, char** argv)
 
 	robot.actions().servoObjects().releaseAll();
 
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

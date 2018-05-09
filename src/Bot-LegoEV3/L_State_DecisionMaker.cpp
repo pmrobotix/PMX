@@ -872,7 +872,7 @@ L_State_DecisionMaker::execute(Robot &, void * data)
 	this->logger().info() << "FUNNY ACTION...stop... " << robot.chrono().getElapsedTimeInSec()
 			<< logs::end;
 
-	robot.stop();
+	robot.stopAll();
 
 	return NULL; //finish all state
 }

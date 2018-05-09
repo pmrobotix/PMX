@@ -46,11 +46,8 @@ public:
 		return r_ia;
 	}
 
-	Data* sharedData; //surcharge ?
 
-
-	void baseStop();
-	void stop();
+	void stopActions();
 
 	void begin(int argc, char** argv);
 

@@ -23,7 +23,7 @@
 // Modified by PM-ROBOTIX in CPP
 /******************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include <cstdlib>
 
 #include "AsservInsa.hpp"

@@ -39,7 +39,7 @@ void L_ButtonBarTest::run(int argc, char** argv)
 	logger().info() << "Please press RIGHT" << logs::end;
 	robot.actions().buttonBar().waitPressed(BUTTON_RIGHT_KEY);
 
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

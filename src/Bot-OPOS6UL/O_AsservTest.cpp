@@ -1,9 +1,11 @@
 #include "O_AsservTest.hpp"
 
+#include <stdlib.h>
 #include <unistd.h>
 #include <cmath>
 #include <string>
 
+#include "../Common/Arguments.hpp"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"
@@ -52,8 +54,10 @@ void O_AsservTest::run(int argc, char** argv)
     //robot.asserv().assistedHandling();
 
     logger().info() << "GO distance mm=" << d << logs::end;
-    if (robot.asserv().doLineAbs(d) != TRAJ_OK) {
-        logger().info() << "Interruption !!" << logs::end;
+    TRAJ_STATE tr = robot.asserv().doLineAbs(d);
+    if (tr != TRAJ_OK) {
+        //logger().info() << robot.actions().sensors().front() << logs::end;
+        logger().info() << "Interruption TRAJ_STATE=!! " << tr << logs::end;
     }
 
     p = robot.asserv().pos_getPosition();

@@ -17,4 +17,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::ERROR, "", "console");
 	add(logs::Level::INFO, "", "console");
 
+	//DEBUG
+	add(logs::Level::DEBUG, "AsservDriver.EV3", "console");
+
 }

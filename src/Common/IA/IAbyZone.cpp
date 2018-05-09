@@ -39,7 +39,8 @@ void IAbyZone::ia_addAction(const char* name, RobotAction action)
     _actions_count++;
 }
 
-void IAbyZone::ia_createZone(const char* name, float minX, float minY, float width, float height, float startX, float startY, float startAngleDeg)
+void IAbyZone::ia_createZone(const char* name, float minX, float minY, float width, float height, float startX,
+        float startY, float startAngleDeg)
 {
     ZONE *z = (ZONE*) calloc(1, sizeof(ZONE));
 
@@ -63,13 +64,15 @@ void IAbyZone::ia_createZone(const char* name, float minX, float minY, float wid
     _zones[_zones_count] = z;
     _zones_count++;
 
-    robot_->svgw().writeZone(z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY, z->startAngle * M_PI / 180.0);
+    robot_->svgw().writeZone(z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY,
+            z->startAngle * M_PI / 180.0);
     //ia_printZone(z);
 }
 
 void IAbyZone::ia_printZone(ZONE *z)
 {
-    printf("ZONE: %s (%f,%f) w:%f h:%f start:%f,%f %f degrees\n", z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY, z->startAngle);
+    printf("ZONE: %s (%f,%f) w:%f h:%f start:%f,%f %f degrees\n", z->name, z->minX, z->minY, z->width, z->height,
+            z->startX, z->startY, z->startAngle);
 }
 void IAbyZone::ia_checkZones()
 {
@@ -113,14 +116,6 @@ void IAbyZone::ia_setPath(const char* zone1Name, const char* zone2Name, float x,
     zp->z2 = ia_getZone(zone2Name);
     zp->x = x;
     zp->y = y;
-
-    /*
-     //printf("ia_setPath cc_getMatchColor=%d\n", cc_getMatchColor());
-     if (cc_getMatchColor() != 0)
-     {
-     //yMM = -yMM;
-     zp->x = 3000 - zp->x;
-     }*/
 
     if (robot_ != NULL) {
         zp->x = robot_->asserv_default->getRelativeX(zp->x);
@@ -176,8 +171,9 @@ void IAbyZone::ia_start()
                 z->completed = done;
                 if (!done) {
                     if (robot_ != NULL)
-                        printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name, robot_->asserv_default->pos_getX_mm(),
-                                robot_->asserv_default->pos_getY_mm(), robot_->asserv_default->pos_getThetaInDegree());
+                        printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
+                                robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm(),
+                                robot_->asserv_default->pos_getThetaInDegree());
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
                         exit(-1);
@@ -185,7 +181,8 @@ void IAbyZone::ia_start()
 
                 }
                 if (robot_ != NULL)
-                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name, robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm(),
+                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
+                            robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm(),
                             robot_->asserv_default->pos_getThetaInDegree());
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
@@ -226,7 +223,8 @@ ZONE* IAbyZone::ia_getNearestZoneFrom(float x, float y)
 {
     ZONE *result = ia_getZoneAt(x, y);
     if (result != NULL) {
-        printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name, robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm());
+        printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name,
+                robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm());
         return result;
     }
 
@@ -264,7 +262,8 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
         exit(-1);
     }
 
-    ZONE *zCurrent = ia_getNearestZoneFrom(robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm());
+    ZONE *zCurrent = ia_getNearestZoneFrom(robot_->asserv_default->pos_getX_mm(),
+            robot_->asserv_default->pos_getY_mm());
     if (zCurrent == NULL) {
         printf("ERROR: cc_goToZone ia_getNearestZoneFrom return NULL !!");
         exit(-1);
@@ -293,7 +292,8 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
      return ts;
      */
     if (path != NULL) {
-        printf("%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name, z->name, path->x, path->y);
+        printf("%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name,
+                z->name, path->x, path->y);
         path_p->x = robot_->asserv_default->getRelativeX(path->x);
         path_p->y = path->y;
     }/*else
@@ -308,7 +308,8 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
     zone_p->y = z->startY;
     zone_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
 
-    printf("----%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name, z->name, path->x, path->y);
+    printf("----%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name,
+            z->name, path->x, path->y);
     //printf("03\n");
     /*
      RobotPosition pos;

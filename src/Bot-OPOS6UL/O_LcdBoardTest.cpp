@@ -27,7 +27,7 @@ void O_LcdBoardTest::run(int argc, char** argv)
 	robot.actions().lcd2x16().setCursor(0, 1);
 	robot.actions().lcd2x16().print("Hi, I'm PMX.");
 
-	sleep(3);
+	sleep(1);
 
 	robot.stopActions();
 

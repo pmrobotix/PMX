@@ -13,16 +13,17 @@
 
 IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 {
+
     logger().info() << "O_State_WaitEndOfMatch executing..." << logs::end;
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-    //démarrage du chrono
+    //démarrage du chrono et des taches du decision maker
     logger().info() << "Start Chronometer" << logs::end;
     robot.chrono().start();
 
     //TODO check ARU and adversary here ?
-    while (robot.chrono().getElapsedTimeInSec() <= 20) //todo mettre en parametre
+    while (robot.chrono().getElapsedTimeInSec() <= 100) //todo mettre en parametre
     {
 
         usleep(1000000);
@@ -45,6 +46,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.stopActions(); //stop specific actions, can take time for servos...
 
     robot.svgPrintEndOfFile();
+
 
     logger().info() << "print lcd during sec" << logs::end;
 

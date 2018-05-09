@@ -97,7 +97,7 @@ void L_IATest::run(int argc, char** argv)
 	robot.ia().iAbyZone().ia_start(); //launch IA
 
 
-	robot.stop();
+	robot.stopAll();
 
 	logger().info() << "Happy End - "
 			<< robot.chrono().getElapsedTimeInSec()

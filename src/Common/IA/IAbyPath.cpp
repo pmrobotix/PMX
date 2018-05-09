@@ -41,6 +41,8 @@ void IAbyPath::addPlayground(Playground * p)
 void IAbyPath::enable(PlaygroundObjectID id, bool enable)
 {
     p_->enable(id, enable);
+
+    //TODO afficher une croix sur le SVG si disable
 }
 
 void IAbyPath::toSVG()
@@ -199,7 +201,6 @@ void IAbyPath::ia_createZone(const char* name, float minX, float minY, float wid
     z->startX = startX;
     z->startY = startY;
     z->startAngle = startAngleDeg;
-
     if (robot_ != NULL) {
         z->startX = robot_->asserv_default->getRelativeX(z->startX);
         z->minX = robot_->asserv_default->getRelativeX(z->minX, z->width);
@@ -215,7 +216,7 @@ void IAbyPath::ia_createZone(const char* name, float minX, float minY, float wid
     robot_->svgw().writeZone(z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY,
             z->startAngle * M_PI / 180.0);
     //log
-    //ia_printZone(z);
+    ia_printZone(z);
 }
 
 void IAbyPath::ia_printZone(ZONE *z)
@@ -302,7 +303,7 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
     return result;
 }
 
-//A renommer getzone
+//A renommer retrievezone
 void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
 {
     ZONE* z = ia_getZone(zoneName);
@@ -313,25 +314,23 @@ void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
         printf("ERROR: %s %d : unable to get zone %s\n", __FUNCTION__, __LINE__, zoneName);
         exit(-1);
     }
-    /*
-     ZONE *zCurrent = ia_getNearestZoneFrom(robot_->asserv_default->pos_getX_mm(),
-     robot_->asserv_default->pos_getY_mm());
-     if (zCurrent == NULL)
-     {
-     printf("ERROR: cc_goToZone ia_getNearestZoneFrom return NULL !!");
-     exit(-1);
-     }
-     */
+
     zone_p->x = robot_->asserv_default->getRelativeX(z->startX);
     zone_p->y = z->startY;
     zone_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
 
 }
 
-TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float x, float y, float theta)
+TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree) //zone toujours donné du côté gauche (ORANGE), à transcrire
 {
+    TRAJ_STATE ts = TRAJ_OK;
+    logger().info() << "111 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+            << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
+            << logs::end;
+    //robot_->svgPrintPosition();
+
     logger().error() << "doMoveForwardAndRotateTo" << logs::end;
-    Point endPoint = { x : x, y : y };
+    Point endPoint = { x : robot_->asserv_default->getRelativeX(xMM), y : yMM };
     FoundPath * found_path = NULL;
     Point startPoint = { x : robot_->asserv_default->pos_getX_mm(), y : robot_->asserv_default->pos_getY_mm() };
     playgroundFindPath(found_path, startPoint, endPoint);
@@ -340,11 +339,12 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float x, float y, float theta)
     std::vector<Node*>::iterator nodes_it;
     if (found_path != NULL) {
         if (found_path->cost == 0) {
-            logger().info() << "PATH NOT FOUND - CANCELLED " << ", " << found_path->cost
-                    << logs::end;
+            logger().info() << "PATH NOT FOUND - CANCELLED " << ", " << found_path->cost << logs::end;
             delete found_path;
             return TRAJ_CANCELLED;
         }
+        //robot_->svgPrintPosition();
+
         //bool node_found = false;
         //svg::Polyline path_polyline(svg::Stroke(5, svg::Color::Green));
         for (nodes_it = found_path->path.begin(); nodes_it < found_path->path.end(); nodes_it++) {
@@ -354,22 +354,39 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float x, float y, float theta)
             //}
             //path_polyline << svg::Point(node->x, node->y);
             path_polyline << node->x << "," << -node->y << " ";
-            logger().info() << "GOTO - PATH to " << node->x << "," << -node->y << ", " << found_path->cost << logs::end;
-            robot_->asserv_default->doMoveForwardTo(node->x, node->y);
+            logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
+
+            ts = robot_->asserv_default->doMoveForwardTo(robot_->asserv_default->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
+            if (ts != TRAJ_OK) {
+                return ts;
+            }
+            logger().info() << "222 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+                    << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
+                    << logs::end;
             robot_->svgPrintPosition();
+
         }
         //if (node_found) {
         //doc << path_polyline;
         //}
+        logger().info() << "333 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+                << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
+                << logs::end;
+
         robot_->svgw().pathPolyline(path_polyline.str());
 
-        robot_->asserv_default->doRotateTo(theta);
+        ts = robot_->asserv_default->doRotateTo(thetaInDegree);
+        if (ts != TRAJ_OK) {
+            return ts;
+        }
+        //robot_->svgPrintPosition();
     } else {
         logger().error() << "ERROR - FOUND PATH NULL !!!" << logs::end;
     }
 
     delete found_path;
-    return TRAJ_OK;
+
+    return ts;
 }
 
 void IAbyPath::playgroundFindPath(FoundPath * & path, Point& start, Point& end)

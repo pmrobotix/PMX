@@ -24,7 +24,18 @@ typedef struct RobotPosition
     float x; //metres
     float y; //metres
     float theta; //radians
-    int asservStatus; // TODO describe values ?
+
+    //asser mbed status old
+    //asservStatus 0 = running
+    //asservStatus 1 = tâche terminée
+    //asservStatus 2 = emergency stop
+
+    //0 idle
+    //1 running
+    //2 emergency stop
+    //3 blocked
+
+    int asservStatus; // TODO describe values ? TRAL_STATE ?
 } RobotPosition;
 
 class AAsservDriver

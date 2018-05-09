@@ -16,81 +16,83 @@ class Actions
 {
 private:
 
-	/*!
-	 * \brief Return \ref Logger linked to \ref Actions.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Actions");
-		return instance;
-	}
+    /*!
+     * \brief Return \ref Logger linked to \ref Actions.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("Actions");
+        return instance;
+    }
 
-	/*!
-	 * \brief Assure la gestion des actions/timers du robot en mode asynchrone.
-	 */
-	ActionManagerTimer actionManagerTimer_;
+    /*!
+     * \brief Assure la gestion des actions/timers du robot en mode asynchrone.
+     */
+    ActionManagerTimer actionManagerTimer_;
 
+    bool started_;
 public:
 
-	/*!
-	 * \brief Constructor.
-	 *
-	 */
-	Actions()
-	{
-	}
+    /*!
+     * \brief Constructor.
+     *
+     */
+    Actions()
+    {
+        started_ = false;
+    }
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~Actions()
-	{
-		logger().debug() << "~Actions()" << logs::end;
-	}
+    /*!
+     * \brief Destructor.
+     */
+    ~Actions()
+    {
+        logger().debug() << "~Actions()" << logs::end;
+    }
 
-	/*!
-	 * \brief Ajout d'une action.
-	 * \param action
-	 *        L'action à ajouter.
-	 */
-	inline void addAction(IAction * action)
-	{
-		//actionManager_.addAction(action);
-		actionManagerTimer_.addAction(action);
-	}
+    /*!
+     * \brief Ajout d'une action.
+     * \param action
+     *        L'action à ajouter.
+     */
+    inline void addAction(IAction * action)
+    {
+        //actionManager_.addAction(action);
+        actionManagerTimer_.addAction(action);
+    }
 
-	inline void addTimer(ITimerListener * timer)
-	{
-		actionManagerTimer_.addTimer(timer);
-	}
+    inline void addTimer(ITimerListener * timer)
+    {
+        actionManagerTimer_.addTimer(timer);
+    }
 
-	inline void stopTimer(std::string name)
-	{
-		actionManagerTimer_.stopTimer(name);
-	}
+    inline void stopTimer(std::string name)
+    {
+        actionManagerTimer_.stopTimer(name);
+    }
 
-	/*!
-	 * \brief Active les actions.
-	 *
-	 * Cette méthode lance le thread gérant le ActionManager.
-	 */
-	void start();
+    /*!
+     * \brief Active les actions.
+     *
+     * Cette méthode lance le thread gérant le ActionManager.
+     */
+    void start();
 
-	/*!
-	 * \brief Arrete le robot et libère les ressources associés.
-	 */
-	void stop();
-	void emergencyStop();
+    /*!
+     * \brief Arrete le robot et libère les ressources associés.
+     */
+    void stop();
+    void emergencyStop();
 
-	/*!
-	 * \brief Arrete le thread sensorManager et actionManager.
-	 */
-	void waitAndStopManagers();
+    /*!
+     * \brief Arrete le thread sensorManager et actionManager.
+     */
+    void waitAndStopManagers();
 
-	/*!
-	 * \brief Annule le thread en cours.
-	 */
-	void cancel();
+    /*!
+     * \brief Annule le thread en cours.
+     */
+    void cancel();
 
 };
 

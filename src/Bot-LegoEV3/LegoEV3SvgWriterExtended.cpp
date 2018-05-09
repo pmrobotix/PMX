@@ -195,3 +195,9 @@ void LegoEV3SvgWriterExtended::writeIaPath(const char* zone1Name,
 			<< logs::end;
 }
 
+void LegoEV3SvgWriterExtended::pathPolyline(std::string points) //TODO mettre dans SVGWriter ?
+{
+
+    logger().info() << "<polyline points='" << points << "' style='fill:none;stroke:red;stroke-width:4' />"
+            << logs::end;
+}

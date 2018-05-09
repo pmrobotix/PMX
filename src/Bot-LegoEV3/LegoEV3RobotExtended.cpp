@@ -1,10 +1,10 @@
 #include "LegoEV3RobotExtended.hpp"
 
+#include <cstdio>
 #include <string>
 
 #include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
-#include "../Common/State/Data.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "L_State_DecisionMaker.hpp"
 #include "L_State1.hpp"
@@ -29,9 +29,10 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 	p_ia_ = new LegoEV3IAExtended(id_, this);
 
 	svg_->beginHeader();
-	sharedData = NULL;
+
 
 }
+/*
 void LegoEV3RobotExtended::baseStop()
 {
 	this->asserv().freeMotion();
@@ -46,7 +47,14 @@ void LegoEV3RobotExtended::stop()
 	this->actions().stop(); //extra devices
 
 	baseStop();
+}*/
+
+void LegoEV3RobotExtended::stopActions()
+{
+    this->actions().stop(); //extra devices
+
 }
+
 
 void LegoEV3RobotExtended::begin(int argc, char** argv)
 {
