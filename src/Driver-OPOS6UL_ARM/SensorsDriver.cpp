@@ -16,8 +16,7 @@ ASensorsDriver * ASensorsDriver::create(std::string)
 }
 
 SensorsDriver::SensorsDriver() :
-        i2c_gp2y0e02b_(1), connected_gp2y0e02b_(false), shift_(0), irLeft_(8, 30), irRight_(9, 30), irRear_(3, 30), irCenter_(
-                5, 150)
+        i2c_gp2y0e02b_(1), connected_gp2y0e02b_(false), shift_(0), irLeft_(8, 30), irCenter_(5, 150), irRight_(9, 30), irRear_(3, 30)
 {
 
     i2c_gp2y0e02b_.setSlaveAddr(ADDRESS_gp2y0e02b);
@@ -51,17 +50,17 @@ bool SensorsDriver::front()
     bool front = false;
 
     if (1) {
-        if (irLeft_.getDistance() < 200) {
+        if (irLeft_.getDistance() < 180) {
             logger().info() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
             front = true;
         }
 
-        if (irRight_.getDistance() < 200) {
+        if (irRight_.getDistance() < 180) {
             logger().info() << "adc_9_right " << " mm=" << irRight_.getDistance() << logs::end;
             front = true;
         }
 
-        if (irCenter_.getDistance() < 380) {
+        if (irCenter_.getDistance() < 300) {
             logger().info() << "adc_5_center " << " mm=" << irCenter_.getDistance() << logs::end;
             front = true;
         }

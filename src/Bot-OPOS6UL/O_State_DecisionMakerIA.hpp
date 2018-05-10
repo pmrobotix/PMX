@@ -45,6 +45,7 @@ public:
     }
 
     void IASetupActivitiesZone();
+    void IASetupActivitiesZoneTableTest();
     void initPlayground();
 
 };

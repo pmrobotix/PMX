@@ -153,7 +153,7 @@ void O_State_Init::setPos()
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
     robot.asserv().assistedHandling();
-    robot.asserv().doLineAbs(155);
+    robot.asserv().doLineAbs(145);
     //robot.asserv().doLineAbs(-50);
 
 

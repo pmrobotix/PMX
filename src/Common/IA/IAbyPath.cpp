@@ -329,7 +329,7 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
             << logs::end;
     //robot_->svgPrintPosition();
 
-    logger().error() << "doMoveForwardAndRotateTo" << logs::end;
+
     Point endPoint = { x : robot_->asserv_default->getRelativeX(xMM), y : yMM };
     FoundPath * found_path = NULL;
     Point startPoint = { x : robot_->asserv_default->pos_getX_mm(), y : robot_->asserv_default->pos_getY_mm() };

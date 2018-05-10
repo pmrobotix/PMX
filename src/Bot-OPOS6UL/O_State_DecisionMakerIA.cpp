@@ -29,24 +29,27 @@ bool O_push_button()
 
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
-/*
+
+    robot.asserv().ignoreFrontCollision(false);
+    robot.asserv().ignoreRearCollision(true);
     robot.ia().iAbyPath().goToZone("zone_push_button", &zone);
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK)
         return false;
-*/
+
     robot.svgPrintPosition();
-/*
+
     //on recule un peu
-    robot.asserv().doLineAbs(-200);
+    robot.asserv().doLineAbs(-120);
     robot.svgPrintPosition();
 
     //recalage
-    robot.asserv().doCalage(-50, 2);
+    robot.asserv().doCalage(-50, 1);
+    robot.svgPrintPosition();
 
     robot.asserv().doLineAbs(150);
     robot.svgPrintPosition();
-*/
+
     robot.logger().info() << "O_push_button done." << logs::end;
 
     return true; //return true si ok sinon false si interruption
@@ -60,6 +63,8 @@ bool O_push_cube()
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
+    robot.asserv().ignoreFrontCollision(false);
+    robot.asserv().ignoreRearCollision(true);
     robot.ia().iAbyPath().goToZone("zone_push_cube", &zone);
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK)
@@ -72,6 +77,16 @@ bool O_push_cube()
         robot.ia().iAbyPath().enable(robot.ia().garea_cube1, 0);
         robot.ia().iAbyPath().enable(robot.ia().garea_buildzone, 1);
     }
+
+    //on avance
+    while (robot.asserv().doMoveForwardTo(850, 400) != TRAJ_OK) {
+        usleep(2000000);
+    }
+    robot.svgPrintPosition();
+
+    //on recule un peu
+    robot.asserv().doLineAbs(-100);
+    robot.svgPrintPosition();
 
     robot.logger().info() << "O_push_cube done." << logs::end;
     return true; //return true si ok sinon false si interruption
@@ -104,13 +119,32 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_cube", 800, 500, 100, 300, 850, 950, -90);
     robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1150, 300, 90);
-    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 300, 1750, -10);
+    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 300, 1700, -10);
 
     robot.ia().iAbyPath().ia_addAction("push_button", &O_push_button);
-    //robot.ia().iAbyPath().ia_addAction("push_cube", &O_push_cube);
-    //robot.ia().iAbyPath().ia_addAction("push_bee", &O_push_bee);
+    robot.ia().iAbyPath().ia_addAction("push_cube", &O_push_cube);
+    robot.ia().iAbyPath().ia_addAction("push_bee", &O_push_bee);
 
     logger().info() << " END IASetupActivitiesZone" << logs::end;
+}
+
+void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
+{
+    logger().info() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    logger().info() << "color = " << robot.getMyColor() << logs::end;
+
+    //definition des zones en zone ORANGE uniquement
+    robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_push_cube", 800, 500, 100, 300, 850, 950, -90);
+    robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1150, 300, 90);
+    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 300, 1300, -10); //modifié
+
+    robot.ia().iAbyPath().ia_addAction("push_button", &O_push_button);
+    robot.ia().iAbyPath().ia_addAction("push_cube", &O_push_cube);
+    robot.ia().iAbyPath().ia_addAction("push_bee", &O_push_bee);
+
+    logger().info() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
 
 void O_State_DecisionMakerIA::initPlayground()
@@ -175,9 +209,28 @@ void O_State_DecisionMakerIA::execute()
     }
     logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
 
-    IASetupActivitiesZone(); //definit les activities
 
+//____________________________________________________________________________________________________
+int tabletest = 0;
+//____________________________________________________________________________________________________
+
+
+if (tabletest == 1)
+{
+    IASetupActivitiesZoneTableTest(); //A COMMENTER pour match
     initPlayground(); //definit les zones de non droit
+    robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
+    robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
+
+}else
+{
+    IASetupActivitiesZone(); //definit les activities
+    initPlayground(); //definit les zones de non droit
+}
+
+
+
+
 
     //wait for the start of the chrono !
     while (!robot.chrono().started()) {
@@ -187,7 +240,7 @@ void O_State_DecisionMakerIA::execute()
     logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
     //robot.svgPrintPosition();
 
-    //robot.actions().sensors().startSensors();
+    robot.actions().sensors().startSensors();
     robot.ia().iAbyPath().ia_start(); //launch IA
 
     robot.actions().ledBar().startK2mil(100, 100000, LED_GREEN);

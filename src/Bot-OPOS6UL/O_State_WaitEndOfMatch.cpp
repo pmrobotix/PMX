@@ -52,6 +52,9 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().setBacklightOn();
+    robot.actions().lcd2x16().setCursor(0,0);
+    robot.actions().lcd2x16().print("40 Points ?");
+    robot.actions().lcd2x16().setCursor(0,1);
     robot.actions().lcd2x16().print("Yeahhh OK");
     robot.actions().ledBar().flashAll(LED_GREEN);
 
