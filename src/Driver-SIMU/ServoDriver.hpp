@@ -52,6 +52,7 @@ public:
 
 	int getPos(int servo);
 
+	int ping(int);
 };
 
 #endif

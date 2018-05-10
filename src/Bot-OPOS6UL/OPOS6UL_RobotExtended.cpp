@@ -35,6 +35,7 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
     //init SVG log file
     svg_->beginHeader();
+    //points = 10;
 }
 
 void OPOS6UL_RobotExtended::stopActions()

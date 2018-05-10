@@ -55,6 +55,8 @@ public:
 
 	int getPos(int servo);
 
+	int ping(int servo);
+
 };
 
 #endif

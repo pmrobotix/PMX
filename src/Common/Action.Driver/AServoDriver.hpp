@@ -69,6 +69,8 @@ public:
 
 	virtual int getPos(int servo) = 0;
 
+	virtual int ping(int servo) = 0;
+
 private:
 
 protected:

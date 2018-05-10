@@ -61,7 +61,6 @@ O_State_Init::execute(Robot&)
             }
             if (b == BUTTON_DOWN_KEY) {
                 logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
-
             }
         }
 
@@ -147,7 +146,7 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(70, 190, 0.0, (robot.getMyColor() != PMXORANGE));
+    robot.asserv().setPositionAndColor(70, 210, 0.0, (robot.getMyColor() != PMXORANGE));
     //robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(true);

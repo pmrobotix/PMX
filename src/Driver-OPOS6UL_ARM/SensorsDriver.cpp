@@ -60,7 +60,7 @@ bool SensorsDriver::front()
             front = true;
         }
 
-        if (irCenter_.getDistance() < 300) {
+        if (irCenter_.getDistance() < 250) {
             logger().info() << "adc_5_center " << " mm=" << irCenter_.getDistance() << logs::end;
             front = true;
         }

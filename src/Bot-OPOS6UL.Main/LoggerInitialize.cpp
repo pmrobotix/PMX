@@ -23,10 +23,10 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "OPOS6UL_RobotExtended", "console");
 
 	//COMMON
-	//add(logs::Level::INFO, "Tirette", "console");
 	add(logs::Level::INFO, "Asserv", "console");
 	add(logs::Level::INFO, "IAbyPath", "console");
 	add(logs::Level::INFO, "SensorsTimer", "console");
+	add(logs::Level::INFO, "ServoObjectsAx12", "console");
 
 
 	//SVG

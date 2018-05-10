@@ -55,7 +55,7 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
     robot.asserv().doCalage(d, 4);
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
     robot.svgPrintPosition();
-
+/*
     robot.asserv().setPositionAndColor(200.0, 200.0, 45.0, (robot.getMyColor() != PMXORANGE));
 
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
@@ -72,7 +72,7 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
     p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
 
-    robot.svgPrintPosition();
+    robot.svgPrintPosition();*/
 
     logger().info() << "Stopping Robot... " << logs::end;
     robot.stopAll();

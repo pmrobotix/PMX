@@ -417,7 +417,7 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
     }
 
     if (p_.asservStatus == 3) {
-        return TRAJ_ERROR;
+        return TRAJ_CANCELLED;
     }
     return pathStatus_;
 
@@ -525,15 +525,16 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
         logger().debug() << "motion_DoDirectLine() DISTmm=" << mm.f << " meters=" << dist_meters << logs::end;
         mbed_writeI2c('V', 4, d);
         pathStatus_ = TRAJ_OK;
-        return mbed_waitEndOfTraj();
+        return pathStatus_;
+        //return mbed_waitEndOfTraj();
     }
 }
 
 void AsservDriver::motion_setLowSpeed(bool enable)
 {
     unsigned char d[4];
-    unsigned char back_div = 6;
-    unsigned char forw_div = 8;
+    unsigned char back_div = 3;
+    unsigned char forw_div = 3;
     if (enable) {
         d[0] = 1;
         d[1] = back_div;

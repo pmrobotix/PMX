@@ -4,7 +4,6 @@
 #include <cmath>
 
 #include "../../Asserv.Insa/AsservInsa.hpp"
-#include "../Utils/Chronometer.hpp"
 #include "MovingBase.hpp"
 
 Asserv::Asserv(std::string botId, Robot * robot)
@@ -346,17 +345,25 @@ TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
 
 TRAJ_STATE Asserv::doCalage(int dist, int tempo)
 {
+    logger().info() << "doCalage" << logs::end;
     if (useInternalAsserv_) {
+
+        //TODO
 
     } else {
         //set low speed
         asservdriver->motion_setLowSpeed(true);
 
-        // On recule 5sec sans régulateur d'angle
+
         asservdriver->motion_ActivateReguAngle(false);
-        asservdriver->motion_DoDirectLine(dist); //sans asservissement L/R
+        //asservdriver->motion_ActivateReguDist(true);
+
+        //TRAJ_STATE ts = asservdriver->motion_DoLine(dist);
+        //logger().info() << "ts=" << ts<< logs::end;
+        asservdriver->motion_DoDirectLine(dist/1000.0); //sans asservissement L/R
         sleep(tempo);
-        assistedHandling();
+        asservdriver->path_CancelTrajectory();
+        asservdriver->path_ResetEmergencyStop();
 
         //reset
         asservdriver->motion_ResetReguAngle();
@@ -365,6 +372,8 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
         //reactive
         asservdriver->motion_ActivateReguAngle(true);
         asservdriver->motion_setLowSpeed(false);
+
+        assistedHandling();
     }
 
     return TRAJ_ERROR;

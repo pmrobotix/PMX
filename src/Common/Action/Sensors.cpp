@@ -43,7 +43,7 @@ void Sensors::startSensors()
 {
 	logger().debug() << "startSensors" << logs::end;
 
-	this->actions().addTimer(new SensorsTimer(*this, 400, "sensors"));
+	this->actions().addTimer(new SensorsTimer(*this, 800, "sensors"));
 
 }
 

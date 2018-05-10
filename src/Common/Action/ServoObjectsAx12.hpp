@@ -22,6 +22,9 @@ private:
 
 	AServoDriver* servodriver;
 
+	int nb_servos_;
+	int *servo_list_;
+
 public:
 
 	/*!
@@ -38,7 +41,7 @@ public:
 	 * \brief Destructor.
 	 * \param keep_sec : 1 sec par defaut et release, 0 (pas de release), ou n secondes et release
 	 */
-	void deploy(int servo, int pos, int keep_millisec = 1000);
+	void deploy(int servo, int pos, int keep_millisec = -1);
 	void turn(int servo, int speed, int keep_millisec);
 	void release(int servo);
 	void hold(int servo);
@@ -47,7 +50,7 @@ public:
 
 	void setSpeed(int servo, int speed);
 	void setSpeedAll(int speed);
-
+	void detectAll();
 
 };
 

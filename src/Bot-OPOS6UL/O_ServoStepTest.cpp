@@ -38,6 +38,10 @@ void O_ServoStepTest::run(int argc, char** argv)
 
     Arguments args = robot.getArgs();
 
+
+
+
+
     logger().info() << "Executing - " << this->desc() << logs::end;
     //args.usage();
 

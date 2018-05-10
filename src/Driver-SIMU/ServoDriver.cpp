@@ -72,3 +72,8 @@ int ServoDriver::getPos(int servo)
 {
 	return -1;
 }
+
+int ServoDriver::ping(int servo)
+{
+          return -1;
+}

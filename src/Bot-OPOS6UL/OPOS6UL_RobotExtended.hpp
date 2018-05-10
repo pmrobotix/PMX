@@ -55,6 +55,8 @@ public:
 
     void stopActions();
 
+    int points;
+
 private:
 
     OPOS6UL_ActionsExtended* p_actions_;

@@ -61,7 +61,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     robot.actions().ledBar().k2mil(2, 50000, LED_GREEN);
     //robot.actions().ledBar().startK2mil(10, 50000, LED_GREEN, false); //TODO pb a corriger
-    sleep(2);
+    sleep(480);
     logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec" << logs::end;
 
     robot.stopAll(); //stop asserv and actionManagerTimer

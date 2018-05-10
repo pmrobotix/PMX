@@ -44,7 +44,7 @@ bool O_push_button()
     robot.svgPrintPosition();
 
     //recalage
-    robot.asserv().doCalage(-50, 1);
+    robot.asserv().doCalage(-60, 3);
     robot.svgPrintPosition();
 
     robot.asserv().doLineAbs(150);
@@ -78,7 +78,7 @@ bool O_push_cube()
         robot.ia().iAbyPath().enable(robot.ia().garea_buildzone, 1);
     }
 
-    //on avance
+    //on avance au point pour deposer
     while (robot.asserv().doMoveForwardTo(850, 400) != TRAJ_OK) {
         usleep(2000000);
     }
@@ -105,6 +105,58 @@ bool O_push_bee()
     if (ts != TRAJ_OK)
         return false;
 
+    ts = robot.asserv().doLineAbs(-40);
+    robot.svgPrintPosition();
+
+    if (robot.getMyColor() == PMXORANGE)
+        ts = robot.asserv().doRotateAbs(90);
+    else
+        ts = robot.asserv().doRotateAbs(-90);
+
+    robot.svgPrintPosition();
+    //ts = robot.asserv().doLineAbs(-100);
+    robot.asserv().doCalage(-150, 5);
+
+    ts = robot.asserv().doLineAbs(50);
+    robot.svgPrintPosition();
+    robot.actions().arm_left_full(0);
+    robot.actions().arm_right_full(-1);
+
+    robot.actions().arm_left_retract(0);
+    robot.actions().arm_right_retract(-1);
+
+    robot.actions().arm_left_full(0);
+    robot.actions().arm_right_full(-1);
+
+    robot.actions().arm_left_retract(0);
+    robot.actions().arm_right_retract(-1);
+
+    robot.actions().servoObjects().releaseAll();
+
+    if (robot.getMyColor() == PMXORANGE)
+        ts = robot.asserv().doRotateRight(45);
+    else
+        ts = robot.asserv().doRotateLeft(45);
+
+    ts = robot.asserv().doLineAbs(120);
+    robot.svgPrintPosition();
+    //sleep(3);
+    //aller au distributeur
+
+    ts = robot.asserv().doMoveForwardAndRotateTo(150, 1000, -90);
+    ts = robot.asserv().doLineAbs(110);
+    robot.svgPrintPosition();
+    ts = robot.asserv().doRotateRight(2);
+    ts = robot.asserv().doRotateLeft(4);
+    ts = robot.asserv().doRotateRight(2);
+    ts = robot.asserv().doRotateLeft(4);
+    ts = robot.asserv().doRotateRight(2);
+    ts = robot.asserv().doRotateLeft(4);
+    ts = robot.asserv().doRotateRight(2);
+    ts = robot.asserv().doRotateLeft(4);
+    robot.svgPrintPosition();
+    ts = robot.asserv().doLineAbs(-150);
+    robot.svgPrintPosition();
     robot.logger().info() << "O_push_bee done." << logs::end;
     return true; //return true si ok sinon false si interruption
 }
@@ -117,9 +169,9 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
 
     //definition des zones en zone ORANGE uniquement
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1020, 250, 90);
     robot.ia().iAbyPath().ia_createZone("zone_push_cube", 800, 500, 100, 300, 850, 950, -90);
-    robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1150, 300, 90);
-    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 300, 1700, -10);
+    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 180, 1700, -90);
 
     robot.ia().iAbyPath().ia_addAction("push_button", &O_push_button);
     robot.ia().iAbyPath().ia_addAction("push_cube", &O_push_cube);
@@ -136,9 +188,9 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 
     //definition des zones en zone ORANGE uniquement
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1020, 250, 90);
     robot.ia().iAbyPath().ia_createZone("zone_push_cube", 800, 500, 100, 300, 850, 950, -90);
-    robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1150, 300, 90);
-    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 300, 1300, -10); //modifié
+    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 180, 1300, -90); //modifié
 
     robot.ia().iAbyPath().ia_addAction("push_button", &O_push_button);
     robot.ia().iAbyPath().ia_addAction("push_cube", &O_push_cube);
@@ -164,13 +216,13 @@ void O_State_DecisionMakerIA::initPlayground()
     //cubes
     p_->add_circle(robot.ia().oarea_cube1, 850.0, 530.0, 300.0, 6);
     p_->add_circle(robot.ia().oarea_cube2high, 1100.0, 1500.0, 300.0, 6);
-    p_->add_circle(robot.ia().oarea_cube3left, 300.0, 1200.0, 300.0, 6);
+    p_->add_circle(robot.ia().oarea_cube3left, 300.0, 1200.0, 250.0, 6);
 
     //distributeurs
     p_->add_rectangle(robot.ia().oarea_distribadverse, 600, 1900, 200.0, 200.0, 0);
 
     //zone de construction
-    p_->add_rectangle(robot.ia().oarea_buildzone, 700, 180, 600.0, 220.0, 0);
+    p_->add_rectangle(robot.ia().oarea_buildzone, 650, 180, 500.0, 220.0, 0);
     if (robot.getMyColor() == PMXORANGE)
         p_->enable(robot.ia().oarea_buildzone, 0);
 
@@ -178,13 +230,13 @@ void O_State_DecisionMakerIA::initPlayground()
     //cubes
     p_->add_circle(robot.ia().garea_cube1, 2150.0, 530.0, 300.0, 6);
     p_->add_circle(robot.ia().garea_cube2high, 1900.0, 1500.0, 300.0, 6);
-    p_->add_circle(robot.ia().garea_cube3left, 2700.0, 1200.0, 300.0, 6);
+    p_->add_circle(robot.ia().garea_cube3left, 2700.0, 1200.0, 250.0, 6);
 
     //distributeurs
     p_->add_rectangle(robot.ia().garea_distribadverse, 2400, 1900, 200.0, 200.0, 0);
 
     //zone de construction
-    p_->add_rectangle(robot.ia().garea_buildzone, 2300, 180, 600.0, 220.0, 0);
+    p_->add_rectangle(robot.ia().garea_buildzone, 2350, 180, 500.0, 220.0, 0);
     if (robot.getMyColor() != PMXORANGE)
         p_->enable(robot.ia().garea_buildzone, 0);
 
@@ -209,28 +261,22 @@ void O_State_DecisionMakerIA::execute()
     }
     logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
 
+    //____________________________________________________________________________________________________
+    int tabletest = 0;
+    //____________________________________________________________________________________________________
 
-//____________________________________________________________________________________________________
-int tabletest = 0;
-//____________________________________________________________________________________________________
+    if (tabletest == 1) {
+        IASetupActivitiesZoneTableTest(); //A COMMENTER pour match
+        initPlayground(); //definit les zones de non droit
+        robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
+        robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
 
-
-if (tabletest == 1)
-{
-    IASetupActivitiesZoneTableTest(); //A COMMENTER pour match
-    initPlayground(); //definit les zones de non droit
-    robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
-    robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
-
-}else
-{
-    IASetupActivitiesZone(); //definit les activities
-    initPlayground(); //definit les zones de non droit
-}
-
-
-
-
+    } else {
+        IASetupActivitiesZone(); //definit les activities
+        initPlayground(); //definit les zones de non droit
+        robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
+        robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
+    }
 
     //wait for the start of the chrono !
     while (!robot.chrono().started()) {
@@ -240,16 +286,20 @@ if (tabletest == 1)
     logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
     //robot.svgPrintPosition();
 
-    robot.actions().sensors().startSensors();
+    //robot.actions().sensors().startSensors();
     robot.ia().iAbyPath().ia_start(); //launch IA
 
     robot.actions().ledBar().startK2mil(100, 100000, LED_GREEN);
     //TODO danse de fin ?
     //robot.actions().ledBar().k2mil(1, 50000, LED_GREEN); //Ne doit pas trop long...
 
-    logger().info() << "O_State_DecisionMakerIA executed" << logs::end;
-    robot.actions().stop();
+    //logger().info() << "O_State_DecisionMakerIA executed" << logs::end;
     robot.freeMotion();
+    //logger().info() << "O_State_DecisionMakerIA freeMotion" << logs::end;
+    robot.actions().stop();
+    //logger().info() << "O_State_DecisionMakerIA actions().stop" << logs::end;
+
     robot.svgPrintEndOfFile();
+    logger().info() << "O_State_DecisionMakerIA svgPrintEndOfFile" << logs::end;
 
 }
