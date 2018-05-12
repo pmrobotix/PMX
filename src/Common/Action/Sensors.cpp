@@ -4,6 +4,8 @@
 
 #include "../Action.Driver/ASensorsDriver.hpp"
 #include "../Asserv/Asserv.hpp"
+#include "../Asserv/MotorControl.hpp"
+#include "../Asserv/MovingBase.hpp"
 #include "../Robot.hpp"
 #include "Actions.hpp"
 
@@ -61,6 +63,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 
 	if (front)
 	{
+	    sensors_.robot()->asserv_default->base()->motors().stopMotors();
 		//send collision to asserv
 		sensors_.robot()->asserv_default->setFrontCollision();
 	}

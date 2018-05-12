@@ -52,7 +52,7 @@ bool L_IAbyPathTest_action2()
 {
 	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 	robot.logger().info() << "start action2." << logs::end;
-
+/*
 	RobotPosition zone;
 	robot.ia().iAbyPath().goToZone("zone_plot2", &zone);
 
@@ -88,7 +88,7 @@ bool L_IAbyPathTest_action2()
 	}
 
 	//toSVG(p, path, "testRobot3.svg"); //TODO afficher le path
-
+*/
 
 	//TRAJ_STATE ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
 
@@ -106,7 +106,7 @@ bool L_IAbyPathTest_action2()
 	 return false;
 	 */
 	robot.svgPrintPosition();
-	delete found_path;
+	//delete found_path;
 	robot.logger().info() << "action2 done." << logs::end;
 	return true;
 }

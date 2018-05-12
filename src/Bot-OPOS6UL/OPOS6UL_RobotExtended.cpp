@@ -35,7 +35,9 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
     //init SVG log file
     svg_->beginHeader();
-    //points = 10;
+
+    //init domotique + abeille placés
+    points = 10;
 }
 
 void OPOS6UL_RobotExtended::stopActions()
@@ -48,7 +50,7 @@ void OPOS6UL_RobotExtended::begin(int argc, char** argv)
 {
     Robot::begin(argc, argv);
 
-    logger().debug() << "OPOS6UL_RobotExtended::start" << logs::end;
+    logger().debug() << "OPOS6UL_RobotExtended::begin" << logs::end;
 
     //specific match cases and strategies
     if (cArgs_["type"] == "m" or cArgs_["type"] == "M") {

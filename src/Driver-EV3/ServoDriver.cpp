@@ -19,7 +19,7 @@ ServoDriver::ServoDriver() :
         connected_(0)
 {
     logger().debug() << "ServoDriver()" << logs::end;
-
+/*
     sv1_ = servo_motor("in4:i2c88:sv1"); //funny action
     //sv1_.set_polarity(sv1_.polarity_inversed);
     sv2_ = servo_motor("in4:i2c88:sv2"); //pince puissance
@@ -29,7 +29,7 @@ ServoDriver::ServoDriver() :
     sv6_ = servo_motor("in4:i2c88:sv6");
 
     sv7_ = servo_motor("in4:i2c88:sv7");
-    sv8_ = servo_motor("in4:i2c88:sv8");
+    sv8_ = servo_motor("in4:i2c88:sv8");*/
 
 }
 
@@ -171,4 +171,9 @@ int ServoDriver::getMoving(int servo)
 int ServoDriver::getPos(int servo)
 {
     return 0;
+}
+
+int ServoDriver::ping(int servo)
+{
+    return 1;
 }

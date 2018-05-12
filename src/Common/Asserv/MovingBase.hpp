@@ -24,7 +24,7 @@ private:
 		return instance;
 	}
 
-	float entraxe_m; //en metre
+	float entraxe_mm; //en metre
 
 	float diam_mm;  //en mm
 
@@ -106,7 +106,7 @@ public:
 
 	long moveDWaitTrajectory(); //return le reste à parcourir
 
-	void turn(float degree, int timems);
+	void turn(float degree, int power);
 
 	void turnLeft(float degree, int timems);
 

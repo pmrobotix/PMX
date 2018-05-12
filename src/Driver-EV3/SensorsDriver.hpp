@@ -21,8 +21,11 @@ private:
         return instance;
     }
 
-    infrared_sensor ir_;
-    infrared_sensor irrear_;
+    infrared_sensor ir1_;
+    infrared_sensor ir2_;
+
+    //infrared_sensor ir_;
+    //infrared_sensor irrear_;
 
     //ultrasonic_sensor us_;
 

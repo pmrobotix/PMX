@@ -21,11 +21,11 @@ AAsservDriver * AAsservDriver::create(std::string)
 
 void AsservDriver::reset()
 {
-    if (_motor_left.connected())
-        _motor_left.reset();
+    if (_motor_left_.connected())
+        _motor_left_.reset();
 
-    if (_motor_right.connected())
-        _motor_right.reset();
+    if (_motor_right_.connected())
+        _motor_right_.reset();
 }
 
 AsservDriver::AsservDriver()
@@ -39,32 +39,31 @@ AsservDriver::AsservDriver()
 
     l.fill(0xFF);
 
+    /*
+     sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
 
-    sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
+     logger().debug() << "angle connected = " << angle.connected() << logs::end;
 
-    logger().debug() << "angle connected = " << angle.connected() << logs::end;
+     if (angle.connected()) {
 
-    if (angle.connected()) {
+     angle.set_mode("ANGLE-ACC");
+     logger().debug() << "angle = " << angle.value(0) << logs::end;
+     angle.set_command("RESET");
+     usleep(25000);
+     const mode_set &m = angle.commands();
+     std::ostringstream oss;
+     oss << "available cmds are ";
+     for (mode_set::const_iterator it = m.begin(); it != m.end(); ++it) {
+     oss << *it << " ";
 
-        angle.set_mode("ANGLE-ACC");
-        logger().debug() << "angle = " << angle.value(0) << logs::end;
-        angle.set_command("RESET");
-        usleep(25000);
-        const mode_set &m = angle.commands();
-        std::ostringstream oss;
-        oss << "available cmds are ";
-        for (mode_set::const_iterator it = m.begin(); it != m.end(); ++it) {
-            oss << *it << " ";
+     }
 
-        }
+     logger().debug() << oss.str() << logs::end;
+     logger().debug() << "driver_name() = " << angle.driver_name() << logs::end;
+     logger().debug() << "angle = " << angle.value(0) << logs::end;
 
-        logger().debug() << oss.str() << logs::end;
-        logger().debug() << "driver_name() = " << angle.driver_name() << logs::end;
-        logger().debug() << "angle = " << angle.value(0) << logs::end;
+     }*/
 
-
-
-    }
     /*
      //test1
      for (unsigned i = 0; i < 4; ++i) {
@@ -77,19 +76,72 @@ AsservDriver::AsservDriver()
      }
      */
 //test 2 - a garder
-    _motor_left_ = large_motor(OUTPUT_A);
-    if (_motor_left_.connected()) {
-
-        logger().info() << "(" << "A" << ") " << _motor_left_.driver_name() << " motor on port "
-                << _motor_left_.address() << logs::end;
-    }
-
-    _motor_right_ = large_motor(OUTPUT_D);
     if (_motor_right_.connected()) {
 
         logger().info() << "(" << "D" << ") " << _motor_right_.driver_name() << " motor on port "
-                << _motor_right_.address() << logs::end;
+                << _motor_right_.address() << " Pol=" << _motor_right_.polarity() << logs::end;
     }
+    if (_motor_right_.connected()) //if both motors are connected, then initialize each motor.
+    {
+        _motor_right_.reset();
+
+        _motor_right_.set_ramp_down_sp(0);
+        _motor_right_.set_ramp_up_sp(0);
+        _motor_right_.set_stop_action("brake");
+
+        //_motor_right_.set_position_sp(-10).set_speed_sp(300).run_to_rel_pos();
+/*
+        logger().info() << "R=" << _motor_right_.position() << logs::end;
+        _motor_right_.set_duty_cycle_sp(-60).run_direct();
+        sleep(1);
+        logger().info() << "R=" << _motor_right_.position() << logs::end;
+
+        _motor_right_.set_duty_cycle_sp(60).run_direct();
+        sleep(1);
+
+        _motor_right_.stop();
+        logger().info() << "R=" << _motor_right_.position() << logs::end;
+*/
+    }
+
+    if (_motor_left_.connected()) {
+
+        logger().info() << "(" << "B" << ") " << _motor_left_.driver_name() << " motor on port "
+                << _motor_left_.address() << " Pol=" << _motor_left_.polarity() << logs::end;
+    }
+
+    if (_motor_left_.connected()) //if both motors are connected, then initialize each motor.
+    {
+        _motor_left_.reset();
+        _motor_left_.set_ramp_down_sp(0);
+        _motor_left_.set_ramp_up_sp(0);
+        _motor_left_.set_stop_action("brake");
+
+        //_motor_left_.set_position_sp(-10).set_speed_sp(300).run_to_rel_pos();
+/*
+        logger().info() << "R=" << _motor_left_.position() << logs::end;
+        _motor_left_.set_duty_cycle_sp(-60).run_direct();
+        sleep(1);
+        logger().info() << "R=" << _motor_left_.position() << logs::end;
+
+        _motor_left_.set_duty_cycle_sp(60).run_direct();
+        sleep(1);
+
+        _motor_left_.stop();
+        logger().info() << "R=" << _motor_left_.position() << logs::end;
+*/
+    }
+
+    resetEncoders();
+
+    /*
+     _motor_porte_droite_.reset();
+     sleep(2);
+     _motor_porte_droite_.set_position_sp(500).set_speed_sp(300).run_to_rel_pos();
+     _motor_porte_gauche_.reset();
+     sleep(2);
+     _motor_porte_gauche_.set_position_sp(500).set_speed_sp(300).run_to_rel_pos();
+     */
     /*
      //test3
      if (_motor_left.connected()) {
@@ -152,9 +204,16 @@ AsservDriver::AsservDriver()
      }*/
 }
 
-void AsservDriver::setMotorLeftPosition(int power, long ticks)
+void AsservDriver::setMotorLeftPosition(int ticks_per_second, long ticks)
 {
-    power = -power; //TODO add a parameter to reverse motor inverted or not using polarity function ?
+    limit(ticks_per_second, MAXVALUE_speed_sp);
+    //ticks_per_second = -ticks_per_second; //TODO add a parameter to reverse motor inverted or not using polarity function ?
+
+    if (_motor_left_.connected()) {
+
+        //ticks :the units are in tachometer pulse counts, so if you are not using a LEGO motor, then you will need to do some math to convert to/from degrees.
+        _motor_left_.set_position_sp(ticks).set_speed_sp(ticks_per_second).run_to_rel_pos();
+    }
     /*
      if (_motor_left.connected())
      {
@@ -173,9 +232,15 @@ void AsservDriver::setMotorLeftPosition(int power, long ticks)
 
 }
 
-void AsservDriver::setMotorRightPosition(int power, long ticks)
+void AsservDriver::setMotorRightPosition(int ticks_per_second, long ticks)
 {
-    power = -power;
+    limit(ticks_per_second, MAXVALUE_speed_sp);
+    //ticks_per_second = -ticks_per_second;
+    if (_motor_right_.connected()) {
+
+        //the units are in tachometer pulse counts, so if you are not using a LEGO motor, then you will need to do some math to convert to/from degrees.
+        _motor_right_.set_position_sp(ticks).set_speed_sp(ticks_per_second).run_to_rel_pos();
+    }
     /*
      if (_motor_right.connected())
      {
@@ -191,6 +256,18 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
      _motor_right.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
      }
      }*/
+}
+
+int AsservDriver::limit(int power, int max)
+{
+    if ((power < -max)) {
+        logger().info() << "ERROR Motor power " << power << " exceeded minimum " << -max << "!!" << logs::end;
+        power = -max;
+    } else if (power > max) {
+        logger().info() << "ERROR Motor power " << power << "exceeded maximum " << max << "!!" << logs::end;
+        power = max;
+    }
+    return power;
 }
 
 //regulation enabled  => power in ticks per second -860 / +860
@@ -216,9 +293,25 @@ void AsservDriver::setMotorRightPosition(int power, long ticks)
 //   action specified by `stop_action`.
 // - `reset` will reset all of the motor parameter attributes to their default value.
 //   This will also have the effect of stopping the motor.
-void AsservDriver::setMotorLeftPower(int power, int timems)
+
+//http://www.ev3dev.org/docs/tutorials/tacho-motors/
+void AsservDriver::setMotorLeftPower(int percent, int timems)
 {
-    power = -power;
+
+    percent = -percent;
+    if (_motor_left_.connected()) {
+        limit(percent, MAXVALUE_duty_cycle_sp);
+        logger().error() << "LEFT percent = " << percent << logs::end;
+        _motor_left_.set_duty_cycle_sp(percent);
+    }
+
+    if (timems > 0) {
+        _motor_left_.set_time_sp(timems);
+        _motor_left_.run_timed();
+    } else {
+        //forever
+        _motor_left_.run_direct();
+    }
     /*
      if (_motor_left.connected())
      {
@@ -262,21 +355,23 @@ void AsservDriver::setMotorLeftPower(int power, int timems)
      }*/
 }
 
-int AsservDriver::limit(int power, int max)
+void AsservDriver::setMotorRightPower(int percent, int timems)
 {
-    if ((power < -max)) {
-        logger().info() << "ERROR Motor power " << power << " exceeded minimum " << -max << "!!" << logs::end;
-        power = -max;
-    } else if (power > max) {
-        logger().info() << "ERROR Motor power " << power << "exceeded maximum " << max << "!!" << logs::end;
-        power = max;
-    }
-    return power;
-}
 
-void AsservDriver::setMotorRightPower(int power, int timems)
-{
-    power = -power;
+    percent = -percent;
+    if (_motor_right_.connected()) {
+        limit(percent, MAXVALUE_duty_cycle_sp);
+        logger().error() << "RIGHT percent = " << percent << logs::end;
+        _motor_right_.set_duty_cycle_sp(percent);
+    }
+
+    if (timems > 0) {
+        _motor_right_.set_time_sp(timems);
+        _motor_right_.run_timed();
+    } else {
+        //forever
+        _motor_right_.run_direct();
+    }
     /*
      if (_motor_right.connected())
      {
@@ -320,6 +415,7 @@ void AsservDriver::setMotorRightPower(int power, int timems)
      }*/
 }
 
+
 long AsservDriver::getLeftExternalEncoder()
 {
     return 0;
@@ -331,17 +427,17 @@ long AsservDriver::getRightExternalEncoder()
 
 long AsservDriver::getLeftInternalEncoder()
 {
-    if (_motor_left.connected()) {
+    if (_motor_left_.connected()) {
         //+/- 2,147,483,648
-        return -_motor_left.position();
+        return -_motor_left_.position();
     } else
         return 0;
 
 }
 long AsservDriver::getRightInternalEncoder()
 {
-    if (_motor_right.connected()) {
-        return -_motor_right.position();
+    if (_motor_right_.connected()) {
+        return -_motor_right_.position();
     } else
         return 0;
 }
@@ -349,39 +445,39 @@ long AsservDriver::getRightInternalEncoder()
 void AsservDriver::stopMotorLeft()
 {
     setMotorLeftPower(0, 0);
-    if (_motor_left.connected()) {
-        _motor_left.stop();
+    if (_motor_left_.connected()) {
+        _motor_left_.stop();
     }
-    logger().debug() << "stopMotorLeft" << logs::end;
+    logger().error() << "stopMotorLeft" << logs::end;
 
 }
 void AsservDriver::stopMotorRight()
 {
 
     setMotorRightPower(0, 0);
-    if (_motor_right.connected()) {
-        _motor_right.stop();
+    if (_motor_right_.connected()) {
+        _motor_right_.stop();
     }
-    logger().debug() << "stopMotorRight" << logs::end;
+    logger().error() << "stopMotorRight" << logs::end;
 }
 
 void AsservDriver::resetEncoders()
 {
-    if (_motor_left.connected()) {
-        _motor_left.set_position(0);
+    if (_motor_left_.connected()) {
+        _motor_left_.set_position(0);
     }
-    if (_motor_right.connected()) {
-        _motor_right.set_position(0);
+    if (_motor_right_.connected()) {
+        _motor_right_.set_position(0);
     }
 }
 
 void AsservDriver::resetInternalEncoders()
 {
-    //TODO
+//TODO
 }
 void AsservDriver::resetExternalEncoders()
 {
-    //TODO
+//TODO
 }
 
 int AsservDriver::getMotorLeftCurrent()

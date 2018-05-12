@@ -16,11 +16,12 @@ O_State_Init::execute(Robot&)
     robot.actions().start();
 
     //BEGIN
-    begin: robot.actions().lcd2x16().setBacklightOn();
+    begin: robot.strategy("all");
+    robot.actions().lcd2x16().setBacklightOn();
     robot.actions().lcd2x16().clear();
+
     robot.actions().servo_init();
 
-    robot.strategy("all");
 
 
 
@@ -42,10 +43,10 @@ O_State_Init::execute(Robot&)
         while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR) {
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_LEFT_KEY) {
-                logger().info() << "BUTTON_LEFT_KEY - BLUE" << logs::end;
+                logger().info() << "BUTTON_LEFT_KEY - GREEN" << logs::end;
                 robot.actions().lcd2x16().clear();
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print("BLUE  ");
+                robot.actions().lcd2x16().print("GREEN  ");
                 robot.setMyColor(PMXGREEN);
             }
             if (b == BUTTON_RIGHT_KEY) {
@@ -116,6 +117,8 @@ O_State_Init::execute(Robot&)
 
         robot.strategy("all");
 
+        setPos();
+
         //sortir pince
         if (robot.getMyColor() == PMXORANGE)
             robot.actions().servo_init_orange();
@@ -123,7 +126,6 @@ O_State_Init::execute(Robot&)
             robot.actions().servo_init_green();
 
 
-        setPos();
         robot.waitForInit(true);
         usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
     }
@@ -146,14 +148,14 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(70, 210, 0.0, (robot.getMyColor() != PMXORANGE));
+    robot.asserv().setPositionAndColor(70, 192, 0.0, (robot.getMyColor() != PMXORANGE));
     //robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
     robot.asserv().assistedHandling();
-    robot.asserv().doLineAbs(145);
-    //robot.asserv().doLineAbs(-50);
+    robot.asserv().doLineAbs(120);
+
 
 
     robot.actions().lcd2x16().print("SET POSITION : OK");

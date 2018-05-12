@@ -141,6 +141,11 @@ public:
         servoObjects().setSpeed(7, speed);
         servoObjects().deploy(7, 750, keep);
     }
+    void arm_right_little(int keep = 0, int speed = 100)
+    {
+        servoObjects().setSpeed(7, speed);
+        servoObjects().deploy(7, 600, keep);
+    }
 
     void arm_left_retract(int keep = 0, int speed = 512)
     {
@@ -151,6 +156,11 @@ public:
     {
         servoObjects().setSpeed(5, speed);
         servoObjects().deploy(5, 200, keep);
+    }
+    void arm_left_little(int keep = 0, int speed = 100)
+    {
+        servoObjects().setSpeed(5, speed);
+        servoObjects().deploy(5, 420, keep);
     }
 
     void ball_front(int keep = 0, int speed = 100)
@@ -189,11 +199,35 @@ public:
     }
     void servo_init_orange()
     {
+        arm_left_little(0);
+        arm_right_little(-1);
 
+        arm_left_retract(0);
+        arm_right_retract(-1);
+
+        arm_left_little(0);
+        arm_right_little(-1);
+
+        arm_left_retract(0);
+        arm_right_retract(-1);
+
+        servoObjects().releaseAll();
     }
     void servo_init_green()
     {
+        arm_left_little(0);
+        arm_right_little(-1);
 
+        arm_left_retract(0);
+        arm_right_retract(-1);
+
+        arm_left_little(0);
+        arm_right_little(-1);
+
+        arm_left_retract(0);
+        arm_right_retract(-1);
+
+        servoObjects().releaseAll();
     }
 
 };

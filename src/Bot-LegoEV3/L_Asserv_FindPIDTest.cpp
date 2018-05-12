@@ -138,7 +138,7 @@ void L_Asserv_FindPIDTest::run(int argc, char** argv)
 */
 	robot.svgPrintPosition();
 
-	robot.stop();
+	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

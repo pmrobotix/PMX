@@ -7,17 +7,16 @@ class Robot;
 LegoEV3IAExtended::LegoEV3IAExtended(std::string botId, Robot *robot) :
 		iaz_(robot), iap_(robot)
 {
-
+/*
 	p_ = new Playground(0.0, 0.0, 3000.0, 2000.0, 1.0, 1.0);
-	//toSVG(p_);
 	initPlayground();
-	iap_.toSVG(p_);
+	iap_.toSVG();*/
 }
 
 LegoEV3IAExtended::~LegoEV3IAExtended()
 {
 }
-
+/*
 void LegoEV3IAExtended::initPlayground()
 {
 
@@ -43,4 +42,4 @@ void LegoEV3IAExtended::playgroundFindPath(FoundPath * & path, Point& start, Poi
 {
 	p_->find_path(path, start, end);
 }
-
+*/

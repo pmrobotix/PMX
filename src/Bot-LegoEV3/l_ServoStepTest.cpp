@@ -53,7 +53,7 @@ void L_ServoStepTest::run(int argc, char** argv)
 	}
 	//robot.actions().servoObjects().leftDeploy(0, true);
 
-	robot.actions().servoObjects().deploy((ServoLabel) num, 0.0, 0);
+	//robot.actions().servoObjects().deploy((ServoLabel) num, 0.0, 0);
 
 	ButtonTouch touch = BUTTON_NONE;
 
@@ -66,7 +66,7 @@ void L_ServoStepTest::run(int argc, char** argv)
 			pos += step;
 			if (pos >= 100) pos = 100;
 			logger().info() << "+" << step << " pos=" << pos << logs::end;
-			robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
+			//robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
 
 		}
 
@@ -75,21 +75,21 @@ void L_ServoStepTest::run(int argc, char** argv)
 			pos -= step;
 			if (pos <= -100) pos = -100;
 			logger().info() << "-" << step << " pos=" << pos << logs::end;
-			robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
+			//robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
 
 		}
 
 		if (touch == BUTTON_ENTER_KEY)
 		{
 			logger().info() << "-" << step << " pos=" << pos << logs::end;
-			robot.actions().servoObjects().release((ServoLabel) num);
+			//robot.actions().servoObjects().release((ServoLabel) num);
 
 		}
 
 		if (touch == BUTTON_RIGHT_KEY)
 		{
 			pos = 0;
-			robot.actions().servoObjects().release((ServoLabel) num);
+			//robot.actions().servoObjects().release((ServoLabel) num);
 			num = num + 1;
 			if (num >= SERVO_enumTypeEnd) num--;
 
@@ -100,7 +100,7 @@ void L_ServoStepTest::run(int argc, char** argv)
 		if (touch == BUTTON_LEFT_KEY)
 		{
 			pos = 0;
-			robot.actions().servoObjects().release((ServoLabel) num);
+			//robot.actions().servoObjects().release((ServoLabel) num);
 			num = num - 1;
 			if (num < 0) num++;
 
@@ -110,7 +110,7 @@ void L_ServoStepTest::run(int argc, char** argv)
 		usleep(30000);
 	}
 
-	robot.actions().servoObjects().releaseAll();
+	//robot.actions().servoObjects().releaseAll();
 
 	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;

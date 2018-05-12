@@ -26,13 +26,15 @@ private:
         return instance;
     }
 
-    motor _motor_left = { OUTPUT_A };
-    motor _motor_right = { OUTPUT_D };
 
-    large_motor _motor_left_;
-    large_motor _motor_right_;
 
-    motor arrMotors[4] = { { OUTPUT_A }, { OUTPUT_B }, { OUTPUT_C }, { OUTPUT_D } };
+    large_motor _motor_right_ = { OUTPUT_D };
+    large_motor _motor_left_ = { OUTPUT_C };
+
+    large_motor _motor_porte_droite_= { OUTPUT_B };
+    large_motor _motor_porte_gauche_= { OUTPUT_A };
+
+    //motor arrMotors[4] = { { OUTPUT_A }, { OUTPUT_B }, { OUTPUT_C }, { OUTPUT_D } };
 
 protected:
 
@@ -55,11 +57,11 @@ public:
     //regulation enabled  => power in ticks per second -860 / +860
     //regulation disabled => power in percentage -100 / +100
     //ticks : relative position to go
-    void setMotorLeftPosition(int power, long ticks);
-    void setMotorRightPosition(int power, long ticks);
+    void setMotorLeftPosition(int ticks_per_second, long ticks);
+    void setMotorRightPosition(int ticks_per_second, long ticks);
 
-    void setMotorLeftPower(int power, int time);
-    void setMotorRightPower(int power, int time);
+    void setMotorLeftPower(int percent, int time);
+    void setMotorRightPower(int percent, int time);
 
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
