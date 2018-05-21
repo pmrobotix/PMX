@@ -26,7 +26,7 @@ bool L_push_button()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start L_push_button." << logs::end;
 
-    robot.asserv().base()->moveForward(100, 100);
+    //robot.asserv().base()->moveForward(100, 100);
 
     return true; //return true si ok sinon false si interruption
 }
@@ -131,14 +131,13 @@ void L_State_DecisionMakerIA::execute()
     logger().info() << "L_State_DecisionMakerIA executing..." << logs::end;
     //robot.svgPrintPosition();
 
-    robot.actions().sensors().startSensors();
+    //robot.actions().sensors().startSensors();
 
     //pause
     sleep(5);
 
-    robot.asserv().base()->moveForward(450, 150);
-
-
+    robot.asserv().base()->moveForward(450, 200);
+    //robot.asserv().base()->moveForward(-100, 200);
 
 
     //logger().info() << "O_State_DecisionMakerIA executed" << logs::end;

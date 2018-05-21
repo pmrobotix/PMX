@@ -96,7 +96,7 @@ bool O_push_cube()
     robot.asserv().doLineAbs(-100);
     robot.svgPrintPosition();
 
-    robot.points += 3;
+    robot.points += 5;
 
     robot.logger().info() << "O_push_cube done." << logs::end;
     return true; //return true si ok sinon false si interruption
@@ -160,9 +160,9 @@ bool O_push_bee()
     //aller au distributeur
 
     if (robot.getMyColor() == PMXORANGE) {
-        ts = robot.asserv().doMoveForwardAndRotateTo(160, 1000, -90);
+        ts = robot.asserv().doMoveForwardAndRotateTo(200, 1000, -90);
         robot.svgPrintPosition();
-        ts = robot.asserv().doLineAbs(100);
+        ts = robot.asserv().doLineAbs(90);
         robot.svgPrintPosition();
     } else {
         ts = robot.asserv().doMoveForwardAndRotateTo(210, 1000, -90);
@@ -188,6 +188,11 @@ bool O_push_bee()
 
     //petite danse
     robot.actions().servo_init_end();
+    ts = robot.asserv().doRotateRight(2);
+    ts = robot.asserv().doRotateLeft(4);
+    ts = robot.asserv().doRotateRight(2);
+    ts = robot.asserv().doRotateLeft(4);
+    robot.actions().servo_init_end();
 
     robot.logger().info() << "O_push_bee done." << logs::end;
     return true; //return true si ok sinon false si interruption
@@ -203,7 +208,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1020, 250, 90);
     robot.ia().iAbyPath().ia_createZone("zone_push_cube", 800, 500, 100, 300, 850, 950, -90);
-    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 200, 1700, -90);
+    robot.ia().iAbyPath().ia_createZone("zone_push_bee", 0, 1700, 300, 300, 220, 1700, -90);
 
     robot.ia().iAbyPath().ia_addAction("push_button", &O_push_button);
     robot.ia().iAbyPath().ia_addAction("push_cube", &O_push_cube);

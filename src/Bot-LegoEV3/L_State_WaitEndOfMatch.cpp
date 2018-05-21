@@ -27,15 +27,57 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     //TODO check ARU and adversary here ?
     while (robot.chrono().getElapsedTimeInSec() <= 100) //todo mettre en parametre
     {
-
+/*
         usleep(1000000);
         long time = robot.chrono().getElapsedTimeInSec();
         this->logger().info() << "execute chrono " << time << logs::end;
 
         robot.actions().ledBar().flash(time, LED_GREEN);
+*/
+        //test ARU
+                            if (robot.actions().tirette().pressed())
+                            {
+                                      logger().error() << "ARU pressed !!!!!!" << logs::end;
+                                      //stop all robot
+                                      robot.stopAll();
 
+                                      sleep(1);
+                                      exit(0);
+                            }
+                            //robot.actions().ledBar().set(1, LED_OFF); //WARNING BUG DE LED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            //robot.actions().ledBar().set(0, LED_OFF);
+                            usleep(300000);
+
+                            //robot.actions().ledBar().set(1, LED_RED);
+                            //robot.actions().ledBar().set(0, LED_RED);
+
+                            this->logger().debug() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
     }
 
+    /*
+//ARU and adversary
+          while (robot.chrono().getElapsedTimeInSec() <= 90)
+          {
+                    //test ARU
+                    if (robot.actions().tirette().pressed())
+                    {
+                              logger().error() << "ARU pressed !!!!!!" << logs::end;
+                              //stop all robot
+                              robot.stop();
+
+                              sharedData->end90s(true);
+                              usleep(200000);
+                              exit(0);
+                    }
+                    //robot.actions().ledBar().set(1, LED_OFF); //WARNING BUG DE LED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    //robot.actions().ledBar().set(0, LED_OFF);
+                    usleep(300000);
+
+                    //robot.actions().ledBar().set(1, LED_RED);
+                    //robot.actions().ledBar().set(0, LED_RED);
+
+                    this->logger().debug() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
+          }*/
     this->logger().info() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.freeMotion();
 

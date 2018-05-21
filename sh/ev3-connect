@@ -21,6 +21,7 @@ all()
 
 main()
 {
+	ssh robot@$IP "killall Bot_LegoMindstorm_EV3"
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" robot@$IP:/home/robot/	
 }
 

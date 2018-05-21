@@ -37,7 +37,7 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     svg_->beginHeader();
 
     //init domotique + abeille placés
-    points = 10;
+    points = 11;
 }
 
 void OPOS6UL_RobotExtended::stopActions()
