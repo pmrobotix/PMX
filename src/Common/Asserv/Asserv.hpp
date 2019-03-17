@@ -3,9 +3,10 @@
 
 #include <string>
 
-#include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
 #include "../Asserv.Driver/AAsservDriver.hpp"
+
+class AsservEsialR;
 
 class Robot;
 
@@ -14,7 +15,6 @@ class AsservInsa;
 class AAsservDriver;
 
 class MovingBase;
-
 
 /*!
  * Asservissement of the robot.It contains default elements.
@@ -39,11 +39,30 @@ protected:
     MovingBase * pMovingBase_;
 
     /*!
-     * \brief asservissement interne. il peut etre remplacé par un asserv externe
+     * \brief type d'asservissement utilisé
+     * \0=Asserdriver 1=ESIAL internal 2=INSA internal
+     */
+    //int useAsservType_;
+    enum AsservType
+    {
+        ASSERV_EXT, ASSERV_INT_ESIALR, ASSERV_INT_INSA
+    };
+
+    AsservType useAsservType_;
+
+    std::string botId_;
+
+    /*!
+     * \brief asservissement interne INSA.
+     * NULL si non defini
      */
     AsservInsa * pAsservInsa_;
 
-    bool useInternalAsserv_; //permet de choisir entre l'utilisattion d'un asserv interne (type insa) ou ext (en utilisant les asserdriver).
+    /*!
+     * \brief asservissement interne ESIAL.
+     * NULL si non defini
+     */
+    AsservEsialR * pAsservEsialR_;
 
     bool ignoreRearCollision_;
     bool ignoreFrontCollision_;

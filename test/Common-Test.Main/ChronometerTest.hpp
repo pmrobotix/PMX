@@ -54,7 +54,7 @@ public:
 
 	void testTimerMiPeriodCount();
 
-	void testTimerCheck();
+	//void testTimerCheck();
 
 	void testTimerNanosleep();
 

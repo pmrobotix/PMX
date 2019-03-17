@@ -32,37 +32,34 @@ AsservDriver::AsservDriver()
 {
     logger().debug() << "AsservDriver()" << logs::end;
 
-    lcd l;
-    logger().debug() << "Resolution is " << l.resolution_x() << " x " << l.resolution_y() << ", " << l.bits_per_pixel()
-            << " bit(s) per pixel" << "Frame buffer size is " << l.frame_buffer_size() << " byte, " << "line length is "
-            << l.line_length() << " byte" << logs::end;
 
-    l.fill(0xFF);
 
-    /*
-     sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
 
-     logger().debug() << "angle connected = " << angle.connected() << logs::end;
 
-     if (angle.connected()) {
+    sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
+    if (angle.connected()) {
+        logger().info() << "angle = " << angle.value(0) << logs::end;
 
-     angle.set_mode("ANGLE-ACC");
-     logger().debug() << "angle = " << angle.value(0) << logs::end;
-     angle.set_command("RESET");
-     usleep(25000);
-     const mode_set &m = angle.commands();
-     std::ostringstream oss;
-     oss << "available cmds are ";
-     for (mode_set::const_iterator it = m.begin(); it != m.end(); ++it) {
-     oss << *it << " ";
+        angle.set_mode("ANGLE-ACC");
+        logger().debug() << "angle = " << angle.value(0) << logs::end;
+        angle.set_command("RESET");
+        usleep(25000);
+        const mode_set &m = angle.commands();
+        std::ostringstream oss;
+        oss << "available cmds are ";
+        for (mode_set::const_iterator it = m.begin(); it != m.end(); ++it) {
+            oss << *it << " ";
+        }
+        logger().debug() << oss.str() << logs::end;
+        logger().debug() << "driver_name() = " << angle.driver_name() << logs::end;
+        logger().debug() << "angle = " << angle.value(0) << logs::end;
+        for (int i = 0; i < 10; i++) {
+            usleep(500000);
+            logger().debug() << "angle = " << angle.value(0) << logs::end;
+        }
 
-     }
+    }
 
-     logger().debug() << oss.str() << logs::end;
-     logger().debug() << "driver_name() = " << angle.driver_name() << logs::end;
-     logger().debug() << "angle = " << angle.value(0) << logs::end;
-
-     }*/
 
     /*
      //test1
@@ -90,18 +87,18 @@ AsservDriver::AsservDriver()
         _motor_right_.set_stop_action("brake");
 
         //_motor_right_.set_position_sp(-10).set_speed_sp(300).run_to_rel_pos();
-/*
-        logger().info() << "R=" << _motor_right_.position() << logs::end;
-        _motor_right_.set_duty_cycle_sp(-60).run_direct();
-        sleep(1);
-        logger().info() << "R=" << _motor_right_.position() << logs::end;
+        /*
+         logger().info() << "R=" << _motor_right_.position() << logs::end;
+         _motor_right_.set_duty_cycle_sp(-60).run_direct();
+         sleep(1);
+         logger().info() << "R=" << _motor_right_.position() << logs::end;
 
-        _motor_right_.set_duty_cycle_sp(60).run_direct();
-        sleep(1);
+         _motor_right_.set_duty_cycle_sp(60).run_direct();
+         sleep(1);
 
-        _motor_right_.stop();
-        logger().info() << "R=" << _motor_right_.position() << logs::end;
-*/
+         _motor_right_.stop();
+         logger().info() << "R=" << _motor_right_.position() << logs::end;
+         */
     }
 
     if (_motor_left_.connected()) {
@@ -118,18 +115,18 @@ AsservDriver::AsservDriver()
         _motor_left_.set_stop_action("brake");
 
         //_motor_left_.set_position_sp(-10).set_speed_sp(300).run_to_rel_pos();
-/*
-        logger().info() << "R=" << _motor_left_.position() << logs::end;
-        _motor_left_.set_duty_cycle_sp(-60).run_direct();
-        sleep(1);
-        logger().info() << "R=" << _motor_left_.position() << logs::end;
+        /*
+         logger().info() << "R=" << _motor_left_.position() << logs::end;
+         _motor_left_.set_duty_cycle_sp(-60).run_direct();
+         sleep(1);
+         logger().info() << "R=" << _motor_left_.position() << logs::end;
 
-        _motor_left_.set_duty_cycle_sp(60).run_direct();
-        sleep(1);
+         _motor_left_.set_duty_cycle_sp(60).run_direct();
+         sleep(1);
 
-        _motor_left_.stop();
-        logger().info() << "R=" << _motor_left_.position() << logs::end;
-*/
+         _motor_left_.stop();
+         logger().info() << "R=" << _motor_left_.position() << logs::end;
+         */
     }
 
     resetEncoders();
@@ -414,7 +411,6 @@ void AsservDriver::setMotorRightPower(int percent, int timems)
      logger().error() << "RIGHT motor not connected !" << logs::end;
      }*/
 }
-
 
 long AsservDriver::getLeftExternalEncoder()
 {

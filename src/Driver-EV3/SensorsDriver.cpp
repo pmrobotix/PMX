@@ -2,6 +2,7 @@
 
 #include "SensorsDriver.hpp"
 
+#include <unistd.h>
 #include <string>
 
 #include "../Log/Logger.hpp"
@@ -15,9 +16,33 @@ ASensorsDriver * ASensorsDriver::create(std::string botName)
 
 SensorsDriver::SensorsDriver()
 {
-    //ir1_ = infrared_sensor("in3:i2c8:mux3");
-    ir1_ = infrared_sensor(INPUT_1);
-    ir2_ = infrared_sensor(INPUT_2);
+    //device d_ = device("in2:i2c80:mux1");
+    //d_.set_attr_
+    lego_port p = lego_port("in2:i2c80:mux1");
+
+    int todo = 0;
+    string temp = "nop";
+    try {
+        temp = p.get_file_string("in2:i2c80:mux1:lego-ev3-color/modalias");
+        logger().info() << "exist driver temp ==  " << temp << logs::end;
+    } catch (...) {
+    }
+    if (temp != "nop")
+        todo = 1;
+
+    if (todo == 0) {
+        logger().info() << "port already set to lego-ev3-ir on " << p.address() << logs::end;
+    } else {
+
+        logger().info() << "set uart and device=lego-ev3-ir on " << p.address() << logs::end;
+        p.set_mode("uart");
+
+        p.set_set_device("lego-ev3-ir");
+        usleep(400000);
+    }
+
+    ir1_ = infrared_sensor("in2:i2c80:mux1");
+
 
     if (ir1_.connected()) {
         logger().info() << ir1_.type_name() << " connected (device " << ir1_.driver_name() << ", port "
@@ -27,13 +52,15 @@ SensorsDriver::SensorsDriver()
         logger().error() << "ir1_ not Connected !!" << logs::end;
     }
 
-    if (ir2_.connected()) {
-        logger().info() << ir2_.type_name() << " connected (device " << ir2_.driver_name() << ", port "
-                << ir2_.address() << ", mode " << ir2_.mode() << ")" << logs::end;
-        ir2_.proximity();
-    } else {
-        logger().error() << "ir2_ not Connected !!" << logs::end;
-    }
+    //ir2_ = infrared_sensor(INPUT_2);
+    /*
+     if (ir2_.connected()) {
+     logger().info() << ir2_.type_name() << " connected (device " << ir2_.driver_name() << ", port "
+     << ir2_.address() << ", mode " << ir2_.mode() << ")" << logs::end;
+     ir2_.proximity();
+     } else {
+     logger().error() << "ir2_ not Connected !!" << logs::end;
+     }*/
     /*
      ir_ = infrared_sensor(INPUT_2);
      if (ir_.connected()) {
@@ -104,22 +131,22 @@ bool SensorsDriver::front()
         } else
             temp = 0;
     }
+    /*
+     if (ir2_.connected()) {
+     double percent = ir2_.value();
+     double percent2 = ir2_.value();
+     percent = (percent + percent2) / 2.0;
 
-    if (ir2_.connected()) {
-        double percent = ir2_.value();
-        double percent2 = ir2_.value();
-        percent = (percent + percent2) / 2.0;
+     double distance_mm = percent * 6.0;
 
-        double distance_mm = percent * 6.0;
-
-        logger().debug() << " ir2_ front %=" << percent << " mm=" << distance_mm << logs::end;
-        if (distance_mm < 280) {
-            logger().info() << "ir2_ !! detected FRONT %=" << percent << " mm=" << distance_mm << logs::end;
-            temp = 1;
-        } else
-            temp = 0;
-    }
-
+     logger().debug() << " ir2_ front %=" << percent << " mm=" << distance_mm << logs::end;
+     if (distance_mm < 280) {
+     logger().debug() << "ir2_ !! detected FRONT %=" << percent << " mm=" << distance_mm << logs::end;
+     temp = 1;
+     } else
+     temp = 0;
+     }
+     */
     return temp;
 
 }

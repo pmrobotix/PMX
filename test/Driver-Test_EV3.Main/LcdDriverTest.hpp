@@ -1,0 +1,58 @@
+/*!
+ * \file
+ * \brief Définition de la classe LcdDriverTest.
+ */
+
+#ifndef EV3TEST_LCDDRIVERTEST_HPP
+#define EV3TEST_LCDDRIVERTEST_HPP
+
+#include "../../src/Common/Action.Driver/ALcdShieldDriver.hpp"
+#include "../../src/Log/LoggerFactory.hpp"
+#include "../Suite/UnitTest.hpp"
+
+namespace test {
+
+/*!
+ * \brief Teste la classe \ref LcdDriverTest.
+ */
+class LcdDriverTest: public UnitTest
+{
+private:
+
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref LcdDriverTest(EV3).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("LcdDriverTest.EV3");
+        return instance;
+    }
+
+public:
+
+    ALcdShieldDriver* lcddriver;
+
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    LcdDriverTest() :
+            UnitTest("LcdDriverTest")
+    {
+        lcddriver = ALcdShieldDriver::create("Bot_LcdDriverTest");
+    }
+
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual ~LcdDriverTest()
+    {
+    }
+
+    virtual void suite();
+
+    void testLCD();
+
+};
+}
+
+#endif

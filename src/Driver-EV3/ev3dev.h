@@ -1776,6 +1776,8 @@ public:
   // complete list of drivers in the [list of port drivers].
   std::string driver_name() const { return get_attr_string("driver_name"); }
 
+  std::string get_file_string(std::string str) const { return get_attr_string(str); }
+
   // Modes: read-only
   // Returns a list of the available modes of the port.
   mode_set modes() const { return get_attr_set("modes"); }

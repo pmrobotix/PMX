@@ -18,7 +18,7 @@
 L_State_DecisionMakerIA::L_State_DecisionMakerIA(Robot& robot) :
         robot_(robot)
 {
-    p_ = NULL;
+    p_ = NULL; //TODO !!!! utiliser le p_ du ia extended???
 }
 
 bool L_push_button()

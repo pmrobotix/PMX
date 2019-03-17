@@ -21,6 +21,7 @@ private:
 
 public:
 
+    //Configuration per robot and strategy
     PlaygroundObjectID oarea_cube1;
     PlaygroundObjectID oarea_cube2high;
     PlaygroundObjectID oarea_cube3left;
@@ -48,11 +49,9 @@ public:
     {
         return iap_;
     }
-    /*
-     void initPlayground();
-     void playgroundComputeEdges();
-     void playgroundFindPath(FoundPath * & path, Point& start, Point& end);
-     */
+
+    void initPlayground();
+
 };
 
 #endif

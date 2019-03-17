@@ -51,23 +51,33 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
         d = atof(args["d"].c_str());
         logger().error() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
     }
-    /*if (args["y"] != "0")
-     {
-     y = atof(args["y"].c_str());
-     logger().debug() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
-     }*/
+
     if (args["a"] != "0") {
         a = atof(args["a"].c_str());
         logger().error() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
     }
 
-    //robot.asserv().startMotionTimerAndOdo(true);
-    logger().error() << "robot.getMyColor()  = " << robot.getMyColor() << logs::end;
-    logger().error() << "(robot.getMyColor() != PMXORANGE) = " << (robot.getMyColor() != PMXORANGE) << logs::end;
+    robot.asserv().startMotionTimerAndOdo(true);
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXORANGE));
 
-    robot.svgPrintPosition();
+    left = robot.asserv().base()->encoders().getLeftEncoder();
+    right = robot.asserv().base()->encoders().getRightEncoder();
+    logger().info() << "time= "
+         << chrono.getElapsedTimeInMilliSec()
+         << "ms ; left= "
+         << left
+         << " ; right= "
+         << right
+         << " x="
+         << robot.asserv().pos_getX_mm()
+         << " y="
+         << robot.asserv().pos_getY_mm()
+         << " a="
+         << robot.asserv().pos_getThetaInDegree()
+         << logs::end;
 
+    robot.svgPrintPosition();
+    /*
     robot.actions().start();
 
     robot.actions().tirette().waitPressed();
@@ -77,18 +87,17 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
         usleep(100000);
     }
     logger().error() << "go..."  << logs::end;
-
+*/
     //robot.actions().sensors().startSensors();
     chrono.start();
-    //robot.asserv().doMoveForwardTo(d, 300);
 
-    //robot.asserv().doLineAbs(d);
+    usleep(50000);
 
+
+    robot.asserv().doLineAbs(d);
 
     //pause
-    sleep(5);
-
-    robot.asserv().base()->moveForward(450, 150);
+    //sleep(5);
 
 
     left = robot.asserv().base()->encoders().getLeftEncoder();
@@ -100,9 +109,9 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     if (a != 0) {
-        //robot.asserv().doRotateAbs(a);
+        robot.asserv().doRotateAbs(a);
 
-        robot.asserv().base()->turn(a, 100);
+        //robot.asserv().base()->turn(a, 100);
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
@@ -112,11 +121,9 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 
         robot.svgPrintPosition();
 
+        //2ème ligne droite
+        robot.asserv().doLineAbs(d);
     }
-    /*
-     sleep(3);
-
-     robot.asserv().doMoveForwardTo(x, 300);
 
      left = robot.asserv().base()->encoders().getLeftEncoder();
      right = robot.asserv().base()->encoders().getRightEncoder();
@@ -136,26 +143,6 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 
      robot.svgPrintPosition();
 
-     robot.asserv().doMoveBackwardTo(0, 300);
-
-     left = robot.asserv().base()->encoders().getLeftEncoder();
-     right = robot.asserv().base()->encoders().getRightEncoder();
-     logger().info() << "time= "
-     << chrono.getElapsedTimeInMilliSec()
-     << "ms ; left= "
-     << left
-     << " ; right= "
-     << right
-     << " x="
-     << robot.asserv().pos_getX_mm()
-     << " y="
-     << robot.asserv().pos_getY_mm()
-     << " a="
-     << robot.asserv().pos_getThetaInDegree()
-     << logs::end;
-
-     robot.svgPrintPosition();
-     */
     robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }

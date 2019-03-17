@@ -6,7 +6,6 @@
 #ifndef COMMON_CHRONOMETER_HPP_
 #define	COMMON_CHRONOMETER_HPP_
 
-#include <ctime>
 #include <sys/time.h>
 
 namespace utils

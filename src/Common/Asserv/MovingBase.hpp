@@ -24,7 +24,7 @@ private:
 		return instance;
 	}
 
-	float entraxe_mm; //en metre
+	float entraxe_mm; //en mm
 
 	float diam_mm;  //en mm
 

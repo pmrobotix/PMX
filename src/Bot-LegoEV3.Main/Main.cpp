@@ -2,8 +2,6 @@
 
 #include "../Bot-LegoEV3/l_ServoStepTest.hpp"
 #include "../Bot-LegoEV3/L_ActionManagerTimerTest.hpp"
-#include "../Bot-LegoEV3/L_Asserv_FindPIDTest.hpp"
-#include "../Bot-LegoEV3/L_Asserv_SetResolutionTest.hpp"
 #include "../Bot-LegoEV3/L_Asserv_SquareTest.hpp"
 #include "../Bot-LegoEV3/L_AsservInsaTest.hpp"
 #include "../Bot-LegoEV3/L_AsservLineRotateTest.hpp"
@@ -38,8 +36,6 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new L_ServoStepTest());
 	robot.getConsoleManager().add(new L_ServoUsingMotorTest());
 	robot.getConsoleManager().add(new L_MovingBaseTest());
-	robot.getConsoleManager().add(new L_Asserv_SetResolutionTest());
-	robot.getConsoleManager().add(new L_Asserv_FindPIDTest());
 	robot.getConsoleManager().add(new L_AsservLineRotateTest());
 	robot.getConsoleManager().add(new L_Asserv_SquareTest());
 	robot.getConsoleManager().add(new L_AsservInsaTest());

@@ -1,13 +1,15 @@
-#ifndef SIMU_LCDSHIELDDRIVER_HPP_
-#define SIMU_LCDSHIELDDRIVER_HPP_
+#ifndef EV3_LCDSHIELDDRIVER_HPP_
+#define EV3_LCDSHIELDDRIVER_HPP_
 
 #include <stddef.h>
 #include <cstdint>
 
 #include "../Common/Action.Driver/ALcdShieldDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "ev3dev.h"
 
 using namespace std;
+using namespace ev3dev;
 
 class LcdShieldDriver: public ALcdShieldDriver
 {

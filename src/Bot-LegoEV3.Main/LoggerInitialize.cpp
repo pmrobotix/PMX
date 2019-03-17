@@ -21,6 +21,7 @@ void logs::LoggerFactory::initialize()
 
     add(logs::Level::INFO, "Robot", "console");
     add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
+    add(logs::Level::INFO, "LegoEV3AsservExtended", "console");
 
     //COMMON
     add(logs::Level::INFO, "Tirette", "console");
@@ -57,6 +58,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_Asserv_SetResolutionTest", "console");
     add(logs::Level::INFO, "L_Asserv_SquareTest", "console");
     add(logs::Level::INFO, "L_AsservInsaTest", "console");
+    add(logs::Level::INFO, "L_AsservEsialRTest", "console");
     add(logs::Level::INFO, "L_AsservRunTest", "console");
     add(logs::Level::INFO, "L_IATest", "console");
     add(logs::Level::INFO, "L_ServoObjectTest", "console");
@@ -68,6 +70,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
     add(logs::Level::INFO, "AsservDriver.SIMU", "console");
     //add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
+    //add(logs::Level::INFO, "AsservDriverMemory.SIMU", "console");
 
     //DRIVERS EV3
     add(logs::Level::INFO, "LedDriver.EV3", "console");
@@ -80,8 +83,11 @@ void logs::LoggerFactory::initialize()
 
     //DEBUG
     add(logs::Level::INFO, "ActionManagerTimer", "console");
-    add(logs::Level::DEBUG, "MovingBase", "console");
-    add(logs::Level::INFO, "AsservInsa", "console");
+    add(logs::Level::INFO, "MovingBase", "console");
+
     add(logs::Level::INFO, "Asserv", "console");
+    add(logs::Level::INFO, "AsservInsa", "console");
+    add(logs::Level::DEBUG, "AsservEsialR", "console");
+
 
 }

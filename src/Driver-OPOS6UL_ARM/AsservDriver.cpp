@@ -99,9 +99,11 @@ void AsservDriver::execute()
     while (1) {
         if (asservMbedStarted_) {
             //logger().error() << "nb=" << nb << " chrono=" << chrono.getElapsedTimeInMicroSec()	<< logs::end;
-            m_pos.lock();
-            p_ = mbed_GetPosition();
-            m_pos.unlock();
+            //m_pos.lock();
+            //p_ = mbed_GetPosition();
+            //m_pos.unlock();
+            odo_GetPosition();
+
             //log SVG
             //TODO PB log SVG a faire ici sauf si fin d'ecriture pb avec </g>
             //loggerSvg().info() << "<circle cx=\"10\" cy=\"-300\" r=\"1\" fill=\"blue\" />" << logs::end;
@@ -112,24 +114,22 @@ void AsservDriver::execute()
 
 void AsservDriver::setMotorLeftPosition(int power, long ticks)
 {
-
+    //TODO
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticks)
 {
-
+    //TODO
 }
 
 void AsservDriver::setMotorLeftPower(int power, int timems)
 {
-    if (!connected_)
-        return;
-
+    //TODO
 }
 
 void AsservDriver::setMotorRightPower(int power, int timems)
 {
-
+    //TODO
 }
 
 long AsservDriver::getLeftExternalEncoder()
@@ -152,7 +152,7 @@ long AsservDriver::getRightInternalEncoder()
 
 void AsservDriver::resetEncoders()
 {
-
+    //TODO
 }
 
 void AsservDriver::resetInternalEncoders()
@@ -182,24 +182,6 @@ int AsservDriver::getMotorRightCurrent()
     return 0;
 }
 
-//deprecated
-//void AsservDriver::enableHardRegulation(bool enable) //legoEV3 configuration to be removed
-//{
-//}
-/*
- float AsservDriver::odo_GetX_mm()
- {
- return 0.0;
- }
- float AsservDriver::odo_GetY_mm()
- {
- }
- float AsservDriver::odo_GetTheta_Rad()
- {
- }
- float AsservDriver::odo_GetTheta_Degree()
- {
- }*/
 void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
 {
     if (!connected_)
@@ -231,13 +213,17 @@ void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
         logger().error() << "odo_SetPosition - S12 - ERROR " << r << logs::end;
     } else {
         logger().info() << "odo_SetPosition S12 " << x_mm.f << " " << y_mm.f << " " << a.f << logs::end;
-        m_pos.lock();
-        p_ = mbed_GetPosition();
-        m_pos.unlock();
+        //m_pos.lock();
+        //p_ = mbed_GetPosition();
+        //m_pos.unlock();
+        odo_GetPosition();
     }
 }
 RobotPosition AsservDriver::odo_GetPosition() //en metre
 {
+    m_pos.lock();
+    p_ = mbed_GetPosition();
+    m_pos.unlock();
     return p_;
 }
 
@@ -294,7 +280,7 @@ RobotPosition AsservDriver::mbed_GetPosition() //en metre
 
 int AsservDriver::path_GetLastCommandStatus()
 {
-    //TODO
+    //TODO deprecated ?
     return 0;
 }
 void AsservDriver::path_InterruptTrajectory()
@@ -617,13 +603,14 @@ void AsservDriver::motion_FreeMotion(void)
 }
 void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotion ???
 {
-    if (!connected_)
+    motion_FreeMotion();
+    /*if (!connected_)
         return;
     if (!asservMbedStarted_)
         logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('K', 0, NULL); //stop mbed managers
-        //pathStatus_ = TRAJ_CANCELLED;
+        //pathStatus_ = TRAJ_CANCELLED;*/
     }
 }
 void AsservDriver::motion_AssistedHandling(void)

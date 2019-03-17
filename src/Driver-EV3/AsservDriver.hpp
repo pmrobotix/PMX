@@ -8,7 +8,7 @@
 #include "ev3dev.h"
 
 #define MAXVALUE_speed_sp 	860 //power
-#define MAXVALUE_duty_cycle_sp 		100 //percentage
+#define MAXVALUE_duty_cycle_sp 100 //percentage
 
 using namespace std;
 using namespace ev3dev;
