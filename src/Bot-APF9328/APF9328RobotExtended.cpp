@@ -4,7 +4,6 @@
 
 #include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
-#include "../Common/State/Data.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "A_State_DecisionMaker.hpp"
@@ -30,12 +29,12 @@ APF9328RobotExtended::APF9328RobotExtended()
 	p_ia_ = new APF9328IAExtended(id_, this);
 
 	svg_->beginHeader();
-	sharedData = NULL;
+	//sharedData = NULL;
 }
 
 void APF9328RobotExtended::stop()
 {
-	Robot::stop();
+	Robot::stopAll();
 	this->actions().stop(); //extra devices
 	this->asserv().freeMotion();
 	this->asserv().base()->motors().stopMotors();
@@ -52,14 +51,15 @@ void APF9328RobotExtended::begin(int argc, char** argv)
 	//specific match case and strategies
 	if (cArgs_["type"] == "m" or cArgs_["type"] == "M")
 	{
-		data_.isEmpty(true);
+	    /*
+		//data_.isEmpty(true);
 		IAutomateState* state1 = new A_State1();
 		IAutomateState* decisionMaker = new A_State_DecisionMaker();
 
 		state1->addState("decisionMaker", decisionMaker);
 
 		// Start the automate and wait for its return
-		automate_.run(*this, state1, &data_);
+		automate_.run(*this, state1);//, &data_);*/
 	}
 
 	logger().info() << "PMX APF9328RobotExtended - Happy End - "

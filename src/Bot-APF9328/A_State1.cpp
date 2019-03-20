@@ -12,7 +12,7 @@
 #include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/State/AAutomateState.hpp"
-#include "../Common/State/Data.hpp"
+//#include "../Common/State/Data.hpp"
 #include "../Log/Logger.hpp"
 #include "A_State_Wait90SecAction.hpp"
 #include "APF9328ActionsExtended.hpp"
@@ -20,20 +20,20 @@
 #include "APF9328RobotExtended.hpp"
 
 IAutomateState*
-A_State1::execute(Robot&, void *data)
+A_State1::execute(Robot&)//, void *data)
 {
 	logger().info() << "A_State1" << logs::end;
 
-	Data* sharedData = (Data*) data;
+	//Data* sharedData = (Data*) data;
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 	robot.actions().start();
 	begin:
 	robot.actions().lcd2x16().setBacklightOn();
 	robot.actions().lcd2x16().clear();
 
-	sharedData->strategy("all");
+	//sharedData->strategy("all");
 
-	if (!sharedData->skipSetup())
+	if (1)//!sharedData->skipSetup())
 	{
 		logger().info() << "METTRE LA TIRETTE ! " << logs::end;
 		robot.actions().lcd2x16().home();
@@ -57,7 +57,7 @@ A_State1::execute(Robot&, void *data)
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
 				robot.actions().lcd2x16().print("BLUE  ");
-				robot.setMyColor(PMXBLUE);
+				robot.setMyColor(PMXVIOLET);
 			}
 			if (b == BUTTON_RIGHT_KEY)
 			{
@@ -70,7 +70,7 @@ A_State1::execute(Robot&, void *data)
 			if (b == BUTTON_UP_KEY)
 			{
 				logger().info() << "BUTTON_UP_KEY - IA" << logs::end;
-				sharedData->strategy("strat5");
+				//sharedData->strategy("strat5");
 			}
 			if (b == BUTTON_DOWN_KEY)
 			{
@@ -121,7 +121,7 @@ A_State1::execute(Robot&, void *data)
 		robot.actions().lcd2x16().home();
 		robot.actions().lcd2x16().print("Skip setup...");
 
-		sharedData->strategy("all");
+		//sharedData->strategy("all");
 
 		setPos();
 	}
@@ -135,8 +135,8 @@ A_State1::execute(Robot&, void *data)
 	robot.actions().ledBar().stop(true);
 
 	//start waitFor90s
-	A_State_Wait90SecAction* action = new A_State_Wait90SecAction(robot, (void *) sharedData);
-	action->start("A_Wait90SecAction");
+	//A_State_Wait90SecAction* action = new A_State_Wait90SecAction(robot);//, (void *) sharedData);
+	//action->start("A_Wait90SecAction");
 
 	return this->getState("decisionMaker");
 	//return NULL; //finish all state
@@ -146,7 +146,7 @@ void A_State1::setPos()
 {
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXBLUE));
+	robot.asserv().setPositionAndColor(105, 1250, 0.0, (robot.getMyColor() == PMXVIOLET));
 	robot.svgPrintPosition();
 
 }

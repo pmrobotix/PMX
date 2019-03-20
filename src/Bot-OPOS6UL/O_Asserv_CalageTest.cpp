@@ -44,9 +44,9 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
     }*/
 
     logger().info() << "Start Asserv " << logs::end;
-    robot.setMyColor(PMXORANGE);
+    robot.setMyColor(PMXVIOLET);
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXORANGE));
+    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
     robot.svgPrintPosition();

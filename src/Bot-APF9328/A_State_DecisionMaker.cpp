@@ -8,7 +8,6 @@
 #include "../Common/IA/IAbyZone.hpp"
 #include "../Common/Position.hpp"
 #include "../Common/Robot.hpp"
-#include "../Common/State/Data.hpp"
 #include "../Log/Logger.hpp"
 #include "APF9328ActionsExtended.hpp"
 #include "APF9328AsservExtended.hpp"
@@ -40,22 +39,22 @@ bool A_tour2()
 	//robot.actions().servoObjects().leftDeploy(80, false); //deploy
 	//robot.actions().servoObjects().rightDeploy(80, false); //deploy
 
-	if (robot.sharedData->strategy() == "strat5")
-	{
-		robot.logger().info() << "strat5." << logs::end;
-		ts = robot.asserv().doMoveForwardAndRotateTo(700, 800, -90);
-		if (ts != TRAJ_OK)
-			return false;
-		robot.svgPrintPosition();
-	}
-	else
-	{
+//	if (robot.sharedData->strategy() == "strat5")
+//	{
+//		robot.logger().info() << "strat5." << logs::end;
+//		ts = robot.asserv().doMoveForwardAndRotateTo(700, 800, -90);
+//		if (ts != TRAJ_OK)
+//			return false;
+//		robot.svgPrintPosition();
+//	}
+//	else
+//	{
 		robot.logger().info() << "All." << logs::end;
 		ts = robot.asserv().doMoveForwardAndRotateTo(700, 550, -90);
 		if (ts != TRAJ_OK)
 			return false;
 		robot.svgPrintPosition();
-	}
+//	}
 
 	ts = robot.asserv().doMoveForwardTo(400, 450);
 	if (ts != TRAJ_OK)
@@ -337,11 +336,11 @@ IAutomateState*
 A_State_DecisionMaker::execute(Robot &, void *data)
 {
 	logger().info() << "A_State_DecisionMaker" << logs::end;
-	Data* sharedData = (Data*) data;
+	//Data* sharedData = (Data*) data;
 
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
-	robot.sharedData = (Data*) data;
+	//robot.sharedData = (Data*) data;
 
 	robot.svgPrintPosition();
 
@@ -354,7 +353,7 @@ A_State_DecisionMaker::execute(Robot &, void *data)
 //	robot.svgPrintPosition();
 	//clotho
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXVIOLET)
 		robot.asserv().doMoveArcRotate(55, 450); //todo gerer dans l'autre couleur
 	if (robot.getMyColor() == PMXYELLOW)
 		robot.asserv().doMoveArcRotate(-55, -450);
@@ -364,7 +363,7 @@ A_State_DecisionMaker::execute(Robot &, void *data)
 	robot.ia().iAbyZone().ia_start(); //launch IA
 
 	//wait the execution Wait90
-	while (!sharedData->end90s()) //&& robot.chronometerRobot().getElapsedTimeInSec() < 35)
+	while (1)//!sharedData->end90s()) //&& robot.chronometerRobot().getElapsedTimeInSec() < 35)
 	{
 //			logger().info() << "sharedData->end90s=" << sharedData->end90s() << " time="
 //					<< robot.chronometerRobot().getElapsedTimeInSec() << utils::end;

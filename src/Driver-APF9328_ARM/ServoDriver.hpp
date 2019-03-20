@@ -52,6 +52,12 @@ public:
 	void setRate(int servo, int millisec);
 
 	void turn(int servo, int speed);
+
+	int getMoving(int servo);
+
+          int getPos(int servo);
+
+          int ping(int);
 };
 
 #endif

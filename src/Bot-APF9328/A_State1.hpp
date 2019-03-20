@@ -3,10 +3,10 @@
 
 #include <string>
 
-#include "../Common/State/State1.hpp"
+#include "../Common/State/IAutomateState.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-class A_State1: public State1
+class A_State1: public IAutomateState
 {
 private:
 
@@ -27,7 +27,7 @@ public:
 	{
 	}
 
-	IAutomateState* execute(Robot& robot, void * data);
+	IAutomateState* execute(Robot& robot);//, void * data);
 
 	std::string name()
 	{

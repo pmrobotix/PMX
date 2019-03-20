@@ -47,14 +47,14 @@ O_State_Init::execute(Robot&)
                 robot.actions().lcd2x16().clear();
                 robot.actions().lcd2x16().setCursor(0, 1);
                 robot.actions().lcd2x16().print("GREEN  ");
-                robot.setMyColor(PMXGREEN);
+                robot.setMyColor(PMXYELLOW);
             }
             if (b == BUTTON_RIGHT_KEY) {
                 logger().info() << "BUTTON_RIGHT_KEY - ORANGE" << logs::end;
                 robot.actions().lcd2x16().clear();
                 robot.actions().lcd2x16().setCursor(0, 1);
                 robot.actions().lcd2x16().print("ORANGE");
-                robot.setMyColor(PMXORANGE);
+                robot.setMyColor(PMXVIOLET);
             }
             if (b == BUTTON_UP_KEY) {
                 logger().info() << "BUTTON_UP_KEY - IA" << logs::end;
@@ -70,7 +70,7 @@ O_State_Init::execute(Robot&)
 
         robot.actions().ledBar().stopAndWait(true);
         //sortir pince
-        if (robot.getMyColor() == PMXORANGE)
+        if (robot.getMyColor() == PMXVIOLET)
             robot.actions().servo_init_orange();
         else
             robot.actions().servo_init_green();
@@ -85,7 +85,7 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().print("PMX...WAIT TIRETTE !");
         logger().info() << "PMX...WAIT TIRETTE !";
-        if (robot.getMyColor() == PMXORANGE)
+        if (robot.getMyColor() == PMXVIOLET)
             logger().info() << " ORANGE";
         else
             logger().info() << "GREEN";
@@ -120,7 +120,7 @@ O_State_Init::execute(Robot&)
         setPos();
 
         //sortir pince
-        if (robot.getMyColor() == PMXORANGE)
+        if (robot.getMyColor() == PMXVIOLET)
             robot.actions().servo_init_orange();
         else
             robot.actions().servo_init_green();
@@ -148,7 +148,7 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(70, 192, 0.0, (robot.getMyColor() != PMXORANGE));
+    robot.asserv().setPositionAndColor(70, 192, 0.0, (robot.getMyColor() != PMXVIOLET));
     //robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(true);

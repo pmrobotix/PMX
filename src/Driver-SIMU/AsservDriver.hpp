@@ -95,23 +95,17 @@ public:
 
     void setMotorLeftPosition(int power, long ticks);
     void setMotorRightPosition(int power, long ticks);
-
     void setMotorLeftPower(int power, int time);
     void setMotorRightPower(int power, int time);
-
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
-
     void resetEncoders();
     void resetInternalEncoders();
     void resetExternalEncoders();
-
     void stopMotorLeft();
     void stopMotorRight();
-
     int getMotorLeftCurrent();
     int getMotorRightCurrent();
 

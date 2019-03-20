@@ -5,6 +5,8 @@
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
+#include "../Log/LoggerFactory.hpp"
+#include "../Thread/Thread.hpp"
 
 class CodeursInterface;
 class CommandManager;
@@ -22,8 +24,7 @@ class Robot;
  #define int32 int
  //#define BOOL bool*/
 
-#include "../Log/LoggerFactory.hpp"
-#include "../Thread/Thread.hpp"
+
 
 class AsservEsialR: public AAsservDriver, public utils::Thread
 {

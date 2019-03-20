@@ -610,8 +610,8 @@ void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotio
         logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('K', 0, NULL); //stop mbed managers
-        //pathStatus_ = TRAJ_CANCELLED;*/
-    }
+        //pathStatus_ = TRAJ_CANCELLED;
+    }*/
 }
 void AsservDriver::motion_AssistedHandling(void)
 {

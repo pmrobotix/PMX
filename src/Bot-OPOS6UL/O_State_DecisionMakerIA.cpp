@@ -31,7 +31,7 @@ bool O_push_button()
     RobotPosition zone;
 
     //on avance en vert
-    if (robot.getMyColor() == PMXORANGE) {
+    if (robot.getMyColor() == PMXVIOLET) {
     } else {
         robot.asserv().doLineAbs(100);
     }
@@ -78,7 +78,7 @@ bool O_push_cube()
     if (ts != TRAJ_OK)
         return false;
 
-    if (robot.getMyColor() == PMXORANGE) {
+    if (robot.getMyColor() == PMXVIOLET) {
         robot.ia().iAbyPath().enable(robot.ia().oarea_cube1, 0);
         robot.ia().iAbyPath().enable(robot.ia().oarea_buildzone, 1);
     } else {
@@ -115,7 +115,7 @@ bool O_push_bee()
     if (ts != TRAJ_OK)
         return false;
 
-    if (robot.getMyColor() == PMXORANGE) {
+    if (robot.getMyColor() == PMXVIOLET) {
         ts = robot.asserv().doLineAbs(-40);
         ts = robot.asserv().doRotateAbs(90);
     } else {
@@ -149,7 +149,7 @@ bool O_push_bee()
     ts = robot.asserv().doLineAbs(120);
     robot.svgPrintPosition();
 
-    if (robot.getMyColor() == PMXORANGE)
+    if (robot.getMyColor() == PMXVIOLET)
         ts = robot.asserv().doRotateRight(45);
     else
         ts = robot.asserv().doRotateLeft(45);
@@ -159,7 +159,7 @@ bool O_push_bee()
     //sleep(3);
     //aller au distributeur
 
-    if (robot.getMyColor() == PMXORANGE) {
+    if (robot.getMyColor() == PMXVIOLET) {
         ts = robot.asserv().doMoveForwardAndRotateTo(200, 1000, -90);
         robot.svgPrintPosition();
         ts = robot.asserv().doLineAbs(90);
@@ -260,7 +260,7 @@ void O_State_DecisionMakerIA::initPlayground()
 
     //zone de construction
     p_->add_rectangle(robot.ia().oarea_buildzone, 650, 180, 500.0, 220.0, 0);
-    if (robot.getMyColor() == PMXORANGE)
+    if (robot.getMyColor() == PMXVIOLET)
         p_->enable(robot.ia().oarea_buildzone, 0);
 
     //Green parts
@@ -274,7 +274,7 @@ void O_State_DecisionMakerIA::initPlayground()
 
     //zone de construction
     p_->add_rectangle(robot.ia().garea_buildzone, 2350, 180, 500.0, 220.0, 0);
-    if (robot.getMyColor() != PMXORANGE)
+    if (robot.getMyColor() != PMXVIOLET)
         p_->enable(robot.ia().garea_buildzone, 0);
 
     //stations d'épuration

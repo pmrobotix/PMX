@@ -103,7 +103,7 @@ void A_IATest::run(int argc, char** argv)
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 	robot.asserv().startMotionTimerAndOdo();
-	robot.asserv().setPositionAndColor(150, 1050, 0.0, (robot.getMyColor() == PMXBLUE));
+	robot.asserv().setPositionAndColor(150, 1050, 0.0, (robot.getMyColor() == PMXVIOLET));
 	robot.svgPrintPosition();
 	robot.chrono().start();
 	IASetup();

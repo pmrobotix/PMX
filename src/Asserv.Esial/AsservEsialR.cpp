@@ -33,6 +33,7 @@ AsservEsialR::AsservEsialR(Robot * robot)
     consignC_ = NULL;
     commandM_ = NULL;
     run_ = false;
+
 }
 
 void AsservEsialR::startAsserv(int freqHz)

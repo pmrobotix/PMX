@@ -150,6 +150,11 @@ void AsservDriver::path_CancelTrajectory()
 void AsservDriver::path_ResetEmergencyStop()
 {
 }
+
+
+TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
+{
+}
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
 {
 }
@@ -170,4 +175,16 @@ void AsservDriver::motion_AssistedHandling()
 }
 void AsservDriver::motion_ActivateManager(bool enable)
 {
+}
+void AsservDriver::motion_setLowSpeed(bool enable){
+}
+void AsservDriver::motion_ActivateReguDist(bool enable){
+}
+void AsservDriver::motion_ActivateReguAngle(bool enable){
+}
+void AsservDriver::motion_ResetReguDist(){
+}
+void AsservDriver::motion_ResetReguAngle(){
+}
+TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters){
 }

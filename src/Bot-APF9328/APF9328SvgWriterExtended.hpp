@@ -32,6 +32,11 @@ public:
 			const char* zone2Name,
 			float x_mm,
 			float y_mm);
+
+	void pathPolyline(std::string points)
+	{
+
+	}
 };
 
 #endif

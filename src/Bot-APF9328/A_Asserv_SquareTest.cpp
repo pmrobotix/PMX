@@ -71,7 +71,7 @@ void A_Asserv_SquareTest::run(int argc, char** argv)
 
 	robot.asserv().startMotionTimerAndOdo();
 
-	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXBLUE));
+	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() == PMXVIOLET));
 
 	robot.svgPrintPosition();
 

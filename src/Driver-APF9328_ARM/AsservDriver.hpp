@@ -58,6 +58,8 @@ public:
 	void path_CollisionRearOnTrajectory();
 	void path_CancelTrajectory();
 	void path_ResetEmergencyStop();
+
+	TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
 	TRAJ_STATE motion_DoLine(float dist_meters);
 	TRAJ_STATE motion_DoRotate(float angle_radians);
 	TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
@@ -66,6 +68,12 @@ public:
 	void motion_AssistedHandling();		//! Assisted movement mode =)
 	void motion_ActivateManager(bool enable);
 
+	void motion_setLowSpeed(bool enable);
+          void motion_ActivateReguDist(bool enable);
+          void motion_ActivateReguAngle(bool enable);
+          void motion_ResetReguDist();
+          void motion_ResetReguAngle();
+          TRAJ_STATE motion_DoDirectLine(float dist_meters); //uniquement en consigne sans le command manager
 	/*!
 	 * \brief Constructor.
 	 */

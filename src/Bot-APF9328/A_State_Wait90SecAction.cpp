@@ -6,7 +6,7 @@
 
 #include "../Common/Asserv/Asserv.hpp"
 #include "../Common/Robot.hpp"
-#include "../Common/State/Data.hpp"
+//#include "../Common/State/Data.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "APF9328RobotExtended.hpp"
@@ -22,7 +22,7 @@ void A_State_Wait90SecAction::execute()
 {
 	this->logger().debug() << "start" << logs::end;
 
-	Data* sharedData = (Data*) data_;
+	//Data* sharedData = (Data*) data_;
 	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
 
@@ -42,7 +42,7 @@ void A_State_Wait90SecAction::execute()
 			<< robot.chrono().getElapsedTimeInSec()
 			<< logs::end;
 
-	sharedData->end90s(true); //indique que l'action est effectuée au prog princ
+	//sharedData->end90s(true); //indique que l'action est effectuée au prog princ
 	robot.asserv_default->freeMotion();
 	robot.stop();
 	usleep(500000);

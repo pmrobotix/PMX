@@ -41,7 +41,7 @@ L_State_Init::execute(Robot&)
                 robot.actions().ledBar().stopAndWait(true);
                 robot.actions().ledBar().set(1, LED_GREEN);
                 robot.actions().ledBar().set(0, LED_OFF);
-                robot.setMyColor(PMXGREEN);
+                robot.setMyColor(PMXYELLOW);
             }
             if (b == BUTTON_RIGHT_KEY) {
                 logger().info() << "BUTTON_RIGHT_KEY - ORANGE" << logs::end;
@@ -49,7 +49,7 @@ L_State_Init::execute(Robot&)
                 robot.actions().ledBar().set(0, LED_ORANGE);
                 robot.actions().ledBar().set(1, LED_OFF);
 
-                robot.setMyColor(PMXORANGE);
+                robot.setMyColor(PMXVIOLET);
             }
             if (b == BUTTON_UP_KEY) {
                 logger().info() << "BUTTON_UP_KEY - IA" << logs::end;
@@ -61,7 +61,7 @@ L_State_Init::execute(Robot&)
         }
 
         //tirette
-        if (robot.getMyColor() == PMXORANGE)
+        if (robot.getMyColor() == PMXVIOLET)
             robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_ORANGE, false);
         else
             robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
@@ -70,7 +70,7 @@ L_State_Init::execute(Robot&)
         robot.waitForInit(true);
 
         logger().info() << "PMX...WAIT TIRETTE !";
-        if (robot.getMyColor() == PMXORANGE)
+        if (robot.getMyColor() == PMXVIOLET)
             logger().info() << " ORANGE";
         else
             logger().info() << "GREEN";
@@ -116,7 +116,7 @@ void L_State_Init::setPos()
 
     /*
      robot.asserv().startMotionTimerAndOdo(false);*/
-    robot.asserv().setPositionAndColor(70, 210, 0.0, (robot.getMyColor() != PMXORANGE));
+    robot.asserv().setPositionAndColor(70, 210, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(false);
