@@ -10,17 +10,20 @@ ServoObjectsSystem::ServoObjectsSystem(Actions & actions, AServoDriver::ServoTyp
         AActionsElement(actions)
 {
     servodriver_ = AServoDriver::create(type);
+    for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
+        ServoLabel foo = static_cast<ServoLabel>(fooInt);
+        //servodriver->setPosition(foo, 0);
+        release(foo);
+    }
 }
 
 ServoObjectsSystem::~ServoObjectsSystem()
 {
-    /*
-     for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
-     {
-     ServoLabel foo = static_cast<ServoLabel>(fooInt);
-     servodriver->setPosition(foo, 0);
-     release(foo);
-     }*/
+//    for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
+//        ServoLabel foo = static_cast<ServoLabel>(fooInt);
+//        //servodriver->setPosition(foo, 0);
+//        release(foo);
+//    }
 }
 
 void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
@@ -30,10 +33,10 @@ void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
     if (keep_millisec > 0) {
         sleep(keep_millisec * 1000);
         release(servo);
-    }else if (keep_millisec <= -1) {
+    } else if (keep_millisec <= -1) {
 
         while (int r = servodriver_->getMoving(servo) >= 1) {
-            r= servodriver_->getMoving(servo);
+            r = servodriver_->getMoving(servo);
             if (r < 0) {
                 break;
             }
@@ -72,26 +75,4 @@ void ServoObjectsSystem::detectAll()
     }
 
 }
-/*
-//deprecated
-void ServoObjectsSystem::releaseAll()
-{
-//	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
-//	{
-//		ServoLabel foo = static_cast<ServoLabel>(fooInt);
-//		release(foo);
-//	}
-
-}
-//deprecated
-void ServoObjectsSystem::holdAll()
-{
-//	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
-//	{
-//		ServoLabel foo = static_cast<ServoLabel>(fooInt);
-//		hold(foo);
-//	}
-
-}
-*/
 
