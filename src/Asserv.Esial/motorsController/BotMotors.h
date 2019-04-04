@@ -21,11 +21,11 @@ public:
     virtual void setVitesseD(int vitMoteurD);
     virtual int getVitesseG(void)
     {
-        return vitMoteurG;
+        return vitMoteurG_;
     }
     virtual int getVitesseD(void)
     {
-        return vitMoteurD;
+        return vitMoteurD_;
     }
 
 private:
@@ -34,7 +34,7 @@ private:
      */
     Robot * robot_;
 
-    int vitMoteurG, vitMoteurD;
+    int vitMoteurG_, vitMoteurD_;
 
 };
 

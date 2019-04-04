@@ -5,8 +5,6 @@
 
 #include "SensorDriverTest.hpp"
 
-#include <unistd.h>
-
 #include "../../src/Log/Logger.hpp"
 
 void test::SensorDriverTest::suite()
@@ -17,10 +15,11 @@ void test::SensorDriverTest::suite()
 
 void test::SensorDriverTest::testSensors()
 {
+    logger().debug() << "testSensors()" << logs::end;
     bool front = false;
 
     for (int i = 0; i < 10; i++) {
-        front = sensordriver->front();
+        front = sensordriver_->front();
         logger().info() << "front=" << front << logs::end;
         //usleep(500000);
     }

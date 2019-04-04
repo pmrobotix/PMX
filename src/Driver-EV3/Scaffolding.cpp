@@ -27,7 +27,7 @@ static bool audible = true;
 #define ARM_BBR_TERMFONT "Lat15-Terminus12x6.psf.gz"
 #define SYSTEM_TERMFONT "Lat15-TomThumb4x6.psf.gz"
 
-#define FBCON_TTYNAME  "/dev/tty"
+#define FBCON_TTYNAME  "/dev/tty0"
 #define BUFSIZE 64
 
 
@@ -158,7 +158,6 @@ static bool term_disp_value(uint value, VALTYPE type)
 	fflush(stdout);
 	return true;
 }
-
 
 /* Public Routines */
 

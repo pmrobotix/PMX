@@ -5,56 +5,53 @@
 #include "../Action.Driver/AServoDriver.hpp"
 #include "AActionsElement.hpp"
 
-class AServoDriver;
 
 class ServoObjectsSystem: public AActionsElement
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ServoObjectsSystem.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoObjectsSystem");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref ServoObjectsSystem.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoObjectsSystem");
+        return instance;
+    }
 
-	AServoDriver* servodriver;
+    AServoDriver* servodriver_;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	ServoObjectsSystem(Actions & actions);
+    /*!
+     * \brief Constructor.
+     */
+    ServoObjectsSystem(Actions & actions, AServoDriver::ServoType type);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~ServoObjectsSystem();
+    /*!
+     * \brief Destructor.
+     */
+    ~ServoObjectsSystem();
 
-	/*!
-	 * \brief Destructor.
-	 * \param keep_sec : 1 sec par defaut et release, 0 (pas de release), ou n secondes et release
-	 */
-	void deploy(ServoLabel servo, double percent, int keep_sec = 1);
-	void release(ServoLabel servo);
-	void hold(ServoLabel servo);
-	void releaseAll();
-	void holdAll();
 
-	//deprecated
-	/*
-	void leftDeploy(double percent = 0, bool keep = false);
-	void leftRelease();
-	void leftHold();
-	void centreDeploy(double percent = 0, bool keep = false);
-	void centreRelease();
-	void centreHold();
-	void rightDeploy(double percent = 0, bool keep = false);
-	void rightRelease();
-	void rightHold();*/
+    void deploy(int servo, int pos, int keep_millisec = -1);
+    void turn(int servo, int speed, int keep_millisec = 0);
+    void release(int servo);
+    void hold(int servo);
+    void setSpeed(int servo, int speed);
+
+    void detectAll();
+
+    /*
+    //deprecated
+    void releaseAll();
+    //deprecated
+    void holdAll();
+    //deprecated
+    void setSpeedAll(int speed);
+*/
+
+
 
 };
 

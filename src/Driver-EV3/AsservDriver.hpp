@@ -1,11 +1,10 @@
 #ifndef EV3_ASSERVDRIVER_HPP_
 #define EV3_ASSERVDRIVER_HPP_
 
-#include <sys/types.h>
-
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "ev3dev.h"
+#include "LegoAngleSensor.hpp"
 
 #define MAXVALUE_speed_sp 	860 //power
 #define MAXVALUE_duty_cycle_sp 100 //percentage
@@ -28,11 +27,16 @@ private:
 
 
 
-    large_motor _motor_right_ = { OUTPUT_D };
-    large_motor _motor_left_ = { OUTPUT_C };
+    large_motor _motor_right_ ;//= { OUTPUT_D };
+    large_motor _motor_left_ ;//= { OUTPUT_C };
 
-    large_motor _motor_porte_droite_= { OUTPUT_B };
-    large_motor _motor_porte_gauche_= { OUTPUT_A };
+    LegoAngleSensor angleR_;
+
+    //sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
+    //sensor angle ;
+
+    //large_motor _motor_porte_droite_= { OUTPUT_B };
+    //large_motor _motor_porte_gauche_= { OUTPUT_A };
 
     //motor arrMotors[4] = { { OUTPUT_A }, { OUTPUT_B }, { OUTPUT_C }, { OUTPUT_D } };
 
@@ -51,7 +55,8 @@ public:
     {
     }
 
-    void reset();
+    void reset(); //motor reset!
+
     int limit(int power, int max);
 
     //regulation enabled  => power in ticks per second -860 / +860

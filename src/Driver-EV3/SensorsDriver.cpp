@@ -14,43 +14,53 @@ ASensorsDriver * ASensorsDriver::create(std::string botName)
     return new SensorsDriver();
 }
 
-SensorsDriver::SensorsDriver()
+
+
+//inX:i2c80:mux1
+//inX:i2c81:mux2
+//inX:i2c82:mux3
+SensorsDriver::SensorsDriver() :
+        IR_1("in3:i2c80:mux1")//, IR_2("in3:i2c81:mux2"), IR_3("in2:i2c82:mux3"), IR_4("in2:i2c81:mux2")
 {
-    //device d_ = device("in2:i2c80:mux1");
-    //d_.set_attr_
-    lego_port p = lego_port("in2:i2c80:mux1");
 
-    int todo = 0;
-    string temp = "nop";
-    try {
-        temp = p.get_file_string("in2:i2c80:mux1:lego-ev3-color/modalias");
-        logger().info() << "exist driver temp ==  " << temp << logs::end;
-    } catch (...) {
-    }
-    if (temp != "nop")
-        todo = 1;
+    /*
+     //device d_ = device("in2:i2c80:mux1");
+     //d_.set_attr_
+     lego_port p = lego_port("in2:i2c80:mux1");
 
-    if (todo == 0) {
-        logger().info() << "port already set to lego-ev3-ir on " << p.address() << logs::end;
-    } else {
+     int todo = 0;
+     string temp = "nop";
+     try {
+     temp = p.get_file_string("in2:i2c80:mux1:lego-ev3-color/modalias");
+     logger().info() << "exist driver temp ==  " << temp << logs::end;
+     } catch (...) {
+     }
+     if (temp != "nop")
+     todo = 1;
 
-        logger().info() << "set uart and device=lego-ev3-ir on " << p.address() << logs::end;
-        p.set_mode("uart");
+     if (todo == 0) {
+     logger().info() << "port already set to lego-ev3-ir on " << p.address() << logs::end;
+     } else {
 
-        p.set_set_device("lego-ev3-ir");
-        usleep(400000);
-    }
+     logger().info() << "set uart and device=lego-ev3-ir on " << p.address() << logs::end;
+     p.set_mode("uart");
 
-    ir1_ = infrared_sensor("in2:i2c80:mux1");
+     p.set_set_device("lego-ev3-ir");
+     usleep(400000);
+     }
+
+     ir1_ = infrared_sensor("in2:i2c80:mux1");
 
 
-    if (ir1_.connected()) {
-        logger().info() << ir1_.type_name() << " connected (device " << ir1_.driver_name() << ", port "
-                << ir1_.address() << ", mode " << ir1_.mode() << ")" << logs::end;
-        ir1_.proximity();
-    } else {
-        logger().error() << "ir1_ not Connected !!" << logs::end;
-    }
+     if (ir1_.connected()) {
+     logger().info() << ir1_.type_name() << " connected (device " << ir1_.driver_name() << ", port "
+     << ir1_.address() << ", mode " << ir1_.mode() << ")" << logs::end;
+     ir1_.proximity();
+     } else {
+     logger().error() << "ir1_ not Connected !!" << logs::end;
+     }
+
+     */
 
     //ir2_ = infrared_sensor(INPUT_2);
     /*
@@ -115,38 +125,19 @@ SensorsDriver::~SensorsDriver()
 
 bool SensorsDriver::front()
 {
+
     bool temp = 0;
-    // as a percentage. 100% is approximately 70cm/27in.
-    if (ir1_.connected()) {
-        double percent = ir1_.value();
-        double percent2 = ir1_.value();
-        percent = (percent + percent2) / 2.0;
 
-        double distance_mm = percent * 6.0;
+    double mm1 = IR_1.getDistanceMM();
+//    double mm2 = IR_2.getDistanceMM();
+//    double mm3 = IR_3.getDistanceMM();
+//    double mm4 = IR_4.getDistanceMM();
+    logger().debug() << "IR_1=" << mm1 << logs::end;
+//    logger().debug() << "IR_2=" << mm2 << logs::end;
+//    logger().debug() << "IR_3=" << mm3 << logs::end;
+//    logger().debug() << "IR_4=" << mm4 << logs::end;
 
-        logger().debug() << "ir1_ front %=" << percent << " mm=" << distance_mm << logs::end;
-        if (distance_mm < 280) {
-            logger().info() << "ir1_ !! detected FRONT %=" << percent << " mm=" << distance_mm << logs::end;
-            temp = 1;
-        } else
-            temp = 0;
-    }
-    /*
-     if (ir2_.connected()) {
-     double percent = ir2_.value();
-     double percent2 = ir2_.value();
-     percent = (percent + percent2) / 2.0;
 
-     double distance_mm = percent * 6.0;
-
-     logger().debug() << " ir2_ front %=" << percent << " mm=" << distance_mm << logs::end;
-     if (distance_mm < 280) {
-     logger().debug() << "ir2_ !! detected FRONT %=" << percent << " mm=" << distance_mm << logs::end;
-     temp = 1;
-     } else
-     temp = 0;
-     }
-     */
     return temp;
 
 }
@@ -154,24 +145,7 @@ bool SensorsDriver::front()
 bool SensorsDriver::rear()
 {
     return 0;
-    /*
-     // as a percentage. 100% is approximately 70cm/27in.
-     if (irrear_.connected()) {
-     double percent = irrear_.value();
-     double percent2 = irrear_.value();
-     percent = (percent + percent2) / 2.0;
 
-     double distance_mm = percent * 6.0;
-
-     logger().debug() << "rear percent=" << percent << " mm=" << distance_mm << logs::end;
-     if (distance_mm < 170) {
-     logger().info() << "!! detected REAR percent=" << percent << " mm=" << distance_mm << logs::end;
-     return 1;
-     } else
-     return 0;
-     } else
-     return 0;
-     */
     /*
      double mm = us_.value() * 10.0;
      double mm2 = us_.value() * 10.0;

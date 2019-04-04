@@ -28,16 +28,24 @@ LcdShieldDriver::LcdShieldDriver()
             << " bit(s) per pixel" << "Frame buffer size is " << l.frame_buffer_size() << " byte, " << "line length is "
             << l.line_length() << " byte" << logs::end;
 
-    l.fill(0xFF);
+   /* l.fill(0xFF);
     sleep(1);
     l.fill(0x00);
+    sleep(1);
+*/
+
 
     prog_init();
+    //sleep(1);
 
     prog_clearscreen();
+    prog_title("CHO");
     prog_display_string("TEST PMX");
     prog_display_integer(10);
-    sleep(1);
+    sleep(2);
+
+
+
 }
 
 LcdShieldDriver::~LcdShieldDriver()

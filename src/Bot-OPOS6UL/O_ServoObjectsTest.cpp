@@ -31,9 +31,9 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 
     //robot.actions().servoObjects().detectAll();
 
-    robot.actions().servo_init();
-
-    robot.actions().servo_init_end();
+//    robot.actions().servo_init();
+//
+//    robot.actions().servo_init_end();
 
 
 

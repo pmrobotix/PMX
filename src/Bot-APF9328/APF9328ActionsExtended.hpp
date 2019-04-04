@@ -52,7 +52,7 @@ public:
 					lcd2x16_(botId, *this),
 					tirette_(*this),
 					sensors_(*this, robot),
-					servoObjects_(*this)
+					servoObjects_(*this, AServoDriver::SERVO_STANDARD)
 
 	{
 		lcd2x16_.init();

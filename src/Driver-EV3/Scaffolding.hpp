@@ -21,6 +21,14 @@
  *  \copyright  See the LICENSE file.
  */
 
+/*
+ *  \References
+ *  https://github.com/ev3dev/ev3dev/issues/1103
+ *  https://github.com/tcwan/ev3dev-arm-bbr/blob/master/common/include/scaffolding.h
+ *  list of fonts
+ *  https://ofalcao.pt/blog/2014/ev3dev-usando-o-lcd-do-ev3
+ */
+
 
 //#include "ev3dev-arm-ctypes.h"
 #include "ev3dev.h"

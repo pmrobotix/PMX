@@ -28,9 +28,9 @@ private:
         return instance;
     }
 
-public:
+    ASensorsDriver* sensordriver_;
 
-    ASensorsDriver* sensordriver;
+public:
 
     /*!
      * \brief Constructeur de la classe.
@@ -38,7 +38,7 @@ public:
     SensorDriverTest() :
             UnitTest("SensorsDriverTest")
     {
-        sensordriver = ASensorsDriver::create("Bot_SensorDriverTest");
+        sensordriver_ = ASensorsDriver::create("Bot_SensorDriverTest");
     }
 
     /*!

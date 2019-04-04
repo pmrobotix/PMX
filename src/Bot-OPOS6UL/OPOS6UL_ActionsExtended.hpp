@@ -8,8 +8,9 @@
 #include "../Common/Action/LcdShield.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Sensors.hpp"
-#include "../Common/Action/ServoObjectsAx12.hpp"
+#include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action/Tirette.hpp"
+#include "../Common/Action.Driver/AServoDriver.hpp"
 
 class OPOS6UL_ActionsExtended: public Actions
 {
@@ -43,12 +44,42 @@ private:
     /*!
      * \brief objets avec servomotors.
      */
-    ServoObjectsAx12 servoObjects_;
+
+    //new
+    ServoObjectsSystem servos_ax12_;
+    ServoObjectsSystem servos_std_;
+
 
 public:
+
+    /*!
+     * \brief Enumération des libellés des servos associés au numéro de servo
+     */
+    enum ServoAx12Label
+    {
+        AX12_SERVO_1 = 5,
+
+        AX12_SERVO_2 = 51,
+
+        AX12_SERVO_4 = 1,
+
+        AX12_enumTypeEnd
+    };
+
+    enum ServoStdLabel
+    {
+
+        STD_SERVO_3 = 5,
+
+        STD_SERVO_4,
+
+        SERVO_enumTypeEnd
+    };
+
     OPOS6UL_ActionsExtended(std::string botId, Robot *robot) :
             ledbar_(botId, *this, 8), buttonbar_(*this), lcd2x16_(botId, *this), tirette_(*this), sensors_(*this,
-                    robot), servoObjects_(*this)
+                    robot), servos_ax12_(*this, AServoDriver::SERVO_DYNAMIXEL), servos_std_(*this,
+                    AServoDriver::SERVO_STANDARD)
 
     {
         lcd2x16_.init();
@@ -95,9 +126,14 @@ public:
         return sensors_;
     }
 
-    ServoObjectsAx12 & servoObjects()
+    ServoObjectsSystem & servosAx12()
     {
-        return servoObjects_;
+        return servos_ax12_;
+    }
+
+    ServoObjectsSystem & servosStd()
+    {
+        return servos_std_;
     }
 
     void stop()
@@ -106,14 +142,51 @@ public:
         ledbar_.stop(true);
         ledbar_.resetAll();
         lcd2x16_.reset();
-        servoObjects().releaseAll();
+
+        releaseAll();
 
         //sensors stop...
 
         //stop all current task in the actionManagerTimer
         Actions::stop();
     }
-    void servo_lowspeed()
+
+    //--------------------------------------------------------------
+    //Actions 2019
+    //--------------------------------------------------------------
+    void releaseAll()
+    {
+        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++)
+        {
+            ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
+            //servosAx12().setPosition(foo, 0);
+            servosAx12().release(foo);
+        }
+
+        for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
+        {
+            ServoStdLabel foo = static_cast<ServoStdLabel>(fooInt);
+            //servosStd().setPosition(foo, 0);
+            servosStd().release(foo);
+        }
+
+    }
+    void ax12_leftHand(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(AX12_SERVO_1, speed);
+        servosAx12().deploy(AX12_SERVO_1, 512, keep);
+    }
+
+    void doorLeft(int keep = 0, int speed = 512)
+    {
+        servosStd().setSpeed(STD_SERVO_3, speed);
+        servosStd().deploy(STD_SERVO_3, 512, keep);
+    }
+
+    //--------------------------------------------------------------
+    //Actions 2018
+    //--------------------------------------------------------------
+    /*void servo_lowspeed()
     {
         servoObjects().setSpeedAll(100);
     }
@@ -126,109 +199,105 @@ public:
     {
         servoObjects().setSpeedAll(1023);
     }
-
-    //--------------------------------------------------------------
-    //Actions 2018
-    //--------------------------------------------------------------
-
     void arm_right_retract(int keep = 0, int speed = 512)
     {
         servoObjects().setSpeed(7, speed);
         servoObjects().deploy(7, 512, keep);
-    }
-    void arm_right_full(int keep = 0, int speed = 100)
-    {
-        servoObjects().setSpeed(7, speed);
-        servoObjects().deploy(7, 750, keep);
-    }
-    void arm_right_little(int keep = 0, int speed = 100)
-    {
-        servoObjects().setSpeed(7, speed);
-        servoObjects().deploy(7, 600, keep);
-    }
+    }*/
+    /*
+     void arm_right_full(int keep = 0, int speed = 100)
+     {
+     servoObjects().setSpeed(7, speed);
+     servoObjects().deploy(7, 750, keep);
+     }
+     void arm_right_little(int keep = 0, int speed = 100)
+     {
+     servoObjects().setSpeed(7, speed);
+     servoObjects().deploy(7, 600, keep);
+     }
 
-    void arm_left_retract(int keep = 0, int speed = 512)
-    {
-        servoObjects().setSpeed(5, speed);
-        servoObjects().deploy(5, 512, keep);
-    }
-    void arm_left_full(int keep = 0, int speed = 100)
-    {
-        servoObjects().setSpeed(5, speed);
-        servoObjects().deploy(5, 200, keep);
-    }
-    void arm_left_little(int keep = 0, int speed = 100)
-    {
-        servoObjects().setSpeed(5, speed);
-        servoObjects().deploy(5, 420, keep);
-    }
+     void arm_left_retract(int keep = 0, int speed = 512)
+     {
+     servoObjects().setSpeed(5, speed);
+     servoObjects().deploy(5, 512, keep);
+     }
+     void arm_left_full(int keep = 0, int speed = 100)
+     {
+     servoObjects().setSpeed(5, speed);
+     servoObjects().deploy(5, 200, keep);
+     }
+     void arm_left_little(int keep = 0, int speed = 100)
+     {
+     servoObjects().setSpeed(5, speed);
+     servoObjects().deploy(5, 420, keep);
+     }
 
-    void ball_front(int keep = 0, int speed = 100)
-    {
-        servoObjects().setSpeed(4, speed);
-        servoObjects().deploy(4, 540, keep);
-    }
-    void ball_back(int keep = 0, int speed = 100)
-    {
-        servoObjects().setSpeed(4, speed);
-        servoObjects().deploy(4, 740, keep);
-    }
+     void ball_front(int keep = 0, int speed = 100)
+     {
+     servoObjects().setSpeed(4, speed);
+     servoObjects().deploy(4, 540, keep);
+     }
+     void ball_back(int keep = 0, int speed = 100)
+     {
+     servoObjects().setSpeed(4, speed);
+     servoObjects().deploy(4, 740, keep);
+     }
 
-    void servo_init()
-    {
-        arm_right_retract();
-        arm_left_retract();
-    }
+     void servo_init()
+     {
+     arm_right_retract();
+     arm_left_retract();
+     }
 
-    void servo_init_end()
-    {
-        arm_left_full(0);
-        arm_right_full(-1);
+     void servo_init_end()
+     {
+     arm_left_full(0);
+     arm_right_full(-1);
 
-        arm_left_retract(0);
-        arm_right_retract(-1);
+     arm_left_retract(0);
+     arm_right_retract(-1);
 
-        arm_left_full(0);
-        arm_right_full(-1);
+     arm_left_full(0);
+     arm_right_full(-1);
 
-        arm_left_retract(0);
-        arm_right_retract(-1);
+     arm_left_retract(0);
+     arm_right_retract(-1);
 
-        servoObjects().releaseAll();
+     servoObjects().releaseAll();
 
-    }
-    void servo_init_orange()
-    {
-        arm_left_little(0);
-        arm_right_little(-1);
+     }
+     void servo_init_orange()
+     {
+     arm_left_little(0);
+     arm_right_little(-1);
 
-        arm_left_retract(0);
-        arm_right_retract(-1);
+     arm_left_retract(0);
+     arm_right_retract(-1);
 
-        arm_left_little(0);
-        arm_right_little(-1);
+     arm_left_little(0);
+     arm_right_little(-1);
 
-        arm_left_retract(0);
-        arm_right_retract(-1);
+     arm_left_retract(0);
+     arm_right_retract(-1);
 
-        servoObjects().releaseAll();
-    }
-    void servo_init_green()
-    {
-        arm_left_little(0);
-        arm_right_little(-1);
+     servoObjects().releaseAll();
+     }
+     void servo_init_green()
+     {
+     arm_left_little(0);
+     arm_right_little(-1);
 
-        arm_left_retract(0);
-        arm_right_retract(-1);
+     arm_left_retract(0);
+     arm_right_retract(-1);
 
-        arm_left_little(0);
-        arm_right_little(-1);
+     arm_left_little(0);
+     arm_right_little(-1);
 
-        arm_left_retract(0);
-        arm_right_retract(-1);
+     arm_left_retract(0);
+     arm_right_retract(-1);
 
-        servoObjects().releaseAll();
-    }
+     servoObjects().releaseAll();
+     }*/
 
 };
 

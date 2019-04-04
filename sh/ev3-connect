@@ -2,7 +2,7 @@
 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
 #EV3 CHO
-IPUSB="10.42.0.3" #USB LINUX
+IPUSB="10.42.0.71" #USB LINUX
 #IPUSB="169.254.230.22" #USB LINUX
 IPWIFI="192.168.2.102" #WIFI
 #IPHOME="192.168.0.217" #WIFI HOME CHO INDEED2G
@@ -15,9 +15,7 @@ IPHOME="192.168.0.219" #WIFI HOME CHO INDEED
 
 all()
 {
-    #ssh root@$IP "killall Bot-SmallPMX-EV3"
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/
-	
 }
 
 main()
@@ -26,8 +24,15 @@ main()
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" robot@$IP:/home/robot/	
 }
 
+installwifi()
+{
+	scp "../src/Driver-EV3/rtl8812au-modules-4.4.87-22-ev3dev-ev3_1+1_armel.deb" robot@$IP:/home/robot/	
+ 	sudo dpkg -i rtl8812au-modules-4.4.87-22-ev3dev-ev3_1+1_armel.deb
+}
+
 driver()
 {
+	
 	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/	
 	
 }
@@ -80,9 +85,12 @@ case "$2" in
 		recup;;
 	tests)
 		tests;;
+		
+	installwifi)
+		installwifi;;
 
 	*)
-		echo "Usage: $0 {usb|wifi|home} {connect|all|main|driver|tests|recup|view-doc}" >&2
+		echo "Usage: $0 {usb|wifi|home} {connect|all|main|driver|tests|installwifi}" >&2
 		exit 1
 	;;
 esac

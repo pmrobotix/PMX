@@ -129,19 +129,19 @@ bool O_push_bee()
 
     ts = robot.asserv().doLineAbs(50);
     robot.svgPrintPosition();
-    robot.actions().arm_left_full(0);
-    robot.actions().arm_right_full(-1);
+//    robot.actions().arm_left_full(0);
+//    robot.actions().arm_right_full(-1);
+//
+//    robot.actions().arm_left_retract(0);
+//    robot.actions().arm_right_retract(-1);
+//
+//    robot.actions().arm_left_full(0);
+//    robot.actions().arm_right_full(-1);
+//
+//    robot.actions().arm_left_retract(0);
+//    robot.actions().arm_right_retract(-1);
 
-    robot.actions().arm_left_retract(0);
-    robot.actions().arm_right_retract(-1);
-
-    robot.actions().arm_left_full(0);
-    robot.actions().arm_right_full(-1);
-
-    robot.actions().arm_left_retract(0);
-    robot.actions().arm_right_retract(-1);
-
-    robot.actions().servoObjects().releaseAll();
+    robot.actions().releaseAll();
 
     //abeille points
     robot.points += 50;
@@ -187,12 +187,12 @@ bool O_push_bee()
     robot.points += 10;
 
     //petite danse
-    robot.actions().servo_init_end();
+    //robot.actions().servo_init_end();
     ts = robot.asserv().doRotateRight(2);
     ts = robot.asserv().doRotateLeft(4);
     ts = robot.asserv().doRotateRight(2);
     ts = robot.asserv().doRotateLeft(4);
-    robot.actions().servo_init_end();
+    //robot.actions().servo_init_end();
 
     robot.logger().info() << "O_push_bee done." << logs::end;
     return true; //return true si ok sinon false si interruption

@@ -28,39 +28,45 @@ void AsservDriver::reset()
         _motor_right_.reset();
 }
 
-AsservDriver::AsservDriver()
+AsservDriver::AsservDriver() :
+        _motor_right_(OUTPUT_D), _motor_left_(OUTPUT_A), angleR_("in1:i2c1")
 {
     logger().debug() << "AsservDriver()" << logs::end;
 
-
-
-
-
-    sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
-    if (angle.connected()) {
-        logger().info() << "angle = " << angle.value(0) << logs::end;
-
-        angle.set_mode("ANGLE-ACC");
-        logger().debug() << "angle = " << angle.value(0) << logs::end;
-        angle.set_command("RESET");
-        usleep(25000);
-        const mode_set &m = angle.commands();
-        std::ostringstream oss;
-        oss << "available cmds are ";
-        for (mode_set::const_iterator it = m.begin(); it != m.end(); ++it) {
-            oss << *it << " ";
-        }
-        logger().debug() << oss.str() << logs::end;
-        logger().debug() << "driver_name() = " << angle.driver_name() << logs::end;
-        logger().debug() << "angle = " << angle.value(0) << logs::end;
-        for (int i = 0; i < 10; i++) {
-            usleep(500000);
-            logger().debug() << "angle = " << angle.value(0) << logs::end;
-        }
-
+    if (angleR_.connected()) {
+        logger().info() << "[" << angleR_.address() << "] (" << angleR_.driver_name() << ") type_name="
+                << angleR_.type_name() << logs::end;
+    }else
+    {
+        logger().error() << "NOT CONNECTED! NO angleR_ !" << logs::end;
     }
+    /*
+     usleep(10000);
+     //sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
+     if (angle.connected()) {
+     logger().info() << "angle = " << angle.value(0) << logs::end;
+     usleep(10000);
+     angle.set_mode("ANGLE-ACC");
+     usleep(10000);
+     logger().debug() << "angle = " << angle.value(0) << logs::end;
+     angle.set_command("RESET");
+     usleep(25000);
+     const mode_set &m = angle.commands();
+     std::ostringstream oss;
+     oss << "available cmds are ";
+     for (mode_set::const_iterator it = m.begin(); it != m.end(); ++it) {
+     oss << *it << " ";
+     }
+     logger().debug() << oss.str() << logs::end;
+     logger().debug() << "driver_name() = " << angle.driver_name() << logs::end;
+     logger().debug() << "angle = " << angle.value(0) << logs::end;
+     //        for (int i = 0; i < 10; i++) {
+     //            usleep(500000);
+     //            logger().debug() << "angle = " << angle.value(0) << logs::end;
+     //        }
 
-
+     }
+     */
     /*
      //test1
      for (unsigned i = 0; i < 4; ++i) {
@@ -75,8 +81,11 @@ AsservDriver::AsservDriver()
 //test 2 - a garder
     if (_motor_right_.connected()) {
 
-        logger().info() << "(" << "D" << ") " << _motor_right_.driver_name() << " motor on port "
+        logger().info() << "(" << "RIGHT" << ") " << _motor_right_.driver_name() << " motor on port "
                 << _motor_right_.address() << " Pol=" << _motor_right_.polarity() << logs::end;
+    }else
+    {
+        logger().error() << "NOT CONNECTED! NO _motor_right_ !" << logs::end;
     }
     if (_motor_right_.connected()) //if both motors are connected, then initialize each motor.
     {
@@ -103,13 +112,17 @@ AsservDriver::AsservDriver()
 
     if (_motor_left_.connected()) {
 
-        logger().info() << "(" << "B" << ") " << _motor_left_.driver_name() << " motor on port "
+        logger().info() << "(" << "LEFT " << ") " << _motor_left_.driver_name() << " motor on port "
                 << _motor_left_.address() << " Pol=" << _motor_left_.polarity() << logs::end;
+    }else
+    {
+        logger().error() << "NOT CONNECTED! NO _motor_left_ !" << logs::end;
     }
 
     if (_motor_left_.connected()) //if both motors are connected, then initialize each motor.
     {
         _motor_left_.reset();
+
         _motor_left_.set_ramp_down_sp(0);
         _motor_left_.set_ramp_up_sp(0);
         _motor_left_.set_stop_action("brake");
@@ -414,7 +427,12 @@ void AsservDriver::setMotorRightPower(int percent, int timems)
 
 long AsservDriver::getLeftExternalEncoder()
 {
-    return 0;
+    if (angleR_.connected()) {
+        long ticks = angleR_.getValueDegrees();
+
+        return ticks;
+    } else
+        return -9999;
 }
 long AsservDriver::getRightExternalEncoder()
 {
@@ -443,8 +461,8 @@ void AsservDriver::stopMotorLeft()
     setMotorLeftPower(0, 0);
     if (_motor_left_.connected()) {
         _motor_left_.stop();
-    }
-    logger().error() << "stopMotorLeft" << logs::end;
+    } else
+        logger().error() << "NOT CONNECTED! NO stopMotorLeft" << logs::end;
 
 }
 void AsservDriver::stopMotorRight()
@@ -453,11 +471,17 @@ void AsservDriver::stopMotorRight()
     setMotorRightPower(0, 0);
     if (_motor_right_.connected()) {
         _motor_right_.stop();
-    }
-    logger().error() << "stopMotorRight" << logs::end;
+    } else
+        logger().error() << "NOT CONNECTED! NO stopMotorRight" << logs::end;
 }
 
 void AsservDriver::resetEncoders()
+{
+    resetInternalEncoders();
+    resetExternalEncoders();
+}
+
+void AsservDriver::resetInternalEncoders()
 {
     if (_motor_left_.connected()) {
         _motor_left_.set_position(0);
@@ -466,14 +490,13 @@ void AsservDriver::resetEncoders()
         _motor_right_.set_position(0);
     }
 }
-
-void AsservDriver::resetInternalEncoders()
-{
-//TODO
-}
 void AsservDriver::resetExternalEncoders()
 {
-//TODO
+    if (angleR_.connected()) {
+        angleR_.reset();
+        logger().error() << "RESET angleR_ !" << logs::end;
+    } else
+        logger().error() << "NOT CONNECTED! NO RESET angleR_ !" << logs::end;
 }
 
 int AsservDriver::getMotorLeftCurrent()

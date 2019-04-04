@@ -28,9 +28,9 @@ private:
         return instance;
     }
 
-public:
+    ALcdShieldDriver* lcddriver_;
 
-    ALcdShieldDriver* lcddriver;
+public:
 
     /*!
      * \brief Constructeur de la classe.
@@ -38,7 +38,7 @@ public:
     LcdDriverTest() :
             UnitTest("LcdDriverTest")
     {
-        lcddriver = ALcdShieldDriver::create("Bot_LcdDriverTest");
+        lcddriver_ = ALcdShieldDriver::create("Bot_LcdDriverTest");
     }
 
     /*!

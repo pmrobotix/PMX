@@ -9,7 +9,7 @@
 #include <cstdio>
 
 utils::Chronometer::Chronometer() :
-        stopped_(1), timerPeriod_us_(0), endSetTime_us(0), periodNb_(0), timerStartTime_us_(0)
+        stopped_(1), timerPeriod_us_(0), periodNb_(0), endSetTime_us(0), timerStartTime_us_(0)
 {
     startCount_.tv_sec = 0;
     startCount_.tv_usec = 0;
@@ -95,8 +95,10 @@ int utils::Chronometer::waitTimer()
     } else {
         long long diff = (endTaskTime - nextTime) / timerPeriod_us_;
         periodNb_ += diff;
-        printf("\nutils::Chronometer::waitTimer() OVERFLOW periodNb=%lld diff=%lld timerPeriod_us_=%dc!!\n", periodNb_,
-                diff, timerPeriod_us_);
+        //printf("\nutils::Chronometer::waitTimer() OVERFLOW periodNb=%lld diff=%lld timerPeriod_us_=%dc!!\n", periodNb_, diff, timerPeriod_us_);
+        logger().error() << "utils::Chronometer::waitTimer() OVERFLOW !!! periodNb="<< periodNb_<<" diff="<<diff<<" timerPeriod_us_="<<timerPeriod_us_<<"!!\n"
+        << logs::end;
+
     }
 
     return periodNb_;

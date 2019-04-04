@@ -12,8 +12,8 @@
 BotMotors::BotMotors(Robot * robot)
 {
     robot_ = robot; //Reference vers le robot
-    vitMoteurG = 0;
-    vitMoteurD = 0;
+    vitMoteurG_ = 0;
+    vitMoteurD_ = 0;
 }
 
 BotMotors::~BotMotors()
@@ -44,10 +44,11 @@ void BotMotors::setVitesseG(int vitMoteurG)
         vitMoteurG = 0;
     }
 
+    vitMoteurG_ = vitMoteurG;
+
     //Apply
     robot_->logger().debug() << "setVitesseG = " << vitMoteurG << logs::end;
     robot_->asserv_default->base()->motors().runMotorLeft(vitMoteurG, 0);
-
 }
 
 void BotMotors::setVitesseD(int vitMoteurD)
@@ -71,10 +72,11 @@ void BotMotors::setVitesseD(int vitMoteurD)
         vitMoteurD = 0;
     }
 
+    vitMoteurD_ = vitMoteurD;
+
     //APPLY
     robot_->logger().debug() << "vitMoteurD = " << vitMoteurD << logs::end;
     robot_->asserv_default->base()->motors().runMotorRight(vitMoteurD, 0);
-
 }
 
 #endif /* CONFIG_MOTORCTRL_BOTMOTORS */

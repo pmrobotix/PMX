@@ -3,7 +3,7 @@
 
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "ev3dev.h"
+#include "LegoIRSensor.hpp"
 
 using namespace std;
 using namespace ev3dev;
@@ -21,13 +21,11 @@ private:
         return instance;
     }
 
-    infrared_sensor ir1_;
-    infrared_sensor ir2_;
+    LegoIRSensor IR_1;
+//    LegoIRSensor IR_2;
+//    LegoIRSensor IR_3;
+//    LegoIRSensor IR_4;
 
-    //infrared_sensor ir_;
-    //infrared_sensor irrear_;
-
-    //ultrasonic_sensor us_;
 
 public:
 

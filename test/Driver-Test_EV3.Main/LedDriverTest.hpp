@@ -27,9 +27,9 @@ private:
         return instance;
     }
 
-public:
+    ALedDriver* leddriver_;
 
-    ALedDriver* leddriver;
+public:
 
     /*!
      * \brief Constructeur de la classe.
@@ -37,7 +37,7 @@ public:
     LedDriverTest() :
             UnitTest("LedDriverTest")
     {
-        leddriver = ALedDriver::create("LedDriverTest", 2);
+        leddriver_ = ALedDriver::create("LedDriverTest", 2);
     }
 
     /*!

@@ -5,9 +5,9 @@
 #include <string>
 
 #include "../Common/Action/ButtonBar.hpp"
-#include "../Common/Action/ServoObjectsAx12.hpp"
+#include "../Common/Action/LcdShield.hpp"
+#include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action.Driver/AButtonDriver.hpp"
-#include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Common/Arguments.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"
@@ -39,7 +39,7 @@ void O_ServoStepTest::run(int argc, char** argv)
     Arguments args = robot.getArgs();
 
 
-
+    ServoObjectsSystem servoObjects = robot.actions().servosAx12();
 
 
     logger().info() << "Executing - " << this->desc() << logs::end;
@@ -75,11 +75,9 @@ void O_ServoStepTest::run(int argc, char** argv)
     robot.actions().lcd2x16().print("SERVO n°");
     robot.actions().lcd2x16().print(num);
 
-    //robot.actions().servoObjects().turn(12, 1020, 5);
+    servoObjects.setSpeed(num, speed);
 
-    robot.actions().servoObjects().setSpeed(num, speed);
-
-    robot.actions().servoObjects().deploy(num, pos, 0);
+    servoObjects.deploy(num, pos, 0);
 
     ButtonTouch touch = BUTTON_NONE;
 
@@ -97,7 +95,7 @@ void O_ServoStepTest::run(int argc, char** argv)
             if (pos >= 1023)
                 pos = 1023;
             logger().info() << "+" << step << " pos=" << pos << logs::end;
-            robot.actions().servoObjects().deploy(num, pos, -1);
+            servoObjects.deploy(num, pos, -1);
         }
 
         if (touch == BUTTON_DOWN_KEY) {
@@ -105,13 +103,13 @@ void O_ServoStepTest::run(int argc, char** argv)
             if (pos <= 0)
                 pos = 0;
             logger().info() << "-" << step << " pos=" << pos << logs::end;
-            robot.actions().servoObjects().deploy(num, pos, -1);
+            servoObjects.deploy(num, pos, -1);
 
         }
 
         if (touch == BUTTON_RIGHT_KEY) {
             pos = 512;
-            robot.actions().servoObjects().release(num);
+            servoObjects.release(num);
             num = num + 1;
             if (num >= 254)
                 num--;
@@ -122,7 +120,7 @@ void O_ServoStepTest::run(int argc, char** argv)
 
         if (touch == BUTTON_LEFT_KEY) {
             pos = 512;
-            robot.actions().servoObjects().release(num);
+            servoObjects.release(num);
             num = num - 1;
             if (num < 0)
                 num++;
@@ -133,7 +131,7 @@ void O_ServoStepTest::run(int argc, char** argv)
         usleep(10000);
     }
     logger().info() << "RELEASE ALL " << logs::end;
-    robot.actions().servoObjects().releaseAll();
+    robot.actions().releaseAll();
 
     robot.stopActions();
     robot.stopAll();

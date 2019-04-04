@@ -15,7 +15,9 @@ void test::ServoDriverTest::suite()
 void test::ServoDriverTest::firstTest()
 {
 
-	servodriver->hold(SERVO_FUNNY_ACTION);
+	servodriver_->hold(0);
+
+	servoDynamixelDriver_->hold(0);
 
 	this->assert(true, "OK");
 }

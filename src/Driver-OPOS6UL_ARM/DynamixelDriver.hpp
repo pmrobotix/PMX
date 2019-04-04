@@ -1,21 +1,29 @@
-#ifndef OPOS6UL_SERVODRIVER_HPP_
-#define OPOS6UL_SERVODRIVER_HPP_
+/*
+ * DynamixelDriver.hpp
+ *
+ *  Created on: 3 avr. 2019
+ *      Author: pmx
+ */
+
+#ifndef DRIVER_OPOS6UL_ARM_DYNAMIXELDRIVER_HPP_
+#define DRIVER_OPOS6UL_ARM_DYNAMIXELDRIVER_HPP_
 
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "CCAx12Adc.hpp"
 
 using namespace std;
 
-class ServoDriver: public AServoDriver
+class DynamixelDriver: public AServoDriver
 {
 private:
 
     /*!
-     * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(OPOS6UL).
+     * \brief Retourne le \ref Logger associé à la classe \ref DynamixelDriver(OPOS6UL).
      */
     static inline const logs::Logger & logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.OPO");
+        static const logs::Logger & instance = logs::LoggerFactory::logger("DynamixelDriver.OPO");
         return instance;
     }
 
@@ -27,12 +35,12 @@ public:
     /*!
      * \brief Constructor.
      */
-    ServoDriver();
+    DynamixelDriver();
 
     /*!
      * \brief Destructor.
      */
-    inline ~ServoDriver()
+    inline ~DynamixelDriver()
     {
 
     }
@@ -56,4 +64,4 @@ public:
 
 };
 
-#endif
+#endif /* DRIVER_OPOS6UL_ARM_DYNAMIXELDRIVER_HPP_ */

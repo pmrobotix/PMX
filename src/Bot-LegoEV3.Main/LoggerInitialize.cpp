@@ -15,7 +15,7 @@ void logs::LoggerFactory::initialize()
     add("svg", new SvgAppender("svgEV3.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));
     //add("memory", new MemoryAppender());
-    //add("file", new FileAppender("logEV3.csv"));
+    add("fileAsserv", new FileAppender("logAsserv.csv"));
 
     add(logs::Level::ERROR, "", "console");
 
@@ -37,8 +37,9 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Svg4LegoEV3Robot", "svg");
     add(logs::Level::INFO, "IAbyPath4LegoEV3Robot", "svgia");
 
-    //File
+    //File DEBUG
     //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
+    add(logs::Level::DEBUG, "logFileAsservEsialR", "fileAsserv");
 
     //TESTS
     add(logs::Level::INFO, "L_LedBarTest", "console");
@@ -88,6 +89,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Asserv", "console");
     add(logs::Level::INFO, "AsservInsa", "console");
     add(logs::Level::DEBUG, "AsservEsialR", "console");
+
+
 
 
 }

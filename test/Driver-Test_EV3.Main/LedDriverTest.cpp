@@ -15,11 +15,11 @@ void test::LedDriverTest::suite()
 
 void test::LedDriverTest::testSet()
 {
-	leddriver->setBit(0, LED_GREEN);
-	leddriver->setBit(1, LED_ORANGE);
+	leddriver_->setBit(0, LED_GREEN);
+	leddriver_->setBit(1, LED_ORANGE);
 	usleep(1000000);
-	leddriver->setBit(0, LED_OFF);
-	leddriver->setBit(1, LED_OFF);
+	leddriver_->setBit(0, LED_OFF);
+	leddriver_->setBit(1, LED_OFF);
 
 	this->assert(true, "OK");
 }

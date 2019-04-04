@@ -5,59 +5,58 @@
 #include "../Log/LoggerFactory.hpp"
 #include "ServoMotorStd.hpp"
 
-
 using namespace std;
 
 class ServoDriver: public AServoDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(ARM).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.ARM");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(ARM).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.ARM");
+        return instance;
+    }
 
-	int connected_;
+    int connected_;
 
-	ServoMotorStd left_;
-	ServoMotorStd right_;
-	ServoMotorStd centre_;
+    ServoMotorStd left_;
+    ServoMotorStd right_;
+    ServoMotorStd centre_;
 
 protected:
 
 public:
-	/*!
-	 * \brief Constructor.
-	 */
-	ServoDriver();
+    /*!
+     * \brief Constructor.
+     */
+    ServoDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	inline ~ServoDriver()
-	{
-	}
+    /*!
+     * \brief Destructor.
+     */
+    inline ~ServoDriver()
+    {
+    }
 
-	void hold(int servo);
+    void hold(int servo);
 
-	//percentage pour EV3 , 0->4096 pour APF
-	void setPosition(int servo, int percent);
+    //percentage pour EV3 , 0->4096 pour APF
+    void setPosition(int servo, int percent);
 
-	void release(int servo);
+    void release(int servo);
 
-	void setRate(int servo, int millisec);
+    void setRate(int servo, int millisec);
 
-	void turn(int servo, int speed);
+    void turn(int servo, int speed);
 
-	int getMoving(int servo);
+    int getMoving(int servo);
 
-          int getPos(int servo);
+    int getPos(int servo);
 
-          int ping(int);
+    int ping(int);
 };
 
 #endif

@@ -34,6 +34,20 @@ AsservEsialR::AsservEsialR(Robot * robot)
     commandM_ = NULL;
     run_ = false;
 
+    //première ligne du fichier csv
+    loggerFile().debug() << "usec"
+            << ", time-last"
+            << ", work time"
+            << ", nb"
+            << ", odo_->getDeltaDist()"
+            << ", motorC_->getVitesseG()"
+            << ", motorC_->getVitesseD()"
+            << ", xmm "
+            << ", ymm "
+            << ", degrees"
+
+            << logs::end;
+
 }
 
 void AsservEsialR::startAsserv(int freqHz)
@@ -102,9 +116,13 @@ void AsservEsialR::execute()
     utils::Chronometer chrono;
     chrono.setTimer(loopDelayInMillisec_ * 1000);
     RobotPosition p;
+    unsigned long long current = 0;
+    unsigned long long last = 0;
+    long nb=0;
     while (1) {
         if (run_) {
-
+            nb++;
+            current = chrono.getElapsedTimeInMicroSec();
             odo_->refresh();
             p = odo_GetPosition();
 
@@ -114,17 +132,34 @@ void AsservEsialR::execute()
                 commandM_->perform();
             }
 
-            logger().info() << "ms=" << chrono.getElapsedTimeInMilliSec() << " xmm=" << p.x * 1000 << std::setw(10)
+            logger().info() << nb << " us=" << (long)(current - last) << " xmm=" << p.x * 1000 << std::setw(10)
                     << " ymm=" << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="
                     << p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::end;
 
+            //svg log
             robot_->svgw().writePosition(p.x * 1000, p.y * 1000, p.theta, "bot-pos");
+
+            //file log for asserv
+            loggerFile().debug() << current
+                    << ", " << (long)(current - last)
+                    << ", " << (long)(current - chrono.getElapsedTimeInMicroSec())
+                    << ", " << nb
+                    << ", " << odo_->getDeltaDist() // distance entre 2
+                    << ", " << motorC_->getVitesseG() //1 à 127
+                    << ", " << motorC_->getVitesseD() //1 à 127
+                    << ", " << p.x * 1000.0
+                    << ", " << p.y * 1000.0
+                    << ", " << p.theta *180.0 / M_PI
+
+                    << logs::end;
+
 
             //logger().info() << "execute started; getElapsedTimeInMilliSec=" << chrono.getElapsedTimeInMilliSec()
             //<< " ms loopDelayInMillisec_=" << loopDelayInMillisec_<< logs::end;
 
             //wait loopDelayInMillisec_
             chrono.waitTimer();
+            last = current;
         }
     }
 }

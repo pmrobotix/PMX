@@ -3,8 +3,8 @@
  * \brief Définition de la classe ServoDriverTest.
  */
 
-#ifndef OPOS6UL_SERVODRIVERTEST_HPP
-#define OPOS6UL_SERVODRIVERTEST_HPP
+#ifndef EV3TEST_SERVODRIVERTEST_HPP
+#define EV3TEST_SERVODRIVERTEST_HPP
 
 #include "../../src/Common/Action.Driver/AServoDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
@@ -20,20 +20,17 @@ class ServoDriverTest: public UnitTest
 private:
 
     /*!
-     * \brief Retourne le \ref Logger associé à la classe \ref ServoDriverTest(OPO).
+     * \brief Retourne le \ref Logger associé à la classe \ref ServoDriverTest(EV3).
      */
     static inline const logs::Logger & logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriverTest.OPO");
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriverTest.EV3");
         return instance;
     }
 
     AServoDriver* servodriver_;
-    AServoDriver* servoDynamixelDriver_;
 
 public:
-
-
 
     /*!
      * \brief Constructeur de la classe.
@@ -42,7 +39,6 @@ public:
             UnitTest("ServoDriverTest")
     {
         servodriver_ = AServoDriver::create(AServoDriver::SERVO_STANDARD);
-        servoDynamixelDriver_ = AServoDriver::create(AServoDriver::SERVO_DYNAMIXEL);
     }
 
     /*!
@@ -54,7 +50,7 @@ public:
 
     virtual void suite();
 
-    void firstTest();
+    void testServos();
 
 };
 }

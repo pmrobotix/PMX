@@ -6,40 +6,37 @@
 #include "../Common/Action.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-
 using namespace std;
-
 
 class SwitchDriver: public ASwitchDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SwitchDriver(OPOS6UL).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref SwitchDriver(OPOS6UL).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.OPO");
+        return instance;
+    }
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	SwitchDriver();
+    /*!
+     * \brief Constructor.
+     */
+    SwitchDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~SwitchDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~SwitchDriver();
 
-
-	int pressed(unsigned char pin);
-	int tirettePressed();
-	int backLeftPressed();
-	int backRightPressed();
+    int pressed(unsigned char pin);
+    int tirettePressed();
+    int backLeftPressed();
+    int backRightPressed();
 
 };
 

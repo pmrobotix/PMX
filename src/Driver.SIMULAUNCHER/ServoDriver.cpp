@@ -6,7 +6,7 @@
 
 using namespace std;
 
-AServoDriver * AServoDriver::create()
+AServoDriver * AServoDriver::create(ServoType type)
 {
 	static ServoDriver *instance = new ServoDriver();
 	return instance;
@@ -106,6 +106,11 @@ int ServoDriver::getMoving(int servo)
 }
 
 int ServoDriver::getPos(int servo)
+{
+
+}
+
+int ServoDriver::ping(int servo)
 {
 
 }

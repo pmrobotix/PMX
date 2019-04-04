@@ -43,7 +43,7 @@ ASensorsDriver * ASensorsDriver::create(std::string)
 }
 
 
-AServoDriver * AServoDriver::create()
+AServoDriver * AServoDriver::create(ServoType type)
 {
 	return 0;
 }

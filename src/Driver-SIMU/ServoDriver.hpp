@@ -4,55 +4,53 @@
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-
 using namespace std;
 
 class ServoDriver: public AServoDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(SIMU).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.SIMU");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(SIMU).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.SIMU");
+        return instance;
+    }
 
-	int connected_;
-
+    int connected_;
 
 protected:
 
 public:
-	/*!
-	 * \brief Constructor.
-	 */
-	ServoDriver();
+    /*!
+     * \brief Constructor.
+     */
+    ServoDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	inline ~ServoDriver()
-	{
-	}
+    /*!
+     * \brief Destructor.
+     */
+    inline ~ServoDriver()
+    {
+    }
 
-	void hold(int servo);
+    void hold(int servo);
 
-	void setPosition(int servo, int percent);
+    void setPosition(int servo, int percent);
 
-	void release(int servo);
+    void release(int servo);
 
-	void setRate(int servo, int millisec);
+    void setRate(int servo, int millisec);
 
-	void turn(int servo, int speed);
+    void turn(int servo, int speed);
 
-	int getMoving(int servo);
+    int getMoving(int servo);
 
-	int getPos(int servo);
+    int getPos(int servo);
 
-	int ping(int);
+    int ping(int);
 };
 
 #endif

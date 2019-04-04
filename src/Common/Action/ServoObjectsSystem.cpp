@@ -1,124 +1,97 @@
+#include "ServoObjectsSystem.hpp"
+
 #include <unistd.h>
 
-#include "../../Log/Logger.hpp"
 #include "../Action.Driver/AServoDriver.hpp"
-#include "Actions.hpp"
-#include "ServoObjectsSystem.hpp"
 
 using namespace std;
 
-ServoObjectsSystem::ServoObjectsSystem(Actions & actions) :
-		AActionsElement(actions)
+ServoObjectsSystem::ServoObjectsSystem(Actions & actions, AServoDriver::ServoType type) :
+        AActionsElement(actions)
 {
-	servodriver = AServoDriver::create();
-	releaseAll();
+    servodriver_ = AServoDriver::create(type);
 }
 
 ServoObjectsSystem::~ServoObjectsSystem()
 {
-	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
-	{
-		ServoLabel foo = static_cast<ServoLabel>(fooInt);
-		servodriver->setPosition(foo, 0);
-		release(foo);
-	}
+    /*
+     for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
+     {
+     ServoLabel foo = static_cast<ServoLabel>(fooInt);
+     servodriver->setPosition(foo, 0);
+     release(foo);
+     }*/
 }
 
-void ServoObjectsSystem::deploy(ServoLabel servo, double percent, int keep_sec)
+void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
 {
-	hold(servo);
-	servodriver->setPosition(servo, percent); // percentage
-	if (keep_sec != 0)
-	{
-		sleep(keep_sec);
-		release(servo);
-	}
-	hold(servo);
+    hold(servo);
+    servodriver_->setPosition(servo, percent); // percentage
+    if (keep_millisec > 0) {
+        sleep(keep_millisec * 1000);
+        release(servo);
+    }else if (keep_millisec <= -1) {
+
+        while (int r = servodriver_->getMoving(servo) >= 1) {
+            r= servodriver_->getMoving(servo);
+            if (r < 0) {
+                break;
+            }
+            //logger().info() << "wait "<< r << logs::end;
+            usleep(10000);
+        }
+    }
 }
 
-void ServoObjectsSystem::release(ServoLabel servo)
+void ServoObjectsSystem::release(int servo)
 {
-	servodriver->release(servo);
+    servodriver_->release(servo);
 }
 
-void ServoObjectsSystem::hold(ServoLabel servo)
+void ServoObjectsSystem::hold(int servo)
 {
-	servodriver->hold(servo);
+    servodriver_->hold(servo);
 }
 
-void ServoObjectsSystem::releaseAll()
+void ServoObjectsSystem::setSpeed(int servo, int speed)
 {
-	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
-	{
-		ServoLabel foo = static_cast<ServoLabel>(fooInt);
-		release(foo);
-	}
+    servodriver_->setRate(servo, speed);
+}
+
+void ServoObjectsSystem::turn(int servo, int speed_percent, int keep_millisec)
+{
 
 }
-void ServoObjectsSystem::holdAll()
+
+void ServoObjectsSystem::detectAll()
 {
-	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
-	{
-		ServoLabel foo = static_cast<ServoLabel>(fooInt);
-		hold(foo);
-	}
+    for (int i = 0; i < 255; i++) {
+        if (servodriver_->ping(i) == 0) {
+            logger().info() << i << logs::end;
+        }
+    }
 
 }
 /*
-void ServoObjectsSystem::leftDeploy(double percent, bool keep)
+//deprecated
+void ServoObjectsSystem::releaseAll()
 {
-	leftHold();
-	servodriver->setPosition(SERVO_LEFT, percent); // percentage
-	if (!keep)
-	{
-		sleep(2);
-		leftRelease();
-	}
-}
-void ServoObjectsSystem::leftRelease()
-{
-	servodriver->release(SERVO_LEFT);
-}
-void ServoObjectsSystem::leftHold()
-{
-	servodriver->hold(SERVO_LEFT);
-}
+//	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
+//	{
+//		ServoLabel foo = static_cast<ServoLabel>(fooInt);
+//		release(foo);
+//	}
 
-void ServoObjectsSystem::centreDeploy(double percent, bool keep)
-{
-	centreHold();
-	servodriver->setPosition(SERVO_CENTRE, percent); // percentage
-	if (!keep)
-	{
-		sleep(2);
-		centreRelease();
-	}
 }
-void ServoObjectsSystem::centreRelease()
+//deprecated
+void ServoObjectsSystem::holdAll()
 {
-	servodriver->release(SERVO_CENTRE);
-}
-void ServoObjectsSystem::centreHold()
-{
-	servodriver->hold(SERVO_CENTRE);
-}
+//	for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
+//	{
+//		ServoLabel foo = static_cast<ServoLabel>(fooInt);
+//		hold(foo);
+//	}
 
-void ServoObjectsSystem::rightDeploy(double percent, bool keep)
-{
-	rightHold();
-	servodriver->setPosition(SERVO_RIGHT, percent); // percentage
-	if (!keep)
-	{
-		sleep(2);
-		rightRelease();
-	}
 }
-void ServoObjectsSystem::rightRelease()
-{
-	servodriver->release(SERVO_RIGHT);
-}
-void ServoObjectsSystem::rightHold()
-{
-	servodriver->hold(SERVO_RIGHT);
-}*/
+*/
 

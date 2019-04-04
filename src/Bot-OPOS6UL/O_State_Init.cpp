@@ -20,7 +20,7 @@ O_State_Init::execute(Robot&)
     robot.actions().lcd2x16().setBacklightOn();
     robot.actions().lcd2x16().clear();
 
-    robot.actions().servo_init();
+//    robot.actions().servo_init();
 
 
 
@@ -70,10 +70,10 @@ O_State_Init::execute(Robot&)
 
         robot.actions().ledBar().stopAndWait(true);
         //sortir pince
-        if (robot.getMyColor() == PMXVIOLET)
-            robot.actions().servo_init_orange();
-        else
-            robot.actions().servo_init_green();
+//        if (robot.getMyColor() == PMXVIOLET)
+//            robot.actions().servo_init_orange();
+//        else
+//            robot.actions().servo_init_green();
 
         //tirette
         robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
@@ -113,17 +113,17 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().home();
         robot.actions().lcd2x16().print("Skip setup...");
 
-        robot.actions().servo_init();
+//        robot.actions().servo_init();
 
         robot.strategy("all");
 
         setPos();
 
         //sortir pince
-        if (robot.getMyColor() == PMXVIOLET)
-            robot.actions().servo_init_orange();
-        else
-            robot.actions().servo_init_green();
+//        if (robot.getMyColor() == PMXVIOLET)
+//            robot.actions().servo_init_orange();
+//        else
+//            robot.actions().servo_init_green();
 
 
         robot.waitForInit(true);

@@ -68,7 +68,7 @@ void ConsignController::perform()
         if (dist_regu_on && !Config::disableDistanceRegu) {
 
             dist_output = dist_regu.manage(dist_consigne, odometrie->getDeltaDist());
-printf("dist_output=%d\n", dist_output);
+//printf("dist_output=%d\n", dist_output);
         }
 
         //Calcul des vitesses à appliquer en les bornant évidemment
