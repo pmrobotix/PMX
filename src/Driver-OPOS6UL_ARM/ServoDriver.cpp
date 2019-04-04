@@ -34,21 +34,13 @@ void ServoDriver::hold(int servo)
 
 void ServoDriver::setPosition(int servo, int percent)
 {
-    if (percent >= 100)
-        percent = 100;
-    if (percent <= 0)
-        percent = 0;
-
-
+    constrain(percent, -100, 100);
 
 }
 
 void ServoDriver::turn(int servo, int speed)
 {
-    if (speed >= 1023)
-        speed = 1023;
-    if (speed <= 0)
-        speed = 0;
+    constrain(speed, -100, 100);
 
 
 
@@ -61,10 +53,11 @@ void ServoDriver::release(int servo)
 
 void ServoDriver::setRate(int servo, int speed)
 {
-    if (speed >= 1023)
-        speed = 1023;
-    if (speed <= 0)
-        speed = 0;
+    if (!testIf(servo, 0, 127))
+            return;
+
+    constrain(speed, -100, 100);
+
 
 
 
@@ -83,5 +76,35 @@ int ServoDriver::getPos(int servo)
 int ServoDriver::ping(int servo)
 {
 
+}
+
+void ServoDriver::setMinPulse(int servo, int pulse)
+{
+
+}
+
+void ServoDriver::setMidPulse(int servo, int pulse)
+{
+
+}
+
+void ServoDriver::setMaxPulse(int servo, int pulse)
+{
+
+}
+
+void ServoDriver::setPolarity(int servo, bool inversed)
+{
+
+}
+
+bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
+{
+    if ((value >= valeurMin) && (value <= valeurMax))
+        return true;
+    else {
+        logger().error() << "SERVO ID NOT EXISTS!! testIf()" << logs::end;
+        return false;
+    }
 }
 

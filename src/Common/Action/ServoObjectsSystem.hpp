@@ -5,7 +5,6 @@
 #include "../Action.Driver/AServoDriver.hpp"
 #include "AActionsElement.hpp"
 
-
 class ServoObjectsSystem: public AActionsElement
 {
 private:
@@ -33,25 +32,18 @@ public:
      */
     ~ServoObjectsSystem();
 
-
     void deploy(int servo, int pos, int keep_millisec = -1);
+
     void turn(int servo, int speed, int keep_millisec = 0);
     void release(int servo);
     void hold(int servo);
     void setSpeed(int servo, int speed);
+    void setMinPulse(int servo, int value);
+    void setMidPulse(int servo, int value);
+    void setMaxPulse(int servo, int value);
+    void setPolarity(int servo, bool inversed = false);
 
     void detectAll();
-
-    /*
-    //deprecated
-    void releaseAll();
-    //deprecated
-    void holdAll();
-    //deprecated
-    void setSpeedAll(int speed);
-*/
-
-
 
 };
 

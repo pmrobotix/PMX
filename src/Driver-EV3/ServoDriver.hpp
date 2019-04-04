@@ -47,7 +47,7 @@ public:
     void hold(int servo);
 
     //pos : (-100% to 100%)
-    void setPosition(int servo, int pos);
+    void setPosition(int servo, int percent);
 
     void release(int servo);
 
@@ -61,8 +61,15 @@ public:
 
     int ping(int);
 
+    void setMinPulse(int servo, int value = 600);//default 600 [300 to 700]
 
-    long constrain(long value, long valeurMin, long valeurMax);
+    void setMidPulse(int servo, int value = 1500);//default 1500 [1300 to 1700]
+
+    void setMaxPulse(int servo, int value = 2400);//default 2400 [2300 to 2700]
+
+    void setPolarity(int servo, bool inversed);
+
+    //long constrain(long value, long valeurMin, long valeurMax);
     bool testIf(long value, long valeurMin, long valeurMax);
 };
 

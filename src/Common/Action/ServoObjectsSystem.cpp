@@ -2,7 +2,7 @@
 
 #include <unistd.h>
 
-#include "../Action.Driver/AServoDriver.hpp"
+#include "../../Log/Logger.hpp"
 
 using namespace std;
 
@@ -10,20 +10,10 @@ ServoObjectsSystem::ServoObjectsSystem(Actions & actions, AServoDriver::ServoTyp
         AActionsElement(actions)
 {
     servodriver_ = AServoDriver::create(type);
-    for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
-        ServoLabel foo = static_cast<ServoLabel>(fooInt);
-        //servodriver->setPosition(foo, 0);
-        release(foo);
-    }
 }
 
 ServoObjectsSystem::~ServoObjectsSystem()
 {
-//    for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
-//        ServoLabel foo = static_cast<ServoLabel>(fooInt);
-//        //servodriver->setPosition(foo, 0);
-//        release(foo);
-//    }
 }
 
 void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
@@ -64,6 +54,23 @@ void ServoObjectsSystem::setSpeed(int servo, int speed)
 void ServoObjectsSystem::turn(int servo, int speed_percent, int keep_millisec)
 {
 
+}
+
+void ServoObjectsSystem::setMinPulse(int servo, int value)
+{
+    servodriver_->setMinPulse(servo, value);
+}
+void ServoObjectsSystem::setMidPulse(int servo, int value)
+{
+    servodriver_->setMidPulse(servo, value);
+}
+void ServoObjectsSystem::setMaxPulse(int servo, int value)
+{
+    servodriver_->setMaxPulse(servo, value);
+}
+void ServoObjectsSystem::setPolarity(int servo, bool inversed)
+{
+    servodriver_->setPolarity(servo, inversed);
 }
 
 void ServoObjectsSystem::detectAll()

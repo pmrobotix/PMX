@@ -37,6 +37,8 @@ public:
 
     }
 
+    bool testIf(long value, long valeurMin, long valeurMax);
+
     void hold(int servo);
 
     //pos AX12 0->1023
@@ -54,6 +56,13 @@ public:
 
     int ping(int servo);
 
+    void setMinPulse(int servo, int value = 600); //default 600 [300 to 700]
+
+    void setMidPulse(int servo, int value = 1500); //default 1500 [1300 to 1700]
+
+    void setMaxPulse(int servo, int value = 2400); //default 2400 [2300 to 2700]
+
+    void setPolarity(int servo, bool inversed);
 };
 
 #endif

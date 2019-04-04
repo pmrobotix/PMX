@@ -111,3 +111,22 @@ int ServoDriver::ping(int servo)
     return 0;
 }
 
+void ServoDriver::setMinPulse(int servo, int pulse)
+{
+
+}
+
+void ServoDriver::setMidPulse(int servo, int pulse)
+{
+
+}
+
+void ServoDriver::setMaxPulse(int servo, int pulse)
+{
+
+}
+
+void ServoDriver::setPolarity(int servo, bool inversed)
+{
+
+}

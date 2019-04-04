@@ -75,6 +75,14 @@ public:
             ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot), servos_std_(
                     *this, AServoDriver::SERVO_STANDARD)
     {
+        releaseAll();
+
+        //Servo config specifique
+        servosStd().setPolarity(0);
+        servosStd().setMinPulse(0, 600);
+        servosStd().setMidPulse(0, 1470);
+        servosStd().setMaxPulse(0, 2350);
+
     }
 
     ~LegoEV3ActionsExtended()
@@ -143,10 +151,6 @@ public:
         releaseAll();
     }
 
-    //--------------------------------------------------------------
-    //Actions 2019
-    //--------------------------------------------------------------
-
     void releaseAll()
     {
         for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
@@ -155,65 +159,17 @@ public:
             servosStd().release(foo);
         }
     }
-    void leftHand(int keep = 0, int speed = 512)
+
+    //--------------------------------------------------------------
+    //Actions 2019
+    //--------------------------------------------------------------
+
+    void conveyorBelt_Push(int keep = 0, int speed = 512)
     {
         servosStd().setSpeed(SERVO_1, speed);
         servosStd().deploy(SERVO_1, 512, keep);
     }
 
-    /*
-     //--------------------------------------------------------------
-     //Actions 2017
-     //--------------------------------------------------------------
-     void funnyAction_Init()
-     {
-     servoObjects().deploy(SERVO_FUNNY_ACTION, 0);
-     }
-
-     void funnyAction_Activate()
-     {
-     servoObjects().deploy(SERVO_FUNNY_ACTION, -45);
-     }
-
-     void pince_HerculeDown()
-     {
-     servoObjects().deploy(SERVO_HERCULE, 80);
-     }
-
-     void pince_HerculeMiddle()
-     {
-     servoObjects().deploy(SERVO_HERCULE, 40);
-     }
-
-     void pince_HerculeUp()
-     {
-     servoObjects().deploy(SERVO_HERCULE, 0);
-     }
-
-     void pince_HerculeUp8cm(int keep_sec)
-     {
-     servoObjects().deploy(SERVO_HERCULE, 50, keep_sec);
-     }
-
-     void pince_InitRotation()
-     {
-     servoObjects().deploy(SERVO_BASCULE, -100, 1);
-     }
-     void pince_Rotate()
-     {
-     servoObjects().deploy(SERVO_BASCULE, 80, 2);
-     }
-
-     void pince_Open()
-     {
-     servoObjects().deploy(SERVO_PINCE, 0, 1); //ouverte
-     }
-
-     void pince_Close(int keep_sec)
-     {
-     servoObjects().deploy(SERVO_PINCE, 45, keep_sec); //fermée
-     }
-     */
 };
 
 #endif

@@ -20,7 +20,7 @@ void L_ServoObjectTest::run(int argc, char** argv)
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-
+    robot.actions().conveyorBelt_Push();
 
     logger().info() << "Happy End." << logs::end;
     robot.stopAll();

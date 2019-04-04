@@ -153,3 +153,22 @@ int DynamixelDriver::ping(int servo)
     return r;
 }
 
+void DynamixelDriver::setMinPulse(int servo, int pulse)
+{
+
+}
+
+void DynamixelDriver::setMidPulse(int servo, int pulse)
+{
+
+}
+
+void DynamixelDriver::setMaxPulse(int servo, int pulse)
+{
+
+}
+
+void DynamixelDriver::setPolarity(int servo, bool inversed)
+{
+
+}

@@ -57,7 +57,6 @@ void ServoDriver::setRate(int servo, int millisec)
 
 void ServoDriver::turn(int servo, int speed)
 {
-
 }
 
 int ServoDriver::getMoving(int servo)
@@ -72,4 +71,20 @@ int ServoDriver::getPos(int servo)
 int ServoDriver::ping(int servo)
 {
     return -1;
+}
+
+void ServoDriver::setMinPulse(int servo, int pulse)
+{
+}
+
+void ServoDriver::setMidPulse(int servo, int pulse)
+{
+}
+
+void ServoDriver::setMaxPulse(int servo, int pulse)
+{
+}
+
+void ServoDriver::setPolarity(int servo, bool inversed)
+{
 }

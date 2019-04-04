@@ -62,6 +62,14 @@ public:
 
     int ping(int servo);
 
+    void setMinPulse(int servo, int value = 0); //default 0 [0 to 200]
+
+    void setMidPulse(int servo, int value = 512); //default 512 [300 to 700]
+
+    void setMaxPulse(int servo, int value = 1023); //default 1023 [800 to 1023]
+
+    void setPolarity(int servo, bool inversed);
+
 };
 
 #endif /* DRIVER_OPOS6UL_ARM_DYNAMIXELDRIVER_HPP_ */

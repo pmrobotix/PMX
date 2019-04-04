@@ -35,6 +35,18 @@ public:
     {
     }
 
+    //Limitation d'une valeur à un intervalle [valeurMin , valeurMax]
+    long constrain(long value, long valeurMin, long valeurMax)
+    {
+        if (value <= valeurMin)
+            return valeurMin;
+
+        if (value >= valeurMax)
+            return valeurMax;
+
+        return value;
+    }
+
     virtual void hold(int) = 0;
 
     virtual void setPosition(int servo, int pos) = 0;
@@ -51,11 +63,13 @@ public:
 
     virtual int ping(int servo) = 0;
 
-    //TODO
-    //set_min_pulse_sp
-    //set_mid_pulse_sp
-    //set_max_pulse_sp
+    virtual void setMinPulse(int servo, int value) = 0;
 
+    virtual void setMidPulse(int servo, int value) = 0;
+
+    virtual void setMaxPulse(int servo, int value) = 0;
+
+    virtual void setPolarity(int servo, bool inversed) = 0;
 
 private:
 
