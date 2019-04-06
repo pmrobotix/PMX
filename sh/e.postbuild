@@ -8,7 +8,7 @@ set cmd2 [lindex $argv 1]
 spawn ./ev3-connect $cmd1 $cmd2
 
 expect {
-password: {
+Password: {
 send "maker\r";
 exp_continue
 #interact

@@ -69,6 +69,16 @@ constexpr char OUTPUT_A[] = "ttyAMA0:outA"; //!< Motor port A
 constexpr char OUTPUT_B[] = "ttyAMA0:outB"; //!< Motor port B
 constexpr char OUTPUT_C[] = "ttyAMA0:outC"; //!< Motor port C
 constexpr char OUTPUT_D[] = "ttyAMA0:outD"; //!< Motor port D
+#elif defined(EV3DEV_PLATFORM_BRICKPI3)
+constexpr char INPUT_1[]  = "spi0.1:S1";  //!< Sensor port 1
+constexpr char INPUT_2[]  = "spi0.1:S2";  //!< Sensor port 2
+constexpr char INPUT_3[]  = "spi0.1:S3";  //!< Sensor port 3
+constexpr char INPUT_4[]  = "spi0.1:S4";  //!< Sensor port 4
+
+constexpr char OUTPUT_A[] = "spi0.1:MA"; //!< Motor port A
+constexpr char OUTPUT_B[] = "spi0.1:MB"; //!< Motor port B
+constexpr char OUTPUT_C[] = "spi0.1:MC"; //!< Motor port C
+constexpr char OUTPUT_D[] = "spi0.1:MD"; //!< Motor port D
 #elif defined(EV3DEV_PLATFORM_PISTORMS)
 constexpr char INPUT_1[]  = "pistorms:BAS1"; //!< Sensor port 1
 constexpr char INPUT_2[]  = "pistorms:BAS2"; //!< Sensor port 2
@@ -80,15 +90,15 @@ constexpr char OUTPUT_B[] = "pistorms:BAM2"; //!< Motor port B
 constexpr char OUTPUT_C[] = "pistorms:BBM1"; //!< Motor port C
 constexpr char OUTPUT_D[] = "pistorms:BBM2"; //!< Motor port D
 #else // assume EV3DEV_PLATFORM_EV3
-constexpr char INPUT_1[]  = "in1";  //!< Sensor port 1
-constexpr char INPUT_2[]  = "in2";  //!< Sensor port 2
-constexpr char INPUT_3[]  = "in3";  //!< Sensor port 3
-constexpr char INPUT_4[]  = "in4";  //!< Sensor port 4
+constexpr char INPUT_1[]  = "ev3-ports:in1";  //!< Sensor port 1
+constexpr char INPUT_2[]  = "ev3-ports:in2";  //!< Sensor port 2
+constexpr char INPUT_3[]  = "ev3-ports:in3";  //!< Sensor port 3
+constexpr char INPUT_4[]  = "ev3-ports:in4";  //!< Sensor port 4
 
-constexpr char OUTPUT_A[] = "outA"; //!< Motor port A
-constexpr char OUTPUT_B[] = "outB"; //!< Motor port B
-constexpr char OUTPUT_C[] = "outC"; //!< Motor port C
-constexpr char OUTPUT_D[] = "outD"; //!< Motor port D
+constexpr char OUTPUT_A[] = "ev3-ports:outA"; //!< Motor port A
+constexpr char OUTPUT_B[] = "ev3-ports:outB"; //!< Motor port B
+constexpr char OUTPUT_C[] = "ev3-ports:outC"; //!< Motor port C
+constexpr char OUTPUT_D[] = "ev3-ports:outD"; //!< Motor port D
 #endif
 
 //-----------------------------------------------------------------------------
@@ -447,6 +457,8 @@ class ultrasonic_sensor : public sensor
 public:
   ultrasonic_sensor(address_type address = INPUT_AUTO);
 
+  ultrasonic_sensor(address_type address, const std::set<sensor_type>& sensorTypes);
+
   // Continuous measurement in centimeters.
   static constexpr char mode_us_dist_cm[] = "US-DIST-CM";
 
@@ -738,7 +750,7 @@ public:
   // Power will be removed from the motor and a passive electrical load will
   // be placed on the motor. This is usually done by shorting the motor terminals
   // together. This load will absorb the energy from the rotation of the motors and
-  // cause the motor to stop more quickly than csetspeoasting.
+  // cause the motor to stop more quickly than coasting.
   static constexpr char stop_action_brake[] = "brake";
 
   // Does not remove power from the motor. Instead it actively try to hold the motor
@@ -1489,6 +1501,15 @@ public:
     static std::vector<float> blue;
 
 //~autogen
+#elif defined(EV3DEV_PLATFORM_BRICKPI3)
+
+    static led amber_led1;
+
+    static std::vector<led*> led1;
+
+    static std::vector<float> black;
+    static std::vector<float> blue;
+
 #elif defined(EV3DEV_PLATFORM_PISTORMS)
 //~autogen leds-declare platforms.pistorms.led>currentClass
 
@@ -1775,8 +1796,6 @@ public:
   // Returns the name of the driver that loaded this device. You can find the
   // complete list of drivers in the [list of port drivers].
   std::string driver_name() const { return get_attr_string("driver_name"); }
-
-  std::string get_file_string(std::string str) const { return get_attr_string(str); }
 
   // Modes: read-only
   // Returns a list of the available modes of the port.

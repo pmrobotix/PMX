@@ -23,16 +23,21 @@ LcdShieldDriver::LcdShieldDriver()
 
     //sudo systemctl stop brickman
     //sudo systemctl start brickman
+
+    //fprintf(stderr, "is_FBConsole=%d\n", is_FBConsole);
+
     lcd l;
     logger().debug() << "Resolution is " << l.resolution_x() << " x " << l.resolution_y() << ", " << l.bits_per_pixel()
             << " bit(s) per pixel" << "Frame buffer size is " << l.frame_buffer_size() << " byte, " << "line length is "
             << l.line_length() << " byte" << logs::end;
 
-   /* l.fill(0xFF);
+    l.fill(0xFF);
     sleep(1);
     l.fill(0x00);
     sleep(1);
-*/
+    //l.fill(0xFF);
+    //sleep(1);
+
 
 
     prog_init();
@@ -42,9 +47,9 @@ LcdShieldDriver::LcdShieldDriver()
     prog_title("CHO");
     prog_display_string("TEST PMX");
     prog_display_integer(10);
+
+    prog_content2("content2");
     sleep(2);
-
-
 
 }
 

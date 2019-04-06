@@ -27,14 +27,15 @@ LegoIRSensor::LegoIRSensor(const char* input)
         string temp = "nop";
 usleep(10000);
         try {
-
-            temp = p.get_file_string(input + string(":lego-ev3-color/modalias"));
+            //temp = p.get_attr_from_set()string(input + string(":lego-ev3-color/modalias"));
+            temp = p.driver_name();
             logger().info() << "exist driver temp ==  " << temp << logs::end;
         } catch (...) {
             logger().error() << "LegoIRSensor  access to " << temp << logs::end;
         }
-        if (temp != "nop")
+        if (temp != "lego-ev3-ir")
             todo = 1;
+
 
         if (todo == 0) {
             logger().info() << "port already set to lego-ev3-ir on " << p.address() << logs::end;
@@ -54,7 +55,7 @@ usleep(10000);
     if (ir_.connected()) {
         logger().info() << ir_.type_name() << " connected (device " << ir_.driver_name() << ", port " << ir_.address()
                 << ", mode " << ir_.mode() << ")" << logs::end;
-        ir_.proximity();
+        //ir_.proximity(true);
     } else {
         logger().error() << input << " ir_ not Connected !!" << logs::end;
     }

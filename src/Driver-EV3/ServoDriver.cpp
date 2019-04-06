@@ -24,23 +24,23 @@ ServoDriver::ServoDriver() :
     logger().debug() << "ServoDriver()" << logs::end;
 
     //CONFIG Specifique si necessaire
-    servo_motors_[0] = servo_motor("in1:i2c88:sv1");
-    servo_motors_[1] = servo_motor("in1:i2c88:sv2");
-    servo_motors_[2] = servo_motor("in1:i2c88:sv3");
-    servo_motors_[3] = servo_motor("in1:i2c88:sv4");
-    servo_motors_[4] = servo_motor("in1:i2c88:sv5");
-    servo_motors_[5] = servo_motor("in1:i2c88:sv6");
-    servo_motors_[6] = servo_motor("in1:i2c88:sv7");
-    servo_motors_[7] = servo_motor("in1:i2c88:sv8");
+    servo_motors_[0] = servo_motor("ev3-ports:in1:i2c88:sv1");
+    servo_motors_[1] = servo_motor("ev3-ports:in1:i2c88:sv2");
+    servo_motors_[2] = servo_motor("ev3-ports:in1:i2c88:sv3");
+    servo_motors_[3] = servo_motor("ev3-ports:in1:i2c88:sv4");
+    servo_motors_[4] = servo_motor("ev3-ports:in1:i2c88:sv5");
+    servo_motors_[5] = servo_motor("ev3-ports:in1:i2c88:sv6");
+    servo_motors_[6] = servo_motor("ev3-ports:in1:i2c88:sv7");
+    servo_motors_[7] = servo_motor("ev3-ports:in1:i2c88:sv8");
 
     if (ping(0)) //test sur le servo 0 pour savoir si la carte est branchée
         connected_ = 1;
     else
         logger().error() << "SERVO NOT CONNECTED! ServoDriver()" << logs::end;
 
-    for (int i = 0; i < 8; i++) {
-        servo_motors_[i].float_();
-    }
+//    for (int i = 0; i < 8; i++) {
+//        servo_motors_[i].float_();
+//    }
 
 }
 
@@ -49,7 +49,8 @@ bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
     if ((value >= valeurMin) && (value <= valeurMax))
         return true;
     else {
-        logger().error() << "SERVO ID NOT EXISTS!! testIf()" << logs::end;
+        logger().error() << "SERVO ID NOT EXISTS!! testIf() " << "value=" << value << " min=" << valeurMin << " max="
+                << valeurMax << logs::end;
         return false;
     }
 }
@@ -57,7 +58,7 @@ bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
 void ServoDriver::hold(int servo) // 0 à 7
 {
     if (!connected_) {
-        logger().error() << "SERVO NOT CONNECTED! hold()" << logs::end;
+        logger().error() << "SERVO NOT CONNECTED! hold() servo=" << servo << logs::end;
         return;
     }
     if (!testIf(servo, 0, 7))
@@ -68,7 +69,7 @@ void ServoDriver::hold(int servo) // 0 à 7
 void ServoDriver::setPosition(int servo, int percent)
 {
     if (!connected_) {
-        logger().error() << "SERVO NOT CONNECTED! setPosition()" << logs::end;
+        logger().error() << "SERVO NOT CONNECTED! setPosition() servo=" << servo << logs::end;
         return;
     }
 
@@ -76,28 +77,29 @@ void ServoDriver::setPosition(int servo, int percent)
         return;
 
     constrain(percent, -100, 100);
-    servo_motors_[servo].run();
     servo_motors_[servo].set_position_sp(percent);
-    //usleep(10000);
+    servo_motors_[servo].run();
+
+    usleep(10000);
 
 }
 
 void ServoDriver::release(int servo)
 {
     if (!connected_) {
-        logger().error() << "SERVO NOT CONNECTED! release()" << logs::end;
+        logger().error() << "SERVO NOT CONNECTED! release() servo=" << servo << logs::end;
         return;
     }
     if (!testIf(servo, 0, 7))
         return;
     servo_motors_[servo].float_();
-    //usleep(10000);
+    usleep(10000);
 }
 
 void ServoDriver::setRate(int servo, int millisec0To90)
 {
     if (!connected_) {
-        logger().error() << "SERVO NOT CONNECTED! NO setRate !" << logs::end;
+        logger().error() << "SERVO NOT CONNECTED! NO setRate ! servo=" << servo << logs::end;
         return;
     }
     if (!testIf(servo, 0, 7))
@@ -109,13 +111,13 @@ void ServoDriver::setRate(int servo, int millisec0To90)
     // to 180 degrees. Note: Some servo controllers may not support this in which
     // case reading and writing will fail with `-EOPNOTSUPP`.
     servo_motors_[servo].set_rate_sp(millisec0To90);
-    //usleep(10000);
+    usleep(10000);
 }
 
 void ServoDriver::turn(int servo, int speed)
 {
     if (!connected_) {
-        logger().error() << "SERVO NOT CONNECTED! turn()" << logs::end;
+        logger().error() << "SERVO NOT CONNECTED! turn() servo=" << servo << logs::end;
         return;
     }
 }
@@ -130,7 +132,7 @@ int ServoDriver::getMoving(int servo)
 int ServoDriver::getPos(int servo)
 {
     if (!connected_) {
-        logger().error() << "SERVO NOT CONNECTED! getPos()" << logs::end;
+        logger().error() << "SERVO NOT CONNECTED! getPos() servo=" << servo << logs::end;
         return -999;
     }
     if (!testIf(servo, 0, 7))

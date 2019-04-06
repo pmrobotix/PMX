@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <string>
 
+#include "../Log/Logger.hpp"
 #include "ev3dev.h"
 
 using namespace std;
@@ -16,12 +17,14 @@ ALedDriver * ALedDriver::create(std::string, int nb)
 LedDriver::LedDriver(int nb)
 {
     nb_ = nb; //Force number of leds.
-
     float volts = power_supply::battery.measured_volts();
-    logger().error() << "===> BAT = " << volts << logs::end;
+    float amps = power_supply::battery.measured_amps();
+
+    logger().error() << "===> BAT = " << "voltage is " << volts << logs::end;
+    logger().error() << "===> AMP = " << "Current is " << amps << logs::end;
+
     if (volts <= 7.6 && volts >= 7.4) {
         setBytes(0xFF, LED_ORANGE);
-
     }
     if (volts < 7.4) {
         setBytes(0xFF, LED_RED);
@@ -38,12 +41,12 @@ LedDriver::~LedDriver()
 
 void LedDriver::setBit(int index, LedColor color)
 {
+
     if (index == 0) //Right
             {
         switch (color) {
-        case LED_OFF: //Off
-            ev3dev::led::green_right.off();
-            ev3dev::led::red_right.off();
+        case LED_BLACK: //Off
+            led::set_color(led::right, led::black);
             break;
         case LED_GREEN: //green
             led::set_color(led::right, led::green);
@@ -60,6 +63,7 @@ void LedDriver::setBit(int index, LedColor color)
         case LED_YELLOW: //yellow
             led::set_color(led::right, led::yellow);
             break;
+        case LED_OFF: //Off
         default:
             ev3dev::led::green_right.off();
             ev3dev::led::red_right.off();
@@ -70,9 +74,8 @@ void LedDriver::setBit(int index, LedColor color)
     if (index == 1) //Left
             {
         switch (color) {
-        case LED_OFF: //Off
-            ev3dev::led::green_left.off();
-            ev3dev::led::red_left.off();
+        case LED_BLACK: //Off
+            led::set_color(led::left, led::black);
             break;
         case LED_GREEN: //green
             led::set_color(led::left, led::green);
@@ -89,6 +92,7 @@ void LedDriver::setBit(int index, LedColor color)
         case LED_YELLOW: //yellow
             led::set_color(led::left, led::yellow);
             break;
+        case LED_OFF: //Off
         default:
             ev3dev::led::green_left.off();
             ev3dev::led::red_left.off();

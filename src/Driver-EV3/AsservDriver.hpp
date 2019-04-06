@@ -6,7 +6,7 @@
 #include "ev3dev.h"
 #include "LegoAngleSensor.hpp"
 
-#define MAXVALUE_speed_sp 	860 //power
+#define MAXVALUE_speed_sp 	1049 //power
 #define MAXVALUE_duty_cycle_sp 100 //percentage
 
 using namespace std;
@@ -25,20 +25,11 @@ private:
         return instance;
     }
 
-
-
     large_motor _motor_right_ ;//= { OUTPUT_D };
     large_motor _motor_left_ ;//= { OUTPUT_C };
 
     LegoAngleSensor angleR_;
-
-    //sensor angle(INPUT_AUTO, { "ht-nxt-angle" });
-    //sensor angle ;
-
-    //large_motor _motor_porte_droite_= { OUTPUT_B };
-    //large_motor _motor_porte_gauche_= { OUTPUT_A };
-
-    //motor arrMotors[4] = { { OUTPUT_A }, { OUTPUT_B }, { OUTPUT_C }, { OUTPUT_D } };
+    LegoAngleSensor angleL_;
 
 protected:
 

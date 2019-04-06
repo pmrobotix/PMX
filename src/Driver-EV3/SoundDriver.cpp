@@ -2,8 +2,9 @@
 
 #include "SoundDriver.hpp"
 
-#include "ev3dev.h"
 #include <vector>
+
+#include "ev3dev.h"
 using namespace std;
 
 ASoundDriver * ASoundDriver::create()

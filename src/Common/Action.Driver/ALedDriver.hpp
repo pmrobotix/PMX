@@ -12,7 +12,7 @@ enum LedColor
 	/*!
 	 * \brief color LED OFF.
 	 */
-	LED_OFF,
+	LED_BLACK,
 	/*!
 	 * \brief led color green.
 	 */
@@ -39,7 +39,7 @@ enum LedColor
 	/*!
 	 * \brief end/eon (end of num) of colors.
 	 */
-	LED_END
+	LED_OFF
 
 };
 

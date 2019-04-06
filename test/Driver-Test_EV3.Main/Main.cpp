@@ -16,13 +16,13 @@ int main()
 	cout << "!!!Hello TEST World!!!" << endl; // prints !!!Hello World!!!
 
 	UnitTestSuite suite;
-
+	//suite.addTest(new test::LedDriverTest());
 	//suite.addTest(new test::LcdDriverTest());
 	//suite.addTest(new test::SensorDriverTest());
-	//suite.addTest(new test::AsservDriverTest());
-	//suite.addTest(new test::LedDriverTest());
+	suite.addTest(new test::AsservDriverTest());
+
 	//suite.addTest(new test::SoundDriverTest());
-	suite.addTest(new test::ServoDriverTest());
+	//suite.addTest(new test::ServoDriverTest());
 	suite.run();
 
 
