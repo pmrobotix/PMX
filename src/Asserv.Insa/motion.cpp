@@ -314,7 +314,7 @@ void AsservInsa::execute()
         x_mm = p.x * 1000.0;
         y_mm = p.y * 1000.0;
         angle_rad = p.theta;
-        robot_->svgw().writePosition(x_mm, y_mm, angle_rad, "bot-pos");
+        robot_->svgw().writePosition_BotPos(x_mm, y_mm, angle_rad);
         /*
          float dx = goal_pos_x_m - (p.x);
          float dy = goal_pos_y_m - (p.y);

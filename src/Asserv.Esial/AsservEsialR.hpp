@@ -71,6 +71,7 @@ private:
         return instance;
     }
 
+
     /*!
      * \brief Retourne le \ref Logger file associé à la classe \ref AsservEsialR.
      */

@@ -13,7 +13,7 @@ AAsservDriver * AAsservDriver::create(std::string botid)
     return instance;
 }
 
-AsservDriver::AsservDriver(std::string botid)
+AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
 {
     botid_ = botid;
 
@@ -94,7 +94,7 @@ AsservDriver::~AsservDriver()
 void AsservDriver::execute()
 {
     int periodTime_us = 10000;
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("AsservDriver::execute().SIMU");
     chrono.setTimer(periodTime_us);
     RobotPosition p;
     while (1) {

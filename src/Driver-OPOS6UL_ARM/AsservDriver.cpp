@@ -93,7 +93,7 @@ AsservDriver::~AsservDriver()
 void AsservDriver::execute()
 {
     int periodTime_us = 100000; //10ms minimum sans le debug MBED activé
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("AsservDriver::execute()");
     chrono.setTimer(periodTime_us);
 
     while (1) {

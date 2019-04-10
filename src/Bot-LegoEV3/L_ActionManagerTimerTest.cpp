@@ -38,7 +38,7 @@ void L_ActionManagerTimerTest::run(int argc, char** argv)
 }
 
 TestAction::TestAction(L_ActionManagerTimerTest & amt) :
-        amt_(amt)
+        amt_(amt), chrono_("TestAction")
 {
     chrono_.start();
     i_ = 0;
@@ -56,7 +56,7 @@ bool TestAction::execute()
 }
 
 TestTimer::TestTimer(L_ActionManagerTimerTest & amt, int timeSpan_ms, std::string name) :
-        amt_(amt)
+        amt_(amt), chrono_("TestTimer")
 {
     name_ = name;
     lasttime_ = 0;

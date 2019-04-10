@@ -4,7 +4,7 @@
 
 using namespace std;
 
-MotorControl::MotorControl(std::string botid)//Asserv & asserv) : AAsservElement(asserv)
+MotorControl::MotorControl(std::string botid)
 {
 	asservdriver = AAsservDriver::create(botid);
 }

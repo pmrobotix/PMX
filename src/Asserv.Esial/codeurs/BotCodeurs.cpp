@@ -1,3 +1,5 @@
+#include "../../Common/Utils/Chronometer.hpp"
+#include "../../Log/Logger.hpp"
 
 #if CONFIG_MOTORCTRL_BOTMOTORS
 
@@ -29,11 +31,22 @@ void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
      * overflow si l'un des codeurs génère plus de 2^31 ticks par
      * refresh, càd si le robot dépasse le mur du son...
      */
+
+//    utils::Chronometer chrono;
+//    chrono.start();
+
+//    long long t0 = chrono.getElapsedTimeInMicroSec();
     int32_t tempD = robot_->asserv_default->base()->extEncoders().getRightEncoder();
+
+//    long long t1 = chrono.getElapsedTimeInMicroSec();
+
+    int32_t tempG = robot_->asserv_default->base()->extEncoders().getLeftEncoder();
+
+//    long long t2 = chrono.getElapsedTimeInMicroSec();
+
     *countD = tempD - lastCountD;
     lastCountD = tempD;
 
-    int32_t tempG = robot_->asserv_default->base()->extEncoders().getLeftEncoder();
     *countG = tempG - lastCountG;
     lastCountG = tempG;
 
@@ -51,6 +64,10 @@ void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
     if (Config::inverseCodeurG) { //Changement de sens de rotation du codeur gauche
         *countG = -(*countG);
     }
+
+//    long long t3 = chrono.getElapsedTimeInMicroSec();
+
+    //robot_->logger().info() << "t1=" << t1-t0 << " t2-t1=" << t2 - t1 << " t3-t2=" << t3 - t2 << logs::end;
 
 }
 

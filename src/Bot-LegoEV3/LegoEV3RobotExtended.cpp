@@ -47,7 +47,7 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
     Robot::begin(argc, argv);
     logger().debug() << "LegoEV3RobotExtended::begin" << logs::end;
 
-    //specific match case and strategies
+    //specific match case ands strategies
     if (cArgs_["type"] == "m" or cArgs_["type"] == "M") {
 
         this->isEmpty(true);

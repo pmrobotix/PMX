@@ -4,11 +4,11 @@
 #include <string>
 
 #include "../../Log/LoggerFactory.hpp"
-//#include "AAsservElement.hpp"
+
 
 class AAsservDriver;
 
-class EncoderControl//: public AAsservElement
+class EncoderControl
 {
 private:
 

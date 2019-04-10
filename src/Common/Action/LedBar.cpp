@@ -22,7 +22,7 @@ LedBar::~LedBar()
 }
 
 LedBarAction::LedBarAction(LedBar & ledBar, LedBarActionName action) :
-        ledBar_(ledBar), action_(action), lastTime_(0), i_(1), j_(1), k_(0), inc_(true)
+        ledBar_(ledBar), action_(action),chrono_("LedBarAction"), lastTime_(0), i_(1), j_(1), k_(0), inc_(true)
 {
     chrono_.start();
 }
@@ -35,7 +35,7 @@ void LedBar::set(int pos, LedColor color)
 void LedBar::rainbow(uint nb, uint timeus)
 {
     for (uint i = 0; i < nb; i++) {
-        for (int c = LED_OFF; c < LED_END; c++) {
+        for (int c = LED_BLACK; c < LED_OFF; c++) {
             for (int k = 0; k <= nbLed_ - 1; k++) {
                 set(k, (LedColor) c);
                 set(k, (LedColor) c);

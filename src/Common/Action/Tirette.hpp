@@ -6,41 +6,40 @@
 
 #include "../Action.Driver/ASwitchDriver.hpp"
 
-
 class Tirette: public AActionsElement
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref Tirette.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Tirette");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref Tirette.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("Tirette");
+        return instance;
+    }
 
 public:
-	ASwitchDriver* switchdriver;
+    ASwitchDriver* switchdriver;
 
-	/*!
-	 * \brief Constructor.
-	 *
-	 */
-	Tirette(Actions & actions);
+    /*!
+     * \brief Constructor.
+     *
+     */
+    Tirette(Actions & actions);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~Tirette();
+    /*!
+     * \brief Destructor.
+     */
+    ~Tirette();
 
-	int pressed();
+    int pressed();
 
-	void monitor(int nb);
+    void monitor(int nb);
 
-	bool waitPressed();
+    bool waitPressed();
 
-	bool waitUnpressed();
+    bool waitUnpressed();
 
 };
 

@@ -181,7 +181,7 @@ std::ifstream &ifstream_open(const std::string &path)
         file.open(path);
     } else {
         // Clear the flags bits in case something happened (like reaching EOF).
-        file.clear();
+        file.clear(); //Chaff semble etre fait dans le seekg
         file.seekg(0, std::ios::beg);
     }
     return file;
@@ -265,6 +265,7 @@ int device::device_index() const
 
 //-----------------------------------------------------------------------------
 
+
 int device::get_attr_int(const std::string &name) const
 {
     using namespace std;
@@ -272,7 +273,10 @@ int device::get_attr_int(const std::string &name) const
     if (_path.empty())
         throw system_error(make_error_code(errc::function_not_supported),
                 "no device connected ; [get_attr_int] path=" + _path + " " + name);
-
+//    if(1==1){
+//        printf("device::get_attr_int %s \n",name.c_str());
+//        return 99;
+//    }
     for (int attempt = 0; attempt < 2; ++attempt) {
         ifstream &is = ifstream_open(_path + name);
         if (is.is_open()) {
@@ -318,7 +322,8 @@ void device::set_attr_int(const std::string &name, int value)
                 os.close();
                 os.clear();
             } else {
-                throw system_error(std::error_code(errno, std::system_category()));
+                throw system_error(std::error_code(errno, std::system_category()),
+                        " [set_attr_int] value=" + std::to_string(value) + " path=" + _path + name);
             }
         } else {
             throw system_error(make_error_code(errc::no_such_device), _path + name);

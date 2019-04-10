@@ -151,11 +151,11 @@ void AsservDriver::setMotorLeftPower(int value, int timems)
     if (_motor_left_.connected()) {
         if (timems > 0) {
             limit(value, MAXVALUE_speed_sp);
-            logger().debug() << "LEFT  value = " << value << logs::end;
+            //logger().debug() << "LEFT  value = " << value << logs::end;
             _motor_left_.set_speed_sp(value).set_time_sp(timems).run_timed();
         } else {
             limit(value, MAXVALUE_duty_cycle_sp);
-            logger().debug() << "LEFT  percent = " << value << logs::end;
+            //logger().debug() << "LEFT  percent = " << value << logs::end;
             _motor_left_.set_duty_cycle_sp(value).run_direct();
         }
     }
@@ -166,11 +166,11 @@ void AsservDriver::setMotorRightPower(int value, int timems)
     if (_motor_right_.connected()) {
         if (timems > 0) {
             limit(value, MAXVALUE_speed_sp);
-            logger().debug() << "RIGHT value = " << value << logs::end;
+            //logger().debug() << "RIGHT value = " << value << logs::end;
             _motor_right_.set_speed_sp(value).set_time_sp(timems).run_timed();
         } else {
             limit(value, MAXVALUE_duty_cycle_sp);
-            logger().debug() << "RIGHT percent = " << value << logs::end;
+            //logger().debug() << "RIGHT percent = " << value << logs::end;
             _motor_right_.set_duty_cycle_sp(value).run_direct();
         }
     }

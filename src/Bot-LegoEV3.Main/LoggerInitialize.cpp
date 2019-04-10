@@ -22,11 +22,15 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Robot", "console");
     add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
     add(logs::Level::INFO, "LegoEV3AsservExtended", "console");
+    add(logs::Level::INFO, "LegoEV3ActionsExtended", "console");
+
 
     //COMMON
     add(logs::Level::INFO, "Tirette", "console");
     add(logs::Level::INFO, "Wait90SecAction", "console");
-    add(logs::Level::DEBUG, "SensorsTimer", "console");
+    add(logs::Level::INFO, "SensorsTimer", "console");
+    add(logs::Level::INFO, "Chronometer", "console");
+
 
     //STATE
     add(logs::Level::INFO, "L_State_Init", "console");
@@ -58,14 +62,13 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_Asserv_FindPIDTest", "console");
     add(logs::Level::INFO, "L_Asserv_SetResolutionTest", "console");
     add(logs::Level::INFO, "L_Asserv_SquareTest", "console");
-    add(logs::Level::INFO, "L_AsservInsaTest", "console");
-    add(logs::Level::INFO, "L_AsservEsialRTest", "console");
+    add(logs::Level::INFO, "L_AsservEsialTest", "console");
     add(logs::Level::INFO, "L_AsservRunTest", "console");
     add(logs::Level::INFO, "L_IATest", "console");
     add(logs::Level::INFO, "L_ServoObjectTest", "console");
 
     //DRIVERS SIMU
-    add(logs::Level::INFO, "LedDriver.SIMU", "console");
+    add(logs::Level::DEBUG, "LedDriver.SIMU", "console");
     add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
     add(logs::Level::INFO, "SoundDriver.SIMU", "console");
     add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
@@ -81,13 +84,15 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "AsservDriver.EV3", "console");
     add(logs::Level::INFO, "ServoDriver.EV3", "console");
     add(logs::Level::INFO, "SensorsDriver.EV3", "console");
+    add(logs::Level::INFO, "LegoIRSensor.EV3", "console");
+
 
     //DEBUG
     add(logs::Level::INFO, "ActionManagerTimer", "console");
     add(logs::Level::INFO, "MovingBase", "console");
 
     add(logs::Level::INFO, "Asserv", "console");
-    add(logs::Level::INFO, "AsservInsa", "console");
+    //add(logs::Level::INFO, "AsservInsa", "console");
     add(logs::Level::DEBUG, "AsservEsialR", "console");
 
 

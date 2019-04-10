@@ -8,13 +8,13 @@
 #include <unistd.h>
 
 ActionManagerTimer::ActionManagerTimer() :
-        stop_(false), pause_(false)
+        stop_(false), pause_(false), chronoTimer_("ActionManagerTimer")
 {
 }
 
 void ActionManagerTimer::execute()
 {
-    logger().info() << "ActionManagerTimer is started stop_=" << stop_ << logs::end;
+    logger().debug() << "ActionManagerTimer is started stop_=" << stop_ << logs::end;
 
     int sizeT = 0;
     int sizeA = 0;

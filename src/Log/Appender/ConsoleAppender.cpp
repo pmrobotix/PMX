@@ -10,34 +10,32 @@
 
 void logs::ConsoleAppender::flush()
 {
-	lockMessages();
-	for (std::list<std::string>::iterator it = messages_.begin(); it != messages_.end(); it++)
-	{
-		(*this->out_) << *it << std::endl;
-	}
-	unlockMessages();
+    lockMessages();
+    for (std::list<std::string>::iterator it = messages_.begin(); it != messages_.end(); it++) {
+        (*this->out_) << *it << std::endl;
+    }
+    unlockMessages();
 }
 
 void logs::ConsoleAppender::execute()
 {
-	while (true) //TODO add a stop of the console appender
-	{
-		this->printData();
-		usleep(100000);
-	}
+    while (true) //TODO add a stop of the console appender
+    {
+        this->printData();
+        usleep(300000);
+    }
 }
 
 void logs::ConsoleAppender::printData()
 {
-	lockMessages();
+    lockMessages();
 
-	while (this->messages_.size() > 0)
-	{
-		std::string message = this->messages_.front();
-		(*this->out_) << message << std::endl;
-		this->messages_.pop_front();
-	}
-	unlockMessages();
+    while (this->messages_.size() > 0) {
+        std::string message = this->messages_.front();
+        (*this->out_) << message << std::endl;
+        this->messages_.pop_front();
+    }
+    unlockMessages();
 }
 
 /*!
@@ -50,19 +48,15 @@ void logs::ConsoleAppender::printData()
  *        Message à tracer.
  */
 void logs::ConsoleAppender::writeMessage(const logs::Logger & logger, const logs::Level & level,
-		const std::string & message)
+        const std::string & message)
 {
-	lockMessages();
-	if (this->state() == utils::CREATED)
-	{
-		//static_cast<utils::Thread *>(this)->lock();
-		//printf(" Thread ConsoleAppender start \n");
-		std::ostringstream msg;
-		msg << "ConsoleAppender created by " << logger.name() << " " << level.name();
-		this->start(msg.str());
-		//static_cast<utils::Thread *>(this)->unlock();
-	}
-	unlockMessages();
-	logs::MemoryAppender::writeMessage(logger, level, message);
+    lockMessages();
+    if (this->state() == utils::CREATED) {
+        std::ostringstream msg;
+        msg << "ConsoleAppender created by " << logger.name() << " " << level.name();
+        this->start(msg.str());
+    }
+    unlockMessages();
+    logs::MemoryAppender::writeMessage(logger, level, message);
 
 }

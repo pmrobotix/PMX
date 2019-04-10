@@ -53,13 +53,13 @@ void L_MovingBaseTest::run(int argc, char** argv)
         logger().info() << "Arg d set " << args["d"] << ", d = " << d << " ticks" << logs::end;
     }
 
-    robot.asserv().startMotionTimerAndOdo(true); //just to give odometry
+    //robot.asserv().startMotionTimerAndOdo(true); //just to give odometry
 
     robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
     robot.svgPrintPosition();
 
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("L_MovingBaseTest");
 
     long left = 0;
     long right = 0;

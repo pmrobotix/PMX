@@ -19,7 +19,7 @@ void L_SensorsTest::run(int argc, char** argv)
 
     bool front;
     bool rear;
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("L_SensorsTest");
     chrono.start();
     while (chrono.getElapsedTimeInSec() < 100) {
         front = robot.actions().sensors().front();

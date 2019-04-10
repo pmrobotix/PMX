@@ -22,8 +22,8 @@ private:
     }
 
     LegoIRSensor IR_1;
-//    LegoIRSensor IR_2;
-//    LegoIRSensor IR_3;
+    LegoIRSensor IR_2;
+    LegoIRSensor IR_3;
 //    LegoIRSensor IR_4;
 
 

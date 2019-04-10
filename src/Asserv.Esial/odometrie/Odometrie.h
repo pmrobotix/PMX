@@ -23,7 +23,7 @@ public:
     // Paramétrage de la position du robot
     void setX(int64_t xval); // En UO
     void setY(int64_t yval); // En UO
-    void setTheta(double thetaVal); // En radians
+    void setTheta(float thetaVal); // En radians
 
     // Mise à jour de la position du robot
     void refresh();
@@ -41,7 +41,7 @@ public:
     {
         return y;   // Renvoie la position en Y en UO par rapport au point de départ
     }
-    double getTheta()
+    float getTheta()
     {
         return theta;   // Renvoie l'angle en radians par rapport au cap de départ
     }
@@ -56,7 +56,7 @@ public:
     }
 
     // Variation de la position depuis la derniàre mise à jour
-    double getDeltaTheta()
+    float getDeltaTheta()
     {
         return deltaTheta;    // Variation du cap du robot
     }
@@ -70,7 +70,7 @@ public:
     }
 
     // Getteurs config
-    double getFrontParMetre()
+    float getFrontParMetre()
     {
         return frontParMetre;
     }
@@ -82,18 +82,18 @@ public:
 private:
 
     // Données sur les codeurs
-    double frontParMetre; // Nombre de tics codeurs pour un mètre parcouru
+    float frontParMetre; // Nombre de tics codeurs pour un mètre parcouru
     int64_t distanceRouesUO; // Distance entre les roues en UO
-    double ratioCodeurs; // Ratio frontParMetreCodeurMax / frontParMetreCodeurMin pour compenser la différence physique entre codeur
+    float ratioCodeurs; // Ratio frontParMetreCodeurMax / frontParMetreCodeurMin pour compenser la différence physique entre codeur
     bool applyRatioOnG; // Si vrai, le ratio s'applique au codeur Gauche, sinon le Droit
 
     // Position actuelle
     int64_t x, y; //En UO
-    double theta; //En radian
+    float theta; //En radian
 
     // Variation pour la mise a jour en cours
     int64_t deltaDist; // En UO
-    double deltaTheta; //En radian
+    float deltaTheta; //En radian
     int64_t compteurG; // Nombre de tics codeur G depuis dernier refresh * UO par front
     int64_t compteurD; // Nombre de tics codeur D depuis dernier refresh * UO par front
 

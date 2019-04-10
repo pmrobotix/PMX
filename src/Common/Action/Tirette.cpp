@@ -7,11 +7,11 @@
 
 using namespace std;
 
-Tirette::Tirette(Actions & actions)
-		: AActionsElement(actions)
+Tirette::Tirette(Actions & actions) :
+        AActionsElement(actions)
 
 {
-	switchdriver = ASwitchDriver::create("tirette");
+    switchdriver = ASwitchDriver::create("tirette");
 }
 
 Tirette::~Tirette()
@@ -20,48 +20,43 @@ Tirette::~Tirette()
 
 int Tirette::pressed()
 {
-	int temp = switchdriver->tirettePressed();
-	logger().debug() << "pressed = " << temp << logs::end;
+    int temp = switchdriver->tirettePressed();
+    logger().debug() << "pressed = " << temp << logs::end;
 
-	return temp;
+    return temp;
 }
 
 //pressed then released
 void Tirette::monitor(int nb)
 {
-	logger().info() << "monitor" << logs::end;
-	int n = 0;
-	while (n <= nb)
-	{
-		while (!pressed())
-		{
-			usleep(10000);
-		}
-		logger().info() << "pressed" << logs::end;
+    logger().info() << "monitor" << logs::end;
+    int n = 0;
+    while (n <= nb) {
+        while (!pressed()) {
+            usleep(10000);
+        }
+        logger().info() << "pressed" << logs::end;
 
-		while (pressed())
-		{
-			usleep(10000);
-		}
-		logger().info() << "unpressed" << logs::end;
-		n++;
-	}
+        while (pressed()) {
+            usleep(10000);
+        }
+        logger().info() << "unpressed" << logs::end;
+        n++;
+    }
 }
 
 bool Tirette::waitPressed()
 {
-	while (!pressed())
-	{
-		usleep(10000);
-	}
-	return true;
+    while (!pressed()) {
+        usleep(10000);
+    }
+    return true;
 }
 
 bool Tirette::waitUnpressed()
 {
-	while (pressed())
-	{
-		usleep(10000);
-	}
-	return true;
+    while (pressed()) {
+        usleep(10000);
+    }
+    return true;
 }

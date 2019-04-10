@@ -15,37 +15,32 @@ IPHOME="192.168.0.215" #WIFI HOME CHO INDEED
 
 all()
 {
-	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/
+	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/pmx
 }
 
 main()
 {
-	ssh robot@$IP "killall Bot_LegoMindstorm_EV3"
-	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" robot@$IP:/home/robot/	
-}
 
-installwifi()
-{
-	scp "../src/Driver-EV3/rtl8812au-modules-4.4.87-22-ev3dev-ev3_1+1_armel.deb" robot@$IP:/home/robot/	
- 	#sudo dpkg -i rtl8812au-modules-4.4.87-22-ev3dev-ev3_1+1_armel.deb #ev3dev jessie
+	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
+	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
 }
 
 driver()
 {
 	
-	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/	
+	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx	
 	
 }
 
 tests()
 {
-	scp "../../ev3dev-lang-cpp/build/tests/api_tests" "../../ev3dev-lang-cpp/build/demos/button-test"  "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-demo" "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-test" "../../ev3dev-lang-cpp/build/demos/sound-test" robot@$IP:/home/robot/	
+	scp "../../ev3dev-lang-cpp/build/tests/api_tests" "../../ev3dev-lang-cpp/build/demos/button-test"  "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-demo" "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-test" "../../ev3dev-lang-cpp/build/demos/sound-test" robot@$IP:/home/robot/pmx	
 	
 }
 
 recup()
 {
-        scp "robot@$IP:/home/robot/*.csv /home/robot/*.svg" /home/pmx/recup/.
+        scp "robot@$IP:/home/robot/pmx/*.csv /home/robot/pmx/*.svg" /home/pmx/recup
 }
 
 connect()
@@ -85,12 +80,9 @@ case "$2" in
 		recup;;
 	tests)
 		tests;;
-		
-	installwifi)
-		installwifi;;
 
 	*)
-		echo "Usage: $0 {usb|wifi|home} {connect|all|main|driver|tests|installwifi}" >&2
+		echo "Usage: $0 {usb|wifi|home} {connect|all|main|driver|tests}" >&2
 		exit 1
 	;;
 esac

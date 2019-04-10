@@ -34,7 +34,7 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
     logger().info() << "Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("L_AsservLineRotateTest");
     long left;
     long right;
 
@@ -60,8 +60,8 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
     robot.asserv().startMotionTimerAndOdo(true);
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
-    left = robot.asserv().base()->encoders().getLeftEncoder();
-    right = robot.asserv().base()->encoders().getRightEncoder();
+    left = robot.asserv().base()->extEncoders().getLeftEncoder();
+    right = robot.asserv().base()->extEncoders().getRightEncoder();
     logger().info() << "time= "
          << chrono.getElapsedTimeInMilliSec()
          << "ms ; left= "

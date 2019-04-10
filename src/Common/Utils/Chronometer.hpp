@@ -7,6 +7,7 @@
 #define	COMMON_CHRONOMETER_HPP_
 
 #include <sys/time.h>
+#include <string>
 
 #include "../../Log/LoggerFactory.hpp"
 
@@ -46,7 +47,9 @@ private:
      */
     int stopped_;
 
-    unsigned int timerPeriod_us_;
+    int timerPeriod_us_;
+
+    std::string name_;
 
     /*!
      * \brief Variable de comptage de début.
@@ -71,13 +74,15 @@ private:
     unsigned int endSetTime_us;
     unsigned long long timerStartTime_us_;
 
+    unsigned long long lastTime_;
+
 public:
 
     /*!
      * \brief Constructeur de la classe.
      * Le chronomètre créé n'est pas lancé par le constructeur.
      */
-    Chronometer();
+    Chronometer(std::string name);
 
     /*!
      * \brief Destructeur de la classe.
@@ -115,7 +120,8 @@ public:
      */
     //int checkTimer(unsigned int usec);
 
-    int waitTimer();
+    int waitTimer(bool debug = false);
+    int waitTimer_OLD();
 
     /*!
      * \brief Un alias pour la méthode getElapsedTimeInSec().

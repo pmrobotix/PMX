@@ -8,8 +8,9 @@
 #include <unistd.h>
 #include <cstdio>
 
-utils::Chronometer::Chronometer() :
-        stopped_(1), timerPeriod_us_(0), periodNb_(0), endSetTime_us(0), timerStartTime_us_(0)
+utils::Chronometer::Chronometer(std::string name) :
+        stopped_(1), timerPeriod_us_(0), name_(name), periodNb_(0), endSetTime_us(0), timerStartTime_us_(0), lastTime_(
+                0)
 {
     startCount_.tv_sec = 0;
     startCount_.tv_usec = 0;
@@ -25,6 +26,8 @@ void utils::Chronometer::start()
 {
     stopped_ = 0; // reset stop flag
     gettimeofday(&startCount_, NULL);
+    lastTime_ = getElapsedTimeInMicroSec();
+
 }
 
 void utils::Chronometer::stop()
@@ -65,23 +68,47 @@ timeval utils::Chronometer::getTime()
     return result;
 }
 /*
-int utils::Chronometer::checkTimer(unsigned int usec)
+ int utils::Chronometer::checkTimer(unsigned int usec)
+ {
+ struct timeval ctv;
+ gettimeofday(&ctv, NULL);
+
+ if ((ctv.tv_usec >= endSet_.tv_usec) && (ctv.tv_sec >= endSet_.tv_sec)) {
+ if (usec != 0)
+ setTimer(timerPeriod_us_);
+ else
+ this->stop();
+
+ return 1;
+ } else
+ return 0;
+ }*/
+
+int utils::Chronometer::waitTimer(bool debug)
 {
-    struct timeval ctv;
-    gettimeofday(&ctv, NULL);
+    periodNb_++;
+    unsigned long long endTaskTime = getElapsedTimeInMicroSec();
+    long long workTime = endTaskTime - lastTime_;
 
-    if ((ctv.tv_usec >= endSet_.tv_usec) && (ctv.tv_sec >= endSet_.tv_sec)) {
-        if (usec != 0)
-            setTimer(timerPeriod_us_);
-        else
-            this->stop();
+    //printf("endTaskTime=%lld , lastime=%lld , workTime=%lld, period_us=%lld\n", endTaskTime, lastTime_, workTime, timerPeriod_us_);
+    if (debug)
+        logger().info() << "waitTimer() name=" << name_ << " endTaskTime=" << endTaskTime << " (diff)workTime="
+                << workTime << " " << timerPeriod_us_ << "!!" << logs::end;
 
-        return 1;
-    } else
-        return 0;
-}*/
+    if (workTime < timerPeriod_us_) {
 
-int utils::Chronometer::waitTimer()
+        usleep(timerPeriod_us_ - workTime);
+    } else {
+        logger().error() << "!!! (diff)workTime=" << workTime << " " << timerPeriod_us_ << "!!\n" << logs::end;
+    }
+
+    // fin
+    lastTime_ = getElapsedTimeInMicroSec();
+
+    return periodNb_;
+}
+
+int utils::Chronometer::waitTimer_OLD()
 {
     periodNb_++;
 
@@ -96,8 +123,9 @@ int utils::Chronometer::waitTimer()
         long long diff = (endTaskTime - nextTime) / timerPeriod_us_;
         periodNb_ += diff;
         //printf("\nutils::Chronometer::waitTimer() OVERFLOW periodNb=%lld diff=%lld timerPeriod_us_=%dc!!\n", periodNb_, diff, timerPeriod_us_);
-        logger().error() << "utils::Chronometer::waitTimer() OVERFLOW !!! periodNb="<< periodNb_<<" diff="<<diff<<" timerPeriod_us_="<<timerPeriod_us_<<"!!\n"
-        << logs::end;
+        logger().error() << "utils::Chronometer::waitTimer() OVERFLOW !!! periodNb=" << periodNb_
+                << " (endTaskTime - nextTime)us=" << (endTaskTime - nextTime) << " timerPeriod_us_=" << timerPeriod_us_
+                << "!!\n" << logs::end;
 
     }
 

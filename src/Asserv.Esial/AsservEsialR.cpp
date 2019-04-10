@@ -1,3 +1,8 @@
+/*
+ *
+ * CONFIG_MOTORCTRL_BOTMOTORS need to be initialised in Eclipse param build
+ */
+
 #include "AsservEsialR.hpp"
 
 #include <stddef.h>
@@ -19,7 +24,7 @@
 
 class Robot;
 
-AsservEsialR::AsservEsialR(Robot * robot)
+AsservEsialR::AsservEsialR(Robot * robot): chronoTimer_("AsservEsialR")
 {
     robot_ = robot; //Reference vers le robot
 
@@ -35,16 +40,8 @@ AsservEsialR::AsservEsialR(Robot * robot)
     run_ = false;
 
     //première ligne du fichier csv
-    loggerFile().debug() << "usec"
-            << ", time-last"
-            << ", work time"
-            << ", nb"
-            << ", odo_->getDeltaDist()"
-            << ", motorC_->getVitesseG()"
-            << ", motorC_->getVitesseD()"
-            << ", xmm "
-            << ", ymm "
-            << ", degrees"
+    loggerFile().debug() << "usec" << ", time-last" << ", work time" << ", nb" << ", odo_->getDeltaDist()"
+            << ", motorC_->getVitesseG()" << ", motorC_->getVitesseD()" << ", xmm " << ", ymm " << ", degrees"
 
             << logs::end;
 
@@ -112,17 +109,23 @@ void AsservEsialR::resetAsserv()
 
 void AsservEsialR::execute()
 {
-    logger().info() << "executing..." << logs::end;
-    utils::Chronometer chrono;
-    chrono.setTimer(loopDelayInMillisec_ * 1000);
+    //logs::Logger::LoggerBuffer info = logger().info();
+    //logs::Logger::LoggerBuffer debugfile = loggerFile().debug();
+    logger().info() << "executing... every " << loopDelayInMillisec_ << logs::end;
+
+    chronoTimer_.setTimer(loopDelayInMillisec_ * 1000);
     RobotPosition p;
     unsigned long long current = 0;
     unsigned long long last = 0;
-    long nb=0;
+    long nb = 0;
+
     while (1) {
         if (run_) {
+            //long t = chrono.getElapsedTimeInMicroSec();
             nb++;
-            current = chrono.getElapsedTimeInMicroSec();
+            //printf("AsservEsialR::execute %d\n", nb);
+
+            current = chronoTimer_.getElapsedTimeInMicroSec();
             odo_->refresh();
             p = odo_GetPosition();
 
@@ -132,33 +135,39 @@ void AsservEsialR::execute()
                 commandM_->perform();
             }
 
-            logger().info() << nb << " us=" << (long)(current - last) << " xmm=" << p.x * 1000 << std::setw(10)
-                    << " ymm=" << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="
-                    << p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::end;
-
             //svg log
-            robot_->svgw().writePosition(p.x * 1000, p.y * 1000, p.theta, "bot-pos");
+            if (nb % 20 == 0) {
 
-            //file log for asserv
-            loggerFile().debug() << current
-                    << ", " << (long)(current - last)
-                    << ", " << (long)(current - chrono.getElapsedTimeInMicroSec())
-                    << ", " << nb
-                    << ", " << odo_->getDeltaDist() // distance entre 2
+                logger().info() << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="
+                        << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="
+                        << p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::end;
+                //
+
+                // 18us
+                robot_->svgw().writePosition_BotPos(p.x * 1000, p.y * 1000, p.theta);
+
+            }
+
+//            //file log for asserv
+            loggerFile().debug() << current << ", " << (long) (current - last) << ", "
+                    << (long) (current - chronoTimer_.getElapsedTimeInMicroSec()) << ", " << nb << ", "
+                    << odo_->getDeltaDist() // distance entre 2
                     << ", " << motorC_->getVitesseG() //1 à 127
                     << ", " << motorC_->getVitesseD() //1 à 127
-                    << ", " << p.x * 1000.0
-                    << ", " << p.y * 1000.0
-                    << ", " << p.theta *180.0 / M_PI
+                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
 
                     << logs::end;
 
-
-            //logger().info() << "execute started; getElapsedTimeInMilliSec=" << chrono.getElapsedTimeInMilliSec()
+            //info << "execute started; getElapsedTimeInMilliSec=" << chrono.getElapsedTimeInMilliSec()
             //<< " ms loopDelayInMillisec_=" << loopDelayInMillisec_<< logs::end;
 
             //wait loopDelayInMillisec_
-            chrono.waitTimer();
+
+//            long diff = chrono.getElapsedTimeInMicroSec() - t;
+//            if (diff > 2000)
+//                printf("diff=%ld\n", diff);
+
+            chronoTimer_.waitTimer();
             last = current;
         }
     }

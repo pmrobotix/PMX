@@ -3,35 +3,31 @@
 
 #include <string>
 
-#include "../Common/Asserv/MovingBase.hpp"
+#include "../Log/Logger.hpp"
 #include "../Log/SvgWriter.hpp"
 
 class LegoEV3SvgWriterExtended: public SvgWriter
 {
 private:
+    logs::Logger::LoggerBuffer *fLogBuffer;
 
 public:
 
-	LegoEV3SvgWriterExtended(std::string botId);
+    LegoEV3SvgWriterExtended(std::string botId);
 
-	~LegoEV3SvgWriterExtended()
-	{
-	}
+    ~LegoEV3SvgWriterExtended()
+    {
+    }
 
-	void writePosition(double x, double y, double a_rad, std::string symbol);
+    void writePosition_Bot(float x, float y, float a_rad);
+    void writePosition_BotPos(float x, float y, float a_rad);
 
-	void writeZone(const char* name,
-			float minX,
-			float minY,
-			float width,
-			float height,
-			float startX,
-			float startY,
-			float startAngle_rad);
+    void writeZone(const char* name, float minX, float minY, float width, float height, float startX, float startY,
+            float startAngle_rad);
 
-	void writeIaPath(const char* zone1Name, const char* zone2Name, float x_mm, float y_mm);
+    void writeIaPath(const char* zone1Name, const char* zone2Name, float x_mm, float y_mm);
 
-	void pathPolyline(std::string points);
+    void pathPolyline(std::string points);
 };
 
 #endif

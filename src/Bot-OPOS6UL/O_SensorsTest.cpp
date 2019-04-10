@@ -20,7 +20,7 @@ void O_SensorsTest::run(int argc, char** argv)
     //execution sans le actionTimer
     bool front;
     bool rear;
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("O_SensorsTest");
     chrono.start();
     while (chrono.getElapsedTimeInSec() < 100) {
         front = robot.actions().sensors().front();

@@ -3,7 +3,7 @@
 #include "../Bot-LegoEV3/l_ServoStepTest.hpp"
 #include "../Bot-LegoEV3/L_ActionManagerTimerTest.hpp"
 #include "../Bot-LegoEV3/L_Asserv_SquareTest.hpp"
-#include "../Bot-LegoEV3/L_AsservInsaTest.hpp"
+#include "../Bot-LegoEV3/L_AsservEsialTest.hpp"
 #include "../Bot-LegoEV3/L_AsservLineRotateTest.hpp"
 #include "../Bot-LegoEV3/L_AsservRunTest.hpp"
 #include "../Bot-LegoEV3/L_ButtonBarTest.hpp"
@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new L_MovingBaseTest());
 	robot.getConsoleManager().add(new L_AsservLineRotateTest());
 	robot.getConsoleManager().add(new L_Asserv_SquareTest());
-	robot.getConsoleManager().add(new L_AsservInsaTest());
+	robot.getConsoleManager().add(new L_AsservEsialTest());
 	robot.getConsoleManager().add(new L_AsservRunTest());
 	robot.getConsoleManager().add(new L_IATest());
 	robot.getConsoleManager().add(new L_IAByPathTest());

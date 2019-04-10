@@ -55,7 +55,7 @@ void LedDriver::setBit(int index, LedColor color)
     ost << " (POS=" << index << ")";
     logger().debug() << ost.str() << logs::end;
 
-    logger().debug() << "LED " << std::bitset<8>(hexa) << " (POS=" << index << ")" << logs::end;
+    //logger().debug() << "LED " << std::bitset<8>(hexa) << " (POS=" << index << ")" << logs::end;
 }
 
 void LedDriver::setBytes(uint hex, LedColor color)

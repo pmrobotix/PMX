@@ -14,68 +14,68 @@ class ASoundDriver;
  */
 enum SoundBarActionName
 {
-	/*!
-	 * \brief Libellé de l'action permettant d'effectuer un beep.
-	 */
-	SOUNDBARBEEP
+    /*!
+     * \brief Libellé de l'action permettant d'effectuer un beep.
+     */
+    SOUNDBARBEEP
 };
 
 class SoundBar: public AActionsElement
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SoundBar.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SoundBar");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref SoundBar.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("SoundBar");
+        return instance;
+    }
 
-	/*!
-	 * \brief Permet de stopper l'action et qu'elle se termine à la prochaine itération des actions.
-	 */
-	bool actionStopped_;
+    /*!
+     * \brief Permet de stopper l'action et qu'elle se termine à la prochaine itération des actions.
+     */
+    bool actionStopped_;
 
-	ASoundDriver* sounddriver;
+    ASoundDriver* sounddriver;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	SoundBar(Actions & actions);
+    /*!
+     * \brief Constructor.
+     */
+    SoundBar(Actions & actions);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~SoundBar();
+    /*!
+     * \brief Destructor.
+     */
+    ~SoundBar();
 
-	inline bool stop() const
-	{
-		return actionStopped_;
-	}
+    inline bool stop() const
+    {
+        return actionStopped_;
+    }
 
-	/*!
-	 * \brief The Imperial March (Darth Vader's theme).
-	 */
-	void toneImperialMarchDarthVader();
+    /*!
+     * \brief The Imperial March (Darth Vader's theme).
+     */
+    void toneImperialMarchDarthVader();
 
-	/*!
-	 * \brief Prononce PMX.
-	 */
-	void speakPMX();
+    /*!
+     * \brief Prononce PMX.
+     */
+    void speakPMX();
 
-	/*!
-	 * \brief Prononce un beep.
-	 */
-	void beep();
+    /*!
+     * \brief Prononce un beep.
+     */
+    void beep();
 
-	/*!
-	 * \brief Lance l'action d'effecter un beep.
-	 */
-	void startBeep();
+    /*!
+     * \brief Lance l'action d'effecter un beep.
+     */
+    void startBeep();
 
 };
 
@@ -87,53 +87,53 @@ class SoundBarAction: public IAction
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SoundBarAction.
-	 */
-	static const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SoundBarAction");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref SoundBarAction.
+     */
+    static const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("SoundBarAction");
+        return instance;
+    }
 
-	/*!
-	 * \brief Référence vers la SoundBar associée.
-	 */
-	SoundBar & soundBar_;
+    /*!
+     * \brief Référence vers la SoundBar associée.
+     */
+    SoundBar & soundBar_;
 
-	/*!
-	 * \brief libellé de l'action à exécuter.
-	 */
-	SoundBarActionName action_;
+    /*!
+     * \brief libellé de l'action à exécuter.
+     */
+    SoundBarActionName action_;
 
 public:
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 * \param ledBar
-	 *        Reference vers la SoundBar associée.
-	 */
-	SoundBarAction(SoundBar & soundBar, SoundBarActionName action);
+    /*!
+     * \brief Constructeur de la classe.
+     * \param ledBar
+     *        Reference vers la SoundBar associée.
+     */
+    SoundBarAction(SoundBar & soundBar, SoundBarActionName action);
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual inline ~SoundBarAction()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~SoundBarAction()
+    {
+    }
 
-	/*!
-	 * \brief Execution de l'action.
-	 */
-	virtual bool execute();
+    /*!
+     * \brief Execution de l'action.
+     */
+    virtual bool execute();
 
-	/*!
-	 * \brief Retourne la description de l'action.
-	 */
-	virtual inline std::string info()
-	{
-		return "SoundBarAction";
-	}
+    /*!
+     * \brief Retourne la description de l'action.
+     */
+    virtual inline std::string info()
+    {
+        return "SoundBarAction";
+    }
 };
 
 #endif

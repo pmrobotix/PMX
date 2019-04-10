@@ -12,10 +12,10 @@
 using namespace std;
 
 Sensors::Sensors(Actions & actions, Robot * robot) :
-		AActionsElement(actions), robot_(robot)
+        AActionsElement(actions), robot_(robot)
 
 {
-	sensorsdriver = ASensorsDriver::create(robot->getID());
+    sensorsdriver = ASensorsDriver::create(robot->getID());
 }
 
 Sensors::~Sensors()
@@ -23,29 +23,29 @@ Sensors::~Sensors()
 }
 
 SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name) :
-		sensors_(sensors)
+        sensors_(sensors), chrono_("SensorsTimer")
 {
-	name_ = name;
-	lasttime_ = 0;
-	timeSpan_ms_ = timeSpan_ms;
-	logger().debug() << "timeSpan_ms=" << timeSpan_ms << logs::end;
+    name_ = name;
+    lasttime_ = 0;
+    timeSpan_ms_ = timeSpan_ms;
+    logger().debug() << "timeSpan_ms=" << timeSpan_ms << logs::end;
 }
 
 bool Sensors::front()
 {
-	return sensorsdriver->front();
+    return sensorsdriver->front();
 }
 
 bool Sensors::rear()
 {
-	return sensorsdriver->rear();
+    return sensorsdriver->rear();
 }
 
 void Sensors::startSensors()
 {
-	logger().debug() << "startSensors" << logs::end;
+    logger().debug() << "startSensors" << logs::end;
 
-	this->actions().addTimer(new SensorsTimer(*this, 800, "sensors"));
+    this->actions().addTimer(new SensorsTimer(*this, 800, "sensors"));
 
 }
 
@@ -56,38 +56,35 @@ void Sensors::stopSensors()
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-	logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
-			<< " us" << logs::end;
+    logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us" << logs::end;
 
-	bool front = sensors_.front();
+    bool front = sensors_.front();
 
-	if (front)
-	{
-	    sensors_.robot()->asserv_default->base()->motors().stopMotors();
-		//send collision to asserv
-		sensors_.robot()->asserv_default->setFrontCollision();
-	}
+    if (front) {
+        sensors_.robot()->asserv_default->base()->motors().stopMotors();
+        //send collision to asserv
+        sensors_.robot()->asserv_default->setFrontCollision();
+    }
 
-	bool rear = sensors_.rear();
+    bool rear = sensors_.rear();
 
-	if (rear)
-	{
-		//send collision to asserv
-		sensors_.robot()->asserv_default->setRearCollision();
-	}
+    if (rear) {
+        //send collision to asserv
+        sensors_.robot()->asserv_default->setRearCollision();
+    }
 }
 
 void SensorsTimer::onTimerEnd(utils::Chronometer chrono)
 {
-	logger().debug() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
-			<< " us" << logs::end;
+    logger().debug() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us"
+            << logs::end;
 
 }
 
 std::string SensorsTimer::info()
 {
-	std::ostringstream oss;
-	oss << "SensorsTimer for " << sensors_.robot()->getID();
-	return oss.str();
+    std::ostringstream oss;
+    oss << "SensorsTimer for " << sensors_.robot()->getID();
+    return oss.str();
 }
 

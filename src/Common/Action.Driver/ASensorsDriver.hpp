@@ -3,36 +3,34 @@
 
 #include <string>
 
-
 class ASensorsDriver
 {
 
 public:
-	/*!
-	 * \brief ASensorsDriver instance creation.
-	 */
-	static ASensorsDriver * create(std::string botName);
+    /*!
+     * \brief ASensorsDriver instance creation.
+     */
+    static ASensorsDriver * create(std::string botName);
 
+    virtual bool front() = 0;
 
-	virtual bool front() = 0;
+    virtual bool rear() = 0;
 
-	virtual bool rear() = 0;
-
-	/*!
-	 * \brief Destructor.
-	 */
-	virtual ~ASensorsDriver()
-	{
-	}
+    /*!
+     * \brief Destructor.
+     */
+    virtual ~ASensorsDriver()
+    {
+    }
 
 protected:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	ASensorsDriver()
-	{
-	}
+    /*!
+     * \brief Constructor.
+     */
+    ASensorsDriver()
+    {
+    }
 
 };
 

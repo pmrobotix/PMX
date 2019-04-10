@@ -12,8 +12,7 @@ public:
 
     enum ServoType
     {
-        SERVO_STANDARD,
-        SERVO_DYNAMIXEL
+        SERVO_STANDARD, SERVO_DYNAMIXEL
     };
 
     /*!

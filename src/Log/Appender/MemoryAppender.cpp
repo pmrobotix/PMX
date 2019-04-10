@@ -8,51 +8,55 @@
 #include <iostream>
 
 logs::MemoryAppender::MemoryAppender() :
-		messages_()
+        messages_()
 {
 }
 
 logs::MemoryAppender::~MemoryAppender()
 {
-	this->flush();
+    this->flush();
 }
-
 
 void logs::MemoryAppender::lockMessages()
 {
-	this->lock();
+    this->lock();
 }
 void logs::MemoryAppender::unlockMessages()
 {
-	this->unlock();
+    this->unlock();
 }
 
 void logs::MemoryAppender::flush()
 {
-	this->lockMessages();
-	for (std::list<std::string>::iterator it = messages_.begin(); it != messages_.end(); it++)
-	{
-		std::cout << *it << std::endl; //TODO not thread safe
-	}
+    //printf("logs::MemoryAppender::flush\n");
+    this->lockMessages();
+    for (std::list<std::string>::iterator it = messages_.begin(); it != messages_.end(); it++) {
+        std::cout << *it << std::endl;
+    }
 
-	this->messages_.clear();
-	this->unlockMessages();
+    this->messages_.clear();
+    this->unlockMessages();
 }
 void logs::MemoryAppender::writeMessage(const logs::Logger & logger, const logs::Level & level,
-		const std::string & message)
+        const std::string & message)
 {
-	std::ostringstream out;
-	out << logger.name() << " " << level.name() << " " << message;
-	this->lockMessages();
-	this->messages_.push_back(out.str());
-	this->unlockMessages();
+
+    std::ostringstream out;
+    out << logger.name() << " " << level.name() << " " << message;
+    this->lockMessages();
+    this->messages_.push_back(out.str());
+    this->unlockMessages();
+    // printf("logs::MemoryAppender::writeMessage %s\n", message.c_str());
 }
 
 void logs::MemoryAppender::writeMessageOnly(const std::string & message)
 {
-	std::ostringstream out;
-	out << message;
-	this->lockMessages();
-	this->messages_.push_back(out.str());
-	this->unlockMessages();
+
+    std::ostringstream out;
+    out << message;
+    this->lockMessages();
+    this->messages_.push_back(out.str());
+    this->unlockMessages();
+
+    //printf("logs::MemoryAppender::writeMessageOnly %s\n", message.c_str());
 }

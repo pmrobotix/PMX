@@ -54,6 +54,8 @@ public:
 
     void test();
 
+    void testcodeurs();
+
 };
 }
 

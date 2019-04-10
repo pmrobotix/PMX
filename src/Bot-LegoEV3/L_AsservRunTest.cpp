@@ -34,7 +34,7 @@ void L_AsservRunTest::run(int argc, char** argv)
     logger().info() << "Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("L_AsservRunTest");
     long left;
     long right;
 

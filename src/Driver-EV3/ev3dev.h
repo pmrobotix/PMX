@@ -37,6 +37,9 @@
 #include <map>
 #include <set>
 #include <string>
+#include <iostream>
+#include <sstream>
+#include <fstream>
 #include <tuple>
 #include <vector>
 #include <algorithm>
@@ -113,6 +116,11 @@ public:
 
   inline bool connected() const { return !_path.empty(); }
 
+  //Chafff
+//  void        openOptimizedFile(const std::string &name) const;
+//  int         get_attr_int_optimized() const;
+  ///fin chafff
+
   int         device_index() const;
 
   int         get_attr_int   (const std::string &name) const;
@@ -130,6 +138,7 @@ public:
 
 protected:
   std::string _path;
+  mutable  std::ifstream *_is;
   mutable int _device_index = -1;
 };
 

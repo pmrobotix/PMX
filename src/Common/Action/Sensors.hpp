@@ -17,43 +17,43 @@ class Sensors: public AActionsElement
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref Sensors.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Sensors");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref Sensors.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("Sensors");
+        return instance;
+    }
 
-	Robot * robot_;
+    Robot * robot_;
 
 public:
-	ASensorsDriver* sensorsdriver;
+    ASensorsDriver* sensorsdriver;
 
-	/*!
-	 * \brief Constructor.
-	 *
-	 */
-	Sensors(Actions & actions, Robot * robot);
+    /*!
+     * \brief Constructor.
+     *
+     */
+    Sensors(Actions & actions, Robot * robot);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~Sensors();
+    /*!
+     * \brief Destructor.
+     */
+    ~Sensors();
 
-	Robot * robot()
-	{
-		return robot_;
-	}
+    Robot * robot()
+    {
+        return robot_;
+    }
 
-	bool front();
+    bool front();
 
-	bool rear();
+    bool rear();
 
-	void startSensors();
+    void startSensors();
 
-	void stopSensors();
+    void stopSensors();
 
 };
 
@@ -65,49 +65,48 @@ class SensorsTimer: public ITimerListener
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SensorsTimer.
-	 */
-	static const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsTimer");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref SensorsTimer.
+     */
+    static const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsTimer");
+        return instance;
+    }
 
-	/*!
-	 * \brief Référence vers sensors.
-	 */
-	Sensors & sensors_;
+    /*!
+     * \brief Référence vers sensors.
+     */
+    Sensors & sensors_;
 
-	utils::Chronometer chrono_;
+    utils::Chronometer chrono_;
 
 public:
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 * \param sensors
-	 *        Reference vers l'objet associée.
-	 * \param timeSpan_ms
-	 *        Temps interval en millisecondes.
-	 * \param name
-	 *        Libellé du timer.
-	 */
-	SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name);
+    /*!
+     * \brief Constructeur de la classe.
+     * \param sensors
+     *        Reference vers l'objet associée.
+     * \param timeSpan_ms
+     *        Temps interval en millisecondes.
+     * \param name
+     *        Libellé du timer.
+     */
+    SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name);
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual inline ~SensorsTimer()
-	{
-		logger().debug() << "~SensorsTimer()" << logs::end;
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~SensorsTimer()
+    {
+        logger().debug() << "~SensorsTimer()" << logs::end;
+    }
 
-	virtual void onTimer(utils::Chronometer chrono);
+    virtual void onTimer(utils::Chronometer chrono);
 
-	virtual void onTimerEnd(utils::Chronometer chrono);
+    virtual void onTimerEnd(utils::Chronometer chrono);
 
-	virtual std::string info();
-
+    virtual std::string info();
 
 };
 

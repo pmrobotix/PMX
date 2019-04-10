@@ -6,13 +6,11 @@
 #include <string>
 
 #include "../../Log/LoggerFactory.hpp"
-//#include "AAsservElement.hpp"
 
 class AAsservDriver;
 
 
-
-class MotorControl//: public AAsservElement
+class MotorControl
 {
 private:
 

@@ -14,8 +14,7 @@
 #include "../../Log/Logger.hpp"
 #include "../../Thread/Mutex.hpp"
 
-namespace logs
-{
+namespace logs {
 /*!
  * \brief Implémentation de Appender stockant les messages en mémoire.
  *
@@ -27,60 +26,60 @@ class MemoryAppender: public Appender, public utils::Mutex
 {
 protected:
 
-	/*!
-	 * \brief Liste des messages enregistrés.
-	 */
-	std::list<std::string> messages_;
-	void lockMessages();
-	void unlockMessages();
+    /*!
+     * \brief Liste des messages enregistrés.
+     */
+    std::list<std::string> messages_;
+    void lockMessages();
+    void unlockMessages();
 
 public:
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	MemoryAppender();
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    MemoryAppender();
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual ~MemoryAppender();
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual ~MemoryAppender();
 
-	/*!
-	 * \return Liste des messages enregistrés.
-	 */
-	inline const std::list<std::string> & messages() const
-	{
-		return messages_;
-	}
+    /*!
+     * \return Liste des messages enregistrés.
+     */
+    inline const std::list<std::string> & messages() const
+    {
+        return messages_;
+    }
 
-	/*!
-	 * \brief Méthode générique de trace d'un message. Ajoute le nom du log devant chaque entrée.
-	 * \param logger
-	 *        Logger de référence du message.
-	 * \param level
-	 *        Niveau de référence du message.
-	 * \param message
-	 *        Message à tracer.
-	 */
-	virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message);
+    /*!
+     * \brief Méthode générique de trace d'un message. Ajoute le nom du log devant chaque entrée.
+     * \param logger
+     *        Logger de référence du message.
+     * \param level
+     *        Niveau de référence du message.
+     * \param message
+     *        Message à tracer.
+     */
+    virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message);
 
-	/*!
-	 * \brief Méthode générique de trace d'un message.
-	 * \param logger
-	 *        Logger de référence du message.
-	 * \param level
-	 *        Niveau de référence du message.
-	 * \param message
-	 *        Message à tracer.
-	 */
-	virtual void writeMessageOnly(const std::string & message);
+    /*!
+     * \brief Méthode générique de trace d'un message.
+     * \param logger
+     *        Logger de référence du message.
+     * \param level
+     *        Niveau de référence du message.
+     * \param message
+     *        Message à tracer.
+     */
+    virtual void writeMessageOnly(const std::string & message);
 
-	/*!
-	 * \brief Cette méthode affiche tous les messages engistrés sur le
-	 * flux de sortie standard.
-	 */
-	virtual void flush();
+    /*!
+     * \brief Cette méthode affiche tous les messages engistrés sur le
+     * flux de sortie standard.
+     */
+    virtual void flush();
 
 };
 }

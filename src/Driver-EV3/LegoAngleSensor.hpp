@@ -12,15 +12,11 @@
 
 using namespace ev3dev;
 
-
-
-
 class LegoAngleSensor: public sensor
 {
 public:
 
-
-    static constexpr char ht_angle[]   = "ht-nxt-angle";
+    static constexpr char ht_angle[] = "ht-nxt-angle";
 
     /*!
      * \brief Constructor.
@@ -40,6 +36,11 @@ public:
     void reset();
 
     long getValueDegrees();
+
+    void openOptimizedFile(const std::string &name) const;
+    int get_attr_int_optimized() const;
+
+    uintmax_t wc(char const *fname); //static ??
 
 };
 
