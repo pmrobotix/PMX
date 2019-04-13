@@ -31,7 +31,7 @@ private:
 protected:
     bool done_;
     bool beginDone_;
-  const  logs::Logger * fLogger;
+    const  logs::Logger * fLogger;
 
 public:
 

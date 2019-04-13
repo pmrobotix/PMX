@@ -75,6 +75,12 @@ private:
     std::thread twLeft_;
     std::thread twRight_;
 
+    float inverseCodeurG_;
+    float inverseCodeurD_;
+
+    float inverseMoteurG_;
+    float inverseMoteurD_;
+
 protected:
 
     virtual void execute();
@@ -219,7 +225,8 @@ public:
 
     void positionLeft(const char *arg1, long internal_ticksToDo) //tick encoder à atteindre
     {
-        printf("positionLeft internal_ticksToDo=%ld   leftSpeed_=%f wanted=%f\n", internal_ticksToDo, asserv_->leftSpeed_, asserv_->wantedLeftSpeed_);
+        printf("positionLeft internal_ticksToDo=%ld   leftSpeed_=%f wanted=%f\n", internal_ticksToDo,
+                asserv_->leftSpeed_, asserv_->wantedLeftSpeed_);
 
         long ticks = std::abs(asserv_->getLeftInternalEncoder());
         if (asserv_->leftSpeed_ > 0) {

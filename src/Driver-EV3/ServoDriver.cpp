@@ -23,6 +23,11 @@ ServoDriver::ServoDriver() :
 {
     logger().debug() << "ServoDriver()" << logs::end;
 
+    //mise du pollong à 0 pour la carte de servo.
+    i2c_sensor servo_sensor = i2c_sensor("ev3-ports:in1:i2c88");
+    servo_sensor.set_poll_ms(0);
+
+
     //CONFIG Specifique si necessaire
     servo_motors_[0] = servo_motor("ev3-ports:in1:i2c88:sv1");
     servo_motors_[1] = servo_motor("ev3-ports:in1:i2c88:sv2");

@@ -18,12 +18,14 @@
 constexpr char LegoAngleSensor::ht_angle[];
 
 LegoAngleSensor::LegoAngleSensor(address_type address) :
-        sensor(address, { ht_angle })
+        i2c_sensor(address, { ht_angle })
 {
     if (this->connected()) {
         this->set_mode("ANGLE-ACC");
+        this->set_poll_ms(20);
     }
-    this->openOptimizedFile("value0");
+    _ifs_value = NULL;
+    this->openIfstreamFile("value0");
 }
 
 void LegoAngleSensor::reset()
@@ -49,9 +51,9 @@ long LegoAngleSensor::getValueDegrees()
         return -999999;
 }
 
-void LegoAngleSensor::openOptimizedFile(const std::string &name) const
+void LegoAngleSensor::openIfstreamFile(const std::string &name) const
 {
-    using namespace std;
+    //using namespace std;
 
 //    if (_path.empty())
 //        throw system_error(make_error_code(errc::function_not_supported),
@@ -61,8 +63,8 @@ void LegoAngleSensor::openOptimizedFile(const std::string &name) const
         return;
     }
 
-    _is = new ifstream();
-    _is->open(_path + name);
+    _ifs_value = new std::ifstream();
+    _ifs_value->open(_path + name);
 
 }
 int LegoAngleSensor::get_attr_int_optimized() const
@@ -76,9 +78,9 @@ int LegoAngleSensor::get_attr_int_optimized() const
 //        }
 
     //_is->clear();
-    _is->seekg(0, std::ios::beg);
+    _ifs_value->seekg(0, std::ios::beg);
     int result = 0;
-    *_is >> result;
+    *_ifs_value >> result;
     // _is->close();
 
     return result;

@@ -17,6 +17,13 @@ AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
 {
     botid_ = botid;
 
+    //config des moteurs et codeurs en SIMU
+    inverseCodeurG_ = 1.0; //1.0 or -1.0
+    inverseCodeurD_ = 1.0;
+    inverseMoteurG_ = 1.0;
+    inverseMoteurD_ = 1.0;
+
+
     if (botid == "APF9328Robot") {
         //printf("--- AsservDriver - botid == APF9328Robot\n");
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
@@ -28,9 +35,9 @@ AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
     } else if (botid == "LegoEV3Robot") {
         //printf("--- AsservDriver - botid == LegoEV3Robot\n");
         //CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
-        simuTicksPerMeter_ = 5450.0f; //nb ticks for 1000mm
+        simuTicksPerMeter_ = 4100.0f; //nb ticks for 1000mm
         simuMaxSpeed_ = 0.5; //m/s
-        simuMaxPower_ = 127.0;
+        simuMaxPower_ = 100.0;
         //CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
 
     } else if (botid == "OPOS6UL_Robot") {
@@ -164,7 +171,9 @@ void AsservDriver::computeCounterL()
     float deltaT_ms = tps - tLeft_ms_;
     tLeft_ms_ = tps;
 
-    float currentLeftMeters = (deltaT_ms * leftSpeed_) / 1000.0f;
+
+
+    float currentLeftMeters = inverseCodeurG_ * (deltaT_ms * leftSpeed_) / 1000.0f;
     mutexL_.lock();
     currentLeftCounter_ = convertMetersToTicks(currentLeftMeters);	//conversion Metre  n Ticks/metres
     leftMeters_ += currentLeftMeters;
@@ -215,7 +224,7 @@ void AsservDriver::computeCounterR()
     float tps = chrono_.getElapsedTimeInMilliSec();	//* timesMultiplicator_;
     float deltaT_ms = tps - tRight_ms_;
     tRight_ms_ = tps;
-    float currentRightMeters = (deltaT_ms * rightSpeed_) / 1000.0f;
+    float currentRightMeters = inverseCodeurD_ * (deltaT_ms * rightSpeed_) / 1000.0f;
 
     mutexR_.lock();
     currentRightCounter_ = convertMetersToTicks(currentRightMeters);	//conversion 1 meter = n ticks
@@ -263,7 +272,7 @@ void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
 
     computeCounterL();
     mutexL_.lock();
-    wantedLeftSpeed_ = convertPowerToSpeed(power);
+    wantedLeftSpeed_ = inverseMoteurG_ * convertPowerToSpeed(power);
     tLeft_ms_ = chrono_.getElapsedTimeInMilliSec();	//* timesMultiplicator_;
     mutexL_.unlock();
 
@@ -287,7 +296,7 @@ void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
 
     computeCounterR();
     mutexR_.lock();
-    wantedRightSpeed_ = convertPowerToSpeed(power);
+    wantedRightSpeed_ = inverseMoteurD_ * convertPowerToSpeed(power);
     tRight_ms_ = chrono_.getElapsedTimeInMilliSec();	//* timesMultiplicator_;
     mutexR_.unlock();
 
@@ -302,7 +311,7 @@ void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 {
     computeCounterL();
     mutexL_.lock();
-    wantedLeftSpeed_ = convertPowerToSpeed(power);
+    wantedLeftSpeed_ = inverseMoteurG_ * convertPowerToSpeed(power);
     tLeft_ms_ = chrono_.getElapsedTimeInMilliSec(); //* timesMultiplicator_;
     mutexL_.unlock();
     logger().debug() << "setMotorLeftPower power=" << power << " leftSpeed_=" << leftSpeed_ << logs::end;
@@ -319,7 +328,7 @@ void AsservDriver::setMotorRightPower(int power, int time_ms)
     //logger().info() << "!!!! setMotorRightPower rightMeters_=" << rightMeters_ << logs::end;
     computeCounterR();
     mutexR_.lock();
-    wantedRightSpeed_ = convertPowerToSpeed(power);
+    wantedRightSpeed_ = inverseMoteurD_ * convertPowerToSpeed(power);
     tRight_ms_ = chrono_.getElapsedTimeInMilliSec(); //* timesMultiplicator_;
     mutexR_.unlock();
     logger().debug() << "setMotorRightPower power=" << power << " rightSpeed_=" << rightSpeed_ << logs::end;

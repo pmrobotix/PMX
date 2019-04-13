@@ -3,8 +3,8 @@
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "ev3dev.h"
 #include "LegoAngleSensor.hpp"
+#include "LegoMotor.hpp"
 
 #define MAXVALUE_speed_sp 	1049 //power
 #define MAXVALUE_duty_cycle_sp 100 //percentage
@@ -25,8 +25,8 @@ private:
         return instance;
     }
 
-    large_motor _motor_right_ ;//= { OUTPUT_D };
-    large_motor _motor_left_ ;//= { OUTPUT_C };
+    LegoMotor _motor_right_ ;
+    LegoMotor _motor_left_ ;
 
     LegoAngleSensor angleR_;
     LegoAngleSensor angleL_;
@@ -45,6 +45,8 @@ public:
     inline ~AsservDriver()
     {
     }
+
+
 
     void reset(); //motor reset!
 

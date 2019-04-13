@@ -28,10 +28,6 @@ void BotMotors::setVitesseG(int vitMoteurG)
     if (Config::reglageCodeurs)
         return;
 
-    if (Config::inverseMoteurG) {
-        vitMoteurG = -vitMoteurG;
-    }
-
     if (vitMoteurG > Config::V_MAX_POS_MOTOR) {
         vitMoteurG = Config::V_MAX_POS_MOTOR;
     } else if (vitMoteurG > 0 && vitMoteurG < Config::V_MIN_POS_MOTOR) {
@@ -46,6 +42,10 @@ void BotMotors::setVitesseG(int vitMoteurG)
 
     vitMoteurG_ = vitMoteurG;
 
+    if (Config::inverseMoteurG) {
+        vitMoteurG = -vitMoteurG;
+    }
+
     //Apply
     //robot_->logger().debug() << "setVitesseG = " << vitMoteurG << logs::end;
     robot_->asserv_default->base()->motors().runMotorLeft(vitMoteurG, 0);
@@ -55,10 +55,6 @@ void BotMotors::setVitesseD(int vitMoteurD)
 {
     if (Config::reglageCodeurs)
         return;
-
-    if (Config::inverseMoteurD) {
-        vitMoteurD = -vitMoteurD;
-    }
 
     if (vitMoteurD > Config::V_MAX_POS_MOTOR) {
         vitMoteurD = Config::V_MAX_POS_MOTOR;
@@ -73,6 +69,10 @@ void BotMotors::setVitesseD(int vitMoteurD)
     }
 
     vitMoteurD_ = vitMoteurD;
+
+    if (Config::inverseMoteurD) {
+        vitMoteurD = -vitMoteurD;
+    }
 
     //APPLY
     //robot_->logger().debug() << "vitMoteurD = " << vitMoteurD << logs::end;

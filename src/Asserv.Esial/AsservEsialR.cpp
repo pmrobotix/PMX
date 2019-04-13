@@ -1,6 +1,6 @@
 /*
  *
- * CONFIG_MOTORCTRL_BOTMOTORS need to be initialised in Eclipse param build
+ l * CONFIG_MOTORCTRL_BOTMOTORS need to be initialised in Eclipse param build
  */
 
 #include "AsservEsialR.hpp"
@@ -24,7 +24,8 @@
 
 class Robot;
 
-AsservEsialR::AsservEsialR(Robot * robot): chronoTimer_("AsservEsialR")
+AsservEsialR::AsservEsialR(Robot * robot) :
+        chronoTimer_("AsservEsialR")
 {
     robot_ = robot; //Reference vers le robot
 
@@ -40,7 +41,7 @@ AsservEsialR::AsservEsialR(Robot * robot): chronoTimer_("AsservEsialR")
     run_ = false;
 
     //première ligne du fichier csv
-    loggerFile().debug() << "usec" << ", time-last" << ", work time" << ", nb" << ", odo_->getDeltaDist()"
+    loggerFile().debug() << "nb " << ", usec" << ", time-last" << ", work time" << ", odo_->getDeltaDist()"
             << ", motorC_->getVitesseG()" << ", motorC_->getVitesseD()" << ", xmm " << ", ymm " << ", degrees"
 
             << logs::end;
@@ -109,9 +110,9 @@ void AsservEsialR::resetAsserv()
 
 void AsservEsialR::execute()
 {
-    //logs::Logger::LoggerBuffer info = logger().info();
-    //logs::Logger::LoggerBuffer debugfile = loggerFile().debug();
-    logger().info() << "executing... every " << loopDelayInMillisec_ << logs::end;
+    logs::Logger::LoggerBuffer info = logger().info();
+    logs::Logger::LoggerBuffer debugfile = loggerFile().debug();
+    info << "executing... every " << loopDelayInMillisec_ << logs::flush;
 
     chronoTimer_.setTimer(loopDelayInMillisec_ * 1000);
     RobotPosition p;
@@ -121,7 +122,7 @@ void AsservEsialR::execute()
 
     while (1) {
         if (run_) {
-            //long t = chrono.getElapsedTimeInMicroSec();
+
             nb++;
             //printf("AsservEsialR::execute %d\n", nb);
 
@@ -129,44 +130,46 @@ void AsservEsialR::execute()
             odo_->refresh();
             p = odo_GetPosition();
 
+            long t2 = chronoTimer_.getElapsedTimeInMicroSec();
+            long t3 =0;
             if (!Config::disableAsserv) {
-                //logger().debug() << "perform"<< logs::end;
+
                 consignC_->perform();
+                t3 = chronoTimer_.getElapsedTimeInMicroSec();
                 commandM_->perform();
             }
 
+            long t4 = chronoTimer_.getElapsedTimeInMicroSec();
             //svg log
-            if (nb % 20 == 0) {
+            if (nb % 40 == 0) {
 
-                logger().info() << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="
-                        << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="
-                        << p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::end;
-                //
+                //info << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="                << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::flush;
 
                 // 18us
                 robot_->svgw().writePosition_BotPos(p.x * 1000, p.y * 1000, p.theta);
 
             }
+            long t5 = chronoTimer_.getElapsedTimeInMicroSec();
 
-//            //file log for asserv
-            loggerFile().debug() << current << ", " << (long) (current - last) << ", "
-                    << (long) (current - chronoTimer_.getElapsedTimeInMicroSec()) << ", " << nb << ", "
-                    << odo_->getDeltaDist() // distance entre 2
-                    << ", " << motorC_->getVitesseG() //1 à 127
-                    << ", " << motorC_->getVitesseD() //1 à 127
-                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
+            //file log for asserv
+//            debugfile << nb << ", " << current << ", " << (long) (current - last) << ", "
+//                    << (long) (chronoTimer_.getElapsedTimeInMicroSec() - current) << ", " << odo_->getDeltaDist() // distance entre 2
+//                    << ", " << motorC_->getVitesseG() //1 à 127
+//                    << ", " << motorC_->getVitesseD() //1 à 127
+//                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
+//                    << logs::flush;
 
-                    << logs::end;
+            long t6 = chronoTimer_.getElapsedTimeInMicroSec();
 
-            //info << "execute started; getElapsedTimeInMilliSec=" << chrono.getElapsedTimeInMilliSec()
-            //<< " ms loopDelayInMillisec_=" << loopDelayInMillisec_<< logs::end;
-
-            //wait loopDelayInMillisec_
-
-//            long diff = chrono.getElapsedTimeInMicroSec() - t;
-//            if (diff > 2000)
-//                printf("diff=%ld\n", diff);
-
+            if (nb % 40 == 0) {
+            info << nb <<" => ODOt2-current=" << t2 - current
+                               << " => consMt3-t2=" << t3 - t2
+                               << " => cmdMt4-t3=" << t4 - t3
+                               << " => svgt5-t4="  << t5 - t4
+                               << " => excelt6-t5="  << t6 - t5
+                               << " => worktime=t6-t1=" << t6 - current
+                               << logs::flush;
+            }
             chronoTimer_.waitTimer();
             last = current;
         }

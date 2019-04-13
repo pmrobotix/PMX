@@ -79,7 +79,7 @@ void Odometrie::refresh()
     int32_t compteurBrutG = 0, compteurBrutD = 0;
     codeurs->getCounts(&compteurBrutG, &compteurBrutD);
 
-    //if (!Config::reglageCodeurs) {
+    if (!Config::reglageCodeurs) {
         //On transforme ces valeurs en Unites Odometrique
         int uo=Config::uOParFront;
         compteurD = compteurBrutD * uo;
@@ -121,9 +121,9 @@ void Odometrie::refresh()
                 theta += 2 * PI;
             }
         }
-//    } else {
-//        // TODO Vérifier qu'on ne perd pas l'accumulation dans ce mode
-//        printf("CG=%ld \t\tCD=%ld\r\n", compteurBrutG, compteurBrutD);
-//
-//    }
+    } else {
+        // TODO Vérifier qu'on ne perd pas l'accumulation dans ce mode
+        printf("CG=%ld \t\tCD=%ld\r\n", compteurBrutG, compteurBrutD);
+
+    }
 }

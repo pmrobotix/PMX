@@ -181,7 +181,7 @@ std::ifstream &ifstream_open(const std::string &path)
         file.open(path);
     } else {
         // Clear the flags bits in case something happened (like reaching EOF).
-        file.clear(); //Chaff semble etre fait dans le seekg
+        //file.clear(); //Chaff : semble etre fait dans le seekg
         file.seekg(0, std::ios::beg);
     }
     return file;

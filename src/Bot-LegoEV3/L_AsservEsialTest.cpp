@@ -1,10 +1,12 @@
 #include "L_AsservEsialTest.hpp"
 
+#include <stdlib.h>
 #include <unistd.h>
 #include <string>
 
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/ExtEncoderControl.hpp"
+#include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -14,9 +16,11 @@
 
 using namespace std;
 
-void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler dans le run ci-dessous
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    //step
+    robot.getArgs().addArgument("step", "n step test");
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
@@ -24,36 +28,80 @@ void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 void L_AsservEsialTest::run(int argc, char** argv)
 {
-    //logs::Logger::LoggerBuffer info = logger().info();
-
     logger().info() << "Executing - " << this->desc() << logs::end;
+    configureConsoleArgs(argc, argv);
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+
     long left;
     long right;
+    int nb = 0;
+    int step = 0;
 
     Arguments args = robot.getArgs();
+
+    if (args["step"] != "0") {
+        step = atoi(args["step"].c_str());
+        logger().debug() << "Arg step set " << args["step"] << ", step = " << step << logs::end;
+    }
+
     utils::Chronometer chrono("L_AsservEsialTest");
 
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
-
     LegoEV3AsservExtended asserv = robot.asserv();
     ExtEncoderControl extEncoders = asserv.base()->extEncoders();
-int nb = 0;
-    while (1) {
+    chrono.start();
 
-        left = extEncoders.getLeftEncoder();
-        right = extEncoders.getRightEncoder();
+    if (step == 1) {
+        logger().info() << "ETAPE 1 : TEST CODEURS - compter sur un mètre" << logs::end;
+        //test1 les codeurs sur 1m
+        while (1) {
 
-        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right << " x="
-                << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a=" << asserv.pos_getThetaInDegree()
-                << logs::end;
-        usleep(200000);
-        nb++;
-        if (nb >10)
-            break;
+            left = extEncoders.getLeftEncoder();
+            right = extEncoders.getRightEncoder();
+
+            logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
+                    << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="  << asserv.pos_getThetaInDegree()
+                    << logs::end;
+            usleep(100000);
+            nb++;
+        }
     }
+
+    if (step == 2) {
+        logger().info() << "ETAPE 2 : TEST MOTEURS ET CODEURS" << logs::end;
+        //test2 moteurs et codeurs dans le bon sens
+        while (1) {
+            asserv.base()->motors().runMotorLeft(20, 0);
+            asserv.base()->motors().runMotorRight(20, 0);
+
+            left = extEncoders.getLeftEncoder();
+            right = extEncoders.getRightEncoder();
+
+            logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                    << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
+                    << asserv.pos_getThetaInDegree() << logs::end;
+            usleep(100000);
+            nb++;
+            if (nb > 10)
+                break;
+        }
+    }
+    //test2 quadramp desactivé on regle le P
+    //distance avec    disableDistanceRegu = true;
+    //puis angle
+    if (step == 3) {
+        logger().info() << "ETAPE 3 : assistedHandling pour regler P" << logs::end;
+        while (1) {
+            robot.asserv().assistedHandling();
+        }
+    }
+
+    //test3 on avance de 10cm pour regler le D
+
+    //test4 quadramp
+
     robot.svgPrintPosition();
 
     robot.stopAll();

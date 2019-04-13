@@ -22,7 +22,7 @@ void logs::ConsoleAppender::execute()
     while (true) //TODO add a stop of the console appender
     {
         this->printData();
-        usleep(300000);
+        usleep(500000);
     }
 }
 

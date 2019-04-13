@@ -56,3 +56,9 @@ logs::end(logs::Logger::LoggerBuffer& buffer)
 {
     buffer.end();
 }
+
+void
+logs::flush(logs::Logger::LoggerBuffer& buffer)
+{
+    buffer.flush();
+}

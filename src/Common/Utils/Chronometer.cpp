@@ -91,15 +91,15 @@ int utils::Chronometer::waitTimer(bool debug)
     long long workTime = endTaskTime - lastTime_;
 
     //printf("endTaskTime=%lld , lastime=%lld , workTime=%lld, period_us=%lld\n", endTaskTime, lastTime_, workTime, timerPeriod_us_);
-    if (debug)
-        logger().info() << "waitTimer() name=" << name_ << " endTaskTime=" << endTaskTime << " (diff)workTime="
-                << workTime << " " << timerPeriod_us_ << "!!" << logs::end;
+//    if (debug)
+//        logger().info() << "waitTimer() name=" << name_ << " endTaskTime=" << endTaskTime << " (diff)workTime="
+//                << workTime << " " << timerPeriod_us_ << "!!" << logs::end;
 
     if (workTime < timerPeriod_us_) {
 
         usleep(timerPeriod_us_ - workTime);
     } else {
-        logger().error() << "!!! (diff)workTime=" << workTime << " " << timerPeriod_us_ << "!!\n" << logs::end;
+        logger().error() << "!!! (diff)workTime=" << workTime << " > " << timerPeriod_us_ << "!!!" << logs::end;
     }
 
     // fin

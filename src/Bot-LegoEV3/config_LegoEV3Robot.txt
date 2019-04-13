@@ -14,7 +14,7 @@ configVersion = 2019031601
 //--------------------------//
 
 //Période de l'asservissement en sec : T=1/f
-asservPeriod = 0.008
+asservPeriod = 0.020
 
 // Désactivation du command manager (le robot n'est plus asservi mais l'odométrie est toujours active)
 disableAsserv = false
@@ -23,16 +23,16 @@ disableAsserv = false
 reglageCodeurs = false
 
 // Désactiver la QuadRampDérivée en distance
-disableDistanceQuad = false
+disableDistanceQuad = true
 
 // Désactiver la QuadRampDérivée en angle
-disableAngleQuad = false
+disableAngleQuad = true
 
 // Désactiver le régulateur de distance
 disableDistanceRegu = false
 
 // Désactiver le régulateur d'angle
-disableAngleRegu = false
+disableAngleRegu = true
 
 //--------------------------//
 //       CommandManager     //
@@ -57,11 +57,11 @@ placementOrigineY = 0
 
 // Nombre de tics codeurs en 1m pour codeur gauche
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-frontParMetreCodeurG = 5450.0
+frontParMetreCodeurG = 4100.0
 
 // Nombre de tics codeurs en 1m pour codeur droite
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-frontParMetreCodeurD = 5450.0
+frontParMetreCodeurD = 4100.0
 
 // Distance entre les roues codeuses en mm
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
@@ -94,14 +94,14 @@ V_MAX_NEG_MOTOR = -100
 // Vitesses à partir desquelles le robot commence à bouger, pour ne pas
 // envoyer de jus dans des moteurs qui ne tournent pas
 
-// MD22 : 1 a 127
-V_MIN_POS_MOTOR = 1
+// EV3 : 1 a 100
+V_MIN_POS_MOTOR = 9
 
-// MD22 : -1 a -128
-V_MIN_NEG_MOTOR = -1
+// EV3 : -1 a -100
+V_MIN_NEG_MOTOR = -9
 
 // Inversion du sens du moteur gauche
-inverseMoteurG = true
+inverseMoteurG = false
 
 // Inversion du sens du moteur droit
 inverseMoteurD = false
@@ -119,19 +119,19 @@ swapMoteurs = false
 
 
 // Coeff proportionelle
-DIST_KP = 400
+DIST_KP = 180
 
 // Coeff intégrale
 DIST_KI = 0
 
 // Coeff dérivée
-DIST_KD = 10
+DIST_KD = 0
 
 // Coeff permettant de diminuer les valeurs du PID 
-DIST_OUT_RATIO = 0.00001
+DIST_OUT_RATIO = 0.000001
 
 // Valeur de sortie maximum pour le moteur
-DIST_MAX_OUTPUT = 125
+DIST_MAX_OUTPUT = 100
 
 // Valeur maximum de l'intégrale (0 = filtre PD)
 DIST_MAX_INTEGRAL = 0
@@ -141,7 +141,7 @@ DIST_MAX_INTEGRAL = 0
 
 
 // Coeff proportionelle
-ANGLE_KP = 400
+ANGLE_KP = 600
 
 // Coeff intégrale
 ANGLE_KI = 0
@@ -150,10 +150,10 @@ ANGLE_KI = 0
 ANGLE_KD = 100
 
 // Coeff permettant de diminuer les valeurs du PID
-ANGLE_OUT_RATIO = 0.00001
+ANGLE_OUT_RATIO = 0.000001
 
 // Valeur de sortie maximum pour le moteur
-ANGLE_MAX_OUTPUT = 125
+ANGLE_MAX_OUTPUT = 100
 
 // Valeur maximum de l'intégrale (0 = filtre PD)
 ANGLE_MAX_INTEGRAL = 0
@@ -164,15 +164,14 @@ ANGLE_MAX_INTEGRAL = 0
 // Vitesse max en marche avant
 DIST_QUAD_1ST_POS = 35000
 
-// Accélération max en marche avant
-DIST_QUAD_AV_2ND_ACC = 200
+// Accélération max en marche avant //plus grand => plus raid
+DIST_QUAD_AV_2ND_ACC = 120
 
-// Décélération max en marche avant
+// Décélération max en marche avant //pente //plus grand =>plus raid 10<100
 DIST_QUAD_AV_2ND_DEC = 100
 
-// Coeff déterminant le début de la rampe de décélération en marche avant
-DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 170
-
+// Coeff déterminant le début de la rampe de décélération en marche avant // deplace la pente : plus grand => plus pres la deceleration 
+DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 10
 
 
 // Vitesse max en marche arrière

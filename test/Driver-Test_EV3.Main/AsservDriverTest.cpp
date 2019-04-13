@@ -65,9 +65,9 @@ void test::AsservDriverTest::testcodeurs()
     int32_t lastCountG = 0, countG = 0;
 
     utils::Chronometer chrono("AsservDriverTest::testcodeurs()");
-
+    chrono.start();
     while (1) {
-        chrono.start();
+
 
         long long t0 = chrono.getElapsedTimeInMicroSec();
         int32_t tempD = asservdriver_->getRightExternalEncoder();
@@ -86,10 +86,10 @@ void test::AsservDriverTest::testcodeurs()
 
         long long t3 = chrono.getElapsedTimeInMicroSec();
 
-        logger().info() << "t1=" << t1 - t0 << " t2-t1=" << t2 - t1 << " t3-t2=" << t3 - t2 << " countD=" << countD
-                << " countG=" << countG << logs::end;
+        logger().info() << "t1=" << t1 - t0 << " t2-t1=" << t2 - t1 << " t3-t2=" << t3 - t2 << "      D=" << countD
+                  << " currentD= " << tempD << "   ___   G=" << countG << " currentG= " << tempG << logs::end;
 
-        sleep(1);
+        usleep(10000);
     }
 
 }

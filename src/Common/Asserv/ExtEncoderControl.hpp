@@ -6,47 +6,47 @@
 
 class AAsservDriver;
 
-class ExtEncoderControl//: public AAsservElement
+class ExtEncoderControl //: public AAsservElement
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ExtEncoderControl.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ExtEncoderControl");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref ExtEncoderControl.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ExtEncoderControl");
+        return instance;
+    }
 
-	AAsservDriver* asservdriver;
+    AAsservDriver* asservdriver;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	ExtEncoderControl(std::string botid);
+    /*!
+     * \brief Constructor.
+     */
+    ExtEncoderControl(std::string botid);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~ExtEncoderControl();
+    /*!
+     * \brief Destructor.
+     */
+    ~ExtEncoderControl();
 
-	/*!
-	 * \brief getEncoderLeft.
-	 */
-	long getLeftEncoder();
+    /*!
+     * \brief getEncoderLeft.
+     */
+    long getLeftEncoder();
 
-	/*!
-	 * \brief getEncoderRight.
-	 */
-	long getRightEncoder();
+    /*!
+     * \brief getEncoderRight.
+     */
+    long getRightEncoder();
 
-	/*!
-	 * \brief reset encoders.
-	 */
-	void reset();
+    /*!
+     * \brief reset encoders.
+     */
+    void reset();
 
 };
 

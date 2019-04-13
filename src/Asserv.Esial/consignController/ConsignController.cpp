@@ -1,5 +1,9 @@
 #include "ConsignController.h"
 
+#include <stdlib.h>
+#include <cstdint>
+
+
 // Constructeur prenant deux objets initialisé avec l'asserv en paramètre
 ConsignController::ConsignController(Odometrie *odo, MotorsController *mot) :
         angle_regu(false), dist_regu(true)
@@ -55,6 +59,9 @@ void ConsignController::set_dist_consigne(int64_t consigneUO)
 void ConsignController::perform()
 {
     if (perform_on) {
+        //utils::Chronometer chrono("ConsignController::perform()");
+        //chrono.start();
+        //long t1 = chrono.getElapsedTimeInMicroSec();
 
         int32_t dist_output = 0; // Calcul de la sortie moteur en distance
         int32_t angle_output = 0; // Calcul de la sortie moteur en angle
@@ -64,40 +71,46 @@ void ConsignController::perform()
             angle_output = angle_regu.manage(angle_consigne, odometrie->getDeltaThetaBrut());
         }
 
+        //long t2 = chrono.getElapsedTimeInMicroSec();
+
         // Si le régu de distance est actif, il doit calculer la consigne de distance en fonction de la moyenne des tics codeurs (variation de distance en UO)
         if (dist_regu_on && !Config::disableDistanceRegu) {
 
             dist_output = dist_regu.manage(dist_consigne, odometrie->getDeltaDist());
-//printf("dist_output=%d\n", dist_output);
         }
+        //long t3 = chrono.getElapsedTimeInMicroSec();
 
         //Calcul des vitesses à appliquer en les bornant évidemment
-        int32_t VmoteurD = Utils::constrain(dist_output + angle_output, Config::V_MAX_NEG_MOTOR, Config::V_MAX_POS_MOTOR);
-        int32_t VmoteurG = Utils::constrain(dist_output - angle_output, Config::V_MAX_NEG_MOTOR, Config::V_MAX_POS_MOTOR);
+        int32_t VmoteurD = Utils::constrain(dist_output + angle_output, Config::V_MAX_NEG_MOTOR,
+                Config::V_MAX_POS_MOTOR);
+        int32_t VmoteurG = Utils::constrain(dist_output - angle_output, Config::V_MAX_NEG_MOTOR,
+                Config::V_MAX_POS_MOTOR);
 
+        //long t4 = chrono.getElapsedTimeInMicroSec();
         // On donne l'ordre aux moteurs et roulez jeunesse !!
         motors->setVitesseG(VmoteurG);
         motors->setVitesseD(VmoteurD);
 
-    // On vérifie si on n'est pas bloqué. Note: on utilise les getters
-    // du MotorsController parce qu'il peut mettre les vitesses à 0
-    // si elles sont trop faibles.
-    if( motors->getVitesseG() != 0 && motors->getVitesseD() != 0
-        && abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD
-        && abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD )
-    {
-        // Bloqué !
-        if(blocked_ticks < INT32_MAX) {
-            // On n'incrémente pas en continue pour éviter l'overflow (au bout de 124 jours...)
-            blocked_ticks++;
+        //long t5 = chrono.getElapsedTimeInMicroSec();
+        // On vérifie si on n'est pas bloqué. Note: on utilise les getters
+        // du MotorsController parce qu'il peut mettre les vitesses à 0
+        // si elles sont trop faibles.
+        if (motors->getVitesseG() != 0 && motors->getVitesseD() != 0
+                && abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD
+                && abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD) {
+            // Bloqué !
+            if (blocked_ticks < INT32_MAX) {
+                // On n'incrémente pas en continue pour éviter l'overflow (au bout de 124 jours...)
+                blocked_ticks++;
+            }
+        } else {
+            // Moteurs arrêtés ou robot qui bouge: on n'est pas bloqué
+            blocked_ticks = 0;
         }
-    }
-    else {
-        // Moteurs arrêtés ou robot qui bouge: on n'est pas bloqué
-        blocked_ticks = 0;
-    }
 
-        //printf("VG=%ld  \tVD=%ld\r\r\n", VmoteurG, VmoteurD);
+        //long t6 = chrono.getElapsedTimeInMicroSec();
+
+        //printf("t2-t1=%ld t3-t2=%ld t4-t3=%ld t5-t4=%ld t6-t5=%ld \n", t2-t1, t3-t2, t4-t3, t5-t4, t6-t5);
     }
 }
 
@@ -113,7 +126,7 @@ void ConsignController::setRightSpeed(int vit)
 
 void ConsignController::setLowSpeed(bool b)
 {
-    setLowSpeed(b,Config::DIST_QUAD_AR_LOW_DIV,Config::DIST_QUAD_AV_LOW_DIV);
+    setLowSpeed(b, Config::DIST_QUAD_AR_LOW_DIV, Config::DIST_QUAD_AV_LOW_DIV);
 }
 
 void ConsignController::setLowSpeed(bool b, unsigned char factor_div_back, unsigned char factor_div_forward)

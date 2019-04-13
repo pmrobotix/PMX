@@ -8,7 +8,7 @@ using namespace std;
 
 ExtEncoderControl::ExtEncoderControl(std::string botid)
 {
-	asservdriver = AAsservDriver::create(botid);
+    asservdriver = AAsservDriver::create(botid);
 }
 
 ExtEncoderControl::~ExtEncoderControl()
@@ -17,15 +17,15 @@ ExtEncoderControl::~ExtEncoderControl()
 
 long ExtEncoderControl::getLeftEncoder()
 {
-	return asservdriver->getLeftExternalEncoder();
+    return asservdriver->getLeftExternalEncoder();
 }
 
 long ExtEncoderControl::getRightEncoder()
 {
-	return asservdriver->getRightExternalEncoder();
+    return asservdriver->getRightExternalEncoder();
 }
 
 void ExtEncoderControl::reset()
 {
-	return asservdriver->resetEncoders(); //todo reset Extencoder
+    return asservdriver->resetEncoders(); //todo reset Extencoder
 }

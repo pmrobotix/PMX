@@ -12,11 +12,17 @@
 
 using namespace ev3dev;
 
-class LegoAngleSensor: public sensor
+class LegoAngleSensor: public i2c_sensor
 {
+
+protected:
+    mutable  std::ifstream *_ifs_value;
+
 public:
 
     static constexpr char ht_angle[] = "ht-nxt-angle";
+
+
 
     /*!
      * \brief Constructor.
@@ -37,7 +43,7 @@ public:
 
     long getValueDegrees();
 
-    void openOptimizedFile(const std::string &name) const;
+    void openIfstreamFile(const std::string &name) const;
     int get_attr_int_optimized() const;
 
     uintmax_t wc(char const *fname); //static ??

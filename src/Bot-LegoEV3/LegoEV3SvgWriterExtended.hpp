@@ -9,7 +9,7 @@
 class LegoEV3SvgWriterExtended: public SvgWriter
 {
 private:
-    logs::Logger::LoggerBuffer *fLogBuffer;
+    logs::Logger::LoggerBuffer *fLogBuffer; //optimisation des logs
 
 public:
 

@@ -121,6 +121,13 @@ public:
             }
         }
 
+        inline void flush(){
+            stream_->flush();
+            logger_.writeMessage(level_, stream_->str());
+            stream_->str("");
+            stream_->clear();
+
+        }
         /*!
          * \brief Cet opérateur permet d'utiliser cette classe comme un flux
          * de sortie standard.
@@ -377,6 +384,9 @@ public:
  * fonctionnalité que std::endl est basée.
  */
 void end(logs::Logger::LoggerBuffer & buffer);
+
+//for optimisation and not delete the buffer
+void flush(logs::Logger::LoggerBuffer & buffer);
 
 }
 

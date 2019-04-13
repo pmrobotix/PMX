@@ -20,9 +20,9 @@ void L_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-    //match color
+    //distance
     robot.getArgs().addArgument("d", "distance mm");
-    //robot.getArgs().addArgument("y", "y mm");
+    //angle
     robot.getArgs().addArgument("a", "angle degre", "0");
 
     //reparse arguments
@@ -93,7 +93,7 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 
     usleep(50000);
 
-
+    logger().error() << "go..." << d << "mm" << logs::end;
     robot.asserv().doLineAbs(d);
 
     //pause

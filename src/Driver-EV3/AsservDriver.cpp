@@ -29,7 +29,7 @@ void AsservDriver::reset()
 }
 
 AsservDriver::AsservDriver() :
-        _motor_right_(OUTPUT_A), _motor_left_(OUTPUT_D), angleR_("ev3-ports:in4:i2c1"), angleL_("ev3-ports:in1:i2c1")
+        _motor_right_(OUTPUT_A), _motor_left_(OUTPUT_D), angleR_("ev3-ports:in1:i2c1"), angleL_("ev3-ports:in4:i2c1")
 {
     logger().debug() << "AsservDriver()" << logs::end;
 
@@ -47,18 +47,18 @@ AsservDriver::AsservDriver() :
         logger().error() << "NOT CONNECTED! NO angleL_ !" << logs::end;
     }
 
-    if (_motor_right_.connected()) //if both motors are connected, then initialize each motor.
-    {
-        //_motor_right_.
-        _motor_right_.reset();
-
-        _motor_right_.set_polarity(motor::polarity_inversed);
-
-        _motor_right_.set_ramp_down_sp(0);
-        _motor_right_.set_ramp_up_sp(0);
-        _motor_right_.set_stop_action("brake");
-
-    }
+//    if (_motor_right_.connected()) //if both motors are connected, then initialize each motor.
+//    {
+//        //_motor_right_.
+//        _motor_right_.reset();
+//
+//        _motor_right_.set_polarity(motor::polarity_inversed);
+//
+//        _motor_right_.set_ramp_down_sp(0);
+//        _motor_right_.set_ramp_up_sp(0);
+//        _motor_right_.set_stop_action("brake");
+//
+//    }
 
     if (_motor_right_.connected()) {
 
@@ -68,15 +68,15 @@ AsservDriver::AsservDriver() :
         logger().error() << "NOT CONNECTED! NO _motor_right_ !" << logs::end;
     }
 
-    if (_motor_left_.connected()) //if both motors are connected, then initialize each motor.
-    {
-        _motor_left_.reset();
-        _motor_left_.set_polarity(motor::polarity_inversed);
-        _motor_left_.set_ramp_down_sp(0);
-        _motor_left_.set_ramp_up_sp(0);
-        _motor_left_.set_stop_action("brake");
-
-    }
+//    if (_motor_left_.connected()) //if both motors are connected, then initialize each motor.
+//    {
+//        _motor_left_.reset();
+//        _motor_left_.set_polarity(motor::polarity_inversed);
+//        _motor_left_.set_ramp_down_sp(0);
+//        _motor_left_.set_ramp_up_sp(0);
+//        _motor_left_.set_stop_action("brake");
+//
+//    }
 
     if (_motor_left_.connected()) {
 
@@ -156,7 +156,8 @@ void AsservDriver::setMotorLeftPower(int value, int timems)
         } else {
             limit(value, MAXVALUE_duty_cycle_sp);
             //logger().debug() << "LEFT  percent = " << value << logs::end;
-            _motor_left_.set_duty_cycle_sp(value).run_direct();
+            //_motor_left_.set_duty_cycle_sp(value).run_direct();
+            _motor_left_.set_duty_cycle_sp_run_direct(value);
         }
     }
 }
@@ -171,15 +172,18 @@ void AsservDriver::setMotorRightPower(int value, int timems)
         } else {
             limit(value, MAXVALUE_duty_cycle_sp);
             //logger().debug() << "RIGHT percent = " << value << logs::end;
-            _motor_right_.set_duty_cycle_sp(value).run_direct();
+            //_motor_right_.set_duty_cycle_sp(value).run_direct();
+            _motor_right_.set_duty_cycle_sp_run_direct(value);
         }
     }
 }
 
+
+
 long AsservDriver::getLeftExternalEncoder()
 {
     if (angleL_.connected()) {
-        long ticks = angleL_.getValueDegrees();
+        long ticks = -1 * angleL_.getValueDegrees();
 
         return ticks;
     } else
