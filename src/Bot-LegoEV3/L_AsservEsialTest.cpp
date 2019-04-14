@@ -61,9 +61,9 @@ void L_AsservEsialTest::run(int argc, char** argv)
             left = extEncoders.getLeftEncoder();
             right = extEncoders.getRightEncoder();
 
-            logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
-                    << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="  << asserv.pos_getThetaInDegree()
-                    << logs::end;
+            logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                    << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
+                    << asserv.pos_getThetaInDegree() << logs::end;
             usleep(100000);
             nb++;
         }
@@ -89,19 +89,39 @@ void L_AsservEsialTest::run(int argc, char** argv)
         }
     }
     //test2 quadramp desactivé on regle le P
-    //distance avec    disableDistanceRegu = true;
+    //distance avec    disableDistanceRegu = true; //faire le reglage en automatique dans cette fonction
     //puis angle
     if (step == 3) {
         logger().info() << "ETAPE 3 : assistedHandling pour regler P" << logs::end;
         while (1) {
             robot.asserv().assistedHandling();
+            sleep(1);
         }
     }
 
     //test3 on avance de 10cm pour regler le D
+    //reste dans la boucle d'attente sir le quadramp n'est pas activée pour terminer
+    if (step == 4) {
+        logger().info() << "ETAPE 4 : on avance pour regler D" << logs::end;
+        robot.asserv().assistedHandling();
+        robot.asserv().doLineAbs(100);
+
+    }
 
     //test4 quadramp
+    if (step == 5) {
 
+
+
+    }
+
+
+
+
+
+    logger().info() << "END t= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                        << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
+                        << asserv.pos_getThetaInDegree() << logs::end;
     robot.svgPrintPosition();
 
     robot.stopAll();

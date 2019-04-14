@@ -130,18 +130,18 @@ void AsservEsialR::execute()
             odo_->refresh();
             p = odo_GetPosition();
 
-            long t2 = chronoTimer_.getElapsedTimeInMicroSec();
-            long t3 =0;
+            //long t2 = chronoTimer_.getElapsedTimeInMicroSec();
+            //long t3 =0;
             if (!Config::disableAsserv) {
 
                 consignC_->perform();
-                t3 = chronoTimer_.getElapsedTimeInMicroSec();
+                //t3 = chronoTimer_.getElapsedTimeInMicroSec();
                 commandM_->perform();
             }
 
-            long t4 = chronoTimer_.getElapsedTimeInMicroSec();
+            //long t4 = chronoTimer_.getElapsedTimeInMicroSec();
             //svg log
-            if (nb % 40 == 0) {
+            if (nb % 10 == 0) {
 
                 //info << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="                << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::flush;
 
@@ -149,27 +149,27 @@ void AsservEsialR::execute()
                 robot_->svgw().writePosition_BotPos(p.x * 1000, p.y * 1000, p.theta);
 
             }
-            long t5 = chronoTimer_.getElapsedTimeInMicroSec();
+            //long t5 = chronoTimer_.getElapsedTimeInMicroSec();
 
             //file log for asserv
-//            debugfile << nb << ", " << current << ", " << (long) (current - last) << ", "
-//                    << (long) (chronoTimer_.getElapsedTimeInMicroSec() - current) << ", " << odo_->getDeltaDist() // distance entre 2
-//                    << ", " << motorC_->getVitesseG() //1 à 127
-//                    << ", " << motorC_->getVitesseD() //1 à 127
-//                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
-//                    << logs::flush;
+            debugfile << nb << ", " << current << ", " << (long) (current - last) << ", "
+                    << (long) (chronoTimer_.getElapsedTimeInMicroSec() - current) << ", " << odo_->getDeltaDist() // distance entre 2
+                    << ", " << motorC_->getVitesseG() //-100 à 100
+                    << ", " << motorC_->getVitesseD() //-100 à 100
+                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
+                    << logs::flush;
 
-            long t6 = chronoTimer_.getElapsedTimeInMicroSec();
+            //long t6 = chronoTimer_.getElapsedTimeInMicroSec();
 
-            if (nb % 40 == 0) {
-            info << nb <<" => ODOt2-current=" << t2 - current
-                               << " => consMt3-t2=" << t3 - t2
-                               << " => cmdMt4-t3=" << t4 - t3
-                               << " => svgt5-t4="  << t5 - t4
-                               << " => excelt6-t5="  << t6 - t5
-                               << " => worktime=t6-t1=" << t6 - current
-                               << logs::flush;
-            }
+//            if (nb % 40 == 0) {
+//            info << nb <<" => ODOt2-current=" << t2 - current
+//                               << " => consMt3-t2=" << t3 - t2
+//                               << " => cmdMt4-t3=" << t4 - t3
+//                               << " => svgt5-t4="  << t5 - t4
+//                               << " => excelt6-t5="  << t6 - t5
+//                               << " => worktime=t6-t1=" << t6 - current
+//                               << logs::flush;
+//            }
             chronoTimer_.waitTimer();
             last = current;
         }
@@ -337,6 +337,7 @@ void AsservEsialR::path_ResetEmergencyStop()
 
 TRAJ_STATE AsservEsialR::waitEndOfTraj()
 {
+    //logger().info() << "_______________________waitEndOfTraj() "<< logs::end;
     int timeout = 0;
     //attente du running status
     while (p_.asservStatus != 1) {

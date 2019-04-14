@@ -68,7 +68,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_ServoObjectTest", "console");
 
     //DRIVERS SIMU
-    add(logs::Level::DEBUG, "LedDriver.SIMU", "console");
+    add(logs::Level::INFO, "LedDriver.SIMU", "console");
     add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
     add(logs::Level::INFO, "SoundDriver.SIMU", "console");
     add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
@@ -85,6 +85,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "ServoDriver.EV3", "console");
     add(logs::Level::INFO, "SensorsDriver.EV3", "console");
     add(logs::Level::INFO, "LegoIRSensor.EV3", "console");
+    add(logs::Level::INFO, "LegoAngleSensor.EV3", "console");
+    add(logs::Level::INFO, "LegoMotor.EV3", "console");
 
 
     //DEBUG

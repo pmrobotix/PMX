@@ -25,6 +25,7 @@ LegoMotor::LegoMotor(address_type address) :
     }
 
     if (_path.empty()) {
+        printf("ERROR - LegoMotor::LegoMotor() path empty !!!!\n");
         return;
     }
 
@@ -48,13 +49,14 @@ void LegoMotor::set_duty_cycle_sp_run_direct(int value)
 
 void LegoMotor::set_duty_cycle_sp_optimised(int value)
 {
-    _os_duty_cycle_sp->clear();
+    //_os_duty_cycle_sp->clear();
     *_os_duty_cycle_sp << value;
+
 }
 
 void LegoMotor::run_direct_optimised()
 {
-    _os_command->clear();
+    //_os_command->clear();
     *_os_command << "run-direct";
 }
 

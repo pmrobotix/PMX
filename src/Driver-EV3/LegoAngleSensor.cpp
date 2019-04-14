@@ -10,20 +10,25 @@
 #include <fcntl.h>
 #include <stddef.h>
 #include <unistd.h>
-#include <cstdint>
 #include <cstring>
 #include <fstream>
 #include <string>
+
+#include "../Log/Logger.hpp"
 
 constexpr char LegoAngleSensor::ht_angle[];
 
 LegoAngleSensor::LegoAngleSensor(address_type address) :
         i2c_sensor(address, { ht_angle })
 {
+    address_ = address;
     if (this->connected()) {
         this->set_mode("ANGLE-ACC");
+
+        //Mise à jour du polling pour mettre a jour en i2c toutes les 20ms
         this->set_poll_ms(20);
     }
+    usleep(10000);
     _ifs_value = NULL;
     this->openIfstreamFile("value0");
 }
@@ -45,7 +50,7 @@ long LegoAngleSensor::getValueDegrees()
 
         //methode3
         long ticks = this->get_attr_int_optimized();
-
+        //logger().info() << address_ << " " << ticks << logs::end;
         return ticks;
     } else
         return -999999;
@@ -53,37 +58,51 @@ long LegoAngleSensor::getValueDegrees()
 
 void LegoAngleSensor::openIfstreamFile(const std::string &name) const
 {
-    //using namespace std;
-
-//    if (_path.empty())
-//        throw system_error(make_error_code(errc::function_not_supported),
-//                "no device connected ; [get_attr_int] path=" + _path + " " + name);
-
     if (_path.empty()) {
+        logger().error() << "ERROR - LegoAngleSensor::openIfstreamFile() path empty !!!!\n" << logs::end;
+        //printf("ERROR - LegoAngleSensor::openIfstreamFile() path empty !!!!\n");
         return;
     }
 
+
     _ifs_value = new std::ifstream();
     _ifs_value->open(_path + name);
+    _ifs_value->clear();
 
 }
 int LegoAngleSensor::get_attr_int_optimized() const
 {
-    // _is = new ifstream();
-    //   _is->open(_path + "value0");
-//     if (!_is->is_open()) {
-//
-//            throw system_error(make_error_code(errc::no_such_device),
-//                    "no device connected ; [open] path=" + _path + name);
-//        }
+    for (int attempt = 0; attempt < 2; ++attempt) {
+        try {
+            _ifs_value->seekg(0, std::ios::beg);
+            int result = -999999;
+            *_ifs_value >> result;
 
-    //_is->clear();
-    _ifs_value->seekg(0, std::ios::beg);
-    int result = 0;
-    *_ifs_value >> result;
-    // _is->close();
+            if (result == -999999)
+            {
+                logger().error() << "ERROR - get_attr_int_optimized - BAD RESULT!! " << address_ << logs::end;
+                _ifs_value->seekg(0, std::ios::beg);
+                *_ifs_value >> result;
 
-    return result;
+                if (result == -999999)
+                            {
+                    logger().error() << "!!!!!!!!!!!!!!!!!!!!!!!!ERROR - get_attr_int_optimized - BAD RESULT!! " << address_ << logs::end;
+                    exit(0);
+                            }
+            }
+            return result;
+        } catch (...) {
+            // This could mean the sysfs attribute was recreated and the
+            // corresponding file handle got stale. Lets close the file and try
+            // again (once):
+            if (attempt != 0) {
+                logger().error() << "ERROR - get_attr_int_optimized !!!! attempt=" << attempt << logs::end;
+                throw;
+            }
+            _ifs_value->clear();
+        }
+    }
+
 }
 
 uintmax_t LegoAngleSensor::wc(char const *fname)
@@ -91,7 +110,8 @@ uintmax_t LegoAngleSensor::wc(char const *fname)
     static const auto BUFFER_SIZE = 16 * 1024;
     int fd = open(fname, O_RDONLY);
     if (fd == -1) {
-        printf("ERROR LegoAngleSensor::wc open");
+        logger().error() << "ERROR LegoAngleSensor::wc open" << logs::end;
+        //printf("ERROR LegoAngleSensor::wc open");
         //handle_error("open");
         return -999;
     }
@@ -104,7 +124,8 @@ uintmax_t LegoAngleSensor::wc(char const *fname)
 
     while (size_t bytes_read = read(fd, buf, BUFFER_SIZE)) {
         if (bytes_read == (size_t) -1) {
-            printf("ERROR LegoAngleSensor::wc read failed");
+            logger().error() << "ERROR LegoAngleSensor::wc read failed" << logs::end;
+            //printf("ERROR LegoAngleSensor::wc read failed");
             //handle_error("read failed");
             return -999;
         }

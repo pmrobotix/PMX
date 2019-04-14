@@ -23,16 +23,16 @@ disableAsserv = false
 reglageCodeurs = false
 
 // Désactiver la QuadRampDérivée en distance
-disableDistanceQuad = true
+disableDistanceQuad = false
 
 // Désactiver la QuadRampDérivée en angle
-disableAngleQuad = true
+disableAngleQuad = false
 
 // Désactiver le régulateur de distance
 disableDistanceRegu = false
 
 // Désactiver le régulateur d'angle
-disableAngleRegu = true
+disableAngleRegu = false
 
 //--------------------------//
 //       CommandManager     //
@@ -55,13 +55,13 @@ enchainThreshold = 2000000
 placementOrigineX = 0
 placementOrigineY = 0
 
-// Nombre de tics codeurs en 1m pour codeur gauche
+// Nombre de tics codeurs en 1m pour codeur gauche left= 4083 ; right= 3995
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-frontParMetreCodeurG = 4100.0
+frontParMetreCodeurG = 4083.0
 
 // Nombre de tics codeurs en 1m pour codeur droite
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-frontParMetreCodeurD = 4100.0
+frontParMetreCodeurD = 3995.0
 
 // Distance entre les roues codeuses en mm
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
@@ -95,10 +95,10 @@ V_MAX_NEG_MOTOR = -100
 // envoyer de jus dans des moteurs qui ne tournent pas
 
 // EV3 : 1 a 100
-V_MIN_POS_MOTOR = 9
+V_MIN_POS_MOTOR = 15
 
 // EV3 : -1 a -100
-V_MIN_NEG_MOTOR = -9
+V_MIN_NEG_MOTOR = -15
 
 // Inversion du sens du moteur gauche
 inverseMoteurG = false
@@ -125,7 +125,7 @@ DIST_KP = 180
 DIST_KI = 0
 
 // Coeff dérivée
-DIST_KD = 0
+DIST_KD = 800
 
 // Coeff permettant de diminuer les valeurs du PID 
 DIST_OUT_RATIO = 0.000001
@@ -141,13 +141,13 @@ DIST_MAX_INTEGRAL = 0
 
 
 // Coeff proportionelle
-ANGLE_KP = 600
+ANGLE_KP = 180
 
 // Coeff intégrale
 ANGLE_KI = 0
 
 // Coeff dérivée
-ANGLE_KD = 100
+ANGLE_KD = 800
 
 // Coeff permettant de diminuer les valeurs du PID
 ANGLE_OUT_RATIO = 0.000001
@@ -162,13 +162,13 @@ ANGLE_MAX_INTEGRAL = 0
 // QUADRAMPDerivee (distance)
 
 // Vitesse max en marche avant
-DIST_QUAD_1ST_POS = 35000
+DIST_QUAD_1ST_POS = 1000000
 
 // Accélération max en marche avant //plus grand => plus raid
-DIST_QUAD_AV_2ND_ACC = 120
+DIST_QUAD_AV_2ND_ACC = 1000
 
 // Décélération max en marche avant //pente //plus grand =>plus raid 10<100
-DIST_QUAD_AV_2ND_DEC = 100
+DIST_QUAD_AV_2ND_DEC = 1000
 
 // Coeff déterminant le début de la rampe de décélération en marche avant // deplace la pente : plus grand => plus pres la deceleration 
 DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 10
