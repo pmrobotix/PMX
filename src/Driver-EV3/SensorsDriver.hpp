@@ -21,10 +21,10 @@ private:
         return instance;
     }
 
-    LegoIRSensor IR_1;
-    LegoIRSensor IR_2;
-    LegoIRSensor IR_3;
-//    LegoIRSensor IR_4;
+    LegoIRSensor IR_1_AV_D;
+    LegoIRSensor IR_2_AV_G;
+    LegoIRSensor IR_3_AR_D;
+    LegoIRSensor IR_4_AR_G;
 
 
 public:

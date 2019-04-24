@@ -14,7 +14,7 @@ public:
 
     virtual bool front() = 0;
 
-    virtual bool rear() = 0;
+    virtual bool rear() = 0; //TODO renommer back ??
 
     /*!
      * \brief Destructor.

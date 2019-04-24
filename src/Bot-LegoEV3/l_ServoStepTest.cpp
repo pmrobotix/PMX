@@ -63,6 +63,7 @@ void L_ServoStepTest::run(int argc, char** argv)
             if (pos >= 100)
                 pos = 100;
             logger().info() << "+" << step << " pos=" << pos << logs::end;
+            robot.actions().servosStd().deploy(num, pos, 0);
             //robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
 
         }
@@ -72,6 +73,7 @@ void L_ServoStepTest::run(int argc, char** argv)
             if (pos <= -100)
                 pos = -100;
             logger().info() << "-" << step << " pos=" << pos << logs::end;
+            robot.actions().servosStd().deploy(num, pos, 0);
             //robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
 
         }
@@ -79,29 +81,31 @@ void L_ServoStepTest::run(int argc, char** argv)
         if (touch == BUTTON_ENTER_KEY) {
             logger().info() << "-" << step << " pos=" << pos << logs::end;
             //robot.actions().servoObjects().release((ServoLabel) num);
-
+            robot.actions().servosStd().release(num);
         }
 
         if (touch == BUTTON_RIGHT_KEY) {
             pos = 0;
+            robot.actions().servosStd().release(num);
             //robot.actions().servoObjects().release((ServoLabel) num);
             num = num + 1;
             if (num >= SERVO_enumTypeEnd)
                 num--;
 
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-
+            usleep(300000);
         }
 
         if (touch == BUTTON_LEFT_KEY) {
             pos = 0;
+            robot.actions().servosStd().release(num);
             //robot.actions().servoObjects().release((ServoLabel) num);
             num = num - 1;
             if (num < 0)
                 num++;
 
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-
+            usleep(300000);
         }
         usleep(10000);
     }

@@ -1780,7 +1780,7 @@ protected:
 // a specific port.
 
 //~autogen
-class lego_port : protected device
+class lego_port : public device
 {
 public:
   lego_port(address_type);

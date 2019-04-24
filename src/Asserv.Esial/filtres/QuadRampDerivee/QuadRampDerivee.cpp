@@ -67,7 +67,7 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     arrivee = false;
 
     int64_t reste = consigne - position_actuelle;
-    printf("reste=%ld   consigne=%ld  pos=%ld\n", reste, consigne, position_actuelle);
+    //printf("reste=%ld   consigne=%ld  pos=%ld\n", reste, consigne, position_actuelle);
     if (llabs(reste) < tailleFenetreArrivee) {
         prevConsigneVitesse = 0; // On reset la consigne precedente
         arrivee = true;
@@ -80,18 +80,24 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     // 0 ---- X1 ---------- X2 ---- consigne
 
     // calcul la distance que parcourerait le robot si on freine a fond
-    float deltaT = 0.020f * 10000000.0f*1.1f;
-    float distanceFreinage = (vitesse * deltaT) / derivee_2nd_neg_av;
+    //float deltaT = 0.020f * 10000000.0f*1.2f; //240000
+    //float distanceFreinage = (vitesse * deltaT) / derivee_2nd_neg_av;
+    int64_t distanceFreinage = 0;
+    if (sens == 1) {
+        distanceFreinage = (vitesse * gainAnticipation_av) / derivee_2nd_neg_av;
+    } else {
+        distanceFreinage = (vitesse * gainAnticipation_ar) / derivee_2nd_neg_ar;
+    }
 
     int64_t vitesseConsigne = prevConsigneVitesse;
     int64_t accelerationConsigne = 0;
     if (distanceFreinage < reste) {
         // on accelere
-        accelerationConsigne = derivee_2nd_pos_av;
+        accelerationConsigne = (sens == 1) ? derivee_2nd_pos_av : derivee_2nd_neg_ar;
 
     } else {
         // on decelere
-        accelerationConsigne = -derivee_2nd_neg_av;
+        accelerationConsigne = (sens == 1) ? -derivee_2nd_neg_av : -derivee_2nd_pos_ar;
 
     }
 
@@ -103,12 +109,18 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     prevConsigneVitesse = vitesseConsigneLimitee;
 
     int64_t positionConsigne = position_actuelle + vitesseConsigneLimitee;
-    if ( positionConsigne > consigne) {
-        positionConsigne = consigne + 1;
-    }
+//    if (sens == 1) {
+//        if (positionConsigne > consigne) {
+//            positionConsigne = consigne;
+//        }
+//    } else {
+//        if (positionConsigne < consigne) {
+//            positionConsigne = consigne;
+//        }
+//    }
 
     printf(
-            "consigne=%ld \tpos=%ld \tvitesse=%ld \tdistanceFreinage=%f \tpositionConsigne=%ld \tvitesseConsigne=%ld \taccelerationConsigne=%ld \tvitesseConsigneLimitee=%ld \n",
+            "consigne=%ld \tpos=%ld \tvitesse=%ld \tdistanceFreinage=%ld \tpositionConsigne=%ld \tvitesseConsigne=%ld \taccelerationConsigne=%ld \tvitesseConsigneLimitee=%ld \n",
             consigne, position_actuelle, vitesse, distanceFreinage, positionConsigne, vitesseConsigne,
             accelerationConsigne, vitesseConsigneLimitee);
 

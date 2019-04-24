@@ -8,7 +8,7 @@
 #include "LegoIRSensor.hpp"
 
 #include <unistd.h>
-#include <iostream>
+#include <cstddef>
 #include <string>
 
 #include "../Log/Logger.hpp"
@@ -33,27 +33,28 @@ LegoIRSensor::LegoIRSensor(const char* input)
 
             int todo = 0;
             string temp = "nop";
-            usleep(10000);
+            //usleep(1000);
             try {
-                //temp = p.get_attr_from_set()string(input + string(":lego-ev3-color/modalias"));
-                temp = p.driver_name();
-                logger().info() << "exist driver temp ==  " << temp << logs::end;
+
+                temp = p.get_attr_from_set(string(input + string(":lego-ev3-color/modalias")));
+
+                logger().debug() << "exist driver temp ==  " << temp << logs::end;
             } catch (...) {
-                logger().error() << "LegoIRSensor  access to " << temp << logs::end;
+                logger().error() << "LegoIRSensor impossible to access to " << temp << logs::end;
             }
-            if (temp != "lego-ev3-ir")
+            if (temp != "nop")
                 todo = 1;
 
             if (todo == 0) {
                 logger().info() << "port already set to lego-ev3-ir on " << p.address() << logs::end;
             } else {
 
-                logger().info() << "set uart and device=lego-ev3-ir on " << p.address() << logs::end;
-                usleep(10000);
+                logger().debug() << "set uart and device=lego-ev3-ir on " << p.address() << logs::end;
+                //usleep(10000);
                 p.set_mode("uart");
-                usleep(10000);
+                usleep(1000);
                 p.set_set_device("lego-ev3-ir");
-                usleep(10000);
+                usleep(1000);
             }
         }
     }
@@ -70,6 +71,33 @@ LegoIRSensor::LegoIRSensor(const char* input)
         logger().error() << input << " ir_ not Connected !!" << logs::end;
     }
 }
+
+//std::string LegoIRSensor::get_attr_from_set(const std::string &name)
+//{
+//    using namespace std;
+//
+//    string s = get_attr_line(name);
+//
+//    size_t pos, last_pos = 0;
+//    string t;
+//    do {
+//        pos = s.find(' ', last_pos);
+//
+//        if (pos != string::npos) {
+//            t = s.substr(last_pos, pos - last_pos);
+//            last_pos = pos + 1;
+//        } else
+//            t = s.substr(last_pos);
+//
+//        if (!t.empty()) {
+//            if (*t.begin() == '[') {
+//                return t.substr(1, t.length() - 2);
+//            }
+//        }
+//    } while (pos != string::npos);
+//
+//    return {"none"};
+//}
 
 double LegoIRSensor::getDistanceMM()
 {

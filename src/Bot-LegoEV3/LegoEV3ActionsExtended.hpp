@@ -76,11 +76,11 @@ private:
      * \brief capteurs IR/US.
      */
     Sensors sensors_;
-//
-//    /*!
-//     * \brief Servomotors standard.
-//     */
-//    ServoObjectsSystem servos_std_;
+
+    /*!
+     * \brief Servomotors standard.
+     */
+    ServoObjectsSystem servos_std_;
 
 public:
     LegoEV3ActionsExtended(std::string botId, Robot * robot);
@@ -134,41 +134,72 @@ public:
     {
         return sensors_;
     }
-//
-//    ServoObjectsSystem & servosStd()
-//    {
-//        return servos_std_;
-//    }
-//
-//    void stop()
-//    {
-//
-//        Actions::stop(); //stop devices and wait manager to finish
-//
-//        ledbar_.resetAll();
-//        ledbar_.stop();
-//        soundbar_.stop();
-//        releaseAll();
-//    }
-//
-//    void releaseAll()
-//    {
-//        for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
-//            ServoLabel foo = static_cast<ServoLabel>(fooInt);
-//            servosStd().deploy(foo, 0);
-//            servosStd().release(foo);
-//        }
-//    }
-//
-//    //--------------------------------------------------------------
-//    //Actions 2019
-//    //--------------------------------------------------------------
-//
-//    void conveyorBelt_Push(int keep = 0, int speed = 512)
-//    {
-//        servosStd().setSpeed(SERVO_1, speed);
-//        servosStd().deploy(SERVO_1, 512, keep);
-//    }
+
+    ServoObjectsSystem & servosStd()
+    {
+        return servos_std_;
+    }
+
+    void stop()
+    {
+        Actions::stop(); //stop devices and wait manager to finish
+
+        ledbar_.resetAll();
+        ledbar_.stop();
+        soundbar_.stop();
+        releaseAll();
+    }
+
+    void releaseAll()
+    {
+        for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
+            ServoLabel foo = static_cast<ServoLabel>(fooInt);
+            servosStd().deploy(foo, 0);
+            servosStd().release(foo);
+        }
+    }
+
+    //--------------------------------------------------------------
+    //Actions 2019
+    //--------------------------------------------------------------
+
+    void left_arm_center(int keep = 0, int speed = 512)
+    {
+        servosStd().setSpeed(SERVO_1, speed);
+        servosStd().deploy(SERVO_1, 512, keep);
+    }
+
+    void left_arm_take(int keep = 0, int speed = 512)
+    {
+
+    }
+    void right_arm_center(int keep = 0, int speed = 512)
+    {
+
+    }
+    void right_arm_take(int keep = 0, int speed = 512)
+    {
+
+    }
+
+    void conveyorBelt_Right_low()
+    {
+
+    }
+
+    void conveyorBelt_Left_low()
+    {
+
+    }
+    void conveyorBelt_Pull(int nb_position)
+    {
+
+    }
+
+    void conveyorBelt_Push(int nb_position)
+    {
+
+    }
 
 };
 

@@ -18,7 +18,8 @@ ASensorsDriver * ASensorsDriver::create(std::string botName)
 //ev3-ports:inX:i2c81:mux2
 //ev3-ports:inX:i2c82:mux3
 SensorsDriver::SensorsDriver() :
-        IR_1("ev3-ports:in3:i2c80:mux1"), IR_2("ev3-ports:in3:i2c81:mux2"), IR_3("ev3-ports:in3:i2c82:mux3") //, IR_4("ev3-ports:in2:i2c81:mux2")
+        IR_1_AV_D("ev3-ports:in4:i2c80:mux1"), IR_2_AV_G("ev3-ports:in3:i2c80:mux1"), IR_3_AR_D(
+                "ev3-ports:in4:i2c81:mux2"), IR_4_AR_G("ev3-ports:in3:i2c82:mux3")
 {
 }
 
@@ -31,16 +32,12 @@ bool SensorsDriver::front()
 
     bool temp = 0;
 
-    double mm1 = IR_1.getDistanceMM();
-    double mm2 = IR_2.getDistanceMM();
-    double mm3 = IR_3.getDistanceMM();
-//    double mm4 = IR_4.getDistanceMM();
-    logger().info() << "IR_1==" << mm1 << "   IR_2==" << mm2 << "   IR_3==" << mm3 << logs::end;
-//    logger().debug() << "IR_2=" << mm2 << logs::end;
-//    logger().debug() << "IR_3=" << mm3 << logs::end;
-//    logger().debug() << "IR_4=" << mm4 << logs::end;
+    double mm1 = IR_1_AV_D.getDistanceMM();
+    double mm2 = IR_2_AV_G.getDistanceMM();
 
-    if (mm1 < 160 || mm2 < 160 || mm3 < 160)
+    logger().info() << "IR_2_AV_G==" << mm2 << "< \tIR_1_AV_D==" << mm1 << logs::end;
+
+    if (mm1 < 160 || mm2 < 160)
         temp = 1;
     return temp;
 
@@ -48,7 +45,15 @@ bool SensorsDriver::front()
 
 bool SensorsDriver::rear()
 {
-    return 0;
+    bool temp = 0;
+    double mm3 = IR_3_AR_D.getDistanceMM();
+    double mm4 = IR_4_AR_G.getDistanceMM();
+
+    logger().info() << "IR_4_AR_G==" << mm4 << " \tIR_3_AR_D==" << mm3 << logs::end;
+
+    if (mm3 < 160 || mm4 < 160)
+        temp = 1;
+    return temp;
 
     /*
      double mm = us_.value() * 10.0;

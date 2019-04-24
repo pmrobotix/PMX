@@ -24,28 +24,24 @@ ServoDriver::ServoDriver() :
     logger().debug() << "ServoDriver()" << logs::end;
 
     //mise du pollong à 0 pour la carte de servo.
-    i2c_sensor servo_sensor = i2c_sensor("ev3-ports:in1:i2c88");
+    i2c_sensor servo_sensor = i2c_sensor("ev3-ports:in4:i2c88");
     servo_sensor.set_poll_ms(0);
 
 
     //CONFIG Specifique si necessaire
-    servo_motors_[0] = servo_motor("ev3-ports:in1:i2c88:sv1");
-    servo_motors_[1] = servo_motor("ev3-ports:in1:i2c88:sv2");
-    servo_motors_[2] = servo_motor("ev3-ports:in1:i2c88:sv3");
-    servo_motors_[3] = servo_motor("ev3-ports:in1:i2c88:sv4");
-    servo_motors_[4] = servo_motor("ev3-ports:in1:i2c88:sv5");
-    servo_motors_[5] = servo_motor("ev3-ports:in1:i2c88:sv6");
-    servo_motors_[6] = servo_motor("ev3-ports:in1:i2c88:sv7");
-    servo_motors_[7] = servo_motor("ev3-ports:in1:i2c88:sv8");
+    servo_motors_[0] = servo_motor("ev3-ports:in4:i2c88:sv1");
+    servo_motors_[1] = servo_motor("ev3-ports:in4:i2c88:sv2");
+    servo_motors_[2] = servo_motor("ev3-ports:in4:i2c88:sv3");
+    servo_motors_[3] = servo_motor("ev3-ports:in4:i2c88:sv4");
+    servo_motors_[4] = servo_motor("ev3-ports:in4:i2c88:sv5");
+    servo_motors_[5] = servo_motor("ev3-ports:in4:i2c88:sv6");
+    servo_motors_[6] = servo_motor("ev3-ports:in4:i2c88:sv7");
+    servo_motors_[7] = servo_motor("ev3-ports:in4:i2c88:sv8");
 
     if (ping(0)) //test sur le servo 0 pour savoir si la carte est branchée
         connected_ = 1;
     else
         logger().error() << "SERVO NOT CONNECTED! ServoDriver()" << logs::end;
-
-//    for (int i = 0; i < 8; i++) {
-//        servo_motors_[i].float_();
-//    }
 
 }
 

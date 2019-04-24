@@ -271,8 +271,13 @@ int device::get_attr_int(const std::string &name) const
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported),
-                "no device connected ; [get_attr_int] path=" + _path + " " + name);
+    {
+        usleep(30000);
+        if (_path.empty())
+                throw system_error(make_error_code(errc::function_not_supported),
+                        "no device connected ; [get_attr_int] path=" + _path + " " + name);
+    }
+
 //    if(1==1){
 //        printf("device::get_attr_int %s \n",name.c_str());
 //        return 99;

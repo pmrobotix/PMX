@@ -17,10 +17,12 @@ void test::SensorDriverTest::testSensors()
 {
     logger().debug() << "testSensors()" << logs::end;
     bool front = false;
+    bool back = false;
 
     for (int i = 0; i < 10; i++) {
         front = sensordriver_->front();
-        logger().info() << "front=" << front << logs::end;
+        back = sensordriver_->rear();
+        logger().info() << "front=" << front<< "  back=" << back << logs::end;
         //usleep(500000);
     }
     this->assert(true, "OK");

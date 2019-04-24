@@ -29,7 +29,7 @@ void AsservDriver::reset()
 }
 
 AsservDriver::AsservDriver() :
-        _motor_right_(OUTPUT_A), _motor_left_(OUTPUT_D), angleR_("ev3-ports:in1:i2c1"), angleL_("ev3-ports:in4:i2c1")
+        _motor_right_(OUTPUT_D), _motor_left_(OUTPUT_A), angleR_("ev3-ports:in2:i2c1"), angleL_("ev3-ports:in1:i2c1")
 {
     logger().debug() << "AsservDriver()" << logs::end;
 
