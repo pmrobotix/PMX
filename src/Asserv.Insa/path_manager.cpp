@@ -140,7 +140,7 @@ void AsservInsa::path_CollisionRearOnTrajectory()
 		motion_FreeMotion();
 		motion_FreeMotion();
 		usleep(3000000);
-		path_TriggerWaypoint(TRAJ_COLLISION_REAR);
+		path_TriggerWaypoint(TRAJ_COLLISION);
 	}
 }
 

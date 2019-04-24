@@ -16,6 +16,7 @@ void logs::LoggerFactory::initialize()
     add("svgia", new SvgAppender("svgIA.svg"));
     //add("memory", new MemoryAppender());
     add("fileAsserv", new FileAppender("logAsserv.csv"));
+    add("fileRegul", new FileAppender("logRegul.csv"));
 
     add(logs::Level::ERROR, "", "console");
 
@@ -44,6 +45,7 @@ void logs::LoggerFactory::initialize()
     //File DEBUG
     //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
     add(logs::Level::DEBUG, "logFileAsservEsialR", "fileAsserv");
+    add(logs::Level::DEBUG, "logFileAsservRegul", "fileRegul");
 
     //TESTS
     add(logs::Level::INFO, "L_LedBarTest", "console");

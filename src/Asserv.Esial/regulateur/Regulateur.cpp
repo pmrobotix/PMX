@@ -1,5 +1,7 @@
 #include "Regulateur.h"
 
+#include "../../Log/Logger.hpp"
+
 // Constructeur
 Regulateur::Regulateur(bool isDistance) :
         filtreQuadRampDerivee(isDistance), filtrePid(isDistance)
@@ -25,6 +27,8 @@ int64_t Regulateur::manage(int64_t consigne, int64_t feedback_odometrie)
     // Cette étape permet d'avoir un comportement linéaire au lieu de binaire (= soit à l'arrêt, soit à fond) qui provoque des secouses et peut
     // renverser le robot. A la place, on accélère et déccélère tranquillement et ça, c'est beau :p
     int64_t consigneFiltree = filtreQuadRampDerivee.filtre(consigne, accumulateur, feedback_odometrie);
+
+    loggerFile().info() << consigne << ", "<< feedback_odometrie << ", "<< consigneFiltree << logs::end;
 
     // On calcul l'erreur, c'est à dire la différence entre la consigne à suivre et la position réelle stockée dans l'accumulateur
     int64_t erreur;

@@ -1,12 +1,24 @@
 #ifndef REGULATEUR
 #define REGULATEUR
 
+#include <sys/types.h>
+
+#include "../../Log/LoggerFactory.hpp"
 #include "../filtres/Pid/Pid.h"
 #include "../filtres/QuadRampDerivee/QuadRampDerivee.h"
-#include "../config/config.h"
 
 class Regulateur
 {
+private:
+    /*!
+    * \brief Retourne le \ref Logger file associé à la classe \ref logFileAsservRegul.
+    */
+        static inline const logs::Logger & loggerFile()
+        {
+            static const logs::Logger & instance = logs::LoggerFactory::logger("logFileAsservRegul");
+            return instance;
+        }
+
 public:
 
     // Constructeur et Destructeur

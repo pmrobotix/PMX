@@ -29,6 +29,9 @@ public:
     }
 
     // Filtre la consigne pour tenir compte des rampes d'accélération et de décélération
+    int64_t filtre_old(int64_t consigne, int64_t position_actuelle , int64_t vitesse);
+
+    //Filtre cho
     int64_t filtre(int64_t consigne, int64_t position_actuelle , int64_t vitesse);
 
 private:

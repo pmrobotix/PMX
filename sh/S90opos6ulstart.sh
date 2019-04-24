@@ -50,6 +50,12 @@ i2cdetect -y -a 1
 #pour eviter une connexion à internet.. les DNS sont ajoutés après l'activation du wifi...
 echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
+#pour ajouter de la place
+# resize2fs /dev/mmcblk0p2
+
+#pour la partition data
+#mount  /dev/mmcblk0p3 /media/data/
+
 
 #start PMX
 #/root/Bot_ArmadeusOPOS6UL_ARM m

@@ -62,7 +62,7 @@ public:
     }
     int64_t getDeltaDist()
     {
-        return deltaDist;    // Variation de la distance du robot
+        return deltaDist;    // Variation de la distance du robot en UO
     }
     int64_t getDeltaThetaBrut()
     {

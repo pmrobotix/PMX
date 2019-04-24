@@ -7,11 +7,11 @@ enum TRAJ_STATE
 {
     TRAJ_OK,			//trajectory successfully completed
     TRAJ_ERROR,			//unknown error (not implemented !)
-    TRAJ_COLLISION,			//trajectory interrupted because of a collision
-    TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision
+    TRAJ_COLLISION,			//trajectory interrupted because of a collision (blocked)
+    TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision (sensors)
     TRAJ_CANCELLED,			//trajectory cancelled by remote user or not found
     TRAJ_INTERRUPTED,		//trajectory interrupted by software
-    TRAJ_COLLISION_REAR
+    //TRAJ_NEAR_OBSTACLE_REAR //TRAJ_COLLISION_REAR
 };
 
 enum MOTION_STATE
@@ -25,17 +25,13 @@ typedef struct RobotPosition
     float y; //metres
     float theta; //radians
 
-    //asser mbed status old
-    //asservStatus 0 = running
-    //asservStatus 1 = tâche terminée
-    //asservStatus 2 = emergency stop
-
+    //asser mbed status
     //0 idle
     //1 running
     //2 emergency stop
     //3 blocked
 
-    int asservStatus; // TODO describe values ? TRAL_STATE ?
+    int asservStatus;
 } RobotPosition;
 
 class AAsservDriver
