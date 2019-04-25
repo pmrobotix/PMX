@@ -17,13 +17,17 @@
 IAutomateState*
 L_State_Init::execute(Robot&)
 {
-    logger().info() << "O_StateInit executing..." << logs::end;
+    logger().info() << "L_StateInit executing..." << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+
+
     robot.actions().start();
 
     //BEGIN
     begin: robot.strategy("all");
+    logger().info() << "robot.skipSetup()= "<< robot.skipSetup() << logs::end;
+
 
     if (!robot.skipSetup()) {
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
@@ -71,9 +75,9 @@ L_State_Init::execute(Robot&)
 
         logger().info() << "PMX...WAIT TIRETTE !";
         if (robot.getMyColor() == PMXVIOLET)
-            logger().info() << " ORANGE";
+            logger().info() << " VIOLET";
         else
-            logger().info() << "GREEN";
+            logger().info() << "YELLOW";
         logger().info() << logs::end;
 
         bool bb = false;
@@ -87,7 +91,8 @@ L_State_Init::execute(Robot&)
             usleep(100000);
         }
     } else {
-        logger().error() << "SKIP SETUP...." << logs::end;
+
+        logger().info() << "SKIP SETUP...." << logs::end;
         if (robot.getMyColor() == PMXNOCOLOR) {
 
             exit(0);
@@ -98,6 +103,7 @@ L_State_Init::execute(Robot&)
         setPos();
         robot.waitForInit(true);
         usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
+
     }
 
 
@@ -105,7 +111,7 @@ L_State_Init::execute(Robot&)
 
     robot.actions().ledBar().resetAll();
 
-    logger().info() << "O_StateInit executed" << logs::end;
+    logger().info() << "L_StateInit executed" << logs::end;
     //return NULL; //finish all state
     return this->getState("WaitEndOfMatch"); //return NULL; //finish all state
 }
@@ -114,9 +120,9 @@ void L_State_Init::setPos()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-    /*
-     robot.asserv().startMotionTimerAndOdo(false);*/
-    robot.asserv().setPositionAndColor(70, 210, 0.0, (robot.getMyColor() != PMXVIOLET));
+
+    robot.asserv().startMotionTimerAndOdo(false);
+    robot.asserv().setPositionAndColor(300, 750, 90.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(false);

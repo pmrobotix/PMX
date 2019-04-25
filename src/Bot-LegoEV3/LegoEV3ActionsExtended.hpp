@@ -1,6 +1,7 @@
 #ifndef LEGOEV3_ACTIONSEXTENDED_HPP_
 #define LEGOEV3_ACTIONSEXTENDED_HPP_
 
+#include <unistd.h>
 #include <string>
 
 #include "../Common/Action/Actions.hpp"
@@ -8,6 +9,7 @@
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/ServoObjectsSystem.hpp"
+#include "../Common/Action/ServoUsingMotor.hpp"
 #include "../Common/Action/SoundBar.hpp"
 #include "../Common/Action/Tirette.hpp"
 #include "../Log/LoggerFactory.hpp"
@@ -82,6 +84,8 @@ private:
      */
     ServoObjectsSystem servos_std_;
 
+    ServoUsingMotor servoUsingMotor_;
+
 public:
     LegoEV3ActionsExtended(std::string botId, Robot * robot);
 
@@ -140,6 +144,11 @@ public:
         return servos_std_;
     }
 
+    ServoUsingMotor & servoUsingMotor()
+    {
+        return servoUsingMotor_;
+    }
+
     void stop()
     {
         Actions::stop(); //stop devices and wait manager to finish
@@ -163,33 +172,63 @@ public:
     //Actions 2019
     //--------------------------------------------------------------
 
-    void left_arm_center(int keep = 0, int speed = 512)
+    void left_arm_center(int speed = 512)
     {
-        servosStd().setSpeed(SERVO_1, speed);
-        servosStd().deploy(SERVO_1, 512, keep);
+        servosStd().deploy(SERVO_7, 0, 0);
+        usleep(1000000);
+        servosStd().release(SERVO_7);
+    }
+    void left_arm_take()
+    {
+        servosStd().deploy(SERVO_7, 100, 0);
+        usleep(1000000);
+        servosStd().release(SERVO_7);
+    }
+    void left_arm_retract()
+    {
+        servosStd().deploy(SERVO_7, -100, 0);
+        usleep(1000000);
+        servosStd().release(SERVO_7);
     }
 
-    void left_arm_take(int keep = 0, int speed = 512)
+    void right_arm_center(int keep = 0)
+    {
+        servosStd().deploy(SERVO_5, 0, 0);
+        usleep(1000000);
+        servosStd().release(SERVO_5);
+    }
+    void right_arm_take(int keep = 0)
     {
 
+        servosStd().deploy(SERVO_5, 100, 0);
+        usleep(1000000);
+        servosStd().release(SERVO_5);
     }
-    void right_arm_center(int keep = 0, int speed = 512)
+    void right_arm_retract()
     {
-
+        servosStd().deploy(SERVO_5, -100, 0);
+        usleep(1000000);
+        servosStd().release(SERVO_5);
     }
-    void right_arm_take(int keep = 0, int speed = 512)
+
+    void conveyorBelt_Left_center()
     {
-
+        servosStd().deploy(SERVO_1, 0, 0);
+        usleep(2000000);
+        //servosStd().release(SERVO_1);
     }
-
     void conveyorBelt_Right_low()
     {
-
+        servosStd().deploy(SERVO_1, -100, 0);
+        usleep(2000000);
+        //servosStd().release(SERVO_1);
     }
 
     void conveyorBelt_Left_low()
     {
-
+        servosStd().deploy(SERVO_1, 100, 0);
+        usleep(2000000);
+        //servosStd().release(SERVO_1);
     }
     void conveyorBelt_Pull(int nb_position)
     {

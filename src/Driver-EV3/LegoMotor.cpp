@@ -20,7 +20,7 @@ LegoMotor::LegoMotor(address_type address) :
 
         this->set_ramp_down_sp(0);
         this->set_ramp_up_sp(0);
-        this->set_stop_action(stop_action_brake);
+        this->set_stop_action(motor::stop_action_brake);
 
     }
 

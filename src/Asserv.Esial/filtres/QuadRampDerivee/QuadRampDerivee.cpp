@@ -1,7 +1,6 @@
 #include "QuadRampDerivee.h"
 
-#include <cstdio>
-#include <cstdlib>
+#include <stdlib.h>
 
 #include "../../config/config.h"
 
@@ -71,7 +70,7 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     if (llabs(reste) < tailleFenetreArrivee) {
         prevConsigneVitesse = 0; // On reset la consigne precedente
         arrivee = true;
-        printf("ARRIVED !!! reste=%ld   consigne=%ld  pos=%ld\n", reste, consigne, position_actuelle);
+        //printf("ARRIVED !!! reste=%ld   consigne=%ld  pos=%ld\n", reste, consigne, position_actuelle);
         return consigne;
     }
 
@@ -98,7 +97,6 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     } else {
         // on decelere
         accelerationConsigne = (sens == 1) ? -derivee_2nd_neg_av : -derivee_2nd_pos_ar;
-
     }
 
     vitesseConsigne += accelerationConsigne;
@@ -109,20 +107,22 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     prevConsigneVitesse = vitesseConsigneLimitee;
 
     int64_t positionConsigne = position_actuelle + vitesseConsigneLimitee;
-//    if (sens == 1) {
-//        if (positionConsigne > consigne) {
-//            positionConsigne = consigne;
-//        }
-//    } else {
-//        if (positionConsigne < consigne) {
-//            positionConsigne = consigne;
-//        }
-//    }
 
-    printf(
-            "consigne=%ld \tpos=%ld \tvitesse=%ld \tdistanceFreinage=%ld \tpositionConsigne=%ld \tvitesseConsigne=%ld \taccelerationConsigne=%ld \tvitesseConsigneLimitee=%ld \n",
-            consigne, position_actuelle, vitesse, distanceFreinage, positionConsigne, vitesseConsigne,
-            accelerationConsigne, vitesseConsigneLimitee);
+    //pour ne pas donner une consigne plus loin
+    if (sens == 1) {
+        if (positionConsigne > consigne) {
+            positionConsigne = consigne;
+        }
+    } else {
+        if (positionConsigne < consigne) {
+            positionConsigne = consigne;
+        }
+    }
+
+//    printf(
+//            "consigne=%ld \tpos=%ld \tvitesse=%ld \tdistanceFreinage=%ld \tpositionConsigne=%ld \tvitesseConsigne=%ld \taccelerationConsigne=%ld \tvitesseConsigneLimitee=%ld \n",
+//            consigne, position_actuelle, vitesse, distanceFreinage, positionConsigne, vitesseConsigne,
+//            accelerationConsigne, vitesseConsigneLimitee);
 
     return positionConsigne;
 

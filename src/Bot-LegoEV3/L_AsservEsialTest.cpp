@@ -61,8 +61,8 @@ void L_AsservEsialTest::run(int argc, char** argv)
             left = extEncoders.getLeftEncoder();
             right = extEncoders.getRightEncoder();
 
-            logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-                    << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
+            logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
+                    << " ; right= " << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
                     << asserv.pos_getThetaInDegree() << logs::end;
             usleep(100000);
             nb++;
@@ -73,8 +73,8 @@ void L_AsservEsialTest::run(int argc, char** argv)
         logger().info() << "ETAPE 2 : TEST MOTEURS ET CODEURS" << logs::end;
         //test2 moteurs et codeurs dans le bon sens
         while (1) {
-            asserv.base()->motors().runMotorLeft(20, 0);
-            asserv.base()->motors().runMotorRight(20, 0);
+            asserv.base()->motors().runMotorLeft(25, 0);
+            asserv.base()->motors().runMotorRight(25, 0);
 
             left = extEncoders.getLeftEncoder();
             right = extEncoders.getRightEncoder();
@@ -84,7 +84,7 @@ void L_AsservEsialTest::run(int argc, char** argv)
                     << asserv.pos_getThetaInDegree() << logs::end;
             usleep(100000);
             nb++;
-            if (nb > 10)
+            if (nb > 50)
                 break;
         }
     }
@@ -105,23 +105,21 @@ void L_AsservEsialTest::run(int argc, char** argv)
         logger().info() << "ETAPE 4 : on avance pour regler D" << logs::end;
         robot.asserv().assistedHandling();
         robot.asserv().doLineAbs(100);
-
+        sleep(1);
     }
 
-    //test4 quadramp
     if (step == 5) {
-
-
+        logger().info() << "ETAPE 5 : on tourne pour regler D" << logs::end;
+        robot.asserv().assistedHandling();
+        robot.asserv().doRotateAbs(90);
+        sleep(1);
 
     }
+    //test4 quadramp
 
-
-
-
-
-    logger().info() << "END t= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-                        << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
-                        << asserv.pos_getThetaInDegree() << logs::end;
+    logger().info() << "END t= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
+            << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a=" << asserv.pos_getThetaInDegree()
+            << logs::end;
     robot.svgPrintPosition();
 
     robot.stopAll();

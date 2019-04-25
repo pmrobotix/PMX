@@ -40,8 +40,12 @@ tests()
 
 recup()
 {
+#faire un repertoire de logs
         #scp "robot@$IP:/home/robot/pmx/*.csv /home/robot/pmx/*.svg" /home/pmx/recup
+        #scp "robot@$IP:/home/robot/pmx/logAsserv.csv /home/robot/pmx/logRegul.csv /home/robot/pmx/svgEV3.svg /home/robot/pmx/svgIA.svg" /home/pmx/recup
         scp "robot@$IP:/home/robot/pmx/*.csv" /home/pmx/recup
+        scp "robot@$IP:/home/robot/pmx/*.svg" /home/pmx/recup
+        
 }
 
 connect()

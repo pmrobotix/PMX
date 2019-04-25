@@ -25,7 +25,7 @@ private:
     }
 
     int connected_;
-    large_motor _servo_device;
+    large_motor _servo_device ;
 
 protected:
 
@@ -42,7 +42,7 @@ public:
     {
     }
 
-    void setMotorPosition(int power, int pos, int ramptimems);
+    void setMotorPosition(int power, int pos, int ramptimems = 0);
 
     long getInternalEncoder();
 
@@ -51,8 +51,6 @@ public:
     void stopMotor();
 
     int getMotorCurrent();
-
-    void enableHardRegulation(bool enable);
 
     int limit(int power, int max);
 

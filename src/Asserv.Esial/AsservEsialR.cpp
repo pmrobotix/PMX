@@ -356,7 +356,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
         logger().info() << " xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
 
-        usleep(10000);
+        usleep(40000);
         timeout++;
         if (timeout > 150 && p_.asservStatus != 1) {
 

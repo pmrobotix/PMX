@@ -32,7 +32,7 @@ disableAngleQuad = false
 disableDistanceRegu = false
 
 // Désactiver le régulateur d'angle
-disableAngleRegu = true
+disableAngleRegu = false
 
 //--------------------------//
 //       CommandManager     //
@@ -95,10 +95,10 @@ V_MAX_NEG_MOTOR = -100
 // envoyer de jus dans des moteurs qui ne tournent pas
 
 // EV3 : 1 a 100
-V_MIN_POS_MOTOR = 10
+V_MIN_POS_MOTOR = 40
 
 // EV3 : -1 a -100
-V_MIN_NEG_MOTOR = -10
+V_MIN_NEG_MOTOR = -40
 
 // Inversion du sens du moteur gauche
 inverseMoteurG = false
@@ -125,7 +125,7 @@ DIST_KP = 180
 DIST_KI = 0
 
 // Coeff dérivée
-DIST_KD = 0
+DIST_KD = 1500
 
 // Coeff permettant de diminuer les valeurs du PID 
 DIST_OUT_RATIO = 0.000001
@@ -147,7 +147,7 @@ ANGLE_KP = 180
 ANGLE_KI = 0
 
 // Coeff dérivée
-ANGLE_KD = 0
+ANGLE_KD = 500
 
 // Coeff permettant de diminuer les valeurs du PID
 ANGLE_OUT_RATIO = 0.000001
@@ -162,16 +162,16 @@ ANGLE_MAX_INTEGRAL = 0
 // QUADRAMPDerivee (distance)
 
 // Vitesse max en marche avant
-DIST_QUAD_1ST_POS = 500000
+DIST_QUAD_1ST_POS = 1000000
 
 // Accélération max en marche avant //plus grand => plus raid
-DIST_QUAD_AV_2ND_ACC = 20000
+DIST_QUAD_AV_2ND_ACC = 30000
 
 // Décélération max en marche avant //pente //plus grand =>plus raid 
-DIST_QUAD_AV_2ND_DEC = 10000
+DIST_QUAD_AV_2ND_DEC = 20000
 
-// Coeff déterminant le début de la rampe de décélération en marche avant // deplace la pente : plus grand => plus pres la deceleration 
-DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 240000
+// Coeff déterminant le début de la rampe de décélération en marche avant // deplace la pente : plus grand => vers la gauche, frene plus tot
+DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 300000
 
 
 // Vitesse max en marche arrière
@@ -179,16 +179,16 @@ DIST_QUAD_1ST_NEG = 500000
 
 
 // Accélération max en marche arrière
-DIST_QUAD_AR_2ND_ACC = 20000
+DIST_QUAD_AR_2ND_ACC = 30000
 
 // Décélération max en marche arrière
-DIST_QUAD_AR_2ND_DEC = 10000
+DIST_QUAD_AR_2ND_DEC = 20000
 
 // Coeff déterminant le début de la rampe de décélération en marche arrière
 DIST_QUAD_AR_ANTICIPATION_GAIN_COEF = 240000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-DIST_TAILLE_FENETRE_ARRIVEE = 20000
+DIST_TAILLE_FENETRE_ARRIVEE = 50000
 
 // Diviseur pour la vitesse faible en marche avant
 DIST_QUAD_AV_LOW_DIV = 0
@@ -203,16 +203,16 @@ DIST_QUAD_AR_LOW_DIV = 0
 ANGLE_QUAD_1ST_POS = 500000
 
 // Accélération max en rotation
-ANGLE_QUAD_2ND_ACC = 20000
+ANGLE_QUAD_2ND_ACC = 10000
 
 // Décélération max en rotation
-ANGLE_QUAD_2ND_DEC = 20000
+ANGLE_QUAD_2ND_DEC = 10000
 
 // Coeff déterminant le début de la rampe de décélération en rotation
 ANGLE_QUAD_ANTICIPATION_GAIN_COEF = 240000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-ANGLE_TAILLE_FENETRE_ARRIVEE = 20000
+ANGLE_TAILLE_FENETRE_ARRIVEE = 30000
 
 
 //--------------------------//
@@ -226,4 +226,4 @@ BLOCK_DIST_SPEED_THRESHOLD = 1024
 BLOCK_ANGLE_SPEED_THRESHOLD = 1024
 
 // Si on ne bouge pas pendant ce nombre de tick, on signale l'info
-BLOCK_TICK_THRESHOLD = 500
+BLOCK_TICK_THRESHOLD = 30

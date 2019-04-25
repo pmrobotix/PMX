@@ -45,7 +45,8 @@ void LegoEV3RobotExtended::stopActions()
 void LegoEV3RobotExtended::begin(int argc, char** argv)
 {
     Robot::begin(argc, argv);
-    logger().debug() << "LegoEV3RobotExtended::begin" << logs::end;
+    logger().info() << "LegoEV3RobotExtended::begin" << logs::end;
+
 
     //specific match case ands strategies
     if (cArgs_["type"] == "m" or cArgs_["type"] == "M") {
@@ -58,6 +59,8 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
         stateInit->addState("WaitEndOfMatch", stateWaitEndOfMatch);
 
         decisionMaker_->start("L_State_DecisionMakerIA");
+
+        logger().info() << "Start the automate" << logs::end;
 
         // Start the automate and wait for its return
         automate_.run(*this, stateInit);

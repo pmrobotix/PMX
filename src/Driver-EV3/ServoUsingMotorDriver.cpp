@@ -2,8 +2,6 @@
 
 #include "ServoUsingMotorDriver.hpp"
 
-#include <string>
-
 #include "../Log/Logger.hpp"
 
 using namespace std;
@@ -16,44 +14,38 @@ AServoUsingMotorDriver * AServoUsingMotorDriver::create()
 }
 
 ServoUsingMotorDriver::ServoUsingMotorDriver() :
-        connected_(0)
+        connected_(0), _servo_device(OUTPUT_B)
 {
     logger().debug() << "ServoDeviceDriver()" << logs::end;
-    /*
-     motor m = motor(OUTPUT_C);
-     if (m.connected())
-     {
-     _servo_device = OUTPUT_C;
-     logger().info() << "EV3 Motor as SERVO - "
-     << m.address()
-     << " connected (CountPerRot:"
-     << m.count_per_rot()
-     << " DriverName:"
-     << m.driver_name()
-     << " Polarity:"
-     << m.polarity()
-     << " EncoderPolarity:"
-     << m.encoder_polarity()
-     << ")"
-     << logs::end;
-     connected_ = 1;
-     }
-     else
-     {
-     _servo_device = OUTPUT_C;
-     logger().error() << "ERROR OUTPUT_C - Motor as SERVO " << "not connected !!" << logs::end;
-     }
 
-     if (connected_ == 1)
-     {
-     _servo_device.reset();
-     _servo_device.set_stop_command(motor::stop_command_brake);
-     enableHardRegulation(false);
-     }*/
+    _servo_device.reset();
+    _servo_device.set_polarity(motor::polarity_normal);
+    _servo_device.set_ramp_down_sp(0);
+    _servo_device.set_ramp_up_sp(0);
+    _servo_device.set_stop_action(motor::stop_action_brake);
+
+    if (_servo_device.connected()) {
+
+        logger().info() << "(" << "RIGHT" << ") " << _servo_device.driver_name() << " motor on port "
+                << _servo_device.address() << " Pol=" << _servo_device.polarity() << logs::end;
+    } else {
+        logger().error() << "NOT CONNECTED! NO _servo_device !" << logs::end;
+    }
+
 }
 
 void ServoUsingMotorDriver::setMotorPosition(int power, int ticks, int ramptimems)
-{/*
+{
+    if (_servo_device.connected())
+    {
+        _servo_device.set_ramp_down_sp(ramptimems);
+        _servo_device.set_ramp_up_sp(ramptimems);
+
+        power = limit(power, MAXVALUE_duty_cycle_sp);
+        _servo_device.set_position_sp(ticks).set_duty_cycle_sp(power).run_to_rel_pos();
+    }
+
+    /*
  if (_servo_device.connected())
  {
  _servo_device.set_ramp_down_sp(ramptimems);
@@ -100,20 +92,6 @@ int ServoUsingMotorDriver::getMotorCurrent()
     return 0;
 }
 
-void ServoUsingMotorDriver::enableHardRegulation(bool enable)
-{/*
- if (_servo_device.connected())
- {
- if (enable)
- {
- _servo_device.set_speed_regulation_enabled("on"); //speed_sp
- }
- else
- {
- _servo_device.set_speed_regulation_enabled("off"); //duty_cycle_sp
- }
- }*/
-}
 
 int ServoUsingMotorDriver::limit(int power, int max)
 {

@@ -51,18 +51,19 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
     logger().info() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     logger().info() << "color = " << robot.getMyColor() << logs::end;
-
+/*
     //definition des zones en zone ORANGE uniquement
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_button", 1000, 0, 300, 400, 1020, 250, 90);
 
     robot.ia().iAbyPath().ia_addAction("push_button", &L_push_button);
-
+*/
     logger().info() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
 
 void L_State_DecisionMakerIA::initPlayground()
 {
+    /*
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     logger().info() << "color = " << robot.getMyColor() << logs::end;
 
@@ -109,7 +110,7 @@ void L_State_DecisionMakerIA::initPlayground()
     p_->compute_edges();
 
     robot.ia().iAbyPath().addPlayground(p_);
-    robot.ia().iAbyPath().toSVG();
+    robot.ia().iAbyPath().toSVG();*/
 }
 
 void L_State_DecisionMakerIA::execute()
@@ -118,27 +119,31 @@ void L_State_DecisionMakerIA::execute()
 
     //wait for init!
     while (!robot.waitForInit()) {
-        usleep(1000);
+        usleep(50000);
         //logger().error() << "waitForInit..." << logs::end;
     }
     logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
 
+    IASetupActivitiesZone(); //definit les activities
+
+
     //wait for the start of the chrono !
     while (!robot.chrono().started()) {
-        usleep(10000);
+        usleep(50000);
     }
 
     logger().info() << "L_State_DecisionMakerIA executing..." << logs::end;
     //robot.svgPrintPosition();
 
-    //robot.actions().sensors().startSensors();
 
     //pause
-    sleep(5);
+    //sleep(5);
 
-    robot.asserv().base()->moveForward(450, 200);
-    //robot.asserv().base()->moveForward(-100, 200);
+    //robot.actions().sensors().startSensors(); // not used here because replace by wait end of match
 
+
+    //start
+    robot.ia().iAbyPath().ia_start();
 
     //logger().info() << "O_State_DecisionMakerIA executed" << logs::end;
     robot.freeMotion();

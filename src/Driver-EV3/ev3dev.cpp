@@ -282,7 +282,7 @@ int device::get_attr_int(const std::string &name) const
 //        printf("device::get_attr_int %s \n",name.c_str());
 //        return 99;
 //    }
-    for (int attempt = 0; attempt < 2; ++attempt) {
+    for (int attempt = 0; attempt < 3; ++attempt) {
         ifstream &is = ifstream_open(_path + name);
         if (is.is_open()) {
             int result = 0;
@@ -302,7 +302,7 @@ int device::get_attr_int(const std::string &name) const
         } else
             break;
     }
-    throw system_error(make_error_code(errc::no_such_device), _path + name);
+    throw system_error(make_error_code(errc::no_such_device), "[get_attr_int] " + _path + name);
 }
 
 //-----------------------------------------------------------------------------
@@ -312,10 +312,17 @@ void device::set_attr_int(const std::string &name, int value)
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported),
-                "no device connected ; [set_attr_int] path=" + _path + " name=" + name);
-
-    for (int attempt = 0; attempt < 2; ++attempt) {
+    {
+        for (int attempt = 0; attempt < 4; ++attempt) {
+            usleep(30000);
+            if (!_path.empty())
+                       break;
+        }
+        if (_path.empty())
+            throw system_error(make_error_code(errc::function_not_supported),
+                            "no device connected ; [set_attr_int] path=" + _path + " name=" + name);
+    }
+    for (int attempt = 0; attempt <= 4; ++attempt) {
         ofstream &os = ofstream_open(_path + name);
         if (os.is_open()) {
             if (os << value)
@@ -323,17 +330,17 @@ void device::set_attr_int(const std::string &name, int value)
 
             // An error could mean that sysfs attribute was recreated and the cached
             // file handle is stale. Lets close the file and try again (once):
-            if (attempt == 0 && errno == ENODEV) {
+            if (errno == ENODEV) {
                 os.close();
                 os.clear();
-            } else {
-                throw system_error(std::error_code(errno, std::system_category()),
-                        " [set_attr_int] value=" + std::to_string(value) + " path=" + _path + name);
+                printf("[set_attr_int] ENODEV attemp=%d\n", attempt);
             }
         } else {
-            throw system_error(make_error_code(errc::no_such_device), _path + name);
+            throw system_error(make_error_code(errc::no_such_device), "[set_attr_int] "+ _path + name);
         }
     }
+    throw system_error(std::error_code(errno, std::system_category()),
+            " [set_attr_int] value=" + std::to_string(value) + " path=" + _path + name );
 }
 
 //-----------------------------------------------------------------------------
@@ -352,7 +359,7 @@ std::string device::get_attr_string(const std::string &name) const
         return result;
     }
 
-    throw system_error(make_error_code(errc::no_such_device), _path + name);
+    throw system_error(make_error_code(errc::no_such_device), "[get_attr_string] "+_path + name);
 }
 
 //-----------------------------------------------------------------------------
@@ -365,11 +372,17 @@ void device::set_attr_string(const std::string &name, const std::string &value)
         throw system_error(make_error_code(errc::function_not_supported),
                 "no device connected ; [set_attr_string] path=" + _path + " name=" + name + " value=" + value);
 
+    for (int attempt = 0; attempt <= 10; ++attempt) {
     ofstream &os = ofstream_open(_path + name);
-    if (os.is_open()) {
-        if (!(os << value))
-            throw system_error(std::error_code(errno, std::system_category()));
-        return;
+        if (os.is_open()) {
+            if (!(os << value))
+            {
+                usleep(30000);
+                if (!(os << value))
+                throw system_error(std::error_code(errno, std::system_category()), "[set_attr_string] (os << value=" + value + ") error! attempt=" + std::to_string(attempt));
+            }
+            return;
+        }
     }
     throw system_error(make_error_code(errc::no_such_device), "ofstream_open ; [set_attr_string] " + _path + name);
 }
@@ -391,7 +404,7 @@ std::string device::get_attr_line(const std::string &name) const
         return result;
     }
 
-    throw system_error(make_error_code(errc::no_such_device), _path + name);
+    throw system_error(make_error_code(errc::no_such_device), "[get_attr_line] " +_path + name);
 }
 
 //-----------------------------------------------------------------------------
@@ -551,7 +564,7 @@ const std::vector<char>& sensor::bin_data() const
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+        throw system_error(make_error_code(errc::function_not_supported), "[bin_data] no device connected");
 
     if (_bin_data.empty()) {
         static const map<string, int> lookup_table { { "u8", 1 }, { "s8", 1 }, { "u16", 2 }, { "s16", 2 },
@@ -573,7 +586,7 @@ const std::vector<char>& sensor::bin_data() const
         return _bin_data;
     }
 
-    throw system_error(make_error_code(errc::no_such_device), fname);
+    throw system_error(make_error_code(errc::no_such_device), "[bin_data] " + fname);
 }
 
 //-----------------------------------------------------------------------------

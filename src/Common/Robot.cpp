@@ -25,7 +25,7 @@
 using namespace std;
 
 Robot::Robot() :
-        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2018", "/") // use character "/" instead of "-" for arguments
+        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2019", "/") // use character "/" instead of "-" for arguments
 {
 
     actions_default = NULL;
@@ -73,7 +73,7 @@ void Robot::configureDefaultConsoleArgs()
 
     {
         Arguments::Option cOpt('c', "");
-        cOpt.addArgument("color", "color of robot [y]ellow/[b]lue", "y");
+        cOpt.addArgument("color", "color of robot [y]ellow/[v]iolet", "v");
         cArgs_.addOption(cOpt);
     }
 }

@@ -22,8 +22,12 @@ private:
 public:
 
     //Configuration per robot and strategy
+    PlaygroundObjectID area_alea_violet;
+    PlaygroundObjectID area_alea_yellow;
+
+    /*
     PlaygroundObjectID oarea_cube1;
-    PlaygroundObjectID oarea_cube2high;
+    PlaygroundObjectID oarea_cub e2high;
     PlaygroundObjectID oarea_cube3left;
     PlaygroundObjectID oarea_distribadverse;
     PlaygroundObjectID oarea_buildzone;
@@ -34,7 +38,7 @@ public:
     PlaygroundObjectID garea_distribadverse;
     PlaygroundObjectID garea_buildzone;
 
-    PlaygroundObjectID area_stations;
+    PlaygroundObjectID area_stations;*/
 
     LegoEV3IAExtended(std::string botId, Robot *robot);
 

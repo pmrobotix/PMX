@@ -46,7 +46,6 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 
     Arguments args = robot.getArgs();
 
-
     if (args["d"] != "0") {
         d = atof(args["d"].c_str());
         logger().error() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
@@ -62,43 +61,31 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 
     left = robot.asserv().base()->extEncoders().getLeftEncoder();
     right = robot.asserv().base()->extEncoders().getRightEncoder();
-    logger().info() << "time= "
-         << chrono.getElapsedTimeInMilliSec()
-         << "ms ; left= "
-         << left
-         << " ; right= "
-         << right
-         << " x="
-         << robot.asserv().pos_getX_mm()
-         << " y="
-         << robot.asserv().pos_getY_mm()
-         << " a="
-         << robot.asserv().pos_getThetaInDegree()
-         << logs::end;
+    logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
+            << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+            << robot.asserv().pos_getThetaInDegree() << logs::end;
 
     robot.svgPrintPosition();
     /*
-    robot.actions().start();
+     robot.actions().start();
 
-    robot.actions().tirette().waitPressed();
-    logger().error() << "waitPressed() done. wait tirette..."  << logs::end;
-    while (robot.actions().tirette().pressed()) {
+     robot.actions().tirette().waitPressed();
+     logger().error() << "waitPressed() done. wait tirette..."  << logs::end;
+     while (robot.actions().tirette().pressed()) {
 
-        usleep(100000);
-    }
-    logger().error() << "go..."  << logs::end;
-*/
+     usleep(100000);
+     }
+     logger().error() << "go..."  << logs::end;
+     */
     //robot.actions().sensors().startSensors();
     chrono.start();
 
     usleep(50000);
 
-    logger().error() << "go..." << d << "mm" << logs::end;
-    robot.asserv().doLineAbs(d);
-
-    //pause
-    //sleep(5);
-
+    logger().info() << "go..." << d << "mm" << logs::end;
+    TRAJ_STATE ts = robot.asserv().doLineAbs(d);
+    if (ts != TRAJ_OK)
+        logger().info() << "COLLISION !!!  ts=" << ts << logs::end;
 
     left = robot.asserv().base()->encoders().getLeftEncoder();
     right = robot.asserv().base()->encoders().getRightEncoder();
@@ -125,23 +112,13 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
         robot.asserv().doLineAbs(d);
     }
 
-     left = robot.asserv().base()->encoders().getLeftEncoder();
-     right = robot.asserv().base()->encoders().getRightEncoder();
-     logger().info() << "time= "
-     << chrono.getElapsedTimeInMilliSec()
-     << "ms ; left= "
-     << left
-     << " ; right= "
-     << right
-     << " x="
-     << robot.asserv().pos_getX_mm()
-     << " y="
-     << robot.asserv().pos_getY_mm()
-     << " a="
-     << robot.asserv().pos_getThetaInDegree()
-     << logs::end;
+    left = robot.asserv().base()->encoders().getLeftEncoder();
+    right = robot.asserv().base()->encoders().getRightEncoder();
+    logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
+            << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+            << robot.asserv().pos_getThetaInDegree() << logs::end;
 
-     robot.svgPrintPosition();
+    robot.svgPrintPosition();
 
     robot.stopAll();
     logger().info() << "Happy End." << logs::end;

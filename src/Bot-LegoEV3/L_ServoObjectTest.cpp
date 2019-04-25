@@ -20,7 +20,38 @@ void L_ServoObjectTest::run(int argc, char** argv)
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-    //robot.actions().conveyorBelt_Push();
+    logger().info() << "conveyorBelt_Left_center" << logs::end;
+    robot.actions().conveyorBelt_Left_center();
+
+    logger().info() << "conveyorBelt_Right_low" << logs::end;
+    robot.actions().conveyorBelt_Right_low();
+
+    logger().info() << "right_arm_center" << logs::end;
+    robot.actions().right_arm_center();
+
+    logger().info() << "right_arm_take" << logs::end;
+    robot.actions().right_arm_take();
+
+    logger().info() << "right_arm_center" << logs::end;
+    robot.actions().right_arm_center();
+
+    logger().info() << "conveyorBelt_Left_center" << logs::end;
+    robot.actions().conveyorBelt_Left_center();
+
+    logger().info() << "conveyorBelt_Left_low" << logs::end;
+    robot.actions().conveyorBelt_Left_low();
+
+    logger().info() << "left_arm_center" << logs::end;
+    robot.actions().left_arm_center();
+
+    logger().info() << "left_arm_take" << logs::end;
+    robot.actions().left_arm_take();
+
+    logger().info() << "left_arm_center" << logs::end;
+    robot.actions().left_arm_center();
+
+    logger().info() << "conveyorBelt_Left_center" << logs::end;
+    robot.actions().conveyorBelt_Left_center();
 
     logger().info() << "Happy End." << logs::end;
     robot.stopAll();
