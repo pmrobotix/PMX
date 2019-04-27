@@ -375,14 +375,25 @@ void device::set_attr_string(const std::string &name, const std::string &value)
     for (int attempt = 0; attempt <= 10; ++attempt) {
     ofstream &os = ofstream_open(_path + name);
         if (os.is_open()) {
+
+            if (os << value)
+                return;
+
+            if (errno == ENODEV) {
+                os.close();
+                os.clear();
+                printf("[set_attr_string] ENODEV attemp=%d\n", attempt);
+            }
+            /*
             if (!(os << value))
             {
                 usleep(30000);
                 if (!(os << value))
                 throw system_error(std::error_code(errno, std::system_category()), "[set_attr_string] (os << value=" + value + ") error! attempt=" + std::to_string(attempt));
             }
-            return;
-        }
+            return;*/
+        }else
+            throw system_error(std::error_code(errno, std::system_category()), "[set_attr_string] (os.is_open error! attempt=" + std::to_string(attempt));
     }
     throw system_error(make_error_code(errc::no_such_device), "ofstream_open ; [set_attr_string] " + _path + name);
 }

@@ -1,6 +1,5 @@
 #include "L_AsservRunTest.hpp"
 
-#include <unistd.h>
 #include <cstdlib>
 #include <string>
 
@@ -10,9 +9,9 @@
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
+#include "L_State_WaitEndOfMatch.hpp"
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
-#include "LegoEV3SvgWriterExtended.hpp"
 
 using namespace std;
 
@@ -70,6 +69,9 @@ void L_AsservRunTest::run(int argc, char** argv)
     chrono.start();
     //robot.actions().start();
     //robot.actions().sensors().startSensors();
+
+    IAutomateState* stateWaitEndOfMatch = new L_State_WaitEndOfMatch();
+    stateWaitEndOfMatch->execute(robot);
 
     robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
 

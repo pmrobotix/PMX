@@ -180,13 +180,13 @@ public:
     }
     void left_arm_take()
     {
-        servosStd().deploy(SERVO_7, 100, 0);
+        servosStd().deploy(SERVO_7, -90, 0);
         usleep(1000000);
         servosStd().release(SERVO_7);
     }
     void left_arm_retract()
     {
-        servosStd().deploy(SERVO_7, -100, 0);
+        servosStd().deploy(SERVO_7, 90, 0);
         usleep(1000000);
         servosStd().release(SERVO_7);
     }
@@ -199,14 +199,13 @@ public:
     }
     void right_arm_take(int keep = 0)
     {
-
-        servosStd().deploy(SERVO_5, 100, 0);
+        servosStd().deploy(SERVO_5, 90, 0);
         usleep(1000000);
         servosStd().release(SERVO_5);
     }
     void right_arm_retract()
     {
-        servosStd().deploy(SERVO_5, -100, 0);
+        servosStd().deploy(SERVO_5, -90, 0);
         usleep(1000000);
         servosStd().release(SERVO_5);
     }
@@ -215,29 +214,30 @@ public:
     {
         servosStd().deploy(SERVO_1, 0, 0);
         usleep(2000000);
-        //servosStd().release(SERVO_1);
+        servosStd().release(SERVO_1);
     }
     void conveyorBelt_Right_low()
     {
-        servosStd().deploy(SERVO_1, -100, 0);
+        servosStd().deploy(SERVO_1, -90, 0);
         usleep(2000000);
-        //servosStd().release(SERVO_1);
+        servosStd().release(SERVO_1);
     }
 
     void conveyorBelt_Left_low()
     {
-        servosStd().deploy(SERVO_1, 100, 0);
+        servosStd().deploy(SERVO_1, 90, 0);
         usleep(2000000);
-        //servosStd().release(SERVO_1);
+        servosStd().release(SERVO_1);
     }
-    void conveyorBelt_Pull(int nb_position)
+    void conveyorBelt_PushRight(int nb_position)
     {
+        servoUsingMotor().moveRight(nb_position);
 
     }
 
-    void conveyorBelt_Push(int nb_position)
+    void conveyorBelt_PushLeft(int nb_position)
     {
-
+        servoUsingMotor().moveLeft(nb_position);
     }
 
 };

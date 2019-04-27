@@ -41,18 +41,17 @@ L_State_Init::execute(Robot&)
         while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR) {
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_LEFT_KEY) {
-                logger().info() << "BUTTON_LEFT_KEY - GREEN" << logs::end;
+                logger().info() << "BUTTON_LEFT_KEY - YELLOW" << logs::end;
                 robot.actions().ledBar().stopAndWait(true);
-                robot.actions().ledBar().set(1, LED_GREEN);
+                robot.actions().ledBar().set(1, LED_YELLOW);
                 robot.actions().ledBar().set(0, LED_OFF);
                 robot.setMyColor(PMXYELLOW);
             }
             if (b == BUTTON_RIGHT_KEY) {
-                logger().info() << "BUTTON_RIGHT_KEY - ORANGE" << logs::end;
+                logger().info() << "BUTTON_RIGHT_KEY - VIOLET" << logs::end;
                 robot.actions().ledBar().stopAndWait(true);
-                robot.actions().ledBar().set(0, LED_ORANGE);
+                robot.actions().ledBar().set(0, LED_GREEN);
                 robot.actions().ledBar().set(1, LED_OFF);
-
                 robot.setMyColor(PMXVIOLET);
             }
             if (b == BUTTON_UP_KEY) {
@@ -66,11 +65,11 @@ L_State_Init::execute(Robot&)
 
         //tirette
         if (robot.getMyColor() == PMXVIOLET)
-            robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_ORANGE, false);
-        else
             robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
+        else
+            robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_YELLOW, false);
 
-        //setPos();
+        setPos();
         robot.waitForInit(true);
 
         logger().info() << "PMX...WAIT TIRETTE !";
@@ -103,7 +102,6 @@ L_State_Init::execute(Robot&)
         setPos();
         robot.waitForInit(true);
         usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
-
     }
 
 

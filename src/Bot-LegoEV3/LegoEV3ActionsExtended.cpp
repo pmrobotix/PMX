@@ -11,8 +11,8 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
 
     releaseAll();
 
-    servosStd().setSpeed(SERVO_7, 512);
-    servosStd().setSpeed(SERVO_5, 512);
+    servosStd().setSpeed(SERVO_7, 200);
+    servosStd().setSpeed(SERVO_5, 200);
     servosStd().setSpeed(SERVO_1, 400);
 
     servosStd().setMinPulse(SERVO_1, 300); ////default 600 [300 to 700]
@@ -53,5 +53,7 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
      servosStd().setMinPulse(0, 600);
      servosStd().setMidPulse(0, 1470);
      servosStd().setMaxPulse(0, 2350);*/
+
+
 
 }

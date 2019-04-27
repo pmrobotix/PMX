@@ -34,8 +34,8 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
          usleep(1000000);
          long time = robot.chrono().getElapsedTimeInSec();
          this->logger().info() << "execute chrono " << time << logs::end;
+        */
 
-         */
         //test ARU
         if (robot.actions().tirette().pressed()) {
             logger().error() << "ARU pressed !!!!!!" << logs::end;

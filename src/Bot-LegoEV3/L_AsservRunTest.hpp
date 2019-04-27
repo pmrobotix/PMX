@@ -11,37 +11,37 @@ class L_AsservRunTest: public FunctionalTest
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LegoEV3AsservRunTest.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("L_AsservRunTest");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref LegoEV3AsservRunTest.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("L_AsservRunTest");
+        return instance;
+    }
 public:
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	L_AsservRunTest()
-			: FunctionalTest("Asserv_Run", "AV/AR avec sensors.")
-	{
-	}
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    L_AsservRunTest() :
+            FunctionalTest("Asserv_Run", "AV/AR en xy avec sensors.")
+    {
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual ~L_AsservRunTest()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual ~L_AsservRunTest()
+    {
+    }
 
-	/*!
-	 * \brief Execute le test.
-	 */
-	virtual void run(int argc, char** argv);
+    /*!
+     * \brief Execute le test.
+     */
+    virtual void run(int argc, char** argv);
 
-	virtual void configureConsoleArgs(int argc, char** argv);
+    virtual void configureConsoleArgs(int argc, char** argv);
 
 };
 
