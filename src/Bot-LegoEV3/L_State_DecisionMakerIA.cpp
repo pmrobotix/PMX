@@ -21,20 +21,25 @@ L_State_DecisionMakerIA::L_State_DecisionMakerIA(Robot& robot) :
     p_ = NULL; //TODO !!!! utiliser le p_ du ia extended???
 }
 
-bool L_push_button()
+bool L_push_palet()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-    robot.logger().info() << "start L_push_button." << logs::end;
+    robot.logger().info() << "start L_push_palet." << logs::end;
 
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
     robot.asserv().ignoreFrontCollision(false);
     robot.asserv().ignoreRearCollision(true);
-    robot.ia().iAbyPath().goToZone("zone_push_button", &zone);
+    robot.ia().iAbyPath().goToZone("zone_push_palet", &zone);
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK)
         return false;
+
+    robot.asserv().doLineAbs(200);
+
+    robot.asserv().doLineAbs(-200);
+
 
     return true; //return true si ok sinon false si interruption
 }
@@ -46,10 +51,10 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     logger().info() << "color = " << robot.getMyColor() << logs::end;
 
     //definition des zones en zone ORANGE uniquement
-    robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_push_button", 1400, 1400, 300, 400, 1400, 1400, 90);
+    robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_push_palet", 400, 700, 100, 100, 700, 750, -180);
 
-    robot.ia().iAbyPath().ia_addAction("push_button", &L_push_button);
+    robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
 
     logger().info() << " END IASetupActivitiesZone" << logs::end;
 }

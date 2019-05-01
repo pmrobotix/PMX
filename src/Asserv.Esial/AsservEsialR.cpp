@@ -354,7 +354,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     //attente de l'interruption ou fin de trajectoire
     while (p_.asservStatus == 1) {
 
-        logger().info() << " xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
+        //logger().info() << "waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
 
         usleep(40000);
         timeout++;

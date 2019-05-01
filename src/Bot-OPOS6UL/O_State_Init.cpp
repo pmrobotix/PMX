@@ -22,10 +22,6 @@ O_State_Init::execute(Robot&)
 
 //    robot.actions().servo_init();
 
-
-
-
-
     if (!robot.skipSetup()) {
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd2x16().home();
@@ -43,17 +39,17 @@ O_State_Init::execute(Robot&)
         while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR) {
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_LEFT_KEY) {
-                logger().info() << "BUTTON_LEFT_KEY - GREEN" << logs::end;
+                logger().info() << "BUTTON_LEFT_KEY - YELLOW" << logs::end;
                 robot.actions().lcd2x16().clear();
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print("GREEN  ");
+                robot.actions().lcd2x16().print("YELLOW ");
                 robot.setMyColor(PMXYELLOW);
             }
             if (b == BUTTON_RIGHT_KEY) {
-                logger().info() << "BUTTON_RIGHT_KEY - ORANGE" << logs::end;
+                logger().info() << "BUTTON_RIGHT_KEY - VIOLET" << logs::end;
                 robot.actions().lcd2x16().clear();
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print("ORANGE");
+                robot.actions().lcd2x16().print("VIOLET");
                 robot.setMyColor(PMXVIOLET);
             }
             if (b == BUTTON_UP_KEY) {
@@ -64,7 +60,6 @@ O_State_Init::execute(Robot&)
                 logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
             }
         }
-
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
 
@@ -75,20 +70,19 @@ O_State_Init::execute(Robot&)
 //        else
 //            robot.actions().servo_init_green();
 
-        //tirette
+//tirette
         robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
 
         setPos();
         robot.waitForInit(true);
 
-
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().print("PMX...WAIT TIRETTE !");
         logger().info() << "PMX...WAIT TIRETTE !";
         if (robot.getMyColor() == PMXVIOLET)
-            logger().info() << " ORANGE";
+            logger().info() << " VIOLET";
         else
-            logger().info() << "GREEN";
+            logger().info() << "YELLOW";
         logger().info() << logs::end;
 
         bool bb = false;
@@ -125,7 +119,6 @@ O_State_Init::execute(Robot&)
 //        else
 //            robot.actions().servo_init_green();
 
-
         robot.waitForInit(true);
         usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
     }
@@ -147,16 +140,29 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().print("SET POSITION...");
 
+    robot.actions().ax12_left_cil_retract(0);
+    robot.actions().ax12_right_cil_retract();
+
+    robot.actions().ax12_left_cil(0);
+    robot.actions().ax12_right_cil();
+
+    sleep(1);
+    robot.actions().ax12_left_cil_retract(0);
+    robot.actions().ax12_right_cil_retract();
+
+    //robot.actions().ax12_left_cil_release();
+
+    //demi largeur 150
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(70, 192, 0.0, (robot.getMyColor() != PMXVIOLET));
-    //robot.svgPrintPosition();
+    robot.asserv().setPositionAndColor(70, 450, 0.0, (robot.getMyColor() != PMXVIOLET));
+    robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
     robot.asserv().assistedHandling();
-    robot.asserv().doLineAbs(120);
+    robot.asserv().doLineAbs(130);
 
-
+    robot.svgPrintPosition();
 
     robot.actions().lcd2x16().print("SET POSITION : OK");
 }

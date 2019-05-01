@@ -38,7 +38,7 @@ L_State_Init::execute(Robot&)
 
         logger().info() << "CHOISIR COULEUR + IA..." << logs::end;
         ButtonTouch b = BUTTON_NONE;
-        while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR) {
+        while (b != BUTTON_ENTER_KEY || robot.getMyColor() == PMXNOCOLOR) {
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_LEFT_KEY) {
                 logger().info() << "BUTTON_LEFT_KEY - YELLOW" << logs::end;
@@ -109,7 +109,7 @@ L_State_Init::execute(Robot&)
 
     robot.actions().ledBar().resetAll();
 
-    logger().info() << "L_StateInit executed" << logs::end;
+    logger().info() << "execute is executed" << logs::end;
     //return NULL; //finish all state
     return this->getState("WaitEndOfMatch"); //return NULL; //finish all state
 }
@@ -118,15 +118,22 @@ void L_State_Init::setPos()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
+    logger().info() << "setPos() executing" << logs::end;
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(300, 750, 90.0, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(45, 718, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(false);
     robot.asserv().ignoreRearCollision(true);
-    /*
+
      robot.asserv().assistedHandling();
-     robot.asserv().doLineAbs(145);*/
+     robot.svgPrintPosition();
+     //init
+
+     robot.asserv().doLineAbs(150);
+     robot.asserv().doMoveForwardAndRotateTo(300, 750, 90.0);
+     robot.svgPrintPosition();
+     logger().info() << "setPos() executed" << logs::end;
 
 }

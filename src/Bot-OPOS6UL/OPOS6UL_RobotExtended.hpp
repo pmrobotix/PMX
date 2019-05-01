@@ -57,6 +57,8 @@ public:
 
     int points;
 
+    int todo_fake;
+
 private:
 
     OPOS6UL_ActionsExtended* p_actions_;

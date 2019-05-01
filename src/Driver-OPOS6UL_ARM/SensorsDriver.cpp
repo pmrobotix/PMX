@@ -50,17 +50,17 @@ bool SensorsDriver::front()
     bool front = false;
 
     if (1) {
-        if (irLeft_.getDistance() < 180) {
+        if (irLeft_.getDistance() < 200) {
             logger().info() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
             front = true;
         }
 
-        if (irRight_.getDistance() < 180) {
+        if (irRight_.getDistance() < 200) {
             logger().info() << "adc_9_right " << " mm=" << irRight_.getDistance() << logs::end;
             front = true;
         }
 
-        if (irCenter_.getDistance() < 250) {
+        if (irCenter_.getDistance() < 350) {
             logger().info() << "adc_5_center " << " mm=" << irCenter_.getDistance() << logs::end;
             front = true;
         }
@@ -85,7 +85,7 @@ bool SensorsDriver::rear()
 {
 
     bool rear = false;
-    if (irRear_.getDistance() < 150) {
+    if (irRear_.getDistance() < 200) {
         logger().info() << "adc_3_rear " << " mm=" << irRear_.getDistance() << logs::end;
         rear = true;
     }

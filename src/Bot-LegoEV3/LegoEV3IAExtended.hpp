@@ -25,6 +25,10 @@ public:
     PlaygroundObjectID area_alea_violet;
     PlaygroundObjectID area_alea_yellow;
 
+    PlaygroundObjectID area_palet_start_violet;
+
+
+
     /*
     PlaygroundObjectID oarea_cube1;
     PlaygroundObjectID oarea_cub e2high;

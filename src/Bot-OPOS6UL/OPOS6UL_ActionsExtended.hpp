@@ -49,7 +49,6 @@ private:
     ServoObjectsSystem servos_ax12_;
     ServoObjectsSystem servos_std_;
 
-
 public:
 
     /*!
@@ -156,54 +155,101 @@ public:
     //--------------------------------------------------------------
     void releaseAll()
     {
-        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++)
-        {
+        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++) {
             ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
             //servosAx12().setPosition(foo, 0);
             servosAx12().release(foo);
         }
 
-        for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++)
-        {
+        for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
             ServoStdLabel foo = static_cast<ServoStdLabel>(fooInt);
             //servosStd().setPosition(foo, 0);
             servosStd().release(foo);
         }
 
     }
+
+    void ax12_rightHand_retract(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(7, speed);
+        servosAx12().deploy(7, 512, keep);
+    }
+
+    void ax12_rightHand(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(7, speed);
+        servosAx12().deploy(7, 732, keep);
+    }
+
+    void ax12_leftHand_retract(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(5, speed);
+        servosAx12().deploy(5, 512, keep);
+    }
     void ax12_leftHand(int keep = 0, int speed = 512)
     {
-        servosAx12().setSpeed(AX12_SERVO_1, speed);
-        servosAx12().deploy(AX12_SERVO_1, 512, keep);
+        servosAx12().setSpeed(5, speed);
+        servosAx12().deploy(5, 300, keep);
     }
 
-    void doorLeft(int keep = 0, int speed = 512)
+    void ax12_left_cil_release(int keep = 0, int speed = 512)
     {
-        servosStd().setSpeed(STD_SERVO_3, speed);
-        servosStd().deploy(STD_SERVO_3, 512, keep);
+        servosAx12().release(180);
+        servosAx12().release(181);
     }
 
+    void ax12_left_cil_retract(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(180, speed);
+        servosAx12().deploy(180, 512, keep);
+        //
+    }
+    void ax12_left_cil(int keep = 0, int speed = 512)
+    {
+
+        servosAx12().setSpeed(180, speed);
+        servosAx12().deploy(180, 232, keep);
+    }
+
+    void ax12_right_cil_retract(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(181, speed);
+        servosAx12().deploy(181, 512, keep);
+        //
+    }
+    void ax12_right_cil(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(181, speed);
+        servosAx12().deploy(181, 792, keep);
+    }
+    /*
+     void doorLeft(int keep = 0, int speed = 512)
+     {
+     servosStd().setSpeed(STD_SERVO_3, speed);
+     servosStd().deploy(STD_SERVO_3, 512, keep);
+     }
+     */
     //--------------------------------------------------------------
     //Actions 2018
     //--------------------------------------------------------------
     /*void servo_lowspeed()
-    {
-        servoObjects().setSpeedAll(100);
-    }
+     {
+     servoObjects().setSpeedAll(100);
+     }
 
-    void servo_mediumspeed()
-    {
-        servoObjects().setSpeedAll(200);
-    }
-    void servo_maxspeed()
-    {
-        servoObjects().setSpeedAll(1023);
-    }
-    void arm_right_retract(int keep = 0, int speed = 512)
-    {
-        servoObjects().setSpeed(7, speed);
-        servoObjects().deploy(7, 512, keep);
-    }*/
+     void servo_mediumspeed()
+     {
+     servoObjects().setSpeedAll(200);
+     }
+     void servo_maxspeed()
+     {
+     servoObjects().setSpeedAll(1023);
+     }
+     void arm_right_retract(int keep = 0, int speed = 512)
+     {
+     servoObjects().setSpeed(7, speed);
+     servoObjects().deploy(7, 512, keep);
+     }*/
     /*
      void arm_right_full(int keep = 0, int speed = 100)
      {

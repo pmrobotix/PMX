@@ -20,19 +20,10 @@ public:
 
     //PlaygroundObjectID opponent_1;
     //PlaygroundObjectID opponent_2;
-    PlaygroundObjectID oarea_cube1;
-    PlaygroundObjectID oarea_cube2high;
-    PlaygroundObjectID oarea_cube3left;
-    PlaygroundObjectID oarea_distribadverse;
-    PlaygroundObjectID oarea_buildzone;
-
-    PlaygroundObjectID garea_cube1;
-    PlaygroundObjectID garea_cube2high;
-    PlaygroundObjectID garea_cube3left;
-    PlaygroundObjectID garea_distribadverse;
-    PlaygroundObjectID garea_buildzone;
-
-    PlaygroundObjectID area_stations;
+    PlaygroundObjectID area_alea_violet;
+    PlaygroundObjectID area_alea_yellow;
+    PlaygroundObjectID area_palet_start_violet;
+    PlaygroundObjectID area_palet_start_yellow;
 
     OPOS6UL_IAExtended(std::string botId, Robot *robot);
 

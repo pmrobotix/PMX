@@ -112,15 +112,18 @@ void Asserv::assistedHandling()
 }
 
 //WARNING matchColor = 0 => en bas à gauche
-void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees, bool matchColor = 0)
+void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, bool matchColor = 0)
 {
 //printf("matchcolor ORANGE=0 GREEN=1 : %d\n", matchColor);
-    logger().error() << "matchcolor ORANGE=0 GREEN=1 : " << matchColor << logs::end;
+    //logger().error() << "matchcolor VIOLET=0 YELLOWs=1 : " << matchColor << logs::end;
 
     setMatchColorPosition(matchColor);
 
     x_mm = getRelativeX(x_mm);
-    thetaInDegrees = getRelativeAngle(thetaInDegrees);
+    float thetaInDegrees = getRelativeAngle(thetaInDegrees_);
+
+    logger().error() << "matchcolor VIOLET=0 YELLOWs=1 : " << matchColor << "thetaInDegrees=" << thetaInDegrees_
+            << "get=" << thetaInDegrees << logs::end;
 
     if (useAsservType_ == ASSERV_INT_INSA)
         pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
@@ -326,12 +329,12 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
     float dx = getRelativeX(xMM) - pos_getX_mm();
     float dy = yMM - pos_getY_mm();
     float aRadian = atan2(dy, dx);
-    logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
+    logger().error() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
             << dy << "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI << " get="
             << getRelativeAngle((aRadian * 180.0f) / M_PI) << " xMM=" << xMM << " yMM=" << yMM << " getX="
             << pos_getX_mm() << " getY=" << pos_getY_mm() << logs::end;
 
-    doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
+    doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI)); //J'ai supprimé le getRelativeAngle ici :on doit utiliser Abs
     float dist = sqrt(dx * dx + dy * dy);
     logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment);
@@ -343,7 +346,7 @@ TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInD
     if (ts != TRAJ_OK)
         return ts;
 
-    ts = doRotateTo(thetaInDegree);
+    ts = doRotateTo(thetaInDegree);//je l'ai rajouté
     return ts;
 }
 TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
@@ -354,7 +357,7 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
     float dy = yMM - pos_getY_mm();
     float aRadian = atan2(dy, dx);
 
-    doRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI)); //TODO angle au plus court ?
+    doRotateTo(((M_PI + aRadian) * 180.0f) / M_PI); //todo a supprimer
 
     float dist = sqrt(dx * dx + dy * dy);
     return doLineAbs(-dist);
@@ -365,7 +368,7 @@ TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaIn
     ts = doMoveBackwardTo(xMM, yMM);
     if (ts != TRAJ_OK)
         return ts;
-    ts = doRotateTo(thetaInDegree);
+    ts = doRotateTo(thetaInDegree); //rajouté
     return ts;
 }
 TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)

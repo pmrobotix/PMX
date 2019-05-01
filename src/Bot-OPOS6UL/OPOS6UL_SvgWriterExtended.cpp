@@ -46,7 +46,7 @@ void OPOS6UL_SvgWriterExtended::writePosition_Bot(float x, float y, float angle_
 
     *fLogBuffer << "<use x=\"" << x - 150 << "\" y=\"" << -y - 150
             << "\" xlink:href=\"#bot-OPOS6UL\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x << ","
-            << -y << ")\" />" << logs::end;
+            << -y << ")\" />" << logs::flush;
 }
 
 void OPOS6UL_SvgWriterExtended::writePosition_BotPos(float x, float y, float angle_rad)
@@ -57,11 +57,11 @@ void OPOS6UL_SvgWriterExtended::writePosition_BotPos(float x, float y, float ang
     double delta_x = 0.0;
 
     // inversion du y pour affichage dans le bon sens dans le SVG
-    *fLogBuffer << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\"1\" fill=\"blue\" />" << logs::end;
+    *fLogBuffer << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\"1\" fill=\"blue\" />" << logs::flush;
     delta_y = 50.0 * sin(angle_rad);
     delta_x = 50.0 * cos(angle_rad);
-    logger().info() << "<line x1=\"" << x << "\" y1=\"" << -y << "\" x2=\"" << x + delta_x << "\" y2=\"" << -y - delta_y
-            << "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::end;
+    *fLogBuffer << "<line x1=\"" << x << "\" y1=\"" << -y << "\" x2=\"" << x + delta_x << "\" y2=\"" << -y - delta_y
+            << "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::flush;
 
 }
 
@@ -73,6 +73,7 @@ void OPOS6UL_SvgWriterExtended::writeZone(const char* name, float minX, float mi
             << width << "\" height=\"" << height << "\" fill=\"none\" stroke=\"#cc00cc\" stroke-width=\"4\" />"
             << "<line x1 = \"" << minX << "\" y1 = \"" << minY << "\" x2 = \"" << minX + width << "\" y2 = \"" << minY
             << "\" stroke=\"#cc00cc\" stroke-width=\"4\"/>"
+
 
 //			<< "<line x1 = \""
 //			<< minX + width
@@ -110,7 +111,7 @@ void OPOS6UL_SvgWriterExtended::writeZone(const char* name, float minX, float mi
             << "</g>"
 
             << "<text x='" << startX + 20 << "' y='" << -startY - 10 << "' font-size='30' fill='#cc00cc'>" << name
-            << "</text>" << logs::end;
+            << "</text>" << logs::flush;
 
 }
 
@@ -120,12 +121,12 @@ void OPOS6UL_SvgWriterExtended::writeIaPath(const char* zone1Name, const char* z
 
     *fLogBuffer << "<circle cx='" << x_mm << "' cy='" << -y_mm << "' r='15' fill='none' stroke='green' />"
             << "<text x='" << x_mm + 20 << "' y='" << -y_mm + 20 << "' font-size='30' fill='green'>" << zone1Name << "-"
-            << zone2Name << "</text>" << logs::end;
+            << zone2Name << "</text>" << logs::flush;
 }
 
 void OPOS6UL_SvgWriterExtended::pathPolyline(std::string points) //TODO mettre dans SVGWriter ?
 {
 
     *fLogBuffer << "<polyline points='" << points << "' style='fill:none;stroke:red;stroke-width:4' />"
-            << logs::end;
+            << logs::flush;
 }

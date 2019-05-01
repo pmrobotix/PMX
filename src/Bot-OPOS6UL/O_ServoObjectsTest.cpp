@@ -1,5 +1,6 @@
 #include "O_ServoObjectsTest.hpp"
 
+#include <unistd.h>
 #include <string>
 
 #include "../Common/Arguments.hpp"
@@ -31,11 +32,22 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 
     //robot.actions().servoObjects().detectAll();
 
+    robot.actions().ax12_left_cil_retract(0);
+    robot.actions().ax12_right_cil_retract();
+
+    robot.actions().ax12_left_cil(0);
+    robot.actions().ax12_right_cil();
+
+    sleep(2);
+    robot.actions().ax12_left_cil_retract(0);
+    robot.actions().ax12_right_cil_retract();
+
+    //robot.actions().ax12_left_cil_retract(1);
+    //robot.actions().ax12_right_cil_retract(1);
+
 //    robot.actions().servo_init();
 //
 //    robot.actions().servo_init_end();
-
-
 
     /*
      robot.actions().servo_lowspeed();

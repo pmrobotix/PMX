@@ -36,8 +36,10 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     //init SVG log file
     svg_->beginHeader();
 
-    //init domotique + abeille placés
-    points = 11;
+    //init experience + bonus
+    points = 15;
+
+    todo_fake = 1;
 }
 
 void OPOS6UL_RobotExtended::stopActions()

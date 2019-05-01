@@ -20,6 +20,7 @@ public:
     }
 
     void writePosition_Bot(float x, float y, float a_rad);
+
     void writePosition_BotPos(float x, float y, float a_rad);
 
     void writeZone(const char* name, float minX, float minY, float width, float height, float startX, float startY,

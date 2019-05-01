@@ -60,11 +60,9 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             robot.asserv().setRearCollision();
         }
 
-        logger().debug() << " front=" << front << " rear=" << rear << logs::end;
-
         usleep(300000);
 
-        this->logger().debug() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
+        this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << " front=" << front << " rear=" << rear<< logs::end;
     }
 
     this->logger().info() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;

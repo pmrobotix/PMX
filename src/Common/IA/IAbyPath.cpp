@@ -366,6 +366,7 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
             robot_->svgPrintPosition();
 
         }
+
         //if (node_found) {
         //doc << path_polyline;
         //}
@@ -375,11 +376,12 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
 
         robot_->svgw().pathPolyline(path_polyline.str());
 
-        ts = robot_->asserv_default->doRotateTo(thetaInDegree);
+        ts = robot_->asserv_default->doRotateTo(thetaInDegree); //les angles du path sont bons
+        robot_->svgPrintPosition();
         if (ts != TRAJ_OK) {
             return ts;
         }
-        //robot_->svgPrintPosition();
+
     } else {
         logger().error() << "ERROR - FOUND PATH NULL !!!" << logs::end;
     }

@@ -112,11 +112,11 @@ void AsservDriver::execute()
             p = odo_GetPosition();
             m_pos.unlock();
 
-            /*
+
              loggerSvg().info() << "<circle cx=\"" << p.x * 1000.0 << "\" cy=\"" << -p.y * 1000.0
              << "\" r=\"1\" fill=\"blue\" />" << "<line x1=\"" << p.x * 1000.0 << "\" y1=\"" << -p.y * 1000.0
              << "\" x2=\"" << p.x * 1000.0 + cos(p.theta) * 25 << "\" y2=\"" << -p.y * 1000.0 - sin(p.theta) * 25
-             << "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::end;*/
+             << "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::end;
         }
         chrono.waitTimer();
     }
