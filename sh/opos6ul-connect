@@ -5,6 +5,8 @@
 IPHOME="192.168.0.212" #WIFI HOME CHO
 IPWIFI="192.168.2.107" #WIFI PMX
 IPETH0="192.168.2.105" #ETH0 PMX
+IP5GHZ="192.168.3.103" #WIFI 5Ghz PMX5G
+#IP5GHZ="192.168.3.103" #WIFI 5Ghz PMX5G (backup)
 
 view_doc()
 {
@@ -13,12 +15,12 @@ view_doc()
 
 all()
 {
-	scp "../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM" "../Driver-UnitTest_OPOS6UL_ARM/Debug/Driver-UnitTest_OPOS6UL_ARM" "../Common-UnitTest_OPOS6UL_ARM/Debug/Common-UnitTest_OPOS6UL_ARM" root@$IP:/root/.
+	scp "../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM" "../Driver-UnitTest_OPOS6UL_ARM/Debug/Driver-UnitTest_OPOS6UL_ARM" "../Common-UnitTest_OPOS6UL_ARM/Debug/Common-UnitTest_OPOS6UL_ARM" root@$IP:/root/pmx/.
 }
 
 tsh()
 {
-	scp ../sh/*.sh root@$IP:/root/
+	scp ../sh/*.sh root@$IP:/root/pmx
 }
 
 kill()
@@ -29,42 +31,45 @@ kill()
 main()
 {
     ssh root@$IP "killall Bot_ArmadeusOPOS6UL_ARM"
-	scp "../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM" root@$IP:/root/.
+	scp "../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM" root@$IP:/root/pmx/.
 }
 
 driver()
 {
-	scp "../Driver-UnitTest_OPOS6UL_ARM/Debug/Driver-UnitTest_OPOS6UL_ARM" root@$IP:/root/.
+	scp "../Driver-UnitTest_OPOS6UL_ARM/Debug/Driver-UnitTest_OPOS6UL_ARM" root@$IP:/root/pmx/.
 }
 
 common()
 {
-	scp "../Common-UnitTest_OPOS6UL_ARM/Debug/Common-UnitTest_OPOS6UL_ARM" root@$IP:/root/.
+	scp "../Common-UnitTest_OPOS6UL_ARM/Debug/Common-UnitTest_OPOS6UL_ARM" root@$IP:/root/pmx/.
 }
 
 recupcsvhost()
 {
     #recup sur le PC Host
-	scp root@$IP:/root/*.* /mnt/hgfs/pmx_xls/.
+	scp root@$IP:/root/pmx/*.* /mnt/hgfs/pmx_xls/.
 }
 
 recupcsv()
 {
-        scp root@$IP:/root/*.csv /home/pmx/recup/.
+        scp root@$IP:/root/pmx/*.csv /home/pmx/recup/.
 }
 
 recupsvg()
 {
-        scp root@$IP:/root/*.svg /home/pmx/recup/.
+        scp root@$IP:/root/pmx/*.svg /home/pmx/recup/.
 }
 
 connect()
 {
-	ssh root@$IP
+	ssh -t root@$IP "cd /root/pmx ; exec \$SHELL -l"
 }
 
 
 case "$1" in
+	5ghz)
+		IP=$IP5GHZ
+	;;
 	eth0)
 		IP=$IPETH0
 	;;
@@ -127,7 +132,7 @@ case "$2" in
 	;;
 
 	*)
-		echo "Usage: $0 {eth0|wifi|home} {connect|main|kill|common|driver|all|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		echo "Usage: $0 {5ghz|eth0|wifi|home} {connect|main|kill|common|driver|all|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
 		exit 1
 	;;
 esac

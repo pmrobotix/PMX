@@ -125,68 +125,6 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
 //            accelerationConsigne, vitesseConsigneLimitee);
 
     return positionConsigne;
-
-//    if(position_actuelle<200 && vitesse<=0){
-//           vitesse=20;
-//       }
-//
-//
-//       //Calcul de la position du pivot qui sert à déterminer si l'on doit commencer à décélérer ou non
-//       char sens = (consigne - position_actuelle >= 0) ? 1 : -1;
-//
-//       // Reset du flag "arrivee" signalant que la consigne est atteinte
-//       arrivee = false;
-//       float a1=(float)vitesse/(float)derivee_2nd_pos_av;
-//       float a2=(float)vitesse/(float)derivee_2nd_neg_av;
-//
-//       float a1r=(float)vitesse/(float)derivee_2nd_pos_ar;
-//       float a2r=(float)vitesse/(float)derivee_2nd_neg_ar;
-//
-//
-//       int64_t position_pivot_cho;
-//       if (sens == 1) {
-//           position_pivot_cho = (a1 * consigne) / (a1 + a2);
-//       } else {
-//           position_pivot_cho = (a1r * consigne) / (a1r + a2r);
-//       }
-//       //printf("position_pivot_cho=%lld\n", position_pivot_cho);
-//       int32_t consigne_temp= ((consigne * 1.0 / (4000 * 2048)) * 1000.0);
-//
-//
-//
-//       //Calcul de la consigne d'accélération qui dépend dans le sens dans lequel on roule et vient de config.h
-//       int64_t acceleration_consign;
-//
-//       if (position_actuelle <= position_pivot_cho) {
-//           acceleration_consign = (sens == 1) ? derivee_2nd_pos_av : derivee_2nd_neg_ar;
-//       } else {
-//           acceleration_consign = (sens == 1) ? -derivee_2nd_neg_av : -derivee_2nd_pos_ar;
-//       }
-//
-//       // Calcul de la consigne de vitesse
-//       int64_t consigneVitesse = prevConsigneVitesse + acceleration_consign;
-//       //int64_t consigneVitesse = vitesse + acceleration_consign;
-//       printf("consigne=%lld %dmm \tpos=%lld \tvitesse=%lld \tpivot=%lld \tarrived=%lld a1=%f a2=%f  consigneVitesse=%lld prevConsigneVitesse=%lld acceleration_consign=%lld\n",consigne, consigne_temp ,position_actuelle,vitesse, position_pivot_cho, consigne - position_actuelle,a1, a2, consigneVitesse, prevConsigneVitesse, acceleration_consign);
-//
-//
-//       //int64_t consigneVitesse =  consigne;
-//       // On borne la consigne, parce que faut éviter de trop déconner en atelier // limitation vitesse
-//       consigneVitesse = Utils::constrain(consigneVitesse, -derivee_1ier_neg, derivee_1ier_pos);
-//       // On stocke la nouvelle consigne pour l'itération suivante
-//       prevConsigneVitesse = consigneVitesse;
-//
-//       //printf("consigne=%lld position_pivot=%lld\r\n", consigne, position_pivot);
-//
-//       // On vérifie si on est dans la fenêtre d'arrivée et si oui, on est arrivé à la fin de la rampe
-//       if (llabs(consigne - position_actuelle) < tailleFenetreArrivee) {
-//           prevConsigneVitesse = 0; // On reset la consigne precedente
-//           arrivee = true;
-//           return consigne;
-//       }
-//
-//       //On retourne la consigne de position
-//       return position_actuelle + consigneVitesse;
-
 }
 
 // On filtre la consigne pour prendre en compte l'accélération et la décélération

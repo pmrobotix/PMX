@@ -292,7 +292,7 @@ int CCAx12Adc::write(unsigned char command)
 
 	if (i2c_CCAx12Adc_.write(&command, 1))
 	{
-		printf("write > cmd=%d > error!\n", command);
+		//printf("write > cmd=%d > error!\n", command);
 		return -1;
 	}
 	return 0;
@@ -305,7 +305,7 @@ int CCAx12Adc::read()
 	a[0] = 0;
 	if (i2c_CCAx12Adc_.read(a, 1) < 0)
 	{
-		printf("write_readI2c  > read  error!\n");
+		//printf("write_readI2c  > read  error!\n");
 		return -1;
 	}
 

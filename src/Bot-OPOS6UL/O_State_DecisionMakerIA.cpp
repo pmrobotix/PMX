@@ -356,9 +356,9 @@ bool O_push_button()
  */
 void O_State_DecisionMakerIA::IASetupActivitiesZone()
 {
-    logger().info() << "IASetupActivitiesZone" << logs::end;
+    logger().info() << "IASetupActivitiesZone definition" << logs::end;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    logger().info() << "color = " << robot.getMyColor() << logs::end;
+    logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_button", 400, 400, 100, 100, 700, 450, 0);
@@ -370,27 +370,27 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
     robot.ia().iAbyPath().ia_addAction("push_blue", &O_push_blue);
     robot.ia().iAbyPath().ia_addAction("fake", &O_fake);
 
-    logger().info() << " END IASetupActivitiesZone" << logs::end;
+    logger().debug() << " END IASetupActivitiesZone" << logs::end;
 }
 
 void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 {
     logger().info() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    logger().info() << "color = " << robot.getMyColor() << logs::end;
+    logger().debug() << "color = " << robot.getMyColor() << logs::end;
     /*
      robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
      robot.ia().iAbyPath().ia_createZone("zone_push_button", 400, 700, 100, 100, 700, 750, -180);
 
      robot.ia().iAbyPath().ia_addAction("push_button", &O_push_button);
      */
-    logger().info() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
+    logger().debug() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
 
 void O_State_DecisionMakerIA::initPlayground()
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    logger().info() << "color = " << robot.getMyColor() << logs::end;
+    logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
     p_ = new Playground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0);
 

@@ -324,11 +324,9 @@ void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
 TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree) //zone toujours donné du côté gauche (ORANGE), à transcrire
 {
     TRAJ_STATE ts = TRAJ_OK;
-    logger().info() << "111 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+    logger().debug() << "111 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
             << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
             << logs::end;
-    //robot_->svgPrintPosition();
-
 
     Point endPoint = { x : robot_->asserv_default->getRelativeX(xMM), y : yMM };
     FoundPath * found_path = NULL;
@@ -343,34 +341,32 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
             delete found_path;
             return TRAJ_CANCELLED;
         }
-        //robot_->svgPrintPosition();
 
-        //bool node_found = false;
-        //svg::Polyline path_polyline(svg::Stroke(5, svg::Color::Green));
+        int count = 0;
         for (nodes_it = found_path->path.begin(); nodes_it < found_path->path.end(); nodes_it++) {
-            Node* node = *nodes_it;
-            //if (!node_found) {
-            //    node_found = true;
-            //}
-            //path_polyline << svg::Point(node->x, node->y);
-            path_polyline << node->x << "," << -node->y << " ";
-            logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
 
-            ts = robot_->asserv_default->doMoveForwardTo(robot_->asserv_default->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
-            if (ts != TRAJ_OK) {
-                return ts;
+            Node* node = *nodes_it;
+
+            path_polyline << node->x << "," << -node->y << " ";
+
+            if (count != 0) {
+
+                logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
+
+                ts = robot_->asserv_default->doMoveForwardTo(robot_->asserv_default->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
+                if (ts != TRAJ_OK) {
+                    return ts;
+                }
+                logger().debug() << "222 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+                        << robot_->asserv_default->pos_getY_mm() << " a "
+                        << robot_->asserv_default->pos_getThetaInDegree() << logs::end;
+                robot_->svgPrintPosition();
             }
-            logger().info() << "222 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
-                    << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
-                    << logs::end;
-            robot_->svgPrintPosition();
+            count++;
 
         }
 
-        //if (node_found) {
-        //doc << path_polyline;
-        //}
-        logger().info() << "333 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+        logger().debug() << "333 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
                 << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
                 << logs::end;
 

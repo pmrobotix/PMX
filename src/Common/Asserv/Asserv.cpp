@@ -319,7 +319,7 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
     if (degrees >= 180)
         degrees -= 360;
 
-//logger().debug() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
+    logger().debug() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
     TRAJ_STATE ts = doRotateAbs(degrees);
 
     return ts;
@@ -328,8 +328,11 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
 {
     float dx = getRelativeX(xMM) - pos_getX_mm();
     float dy = yMM - pos_getY_mm();
+    if (std::abs(dx) < 0.1 && std::abs(dy) < 0.1) { //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
+        return TRAJ_OK;
+    }
     float aRadian = atan2(dy, dx);
-    logger().error() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
+    logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
             << dy << "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI << " get="
             << getRelativeAngle((aRadian * 180.0f) / M_PI) << " xMM=" << xMM << " yMM=" << yMM << " getX="
             << pos_getX_mm() << " getY=" << pos_getY_mm() << logs::end;
@@ -346,7 +349,7 @@ TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInD
     if (ts != TRAJ_OK)
         return ts;
 
-    ts = doRotateTo(thetaInDegree);//je l'ai rajouté
+    ts = doRotateTo(thetaInDegree); //je l'ai rajouté
     return ts;
 }
 TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)

@@ -160,11 +160,11 @@ float AsservDriver::convertPowerToSpeed(int power)
 void AsservDriver::computeCounterL()
 {
     // MAJ real speed
-//	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
-//	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
-//		leftSpeed_ = wantedLeftSpeed_;
+	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
+	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
+		leftSpeed_ = wantedLeftSpeed_;
     //or perfect virtual motor
-    leftSpeed_ = wantedLeftSpeed_;
+    //leftSpeed_ = wantedLeftSpeed_;
 
     // utilise la real speed
     float tps = chrono_.getElapsedTimeInMilliSec();	//* timesMultiplicator_;
@@ -215,11 +215,11 @@ void AsservDriver::computeCounterL()
 void AsservDriver::computeCounterR()
 {
     // MAJ real speed
-//	rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
-//	if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
-//		rightSpeed_ = wantedRightSpeed_;
+	rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
+	if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
+		rightSpeed_ = wantedRightSpeed_;
     //or perfect virtual motor
-    rightSpeed_ = wantedRightSpeed_;
+    //rightSpeed_ = wantedRightSpeed_;
 
     float tps = chrono_.getElapsedTimeInMilliSec();	//* timesMultiplicator_;
     float deltaT_ms = tps - tRight_ms_;
