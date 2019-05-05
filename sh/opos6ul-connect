@@ -5,7 +5,7 @@
 IPHOME="192.168.0.212" #WIFI HOME CHO
 IPWIFI="192.168.2.107" #WIFI PMX
 IPETH0="192.168.2.105" #ETH0 PMX
-IP5GHZ="192.168.3.103" #WIFI 5Ghz PMX5G
+IP5GHZ="192.168.3.104" #WIFI 5Ghz PMX5G
 #IP5GHZ="192.168.3.103" #WIFI 5Ghz PMX5G (backup)
 
 view_doc()
@@ -62,12 +62,13 @@ recupsvg()
 
 connect()
 {
+	echo $IP
 	ssh -t root@$IP "cd /root/pmx ; exec \$SHELL -l"
 }
 
 
 case "$1" in
-	5ghz)
+	5g)
 		IP=$IP5GHZ
 	;;
 	eth0)
@@ -132,7 +133,7 @@ case "$2" in
 	;;
 
 	*)
-		echo "Usage: $0 {5ghz|eth0|wifi|home} {connect|main|kill|common|driver|all|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
+		echo "Usage: $0 {5g|eth0|wifi|home} {connect|main|kill|common|driver|all|tsh|view-doc|recupcsv|recupsvg|recupcsvhost}" >&2
 		exit 1
 	;;
 esac

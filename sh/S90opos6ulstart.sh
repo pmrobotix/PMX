@@ -57,6 +57,17 @@ i2cdetect -y -a 0
 #I2C UART5
 i2cdetect -y -a 1
 
+#liste des i2c
+#bus 0
+#MBED I2C_SLAVE_ADDRESS 0x05
+#bus 1
+#GPIOBOARD_PCA9555 24
+#MCP23017_ADDRESS 20
+#AX12ADC_ADDR 08
+#GROVE_COLOR_DEFAULT_ADDRESS 39
+#ADDRESS_gp2y0e02b 40
+
+
 #thread info linuxthreads/NPTL //TODO A verifier sur opos6ul !!!
 #getconf GNU_LIBPTHREAD_VERSION
 

@@ -26,7 +26,23 @@ O_State_Init::execute(Robot&)
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd2x16().home();
         robot.actions().lcd2x16().print("METTRE LA TIRETTE ! ");
-        robot.actions().tirette().waitPressed();
+        //robot.actions().tirette().waitPressed();
+        ButtonTouch b = BUTTON_NONE;
+        while (!robot.actions().tirette().pressed()) {
+            usleep(10000);
+            b = robot.actions().buttonBar().checkOneOfAllPressed();
+            if (b == BUTTON_BACK_KEY)
+            {
+                robot.actions().lcd2x16().home();
+                robot.actions().lcd2x16().clear();
+                robot.actions().lcd2x16().print("EXIIIIIIT !");
+                usleep(500000);
+                logger().info() << "Exit by User request! " << logs::end;
+                //on quitte le programme!!
+                exit(0);
+            }
+        }
+
         robot.actions().lcd2x16().clear();
 
         robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
@@ -35,7 +51,7 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().home();
         robot.actions().lcd2x16().print("CHOISIR COULEUR + IA...");
         logger().info() << "CHOISIR COULEUR + IA..." << logs::end;
-        ButtonTouch b = BUTTON_NONE;
+        b = BUTTON_NONE;
         while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR) {
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_LEFT_KEY) {
@@ -77,12 +93,20 @@ O_State_Init::execute(Robot&)
         robot.waitForInit(true);
 
         robot.actions().lcd2x16().clear();
-        robot.actions().lcd2x16().print("PMX...WAIT TIRETTE !");
+        robot.actions().lcd2x16().print("WAIT TIRETTE...");
         logger().info() << "PMX...WAIT TIRETTE !";
         if (robot.getMyColor() == PMXVIOLET)
+        {
+            robot.actions().lcd2x16().setCursor(0,1);
+            robot.actions().lcd2x16().print("=>  VIOLET !");
             logger().info() << " VIOLET";
+        }
         else
+        {
+            robot.actions().lcd2x16().setCursor(0,1);
+            robot.actions().lcd2x16().print("=>  YELLOW !");
             logger().info() << "YELLOW";
+        }
         logger().info() << logs::end;
 
         bool bb = false;

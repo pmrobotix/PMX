@@ -114,7 +114,7 @@ void Asserv::assistedHandling()
 //WARNING matchColor = 0 => en bas à gauche
 void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, bool matchColor = 0)
 {
-//printf("matchcolor ORANGE=0 GREEN=1 : %d\n", matchColor);
+    //printf("matchcolor ORANGE=0 GREEN=1 : %d\n", matchColor);
     //logger().error() << "matchcolor VIOLET=0 YELLOWs=1 : " << matchColor << logs::end;
 
     setMatchColorPosition(matchColor);
@@ -122,7 +122,7 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     x_mm = getRelativeX(x_mm);
     float thetaInDegrees = getRelativeAngle(thetaInDegrees_);
 
-    logger().error() << "matchcolor VIOLET=0 YELLOWs=1 : " << matchColor << "thetaInDegrees=" << thetaInDegrees_
+    logger().debug() << "matchcolor VIOLET=0 YELLOW=1 : " << matchColor << "thetaInDegrees=" << thetaInDegrees_
             << "get=" << thetaInDegrees << logs::end;
 
     if (useAsservType_ == ASSERV_INT_INSA)
