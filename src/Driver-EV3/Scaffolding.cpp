@@ -11,18 +11,21 @@
  */
 
 #include "Scaffolding.hpp"
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include "ev3dev.h"
 
-static bool audible = true;
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <cstring>
+
+
+//static bool audible = true;
 
 // In ev3dev-jessie, the console font will revert to the system setting on exit
 #undef RESTORE_SETFONT
 #undef DEBUG_TTYTYPE
 
+#define ARM_BBR_TERMFONT_BIG "Lat7-TerminusBold20x10.psf.gz"
 #define ARM_BBR_TERMFONT "Lat15-Terminus12x6.psf.gz"
 #define SYSTEM_TERMFONT "Lat15-TomThumb4x6.psf.gz"
 
@@ -105,7 +108,7 @@ static bool term_set_curpos(int col, int row)
     return is_FBConsole;
 }
 
-static inline bool term_disp_string(char *string)
+static inline bool term_disp_string(const char *string)
 {
     fputs(string, stdout);
     if (!is_FBConsole)
@@ -159,6 +162,7 @@ void prog_init(void)
 
     //alrt_hello(audible);
     system("setfont " ARM_BBR_TERMFONT);		// Use legible font for status messages
+    //system("setfont " ARM_BBR_TERMFONT_BIG);                    // Use for PMX
 
     // Check if we're running on Frameb Buffer Console, or else in Debugger w/o ncurses support.
     char ttynamestr[BUFSIZE];
@@ -188,33 +192,42 @@ void prog_exit(void)
 
 }
 
-void prog_title(char *string)
-{
-    //printf("Debug: prog_title()\n");
-    /* Display Title string on LCD Screen */
-    prog_contentX(string, 1);
-}
+//void prog_title(char *string)
+//{
+//    //printf("Debug: prog_title()\n");
+//    /* Display Title string on LCD Screen */
+//    prog_contentX(string, 1);
+//}
+//
+//void prog_content1(char *string)
+//{
+//    //printf("Debug: prog_content1()\n");
+//    /* Display Content string on LCD Screen on Row 3 */
+//    prog_contentX(string, 3);
+//}
+//
+//void prog_content2(char *string)
+//{
+//    //printf("Debug: prog_content2()\n");
+//    /* Display Content string on LCD Screen on Row 5 */
+//    prog_contentX(string, 5);
+//}
 
-void prog_content1(char *string)
-{
-    //printf("Debug: prog_content1()\n");
-    /* Display Content string on LCD Screen on Row 3 */
-    prog_contentX(string, 3);
-}
-
-void prog_content2(char *string)
-{
-    //printf("Debug: prog_content2()\n");
-    /* Display Content string on LCD Screen on Row 5 */
-    prog_contentX(string, 5);
-}
-
-void prog_contentX(char *string, int row)
+void prog_contentX(std::string str, int row, int col=1)
 {
     /* Display Content string on LCD Screen on Row X */
-    term_set_curpos(1, row);
-    term_disp_string(string);
+    term_set_curpos(col, row);
+    term_disp_string(str.c_str());
 }
+
+void prog_NumberX(int value, int row, int col=1)
+{
+
+    /* Display Content string on LCD Screen on Row X */
+    term_set_curpos(col, row);
+    prog_display_integer(value);
+}
+
 
 void prog_clearscreen(void)
 {
@@ -223,6 +236,7 @@ void prog_clearscreen(void)
 
 bool prog_set_cursorpos(int col, int row)
 {
+    system("setfont " ARM_BBR_TERMFONT_BIG);
     return term_set_curpos(col, row);
 }
 

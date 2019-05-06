@@ -36,6 +36,11 @@ public:
 
     virtual size_t write(uint8_t value) = 0; //for Print
 
+    virtual void print_content_string(std::string str, int row, int col=1) = 0;
+
+    virtual void print_content_integer(int value, int row, int col=1) = 0;
+
+
 protected:
 
     /*!

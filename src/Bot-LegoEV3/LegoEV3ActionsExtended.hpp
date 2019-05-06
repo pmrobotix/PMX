@@ -6,6 +6,7 @@
 
 #include "../Common/Action/Actions.hpp"
 #include "../Common/Action/ButtonBar.hpp"
+#include "../Common/Action/LcdShield.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/ServoObjectsSystem.hpp"
@@ -80,6 +81,11 @@ private:
     Sensors sensors_;
 
     /*!
+     * \brief capteurs IR/US.
+     */
+    LcdShield lcd_;
+
+    /*!
      * \brief Servomotors standard.
      */
     ServoObjectsSystem servos_std_;
@@ -137,6 +143,11 @@ public:
     Sensors & sensors()
     {
         return sensors_;
+    }
+
+    LcdShield & lcd()
+    {
+        return lcd_;
     }
 
     ServoObjectsSystem & servosStd()

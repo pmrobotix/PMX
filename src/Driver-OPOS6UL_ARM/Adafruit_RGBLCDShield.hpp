@@ -81,91 +81,91 @@
 #define BUTTON_RIGHT 0x02
 #define BUTTON_SELECT 0x01
 
-class Adafruit_RGBLCDShield : public utils::Mutex //: public Print
+class Adafruit_RGBLCDShield: public utils::Mutex //: public Print
 {
 private:
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref Adafruit_RGBLCDShield (OPOS6UL).
-	 */
-	static const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_RGBLCDShield.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref Adafruit_RGBLCDShield (OPOS6UL).
+     */
+    static const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_RGBLCDShield.OPO");
+        return instance;
+    }
 
-	utils::Mutex mutex_;
-	bool connected_;
+    utils::Mutex mutex_;
+    bool connected_;
 
-	uint8_t _rs_pin; // LOW: command.  HIGH: character.
-	uint8_t _rw_pin; // LOW: write to LCD.  HIGH: read from LCD.
-	uint8_t _enable_pin; // activated by a HIGH pulse.
-	uint8_t _data_pins[8];
-	uint8_t _button_pins[5];
-	uint8_t _displayfunction;
-	uint8_t _displaycontrol;
-	uint8_t _displaymode;
+    uint8_t _rs_pin; // LOW: command.  HIGH: character.
+    uint8_t _rw_pin; // LOW: write to LCD.  HIGH: read from LCD.
+    uint8_t _enable_pin; // activated by a HIGH pulse.
+    uint8_t _data_pins[8];
+    uint8_t _button_pins[5];
+    uint8_t _displayfunction;
+    uint8_t _displaycontrol;
+    uint8_t _displaymode;
 
-	//uint8_t _initialized;
+    //uint8_t _initialized;
 
-	uint8_t _numlines, _currline;
+    uint8_t _numlines, _currline;
 
-	uint8_t _i2cAddr;
-	Adafruit_MCP23017 _i2c;
+    uint8_t _i2cAddr;
+    Adafruit_MCP23017 _i2c;
 
-	Adafruit_RGBLCDShield();
+    Adafruit_RGBLCDShield();
 
-	void send(uint8_t, uint8_t);
-	void write4bits(uint8_t);
-	void write8bits(uint8_t);
-	void pulseEnable();
-	void _digitalWrite(uint8_t, uint8_t);
-	void _pinMode(uint8_t, uint8_t);
+    void send(uint8_t, uint8_t);
+    void write4bits(uint8_t);
+    void write8bits(uint8_t);
+    void pulseEnable();
+    void _digitalWrite(uint8_t, uint8_t);
+    void _pinMode(uint8_t, uint8_t);
 
 public:
 
-	static Adafruit_RGBLCDShield & instance()
-	{
-		static Adafruit_RGBLCDShield instance;
-		return instance;
-	}
+    static Adafruit_RGBLCDShield & instance()
+    {
+        static Adafruit_RGBLCDShield instance;
+        return instance;
+    }
 
-	~Adafruit_RGBLCDShield()
-	{
-		setBacklight(0);
-	}
+    ~Adafruit_RGBLCDShield()
+    {
+        setBacklight(0);
+    }
 
-	void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
+    void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
 
-	void clear();
-	void home();
+    void clear();
+    void home();
 
-	void noDisplay();
-	void display();
-	void noBlink();
-	void blink();
-	void noCursor();
-	void cursor();
-	void scrollDisplayLeft();
-	void scrollDisplayRight();
-	void leftToRight();
-	void rightToLeft();
-	void autoscroll();
-	void noAutoscroll();
+    void noDisplay();
+    void display();
+    void noBlink();
+    void blink();
+    void noCursor();
+    void cursor();
+    void scrollDisplayLeft();
+    void scrollDisplayRight();
+    void leftToRight();
+    void rightToLeft();
+    void autoscroll();
+    void noAutoscroll();
 
-	// only if using backpack
-	void setBacklight(uint8_t status);
+    // only if using backpack
+    void setBacklight(uint8_t status);
 
-	void createChar(uint8_t, uint8_t[]);
-	void setCursor(uint8_t, uint8_t);
-	/*#if ARDUINO >= 100
-	 virtual size_t write(uint8_t);
-	 #else*/
+    void createChar(uint8_t, uint8_t[]);
+    void setCursor(uint8_t, uint8_t);
+    /*#if ARDUINO >= 100
+     virtual size_t write(uint8_t);
+     #else*/
 
-	size_t write__(uint8_t value); //virtual
+    size_t write__(uint8_t value); //virtual
 
-	//#endif
-	void command(uint8_t);
-	uint8_t readButtons();
+    //#endif
+    void command(uint8_t);
+    uint8_t readButtons();
 
 };
 

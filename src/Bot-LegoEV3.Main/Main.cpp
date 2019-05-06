@@ -9,6 +9,7 @@
 #include "../Bot-LegoEV3/L_ButtonBarTest.hpp"
 #include "../Bot-LegoEV3/L_IAbyPathTest.hpp"
 #include "../Bot-LegoEV3/L_IATest.hpp"
+#include "../Bot-LegoEV3/L_LcdTest.hpp"
 #include "../Bot-LegoEV3/L_LedBarTest.hpp"
 #include "../Bot-LegoEV3/L_MovingBaseTest.hpp"
 #include "../Bot-LegoEV3/L_SensorsTest.hpp"
@@ -31,6 +32,7 @@ int main(int argc, char** argv)
 	robot.getConsoleManager().add(new L_ButtonBarTest());
 	robot.getConsoleManager().add(new L_SoundBarTest());
 	robot.getConsoleManager().add(new L_TiretteTest());
+	robot.getConsoleManager().add(new L_LcdTest());
 	robot.getConsoleManager().add(new L_SensorsTest());
 	robot.getConsoleManager().add(new L_ServoObjectTest());
 	robot.getConsoleManager().add(new L_ServoStepTest());

@@ -89,6 +89,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "LegoIRSensor.EV3", "console");
     add(logs::Level::INFO, "LegoAngleSensor.EV3", "console");
     add(logs::Level::INFO, "LegoMotor.EV3", "console");
+    add(logs::Level::INFO, "LcdShieldDriver.EV3", "console");
 
 
     //DEBUG

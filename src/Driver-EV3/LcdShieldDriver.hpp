@@ -3,50 +3,53 @@
 
 #include <stddef.h>
 #include <cstdint>
+#include <string>
 
 #include "../Common/Action.Driver/ALcdShieldDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "ev3dev.h"
 
 using namespace std;
-using namespace ev3dev;
 
 class LcdShieldDriver: public ALcdShieldDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LcdShieldDriver(SIMU).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriver.SIMU");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref LcdShieldDriver(EV3).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriver.EV3");
+        return instance;
+    }
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	LcdShieldDriver();
+    /*!
+     * \brief Constructor.
+     */
+    LcdShieldDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~LcdShieldDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~LcdShieldDriver();
 
-	void clear();
+    void clear();
 
-	void home();
+    void home();
 
-	void setBacklightOn();
+    void setBacklightOn();
 
-	void setBacklightOff();
+    void setBacklightOff();
 
-	void setCursor(uint8_t, uint8_t);
+    void setCursor(uint8_t, uint8_t);
 
-	size_t write(uint8_t value);
+    size_t write(uint8_t value);
+
+    void print_content_string(std::string str, int row, int col);
+
+    void print_content_integer(int value, int row, int col);
 
 };
 

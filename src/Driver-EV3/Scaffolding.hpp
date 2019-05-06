@@ -79,26 +79,26 @@ void prog_init(void);                /* Program Initialization Routine */
  */
 void prog_exit(void);                   /* Program Exit Routine */
 
-/**
- * Display Title string on LCD (Row 1)
- *    @param string: Null-terminated string
- *    @return None
- */
-void prog_title(char *string);       /* Display Title string on LCD Screen */
-
-/**
- * Display Content string on LCD (Row 3)
- *    @param string: Null-terminated string
- *    @return None
- */
-void prog_content1(char *string);     /* Display Content string on LCD Screen */
-
-/**
- * Display Content string on LCD (Row 5)
- *    @param string: Null-terminated string
- *    @return None
- */
-void prog_content2(char *string);     /* Display Content string on LCD Screen */
+///**
+// * Display Title string on LCD (Row 1)
+// *    @param string: Null-terminated string
+// *    @return None
+// */
+//void prog_title(char *string);       /* Display Title string on LCD Screen */
+//
+///**
+// * Display Content string on LCD (Row 3)
+// *    @param string: Null-terminated string
+// *    @return None
+// */
+//void prog_content1(char *string);     /* Display Content string on LCD Screen */
+//
+///**
+// * Display Content string on LCD (Row 5)
+// *    @param string: Null-terminated string
+// *    @return None
+// */
+//void prog_content2(char *string);     /* Display Content string on LCD Screen */
 
 /**
  * Display Content string on LCD (Row row)
@@ -106,7 +106,9 @@ void prog_content2(char *string);     /* Display Content string on LCD Screen */
  *    @param row int: Row Index [1..MAX_ROW]
  *    @return None
  */
-void prog_contentX(char *string, int row);     /* Display Content string on LCD Screen */
+void prog_contentX(std::string str, int row, int col);     /* Display Content string on LCD Screen */
+
+void prog_NumberX(int value, int row, int col);
 
 //
 // Generic Output routines

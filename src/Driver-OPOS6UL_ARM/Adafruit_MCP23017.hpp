@@ -53,44 +53,44 @@ class Adafruit_MCP23017
 {
 
 private:
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref Adafruit_MCP23017.
-	 */
-	static const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_MCP23017.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref Adafruit_MCP23017.
+     */
+    static const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("Adafruit_MCP23017.OPO");
+        return instance;
+    }
 
-	//bool connected_;
+    //bool connected_;
 
-	//uint8_t i2caddr;
-	//HostI2cBus MCP_i2c_;
-	AsI2c MCP_i2c_;
+    //uint8_t i2caddr;
+    //HostI2cBus MCP_i2c_;
+    AsI2c MCP_i2c_;
 
 public:
-	Adafruit_MCP23017();
-	~Adafruit_MCP23017()
-	{
-	}
+    Adafruit_MCP23017();
+    ~Adafruit_MCP23017()
+    {
+    }
 
-	int begin(void);
+    int begin(void);
 
-	void pinMode(uint8_t p, uint8_t d);
-	void digitalWrite(uint8_t p, uint8_t d);
-	void pullUp(uint8_t p, uint8_t d);
-	uint8_t digitalRead(uint8_t p);
+    void pinMode(uint8_t p, uint8_t d);
+    void digitalWrite(uint8_t p, uint8_t d);
+    void pullUp(uint8_t p, uint8_t d);
+    uint8_t digitalRead(uint8_t p);
 
-	void writeGPIOAB(uint16_t);
-	uint16_t readGPIOAB();
+    void writeGPIOAB(uint16_t);
+    uint16_t readGPIOAB();
 
-	long write_i2c(unsigned char command, unsigned char value);
-	long read_i2c(unsigned char command);
+    long write_i2c(unsigned char command, unsigned char value);
+    long read_i2c(unsigned char command);
 
-	long writeI2c_3Bytes(unsigned char *buf);
+    long writeI2c_3Bytes(unsigned char *buf);
 
-	//TODO inutilisé pour le moment
-	long readI2c_2Bytes(unsigned char *buf);
+    //TODO inutilisé pour le moment
+    long readI2c_2Bytes(unsigned char *buf);
 
 };
 

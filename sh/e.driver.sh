@@ -1,6 +1,9 @@
 #!/bin/bash
 
-#ARM9 - ARM arch V5
+#ARM9 - ARM arch V5 
+#So, at the usual 300MHz, this number will be ~150. At 375MHz it will be ~187 and at 456MHz it will be ~228.
+lscpu | grep Bogo
+
 
 sudo systemctl stop brickman
 sudo ./Driver-UnitTest_EV3 >/dev/tty0

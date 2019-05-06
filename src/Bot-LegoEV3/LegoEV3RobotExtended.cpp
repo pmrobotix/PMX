@@ -39,13 +39,12 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 void LegoEV3RobotExtended::stopActions()
 {
     this->actions().stop(); //extra devices
-
 }
 
 void LegoEV3RobotExtended::begin(int argc, char** argv)
 {
     Robot::begin(argc, argv);
-    logger().info() << "LegoEV3RobotExtended::begin" << logs::end;
+    logger().debug() << "LegoEV3RobotExtended::begin" << logs::end;
 
 
     //specific match case ands strategies

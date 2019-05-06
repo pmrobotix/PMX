@@ -4,8 +4,8 @@
 #include "../Log/Logger.hpp"
 
 LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot) :
-        ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot), servos_std_(
-                *this, AServoDriver::SERVO_STANDARD), servoUsingMotor_(*this)
+        ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot), lcd_(botId, *this),
+        servos_std_(*this, AServoDriver::SERVO_STANDARD), servoUsingMotor_(*this)
 {
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
 
