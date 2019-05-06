@@ -38,49 +38,20 @@ void O_ServoObjectsTest::run(int argc, char** argv)
     robot.actions().ax12_left_cil(0);
     robot.actions().ax12_right_cil();
 
-    sleep(2);
+    logger().info() << "goldenium = " <<robot.actions().ax12_goldenium_in_cil() << logs::end;
+
+    sleep(3);
+    logger().info() << "goldenium = " <<robot.actions().ax12_goldenium_in_cil() << logs::end;
+
+
+
     robot.actions().ax12_left_cil_retract(0);
     robot.actions().ax12_right_cil_retract();
 
-    //robot.actions().ax12_left_cil_retract(1);
-    //robot.actions().ax12_right_cil_retract(1);
 
-//    robot.actions().servo_init();
-//
-//    robot.actions().servo_init_end();
 
-    /*
-     robot.actions().servo_lowspeed();
-     robot.actions().arm_retract(150);
-     robot.actions().funnyAction_Init();
-     robot.actions().nose_init();
-     robot.actions().arm_center(150);
-     robot.actions().turn_nene_center();
-     sleep(5);
 
-     robot.actions().arm_right(150);
-     sleep(1);
-     robot.actions().turn_nene_right_trembl();
-
-     robot.actions().turn_nene_center_right();
-     sleep(1);
-
-     robot.actions().arm_left(150);
-     sleep(1);
-     robot.actions().turn_nene_left_trembl();
-
-     robot.actions().turn_nene_center_left();
-     sleep(1);
-
-     robot.actions().servo_mediumspeed();
-     logger().info() << "execute Funny action " << logs::end;
-     robot.actions().funnyAction_Activate();
-
-     logger().info() << "prepare blue match" << logs::end;
-     robot.actions().turn_nene_left();
-     sleep(2);
-
-     robot.stopActions();*/
+    robot.stopExtraActions();
     robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }

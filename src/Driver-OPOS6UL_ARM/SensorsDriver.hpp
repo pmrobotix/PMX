@@ -5,11 +5,13 @@
 
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "Gp2y0e02b.hpp"
 #include "IrSensor.hpp"
 
 using namespace std;
 
 #define ADDRESS_gp2y0e02b       0x40 //0x80 >> 1  // Arduino uses 7 bit addressing so we shift address right one bit
+//#define ADDR_gp2y0e02b 0x80
 #define DISTANCE_REG_gp2y0e02b  0x5E
 #define SHIFT_gp2y0e02b         0x35
 
@@ -26,7 +28,8 @@ private:
 		return instance;
 	}
 
-	AsI2c i2c_gp2y0e02b_;
+	Gp2y0e02b gp2_1_;
+	Gp2y0e02b gp2_2_;
 
 	int read_i2c(unsigned char command);
 	int read_i2c_2bytes_optimised(unsigned char command);

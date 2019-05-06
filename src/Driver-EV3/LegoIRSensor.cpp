@@ -40,7 +40,7 @@ LegoIRSensor::LegoIRSensor(const char* input)
 
                 logger().debug() << "exist driver temp ==  " << temp << logs::end;
             } catch (...) {
-                logger().error() << "LegoIRSensor impossible to access to " << temp << logs::end;
+                //logger().error() << "LegoIRSensor impossible to access to " << temp << logs::end;
             }
             if (temp != "nop")
                 todo = 1;

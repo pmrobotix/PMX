@@ -53,7 +53,7 @@ public:
 
     void begin(int argc, char** argv);
 
-    void stopActions();
+    void stopExtraActions();
 
     int points;
 

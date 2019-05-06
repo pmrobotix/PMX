@@ -8,6 +8,7 @@ IPUSB="10.42.0.71" #USB LINUX
 IPWIFI="192.168.2.104"
 #IPHOME="192.168.0.217" #WIFI HOME CHO INDEED2G
 IPHOME="192.168.0.220" #WIFI HOME CHO INDEED
+IP5GHZ="192.168.3.102" #WIFI PMX5G
 
 #EV3 ChristopheD
 #IPWIFI="192.168.2.102" #WIFI
@@ -21,40 +22,41 @@ all()
 
 main()
 {
-
 	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
 }
 
 driver()
 {
-	
-	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx	
-	
+	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
 }
 
 tests()
 {
 	scp "../../ev3dev-lang-cpp/build/tests/api_tests" "../../ev3dev-lang-cpp/build/demos/button-test"  "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-demo" "../../ev3dev-lang-cpp/build/demos/ev3dev-lang-test" "../../ev3dev-lang-cpp/build/demos/sound-test" robot@$IP:/home/robot/pmx	
-	
 }
 
-recup()
+recupsvg()
 {
-#faire un repertoire de logs
-        #scp "robot@$IP:/home/robot/pmx/*.csv /home/robot/pmx/*.svg" /home/pmx/recup
-        #scp "robot@$IP:/home/robot/pmx/logAsserv.csv /home/robot/pmx/logRegul.csv /home/robot/pmx/svgEV3.svg /home/robot/pmx/svgIA.svg" /home/pmx/recup
-        scp "robot@$IP:/home/robot/pmx/*.csv" /home/pmx/recup
-        scp "robot@$IP:/home/robot/pmx/*.svg" /home/pmx/recup
-        
+		#faire un repertoire de logs pour mutualiser la recup des logs csv et svg    
+        scp "robot@$IP:/home/robot/pmx/*.svg" /home/pmx/recup 
+}
+recupcsv()
+{
+		#faire un repertoire de logs pour mutualiser la recup des logs csv et svg
+        scp "robot@$IP:/home/robot/pmx/*.csv" /home/pmx/recup    
 }
 
 connect()
 {
-	ssh robot@$IP
+	echo $IP
+	ssh -t robot@$IP "cd /home/robot/pmx ; exec \$SHELL -l"
 }
 
 case "$1" in
+	5g)
+		IP=$IP5GHZ
+	;;
 	usb)
 		IP=$IPUSB
 	;;
@@ -82,13 +84,15 @@ case "$2" in
 		driver;;
 	main)
 		main;;
-	recup)
-		recup;;
+	svg)
+		recupsvg;;
+	csv)
+		recupcsv;;
 	tests)
 		tests;;
 
 	*)
-		echo "Usage: $0 {usb|wifi|home} {connect|all|main|driver|tests}" >&2
+		echo "Usage: $0 {5g|usb|wifi|home} {connect|all|main|driver|csv|svg|tests}" >&2
 		exit 1
 	;;
 esac

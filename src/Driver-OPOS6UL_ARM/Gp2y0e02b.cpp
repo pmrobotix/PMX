@@ -9,45 +9,49 @@
 
 #include "../Log/Logger.hpp"
 
-Gp2y0e02b::Gp2y0e02b(unsigned char address) :
-        i2c_gp2y0e02b_(1), connected_gp2y0e02b_(false), shift_(0)
+Gp2y0e02b::Gp2y0e02b(int bus, unsigned char addr) :
+        i2c_gp2y0e02b_(bus), connected_gp2y0e02b_(false), shift_(0)
 {
-    address = address_;
-    i2c_gp2y0e02b_.setSlaveAddr(address >> 1);
+    logger().debug() << "Gp2y0e02b(" << reinterpret_cast<void*>(addr) << ") : gp2y0e02b CREATE" << logs::end;
+
+    address_ = addr;
+    i2c_gp2y0e02b_.setSlaveAddr(addr);
 
     //read shift
     shift_ = readRegByte(SHIFT_ADDR);
 
     if (shift_ <= 0) {
-        logger().error() << "Gp2y0e02b() : gp2y0e02b NOT CONNECTED !" << logs::end;
+        logger().error() << "Gp2y0e02b(" << reinterpret_cast<void*>(addr) << ") : gp2y0e02b NOT CONNECTED !" << logs::end;
         connected_gp2y0e02b_ = false;
     } else
         connected_gp2y0e02b_ = true;
-
+    logger().info() << "CREATE ok" << logs::end;
 }
 
-Gp2y0e02b::~Gp2y0e02b()
+int Gp2y0e02b::getDistanceMm()
 {
-}
-
-int Gp2y0e02b::getDistanceCm()
-{
+    if (!connected_gp2y0e02b_)
+        return -99;
     unsigned char data[2];
     int r = readReg2Bytes(DISTANCE_ADDR, data);
     if (r < 0)
-        logger().error() << "ERROR getDistanceCm() readReg2Bytes " << logs::end;
+        logger().error() << "ERROR getDistanceMm() readReg2Bytes r=" << r << logs::end;
     unsigned char high = data[0];
     unsigned char low = data[1];
 
     logger().debug() << "high: " << (int) high << " \tlow: " << (int) low << logs::end;
-    int distance_cm = ((high * 16 + low) / 16) * 10 / (int) std::pow(2, shift_); // Calculate the range in CM
-    logger().debug() << "distance: " << address_ << " cm = " << distance_cm << logs::end;
+    int distance_mm = ((high * 16 + low) / 16) * 10 / (int) std::pow(2, shift_); // Calculate the range in CM
+    logger().debug() << "distance: " << address_ << " mm = " << distance_mm << logs::end;
 
-    return distance_cm;
+    if (distance_mm == 637)
+        return -1;
+    return distance_mm;
 }
 
 void Gp2y0e02b::getInfoData(unsigned int *spotSize, unsigned int *spotSym)
 {
+    if (!connected_gp2y0e02b_)
+        return;
     unsigned char data[3]; //c + a + b
     int r = readReg3Bytes(RIGHT_EDGE_ADDR, data);
     if (r < 0)
@@ -60,6 +64,11 @@ void Gp2y0e02b::getInfoData(unsigned int *spotSize, unsigned int *spotSym)
 
 void Gp2y0e02b::EFuseSlaveID(unsigned char desiredAddress, bool pin_activated)
 {
+    if (!connected_gp2y0e02b_) {
+        logger().error() << "ERROR Gp2y0e02b Not connected" << logs::end;
+        return;
+    }
+
     int r = 0;
     /* ----- Stage 1 ----- */
     logger().info() << "Stage 1 started." << logs::end;

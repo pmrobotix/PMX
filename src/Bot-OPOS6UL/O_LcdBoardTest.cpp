@@ -29,7 +29,7 @@ void O_LcdBoardTest::run(int argc, char** argv)
 
 	sleep(1);
 
-	robot.stopActions();
+	robot.stopExtraActions();
 
 	robot.stopAll();
 	logger().info() << "OPOS6UL_RobotExtended Happy End." << logs::end;

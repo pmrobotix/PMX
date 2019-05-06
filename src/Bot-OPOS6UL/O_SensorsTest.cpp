@@ -31,7 +31,7 @@ void O_SensorsTest::run(int argc, char** argv)
         logger().info() << " front=" << front << " rear=" << rear << logs::end;
     }
 
-    robot.stopActions();
+    robot.stopExtraActions();
     robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }

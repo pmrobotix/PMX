@@ -42,9 +42,9 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     todo_fake = 1;
 }
 
-void OPOS6UL_RobotExtended::stopActions()
+void OPOS6UL_RobotExtended::stopExtraActions()
 {
-    this->actions().stop(); //extra devices
+    this->actions().stopExtra(); //extra devices
 
 }
 

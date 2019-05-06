@@ -26,7 +26,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "Asserv", "console");
 	add(logs::Level::INFO, "IAbyPath", "console");
 	add(logs::Level::INFO, "SensorsTimer", "console");
-	add(logs::Level::INFO, "ServoObjectsAx12", "console");
+	add(logs::Level::INFO, "ServoObjectsSystem", "console");
 
 
 	//SVG
@@ -58,6 +58,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "O_ServoObjectsTest", "console");
 	add(logs::Level::INFO, "O_SensorsTest", "console");
 	add(logs::Level::INFO, "O_IAByPathTest", "console");
+
 
 
 

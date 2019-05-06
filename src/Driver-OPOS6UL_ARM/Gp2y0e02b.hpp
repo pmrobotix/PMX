@@ -22,7 +22,6 @@
 #include "../Log/LoggerFactory.hpp"
 
 //#define ADDRESS_gp2y0e02b       0x40 //0x80 >> 1  // Arduino uses 7 bit addressing so we shift address right one bit
-//#define ADDRESS         (0x80 >> 1) // 7 highest bits
 #define SHIFT_ADDR      0x35
 #define DISTANCE_ADDR   0x5E
 #define RIGHT_EDGE_ADDR 0xF8 // C
@@ -60,18 +59,20 @@ public:
     /*!
      * \brief Constructor.
      */
-    Gp2y0e02b(unsigned char address);
+    Gp2y0e02b(int bus, unsigned char address);
 
     /*!
      * \brief Destructor.
      */
-    ~Gp2y0e02b();
+    ~Gp2y0e02b()
+    {
+    }
 
     /*!
-     *  \brief get distance in cm.
+     *  \brief get distance in mm.
      *  //every 250 ms
      */
-    int getDistanceCm();
+    int getDistanceMm();
     void getInfoData(unsigned int *spotSize, unsigned int *spotSym);
     void EFuseSlaveID(unsigned char desiredAddress, bool pin_activated);
     int ScanBus();

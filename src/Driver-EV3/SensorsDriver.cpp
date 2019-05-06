@@ -35,7 +35,7 @@ bool SensorsDriver::front()
     double mm1 = IR_1_AV_D.getDistanceMM();
     double mm2 = IR_2_AV_G.getDistanceMM();
 
-    logger().info() << "IR_2_AV_G==" << mm2 << "< \tIR_1_AV_D==" << mm1 << logs::end;
+    logger().info() << "IR_2_AV_G==" << mm2 << " \tIR_1_AV_D==" << mm1 << logs::end;
 
     if (mm1 < 160 || mm2 < 160)
         temp = 1;

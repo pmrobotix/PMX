@@ -21,23 +21,33 @@ L_State_Init::execute(Robot&)
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-
     robot.actions().start();
 
     //BEGIN
     begin: robot.strategy("all");
-    logger().info() << "robot.skipSetup()= "<< robot.skipSetup() << logs::end;
-
+    logger().info() << "robot.skipSetup()= " << robot.skipSetup() << logs::end;
 
     if (!robot.skipSetup()) {
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
 
         robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
-        robot.actions().tirette().waitPressed();
+        //robot.actions().tirette().waitPressed();
+        ButtonTouch b = BUTTON_NONE;
+        while (!robot.actions().tirette().pressed()) {
+            usleep(10000);
+            b = robot.actions().buttonBar().checkOneOfAllPressed();
+            if (b == BUTTON_BACK_KEY) {
+                logger().info() << "Exit by User request! " << logs::end;
+                robot.actions().ledBar().resetAll();
+                robot.actions().ledBar().stopAndWait(true);
+                //on quitte le programme!!
+                exit(0);
+            }
+        }
         robot.actions().ledBar().resetAll();
 
         logger().info() << "CHOISIR COULEUR + IA..." << logs::end;
-        ButtonTouch b = BUTTON_NONE;
+        b = BUTTON_NONE;
         while (b != BUTTON_ENTER_KEY || robot.getMyColor() == PMXNOCOLOR) {
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_LEFT_KEY) {
@@ -60,6 +70,13 @@ L_State_Init::execute(Robot&)
             }
             if (b == BUTTON_DOWN_KEY) {
                 logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
+            }
+            if (b == BUTTON_BACK_KEY) {
+                logger().info() << "Exit by User request! " << logs::end;
+                robot.actions().ledBar().resetAll();
+                robot.actions().ledBar().stopAndWait(true);
+                //on quitte le programme!!
+                exit(0);
             }
         }
 
@@ -104,7 +121,6 @@ L_State_Init::execute(Robot&)
         usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
     }
 
-
     robot.actions().ledBar().stopAndWait(true);
 
     robot.actions().ledBar().resetAll();
@@ -127,13 +143,13 @@ void L_State_Init::setPos()
     robot.asserv().ignoreFrontCollision(false);
     robot.asserv().ignoreRearCollision(true);
 
-     robot.asserv().assistedHandling();
-     robot.svgPrintPosition();
-     //init
+    robot.asserv().assistedHandling();
+    robot.svgPrintPosition();
+    //init
 
-     robot.asserv().doLineAbs(150);
-     robot.asserv().doMoveForwardAndRotateTo(300, 750, 90.0);
-     robot.svgPrintPosition();
-     logger().info() << "setPos() executed" << logs::end;
+    robot.asserv().doLineAbs(150);
+    robot.asserv().doMoveForwardAndRotateTo(300, 750, 90.0);
+    robot.svgPrintPosition();
+    logger().info() << "setPos() executed" << logs::end;
 
 }

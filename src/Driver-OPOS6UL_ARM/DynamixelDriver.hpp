@@ -70,6 +70,8 @@ public:
 
     void setPolarity(int servo, bool inversed);
 
+    int getTorque(int servo);
+
 };
 
 #endif /* DRIVER_OPOS6UL_ARM_DYNAMIXELDRIVER_HPP_ */

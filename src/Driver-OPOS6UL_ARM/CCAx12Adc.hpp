@@ -68,88 +68,88 @@ class CCAx12Adc: public utils::Mutex
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref CCAx12Adc (OPOS6UL).
-	 */
-	static const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("CCAx12Adc.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref CCAx12Adc (OPOS6UL).
+     */
+    static const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("CCAx12Adc.OPO");
+        return instance;
+    }
 
-	AsI2c i2c_CCAx12Adc_;
+    AsI2c i2c_CCAx12Adc_;
 
-	bool connected_;
-	utils::Mutex mutex_;
-	bool begin_;
+    bool connected_;
+    utils::Mutex mutex_;
+    bool begin_;
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	CCAx12Adc();
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    CCAx12Adc();
 
-	int getAddressSize(int address);
+    int getAddressSize(int address);
 
-	int write_i2c(unsigned char command, unsigned char value);
+    int write_i2c(unsigned char command, unsigned char value);
 
-	int write(unsigned char command);
-	int read();
+    int write(unsigned char command);
+    int read();
 
 public:
 
-	static CCAx12Adc & instance()
-	{
-		static CCAx12Adc instance;
-		return instance;
-	}
+    static CCAx12Adc & instance()
+    {
+        static CCAx12Adc instance;
+        return instance;
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual inline ~CCAx12Adc()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~CCAx12Adc()
+    {
+    }
 
-	// configuration and initialisation
-	int begin();
+    // configuration and initialisation
+    int begin();
 
-	//todo get address i2c //ping de la carte à faire
+    //todo get address i2c //ping de la carte à faire
 
-	// Set the led on
-	// @param led :  1 - 10
-	void setLedOn(int led);
+    // Set the led on
+    // @param led :  1 - 10
+    void setLedOn(int led);
 
-	// Set the led off
-	// @param led :  1 - 10
-	void setLedOff(int led);
+    // Set the led off
+    // @param led :  1 - 10
+    void setLedOff(int led);
 
-	// Get the ADC value (12bits) for -5 to 5 volts
-	// @param ADC :  0 - 9
-	// @returns value : 0 - 4095
-	int getADC(int adc);
+    // Get the ADC value (12bits) for -5 to 5 volts
+    // @param ADC :  0 - 9
+    // @returns value : 0 - 4095
+    int getADC(int adc);
 
-	int convertToVoltage(int adc);
+    int convertToVoltage(int adc);
 
-	// Ping a Dynamixel Servo
-	// @param id : the id of the dynamixel
-	// @returns 1 is servo is found
-	int pingAX(int id);
+    // Ping a Dynamixel Servo
+    // @param id : the id of the dynamixel
+    // @returns 1 is servo is found
+    int pingAX(int id);
 
-	// Read data (8bits or 16bits) at a specified address
-	// @param id : the id of the dynamixel
-	// @param address : address of the data
-	// @returns the data
-	int readAXData(int id, int address);
+    // Read data (8bits or 16bits) at a specified address
+    // @param id : the id of the dynamixel
+    // @param address : address of the data
+    // @returns the data
+    int readAXData(int id, int address);
 
-	// Write data (8bits or 16bits) at a specified address
-	// @param id : the id of the dynamixel
-	// @param address : address of the data
-	int writeAXData(int id, int address, int data);
+    // Write data (8bits or 16bits) at a specified address
+    // @param id : the id of the dynamixel
+    // @param address : address of the data
+    int writeAXData(int id, int address, int data);
 
-	bool isConnected()
-	{
-		return connected_;
-	}
+    bool isConnected()
+    {
+        return connected_;
+    }
 
 };
 

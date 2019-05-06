@@ -255,7 +255,7 @@ void Robot::begin(int argc, char** argv)
     }
 }
 
-void Robot::stopAll()
+void Robot::stopAll() //TODO renommer stopMotionTimerAndActionManager
 {
 
     if (asserv_default != NULL) {

@@ -34,6 +34,13 @@ void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
             usleep(10000);
         }
     }
+    int torque = getTorque(servo);
+    logger().info() << "servo=" << servo << " percent= "<< percent << " torque= "<< torque << logs::end;
+}
+
+int ServoObjectsSystem::getTorque(int servo)
+{
+    return servodriver_->getTorque(servo);
 }
 
 void ServoObjectsSystem::release(int servo)
@@ -80,6 +87,5 @@ void ServoObjectsSystem::detectAll()
             logger().info() << i << logs::end;
         }
     }
-
 }
 

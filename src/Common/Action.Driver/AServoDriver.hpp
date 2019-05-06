@@ -70,6 +70,8 @@ public:
 
     virtual void setPolarity(int servo, bool inversed) = 0;
 
+    virtual int getTorque(int servo) = 0;
+
 private:
 
 protected:

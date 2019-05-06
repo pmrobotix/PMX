@@ -43,7 +43,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     //init robot for end
     robot.freeMotion(); //stop the robot
 
-    robot.stopActions(); //stop specific actions, can take time for servos...
+    robot.stopExtraActions(); //stop specific actions, can take time for servos...
 
     robot.svgPrintEndOfFile();
 

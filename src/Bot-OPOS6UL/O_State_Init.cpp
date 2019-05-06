@@ -36,6 +36,8 @@ O_State_Init::execute(Robot&)
                 robot.actions().lcd2x16().home();
                 robot.actions().lcd2x16().clear();
                 robot.actions().lcd2x16().print("EXIIIIIIT !");
+                robot.actions().ledBar().resetAll();
+                robot.actions().ledBar().stopAndWait(true);
                 usleep(500000);
                 logger().info() << "Exit by User request! " << logs::end;
                 //on quitte le programme!!

@@ -135,7 +135,7 @@ public:
         return servos_std_;
     }
 
-    void stop()
+    void stopExtra()
     {
 
         ledbar_.stop(true);
@@ -147,7 +147,7 @@ public:
         //sensors stop...
 
         //stop all current task in the actionManagerTimer
-        Actions::stop();
+        //Actions::stop();
     }
 
     //--------------------------------------------------------------
@@ -222,128 +222,18 @@ public:
         servosAx12().setSpeed(181, speed);
         servosAx12().deploy(181, 792, keep);
     }
-    /*
-     void doorLeft(int keep = 0, int speed = 512)
-     {
-     servosStd().setSpeed(STD_SERVO_3, speed);
-     servosStd().deploy(STD_SERVO_3, 512, keep);
-     }
-     */
-    //--------------------------------------------------------------
-    //Actions 2018
-    //--------------------------------------------------------------
-    /*void servo_lowspeed()
-     {
-     servoObjects().setSpeedAll(100);
-     }
 
-     void servo_mediumspeed()
-     {
-     servoObjects().setSpeedAll(200);
-     }
-     void servo_maxspeed()
-     {
-     servoObjects().setSpeedAll(1023);
-     }
-     void arm_right_retract(int keep = 0, int speed = 512)
-     {
-     servoObjects().setSpeed(7, speed);
-     servoObjects().deploy(7, 512, keep);
-     }*/
-    /*
-     void arm_right_full(int keep = 0, int speed = 100)
-     {
-     servoObjects().setSpeed(7, speed);
-     servoObjects().deploy(7, 750, keep);
-     }
-     void arm_right_little(int keep = 0, int speed = 100)
-     {
-     servoObjects().setSpeed(7, speed);
-     servoObjects().deploy(7, 600, keep);
-     }
+    bool ax12_goldenium_in_cil()
+    {
+        int leftT = servosAx12().getTorque(180);
+        int RightT = servosAx12().getTorque(181);
 
-     void arm_left_retract(int keep = 0, int speed = 512)
-     {
-     servoObjects().setSpeed(5, speed);
-     servoObjects().deploy(5, 512, keep);
-     }
-     void arm_left_full(int keep = 0, int speed = 100)
-     {
-     servoObjects().setSpeed(5, speed);
-     servoObjects().deploy(5, 200, keep);
-     }
-     void arm_left_little(int keep = 0, int speed = 100)
-     {
-     servoObjects().setSpeed(5, speed);
-     servoObjects().deploy(5, 420, keep);
-     }
+        if (RightT > 900 && leftT < 300)
+            return true;
+        else
+            return false;
 
-     void ball_front(int keep = 0, int speed = 100)
-     {
-     servoObjects().setSpeed(4, speed);
-     servoObjects().deploy(4, 540, keep);
-     }
-     void ball_back(int keep = 0, int speed = 100)
-     {
-     servoObjects().setSpeed(4, speed);
-     servoObjects().deploy(4, 740, keep);
-     }
-
-     void servo_init()
-     {
-     arm_right_retract();
-     arm_left_retract();
-     }
-
-     void servo_init_end()
-     {
-     arm_left_full(0);
-     arm_right_full(-1);
-
-     arm_left_retract(0);
-     arm_right_retract(-1);
-
-     arm_left_full(0);
-     arm_right_full(-1);
-
-     arm_left_retract(0);
-     arm_right_retract(-1);
-
-     servoObjects().releaseAll();
-
-     }
-     void servo_init_orange()
-     {
-     arm_left_little(0);
-     arm_right_little(-1);
-
-     arm_left_retract(0);
-     arm_right_retract(-1);
-
-     arm_left_little(0);
-     arm_right_little(-1);
-
-     arm_left_retract(0);
-     arm_right_retract(-1);
-
-     servoObjects().releaseAll();
-     }
-     void servo_init_green()
-     {
-     arm_left_little(0);
-     arm_right_little(-1);
-
-     arm_left_retract(0);
-     arm_right_retract(-1);
-
-     arm_left_little(0);
-     arm_right_little(-1);
-
-     arm_left_retract(0);
-     arm_right_retract(-1);
-
-     servoObjects().releaseAll();
-     }*/
+    }
 
 };
 

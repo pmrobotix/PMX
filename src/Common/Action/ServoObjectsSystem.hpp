@@ -42,6 +42,7 @@ public:
     void setMidPulse(int servo, int value);
     void setMaxPulse(int servo, int value);
     void setPolarity(int servo, bool inversed = false);
+    int getTorque(int servo);
 
     void detectAll();
 

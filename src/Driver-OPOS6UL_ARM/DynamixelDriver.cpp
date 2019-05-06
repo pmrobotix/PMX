@@ -172,3 +172,9 @@ void DynamixelDriver::setPolarity(int servo, bool inversed)
 {
 
 }
+
+int DynamixelDriver::getTorque(int servo)
+{
+    int r = CCAx12Adc::instance().readAXData(servo, P_PRESENT_LOAD);
+    return r;
+}

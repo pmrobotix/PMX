@@ -98,6 +98,11 @@ void ServoDriver::setPolarity(int servo, bool inversed)
 
 }
 
+int ServoDriver::getTorque(int servo)
+{
+
+}
+
 bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
 {
     if ((value >= valeurMin) && (value <= valeurMax))
@@ -107,4 +112,5 @@ bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
         return false;
     }
 }
+
 
