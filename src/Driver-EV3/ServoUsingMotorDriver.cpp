@@ -44,7 +44,7 @@ void ServoUsingMotorDriver::setMotorPosition(int power, int ticks, int ramptimem
         power = limit(power, MAXVALUE_speed_sp);
 
         logger().error() << "ticks= "<< ticks << " power=" << power<< logs::end;
-        _servo_device.set_position_sp(ticks).set_speed_sp(power).run_to_abs_pos();
+        _servo_device.set_position_sp(ticks).set_speed_sp(power).run_to_rel_pos();
         //_motor_left. set_position_sp( direction).set_speed_sp(500).run_to_rel_pos();
     }
 

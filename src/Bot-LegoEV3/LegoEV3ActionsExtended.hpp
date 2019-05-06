@@ -227,28 +227,37 @@ public:
         usleep(2000000);
         servosStd().release(SERVO_1);
     }
-    void conveyorBelt_Right_low()
+    void conveyorBelt_Right_low(bool keep_activated=false)
     {
         servosStd().deploy(SERVO_1, -90, 0);
         usleep(2000000);
+        if (!keep_activated)
         servosStd().release(SERVO_1);
     }
 
-    void conveyorBelt_Left_low()
+    void conveyorBelt_Left_low(bool keep_activated=false)
     {
         servosStd().deploy(SERVO_1, 90, 0);
         usleep(2000000);
+        if (!keep_activated)
         servosStd().release(SERVO_1);
     }
     void conveyorBelt_PushRight(int nb_position)
     {
         servoUsingMotor().moveRight(nb_position);
-
     }
 
     void conveyorBelt_PushLeft(int nb_position)
     {
         servoUsingMotor().moveLeft(nb_position);
+    }
+    void conveyorBelt_EjectLeft()
+    {
+        servoUsingMotor().ejectLeft();
+    }
+    void conveyorBelt_EjectRight()
+    {
+        servoUsingMotor().ejectRight();
     }
 
 };

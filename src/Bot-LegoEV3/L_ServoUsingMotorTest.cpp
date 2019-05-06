@@ -42,37 +42,38 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
     step = atoi(args["step"].c_str());
     logger().debug() << "Arg step set " << args["step"] << ", step = " << step << logs::end;
 
+    robot.actions().servoUsingMotor().moveLeft(1);
+    sleep(2);
+    robot.actions().servoUsingMotor().moveLeft(1);
+    sleep(2);
+    robot.actions().servoUsingMotor().moveLeft(1);
+    sleep(2);
 
     robot.actions().servoUsingMotor().moveRight(1);
-    sleep(1);
+    sleep(2);
     robot.actions().servoUsingMotor().moveRight(1);
-    sleep(1);
+    sleep(2);
     robot.actions().servoUsingMotor().moveRight(1);
-    sleep(1);
-    robot.actions().servoUsingMotor().moveLeft(1);
-    sleep(1);
-    robot.actions().servoUsingMotor().moveLeft(1);
-    sleep(1);
-    robot.actions().servoUsingMotor().moveLeft(1);
-
-
-    robot.actions().servoUsingMotor().moveRight(2);
-    robot.actions().servoUsingMotor().moveLeft(2);
-
-    robot.actions().servoUsingMotor().ejectRight();
-    robot.actions().servoUsingMotor().ejectLeft();
-
+    sleep(2);
 
     /*
-     int pos = 0;
-     robot.actions().funnyAction().reset();
-     //sleep(1);
-     robot.actions().funnyAction().activate(-20);
+     robot.actions().servoUsingMotor().moveLeft(1);
      sleep(1);
-     robot.actions().funnyAction().activate(300);
-     sleep(6);
-     robot.actions().funnyAction().activate(-150);
-     sleep(1);*/
+
+     robot.actions().servoUsingMotor().moveRight(1);
+     sleep(1);
+     robot.actions().servoUsingMotor().moveRight(2);
+     sleep(1);
+     robot.actions().servoUsingMotor().moveRight(1);
+     sleep(1);
+     robot.actions().servoUsingMotor().moveLeft(2);
+
+     robot.actions().servoUsingMotor().moveRight(2);
+
+     robot.actions().servoUsingMotor().ejectLeft();
+     robot.actions().servoUsingMotor().ejectRight();
+     */
+
     /*
      ButtonTouch touch = BUTTON_NONE;
 
@@ -99,7 +100,7 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
      //usleep(10000);
      }
      */
-    //robot.actions().funnyAction().release();
+
     robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
