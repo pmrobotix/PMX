@@ -20,8 +20,9 @@ LedDriver::LedDriver(int nb)
     float volts = power_supply::battery.measured_volts();
     float amps = power_supply::battery.measured_amps();
 
-    logger().error() << "===> BAT = " << "voltage is " << volts << logs::end;
-    logger().error() << "===> AMP = " << "Current is " << amps << logs::end;
+    //logger().error() << "===> BAT = " << "voltage is " << volts << logs::end;
+    //logger().error() << "===> AMP = " << "Current is " << amps << logs::end;
+    logger().info() << "=> V=" << volts << " A=" << amps << logs::end;
 
     if (volts <= 7.6 && volts >= 7.4) {
         setBytes(0xFF, LED_ORANGE);

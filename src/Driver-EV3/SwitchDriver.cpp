@@ -33,7 +33,7 @@ SwitchDriver::SwitchDriver()
         try {
             //temp = p.get_attr_from_set()string(input + string(":lego-ev3-color/modalias"));
             temp = p.driver_name();
-            logger().info() << "exist driver temp ==  " << temp << logs::end;
+            logger().debug() << "exist driver temp ==  " << temp << logs::end;
         } catch (...) {
             logger().error() << "SwitchDriver()  access to " << temp << logs::end;
         }
@@ -41,10 +41,10 @@ SwitchDriver::SwitchDriver()
             todo = 1;
 
         if (todo == 0) {
-            logger().info() << "port already set to lego-ev3-touch on " << p.address() << logs::end;
+            logger().debug() << "port already set to lego-ev3-touch on " << p.address() << logs::end;
         } else {
 
-            logger().info() << "set uart and device=lego-ev3-touch on " << p.address() << logs::end;
+            logger().debug() << "set uart and device=lego-ev3-touch on " << p.address() << logs::end;
             //usleep(10000);
 
             p.set_mode("analog"); //TOUCH ev3-analog
@@ -60,7 +60,7 @@ SwitchDriver::SwitchDriver()
     //touch_ = touch_sensor(INPUT_AUTO);
 
     if (touch_.connected()) {
-        logger().info() << touch_.type_name() << " connected (device " << touch_.driver_name() << ", port "
+        logger().debug() << touch_.type_name() << " connected (device " << touch_.driver_name() << ", port "
                 << touch_.address() << ", mode " << touch_.mode() << ")" << logs::end;
     } else {
         logger().error() << "INPUT_1 (Tirette) not Connected !!" << logs::end;

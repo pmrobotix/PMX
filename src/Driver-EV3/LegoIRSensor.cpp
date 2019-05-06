@@ -46,7 +46,7 @@ LegoIRSensor::LegoIRSensor(const char* input)
                 todo = 1;
 
             if (todo == 0) {
-                logger().info() << "port already set to lego-ev3-ir on " << p.address() << logs::end;
+                logger().debug() << "port already set to lego-ev3-ir on " << p.address() << logs::end;
             } else {
 
                 logger().debug() << "set uart and device=lego-ev3-ir on " << p.address() << logs::end;
@@ -63,7 +63,7 @@ LegoIRSensor::LegoIRSensor(const char* input)
     ir_ = infrared_sensor(input);
 
     if (ir_.connected()) {
-        logger().info() << ir_.type_name() << " connected (device " << ir_.driver_name() << ", port " << ir_.address()
+        logger().debug() << ir_.type_name() << " connected (device " << ir_.driver_name() << ", port " << ir_.address()
                 << ", mode " << ir_.mode() << ")" << logs::end;
         //ir_.proximity(true); //BUG de permission à Corriger
         ir_.proximity(false);

@@ -98,7 +98,7 @@ void logs::LoggerFactory::initialize()
 
     add(logs::Level::INFO, "Asserv", "console");
     //add(logs::Level::INFO, "AsservInsa", "console");
-    add(logs::Level::DEBUG, "AsservEsialR", "console");
+    add(logs::Level::INFO, "AsservEsialR", "console");
 
 
 

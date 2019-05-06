@@ -34,14 +34,14 @@ AsservDriver::AsservDriver() :
     logger().debug() << "AsservDriver()" << logs::end;
 
     if (angleR_.connected()) {
-        logger().info() << "[" << angleR_.address() << "] (" << angleR_.driver_name() << ") type_name="
+        logger().debug() << "[" << angleR_.address() << "] (" << angleR_.driver_name() << ") type_name="
                 << angleR_.type_name() << logs::end;
     } else {
         logger().error() << "NOT CONNECTED! NO angleR_ !" << logs::end;
     }
 
     if (angleL_.connected()) {
-        logger().info() << "[" << angleL_.address() << "] (" << angleL_.driver_name() << ") type_name="
+        logger().debug() << "[" << angleL_.address() << "] (" << angleL_.driver_name() << ") type_name="
                 << angleL_.type_name() << logs::end;
     } else {
         logger().error() << "NOT CONNECTED! NO angleL_ !" << logs::end;
@@ -62,7 +62,7 @@ AsservDriver::AsservDriver() :
 
     if (_motor_right_.connected()) {
 
-        logger().info() << "(" << "RIGHT" << ") " << _motor_right_.driver_name() << " motor on port "
+        logger().debug() << "(" << "RIGHT" << ") " << _motor_right_.driver_name() << " motor on port "
                 << _motor_right_.address() << " Pol=" << _motor_right_.polarity() << logs::end;
     } else {
         logger().error() << "NOT CONNECTED! NO _motor_right_ !" << logs::end;
@@ -80,7 +80,7 @@ AsservDriver::AsservDriver() :
 
     if (_motor_left_.connected()) {
 
-        logger().info() << "(" << "LEFT " << ") " << _motor_left_.driver_name() << " motor on port "
+        logger().debug() << "(" << "LEFT " << ") " << _motor_left_.driver_name() << " motor on port "
                 << _motor_left_.address() << " Pol=" << _motor_left_.polarity() << logs::end;
     } else {
         logger().error() << "NOT CONNECTED! NO _motor_left_ !" << logs::end;

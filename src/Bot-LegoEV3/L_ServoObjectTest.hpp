@@ -46,6 +46,7 @@ public:
 	 */
 	virtual void run(int argc, char** argv);
 
+	virtual void configureConsoleArgs(int argc, char** argv);
 };
 
 #endif
