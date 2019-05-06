@@ -8,31 +8,31 @@ class AColorDriver
 
 public:
 
-	/*!
-	 * \brief instance creation.
-	 */
-	static AColorDriver * create(std::string botName);
+    /*!
+     * \brief instance creation.
+     */
+    static AColorDriver * create(std::string botName);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	virtual ~AColorDriver()
-	{
-	}
+    /*!
+     * \brief Destructor.
+     */
+    virtual ~AColorDriver()
+    {
+    }
 
-	//return connected or not
-	virtual bool readRGB() = 0;
-	virtual float getTX() = 0;
-	virtual float getTY() = 0;
+    //return connected or not
+    virtual bool readRGB() = 0;
+    virtual float getTX() = 0;
+    virtual float getTY() = 0;
 
 protected:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	AColorDriver()
-	{
-	}
+    /*!
+     * \brief Constructor.
+     */
+    AColorDriver()
+    {
+    }
 
 };
 

@@ -6,8 +6,6 @@
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
-#include "A_State_DecisionMaker.hpp"
-#include "A_State1.hpp"
 #include "APF9328SvgWriterExtended.hpp"
 
 APF9328RobotExtended::APF9328RobotExtended()

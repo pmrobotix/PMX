@@ -285,7 +285,7 @@ bool LedBarAction::execute()
 
     case LEDBARALTERNATE:
         ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1) {
+        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long)(lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
             if ((i_ % 2)) {
                 ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
             } else {
@@ -305,7 +305,7 @@ bool LedBarAction::execute()
 
     case LEDBARBLINK:
         ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1) {
+        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long)(lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
             //ledBar_.flash((255 * (i_ % 2)), ledBar_.color());
             ledBar_.flash(((std::pow(2, ledBar_.nbLed()) - 1) * (i_ % 2)), ledBar_.color());
 
@@ -323,7 +323,7 @@ bool LedBarAction::execute()
 
     case LEDBARBLINKPIN:
         ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1) {
+        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long)(lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
             LedColor temp;
             if (i_ % 2)
                 temp = ledBar_.color();
@@ -347,7 +347,7 @@ bool LedBarAction::execute()
 
     case LEDBARK2MIL:
         ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= lastTime_ + (long) ledBar_.timeus() || i_ == 1) {
+        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long)(lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
             if (i_ >= ledBar_.nb() + 2) {
                 ledBar_.stop(true);
                 ledBar_.nb(0);

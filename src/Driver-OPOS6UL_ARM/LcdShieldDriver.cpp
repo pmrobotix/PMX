@@ -15,12 +15,12 @@ ALcdShieldDriver * ALcdShieldDriver::create(std::string botId)
 //	static LcdShieldDriver *instance = new LcdShieldDriver();
 //	return instance;
 
-	return new LcdShieldDriver();
+    return new LcdShieldDriver();
 }
 
 LcdShieldDriver::LcdShieldDriver()
 {
-	Adafruit_RGBLCDShield::instance().clear();
+    Adafruit_RGBLCDShield::instance().clear();
 }
 
 LcdShieldDriver::~LcdShieldDriver()
@@ -29,32 +29,32 @@ LcdShieldDriver::~LcdShieldDriver()
 
 void LcdShieldDriver::clear()
 {
-	Adafruit_RGBLCDShield::instance().clear();
+    Adafruit_RGBLCDShield::instance().clear();
 }
 
 void LcdShieldDriver::home()
 {
-	Adafruit_RGBLCDShield::instance().home();
+    Adafruit_RGBLCDShield::instance().home();
 }
 
 void LcdShieldDriver::setBacklightOn()
 {
-	Adafruit_RGBLCDShield::instance().setBacklight(LCD_ON);
+    Adafruit_RGBLCDShield::instance().setBacklight(LCD_ON);
 }
 
 void LcdShieldDriver::setBacklightOff()
 {
-	Adafruit_RGBLCDShield::instance().setBacklight(LCD_OFF);
+    Adafruit_RGBLCDShield::instance().setBacklight(LCD_OFF);
 }
 
 void LcdShieldDriver::setCursor(uint8_t col, uint8_t row)
 {
-	Adafruit_RGBLCDShield::instance().setCursor(col, row);
+    Adafruit_RGBLCDShield::instance().setCursor(col, row);
 }
 
 size_t LcdShieldDriver::write(uint8_t value)
 {
-	size_t s = Adafruit_RGBLCDShield::instance().write__(value);
-	return s;
+    size_t s = Adafruit_RGBLCDShield::instance().write__(value);
+    return s;
 }
 

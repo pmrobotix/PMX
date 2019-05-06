@@ -39,57 +39,57 @@ class GpioPCA9555
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref GpioPCA9555 (OPOS6UL).
-	 */
-	static const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("GpioPCA9555.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref GpioPCA9555 (OPOS6UL).
+     */
+    static const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("GpioPCA9555.OPO");
+        return instance;
+    }
 
-	AsI2c i2cGB_;
+    AsI2c i2cGB_;
 
-	bool connected_;
+    bool connected_;
 
-	int port0Value_;
-	int port1Value_;
+    int port0Value_;
+    int port1Value_;
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	GpioPCA9555();
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    GpioPCA9555();
 
-	long write_i2c(unsigned char command, unsigned char value);
-	long read_i2c(unsigned char command);
+    long write_i2c(unsigned char command, unsigned char value);
+    long read_i2c(unsigned char command);
 
 public:
 
-	static GpioPCA9555 & instance()
-	{
-		static GpioPCA9555 instance;
-		return instance;
-	}
+    static GpioPCA9555 & instance()
+    {
+        static GpioPCA9555 instance;
+        return instance;
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual inline ~GpioPCA9555()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~GpioPCA9555()
+    {
+    }
 
-	void begin();
+    void begin();
 
-	bool isConnected()
-	{
-		return connected_;
-	}
+    bool isConnected()
+    {
+        return connected_;
+    }
 
-	int getValueP1(int pin);
-	void setValueP0(int port, int pin, int value);
-	void setOnP0(int pin);
-	void setOffP0(int pin);
-	void setup();
+    int getValueP1(int pin);
+    void setValueP0(int port, int pin, int value);
+    void setOnP0(int pin);
+    void setOffP0(int pin);
+    void setup();
 
 };
 

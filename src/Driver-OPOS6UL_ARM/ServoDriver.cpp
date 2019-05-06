@@ -23,12 +23,10 @@ ServoDriver::ServoDriver() :
 {
     logger().debug() << "ServoDriver::ServoDriver()" << logs::end;
 
-
 }
 
 void ServoDriver::hold(int servo)
 {
-
 
 }
 
@@ -42,8 +40,6 @@ void ServoDriver::turn(int servo, int speed)
 {
     constrain(speed, -100, 100);
 
-
-
 }
 
 void ServoDriver::release(int servo)
@@ -54,28 +50,25 @@ void ServoDriver::release(int servo)
 void ServoDriver::setRate(int servo, int speed)
 {
     if (!testIf(servo, 0, 127))
-            return;
+        return;
 
     constrain(speed, -100, 100);
-
-
-
 
 }
 //return 1 when moving
 int ServoDriver::getMoving(int servo)
 {
-
+    return -1;
 }
 
 int ServoDriver::getPos(int servo)
 {
-
+    return -1;
 }
 
 int ServoDriver::ping(int servo)
 {
-
+    return -1;
 }
 
 void ServoDriver::setMinPulse(int servo, int pulse)
@@ -100,7 +93,7 @@ void ServoDriver::setPolarity(int servo, bool inversed)
 
 int ServoDriver::getTorque(int servo)
 {
-
+    return -1;
 }
 
 bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
@@ -112,5 +105,4 @@ bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
         return false;
     }
 }
-
 

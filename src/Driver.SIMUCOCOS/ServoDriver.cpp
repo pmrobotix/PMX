@@ -130,3 +130,8 @@ void ServoDriver::setPolarity(int servo, bool inversed)
 {
 
 }
+
+int ServoDriver::getTorque(int servo)
+{
+    return -1;
+}

@@ -24,7 +24,7 @@ void test::AsservDriverTest::testSet()
 
 	int power = 800;
 	int timems = 3000;
-	utils::Chronometer chrono;
+	utils::Chronometer chrono("testSet");
 
 	asservdriver->resetEncoders();
 	long left = asservdriver->getLeftInternalEncoder();

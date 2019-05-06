@@ -14,7 +14,7 @@ AAsservDriver * AAsservDriver::create(std::string botid)
     //return new AsservDriver(botid);
 }
 
-AsservDriver::AsservDriver(std::string botid)
+AsservDriver::AsservDriver(std::string botid): chrono_("AsservDriver.SIMUCOCOS")
 {
     botid_ = botid;
     if (botid == "APF9328Robot") {

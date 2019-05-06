@@ -168,7 +168,7 @@ public:
 
         if (time_ms > 0) //stop using thread
                 {
-            utils::Chronometer chrono_member1left;
+            utils::Chronometer chrono_member1left("member1left");
             chrono_member1left.start();
             while (chrono_member1left.getElapsedTimeInMilliSec() < time_ms) {
                 asserv_->computeCounterL();
@@ -189,7 +189,7 @@ public:
 
         if (time_ms > 0) //stop using thread
                 {
-            utils::Chronometer chrono_member2right;
+            utils::Chronometer chrono_member2right("member2right");
             chrono_member2right.start();
             while (chrono_member2right.getElapsedTimeInMilliSec() < time_ms) {
                 asserv_->computeCounterR();

@@ -59,6 +59,8 @@ public:
     void setMaxPulse(int servo, int value = 2400); //default 2400 [2300 to 2700]
 
     void setPolarity(int servo, bool inversed);
+
+    int getTorque(int servo);
 };
 
 #endif

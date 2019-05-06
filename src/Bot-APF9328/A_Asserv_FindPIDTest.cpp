@@ -104,7 +104,7 @@ void A_Asserv_FindPIDTest::run(int argc, char** argv)
 		logger().debug() << "Arg Ad set " << args["Ad"] << ", Ad = " << Ad << logs::end;
 	}
 
-	utils::Chronometer chrono;
+	utils::Chronometer chrono("A_Asserv_FindPIDTest");
 	long left;
 	long right;
 

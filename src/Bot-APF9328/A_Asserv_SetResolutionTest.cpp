@@ -12,7 +12,6 @@
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
-#include "../Log/SvgWriter.hpp"
 #include "APF9328AsservExtended.hpp"
 #include "APF9328RobotExtended.hpp"
 
@@ -34,7 +33,7 @@ void A_Asserv_SetResolutionTest::run(int argc, char** argv)
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
 
-	utils::Chronometer chrono;
+	utils::Chronometer chrono("A_Asserv_SetResolutionTest");
 	long left;
 	long right;
 
@@ -69,10 +68,9 @@ void A_Asserv_SetResolutionTest::run(int argc, char** argv)
 	robot.asserv().configureDeltaPID(Dp, 0.0, Dd);
 	robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, false);
 
-	robot.svgw().writePosition(robot.asserv().pos_getX_mm(),
+	robot.svgw().writePosition_Bot(robot.asserv().pos_getX_mm(),
 			robot.asserv().pos_getY_mm(),
-			robot.asserv().pos_getTheta(),
-			"bot");
+			robot.asserv().pos_getTheta());
 
 	chrono.start();
 

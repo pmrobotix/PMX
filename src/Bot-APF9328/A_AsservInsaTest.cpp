@@ -45,7 +45,7 @@ void A_AsservInsaTest::run(int argc, char** argv)
 	logger().info() << "Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
 
-	utils::Chronometer chrono;
+	utils::Chronometer chrono("A_AsservInsaTest");
 	long left;
 	long right;
 

@@ -8,41 +8,39 @@
 
 #include <as_devices/cpp/as_gpio.hpp>
 
-
-
 class LedDriver: public ALedDriver
 {
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref LedDriver(OPOS6UL).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("LedDriver.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref LedDriver(OPOS6UL).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("LedDriver.OPO");
+        return instance;
+    }
 
-	int nb_;
+    int nb_;
 
 public:
 
-	/*!
-	 * \brief Liste des gpio à utiliser.
-	 */
-	AsGpio * gpio[8];
+    /*!
+     * \brief Liste des gpio à utiliser.
+     */
+    AsGpio * gpio[8];
 
-	void setBit(int index, LedColor color);
+    void setBit(int index, LedColor color);
 
-	void setBytes(uint hex, LedColor color);
+    void setBytes(uint hex, LedColor color);
 
-	/*!
-	 * \brief Constructor.
-	 */
-	LedDriver(int nb);
+    /*!
+     * \brief Constructor.
+     */
+    LedDriver(int nb);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~LedDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~LedDriver();
 
 };
 

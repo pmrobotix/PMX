@@ -60,6 +60,8 @@ public:
 
     void setPolarity(int servo, bool inversed);
 
+    int getTorque(int servo);
+
 };
 
 #endif

@@ -6,38 +6,38 @@ class AActionDriver
 
 public:
 
-	/*!
-	 * \brief instance creation.
-	 */
-	static AActionDriver * create(int nb);
+    /*!
+     * \brief instance creation.
+     */
+    static AActionDriver * create(int nb);
 
-	int example1;
+    int example1;
 
 #ifdef SIMU
-	int exampleSimu;
+    int exampleSimu;
 #endif
 
-	virtual void function(int value);
+    virtual void function(int value);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	virtual ~AActionDriver()
-	{
-	}
+    /*!
+     * \brief Destructor.
+     */
+    virtual ~AActionDriver()
+    {
+    }
 
 protected:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	AActionDriver()
-	{
-		example1 = 0;
+    /*!
+     * \brief Constructor.
+     */
+    AActionDriver()
+    {
+        example1 = 0;
 #ifdef SIMU
-		exampleSimu = 0;
+        exampleSimu = 0;
 #endif
-	}
+    }
 
 };
 

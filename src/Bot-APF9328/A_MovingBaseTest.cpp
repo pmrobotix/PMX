@@ -71,7 +71,7 @@ void A_MovingBaseTest::run(int argc, char** argv)
 
 	robot.svgPrintPosition();
 
-	utils::Chronometer chrono;
+	utils::Chronometer chrono("A_MovingBaseTest");
 
 	long left = 0;
 	long right = 0;

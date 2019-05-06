@@ -29,7 +29,7 @@ private:
 
 public:
 
-	MockAction(int num, int nbmax)
+	MockAction(int num, int nbmax) : chronoA_("MockAction")
 	{
 		std::ostringstream oss;
 		oss << "MockAction" << num;

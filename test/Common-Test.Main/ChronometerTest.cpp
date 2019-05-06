@@ -121,7 +121,7 @@ void test::ChronometerTest::testTimerNanosleep()
 
     sigaction(SIGINT, &sa, NULL);
 
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("ChronometerTest");
     chrono.start();
     _usleep(1000);
     chrono.stop();
@@ -251,7 +251,7 @@ void test::ChronometerTest::testWithGettimeofday()
 void test::ChronometerTest::testTimer()
 {
     logger().info() << "testTimer: utilisation des fonctions du Chronometer start usleep stop" << logs::end;
-    utils::Chronometer chrono;
+    utils::Chronometer chrono("testTimer");
 
     // start timer
     chrono.start();
@@ -288,7 +288,7 @@ void test::ChronometerTest::testTimerTickMin()
     logger().info() << " testTimerTickMin: Check Chronometer.getElapsedTimeInMicroSec toutes les millisecondes "
             << logs::end;
 
-    utils::Chronometer timer;
+    utils::Chronometer timer("testTimerTickMin");
     std::ostringstream oss;
     int nb = 0;
     int us = 0;
@@ -320,8 +320,8 @@ void test::ChronometerTest::testTimerMiPeriodCount()
     int tempsTotalEnMilliSec = 1000;
     int tempsMiPeriodeEnMicroSec = 1000;
 
-    utils::Chronometer timer;
-    utils::Chronometer timerTotal;
+    utils::Chronometer timer("testTimerMiPeriodCount");
+    utils::Chronometer timerTotal("testTimerMiPeriodCount_2");
     bool value = false;
     int i = 0;
     long max = 0;

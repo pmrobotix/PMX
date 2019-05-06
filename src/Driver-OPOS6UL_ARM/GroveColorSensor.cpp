@@ -20,7 +20,7 @@ GroveColorSensor::GroveColorSensor() :
 				false), compensateEnabled_(false), colorTemperature_(false)
 {
 
-	if(!begin());
+	if(!begin())
 		logger().error() << "GroveColorSensor::GroveColorSensor() : TCS3414 is NOT CONNECTED !" << logs::end;
 
 }

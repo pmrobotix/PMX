@@ -27,7 +27,6 @@ ServoDriver::ServoDriver() :
     i2c_sensor servo_sensor = i2c_sensor("ev3-ports:in4:i2c88");
     servo_sensor.set_poll_ms(0);
 
-
     //CONFIG Specifique si necessaire
     servo_motors_[0] = servo_motor("ev3-ports:in4:i2c88:sv1");
     servo_motors_[1] = servo_motor("ev3-ports:in4:i2c88:sv2");
@@ -189,4 +188,9 @@ void ServoDriver::setPolarity(int servo, bool inversed)
         servo_motors_[servo].set_polarity(servo_motor::polarity_normal);
     else
         servo_motors_[servo].set_polarity(servo_motor::polarity_inversed);
+}
+
+int ServoDriver::getTorque(int servo)
+{
+    return -1;
 }

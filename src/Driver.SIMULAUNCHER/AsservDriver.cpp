@@ -13,7 +13,7 @@ AAsservDriver * AAsservDriver::create(std::string botid)
     return instance;
 }
 
-AsservDriver::AsservDriver()
+AsservDriver::AsservDriver(): chrono_("AsservDriver.SIMULAUNCHER")
 {
     //CONFIGURATION SIMULATEUR --------------------------------------------
     simuTicksPerMeter_ = 3640.0; //3000.0; //nb ticks for 1000mm

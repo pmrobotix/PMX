@@ -69,6 +69,8 @@ public:
 
     void setPolarity(int servo, bool inversed);
 
+    int getTorque(int servo);
+
     //long constrain(long value, long valeurMin, long valeurMax);
     bool testIf(long value, long valeurMin, long valeurMax);
 };

@@ -144,6 +144,7 @@ unsigned char Adafruit_PWMServoDriver::read8(unsigned char addr)
 
 	 WIRE.requestFrom((uint8_t)_i2caddr, (uint8_t)1);
 	 return WIRE.read();*/
+    return 0;
 }
 
 void Adafruit_PWMServoDriver::write8(unsigned char addr, unsigned char d)

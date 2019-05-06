@@ -33,7 +33,6 @@ void SimLedBar::setBit(int i, LedColor color)
 	switch (color)
 	{
 	case LED_OFF:
-	case LED_END:
 		currentTexture_[i] = offTexture_;
 		break;
 	case LED_GREEN:
@@ -68,7 +67,6 @@ void SimLedBar::setBytes(uint hex, LedColor color)
 			switch (color)
 			{
 			case LED_OFF:
-			case LED_END:
 				currentTexture_[i] = offTexture_;
 				break;
 			case LED_GREEN:
