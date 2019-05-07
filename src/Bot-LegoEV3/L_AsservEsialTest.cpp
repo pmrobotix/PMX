@@ -104,7 +104,7 @@ void L_AsservEsialTest::run(int argc, char** argv)
     if (step == 4) {
         logger().info() << "ETAPE 4 : on avance pour regler D" << logs::end;
         robot.asserv().assistedHandling();
-        robot.asserv().doLineAbs(100);
+        robot.asserv().doLineAbs(200);
         sleep(1);
     }
 

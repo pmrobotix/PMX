@@ -95,6 +95,7 @@ void ConsignController::perform()
         // On vérifie si on n'est pas bloqué. Note: on utilise les getters
         // du MotorsController parce qu'il peut mettre les vitesses à 0
         // si elles sont trop faibles.
+//printf("VitG=%d VitD=%d absA=%ld absD=%ld ",motors->getVitesseG(), motors->getVitesseD(), abs(odometrie->getDeltaThetaBrut()), abs(odometrie->getDeltaDist()));
         if (motors->getVitesseG() != 0 && motors->getVitesseD() != 0
                 && abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD
                 && abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD) {
@@ -102,6 +103,7 @@ void ConsignController::perform()
             if (blocked_ticks < INT32_MAX) {
                 // On n'incrémente pas en continue pour éviter l'overflow (au bout de 124 jours...)
                 blocked_ticks++;
+                //printf(" blocked_ticks++ %d \n", blocked_ticks);
             }
         } else {
             // Moteurs arrêtés ou robot qui bouge: on n'est pas bloqué

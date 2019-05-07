@@ -80,42 +80,55 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
     //robot.actions().sensors().startSensors();
     chrono.start();
 
-    usleep(50000);
+    TRAJ_STATE ts;
+    //usleep(50000);
 
-    logger().info() << "go..." << d << "mm" << logs::end;
-    TRAJ_STATE ts = robot.asserv().doLineAbs(d);
-    if (ts != TRAJ_OK)
-        logger().info() << "COLLISION !!!  ts=" << ts << logs::end;
-
-    left = robot.asserv().base()->encoders().getLeftEncoder();
-    right = robot.asserv().base()->encoders().getRightEncoder();
-    logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
-            << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
-            << robot.asserv().pos_getThetaInDegree() << logs::end;
-
-    robot.svgPrintPosition();
-
-    if (a != 0) {
-        robot.asserv().doRotateAbs(a);
-
-        //robot.asserv().base()->turn(a, 100);
+    if (d != 0) {
+        logger().info() << "go..." << d << "mm" << logs::end;
+        ts = robot.asserv().doLineAbs(d);
+        if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
+            logger().info() << "MOVE1 COLLISION !!!  ts=" << ts << logs::end;
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
-        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+        logger().info() << "1 time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+                << robot.asserv().pos_getThetaInDegree() << logs::end;
+
+        robot.svgPrintPosition();
+    }
+    if (a != 0) {
+        ts = robot.asserv().doRotateAbs(a);
+        if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
+            logger().info() << "TURN COLLISION !!!  ts=" << ts << logs::end;
+
+        left = robot.asserv().base()->encoders().getLeftEncoder();
+        right = robot.asserv().base()->encoders().getRightEncoder();
+        logger().info() << "2 time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
                 << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
                 << robot.asserv().pos_getThetaInDegree() << logs::end;
 
         robot.svgPrintPosition();
 
-        //2ème ligne droite
-        robot.asserv().doLineAbs(d);
+        if (d != 0) {
+            //2ème ligne droite
+            ts = robot.asserv().doLineAbs(d);
+            if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
+                logger().info() << "MOVE2 COLLISION !!!  ts=" << ts << logs::end;
+
+            left = robot.asserv().base()->encoders().getLeftEncoder();
+            right = robot.asserv().base()->encoders().getRightEncoder();
+            logger().info() << "3 time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                    << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+                    << robot.asserv().pos_getThetaInDegree() << logs::end;
+            robot.svgPrintPosition();
+        }
     }
 
     left = robot.asserv().base()->encoders().getLeftEncoder();
     right = robot.asserv().base()->encoders().getRightEncoder();
-    logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
-            << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+    logger().info() << "End time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+            << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
             << robot.asserv().pos_getThetaInDegree() << logs::end;
 
     robot.svgPrintPosition();

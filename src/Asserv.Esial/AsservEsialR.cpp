@@ -141,9 +141,9 @@ void AsservEsialR::execute()
 
             //long t4 = chronoTimer_.getElapsedTimeInMicroSec();
             //svg log
-            if (nb % 10 == 0) {
+            if (nb % 5 == 0) {
 
-                //info << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="                << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::flush;
+                info << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="                << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::flush;
 
                 // 18us
                 robot_->svgw().writePosition_BotPos(p.x * 1000, p.y * 1000, p.theta);
@@ -356,7 +356,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
         //logger().info() << "waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
 
-        usleep(40000);
+        usleep(1000);
         timeout++;
         if (timeout > 150 && p_.asservStatus != 1) {
 

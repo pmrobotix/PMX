@@ -56,16 +56,16 @@ placementOrigineX = 0
 placementOrigineY = 0
 
 // Nombre de tics codeurs en 1m pour codeur gauche left= 4083 ; right= 3995
-// !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-frontParMetreCodeurG = 4083.0
+// !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!//4083.0
+frontParMetreCodeurG = 4107
 
 // Nombre de tics codeurs en 1m pour codeur droite
-// !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-frontParMetreCodeurD = 3995.0
+// !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!//3995.0
+frontParMetreCodeurD = 4131
 
 // Distance entre les roues codeuses en mm
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-distRoues = 215
+distRoues = 212
 
 // Nombre d'UO pour un tic de codeur
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
@@ -95,10 +95,10 @@ V_MAX_NEG_MOTOR = -100
 // envoyer de jus dans des moteurs qui ne tournent pas
 
 // EV3 : 1 a 100
-V_MIN_POS_MOTOR = 40
+V_MIN_POS_MOTOR = 25
 
 // EV3 : -1 a -100
-V_MIN_NEG_MOTOR = -40
+V_MIN_NEG_MOTOR = -25
 
 // Inversion du sens du moteur gauche
 inverseMoteurG = false
@@ -118,14 +118,14 @@ swapMoteurs = false
 // PID en distance
 
 
-// Coeff proportionelle
-DIST_KP = 130
+// Coeff proportionelle //mini 130 pour atteindre le 100%
+DIST_KP = 140
 
 // Coeff intégrale
 DIST_KI = 0
 
-// Coeff dérivée//1500
-DIST_KD = 100 
+// Coeff dérivée//old1500
+DIST_KD = 350
 
 // Coeff permettant de diminuer les valeurs du PID 
 DIST_OUT_RATIO = 0.000001
@@ -140,14 +140,14 @@ DIST_MAX_INTEGRAL = 0
 // PID en angle
 
 
-// Coeff proportionelle
-ANGLE_KP = 95
+// Coeff proportionelle //mini 95 pour atteindre le 100%
+ANGLE_KP = 120
 
 // Coeff intégrale
 ANGLE_KI = 0
 
-// Coeff dérivée//500
-ANGLE_KD = 10
+// Coeff dérivée//old500 315
+ANGLE_KD = 420
 
 // Coeff permettant de diminuer les valeurs du PID
 ANGLE_OUT_RATIO = 0.000001
@@ -188,7 +188,7 @@ DIST_QUAD_AR_2ND_DEC = 20000
 DIST_QUAD_AR_ANTICIPATION_GAIN_COEF = 300000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-DIST_TAILLE_FENETRE_ARRIVEE = 50000
+DIST_TAILLE_FENETRE_ARRIVEE = 30000
 
 // Diviseur pour la vitesse faible en marche avant
 DIST_QUAD_AV_LOW_DIV = 0
@@ -212,7 +212,7 @@ ANGLE_QUAD_2ND_DEC = 20000
 ANGLE_QUAD_ANTICIPATION_GAIN_COEF = 300000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-ANGLE_TAILLE_FENETRE_ARRIVEE = 30000
+ANGLE_TAILLE_FENETRE_ARRIVEE = 20000
 
 
 //--------------------------//
@@ -226,4 +226,4 @@ BLOCK_DIST_SPEED_THRESHOLD = 1024
 BLOCK_ANGLE_SPEED_THRESHOLD = 1024
 
 // Si on ne bouge pas pendant ce nombre de tick, on signale l'info
-BLOCK_TICK_THRESHOLD = 30
+BLOCK_TICK_THRESHOLD = 50
