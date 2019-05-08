@@ -30,7 +30,8 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
         long time = robot.chrono().getElapsedTimeInSec();
         this->logger().info() << "O_State_Wait90SecAction::execute chrono " << time << logs::end;
 
-        robot.actions().ledBar().flash(time, LED_GREEN);
+        //indique le temps en binaire
+        //robot.actions().ledBar().flash(time, LED_GREEN);
 
     }
 
@@ -62,8 +63,8 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
 
     robot.actions().ledBar().k2mil(2, 50000, LED_GREEN);
-    //robot.actions().ledBar().startK2mil(10, 50000, LED_GREEN, false); //TODO pb a corriger
-    sleep(480);
+
+    sleep(480); //TODO boucle jusqu'à appuyer sur le bouton
     logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec" << logs::end;
 
     robot.stopAll(); //stop asserv and actionManagerTimer

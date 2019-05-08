@@ -74,24 +74,6 @@ bool SensorsDriver::front()
      }
      }*/
 
-    //read distance
-    int d = gp2_1_.getDistanceMm();
-    if (d < 0) {
-        //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
-    } else {
-        logger().debug() << "gp2y0e02b 1 dist=" << d << logs::end;
-        if (d < 250)
-            front = true;
-    }
-
-    d = gp2_2_.getDistanceMm();
-    if (d < 0) {
-        //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
-    } else {
-        logger().debug() << "gp2y0e02b 2 dist=" << d << logs::end;
-        if (d < 250)
-            front = true;
-    }
 
     return front;
 }
@@ -106,6 +88,30 @@ bool SensorsDriver::rear()
     }
     return rear;
 }
+
+bool SensorsDriver::gp2()
+{
+//read distance
+int d = gp2_1_.getDistanceMm();
+if (d < 0) {
+    //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
+} else {
+    logger().debug() << "gp2y0e02b 1 dist=" << d << logs::end;
+//        if (d < 250)
+//            front = true;
+}
+
+d = gp2_2_.getDistanceMm();
+if (d < 0) {
+    //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
+} else {
+    logger().debug() << "gp2y0e02b 2 dist=" << d << logs::end;
+//        if (d < 250)
+//            front = true;
+}
+}
+
+
 
 /*
  long SensorsDriver::write_i2c(unsigned char command, unsigned char value)

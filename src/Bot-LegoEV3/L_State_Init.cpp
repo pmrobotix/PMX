@@ -60,7 +60,7 @@ L_State_Init::execute(Robot&)
             if (b == BUTTON_RIGHT_KEY) {
                 logger().info() << "BUTTON_RIGHT_KEY - VIOLET" << logs::end;
                 robot.actions().ledBar().stopAndWait(true);
-                robot.actions().ledBar().set(0, LED_GREEN);
+                robot.actions().ledBar().set(0, LED_RED);
                 robot.actions().ledBar().set(1, LED_OFF);
                 robot.setMyColor(PMXVIOLET);
             }
@@ -82,7 +82,7 @@ L_State_Init::execute(Robot&)
 
         //tirette
         if (robot.getMyColor() == PMXVIOLET)
-            robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
+            robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_RED, false);
         else
             robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_YELLOW, false);
 
@@ -91,9 +91,13 @@ L_State_Init::execute(Robot&)
 
         logger().info() << "PMX...WAIT TIRETTE !";
         if (robot.getMyColor() == PMXVIOLET)
+        {
             logger().info() << " VIOLET";
+        }
         else
+        {
             logger().info() << "YELLOW";
+        }
         logger().info() << logs::end;
 
         bool bb = false;
@@ -110,9 +114,14 @@ L_State_Init::execute(Robot&)
 
         logger().info() << "SKIP SETUP...." << logs::end;
         if (robot.getMyColor() == PMXNOCOLOR) {
-
+            logger().info() << "PMXNOCOLOR !!!" << logs::end;
+            printf("PMXNOCOLOR !!!\n");
             exit(0);
         }
+
+        //attente si la tirette est mise!
+        logger().info() << "VERIFICATION TIRETTE...(ne pas oublier de l'enlever!)" << logs::end;
+        robot.actions().tirette().waitUnpressed();
 
         robot.strategy("all");
 

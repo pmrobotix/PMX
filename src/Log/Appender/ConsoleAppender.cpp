@@ -19,10 +19,10 @@ void logs::ConsoleAppender::flush()
 
 void logs::ConsoleAppender::execute()
 {
-    while (true) //TODO add a stop of the console appender
+    while (true) //TODO add a stop of the console appender //TODO merge all logs thread !
     {
         this->printData();
-        usleep(500000);
+        usleep(100000);
     }
 }
 

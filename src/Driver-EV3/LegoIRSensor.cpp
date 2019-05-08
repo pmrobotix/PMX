@@ -36,7 +36,7 @@ LegoIRSensor::LegoIRSensor(const char* input)
             //usleep(1000);
             try {
 
-                temp = p.get_attr_from_set(string(input + string(":lego-ev3-color/modalias")));
+                temp = p.get_attr_string(string(input + string(":lego-ev3-color/modalias")));
 
                 logger().debug() << "exist driver temp ==  " << temp << logs::end;
             } catch (...) {

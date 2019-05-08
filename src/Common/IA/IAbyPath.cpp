@@ -14,9 +14,9 @@
 #include <src/pmr_pathfinding.h>
 #include <src/pmr_point.h>
 #include <src/pmr_zone.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <cmath>
-#include <cstdio>
-#include <cstdlib>
 #include <cstring>
 #include <iterator>
 #include <vector>
@@ -24,7 +24,6 @@
 #include "../../Log/Logger.hpp"
 #include "../../Log/SvgWriter.hpp"
 #include "../Asserv/Asserv.hpp"
-#include "../Asserv.Driver/AAsservDriver.hpp"
 
 IAbyPath::IAbyPath(Robot *robot)
 {
@@ -306,6 +305,7 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
 //A renommer retrievezone
 void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
 {
+    printf("111\n");
     ZONE* z = ia_getZone(zoneName);
 
     printf("%s (line %d) : goToZone %s\n", __FUNCTION__, __LINE__, zoneName);
@@ -330,8 +330,10 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
 
     Point endPoint = { x : robot_->asserv_default->getRelativeX(xMM), y : yMM };
     FoundPath * found_path = NULL;
+
     Point startPoint = { x : robot_->asserv_default->pos_getX_mm(), y : robot_->asserv_default->pos_getY_mm() };
     playgroundFindPath(found_path, startPoint, endPoint);
+
 
     std::ostringstream path_polyline;
     std::vector<Node*>::iterator nodes_it;

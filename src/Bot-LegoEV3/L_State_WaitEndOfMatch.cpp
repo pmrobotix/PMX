@@ -28,22 +28,17 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     bool front = false;
     bool rear = false;
 
+    uint c=0;
+
     while (robot.chrono().getElapsedTimeInSec() <= 100)
     {
-        /*
-         usleep(1000000);
-         long time = robot.chrono().getElapsedTimeInSec();
-         this->logger().info() << "execute chrono " << time << logs::end;
-        */
 
         //test ARU
         if (robot.actions().tirette().pressed()) {
+            printf("===== ARU pressed !!!!!!\n");
             logger().error() << "ARU pressed !!!!!!" << logs::end;
             //stop all robot
-            robot.stopAll();
-
-            sleep(1);
-            exit(0);
+            break;
         }
 
         //test sensors
@@ -60,9 +55,11 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             robot.asserv().setRearCollision();
         }
 
-        usleep(300000);
+        usleep(100000);
+        if (c % 10 == 0)
+            this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << " front=" << front << " rear=" << rear<< logs::end;
 
-        this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << " front=" << front << " rear=" << rear<< logs::end;
+        c++;
     }
 
     this->logger().info() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;

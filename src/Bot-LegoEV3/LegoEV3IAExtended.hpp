@@ -26,7 +26,7 @@ public:
     PlaygroundObjectID area_alea_yellow;
 
     PlaygroundObjectID area_palet_start_violet;
-
+    PlaygroundObjectID area_palet_start_yellow;
 
 
     /*

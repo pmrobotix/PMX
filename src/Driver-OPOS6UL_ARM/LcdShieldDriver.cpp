@@ -58,3 +58,14 @@ size_t LcdShieldDriver::write(uint8_t value)
     return s;
 }
 
+
+
+void LcdShieldDriver::print_content_string(std::string str, int row, int col)
+{
+
+}
+
+void LcdShieldDriver::print_content_integer(int value, int row, int col)
+{
+
+}

@@ -11,6 +11,7 @@ OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
     area_alea_violet= Playground::INVALID;
     area_alea_yellow= Playground::INVALID;
     area_palet_start_violet= Playground::INVALID;
+    area_palet_start_yellow= Playground::INVALID;
 
 }
 

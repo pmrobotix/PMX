@@ -31,7 +31,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Wait90SecAction", "console");
     add(logs::Level::INFO, "SensorsTimer", "console");
     add(logs::Level::INFO, "Chronometer", "console");
-
+    add(logs::Level::INFO, "IAbyPath", "console");
 
     //STATE
     add(logs::Level::INFO, "L_State_Init", "console");

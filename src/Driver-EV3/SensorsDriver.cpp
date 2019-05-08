@@ -35,7 +35,7 @@ bool SensorsDriver::front()
     double mm1 = IR_1_AV_D.getDistanceMM();
     double mm2 = IR_2_AV_G.getDistanceMM();
 
-    logger().info() << "IR_2_AV_G==" << mm2 << " \tIR_1_AV_D==" << mm1 << logs::end;
+    logger().debug() << "IR_2_AV_G==" << mm2 << " \tIR_1_AV_D==" << mm1 << logs::end;
 
     if (mm1 < 160 || mm2 < 160)
         temp = 1;
@@ -49,7 +49,7 @@ bool SensorsDriver::rear()
     double mm3 = IR_3_AR_D.getDistanceMM();
     double mm4 = IR_4_AR_G.getDistanceMM();
 
-    logger().info() << "IR_4_AR_G==" << mm4 << " \tIR_3_AR_D==" << mm3 << logs::end;
+    logger().debug() << "IR_4_AR_G==" << mm4 << " \tIR_3_AR_D==" << mm3 << logs::end;
 
     if (mm3 < 160 || mm4 < 160)
         temp = 1;

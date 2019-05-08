@@ -61,6 +61,7 @@ public:
 	bool front();
 	bool rear();
 
+	bool gp2();
 
 
 };

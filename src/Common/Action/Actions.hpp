@@ -6,6 +6,7 @@
 #include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
 #include "ActionManagerTimer.hpp"
+#include "LedBar.hpp"
 
 class IAction;
 
@@ -31,23 +32,25 @@ private:
     ActionManagerTimer actionManagerTimer_;
 
     bool started_;
+
+    /*!
+     * \brief LED Bar.
+     */
+    //LedBar ledbar_;
+
 public:
 
     /*!
      * \brief Constructor.
      *
      */
-    Actions()
-    {
-        started_ = false;
-    }
+    Actions();
 
     /*!
      * \brief Destructor.
      */
     ~Actions()
     {
-        logger().debug() << "~Actions()" << logs::end;
     }
 
     /*!
@@ -70,6 +73,15 @@ public:
     {
         actionManagerTimer_.stopTimer(name);
     }
+
+//    /*!
+//     * \brief Cette methode retourne l'objet ledbar.
+//     * \return ledbar_.
+//     */
+//    LedBar & ledBar()
+//    {
+//        return ledbar_;
+//    }
 
     /*!
      * \brief Active les actions.

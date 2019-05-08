@@ -3,7 +3,6 @@
 #include "../Action.Driver/AServoUsingMotorDriver.hpp"
 
 
-
 using namespace std;
 
 ServoUsingMotor::ServoUsingMotor(Actions & actions) :
@@ -12,9 +11,8 @@ ServoUsingMotor::ServoUsingMotor(Actions & actions) :
     servoMotordriver_ = AServoUsingMotorDriver::create();
 
     servoMotordriver_->resetEncoder(0);
-    ticks_place = 350; //pour 1000
+    ticks_place = 400; //pour 1000 - 350
 }
-
 
 ServoUsingMotor::~ServoUsingMotor()
 {

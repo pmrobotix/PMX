@@ -141,13 +141,11 @@ void AsservEsialR::execute()
 
             //long t4 = chronoTimer_.getElapsedTimeInMicroSec();
             //svg log
-            if (nb % 5 == 0) {
+            if (nb % 10 == 0) {
 
-                info << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="                << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::flush;
+                //info << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="                << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::flush;
 
-                // 18us
                 robot_->svgw().writePosition_BotPos(p.x * 1000, p.y * 1000, p.theta);
-
             }
             //long t5 = chronoTimer_.getElapsedTimeInMicroSec();
 
@@ -240,21 +238,25 @@ int AsservEsialR::getMotorRightCurrent()
 long AsservEsialR::getLeftExternalEncoder()
 {
     logger().error() << "TODO getLeftExternalEncoder !!!" << logs::end;
+    return -99;
     //TODO
 }
 long AsservEsialR::getRightExternalEncoder()
 {
     logger().error() << "TODO getRightExternalEncoder !!!" << logs::end;
+    return -99;
     //TODO
 }
 long AsservEsialR::getLeftInternalEncoder()
 {
     logger().error() << "TODO getLeftInternalEncoder !!!" << logs::end;
+    return -99;
     //TODO
 }
 long AsservEsialR::getRightInternalEncoder()
 {
     logger().error() << "TODO getRightInternalEncoder !!!" << logs::end;
+    return -99;
     //TODO
 }
 void AsservEsialR::resetEncoders()

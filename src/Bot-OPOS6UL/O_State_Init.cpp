@@ -153,7 +153,16 @@ O_State_Init::execute(Robot&)
 
     robot.actions().ledBar().resetAll();
     robot.actions().lcd2x16().clear();
-    robot.actions().lcd2x16().setBacklightOff();
+    //robot.actions().lcd2x16().setBacklightOff();
+    robot.actions().lcd2x16().setBacklightOn();
+    robot.actions().lcd2x16().setCursor(0,0);
+    robot.actions().lcd2x16().home();
+    robot.actions().lcd2x16().print("GO...");
+
+
+    logger().info() << "on ferme les cils" << logs::end;
+    robot.actions().ax12_left_cil(0);
+    robot.actions().ax12_right_cil();
 
     logger().info() << "O_StateInit executed" << logs::end;
     return this->getState("WaitEndOfMatch"); //return NULL; //finish all state
@@ -176,19 +185,19 @@ void O_State_Init::setPos()
     robot.actions().ax12_left_cil_retract(0);
     robot.actions().ax12_right_cil_retract();
 
-    //robot.actions().ax12_left_cil_release();
-
     //demi largeur 150
     robot.asserv().startMotionTimerAndOdo(false);
+    robot.actions().lcd2x16().clear();
     robot.asserv().setPositionAndColor(70, 450, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
+
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
+    robot.asserv().resetDisplayTS();
     robot.asserv().assistedHandling();
-    robot.asserv().doLineAbs(130);
-
+    TRAJ_STATE ts = robot.asserv().doLineAbs(130);
+    robot.asserv().displayTS(ts);
     robot.svgPrintPosition();
-
-    robot.actions().lcd2x16().print("SET POSITION : OK");
+    robot.actions().lcd2x16().println("SET POSITION : OK");
 }

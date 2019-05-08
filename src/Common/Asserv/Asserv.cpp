@@ -180,7 +180,7 @@ float Asserv::pos_getThetaInDegree()
 
 void Asserv::setFrontCollision()
 {
-    logger().error() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_ << logs::end;
+    logger().debug() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_ << logs::end;
 
     if (!ignoreFrontCollision_) {
 
@@ -196,7 +196,8 @@ void Asserv::setFrontCollision()
 
 void Asserv::setRearCollision()
 {
-    logger().error() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_ << logs::end;
+    logger().debug() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_ << logs::end;
+
     if (!ignoreRearCollision_) {
         if (useAsservType_ == ASSERV_INT_INSA)
             pAsservInsa_->path_CollisionRearOnTrajectory();

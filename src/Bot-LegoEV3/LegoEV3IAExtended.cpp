@@ -32,6 +32,7 @@ void LegoEV3IAExtended::initPlayground()
 
     //zone palets depart
     p_->add_rectangle(this->area_palet_start_violet, 500.0, 600.0, 300.0, 1400.0, 0.0);
+    p_->add_rectangle(this->area_palet_start_yellow, 3000-500.0, 600.0, 300.0, 1400.0, 0.0);
 
     /*
      //orange parts

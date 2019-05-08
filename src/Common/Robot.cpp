@@ -6,6 +6,10 @@
 
 #include "Robot.hpp"
 
+#include <stdlib.h>
+
+#include "Asserv/MotorControl.hpp"
+#include "Asserv/MovingBase.hpp"
 #include "Utils/ConsoleKeyInput.hpp"
 
 #ifdef SIMU
@@ -276,4 +280,6 @@ void Robot::stopAll() //TODO renommer stopMotionTimerAndActionManager
 void Robot::freeMotion()
 {
     this->asserv_default->freeMotion();
+    this->asserv_default->base()->motors().stopMotors();
+
 }

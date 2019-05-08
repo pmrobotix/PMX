@@ -23,10 +23,6 @@ ServoDriver::ServoDriver() :
 {
     logger().debug() << "ServoDriver()" << logs::end;
 
-    //mise du pollong à 0 pour la carte de servo.
-    i2c_sensor servo_sensor = i2c_sensor("ev3-ports:in4:i2c88");
-    servo_sensor.set_poll_ms(0);
-
     //CONFIG Specifique si necessaire
     servo_motors_[0] = servo_motor("ev3-ports:in4:i2c88:sv1");
     servo_motors_[1] = servo_motor("ev3-ports:in4:i2c88:sv2");
@@ -42,6 +38,11 @@ ServoDriver::ServoDriver() :
     else
         logger().error() << "SERVO NOT CONNECTED! ServoDriver()" << logs::end;
 
+    if (connected_) {
+        //mise du pollong à 0 pour la carte de servo.
+        i2c_sensor servo_sensor = i2c_sensor("ev3-ports:in4:i2c88");
+        servo_sensor.set_poll_ms(0);
+    }
 }
 
 bool ServoDriver::testIf(long value, long valeurMin, long valeurMax)
@@ -116,6 +117,8 @@ void ServoDriver::setRate(int servo, int millisec0To90)
 
 void ServoDriver::turn(int servo, int speed)
 {
+    if (!connected_)
+        return;
     if (!connected_) {
         logger().error() << "SERVO NOT CONNECTED! turn() servo=" << servo << logs::end;
         return;
@@ -124,6 +127,8 @@ void ServoDriver::turn(int servo, int speed)
 
 int ServoDriver::getMoving(int servo)
 {
+    if (!connected_)
+        return -99;
     if (!testIf(servo, 0, 7))
         return -999;
     return -999;
@@ -152,6 +157,8 @@ int ServoDriver::ping(int servo)
 
 void ServoDriver::setMinPulse(int servo, int pulse)
 {
+    if (!connected_)
+        return;
     if (!testIf(servo, 0, 7))
         return;
 
@@ -163,16 +170,21 @@ void ServoDriver::setMinPulse(int servo, int pulse)
 
 void ServoDriver::setMidPulse(int servo, int pulse)
 {
+    if (!connected_)
+        return;
     if (!testIf(servo, 0, 7))
         return;
 
     if (!testIf(pulse, 1300, 1700))
         constrain(pulse, 1300, 1700);
+
     servo_motors_[servo].set_mid_pulse_sp(pulse); //default 1500 [1300 to 1700]
 }
 
 void ServoDriver::setMaxPulse(int servo, int pulse)
 {
+    if (!connected_)
+        return;
     if (!testIf(servo, 0, 7))
         return;
     if (!testIf(pulse, 2300, 2700))
@@ -182,6 +194,8 @@ void ServoDriver::setMaxPulse(int servo, int pulse)
 
 void ServoDriver::setPolarity(int servo, bool inversed)
 {
+    if (!connected_)
+        return;
     if (!testIf(servo, 0, 7))
         return;
     if (!inversed)

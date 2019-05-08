@@ -12,14 +12,14 @@ LegoEV3SvgWriterExtended::LegoEV3SvgWriterExtended(std::string botId) :
 
     std::ostringstream symbol;
 
-    symbol << "<symbol id=\"bot-legoev3\">" << "<circle cx=\"90\" cy=\"90\" r=\"90\" fill=\"none\" stroke=\"orange\" />"
-            << "<circle cx=\"90\" cy=\"90\" r=\"10\" fill=\"none\" stroke=\"orange\" />"
-            << "<rect x=\"0\" y=\"0\" width=\"180\" height=\"180\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
-            << "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
+    symbol << "<symbol id=\"bot-legoev3\">" << "<circle cx=\"45\" cy=\"120\" r=\"120\" fill=\"none\" stroke=\"orange\" />"
+            << "<circle cx=\"45\" cy=\"120\" r=\"10\" fill=\"none\" stroke=\"orange\" stroke-width=\"4\"/>"
+            << "<rect x=\"0\" y=\"0\" width=\"200\" height=\"240\" style=\"fill:none;stroke:orange;stroke-width:3px;\" />"
+            //<< "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
             //arriere du robot en position 0,0
-            << "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"orange\" stroke-width=\"4\"/>"
-            << "<line x1=\"0\" y1=\"150\" x2=\"50\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
-            << "<line x1=\"180\" y1=\"0\" x2=\"180\" y2=\"180\" stroke=\"red\" stroke-width=\"4\"/>"
+            //<< "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"orange\" stroke-width=\"4\"/>"
+            //<< "<line x1=\"0\" y1=\"150\" x2=\"50\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
+            << "<line x1=\"200\" y1=\"0\" x2=\"200\" y2=\"240\" stroke=\"red\" stroke-width=\"4\"/>"
             //devant du robot en position 180,0
             << "</symbol>";
     addDefsSymbol(symbol.str());
@@ -45,7 +45,7 @@ void LegoEV3SvgWriterExtended::writePosition_Bot(float x, float y, float angle_r
 {
     if (!done_) {
 
-        *fLogBuffer << "<use x=\"" << x - 90 << "\" y=\"" << -y - 90
+        *fLogBuffer << "<use x=\"" << x - 45 << "\" y=\"" << -y - 120
                 << "\" xlink:href=\"#bot-legoev3\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x
                 << "," << -y << ")\" />" << logs::flush;
         //logger().info() << "<use x=\"" << x - 90 << "\" y=\"" << -y - 90 << "\" xlink:href=\"#bot-legoev3\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x << "," << -y << ")\" />" << logs::end;

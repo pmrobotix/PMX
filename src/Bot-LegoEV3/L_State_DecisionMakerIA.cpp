@@ -35,11 +35,49 @@ bool L_push_palet()
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK)
         return false;
+    robot.svgPrintPosition();
+    robot.asserv().doMoveForwardTo(500, 750);
+//    robot.asserv().doLineAbs(200);
+//    robot.svgPrintPosition();
+//    robot.asserv().doLineAbs(-200);
+//    robot.svgPrintPosition();
+//    robot.asserv().doLineAbs(350);
+    robot.svgPrintPosition();
+    return true; //return true si ok sinon false si interruption
+}
+bool L_take_grand_distributeur()
+{
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    robot.logger().info() << "start L_take_grand_distributeur." << logs::end;
 
-    robot.asserv().doLineAbs(200);
+    TRAJ_STATE ts = TRAJ_OK;
+    RobotPosition zone;
 
-    robot.asserv().doLineAbs(-200);
+    robot.asserv().ignoreFrontCollision(false);
+    robot.asserv().ignoreRearCollision(true);
+    robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
 
+
+    ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+    if (ts != TRAJ_OK)
+        return false;
+
+    //robot.svgPrintPosition();
+
+    robot.asserv().ignoreFrontCollision(true);
+    robot.asserv().ignoreRearCollision(true);
+
+    //position vert1
+    ts = robot.asserv().doMoveForwardTo(500, 1415);
+    robot.svgPrintPosition();
+
+    //position bleu
+    ts = robot.asserv().doMoveForwardTo(680, 1415);
+    robot.svgPrintPosition();
+
+    //position vert2
+    ts = robot.asserv().doMoveForwardTo(880, 1415);
+    robot.svgPrintPosition();
 
     return true; //return true si ok sinon false si interruption
 }
@@ -53,8 +91,10 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     //definition des zones en zone ORANGE uniquement
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_palet", 400, 700, 100, 100, 700, 750, -180);
+    robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1400, 90);
 
-    robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
+    //robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
+    robot.ia().iAbyPath().ia_addAction("take_grand_distributeur", &L_take_grand_distributeur);
 
     logger().info() << " END IASetupActivitiesZone" << logs::end;
 }

@@ -55,9 +55,11 @@ public:
 
     void stopExtraActions();
 
+
     int points;
 
     int todo_fake;
+
 
 private:
 

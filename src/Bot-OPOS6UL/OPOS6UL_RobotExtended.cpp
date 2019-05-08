@@ -1,5 +1,6 @@
 #include "OPOS6UL_RobotExtended.hpp"
 
+#include <bits/basic_string.h>
 #include <string>
 
 #include "../Common/Utils/Chronometer.hpp"
@@ -75,3 +76,5 @@ void OPOS6UL_RobotExtended::begin(int argc, char** argv)
 
     logger().info() << "PMX OPOS6UL_RobotExtended - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec" << logs::end;
 }
+
+
