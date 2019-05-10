@@ -6,13 +6,15 @@
 
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/Tirette.hpp"
+#include "../Common/Asserv/Asserv.hpp"
+#include "../Common/Asserv/MotorControl.hpp"
+#include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "../Thread/Thread.hpp"
 #include "L_State_DecisionMakerIA.hpp"
 #include "LegoEV3ActionsExtended.hpp"
-#include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
 IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
@@ -30,7 +32,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     bool rear = false;
 
     uint c = 0;
-
+    uint lastdetect_front_nb_ =0;
     while (robot.chrono().getElapsedTimeInSec() <= 100) {
 
         //test ARU
@@ -42,18 +44,55 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         }
 
         //test sensors
-        front = false;
-        rear = false;
-
-        front = robot.actions().sensors().front();
+//        front = false;
+//        rear = false;
+//
+//        front = robot.actions().sensors().front();
+//        if (front) {
+//            robot.asserv().setFrontCollision();
+//        }
+//
+//        rear = robot.actions().sensors().rear();
+//        if (rear) {
+//            robot.asserv().setRearCollision();
+//        }
+        //AVANT
+        bool front = robot.actions().sensors().front();
+        bool frontVeryclosed = robot.actions().sensors().frontVeryClosed();
         if (front) {
-            robot.asserv().setFrontCollision();
-        }
+            //send collision to asserv
+            if (lastdetect_front_nb_ == 0) {
 
-        rear = robot.actions().sensors().rear();
-        if (rear) {
-            robot.asserv().setRearCollision();
+                if (!robot.asserv_default->getIgnoreFrontCollision()) {
+                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+                    robot.asserv_default->setFrontCollision();
+                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+
+                    robot.asserv_default->setLowSpeed(true);
+                }
+            }
+            lastdetect_front_nb_++;
+        } else {
+            lastdetect_front_nb_ = 0;
+            robot.asserv_default->setLowSpeed(false);
         }
+        if (lastdetect_front_nb_ > 0) {
+            if (frontVeryclosed) {
+
+                if (!robot.asserv_default->getIgnoreFrontCollision()) {
+                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+                    robot.asserv_default->setFrontCollision();
+                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+                }
+            }
+        }
+        //ARRIERE TODO
+
+
+
+
+
+
 
         usleep(100000);
         if (c % 10 == 0)
@@ -71,7 +110,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 
     if (robot.decisionMaker_ != NULL)
         //if (robot.decisionMaker_->state() == utils::CREATED)
-            robot.decisionMaker_->cancel();
+        robot.decisionMaker_->cancel();
 
     //init robot for end
     robot.freeMotion(); //stop the robot

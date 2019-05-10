@@ -39,24 +39,24 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
-bool SensorsDriver::front()
+bool SensorsDriver::front() //TODO fusionner front et frontVeryClosed avec un retour de données en int
 {
 
     bool front = false;
 
     if (1) {
         if (irLeft_.getDistance() < 200) {
-            logger().info() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
+            logger().debug() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
             front = true;
         }
 
         if (irRight_.getDistance() < 200) {
-            logger().info() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
+            logger().debug() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
             front = true;
         }
 
         if (irCenter_.getDistance() < 350) {
-            logger().info() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
+            logger().debug() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
             front = true;
         }
 
@@ -82,21 +82,20 @@ bool SensorsDriver::frontVeryClosed()
     bool front = false;
 
     if (1) {
-        if (irLeft_.getDistance() < 105) {
-            logger().info() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
+        if (irLeft_.getDistance() < 118) {
+            logger().debug() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
             front = true;
         }
 
-        if (irRight_.getDistance() < 105) {
-            logger().info() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
+        if (irRight_.getDistance() < 118) {
+            logger().debug() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
             front = true;
         }
 
         if (irCenter_.getDistance() < 240) {
-            logger().info() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
+            logger().debug() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
             front = true;
         }
-
     }
     return front;
 }
@@ -106,7 +105,7 @@ bool SensorsDriver::rear()
 
     bool rear = false;
     if (irRear_.getDistance() < 200) {
-        logger().info() << "adc_3_rear " << " mm=" << irRear_.getDistance() << logs::end;
+        logger().debug() << "adc_3_rear " << " mm=" << irRear_.getDistance() << logs::end;
         rear = true;
     }
     return rear;

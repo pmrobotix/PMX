@@ -38,9 +38,10 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     svg_->beginHeader();
 
     //init experience + bonus
-    points = 15;
+    points = 0;
 
     todo_fake = 1;
+    todo_alea = 1;
 }
 
 void OPOS6UL_RobotExtended::stopExtraActions()

@@ -17,17 +17,19 @@ void L_SensorsTest::run(int argc, char** argv)
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-    bool front;
-    bool rear;
+    bool front, frontV;
+    bool rear, rearV;
     utils::Chronometer chrono("L_SensorsTest");
     chrono.start();
     while (chrono.getElapsedTimeInSec() < 100) {
         front = robot.actions().sensors().front();
+        frontV = robot.actions().sensors().frontVeryClosed();
 
         rear = robot.actions().sensors().rear();
+        rearV = robot.actions().sensors().rearVeryClosed();
 
         usleep(400000);
-        logger().info() << " front=" << front << " rear=" << rear << logs::end;
+        logger().info() << " front=" << front << " rear=" << rear << " fV=" << frontV << " rV=" << rearV << logs::end;
     }
 
     robot.stopAll();

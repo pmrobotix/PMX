@@ -30,6 +30,7 @@ Asserv::Asserv(std::string botId, Robot * robot)
     ignoreRearCollision_ = true;
     ignoreFrontCollision_ = true;
     matchColorPosition_ = false;
+    forceRotation_ = false;
 }
 
 MovingBase * Asserv::base()
@@ -186,40 +187,75 @@ float Asserv::pos_getThetaInDegree()
 {
     return (pos_getTheta() * 180.0f) / M_PI;
 }
+bool Asserv::filtreInsideTable(float metre)
+{
+    //On filtre si c'est pas à l'exterieur du terrain
+    float x = 0.0;
+    float y = 0.0;
+    bool result = false;
+    RobotPosition p = pos_getPosition();
+    x = p.x + metre * cos(p.theta);
+    y = p.y + metre * sin(p.theta);
+    if ((x > 0.150 && x < 2.850) && (y > 0.150 && y < 1.500)) //en mètre
+        result = true;
+    else
+        result = false;
+    logger().error() << "filtreInsideTable" << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
+            << " y=" << y << " result = " << result << logs::end;
+
+    if (result) {
+        return true; //si ok
+    } else
+        return false; //si en dehors de la table
+}
 
 void Asserv::setFrontCollision()
 {
-    logger().debug() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_ << logs::end;
+    logger().debug() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_
+            << "   forceRotation_="<< forceRotation_<< logs::end;
 
-    if (!ignoreFrontCollision_) {
+    if (forceRotation_)
+        return;
 
-        if (useAsservType_ == ASSERV_INT_INSA)
-            pAsservInsa_->path_CollisionOnTrajectory();
-        else if (useAsservType_ == ASSERV_EXT)
-            asservdriver->path_CollisionOnTrajectory();
-        else if (useAsservType_ == ASSERV_INT_ESIALR)
-            pAsservEsialR_->path_CollisionOnTrajectory();
+    float metre = 0.300; //distance devant le robot
 
+    if (filtreInsideTable(metre)) {
+
+        if (!ignoreFrontCollision_) {
+
+            if (useAsservType_ == ASSERV_INT_INSA)
+                pAsservInsa_->path_CollisionOnTrajectory();
+            else if (useAsservType_ == ASSERV_EXT)
+                asservdriver->path_CollisionOnTrajectory();
+            else if (useAsservType_ == ASSERV_INT_ESIALR)
+                pAsservEsialR_->path_CollisionOnTrajectory();
+
+        }
     }
 }
 
 void Asserv::setRearCollision()
 {
-    logger().debug() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_ << logs::end;
+    if (forceRotation_)
+        return;
 
-    if (!ignoreRearCollision_) {
-        if (useAsservType_ == ASSERV_INT_INSA)
-            pAsservInsa_->path_CollisionRearOnTrajectory();
-        else if (useAsservType_ == ASSERV_EXT)
-            asservdriver->path_CollisionRearOnTrajectory();
-        else if (useAsservType_ == ASSERV_INT_ESIALR)
-            pAsservEsialR_->path_CollisionRearOnTrajectory();
+    logger().debug() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_ << logs::end;
+    float metre = -0.300; //distance derriere le robot
+    if (filtreInsideTable(metre)) {
+        if (!ignoreRearCollision_) {
+            if (useAsservType_ == ASSERV_INT_INSA)
+                pAsservInsa_->path_CollisionRearOnTrajectory();
+            else if (useAsservType_ == ASSERV_EXT)
+                asservdriver->path_CollisionRearOnTrajectory();
+            else if (useAsservType_ == ASSERV_INT_ESIALR)
+                pAsservEsialR_->path_CollisionRearOnTrajectory();
+        }
     }
 }
 
 TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 {
-//TODO test si l'adversaire est toujours present, si oui on ne cherche pas à avancer
+//TODO test si l'adversaire est toujours present, si oui on ne cherche pas à avancer  //a voir si toujorus d'actualité
 //if(asservdriver->path_CollisionOnTrajectory())
 //    return TRAJ_COLLISION;
 
@@ -257,6 +293,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
     int r = ignoreRearCollision_;
     ignoreRearCollision_ = true;
     ignoreFrontCollision_ = true;
+    forceRotation_ = true;
 
     TRAJ_STATE ts;
     float radians = (degrees * M_PI) / 180.0f;
@@ -271,6 +308,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
     logger().debug() << "Asserv::doRotateAbs f=" << f << " r=" << r << logs::end;
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
+    forceRotation_ = false;
 
     return ts;
 }
@@ -354,7 +392,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
-    logger().error() << " __doMoveForwardAndRotateTo"  << logs::end;
+    logger().error() << " __doMoveForwardAndRotateTo" << logs::end;
     TRAJ_STATE ts;
     ts = doMoveForwardTo(xMM, yMM);
     if (ts != TRAJ_OK)

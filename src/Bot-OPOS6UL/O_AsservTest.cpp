@@ -74,6 +74,7 @@ void O_AsservTest::run(int argc, char** argv)
     while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_OK) {
 
         logger().info() << "Interruption dist TRAJ_STATE=" << ts << " front=" << robot.actions().sensors().front()
+        << " frontV=" << robot.actions().sensors().frontVeryClosed()
                 << logs::end;
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
@@ -83,14 +84,16 @@ void O_AsservTest::run(int argc, char** argv)
             if (f >= 5)
                 break; //return
             f++;
-            usleep(100000);
+            //usleep(100000);
         }
 
         if (ts == TRAJ_COLLISION) {
-            logger().error() << "===== COLLISION essai n°" << c << logs::end;
-            if (c >= 3)
+            logger().error() << "===== COLLISION ASSERV essai n°" << c << logs::end;
+
+            if (c >= 1)
                 break; // ou return;
             c++;
+            usleep(100000);
         }
         robot.asserv().resetDisplayTS();
     }

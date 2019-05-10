@@ -6,6 +6,8 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../Asserv.Driver/AAsservDriver.hpp"
 
+class MovingBase;
+
 class AsservEsialR;
 
 class Robot;
@@ -14,7 +16,7 @@ class AsservInsa;
 
 class AAsservDriver;
 
-class MovingBase;
+
 
 /*!
  * Asservissement of the robot.It contains default elements.
@@ -51,6 +53,8 @@ protected:
     AsservType useAsservType_;
 
     std::string botId_;
+
+    bool forceRotation_;
 
     /*!
      * \brief asservissement interne INSA.
@@ -173,7 +177,9 @@ public:
         return degrees;
     }
 
-    virtual void setFrontCollision();
+    bool filtreInsideTable(float mm);
+
+    virtual void setFrontCollision(); //TODO Virtual ???? a verifier car peut etre surcharger?
     virtual void setRearCollision();
 
     virtual RobotPosition pos_getPosition();

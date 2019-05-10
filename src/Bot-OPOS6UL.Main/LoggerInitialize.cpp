@@ -61,7 +61,6 @@ void logs::LoggerFactory::initialize()
 
 
 
-
 	//DRIVERS SIMU
 	add(logs::Level::INFO, "LedDriver.SIMU", "console");
 	add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
@@ -76,7 +75,7 @@ void logs::LoggerFactory::initialize()
 	add(logs::Level::INFO, "ButtonDriver.OPO", "console");
 	add(logs::Level::INFO, "SoundDriver.OPO", "console");
 	add(logs::Level::INFO, "SwitchDriver.OPO", "console");
-	add(logs::Level::DEBUG, "SensorsDriver.OPO", "console");
+	add(logs::Level::INFO, "SensorsDriver.OPO", "console");
 	add(logs::Level::INFO, "AsservDriver.OPO", "console");
 	add(logs::Level::INFO, "CCAx12Adc.OPO", "console");
 	add(logs::Level::INFO, "SensorsDriver.OPO", "console");

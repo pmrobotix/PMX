@@ -61,6 +61,8 @@ public:
 
     int todo_fake;
 
+    int todo_alea;
+
 
 private:
 

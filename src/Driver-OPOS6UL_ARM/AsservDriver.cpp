@@ -376,34 +376,33 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 //1 running
 //2 emergency stop
 //3 blocked
-
-//old
-//asservStatus 0 = running
-//asservStatus 1 = tâche terminée
-//asservStatus 2 = emergency stop
 TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
 {
 
     int timeout = 0;
-    //attente du running status
+    //attente du running status passage de 0,2,3 à 1
     while (p_.asservStatus != 1) {
+
+       //logger().debug() << "1111 p= " << p_.asservStatus << " timeout=" << timeout << logs::end;
         usleep(10000);
         timeout++;
-        if (timeout > 50)
+        if (timeout > 10)
             break;
     }
 
     timeout = 0;
     //attente de l'interruption ou fin de trajectoire
     while (p_.asservStatus == 1) {
-        usleep(10000);
+        //logger().debug() << "2222 p= " << p_.asservStatus << " timeout=" << timeout << logs::end;
+        usleep(1000);
         timeout++;
-        if (timeout > 50 && p_.asservStatus != 1)
+        if (timeout > 10 && p_.asservStatus != 1)
             break;
     }
 
     if (p_.asservStatus == 3) {
-        return TRAJ_COLLISION;
+        logger().error() << "3333 p= " << p_.asservStatus << logs::end;
+        return TRAJ_COLLISION; //blocked //TODO necessaire ? ce n'est pas un melange avec pathstatus ?
     }
     return pathStatus_;
 
@@ -605,13 +604,13 @@ void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotio
 {
     motion_FreeMotion();
     /*if (!connected_)
-        return;
-    if (!asservMbedStarted_)
-        logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
-    else {
-        mbed_writeI2c('K', 0, NULL); //stop mbed managers
-        //pathStatus_ = TRAJ_CANCELLED;
-    }*/
+     return;
+     if (!asservMbedStarted_)
+     logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
+     else {
+     mbed_writeI2c('K', 0, NULL); //stop mbed managers
+     //pathStatus_ = TRAJ_CANCELLED;
+     }*/
 }
 void AsservDriver::motion_AssistedHandling(void)
 {
