@@ -185,13 +185,10 @@ public:
     virtual float pos_getThetaInDegree();
 
     void ignoreFrontCollision(bool ignore);
-
     void ignoreRearCollision(bool ignore);
 
-    bool getIgnoreFrontCollision()
-    {
-        return ignoreFrontCollision_;
-    }
+    bool getIgnoreFrontCollision();
+    bool getIgnoreRearCollision();
 };
 
 #endif

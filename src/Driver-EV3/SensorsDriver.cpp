@@ -29,30 +29,35 @@ SensorsDriver::~SensorsDriver()
 
 bool SensorsDriver::front()
 {
-
+    int seuil = 250;
     bool temp = 0;
 
     double mm1 = IR_1_AV_D.getDistanceMM();
     double mm2 = IR_2_AV_G.getDistanceMM();
 
-    logger().debug() << "IR_2_AV_G==" << mm2 << " \tIR_1_AV_D==" << mm1 << logs::end;
+    logger().debug() << "IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
 
-    if (mm1 < 160 || mm2 < 160)
+    if (mm1 < seuil || mm2 < seuil) {
+        logger().info() << "=> IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
         temp = 1;
+    }
     return temp;
 
 }
 
 bool SensorsDriver::rear()
 {
+    int seuil = 200;
     bool temp = 0;
     double mm3 = IR_3_AR_D.getDistanceMM();
     double mm4 = IR_4_AR_G.getDistanceMM();
 
-    logger().debug() << "IR_4_AR_G==" << mm4 << " \tIR_3_AR_D==" << mm3 << logs::end;
+    logger().debug() << "IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
 
-    if (mm3 < 160 || mm4 < 160)
+    if (mm3 < seuil || mm4 < seuil) {
+        logger().info() << "=> IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
         temp = 1;
+    }
     return temp;
 
     /*
@@ -69,4 +74,13 @@ bool SensorsDriver::rear()
      }
      else
      return 0;*/
+}
+
+bool SensorsDriver::frontVeryClosed()
+{
+
+}
+bool SensorsDriver::rearVeryClosed()
+{
+
 }

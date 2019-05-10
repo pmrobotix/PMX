@@ -145,6 +145,9 @@ void L_State_Init::setPos()
 
     logger().info() << "setPos() executing" << logs::end;
 
+    //TODO int des objects
+
+
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(45, 718, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();

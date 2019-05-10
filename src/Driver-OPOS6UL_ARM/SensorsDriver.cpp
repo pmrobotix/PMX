@@ -51,12 +51,12 @@ bool SensorsDriver::front()
         }
 
         if (irRight_.getDistance() < 200) {
-            logger().info() << "adc_9_right " << " mm=" << irRight_.getDistance() << logs::end;
+            logger().info() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
             front = true;
         }
 
         if (irCenter_.getDistance() < 350) {
-            logger().info() << "adc_5_center " << " mm=" << irCenter_.getDistance() << logs::end;
+            logger().info() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
             front = true;
         }
 
@@ -74,7 +74,30 @@ bool SensorsDriver::front()
      }
      }*/
 
+    return front;
+}
 
+bool SensorsDriver::frontVeryClosed()
+{
+    bool front = false;
+
+    if (1) {
+        if (irLeft_.getDistance() < 105) {
+            logger().info() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
+            front = true;
+        }
+
+        if (irRight_.getDistance() < 105) {
+            logger().info() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
+            front = true;
+        }
+
+        if (irCenter_.getDistance() < 240) {
+            logger().info() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
+            front = true;
+        }
+
+    }
     return front;
 }
 
@@ -89,29 +112,40 @@ bool SensorsDriver::rear()
     return rear;
 }
 
+bool SensorsDriver::rearVeryClosed()
+{
+
+    bool rear = false;
+    if (irRear_.getDistance() < 150) {
+        logger().info() << "adc_3_rear " << " mm=" << irRear_.getDistance() << logs::end;
+        rear = true;
+    }
+    return rear;
+}
+
 bool SensorsDriver::gp2()
 {
 //read distance
-int d = gp2_1_.getDistanceMm();
-if (d < 0) {
-    //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
-} else {
-    logger().debug() << "gp2y0e02b 1 dist=" << d << logs::end;
+    int d = gp2_1_.getDistanceMm();
+    if (d < 0) {
+        //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
+    } else {
+        logger().debug() << "gp2y0e02b 1 dist=" << d << logs::end;
 //        if (d < 250)
 //            front = true;
-}
+    }
 
-d = gp2_2_.getDistanceMm();
-if (d < 0) {
-    //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
-} else {
-    logger().debug() << "gp2y0e02b 2 dist=" << d << logs::end;
+    d = gp2_2_.getDistanceMm();
+    if (d < 0) {
+        //logger().error() << "ERROR : front() : getDistanceMm neg!" << logs::end;
+    } else {
+        logger().debug() << "gp2y0e02b 2 dist=" << d << logs::end;
 //        if (d < 250)
 //            front = true;
-}
-}
+    }
 
-
+    //TODO return
+}
 
 /*
  long SensorsDriver::write_i2c(unsigned char command, unsigned char value)

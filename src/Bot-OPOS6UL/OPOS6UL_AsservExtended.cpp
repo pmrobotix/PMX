@@ -18,14 +18,14 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 void OPOS6UL_AsservExtended::resetDisplayTS()
 {
     robot_extended_->actions().ledBar().resetAll();
-    robot_extended_->actions().lcd2x16().clear();
+    //robot_extended_->actions().lcd2x16().clear();
 
 }
 
 void OPOS6UL_AsservExtended::displayTS(TRAJ_STATE ts)
 {
     robot_extended_->actions().ledBar().setOn(ts);
-
+/*
     robot_extended_->actions().lcd2x16().home();
     if (ts == TRAJ_OK) {
         robot_extended_->actions().lcd2x16().println("TRAJ_OK");
@@ -44,7 +44,7 @@ void OPOS6UL_AsservExtended::displayTS(TRAJ_STATE ts)
     }
     if (ts == TRAJ_NEAR_OBSTACLE) {
         robot_extended_->actions().lcd2x16().println("TRAJ_NEAR_OBSTACLE");
-    }
+    }*/
 
     //sleep(1);
 }

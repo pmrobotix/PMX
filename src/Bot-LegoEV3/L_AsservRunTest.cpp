@@ -1,15 +1,16 @@
 #include "L_AsservRunTest.hpp"
 
-#include <cstdlib>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
 
+#include "../Common/Action/Actions.hpp"
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
-#include "../Common/Utils/Chronometer.hpp"
-#include "../Log/Logger.hpp"
+#include "../Common/State/Automate.hpp"
 #include "L_State_WaitEndOfMatch.hpp"
+#include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
@@ -62,21 +63,31 @@ void L_AsservRunTest::run(int argc, char** argv)
 
     robot.asserv().startMotionTimerAndOdo(true);
 
+    logger().info() << "COORD 0,300" << logs::end;
     robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
     robot.svgPrintPosition();
 
     chrono.start();
-    //robot.actions().start();
-    //robot.actions().sensors().startSensors();
 
-    IAutomateState* stateWaitEndOfMatch = new L_State_WaitEndOfMatch();
-    stateWaitEndOfMatch->execute(robot);
+    logger().info() << "COORD x,300 avec x=" << x << logs::end;
 
-    robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
+    robot.actions().start();
+    robot.actions().addAction(new TestActionRun(*this));
 
-    //robot.asserv().doLineAbsGoal(x, x, 300);
-    //robot.asserv().doLineAbs(x);
+    robot.asserv().ignoreFrontCollision(false);
+    robot.asserv().ignoreRearCollision(true);
+    TRAJ_STATE ts;
+    while ((ts = robot.asserv().doMoveForwardAndRotateTo(x, 300, 0)) != TRAJ_OK)
+    {
+        robot.svgPrintPosition();
+        robot.actions().ledBar().set(0, LED_AMBER);
+        logger().info() << "attente trajstate=" << ts << logs::end;
+        //break;
+        //robot.asserv().freeMotion();
+        sleep(4);
+        robot.actions().ledBar().setOff(0);
+    }
 
     left = robot.asserv().base()->encoders().getLeftEncoder();
     right = robot.asserv().base()->encoders().getRightEncoder();
@@ -86,70 +97,31 @@ void L_AsservRunTest::run(int argc, char** argv)
 
     robot.svgPrintPosition();
 
-    /*
-     robot.asserv().doMoveBackwardTo(0, 300);
-
-     left = robot.asserv().base()->encoders().getLeftEncoder();
-     right = robot.asserv().base()->encoders().getRightEncoder();
-     logger().info() << "time= "
-     << chrono.getElapsedTimeInMilliSec()
-     << "ms ; left= "
-     << left
-     << " ; right= "
-     << right
-     << " x="
-     << robot.asserv().pos_getX_mm()
-     << " y="
-     << robot.asserv().pos_getY_mm()
-     << " a="
-     << robot.asserv().pos_getThetaInDegree()
-     << logs::end;
-
-     robot.svgPrintPosition();
-
-     sleep(3);
-
-     robot.asserv().doMoveForwardTo(x, 300);
-
-     left = robot.asserv().base()->encoders().getLeftEncoder();
-     right = robot.asserv().base()->encoders().getRightEncoder();
-     logger().info() << "time= "
-     << chrono.getElapsedTimeInMilliSec()
-     << "ms ; left= "
-     << left
-     << " ; right= "
-     << right
-     << " x="
-     << robot.asserv().pos_getX_mm()
-     << " y="
-     << robot.asserv().pos_getY_mm()
-     << " a="
-     << robot.asserv().pos_getThetaInDegree()
-     << logs::end;
-
-     robot.svgPrintPosition();
-
-     robot.asserv().doMoveBackwardTo(0, 300);
-
-     left = robot.asserv().base()->encoders().getLeftEncoder();
-     right = robot.asserv().base()->encoders().getRightEncoder();
-     logger().info() << "time= "
-     << chrono.getElapsedTimeInMilliSec()
-     << "ms ; left= "
-     << left
-     << " ; right= "
-     << right
-     << " x="
-     << robot.asserv().pos_getX_mm()
-     << " y="
-     << robot.asserv().pos_getY_mm()
-     << " a="
-     << robot.asserv().pos_getThetaInDegree()
-     << logs::end;
-
-     robot.svgPrintPosition();
-     */
     robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 
+TestActionRun::TestActionRun(L_AsservRunTest & amt) :
+        amt_(amt), chrono_("TestActionRun")
+{
+    chrono_.start();
+    i_ = 0;
+}
+
+//execution de la tâche
+bool TestActionRun::execute()
+{
+    logger().info() << " !!!!! execution time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    logger().info() << "ACTIVATION DETECTION ADVERSAIRE !" << logs::end;
+
+    //robot.actions().sensors().startSensors();
+
+    Automate automate;
+    IAutomateState* stateWaitEndOfMatch = new L_State_WaitEndOfMatch();
+    // Start the automate and wait for its return
+    automate.run(robot, stateWaitEndOfMatch);
+
+    return false;
+
+}

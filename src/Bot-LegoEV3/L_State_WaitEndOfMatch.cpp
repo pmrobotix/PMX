@@ -1,7 +1,8 @@
 #include "L_State_WaitEndOfMatch.hpp"
 
+#include <stdio.h>
+#include <sys/types.h>
 #include <unistd.h>
-#include <cstdlib>
 
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/Tirette.hpp"
@@ -28,10 +29,9 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     bool front = false;
     bool rear = false;
 
-    uint c=0;
+    uint c = 0;
 
-    while (robot.chrono().getElapsedTimeInSec() <= 100)
-    {
+    while (robot.chrono().getElapsedTimeInSec() <= 100) {
 
         //test ARU
         if (robot.actions().tirette().pressed()) {
@@ -57,7 +57,8 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 
         usleep(100000);
         if (c % 10 == 0)
-            this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << " front=" << front << " rear=" << rear<< logs::end;
+            this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << " front=" << front << " rear="
+                    << rear << logs::end;
 
         c++;
     }
@@ -67,7 +68,10 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 
     robot.end90s(true); //indique que l'action est effectuée au prog princ
     logger().info() << "cancel decisionmaker" << logs::end;
-    robot.decisionMaker_->cancel();
+
+    if (robot.decisionMaker_ != NULL)
+        //if (robot.decisionMaker_->state() == utils::CREATED)
+            robot.decisionMaker_->cancel();
 
     //init robot for end
     robot.freeMotion(); //stop the robot
@@ -77,5 +81,6 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     robot.svgPrintEndOfFile();
 
     robot.stopAll(); //stop asserv and actionManagerTimer
+    printf("555\n");
     return NULL; //finish all state
 }

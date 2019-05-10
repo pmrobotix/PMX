@@ -29,6 +29,8 @@ SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name)
     lasttime_ = 0;
     timeSpan_ms_ = timeSpan_ms;
     logger().debug() << "timeSpan_ms=" << timeSpan_ms << logs::end;
+    lastdetect_front_nb_ = 0;
+    lastdetect_back_nb_ = 0;
 }
 
 bool Sensors::front()
@@ -36,42 +38,96 @@ bool Sensors::front()
     return sensorsdriver->front();
 }
 
+bool Sensors::frontVeryClosed()
+{
+    return sensorsdriver->frontVeryClosed();
+}
+
 bool Sensors::rear()
 {
     return sensorsdriver->rear();
 }
 
-void Sensors::startSensors()
+bool Sensors::rearVeryClosed()
+{
+    return sensorsdriver->rearVeryClosed();
+}
+
+void Sensors::addTimerSensors()
 {
     logger().debug() << "startSensors" << logs::end;
 
-    this->actions().addTimer(new SensorsTimer(*this, 800, "sensors"));
-
-}
-
-void Sensors::stopSensors()
-{
+    this->actions().addTimer(new SensorsTimer(*this, 300, "sensors"));
 
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-    logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us" << logs::end;
 
     bool front = sensors_.front();
-
+    bool frontVeryclosed = sensors_.frontVeryClosed();
     if (front) {
-        sensors_.robot()->asserv_default->base()->motors().stopMotors();
         //send collision to asserv
-        sensors_.robot()->asserv_default->setFrontCollision();
+        if (lastdetect_front_nb_ == 0) {
+
+            if (!sensors_.robot()->asserv_default->getIgnoreFrontCollision()) {
+                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+                sensors_.robot()->asserv_default->setFrontCollision();
+                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+
+                sensors_.robot()->asserv_default->setLowSpeed(true);
+            }
+        }
+        lastdetect_front_nb_++;
+    } else {
+        lastdetect_front_nb_ = 0;
+        sensors_.robot()->asserv_default->setLowSpeed(false);
     }
 
-    bool rear = sensors_.rear();
+    //cas nearest
+    if (lastdetect_front_nb_ > 0) {
+        if (frontVeryclosed) {
 
+            if (!sensors_.robot()->asserv_default->getIgnoreFrontCollision()) {
+                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+                sensors_.robot()->asserv_default->setFrontCollision();
+                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            }
+
+        }
+    }
+
+    //ARRIERE/////////////////////////////////////////////////////////////////
+    bool rear = sensors_.rear();
+    bool rearVeryclosed = sensors_.rearVeryClosed();
     if (rear) {
         //send collision to asserv
-        sensors_.robot()->asserv_default->setRearCollision();
+
+        if (lastdetect_back_nb_ == 0) {
+
+            if (!sensors_.robot()->asserv_default->getIgnoreRearCollision()) {
+                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+                sensors_.robot()->asserv_default->setRearCollision();
+                //sensors_.robot()->asserv_default->setLowSpeed(true); //TODO a faire en arrière parceque ca interfere avec la partie au dessus
+            }
+        }
+        lastdetect_back_nb_++;
+    } else {
+        lastdetect_back_nb_ = 0;
+        //sensors_.robot()->asserv_default->setLowSpeed(false);
     }
+
+    if (lastdetect_back_nb_ > 0) {
+        if (rearVeryclosed) {
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            if (!sensors_.robot()->asserv_default->getIgnoreRearCollision())
+                sensors_.robot()->asserv_default->setRearCollision();
+        }
+    }
+
+    logger().error() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
+            << lastdetect_front_nb_ << " front=" << front << " rear=" << rear << "  frontVeryclosed=" << frontVeryclosed
+            << logs::end;
 }
 
 void SensorsTimer::onTimerEnd(utils::Chronometer chrono)

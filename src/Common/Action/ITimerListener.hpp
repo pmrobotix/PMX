@@ -70,6 +70,7 @@ protected:
 
 	std::string name_;
 
+
 	/*!
 	 * \brief Constructeur de la classe.
 	 */

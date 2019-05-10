@@ -31,8 +31,7 @@ O_State_Init::execute(Robot&)
         while (!robot.actions().tirette().pressed()) {
             usleep(10000);
             b = robot.actions().buttonBar().checkOneOfAllPressed();
-            if (b == BUTTON_BACK_KEY)
-            {
+            if (b == BUTTON_BACK_KEY) {
                 robot.actions().lcd2x16().home();
                 robot.actions().lcd2x16().clear();
                 robot.actions().lcd2x16().print("EXIIIIIIT !");
@@ -97,15 +96,12 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().print("WAIT TIRETTE...");
         logger().info() << "PMX...WAIT TIRETTE !";
-        if (robot.getMyColor() == PMXVIOLET)
-        {
-            robot.actions().lcd2x16().setCursor(0,1);
+        if (robot.getMyColor() == PMXVIOLET) {
+            robot.actions().lcd2x16().setCursor(0, 1);
             robot.actions().lcd2x16().print("=>  VIOLET !");
             logger().info() << " VIOLET";
-        }
-        else
-        {
-            robot.actions().lcd2x16().setCursor(0,1);
+        } else {
+            robot.actions().lcd2x16().setCursor(0, 1);
             robot.actions().lcd2x16().print("=>  YELLOW !");
             logger().info() << "YELLOW";
         }
@@ -155,14 +151,16 @@ O_State_Init::execute(Robot&)
     robot.actions().lcd2x16().clear();
     //robot.actions().lcd2x16().setBacklightOff();
     robot.actions().lcd2x16().setBacklightOn();
-    robot.actions().lcd2x16().setCursor(0,0);
+    robot.actions().lcd2x16().setCursor(0, 0);
     robot.actions().lcd2x16().home();
     robot.actions().lcd2x16().print("GO...");
-
 
     logger().info() << "on ferme les cils" << logs::end;
     robot.actions().ax12_left_cil(0);
     robot.actions().ax12_right_cil();
+
+    robot.points += 40; //35 +5
+    robot.displayPoints(robot.points);
 
     logger().info() << "O_StateInit executed" << logs::end;
     return this->getState("WaitEndOfMatch"); //return NULL; //finish all state
@@ -175,22 +173,27 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().print("SET POSITION...");
 
-    robot.actions().ax12_left_cil_retract(0);
-    robot.actions().ax12_right_cil_retract();
+    robot.actions().ax12_leftHand();
+    robot.actions().ax12_rightHand();
+    robot.actions().ax12_left_cil_retract();
+    robot.actions().ax12_right_cil_retract(-1);
 
-    robot.actions().ax12_left_cil(0);
-    robot.actions().ax12_right_cil();
+    robot.actions().ax12_leftHand_retract();
+    robot.actions().ax12_rightHand_retract();
+    robot.actions().ax12_left_cil();
+    robot.actions().ax12_right_cil(-1);
 
-    sleep(1);
-    robot.actions().ax12_left_cil_retract(0);
+    robot.actions().ax12_left_cil_retract();
     robot.actions().ax12_right_cil_retract();
 
     //demi largeur 150
     robot.asserv().startMotionTimerAndOdo(false);
+
     robot.actions().lcd2x16().clear();
     robot.asserv().setPositionAndColor(70, 450, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
+    robot.asserv().setLowSpeed(false); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
 
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);

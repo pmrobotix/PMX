@@ -49,6 +49,14 @@ void OPOS6UL_RobotExtended::stopExtraActions()
 
 }
 
+void OPOS6UL_RobotExtended::displayPoints(int points)
+{
+    this->actions().lcd2x16().clear();
+    this->actions().lcd2x16().setCursor(0, 0);
+    this->actions().lcd2x16().print("Points = ");
+    this->actions().lcd2x16().print(points);
+}
+
 void OPOS6UL_RobotExtended::begin(int argc, char** argv)
 {
     Robot::begin(argc, argv);
@@ -74,7 +82,7 @@ void OPOS6UL_RobotExtended::begin(int argc, char** argv)
         decisionMaker_->waitForEnd();
     }
 
-    logger().info() << "PMX OPOS6UL_RobotExtended - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec" << logs::end;
+    logger().info() << "PMX OPOS6UL_RobotExtended - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec"
+            << logs::end;
 }
-
 

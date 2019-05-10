@@ -16,6 +16,10 @@ public:
 
     virtual bool rear() = 0; //TODO renommer back ??
 
+    virtual bool frontVeryClosed() = 0;
+
+    virtual bool rearVeryClosed() = 0;
+
     /*!
      * \brief Destructor.
      */

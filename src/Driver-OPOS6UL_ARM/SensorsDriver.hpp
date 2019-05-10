@@ -58,8 +58,11 @@ public:
 	 */
 	~SensorsDriver();
 
+
 	bool front();
 	bool rear();
+	bool frontVeryClosed();
+	bool rearVeryClosed();
 
 	bool gp2();
 

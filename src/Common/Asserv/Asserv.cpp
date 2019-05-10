@@ -138,9 +138,18 @@ void Asserv::ignoreFrontCollision(bool ignore) //TODO rename setIgnoreFrontColli
     ignoreFrontCollision_ = ignore;
 }
 
-void Asserv::ignoreRearCollision(bool ignore) //TODO rename setIgnoreRearCollision
+void Asserv::ignoreRearCollision(bool ignore) //TODO rename setIgnoreBackCollision
 {
     ignoreRearCollision_ = ignore;
+}
+
+bool Asserv::getIgnoreRearCollision()
+{
+    return ignoreRearCollision_;
+}
+bool Asserv::getIgnoreFrontCollision()
+{
+    return ignoreFrontCollision_;
 }
 
 RobotPosition Asserv::pos_getPosition()
@@ -329,7 +338,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
 {
     float dx = getRelativeX(xMM) - pos_getX_mm();
     float dy = yMM - pos_getY_mm();
-    if (std::abs(dx) < 0.1 && std::abs(dy) < 0.1) { //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
+    if (std::abs(dx) < 1.0 && std::abs(dy) < 1.0) { //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
         return TRAJ_OK;
     }
     float aRadian = atan2(dy, dx);
@@ -345,6 +354,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
+    logger().error() << " __doMoveForwardAndRotateTo"  << logs::end;
     TRAJ_STATE ts;
     ts = doMoveForwardTo(xMM, yMM);
     if (ts != TRAJ_OK)

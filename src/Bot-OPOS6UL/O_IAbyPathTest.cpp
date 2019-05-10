@@ -144,7 +144,7 @@ void O_IAByPathTest::run(int argc, char** argv)
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
     robot.actions().start();
-    robot.actions().sensors().startSensors();
+    robot.actions().sensors().addTimerSensors();
 
     robot.chrono().start();
     robot.ia().iAbyPath().ia_start(); //launch IA

@@ -60,6 +60,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_AsservLineRotateTest", "console");
     add(logs::Level::INFO, "TestAction", "console");
     add(logs::Level::INFO, "TestTimer", "console");
+    add(logs::Level::INFO, "TestActionRun", "console");
 
     add(logs::Level::INFO, "L_Asserv_FindPIDTest", "console");
     add(logs::Level::INFO, "L_Asserv_SetResolutionTest", "console");

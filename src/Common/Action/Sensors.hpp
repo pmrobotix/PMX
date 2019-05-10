@@ -51,9 +51,12 @@ public:
 
     bool rear();
 
-    void startSensors();
+    bool frontVeryClosed();
 
-    void stopSensors();
+    bool rearVeryClosed();
+
+    //Ajoute le timer des sensors de detection
+    void addTimerSensors();
 
 };
 
@@ -80,6 +83,9 @@ private:
     Sensors & sensors_;
 
     utils::Chronometer chrono_;
+
+    int lastdetect_front_nb_;
+    int lastdetect_back_nb_;
 
 public:
 

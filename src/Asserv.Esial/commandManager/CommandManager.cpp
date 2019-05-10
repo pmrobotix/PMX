@@ -50,7 +50,7 @@ bool CommandManager::addGoTo(int32_t posXInmm, int32_t posYInmm)
 
 bool CommandManager::addGoToBack(int32_t posXInmm, int32_t posYInmm)
 {
-    return liste->enqueue(CMD_GOTO_BACK , Utils::mmToUO(odometrie, posXInmm) , Utils::mmToUO(odometrie, posYInmm));
+    return liste->enqueue(CMD_GOTO_BACK, Utils::mmToUO(odometrie, posXInmm), Utils::mmToUO(odometrie, posYInmm));
 }
 
 bool CommandManager::addGoToEnchainement(int32_t posXInmm, int32_t posYInmm)
@@ -86,7 +86,7 @@ void CommandManager::perform()
     if (!cnsgCtrl->areRampsFinished()) {
         // On est forcément en train d'exécuter une consigne, on vérifie
         // si on est pas bloqué
-        if(cnsgCtrl->isBlocked()) {
+        if (cnsgCtrl->isBlocked()) {
             commandStatus = STATUS_BLOCKED;
         } else {
             commandStatus = STATUS_RUNNING;
@@ -210,7 +210,7 @@ void CommandManager::computeGoToBack()
     double deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
     double deltaY = currCMD.secValue - odometrie->getY();  // Différence entre la cible et le robot selon Y
 
-    // Valeur absolue de la distance à parcourir en allant tout droit pour atteindre la consigne
+            // Valeur absolue de la distance à parcourir en allant tout droit pour atteindre la consigne
     int64_t deltaDist = computeDeltaDist(deltaX, deltaY);
 
     // La différence entre le thetaCible (= cap à atteindre) et le theta (= cap actuel du robot) donne l'angle à parcourir
@@ -225,15 +225,13 @@ void CommandManager::computeGoToBack()
 
     // On utilise -projectedDist et -deltaDist parc qu'on veut reculer
     if (deltaDist < Utils::mmToUO(odometrie, Config::returnThreshold)) {
-        consigne_dist =  cnsgCtrl->getAccuDist() - projectedDist;
+        consigne_dist = cnsgCtrl->getAccuDist() - projectedDist;
         cnsgCtrl->set_dist_consigne(consigne_dist);
     } else {
-        cnsgCtrl->set_angle_consigne(
-            Utils::radToUO(odometrie, deltaTheta) + cnsgCtrl->getAccuAngle()
-        ) ; //on se met dans la bonne direction
+        cnsgCtrl->set_angle_consigne(Utils::radToUO(odometrie, deltaTheta) + cnsgCtrl->getAccuAngle()); //on se met dans la bonne direction
 
-        //printf("dT=%ldd - ",Utils::radToUO(odometrie, deltaTheta) + cnsgCtrl->getAccuAngle());
-        //printf("Td=%f - aT=%f\n", fabs( thetaCible - odometrie->getTheta()), Config::angleThreshold);
+                //printf("dT=%ldd - ",Utils::radToUO(odometrie, deltaTheta) + cnsgCtrl->getAccuAngle());
+                //printf("Td=%f - aT=%f\n", fabs( thetaCible - odometrie->getTheta()), Config::angleThreshold);
         if (fabs(deltaTheta) < Config::angleThreshold) {
             consigne_dist = cnsgCtrl->getAccuDist() - deltaDist;
         } else {
@@ -296,7 +294,7 @@ int64_t CommandManager::computeDeltaDist(double deltaX, double deltaY)
 
     // Valeur absolue de la distance à parcourir en allant tout droit pour atteindre la consigne
     if (max != 0) {
-        return (int64_t)(max * sqrt(1.0 + (min / max) * (min / max)));
+        return (int64_t) (max * sqrt(1.0 + (min / max) * (min / max)));
     } else {
         return 0;
     }
@@ -329,6 +327,9 @@ void CommandManager::computeEnchainement()
 
 void CommandManager::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgence
 {
+    cnsgCtrl->setQuadRamp_Angle(false); //Ajouter cho 2019
+    cnsgCtrl->setQuadRamp_Dist(false);
+
     cnsgCtrl->set_dist_consigne(cnsgCtrl->getAccuDist());
     cnsgCtrl->set_angle_consigne(cnsgCtrl->getAccuAngle());
 
@@ -341,9 +342,11 @@ void CommandManager::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgen
 
 void CommandManager::resetEmergencyStop()
 {
-    if(commandStatus == STATUS_HALTED) {
+    if (commandStatus == STATUS_HALTED) {
         commandStatus = STATUS_IDLE;
     }
+    cnsgCtrl->setQuadRamp_Angle(true); //Ajouter cho 2019
+    cnsgCtrl->setQuadRamp_Dist(true);
 }
 
 int CommandManager::getPendingCommandCount()
@@ -352,8 +355,7 @@ int CommandManager::getPendingCommandCount()
     int count = liste->size();
 
     // On n'oublie pas l'éventuelle commande suivante
-    if(nextCMD.type != CMD_NULL)
-    {
+    if (nextCMD.type != CMD_NULL) {
         count++;
     }
 

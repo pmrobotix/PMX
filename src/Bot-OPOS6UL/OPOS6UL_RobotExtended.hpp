@@ -55,6 +55,7 @@ public:
 
     void stopExtraActions();
 
+    void displayPoints(int points);
 
     int points;
 

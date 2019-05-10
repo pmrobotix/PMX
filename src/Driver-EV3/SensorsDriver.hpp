@@ -42,6 +42,9 @@ public:
     bool front();
     bool rear();
 
+    bool frontVeryClosed();
+    bool rearVeryClosed();
+
 };
 
 #endif

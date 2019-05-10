@@ -57,7 +57,6 @@ bool L_take_grand_distributeur()
     robot.asserv().ignoreRearCollision(true);
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
 
-
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK)
         return false;
@@ -70,6 +69,30 @@ bool L_take_grand_distributeur()
     //position vert1
     ts = robot.asserv().doMoveForwardTo(500, 1415);
     robot.svgPrintPosition();
+    if (robot.getMyColor() == PMXVIOLET)
+    {
+    robot.logger().info() << "conveyorBelt_Left_low" << logs::end;
+    robot.actions().conveyorBelt_Left_low(true);
+    sleep(2);
+    robot.logger().info() << "left_arm_take" << logs::end;
+    robot.actions().left_arm_take();
+    robot.logger().info() << "left_arm_retract" << logs::end;
+    robot.actions().left_arm_retract();
+    //2nd time
+    robot.logger().info() << "left_arm_take" << logs::end;
+    robot.actions().left_arm_take();
+    robot.logger().info() << "left_arm_retract" << logs::end;
+    robot.actions().left_arm_retract();
+    robot.actions().conveyorBelt_PushRight(1000);
+    }else
+    {
+
+    }
+
+
+
+
+
 
     //position bleu
     ts = robot.asserv().doMoveForwardTo(680, 1415);

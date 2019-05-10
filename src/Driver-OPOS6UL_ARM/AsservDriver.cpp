@@ -281,7 +281,7 @@ RobotPosition AsservDriver::mbed_GetPosition() //en metre
 int AsservDriver::path_GetLastCommandStatus()
 {
     //TODO deprecated ?
-    return 0;
+    return -1;
 }
 void AsservDriver::path_InterruptTrajectory()
 {
@@ -302,7 +302,7 @@ void AsservDriver::path_CollisionOnTrajectory()
     else {
         logger().error() << "path_CollisionOnTrajectory() HALT " << asservMbedStarted_ << logs::end;
         mbed_writeI2c('h', 0, NULL);
-        pathStatus_ = TRAJ_COLLISION;
+        pathStatus_ = TRAJ_NEAR_OBSTACLE;
         usleep(300000);
         mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
@@ -316,7 +316,7 @@ void AsservDriver::path_CollisionRearOnTrajectory()
                 << logs::end;
     else {
         mbed_writeI2c('h', 0, NULL);
-        pathStatus_ = TRAJ_COLLISION;
+        pathStatus_ = TRAJ_NEAR_OBSTACLE;
         usleep(300000);
         mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
@@ -375,7 +375,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 //0 idle
 //1 running
 //2 emergency stop
-//3 blocked //TODO à coder
+//3 blocked
 
 //old
 //asservStatus 0 = running
@@ -403,7 +403,7 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
     }
 
     if (p_.asservStatus == 3) {
-        return TRAJ_CANCELLED;
+        return TRAJ_COLLISION;
     }
     return pathStatus_;
 
@@ -519,8 +519,8 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
 void AsservDriver::motion_setLowSpeed(bool enable)
 {
     unsigned char d[4];
-    unsigned char back_div = 3;
-    unsigned char forw_div = 3;
+    unsigned char back_div = 6;
+    unsigned char forw_div = 6;
     if (enable) {
         d[0] = 1;
         d[1] = back_div;
