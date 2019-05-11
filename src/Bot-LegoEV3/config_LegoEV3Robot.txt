@@ -14,7 +14,7 @@ configVersion = 2019031601
 //--------------------------//
 
 //Période de l'asservissement en sec : T=1/f
-asservPeriod = 0.020
+asservPeriod = 0.017
 
 // Désactivation du command manager (le robot n'est plus asservi mais l'odométrie est toujours active)
 disableAsserv = false
@@ -96,7 +96,6 @@ V_MAX_NEG_MOTOR = -100
 
 // EV3 : 1 a 100
 V_MIN_POS_MOTOR = 50
-
 // EV3 : -1 a -100
 V_MIN_NEG_MOTOR = -50
 
@@ -119,13 +118,13 @@ swapMoteurs = false
 
 
 // Coeff proportionelle //mini 130 pour atteindre le 100%
-DIST_KP = 100
+DIST_KP = 130
 
 // Coeff intégrale
 DIST_KI = 0
 
 // Coeff dérivée//old1500 350 550
-DIST_KD = 450
+DIST_KD = 550
 
 // Coeff permettant de diminuer les valeurs du PID 
 DIST_OUT_RATIO = 0.000001
@@ -141,13 +140,13 @@ DIST_MAX_INTEGRAL = 0
 
 
 // Coeff proportionelle //mini 95 pour atteindre le 100% 140
-ANGLE_KP = 120
+ANGLE_KP = 140
 
 // Coeff intégrale
 ANGLE_KI = 0
 
 // Coeff dérivée//old500 315 420
-ANGLE_KD = 220
+ANGLE_KD = 820
 
 // Coeff permettant de diminuer les valeurs du PID
 ANGLE_OUT_RATIO = 0.000001
@@ -175,7 +174,7 @@ DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 260000
 
 
 // Vitesse max en marche arrière
-DIST_QUAD_1ST_NEG = 500000
+DIST_QUAD_1ST_NEG = 1000000
 
 
 // Accélération max en marche arrière
@@ -188,7 +187,7 @@ DIST_QUAD_AR_2ND_DEC = 20000
 DIST_QUAD_AR_ANTICIPATION_GAIN_COEF = 260000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-DIST_TAILLE_FENETRE_ARRIVEE = 50000
+DIST_TAILLE_FENETRE_ARRIVEE = 100000
 
 // Diviseur pour la vitesse faible en marche avant
 DIST_QUAD_AV_LOW_DIV = 0
@@ -212,7 +211,7 @@ ANGLE_QUAD_2ND_DEC = 10000
 ANGLE_QUAD_ANTICIPATION_GAIN_COEF = 260000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-ANGLE_TAILLE_FENETRE_ARRIVEE = 100000
+ANGLE_TAILLE_FENETRE_ARRIVEE = 200000
 
 
 //--------------------------//
@@ -220,10 +219,10 @@ ANGLE_TAILLE_FENETRE_ARRIVEE = 100000
 //--------------------------//
 
 // Seuil de détection du blocage pour la distance (en UO/tick)
-BLOCK_DIST_SPEED_THRESHOLD = 1024
+BLOCK_DIST_SPEED_THRESHOLD = 2048
 
 // Seuil de détection du blocage pour l'angle (en UO/tick)
-BLOCK_ANGLE_SPEED_THRESHOLD = 1024
+BLOCK_ANGLE_SPEED_THRESHOLD = 2048
 
 // Si on ne bouge pas pendant ce nombre de tick, on signale l'info
-BLOCK_TICK_THRESHOLD = 20
+BLOCK_TICK_THRESHOLD = 30

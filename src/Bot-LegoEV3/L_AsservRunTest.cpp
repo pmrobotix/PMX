@@ -85,7 +85,7 @@ void L_AsservRunTest::run(int argc, char** argv)
         logger().info() << "attente trajstate=" << ts << logs::end;
         //break;
         //robot.asserv().freeMotion();
-        sleep(4);
+        sleep(2);
         robot.actions().ledBar().setOff(0);
     }
 

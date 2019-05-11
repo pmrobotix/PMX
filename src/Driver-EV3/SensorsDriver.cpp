@@ -29,7 +29,7 @@ SensorsDriver::~SensorsDriver()
 
 bool SensorsDriver::front() //todo renvoyer la valeur min de front ?? fusionner avec frontVeryClosed
 {
-    int seuil = 250;
+    int seuil = 280;
     bool temp = 0;
 
     double mm1 = IR_1_AV_D.getDistanceMM();
@@ -38,7 +38,7 @@ bool SensorsDriver::front() //todo renvoyer la valeur min de front ?? fusionner 
     logger().debug() << "IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
 
     if (mm1 < seuil || mm2 < seuil) {
-        logger().info() << "=> IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
+        logger().debug() << "=> IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
         temp = 1;
     }
     return temp;
@@ -47,7 +47,7 @@ bool SensorsDriver::front() //todo renvoyer la valeur min de front ?? fusionner 
 
 bool SensorsDriver::rear()
 {
-    int seuil = 200;
+    int seuil = 250;
     bool temp = 0;
     double mm3 = IR_3_AR_D.getDistanceMM();
     double mm4 = IR_4_AR_G.getDistanceMM();
@@ -55,7 +55,7 @@ bool SensorsDriver::rear()
     logger().debug() << "IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
 
     if (mm3 < seuil || mm4 < seuil) {
-        logger().info() << "=> IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
+        logger().debug() << "=> IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
         temp = 1;
     }
     return temp;
@@ -78,7 +78,6 @@ bool SensorsDriver::rear()
 
 bool SensorsDriver::frontVeryClosed()
 {
-    int seuil = 130;
     bool temp = 0;
 
     double mm1 = IR_1_AV_D.getDistanceMM();
@@ -86,7 +85,7 @@ bool SensorsDriver::frontVeryClosed()
 
     logger().debug() << "IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
 
-    if (mm1 < 90 || mm2 < 130) {
+    if (mm1 < 100 || mm2 < 130) {
         logger().info() << "=> IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
         temp = 1;
     }
@@ -94,14 +93,14 @@ bool SensorsDriver::frontVeryClosed()
 }
 bool SensorsDriver::rearVeryClosed()
 {
-    int seuil = 140;
+
     bool temp = 0;
     double mm3 = IR_3_AR_D.getDistanceMM();
     double mm4 = IR_4_AR_G.getDistanceMM();
 
     logger().debug() << "IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
 
-    if (mm3 < 120 || mm4 < 90) {
+    if (mm3 < 140 || mm4 < 120) {
         logger().info() << "=> IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
         temp = 1;
     }

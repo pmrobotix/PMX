@@ -187,6 +187,8 @@ float Asserv::pos_getThetaInDegree()
 {
     return (pos_getTheta() * 180.0f) / M_PI;
 }
+
+//TODO Configuration à faire par robot !
 bool Asserv::filtreInsideTable(float metre)
 {
     //On filtre si c'est pas à l'exterieur du terrain
@@ -211,8 +213,6 @@ bool Asserv::filtreInsideTable(float metre)
 
 void Asserv::setFrontCollision()
 {
-    logger().debug() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_
-            << "   forceRotation_="<< forceRotation_<< logs::end;
 
     if (forceRotation_)
         return;
@@ -222,6 +222,8 @@ void Asserv::setFrontCollision()
     if (filtreInsideTable(metre)) {
 
         if (!ignoreFrontCollision_) {
+            logger().error() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_
+                    << "   forceRotation_=" << forceRotation_ << logs::end;
 
             if (useAsservType_ == ASSERV_INT_INSA)
                 pAsservInsa_->path_CollisionOnTrajectory();
@@ -461,6 +463,25 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
         assistedHandling();
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         logger().error() << "TODO doCalage ASSERV_INT_ESIALR !!!" << logs::end;
+        //set low speed
+        pAsservEsialR_->motion_setLowSpeed(true);
+
+        pAsservEsialR_->motion_ActivateReguAngle(false);
+
+        pAsservEsialR_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
+        sleep(tempo);
+        pAsservEsialR_->path_CancelTrajectory();
+        pAsservEsialR_->path_ResetEmergencyStop();
+
+        //reset
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+
+        //reactive
+        pAsservEsialR_->motion_ActivateReguAngle(true);
+        pAsservEsialR_->motion_setLowSpeed(false);
+
+        assistedHandling();
     }
 
     return TRAJ_ERROR;

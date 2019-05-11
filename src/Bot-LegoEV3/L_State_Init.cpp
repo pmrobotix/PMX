@@ -90,12 +90,9 @@ L_State_Init::execute(Robot&)
         robot.waitForInit(true);
 
         logger().info() << "PMX...WAIT TIRETTE !";
-        if (robot.getMyColor() == PMXVIOLET)
-        {
+        if (robot.getMyColor() == PMXVIOLET) {
             logger().info() << " VIOLET";
-        }
-        else
-        {
+        } else {
             logger().info() << "YELLOW";
         }
         logger().info() << logs::end;
@@ -129,6 +126,15 @@ L_State_Init::execute(Robot&)
         robot.waitForInit(true);
         usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
     }
+    if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.actions().right_arm_take();
+        robot.actions().conveyorBelt_Left_low();
+    } else {
+
+        robot.actions().left_arm_take();
+        robot.actions().conveyorBelt_Right_low();
+    }
 
     robot.actions().ledBar().stopAndWait(true);
 
@@ -145,9 +151,15 @@ void L_State_Init::setPos()
 
     logger().info() << "setPos() executing" << logs::end;
 
-    //TODO int des objects
+    //init des objects
+    robot.actions().conveyorBelt_Left_center();
+    robot.actions().left_arm_retract();
+        robot.actions().right_arm_retract();
+    if (robot.getMyColor() == PMXVIOLET) {
 
+    } else {
 
+    }
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(45, 718, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();

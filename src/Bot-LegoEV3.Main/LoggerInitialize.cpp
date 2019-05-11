@@ -69,6 +69,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_AsservRunTest", "console");
     add(logs::Level::INFO, "L_IATest", "console");
     add(logs::Level::INFO, "L_ServoObjectTest", "console");
+    add(logs::Level::INFO, "L_Asserv_CalageTest", "console");
+
 
     //DRIVERS SIMU
     add(logs::Level::INFO, "LedDriver.SIMU", "console");

@@ -52,8 +52,9 @@ bool L_take_grand_distributeur()
 
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
+    int f = 0;
 
-    robot.asserv().ignoreFrontCollision(false);
+    robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
 
@@ -61,46 +62,111 @@ bool L_take_grand_distributeur()
     if (ts != TRAJ_OK)
         return false;
 
-    //robot.svgPrintPosition();
+    robot.svgPrintPosition();
 
     robot.asserv().ignoreFrontCollision(true);
     robot.asserv().ignoreRearCollision(true);
 
     //position vert1
-    ts = robot.asserv().doMoveForwardTo(500, 1415);
+    int pos = 0;
+    if (robot.getMyColor() == PMXVIOLET) {
+        pos = 1385;
+    } else
+        pos = 1445;
+    while ((ts = robot.asserv().doMoveForwardTo(510, pos)) != TRAJ_OK) {
+        robot.svgPrintPosition();
+        if (ts == TRAJ_NEAR_OBSTACLE) {
+            robot.logger().error() << " position vert1 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+//            if (f > 2)
+//                return false;
+            f++;
+            usleep(200000);
+        }
+        if (ts == TRAJ_COLLISION) {
+            robot.logger().error() << " position vert1 ===== COLLISION essai n°" << f << logs::end;
+//            if (f >= 1)
+//                return false;
+            f++;
+        }
+    }
     robot.svgPrintPosition();
-    if (robot.getMyColor() == PMXVIOLET)
-    {
-    robot.logger().info() << "conveyorBelt_Left_low" << logs::end;
-    robot.actions().conveyorBelt_Left_low(true);
-    sleep(2);
-    robot.logger().info() << "left_arm_take" << logs::end;
-    robot.actions().left_arm_take();
-    robot.logger().info() << "left_arm_retract" << logs::end;
-    robot.actions().left_arm_retract();
-    //2nd time
-    robot.logger().info() << "left_arm_take" << logs::end;
-    robot.actions().left_arm_take();
-    robot.logger().info() << "left_arm_retract" << logs::end;
-    robot.actions().left_arm_retract();
-    robot.actions().conveyorBelt_PushRight(1000);
-    }else
-    {
+
+    if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.logger().info() << "left_prendre_palet" << logs::end;
+        robot.actions().left_prendre_palet();
+
+    } else {
+
+        robot.logger().info() << "right_prendre_palet" << logs::end;
+        robot.actions().right_prendre_palet();
 
     }
 
-
-
-
-
-
     //position bleu
-    ts = robot.asserv().doMoveForwardTo(680, 1415);
+    robot.asserv().ignoreFrontCollision(true);
+    robot.asserv().ignoreRearCollision(true);
+
+    robot.asserv().doLineAbs(200);
+    if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.logger().info() << "left_prendre_palet" << logs::end;
+        robot.actions().left_prendre_palet();
+
+    } else {
+
+        robot.logger().info() << "right_prendre_palet" << logs::end;
+        robot.actions().right_prendre_palet();
+
+    }
     robot.svgPrintPosition();
 
     //position vert2
-    ts = robot.asserv().doMoveForwardTo(880, 1415);
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.asserv().doLineAbs(210);
+        robot.logger().info() << "left_prendre_palet" << logs::end;
+        robot.actions().left_prendre_palet();
+
+    } else {
+        robot.asserv().doLineAbs(200);
+        robot.logger().info() << "right_prendre_palet" << logs::end;
+        robot.actions().right_prendre_palet();
+
+    }
     robot.svgPrintPosition();
+
+    //Calage balance
+
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.asserv().doLineAbs(200);
+        robot.asserv().doRotateLeft(10);
+        robot.asserv().doCalage(200, 5);
+
+        robot.logger().info() << "left_eject_all" << logs::end;
+        robot.actions().left_eject_all();
+        robot.asserv().doLineAbs(-100);
+        robot.asserv().doRotateRight(170);
+
+    } else {
+        robot.asserv().doLineAbs(210);
+        robot.asserv().doRotateRight(10);
+        robot.asserv().doCalage(200, 5);
+        robot.logger().info() << "right_eject_all" << logs::end;
+        robot.actions().right_eject_all();
+        robot.asserv().doLineAbs(-100);
+        robot.asserv().doRotateLeft(170);
+    }
+
+    robot.asserv().doMoveForwardTo(700, 1300);
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.ia().iAbyPath().enable(robot.ia().area_palet_start_violet, 0);
+    } else {
+        robot.ia().iAbyPath().enable(robot.ia().area_palet_start_yellow, 0);
+    }
+    robot.asserv().doMoveForwardTo(200, 700);
 
     return true; //return true si ok sinon false si interruption
 }
@@ -114,7 +180,10 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     //definition des zones en zone ORANGE uniquement
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_palet", 400, 700, 100, 100, 700, 750, -180);
-    robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1400, 90);
+    if (robot.getMyColor() == PMXVIOLET)
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1385, 90);
+    else
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1420, 90);
 
     //robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
     robot.ia().iAbyPath().ia_addAction("take_grand_distributeur", &L_take_grand_distributeur);

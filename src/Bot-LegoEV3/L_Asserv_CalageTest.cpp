@@ -52,9 +52,10 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     logger().info() << "GO distance calage mm=" << d << logs::end;
-    robot.asserv().doCalage(d, 4);
+    TRAJ_STATE ts = robot.asserv().doCalage(d, 4);
+
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << logs::end;
+            << p.asservStatus << " ts=" << ts<<  logs::end;
     robot.svgPrintPosition();
     /*
      robot.asserv().setPositionAndColor(200.0, 200.0, 45.0, (robot.getMyColor() != PMXORANGE));

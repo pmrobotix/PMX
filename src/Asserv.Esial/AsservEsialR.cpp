@@ -316,7 +316,6 @@ printf("path_CollisionOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
     usleep(300000);
-    //usleep(1000000);
     path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CollisionRearOnTrajectory()
@@ -324,7 +323,6 @@ void AsservEsialR::path_CollisionRearOnTrajectory()
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
     usleep(300000);
-    //usleep(1000000);
     path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CancelTrajectory()
@@ -349,7 +347,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
         usleep(10000);
         timeout++;
-        if (timeout > 50) {
+        if (timeout > 10) {
 
             break;
         }
@@ -363,7 +361,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
         usleep(1000);
         timeout++;
-        if (timeout > 150 && p_.asservStatus != 1) {
+        if (timeout > 10 && p_.asservStatus != 1) {
 
             break;
         }
@@ -436,8 +434,8 @@ void AsservEsialR::motion_ActivateManager(bool enable)
 }
 void AsservEsialR::motion_setLowSpeed(bool enable)
 {
-    unsigned char back_factor = 3;
-    unsigned char forward_factor = 3;
+    unsigned char back_factor = 4;
+    unsigned char forward_factor = 4;
     consignC_->setLowSpeed(enable, back_factor, forward_factor);
 }
 
