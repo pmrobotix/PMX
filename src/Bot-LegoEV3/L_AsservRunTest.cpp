@@ -81,12 +81,18 @@ void L_AsservRunTest::run(int argc, char** argv)
     while ((ts = robot.asserv().doMoveForwardAndRotateTo(x, 300, 0)) != TRAJ_OK)
     {
         robot.svgPrintPosition();
-        robot.actions().ledBar().set(0, LED_AMBER);
+        robot.asserv().displayTS(ts);
         logger().info() << "attente trajstate=" << ts << logs::end;
-        //break;
-        //robot.asserv().freeMotion();
-        sleep(2);
-        robot.actions().ledBar().setOff(0);
+
+
+        bool frontVeryclosed = robot.actions().sensors().frontVeryClosed();
+        while(frontVeryclosed)
+        {
+            sleep(1);
+            frontVeryclosed = robot.actions().sensors().frontVeryClosed();
+
+        }
+        robot.asserv().resetDisplayTS();
     }
 
     left = robot.asserv().base()->encoders().getLeftEncoder();

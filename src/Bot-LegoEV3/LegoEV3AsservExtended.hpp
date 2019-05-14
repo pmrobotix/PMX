@@ -4,7 +4,10 @@
 #include <string>
 
 #include "../Common/Asserv/Asserv.hpp"
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+
+class LegoEV3RobotExtended;
 
 class LegoEV3AsservExtended: public Asserv
 {
@@ -17,9 +20,10 @@ private:
         static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3AsservExtended");
         return instance;
     }
+    LegoEV3RobotExtended * robot_extended_;
 
 public:
-    LegoEV3AsservExtended(std::string botId, Robot * robot);
+    LegoEV3AsservExtended(std::string botId, LegoEV3RobotExtended * robot);
 
     ~LegoEV3AsservExtended()
     {
@@ -27,7 +31,8 @@ public:
 
     void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 
-
+    void resetDisplayTS();
+    void displayTS(TRAJ_STATE ts);
 };
 
 #endif

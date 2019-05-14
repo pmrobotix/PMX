@@ -1,18 +1,40 @@
 #include "LegoEV3AsservExtended.hpp"
 
-#include <cstdio>
+#include <stdio.h>
 
 #include "../Asserv.Esial/AsservEsialR.hpp"
 #include "../Asserv.Esial/config/config.h"
 #include "../Asserv.Insa/AsservInsa.hpp"
+#include "../Common/Action/LedBar.hpp"
+#include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Log/Logger.hpp"
+#include "LegoEV3ActionsExtended.hpp"
+#include "LegoEV3RobotExtended.hpp"
 
-LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, Robot * robot) :
+LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, LegoEV3RobotExtended * robot) :
         Asserv(botId, robot) //on appelle le constructeur pere
 {
     botId_ = botId;
     useAsservType_ = ASSERV_INT_ESIALR;
+    robot_extended_ = robot;
 }
+
+
+void LegoEV3AsservExtended::resetDisplayTS()
+{
+    robot_extended_->actions().ledBar().resetAll();
+    //robot_extended_->actions().ledBar().setOff(0);
+
+}
+
+void LegoEV3AsservExtended::displayTS(TRAJ_STATE ts)
+{
+    if (ts== TRAJ_NEAR_OBSTACLE)
+        robot_extended_->actions().ledBar().set(0, LED_AMBER);
+    if (ts== TRAJ_COLLISION)
+        robot_extended_->actions().ledBar().set(1, LED_RED);
+}
+
 
 void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 {

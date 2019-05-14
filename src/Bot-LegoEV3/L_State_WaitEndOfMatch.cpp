@@ -6,7 +6,6 @@
 
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/Tirette.hpp"
-#include "../Common/Asserv/Asserv.hpp"
 #include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
@@ -15,6 +14,7 @@
 #include "../Thread/Thread.hpp"
 #include "L_State_DecisionMakerIA.hpp"
 #include "LegoEV3ActionsExtended.hpp"
+#include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
 IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
@@ -25,15 +25,16 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
     //démarrage du chrono et des taches du decision maker
-    logger().info() << "Start Chronometer" << logs::end;
+    logger().error() << "Start Chronometer getIgnoreFrontCollision=" << robot.asserv().getIgnoreFrontCollision()
+            << logs::end;
     robot.chrono().start();
 
     bool front = false;
     bool rear = false;
-
     uint c = 0;
-    uint lastdetect_front_nb_ =0;
-    while (robot.chrono().getElapsedTimeInSec() <= 100) {
+    uint lastdetect_front_nb_ = 0;
+    uint lastdetect_rear_nb_ = 0;
+    while (robot.chrono().getElapsedTimeInSec() <= 98) {
 
         //test ARU
         if (robot.actions().tirette().pressed()) {
@@ -57,47 +58,93 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 //            robot.asserv().setRearCollision();
 //        }
         //AVANT
+
         bool front = robot.actions().sensors().front();
         bool frontVeryclosed = robot.actions().sensors().frontVeryClosed();
+
         if (front) {
-            //send collision to asserv
-            if (lastdetect_front_nb_ == 0) {
+            if (!robot.asserv_default->getIgnoreFrontCollision()) {
+                robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+                robot.asserv_default->setFrontCollision();
+                robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
 
-                if (!robot.asserv_default->getIgnoreFrontCollision()) {
-                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-                    robot.asserv_default->setFrontCollision();
-                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-
-                    robot.asserv_default->setLowSpeed(true);
-                }
+                //robot.asserv_default->setLowSpeed(true);
             }
-            lastdetect_front_nb_++;
-        } else {
-            lastdetect_front_nb_ = 0;
-            robot.asserv_default->setLowSpeed(false);
+
+            //exit(0);
+
         }
-        if (lastdetect_front_nb_ > 0) {
-            if (frontVeryclosed) {
+        /*
+         if (front) {
+         //send collision to asserv
+         if (lastdetect_front_nb_ == 0) {
 
-                if (!robot.asserv_default->getIgnoreFrontCollision()) {
-                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-                    robot.asserv_default->setFrontCollision();
-                    robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-                }
-            }
-        }
-        //ARRIERE TODO
+         if (!robot.asserv_default->getIgnoreFrontCollision()) {
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+         robot.asserv_default->setFrontCollision();
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
 
+         robot.asserv_default->setLowSpeed(true);
+         }
+         }
+         lastdetect_front_nb_++;
+         } else {
+         lastdetect_front_nb_ = 0;
+         robot.asserv_default->setLowSpeed(false);
+         }
+         if (lastdetect_front_nb_ > 0) {
+         if (frontVeryclosed) {
+         this->logger().error() << "====> setFrontCollision frontVeryclosed! nb="<< lastdetect_front_nb_
+         << " ignorefrontdefault=" << robot.asserv_default->getIgnoreFrontCollision()
+         << " ignorefront=" << robot.asserv().getIgnoreFrontCollision()
+         << logs::end;
+         //if (!robot.asserv_default->getIgnoreFrontCollision()) {
+         this->logger().error() << "====> non ignored setFrontCollision frontVeryclosed! nb="<< lastdetect_front_nb_<< logs::end;
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+         robot.asserv_default->setFrontCollision();
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+         // }
+         }
+         }
+         */
+        //ARRIERE
+        bool rear = robot.actions().sensors().rear();
+        bool rearVeryclosed = robot.actions().sensors().rearVeryClosed();
+        /*        if (rear) {
+         //send collision to asserv
+         if (lastdetect_rear_nb_ == 0) {
 
+         if (!robot.asserv_default->getIgnoreRearCollision()) {
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+         robot.asserv_default->setRearCollision();
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
 
+         //robot.asserv_default->setLowSpeed(true);//TODO a faire en arrière parceque ca interfere avec la partie au dessus
+         }
+         }
+         lastdetect_rear_nb_++;
+         } else {
+         lastdetect_rear_nb_ = 0;
+         //robot.asserv_default->setLowSpeed(false);//TODO a faire en arrière parceque ca interfere avec la partie au dessus
+         }
+         if (lastdetect_rear_nb_ > 0) {
+         if (rearVeryclosed) {
 
-
-
-
+         if (!robot.asserv_default->getIgnoreRearCollision()) {
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+         robot.asserv_default->setRearCollision();
+         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+         }
+         }
+         }
+         */
         usleep(100000);
-        if (c % 10 == 0)
-            this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << " front=" << front << " rear="
-                    << rear << logs::end;
+        //if (c % 10 == 0)
+        this->logger().error() << "chrono " << robot.chrono().getElapsedTimeInSec() << " nb=" << lastdetect_front_nb_
+                << " front=" << front << " frontV=" << frontVeryclosed << "    nb=" << lastdetect_rear_nb_ << " rear="
+                << rear << " rearV=" << rearVeryclosed << "    ignorefrontd="
+                << robot.asserv_default->getIgnoreFrontCollision() << "    ignorefront="
+                << robot.asserv().getIgnoreFrontCollision() << logs::end;
 
         c++;
     }

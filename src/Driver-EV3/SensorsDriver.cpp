@@ -29,7 +29,7 @@ SensorsDriver::~SensorsDriver()
 
 bool SensorsDriver::front() //todo renvoyer la valeur min de front ?? fusionner avec frontVeryClosed
 {
-    int seuil = 280;
+    int seuil = 350;
     bool temp = 0;
 
     double mm1 = IR_1_AV_D.getDistanceMM();
@@ -85,8 +85,8 @@ bool SensorsDriver::frontVeryClosed()
 
     logger().debug() << "IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
 
-    if (mm1 < 100 || mm2 < 130) {
-        logger().info() << "=> IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
+    if (mm1 < 130 || mm2 < 160) {
+        logger().debug() << "=> IR_2_AV_G== " << mm2 << " \tIR_1_AV_D== " << mm1 << logs::end;
         temp = 1;
     }
     return temp;
@@ -101,7 +101,7 @@ bool SensorsDriver::rearVeryClosed()
     logger().debug() << "IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
 
     if (mm3 < 140 || mm4 < 120) {
-        logger().info() << "=> IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
+        logger().debug() << "=> IR_4_AR_G== " << mm4 << " \tIR_3_AR_D== " << mm3 << logs::end;
         temp = 1;
     }
     return temp;

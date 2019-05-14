@@ -83,6 +83,7 @@ void Asserv::setLowSpeed(bool enable)
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
 
         pAsservEsialR_->motion_setLowSpeed(enable);
+        //logger().error() << "pAsservEsialR_->motion_setLowSpeed(" << enable << logs::end;
 
     } else if (useAsservType_ == 0)
         asservdriver->motion_setLowSpeed(enable);
@@ -261,8 +262,9 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 //if(asservdriver->path_CollisionOnTrajectory())
 //    return TRAJ_COLLISION;
 
-    int f = ignoreFrontCollision_;
-    int r = ignoreRearCollision_;
+    logger().error() << "doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    bool f = ignoreFrontCollision_;
+    bool r = ignoreRearCollision_;
     if (distance_mm > 0) {
         ignoreRearCollision_ = true;
     } else {
@@ -284,15 +286,16 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
+    logger().error() << "END doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
     return ts;
 }
 
 TRAJ_STATE Asserv::doRotateAbs(float degrees)
 {
-    logger().debug() << "doRotateAbs degrees=" << degrees << logs::end;
+    logger().error() << "doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
 
-    int f = ignoreFrontCollision_;
-    int r = ignoreRearCollision_;
+    bool f = ignoreFrontCollision_;
+    bool r = ignoreRearCollision_;
     ignoreRearCollision_ = true;
     ignoreFrontCollision_ = true;
     forceRotation_ = true;
@@ -311,7 +314,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
     forceRotation_ = false;
-
+    logger().error() << "END doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
     return ts;
 }
 TRAJ_STATE Asserv::doRotateLeft(float degrees)

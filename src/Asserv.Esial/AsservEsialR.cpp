@@ -434,8 +434,8 @@ void AsservEsialR::motion_ActivateManager(bool enable)
 }
 void AsservEsialR::motion_setLowSpeed(bool enable)
 {
-    unsigned char back_factor = 4;
-    unsigned char forward_factor = 4;
+    unsigned char back_factor = 2;
+    unsigned char forward_factor = 2;
     consignC_->setLowSpeed(enable, back_factor, forward_factor);
 }
 

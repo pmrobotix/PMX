@@ -36,7 +36,7 @@ void BotMotors::setVitesseG(int vitMoteurG)
     } else if (vitMoteurG > 0 && vitMoteurG < Config::V_MIN_POS_MOTOR) {
         int delta = Config::V_MIN_POS_MOTOR - vitMoteurG;
         //vitMoteurG += (delta * 2) / 3;
-        vitMoteurG += (delta / 3.0);
+        vitMoteurG += (delta / 2.0);
     }
 
     if (vitMoteurG < Config::V_MAX_NEG_MOTOR) {
@@ -45,7 +45,7 @@ void BotMotors::setVitesseG(int vitMoteurG)
         //vitMoteurG = Config::V_MIN_NEG_MOTOR;
         int delta = Config::V_MIN_NEG_MOTOR - vitMoteurG;
         //vitMoteurG += (delta * 2) / 3;
-        vitMoteurG += (delta / 3.0);
+        vitMoteurG += (delta / 2.0);
     }
 
     vitMoteurG_ = vitMoteurG;
@@ -72,7 +72,7 @@ void BotMotors::setVitesseD(int vitMoteurD)
         //vitMoteurD = Config::V_MIN_POS_MOTOR;
         int delta = Config::V_MIN_POS_MOTOR - vitMoteurD;
         //vitMoteurD += (delta * 2) / 3;
-        vitMoteurD += (delta / 3.0);
+        vitMoteurD += (delta / 2.0);
     }
 
     if (vitMoteurD < Config::V_MAX_NEG_MOTOR) {
@@ -81,7 +81,7 @@ void BotMotors::setVitesseD(int vitMoteurD)
         //vitMoteurD = Config::V_MIN_NEG_MOTOR;
         int delta = Config::V_MIN_NEG_MOTOR - vitMoteurD;
         //vitMoteurD += (delta * 2) / 3;
-        vitMoteurD += (delta / 3.0);
+        vitMoteurD += (delta / 2.0);
     }
 
     vitMoteurD_ = vitMoteurD;

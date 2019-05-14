@@ -23,7 +23,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.chrono().start();
 
     //TODO check ARU and adversary here ?
-    while (robot.chrono().getElapsedTimeInSec() <= 100)
+    while (robot.chrono().getElapsedTimeInSec() <= 99)
     {
 
         usleep(1000000);

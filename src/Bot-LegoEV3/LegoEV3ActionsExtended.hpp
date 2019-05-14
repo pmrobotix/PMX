@@ -303,12 +303,12 @@ public:
     void conveyorBelt_EjectLeft()
     {
         servoUsingMotor().ejectLeft();
-        sleep(1);
+        sleep(2);
     }
     void conveyorBelt_EjectRight()
     {
         servoUsingMotor().ejectRight();
-        sleep(1);
+        sleep(2);
     }
 
 };

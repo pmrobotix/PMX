@@ -18,7 +18,7 @@ Tirette::~Tirette()
 {
 }
 
-int Tirette::pressed()
+bool Tirette::pressed()
 {
     int temp = switchdriver->tirettePressed();
     logger().debug() << "pressed = " << temp << logs::end;
@@ -48,7 +48,7 @@ void Tirette::monitor(int nb)
 bool Tirette::waitPressed()
 {
     while (!pressed()) {
-        usleep(10000);
+        usleep(100000);
     }
     return true;
 }
@@ -56,7 +56,7 @@ bool Tirette::waitPressed()
 bool Tirette::waitUnpressed()
 {
     while (pressed()) {
-        usleep(10000);
+        usleep(100000);
     }
     return true;
 }

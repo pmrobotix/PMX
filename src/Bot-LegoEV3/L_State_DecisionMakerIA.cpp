@@ -54,13 +54,20 @@ bool L_take_grand_distributeur()
     RobotPosition zone;
     int f = 0;
 
-    robot.asserv().ignoreFrontCollision(true);
+    robot.asserv().ignoreFrontCollision(false);
     robot.asserv().ignoreRearCollision(true);
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
 
-    ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-    if (ts != TRAJ_OK)
-        return false;
+    while ((ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_OK) {
+        robot.svgPrintPosition();
+
+        robot.asserv().displayTS(ts);
+        robot.logger().info() << "L_take_grand_distributeur doMoveForwardAndRotateTo trajstate=" << ts << logs::end;
+
+        sleep(3);
+        robot.asserv().resetDisplayTS();
+
+    }
 
     robot.svgPrintPosition();
 
@@ -73,7 +80,7 @@ bool L_take_grand_distributeur()
         pos = 1385;
     } else
         pos = 1445;
-    while ((ts = robot.asserv().doMoveForwardTo(510, pos)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveForwardTo(520, pos)) != TRAJ_OK) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " position vert1 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
@@ -120,11 +127,11 @@ bool L_take_grand_distributeur()
 
     }
     robot.svgPrintPosition();
-
+sleep(20);
     //position vert2
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.asserv().doLineAbs(210);
+        robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
         robot.actions().left_prendre_palet();
 
@@ -137,24 +144,24 @@ bool L_take_grand_distributeur()
     robot.svgPrintPosition();
 
     //Calage balance
-
-
     if (robot.getMyColor() == PMXVIOLET) {
         robot.asserv().doLineAbs(200);
-        robot.asserv().doRotateLeft(10);
-        robot.asserv().doCalage(200, 5);
+        robot.asserv().doRotateLeft(15);
+        robot.asserv().doCalage(220, 5);
 
         robot.logger().info() << "left_eject_all" << logs::end;
         robot.actions().left_eject_all();
+        sleep(2);
         robot.asserv().doLineAbs(-100);
         robot.asserv().doRotateRight(170);
 
     } else {
         robot.asserv().doLineAbs(210);
-        robot.asserv().doRotateRight(10);
-        robot.asserv().doCalage(200, 5);
+        robot.asserv().doRotateRight(15);
+        robot.asserv().doCalage(220, 5);
         robot.logger().info() << "right_eject_all" << logs::end;
         robot.actions().right_eject_all();
+        sleep(2);
         robot.asserv().doLineAbs(-100);
         robot.asserv().doRotateLeft(170);
     }
@@ -166,7 +173,23 @@ bool L_take_grand_distributeur()
     } else {
         robot.ia().iAbyPath().enable(robot.ia().area_palet_start_yellow, 0);
     }
-    robot.asserv().doMoveForwardTo(200, 700);
+
+    while ((ts = robot.asserv().doMoveForwardTo(200, 700)) != TRAJ_OK) {
+        robot.svgPrintPosition();
+        robot.asserv().displayTS(ts);
+
+        sleep(2);
+        robot.asserv().resetDisplayTS();
+    }
+
+    while ((ts = robot.asserv().doMoveBackwardTo(600,1200)) != TRAJ_OK) {
+        robot.svgPrintPosition();
+        robot.asserv().displayTS(ts);
+
+        sleep(2);
+        robot.asserv().resetDisplayTS();
+
+    }
 
     return true; //return true si ok sinon false si interruption
 }

@@ -48,6 +48,7 @@ public:
 
     L_State_DecisionMakerIA* decisionMaker_; //TODO mettre un accesseur
 
+
     void stopActions();
 
     void begin(int argc, char** argv);

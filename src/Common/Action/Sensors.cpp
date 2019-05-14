@@ -114,7 +114,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         lastdetect_back_nb_++;
     } else {
         lastdetect_back_nb_ = 0;
-        //sensors_.robot()->asserv_default->setLowSpeed(false);
+        //sensors_.robot()->asserv_default->setLowSpeed(false); //TODO a faire en arrière parceque ca interfere avec la partie au dessus
     }
 
     if (lastdetect_back_nb_ > 0) {
@@ -125,15 +125,15 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         }
     }
 
-    logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
+    logger().error() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
             << lastdetect_front_nb_ << " front=" << front << " rear=" << rear << "  frontVeryclosed=" << frontVeryclosed
             << logs::end;
 }
 
 void SensorsTimer::onTimerEnd(utils::Chronometer chrono)
 {
-    logger().debug() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us"
-            << logs::end;
+//    logger().debug() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us"
+//            << logs::end;
 
 }
 
