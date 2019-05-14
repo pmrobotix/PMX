@@ -48,7 +48,7 @@ void LegoEV3SvgWriterExtended::writePosition_Bot(float x, float y, float angle_r
         *fLogBuffer << "<use x=\"" << x - 45 << "\" y=\"" << -y - 120
                 << "\" xlink:href=\"#bot-legoev3\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x
                 << "," << -y << ")\" />" << logs::flush;
-        //logger().info() << "<use x=\"" << x - 90 << "\" y=\"" << -y - 90 << "\" xlink:href=\"#bot-legoev3\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x << "," << -y << ")\" />" << logs::end;
+
 
     }
 }

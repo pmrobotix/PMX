@@ -14,7 +14,7 @@
 BotMotors::BotMotors(Robot * robot)
 {
     robot_ = robot; //Reference vers le robot
-    vitMoteurG_ = 0; //TODO deprecated ?
+    vitMoteurG_ = 0;
     vitMoteurD_ = 0;
 }
 
@@ -27,7 +27,7 @@ BotMotors::~BotMotors()
 
 void BotMotors::setVitesseG(int vitMoteurG)
 {
-    int temp = vitMoteurG;
+    //int temp = vitMoteurG;
     if (Config::reglageCodeurs)
         return;
 
@@ -61,7 +61,7 @@ void BotMotors::setVitesseG(int vitMoteurG)
 
 void BotMotors::setVitesseD(int vitMoteurD)
 {
-    int temp = vitMoteurD;
+    //int temp = vitMoteurD;
 
     if (Config::reglageCodeurs)
         return;

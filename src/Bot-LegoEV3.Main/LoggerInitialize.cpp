@@ -16,7 +16,7 @@ void logs::LoggerFactory::initialize()
     add("svgia", new SvgAppender("svgIA.svg"));
     //add("memory", new MemoryAppender());
     add("fileAsserv", new FileAppender("logAsserv.csv"));
-    //add("fileRegul", new FileAppender("logRegul.csv"));
+    add("fileRegul", new FileAppender("logRegul.csv"));
 
     add(logs::Level::ERROR, "", "console");
 
@@ -45,7 +45,7 @@ void logs::LoggerFactory::initialize()
     //File DEBUG
     //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
     add(logs::Level::DEBUG, "logFileAsservEsialR", "fileAsserv");
-    //add(logs::Level::DEBUG, "logFileAsservRegul", "fileRegul");
+    add(logs::Level::DEBUG, "logFileAsservRegul", "fileRegul");
 
     //TESTS
     add(logs::Level::INFO, "L_LedBarTest", "console");
@@ -95,7 +95,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "LcdShieldDriver.EV3", "console");
 
 
-    //DEBUG
+
     add(logs::Level::INFO, "ActionManagerTimer", "console");
     add(logs::Level::INFO, "MovingBase", "console");
 
@@ -103,7 +103,7 @@ void logs::LoggerFactory::initialize()
     //add(logs::Level::INFO, "AsservInsa", "console");
     add(logs::Level::INFO, "AsservEsialR", "console");
 
-
+    //DEBUG
 
 
 }

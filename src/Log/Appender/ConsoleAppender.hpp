@@ -26,7 +26,7 @@ namespace logs {
  * Le constructeur par défaut de cette classe permet de créer un Appender
  * vers la sortie standard.
  */
-class ConsoleAppender: public MemoryAppender, public utils::Thread
+class ConsoleAppender: public MemoryAppender
 {
 private:
 
@@ -34,8 +34,6 @@ private:
      * Flux de sortie associé.
      */
     std::ostream * out_;
-
-    void printData();
 
 public:
 
@@ -65,8 +63,6 @@ public:
     }
 
     virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message);
-
-    virtual void execute();
 
     virtual void flush();
 };

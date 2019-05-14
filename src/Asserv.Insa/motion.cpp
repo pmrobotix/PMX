@@ -293,7 +293,7 @@ void AsservInsa::execute()
     //		<< "NbPeriod, currentTime(us), Lencoder(vtops), Rencoder(vtops), Lencoder(ticks), Rencoder(ticks), speed0, speed1, speed0(mm/s), speed1(mm/s), pwm0, pwm1, lastpos0(ticks), lastpos1(ticks), ord0(ticks), ord1(ticks), x(mm), y(mm), angle(degre)"
     //		<< logs::end;
     int iii = 0;
-    float dest_old = 0.0;
+    //float dest_old = 0.0;
     while (!stop_motion_ITTask) {
         periodNb++;
         iii++;
@@ -576,7 +576,7 @@ void AsservInsa::execute()
                 cap_enabled_ = false;
                 goal_pos_x_m = 0.0;
                 goal_pos_y_m = 0.0;
-                dest_old = 0.0;
+                //dest_old = 0.0;
                 iii = 0;
                 signalEndOfTraj();
             }

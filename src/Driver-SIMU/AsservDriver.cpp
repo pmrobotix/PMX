@@ -86,7 +86,7 @@ AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
     this->start("AsservDriver::AsservDriver()" + botid);
 
     chrono_.start();
-    logger().info() << "BOT ID started !!  botid_=" << botid_ << logs::end;
+    logger().debug() << "BOT ID started !!  botid_=" << botid_ << logs::end;
 
 }
 
@@ -468,11 +468,12 @@ void AsservDriver::path_ResetEmergencyStop()
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 {
-    m_pos.lock();
-    float x_init = p_.x;
-    float y_init = p_.y;
-    float t_init = p_.theta;
-    m_pos.unlock();
+    logger().error() << "TODO motion_DoFace !!!!!" << logs::end;
+//    m_pos.lock();
+//    float x_init = p_.x;
+//    float y_init = p_.y;
+//    float t_init = p_.theta;
+//    m_pos.unlock();
 //motion_DoRotate(x_init +);
     //TODO motion_DoFace
 

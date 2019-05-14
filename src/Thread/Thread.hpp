@@ -9,7 +9,6 @@
 #include <pthread.h>
 #include <string>
 
-#include "../Log/LoggerFactory.hpp"
 #include "Mutex.hpp"
 
 namespace utils {
@@ -44,11 +43,11 @@ private:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref Thread.
      */
-    static inline const logs::Logger & logger()
-    {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("Thread");
-        return instance;
-    }
+//    static inline const logs::Logger & logger()
+//    {
+//        static const logs::Logger & instance = logs::LoggerFactory::logger("Thread");
+//        return instance;
+//    }
 
     typedef pthread_t ThreadId;
 

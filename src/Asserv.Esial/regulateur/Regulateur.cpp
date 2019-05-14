@@ -28,6 +28,7 @@ int64_t Regulateur::manage(int64_t consigne, int64_t feedback_odometrie)
     // renverser le robot. A la place, on accélère et déccélère tranquillement et ça, c'est beau :p
     int64_t consigneFiltree = filtreQuadRampDerivee.filtre(consigne, accumulateur, feedback_odometrie);
 
+    //log by cho
     //loggerFile().info() << consigne << ", "<< feedback_odometrie << ", "<< consigneFiltree << logs::end;
 
     // On calcul l'erreur, c'est à dire la différence entre la consigne à suivre et la position réelle stockée dans l'accumulateur

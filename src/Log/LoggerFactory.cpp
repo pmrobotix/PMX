@@ -5,6 +5,10 @@
 
 #include "LoggerFactory.hpp"
 
+#include <unistd.h>
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
 #include <utility>
 
 #include "Level.hpp"
@@ -15,14 +19,13 @@ logs::LoggerFactory::LoggerFactory() :
     this->initialize();
 
     if (rootLogger() == NULL) {
-        //! \todo Must throw an exception
-        //TODO Exception Must throw an exception
+        printf("ERROR Exception logs::LoggerFactory::LoggerFactory() NO default rootLogger() \n Exit!\n");
+        exit(1);
     }
 }
 
 logs::LoggerFactory::~LoggerFactory()
 {
-
     std::map<std::string, logs::Logger *>::iterator i1 = loggers_.begin();
     for (; i1 != loggers_.end(); i1++) {
         delete i1->second;
@@ -33,7 +36,6 @@ logs::LoggerFactory::~LoggerFactory()
         delete i2->second;
         i2->second = NULL;
     }
-
 }
 
 const logs::Logger &
@@ -73,28 +75,39 @@ void logs::LoggerFactory::add(Logger * logger)
     if (logger->name() == "") {
 
         this->rootLogger_ = logger;
+        this->start("LoggerFactory");
 
     } else {
         loggers_.insert(std::make_pair(logger->name(), logger));
     }
-
 }
 
 void logs::LoggerFactory::add(const std::string & name, logs::Appender * appender)
 {
-//   lock->lock();
     appenders_.insert(std::make_pair(name, appender));
-    // lock->unlock();
 }
 
 void logs::LoggerFactory::add(const Level & level, const std::string & loggerName, const std::string & appenderName)
 {
     Appender * appender = this->appender(appenderName);
     if (appender == NULL) {
-        //! \todo Must throw an exception
+        printf("ERROR Exception logs::LoggerFactory::add() %s, %s\nExit!\n", loggerName.c_str(), appenderName.c_str());
+        exit(1);
     } else {
         Logger *log = new Logger(level, loggerName, *appender);
         this->add(log);
+    }
+}
+
+void logs::LoggerFactory::execute()
+{
+    while (1) {
+        std::map<std::string, Appender *>::iterator it = appenders_.begin();
+        for (it = appenders_.begin(); it != appenders_.end(); ++it) {
+            //std::cout << it->first << " :: " << it->second << std::endl;
+            it->second->flush();
+            usleep(50000);
+        }
     }
 }
 

@@ -22,20 +22,9 @@ logs::SvgAppender::~SvgAppender()
 
 void logs::SvgAppender::writeMessage(const logs::Logger &, const logs::Level &, const std::string & message)
 {
-    //ECRITURE DIRECT
-	this->lockMessages();
-	std::ostringstream out;
-	this->ofs_ << message << std::endl;
-	this->unlockMessages();
-
-    //EN MEMOIRE
-    //logs::MemoryAppender::writeMessageOnly(message);
+    logs::MemoryAppender::writeMessageOnly(message);
 }
 
-//void logs::SvgAppender::flush()
-//{
-//	this->ofs_.close();
-//}
 void logs::SvgAppender::flush()
 {
     lockMessages();
@@ -45,5 +34,7 @@ void logs::SvgAppender::flush()
         this->messages_.pop_front();
     }
     unlockMessages();
-
+    ofs_.flush();
 }
+
+

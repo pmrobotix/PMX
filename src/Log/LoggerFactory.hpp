@@ -9,6 +9,7 @@
 #include <map>
 #include <string>
 
+#include "../Thread/Thread.hpp"
 #include "Logger.hpp"
 
 namespace logs {
@@ -27,7 +28,7 @@ namespace logs {
  *
  * \todo Documenter et coder la notion de hierarchie.
  */
-class LoggerFactory
+class LoggerFactory: public utils::Thread
 {
 public:
 
@@ -137,6 +138,7 @@ protected:
 
 public:
 
+
     /*!
      * \brief Destructeur de la classe.
      */
@@ -151,6 +153,9 @@ public:
     {
         return rootLogger_;
     }
+
+    void execute();
+
 };
 }
 

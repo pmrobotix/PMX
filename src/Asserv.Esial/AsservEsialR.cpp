@@ -195,7 +195,7 @@ void AsservEsialR::loadConfig()
 
 void AsservEsialR::setMotorLeftPosition(int power, long ticks)
 {
-    //TODO
+    //TODO setMotorLeftPosition
     logger().error() << "TODO setMotorLeftPosition !!!" << logs::end;
 }
 void AsservEsialR::setMotorRightPosition(int power, long ticks)

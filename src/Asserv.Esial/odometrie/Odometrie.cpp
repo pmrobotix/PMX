@@ -123,7 +123,7 @@ void Odometrie::refresh()
         }
     } else {
         // TODO Vérifier qu'on ne perd pas l'accumulation dans ce mode
-        printf("CG=%ld \t\tCD=%ld\r\n", compteurBrutG, compteurBrutD);
+        printf("CG=%d \t\tCD=%d\r\n", compteurBrutG, compteurBrutD);
 
     }
 }

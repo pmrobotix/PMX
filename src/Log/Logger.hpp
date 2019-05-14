@@ -48,6 +48,12 @@ public:
      *        Message a tracer.
      */
     virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message)=0;
+
+    /*!
+     * \brief Méthode générique pour l'ecriture des traces.
+     *
+     */
+    virtual void flush()=0;
 };
 
 /*!
@@ -74,7 +80,7 @@ public:
      *
      * \sa Logger::info()
      */
-    class LoggerBuffer : public utils::Mutex
+    class LoggerBuffer: public utils::Mutex
     {
     private:
 
@@ -124,13 +130,16 @@ public:
             }
         }
 
-        inline void flush(){
-            this->lock();
-            stream_->flush();
-            logger_.writeMessage(level_, stream_->str());
-            stream_->str("");
-            stream_->clear();
-            this->unlock();
+        inline void flush()
+        {
+            if (stream_ != NULL) {
+                this->lock();
+                stream_->flush();
+                logger_.writeMessage(level_, stream_->str());
+                stream_->str("");
+                stream_->clear();
+                this->unlock();
+            }
 
         }
         /*!
@@ -190,8 +199,6 @@ private:
      * \brief Appender associé.
      */
     Appender & appender_;
-
-
 
 public:
 

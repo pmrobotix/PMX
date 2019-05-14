@@ -65,11 +65,7 @@ public:
     virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message);
 
     /*!
-     * \brief Méthode générique de trace d'un message.
-     * \param logger
-     *        Logger de référence du message.
-     * \param level
-     *        Niveau de référence du message.
+     * \brief Méthode générique de trace d'un message sans le nom du log devant chaque entrée.
      * \param message
      *        Message à tracer.
      */
