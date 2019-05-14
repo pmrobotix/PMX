@@ -9,6 +9,7 @@
 #include <sstream>
 #include <string>
 
+#include "../Thread/Mutex.hpp"
 #include "Level.hpp"
 
 namespace logs {
@@ -73,7 +74,7 @@ public:
      *
      * \sa Logger::info()
      */
-    class LoggerBuffer
+    class LoggerBuffer : public utils::Mutex
     {
     private:
 
@@ -115,17 +116,21 @@ public:
         inline void end()
         {
             if (stream_ != NULL) {
+                this->lock();
                 logger_.writeMessage(level_, stream_->str());
                 delete stream_;
                 stream_ = NULL;
+                this->unlock();
             }
         }
 
         inline void flush(){
+            this->lock();
             stream_->flush();
             logger_.writeMessage(level_, stream_->str());
             stream_->str("");
             stream_->clear();
+            this->unlock();
 
         }
         /*!
@@ -143,7 +148,9 @@ public:
         inline LoggerBuffer & operator <<(const A & value)
         {
             if (stream_ != NULL) {
+                this->lock();
                 (*stream_) << value;
+                this->unlock();
             }
 
             return *this;

@@ -139,12 +139,12 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
          }
          */
         usleep(100000);
-        //if (c % 10 == 0)
-        this->logger().error() << "chrono " << robot.chrono().getElapsedTimeInSec() << " nb=" << lastdetect_front_nb_
-                << " front=" << front << " frontV=" << frontVeryclosed << "    nb=" << lastdetect_rear_nb_ << " rear="
-                << rear << " rearV=" << rearVeryclosed << "    ignorefrontd="
-                << robot.asserv_default->getIgnoreFrontCollision() << "    ignorefront="
-                << robot.asserv().getIgnoreFrontCollision() << logs::end;
+        if (c % 10 == 0)
+            this->logger().error() << "chrono " << robot.chrono().getElapsedTimeInSec() << " nb="
+                    << lastdetect_front_nb_ << " front=" << front << " frontV=" << frontVeryclosed << "    nb="
+                    << lastdetect_rear_nb_ << " rear=" << rear << " rearV=" << rearVeryclosed << "    ignorefrontd="
+                    << robot.asserv_default->getIgnoreFrontCollision() << "    ignorefront="
+                    << robot.asserv().getIgnoreFrontCollision() << logs::end;
 
         c++;
     }
