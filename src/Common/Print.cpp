@@ -51,7 +51,7 @@ size_t Print::print(const String &s)
     return n;
 }
 
-size_t Print::print(std::string &s)
+size_t Print::print(std::string s)
 {
     size_t n = 0;
     for (uint16_t i = 0; i < s.length(); i++) {

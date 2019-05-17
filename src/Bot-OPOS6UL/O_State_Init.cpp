@@ -55,7 +55,7 @@ O_State_Init::execute(Robot&)
 
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
-        robot.actions().lcd2x16().print("COULEUR?");
+        robot.actions().lcd2x16().print("  COULEUR ?");
         logger().info() << "CHOISIR COULEUR + IA..." << logs::end;
         b = BUTTON_NONE;
         int mode = 1; //1,2,3
@@ -68,9 +68,9 @@ O_State_Init::execute(Robot&)
                 robot.actions().lcd2x16().setCursor(0, 0);
                 robot.actions().lcd2x16().print("* ");
                 robot.actions().lcd2x16().setCursor(9, 0);
-                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().print("  ");
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().print("  ");
 
                 if (b == BUTTON_LEFT_KEY) {
                     logger().info() << "BUTTON_LEFT_KEY - YELLOW selected" << logs::end;
@@ -89,11 +89,11 @@ O_State_Init::execute(Robot&)
             } else if (mode == 2) {
                 logger().info() << "MODE VRR selected" << logs::end;
                 robot.actions().lcd2x16().setCursor(0, 0);
-                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().print("  ");
                 robot.actions().lcd2x16().setCursor(9, 0);
-                robot.actions().lcd2x16().print("*");
+                robot.actions().lcd2x16().print("* ");
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().print("  ");
                 if (b == BUTTON_LEFT_KEY) {
                     logger().info() << "BUTTON_LEFT_KEY - PREV" << logs::end;
                     v--;
@@ -124,11 +124,11 @@ O_State_Init::execute(Robot&)
             } else if (mode == 3) {
                 logger().info() << "MODE STRAT selected" << logs::end;
                 robot.actions().lcd2x16().setCursor(0, 0);
-                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().print("  ");
                 robot.actions().lcd2x16().setCursor(9, 0);
-                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().print("  ");
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print("*");
+                robot.actions().lcd2x16().print("* ");
                 robot.actions().lcd2x16().setCursor(1, 1);
 
                 if (b == BUTTON_LEFT_KEY) {
@@ -144,22 +144,23 @@ O_State_Init::execute(Robot&)
                         st = 1;
                 }
 
-                robot.actions().lcd2x16().setCursor(1, 2);
+                robot.actions().lcd2x16().setCursor(2, 1);
                 if (st == 1) {
                     logger().info() << "strat1" << logs::end;
-                    robot.actions().lcd2x16().print(" strat1");
+                    robot.actions().lcd2x16().print("strat1");
                     robot.strategy("strat1");
                 } else if (st == 2) {
                     logger().info() << "strat2" << logs::end;
-                    robot.actions().lcd2x16().print(" strat2");
+                    robot.actions().lcd2x16().print("strat2");
                     robot.strategy("strat2");
                 } else if (st == 3) {
                     logger().info() << "strat3" << logs::end;
-                    robot.actions().lcd2x16().print(" strat3");
+                    robot.actions().lcd2x16().print("strat3");
                     robot.strategy("strat3");
                 }
 
             }
+            b = robot.actions().buttonBar().waitOneOfAllPressed();
 
             if (b == BUTTON_UP_KEY) {
                 logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
@@ -174,7 +175,7 @@ O_State_Init::execute(Robot&)
                 logger().info() << "BUTTON_DOWN_KEY - MODE changed to " << mode << logs::end;
 
             }
-            b = robot.actions().buttonBar().waitOneOfAllPressed();
+
 
         }
         robot.actions().lcd2x16().clear();
@@ -192,34 +193,31 @@ O_State_Init::execute(Robot&)
 
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().setCursor(0, 1);
-        robot.actions().lcd2x16().print("...WAIT TIRETTE...");
+        robot.actions().lcd2x16().print("WAITING TIRETT...");
         logger().info() << "PMX...WAIT TIRETTE !!!!!!!!!!!!!!!";
         if (robot.getMyColor() == PMXVIOLET) {
             robot.actions().lcd2x16().setCursor(0, 0);
-            robot.actions().lcd2x16().print("VIOLET");
+            robot.actions().lcd2x16().print("VIO");
             logger().info() << " VIOLET";
         } else {
             robot.actions().lcd2x16().setCursor(0, 0);
-            robot.actions().lcd2x16().print("YELLOW");
+            robot.actions().lcd2x16().print("YEL");
             logger().info() << "YELLOW";
         }
         logger().info() << logs::end;
 
-        robot.actions().lcd2x16().setCursor(8, 0);
+        robot.actions().lcd2x16().setCursor(4, 0);
 
-        //robot.actions().lcd2x16().print((String)robot.configVRR());
+        robot.actions().lcd2x16().print(robot.configVRR());
         if (v == 1) {
-            robot.actions().lcd2x16().print("V R R");
             robot.configVRR("VRR");
         } else if (v == 2) {
-            robot.actions().lcd2x16().print("R V R");
             robot.configVRR("RVR");
         } else if (v == 3) {
-            robot.actions().lcd2x16().print("R R V");
             robot.configVRR("RRV");
         }
-        robot.actions().lcd2x16().setCursor(13, 0);
-        //robot.actions().lcd2x16().print(robot.strategy());
+        robot.actions().lcd2x16().setCursor(8, 0);
+        robot.actions().lcd2x16().print(robot.strategy());
 
         //ATTENTE TIRETTE !!!!
         bool bb = false;
@@ -228,6 +226,7 @@ O_State_Init::execute(Robot&)
             if (bb) {
                 robot.actions().ledBar().stopAndWait(true);
                 robot.actions().lcd2x16().clear();
+                robot.asserv().freeMotion();
                 goto begin;
             }
         }
@@ -281,22 +280,9 @@ void O_State_Init::setPos()
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().print("SET POSITION...");
-    /*
-     robot.actions().ax12_leftHand();
-     robot.actions().ax12_rightHand();
-     robot.actions().ax12_left_cil_retract();
-     robot.actions().ax12_right_cil_retract(-1);
 
-     robot.actions().ax12_leftHand_retract();
-     robot.actions().ax12_rightHand_retract();
-     robot.actions().ax12_left_cil();
-     robot.actions().ax12_right_cil(-1);
-
-     robot.actions().ax12_left_cil_retract();
-     robot.actions().ax12_right_cil_retract();*/
     robot.actions().ax12_init();
 
-    //demi largeur 150
     robot.asserv().startMotionTimerAndOdo(false);
 
     robot.actions().lcd2x16().clear();

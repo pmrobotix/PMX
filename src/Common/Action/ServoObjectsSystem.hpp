@@ -45,6 +45,7 @@ public:
     int getTorque(int servo);
 
     void detectAll();
+    void detect();
 
 };
 

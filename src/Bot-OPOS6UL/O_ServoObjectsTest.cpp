@@ -30,8 +30,7 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 
     logger().info() << "Executing - " << this->desc() << logs::end;
 
-    //robot.actions().servoObjects().detectAll();
-
+    robot.actions().servosAx12().detect();
     robot.actions().ax12_left_cil_retract(0);
     robot.actions().ax12_right_cil_retract();
 

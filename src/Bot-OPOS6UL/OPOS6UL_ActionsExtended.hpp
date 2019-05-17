@@ -171,6 +171,8 @@ public:
 
     void ax12_init()
     {
+        servosAx12().detect();
+
         ax12_leftHand();
         ax12_rightHand();
         ax12_left_cil_retract();
@@ -218,7 +220,7 @@ public:
     {
         servosAx12().setSpeed(180, speed);
         servosAx12().deploy(180, 512, keep);
-        //
+
     }
     void ax12_left_cil(int keep = 0, int speed = 512)
     {
@@ -231,7 +233,7 @@ public:
     {
         servosAx12().setSpeed(181, speed);
         servosAx12().deploy(181, 512, keep);
-        //
+
     }
     void ax12_right_cil(int keep = 0, int speed = 512)
     {

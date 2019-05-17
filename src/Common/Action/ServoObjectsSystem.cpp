@@ -89,3 +89,9 @@ void ServoObjectsSystem::detectAll()
     }
 }
 
+void ServoObjectsSystem::detect()
+{
+    if (servodriver_->ping(51) != 0) {
+        logger().error() << "ERROR AX12 CONNECTION !!!" << logs::end;
+    }
+}
