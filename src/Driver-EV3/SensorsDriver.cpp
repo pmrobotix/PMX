@@ -27,6 +27,15 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
+int SensorsDriver::right()
+{
+    return -1;
+}
+int SensorsDriver::left()
+{
+    return -1;
+}
+
 bool SensorsDriver::front() //todo renvoyer la valeur min de front ?? fusionner avec frontVeryClosed
 {
     int seuil = 350;

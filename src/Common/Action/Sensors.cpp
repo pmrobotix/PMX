@@ -33,6 +33,16 @@ SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name)
     lastdetect_back_nb_ = 0;
 }
 
+int Sensors::right()
+{
+    return sensorsdriver->right();
+}
+
+int Sensors::left()
+{
+    return sensorsdriver->left();
+}
+
 bool Sensors::front()
 {
     return sensorsdriver->front();
@@ -125,7 +135,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         }
     }
 
-    logger().error() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
+    logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
             << lastdetect_front_nb_ << " front=" << front << " rear=" << rear << "  frontVeryclosed=" << frontVeryclosed
             << logs::end;
 }

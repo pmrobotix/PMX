@@ -10,9 +10,6 @@ using namespace std;
 
 ALcdShieldDriver * ALcdShieldDriver::create(std::string botId)
 {
-//	static LcdShieldDriver *instance = new LcdShieldDriver();
-//	return instance;
-
     return new LcdShieldDriver();
 }
 
@@ -37,12 +34,12 @@ void LcdShieldDriver::home()
 
 void LcdShieldDriver::setBacklightOn()
 {
-    logger().info() << "setBacklightOn()" << logs::end;
+    logger().debug() << "setBacklightOn()" << logs::end;
 }
 
 void LcdShieldDriver::setBacklightOff()
 {
-    logger().info() << "setBacklightOff()" << logs::end;
+    logger().debug() << "setBacklightOff()" << logs::end;
 }
 
 void LcdShieldDriver::setCursor(uint8_t col, uint8_t row)

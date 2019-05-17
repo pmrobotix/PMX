@@ -47,12 +47,13 @@ public:
         return robot_;
     }
 
-    bool front();
+    int right();
+    int left();
 
+    bool front();
     bool rear();
 
     bool frontVeryClosed();
-
     bool rearVeryClosed();
 
     //Ajoute le timer des sensors de detection

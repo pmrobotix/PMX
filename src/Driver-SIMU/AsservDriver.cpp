@@ -450,7 +450,6 @@ void AsservDriver::path_InterruptTrajectory()
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
-    //TODO interrupt move
     logger().error() << "TODO path_CollisionOnTrajectory !!!!!" << logs::end;
 }
 void AsservDriver::path_CollisionRearOnTrajectory()
@@ -600,33 +599,33 @@ void AsservDriver::motion_AssistedHandling()
 }
 void AsservDriver::motion_ActivateManager(bool enable)
 {
-    logger().error() << "TODO motion_ActivateManager !!!!!" << logs::end;
+    logger().debug() << "TODO motion_ActivateManager !!!!!" << logs::end;
 }
 
 void AsservDriver::motion_setLowSpeed(bool enable)
 {
-    logger().error() << "TODO motion_setLowSpeed !!!!!" << logs::end;
+    logger().debug() << "TODO motion_setLowSpeed !!!!!" << logs::end;
 }
 
 void AsservDriver::motion_ActivateReguDist(bool enable)
 {
-    logger().error() << "TODO motion_ActivateReguDist !!!!!" << logs::end;
+    logger().debug() << "TODO motion_ActivateReguDist !!!!!" << logs::end;
 }
 void AsservDriver::motion_ActivateReguAngle(bool enable)
 {
-    logger().error() << "TODO motion_ActivateReguAngle !!!!!" << logs::end;
+    logger().debug() << "TODO motion_ActivateReguAngle !!!!!" << logs::end;
 }
 void AsservDriver::motion_ResetReguDist()
 {
-    logger().error() << "TODO motion_ResetReguDist !!!!!" << logs::end;
+    logger().debug() << "TODO motion_ResetReguDist !!!!!" << logs::end;
 }
 void AsservDriver::motion_ResetReguAngle()
 {
-    logger().error() << "TODO motion_ResetReguAngle !!!!!" << logs::end;
+    logger().debug() << "TODO motion_ResetReguAngle !!!!!" << logs::end;
 }
 TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
 {
     //TODO
-    logger().error() << "TODO motion_DoDirectLine !!!!!" << logs::end;
+    logger().debug() << "TODO motion_DoDirectLine !!!!!" << logs::end;
     return TRAJ_ERROR;
 }

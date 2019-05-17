@@ -20,41 +20,9 @@
 #include "../Log/Exception.hpp"
 #include "../Log/Logger.hpp"
 
-/*
- #include <Wire.h>
- #ifdef __AVR__
- #define WIRE Wire
- #else // Arduino Due
- #define WIRE Wire1
- #endif
 
- #if ARDUINO >= 100
- #include "Arduino.h"
- #else
- #include "WProgram.h"
- #endif*/
-
-// When the display powers up, it is configured as follows:
-//
-// 1. Display clear
-// 2. Function set: 
-//    DL = 1; 8-bit interface data 
-//    N = 0; 1-line display 
-//    F = 0; 5x8 dot character font 
-// 3. Display on/off control: 
-//    D = 0; Display off 
-//    C = 0; Cursor off 
-//    B = 0; Blinking off 
-// 4. Entry mode set: 
-//    I/D = 1; Increment by 1 
-//    S = 0; No shift 
-//
-// Note, however, that resetting the Arduino doesn't reset the LCD, so we
-// can't assume that its in that state when a sketch starts (and the
-// RGBLCDShield constructor is called).
 Adafruit_RGBLCDShield::Adafruit_RGBLCDShield()
 {
-
     _displaycontrol = 0;
     _displaymode = 0;
     _numlines = 0;
@@ -88,9 +56,6 @@ Adafruit_RGBLCDShield::Adafruit_RGBLCDShield()
 void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //cols, lines, dotsize
 {
 
-    //mutex_.lock();
-    /*try
-     {*/
     int err = _i2c.begin();
     if (err == -1) {
         connected_ = false;
@@ -98,13 +63,6 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
         return;
     } else {
         connected_ = true;
-
-        // check if i2c
-        //if (_i2cAddr != 255)
-        //{
-        //_i2c.begin(_i2cAddr);
-        //WIRE.begin();
-        //_i2c.begin();
 
         _i2c.pinMode(8, OUTPUT);
         _i2c.pinMode(6, OUTPUT);
@@ -197,13 +155,7 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
         _displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
         // set the entry mode
         command(LCD_ENTRYMODESET | _displaymode);
-        /*} catch (logs::Exception * e)
-         {
 
-         logger().error() << "begin()::Exception - Adafruit_MCP23017 NOT CONNECTED !!! (begin test) " //<< e->what()
-         << logs::end;
-         }*/
-        //mutex_.unlock();
     }
 }
 
@@ -418,13 +370,7 @@ inline void Adafruit_RGBLCDShield::command(uint8_t value)
 {
     send(value, 0);
 }
-/*
- #if ARDUINO >= 100
- inline size_t Adafruit_RGBLCDShield::write(uint8_t value) {
- send(value, HIGH);
- return 1;
- }
- #else*/
+
 size_t Adafruit_RGBLCDShield::write__(uint8_t value)
 {
     if (!connected_) {
@@ -445,17 +391,7 @@ void Adafruit_RGBLCDShield::_digitalWrite(uint8_t p, uint8_t d)
         logger().debug() << "_digitalWrite() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
         return;
     }
-    /*
-     if (_i2cAddr != 255)
-     {
-     // an i2c command
-     _i2c.digitalWrite(p, d);
-     }
-     else
-     {
-     // straightup IO
-     digitalWrite(p, d);
-     }*/
+
     _i2c.digitalWrite(p, d);
 }
 
@@ -481,17 +417,7 @@ void Adafruit_RGBLCDShield::_pinMode(uint8_t p, uint8_t d)
         logger().debug() << "_pinMode() : Adafruit_RGBLCDShield NOT CONNECTED !" << logs::end;
         return;
     }
-    /*
-     if (_i2cAddr != 255)
-     {
-     // an i2c command
-     _i2c.pinMode(p, d);
-     }
-     else
-     {
-     // straightup IO
-     pinMode(p, d);
-     }*/
+
     _i2c.pinMode(p, d);
 }
 

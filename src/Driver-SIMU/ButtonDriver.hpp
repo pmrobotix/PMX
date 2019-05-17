@@ -13,52 +13,51 @@
 
 struct msgform
 {
-	long mtype;
-	char mtext[512];
+    long mtype;
+    char mtext[512];
 } msg;
 
 class ButtonDriver: public AButtonDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ButtonDriver(SIMU).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger(
-				"ButtonDriver.SIMU");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref ButtonDriver(SIMU).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ButtonDriver.SIMU");
+        return instance;
+    }
 
-	int lindex;
+    int lindex;
 
-	std::thread tbutton_;
+    std::thread tbutton_;
 
 public:
 
-	bool back_;
-	bool enter_;
-	bool up_;
-	bool down_;
-	bool left_;
-	bool right_;
+    bool back_;
+    bool enter_;
+    bool up_;
+    bool down_;
+    bool left_;
+    bool right_;
 
-	bool stop_;
+    bool stop_;
 
-	int thread_created_;
+    int thread_created_;
 
-	/*!
-	 * \brief Constructor.
-	 */
-	ButtonDriver();
+    /*!
+     * \brief Constructor.
+     */
+    ButtonDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~ButtonDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~ButtonDriver();
 
-	bool pressed(ButtonTouch button);
+    bool pressed(ButtonTouch button);
 
 };
 
@@ -77,76 +76,71 @@ public:
 class ButtonDriverWrapper
 {
 public:
-	ButtonDriverWrapper(ButtonDriver * buttondriver)
-	{
-		buttondriver_ = buttondriver;
-	}
-	~ButtonDriverWrapper()
-	{
-	}
+    ButtonDriverWrapper(ButtonDriver * buttondriver)
+    {
+        buttondriver_ = buttondriver;
+    }
+    ~ButtonDriverWrapper()
+    {
+    }
 
-	ButtonDriver * buttondriver_;
+    ButtonDriver * buttondriver_;
 
-	void checkButton(const char *arg1, int)
-	{
+    void checkButton(const char *arg1, int)
+    {
 
-		int res;
-		int frequete;
-		int CLEF_REQUETES = 0x00012345;
+        int res;
+        int frequete;
+        int CLEF_REQUETES = 0x00012345;
 
-		frequete = msgget(CLEF_REQUETES, 0700 | IPC_CREAT);
-		if (frequete == -1)
-		{
-			perror("checkButton() msgget");
-			exit(0);
+        frequete = msgget(CLEF_REQUETES, 0700 | IPC_CREAT);
+        if (frequete == -1) {
+            perror("checkButton() msgget");
+            exit(0);
 
-		}
+        }
 
-		while (!buttondriver_->stop_)
-		{
+        while (!buttondriver_->stop_) {
 
-			buttondriver_->enter_ = false;
-			buttondriver_->back_ = false;
-			buttondriver_->up_ = false;
-			buttondriver_->down_ = false;
-			buttondriver_->left_ = false;
-			buttondriver_->right_ = false;
+            buttondriver_->enter_ = false;
+            buttondriver_->back_ = false;
+            buttondriver_->up_ = false;
+            buttondriver_->down_ = false;
+            buttondriver_->left_ = false;
+            buttondriver_->right_ = false;
 
-			res = msgrcv(frequete, &msg, 512, 0, 0);
-			if (res == -1)
-			{
-				perror("checkButton() msgrcv");
-				exit(0);
-			}
-			else
-			{
+            res = msgrcv(frequete, &msg, 512, 0, 0);
+            if (res == -1) {
+                perror("checkButton() msgrcv");
+                exit(0);
+            } else {
 
-				//printf("msg=%s\n", msg.mtext);
+                //printf("msg=%s\n", msg.mtext);
 
-				std::string str(msg.mtext);
-				if (str == "enter")
-					buttondriver_->enter_ = true;
-				if (str == "back")
-					buttondriver_->back_ = true;
-				if (str == "up")
-					buttondriver_->up_ = true;
-				if (str == "down")
-					buttondriver_->down_ = true;
-				if (str == "right")
-					buttondriver_->right_ = true;
-				if (str == "left")
-					buttondriver_->left_ = true;
+                std::string str(msg.mtext);
+                if (str == "enter")
+                    buttondriver_->enter_ = true;
+                if (str == "back")
+                    buttondriver_->back_ = true;
+                if (str == "up")
+                    buttondriver_->up_ = true;
+                if (str == "down")
+                    buttondriver_->down_ = true;
+                if (str == "right")
+                    buttondriver_->right_ = true;
+                if (str == "left")
+                    buttondriver_->left_ = true;
 
-			}
-			usleep(5000);
-		}
-	}
+            }
+            usleep(200000); //necessaire pour eviter le rebond
+        }
+    }
 
-	std::thread buttonThread(const char *arg1, int args)
-	{
-		return std::thread([=]
-		{	this->checkButton(arg1, args);});
-	}
+    std::thread buttonThread(const char *arg1, int args)
+    {
+        return std::thread([=]
+        {   this->checkButton(arg1, args);});
+    }
 
 };
 

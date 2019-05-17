@@ -105,8 +105,6 @@ private:
     uint8_t _displaycontrol;
     uint8_t _displaymode;
 
-    //uint8_t _initialized;
-
     uint8_t _numlines, _currline;
 
     uint8_t _i2cAddr;
@@ -157,9 +155,6 @@ public:
 
     void createChar(uint8_t, uint8_t[]);
     void setCursor(uint8_t, uint8_t);
-    /*#if ARDUINO >= 100
-     virtual size_t write(uint8_t);
-     #else*/
 
     size_t write__(uint8_t value); //virtual
 

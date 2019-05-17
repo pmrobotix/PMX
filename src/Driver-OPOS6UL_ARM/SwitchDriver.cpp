@@ -2,6 +2,8 @@
 
 #include "SwitchDriver.hpp"
 
+#include <unistd.h>
+
 #include "../Log/Logger.hpp"
 #include "GpioPCA9555.hpp"
 
@@ -33,6 +35,7 @@ int SwitchDriver::pressed(unsigned char pin)
 
 int SwitchDriver::tirettePressed()
 {
+    usleep(30000);
     return pressed(7);
 }
 

@@ -26,7 +26,6 @@ private:
     LegoIRSensor IR_3_AR_D;
     LegoIRSensor IR_4_AR_G;
 
-
 public:
 
     /*!
@@ -38,6 +37,9 @@ public:
      * \brief Destructor.
      */
     ~SensorsDriver();
+
+    int left();
+    int right();
 
     bool front();
     bool rear();

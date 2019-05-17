@@ -19,6 +19,15 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
+int SensorsDriver::right()
+{
+    return 0;
+}
+int SensorsDriver::left()
+{
+    return 0;
+}
+
 bool SensorsDriver::front()
 {
     return 0;

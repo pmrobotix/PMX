@@ -60,25 +60,13 @@ AsservDriver::AsservDriver() :
         mbedI2c_(0) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
                 , connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1 })
 {
+    errorCount_ = 0;
     if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
             {
 
         logger().error() << "AsservDriver() : ERROR setSlaveAddr !" << logs::end;
         connected_ = false;
     } else {
-        /*
-         if (mbed_ack() == 0)
-         {
-         connected_ = true;
-
-         asservMbedStarted_ = false;
-         //on demarre le thread
-         this->start("AsservDriver::AsservDriver()");
-         }
-         else
-         {
-         logger().error() << "AsservDriver() : MBED is NOT CONNECTED !" << logs::end;
-         }*/
 
         //on demarre le check de positionnement...
         this->start("AsservDriver::AsservDriver()");
@@ -92,21 +80,15 @@ AsservDriver::~AsservDriver()
 
 void AsservDriver::execute()
 {
-    int periodTime_us = 100000; //10ms minimum sans le debug MBED activé
+    int periodTime_us = 50000; //10ms minimum sans le debug MBED activé
     utils::Chronometer chrono("AsservDriver::execute()");
     chrono.setTimer(periodTime_us);
 
     while (1) {
         if (asservMbedStarted_) {
-            //logger().error() << "nb=" << nb << " chrono=" << chrono.getElapsedTimeInMicroSec()	<< logs::end;
-            //m_pos.lock();
-            //p_ = mbed_GetPosition();
-            //m_pos.unlock();
+
             odo_GetPosition();
 
-            //log SVG
-            //TODO PB log SVG a faire ici sauf si fin d'ecriture pb avec </g>
-            //loggerSvg().info() << "<circle cx=\"10\" cy=\"-300\" r=\"1\" fill=\"blue\" />" << logs::end;
         }
         chrono.waitTimer();
     }
@@ -242,6 +224,12 @@ RobotPosition AsservDriver::mbed_GetPosition() //en metre
 
     if (int r = mbed_readI2c('p', 13, data) < 0) {
         logger().error() << "mbed_GetPosition - p13 - ERROR " << r << logs::end;
+        errorCount_++;
+        if (errorCount_ > 20)
+        {
+            logger().error() << "mbed_GetPosition Too many Error ==> EXIT !!! " << r << logs::end;
+            exit(0);
+        }
         return p;
     } else {
         //printf("read %d %d %d %d\n", data[0], data[1], data[2], data[3]);

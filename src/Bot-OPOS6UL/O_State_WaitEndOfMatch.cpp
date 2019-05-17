@@ -23,8 +23,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.chrono().start();
 
     //TODO check ARU and adversary here ?
-    while (robot.chrono().getElapsedTimeInSec() <= 99)
-    {
+    while (robot.chrono().getElapsedTimeInSec() <= 99) {
 
         usleep(1000000);
         long time = robot.chrono().getElapsedTimeInSec();
@@ -35,11 +34,12 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     }
 
-    this->logger().info() << "O_State_Wait90SecAction::execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
+    this->logger().info() << "O_State_Wait90SecAction::execute end100s...stop... "
+            << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.freeMotion();
 
     robot.end90s(true); //indique que l'action est effectuée au prog princ
-    logger().info() << "cancel decisionmaker"  << logs::end;
+    logger().info() << "cancel decisionmaker" << logs::end;
     robot.decisionMaker_->cancel();
     //init robot for end
     robot.freeMotion(); //stop the robot
@@ -48,24 +48,33 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     robot.svgPrintEndOfFile();
 
-
-    logger().info() << "print lcd during sec" << logs::end;
+    logger().info() << "Display Points after 100sec" << logs::end;
 
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().setBacklightOn();
-    robot.actions().lcd2x16().setCursor(0,0);
-    //robot.actions().lcd2x16().print("40 Points ?");
+    robot.actions().lcd2x16().setCursor(0, 0);
     robot.actions().lcd2x16().print(robot.points);
     robot.actions().lcd2x16().print(" points ?");
-    robot.actions().lcd2x16().setCursor(0,1);
+    robot.actions().lcd2x16().setCursor(0, 1);
     robot.actions().lcd2x16().print("Yeahhh OK");
     robot.actions().ledBar().flashAll(LED_GREEN);
 
-
     robot.actions().ledBar().k2mil(2, 50000, LED_GREEN);
 
-    sleep(480); //TODO boucle jusqu'à appuyer sur le bouton
-    logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec" << logs::end;
+    ButtonTouch b = BUTTON_NONE;
+    while (1) {
+        b = robot.actions().buttonBar().checkOneOfAllPressed();
+        if (b == BUTTON_BACK_KEY) {
+            break;
+        }
+        if (b == BUTTON_ENTER_KEY) {
+            break;
+        }
+        usleep(1000);
+    }
+
+    logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec"
+            << logs::end;
 
     robot.stopAll(); //stop asserv and actionManagerTimer
     return NULL; //finish all state

@@ -11,35 +11,38 @@ class SensorsDriver: public ASensorsDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref SensorsDriver(ARM).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsDriver.ARM");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref SensorsDriver(ARM).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsDriver.ARM");
+        return instance;
+    }
 
-	IrSensor frontIR_; //centre
-	IrSensor frontIRRight_;
-	IrSensor frontIRLeft_;
+    IrSensor frontIR_; //centre
+    IrSensor frontIRRight_;
+    IrSensor frontIRLeft_;
 
-	IrSensor rearIR_;
+    IrSensor rearIR_;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	SensorsDriver();
+    /*!
+     * \brief Constructor.
+     */
+    SensorsDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~SensorsDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~SensorsDriver();
 
-	bool front();
-	bool rear();
+    int left();
+    int right();
+
+    bool front();
+    bool rear();
 
 };
 

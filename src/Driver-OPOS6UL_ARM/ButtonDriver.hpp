@@ -9,30 +9,29 @@ class ButtonDriver: public AButtonDriver
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ButtonDriver(OPOS6UL).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("ButtonDriver.OPO");
-		return instance;
-	}
-
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref ButtonDriver(OPOS6UL).
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ButtonDriver.OPO");
+        return instance;
+    }
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 * Bouton de selection.
-	 */
-	ButtonDriver();
+    /*!
+     * \brief Constructor.
+     * Bouton de selection.
+     */
+    ButtonDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~ButtonDriver();
+    /*!
+     * \brief Destructor.
+     */
+    ~ButtonDriver();
 
-	bool pressed(ButtonTouch button);
+    bool pressed(ButtonTouch button);
 
 };
 

@@ -49,6 +49,7 @@ private:
 
     AsI2c mbedI2c_;
     bool connected_;
+    int errorCount_;
 
     bool asservMbedStarted_;
 

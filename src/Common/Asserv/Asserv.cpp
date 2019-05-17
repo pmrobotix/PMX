@@ -203,7 +203,7 @@ bool Asserv::filtreInsideTable(float metre)
         result = true;
     else
         result = false;
-    logger().error() << "filtreInsideTable" << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
+    logger().debug() << "filtreInsideTable" << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
             << " y=" << y << " result = " << result << logs::end;
 
     if (result) {
@@ -262,7 +262,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 //if(asservdriver->path_CollisionOnTrajectory())
 //    return TRAJ_COLLISION;
 
-    logger().error() << "doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
     bool f = ignoreFrontCollision_;
     bool r = ignoreRearCollision_;
     if (distance_mm > 0) {
@@ -286,13 +286,13 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
-    logger().error() << "END doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "END doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
     return ts;
 }
 
 TRAJ_STATE Asserv::doRotateAbs(float degrees)
 {
-    logger().error() << "doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
 
     bool f = ignoreFrontCollision_;
     bool r = ignoreRearCollision_;
@@ -314,7 +314,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
     forceRotation_ = false;
-    logger().error() << "END doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "END doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
     return ts;
 }
 TRAJ_STATE Asserv::doRotateLeft(float degrees)

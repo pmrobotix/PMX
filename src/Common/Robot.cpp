@@ -47,7 +47,8 @@ Robot::Robot() :
 void Robot::svgPrintPosition()
 {
     if (asserv_default != NULL)
-        this->svgw().writePosition_Bot(this->asserv_default->pos_getX_mm(), this->asserv_default->pos_getY_mm(), this->asserv_default->pos_getTheta());
+        this->svgw().writePosition_Bot(this->asserv_default->pos_getX_mm(), this->asserv_default->pos_getY_mm(),
+                this->asserv_default->pos_getTheta());
     else
         logger().error() << "asserv_default is NULL !" << logs::end;
 }
@@ -66,9 +67,9 @@ void Robot::configureDefaultConsoleArgs()
     // Add option "-h" with explanation...
     cArgs_.addOption('h', "Display usage help");
 
-    cArgs_.addOption('s', "skip setup");
+    cArgs_.addOption('k', "skip setup");
 
-    cArgs_.addArgument("type", "Type of match (t)est/(m)atch", "0");
+    cArgs_.addArgument("type", "Type of match (p)pause/(t)est/(m)atch", "m");
     {
         Arguments::Option cOpt('n', "");
         cOpt.addArgument("num", "number of the functional test");
@@ -78,6 +79,12 @@ void Robot::configureDefaultConsoleArgs()
     {
         Arguments::Option cOpt('c', "");
         cOpt.addArgument("color", "color of robot [y]ellow/[v]iolet", "v");
+        cArgs_.addOption(cOpt);
+    }
+
+    {
+        Arguments::Option cOpt('s', "");
+        cOpt.addArgument("strategy", "name of the strategy", "all");
         cArgs_.addOption(cOpt);
     }
 }
@@ -104,10 +111,11 @@ void Robot::begin(int argc, char** argv)
     int num = -1;
     string select = "-";
     string color = "-";
+    string strat = "-";
 
 #ifdef SIMU //cas de la simulation sous linux
     //http://jean-luc.massat.perso.luminy.univ-amu.fr/ens/docs/IPC.html
-    //only for SIMU to simulate a non blocking getch() in a separate window colconsole with /z
+    //only for SIMU to simulate a non blocking getch() in a separate window console with /z
     if (cArgs_['z']) {
         int res;
         int frequete;
@@ -121,7 +129,7 @@ void Robot::begin(int argc, char** argv)
             char cInput;
             cInput = ConsoleKeyInput::mygetch(); //wait a user action
             //printf("button= %d<\n", cInput);
-            if (cInput == 27)			// if ch is the escape sequence with num code 27, k turns 1 to signal the next
+            if (cInput == 27)	// if ch is the escape sequence with num code 27, k turns 1 to signal the next
                     {
                 cInput = ConsoleKeyInput::mygetch();
                 if (cInput == 91) // if the previous char was 27, and the current 91, k turns 2 for further use
@@ -156,7 +164,7 @@ void Robot::begin(int argc, char** argv)
 
                 break;
 
-                usleep(2000);
+                usleep(1000);
             }
 
             msg_ipc.mtype = getpid();
@@ -170,17 +178,16 @@ void Robot::begin(int argc, char** argv)
     }
 #endif
 
-    if (cArgs_["type"] == "0") {
+    if (cArgs_["type"] == "p" || cArgs_["type"] == "P") {
         //display all functional tests
         cmanager_.displayAvailableTests("", -1);
 
-        if (!cArgs_['s']) {
+        if (!cArgs_['k']) {
             //------------- Pour debug
             //pause s'il n'y a pas tous les elements pour visualiser le log d'erreur
             char cInput;
             Robot::logger().info() << "Press Enter key to continue ..." << logs::end;
-            //cout << "Press Enter key to continue ..." << endl;
-            //sleep(1);
+
             do {
                 cInput = ConsoleKeyInput::mygetch();
                 switch (cInput) {
@@ -204,7 +211,8 @@ void Robot::begin(int argc, char** argv)
 
     logger().debug() << "type = " << cArgs_["type"] << logs::end;
 
-    logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"] << logs::end;
+    logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"]
+            << logs::end;
 
     if (cArgs_['c']) {
         color = cArgs_['c']["color"];
@@ -217,13 +225,21 @@ void Robot::begin(int argc, char** argv)
             logger().error() << "setMyColor(NOCOLOR)" << logs::end;
             exit(-1);
         }
-        logger().error() << "setMyColor DONE : " << this->getMyColor() << logs::end;
+        logger().debug() << "setMyColor DONE : " << this->getMyColor() << logs::end;
     } else {
         //defaut si aucune couleur n'est specifiée
         this->setMyColor(PMXVIOLET);
     }
-
     logger().debug() << "setMyColor done; getMyColor() = " << getMyColor() << logs::end;
+
+    if (cArgs_['s']) {
+        strat = cArgs_['s']["strategy"];
+        logger().info() << "strategy selected = " << strat << logs::end;
+        this->strategy(strat);
+    }else
+    {
+        this->strategy("all");
+    }
 
     //test number
     if (cArgs_['n']) {
@@ -232,8 +248,8 @@ void Robot::begin(int argc, char** argv)
     }
 
     //skip state
-    if (cArgs_['s']) {
-        logger().debug() << "skip = " << (int) cArgs_['s'] << logs::end;
+    if (cArgs_['k']) {
+        logger().debug() << "skip = " << (int) cArgs_['k'] << logs::end;
         this->skipSetup(true);
     } else
         this->skipSetup(false);
@@ -267,7 +283,6 @@ void Robot::stopAll() //TODO renommer stopMotionTimerAndActionManager
         svgPrintEndOfFile();
     } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
-
 
     if (actions_default != NULL) {
         this->actions_default->stop();

@@ -12,6 +12,10 @@ public:
      */
     static ASensorsDriver * create(std::string botName);
 
+    virtual int right() = 0;
+
+    virtual int left() = 0;
+
     virtual bool front() = 0;
 
     virtual bool rear() = 0; //TODO renommer back ??

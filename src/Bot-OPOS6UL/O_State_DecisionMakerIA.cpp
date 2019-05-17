@@ -386,7 +386,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
 
 void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 {
-    logger().info() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
+    logger().error() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
@@ -429,25 +429,25 @@ void O_State_DecisionMakerIA::execute()
         usleep(1000);
         //logger().error() << "waitForInit..." << logs::end;
     }
-    logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
+    //logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
 
-    //____________________________________________________________________________________________________
-    int tabletest = 0;
-    //____________________________________________________________________________________________________
+    logger().info() << "Strategy to be applied = " << robot.strategy() << logs::end;
 
-    if (tabletest == 1) {
+    if (robot.strategy() == "tabletest") {
         IASetupActivitiesZoneTableTest(); //A COMMENTER pour match
         initPlayground(); //definit les zones de non droit
         //enable zone
         //robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
         //robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
 
-    } else {
+    } else if (robot.strategy() == "all") {
         IASetupActivitiesZone(); //definit les activities
         initPlayground(); //definit les zones de non droit
         //enable zone
         //robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
         //robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
+    } else {
+        logger().error() << "NO STRATEGY " << robot.strategy() << " FOUND !!! " << logs::end;
     }
 
     //wait for the start of the chrono !
@@ -456,7 +456,6 @@ void O_State_DecisionMakerIA::execute()
     }
 
     logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
-    //robot.svgPrintPosition();
 
     //On ajoute le timer de detection
     robot.actions().sensors().addTimerSensors();
@@ -478,182 +477,3 @@ void O_State_DecisionMakerIA::execute()
 
 }
 
-/*
- bool O_push_button()
- {
- OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
- robot.logger().info() << "start O_push_button." << logs::end;
-
- robot.svgPrintPosition();
-
- TRAJ_STATE ts = TRAJ_OK;
- RobotPosition zone;
-
- //on avance en vert
- if (robot.getMyColor() == PMXVIOLET) {
- } else {
- robot.asserv().doLineAbs(100);
- }
-
- robot.asserv().ignoreFrontCollision(false);
- robot.asserv().ignoreRearCollision(true);
- robot.ia().iAbyPath().goToZone("zone_push_button", &zone);
- ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
- if (ts != TRAJ_OK)
- return false;
-
- robot.svgPrintPosition();
-
- //on recule un peu
- robot.asserv().doLineAbs(-120);
- robot.svgPrintPosition();
-
- //recalage
- robot.asserv().doCalage(-80, 3);
- robot.svgPrintPosition();
-
- robot.asserv().doLineAbs(150);
- robot.svgPrintPosition();
-
- robot.logger().info() << "O_push_button done." << logs::end;
-
- robot.points += 25;
-
- return true; //return true si ok sinon false si interruption
- }
-
- bool O_push_cube()
- {
- OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
- robot.logger().info() << "start O_push_cube." << logs::end;
-
- TRAJ_STATE ts = TRAJ_OK;
- RobotPosition zone;
-
- robot.asserv().ignoreFrontCollision(false);
- robot.asserv().ignoreRearCollision(true);
- robot.ia().iAbyPath().goToZone("zone_push_cube", &zone);
- ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
- if (ts != TRAJ_OK)
- return false;
-
- if (robot.getMyColor() == PMXVIOLET) {
- robot.ia().iAbyPath().enable(robot.ia().oarea_cube1, 0);
- robot.ia().iAbyPath().enable(robot.ia().oarea_buildzone, 1);
- } else {
- robot.ia().iAbyPath().enable(robot.ia().garea_cube1, 0);
- robot.ia().iAbyPath().enable(robot.ia().garea_buildzone, 1);
- }
-
- //on avance au point pour deposer
- while (robot.asserv().doMoveForwardTo(850, 400) != TRAJ_OK) {
- usleep(2000000);
- }
- robot.svgPrintPosition();
-
- //on recule un peu
- robot.asserv().doLineAbs(-100);
- robot.svgPrintPosition();
-
- robot.points += 5;
-
- robot.logger().info() << "O_push_cube done." << logs::end;
- return true; //return true si ok sinon false si interruption
- }
-
- bool O_push_bee()
- {
- OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
- robot.logger().info() << "start O_push_bee." << logs::end;
-
- TRAJ_STATE ts = TRAJ_OK;
- RobotPosition zone;
-
- robot.ia().iAbyPath().goToZone("zone_push_bee", &zone);
- ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
- if (ts != TRAJ_OK)
- return false;
-
- if (robot.getMyColor() == PMXVIOLET) {
- ts = robot.asserv().doLineAbs(-40);
- ts = robot.asserv().doRotateAbs(90);
- } else {
- ts = robot.asserv().doLineAbs(-70);
- ts = robot.asserv().doRotateAbs(-90);
- }
-
- robot.svgPrintPosition();
- //ts = robot.asserv().doLineAbs(-100);
- robot.asserv().doCalage(-250, 8);
-
- ts = robot.asserv().doLineAbs(50);
- robot.svgPrintPosition();
- //    robot.actions().arm_left_full(0);
- //    robot.actions().arm_right_full(-1);
- //
- //    robot.actions().arm_left_retract(0);
- //    robot.actions().arm_right_retract(-1);
- //
- //    robot.actions().arm_left_full(0);
- //    robot.actions().arm_right_full(-1);
- //
- //    robot.actions().arm_left_retract(0);
- //    robot.actions().arm_right_retract(-1);
-
- robot.actions().releaseAll();
-
- //abeille points
- robot.points += 50;
-
- ts = robot.asserv().doLineAbs(120);
- robot.svgPrintPosition();
-
- if (robot.getMyColor() == PMXVIOLET)
- ts = robot.asserv().doRotateRight(45);
- else
- ts = robot.asserv().doRotateLeft(45);
-
- ts = robot.asserv().doLineAbs(120);
- robot.svgPrintPosition();
- //sleep(3);
- //aller au distributeur
-
- if (robot.getMyColor() == PMXVIOLET) {
- ts = robot.asserv().doMoveForwardAndRotateTo(200, 1000, -90);
- robot.svgPrintPosition();
- ts = robot.asserv().doLineAbs(90);
- robot.svgPrintPosition();
- } else {
- ts = robot.asserv().doMoveForwardAndRotateTo(210, 1000, -90);
- robot.svgPrintPosition();
- ts = robot.asserv().doLineAbs(70);
- robot.svgPrintPosition();
- }
-
- ts = robot.asserv().doRotateRight(2);
- ts = robot.asserv().doRotateLeft(4);
- ts = robot.asserv().doRotateRight(2);
- ts = robot.asserv().doRotateLeft(4);
- ts = robot.asserv().doRotateRight(2);
- ts = robot.asserv().doRotateLeft(4);
- ts = robot.asserv().doRotateRight(2);
- ts = robot.asserv().doRotateLeft(4);
- robot.svgPrintPosition();
-
- ts = robot.asserv().doLineAbs(-150);
- robot.svgPrintPosition();
- //points distributeurs
- robot.points += 10;
-
- //petite danse
- //robot.actions().servo_init_end();
- ts = robot.asserv().doRotateRight(2);
- ts = robot.asserv().doRotateLeft(4);
- ts = robot.asserv().doRotateRight(2);
- ts = robot.asserv().doRotateLeft(4);
- //robot.actions().servo_init_end();
-
- robot.logger().info() << "O_push_bee done." << logs::end;
- return true; //return true si ok sinon false si interruption
- }
- */

@@ -16,20 +16,20 @@ O_State_Init::execute(Robot&)
     robot.actions().start();
 
     //BEGIN
-    begin: robot.strategy("all");
+    begin:
+
     robot.actions().lcd2x16().setBacklightOn();
     robot.actions().lcd2x16().clear();
 
-//    robot.actions().servo_init();
-
     if (!robot.skipSetup()) {
+        //robot.strategy("all");//defaut si BEGIN //TODO utile ?
+
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd2x16().home();
         robot.actions().lcd2x16().print("METTRE LA TIRETTE ! ");
-        //robot.actions().tirette().waitPressed();
+
         ButtonTouch b = BUTTON_NONE;
         while (!robot.actions().tirette().pressed()) {
-            usleep(10000);
             b = robot.actions().buttonBar().checkOneOfAllPressed();
             if (b == BUTTON_BACK_KEY) {
                 robot.actions().lcd2x16().home();
@@ -37,11 +37,16 @@ O_State_Init::execute(Robot&)
                 robot.actions().lcd2x16().print("EXIIIIIIT !");
                 robot.actions().ledBar().resetAll();
                 robot.actions().ledBar().stopAndWait(true);
-                usleep(500000);
+                usleep(200000);
                 logger().info() << "Exit by User request! " << logs::end;
+                robot.actions().lcd2x16().clear();
                 //on quitte le programme!!
                 exit(0);
             }
+            if (b == BUTTON_ENTER_KEY) {
+                break;
+            }
+            usleep(1000);
         }
 
         robot.actions().lcd2x16().clear();
@@ -50,99 +55,203 @@ O_State_Init::execute(Robot&)
 
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
-        robot.actions().lcd2x16().print("CHOISIR COULEUR + IA...");
+        robot.actions().lcd2x16().print("COULEUR?");
         logger().info() << "CHOISIR COULEUR + IA..." << logs::end;
         b = BUTTON_NONE;
+        int mode = 1; //1,2,3
+        int v = 1; //1,2,3 VRR, RVR, RRV
+        int st = 1;
         while (b != BUTTON_BACK_KEY || robot.getMyColor() == PMXNOCOLOR) {
-            b = robot.actions().buttonBar().waitOneOfAllPressed();
-            if (b == BUTTON_LEFT_KEY) {
-                logger().info() << "BUTTON_LEFT_KEY - YELLOW" << logs::end;
-                robot.actions().lcd2x16().clear();
+
+            if (mode == 1) {
+                logger().info() << "MODE COULEUR selected" << logs::end;
+                robot.actions().lcd2x16().setCursor(0, 0);
+                robot.actions().lcd2x16().print("* ");
+                robot.actions().lcd2x16().setCursor(9, 0);
+                robot.actions().lcd2x16().print(" ");
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print("YELLOW ");
-                robot.setMyColor(PMXYELLOW);
-            }
-            if (b == BUTTON_RIGHT_KEY) {
-                logger().info() << "BUTTON_RIGHT_KEY - VIOLET" << logs::end;
-                robot.actions().lcd2x16().clear();
+                robot.actions().lcd2x16().print(" ");
+
+                if (b == BUTTON_LEFT_KEY) {
+                    logger().info() << "BUTTON_LEFT_KEY - YELLOW selected" << logs::end;
+
+                    robot.actions().lcd2x16().setCursor(2, 0);
+                    robot.actions().lcd2x16().print("YELLOW ");
+                    robot.setMyColor(PMXYELLOW);
+                }
+                if (b == BUTTON_RIGHT_KEY) {
+                    logger().info() << "BUTTON_RIGHT_KEY - VIOLET selected" << logs::end;
+
+                    robot.actions().lcd2x16().setCursor(2, 0);
+                    robot.actions().lcd2x16().print("VIOLET ");
+                    robot.setMyColor(PMXVIOLET);
+                }
+            } else if (mode == 2) {
+                logger().info() << "MODE VRR selected" << logs::end;
+                robot.actions().lcd2x16().setCursor(0, 0);
+                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().setCursor(9, 0);
+                robot.actions().lcd2x16().print("*");
                 robot.actions().lcd2x16().setCursor(0, 1);
-                robot.actions().lcd2x16().print("VIOLET");
-                robot.setMyColor(PMXVIOLET);
+                robot.actions().lcd2x16().print(" ");
+                if (b == BUTTON_LEFT_KEY) {
+                    logger().info() << "BUTTON_LEFT_KEY - PREV" << logs::end;
+                    v--;
+                    if (v <= 0)
+                        v = 3;
+                }
+                if (b == BUTTON_RIGHT_KEY) {
+                    logger().info() << "BUTTON_RIGHT_KEY - NEXT" << logs::end;
+                    v++;
+                    if (v >= 4)
+                        v = 1;
+                }
+                robot.actions().lcd2x16().setCursor(11, 0);
+                if (v == 1) {
+                    logger().info() << "mode V R R selected" << logs::end;
+                    robot.actions().lcd2x16().print("V R R");
+                    robot.configVRR("VRR");
+                } else if (v == 2) {
+                    logger().info() << "mode R V R selected" << logs::end;
+                    robot.actions().lcd2x16().print("R V R");
+                    robot.configVRR("RVR");
+                } else if (v == 3) {
+                    logger().info() << "mode R R V selected" << logs::end;
+                    robot.actions().lcd2x16().print("R R V");
+                    robot.configVRR("RRV");
+                }
+
+            } else if (mode == 3) {
+                logger().info() << "MODE STRAT selected" << logs::end;
+                robot.actions().lcd2x16().setCursor(0, 0);
+                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().setCursor(9, 0);
+                robot.actions().lcd2x16().print(" ");
+                robot.actions().lcd2x16().setCursor(0, 1);
+                robot.actions().lcd2x16().print("*");
+                robot.actions().lcd2x16().setCursor(1, 1);
+
+                if (b == BUTTON_LEFT_KEY) {
+                    logger().info() << "STRAT - PREV" << logs::end;
+                    st--;
+                    if (st <= 0)
+                        st = 3;
+                }
+                if (b == BUTTON_RIGHT_KEY) {
+                    logger().info() << "STRAT - NEXT" << logs::end;
+                    st++;
+                    if (st >= 4)
+                        st = 1;
+                }
+
+                robot.actions().lcd2x16().setCursor(1, 2);
+                if (st == 1) {
+                    logger().info() << "strat1" << logs::end;
+                    robot.actions().lcd2x16().print(" strat1");
+                    robot.strategy("strat1");
+                } else if (st == 2) {
+                    logger().info() << "strat2" << logs::end;
+                    robot.actions().lcd2x16().print(" strat2");
+                    robot.strategy("strat2");
+                } else if (st == 3) {
+                    logger().info() << "strat3" << logs::end;
+                    robot.actions().lcd2x16().print(" strat3");
+                    robot.strategy("strat3");
+                }
+
             }
+
             if (b == BUTTON_UP_KEY) {
-                logger().info() << "BUTTON_UP_KEY - IA" << logs::end;
-                //robot.strategy("strat5");
+                logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
+
+                robot.actions().ax12_init();
+                usleep(300000);
             }
             if (b == BUTTON_DOWN_KEY) {
-                logger().info() << "BUTTON_DOWN_KEY - MECA" << logs::end;
+                mode++;
+                if (mode > 3)
+                    mode = 1;
+                logger().info() << "BUTTON_DOWN_KEY - MODE changed to " << mode << logs::end;
+
             }
+            b = robot.actions().buttonBar().waitOneOfAllPressed();
+
         }
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
 
         robot.actions().ledBar().stopAndWait(true);
-        //sortir pince
-//        if (robot.getMyColor() == PMXVIOLET)
-//            robot.actions().servo_init_orange();
-//        else
-//            robot.actions().servo_init_green();
 
-//tirette
         robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
 
+        //position et init servo
         setPos();
+
+        //ATTENTE TIRETTE
         robot.waitForInit(true);
 
         robot.actions().lcd2x16().clear();
-        robot.actions().lcd2x16().print("WAIT TIRETTE...");
-        logger().info() << "PMX...WAIT TIRETTE !";
+        robot.actions().lcd2x16().setCursor(0, 1);
+        robot.actions().lcd2x16().print("...WAIT TIRETTE...");
+        logger().info() << "PMX...WAIT TIRETTE !!!!!!!!!!!!!!!";
         if (robot.getMyColor() == PMXVIOLET) {
-            robot.actions().lcd2x16().setCursor(0, 1);
-            robot.actions().lcd2x16().print("=>  VIOLET !");
+            robot.actions().lcd2x16().setCursor(0, 0);
+            robot.actions().lcd2x16().print("VIOLET");
             logger().info() << " VIOLET";
         } else {
-            robot.actions().lcd2x16().setCursor(0, 1);
-            robot.actions().lcd2x16().print("=>  YELLOW !");
+            robot.actions().lcd2x16().setCursor(0, 0);
+            robot.actions().lcd2x16().print("YELLOW");
             logger().info() << "YELLOW";
         }
         logger().info() << logs::end;
 
+        robot.actions().lcd2x16().setCursor(8, 0);
+
+        //robot.actions().lcd2x16().print((String)robot.configVRR());
+        if (v == 1) {
+            robot.actions().lcd2x16().print("V R R");
+            robot.configVRR("VRR");
+        } else if (v == 2) {
+            robot.actions().lcd2x16().print("R V R");
+            robot.configVRR("RVR");
+        } else if (v == 3) {
+            robot.actions().lcd2x16().print("R R V");
+            robot.configVRR("RRV");
+        }
+        robot.actions().lcd2x16().setCursor(13, 0);
+        //robot.actions().lcd2x16().print(robot.strategy());
+
+        //ATTENTE TIRETTE !!!!
         bool bb = false;
-        while (robot.actions().tirette().pressed()) {
+        while (robot.actions().tirette().pressed()) { //WARNING renvoi toujours 0 en SIMU
             bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
             if (bb) {
                 robot.actions().ledBar().stopAndWait(true);
                 robot.actions().lcd2x16().clear();
                 goto begin;
             }
-            usleep(100000);
         }
 
     } else {
-        logger().error() << "SKIP SETUP...." << logs::end;
+        logger().info() << "SKIP SETUP...." << logs::end;
         if (robot.getMyColor() == PMXNOCOLOR) {
             robot.actions().lcd2x16().home();
             robot.actions().lcd2x16().print("NO COLOR... => EXIT !!");
             exit(0);
+        } else {
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXVIOLET ? "VIOLET" : "YELLOW") << logs::end;
         }
 
         robot.actions().lcd2x16().home();
         robot.actions().lcd2x16().print("Skip setup...");
 
-//        robot.actions().servo_init();
-
-        robot.strategy("all");
+        logger().info() << "Strategy is " << robot.strategy() << logs::end;
 
         setPos();
 
-        //sortir pince
-//        if (robot.getMyColor() == PMXVIOLET)
-//            robot.actions().servo_init_orange();
-//        else
-//            robot.actions().servo_init_green();
-
+        logger().info() << "END SETUP !" << logs::end;
         robot.waitForInit(true);
-        usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
+        usleep(2000000); //simulation attente tirette pour avoir les logs sequentiels
     }
 
     robot.actions().ledBar().stopAndWait(true);
@@ -172,19 +281,20 @@ void O_State_Init::setPos()
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().print("SET POSITION...");
+    /*
+     robot.actions().ax12_leftHand();
+     robot.actions().ax12_rightHand();
+     robot.actions().ax12_left_cil_retract();
+     robot.actions().ax12_right_cil_retract(-1);
 
-    robot.actions().ax12_leftHand();
-    robot.actions().ax12_rightHand();
-    robot.actions().ax12_left_cil_retract();
-    robot.actions().ax12_right_cil_retract(-1);
+     robot.actions().ax12_leftHand_retract();
+     robot.actions().ax12_rightHand_retract();
+     robot.actions().ax12_left_cil();
+     robot.actions().ax12_right_cil(-1);
 
-    robot.actions().ax12_leftHand_retract();
-    robot.actions().ax12_rightHand_retract();
-    robot.actions().ax12_left_cil();
-    robot.actions().ax12_right_cil(-1);
-
-    robot.actions().ax12_left_cil_retract();
-    robot.actions().ax12_right_cil_retract();
+     robot.actions().ax12_left_cil_retract();
+     robot.actions().ax12_right_cil_retract();*/
+    robot.actions().ax12_init();
 
     //demi largeur 150
     robot.asserv().startMotionTimerAndOdo(false);

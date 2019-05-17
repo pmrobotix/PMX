@@ -63,6 +63,8 @@ protected:
     bool end90s_ = false;
     bool waitForInit_ = false;
     std::string strategy_ = "all";
+    std::string configVRR_ = "all";
+
 
 public:
 #ifdef SIMU
@@ -72,7 +74,7 @@ public:
     {
         long mtype;
         char mtext[512];
-    } msg_ipc;
+    }msg_ipc;
 #endif
 
     //Action => RobotElement
@@ -124,6 +126,15 @@ public:
     void strategy(std::string str)
     {
         this->strategy_ = str;
+    }
+
+    std::string configVRR() const
+    {
+        return this->configVRR_;
+    }
+    void configVRR(std::string str)
+    {
+        this->configVRR_ = str;
     }
 
     int useExternalEncoder() const
