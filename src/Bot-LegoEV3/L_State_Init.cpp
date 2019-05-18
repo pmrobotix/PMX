@@ -245,8 +245,7 @@ L_State_Init::execute(Robot&)
     robot.actions().ledBar().resetAll();
 
     logger().debug() << "L_State_Init finished" << logs::end;
-    //return NULL; //finish all state
-    return this->getState("WaitEndOfMatch"); //return NULL; //finish all state
+    return this->getState("WaitEndOfMatch"); //return NULL; to finish all state
 }
 
 void L_State_Init::setPos()
@@ -277,9 +276,9 @@ void L_State_Init::setPos()
     robot.svgPrintPosition();
     //init
 
-    //robot.asserv().doLineAbs(150);
-    //robot.asserv().doMoveForwardAndRotateTo(300, 740, 90.0);
-    //robot.svgPrintPosition();
+    robot.asserv().doLineAbs(150);
+    robot.asserv().doMoveForwardAndRotateTo(300, 740, 90.0);
+    robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;
     robot.actions().lcd().display_content_string("SET POSITION Done.", 6);
 

@@ -49,6 +49,7 @@ void logs::LoggerFactory::initialize()
 
     //TESTS
     add(logs::Level::INFO, "L_LedBarTest", "console");
+    add(logs::Level::INFO, "L_LcdTest", "console");
     add(logs::Level::INFO, "L_ServoUsingMotorTest", "console");
     add(logs::Level::INFO, "L_ButtonBarTest", "console");
     add(logs::Level::INFO, "L_SoundBarTest", "console");

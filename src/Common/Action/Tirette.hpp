@@ -33,7 +33,7 @@ public:
      */
     ~Tirette();
 
-    bool pressed();
+    int pressed();
 
     void monitor(int nb);
 

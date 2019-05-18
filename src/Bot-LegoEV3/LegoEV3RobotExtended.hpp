@@ -23,7 +23,6 @@ public:
 
     ~LegoEV3RobotExtended()
     {
-        logger().debug() << "~LegoEV3RobotExtended()" << logs::end;
     }
 
     inline LegoEV3ActionsExtended& actions()
@@ -53,9 +52,6 @@ public:
     void stopExtraActions();
 
     void displayPoints();
-
-
-
 
 
     static inline const logs::Logger & logger()

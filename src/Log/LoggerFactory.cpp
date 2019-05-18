@@ -14,7 +14,7 @@
 #include "Level.hpp"
 
 logs::LoggerFactory::LoggerFactory() :
-        appenders_(), loggers_(), rootLogger_()
+        appenders_(), loggers_(), rootLogger_(), stop_(false)
 {
     this->initialize();
 
@@ -22,6 +22,12 @@ logs::LoggerFactory::LoggerFactory() :
         printf("ERROR Exception logs::LoggerFactory::LoggerFactory() NO default rootLogger() \n Exit!\n");
         exit(1);
     }
+}
+
+void logs::LoggerFactory::stopLog()
+{
+    stop_ = true;
+    this->waitForEnd();
 }
 
 logs::LoggerFactory::~LoggerFactory()
@@ -36,6 +42,8 @@ logs::LoggerFactory::~LoggerFactory()
         delete i2->second;
         i2->second = NULL;
     }
+    stopLog();
+    this->cancel();
 }
 
 const logs::Logger &
@@ -71,7 +79,7 @@ logs::LoggerFactory::appender(const std::string & name)
 
 void logs::LoggerFactory::add(Logger * logger)
 {
-
+    //on demarre le thread du logfactory sur le logger (ERROR) par defaut.
     if (logger->name() == "") {
 
         this->rootLogger_ = logger;
@@ -101,7 +109,7 @@ void logs::LoggerFactory::add(const Level & level, const std::string & loggerNam
 
 void logs::LoggerFactory::execute()
 {
-    while (1) {
+    while (!stop_) {
         std::map<std::string, Appender *>::iterator it = appenders_.begin();
         for (it = appenders_.begin(); it != appenders_.end(); ++it) {
             //std::cout << it->first << " :: " << it->second << std::endl;

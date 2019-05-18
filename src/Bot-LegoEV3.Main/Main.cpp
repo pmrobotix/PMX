@@ -26,35 +26,33 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	//add specific tests for this robot
-	robot.getConsoleManager().add(new L_LedBarTest());
-	robot.getConsoleManager().add(new L_ButtonBarTest());
-	robot.getConsoleManager().add(new L_SoundBarTest());
-	robot.getConsoleManager().add(new L_TiretteTest());
-	robot.getConsoleManager().add(new L_LcdTest());
-	robot.getConsoleManager().add(new L_SensorsTest());
-	robot.getConsoleManager().add(new L_ServoObjectTest());
-	robot.getConsoleManager().add(new L_ServoStepTest());
-	robot.getConsoleManager().add(new L_ServoUsingMotorTest());
-	robot.getConsoleManager().add(new L_MovingBaseTest());
-	robot.getConsoleManager().add(new L_AsservLineRotateTest());
-	robot.getConsoleManager().add(new L_Asserv_SquareTest());
-	robot.getConsoleManager().add(new L_AsservEsialTest());
-	robot.getConsoleManager().add(new L_AsservRunTest());
-	robot.getConsoleManager().add(new L_IATest());
-	robot.getConsoleManager().add(new L_IAByPathTest());
-	robot.getConsoleManager().add(new L_ActionManagerTimerTest());
-	robot.getConsoleManager().add(new L_Asserv_CalageTest());
+    //add specific tests for this robot
+    robot.getConsoleManager().add(new L_LedBarTest());
+    robot.getConsoleManager().add(new L_ButtonBarTest());
+    robot.getConsoleManager().add(new L_SoundBarTest());
+    robot.getConsoleManager().add(new L_TiretteTest());
+    robot.getConsoleManager().add(new L_LcdTest());
+    robot.getConsoleManager().add(new L_SensorsTest());
+    robot.getConsoleManager().add(new L_ServoObjectTest());
+    robot.getConsoleManager().add(new L_ServoStepTest());
+    robot.getConsoleManager().add(new L_ServoUsingMotorTest());
+    robot.getConsoleManager().add(new L_MovingBaseTest());
+    robot.getConsoleManager().add(new L_AsservLineRotateTest());
+    robot.getConsoleManager().add(new L_Asserv_SquareTest());
+    robot.getConsoleManager().add(new L_AsservEsialTest());
+    robot.getConsoleManager().add(new L_AsservRunTest());
+    robot.getConsoleManager().add(new L_IATest());
+    robot.getConsoleManager().add(new L_IAByPathTest());
+    robot.getConsoleManager().add(new L_ActionManagerTimerTest());
+    robot.getConsoleManager().add(new L_Asserv_CalageTest());
 
+    robot.parseConsoleArgs(argc, argv);
 
-	robot.parseConsoleArgs(argc, argv);
+    //start the Robot (functional tests or match)
+    robot.begin(argc, argv);
 
-	//start the Robot (functional tests or match)
-	robot.begin(argc, argv);
-
-	sleep(1); //TODO wait and verify end of logger ?
-	//cout << "End LegoEV3 robot." << endl;
-	return 0;
+    //cout << "End LegoEV3 robot." << endl;
+    return 0;
 }

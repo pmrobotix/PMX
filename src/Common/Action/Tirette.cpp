@@ -18,10 +18,18 @@ Tirette::~Tirette()
 {
 }
 
-bool Tirette::pressed()
+int Tirette::pressed()
 {
     int temp = switchdriver->tirettePressed();
     logger().debug() << "pressed = " << temp << logs::end;
+    if (temp == -1) {
+        logger().error() << "pressed1 = " << temp << logs::end;
+        temp = switchdriver->tirettePressed();
+    }
+    if (temp == -1) {
+        logger().error() << "pressed2 = " << temp << logs::end;
+        temp = switchdriver->tirettePressed();
+    }
 
     return temp;
 }

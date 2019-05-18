@@ -57,6 +57,8 @@ public:
      */
     static const Logger & logger(const std::string & name);
 
+    void stopLog();
+
 private:
 
     /*!
@@ -73,6 +75,8 @@ private:
      * \brief Logger principal. Il définit le niveau de trace par défaut.
      */
     Logger * rootLogger_;
+
+    bool stop_;
 
     /*!
      * \brief constructeur de la classe.

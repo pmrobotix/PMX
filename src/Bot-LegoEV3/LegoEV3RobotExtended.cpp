@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "../Common/Action/LcdShield.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Thread/Thread.hpp"
 #include "L_State_DecisionMakerIA.hpp"
@@ -56,7 +57,6 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
     Robot::begin(argc, argv);
     logger().debug() << "LegoEV3RobotExtended::begin" << logs::end;
 
-
     //specific match case ands strategies
     if (cArgs_["type"] == "m" or cArgs_["type"] == "M") {
 
@@ -79,7 +79,6 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
 
     }
 
-    logger().debug() << "PMX LegoEV3Robot - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec"
-            << logs::end;
+    logger().info() << "PMX LegoEV3Robot - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec" << logs::end;
 }
 

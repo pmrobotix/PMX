@@ -70,7 +70,7 @@ int GpioPCA9555::getValueP1(int pin)
 {
     if (!connected_) {
         logger().error() << "getValueP1() : return 0; GpioBoard NOT CONNECTED !" << logs::end;
-        return 0;
+        return -1;
     }
     unsigned char in = read_i2c(IN_P1);
     logger().debug() << "getValueP1 in = " << reinterpret_cast<void*>(in) << logs::end;

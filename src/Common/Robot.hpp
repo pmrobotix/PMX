@@ -4,7 +4,6 @@
 #include <string>
 
 #include "../Log/LoggerFactory.hpp"
-#include "../Log/SvgWriter.hpp"
 #include "Arguments.hpp"
 #include "ConsoleManager.hpp"
 #include "State/Automate.hpp"
@@ -98,6 +97,8 @@ public:
      */
     virtual ~Robot()
     {
+        //Tue le log s'il existe (core dump sinon)
+        logs::LoggerFactory::instance().stopLog();
     }
 
     //DATA

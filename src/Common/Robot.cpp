@@ -6,8 +6,10 @@
 
 #include "Robot.hpp"
 
+#include <stdio.h>
 #include <stdlib.h>
 
+#include "../Log/SvgWriter.hpp"
 #include "Asserv/MotorControl.hpp"
 #include "Asserv/MovingBase.hpp"
 #include "Utils/ConsoleKeyInput.hpp"
