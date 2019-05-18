@@ -103,7 +103,6 @@ void L_AsservRunTest::run(int argc, char** argv)
 
     robot.svgPrintPosition();
 
-    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

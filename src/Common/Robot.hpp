@@ -97,6 +97,7 @@ public:
      */
     virtual ~Robot()
     {
+        stopMotionTimerAndActionManager();
         //Tue le log s'il existe (core dump sinon)
         logs::LoggerFactory::instance().stopLog();
     }
@@ -233,7 +234,7 @@ public:
      */
     virtual void begin(int argc, char** argv);
 
-    virtual void stopAll();
+    virtual void stopMotionTimerAndActionManager();
 
     virtual void freeMotion();
 

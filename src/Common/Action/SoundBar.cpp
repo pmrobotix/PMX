@@ -11,12 +11,12 @@ using namespace std;
 SoundBar::SoundBar(Actions & actions) :
         AActionsElement(actions), actionStopped_(false)
 {
-    sounddriver = ASoundDriver::create();
+    sounddriver_ = ASoundDriver::create();
 }
 
 SoundBar::~SoundBar()
 {
-    delete sounddriver;
+    delete sounddriver_;
 }
 
 SoundBarAction::SoundBarAction(SoundBar & soundBar, SoundBarActionName action) :
@@ -26,7 +26,7 @@ SoundBarAction::SoundBarAction(SoundBar & soundBar, SoundBarActionName action) :
 
 void SoundBar::toneImperialMarchDarthVader()
 {
-	sounddriver->tone(
+    sounddriver_->tone(
 	{
 	{ 392, 350, 100 },
 	{ 392, 350, 100 },
@@ -98,14 +98,14 @@ void SoundBar::toneImperialMarchDarthVader()
 
 void SoundBar::speakPMX()
 {
-    sounddriver->speak("Hello PMX", true);
+    sounddriver_->speak("Hello PMX", true);
     sleep(1);
-    sounddriver->speak("How are you today ?", true);
+    sounddriver_->speak("How are you today ?", true);
 }
 
 void SoundBar::beep()
 {
-    sounddriver->beep("", true);
+    sounddriver_->beep("", true);
 }
 
 void SoundBar::startBeep()

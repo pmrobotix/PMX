@@ -47,7 +47,6 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 void OPOS6UL_RobotExtended::stopExtraActions()
 {
     this->actions().stopExtra(); //extra devices
-
 }
 
 void OPOS6UL_RobotExtended::displayPoints()

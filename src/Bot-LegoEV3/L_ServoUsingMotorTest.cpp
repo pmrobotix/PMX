@@ -101,7 +101,6 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
      }
      */
 
-    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

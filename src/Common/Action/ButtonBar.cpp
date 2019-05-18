@@ -11,17 +11,17 @@ ButtonBar::ButtonBar(Actions & actions) :
         AActionsElement(actions)
 
 {
-    buttondriver = AButtonDriver::create();
+    buttondriver_ = AButtonDriver::create();
 }
 
 ButtonBar::~ButtonBar()
 {
-    delete buttondriver;
+    delete buttondriver_;
 }
 
 bool ButtonBar::pressed(ButtonTouch button)
 {
-    return buttondriver->pressed(button);
+    return buttondriver_->pressed(button);
 }
 
 bool ButtonBar::waitPressed(ButtonTouch button)

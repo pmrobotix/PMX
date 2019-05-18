@@ -28,8 +28,10 @@ private:
 
     Robot * robot_;
 
+    ASensorsDriver* sensorsdriver_;
+
 public:
-    ASensorsDriver* sensorsdriver;
+
 
     /*!
      * \brief Constructor.
@@ -58,6 +60,8 @@ public:
 
     //Ajoute le timer des sensors de detection
     void addTimerSensors();
+
+    //TODO supprimer la tache des sensors void removeTimerSensors();
 
 };
 

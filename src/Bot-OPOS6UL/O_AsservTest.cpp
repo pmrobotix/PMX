@@ -124,8 +124,7 @@ void O_AsservTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     robot.asserv().freeMotion();
-    logger().info() << "Stopping Robot... " << logs::end;
-    robot.stopAll();
+
     logger().info() << "Happy End." << logs::end;
 }
 

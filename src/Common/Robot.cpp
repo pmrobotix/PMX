@@ -277,9 +277,8 @@ void Robot::begin(int argc, char** argv)
     }
 }
 
-void Robot::stopAll() //TODO renommer stopMotionTimerAndActionManager
+void Robot::stopMotionTimerAndActionManager()
 {
-
     if (asserv_default != NULL) {
         this->asserv_default->stopMotionTimerAndOdo();
         svgPrintEndOfFile();
@@ -291,7 +290,6 @@ void Robot::stopAll() //TODO renommer stopMotionTimerAndActionManager
         this->actions_default->cancel(); //stop devices and wait manager to finish
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
-
 }
 
 void Robot::freeMotion()

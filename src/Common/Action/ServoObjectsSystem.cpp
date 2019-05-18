@@ -14,6 +14,7 @@ ServoObjectsSystem::ServoObjectsSystem(Actions & actions, AServoDriver::ServoTyp
 
 ServoObjectsSystem::~ServoObjectsSystem()
 {
+    delete servodriver_;
 }
 
 void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)

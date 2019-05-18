@@ -181,7 +181,6 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 		robot.svgPrintPosition();
 	}
 
-	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

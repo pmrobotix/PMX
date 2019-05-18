@@ -133,8 +133,6 @@ void O_ServoStepTest::run(int argc, char** argv)
     logger().info() << "RELEASE ALL " << logs::end;
     robot.actions().releaseAll();
 
-    robot.stopExtraActions();
-    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

@@ -184,6 +184,6 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             usleep(1000);
         }
     }
-    robot.stopAll(); //stop asserv and actionManagerTimer
+
     return NULL; //finish all state
 }

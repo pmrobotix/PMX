@@ -11,7 +11,7 @@
 Asserv::Asserv(std::string botId, Robot * robot)
 {
     pMovingBase_ = new MovingBase(botId);
-    asservdriver = AAsservDriver::create(botId);
+    asservdriver_ = AAsservDriver::create(botId);
     probot_ = robot;
 
     useAsservType_ = ASSERV_INT_ESIALR; //default
@@ -52,11 +52,11 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 
     } else if (useAsservType_ == ASSERV_EXT) {
 
-        asservdriver->motion_ActivateManager(true); //on active la carte d'asserv externe
+        asservdriver_->motion_ActivateManager(true); //on active la carte d'asserv externe
         if (assistedHandlingEnabled)
-            asservdriver->motion_AssistedHandling();
+            asservdriver_->motion_AssistedHandling();
         else
-            asservdriver->motion_FreeMotion();
+            asservdriver_->motion_FreeMotion();
 
     }
 }
@@ -66,8 +66,8 @@ void Asserv::stopMotionTimerAndOdo()
     if (useAsservType_ == ASSERV_INT_INSA) {
         pAsservInsa_->motion_StopTimer();
     } else if (useAsservType_ == ASSERV_EXT) {
-        asservdriver->path_InterruptTrajectory();
-        asservdriver->motion_ActivateManager(false);
+        asservdriver_->path_InterruptTrajectory();
+        asservdriver_->motion_ActivateManager(false);
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         pAsservEsialR_->stopAsserv();
     }
@@ -86,7 +86,7 @@ void Asserv::setLowSpeed(bool enable)
         //logger().error() << "pAsservEsialR_->motion_setLowSpeed(" << enable << logs::end;
 
     } else if (useAsservType_ == 0)
-        asservdriver->motion_setLowSpeed(enable);
+        asservdriver_->motion_setLowSpeed(enable);
 }
 void Asserv::disablePID() //deprecated TODO a remplacer par freemotion
 {
@@ -98,7 +98,7 @@ void Asserv::freeMotion()
     if (useAsservType_ == ASSERV_INT_INSA)
         pAsservInsa_->motion_FreeMotion();
     else if (useAsservType_ == ASSERV_EXT)
-        asservdriver->motion_FreeMotion();
+        asservdriver_->motion_FreeMotion();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->motion_FreeMotion();
 }
@@ -108,7 +108,7 @@ void Asserv::assistedHandling()
     if (useAsservType_ == ASSERV_INT_INSA)
         pAsservInsa_->motion_AssistedHandling();
     else if (useAsservType_ == ASSERV_EXT)
-        asservdriver->motion_AssistedHandling();
+        asservdriver_->motion_AssistedHandling();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->motion_AssistedHandling();
 }
@@ -130,7 +130,7 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     if (useAsservType_ == ASSERV_INT_INSA)
         pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
     else if (useAsservType_ == ASSERV_EXT)
-        asservdriver->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
+        asservdriver_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
 }
@@ -161,7 +161,7 @@ RobotPosition Asserv::pos_getPosition()
     if (useAsservType_ == ASSERV_INT_INSA)
         p = pAsservInsa_->odo_GetPosition();
     else if (useAsservType_ == ASSERV_EXT)
-        p = asservdriver->odo_GetPosition();
+        p = asservdriver_->odo_GetPosition();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         p = pAsservEsialR_->odo_GetPosition();
     return p;
@@ -229,7 +229,7 @@ void Asserv::setFrontCollision()
             if (useAsservType_ == ASSERV_INT_INSA)
                 pAsservInsa_->path_CollisionOnTrajectory();
             else if (useAsservType_ == ASSERV_EXT)
-                asservdriver->path_CollisionOnTrajectory();
+                asservdriver_->path_CollisionOnTrajectory();
             else if (useAsservType_ == ASSERV_INT_ESIALR)
                 pAsservEsialR_->path_CollisionOnTrajectory();
 
@@ -249,7 +249,7 @@ void Asserv::setRearCollision()
             if (useAsservType_ == ASSERV_INT_INSA)
                 pAsservInsa_->path_CollisionRearOnTrajectory();
             else if (useAsservType_ == ASSERV_EXT)
-                asservdriver->path_CollisionRearOnTrajectory();
+                asservdriver_->path_CollisionRearOnTrajectory();
             else if (useAsservType_ == ASSERV_INT_ESIALR)
                 pAsservEsialR_->path_CollisionRearOnTrajectory();
         }
@@ -278,7 +278,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
     if (useAsservType_ == ASSERV_INT_INSA)
         ts = pAsservInsa_->motion_DoLine(meters);
     else if (useAsservType_ == ASSERV_EXT)
-        ts = asservdriver->motion_DoLine(meters);
+        ts = asservdriver_->motion_DoLine(meters);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         ts = pAsservEsialR_->motion_DoLine(meters);
 
@@ -306,7 +306,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
     if (useAsservType_ == ASSERV_INT_INSA)
         ts = pAsservInsa_->motion_DoRotate(radians);
     else if (useAsservType_ == ASSERV_EXT)
-        ts = asservdriver->motion_DoRotate(radians);
+        ts = asservdriver_->motion_DoRotate(radians);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         ts = pAsservEsialR_->motion_DoRotate(radians);
 
@@ -336,7 +336,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
         //TODO
         logger().error() << "TODO doFaceTo ASSERV_INT_INSA !!!" << logs::end;
     } else if (useAsservType_ == ASSERV_EXT)
-        ts = asservdriver->motion_DoFace(xMM / 1000.0, yMM / 1000.0);
+        ts = asservdriver_->motion_DoFace(xMM / 1000.0, yMM / 1000.0);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         ts = pAsservEsialR_->motion_DoFace(xMM / 1000.0, yMM / 1000.0);
 
@@ -443,25 +443,25 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
         logger().error() << "TODO doCalage ASSERV_INT_INSA !!!" << logs::end;
     } else if (useAsservType_ == ASSERV_EXT) {
         //set low speed
-        asservdriver->motion_setLowSpeed(true);
+        asservdriver_->motion_setLowSpeed(true);
 
-        asservdriver->motion_ActivateReguAngle(false);
+        asservdriver_->motion_ActivateReguAngle(false);
         //asservdriver->motion_ActivateReguDist(true);
 
         //TRAJ_STATE ts = asservdriver->motion_DoLine(dist);
         //logger().info() << "ts=" << ts<< logs::end;
-        asservdriver->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
+        asservdriver_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
         sleep(tempo);
-        asservdriver->path_CancelTrajectory();
-        asservdriver->path_ResetEmergencyStop();
+        asservdriver_->path_CancelTrajectory();
+        asservdriver_->path_ResetEmergencyStop();
 
         //reset
-        asservdriver->motion_ResetReguAngle();
-        asservdriver->motion_ResetReguDist();
+        asservdriver_->motion_ResetReguAngle();
+        asservdriver_->motion_ResetReguDist();
 
         //reactive
-        asservdriver->motion_ActivateReguAngle(true);
-        asservdriver->motion_setLowSpeed(false);
+        asservdriver_->motion_ActivateReguAngle(true);
+        asservdriver_->motion_setLowSpeed(false);
 
         assistedHandling();
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {

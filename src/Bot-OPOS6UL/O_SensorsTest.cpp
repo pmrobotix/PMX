@@ -31,8 +31,11 @@ void O_SensorsTest::run(int argc, char** argv)
         logger().info() << " front=" << front << " rear=" << rear << logs::end;
     }
 
-    robot.stopExtraActions();
-    robot.stopAll();
+    //TODO execution avec l'actionTimer
+
+
+    //robot.stopExtraActions(); //TODO ajouter les sensors ??
+
     logger().info() << "Happy End." << logs::end;
 }
 

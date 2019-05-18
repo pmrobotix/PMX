@@ -48,10 +48,7 @@ void O_ServoObjectsTest::run(int argc, char** argv)
     robot.actions().ax12_right_cil_retract();
 
 
-
-
     robot.stopExtraActions();
-    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

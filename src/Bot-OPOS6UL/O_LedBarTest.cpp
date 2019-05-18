@@ -70,9 +70,6 @@ void O_LedBarTest::run(int argc, char** argv)
     robot.actions().ledBar().startK2mil(10, 50000, LED_ORANGE, true);
     sleep(1);
     */
-    logger().info() << "actions End." << logs::end;
-
-    robot.stopAll();
 
     logger().info() << "O_LedBarTest Happy End." << logs::end;
 }

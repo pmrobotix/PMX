@@ -19,8 +19,10 @@ private:
         return instance;
     }
 
+    AButtonDriver* buttondriver_;
+
 public:
-    AButtonDriver* buttondriver;
+
 
     /*!
      * \brief Constructor.

@@ -27,6 +27,7 @@ public:
 
     ~LegoEV3AsservExtended()
     {
+
     }
 
     void startMotionTimerAndOdo(bool assistedHandlingEnabled);

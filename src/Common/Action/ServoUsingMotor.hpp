@@ -22,6 +22,7 @@ private:
     AServoUsingMotorDriver* servoMotordriver_;
 
     int ticks_place;
+
 public:
 
     /*!

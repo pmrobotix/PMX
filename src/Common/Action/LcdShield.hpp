@@ -24,6 +24,9 @@ private:
         return instance;
     }
 
+    ALcdShieldDriver* lcdshielddriver_;
+
+
 public:
 
     /*!
@@ -31,7 +34,7 @@ public:
      */
     std::string botId_;
 
-    ALcdShieldDriver* lcdshielddriver;
+
 
     /*!
      * \brief Constructor.

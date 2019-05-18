@@ -11,11 +11,13 @@ ServoUsingMotor::ServoUsingMotor(Actions & actions) :
     servoMotordriver_ = AServoUsingMotorDriver::create();
 
     servoMotordriver_->resetEncoder(0);
-    ticks_place = 400; //pour 1000 - 350
+
+    ticks_place = 400; //pour 1000 - 350  //TODO a separer par robot !!!
 }
 
 ServoUsingMotor::~ServoUsingMotor()
 {
+    delete servoMotordriver_;
 }
 
 void ServoUsingMotor::moveRight(int nb)

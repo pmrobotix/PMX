@@ -17,32 +17,31 @@ using namespace std;
 
 void L_SoundBarTest::run(int argc, char** argv)
 {
-	logger().info() << "Executing - " << this->desc() << logs::end;
+    logger().info() << "Executing - " << this->desc() << logs::end;
 
-	LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-	logger().info() << "BEEP" << logs::end;
-	robot.actions().soundBar().beep();
+    logger().info() << "BEEP" << logs::end;
+    robot.actions().soundBar().beep();
 
-	logger().info() << "speakPMX" << logs::end;
-	robot.actions().soundBar().speakPMX();
+    logger().info() << "speakPMX" << logs::end;
+    robot.actions().soundBar().speakPMX();
 
-	robot.actions().start();
+    robot.actions().start();
 
-	logger().info() << "BEEP BEEP" << logs::end;
-	robot.actions().soundBar().startBeep();
-	robot.actions().soundBar().startBeep();
+    logger().info() << "BEEP BEEP" << logs::end;
+    robot.actions().soundBar().startBeep();
+    robot.actions().soundBar().startBeep();
 
-	sleep(1);
+    sleep(1);
 
-	robot.actions().stop();
+    robot.actions().stop();
 
-	logger().info() << "ImperialMarchDarthVader" << logs::end;
-	robot.actions().soundBar().toneImperialMarchDarthVader();
+    logger().info() << "ImperialMarchDarthVader" << logs::end;
+    robot.actions().soundBar().toneImperialMarchDarthVader();
 
-	logger().info() << "BEEP Happy End." << logs::end;
-	robot.actions().soundBar().beep();
-	robot.stopAll();
+    logger().info() << "BEEP Happy End." << logs::end;
+    robot.actions().soundBar().beep();
 
 }
 

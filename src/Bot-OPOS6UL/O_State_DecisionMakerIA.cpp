@@ -469,7 +469,7 @@ void O_State_DecisionMakerIA::execute()
     //logger().info() << "O_State_DecisionMakerIA executed" << logs::end;
     robot.freeMotion();
     //logger().info() << "O_State_DecisionMakerIA freeMotion" << logs::end;
-    robot.actions().stop(); //TODO a supprimer ? sera fait par le Wait
+    //robot.actions().stop(); //TODO a supprimer ? sera fait par le Wait
     //logger().info() << "O_State_DecisionMakerIA actions().stop" << logs::end;
 
     robot.svgPrintEndOfFile();

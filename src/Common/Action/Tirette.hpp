@@ -19,8 +19,10 @@ private:
         return instance;
     }
 
+    ASwitchDriver* switchdriver_;
+
 public:
-    ASwitchDriver* switchdriver;
+
 
     /*!
      * \brief Constructor.

@@ -18,7 +18,6 @@ void O_GroveColorTest::run(int argc, char** argv)
 	//TODO
 
 
-	robot.stopAll();
 	logger().info() << "Happy End." << logs::end;
 }
 

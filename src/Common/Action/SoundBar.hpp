@@ -38,7 +38,7 @@ private:
      */
     bool actionStopped_;
 
-    ASoundDriver* sounddriver;
+    ASoundDriver* sounddriver_;
 
 public:
 

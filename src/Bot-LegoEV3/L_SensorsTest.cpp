@@ -32,7 +32,6 @@ void L_SensorsTest::run(int argc, char** argv)
         logger().info() << " front=" << front << " rear=" << rear << " fV=" << frontV << " rV=" << rearV << logs::end;
     }
 
-    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

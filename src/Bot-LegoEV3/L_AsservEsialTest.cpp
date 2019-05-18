@@ -122,7 +122,6 @@ void L_AsservEsialTest::run(int argc, char** argv)
             << logs::end;
     robot.svgPrintPosition();
 
-    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

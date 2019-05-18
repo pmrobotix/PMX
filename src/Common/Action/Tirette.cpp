@@ -11,24 +11,25 @@ Tirette::Tirette(Actions & actions) :
         AActionsElement(actions)
 
 {
-    switchdriver = ASwitchDriver::create("tirette");
+    switchdriver_ = ASwitchDriver::create("tirette");
 }
 
 Tirette::~Tirette()
 {
+    delete switchdriver_;
 }
 
 int Tirette::pressed()
 {
-    int temp = switchdriver->tirettePressed();
+    int temp = switchdriver_->tirettePressed();
     logger().debug() << "pressed = " << temp << logs::end;
     if (temp == -1) {
         logger().error() << "pressed1 = " << temp << logs::end;
-        temp = switchdriver->tirettePressed();
+        temp = switchdriver_->tirettePressed();
     }
     if (temp == -1) {
         logger().error() << "pressed2 = " << temp << logs::end;
-        temp = switchdriver->tirettePressed();
+        temp = switchdriver_->tirettePressed();
     }
 
     return temp;

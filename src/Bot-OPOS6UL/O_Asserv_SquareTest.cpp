@@ -128,7 +128,6 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
     logger().info() << "End time= " << chrono.getElapsedTimeInMilliSec() << " ; x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " degrees="
             << robot.asserv().pos_getThetaInDegree() << logs::end;
 
-    robot.stopAll();
     logger().info() << "Happy End." << logs::end;
 }
 

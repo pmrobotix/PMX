@@ -76,6 +76,5 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec"
             << logs::end;
 
-    robot.stopAll(); //stop asserv and actionManagerTimer
     return NULL; //finish all state
 }

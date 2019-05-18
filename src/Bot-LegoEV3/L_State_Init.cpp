@@ -20,6 +20,7 @@ L_State_Init::execute(Robot&)
     logger().info() << "L_StateInit executing..." << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    //demarre le actionManagerTimer
     robot.actions().start();
 
     //BEGIN

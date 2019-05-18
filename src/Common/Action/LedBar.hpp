@@ -110,6 +110,18 @@ private:
      */
     uint hexNext_;
 
+    /*!
+     * \brief valeur d'echapement pour ne pas rester bloquer si l'actionmanager n'est pas lancé
+     */
+    uint echap_;
+
+    /*!
+     * \brief attente avec boucle d'echapement
+     */
+    void waiting(bool wait);
+
+    ALedDriver* leddriver_;
+
 public:
 
     /*!
@@ -117,7 +129,7 @@ public:
      */
     std::string botId_;
 
-    ALedDriver* leddriver;
+
 
     /*!
      * \brief Constructor.
@@ -306,7 +318,8 @@ public:
      * \brief Lance l'action de faire alterner les leds selon les valeurs hexValue et hexValueNext.
      *
      */
-    void startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color = LED_GREEN, bool wait = false);
+    void startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color = LED_GREEN, bool wait =
+            false);
 
     /*!
      * \brief Lance l'action de faire clignoter toutes les leds nb fois tous les timeus.

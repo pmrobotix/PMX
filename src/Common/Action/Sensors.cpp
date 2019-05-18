@@ -15,11 +15,12 @@ Sensors::Sensors(Actions & actions, Robot * robot) :
         AActionsElement(actions), robot_(robot)
 
 {
-    sensorsdriver = ASensorsDriver::create(robot->getID());
+    sensorsdriver_ = ASensorsDriver::create(robot->getID());
 }
 
 Sensors::~Sensors()
 {
+    delete sensorsdriver_;
 }
 
 SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name) :
@@ -35,32 +36,32 @@ SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name)
 
 int Sensors::right()
 {
-    return sensorsdriver->right();
+    return sensorsdriver_->right();
 }
 
 int Sensors::left()
 {
-    return sensorsdriver->left();
+    return sensorsdriver_->left();
 }
 
 bool Sensors::front()
 {
-    return sensorsdriver->front();
+    return sensorsdriver_->front();
 }
 
 bool Sensors::frontVeryClosed()
 {
-    return sensorsdriver->frontVeryClosed();
+    return sensorsdriver_->frontVeryClosed();
 }
 
 bool Sensors::rear()
 {
-    return sensorsdriver->rear();
+    return sensorsdriver_->rear();
 }
 
 bool Sensors::rearVeryClosed()
 {
-    return sensorsdriver->rearVeryClosed();
+    return sensorsdriver_->rearVeryClosed();
 }
 
 void Sensors::addTimerSensors()

@@ -33,7 +33,7 @@ void L_ActionManagerTimerTest::run(int argc, char** argv)
     sleep(1);
     robot.actions().addAction(new TestAction(*this));
     sleep(1);
-    robot.stopAll();
+
     logger().info() << "Happy End." << logs::end;
 }
 

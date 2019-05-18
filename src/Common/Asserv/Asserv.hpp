@@ -33,6 +33,9 @@ private:
         static const logs::Logger & instance = logs::LoggerFactory::logger("Asserv");
         return instance;
     }
+
+    AAsservDriver* asservdriver_;
+
 protected:
 
     /*!
@@ -90,6 +93,10 @@ public:
      */
     virtual ~Asserv()
     {
+        delete asservdriver_;
+//        delete pMovingBase_; //TODO pourquoi un warning si on souhaite les supprimer ??
+//        delete pAsservInsa_;
+//        delete pAsservEsialR_;
     }
 
     /*!
@@ -98,7 +105,7 @@ public:
      */
     MovingBase * base();
 
-    AAsservDriver* asservdriver;
+
 
     //Gestion de l'asservissement
     virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);

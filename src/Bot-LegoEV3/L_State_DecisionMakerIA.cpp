@@ -292,6 +292,7 @@ void L_State_DecisionMakerIA::execute()
     }
     logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
 
+    //TODO depend des strategies
     IASetupActivitiesZone(); //definit les activities
 
     //wait for the start of the chrono !
@@ -300,21 +301,14 @@ void L_State_DecisionMakerIA::execute()
     }
 
     logger().info() << "L_State_DecisionMakerIA executing..." << logs::end;
-    //robot.svgPrintPosition();
 
-    //pause
-    //sleep(5);
+    //On ajoute le timer de detection
+    //robot.actions().sensors().startSensors(); // not used here because replace by wait end of match !
 
-    //robot.actions().sensors().startSensors(); // not used here because replace by wait end of match
-
-    //start
+    //start IA
     robot.ia().iAbyPath().ia_start();
 
-    //logger().info() << "O_State_DecisionMakerIA executed" << logs::end;
     robot.freeMotion();
-    //logger().info() << "O_State_DecisionMakerIA freeMotion" << logs::end;
-    robot.actions().stop();
-    //logger().info() << "O_State_DecisionMakerIA actions().stop" << logs::end;
 
     robot.svgPrintEndOfFile();
     logger().info() << "L_State_DecisionMakerIA svgPrintEndOfFile" << logs::end;
