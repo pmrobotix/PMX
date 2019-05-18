@@ -37,7 +37,7 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     //init SVG log file
     svg_->beginHeader();
 
-    //init experience + bonus
+
     points = 0;
 
     todo_fake = 1;
@@ -50,12 +50,12 @@ void OPOS6UL_RobotExtended::stopExtraActions()
 
 }
 
-void OPOS6UL_RobotExtended::displayPoints(int points)
+void OPOS6UL_RobotExtended::displayPoints()
 {
     this->actions().lcd2x16().clear();
     this->actions().lcd2x16().setCursor(0, 0);
     this->actions().lcd2x16().print("Points = ");
-    this->actions().lcd2x16().print(points);
+    this->actions().lcd2x16().print(this->points);
 }
 
 void OPOS6UL_RobotExtended::begin(int argc, char** argv)

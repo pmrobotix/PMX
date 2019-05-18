@@ -144,10 +144,9 @@ public:
 
         releaseAll();
 
-        //sensors stop...
+        //TODO sensors stop...?
 
-        //stop all current task in the actionManagerTimer
-        //Actions::stop();
+
     }
 
     //--------------------------------------------------------------

@@ -34,11 +34,21 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 
     svg_->beginHeader();
 
+    points = 0;
+
 }
 
-void LegoEV3RobotExtended::stopActions()
+void LegoEV3RobotExtended::displayPoints()
 {
-    this->actions().stop(); //extra devices
+    this->actions().lcd().clear();
+    this->actions().lcd().display_content_string("Points = ", 4);
+    this->actions().lcd().display_content_integer(this->points, 5);
+
+}
+
+void LegoEV3RobotExtended::stopExtraActions()
+{
+    this->actions().stopExtra(); //extra devices
 }
 
 void LegoEV3RobotExtended::begin(int argc, char** argv)

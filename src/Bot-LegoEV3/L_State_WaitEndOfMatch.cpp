@@ -34,13 +34,16 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     uint c = 0;
     uint lastdetect_front_nb_ = 0;
     uint lastdetect_rear_nb_ = 0;
+    bool stop = false;
     while (robot.chrono().getElapsedTimeInSec() <= 98) {
 
+        robot.displayPoints();
         //test ARU
         if (robot.actions().tirette().pressed()) {
             printf("===== ARU pressed !!!!!!\n");
             logger().error() << "ARU pressed !!!!!!" << logs::end;
             //stop all robot
+            stop = true;
             break;
         }
 
@@ -161,12 +164,26 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 
     //init robot for end
     robot.freeMotion(); //stop the robot
-
-    robot.stopActions(); //stop specific actions, can take time for servos...
-
+    robot.stopExtraActions(); //stop specific actions, can take time for servos...
     robot.svgPrintEndOfFile();
 
+    logger().info() << "Display Points after 100sec" << logs::end;
+    robot.actions().lcd().clear();
+    robot.actions().lcd().display_content_integer(robot.points, 4);
+    robot.actions().lcd().display_content_string("points ?", 5);
+    if (!stop) {
+        ButtonTouch b = BUTTON_NONE;
+        while (1) {
+            b = robot.actions().buttonBar().checkOneOfAllPressed();
+            if (b == BUTTON_BACK_KEY) {
+                break;
+            }
+            if (b == BUTTON_ENTER_KEY) {
+                break;
+            }
+            usleep(1000);
+        }
+    }
     robot.stopAll(); //stop asserv and actionManagerTimer
-    printf("555\n");
     return NULL; //finish all state
 }

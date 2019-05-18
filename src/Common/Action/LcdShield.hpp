@@ -70,7 +70,7 @@ public:
 
     void display_content_string(std::string str, int row, int col=1);
 
-    void display_content_integer(int value, int row, int col);
+    void display_content_integer(int value, int row, int col=1);
 
 
     /*!

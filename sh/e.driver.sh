@@ -38,3 +38,8 @@ sudo systemctl disable nfs-config.service
 
 #keyboard-setup.service, fake-hwclock.service, systemd-journald.service, systemd-fsck-root.service, systemd-journal-flush.service, 
 #networking.service, console-setup.service, nfs-config.service.
+
+
+# pour lancer avec le LCD depuis ssh
+sudo systemctl stop brickman
+#sudo ./Bot_LegoMindstorm_EV3 m > /dev/tty0

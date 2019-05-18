@@ -56,7 +56,7 @@ SwitchDriver::SwitchDriver()
 
             //verif ev3-ports:in3:i2c81:mux2:lego-ev3-touch
             temp = p.get_attr_string(string(input + string(":lego-ev3-touch/modalias")));
-            logger().debug() << "vERIF driver lego-ev3-touch temp ==  " << temp << logs::end;
+            logger().debug() << "VERIF driver lego-ev3-touch temp ==  " << temp << logs::end;
         }
     }
 
@@ -79,6 +79,7 @@ SwitchDriver::~SwitchDriver()
 
 int SwitchDriver::tirettePressed()
 {
+    usleep(250000);
     if (touch_.value() == 257) //in case of MUX
         return true;
     else

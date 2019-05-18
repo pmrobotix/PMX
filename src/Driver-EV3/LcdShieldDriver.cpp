@@ -12,9 +12,6 @@ using namespace ev3dev;
 
 ALcdShieldDriver * ALcdShieldDriver::create(std::string botId)
 {
-//	static LcdShieldDriver *instance = new LcdShieldDriver();
-//	return instance;
-
     return new LcdShieldDriver();
 }
 
@@ -39,21 +36,8 @@ LcdShieldDriver::LcdShieldDriver()
     l.fill(0xFF);
     //sleep(1);*/
 
-
-
     prog_init();
-    //sleep(1);
-
     prog_clearscreen();
-
-    //prog_contentX("PM-ROBOTIX GO!", 5,1);
-    //prog_display_integer(10);
-
-
-    //sleep(2);
-
-
-
 }
 
 LcdShieldDriver::~LcdShieldDriver()

@@ -17,7 +17,7 @@ void L_LcdTest::run(int argc, char** argv)
 
     robot.actions().lcd().clear();
     robot.actions().lcd().display_content_string("test", 1);
-
+    logger().info() << "Executing - " << this->desc() << logs::end;
     int p = 100;
     sleep(1);
     robot.actions().lcd().setCursor(1,1); //to change the font

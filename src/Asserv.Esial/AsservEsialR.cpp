@@ -102,7 +102,7 @@ void AsservEsialR::stopAsserv()
 void AsservEsialR::resetAsserv()
 {
     //printf("Réinitialisation de l'asserv...\r\n");
-    logger().info() << "Réinitialisation de l'asserv..." << logs::end;
+    logger().debug() << "Réinitialisation de l'asserv..." << logs::end;
     stopAsserv();
     //On reprend l'asserv
     initAsserv();
@@ -111,8 +111,9 @@ void AsservEsialR::resetAsserv()
 void AsservEsialR::execute()
 {
     logs::Logger::LoggerBuffer info = logger().info();
+    logs::Logger::LoggerBuffer debug = logger().debug();
     logs::Logger::LoggerBuffer debugfile = loggerFile().debug();
-    info << "executing... every " << loopDelayInMillisec_ << logs::flush;
+    debug << "executing... every " << loopDelayInMillisec_ << logs::flush;
 
     chronoTimer_.setTimer(loopDelayInMillisec_ * 1000);
     RobotPosition p;
@@ -277,7 +278,7 @@ void AsservEsialR::resetExternalEncoders()
 
 void AsservEsialR::odo_SetPosition(double x_m, double y_m, double angle_rad)
 {
-    logger().info() << "odo_SetPosition x_m=" << x_m << " y_m=" << y_m << " angle_rad=" << angle_rad << logs::end;
+    logger().debug() << "odo_SetPosition x_m=" << x_m << " y_m=" << y_m << " angle_rad=" << angle_rad << logs::end;
     lock();
     odo_->setX(Utils::mmToUO(odo_, (long) floor(x_m * 1000.0f))); //UO
     odo_->setY(Utils::mmToUO(odo_, (long) floor(y_m * 1000.0f)));

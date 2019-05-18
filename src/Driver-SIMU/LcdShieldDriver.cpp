@@ -49,17 +49,17 @@ void LcdShieldDriver::setCursor(uint8_t col, uint8_t row)
 
 size_t LcdShieldDriver::write(uint8_t value)
 {
-    logger().debug() << value << logs::end;
+    logger().info() << value << logs::end;
     return 1;
 }
 
 void LcdShieldDriver::print_content_string(std::string str, int row, int col)
 {
-
+    logger().info() << str << logs::end;
 }
 
 void LcdShieldDriver::print_content_integer(int value, int row, int col)
 {
-
+    logger().info() << value << logs::end;
 }
 

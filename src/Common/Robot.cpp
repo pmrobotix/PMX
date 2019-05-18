@@ -286,7 +286,7 @@ void Robot::stopAll() //TODO renommer stopMotionTimerAndActionManager
 
     if (actions_default != NULL) {
         this->actions_default->stop();
-        this->actions_default->cancel();			//stop devices and wait manager to finish
+        this->actions_default->cancel(); //stop devices and wait manager to finish
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
 

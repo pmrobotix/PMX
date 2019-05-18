@@ -62,8 +62,8 @@ protected:
     int skipSetup_ = 0;
     bool end90s_ = false;
     bool waitForInit_ = false;
-    std::string strategy_ = "all";
-    std::string configVRR_ = "all";
+    std::string strategy_ = "all"; //defaut strategy
+    std::string configVRR_ = "VRR"; //defaut config VRR
 
 
 public:

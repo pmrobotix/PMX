@@ -55,7 +55,7 @@ O_State_Init::execute(Robot&)
 
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
-        robot.actions().lcd2x16().print("  COULEUR ?");
+        robot.actions().lcd2x16().print("  COLOR ?");
         logger().info() << "CHOISIR COULEUR + IA..." << logs::end;
         b = BUTTON_NONE;
         int mode = 1; //1,2,3
@@ -209,13 +209,13 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().setCursor(4, 0);
 
         robot.actions().lcd2x16().print(robot.configVRR());
-        if (v == 1) {
-            robot.configVRR("VRR");
-        } else if (v == 2) {
-            robot.configVRR("RVR");
-        } else if (v == 3) {
-            robot.configVRR("RRV");
-        }
+//        if (v == 1) {
+//            robot.configVRR("VRR");
+//        } else if (v == 2) {
+//            robot.configVRR("RVR");
+//        } else if (v == 3) {
+//            robot.configVRR("RRV");
+//        }
         robot.actions().lcd2x16().setCursor(8, 0);
         robot.actions().lcd2x16().print(robot.strategy());
 
@@ -257,7 +257,6 @@ O_State_Init::execute(Robot&)
 
     robot.actions().ledBar().resetAll();
     robot.actions().lcd2x16().clear();
-    //robot.actions().lcd2x16().setBacklightOff();
     robot.actions().lcd2x16().setBacklightOn();
     robot.actions().lcd2x16().setCursor(0, 0);
     robot.actions().lcd2x16().home();
@@ -268,7 +267,7 @@ O_State_Init::execute(Robot&)
     robot.actions().ax12_right_cil();
 
     robot.points += 40; //35 +5
-    robot.displayPoints(robot.points);
+    robot.displayPoints();
 
     logger().info() << "O_StateInit executed" << logs::end;
     return this->getState("WaitEndOfMatch"); //return NULL; //finish all state

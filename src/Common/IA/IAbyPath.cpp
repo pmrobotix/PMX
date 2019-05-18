@@ -221,7 +221,7 @@ void IAbyPath::ia_createZone(const char* name, float minX, float minY, float wid
 void IAbyPath::ia_printZone(ZONE *z)
 {
     //printf("ZONE: %s (%f,%f) w:%f h:%f start:%f,%f %f degrees\n", z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY, z->startAngle);
-    logger().info() << "ZONE: " << z->name << "(" << z->minX << "," << z->minY << ")" << " w:" << z->width << " h:"
+    logger().debug() << "ZONE: " << z->name << "(" << z->minX << "," << z->minY << ")" << " w:" << z->width << " h:"
             << z->height << " start: " << z->startX << "," << z->startY << "," << z->startAngle << logs::end;
 }
 void IAbyPath::ia_checkZones()

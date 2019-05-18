@@ -99,7 +99,7 @@ int utils::Chronometer::waitTimer(bool debug)
 
         usleep(timerPeriod_us_ - workTime);
     } else {
-        logger().error() << "!!! (diff)workTime=" << workTime << " > " << timerPeriod_us_ << "!!!" << logs::end;
+        logger().debug() << "!!! (diff)workTime=" << workTime << " > " << timerPeriod_us_ << "!!!" << logs::end;
     }
 
     // fin

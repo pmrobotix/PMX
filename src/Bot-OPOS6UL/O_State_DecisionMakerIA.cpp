@@ -110,7 +110,7 @@ bool O_push_blue()
     }
 
     robot.points += 20;
-    robot.displayPoints(robot.points);
+    robot.displayPoints();
 
     robot.logger().info() << "on desactive la zone fake" << logs::end;
 
@@ -162,7 +162,7 @@ bool O_push_blue()
     robot.svgPrintPosition();
 
     robot.points += 20;
-    robot.displayPoints(robot.points);
+    robot.displayPoints();
 
     robot.logger().info() << "on va deposer" << logs::end;
     robot.asserv().ignoreFrontCollision(false);
@@ -213,7 +213,7 @@ bool O_push_blue()
     }
 
     robot.points += 24;
-    robot.displayPoints(robot.points);
+    robot.displayPoints();
 
     robot.todo_alea = 1;
 
@@ -265,7 +265,7 @@ bool O_push_red()
     robot.asserv().displayTS(ts);
 
     robot.points += 6;
-    robot.displayPoints(robot.points);
+    robot.displayPoints();
 
     robot.asserv().ignoreFrontCollision(false);
     robot.asserv().ignoreRearCollision(true);
@@ -353,7 +353,7 @@ bool O_push_alea()
     robot.asserv().displayTS(ts);
 
     robot.points += 7;
-    robot.displayPoints(robot.points);
+    robot.displayPoints();
 
     return true; //return true si ok sinon false si interruption
 }
@@ -469,7 +469,7 @@ void O_State_DecisionMakerIA::execute()
     //logger().info() << "O_State_DecisionMakerIA executed" << logs::end;
     robot.freeMotion();
     //logger().info() << "O_State_DecisionMakerIA freeMotion" << logs::end;
-    robot.actions().stop();
+    robot.actions().stop(); //TODO a supprimer ? sera fait par le Wait
     //logger().info() << "O_State_DecisionMakerIA actions().stop" << logs::end;
 
     robot.svgPrintEndOfFile();

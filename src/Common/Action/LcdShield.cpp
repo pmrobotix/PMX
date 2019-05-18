@@ -61,7 +61,7 @@ void LcdShield::display_content_string(std::string str, int row, int col)
     lcdshielddriver->print_content_string(str, row, col);
 }
 
-void LcdShield::display_content_integer(int value, int row, int col=1)
+void LcdShield::display_content_integer(int value, int row, int col)
 {
     lcdshielddriver->print_content_integer(value, row, col);
 }

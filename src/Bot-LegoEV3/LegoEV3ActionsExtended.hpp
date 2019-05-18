@@ -160,9 +160,8 @@ public:
         return servoUsingMotor_;
     }
 
-    void stop()
+    void stopExtra()
     {
-        Actions::stop(); //stop devices and wait manager to finish
 
         ledbar_.resetAll();
         ledbar_.stop();
@@ -182,7 +181,12 @@ public:
     //--------------------------------------------------------------
     //Actions 2019
     //--------------------------------------------------------------
-
+    void init_servos()
+    {
+        conveyorBelt_Left_center();
+        left_arm_retract();
+        right_arm_retract();
+    }
     void right_eject_all()
     {
         logger().info() << "conveyorBelt_Left_low" << logs::end;

@@ -196,9 +196,9 @@ sleep(20);
 
 void L_State_DecisionMakerIA::IASetupActivitiesZone()
 {
-    logger().info() << "IASetupActivitiesZone" << logs::end;
+    logger().debug() << "IASetupActivitiesZone" << logs::end;
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-    logger().info() << "color = " << robot.getMyColor() << logs::end;
+    logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
     //definition des zones en zone ORANGE uniquement
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
@@ -211,14 +211,14 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     //robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
     robot.ia().iAbyPath().ia_addAction("take_grand_distributeur", &L_take_grand_distributeur);
 
-    logger().info() << " END IASetupActivitiesZone" << logs::end;
+    logger().debug() << " END IASetupActivitiesZone" << logs::end;
 }
 
 void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 {
-    logger().info() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
+    logger().debug() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-    logger().info() << "color = " << robot.getMyColor() << logs::end;
+    logger().debug() << "color = " << robot.getMyColor() << logs::end;
     /*
      //definition des zones en zone ORANGE uniquement
      robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 500, 0);
@@ -226,7 +226,7 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 
      robot.ia().iAbyPath().ia_addAction("push_button", &L_push_button);
      */
-    logger().info() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
+    logger().debug() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
 /*
  void L_State_DecisionMakerIA::initPlayground()

@@ -11,8 +11,6 @@ class LegoEV3AsservExtended;
 class LegoEV3IAExtended;
 class LegoEV3SvgWriterExtended;
 
-
-
 class LegoEV3RobotExtended: public Robot
 {
 public:
@@ -48,10 +46,17 @@ public:
 
     L_State_DecisionMakerIA* decisionMaker_; //TODO mettre un accesseur
 
-
-    void stopActions();
+    int points;
 
     void begin(int argc, char** argv);
+
+    void stopExtraActions();
+
+    void displayPoints();
+
+
+
+
 
     static inline const logs::Logger & logger()
     {

@@ -2,6 +2,8 @@
 
 #include "ButtonDriver.hpp"
 
+#include <unistd.h>
+
 #include "ev3dev.h"
 
 using namespace std;
@@ -23,6 +25,7 @@ ButtonDriver::~ButtonDriver()
 
 bool ButtonDriver::pressed(ButtonTouch button)
 {
+    usleep(20000);
     switch (button) {
     case BUTTON_ENTER_KEY:
         return button::enter.pressed();

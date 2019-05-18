@@ -45,7 +45,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
         filename.append(botId_);
         filename.append(".txt");
         Config::loadFile(filename.c_str());
-        logger().info() << "Version configuration : " << Config::configVersion << logs::end;
+        logger().debug() << "Version configuration : " << Config::configVersion << logs::end;
         //logger().debug() << Config::dumpConfig() << logs::end;
 
         double periodSec = Config::asservPeriod;
