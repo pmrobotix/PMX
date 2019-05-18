@@ -36,6 +36,8 @@ public:
 
 private:
 
+    //int64_t last;
+
     // Dérivées premières de la consigne ( dans notre cas, la vitesse )
     int64_t derivee_1ier_pos; //En avant ( positif ) // Vient de config.h
     int64_t derivee_1ier_neg; // En arrière (negatif )  // Vient de config.h

@@ -124,7 +124,7 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
             robot.svgPrintPosition();
         }
     }
-
+sleep(1);
     left = robot.asserv().base()->encoders().getLeftEncoder();
     right = robot.asserv().base()->encoders().getRightEncoder();
     logger().info() << "End time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "

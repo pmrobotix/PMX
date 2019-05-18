@@ -151,12 +151,12 @@ void AsservEsialR::execute()
             //long t5 = chronoTimer_.getElapsedTimeInMicroSec();
 
             //file log for asserv
-            debugfile << nb << ", " << current << ", " << (long) (current - last) << ", "
-                    << (long) (chronoTimer_.getElapsedTimeInMicroSec() - current) << ", " << odo_->getDeltaDist() // distance entre 2
-                    << ", " << motorC_->getVitesseG() //-100 à 100
-                    << ", " << motorC_->getVitesseD() //-100 à 100
-                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
-                    << logs::flush;
+//            debugfile << nb << ", " << current << ", " << (long) (current - last) << ", "
+//                    << (long) (chronoTimer_.getElapsedTimeInMicroSec() - current) << ", " << odo_->getDeltaDist() // distance entre 2
+//                    << ", " << motorC_->getVitesseG() //-100 à 100
+//                    << ", " << motorC_->getVitesseD() //-100 à 100
+//                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
+//                    << logs::flush;
 
             //long t6 = chronoTimer_.getElapsedTimeInMicroSec();
 

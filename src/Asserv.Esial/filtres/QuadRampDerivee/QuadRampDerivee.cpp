@@ -53,6 +53,8 @@ QuadRampDerivee::QuadRampDerivee(bool isDistance)
     prevConsigneVitesse = 0;
     // Comme il n'y a pas encore de consigne, on est arrivé
     arrivee = true;
+
+    //last = 0;
 }
 
 // Destructeur
@@ -105,19 +107,25 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     int64_t vitesseConsigneLimitee = Utils::constrain(vitesseConsigne, -derivee_1ier_neg, derivee_1ier_pos);
 
     prevConsigneVitesse = vitesseConsigneLimitee;
-
+//    if (vitesseConsigneLimitee < 0)
+//        vitesseConsigneLimitee = 0;
     int64_t positionConsigne = position_actuelle + vitesseConsigneLimitee;
 
+    //printf("posC=%lld last=%lld\n", positionConsigne, last);
+//    if(positionConsigne<last){
+//        positionConsigne=last;
+//    }
+//    last = positionConsigne;
     //pour ne pas donner une consigne plus loin
-    if (sens == 1) {
-        if (positionConsigne > consigne) {
-            positionConsigne = consigne;
-        }
-    } else {
-        if (positionConsigne < consigne) {
-            positionConsigne = consigne;
-        }
-    }
+//    if (sens == 1) {
+//        if (positionConsigne > consigne) {
+//            positionConsigne = consigne;
+//        }
+//    } else {
+//        if (positionConsigne < consigne) {
+//            positionConsigne = consigne;
+//        }
+//    }
 
 //    printf(
 //            "consigne=%ld \tpos=%ld \tvitesse=%ld \tdistanceFreinage=%ld \tpositionConsigne=%ld \tvitesseConsigne=%ld \taccelerationConsigne=%ld \tvitesseConsigneLimitee=%ld \n",

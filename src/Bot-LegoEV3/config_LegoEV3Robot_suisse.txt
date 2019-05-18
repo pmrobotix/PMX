@@ -95,9 +95,9 @@ V_MAX_NEG_MOTOR = -100
 // envoyer de jus dans des moteurs qui ne tournent pas
 
 // EV3 : 1 a 100
-V_MIN_POS_MOTOR = 1
+V_MIN_POS_MOTOR = 55
 // EV3 : -1 a -100
-V_MIN_NEG_MOTOR = -1
+V_MIN_NEG_MOTOR = -55
 
 // Inversion du sens du moteur gauche
 inverseMoteurG = false
@@ -124,7 +124,7 @@ DIST_KP = 130
 DIST_KI = 0
 
 // Coeff dérivée//old1500 350 550
-DIST_KD = 800
+DIST_KD = 550
 
 // Coeff permettant de diminuer les valeurs du PID 
 DIST_OUT_RATIO = 0.000001
@@ -140,13 +140,13 @@ DIST_MAX_INTEGRAL = 0
 
 
 // Coeff proportionelle //mini 95 pour atteindre le 100% 140
-ANGLE_KP = 150
+ANGLE_KP = 160
 
 // Coeff intégrale
 ANGLE_KI = 0
 
 // Coeff dérivée//old500 315 420
-ANGLE_KD = 950
+ANGLE_KD = 920
 
 // Coeff permettant de diminuer les valeurs du PID
 ANGLE_OUT_RATIO = 0.000001
@@ -170,7 +170,7 @@ DIST_QUAD_AV_2ND_ACC = 30000
 DIST_QUAD_AV_2ND_DEC = 20000
 
 // Coeff déterminant le début de la rampe de décélération en marche avant // deplace la pente : plus grand => vers la gauche, frene plus tot //300000
-DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 550000
+DIST_QUAD_AV_ANTICIPATION_GAIN_COEF = 260000
 
 
 // Vitesse max en marche arrière
@@ -184,10 +184,10 @@ DIST_QUAD_AR_2ND_ACC = 30000
 DIST_QUAD_AR_2ND_DEC = 20000
 
 // Coeff déterminant le début de la rampe de décélération en marche arrière 
-DIST_QUAD_AR_ANTICIPATION_GAIN_COEF = 550000
+DIST_QUAD_AR_ANTICIPATION_GAIN_COEF = 260000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-DIST_TAILLE_FENETRE_ARRIVEE = 20000
+DIST_TAILLE_FENETRE_ARRIVEE = 100000
 
 // Diviseur pour la vitesse faible en marche avant
 DIST_QUAD_AV_LOW_DIV = 0
@@ -199,19 +199,19 @@ DIST_QUAD_AR_LOW_DIV = 0
 
 
 // Vitesse max en rotation
-ANGLE_QUAD_1ST_POS = 3000000
+ANGLE_QUAD_1ST_POS = 2000000
 
 // Accélération max en rotation
-ANGLE_QUAD_2ND_ACC = 30000
+ANGLE_QUAD_2ND_ACC = 40000
 
 // Décélération max en rotation
-ANGLE_QUAD_2ND_DEC = 20000
+ANGLE_QUAD_2ND_DEC = 10000
 
 // Coeff déterminant le début de la rampe de décélération en rotation
-ANGLE_QUAD_ANTICIPATION_GAIN_COEF = 550000
+ANGLE_QUAD_ANTICIPATION_GAIN_COEF = 260000
 
 // Largeur de la zone où l'on considère être arrivé (UO)
-ANGLE_TAILLE_FENETRE_ARRIVEE = 30000
+ANGLE_TAILLE_FENETRE_ARRIVEE = 250000
 
 
 //--------------------------//

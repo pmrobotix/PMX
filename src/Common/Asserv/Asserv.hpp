@@ -93,7 +93,7 @@ public:
      */
     virtual ~Asserv()
     {
-        delete asservdriver_;
+        //delete asservdriver_;
 //        delete pMovingBase_; //TODO pourquoi un warning si on souhaite les supprimer ??
 //        delete pAsservInsa_;
 //        delete pAsservEsialR_;
