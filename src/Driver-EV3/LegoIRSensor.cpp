@@ -99,17 +99,16 @@ LegoIRSensor::LegoIRSensor(const char* input)
 //    return {"none"};
 //}
 
-double LegoIRSensor::getDistanceMM()
+float LegoIRSensor::getDistanceMM()
 {
 // as a percentage. 100% is approximately 70cm/27in.
     if (ir_.connected()) {
-        double percent = ir_.value();
-//        usleep(30000);
-//        double percent2 = ir_.value();
-//        logger().info() << " percent=" << percent << " percent2=" << percent2 << logs::end;
-//        percent = (percent + percent2) / 2.0;
+        float percent = (float)ir_.value();
+        //float distance_mm = (percent * 6.0);
+        float distance_mm = (percent * 6.0) + 20.0;
 
-        double distance_mm = percent * 6.0;
+        //real distance on the ground
+         distance_mm = distance_mm * 0.8; // cos a = 400/500 = 0.8
 
         return distance_mm;
     } else {

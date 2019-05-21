@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <cstdint>
 
-
 // Constructeur prenant deux objets initialisé avec l'asserv en paramètre
 ConsignController::ConsignController(Odometrie *odo, MotorsController *mot) :
         angle_regu(false), dist_regu(true)
@@ -128,9 +127,10 @@ void ConsignController::setRightSpeed(int vit)
 
 void ConsignController::setLowSpeed(bool b)
 {
-    setLowSpeed(b, Config::DIST_QUAD_AR_LOW_DIV, Config::DIST_QUAD_AV_LOW_DIV);
+    setLowSpeedForward(b, Config::DIST_QUAD_AV_LOW_DIV);
+    setLowSpeedBackward(b, Config::DIST_QUAD_AR_LOW_DIV);
 }
-
+/*
 void ConsignController::setLowSpeed(bool b, unsigned char factor_div_back, unsigned char factor_div_forward)
 {
     if (b) {
@@ -139,6 +139,23 @@ void ConsignController::setLowSpeed(bool b, unsigned char factor_div_back, unsig
     } else {
         dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG);
         dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS);
+    }
+}*/
+
+void ConsignController::setLowSpeedForward(bool b, int percent)
+{
+    if (b) {
+        dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS * percent / 100.0);
+    } else {
+        dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS);
+    }
+}
+void ConsignController::setLowSpeedBackward(bool b, int percent)
+{
+    if (b) {
+        dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG * percent / 100.0);
+    } else {
+        dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG);
     }
 }
 

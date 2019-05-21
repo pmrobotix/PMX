@@ -74,19 +74,25 @@ void Asserv::stopMotionTimerAndOdo()
 
 }
 
-void Asserv::setLowSpeed(bool enable)
+void Asserv::setLowSpeedForward(bool enable, int percent)
 {
     if (useAsservType_ == ASSERV_INT_INSA) {
-        //TODO
-        logger().error() << "TODO setLowSpeed ASSERV_INT_INSA !!!" << logs::end;
+        logger().error() << "TODO setLowSpeed ASSERV_INT_INSA NOT EXIST !!!" << logs::end;
 
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
-
-        pAsservEsialR_->motion_setLowSpeed(enable);
-        //logger().error() << "pAsservEsialR_->motion_setLowSpeed(" << enable << logs::end;
-
+        pAsservEsialR_->motion_setLowSpeedForward(enable, percent);
     } else if (useAsservType_ == 0)
-        asservdriver_->motion_setLowSpeed(enable);
+        asservdriver_->motion_setLowSpeedForward(enable, percent);
+}
+
+void Asserv::setLowSpeedBackward(bool enable, int percent)
+{
+    if (useAsservType_ == ASSERV_INT_INSA) {
+        logger().error() << "TODO setLowSpeed ASSERV_INT_INSA NOT EXIST!!!" << logs::end;
+    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+        pAsservEsialR_->motion_setLowSpeedBackward(enable, percent);
+    } else if (useAsservType_ == 0)
+        asservdriver_->motion_setLowSpeedBackward(enable, percent);
 }
 void Asserv::disablePID() //deprecated TODO a remplacer par freemotion
 {
@@ -134,25 +140,24 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
 }
+/*
+ void Asserv::setIgnoreFrontNearObstacle(bool ignoreLeft, bool ignoreCenter, bool ignoreRight) //TODO comment preciser le capteur à ignorer??
+ {
+ ignoreFrontCollision_ = ignore;
+ }
+ bool Asserv::getIgnoreFrontNearObstacle()
+ {
+ return ignoreFrontCollision_;
+ }
 
-void Asserv::ignoreFrontCollision(bool ignore) //TODO rename setIgnoreFrontCollision
-{
-    ignoreFrontCollision_ = ignore;
-}
-
-void Asserv::ignoreRearCollision(bool ignore) //TODO rename setIgnoreBackCollision
-{
-    ignoreRearCollision_ = ignore;
-}
-
-bool Asserv::getIgnoreRearCollision()
-{
-    return ignoreRearCollision_;
-}
-bool Asserv::getIgnoreFrontCollision()
-{
-    return ignoreFrontCollision_;
-}
+ void Asserv::setIgnoreBackNearObstacle(bool ignore)
+ {
+ ignoreRearCollision_ = ignore;
+ }
+ bool Asserv::getIgnoreBackNearObstacle()
+ {
+ return ignoreRearCollision_;
+ }*/
 
 RobotPosition Asserv::pos_getPosition()
 {
@@ -189,7 +194,7 @@ float Asserv::pos_getThetaInDegree()
     return (pos_getTheta() * 180.0f) / M_PI;
 }
 
-//TODO Configuration à faire par robot !
+//TODO Configuration à faire par robot ! donc a surcharger !
 bool Asserv::filtreInsideTable(float metre)
 {
     //On filtre si c'est pas à l'exterieur du terrain
@@ -212,47 +217,42 @@ bool Asserv::filtreInsideTable(float metre)
         return false; //si en dehors de la table
 }
 
-void Asserv::setFrontCollision()
+void Asserv::warnFrontCollisionOnTraj()
 {
-
-    if (forceRotation_)
+    if (forceRotation_) {
+        logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
         return;
+    }
 
-    float metre = 0.300; //distance devant le robot
+    float metre = 0.300; //distance devant le robot //a inclure dans le filtre et par configuration des robots
 
     if (filtreInsideTable(metre)) {
 
-        if (!ignoreFrontCollision_) {
-            logger().error() << "setFrontCollision ignoreFrontCollision_=" << ignoreFrontCollision_
-                    << "   forceRotation_=" << forceRotation_ << logs::end;
-
-            if (useAsservType_ == ASSERV_INT_INSA)
-                pAsservInsa_->path_CollisionOnTrajectory();
-            else if (useAsservType_ == ASSERV_EXT)
-                asservdriver_->path_CollisionOnTrajectory();
-            else if (useAsservType_ == ASSERV_INT_ESIALR)
-                pAsservEsialR_->path_CollisionOnTrajectory();
-
-        }
+        if (useAsservType_ == ASSERV_INT_INSA)
+            pAsservInsa_->path_CollisionOnTrajectory();
+        else if (useAsservType_ == ASSERV_EXT)
+            asservdriver_->path_CollisionOnTrajectory();
+        else if (useAsservType_ == ASSERV_INT_ESIALR)
+            pAsservEsialR_->path_CollisionOnTrajectory();
+    } else {
+        logger().error() << "filtreInsideTable" << logs::end;
     }
 }
 
-void Asserv::setRearCollision()
+void Asserv::warnBackCollisionOnTraj()
 {
     if (forceRotation_)
         return;
 
-    logger().debug() << "setRearCollision ignoreRearCollision_=" << ignoreRearCollision_ << logs::end;
     float metre = -0.300; //distance derriere le robot
+
     if (filtreInsideTable(metre)) {
-        if (!ignoreRearCollision_) {
-            if (useAsservType_ == ASSERV_INT_INSA)
-                pAsservInsa_->path_CollisionRearOnTrajectory();
-            else if (useAsservType_ == ASSERV_EXT)
-                asservdriver_->path_CollisionRearOnTrajectory();
-            else if (useAsservType_ == ASSERV_INT_ESIALR)
-                pAsservEsialR_->path_CollisionRearOnTrajectory();
-        }
+        if (useAsservType_ == ASSERV_INT_INSA)
+            pAsservInsa_->path_CollisionRearOnTrajectory();
+        else if (useAsservType_ == ASSERV_EXT)
+            asservdriver_->path_CollisionRearOnTrajectory();
+        else if (useAsservType_ == ASSERV_INT_ESIALR)
+            pAsservEsialR_->path_CollisionRearOnTrajectory();
     }
 }
 
@@ -262,7 +262,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 //if(asservdriver->path_CollisionOnTrajectory())
 //    return TRAJ_COLLISION;
 
-    logger().debug() << "doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "doLineAbs mm=" << distance_mm << " ignorefront=" << ignoreFrontCollision_ << logs::end;
     bool f = ignoreFrontCollision_;
     bool r = ignoreRearCollision_;
     if (distance_mm > 0) {
@@ -286,15 +286,15 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
-    logger().debug() << "END doLineAbs mm=" << distance_mm << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "END doLineAbs mm=" << distance_mm << " ignorefront=" << ignoreFrontCollision_ << logs::end;
     return ts;
 }
 
 TRAJ_STATE Asserv::doRotateAbs(float degrees)
 {
-    logger().debug() << "doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "doRotateAbs degrees=" << degrees << " ignorefront=" << ignoreFrontCollision_ << logs::end;
 
-    bool f = ignoreFrontCollision_;
+    bool f = ignoreFrontCollision_; //TODO a supprimer
     bool r = ignoreRearCollision_;
     ignoreRearCollision_ = true;
     ignoreFrontCollision_ = true;
@@ -314,7 +314,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degrees)
     ignoreFrontCollision_ = f;
     ignoreRearCollision_ = r;
     forceRotation_ = false;
-    logger().debug() << "END doRotateAbs degrees=" << degrees << " ignorefront=" <<ignoreFrontCollision_<< logs::end;
+    logger().debug() << "END doRotateAbs degrees=" << degrees << " ignorefront=" << ignoreFrontCollision_ << logs::end;
     return ts;
 }
 TRAJ_STATE Asserv::doRotateLeft(float degrees)
@@ -390,20 +390,19 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
             << getRelativeAngle((aRadian * 180.0f) / M_PI) << " xMM=" << xMM << " yMM=" << yMM << " getX="
             << pos_getX_mm() << " getY=" << pos_getY_mm() << logs::end;
 
-    doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI)); //J'ai supprimé le getRelativeAngle ici :on doit utiliser Abs
+    doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
     float dist = sqrt(dx * dx + dy * dy);
     logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment);
 }
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
-    logger().error() << " __doMoveForwardAndRotateTo" << logs::end;
     TRAJ_STATE ts;
     ts = doMoveForwardTo(xMM, yMM);
     if (ts != TRAJ_OK)
         return ts;
 
-    ts = doRotateTo(thetaInDegree); //je l'ai rajouté
+    ts = doRotateTo(thetaInDegree);
     return ts;
 }
 TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
@@ -412,9 +411,12 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
 
     float dx = xMM - pos_getX_mm();
     float dy = yMM - pos_getY_mm();
+    if (std::abs(dx) < 1.0 && std::abs(dy) < 1.0) { //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
+            return TRAJ_OK;
+        }
     float aRadian = atan2(dy, dx);
 
-    doRotateTo(((M_PI + aRadian) * 180.0f) / M_PI); //todo a supprimer
+    doRotateTo(((M_PI + aRadian) * 180.0f) / M_PI);
 
     float dist = sqrt(dx * dx + dy * dy);
     return doLineAbs(-dist);
@@ -425,7 +427,7 @@ TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaIn
     ts = doMoveBackwardTo(xMM, yMM);
     if (ts != TRAJ_OK)
         return ts;
-    ts = doRotateTo(thetaInDegree); //rajouté
+    ts = doRotateTo(thetaInDegree);
     return ts;
 }
 TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
@@ -435,7 +437,38 @@ TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
     return TRAJ_ERROR;
 }
 
-TRAJ_STATE Asserv::doCalage(int dist, int tempo)
+TRAJ_STATE Asserv::calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm)
+{
+
+//Partie théorique basé sur la position d'arrivée (que croit le robot)
+    RobotPosition p = pos_getPosition();
+    //tan teta = d1/l
+    float dx = (p.x * 1000.0) - x_depart_mm;
+    float dy = (p.y * 1000.0) - y_depart_mm;
+    float l_theo_mm = std::sqrt(dx * dx + dy * dy);
+    float d1_theo = d2_theo_bordure_mm; //TODO a modifier avec cos(beta)
+    float teta_theo = atan2(d1_theo, l_theo_mm);
+
+//partie reelle (avec la distance mesurée de la bordure
+    //tan teta = d1b/l
+    float d1_b = d2b_bordure_mm;    //TODO a modifier avec cos(beta)
+    float teta_b = atan2(d1_b, l_theo_mm);
+
+    float teta_error = teta_theo - teta_b;
+    float alpha = acos((p.x * 1000.0) / l_theo_mm);
+    float alpha_error = alpha - teta_error;
+
+    //changement des coordonnées
+    float new_teta = p.theta + teta_error;
+    float new_x = x_depart_mm + (l_theo_mm * cos(alpha_error));
+    float new_y = y_depart_mm + (l_theo_mm * sin(alpha_error));
+
+    setPositionAndColor(new_x, new_y, new_teta, matchColorPosition_);
+
+    return TRAJ_OK;
+}
+
+TRAJ_STATE Asserv::doCalage(int dist, int tempo, int percent) //TODO ajouter le percent de vitesse
 {
     logger().info() << "doCalage" << logs::end;
 
@@ -443,7 +476,8 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
         logger().error() << "TODO doCalage ASSERV_INT_INSA !!!" << logs::end;
     } else if (useAsservType_ == ASSERV_EXT) {
         //set low speed
-        asservdriver_->motion_setLowSpeed(true);
+        asservdriver_->motion_setLowSpeedForward(true, percent); //TODO percent par config robot
+        asservdriver_->motion_setLowSpeedBackward(true, percent);
 
         asservdriver_->motion_ActivateReguAngle(false);
         //asservdriver->motion_ActivateReguDist(true);
@@ -461,13 +495,15 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
 
         //reactive
         asservdriver_->motion_ActivateReguAngle(true);
-        asservdriver_->motion_setLowSpeed(false);
+        asservdriver_->motion_setLowSpeedForward(false, 0);
+        asservdriver_->motion_setLowSpeedBackward(false, 0);
 
         assistedHandling();
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         logger().error() << "TODO doCalage ASSERV_INT_ESIALR !!!" << logs::end;
         //set low speed
-        pAsservEsialR_->motion_setLowSpeed(true);
+        pAsservEsialR_->motion_setLowSpeedForward(true, 50);
+        pAsservEsialR_->motion_setLowSpeedBackward(true, 50);
 
         pAsservEsialR_->motion_ActivateReguAngle(false);
 
@@ -482,7 +518,9 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo)
 
         //reactive
         pAsservEsialR_->motion_ActivateReguAngle(true);
-        pAsservEsialR_->motion_setLowSpeed(false);
+
+        pAsservEsialR_->motion_setLowSpeedForward(false, 0);
+        pAsservEsialR_->motion_setLowSpeedBackward(false, 0);
 
         assistedHandling();
     }

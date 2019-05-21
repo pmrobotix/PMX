@@ -29,8 +29,8 @@ bool L_push_palet()
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.asserv().ignoreFrontCollision(false);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().setIgnoreFrontNearObstacle(false);
+//    robot.asserv().setIgnoreBackNearObstacle(true);
     robot.ia().iAbyPath().goToZone("zone_push_palet", &zone);
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK)
@@ -54,10 +54,10 @@ bool L_take_grand_distributeur()
     RobotPosition zone;
     int f = 0;
 
-    robot.asserv().ignoreFrontCollision(false);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().setIgnoreFrontNearObstacle(false);
+//    robot.asserv().setIgnoreBackNearObstacle(true);
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
-
+    f = 0;
     while ((ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_OK) {
         robot.svgPrintPosition();
 
@@ -71,15 +71,16 @@ bool L_take_grand_distributeur()
 
     robot.svgPrintPosition();
 
-    robot.asserv().ignoreFrontCollision(true);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().setIgnoreFrontNearObstacle(true);
+//    robot.asserv().setIgnoreBackNearObstacle(true);
 
     //position vert1
     int pos = 0;
     if (robot.getMyColor() == PMXVIOLET) {
-        pos = 1385;
+        pos = 1410;
     } else
-        pos = 1445;
+        pos = 1410;
+    f = 0;
     while ((ts = robot.asserv().doMoveForwardTo(520, pos)) != TRAJ_OK) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -98,47 +99,74 @@ bool L_take_grand_distributeur()
     }
     robot.svgPrintPosition();
 
+    //prendre vert1
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet();
+        robot.actions().left_prendre_palet(1500, 1);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet();
+        robot.actions().right_prendre_palet(1500, 1);
 
     }
 
     //position bleu
-    robot.asserv().ignoreFrontCollision(true);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().setIgnoreFrontNearObstacle(true);
+//    robot.asserv().setIgnoreBackNearObstacle(true);
 
-    robot.asserv().doLineAbs(200);
+    //robot.asserv().doLineAbs(190);
+    f = 0;
+    while ((ts = robot.asserv().doMoveForwardTo(520 + 190, pos + 5)) != TRAJ_OK) {
+        robot.svgPrintPosition();
+        if (ts == TRAJ_NEAR_OBSTACLE) {
+            robot.logger().error() << " position bleu ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+            f++;
+
+        }
+        if (ts == TRAJ_COLLISION) {
+            robot.logger().error() << " position bleu ===== COLLISION essai n°" << f << logs::end;
+            f++;
+        }
+    }
+
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet();
+        robot.actions().left_prendre_palet(1500, 2);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet();
+        robot.actions().right_prendre_palet(1500, 2);
 
     }
     robot.svgPrintPosition();
-sleep(20);
-    //position vert2
 
+    //position vert2
+    f = 0;
+    while ((ts = robot.asserv().doMoveForwardTo(520 + 190 + 205, pos + 7)) != TRAJ_OK) {
+        robot.svgPrintPosition();
+        if (ts == TRAJ_NEAR_OBSTACLE) {
+            robot.logger().error() << " position vert2 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+            f++;
+
+        }
+        if (ts == TRAJ_COLLISION) {
+            robot.logger().error() << " position vert2 ===== COLLISION essai n°" << f << logs::end;
+            f++;
+        }
+    }
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.asserv().doLineAbs(205);
+        //robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet();
+        robot.actions().left_prendre_palet(1300, 1);
 
     } else {
-        robot.asserv().doLineAbs(200);
+        //robot.asserv().doLineAbs(200);
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet();
+        robot.actions().right_prendre_palet(1300, 1);
 
     }
     robot.svgPrintPosition();
@@ -146,21 +174,28 @@ sleep(20);
     //Calage balance
     if (robot.getMyColor() == PMXVIOLET) {
         robot.asserv().doLineAbs(200);
-        robot.asserv().doRotateLeft(15);
-        robot.asserv().doCalage(220, 5);
-
+        robot.asserv().doRotateLeft(12);
+        //robot.asserv().doCalage(220, 4, 70);
+        robot.asserv().doCalage(240, 4, 70);
+        robot.asserv().doLineAbs(-60);
         robot.logger().info() << "left_eject_all" << logs::end;
-        robot.actions().left_eject_all();
-        sleep(2);
+        robot.actions().left_eject_all(0);
+        //sleep(2);
+        robot.asserv().doRotateRight(15);
+        robot.asserv().doRotateLeft(15);
+        robot.asserv().doRotateRight(15);
+        robot.asserv().doRotateLeft(15);
+
         robot.asserv().doLineAbs(-100);
+        robot.actions().init_servos();
         robot.asserv().doRotateRight(170);
 
     } else {
         robot.asserv().doLineAbs(210);
         robot.asserv().doRotateRight(15);
-        robot.asserv().doCalage(220, 5);
+        robot.asserv().doCalage(220, 4, 70);
         robot.logger().info() << "right_eject_all" << logs::end;
-        robot.actions().right_eject_all();
+        robot.actions().right_eject_all(3);
         sleep(2);
         robot.asserv().doLineAbs(-100);
         robot.asserv().doRotateLeft(170);
@@ -182,7 +217,7 @@ sleep(20);
         robot.asserv().resetDisplayTS();
     }
 
-    while ((ts = robot.asserv().doMoveBackwardTo(600,1200)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveBackwardTo(600, 1200)) != TRAJ_OK) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
 
@@ -204,9 +239,9 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_palet", 400, 700, 100, 100, 700, 750, -180);
     if (robot.getMyColor() == PMXVIOLET)
-        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1385, 90);
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1415, 90);
     else
-        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1420, 90);
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1415, 90);
 
     //robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
     robot.ia().iAbyPath().ia_addAction("take_grand_distributeur", &L_take_grand_distributeur);

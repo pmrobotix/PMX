@@ -24,7 +24,44 @@ SensorsDriver::SensorsDriver() :
 SensorsDriver::~SensorsDriver()
 {
 }
+int SensorsDriver::leftSide()
+{
+    int d = gp2_2_.getDistanceMm();
+    return d;
+}
+int SensorsDriver::rightSide()
+{
+    int d = gp2_1_.getDistanceMm();
+    return d;
+}
 
+int SensorsDriver::frontLeft()
+{
+    return irLeft_.getDistanceMm();
+}
+
+int SensorsDriver::frontCenter()
+{
+    return irCenter_.getDistanceMm();
+}
+int SensorsDriver::frontRight()
+{
+    return irRight_.getDistanceMm();
+}
+
+int SensorsDriver::backLeft()
+{
+    return -1;
+}
+int SensorsDriver::backCenter()
+{
+    return irRear_.getDistanceMm();
+}
+int SensorsDriver::backRight()
+{
+    return -1;
+}
+/*
 int SensorsDriver::left()
 {
     int d = gp2_2_.getDistanceMm();
@@ -105,6 +142,5 @@ bool SensorsDriver::rearVeryClosed()
     }
     return rear;
 }
-
-
+*/
 

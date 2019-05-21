@@ -33,11 +33,6 @@ private:
 
     bool started_;
 
-    /*!
-     * \brief LED Bar.
-     */
-    //LedBar ledbar_;
-
 public:
 
     /*!
@@ -60,7 +55,6 @@ public:
      */
     inline void addAction(IAction * action)
     {
-        //actionManager_.addAction(action);
         actionManagerTimer_.addAction(action);
     }
 
@@ -73,15 +67,6 @@ public:
     {
         actionManagerTimer_.stopTimer(name);
     }
-
-//    /*!
-//     * \brief Cette methode retourne l'objet ledbar.
-//     * \return ledbar_.
-//     */
-//    LedBar & ledBar()
-//    {
-//        return ledbar_;
-//    }
 
     /*!
      * \brief Active les actions.

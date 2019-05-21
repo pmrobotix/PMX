@@ -46,7 +46,7 @@ void O_AsservTest::run(int argc, char** argv)
 
     //detection adverse
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors();
+    robot.actions().sensors().addTimerSensors(50);
 
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXVIOLET);
@@ -64,9 +64,9 @@ void O_AsservTest::run(int argc, char** argv)
     TRAJ_STATE ts = TRAJ_OK;
 
     //TEST GO x y
-    robot.asserv().ignoreFrontCollision(false);
-    robot.asserv().ignoreRearCollision(true);
-    robot.asserv().setLowSpeed(false); //au cas où par les sensors (si pas de ARU)
+//    robot.asserv().ignoreFrontCollision(false);
+//    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().setLowSpeed(false); //au cas où par les sensors (si pas de ARU)
 
     robot.asserv().resetDisplayTS();
     int c = 0;
@@ -74,7 +74,6 @@ void O_AsservTest::run(int argc, char** argv)
     while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_OK) {
 
         logger().info() << "Interruption dist TRAJ_STATE=" << ts << " front=" << robot.actions().sensors().front()
-        << " frontV=" << robot.actions().sensors().frontVeryClosed()
                 << logs::end;
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);

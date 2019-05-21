@@ -12,17 +12,16 @@ public:
      */
     static ASensorsDriver * create(std::string botName);
 
-    virtual int right() = 0;
+    virtual int rightSide() = 0;
+    virtual int leftSide() = 0;
 
-    virtual int left() = 0;
+    virtual int frontLeft() = 0;
+    virtual int frontCenter() = 0;
+    virtual int frontRight() = 0;
 
-    virtual bool front() = 0;
-
-    virtual bool rear() = 0; //TODO renommer back ??
-
-    virtual bool frontVeryClosed() = 0;
-
-    virtual bool rearVeryClosed() = 0;
+    virtual int backLeft() = 0;
+    virtual int backCenter() = 0;
+    virtual int backRight() = 0;
 
     /*!
      * \brief Destructor.

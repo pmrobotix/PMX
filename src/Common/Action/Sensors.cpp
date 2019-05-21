@@ -16,6 +16,13 @@ Sensors::Sensors(Actions & actions, Robot * robot) :
 
 {
     sensorsdriver_ = ASensorsDriver::create(robot->getID());
+
+    addThresholdFront(0, 0, 0);
+    addThresholdFrontVeryClosed(0, 0, 0);
+    addThresholdBack(0, 0, 0);
+    addThresholdBackVeryClosed(0, 0, 0);
+    addConfigFront(false, false, false);
+    addConfigBack(false, false, false);
 }
 
 Sensors::~Sensors()
@@ -34,111 +41,176 @@ SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name)
     lastdetect_back_nb_ = 0;
 }
 
-int Sensors::right()
+void Sensors::addThresholdFront(int left, int center, int right)
 {
-    return sensorsdriver_->right();
+    frontLeftThreshold_ = left;
+    frontCenterThreshold_ = center;
+    frontRightThreshold_ = right;
+}
+void Sensors::addThresholdFrontVeryClosed(int left, int center, int right)
+{
+    frontLeftVeryClosedThreshold_ = left;
+    frontCenterVeryClosedThreshold_ = center;
+    frontRightVeryClosedThreshold_ = right;
+}
+void Sensors::addThresholdBack(int left, int center, int right)
+{
+    backLeftThreshold_ = left;
+    backCenterThreshold_ = center;
+    backRightThreshold_ = right;
+}
+void Sensors::addThresholdBackVeryClosed(int left, int center, int right)
+{
+    backLeftVeryClosedThreshold_ = left;
+    backCenterVeryClosedThreshold_ = center;
+    backRightVeryClosedThreshold_ = right;
 }
 
-int Sensors::left()
+void Sensors::addConfigFront(bool left, bool center, bool right)
 {
-    return sensorsdriver_->left();
+    enableFrontLeft_ = left;
+    enableFrontCenter_ = center;
+    enableFrontRight_ = right;
+}
+void Sensors::addConfigBack(bool left, bool center, bool right)
+{
+    enableBackLeft_ = left;
+    enableBackCenter_ = center;
+    enableBackRight_ = right;
 }
 
-bool Sensors::front()
+int Sensors::rightSide()
 {
-    return sensorsdriver_->front();
+    return sensorsdriver_->rightSide();
+}
+int Sensors::leftSide()
+{
+    return sensorsdriver_->leftSide();
 }
 
-bool Sensors::frontVeryClosed()
+//retourne 0, sinon le niveau detecté 2 veryClosed, 1 first level
+int Sensors::front()
 {
-    return sensorsdriver_->frontVeryClosed();
+    int fL = sensorsdriver_->frontLeft();
+    int fC = sensorsdriver_->frontCenter();
+    int fR = sensorsdriver_->frontRight();
+
+    //logger().info() << " L " << enableFrontLeft_ << " C " << enableFrontCenter_ << " R " << enableFrontRight_ << logs::end;
+    int level = 0;
+
+    if ((enableFrontLeft_ && (fL < frontLeftThreshold_)) || (enableFrontCenter_ && (fC < frontCenterThreshold_))
+            || (enableFrontRight_ && (fR < frontRightThreshold_))) {
+        logger().debug() << "1 frontLeft= " << fL << " frontCenter= " << fC << " frontRight= " << fR << logs::end;
+        level = 1;
+    }
+
+    if ((enableFrontLeft_ && (fL < frontLeftVeryClosedThreshold_))
+            || (enableFrontCenter_ && (fC < frontCenterVeryClosedThreshold_))
+            || (enableFrontRight_ && (fR < frontRightVeryClosedThreshold_))) {
+        logger().debug() << "2 frontLeft= " << fL << " frontCenter= " << fC << " frontRight= " << fR << logs::end;
+
+        level = 2;
+    }
+
+    return level;
 }
 
-bool Sensors::rear()
+int Sensors::back()
 {
-    return sensorsdriver_->rear();
+    int bL = sensorsdriver_->backLeft();
+    int bC = sensorsdriver_->backCenter();
+    int bR = sensorsdriver_->backRight();
+    int level = 0;
+
+    if ((enableBackLeft_ && (bL < backLeftThreshold_)) || (enableBackCenter_ && (bC < backCenterThreshold_))
+            || (enableBackRight_ && (bR < backRightThreshold_))) {
+        logger().debug() << "1 backLeft= " << bL << " backCenter= " << bC << " backRight= " << bR << logs::end;
+        level = 1;
+    }
+
+    if ((enableBackLeft_ && (bL < backLeftVeryClosedThreshold_))
+            || (enableBackCenter_ && (bC < backCenterVeryClosedThreshold_))
+            || (enableBackRight_ && (bR < backRightVeryClosedThreshold_))) {
+        logger().debug() << "2 backLeft= " << bL << " backCenter= " << bC << " backRight= " << bR << logs::end;
+
+        level = 2;
+    }
+
+    return level;
 }
 
-bool Sensors::rearVeryClosed()
-{
-    return sensorsdriver_->rearVeryClosed();
-}
-
-void Sensors::addTimerSensors()
+void Sensors::addTimerSensors(int timeSpan_ms)
 {
     logger().debug() << "startSensors" << logs::end;
 
-    this->actions().addTimer(new SensorsTimer(*this, 100, "sensors"));
+    this->actions().addTimer(new SensorsTimer(*this, timeSpan_ms, "sensors"));
 
+}
+void Sensors::stopTimerSensors()
+{
+    this->actions().stopTimer("sensors");
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-
-    bool front = sensors_.front();
-    bool frontVeryclosed = sensors_.frontVeryClosed();
-    if (front) {
+    int frontLevel = sensors_.front();
+    if (frontLevel == 1) {
         //send collision to asserv
         if (lastdetect_front_nb_ == 0) {
 
-            if (!sensors_.robot()->asserv_default->getIgnoreFrontCollision()) {
-                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-                sensors_.robot()->asserv_default->setFrontCollision();
-                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            sensors_.robot()->asserv_default->warnFrontCollisionOnTraj();
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
 
-                sensors_.robot()->asserv_default->setLowSpeed(true);
-            }
+            sensors_.robot()->asserv_default->setLowSpeedForward(true, 40); //TODO valeur differente a faire par robot
         }
         lastdetect_front_nb_++;
-    } else {
-        lastdetect_front_nb_ = 0;
-        sensors_.robot()->asserv_default->setLowSpeed(false);
     }
 
-    //cas nearest
+//cas nearest
     if (lastdetect_front_nb_ > 0) {
-        if (frontVeryclosed) {
-
-            if (!sensors_.robot()->asserv_default->getIgnoreFrontCollision()) {
-                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-                sensors_.robot()->asserv_default->setFrontCollision();
-                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            }
-
+        if (frontLevel == 2) {
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            sensors_.robot()->asserv_default->warnFrontCollisionOnTraj();
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+        }
+        if (frontLevel == 0) {
+            lastdetect_front_nb_ = 0;
+            sensors_.robot()->asserv_default->setLowSpeedForward(false); //TOD le zero ne sert a rien
         }
     }
 
-    //ARRIERE/////////////////////////////////////////////////////////////////
-    bool rear = sensors_.rear();
-    bool rearVeryclosed = sensors_.rearVeryClosed();
-    if (rear) {
+//ARRIERE/////////////////////////////////////////////////////////////////
+    int backLevel = sensors_.back();
+    if (backLevel == 1) {
         //send collision to asserv
 
         if (lastdetect_back_nb_ == 0) {
 
-            if (!sensors_.robot()->asserv_default->getIgnoreRearCollision()) {
-                sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-                sensors_.robot()->asserv_default->setRearCollision();
-                //sensors_.robot()->asserv_default->setLowSpeed(true); //TODO a faire en arrière parceque ca interfere avec la partie au dessus
-            }
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            sensors_.robot()->asserv_default->warnBackCollisionOnTraj();
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+
+            sensors_.robot()->asserv_default->setLowSpeedBackward(true, 40); //TODO a faire par robot
+
         }
         lastdetect_back_nb_++;
-    } else {
-        lastdetect_back_nb_ = 0;
-        //sensors_.robot()->asserv_default->setLowSpeed(false); //TODO a faire en arrière parceque ca interfere avec la partie au dessus
     }
 
     if (lastdetect_back_nb_ > 0) {
-        if (rearVeryclosed) {
+        if (backLevel == 2) {
             sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            if (!sensors_.robot()->asserv_default->getIgnoreRearCollision())
-                sensors_.robot()->asserv_default->setRearCollision();
+            sensors_.robot()->asserv_default->warnBackCollisionOnTraj();
+            sensors_.robot()->asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+        }
+        if (backLevel == 0) {
+            lastdetect_back_nb_ = 0;
+            sensors_.robot()->asserv_default->setLowSpeedBackward(false);
         }
     }
 
-    logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
-            << lastdetect_front_nb_ << " front=" << front << " rear=" << rear << "  frontVeryclosed=" << frontVeryclosed
-            << logs::end;
+    logger().info() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
+            << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel << logs::end;
 }
 
 void SensorsTimer::onTimerEnd(utils::Chronometer chrono)

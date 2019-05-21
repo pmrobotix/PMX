@@ -13,7 +13,8 @@ AAsservDriver * AAsservDriver::create(std::string botid)
     return instance;
 }
 
-AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
+AsservDriver::AsservDriver(std::string botid) :
+        chrono_("AsservDriver.SIMU")
 {
     botid_ = botid;
 
@@ -22,7 +23,6 @@ AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
     inverseCodeurD_ = 1.0;
     inverseMoteurG_ = 1.0;
     inverseMoteurD_ = 1.0;
-
 
     if (botid == "APF9328Robot") {
         //printf("--- AsservDriver - botid == APF9328Robot\n");
@@ -52,8 +52,6 @@ AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
         exit(-1);
     }
 
-
-
     //reset position
     p_.x = 0.0;
     p_.y = 0.0;
@@ -74,8 +72,8 @@ AsservDriver::AsservDriver(std::string botid) : chrono_("AsservDriver.SIMU")
 
     rightCounter_ = 0.0;
     leftCounter_ = 0.0;
-    rightMeters_= 0.0;
-    leftMeters_= 0.0;
+    rightMeters_ = 0.0;
+    leftMeters_ = 0.0;
 
     //timesMultiplicator_ = 1000.0;
 
@@ -112,11 +110,10 @@ void AsservDriver::execute()
             p = odo_GetPosition();
             m_pos.unlock();
 
-
-             loggerSvg().info() << "<circle cx=\"" << p.x * 1000.0 << "\" cy=\"" << -p.y * 1000.0
-             << "\" r=\"1\" fill=\"blue\" />" << "<line x1=\"" << p.x * 1000.0 << "\" y1=\"" << -p.y * 1000.0
-             << "\" x2=\"" << p.x * 1000.0 + cos(p.theta) * 25 << "\" y2=\"" << -p.y * 1000.0 - sin(p.theta) * 25
-             << "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::end;
+            loggerSvg().info() << "<circle cx=\"" << p.x * 1000.0 << "\" cy=\"" << -p.y * 1000.0
+                    << "\" r=\"1\" fill=\"blue\" />" << "<line x1=\"" << p.x * 1000.0 << "\" y1=\"" << -p.y * 1000.0
+                    << "\" x2=\"" << p.x * 1000.0 + cos(p.theta) * 25 << "\" y2=\"" << -p.y * 1000.0 - sin(p.theta) * 25
+                    << "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::end;
         }
         chrono.waitTimer();
     }
@@ -125,11 +122,9 @@ void AsservDriver::execute()
 //conversion 1 meter = n ticks
 float AsservDriver::convertMetersToTicks(float meters)
 {
-    float ticks = (float)std::rint(meters * simuTicksPerMeter_);
-	logger().debug() << " meters=" << meters
-			<< " ticks=" << ticks
-			<< " simuTicksPerMeter_=" << simuTicksPerMeter_
-			<< logs::end;
+    float ticks = (float) std::rint(meters * simuTicksPerMeter_);
+    logger().debug() << " meters=" << meters << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_
+            << logs::end;
     return ticks;
 }
 
@@ -160,9 +155,9 @@ float AsservDriver::convertPowerToSpeed(int power)
 void AsservDriver::computeCounterL()
 {
     // MAJ real speed
-	leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
-	if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
-		leftSpeed_ = wantedLeftSpeed_;
+    leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
+    if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
+        leftSpeed_ = wantedLeftSpeed_;
     //or perfect virtual motor
     //leftSpeed_ = wantedLeftSpeed_;
 
@@ -170,8 +165,6 @@ void AsservDriver::computeCounterL()
     float tps = chrono_.getElapsedTimeInMilliSec();	//* timesMultiplicator_;
     float deltaT_ms = tps - tLeft_ms_;
     tLeft_ms_ = tps;
-
-
 
     float currentLeftMeters = inverseCodeurG_ * (deltaT_ms * leftSpeed_) / 1000.0f;
     mutexL_.lock();
@@ -215,9 +208,9 @@ void AsservDriver::computeCounterL()
 void AsservDriver::computeCounterR()
 {
     // MAJ real speed
-	rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
-	if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
-		rightSpeed_ = wantedRightSpeed_;
+    rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
+    if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
+        rightSpeed_ = wantedRightSpeed_;
     //or perfect virtual motor
     //rightSpeed_ = wantedRightSpeed_;
 
@@ -602,9 +595,13 @@ void AsservDriver::motion_ActivateManager(bool enable)
     logger().debug() << "TODO motion_ActivateManager !!!!!" << logs::end;
 }
 
-void AsservDriver::motion_setLowSpeed(bool enable)
+void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
 {
-    logger().debug() << "TODO motion_setLowSpeed !!!!!" << logs::end;
+    logger().debug() << "TODO motion_setLowSpeedForward !!!!!" << logs::end;
+}
+void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
+{
+    logger().debug() << "TODO motion_setLowSpeedBackward !!!!!" << logs::end;
 }
 
 void AsservDriver::motion_ActivateReguDist(bool enable)

@@ -8,8 +8,7 @@
 
 #include <string>
 
-namespace utils
-{
+namespace utils {
 class Chronometer;
 } /* namespace utils */
 
@@ -21,65 +20,64 @@ class ITimerListener
 {
 public:
 
-	/*!
-	 * \brief Getter sur les infos permettant d'identifier le timer.
-	 */
-	virtual void onTimer(utils::Chronometer chrono) = 0;
+    /*!
+     * \brief Getter sur les infos permettant d'identifier le timer.
+     */
+    virtual void onTimer(utils::Chronometer chrono) = 0;
 
-	/*!
-	 * \brief Getter sur les infos permettant d'identifier le timer.
-	 */
-	virtual void onTimerEnd(utils::Chronometer chrono) = 0;
+    /*!
+     * \brief Getter sur les infos permettant d'identifier le timer.
+     */
+    virtual void onTimerEnd(utils::Chronometer chrono) = 0;
 
-	/*!
-	 * \brief Getter sur les infos permettant d'identifier le timer.
-	 */
-	virtual std::string info()
-	{
-		return name_;
-	}
+    /*!
+     * \brief Getter sur les infos permettant d'identifier le timer.
+     */
+    virtual std::string info()
+    {
+        return name_;
+    }
 
-	inline int timeSpan()
-	{
-		return timeSpan_ms_;
-	}
+    inline int timeSpan()
+    {
+        return timeSpan_ms_;
+    }
 
-	//last execution time
-	inline int getLastTime()
-	{
-		return lasttime_;
-	}
+    //last execution time
+    inline int getLastTime()
+    {
+        return lasttime_;
+    }
 
-	inline void setLastTime(long l)
-	{
-		lasttime_ = l;
-	}
+    inline void setLastTime(long l)
+    {
+        lasttime_ = l;
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual inline ~ ITimerListener()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~ ITimerListener()
+    {
+    }
 
 protected:
 
-	long timeSpan_ms_; //for Timer tasks
+    long timeSpan_ms_; //for Timer tasks
 
-	long lasttime_;
+    long lasttime_;
 
-	std::string name_;
+    std::string name_;
 
-
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	ITimerListener()
-	{
-		timeSpan_ms_ = 0;
-		lasttime_ = 0;
-		name_ = "iTimerListener_default";
-	}
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    ITimerListener()
+    {
+        timeSpan_ms_ = 0;
+        lasttime_ = 0;
+        name_ = "iTimerListener_default";
+    }
 };
 
 #endif

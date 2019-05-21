@@ -104,7 +104,8 @@ public:
     virtual void motion_DisablePID(void) = 0;		//! Stop motion control and disable PID
     virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =) (activate PID)
     virtual void motion_ActivateManager(bool enable) = 0;		//! Enable or Stop motion control timer, used to shutdown motion control
-    virtual void motion_setLowSpeed(bool enable)=0;
+    virtual void motion_setLowSpeedForward(bool enable, int percent)=0;
+    virtual void motion_setLowSpeedBackward(bool enable, int percent)=0;
 
     virtual void motion_ActivateReguDist(bool enable) = 0;
     virtual void motion_ActivateReguAngle(bool enable) = 0;

@@ -65,7 +65,7 @@ public:
 
     int getVoltage();
 
-    int getDistance();
+    int getDistanceMm();
 
     /*!
      * \brief conversion en mm du voltage donné par l'adc du GP2.

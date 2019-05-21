@@ -30,8 +30,8 @@ bool O_IAbyPathTest_action1()
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.asserv().ignoreFrontCollision(false);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().ignoreFrontCollision(false);
+//    robot.asserv().ignoreRearCollision(true);
     robot.ia().iAbyPath().goToZone("zone_1", &zone); //recuperation de la zone
 
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
@@ -60,8 +60,8 @@ bool O_IAByPathTest_action2()
     //opponent p->move(obj, 0.0, 300.0)->synchronize();
 
 
-    robot.asserv().ignoreFrontCollision(false);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().ignoreFrontCollision(false);
+//    robot.asserv().ignoreRearCollision(true);
 
     ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK) {
@@ -141,10 +141,10 @@ void O_IAByPathTest::run(int argc, char** argv)
     robot.asserv().doLineAbs(155);
     robot.svgPrintPosition();
 
-    robot.asserv().ignoreFrontCollision(true);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().ignoreFrontCollision(true);
+//    robot.asserv().ignoreRearCollision(true);
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors();
+    robot.actions().sensors().addTimerSensors(50);
 
     robot.chrono().start();
     robot.ia().iAbyPath().ia_start(); //launch IA

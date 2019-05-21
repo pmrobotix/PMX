@@ -16,8 +16,6 @@ class AsservInsa;
 
 class AAsservDriver;
 
-
-
 /*!
  * Asservissement of the robot.It contains default elements.
  */
@@ -105,32 +103,35 @@ public:
      */
     MovingBase * base();
 
-
-
     //Gestion de l'asservissement
     virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);
     virtual void stopMotionTimerAndOdo();
-    virtual void disablePID(); //TODO deprecated
-    virtual void setLowSpeed(bool enable);
+    void disablePID(); //TODO deprecated
+    void setLowSpeedForward(bool enable, int percent = 0);
+    void setLowSpeedBackward(bool enable, int percent = 0);
 
     //modes d'arret de l'asservissement
-    virtual void freeMotion();
-    virtual void assistedHandling();
+    void freeMotion();
+    void assistedHandling();
     //absolute motion
-    virtual TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
-    virtual TRAJ_STATE doRotateAbs(float degrees);
-    virtual TRAJ_STATE doRotateLeft(float degrees);
-    virtual TRAJ_STATE doRotateRight(float degrees);
-    virtual TRAJ_STATE doFaceTo(float xMM, float yMM);
+    TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
+    TRAJ_STATE doRotateAbs(float degrees);
+    TRAJ_STATE doRotateLeft(float degrees);
+    TRAJ_STATE doRotateRight(float degrees);
+    TRAJ_STATE doFaceTo(float xMM, float yMM);
     //relative motion (depends on current position of the robot)
-    virtual TRAJ_STATE doRotateTo(float thetaInDegree);
-    virtual TRAJ_STATE doMoveForwardTo(float xMM, float yMM, float adjustment = 0);
-    virtual TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
-    virtual TRAJ_STATE doMoveBackwardTo(float xMM, float yMM);
-    virtual TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
-    virtual TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
+    TRAJ_STATE doRotateTo(float thetaInDegree);
+    TRAJ_STATE doMoveForwardTo(float xMM, float yMM, float adjustment = 0);
+    TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
+    TRAJ_STATE doMoveBackwardTo(float xMM, float yMM);
+    TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
+    TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
-    virtual TRAJ_STATE doCalage(int d, int d2);
+    TRAJ_STATE doCalage(int d, int tempo, int percent);
+
+
+//La couleur de match doit deja etre effectué !
+    TRAJ_STATE calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
 
     //void findPidAD(float degrees, int mm, int sec);
     //void findPidLR(float posl, int posr, int sec);
@@ -186,22 +187,29 @@ public:
 
     bool filtreInsideTable(float mm);
 
-    virtual void setFrontCollision(); //TODO Virtual ???? a verifier car peut etre surcharger?
-    virtual void setRearCollision();
+    void warnFrontCollisionOnTraj(); //TODO Virtual ???? a verifier car peut etre surcharger?
+    void warnBackCollisionOnTraj();
 
-    virtual RobotPosition pos_getPosition();
-    virtual float pos_getX_mm();
-    virtual float pos_getY_mm();
+    RobotPosition pos_getPosition();
+    float pos_getX_mm();
+    float pos_getY_mm();
     // angle in radian
-    virtual float pos_getTheta();
+    float pos_getTheta();
     // angle in degrees
-    virtual float pos_getThetaInDegree();
+    float pos_getThetaInDegree();
 
-    void ignoreFrontCollision(bool ignore);
-    void ignoreRearCollision(bool ignore);
+    /*
+     //Near obstacle
+     void setIgnoreFrontNearObstacle(bool ignore);
+     void setIgnoreBackNearObstacle(bool ignore);
+     bool getIgnoreFrontNearObstacle();
+     bool getIgnoreBackNearObstacle();*/
 
-    bool getIgnoreFrontCollision();
-    bool getIgnoreRearCollision();
+    //TODO Collision a faire sur l'asserv car c'est elle qui donne l'info!
+//    void setIgnoreFrontColl(bool ignore);
+//    void setIgnoreBackColl(bool ignore);
+//    bool getIgnoreFrontColl();
+//    bool getIgnoreBackColl();
 };
 
 #endif

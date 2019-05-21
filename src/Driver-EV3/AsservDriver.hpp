@@ -95,7 +95,8 @@ public:
     void motion_DisablePID();		//! Stop motion control and disable PID
     void motion_AssistedHandling();		//! Assisted movement mode =)
     void motion_ActivateManager(bool enable);
-    void motion_setLowSpeed(bool enable);
+    void motion_setLowSpeedForward(bool enable, int percent);
+    void motion_setLowSpeedBackward(bool enable, int percent);
 
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);

@@ -187,51 +187,55 @@ public:
         left_arm_retract();
         right_arm_retract();
     }
-    void right_eject_all()
+    void right_eject_all(int sleeptime)
     {
         logger().info() << "conveyorBelt_Left_low" << logs::end;
-        conveyorBelt_Left_low();
+        conveyorBelt_Left_low(true);
         logger().info() << "conveyorBelt_EjectRight" << logs::end;
-        conveyorBelt_EjectRight();
+        conveyorBelt_EjectRight(sleeptime);
     }
 
-    void left_eject_all()
+    void left_eject_all(int sleeptime)
     {
         logger().info() << "conveyorBelt_Right_low" << logs::end;
-        conveyorBelt_Right_low();
+        conveyorBelt_Right_low(true);
         logger().info() << "conveyorBelt_EjectLeft" << logs::end;
-        conveyorBelt_EjectLeft();
+        conveyorBelt_EjectLeft(sleeptime);
     }
 
-    void left_prendre_palet()
+    void left_prendre_palet(int push, int nb)
     {
-        logger().info() << "left_arm_take" << logs::end;
-        left_arm_take();
-        logger().info() << "left_arm_retract" << logs::end;
-        left_arm_retract();
+        for (int i = 1; i <= nb; i++)
+        {
+            logger().info() << "left_arm_take" << logs::end;
+            left_arm_take();
+            logger().info() << "left_arm_retract" << logs::end;
+            left_arm_retract();
+        }
         //2nd time
-        logger().info() << "left_arm_take" << logs::end;
-        left_arm_take();
-        logger().info() << "left_arm_retract" << logs::end;
-        left_arm_retract();
-        conveyorBelt_PushRight(1000);
+        //logger().info() << "left_arm_take" << logs::end;
+        //left_arm_take();
+        //logger().info() << "left_arm_retract" << logs::end;
+        //left_arm_retract();
+
+        conveyorBelt_PushRight(push);
     }
-    void right_prendre_palet()
+    void right_prendre_palet(int push, int nb)
     {
-        logger().info() << "right_arm_take" << logs::end;
-        right_arm_take();
+        for (int i = 1; i <= nb; i++) {
+            logger().info() << "right_arm_take" << logs::end;
+            right_arm_take();
 
-        logger().info() << "right_arm_retract" << logs::end;
-        right_arm_retract();
-
+            logger().info() << "right_arm_retract" << logs::end;
+            right_arm_retract();
+        }
         //2nd time
-        logger().info() << "right_arm_take" << logs::end;
-        right_arm_take();
+        //logger().info() << "right_arm_take" << logs::end;
+        //right_arm_take();
+        //logger().info() << "right_arm_retract" << logs::end;
+        //right_arm_retract();
 
-        logger().info() << "right_arm_retract" << logs::end;
-        right_arm_retract();
-
-        conveyorBelt_PushLeft(1000);
+        conveyorBelt_PushLeft(push);
     }
 
     void left_arm_center(int speed = 512)
@@ -243,7 +247,7 @@ public:
     void left_arm_take()
     {
         servosStd().deploy(SERVO_7, -90, 0);
-        usleep(1000000);
+        usleep(1500000);
         servosStd().release(SERVO_7);
     }
     void left_arm_retract()
@@ -262,7 +266,7 @@ public:
     void right_arm_take(int keep = 0)
     {
         servosStd().deploy(SERVO_5, 90, 0);
-        usleep(1000000);
+        usleep(1500000);
         servosStd().release(SERVO_5);
     }
     void right_arm_retract()
@@ -304,15 +308,15 @@ public:
         servoUsingMotor().moveLeft(nb_position);
         sleep(1);
     }
-    void conveyorBelt_EjectLeft()
+    void conveyorBelt_EjectLeft(int sleeptime)
     {
         servoUsingMotor().ejectLeft();
-        sleep(2);
+        sleep(sleeptime);
     }
-    void conveyorBelt_EjectRight()
+    void conveyorBelt_EjectRight(int sleeptime)
     {
         servoUsingMotor().ejectRight();
-        sleep(2);
+        sleep(sleeptime);
     }
 
 };

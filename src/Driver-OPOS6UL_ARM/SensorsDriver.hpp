@@ -53,12 +53,16 @@ public:
      */
     ~SensorsDriver();
 
-    int left();
-    int right();
-    bool front();
-    bool rear();
-    bool frontVeryClosed();
-    bool rearVeryClosed();
+    int rightSide();
+    int leftSide();
+
+    int frontLeft();
+    int frontCenter();
+    int frontRight();
+
+    int backLeft();
+    int backCenter();
+    int backRight();
 
 };
 

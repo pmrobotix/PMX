@@ -52,7 +52,7 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     logger().info() << "GO distance calage mm=" << d << logs::end;
-    TRAJ_STATE ts = robot.asserv().doCalage(d, 4);
+    TRAJ_STATE ts = robot.asserv().doCalage(d, 4, 65);
 
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
             << p.asservStatus << " ts=" << ts<<  logs::end;

@@ -73,26 +73,35 @@ void L_AsservRunTest::run(int argc, char** argv)
     logger().info() << "COORD x,300 avec x=" << x << logs::end;
 
     robot.actions().start();
-    robot.actions().addAction(new TestActionRun(*this));
+    robot.actions().sensors().addTimerSensors(50);
 
-    robot.asserv().ignoreFrontCollision(false);
-    robot.asserv().ignoreRearCollision(true);
+    //robot.actions().addAction(new TestActionRun(*this));
+
+    //level 0 - pas d'ignore
+    //level 1 - on ignore le level 1 et inferieur
+    //level 2 - on ignore le level 2 et inferieur
+    //robot.actions().sensors().setIgnoreNearObstacleMinLevel(0,0,0,0,0,0);
+
     TRAJ_STATE ts;
-    while ((ts = robot.asserv().doMoveForwardAndRotateTo(x, 300, 0)) != TRAJ_OK)
-    {
+    int f = 0;
+    while ((ts = robot.asserv().doMoveForwardTo(x, 300)) != TRAJ_OK) { //TODO PB avec le And rotateTo
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
-        logger().info() << "attente trajstate=" << ts << logs::end;
 
+        if (ts == TRAJ_NEAR_OBSTACLE) {
+            robot.logger().error() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
 
-        bool frontVeryclosed = robot.actions().sensors().frontVeryClosed();
-        while(frontVeryclosed)
-        {
-            sleep(1);
-            frontVeryclosed = robot.actions().sensors().frontVeryClosed();
+            f++;
+            usleep(200000);
+        }
+        if (ts == TRAJ_COLLISION) {
+            robot.logger().error() << "===== COLLISION essai n°" << f << logs::end;
 
+            f++;
         }
         robot.asserv().resetDisplayTS();
+
+
     }
 
     left = robot.asserv().base()->encoders().getLeftEncoder();
@@ -105,28 +114,28 @@ void L_AsservRunTest::run(int argc, char** argv)
 
     logger().info() << "Happy End." << logs::end;
 }
-
-TestActionRun::TestActionRun(L_AsservRunTest & amt) :
-        amt_(amt), chrono_("TestActionRun")
-{
-    chrono_.start();
-    i_ = 0;
-}
-
-//execution de la tâche
-bool TestActionRun::execute()
-{
-    logger().info() << " !!!!! execution time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
-    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-    logger().info() << "ACTIVATION DETECTION ADVERSAIRE !" << logs::end;
-
-    //robot.actions().sensors().startSensors();
-
-    Automate automate;
-    IAutomateState* stateWaitEndOfMatch = new L_State_WaitEndOfMatch();
-    // Start the automate and wait for its return
-    automate.run(robot, stateWaitEndOfMatch);
-
-    return false;
-
-}
+//
+//TestActionRun::TestActionRun(L_AsservRunTest & amt) :
+//        amt_(amt), chrono_("TestActionRun")
+//{
+//    chrono_.start();
+//    i_ = 0;
+//}
+//
+////execution de la tâche
+//bool TestActionRun::execute()
+//{
+//    logger().info() << " !!!!! execution time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
+//    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+//    logger().info() << "ACTIVATION DETECTION ADVERSAIRE !" << logs::end;
+//
+//    //robot.actions().sensors().startSensors();
+//
+//    Automate automate;
+//    IAutomateState* stateWaitEndOfMatch = new L_State_WaitEndOfMatch();
+//    // Start the automate and wait for its return
+//    automate.run(robot, stateWaitEndOfMatch);
+//
+//    return false;
+//
+//}

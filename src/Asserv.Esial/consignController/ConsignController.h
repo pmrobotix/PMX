@@ -108,9 +108,11 @@ public:
         return angle_consigne;
     }
 
+
     //Méthode permettant de réduire la vitesse du robot, en cas de calage bordure par exemple
-    void setLowSpeed(bool b);
-    void setLowSpeed(bool b, unsigned char factor_div_back, unsigned char factor_div_forward);
+    void setLowSpeed(bool b);//deprecated methods
+    void setLowSpeedForward(bool b, int percent);
+    void setLowSpeedBackward(bool b, int percent);
 
     void setLeftSpeed(int vit);
     void setRightSpeed(int vit);

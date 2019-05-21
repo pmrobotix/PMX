@@ -30,8 +30,31 @@ private:
 
     ASensorsDriver* sensorsdriver_;
 
-public:
+    int frontLeftThreshold_;
+    int frontCenterThreshold_;
+    int frontRightThreshold_;
 
+    int frontLeftVeryClosedThreshold_;
+    int frontCenterVeryClosedThreshold_;
+    int frontRightVeryClosedThreshold_;
+
+    int backLeftThreshold_;
+    int backCenterThreshold_;
+    int backRightThreshold_;
+
+    int backLeftVeryClosedThreshold_;
+    int backCenterVeryClosedThreshold_;
+    int backRightVeryClosedThreshold_;
+
+    int enableFrontLeft_;
+    int enableFrontCenter_;
+    int enableFrontRight_;
+
+    int enableBackLeft_;
+    int enableBackCenter_;
+    int enableBackRight_;
+
+public:
 
     /*!
      * \brief Constructor.
@@ -49,20 +72,32 @@ public:
         return robot_;
     }
 
-    int right();
-    int left();
+    int rightSide();
+    int leftSide();
 
-    bool front();
-    bool rear();
+    int front();
 
-    bool frontVeryClosed();
-    bool rearVeryClosed();
+//    int frontLeft();
+//    int frontCenter();
+//    int frontRight();
+
+    int back();
+//    int backLeft();
+//    int backCenter();
+//    int backRight();
+
+    void addConfigFront(bool left, bool center, bool right);
+    void addConfigBack(bool left, bool center, bool right);
+    void addThresholdFront(int left, int center, int right);
+    void addThresholdBack(int left, int center, int right);
+    void addThresholdFrontVeryClosed(int left, int center, int right);
+    void addThresholdBackVeryClosed(int left, int center, int right);
 
     //Ajoute le timer des sensors de detection
-    void addTimerSensors();
+    void addTimerSensors(int timespan_ms);
 
     //TODO supprimer la tache des sensors void removeTimerSensors();
-
+    void stopTimerSensors();
 };
 
 /*!

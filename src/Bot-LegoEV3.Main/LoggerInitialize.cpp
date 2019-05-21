@@ -29,6 +29,7 @@ void logs::LoggerFactory::initialize()
     //COMMON
     add(logs::Level::INFO, "Tirette", "console");
     add(logs::Level::INFO, "Wait90SecAction", "console");
+    add(logs::Level::INFO, "Sensors", "console");
     add(logs::Level::INFO, "SensorsTimer", "console");
     add(logs::Level::INFO, "Chronometer", "console");
     add(logs::Level::INFO, "IAbyPath", "console");

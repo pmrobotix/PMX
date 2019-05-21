@@ -328,7 +328,12 @@ void AsservDriver::motion_ActivateManager(bool enable)
 {
 }
 
-void AsservDriver::motion_setLowSpeed(bool enable)
+void AsservDriver::motion_setLowSpeedForward(bool enable, int)
+{
+
+}
+
+void AsservDriver::motion_setLowSpeedBackward(bool enable, int)
 {
 
 }

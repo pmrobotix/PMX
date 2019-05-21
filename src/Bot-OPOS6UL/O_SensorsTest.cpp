@@ -19,16 +19,16 @@ void O_SensorsTest::run(int argc, char** argv)
 
     //execution sans le actionTimer
     bool front;
-    bool rear;
+    bool back;
     utils::Chronometer chrono("O_SensorsTest");
     chrono.start();
     while (chrono.getElapsedTimeInSec() < 100) {
         front = robot.actions().sensors().front();
 
-        rear = robot.actions().sensors().rear();
+        back = robot.actions().sensors().back();
 
         usleep(400000);
-        logger().info() << " front=" << front << " rear=" << rear << logs::end;
+        logger().info() << " front=" << front << " back=" << back << logs::end;
     }
 
     //TODO execution avec l'actionTimer

@@ -288,10 +288,10 @@ void O_State_Init::setPos()
     robot.asserv().setPositionAndColor(70, 450, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
-    robot.asserv().setLowSpeed(false); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
+    robot.asserv().setLowSpeedForward(false); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
 
-    robot.asserv().ignoreFrontCollision(true);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().ignoreFrontCollision(true);
+//    robot.asserv().ignoreRearCollision(true);
     robot.asserv().resetDisplayTS();
     robot.asserv().assistedHandling();
     TRAJ_STATE ts = robot.asserv().doLineAbs(130);

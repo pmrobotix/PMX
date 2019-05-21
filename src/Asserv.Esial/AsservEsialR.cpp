@@ -433,11 +433,14 @@ void AsservEsialR::motion_ActivateManager(bool enable)
         run_ = false;
     }
 }
-void AsservEsialR::motion_setLowSpeed(bool enable)
+void AsservEsialR::motion_setLowSpeedForward(bool enable, int percent) //TODO percent ne sert à rien dans le cas enable =false ???
 {
-    unsigned char back_factor = 2;
-    unsigned char forward_factor = 2;
-    consignC_->setLowSpeed(enable, back_factor, forward_factor);
+    consignC_->setLowSpeedForward(enable, percent);
+}
+
+void AsservEsialR::motion_setLowSpeedBackward(bool enable, int percent)
+{
+    consignC_->setLowSpeedBackward(enable, percent);
 }
 
 void AsservEsialR::motion_ActivateReguDist(bool enable)

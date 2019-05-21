@@ -225,8 +225,7 @@ RobotPosition AsservDriver::mbed_GetPosition() //en metre
     if (int r = mbed_readI2c('p', 13, data) < 0) {
         logger().error() << "mbed_GetPosition - p13 - ERROR " << r << logs::end;
         errorCount_++;
-        if (errorCount_ > 20)
-        {
+        if (errorCount_ > 20) {
             logger().error() << "mbed_GetPosition Too many Error ==> EXIT !!! " << r << logs::end;
             exit(0);
         }
@@ -371,7 +370,7 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
     //attente du running status passage de 0,2,3 à 1
     while (p_.asservStatus != 1) {
 
-       //logger().debug() << "1111 p= " << p_.asservStatus << " timeout=" << timeout << logs::end;
+        //logger().debug() << "1111 p= " << p_.asservStatus << " timeout=" << timeout << logs::end;
         usleep(10000);
         timeout++;
         if (timeout > 10)
@@ -502,15 +501,51 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
         //return mbed_waitEndOfTraj();
     }
 }
+/*
+ void AsservDriver::motion_setLowSpeed(bool enable)
+ {
+ unsigned char d[4];
+ unsigned char back_div = 6;
+ unsigned char forw_div = 6;
+ if (enable) {
+ d[0] = 1;
+ d[1] = back_div;
+ d[2] = forw_div;
+ d[3] = 0;
+ } else {
+ d[0] = 0;
+ d[1] = 0;
+ d[2] = 0;
+ d[3] = 0;
+ }
+ mbed_writeI2c('l', 4, d);
+ }*/
 
-void AsservDriver::motion_setLowSpeed(bool enable)
+void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
 {
     unsigned char d[4];
-    unsigned char back_div = 6;
-    unsigned char forw_div = 6;
+    unsigned char back_div = (unsigned char)percent;
     if (enable) {
         d[0] = 1;
         d[1] = back_div;
+        d[2] = 0;
+        d[3] = 0;
+    } else {
+        d[0] = 0;
+        d[1] = 0;
+        d[2] = 0;
+        d[3] = 0;
+    }
+    mbed_writeI2c('l', 4, d);
+
+}
+void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
+{
+    unsigned char d[4];
+    unsigned char forw_div = (unsigned char)percent;
+    if (enable) {
+        d[0] = 1;
+        d[1] = 0;
         d[2] = forw_div;
         d[3] = 0;
     } else {
@@ -585,20 +620,11 @@ void AsservDriver::motion_FreeMotion(void)
         logger().debug() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('K', 0, NULL); //stop mbed managers
-        //pathStatus_ = TRAJ_CANCELLED;
     }
 }
 void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotion ???
 {
     motion_FreeMotion();
-    /*if (!connected_)
-     return;
-     if (!asservMbedStarted_)
-     logger().error() << "motion_DisablePID() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
-     else {
-     mbed_writeI2c('K', 0, NULL); //stop mbed managers
-     //pathStatus_ = TRAJ_CANCELLED;
-     }*/
 }
 void AsservDriver::motion_AssistedHandling(void)
 {
@@ -608,7 +634,6 @@ void AsservDriver::motion_AssistedHandling(void)
         logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('J', 0, NULL);
-        //pathStatus_ = TRAJ_INTERRUPTED;
     }
 }
 void AsservDriver::motion_ActivateManager(bool enable)
@@ -624,7 +649,6 @@ void AsservDriver::motion_ActivateManager(bool enable)
         asservMbedStarted_ = false;
         usleep(100000);
         mbed_writeI2c('!', 0, NULL);
-
     }
 }
 

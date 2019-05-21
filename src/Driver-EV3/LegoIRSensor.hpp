@@ -46,7 +46,7 @@ public:
     /*!
      * \brief donne la distance detectée en mm.
      */
-    double getDistanceMM();
+    float getDistanceMM();
 
 };
 

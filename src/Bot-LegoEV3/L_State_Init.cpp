@@ -216,7 +216,7 @@ L_State_Init::execute(Robot&)
             logger().error() << "PMXNOCOLOR !!!" << logs::end;
             exit(0);
         } else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXVIOLET ? "VIOLET" : "YELLOW") << logs::end;
+            logger().error() << "COLOR is " << (robot.getMyColor() == PMXVIOLET ? "VIOLET" : "YELLOW") << logs::end;
         }
 
         logger().info() << "ENLEVER TIRETTE !!!" << logs::end;
@@ -267,18 +267,21 @@ void L_State_Init::setPos()
 //    } else {
 //    }
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(45, 771, 0.0, (robot.getMyColor() != PMXVIOLET)); //collé au vert, coté bleu
+    //robot.asserv().setPositionAndColor(45, 771, 0.0, (robot.getMyColor() != PMXVIOLET)); //collé au vert, coté bleu
+    robot.asserv().setPositionAndColor(450+120, 1543-48, -90.0, (robot.getMyColor() != PMXVIOLET)); //au coin du distributeur
     robot.svgPrintPosition();
 
-    robot.asserv().ignoreFrontCollision(false);
-    robot.asserv().ignoreRearCollision(true);
+//    robot.asserv().setIgnoreFrontNearObstacle(false);
+//    robot.asserv().setIgnoreBackNearObstacle(true);
 
     robot.asserv().assistedHandling();
     robot.svgPrintPosition();
     //init
-
     robot.asserv().doLineAbs(150);
-    robot.asserv().doMoveForwardAndRotateTo(300, 740, 90.0);
+    robot.asserv().doMoveBackwardTo(300,robot.asserv().pos_getY_mm());
+    robot.asserv().doMoveBackwardTo(300,730);
+    //
+    //robot.asserv().doMoveForwardAndRotateTo(300, 740, 90.0);
     robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;
     robot.actions().lcd().display_content_string("SET POSITION Done.", 6);

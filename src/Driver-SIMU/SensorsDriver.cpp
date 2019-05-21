@@ -19,30 +19,37 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
-int SensorsDriver::right()
+int SensorsDriver::rightSide()
 {
     return 0;
 }
-int SensorsDriver::left()
-{
-    return 0;
-}
-
-bool SensorsDriver::front()
+int SensorsDriver::leftSide()
 {
     return 0;
 }
 
-bool SensorsDriver::rear()
+int SensorsDriver::frontLeft()
+{
+    return 0;
+}
+int SensorsDriver::frontCenter()
+{
+    return 0;
+}
+int SensorsDriver::frontRight()
 {
     return 0;
 }
 
-bool SensorsDriver::frontVeryClosed()
+int SensorsDriver::backLeft()
 {
     return 0;
 }
-bool SensorsDriver::rearVeryClosed()
+int SensorsDriver::backCenter()
+{
+    return 0;
+}
+int SensorsDriver::backRight()
 {
     return 0;
 }
