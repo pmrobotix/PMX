@@ -31,12 +31,12 @@ Sensors::~Sensors()
 }
 
 SensorsTimer::SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name) :
-        sensors_(sensors), chrono_("SensorsTimer")
+        sensors_(sensors), chrono_("SensorsTimerChrono")
 {
-    name_ = name;
+    nameListener_ = name;
     lasttime_ = 0;
     timeSpan_ms_ = timeSpan_ms;
-    logger().debug() << "timeSpan_ms=" << timeSpan_ms << logs::end;
+
     lastdetect_front_nb_ = 0;
     lastdetect_back_nb_ = 0;
 }
@@ -223,7 +223,7 @@ void SensorsTimer::onTimerEnd(utils::Chronometer chrono)
 std::string SensorsTimer::info()
 {
     std::ostringstream oss;
-    oss << "SensorsTimer for " << sensors_.robot()->getID();
+    oss << "SensorsTimer ["<< nameListener_ << "] for " << sensors_.robot()->getID();
     return oss.str();
 }
 

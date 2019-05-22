@@ -165,8 +165,11 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         //if (robot.decisionMaker_->state() == utils::CREATED)
         robot.decisionMaker_->cancel();
 
+
     //init robot for end
     robot.freeMotion(); //stop the robot
+    robot.actions().sensors().stopTimerSensors();
+
     robot.stopExtraActions(); //stop specific actions, can take time for servos...
     robot.svgPrintEndOfFile();
 

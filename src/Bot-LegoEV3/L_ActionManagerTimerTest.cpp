@@ -58,7 +58,7 @@ bool TestAction::execute()
 TestTimer::TestTimer(L_ActionManagerTimerTest & amt, int timeSpan_ms, std::string name) :
         amt_(amt), chrono_("TestTimer")
 {
-    name_ = name;
+    nameListener_ = name;
     lasttime_ = 0;
     timeSpan_ms_ = timeSpan_ms;
     logger().debug() << "timeSpan_ms=" << timeSpan_ms << logs::end;

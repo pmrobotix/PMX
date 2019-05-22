@@ -177,6 +177,7 @@ bool L_take_grand_distributeur()
         robot.asserv().doRotateLeft(12);
         //robot.asserv().doCalage(220, 4, 70);
         robot.asserv().doCalage(240, 4, 70);
+        robot.svgPrintPosition();
         robot.asserv().doLineAbs(-60);
         robot.logger().info() << "left_eject_all" << logs::end;
         robot.actions().left_eject_all(0);
@@ -187,6 +188,7 @@ bool L_take_grand_distributeur()
         robot.asserv().doRotateLeft(15);
 
         robot.asserv().doLineAbs(-100);
+        robot.svgPrintPosition();
         robot.actions().init_servos();
         robot.asserv().doRotateRight(170);
 
@@ -202,7 +204,7 @@ bool L_take_grand_distributeur()
     }
 
     robot.asserv().doMoveForwardTo(700, 1300);
-
+    robot.svgPrintPosition();
     if (robot.getMyColor() == PMXVIOLET) {
         robot.ia().iAbyPath().enable(robot.ia().area_palet_start_violet, 0);
     } else {
@@ -216,7 +218,7 @@ bool L_take_grand_distributeur()
         sleep(2);
         robot.asserv().resetDisplayTS();
     }
-
+    robot.svgPrintPosition();
     while ((ts = robot.asserv().doMoveBackwardTo(600, 1200)) != TRAJ_OK) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
@@ -225,7 +227,7 @@ bool L_take_grand_distributeur()
         robot.asserv().resetDisplayTS();
 
     }
-
+    robot.svgPrintPosition();
     return true; //return true si ok sinon false si interruption
 }
 

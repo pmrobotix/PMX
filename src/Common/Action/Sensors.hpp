@@ -145,7 +145,6 @@ public:
      */
     virtual inline ~SensorsTimer()
     {
-        logger().debug() << "~SensorsTimer()" << logs::end;
     }
 
     virtual void onTimer(utils::Chronometer chrono);

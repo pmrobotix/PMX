@@ -22,8 +22,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "Start Chronometer" << logs::end;
     robot.chrono().start();
 
-    //TODO check ARU and adversary here ?
-    while (robot.chrono().getElapsedTimeInSec() <= 99) {
+    while (robot.chrono().getElapsedTimeInSec() <= 9) {
 
         usleep(1000000);
         long time = robot.chrono().getElapsedTimeInSec();
@@ -31,7 +30,6 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
         //indique le temps en binaire
         //robot.actions().ledBar().flash(time, LED_GREEN);
-
     }
 
     this->logger().info() << "O_State_Wait90SecAction::execute end100s...stop... "
@@ -41,11 +39,10 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.end90s(true); //indique que l'action est effectuée au prog princ
     logger().info() << "cancel decisionmaker" << logs::end;
     robot.decisionMaker_->cancel();
-    //init robot for end
-    robot.freeMotion(); //stop the robot
 
+    robot.freeMotion();
+    robot.actions().sensors().stopTimerSensors();
     robot.stopExtraActions(); //stop specific actions, can take time for servos...
-
     robot.svgPrintEndOfFile();
 
     logger().info() << "Display Points after 100sec" << logs::end;
@@ -57,9 +54,11 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.actions().lcd2x16().print(" points ?");
     robot.actions().lcd2x16().setCursor(0, 1);
     robot.actions().lcd2x16().print("Yeahhh OK");
+
     robot.actions().ledBar().flashAll(LED_GREEN);
 
     robot.actions().ledBar().k2mil(2, 50000, LED_GREEN);
+
 
     ButtonTouch b = BUTTON_NONE;
     while (1) {

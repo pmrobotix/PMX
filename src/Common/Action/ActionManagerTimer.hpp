@@ -6,12 +6,12 @@
 #ifndef COMMON_ACTIONMANAGERTIMER_HPP_
 #define COMMON_ACTIONMANAGERTIMER_HPP_
 
+#include <cstdio>
 #include <list>
 #include <string>
 
 #include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
-#include "../../Thread/Thread.hpp"
 #include "../Utils/Chronometer.hpp"
 #include "../Utils/PointerList.hpp"
 #include "IAction.hpp"
@@ -137,7 +137,7 @@ public:
      * \param name
      *        Le label du timer.
      */
-    inline void stopTimer(std::string timerName) //TODO Move in the loop
+    inline void stopTimer(std::string timerNameToDelete) //TODO Move in the loop
     {
         bool found = false;
         utils::PointerList<ITimerListener *>::iterator save;
@@ -145,7 +145,9 @@ public:
         mtimer_.lock();
         while (i != timers_.end()) {
             ITimerListener * timer = *i;
-            if (timer->info() == timerName) {
+
+            if (timer->name() == timerNameToDelete) {
+
                 save = i;
                 found = true;
                 timer->onTimerEnd(chronoTimer_);
@@ -155,7 +157,7 @@ public:
         if (found)
             timers_.erase(save);
         else
-            logger().error() << "Timer " << timerName << " not found !!" << logs::end;
+            logger().error() << "Timer [" << timerNameToDelete << "] not found !!" << logs::end;
 
         mtimer_.unlock();
     }

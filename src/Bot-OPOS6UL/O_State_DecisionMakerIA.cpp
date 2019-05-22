@@ -141,7 +141,7 @@ bool O_push_blue()
 //    robot.asserv().ignoreRearCollision(true);
     robot.asserv().resetDisplayTS();
     ts = robot.asserv().doLineAbs(60);
-    robot.asserv().doCalage(50, 2);
+    robot.asserv().doCalage(50, 2, 35);
     ts = robot.asserv().doLineAbs(-15);
 
     robot.asserv().displayTS(ts);
@@ -195,7 +195,7 @@ bool O_push_blue()
 
     robot.svgPrintPosition();
 
-    robot.asserv().doCalage(150, 6);
+    robot.asserv().doCalage(150, 6, 35);
     robot.svgPrintPosition();
 
     //robot.actions().ax12_left_cil_retract(0);

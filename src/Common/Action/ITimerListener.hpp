@@ -33,9 +33,9 @@ public:
     /*!
      * \brief Getter sur les infos permettant d'identifier le timer.
      */
-    virtual std::string info()
+    virtual std::string name()
     {
-        return name_;
+        return nameListener_;
     }
 
     inline int timeSpan()
@@ -67,7 +67,7 @@ protected:
 
     long lasttime_;
 
-    std::string name_;
+    std::string nameListener_;
 
     /*!
      * \brief Constructeur de la classe.
@@ -76,7 +76,7 @@ protected:
     {
         timeSpan_ms_ = 0;
         lasttime_ = 0;
-        name_ = "iTimerListener_default";
+        nameListener_ = "iTimerListener_default";
     }
 };
 

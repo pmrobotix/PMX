@@ -107,6 +107,20 @@ void L_ServoObjectTest::run(int argc, char** argv)
         robot.actions().conveyorBelt_EjectLeft(3);
     }
 
+    if (m == "DR") {
+        logger().info() << "conveyorBelt_Left_low" << logs::end;
+        robot.actions().conveyorBelt_Right_low();
+        logger().info() << "conveyorBelt_EjectRight" << logs::end;
+        robot.actions().conveyorBelt_EjectRight(3);
+    }
+
+    if (m == "DL") {
+        logger().info() << "conveyorBelt_Left_low" << logs::end;
+        robot.actions().conveyorBelt_Left_low();
+        logger().info() << "conveyorBelt_EjectLeft" << logs::end;
+        robot.actions().conveyorBelt_EjectLeft(3);
+    }
+
     /*
      logger().info() << "conveyorBelt_Left_center" << logs::end;
      robot.actions().conveyorBelt_Left_center();

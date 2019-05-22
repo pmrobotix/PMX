@@ -28,7 +28,6 @@ L_State_Init::execute(Robot&)
 
     robot.actions().lcd().clear();
 
-
     if (!robot.skipSetup()) {
         robot.actions().lcd().setCursor(1, 1); //to change the font
 
@@ -216,7 +215,7 @@ L_State_Init::execute(Robot&)
             logger().error() << "PMXNOCOLOR !!!" << logs::end;
             exit(0);
         } else {
-            logger().error() << "COLOR is " << (robot.getMyColor() == PMXVIOLET ? "VIOLET" : "YELLOW") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXVIOLET ? "VIOLET" : "YELLOW") << logs::end;
         }
 
         logger().info() << "ENLEVER TIRETTE !!!" << logs::end;
@@ -225,6 +224,7 @@ L_State_Init::execute(Robot&)
 
         logger().info() << "Strategy is " << robot.strategy() << logs::end;
 
+        logger().info() << "setPos() executing" << logs::end;
         setPos();
 
         robot.waitForInit(true);
@@ -259,29 +259,20 @@ void L_State_Init::setPos()
 
     //init des objects
     robot.actions().init_servos();
-//    robot.actions().conveyorBelt_Left_center();
-//    robot.actions().left_arm_retract();
-//    robot.actions().right_arm_retract();
 
-//    if (robot.getMyColor() == PMXVIOLET) {
-//    } else {
-//    }
     robot.asserv().startMotionTimerAndOdo(false);
     //robot.asserv().setPositionAndColor(45, 771, 0.0, (robot.getMyColor() != PMXVIOLET)); //collé au vert, coté bleu
-    robot.asserv().setPositionAndColor(450+120, 1543-48, -90.0, (robot.getMyColor() != PMXVIOLET)); //au coin du distributeur
+    robot.asserv().setPositionAndColor(450 + 120, 1543 - 48, -90.0, (robot.getMyColor() != PMXVIOLET)); //au coin du distributeur
     robot.svgPrintPosition();
 
-//    robot.asserv().setIgnoreFrontNearObstacle(false);
-//    robot.asserv().setIgnoreBackNearObstacle(true);
-
+    //active l'asservissement
     robot.asserv().assistedHandling();
     robot.svgPrintPosition();
     //init
     robot.asserv().doLineAbs(150);
-    robot.asserv().doMoveBackwardTo(300,robot.asserv().pos_getY_mm());
-    robot.asserv().doMoveBackwardTo(300,730);
-    //
-    //robot.asserv().doMoveForwardAndRotateTo(300, 740, 90.0);
+    robot.asserv().doMoveBackwardTo(300, robot.asserv().pos_getY_mm());
+    robot.asserv().doMoveBackwardTo(300, 730);
+
     robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;
     robot.actions().lcd().display_content_string("SET POSITION Done.", 6);

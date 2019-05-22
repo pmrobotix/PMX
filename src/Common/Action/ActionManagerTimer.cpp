@@ -106,7 +106,7 @@ void ActionManagerTimer::debugTimers()
     utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
     while (i != timers_.end()) {
         ITimerListener * timer = *i;
-        logger().debug() << " - " << timer->info() << logs::end;
+        logger().debug() << " - " << timer->name() << logs::end;
         i++;
     }
     mtimer_.unlock();

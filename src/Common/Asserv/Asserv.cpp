@@ -377,7 +377,7 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegree)
 
     return ts;
 }
-TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
+TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment_mm)
 {
     float dx = getRelativeX(xMM) - pos_getX_mm();
     float dy = yMM - pos_getY_mm();
@@ -393,17 +393,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment)
     doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
     float dist = sqrt(dx * dx + dy * dy);
     logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
-    return doLineAbs(dist + adjustment);
-}
-TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
-{
-    TRAJ_STATE ts;
-    ts = doMoveForwardTo(xMM, yMM);
-    if (ts != TRAJ_OK)
-        return ts;
-
-    ts = doRotateTo(thetaInDegree);
-    return ts;
+    return doLineAbs(dist + adjustment_mm);
 }
 TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
 {
@@ -416,10 +406,20 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
         }
     float aRadian = atan2(dy, dx);
 
-    doRotateTo(((M_PI + aRadian) * 180.0f) / M_PI);
+    doRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI));
 
     float dist = sqrt(dx * dx + dy * dy);
     return doLineAbs(-dist);
+}
+TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
+{
+    TRAJ_STATE ts;
+    ts = doMoveForwardTo(xMM, yMM);
+    if (ts != TRAJ_OK)
+        return ts;
+
+    ts = doRotateTo(thetaInDegree);
+    return ts;
 }
 TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
@@ -502,8 +502,8 @@ TRAJ_STATE Asserv::doCalage(int dist, int tempo, int percent) //TODO ajouter le 
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         logger().error() << "TODO doCalage ASSERV_INT_ESIALR !!!" << logs::end;
         //set low speed
-        pAsservEsialR_->motion_setLowSpeedForward(true, 50);
-        pAsservEsialR_->motion_setLowSpeedBackward(true, 50);
+        pAsservEsialR_->motion_setLowSpeedForward(true, percent);
+        pAsservEsialR_->motion_setLowSpeedBackward(true, percent);
 
         pAsservEsialR_->motion_ActivateReguAngle(false);
 
