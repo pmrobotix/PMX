@@ -28,7 +28,7 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 
     Arguments args = robot.getArgs();
 
-    logger().info() << "Executing - " << this->desc() << logs::end;
+    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
 
     robot.actions().servosAx12().detect();
     robot.actions().ax12_left_cil_retract(0);

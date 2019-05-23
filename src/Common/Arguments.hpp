@@ -19,91 +19,89 @@
 using namespace std;
 
 #ifndef TCHAR
-	typedef char TCHAR;
+typedef char TCHAR;
 #define _T(a) a
-	typedef string tstring;
+typedef string tstring;
 #else
-	typedef basic_string<TCHAR> tstring;
+typedef basic_string<TCHAR> tstring;
 #endif
 
 inline ostream &operator<<(ostream& ostr, tstring& tstr)
 {
-	ostr << tstr.c_str();
-	return ostr;
+    ostr << tstr.c_str();
+    return ostr;
 }
 
 class Arguments
 {
-	tstring m_strCommandName;
-	tstring m_strDescription;
-	tstring m_strOptionmarkers;
+    tstring m_strCommandName;
+    tstring m_strDescription;
+    tstring m_strOptionmarkers;
 
 public:
-	static tstring UnknownArgument;
+    static tstring UnknownArgument;
 
-	class Option;
+    class Option;
 
-	class Argument
-	{
-		friend class Arguments;
-		friend class Option;
+    class Argument
+    {
+        friend class Arguments;
+        friend class Option;
 
-		tstring m_strName;
-		tstring m_strDescription;
-		tstring m_strValue;
-		tstring m_strDefault;
-		bool m_bOptional;
+        tstring m_strName;
+        tstring m_strDescription;
+        tstring m_strValue;
+        tstring m_strDefault;
+        bool m_bOptional;
 
-	public:
-		Argument(tstring strName, tstring strDescription = _T(""), tstring strDefault = _T(""));
-	};
+    public:
+        Argument(tstring strName, tstring strDescription = _T(""), tstring strDefault = _T(""));
+    };
 
-	typedef vector<Argument> ArgVector;
+    typedef vector<Argument> ArgVector;
 
-	class Option
-	{
-		friend class Arguments;
-		static Option Empty;
+    class Option
+    {
+        friend class Arguments;
+        static Option Empty;
 
-		TCHAR m_chName;
-		ArgVector m_vArguments;
-		tstring m_strDescription;
-		bool m_bSet;
+        TCHAR m_chName;
+        ArgVector m_vArguments;
+        tstring m_strDescription;
+        bool m_bSet;
 
-	public:
-		Option(TCHAR chName, tstring strDescription = _T(""));
-		bool addArgument(tstring strName, tstring strDescription = _T(""),
-				tstring strDefault = _T(""));
-		tstring &operator[](int n);
-		tstring &operator[](tstring strArgumentName);
-		tstring &operator[](const TCHAR *pszArgumentName);
-		operator bool();
-		void set(bool bSet = true);
-		tstring getName();
-	};
+    public:
+        Option(TCHAR chName, tstring strDescription = _T(""));
+        bool addArgument(tstring strName, tstring strDescription = _T(""), tstring strDefault = _T(""));
+        tstring &operator[](int n);
+        tstring &operator[](tstring strArgumentName);
+        tstring &operator[](const TCHAR *pszArgumentName);
+        operator bool();
+        void set(bool bSet = true);
+        tstring getName();
+    };
 
 private:
-	typedef map<TCHAR, Option, less<TCHAR>, allocator<Option> > OptionMap;
+    typedef map<TCHAR, Option, less<TCHAR>, allocator<Option> > OptionMap;
 
-	OptionMap m_mOptions;
-	ArgVector m_vArguments;
+    OptionMap m_mOptions;
+    ArgVector m_vArguments;
 
 public:
-	bool isOption(TCHAR chOptionName);
-	bool usage();
-	bool addOption(TCHAR chOptionName, tstring strDescription = _T(""));
-	bool addOption(Option &option);
-	bool addArgument(tstring strName, tstring strDescription = _T(""), tstring strDefault = _T(""));
-	bool parse(int argc, TCHAR* argv[]);
-	void setDescription(tstring desc);
+    bool isOption(TCHAR chOptionName);
+    bool usage();
+    bool addOption(TCHAR chOptionName, tstring strDescription = _T(""));
+    bool addOption(Option &option);
+    bool addArgument(tstring strName, tstring strDescription = _T(""), tstring strDefault = _T(""));
+    bool parse(int argc, TCHAR* argv[]);
+    void setDescription(tstring desc);
 
-	tstring &operator[](int n);
-	tstring &operator[](tstring strArgumentName);
-	Option &operator[](TCHAR chOptionName);
+    tstring &operator[](int n);
+    tstring &operator[](tstring strArgumentName);
+    Option &operator[](TCHAR chOptionName);
 
-	Arguments(tstring strCommandName, tstring strDescription = _T(""), tstring strOptionmarkers =
-			_T("-/"));
-	virtual ~Arguments();
+    Arguments(tstring strCommandName, tstring strDescription = _T(""), tstring strOptionmarkers = _T("-/"));
+    virtual ~Arguments();
 };
 
 //#pragma warning (disable : 4786)

@@ -439,23 +439,23 @@ int AsservDriver::path_GetLastCommandStatus()
 }
 void AsservDriver::path_InterruptTrajectory()
 {
-    logger().error() << "TODO path_InterruptTrajectory !!!!!" << logs::end;
+    logger().debug() << "TODO path_InterruptTrajectory !!!!!" << logs::end;
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
-    logger().error() << "TODO path_CollisionOnTrajectory !!!!!" << logs::end;
+    logger().debug() << "TODO path_CollisionOnTrajectory !!!!!" << logs::end;
 }
 void AsservDriver::path_CollisionRearOnTrajectory()
 {
-    logger().error() << "TODO path_CollisionRearOnTrajectory !!!!!" << logs::end;
+    logger().debug() << "TODO path_CollisionRearOnTrajectory !!!!!" << logs::end;
 }
 void AsservDriver::path_CancelTrajectory()
 {
-    logger().error() << "TODO path_CancelTrajectory !!!!!" << logs::end;
+    logger().debug() << "TODO path_CancelTrajectory !!!!!" << logs::end;
 }
 void AsservDriver::path_ResetEmergencyStop()
 {
-    logger().error() << "TODO path_ResetEmergencyStop !!!!!" << logs::end;
+    logger().debug() << "TODO path_ResetEmergencyStop !!!!!" << logs::end;
 }
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)

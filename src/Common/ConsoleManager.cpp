@@ -17,12 +17,14 @@
 using namespace std;
 
 ConsoleManager::ConsoleManager() :
-        tests_()
+        tests_(), pos_(0)
 {
 }
 
 void ConsoleManager::add(FunctionalTest * test)
 {
+    pos_++;
+    test->setPos(pos_);
     this->tests_.push_back(test);
 }
 
@@ -46,19 +48,13 @@ std::string * ConsoleManager::displayAvailableTests(std::string color, int selec
         else
             std::cout << "\033[0m" << std::flush;
 
-        //affichage long
-//		std::cout << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name()
-//				<< std::setw(3) << "- " << tests_[i]->desc() << std::endl;
-//		ostringstream out;
-//		                    out << std::setw(3) << i + 1 << "." << std::setw(15) << tests_[i]->name() << std::setw(3)
-//		                                        << "- " << tests_[i]->desc();
-        //affichage court
-        std::cout << std::setw(3) << i + 1 << ". " << tests_[i]->name() << std::endl;
-
         ostringstream out;
-        out << std::setw(3) << i + 1 << ". " << tests_[i]->name();
+        out << std::setw(3) << tests_[i]->position() << ". " << tests_[i]->name();
 
         tab[i + 1] = out.str();
+
+        //Affichage console
+        std::cout << out.str() << std::endl;
     }
     return tab;
 }

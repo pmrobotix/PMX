@@ -261,7 +261,6 @@ void L_State_Init::setPos()
     robot.actions().init_servos();
 
     robot.asserv().startMotionTimerAndOdo(false);
-    //robot.asserv().setPositionAndColor(45, 771, 0.0, (robot.getMyColor() != PMXVIOLET)); //collé au vert, coté bleu
     robot.asserv().setPositionAndColor(450 + 120, 1543 - 48, -90.0, (robot.getMyColor() != PMXVIOLET)); //au coin du distributeur
     robot.svgPrintPosition();
 

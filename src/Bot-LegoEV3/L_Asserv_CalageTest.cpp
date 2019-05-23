@@ -25,7 +25,7 @@ void L_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharg
 
 void L_Asserv_CalageTest::run(int argc, char** argv)
 {
-    logger().info() << "Executing - " << this->desc() << logs::end;
+    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     Arguments args = robot.getArgs();
@@ -41,7 +41,7 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
      a = atof(args["a"].c_str());
      logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
      }*/
-
+    TRAJ_STATE ts;
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXVIOLET);
     robot.asserv().startMotionTimerAndOdo(true);
@@ -52,29 +52,26 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     logger().info() << "GO distance calage mm=" << d << logs::end;
-    TRAJ_STATE ts = robot.asserv().doCalage(d, 4, 65);
+    ts = robot.asserv().doCalage(d, 40);
 
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << " ts=" << ts<<  logs::end;
+            << p.asservStatus << " ts=" << ts << logs::end;
     robot.svgPrintPosition();
-    /*
-     robot.asserv().setPositionAndColor(200.0, 200.0, 45.0, (robot.getMyColor() != PMXORANGE));
 
-     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
-     robot.svgPrintPosition();
 
-     logger().info() << "GO distance mm=" << d << logs::end;
-     if (robot.asserv().doLineAbs(100) != TRAJ_OK) {
-     logger().info() << "Interruption !!" << logs::end;
-     }
+/*
+    //2eme technique
 
-     p = robot.asserv().pos_getPosition();
-     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
-     sleep(1);
-     p = robot.asserv().pos_getPosition();
-     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
 
-     robot.svgPrintPosition();*/
+    ts = robot.asserv().doMoveForwardTo(200, 20);
+    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
+            << p.asservStatus << " ts=" << ts << logs::end;
+    robot.svgPrintPosition();
+
+    ts = robot.asserv().doMoveForwardTo(400, 60);
+    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
+            << p.asservStatus << " ts=" << ts << logs::end;
+    robot.svgPrintPosition();*/
 
     logger().info() << "Happy End." << logs::end;
 }

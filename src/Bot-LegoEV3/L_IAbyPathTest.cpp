@@ -135,7 +135,7 @@ bool L_IAbyPathTest_action3()
 
 void L_IAByPathTest::run(int argc, char** argv)
 {
-    logger().info() << "Executing - " << this->desc() << logs::end;
+    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 

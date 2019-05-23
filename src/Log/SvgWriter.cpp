@@ -27,6 +27,7 @@ SvgWriter::SvgWriter(std::string id)
 
 SvgWriter::~SvgWriter()
 {
+    endHeader();
 }
 
 void SvgWriter::beginHeader()

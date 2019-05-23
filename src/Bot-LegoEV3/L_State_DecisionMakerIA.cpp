@@ -77,9 +77,9 @@ bool L_take_grand_distributeur()
     //position vert1
     int pos = 0;
     if (robot.getMyColor() == PMXVIOLET) {
-        pos = 1410;
+        pos = 1420;
     } else
-        pos = 1410;
+        pos = 1420;
     f = 0;
     while ((ts = robot.asserv().doMoveForwardTo(520, pos)) != TRAJ_OK) {
         robot.svgPrintPosition();
@@ -118,7 +118,7 @@ bool L_take_grand_distributeur()
 
     //robot.asserv().doLineAbs(190);
     f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(520 + 190, pos + 5)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveForwardTo(520 + 190, pos)) != TRAJ_OK) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " position bleu ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
@@ -146,7 +146,7 @@ bool L_take_grand_distributeur()
 
     //position vert2
     f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(520 + 190 + 205, pos + 7)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveForwardTo(520 + 190 + 205, pos)) != TRAJ_OK) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " position vert2 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
@@ -176,7 +176,7 @@ bool L_take_grand_distributeur()
         robot.asserv().doLineAbs(200);
         robot.asserv().doRotateLeft(12);
         //robot.asserv().doCalage(220, 4, 70);
-        robot.asserv().doCalage(240, 4, 70);
+        robot.asserv().doCalage(240, 50);
         robot.svgPrintPosition();
         robot.asserv().doLineAbs(-60);
         robot.logger().info() << "left_eject_all" << logs::end;
@@ -190,17 +190,36 @@ bool L_take_grand_distributeur()
         robot.asserv().doLineAbs(-100);
         robot.svgPrintPosition();
         robot.actions().init_servos();
-        robot.asserv().doRotateRight(170);
+        robot.asserv().doRotateRight(150);
 
     } else {
-        robot.asserv().doLineAbs(210);
+        robot.asserv().doLineAbs(200);
+        robot.asserv().doRotateRight(12);
+        //robot.asserv().doCalage(220, 4, 70);
+        robot.asserv().doCalage(240, 50);
+        robot.svgPrintPosition();
+        robot.asserv().doLineAbs(-60);
+        robot.logger().info() << "left_eject_all" << logs::end;
+        robot.actions().right_eject_all(0);
+        //sleep(2);
+        robot.asserv().doRotateLeft(15);
         robot.asserv().doRotateRight(15);
-        robot.asserv().doCalage(220, 4, 70);
-        robot.logger().info() << "right_eject_all" << logs::end;
-        robot.actions().right_eject_all(3);
-        sleep(2);
+        robot.asserv().doRotateLeft(15);
+        robot.asserv().doRotateRight(15);
+
         robot.asserv().doLineAbs(-100);
-        robot.asserv().doRotateLeft(170);
+        robot.svgPrintPosition();
+        robot.actions().init_servos();
+        robot.asserv().doRotateLeft(150);
+
+//        robot.asserv().doLineAbs(210);
+//        robot.asserv().doRotateRight(15);
+//        robot.asserv().doCalage(220, 4, 70);
+//        robot.logger().info() << "right_eject_all" << logs::end;
+//        robot.actions().right_eject_all(3);
+//        sleep(2);
+//        robot.asserv().doLineAbs(-100);
+//        robot.asserv().doRotateLeft(170);
     }
 
     robot.asserv().doMoveForwardTo(700, 1300);
@@ -241,9 +260,9 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_palet", 400, 700, 100, 100, 700, 750, -180);
     if (robot.getMyColor() == PMXVIOLET)
-        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1415, 90);
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1420, 90);
     else
-        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1415, 90);
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1417, 90);
 
     //robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
     robot.ia().iAbyPath().ia_addAction("take_grand_distributeur", &L_take_grand_distributeur);
@@ -265,58 +284,6 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
      */
     logger().debug() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
-/*
- void L_State_DecisionMakerIA::initPlayground()
- {
-
- LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
- logger().info() << "color = " << robot.getMyColor() << logs::end;
-
- p_ = new Playground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0);
-
- //bordure terrain
- p_->add_rectangle(1500, 0, 3000, 140, 0); //bottom
- p_->add_rectangle(1500, 2000, 3000, 140, 0); //top
- p_->add_rectangle(0, 1000, 140, 2000, 0); //left
- p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
-
- //orange parts
- //cubes
- p_->add_circle(robot.ia().oarea_cube1, 850.0, 530.0, 300.0, 6);
- p_->add_circle(robot.ia().oarea_cube2high, 1100.0, 1500.0, 300.0, 6);
- p_->add_circle(robot.ia().oarea_cube3left, 300.0, 1200.0, 250.0, 6);
-
- //distributeurs
- p_->add_rectangle(robot.ia().oarea_distribadverse, 600, 1900, 200.0, 200.0, 0);
-
- //zone de construction
- p_->add_rectangle(robot.ia().oarea_buildzone, 650, 180, 500.0, 220.0, 0);
- if (robot.getMyColor() == PMXVIOLET)
- p_->enable(robot.ia().oarea_buildzone, 0);
-
- //Green parts
- //cubes
- p_->add_circle(robot.ia().garea_cube1, 2150.0, 530.0, 300.0, 6);
- p_->add_circle(robot.ia().garea_cube2high, 1900.0, 1500.0, 300.0, 6);
- p_->add_circle(robot.ia().garea_cube3left, 2700.0, 1200.0, 250.0, 6);
-
- //distributeurs
- p_->add_rectangle(robot.ia().garea_distribadverse, 2400, 1900, 200.0, 200.0, 0);
-
- //zone de construction
- p_->add_rectangle(robot.ia().garea_buildzone, 2350, 180, 500.0, 220.0, 0);
- if (robot.getMyColor() != PMXVIOLET)
- p_->enable(robot.ia().garea_buildzone, 0);
-
- //stations d'épuration
- p_->add_rectangle(robot.ia().area_stations, 1500.0, 1850.0, 1400.0, 300.0, 0);
- //p_->add_circle(robot.ia().opponent_1, 1200.0, 1200.0, 100.0, 6);
-
- p_->compute_edges();
-
- robot.ia().iAbyPath().addPlayground(p_);
- robot.ia().iAbyPath().toSVG();
- }*/
 
 void L_State_DecisionMakerIA::execute()
 {
@@ -325,7 +292,6 @@ void L_State_DecisionMakerIA::execute()
     //wait for init!
     while (!robot.waitForInit()) {
         usleep(50000);
-        //logger().error() << "waitForInit..." << logs::end;
     }
     logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
 
@@ -334,13 +300,13 @@ void L_State_DecisionMakerIA::execute()
 
     //wait for the start of the chrono !
     while (!robot.chrono().started()) {
-        usleep(50000);
+        usleep(10000);
     }
 
     logger().info() << "L_State_DecisionMakerIA executing..." << logs::end;
 
     //On ajoute le timer de detection
-    //robot.actions().sensors().startSensors(); // not used here because replace by wait end of match !
+    //robot.actions().sensors().startSensors();
 
     //start IA
     robot.ia().iAbyPath().ia_start();

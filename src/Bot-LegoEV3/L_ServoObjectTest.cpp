@@ -28,7 +28,7 @@ void L_ServoObjectTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 void L_ServoObjectTest::run(int argc, char** argv)
 {
-    logger().info() << "Executing - " << this->desc() << logs::end;
+    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     Arguments args = robot.getArgs();

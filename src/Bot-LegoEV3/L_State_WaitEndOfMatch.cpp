@@ -19,7 +19,6 @@
 
 IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 {
-
     logger().info() << "executing..." << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();

@@ -281,7 +281,6 @@ void Robot::stopMotionTimerAndActionManager()
 {
     if (asserv_default != NULL) {
         this->asserv_default->stopMotionTimerAndOdo();
-        svgPrintEndOfFile();
     } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
 

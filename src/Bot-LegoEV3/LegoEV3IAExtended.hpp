@@ -46,7 +46,9 @@ public:
 
     LegoEV3IAExtended(std::string botId, Robot *robot);
 
-    ~LegoEV3IAExtended();
+    ~LegoEV3IAExtended()
+    {
+    }
 
     IAbyZone & iAbyZone()
     {

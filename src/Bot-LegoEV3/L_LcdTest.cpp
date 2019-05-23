@@ -11,7 +11,7 @@ using namespace std;
 
 void L_LcdTest::run(int argc, char** argv)
 {
-    logger().debug() << "Executing - " << this->desc() << logs::end;
+    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
@@ -27,6 +27,6 @@ void L_LcdTest::run(int argc, char** argv)
     sleep(3); //to have time to see it on the EV3
     //robot.actions().lcd().setCursor(1,1); //to change the font
 
-    logger().debug() << "Happy End." << logs::end;
+    //logger().debug() << "Happy End." << logs::end;
 }
 

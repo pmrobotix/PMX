@@ -365,7 +365,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_push_red", 400, 400, 100, 100, 700, 450, 0);
+    //robot.ia().iAbyPath().ia_createZone("zone_push_red", 400, 400, 100, 100, 700, 450, 0);
     if (robot.getMyColor() == PMXVIOLET) {
         robot.ia().iAbyPath().ia_createZone("zone_push_blue", 1680, 0, 200, 200, 1680, 255, 0);
     } else {
@@ -376,7 +376,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
     robot.ia().iAbyPath().ia_createZone("zone_depose", 1300, 1400, 200, 200, 1180, 1250, 180);
     robot.ia().iAbyPath().ia_createZone("zone_alea_violet", 1000, 1100, 100, 100, 1300, 1150, -145);
 
-    robot.ia().iAbyPath().ia_addAction("push_red", &O_push_red);
+    //robot.ia().iAbyPath().ia_addAction("push_red", &O_push_red);
     robot.ia().iAbyPath().ia_addAction("push_blue", &O_push_blue);
     robot.ia().iAbyPath().ia_addAction("fake", &O_fake);
     robot.ia().iAbyPath().ia_addAction("push_alea", &O_push_alea);

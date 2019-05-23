@@ -209,13 +209,7 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().setCursor(4, 0);
 
         robot.actions().lcd2x16().print(robot.configVRR());
-//        if (v == 1) {
-//            robot.configVRR("VRR");
-//        } else if (v == 2) {
-//            robot.configVRR("RVR");
-//        } else if (v == 3) {
-//            robot.configVRR("RRV");
-//        }
+
         robot.actions().lcd2x16().setCursor(8, 0);
         robot.actions().lcd2x16().print(robot.strategy());
 

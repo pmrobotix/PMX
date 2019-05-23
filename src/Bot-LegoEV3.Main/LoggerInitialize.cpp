@@ -80,6 +80,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SoundDriver.SIMU", "console");
     add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
     add(logs::Level::INFO, "AsservDriver.SIMU", "console");
+    add(logs::Level::INFO, "LcdShieldDriver.SIMU", "console");
+
     //add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
     //add(logs::Level::INFO, "AsservDriverMemory.SIMU", "console");
 

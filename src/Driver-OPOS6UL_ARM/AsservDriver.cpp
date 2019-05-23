@@ -318,7 +318,8 @@ void AsservDriver::path_CancelTrajectory()
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_CANCELLED;
         usleep(300000);
-        mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
+        path_ResetEmergencyStop(); //reset de l'arret d'urgence
+        //mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_ResetEmergencyStop()

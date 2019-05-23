@@ -127,8 +127,9 @@ public:
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
-    TRAJ_STATE doCalage(int d, int tempo, int percent);
-
+    TRAJ_STATE doCalage(int d, int percent);
+    TRAJ_STATE doCalage2(int d, int tempo, int percent); //old version
+    void doActivateReguAngle(bool enable);
 
 //La couleur de match doit deja etre effectué !
     TRAJ_STATE calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);

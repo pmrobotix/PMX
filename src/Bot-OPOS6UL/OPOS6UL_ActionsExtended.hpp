@@ -84,6 +84,10 @@ public:
         lcd2x16_.init();
     }
 
+    ~OPOS6UL_ActionsExtended()
+    {
+    }
+
     /*!
      * \brief Cette methode retourne l'objet ledbar.
      * \return ledbar_.
@@ -145,7 +149,6 @@ public:
         releaseAll();
 
         //TODO sensors stop...?
-
 
     }
 

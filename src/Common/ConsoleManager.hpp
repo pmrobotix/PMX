@@ -31,6 +31,8 @@ private:
 	 */
 	data_type tests_;
 
+	int pos_;
+
 public:
 
 	/*!

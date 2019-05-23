@@ -31,7 +31,7 @@ void L_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
 
 void L_AsservLineRotateTest::run(int argc, char** argv)
 {
-    logger().info() << "Executing - " << this->desc() << logs::end;
+    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
     utils::Chronometer chrono("L_AsservLineRotateTest");

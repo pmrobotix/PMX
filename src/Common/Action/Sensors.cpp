@@ -209,7 +209,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         }
     }
 
-    logger().info() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
+    logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "
             << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel << logs::end;
 }
 

@@ -22,7 +22,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "Start Chronometer" << logs::end;
     robot.chrono().start();
 
-    while (robot.chrono().getElapsedTimeInSec() <= 9) {
+    while (robot.chrono().getElapsedTimeInSec() <= 99) {
 
         usleep(1000000);
         long time = robot.chrono().getElapsedTimeInSec();

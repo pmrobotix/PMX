@@ -1,4 +1,4 @@
-#include "L_AsservEsialTest.hpp"
+#include "O_AsservEsialTest.hpp"
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -11,14 +11,14 @@
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
-#include "LegoEV3AsservExtended.hpp"
-#include "LegoEV3RobotExtended.hpp"
+#include "OPOS6UL_AsservExtended.hpp"
+#include "OPOS6UL_RobotExtended.hpp"
 
 using namespace std;
 
-void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler dans le run ci-dessous
+void O_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler dans le run ci-dessous
 {
-    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     //step
     robot.getArgs().addArgument("step", "n step test");
 
@@ -26,11 +26,11 @@ void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler
     robot.parseConsoleArgs(argc, argv);
 }
 
-void L_AsservEsialTest::run(int argc, char** argv)
+void O_AsservEsialTest::run(int argc, char** argv)
 {
     logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
-    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
     long left;
     long right;
@@ -49,7 +49,7 @@ void L_AsservEsialTest::run(int argc, char** argv)
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
-    LegoEV3AsservExtended asserv = robot.asserv();
+    OPOS6UL_AsservExtended asserv = robot.asserv();
     ExtEncoderControl extEncoders = asserv.base()->extEncoders();
     chrono.start();
 

@@ -24,8 +24,6 @@ class Robot;
  #define int32 int
  //#define BOOL bool*/
 
-
-
 class AsservEsialR: public AAsservDriver, public utils::Thread
 {
 
@@ -58,7 +56,6 @@ private:
     ConsignController *consignC_;
     CommandManager *commandM_;
 
-
     TRAJ_STATE pathStatus_;
     RobotPosition p_;
 
@@ -70,7 +67,6 @@ private:
         static const logs::Logger & instance = logs::LoggerFactory::logger("AsservEsialR");
         return instance;
     }
-
 
     /*!
      * \brief Retourne le \ref Logger file associé à la classe \ref AsservEsialR.
@@ -87,7 +83,6 @@ public:
     {
     }
 
-
     void setSamplingFrequency(uint frequency);
     void loadConfig();
     void startAsserv(int freqHz);
@@ -95,7 +90,6 @@ public:
     void stopAsserv();
     void resetAsserv();
     TRAJ_STATE waitEndOfTraj();
-
 
     //commandes directes concernant les moteurs
     void setMotorLeftPosition(int power, long ticks);
@@ -134,8 +128,8 @@ public:
     void motion_DisablePID();           //! just disable PID
     void motion_AssistedHandling(void);           //! Assisted movement mode =)
     void motion_ActivateManager(bool enable);
-    void motion_setLowSpeedForward(bool enable, int percent);
-    void motion_setLowSpeedBackward(bool enable, int percent);
+    void motion_setLowSpeedForward(bool enable, int percent = 0);
+    void motion_setLowSpeedBackward(bool enable, int percent = 0);
 
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);
