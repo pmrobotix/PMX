@@ -260,7 +260,8 @@ O_State_Init::execute(Robot&)
     robot.actions().ax12_left_cil(0);
     robot.actions().ax12_right_cil();
 
-    robot.points += 40; //35 +5
+    robot.points += 5;
+
     robot.displayPoints();
 
     logger().info() << "O_StateInit executed" << logs::end;
@@ -279,7 +280,7 @@ void O_State_Init::setPos()
     robot.asserv().startMotionTimerAndOdo(false);
 
     robot.actions().lcd2x16().clear();
-    robot.asserv().setPositionAndColor(70, 450, 0.0, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(70, 450+13, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
     robot.asserv().setLowSpeedForward(false); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
@@ -288,7 +289,7 @@ void O_State_Init::setPos()
 //    robot.asserv().ignoreRearCollision(true);
     robot.asserv().resetDisplayTS();
     robot.asserv().assistedHandling();
-    TRAJ_STATE ts = robot.asserv().doLineAbs(130);
+    TRAJ_STATE ts = robot.asserv().doLineAbs(200);
     robot.asserv().displayTS(ts);
     robot.svgPrintPosition();
     robot.actions().lcd2x16().println("SET POSITION : OK");

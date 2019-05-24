@@ -19,7 +19,7 @@ void O_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharg
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.getArgs().addArgument("d", "dist en mm");
-    robot.getArgs().addArgument("type", "type de calage", "B");
+    robot.getArgs().addArgument("ty", "type de calage", "B");
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
@@ -39,9 +39,9 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
     }
 
     std::string type;
-    if (args["type"] != "0") {
-        type = args["v"];
-        logger().info() << "Arg type set " << args["type"] << ", type = " << type << logs::end;
+    if (args["ty"] != "0") {
+        type = args["ty"];
+        logger().info() << "Arg type set " << args["ty"] << ", type = " << type << logs::end;
     }
     if (type == "B") {
         logger().info() << "Start Asserv " << logs::end;
@@ -54,7 +54,7 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
         robot.svgPrintPosition();
 
         logger().info() << "GO distance calage mm=" << d << logs::end;
-        robot.asserv().doCalage(d, 4, 35);
+        robot.asserv().doCalage(d, 1);
         logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
                 << p.asservStatus << logs::end;
         robot.svgPrintPosition();

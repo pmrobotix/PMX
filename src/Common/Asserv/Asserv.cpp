@@ -221,7 +221,7 @@ bool Asserv::filtreInsideTable(float metre)
 void Asserv::warnFrontCollisionOnTraj()
 {
     if (forceRotation_) {
-        logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
+        //logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
         return;
     }
 
@@ -236,7 +236,7 @@ void Asserv::warnFrontCollisionOnTraj()
         else if (useAsservType_ == ASSERV_INT_ESIALR)
             pAsservEsialR_->path_CollisionOnTrajectory();
     } else {
-        logger().error() << "filtreInsideTable" << logs::end;
+        logger().error() << "detection is InsideTable !" << logs::end;
     }
 }
 
@@ -522,13 +522,13 @@ TRAJ_STATE Asserv::doCalage(int dist, int percent)
 
         TRAJ_STATE ts = asservdriver_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
         logger().error() << "ts=" << ts << logs::end;
-
+        //sleep(3);
         asservdriver_->path_CancelTrajectory();
-        asservdriver_->path_ResetEmergencyStop();
-        asservdriver_->motion_ActivateReguAngle(true);
-        asservdriver_->motion_ActivateReguDist(true);
         asservdriver_->motion_setLowSpeedForward(false);
         asservdriver_->motion_setLowSpeedBackward(false);
+        asservdriver_->motion_ActivateReguAngle(true);
+        asservdriver_->motion_ActivateReguDist(true);
+
 
         return ts;
     } else

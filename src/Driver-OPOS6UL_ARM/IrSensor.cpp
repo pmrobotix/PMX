@@ -32,7 +32,6 @@ int IrSensor::getVoltage()
 
 int IrSensor::getDistanceMm()
 {
-
     voltage_ = getVoltage();
     distanceMm_ = gp2Convert(type_, voltage_);
     int nb = 5;
@@ -47,7 +46,7 @@ int IrSensor::getDistanceMm()
     logger().debug() << "getDistance type=" << type_ << " " << adcPin_ << " dist=" << distanceMm_ << " v=" << voltage_
             << logs::end;
 
-    //TODO renvoyer la distance au sol !
+    //TODO renvoyer la distance au sol  dans une fonction specifique !
     return (int) moy;
 }
 

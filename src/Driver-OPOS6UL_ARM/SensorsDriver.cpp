@@ -17,7 +17,7 @@ ASensorsDriver * ASensorsDriver::create(std::string)
 
 SensorsDriver::SensorsDriver() :
         gp2_1_(1, ADDRESS_gp2y0e02b), gp2_2_(0, ADDRESS_gp2y0e02b), connected_gp2y0e02b_(false), shift_(0), irLeft_(8,
-                30), irCenter_(5, 150), irRight_(9, 30), irRear_(3, 30)
+                30), irCenter_(5, 80), irRight_(9, 30), irRear_(3, 30)
 {
 }
 

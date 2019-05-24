@@ -498,8 +498,8 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
         logger().debug() << "motion_DoDirectLine() DISTmm=" << mm.f << " meters=" << dist_meters << logs::end;
         mbed_writeI2c('V', 4, d);
         pathStatus_ = TRAJ_OK;
-        return pathStatus_;
-        //return mbed_waitEndOfTraj();
+        //return pathStatus_;
+        return mbed_waitEndOfTraj();
     }
 }
 /*

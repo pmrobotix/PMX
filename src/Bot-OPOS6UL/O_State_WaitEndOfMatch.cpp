@@ -40,6 +40,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "cancel decisionmaker" << logs::end;
     robot.decisionMaker_->cancel();
 
+    robot.actions().releaseAll();
     robot.freeMotion();
     robot.actions().sensors().stopTimerSensors();
     robot.stopExtraActions(); //stop specific actions, can take time for servos...

@@ -59,9 +59,13 @@ public:
 
     int points;
 
-    int todo_fake;
+    bool blue_done;
 
-    int todo_alea;
+    bool gold_taken;
+
+    bool gold_dropped;
+
+    //int todo_alea;
 
 
 private:

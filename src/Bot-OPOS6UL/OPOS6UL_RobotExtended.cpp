@@ -40,8 +40,10 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
     points = 0;
 
-    todo_fake = 1;
-    todo_alea = 1;
+    blue_done = false;
+    gold_taken = false;
+    gold_dropped = false;
+    //todo_alea = 1;
 }
 
 void OPOS6UL_RobotExtended::stopExtraActions()

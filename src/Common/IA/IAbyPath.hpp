@@ -83,6 +83,7 @@ public:
 
     void playgroundFindPath(FoundPath * & path, Point& start, Point& end);
     TRAJ_STATE doMoveForwardAndRotateTo(float x, float y, float theta);
+    TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
     void enable(PlaygroundObjectID id, bool enable);
 
 };

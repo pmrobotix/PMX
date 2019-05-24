@@ -9,7 +9,7 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
 {
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
 
-    //TODO envoyer les seuils des sensors ?
+
     sensors_.addThresholdFront(250, 0, 250);
     sensors_.addThresholdFrontVeryClosed(130,0,130);
 

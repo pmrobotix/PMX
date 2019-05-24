@@ -321,7 +321,7 @@ void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
 
 }
 
-TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree) //zone toujours donné du côté gauche (ORANGE), à transcrire
+TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM)
 {
     TRAJ_STATE ts = TRAJ_OK;
     logger().debug() << "111 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
@@ -333,7 +333,6 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
 
     Point startPoint = { x : robot_->asserv_default->pos_getX_mm(), y : robot_->asserv_default->pos_getY_mm() };
     playgroundFindPath(found_path, startPoint, endPoint);
-
 
     std::ostringstream path_polyline;
     std::vector<Node*>::iterator nodes_it;
@@ -374,19 +373,92 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
 
         robot_->svgw().pathPolyline(path_polyline.str());
 
-        ts = robot_->asserv_default->doRotateTo(thetaInDegree); //les angles du path sont bons
-        robot_->svgPrintPosition();
-        if (ts != TRAJ_OK) {
-            return ts;
-        }
-
     } else {
         logger().error() << "ERROR - FOUND PATH NULL !!!" << logs::end;
     }
-
     delete found_path;
 
     return ts;
+}
+
+TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree) //zone toujours donné du côté gauche (ORANGE), à transcrire
+{
+    TRAJ_STATE ts = TRAJ_ERROR;
+    ts = doMoveForwardTo(xMM, yMM);
+    if (ts != TRAJ_OK) {
+        return ts;
+    }
+
+    ts = robot_->asserv_default->doRotateTo(thetaInDegree);
+    robot_->svgPrintPosition();
+    if (ts != TRAJ_OK) {
+        return ts;
+    }
+    return ts;
+    /*
+     TRAJ_STATE ts = TRAJ_OK;
+     logger().debug() << "111 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+     << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
+     << logs::end;
+
+     Point endPoint = { x : robot_->asserv_default->getRelativeX(xMM), y : yMM };
+     FoundPath * found_path = NULL;
+
+     Point startPoint = { x : robot_->asserv_default->pos_getX_mm(), y : robot_->asserv_default->pos_getY_mm() };
+     playgroundFindPath(found_path, startPoint, endPoint);
+
+     std::ostringstream path_polyline;
+     std::vector<Node*>::iterator nodes_it;
+     if (found_path != NULL) {
+     if (found_path->cost == 0) {
+     logger().info() << "PATH NOT FOUND - CANCELLED " << ", " << found_path->cost << logs::end;
+     delete found_path;
+     return TRAJ_CANCELLED;
+     }
+
+     int count = 0;
+     for (nodes_it = found_path->path.begin(); nodes_it < found_path->path.end(); nodes_it++) {
+
+     Node* node = *nodes_it;
+
+     path_polyline << node->x << "," << -node->y << " ";
+
+     if (count != 0) {
+
+     logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
+
+     ts = robot_->asserv_default->doMoveForwardTo(robot_->asserv_default->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
+     if (ts != TRAJ_OK) {
+     return ts;
+     }
+     logger().debug() << "222 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+     << robot_->asserv_default->pos_getY_mm() << " a "
+     << robot_->asserv_default->pos_getThetaInDegree() << logs::end;
+     robot_->svgPrintPosition();
+     }
+     count++;
+
+     }
+
+     logger().debug() << "333 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
+     << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
+     << logs::end;
+
+     robot_->svgw().pathPolyline(path_polyline.str());
+
+     ts = robot_->asserv_default->doRotateTo(thetaInDegree); //les angles du path sont bons
+     robot_->svgPrintPosition();
+     if (ts != TRAJ_OK) {
+     return ts;
+     }
+
+     } else {
+     logger().error() << "ERROR - FOUND PATH NULL !!!" << logs::end;
+     }
+
+     delete found_path;
+
+     return ts;*/
 }
 
 void IAbyPath::playgroundFindPath(FoundPath * & path, Point& start, Point& end)
