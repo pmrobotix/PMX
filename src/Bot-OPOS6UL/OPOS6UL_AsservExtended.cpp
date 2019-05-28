@@ -17,7 +17,7 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
     robot_extended_ = robot;
 }
 
-void OPOS6UL_AsservExtended::resetDisplayTS()
+void OPOS6UL_AsservExtended::resetDisplayTS() //tod a remonter sur le robot ???
 {
     robot_extended_->actions().ledBar().resetAll();
     //robot_extended_->actions().lcd2x16().clear();

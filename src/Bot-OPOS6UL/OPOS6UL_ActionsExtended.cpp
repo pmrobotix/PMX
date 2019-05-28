@@ -11,7 +11,7 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
     sensors_.addConfigFront(true, true, true);
     sensors_.addConfigBack(false, true, false);
 
-    sensors_.addThresholdFront(340, 340, 340);
+    sensors_.addThresholdFront(340, 345, 340);
     sensors_.addThresholdFrontVeryClosed(240, 240, 240);
 
     sensors_.addThresholdBack(0, 200, 0);

@@ -164,7 +164,7 @@ int AsservDriver::getMotorRightCurrent()
     return 0;
 }
 
-void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
+void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
 {
     if (!connected_)
         return;
@@ -195,9 +195,7 @@ void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
         logger().error() << "odo_SetPosition - S12 - ERROR " << r << logs::end;
     } else {
         logger().info() << "odo_SetPosition S12 " << x_mm.f << " " << y_mm.f << " " << a.f << logs::end;
-        //m_pos.lock();
-        //p_ = mbed_GetPosition();
-        //m_pos.unlock();
+
         odo_GetPosition();
     }
 }
@@ -363,7 +361,6 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
 //3 blocked
 TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
 {
-
     int timeout = 0;
     //attente du running status passage de 0,2,3 à 1
     while (p_.asservStatus != 1) {
@@ -386,7 +383,7 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
     }
 
     if (p_.asservStatus == 3) {
-        logger().error() << "3333 p= " << p_.asservStatus << logs::end;
+        //logger().error() << "3333 p= " << p_.asservStatus << logs::end;
         return TRAJ_COLLISION;
     }
 

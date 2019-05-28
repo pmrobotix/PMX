@@ -29,12 +29,14 @@ SensorsDriver::~SensorsDriver()
 }
 int SensorsDriver::leftSide()
 {
-    int d = gp2_2_.getDistanceMm();
+    int dist_from_center_mm = 90;
+    int d = gp2_2_.getDistanceMm() + dist_from_center_mm;
     return d;
 }
 int SensorsDriver::rightSide()
 {
-    int d = gp2_1_.getDistanceMm();
+    int dist_from_center_mm = 103;
+    int d = gp2_1_.getDistanceMm() + dist_from_center_mm;
     return d;
 }
 
@@ -61,7 +63,8 @@ int SensorsDriver::frontLeft()
 
 int SensorsDriver::frontCenter()
 {
-    return irCenter_.getDistanceMm();
+    int dist_from_wheel_axe_mm = 140;
+    return irCenter_.getDistanceMm() + dist_from_wheel_axe_mm;
 }
 int SensorsDriver::frontRight()
 {

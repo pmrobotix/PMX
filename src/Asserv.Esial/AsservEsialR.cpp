@@ -276,7 +276,7 @@ void AsservEsialR::resetExternalEncoders()
     //TODO
 }
 
-void AsservEsialR::odo_SetPosition(double x_m, double y_m, double angle_rad)
+void AsservEsialR::odo_SetPosition(float x_m, float y_m, float angle_rad)
 {
     logger().debug() << "odo_SetPosition x_m=" << x_m << " y_m=" << y_m << " angle_rad=" << angle_rad << logs::end;
     lock();

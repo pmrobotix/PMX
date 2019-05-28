@@ -244,7 +244,7 @@ O_State_Init::execute(Robot&)
 
         logger().info() << "END SETUP !" << logs::end;
         robot.waitForInit(true);
-        usleep(2000000); //simulation attente tirette pour avoir les logs sequentiels
+        //usleep(2000000); //simulation attente tirette pour avoir les logs sequentiels
     }
 
     robot.actions().ledBar().stopAndWait(true);

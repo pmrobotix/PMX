@@ -43,7 +43,7 @@ int Gp2y0e02b::getDistanceMm()
     int distance_mm = ((high * 16 + low) / 16) * 10 / (int) std::pow(2, shift_); // Calculate the range in CM
     logger().debug() << "distance: " << address_ << " mm = " << distance_mm << logs::end;
 
-    if (distance_mm == 637)
+    if (distance_mm >= 637)
         return -1;
     return distance_mm;
 }

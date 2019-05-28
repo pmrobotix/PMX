@@ -270,7 +270,7 @@ int AsservDriver::getMotorRightCurrent()
     return 0;
 }
 
-void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
+void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
 {
 }
 RobotPosition AsservDriver::odo_GetPosition()

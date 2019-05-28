@@ -127,8 +127,8 @@ public:
     TRAJ_STATE doCalage2(int d, int tempo, int percent); //old version
     void doActivateReguAngle(bool enable);
 
-//La couleur de match doit deja etre effectué !
-    TRAJ_STATE calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
+    //attentionLa couleur de match doit deja etre effectué !
+    bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
 
     //void findPidAD(float degrees, int mm, int sec);
     //void findPidLR(float posl, int posr, int sec);

@@ -85,6 +85,9 @@ public:
     void playgroundFindPath(FoundPath * & path, Point& start, Point& end);
     TRAJ_STATE doMoveForwardAndRotateTo(float x, float y, float theta);
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
+
+    bool path_doMoveForwardTo(string zoneName, int tempo_ms, int nb_near_obstacle, int nb_collision);
+
     void enable(PlaygroundObjectID id, bool enable);
 
 };

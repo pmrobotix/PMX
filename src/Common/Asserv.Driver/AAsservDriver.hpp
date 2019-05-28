@@ -80,13 +80,8 @@ public:
     /*!
      * \brief Fonctions permettant d'utiliser un asservissement externe.
      */
-    /*
-     virtual float odo_GetX_mm() = 0;
-     virtual float odo_GetY_mm() = 0;
-     virtual float odo_GetTheta_Rad() = 0;		// angle in radian
-     virtual float odo_GetTheta_Degree() = 0;		// angle in degrees
-     */
-    virtual void odo_SetPosition(double x_m, double y_m, double angle_rad) = 0;
+
+    virtual void odo_SetPosition(float x_m, float y_m, float angle_rad) = 0;
     virtual RobotPosition odo_GetPosition() = 0; //pos in metre/radian
 
     virtual int path_GetLastCommandStatus() = 0;

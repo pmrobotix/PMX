@@ -43,7 +43,7 @@ void O_ServoStepTest::run(int argc, char** argv)
 
 
     logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
-    //args.usage();
+
 
     int pos = 512;
     int step = 5;

@@ -111,7 +111,7 @@ public:
     void resetExternalEncoders();
 
     //fonctions asservissements externe par defaut
-    void odo_SetPosition(double x_m, double y_m, double angle_rad);
+    void odo_SetPosition(float x_m, float y_m, float angle_rad);
     RobotPosition odo_GetPosition();
 
     int path_GetLastCommandStatus();

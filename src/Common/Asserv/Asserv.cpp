@@ -429,36 +429,62 @@ TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
     return TRAJ_ERROR;
 }
 
-TRAJ_STATE Asserv::calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
+bool Asserv::calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
         float y_depart_mm)
 {
+    logger().error() << "calculate : " << " d2_theo_bordure_mm= " << d2_theo_bordure_mm << " d2b_bordure_mm= "
+            << d2b_bordure_mm << " x_depart_mm= " << x_depart_mm << " y_depart_mm= " << y_depart_mm << logs::end;
+
+    if (abs(d2b_bordure_mm - d2_theo_bordure_mm) >= 5) {
 
 //Partie théorique basé sur la position d'arrivée (que croit le robot)
-    RobotPosition p = pos_getPosition();
-    //tan teta = d1/l
-    float dx = (p.x * 1000.0) - x_depart_mm;
-    float dy = (p.y * 1000.0) - y_depart_mm;
-    float l_theo_mm = std::sqrt(dx * dx + dy * dy);
-    float d1_theo = d2_theo_bordure_mm; //TODO a modifier avec cos(beta)
-    float teta_theo = atan2(d1_theo, l_theo_mm);
+        RobotPosition p = pos_getPosition();
+        //tan teta = d1/l
+        float dx = (p.x * 1000.0) - x_depart_mm;
+        float dy = (p.y * 1000.0) - y_depart_mm;
+        float l_theo_mm = std::sqrt(dx * dx + dy * dy);
+        float d1_theo = d2_theo_bordure_mm; //TODO a modifier avec cos(beta)
+        float teta_theo = atan2(d1_theo, l_theo_mm);
+
+        logger().error() << "calculate : " << " dx= " << dx << " dy= " << dy << " l_theo_mm= " << l_theo_mm
+                << " teta_theo_deg= " << teta_theo * 180.0 / M_PI << logs::end;
 
 //partie reelle (avec la distance mesurée de la bordure
-    //tan teta = d1b/l
-    float d1_b = d2b_bordure_mm;    //TODO a modifier avec cos(beta)
-    float teta_b = atan2(d1_b, l_theo_mm);
+        //tan teta = d1b/l
+        float d1_b = d2b_bordure_mm;    //TODO a modifier avec cos(beta)
+        float teta_b = atan2(d1_b, l_theo_mm);
 
-    float teta_error = teta_theo - teta_b;
-    float alpha = acos((p.x * 1000.0) / l_theo_mm);
-    float alpha_error = alpha - teta_error;
+        float teta_error = teta_b - teta_theo;
+        logger().error() << "calculate  : " << " teta_b_deg= " << teta_b * 180.0 / M_PI << " teta_error_deg= "
+                << teta_error * 180.0 / M_PI << " p.x=" << p.x << " l_theo_mm / 1000.0=" << (l_theo_mm / 1000.0)
+                << logs::end;
 
-    //changement des coordonnées
-    float new_teta = p.theta + teta_error;
-    float new_x = x_depart_mm + (l_theo_mm * cos(alpha_error));
-    float new_y = y_depart_mm + (l_theo_mm * sin(alpha_error));
+        float alpha = acos((float) ((dx) / (l_theo_mm)));
+        float alpha_error = alpha - teta_error;
 
-    setPositionAndColor(new_x, new_y, new_teta, matchColorPosition_);
+        logger().error() << "calculate  : " << " teta_b= " << teta_b << " teta_error= " << teta_error << " alpha_deg= "
+                << alpha * 180.0 / M_PI << " alpha_error_deg= " << alpha_error * 180.0 / M_PI << logs::end;
+        //changement des coordonnées
+        float new_teta = p.theta + teta_error;
+        float new_x = x_depart_mm + (l_theo_mm * cos(alpha_error));
+        float new_y = y_depart_mm - (l_theo_mm * sin(alpha_error));
 
-    return TRAJ_OK;
+        logger().error() << "old position : " << " x= " << p.x << " y= " << p.y << " a_deg= " << p.theta * 180.0 / M_PI
+                << logs::end;
+        //pour 2 deg on a un decalage de 10mm
+        float x_corr = (abs(teta_error) * 180.0 / M_PI) * 10.0 / 2.0;
+        logger().error() << "x_corr : " << x_corr << logs::end;
+        new_x = new_x + x_corr;
+
+        logger().error() << "setPosition  : " << " x= " << new_x << " y= " << new_y << " a_rad= " << new_teta
+                << " a_deg= " << new_teta * 180.0 / M_PI << logs::end;
+        //regle de 3 pour modifier le x (decalage sur aire de depart qui influe sur le x)
+
+        setPositionAndColor(new_x, new_y, new_teta * 180.0 / M_PI, matchColorPosition_);
+        return true;
+    } else
+        return false;
+
 }
 
 void Asserv::doActivateReguAngle(bool enable)

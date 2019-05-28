@@ -58,8 +58,8 @@ void O_AsservEsialTest::run(int argc, char** argv)
         //test1 les codeurs sur 1m
         while (1) {
 
-            left = extEncoders.getLeftEncoder();
-            right = extEncoders.getRightEncoder();
+            left = extEncoders.getLeftEncoder(); //TODO a coder pour asserv externe !
+            right = extEncoders.getRightEncoder();//TODO a coder pour asserv externe !
 
             logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
                     << " ; right= " << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="

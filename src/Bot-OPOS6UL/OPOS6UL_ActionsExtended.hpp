@@ -218,6 +218,15 @@ public:
         servosAx12().deploy(180, 512, keep);
 
     }
+    void ax12_left_cil_retract_more(int keep = 0, int speed = 512)
+    {
+        //activation du capteur central
+        sensors_.addConfigFront(true, true, true);
+
+        servosAx12().setSpeed(180, speed);
+        servosAx12().deploy(180, 572, keep);
+
+    }
     void ax12_left_cil(int keep = 0, int speed = 512)
     {
         //desactivation du capteur central
@@ -231,6 +240,12 @@ public:
     {
         servosAx12().setSpeed(181, speed);
         servosAx12().deploy(181, 512, keep);
+
+    }
+    void ax12_right_cil_retract_more(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(181, speed);
+        servosAx12().deploy(181, 462, keep);
 
     }
     void ax12_right_cil(int keep = 0, int speed = 512)

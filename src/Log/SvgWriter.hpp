@@ -63,7 +63,6 @@ public:
 
     void writeTextCustom(double x_mm, double y_mm, std::string text, std::string color, std::string fontsize);
 
-    //virtual void writePosition(double x_mm, double y_mm, double angle_rad, std::string symbol) = 0;
     virtual void writePosition_Bot(float x, float y, float a_rad) = 0;
     virtual void writePosition_BotPos(float x, float y, float a_rad) = 0;
 
