@@ -150,8 +150,8 @@ void IAbyPath::ia_start()
                 if (!done) {
                     if (robot_ != NULL)
                         printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
-                                robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm(),
-                                robot_->asserv_default->pos_getThetaInDegree());
+                                robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
+                                robot_->asserv()->pos_getThetaInDegree());
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
                         exit(-1);
@@ -160,8 +160,8 @@ void IAbyPath::ia_start()
                 }
                 if (robot_ != NULL)
                     printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
-                            robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm(),
-                            robot_->asserv_default->pos_getThetaInDegree());
+                            robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
+                            robot_->asserv()->pos_getThetaInDegree());
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
                     exit(-1);
@@ -201,9 +201,9 @@ void IAbyPath::ia_createZone(const char* name, float minX, float minY, float wid
     z->startY = startY;
     z->startAngle = startAngleDeg;
     if (robot_ != NULL) {
-        z->startX = robot_->asserv_default->getRelativeX(z->startX);
-        z->minX = robot_->asserv_default->getRelativeX(z->minX, z->width);
-        z->startAngle = robot_->asserv_default->getRelativeAngle(z->startAngle);
+        z->startX = robot_->asserv()->getRelativeX(z->startX);
+        z->minX = robot_->asserv()->getRelativeX(z->minX, z->width);
+        z->startAngle = robot_->asserv()->getRelativeAngle(z->startAngle);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         exit(-1);
@@ -276,7 +276,7 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
     ZONE *result = ia_getZoneAt(x, y);
     if (result != NULL) {
         printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name,
-                robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm());
+                robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm());
         return result;
     }
 
@@ -315,23 +315,23 @@ void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
         exit(-1);
     }
 
-    zone_p->x = robot_->asserv_default->getRelativeX(z->startX);
+    zone_p->x = robot_->asserv()->getRelativeX(z->startX);
     zone_p->y = z->startY;
-    zone_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
+    zone_p->theta = robot_->asserv()->getRelativeAngle(z->startAngle);
 
 }
 
 TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM)
 {
     TRAJ_STATE ts = TRAJ_OK;
-    logger().debug() << "111 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
-            << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
+    logger().debug() << "111 p = x " << robot_->asserv()->pos_getX_mm() << " y "
+            << robot_->asserv()->pos_getY_mm() << " a " << robot_->asserv()->pos_getThetaInDegree()
             << logs::end;
 
-    Point endPoint = { x : robot_->asserv_default->getRelativeX(xMM), y : yMM };
+    Point endPoint = { x : robot_->asserv()->getRelativeX(xMM), y : yMM };
     FoundPath * found_path = NULL;
 
-    Point startPoint = { x : robot_->asserv_default->pos_getX_mm(), y : robot_->asserv_default->pos_getY_mm() };
+    Point startPoint = { x : robot_->asserv()->pos_getX_mm(), y : robot_->asserv()->pos_getY_mm() };
     playgroundFindPath(found_path, startPoint, endPoint);
 
     std::ostringstream path_polyline;
@@ -354,21 +354,21 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM)
 
                 logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
 
-                ts = robot_->asserv_default->doMoveForwardTo(robot_->asserv_default->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
+                ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
                 if (ts != TRAJ_OK) {
                     return ts;
                 }
-                logger().debug() << "222 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
-                        << robot_->asserv_default->pos_getY_mm() << " a "
-                        << robot_->asserv_default->pos_getThetaInDegree() << logs::end;
+                logger().debug() << "222 p = x " << robot_->asserv()->pos_getX_mm() << " y "
+                        << robot_->asserv()->pos_getY_mm() << " a "
+                        << robot_->asserv()->pos_getThetaInDegree() << logs::end;
                 robot_->svgPrintPosition();
             }
             count++;
 
         }
 
-        logger().debug() << "333 p = x " << robot_->asserv_default->pos_getX_mm() << " y "
-                << robot_->asserv_default->pos_getY_mm() << " a " << robot_->asserv_default->pos_getThetaInDegree()
+        logger().debug() << "333 p = x " << robot_->asserv()->pos_getX_mm() << " y "
+                << robot_->asserv()->pos_getY_mm() << " a " << robot_->asserv()->pos_getThetaInDegree()
                 << logs::end;
 
         robot_->svgw().pathPolyline(path_polyline.str());
@@ -389,7 +389,7 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
         return ts;
     }
 
-    ts = robot_->asserv_default->doRotateTo(thetaInDegree);
+    ts = robot_->asserv()->doRotateTo(thetaInDegree);
     robot_->svgPrintPosition();
     if (ts != TRAJ_OK) {
         return ts;

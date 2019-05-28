@@ -46,13 +46,21 @@ private:
     int backCenterVeryClosedThreshold_;
     int backRightVeryClosedThreshold_;
 
-    int enableFrontLeft_;
-    int enableFrontCenter_;
-    int enableFrontRight_;
+    bool enableFrontLeft_;
+    bool enableFrontCenter_;
+    bool enableFrontRight_;
 
-    int enableBackLeft_;
-    int enableBackCenter_;
-    int enableBackRight_;
+    bool enableBackLeft_;
+    bool enableBackCenter_;
+    bool enableBackRight_;
+
+    bool ignoreFrontLeft_;
+    bool ignoreFrontCenter_;
+    bool ignoreFrontRight_;
+
+    bool ignoreBackLeft_;
+    bool ignoreBackCenter_;
+    bool ignoreBackRight_;
 
 public:
 
@@ -75,28 +83,32 @@ public:
     int rightSide();
     int leftSide();
 
-    int front();
+    //acces directement aux capteurs
+    int sensorDist(std::string sensorname);
 
-//    int frontLeft();
-//    int frontCenter();
-//    int frontRight();
+    //accès detection
+    int front(bool display = false);
+    int back(bool display = false);
 
-    int back();
-//    int backLeft();
-//    int backCenter();
-//    int backRight();
-
+    //activation des capteurs
     void addConfigFront(bool left, bool center, bool right);
     void addConfigBack(bool left, bool center, bool right);
+
+    //configuration à partir du centre du robot
     void addThresholdFront(int left, int center, int right);
     void addThresholdBack(int left, int center, int right);
     void addThresholdFrontVeryClosed(int left, int center, int right);
     void addThresholdBackVeryClosed(int left, int center, int right);
 
+    void setIgnoreFrontNearObstacle(bool ignoreLeft, bool ignoreCenter, bool ignoreRight);
+    void setIgnoreBackNearObstacle(bool ignoreLeft, bool ignoreCenter, bool ignoreRight);
+    void setIgnoreAllFrontNearObstacle(bool ignore);
+    void setIgnoreAllBackNearObstacle(bool ignore);
+
     //Ajoute le timer des sensors de detection
     void addTimerSensors(int timespan_ms);
 
-    //TODO supprimer la tache des sensors void removeTimerSensors();
+    //supprime le timer des sensors
     void stopTimerSensors();
 };
 

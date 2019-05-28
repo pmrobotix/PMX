@@ -141,13 +141,13 @@ bool O_take_gold()
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
     robot.asserv().resetDisplayTS();
-    int patchx;
-    if (robot.getMyColor() == PMXVIOLET) {
-        patchx = 50;
-    } else {
-        patchx = 50;
-    }
-    while ((ts = robot.asserv().doMoveForwardAndRotateTo(2225.0, 300.0 + patchx, -90.0)) != TRAJ_OK) {
+    //int patchx;
+//    if (robot.getMyColor() == PMXVIOLET) {
+//        patchx = 50;
+//    } else {
+//        patchx = 50;
+//    }
+    while ((ts = robot.asserv().doMoveForwardAndRotateTo(2225.0, 333.0, -90.0)) != TRAJ_OK) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -169,8 +169,17 @@ bool O_take_gold()
 
     robot.svgPrintPosition();
 
+    //test si porte goldenium
+    int dist_porte = robot.actions().sensors().sensorDist("fC");
+    int corr = robot.asserv().pos_getY_mm() - 333.0;
+    if ((dist_porte + corr) <= 255) //255 et 290
+    {
+        robot.logger().info() << "on avance pour prendre le goldenium" << logs::end;
+        return false;
+    }
     robot.actions().ax12_left_cil_retract(0);
     robot.actions().ax12_right_cil_retract();
+
 
     robot.logger().info() << "on avance pour prendre le goldenium" << logs::end;
 //    robot.asserv().ignoreFrontCollision(true);

@@ -50,7 +50,6 @@ public:
     IAbyZone(Robot *robot);
     ~IAbyZone()
     {
-
     }
 
     void ia_start();

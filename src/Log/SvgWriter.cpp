@@ -65,7 +65,7 @@ void SvgWriter::beginHeader()
      << "</symbol>"
      << logs::end;
      */
-    utils::PointerList<std::string>::iterator i = symbol_list_.begin();
+    //utils::PointerList<std::string>::iterator i = symbol_list_.begin();
     /*while (i != symbol_list_.end())
      {
      logger().info() << i << logs::end;

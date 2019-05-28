@@ -40,8 +40,8 @@ LedDriver::LedDriver(int nb)
 
     for (int i = 0; i < 8; i++) {
         if (gpio[i] != NULL) {
-            gpio[i]->setPinDirection("out");
-            gpio[i]->setIrqMode("none");
+            gpio[i]->setPinDirection((char *)"out");
+            gpio[i]->setIrqMode((char *)"none");
             gpio[i]->setPinValue(0);
         }
     }

@@ -16,8 +16,11 @@ ASensorsDriver * ASensorsDriver::create(std::string)
 }
 
 SensorsDriver::SensorsDriver() :
-        gp2_1_(1, ADDRESS_gp2y0e02b), gp2_2_(0, ADDRESS_gp2y0e02b), connected_gp2y0e02b_(false), shift_(0), irLeft_(8,
-                30), irCenter_(5, 80), irRight_(9, 30), irRear_(3, 30)
+        gp2_1_(1, ADDRESS_gp2y0e02b), gp2_2_(0, ADDRESS_gp2y0e02b), connected_gp2y0e02b_(false), shift_(0),
+        irLeft_(8, 30),
+        irCenter_(5, 80),
+        irRight_(9, 30),
+        irRear_(3, 30)
 {
 }
 
@@ -35,9 +38,25 @@ int SensorsDriver::rightSide()
     return d;
 }
 
+int SensorsDriver::getFrontDistMmFromObject(int diagonal_dist_mm)
+{
+    int dist_from_wheel_axe_mm = 155;
+    float cos_alpha = 45.0/48.0;
+    int lmm = diagonal_dist_mm * cos_alpha + dist_from_wheel_axe_mm;
+    return lmm;
+}
+
+int SensorsDriver::getBackDistMmFromObject(int diagonal_dist_mm)
+{
+    int dist_from_wheel_axe_mm = 70;
+    float cos_alpha = 42.0/48.0;
+    int lmm = diagonal_dist_mm * cos_alpha + dist_from_wheel_axe_mm;
+    return lmm;
+}
+
 int SensorsDriver::frontLeft()
 {
-    return irLeft_.getDistanceMm();
+    return getFrontDistMmFromObject(irLeft_.getDistanceMm());
 }
 
 int SensorsDriver::frontCenter()
@@ -46,7 +65,7 @@ int SensorsDriver::frontCenter()
 }
 int SensorsDriver::frontRight()
 {
-    return irRight_.getDistanceMm();
+    return getFrontDistMmFromObject(irRight_.getDistanceMm());
 }
 
 int SensorsDriver::backLeft()
@@ -55,92 +74,9 @@ int SensorsDriver::backLeft()
 }
 int SensorsDriver::backCenter()
 {
-    return irRear_.getDistanceMm();
+    return getBackDistMmFromObject(irRear_.getDistanceMm());
 }
 int SensorsDriver::backRight()
 {
     return -1;
 }
-/*
-int SensorsDriver::left()
-{
-    int d = gp2_2_.getDistanceMm();
-    return d;
-}
-
-int SensorsDriver::right()
-{
-    int d = gp2_1_.getDistanceMm();
-    return d;
-}
-
-bool SensorsDriver::front() //TODO fusionner front et frontVeryClosed avec un retour de données en int
-{
-
-    bool front = false;
-
-    if (1) {
-        if (irLeft_.getDistance() < 200) {
-            logger().debug() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
-            front = true;
-        }
-
-        if (irRight_.getDistance() < 200) {
-            logger().debug() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
-            front = true;
-        }
-
-        if (irCenter_.getDistance() < 350) {
-            logger().debug() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
-            front = true;
-        }
-    }
-    return front;
-}
-
-bool SensorsDriver::frontVeryClosed()
-{
-    bool front = false;
-
-    if (1) {
-        if (irLeft_.getDistance() < 118) {
-            logger().debug() << "adc_8_left " << " mm=" << irLeft_.getDistance() << logs::end;
-            front = true;
-        }
-
-        if (irRight_.getDistance() < 118) {
-            logger().debug() << "adc_9_right " << "       mm=" << irRight_.getDistance() << logs::end;
-            front = true;
-        }
-
-        if (irCenter_.getDistance() < 240) {
-            logger().debug() << "adc_5_center " << "   mm=" << irCenter_.getDistance() << logs::end;
-            front = true;
-        }
-    }
-    return front;
-}
-
-bool SensorsDriver::rear()
-{
-
-    bool rear = false;
-    if (irRear_.getDistance() < 200) {
-        logger().debug() << "adc_3_rear " << " mm=" << irRear_.getDistance() << logs::end;
-        rear = true;
-    }
-    return rear;
-}
-
-bool SensorsDriver::rearVeryClosed()
-{
-
-    bool rear = false;
-    if (irRear_.getDistance() < 150) {
-        logger().info() << "adc_3_rear " << " mm=" << irRear_.getDistance() << logs::end;
-        rear = true;
-    }
-    return rear;
-}
-*/
-

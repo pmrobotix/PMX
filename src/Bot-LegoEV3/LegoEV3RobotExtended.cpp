@@ -23,11 +23,11 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
     svg_ = p_svg_;
 
     p_asserv_ = new LegoEV3AsservExtended(id_, this);
-    asserv_default = p_asserv_;
+    asserv_default_ = p_asserv_;
 
     //on ecrase les versions par default avec la version extended
     p_actions_ = new LegoEV3ActionsExtended(id_, this);
-    actions_default = p_actions_;
+    actions_default_ = p_actions_;
 
     p_ia_ = new LegoEV3IAExtended(id_, this);
 

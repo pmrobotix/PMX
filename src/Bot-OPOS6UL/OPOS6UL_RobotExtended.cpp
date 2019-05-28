@@ -25,10 +25,10 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     svg_ = p_svg_;
 
     p_asserv_ = new OPOS6UL_AsservExtended(id_, this);
-    asserv_default = p_asserv_;
+    asserv_default_ = p_asserv_;
 
     p_actions_ = new OPOS6UL_ActionsExtended(id_, this);
-    actions_default = p_actions_;
+    actions_default_ = p_actions_;
 
     p_ia_ = new OPOS6UL_IAExtended(id_, this);
 

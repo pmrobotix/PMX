@@ -53,9 +53,9 @@ void IAbyZone::ia_createZone(const char* name, float minX, float minY, float wid
     z->startAngle = startAngleDeg;
 
     if (robot_ != NULL) {
-        z->startX = robot_->asserv_default->getRelativeX(z->startX);
-        z->minX = robot_->asserv_default->getRelativeX(z->minX, z->width);
-        z->startAngle = robot_->asserv_default->getRelativeAngle(z->startAngle);
+        z->startX = robot_->asserv()->getRelativeX(z->startX);
+        z->minX = robot_->asserv()->getRelativeX(z->minX, z->width);
+        z->startAngle = robot_->asserv()->getRelativeAngle(z->startAngle);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         exit(-1);
@@ -118,7 +118,7 @@ void IAbyZone::ia_setPath(const char* zone1Name, const char* zone2Name, float x,
     zp->y = y;
 
     if (robot_ != NULL) {
-        zp->x = robot_->asserv_default->getRelativeX(zp->x);
+        zp->x = robot_->asserv()->getRelativeX(zp->x);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         exit(-1);
@@ -172,8 +172,8 @@ void IAbyZone::ia_start()
                 if (!done) {
                     if (robot_ != NULL)
                         printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
-                                robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm(),
-                                robot_->asserv_default->pos_getThetaInDegree());
+                                robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
+                                robot_->asserv()->pos_getThetaInDegree());
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
                         exit(-1);
@@ -182,8 +182,8 @@ void IAbyZone::ia_start()
                 }
                 if (robot_ != NULL)
                     printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
-                            robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm(),
-                            robot_->asserv_default->pos_getThetaInDegree());
+                            robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
+                            robot_->asserv()->pos_getThetaInDegree());
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
                     exit(-1);
@@ -224,7 +224,7 @@ ZONE* IAbyZone::ia_getNearestZoneFrom(float x, float y)
     ZONE *result = ia_getZoneAt(x, y);
     if (result != NULL) {
         printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name,
-                robot_->asserv_default->pos_getX_mm(), robot_->asserv_default->pos_getY_mm());
+                robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm());
         return result;
     }
 
@@ -262,63 +262,27 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
         exit(-1);
     }
 
-    ZONE *zCurrent = ia_getNearestZoneFrom(robot_->asserv_default->pos_getX_mm(),
-            robot_->asserv_default->pos_getY_mm());
+    ZONE *zCurrent = ia_getNearestZoneFrom(robot_->asserv()->pos_getX_mm(),
+            robot_->asserv()->pos_getY_mm());
     if (zCurrent == NULL) {
         printf("ERROR: cc_goToZone ia_getNearestZoneFrom return NULL !!");
         exit(-1);
     }
-    //printf("01\n");
+
     ZONE_PATH *path = ia_getZonePath(zCurrent, z);
-    //printf("02\n");
-    /*
-     if (path != NULL)
-     {
-     printf("%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__,
-     zCurrent->name, z->name, path->x, path->y);
-     ts = cc_moveForwardTo(cc_getRelativeX(path->x), path->y, cc_motion_GetDefaultSpeed(), cc_motion_GetDefaultAccel(), cc_motion_GetDefaultDecel());
-     if (ts != TRAJ_OK)
-     {
-     return ts;
-     }
-     }
-     else
-     {
-     printf("%s (line %d) : goToZone FROM %s TO %s with NO path \n", __FUNCTION__, __LINE__,
-     zCurrent->name, z->name);
-     }
-     ts = cc_moveForwardAndRotateTo(cc_getRelativeX(z->startX), z->startY,
-     cc_getRelativeAngle(z->startAngle), cc_motion_GetDefaultSpeed(), cc_motion_GetDefaultAccel(), cc_motion_GetDefaultDecel());
-     return ts;
-     */
+
     if (path != NULL) {
         printf("%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name,
                 z->name, path->x, path->y);
-        path_p->x = robot_->asserv_default->getRelativeX(path->x);
+        path_p->x = robot_->asserv()->getRelativeX(path->x);
         path_p->y = path->y;
-    }/*else
-     {
-     printf("%s (line %d) : goToZone FROM %s TO %s with NO path \n", __FUNCTION__, __LINE__,
-     zCurrent->name, z->name);
-     path_p->x = robot_->asserv_default->getRelativeX(z->startX);
-     path_p->y = z->startY;
-     path_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
-     }*/
-    zone_p->x = robot_->asserv_default->getRelativeX(z->startX);
+    }
+    zone_p->x = robot_->asserv()->getRelativeX(z->startX);
     zone_p->y = z->startY;
-    zone_p->theta = robot_->asserv_default->getRelativeAngle(z->startAngle);
+    zone_p->theta = robot_->asserv()->getRelativeAngle(z->startAngle);
 
     printf("----%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name,
             z->name, path->x, path->y);
-    //printf("03\n");
-    /*
-     RobotPosition pos;
 
-     //convert position from ticks to meter
-     pos.x = path->x;
-     pos.y = path->y;
-     pos.theta = z->startAngle;
-
-     return pos;*/
 }
 

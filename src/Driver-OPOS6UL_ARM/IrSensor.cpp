@@ -46,7 +46,6 @@ int IrSensor::getDistanceMm()
     logger().debug() << "getDistance type=" << type_ << " " << adcPin_ << " dist=" << distanceMm_ << " v=" << voltage_
             << logs::end;
 
-    //TODO renvoyer la distance au sol  dans une fonction specifique !
     return (int) moy;
 }
 

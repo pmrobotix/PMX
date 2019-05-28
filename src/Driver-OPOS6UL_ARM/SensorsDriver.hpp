@@ -53,6 +53,10 @@ public:
      */
     ~SensorsDriver();
 
+    int getFrontDistMmFromObject(int diagonal_dist_mm);
+    int getBackDistMmFromObject(int diagonal_dist_mm);
+
+
     int rightSide();
     int leftSide();
 

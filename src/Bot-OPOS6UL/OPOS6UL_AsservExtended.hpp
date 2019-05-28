@@ -11,6 +11,11 @@ class OPOS6UL_RobotExtended;
 class OPOS6UL_AsservExtended: public Asserv
 {
 private:
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("OPOS6UL_AsservExtended");
+        return instance;
+    }
     OPOS6UL_RobotExtended * robot_extended_;
 public:
     OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotExtended * robot);
@@ -21,7 +26,7 @@ public:
 
     void resetDisplayTS();
     void displayTS(TRAJ_STATE ts);
-
+    bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
 };
 
 #endif

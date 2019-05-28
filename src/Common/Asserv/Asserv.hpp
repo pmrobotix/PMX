@@ -55,7 +55,7 @@ protected:
 
     std::string botId_;
 
-    bool forceRotation_;
+
 
     /*!
      * \brief asservissement interne INSA.
@@ -69,8 +69,10 @@ protected:
      */
     AsservEsialR * pAsservEsialR_;
 
-    bool ignoreRearCollision_;
-    bool ignoreFrontCollision_;
+    bool temp_ignoreRearCollision_;
+    bool temp_ignoreFrontCollision_;
+    bool temp_forceRotation_;
+
 
     //0=>LEFT with coordinate x, y, angle
     //1=>RIGHT with coordinate 3000-x, y , -angle
@@ -89,13 +91,7 @@ public:
     /*!
      * \brief Destructor.
      */
-    virtual ~Asserv()
-    {
-        //delete asservdriver_;
-//        delete pMovingBase_; //TODO pourquoi un warning si on souhaite les supprimer ??
-//        delete pAsservInsa_;
-//        delete pAsservEsialR_;
-    }
+    virtual ~Asserv();
 
     /*!
      * \brief return objet movingBase.
@@ -115,12 +111,12 @@ public:
     void assistedHandling();
     //absolute motion
     TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
-    TRAJ_STATE doRotateAbs(float degrees);
-    TRAJ_STATE doRotateLeft(float degrees);
-    TRAJ_STATE doRotateRight(float degrees);
+    TRAJ_STATE doRotateAbs(float degreesRelative);
+    TRAJ_STATE doRotateLeft(float degreesRelative);
+    TRAJ_STATE doRotateRight(float degreesRelative);
     TRAJ_STATE doFaceTo(float xMM, float yMM);
     //relative motion (depends on current position of the robot)
-    TRAJ_STATE doRotateTo(float thetaInDegree);
+    TRAJ_STATE doRotateTo(float thetaInDegreeAbsolute);
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM, float adjustment = 0);
     TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveBackwardTo(float xMM, float yMM);
@@ -150,20 +146,19 @@ public:
     }
 
     //transformation suivant la couleur de match
-    inline float getRelativeX(float x, float width = 0.0)
+    inline float getRelativeX(float x_mm, float width = 0.0)
     {
         //printf("matchcolor:%d", matchColorPosition_);
         //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
         if (matchColorPosition_ != 0) {
-            return 3000 - x - width;
+            return 3000 - x_mm - width;
         }
-        return x;
+        return x_mm;
     }
     //transformation suivant la couleur de match
     inline float getRelativeAngle(float degrees)
     {
         if (matchColorPosition_ != 0) {
-            //TODO limitAngle()
             float limit = (180 - degrees);
             if (limit >= 360)
                 limit -= 360;
@@ -186,10 +181,10 @@ public:
         return degrees;
     }
 
-    bool filtreInsideTable(float mm);
+    virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
 
-    void warnFrontCollisionOnTraj(); //TODO Virtual ???? a verifier car peut etre surcharger?
-    void warnBackCollisionOnTraj();
+    virtual void warnFrontCollisionOnTraj();
+    virtual void warnBackCollisionOnTraj();
 
     RobotPosition pos_getPosition();
     float pos_getX_mm();

@@ -24,10 +24,20 @@ void O_LcdBoardTest::run(int argc, char** argv)
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().home();
     robot.actions().lcd2x16().print("PM-ROBOTIX start");
-    robot.actions().lcd2x16().setCursor(0, 1);
-    robot.actions().lcd2x16().print("Hi, I'm PMX.");
-
     sleep(1);
+    robot.actions().lcd2x16().clear();
+    robot.actions().lcd2x16().setCursor(0, 0);
+    //robot.actions().lcd2x16().print("Hi, I'm PMX.");
+    robot.actions().lcd2x16().print("Inna...");
+    sleep(1);
+    robot.actions().lcd2x16().setCursor(0, 1);
+
+    robot.actions().lcd2x16().print("I happy with you !!");
+
+    sleep(2);
+    robot.actions().lcd2x16().setCursor(7, 0);
+    robot.actions().lcd2x16().print("ooooxxyyyy !");
+    sleep(2);
 
     robot.stopExtraActions();
 

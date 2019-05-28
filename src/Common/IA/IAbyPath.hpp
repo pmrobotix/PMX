@@ -69,7 +69,8 @@ public:
     void addPlayground(Playground * p);
 
     void ia_clear();
-    void ia_createZone(const char* name, float minX, float minY, float width, float height, float startX, float startY, float startAngleDeg);
+    void ia_createZone(const char* name, float minX, float minY, float width, float height, float startX, float startY,
+            float startAngleDeg);
     ZONE* ia_getZone(const char* zoneName);
     ZONE* ia_getZoneAt(float x, float y);
     ZONE* ia_getNearestZoneFrom(float x, float y);

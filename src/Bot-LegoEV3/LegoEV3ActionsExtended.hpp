@@ -162,7 +162,7 @@ public:
 
     void stopExtra()
     {
-
+        sensors_.stopTimerSensors();
         ledbar_.resetAll();
         ledbar_.stop();
         soundbar_.stop();

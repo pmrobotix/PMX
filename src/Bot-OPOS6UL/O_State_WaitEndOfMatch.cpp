@@ -42,8 +42,8 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     robot.actions().releaseAll();
     robot.freeMotion();
-    robot.actions().sensors().stopTimerSensors();
-    robot.stopExtraActions(); //stop specific actions, can take time for servos...
+
+    robot.stopExtraActions(); //stop specific actions, sensors, can take time for servos...
     robot.svgPrintEndOfFile();
 
     logger().info() << "Display Points after 100sec" << logs::end;
@@ -54,7 +54,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.actions().lcd2x16().print(robot.points);
     robot.actions().lcd2x16().print(" points ?");
     robot.actions().lcd2x16().setCursor(0, 1);
-    robot.actions().lcd2x16().print("Yeahhh OK");
+    robot.actions().lcd2x16().print("ooooxxyyyy !");
 
     robot.actions().ledBar().flashAll(LED_GREEN);
 

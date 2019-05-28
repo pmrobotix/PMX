@@ -57,8 +57,8 @@ void DynamixelDriver::turn(int servo, int speed)
     if (speed <= 0)
         speed = 0;
 
-    int rcw = CCAx12Adc::instance().writeAXData(servo, P_CW_ANGLE_LIMIT, 0);
-    int rccw = CCAx12Adc::instance().writeAXData(servo, P_CCW_ANGLE_LIMIT, 0);
+    //int rcw = CCAx12Adc::instance().writeAXData(servo, P_CW_ANGLE_LIMIT, 0);
+    //int rccw = CCAx12Adc::instance().writeAXData(servo, P_CCW_ANGLE_LIMIT, 0);
     int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, speed);
     logger().debug() << "setPosition P_GOAL_SPEED =" << r << logs::end;
     logger().debug() << "setPosition P_GOAL_POSITION =" << r << logs::end;

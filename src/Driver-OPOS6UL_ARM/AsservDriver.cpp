@@ -227,7 +227,7 @@ RobotPosition AsservDriver::mbed_GetPosition() //en metre
         errorCount_++;
         if (errorCount_ > 20) {
             logger().error() << "mbed_GetPosition Too many Error ==> EXIT !!! " << r << logs::end;
-            exit(0);
+            exit(1);
         }
         return p;
     } else {
@@ -279,15 +279,18 @@ void AsservDriver::path_InterruptTrajectory()
     else {
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_INTERRUPTED;
+        usleep(300000);
+        mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
-    //if (!connected_) return;
+    if (!connected_)
+        return;
     if (!asservMbedStarted_)
         logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
-        logger().error() << "path_CollisionOnTrajectory() HALT " << asservMbedStarted_ << logs::end;
+        //logger().info() << "path_CollisionOnTrajectory() HALT " << asservMbedStarted_ << logs::end;
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_NEAR_OBSTACLE;
         usleep(300000);
@@ -318,8 +321,7 @@ void AsservDriver::path_CancelTrajectory()
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_CANCELLED;
         usleep(300000);
-        path_ResetEmergencyStop(); //reset de l'arret d'urgence
-        //mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
+        mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_ResetEmergencyStop()
@@ -330,7 +332,6 @@ void AsservDriver::path_ResetEmergencyStop()
         logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('r', 0, NULL);
-        pathStatus_ = TRAJ_OK;
     }
 }
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
@@ -341,10 +342,6 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
         logger().debug() << "motion_DoLine() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
         return TRAJ_ERROR;
     } else {
-        /*
-         //resetEmergencyStop à faire
-         if(pathStatus_ != TRAJ_OK)
-         return pathStatus_;*/
 
         unsigned char d[4];
         float2bytes_t mm;
@@ -390,41 +387,10 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
 
     if (p_.asservStatus == 3) {
         logger().error() << "3333 p= " << p_.asservStatus << logs::end;
-        return TRAJ_COLLISION; //blocked //TODO necessaire ? ce n'est pas un melange avec pathstatus ?
+        return TRAJ_COLLISION;
     }
+
     return pathStatus_;
-
-    /*
-     //OLD
-     int timeout = 0;
-     //logger().error() << "p_.asservStatus avant = " << p_.asservStatus	<< logs::end;
-     //attente du running status
-     while (p_.asservStatus > 0) {
-     //logger().error() << "p_.asservStatus boucle 1 = " << p_.asservStatus	<< logs::end;
-     usleep(10000);
-     timeout++;
-     if (timeout > 50)
-     break;
-     }
-     timeout = 0;
-     //attente de l'interruption ou fin de trajectoire
-     while (p_.asservStatus == 0) {
-     //logger().error() << "p_.asservStatus boucle 2 = " << p_.asservStatus	<< logs::end;
-     usleep(10000);
-     timeout++;
-     if (timeout > 50 && p_.asservStatus != 0) //TODO  pourquoi pas || ?????? if (timeout > 50 && p_.asservStatus != 0)
-     break;
-     }
-     if (p_.asservStatus == 1)
-     return TRAJ_OK;
-     if (p_.asservStatus == 2) {
-     return pathStatus_;
-     }
-
-     //cas d'erreur
-     p_.asservStatus = -1;
-     return TRAJ_ERROR;
-     */
 }
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_m, float y_m) // f8 +x+y
@@ -498,34 +464,15 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
         logger().debug() << "motion_DoDirectLine() DISTmm=" << mm.f << " meters=" << dist_meters << logs::end;
         mbed_writeI2c('V', 4, d);
         pathStatus_ = TRAJ_OK;
-        //return pathStatus_;
+
         return mbed_waitEndOfTraj();
     }
 }
-/*
- void AsservDriver::motion_setLowSpeed(bool enable)
- {
- unsigned char d[4];
- unsigned char back_div = 6;
- unsigned char forw_div = 6;
- if (enable) {
- d[0] = 1;
- d[1] = back_div;
- d[2] = forw_div;
- d[3] = 0;
- } else {
- d[0] = 0;
- d[1] = 0;
- d[2] = 0;
- d[3] = 0;
- }
- mbed_writeI2c('l', 4, d);
- }*/
 
-void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
+void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
 {
     unsigned char d[4];
-    unsigned char back_div = (unsigned char)percent;
+    unsigned char back_div = (unsigned char) percent;
     if (enable) {
         d[0] = 1;
         d[1] = back_div;
@@ -540,10 +487,10 @@ void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
     mbed_writeI2c('l', 4, d);
 
 }
-void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
+void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
 {
     unsigned char d[4];
-    unsigned char forw_div = (unsigned char)percent;
+    unsigned char forw_div = (unsigned char) percent;
     if (enable) {
         d[0] = 1;
         d[1] = 0;

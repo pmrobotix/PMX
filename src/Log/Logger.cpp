@@ -1,5 +1,5 @@
 /*!
- * \file
+é * \file
  * \brief Implémentation de la classe Logger.
  */
 
@@ -30,9 +30,9 @@ logs::Logger::writeMessage(const logs::Level & level, const std::string & messag
 logs::Logger::LoggerBuffer::LoggerBuffer(const logs::Logger & logger, const logs::Level & level)
 : logger_(logger), level_(level)
 {
-    if(&logger==NULL){
-        std::cout<<"NULL logger"<<std::endl;
-    }
+    //if(&logger==NULL){
+        //std::cout<<"NULL logger"<<std::endl;
+    //}
     if (logger.isActive(level))
     {
         stream_ = new std::ostringstream();

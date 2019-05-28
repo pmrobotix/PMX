@@ -31,7 +31,7 @@ void O_LedBarTest::run(int argc, char** argv)
 
 
 
-/*
+
     robot.actions().ledBar().setOff(0);
     robot.actions().ledBar().setOff(1);
     usleep(wait);
@@ -48,11 +48,11 @@ void O_LedBarTest::run(int argc, char** argv)
     usleep(wait);
     robot.actions().ledBar().setOff(0);
     usleep(wait);
-*/
+
     robot.actions().ledBar().blink(5, 100000, LED_ORANGE);
 
     robot.actions().ledBar().k2mil(4, 100000, LED_GREEN);
-/*
+
 
     //START ActionTimer
     robot.actions().start(); //start ActionTimer
@@ -68,8 +68,8 @@ void O_LedBarTest::run(int argc, char** argv)
     sleep(2);
 
     robot.actions().ledBar().startK2mil(10, 50000, LED_ORANGE, true);
-    sleep(1);
-    */
+
+
 
     logger().info() << "O_LedBarTest Happy End." << logs::end;
 }

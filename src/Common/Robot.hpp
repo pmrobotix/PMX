@@ -64,7 +64,13 @@ protected:
     std::string strategy_ = "all"; //defaut strategy
     std::string configVRR_ = "VRR"; //defaut config VRR
 
+    //Action => RobotElement
+    Actions * actions_default_;
 
+    //Asserv => asservissement
+    Asserv * asserv_default_;
+
+    SvgWriter * svg_;
 public:
 #ifdef SIMU
     int CLEF_REQUETES = 0x00012345;
@@ -76,17 +82,6 @@ public:
     }msg_ipc;
 #endif
 
-    //Action => RobotElement
-    Actions * actions_default;
-
-    //Asserv => asservissement
-    Asserv * asserv_default;
-
-    SvgWriter * svg_;
-
-    //IA
-    //TODO IA
-
     /*!
      * \brief Constructeur de la classe.
      */
@@ -95,14 +90,8 @@ public:
     /*!
      * \brief Destructor.
      */
-    virtual ~Robot()
-    {
-        stopMotionTimerAndActionManager();
-        //Tue le log s'il existe (core dump sinon)
-        logs::LoggerFactory::instance().stopLog();
-    }
+    virtual ~Robot();
 
-    //DATA
     bool end90s() const
     {
         return this->end90s_;
@@ -167,6 +156,13 @@ public:
     }
 
     ///DATA
+
+    inline Asserv * asserv()
+    {
+        if(asserv_default_ == NULL)
+            printf("ERROR asserv() NULL ! \n");
+        return asserv_default_;
+    }
 
     std::string getID()
     {

@@ -56,7 +56,7 @@ void BotMotors::setVitesseG(int vitMoteurG)
 
     //Apply
     //robot_->logger().error() << "vit = " << temp << "  setVitesseG = " << vitMoteurG << logs::end;
-    robot_->asserv_default->base()->motors().runMotorLeft(vitMoteurG, 0);
+    robot_->asserv()->base()->motors().runMotorLeft(vitMoteurG, 0);
 }
 
 void BotMotors::setVitesseD(int vitMoteurD)
@@ -92,7 +92,7 @@ void BotMotors::setVitesseD(int vitMoteurD)
 
     //APPLY
     //robot_->logger().error() << "vit = " << temp << "  setVitesseD = " << vitMoteurD << logs::end;
-    robot_->asserv_default->base()->motors().runMotorRight(vitMoteurD, 0);
+    robot_->asserv()->base()->motors().runMotorRight(vitMoteurD, 0);
 }
 
 #endif /* CONFIG_MOTORCTRL_BOTMOTORS */

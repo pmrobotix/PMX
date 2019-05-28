@@ -36,11 +36,11 @@ void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
 //    chrono.start();
 
 //    long long t0 = chrono.getElapsedTimeInMicroSec();
-    int32_t tempD = robot_->asserv_default->base()->extEncoders().getRightEncoder();
+    int32_t tempD = robot_->asserv()->base()->extEncoders().getRightEncoder();
 
 //    long long t1 = chrono.getElapsedTimeInMicroSec();
 
-    int32_t tempG = robot_->asserv_default->base()->extEncoders().getLeftEncoder();
+    int32_t tempG = robot_->asserv()->base()->extEncoders().getLeftEncoder();
 
 //    long long t2 = chrono.getElapsedTimeInMicroSec();
 

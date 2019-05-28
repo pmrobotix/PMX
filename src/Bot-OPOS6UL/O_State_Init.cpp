@@ -256,9 +256,9 @@ O_State_Init::execute(Robot&)
     robot.actions().lcd2x16().home();
     robot.actions().lcd2x16().print("GO...");
 
-    logger().info() << "on ferme les cils" << logs::end;
-    robot.actions().ax12_left_cil(0);
-    robot.actions().ax12_right_cil();
+//    logger().info() << "on ferme les cils" << logs::end;
+//    robot.actions().ax12_left_cil(0);
+//    robot.actions().ax12_right_cil();
 
     robot.points += 5;
 

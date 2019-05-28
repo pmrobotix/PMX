@@ -34,8 +34,8 @@ Robot::Robot() :
         chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2019", "/") // use character "/" instead of "-" for arguments
 {
 
-    actions_default = NULL;
-    asserv_default = NULL;
+    actions_default_ = NULL;
+    asserv_default_ = NULL;
 
     empty_ = 0;
     useExternalEncoder_ = 0;
@@ -46,11 +46,19 @@ Robot::Robot() :
 
 }
 
+Robot::~Robot()
+{
+    stopMotionTimerAndActionManager();
+    //Tue le log s'il existe (core dump sinon)
+    logs::LoggerFactory::instance().stopLog();
+}
+
+
 void Robot::svgPrintPosition()
 {
-    if (asserv_default != NULL)
-        this->svgw().writePosition_Bot(this->asserv_default->pos_getX_mm(), this->asserv_default->pos_getY_mm(),
-                this->asserv_default->pos_getTheta());
+    if (asserv_default_ != NULL)
+        this->svgw().writePosition_Bot(this->asserv_default_->pos_getX_mm(), this->asserv_default_->pos_getY_mm(),
+                this->asserv_default_->pos_getTheta());
     else
         logger().error() << "asserv_default is NULL !" << logs::end;
 }
@@ -131,11 +139,11 @@ void Robot::begin(int argc, char** argv)
             char cInput;
             cInput = ConsoleKeyInput::mygetch(); //wait a user action
             //printf("button= %d<\n", cInput);
-            if (cInput == 27)	// if ch is the escape sequence with num code 27, k turns 1 to signal the next
-                    {
+            if (cInput == 27)// if ch is the escape sequence with num code 27, k turns 1 to signal the next
+            {
                 cInput = ConsoleKeyInput::mygetch();
                 if (cInput == 91) // if the previous char was 27, and the current 91, k turns 2 for further use
-                        {
+                {
                     cInput = ConsoleKeyInput::mygetch();
                 }
             }
@@ -143,26 +151,26 @@ void Robot::begin(int argc, char** argv)
             printf("final button= %d \n", cInput);
 
             switch (cInput) {
-            case 10:
+                case 10:
                 strcpy(msg_ipc.mtext, "enter");
                 break;
-            case 127:
+                case 127:
                 strcpy(msg_ipc.mtext, "back");
                 break;
-            case 65:
+                case 65:
                 strcpy(msg_ipc.mtext, "up");
                 break;
-            case 66:
+                case 66:
                 strcpy(msg_ipc.mtext, "down");
                 break;
-            case 67:
+                case 67:
                 strcpy(msg_ipc.mtext, "right");
                 break;
-            case 68:
+                case 68:
                 strcpy(msg_ipc.mtext, "left");
                 break;
 
-            default:
+                default:
 
                 break;
 
@@ -238,8 +246,7 @@ void Robot::begin(int argc, char** argv)
         strat = cArgs_['s']["strategy"];
         logger().info() << "strategy selected = " << strat << logs::end;
         this->strategy(strat);
-    }else
-    {
+    } else {
         this->strategy("all");
     }
 
@@ -279,21 +286,21 @@ void Robot::begin(int argc, char** argv)
 
 void Robot::stopMotionTimerAndActionManager()
 {
-    if (asserv_default != NULL) {
-        this->asserv_default->stopMotionTimerAndOdo();
+    if (asserv_default_ != NULL) {
+        this->asserv_default_->stopMotionTimerAndOdo();
     } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
 
-    if (actions_default != NULL) {
-        this->actions_default->stop();
-        this->actions_default->cancel(); //stop devices and wait manager to finish
+    if (actions_default_ != NULL) {
+        this->actions_default_->stop();
+        this->actions_default_->cancel(); //stop devices and wait manager to finish
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
 }
 
 void Robot::freeMotion()
 {
-    this->asserv_default->freeMotion();
-    this->asserv_default->base()->motors().stopMotors();
+    this->asserv_default_->freeMotion();
+    this->asserv_default_->base()->motors().stopMotors();
 
 }

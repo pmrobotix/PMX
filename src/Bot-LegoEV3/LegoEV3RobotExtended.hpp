@@ -23,6 +23,7 @@ public:
 
     ~LegoEV3RobotExtended()
     {
+        stopExtraActions();
     }
 
     inline LegoEV3ActionsExtended& actions()

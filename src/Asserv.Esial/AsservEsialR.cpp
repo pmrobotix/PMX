@@ -313,7 +313,7 @@ void AsservEsialR::path_InterruptTrajectory()
 }
 void AsservEsialR::path_CollisionOnTrajectory()
 {
-printf("path_CollisionOnTrajectory() sent !!!!!\n");
+//printf("path_CollisionOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
     usleep(300000);

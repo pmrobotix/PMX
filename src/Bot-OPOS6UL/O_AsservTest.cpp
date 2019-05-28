@@ -57,24 +57,18 @@ void O_AsservTest::run(int argc, char** argv)
             << p.asservStatus << logs::end;
     robot.svgPrintPosition();
 
-    //robot.asserv().freeMotion();
-    //robot.asserv().assistedHandling();
-
     logger().info() << "GO distance mm=" << d << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
 
-    //TEST GO x y
-//    robot.asserv().ignoreFrontCollision(false);
-//    robot.asserv().ignoreRearCollision(true);
-//    robot.asserv().setLowSpeed(false); //au cas où par les sensors (si pas de ARU)
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
 
     robot.asserv().resetDisplayTS();
     int c = 0;
     int f = 0;
     while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_OK) {
 
-        logger().info() << "Interruption dist TRAJ_STATE=" << ts << " front=" << robot.actions().sensors().front()
-                << logs::end;
+        logger().info() << "Interruption dist TRAJ_STATE=" << ts << logs::end;
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -83,35 +77,62 @@ void O_AsservTest::run(int argc, char** argv)
             if (f >= 5)
                 break; //return
             f++;
-            //usleep(100000);
+            printf("f=%d\n", f);
+            usleep(1000000);
         }
 
         if (ts == TRAJ_COLLISION) {
             logger().error() << "===== COLLISION ASSERV essai n°" << c << logs::end;
 
-            if (c >= 1)
+            if (c >= 2)
                 break; // ou return;
             c++;
-            usleep(100000);
+            printf("c=%d\n", c);
+            usleep(1000000);
         }
         robot.asserv().resetDisplayTS();
     }
 
-    //Remettre le doLine
-    //ts = robot.asserv().doLineAbs(d);
-    /*
-     p = robot.asserv().pos_getPosition();
-     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-     << p.asservStatus << logs::end;
-     robot.svgPrintPosition();
 
-     ts = TRAJ_OK;
-     logger().info() << "GO turn angle=" << a << logs::end;
-     if ((ts = robot.asserv().doRotateAbs(a)) != TRAJ_OK) {
-     logger().info() << "Interruption turn !! TRAJ_STATE=" << ts << logs::end;
+    p = robot.asserv().pos_getPosition();
+    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
+            << p.asservStatus << logs::end;
+    robot.svgPrintPosition();
 
-     }
-     */
+    ts = TRAJ_OK;
+    c = 0;
+    f = 0;
+    logger().info() << "GO turn angle=" << a << logs::end;
+
+    while ((ts = robot.asserv().doRotateAbs(a)) != TRAJ_OK) {
+        robot.svgPrintPosition();
+        robot.asserv().displayTS(ts);
+        if (ts == TRAJ_NEAR_OBSTACLE) {
+            logger().error() << "===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+
+            if (f >= 5)
+                break; //return
+            f++;
+            printf("f=%d\n", f);
+            usleep(1000000);
+        }
+
+        if (ts == TRAJ_COLLISION) {
+            logger().error() << "===== COLLISION ASSERV essai n°" << c << logs::end;
+
+            if (c >= 2)
+                break; // ou return;
+            c++;
+            printf("c=%d\n", c);
+            usleep(1000000);
+        }
+        robot.asserv().resetDisplayTS();
+    }
+//    if ((ts = robot.asserv().doRotateAbs(a)) != TRAJ_OK) {
+//        logger().info() << "Interruption turn !! TRAJ_STATE=" << ts << logs::end;
+//
+//    }
+
     p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
             << p.asservStatus << logs::end;
@@ -123,7 +144,7 @@ void O_AsservTest::run(int argc, char** argv)
     robot.svgPrintPosition();
 
     robot.asserv().freeMotion();
-
+    robot.stopExtraActions();
     logger().info() << "Happy End." << logs::end;
 }
 

@@ -157,7 +157,7 @@ public:
         if (found)
             timers_.erase(save);
         else
-            logger().error() << "Timer [" << timerNameToDelete << "] not found !!" << logs::end;
+            logger().debug() << "Timer [" << timerNameToDelete << "] not found or already deleted !!" << logs::end;
 
         mtimer_.unlock();
     }

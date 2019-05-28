@@ -134,14 +134,12 @@ public:
 
     void stopExtra()
     {
-
+        sensors_.stopTimerSensors();
         ledbar_.stop(true);
         ledbar_.resetAll();
         lcd2x16_.reset();
 
         releaseAll();
-
-        //TODO sensors stop...?
 
     }
 
@@ -213,12 +211,17 @@ public:
 
     void ax12_left_cil_retract(int keep = 0, int speed = 512)
     {
+        //activation du capteur central
+        sensors_.addConfigFront(true, true, true);
+
         servosAx12().setSpeed(180, speed);
         servosAx12().deploy(180, 512, keep);
 
     }
     void ax12_left_cil(int keep = 0, int speed = 512)
     {
+        //desactivation du capteur central
+        sensors_.addConfigFront(true, false, true);
 
         servosAx12().setSpeed(180, speed);
         servosAx12().deploy(180, 232, keep);

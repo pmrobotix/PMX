@@ -29,6 +29,7 @@ public:
 
     ~OPOS6UL_RobotExtended()
     {
+        stopExtraActions();
     }
 
     inline OPOS6UL_ActionsExtended& actions()
