@@ -1,12 +1,14 @@
 #include "L_AsservLineRotateTest.hpp"
 
 #include <stdlib.h>
+#include <unistd.h>
 #include <string>
 
-#include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
+#include "../Common/Asserv/ExtEncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
@@ -56,8 +58,9 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
         logger().error() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
     }
 
+    robot.setMyColor(PMXVIOLET);
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
     left = robot.asserv().base()->extEncoders().getLeftEncoder();
     right = robot.asserv().base()->extEncoders().getRightEncoder();
@@ -77,17 +80,53 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
      }
      logger().error() << "go..."  << logs::end;
      */
-    //robot.actions().sensors().startSensors();
+
+    //detection adverse
+    robot.actions().start();
+    robot.actions().sensors().addTimerSensors(100);
     chrono.start();
 
-    TRAJ_STATE ts;
-    //usleep(50000);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
 
+    TRAJ_STATE ts;
+    int f = 0;
+    int c = 0;
     if (d != 0) {
         logger().info() << "go..." << d << "mm" << logs::end;
-        ts = robot.asserv().doLineAbs(d);
-        if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
-            logger().info() << "MOVE1 COLLISION !!!  ts=" << ts << logs::end;
+
+        while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_OK) {
+
+            logger().info() << "doMoveForwardTo Interruption dist TRAJ_STATE=" << ts << logs::end;
+            robot.svgPrintPosition();
+            robot.asserv().displayTS(ts);
+            if (ts == TRAJ_NEAR_OBSTACLE) {
+                logger().error() << "===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+
+                if (f >= 5) {
+                    logger().error() << "===== TRAJ_NEAR_OBSTACLE BREAK essai n°" << f << logs::end;
+                    break; //return
+                }
+                f++;
+
+                usleep(1000000);
+            }
+
+            if (ts == TRAJ_COLLISION) {
+                logger().error() << "===== COLLISION ASSERV essai n°" << c << logs::end;
+
+                if (c >= 2) {
+                    logger().error() << "===== COLLISION ASSERV essai BREAK n°" << c << logs::end;
+                    break; // ou return;
+                }
+                printf("c=%d\n", c);
+                usleep(1000000);
+            }
+            usleep(1000000);
+            robot.asserv().resetDisplayTS();
+        }
+        //logger().error() << "===== COLLISION ASSERV essai END WHILE on  ts:" << ts << logs::end;
+
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
@@ -97,34 +136,35 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
 
         robot.svgPrintPosition();
     }
-    if (a != 0) {
-        ts = robot.asserv().doRotateAbs(a);
-        if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
-            logger().info() << "TURN COLLISION !!!  ts=" << ts << logs::end;
+    /*
+     if (a != 0) {
+     ts = robot.asserv().doRotateAbs(a);
+     if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
+     logger().info() << "TURN COLLISION !!!  ts=" << ts << logs::end;
 
-        left = robot.asserv().base()->encoders().getLeftEncoder();
-        right = robot.asserv().base()->encoders().getRightEncoder();
-        logger().info() << "2 time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-                << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
-                << robot.asserv().pos_getThetaInDegree() << logs::end;
+     left = robot.asserv().base()->encoders().getLeftEncoder();
+     right = robot.asserv().base()->encoders().getRightEncoder();
+     logger().info() << "2 time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+     << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+     << robot.asserv().pos_getThetaInDegree() << logs::end;
 
-        robot.svgPrintPosition();
+     robot.svgPrintPosition();
 
-        if (d != 0) {
-            //2ème ligne droite
-            ts = robot.asserv().doLineAbs(d);
-            if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
-                logger().info() << "MOVE2 COLLISION !!!  ts=" << ts << logs::end;
+     if (d != 0) {
+     //2ème ligne droite
+     ts = robot.asserv().doLineAbs(d);
+     if (ts != TRAJ_OK) //TRAJ_OK, TRAJ_ERROR, TRAJ_COLLISION, TRAJ_NEAR_OBSTACLE, TRAJ_CANCELLED, TRAJ_INTERRUPTED
+     logger().info() << "MOVE2 COLLISION !!!  ts=" << ts << logs::end;
 
-            left = robot.asserv().base()->encoders().getLeftEncoder();
-            right = robot.asserv().base()->encoders().getRightEncoder();
-            logger().info() << "3 time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-                    << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
-                    << robot.asserv().pos_getThetaInDegree() << logs::end;
-            robot.svgPrintPosition();
-        }
-    }
-sleep(1);
+     left = robot.asserv().base()->encoders().getLeftEncoder();
+     right = robot.asserv().base()->encoders().getRightEncoder();
+     logger().info() << "3 time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+     << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+     << robot.asserv().pos_getThetaInDegree() << logs::end;
+     robot.svgPrintPosition();
+     }
+     }
+     sleep(1);*/
     left = robot.asserv().base()->encoders().getLeftEncoder();
     right = robot.asserv().base()->encoders().getRightEncoder();
     logger().info() << "End time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "

@@ -43,6 +43,7 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     blue_done = false;
     gold_taken = false;
     gold_dropped = false;
+    gold_door_opened = false;
     //todo_alea = 1;
 }
 

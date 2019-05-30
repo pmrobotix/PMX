@@ -36,10 +36,11 @@ bool O_fake_blue()
 
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.asserv().resetDisplayTS();
     robot.ia().iAbyPath().goToZone("zone_fake_blue", &zone);
 
-    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_OK) {
+    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -58,7 +59,6 @@ bool O_fake_blue()
 
         robot.asserv().resetDisplayTS();
     }
-
     return false; //return true si ok sinon false si interruption
 }
 
@@ -67,6 +67,11 @@ bool O_push_blue()
     int f = 0;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start O_push_blue." << logs::end;
+    if (robot.gold_door_opened == true) {
+        robot.logger().info() << "gold_door_opened, then skip blue..." << logs::end;
+        return true;
+    }
+
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
@@ -74,22 +79,23 @@ bool O_push_blue()
 
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.asserv().resetDisplayTS();
     robot.ia().iAbyPath().goToZone("zone_push_blue", &zone);
     int dest_blue = zone.y;
-    while ((ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_OK) {
+    while ((ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " O_push_blue ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
-            if (f > 5)
+            if (f > 2)
                 return false;
             f++;
 
         }
         if (ts == TRAJ_COLLISION) {
             robot.logger().error() << " O_push_blue ===== COLLISION essai n°" << f << logs::end;
-            if (f >= 3)
+            if (f >= 2)
                 return false;
             f++;
 
@@ -104,6 +110,8 @@ bool O_push_blue()
     //test du calage terrain
     //TODO cote gauche a faire!!!!!
     if (robot.getMyColor() == PMXVIOLET) {
+        robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+        robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
         int dist_1 = robot.actions().sensors().rightSide();
         int dist_2 = robot.actions().sensors().rightSide();
         int dist_3 = robot.actions().sensors().rightSide();
@@ -116,9 +124,22 @@ bool O_push_blue()
                 robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
         }
     } else {
-        //TODO YELLOW
+        /*
+        robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+        robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+        int dist_1 = robot.actions().sensors().leftSide();
+        int dist_2 = robot.actions().sensors().leftSide();
+        int dist_3 = robot.actions().sensors().leftSide();
+        float moy = (dist_1 + dist_2 + dist_3) / 3.0;
+        bool change = robot.asserv().calculateDriftLeftSideAndSetPos(dest_blue - 30, moy, 70, 450 + 13);
+        if (change) {
+            if (moy > dest_blue - 30)
+                robot.asserv().doMoveBackwardAndRotateTo(zone.x, zone.y, zone.theta);
+            else
+                robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+        }*/
     }
-
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.logger().info() << "on leve le bras" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
         robot.actions().ax12_rightHand(-1);
@@ -129,7 +150,7 @@ bool O_push_blue()
     robot.logger().info() << "on pousse le bleu" << logs::end;
 //    robot.asserv().ignoreFrontCollision(true);
 //    robot.asserv().ignoreRearCollision(true);
-    robot.asserv().doLineAbs(140);
+    robot.asserv().doLineAbs(150);
     robot.svgPrintPosition();
 
     robot.logger().info() << "on retracte le bras" << logs::end;
@@ -143,8 +164,8 @@ bool O_push_blue()
     robot.displayPoints();
 
     robot.blue_done = true;
-
-    return true; //return true si ok sinon false si interruption
+    return false; //return true si ok sinon false si interruption
+    //return true;
 }
 
 bool O_take_gold()
@@ -163,10 +184,11 @@ bool O_take_gold()
     robot.logger().info() << "on go au goldenium" << logs::end;
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.asserv().resetDisplayTS();
 
     robot.ia().iAbyPath().goToZone("zone_gold", &zone);
-    while ((ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_OK) {
+    while ((ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -202,7 +224,10 @@ bool O_take_gold()
     if ((dist_porte1 + corr) <= 290) //255 et 290
             {
         robot.logger().info() << "PORTE FERMEE !!!!" << logs::end;
-        return false;
+        robot.gold_door_opened = false;
+        return false; // ne marche pas en simu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    } else {
+        robot.gold_door_opened = true;
     }
     robot.actions().ax12_left_cil_retract_more(0);
     robot.actions().ax12_right_cil_retract_more();
@@ -210,9 +235,11 @@ bool O_take_gold()
     robot.logger().info() << "on avance pour prendre le goldenium" << logs::end;
 //    robot.asserv().ignoreFrontCollision(true);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.asserv().resetDisplayTS();
     ts = robot.asserv().doLineAbs(60);
-    robot.asserv().doCalage(80, 35);
+    robot.asserv().doCalage(80, 35);//80
     ts = robot.asserv().doLineAbs(-10);
 
     robot.asserv().displayTS(ts);
@@ -229,6 +256,8 @@ bool O_take_gold()
     robot.logger().info() << "on recule un peu" << logs::end;
 //    robot.asserv().ignoreFrontCollision(true);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.asserv().doLineAbs(-130);
     robot.svgPrintPosition();
 
@@ -256,9 +285,10 @@ bool O_drop_gold()
     robot.logger().info() << "on va deposer" << logs::end;
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.asserv().resetDisplayTS();
     robot.ia().iAbyPath().goToZone("zone_depose", &zone);
-    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_OK) {
+    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -292,8 +322,9 @@ bool O_drop_gold()
     robot.logger().info() << "go...doMoveForwardAndRotateTo(1320, 1230, 77);" << logs::end;
 //    robot.asserv().ignoreFrontCollision(true);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
 
-    while ((ts = robot.asserv().doMoveForwardAndRotateTo(1320, 1230, 77)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveForwardAndRotateTo(1320, 1230, 77)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -318,8 +349,10 @@ bool O_drop_gold()
     robot.logger().error() << "POS : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
             << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
 
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.logger().info() << "doCalage..." << logs::end;
-    robot.asserv().doCalage(220, 45);
+    robot.asserv().doCalage(230, 45);
     robot.svgPrintPosition();
 
     robot.logger().info() << "on lache le goldenium..." << logs::end;
@@ -328,10 +361,12 @@ bool O_drop_gold()
 //robot.actions().ax12_right_cil_retract();
     robot.actions().ax12_left_cil_release(-1);
 
-    sleep(1);
+
 
     robot.points += 24;
     robot.displayPoints();
+
+    sleep(1);
 //on recule
     robot.asserv().doLineAbs(-120);
 
@@ -359,10 +394,11 @@ bool O_fake_balance()
 
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.asserv().resetDisplayTS();
     robot.ia().iAbyPath().goToZone("zone_fake_balance", &zone);
 
-    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_OK) {
+    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -398,9 +434,10 @@ bool O_push_alea()
     if (robot.gold_dropped == false)
         return false;
 
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.asserv().resetDisplayTS();
     robot.ia().iAbyPath().goToZone("zone_alea_violet", &zone);
-    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_OK) {
+    while ((ts = robot.ia().iAbyPath().doMoveForwardTo(zone.x, zone.y)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -423,8 +460,9 @@ bool O_push_alea()
     robot.logger().error() << "POS : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
             << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
 
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.logger().info() << "pousse zone depart" << logs::end;
-    while ((ts = robot.asserv().doMoveForwardAndRotateTo(620, 650, 180)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveForwardAndRotateTo(620, 650, 180)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -449,9 +487,10 @@ bool O_push_alea()
 
     robot.points += 14;
     robot.displayPoints();
-
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.asserv().doLineAbs(-120);
-    while ((ts = robot.asserv().doMoveForwardAndRotateTo(1000, 1005, 60)) != TRAJ_OK) {
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
+    while ((ts = robot.asserv().doMoveForwardAndRotateTo(1000, 1005, 60)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -585,11 +624,15 @@ void O_State_DecisionMakerIA::execute()
     robot.asserv().doRotateTo(150);
 
     robot.points += 6;
+    robot.displayPoints();
     robot.asserv().doLineAbs(-100);
     robot.points += 35;
+    robot.displayPoints();
 
 //On ajoute le timer de detection
-//robot.actions().sensors().addTimerSensors(50);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+    robot.actions().sensors().addTimerSensors(50);
 
     robot.ia().iAbyPath().ia_start();        //launch IA
 

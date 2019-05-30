@@ -35,6 +35,9 @@ public:
     void displayTS(TRAJ_STATE ts);
 
     bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
+
+    void setLowSpeedForward(bool enable, int);
+    void setLowSpeedBackward(bool enable, int);
 };
 
 #endif

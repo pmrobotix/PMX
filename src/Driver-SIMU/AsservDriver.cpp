@@ -421,7 +421,7 @@ int AsservDriver::getMotorRightCurrent()
     return 0;
 }
 
-void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
+void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
 {
     m_pos.lock();
     p_.x = x_m;
@@ -469,7 +469,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 //motion_DoRotate(x_init +);
     //TODO motion_DoFace
 
-    return TRAJ_OK;
+    return TRAJ_FINISHED;
 }
 
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
@@ -545,7 +545,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
 
     asservStarted_ = false;
 
-    return TRAJ_OK;
+    return TRAJ_FINISHED;
 }
 
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
@@ -567,7 +567,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
     m_pos.unlock();
 //logger().error() <<  " temp= " << temp << "  !!!!!"	<< logs::end;
     usleep(increment_time_us * 7);
-    return TRAJ_OK;
+    return TRAJ_FINISHED;
 }
 
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)

@@ -23,6 +23,7 @@ private:
 
     touch_sensor touch_;
 
+//    int prec_;
 public:
 
     /*!
@@ -35,6 +36,7 @@ public:
      */
     ~SwitchDriver();
 
+//    int tirettePressedFiltered();
     int tirettePressed();
     int backLeftPressed();
     int backRightPressed();

@@ -3,12 +3,14 @@
 #include <cstdlib>
 #include <string>
 
+#include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
+#include "OPOS6UL_ActionsExtended.hpp"
 #include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
@@ -67,9 +69,13 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 
     robot.asserv().startMotionTimerAndOdo(true);
 
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
-
+    robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
+
+    robot.actions().start();
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+    robot.actions().sensors().addTimerSensors(50);
 
     chrono.start();
 
@@ -79,8 +85,9 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
-        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
-                << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
+        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+                << robot.asserv().pos_getThetaInDegree() << logs::end;
 
         robot.svgPrintPosition();
 
@@ -89,8 +96,9 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
-        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
-                << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
+        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+                << robot.asserv().pos_getThetaInDegree() << logs::end;
 
         robot.svgPrintPosition();
 
@@ -99,8 +107,9 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
-        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
-                << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
+        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+                << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+                << robot.asserv().pos_getThetaInDegree() << logs::end;
 
         robot.svgPrintPosition();
 
@@ -109,8 +118,9 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
-        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " right= " << right << " ; x=" << robot.asserv().pos_getX_mm() << " y="
-                << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
+        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " right= " << right
+                << " ; x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+                << robot.asserv().pos_getThetaInDegree() << logs::end;
 
         robot.svgPrintPosition();
 
@@ -119,14 +129,16 @@ void O_Asserv_SquareTest::run(int argc, char** argv)
 
         left = robot.asserv().base()->encoders().getLeftEncoder();
         right = robot.asserv().base()->encoders().getRightEncoder();
-        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " right= " << right << " ; x=" << robot.asserv().pos_getX_mm() << " y="
-                << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
+        logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " right= " << right
+                << " ; x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+                << robot.asserv().pos_getThetaInDegree() << logs::end;
 
         robot.svgPrintPosition();
     }
 
-    logger().info() << "End time= " << chrono.getElapsedTimeInMilliSec() << " ; x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " degrees="
-            << robot.asserv().pos_getThetaInDegree() << logs::end;
+    logger().info() << "End time= " << chrono.getElapsedTimeInMilliSec() << " ; x=" << robot.asserv().pos_getX_mm()
+            << " y=" << robot.asserv().pos_getY_mm() << " degrees=" << robot.asserv().pos_getThetaInDegree()
+            << logs::end;
 
     logger().info() << "Happy End." << logs::end;
 }

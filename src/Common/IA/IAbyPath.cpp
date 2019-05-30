@@ -333,7 +333,7 @@ bool IAbyPath::path_doMoveForwardTo(string zoneName, int tempo_ms, int nb_near_o
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
     goToZone(zoneName.c_str(), &zone);
-    while ((ts = doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_OK) {
+    while ((ts = doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_FINISHED) {
 
         robot_->svgPrintPosition();
         //robot_->asserv()->displayTS(ts);
@@ -391,7 +391,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM)
                 logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
 
                 ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
-                if (ts != TRAJ_OK) {
+                if (ts != TRAJ_FINISHED) {
                     return ts;
                 }
                 logger().debug() << "222 p = x " << robot_->asserv()->pos_getX_mm() << " y "
@@ -418,15 +418,15 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM)
 
 TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
-    TRAJ_STATE ts = TRAJ_ERROR;
+    TRAJ_STATE ts = TRAJ_OK;
     ts = doMoveForwardTo(xMM, yMM);
-    if (ts != TRAJ_OK) {
+    if (ts != TRAJ_FINISHED) {
         return ts;
     }
 
     ts = robot_->asserv()->doRotateTo(thetaInDegree);
     robot_->svgPrintPosition();
-    if (ts != TRAJ_OK) {
+    if (ts != TRAJ_FINISHED) {
         return ts;
     }
     return ts;

@@ -5,7 +5,8 @@
 
 enum TRAJ_STATE
 {
-    TRAJ_OK,			//trajectory successfully completed
+    TRAJ_OK,			//init before trajectory
+    TRAJ_FINISHED,                      //trajectory successfully completed
     TRAJ_ERROR,			//unknown error (not implemented !)
     TRAJ_COLLISION,			//trajectory interrupted because of a collision (blocked)
     TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision (sensors)

@@ -149,7 +149,7 @@ int Sensors::front(bool display)
     //logger().info() << " L " << enableFrontLeft_ << " C " << enableFrontCenter_ << " R " << enableFrontRight_ << logs::end;
     int level = 0;
     if (enableFrontLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fL, -140)) { //negatif = capteur placé à gauche
+    if (this->robot()->asserv()->filtre_IsInsideTable(fL, -1)) { //negatif = capteur placé à gauche
         if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
             if (display)
                 logger().info() << "1 frontLeft= " << fL << logs::end;
@@ -165,7 +165,7 @@ int Sensors::front(bool display)
         }
     }
     if (enableFrontRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fR, 140)) {
+    if (this->robot()->asserv()->filtre_IsInsideTable(fR, 1)) {
         if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
             if (display)
                 logger().info() << "1 frontRight= " << fR << logs::end;
@@ -173,7 +173,7 @@ int Sensors::front(bool display)
         }
     }
     if (enableFrontLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fL, -140)) { //negatif = capteur placé à gauche
+    if (this->robot()->asserv()->filtre_IsInsideTable(fL, -1)) { //negatif = capteur placé à gauche
         if ((!ignoreFrontLeft_ && (fL < frontLeftVeryClosedThreshold_))) {
             if (display)
                 logger().info() << "2 frontLeft= " << fL << logs::end;
@@ -189,7 +189,7 @@ int Sensors::front(bool display)
         }
     }
     if (enableFrontRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fR, +140)) {
+    if (this->robot()->asserv()->filtre_IsInsideTable(fR, +1)) {
         if ((!ignoreFrontRight_ && (fR < frontRightVeryClosedThreshold_))) {
             if (display)
                 logger().info() << "2 frontRight= " << fR << logs::end;
@@ -207,7 +207,7 @@ int Sensors::back(bool display)
     int bR = sensorDist("bR");
     int level = 0;
     if (enableBackLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -140)) { //negatif = capteur placé à gauche
+    if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -1)) { //negatif = capteur placé à gauche
         if ((!ignoreBackLeft_ && (bL < backLeftThreshold_))) {
             logger().info() << "1 backLeft= " << bL << logs::end;
             level = 1;
@@ -221,14 +221,14 @@ int Sensors::back(bool display)
         }
     }
     if (enableBackRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 140)) {
+    if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 1)) {
         if ((!ignoreBackRight_ && (bR < backRightThreshold_))) {
             logger().info() << "1 backRight= " << bR << logs::end;
             level = 1;
         }
     }
     if (enableBackLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -140)) {
+    if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -1)) {
         if ((!ignoreBackLeft_ && (bL < backLeftVeryClosedThreshold_))) {
             logger().info() << "2 backLeft= " << bL << logs::end;
             level = 2;
@@ -242,7 +242,7 @@ int Sensors::back(bool display)
         }
     }
     if (enableBackRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 140)) {
+    if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 1)) {
         if ((!ignoreBackRight_ && (bR < backRightVeryClosedThreshold_))) {
             logger().info() << "2 backRight= " << bR << logs::end;
             level = 2;
@@ -266,14 +266,15 @@ void Sensors::stopTimerSensors()
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-    int frontLevel = sensors_.front(true);
+    int frontLevel = sensors_.front(false);
     if (frontLevel >= 1) {
         //send collision to asserv
         if (lastdetect_front_nb_ == 0) {
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnFrontCollisionOnTraj();
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->setLowSpeedForward(true, 20); //TODO valeur differente a faire par robot
+            sensors_.robot()->asserv()->setLowSpeedForward(true);
+
         }
         lastdetect_front_nb_++;
     }
@@ -287,12 +288,13 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         }
         if (frontLevel == 0) {
             lastdetect_front_nb_ = 0;
-            sensors_.robot()->asserv()->setLowSpeedForward(false); //TOD le zero ne sert a rien
+            sensors_.robot()->asserv()->setLowSpeedForward(false); //surcharge par robot utilisée
+            sensors_.robot()->asserv()->resetFrontCollisionOnTraj();
         }
     }
 
 //ARRIERE/////////////////////////////////////////////////////////////////
-    int backLevel = sensors_.back(true);
+    int backLevel = sensors_.back(false);
     if (backLevel >= 1) {
         //send collision to asserv
 
@@ -300,7 +302,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnBackCollisionOnTraj();
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->setLowSpeedBackward(true, 20);
+            sensors_.robot()->asserv()->setLowSpeedBackward(true);
 
         }
         lastdetect_back_nb_++;
@@ -314,7 +316,8 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         }
         if (backLevel == 0) {
             lastdetect_back_nb_ = 0;
-            sensors_.robot()->asserv()->setLowSpeedBackward(false);
+            sensors_.robot()->asserv()->setLowSpeedBackward(false); //surcharge par robot utilisée
+            //TODO sensors_.robot()->asserv()->resetBackCollisionOnTraj();
         }
     }
 

@@ -64,6 +64,8 @@ public:
 
     bool gold_taken;
 
+    bool gold_door_opened;
+
     bool gold_dropped;
 
     //int todo_alea;

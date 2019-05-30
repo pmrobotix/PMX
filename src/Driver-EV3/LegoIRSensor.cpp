@@ -107,8 +107,6 @@ float LegoIRSensor::getDistanceMM()
         //float distance_mm = (percent * 6.0);
         float distance_mm = (percent * 6.0) + 20.0;
 
-        //real distance on the ground
-         distance_mm = distance_mm * 0.8; // cos a = 400/500 = 0.8
 
         return distance_mm;
     } else {

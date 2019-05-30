@@ -103,8 +103,8 @@ public:
     virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);
     virtual void stopMotionTimerAndOdo();
     void disablePID(); //TODO deprecated
-    void setLowSpeedForward(bool enable, int percent = 0);
-    void setLowSpeedBackward(bool enable, int percent = 0);
+    virtual void setLowSpeedForward(bool enable, int percent = 0);
+    virtual void setLowSpeedBackward(bool enable, int percent = 0);
 
     //modes d'arret de l'asservissement
     void freeMotion();
@@ -129,6 +129,7 @@ public:
 
     //attentionLa couleur de match doit deja etre effectué !
     bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
+    bool calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
 
     //void findPidAD(float degrees, int mm, int sec);
     //void findPidLR(float posl, int posr, int sec);
@@ -183,6 +184,7 @@ public:
 
     virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
 
+    void resetFrontCollisionOnTraj();
     virtual void warnFrontCollisionOnTraj();
     virtual void warnBackCollisionOnTraj();
 

@@ -30,11 +30,11 @@ void ServoUsingMotor::moveLeft(int nb)
 }
 void ServoUsingMotor::ejectRight()
 {
-    servoMotordriver_->setMotorPosition(860, ticks_place * 6);
+    servoMotordriver_->setMotorPosition(860, ticks_place * 7);
 }
 void ServoUsingMotor::ejectLeft()
 {
-    servoMotordriver_->setMotorPosition(-860, -ticks_place * 6);
+    servoMotordriver_->setMotorPosition(-860, -ticks_place * 7);
 }
 
 

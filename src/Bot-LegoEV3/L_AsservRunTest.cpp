@@ -84,7 +84,7 @@ void L_AsservRunTest::run(int argc, char** argv)
 
     TRAJ_STATE ts;
     int f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(x, 300)) != TRAJ_OK) { //TODO PB avec le And rotateTo
+    while ((ts = robot.asserv().doMoveForwardTo(x, 300)) != TRAJ_OK) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
 

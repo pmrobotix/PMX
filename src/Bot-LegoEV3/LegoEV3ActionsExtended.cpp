@@ -4,21 +4,19 @@
 #include "../Log/Logger.hpp"
 
 LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot) :
-        ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot), lcd_(botId, *this),
-        servos_std_(*this, AServoDriver::SERVO_STANDARD), servoUsingMotor_(*this)
+        ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot), lcd_(
+                botId, *this), servos_std_(*this, AServoDriver::SERVO_STANDARD), servoUsingMotor_(*this)
 {
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
-
-
-    sensors_.addThresholdFront(250, 0, 250);
-    sensors_.addThresholdFrontVeryClosed(130,0,130);
-
-    sensors_.addThresholdBack(250,0,250);
-    sensors_.addThresholdBackVeryClosed(130,0,130);
 
     sensors_.addConfigFront(true, false, true);
     sensors_.addConfigBack(true, false, true);
 
+    sensors_.addThresholdFront(330, 0, 330);
+    sensors_.addThresholdFrontVeryClosed(200, 0, 200);
+
+    sensors_.addThresholdBack(200, 0, 200);
+    sensors_.addThresholdBackVeryClosed(130, 0, 130);
 
     releaseAll();
 
@@ -64,7 +62,5 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
      servosStd().setMinPulse(0, 600);
      servosStd().setMidPulse(0, 1470);
      servosStd().setMaxPulse(0, 2350);*/
-
-
 
 }

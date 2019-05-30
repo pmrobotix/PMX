@@ -35,9 +35,13 @@ L_State_Init::execute(Robot&)
         robot.actions().lcd().display_content_string("METTRE LA TIRETTE", 4);
 
         robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
-
+        int nb_tirette = 0;
         ButtonTouch b = BUTTON_NONE;
-        while (!robot.actions().tirette().pressed()) {
+        while (nb_tirette < 3) {
+            int tirette = robot.actions().tirette().pressed();
+            if (tirette == 1)
+                nb_tirette++;
+
             b = robot.actions().buttonBar().checkOneOfAllPressed();
             if (b == BUTTON_BACK_KEY) {
                 logger().info() << "Exit by User request! " << logs::end;
@@ -197,7 +201,11 @@ L_State_Init::execute(Robot&)
         bool bb = false;
         robot.actions().lcd().display_content_string("WAIT TIRETTE...", 6);
 
-        while (robot.actions().tirette().pressed()) {
+        nb_tirette = 0;
+        while (nb_tirette < 3) {
+            int tirette = robot.actions().tirette().pressed();
+            if (tirette == 0)
+                nb_tirette++;
             bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
             if (bb) {
                 robot.actions().ledBar().stopAndWait(true);
@@ -231,15 +239,6 @@ L_State_Init::execute(Robot&)
         usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
     }
     robot.actions().lcd().clear();
-    if (robot.getMyColor() == PMXVIOLET) {
-
-        robot.actions().right_arm_take();
-        robot.actions().conveyorBelt_Left_low();
-    } else {
-
-        robot.actions().left_arm_take();
-        robot.actions().conveyorBelt_Right_low();
-    }
 
     robot.actions().ledBar().stopAndWait(true);
 

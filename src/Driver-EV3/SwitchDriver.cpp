@@ -76,16 +76,28 @@ SwitchDriver::SwitchDriver()
 SwitchDriver::~SwitchDriver()
 {
 }
+//
+//int SwitchDriver::tirettePressedFiltered()
+//{
+//    int tirettePressedFiltered();
+//
+//}
 
 int SwitchDriver::tirettePressed()
 {
     usleep(250000);
     if (touch_.value() == 257) //in case of MUX
+    {
         return 1;
+    }
     else if (touch_.value() == 256)
+    {
         return 0;
+    }
     else
+    {
         return -1;
+    }
 }
 
 int SwitchDriver::backLeftPressed()

@@ -60,8 +60,8 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
     float y = 0.0;
     bool result = false;
     RobotPosition p = pos_getPosition();
-    x = p.x + ((lateral_pos_sensor_mm / 1000.0) * cos(p.theta - M_PI_2)) + (distmetre * cos(p.theta));
-    y = p.y + ((lateral_pos_sensor_mm / 1000.0) * sin(p.theta - M_PI_2)) + (distmetre * sin(p.theta));
+    x = p.x + ((lateral_pos_sensor_mm * 140.0 / 1000.0) * cos(p.theta - M_PI_2)) + (distmetre * cos(p.theta));
+    y = p.y + ((lateral_pos_sensor_mm * 140.0 / 1000.0) * sin(p.theta - M_PI_2)) + (distmetre * sin(p.theta));
     if ((x > 0.150 && x < 2.850) && (y > 0.150 && y < 1.500)) //en mètre
         result = true;
     else
@@ -73,4 +73,17 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
         return true; //si ok
     } else
         return false; //si en dehors de la table*/
+}
+
+void OPOS6UL_AsservExtended::setLowSpeedForward(bool enable, int)
+{
+    logger().error() << "LegoEV3AsservExtended::setLowSpeedForward = " << enable << logs::end;
+    Asserv::setLowSpeedForward(enable, 45);
+
+}
+void OPOS6UL_AsservExtended::setLowSpeedBackward(bool enable, int)
+{
+    logger().error() << "LegoEV3AsservExtended::setLowSpeedBackward =" << enable << logs::end;
+
+    Asserv::setLowSpeedBackward(enable, 45);
 }

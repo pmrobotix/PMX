@@ -302,39 +302,41 @@ int AsservEsialR::path_GetLastCommandStatus()
     //TODO path_GetLastCommandStatus deprecated ?
 
     logger().error() << "TODO DEPRECATED ? path_GetLastCommandStatus !!!!!!!!!!!!!" << logs::end;
-    return 0;
+    return -1;
 }
 void AsservEsialR::path_InterruptTrajectory()
 {
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_INTERRUPTED;
-    usleep(300000);
-    path_ResetEmergencyStop();
+    //usleep(500000);
+    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CollisionOnTrajectory()
 {
-//printf("path_CollisionOnTrajectory() sent !!!!!\n");
+    printf("path_CollisionOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
-    usleep(300000);
-    path_ResetEmergencyStop();
+    //usleep(500000);
+    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CollisionRearOnTrajectory()
 {
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
-    usleep(300000);
-    path_ResetEmergencyStop();
+    //usleep(500000);
+    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CancelTrajectory()
 {
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_CANCELLED;
-    usleep(300000);
-    path_ResetEmergencyStop();
+    //usleep(500000);
+    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_ResetEmergencyStop()
 {
+
+    logger().error() << "______________________path_ResetEmergencyStop() !!!!!!!!!!!!!! "<< logs::end;
     commandM_->resetEmergencyStop();
     pathStatus_ = TRAJ_OK;
 }
@@ -345,11 +347,13 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     int timeout = 0;
     //attente du running status
     while (p_.asservStatus != 1) {
+//        logger().debug() << " 111 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
+//                << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI
+//                << std::setw(10) << " s=" << p_.asservStatus << logs::end;
 
         usleep(10000);
         timeout++;
         if (timeout > 10) {
-
             break;
         }
     }
@@ -357,42 +361,54 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     timeout = 0;
     //attente de l'interruption ou fin de trajectoire
     while (p_.asservStatus == 1) {
-
-        //logger().info() << "waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
-
+        //logger().info() << "222 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
         usleep(1000);
         timeout++;
         if (timeout > 10 && p_.asservStatus != 1) {
-
             break;
         }
     }
 
+//    logger().debug() << "END waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
+//            << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI << std::setw(10)
+//            << " s=" << p_.asservStatus << logs::end;
+
     //blocage!!
     if (p_.asservStatus == 3) {
-
         return TRAJ_COLLISION;
-    }
-
-    return pathStatus_;
+    } else if (p_.asservStatus == 0) {
+        return TRAJ_FINISHED;
+    } else if (p_.asservStatus == 2) {
+        //logger().info() << "_______________________waitEndOfTraj() pathStatus_= " << pathStatus_<< logs::end;
+        return pathStatus_;
+    } else
+        return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservEsialR::motion_DoLine(float dist_meters)
 {
+//    if (pathStatus_ != TRAJ_OK)
+//        return pathStatus_;
+    path_ResetEmergencyStop();
     commandM_->addStraightLine(dist_meters * 1000.0f);
-    pathStatus_ = TRAJ_OK;
+    //pathStatus_ = TRAJ_OK;
+
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFace(float x_m, float y_m)
 {
+    path_ResetEmergencyStop();
     commandM_->addGoToAngle(x_m * 1000.0f, y_m * 1000.0f);
-    pathStatus_ = TRAJ_OK;
+    //pathStatus_ = TRAJ_OK;
+
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoRotate(float angle_radians)
 {
+    path_ResetEmergencyStop();
     commandM_->addTurn((angle_radians * 180.0) / M_PI);
-    pathStatus_ = TRAJ_OK;
+    //pathStatus_ = TRAJ_OK;
+
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius)
@@ -403,8 +419,12 @@ TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius)
 
 TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_meters)
 {
+//    if (pathStatus_ != TRAJ_OK)
+//        return pathStatus_;
+    path_ResetEmergencyStop();
     consignC_->add_dist_consigne(Utils::mmToUO(odo_, dist_meters * 1000.0f));
-    pathStatus_ = TRAJ_OK;
+    //pathStatus_ = TRAJ_OK;
+
     return waitEndOfTraj();
 }
 

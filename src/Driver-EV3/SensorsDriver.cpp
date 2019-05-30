@@ -39,11 +39,11 @@ int SensorsDriver::leftSide()
 int SensorsDriver::frontLeft()
 {
     float mm1 = IR_2_AV_G.getDistanceMM();
+
+    //real distance on the ground
+    mm1 = (mm1 * 0.75) + 155; // cos a = 400/500 = 0.8
+
     return mm1;
-//    usleep(20000);
-//    float mm2 = IR_2_AV_G.getDistanceMM();
-//    logger().debug() << "IR_2_AV_G== " << mm1 << " " << mm2 << logs::end;
-//    return (int) ((mm1 + mm2) / 2.0);
 }
 int SensorsDriver::frontCenter()
 {
@@ -52,6 +52,9 @@ int SensorsDriver::frontCenter()
 int SensorsDriver::frontRight()
 {
     float mm1 = IR_1_AV_D.getDistanceMM();
+    //real distance on the ground
+    mm1 = (mm1 * 0.75) + 145; // cos a = 400/500 = 0.8
+
     return mm1;
 //    usleep(20000);
 //    float mm2 = IR_1_AV_D.getDistanceMM();
@@ -62,6 +65,8 @@ int SensorsDriver::frontRight()
 int SensorsDriver::backLeft()
 {
     float mm1 = IR_4_AR_G.getDistanceMM();
+    //real distance on the ground
+    mm1 = (mm1 * 0.85) + 45; // cos a = 400/500 = 0.8
     return mm1;
 //    usleep(20000);
 //    float mm2 = IR_4_AR_G.getDistanceMM();
@@ -74,6 +79,8 @@ int SensorsDriver::backCenter()
 int SensorsDriver::backRight()
 {
     float mm1 = IR_3_AR_D.getDistanceMM();
+    //real distance on the ground
+    mm1 = (mm1 * 0.75) + 45; // cos a = 400/500 = 0.8
     return mm1;
 //    usleep(20000);
 //    float mm2 = IR_3_AR_D.getDistanceMM();

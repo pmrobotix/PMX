@@ -32,6 +32,9 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
         //robot.actions().ledBar().flash(time, LED_GREEN);
     }
 
+    //
+    robot.actions().ax12_left_cil_release(-1);
+
     this->logger().info() << "O_State_Wait90SecAction::execute end100s...stop... "
             << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.freeMotion();
