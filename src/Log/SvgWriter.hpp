@@ -59,9 +59,9 @@ public:
 
     void endHeader();
 
-    void writeText(double x_mm, double y_mm, std::string text);
+    void writeText(float x_mm, float y_mm, std::string text);
 
-    void writeTextCustom(double x_mm, double y_mm, std::string text, std::string color, std::string fontsize);
+    void writeTextCustom(float x_mm, float y_mm, std::string text, std::string color, std::string fontsize);
 
     virtual void writePosition_Bot(float x, float y, float a_rad) = 0;
     virtual void writePosition_BotPos(float x, float y, float a_rad) = 0;

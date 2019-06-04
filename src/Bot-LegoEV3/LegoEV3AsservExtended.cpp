@@ -49,7 +49,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
         logger().debug() << "Version configuration : " << Config::configVersion << logs::end;
         //logger().debug() << Config::dumpConfig() << logs::end;
 
-        double periodSec = Config::asservPeriod;
+        float periodSec = Config::asservPeriod;
 
         //start asserv thread
         pAsservEsialR_->startAsserv(1.0f/periodSec); //f=20 Hz => every 50ms

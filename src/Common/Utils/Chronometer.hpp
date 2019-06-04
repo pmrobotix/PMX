@@ -127,17 +127,17 @@ public:
      * \brief Un alias pour la méthode getElapsedTimeInSec().
      * \return Le nb de periodes ecoulées depuis le début.
      */
-    double getElapsedTime();
+    float getElapsedTime();
 
     /*!
      * \return Le temps du chronomètre en seconde.
      */
-    double getElapsedTimeInSec();
+    float getElapsedTimeInSec();
 
     /*!
      * \return Le temps du chronomètre en milliseconde.
      */
-    double getElapsedTimeInMilliSec();
+    float getElapsedTimeInMilliSec();
 
     /*!
      * \return Le temps du chronomètre en microseconde.

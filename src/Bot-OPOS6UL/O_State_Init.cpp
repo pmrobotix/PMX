@@ -23,33 +23,33 @@ O_State_Init::execute(Robot&)
 
     if (!robot.skipSetup()) {
         //robot.strategy("all");//defaut si BEGIN //TODO utile ?
-
-        logger().info() << "METTRE LA TIRETTE ! " << logs::end;
-        robot.actions().lcd2x16().home();
-        robot.actions().lcd2x16().print("METTRE LA TIRETTE ! ");
-
         ButtonTouch b = BUTTON_NONE;
-        while (!robot.actions().tirette().pressed()) {
-            b = robot.actions().buttonBar().checkOneOfAllPressed();
-            if (b == BUTTON_BACK_KEY) {
-                robot.actions().lcd2x16().home();
-                robot.actions().lcd2x16().clear();
-                robot.actions().lcd2x16().print("EXIIIIIIT !");
-                robot.actions().ledBar().resetAll();
-                robot.actions().ledBar().stopAndWait(true);
-                usleep(200000);
-                logger().info() << "Exit by User request! " << logs::end;
-                robot.actions().lcd2x16().clear();
-                //on quitte le programme!!
-                exit(0);
-            }
-            if (b == BUTTON_ENTER_KEY) {
-                break;
-            }
-            usleep(1000);
-        }
 
-        robot.actions().lcd2x16().clear();
+//        logger().info() << "METTRE LA TIRETTE ! " << logs::end;
+//        robot.actions().lcd2x16().home();
+//        robot.actions().lcd2x16().print("METTRE LA TIRETTE ! ");
+//
+//        while (!robot.actions().tirette().pressed()) {
+//            b = robot.actions().buttonBar().checkOneOfAllPressed();
+//            if (b == BUTTON_BACK_KEY) {
+//                robot.actions().lcd2x16().home();
+//                robot.actions().lcd2x16().clear();
+//                robot.actions().lcd2x16().print("EXIIIIIIT !");
+//                robot.actions().ledBar().resetAll();
+//                robot.actions().ledBar().stopAndWait(true);
+//                usleep(200000);
+//                logger().info() << "Exit by User request! " << logs::end;
+//                robot.actions().lcd2x16().clear();
+//                //on quitte le programme!!
+//                exit(0);
+//            }
+//            if (b == BUTTON_ENTER_KEY) {
+//                break;
+//            }
+//            usleep(1000);
+//        }
+//
+//        robot.actions().lcd2x16().clear();
 
         robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
 
@@ -176,7 +176,6 @@ O_State_Init::execute(Robot&)
 
             }
 
-
         }
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
@@ -187,6 +186,32 @@ O_State_Init::execute(Robot&)
 
         //position et init servo
         setPos();
+
+        logger().info() << "METTRE LA TIRETTE ! " << logs::end;
+        robot.actions().lcd2x16().home();
+        robot.actions().lcd2x16().print("METTRE LA TIRETTE ! ");
+
+        b = BUTTON_NONE;
+        while (!robot.actions().tirette().pressed()) {
+            b = robot.actions().buttonBar().checkOneOfAllPressed();
+            if (b == BUTTON_BACK_KEY) {
+                robot.actions().lcd2x16().home();
+                robot.actions().lcd2x16().clear();
+                robot.actions().lcd2x16().print("EXIIIIIIT !");
+                robot.actions().ledBar().resetAll();
+                robot.actions().ledBar().stopAndWait(true);
+                usleep(200000);
+                logger().info() << "Exit by User request! " << logs::end;
+                robot.actions().lcd2x16().clear();
+                //on quitte le programme!!
+                exit(0);
+            }
+            if (b == BUTTON_ENTER_KEY) {
+                break;
+            }
+            usleep(1000);
+        }
+
 
         //ATTENTE TIRETTE
         robot.waitForInit(true);
@@ -274,21 +299,29 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().print("SET POSITION...");
 
-    robot.actions().ax12_init();
-
     robot.asserv().startMotionTimerAndOdo(false);
 
     robot.actions().lcd2x16().clear();
     robot.asserv().setPositionAndColor(70, 450+13, 0.0, (robot.getMyColor() != PMXVIOLET));
+    //robot.asserv().setPositionAndColor(1902, 105, 90.0, (robot.getMyColor() != PMXVIOLET));
     robot.svgPrintPosition();
 
-    robot.asserv().setLowSpeedForward(false,0); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
+    robot.asserv().setLowSpeedForward(false, 0); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
 
-//    robot.asserv().ignoreFrontCollision(true);
-//    robot.asserv().ignoreRearCollision(true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
     robot.asserv().resetDisplayTS();
     robot.asserv().assistedHandling();
-    TRAJ_STATE ts = robot.asserv().doLineAbs(200);
+    TRAJ_STATE ts;
+    ts = robot.asserv().doLineAbs(150);
+    /*
+    ts = robot.asserv().doLineAbs(200);
+    robot.actions().ax12_init();
+    ts = robot.asserv().doMoveForwardTo(600, 450);
+    robot.actions().ax12_init();
+    ts = robot.asserv().doMoveBackwardAndRotateTo(70 + 150, 450 + 13, 0.0);
+     */
     robot.asserv().displayTS(ts);
     robot.svgPrintPosition();
     robot.actions().lcd2x16().println("SET POSITION : OK");

@@ -58,7 +58,8 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
             << p.asservStatus << " ts=" << ts << logs::end;
     robot.svgPrintPosition();
 
-
+    //ts = robot.asserv().doLineAbs(-d);
+    ts = robot.asserv().doRotateTo(90);
 /*
     //2eme technique
 

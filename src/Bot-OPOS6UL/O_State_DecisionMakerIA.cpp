@@ -104,18 +104,94 @@ bool O_push_blue()
         robot.asserv().resetDisplayTS();
     }
     robot.svgPrintPosition();
-    robot.logger().error() << "POS : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
+    robot.logger().error() << "POS1 : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
             << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
+    /*
+     if (robot.asserv().pos_getY_mm() > 260.0)
+     robot.asserv().doMoveBackwardAndRotateTo(zone.x, 260.0, zone.theta);
+     else
+     robot.asserv().doMoveForwardAndRotateTo(zone.x, 260.0, zone.theta);
+     */
+//    while ((ts = robot.asserv().doMoveBackwardAndRotateTo(zone.x, 260.0, zone.theta)) != TRAJ_FINISHED) {
+//        robot.svgPrintPosition();
+//        robot.asserv().displayTS(ts);
+//        if (ts == TRAJ_NEAR_OBSTACLE) {
+//            robot.logger().error() << " O_push_blue ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+//            if (f > 2)
+//                return false;
+//            f++;
+//
+//        }
+//        if (ts == TRAJ_COLLISION) {
+//            robot.logger().error() << " O_push_blue ===== COLLISION essai n°" << f << logs::end;
+//            if (f >= 2)
+//                return false;
+//            f++;
+//
+//        }
+//        usleep(500000);
+//        robot.asserv().resetDisplayTS();
+//    }
+//    robot.svgPrintPosition();
 
-    //test du calage terrain
-    //TODO cote gauche a faire!!!!!
+//test du calage terrain
+//    int max = 0;
+//    int min = 0;
+//    int value = 0;
+//    int nb = 10;
+//    int data[nb];
+//    int nb_moy = 0;
+//    float moy = 0.0;
+//    for (int ii = 0; ii < nb - 1; ii++) {
+//        if (robot.getMyColor() == PMXVIOLET) {
+//            data[ii] = robot.actions().sensors().rightSide();
+//        } else
+//            data[ii] = robot.actions().sensors().leftSide();
+//        usleep(200000);
+//    }
+//
+//    for (int ii = 0; ii < nb - 1; ii++) {
+//        if (data[ii] > max)
+//            max = data[ii];
+//        if (data[ii] < min)
+//            min = data[ii];
+//    }
+//    if (min != max) {
+//        for (int ii = 0; ii < nb - 1; ii++) {
+//            if ((value != max) || (value != min)) {
+//                value += data[ii];
+//                nb_moy++;
+//            }
+//        }
+//        moy = value * 1.0 / nb_moy;
+//    } else {
+//        moy = min;
+//    }
+//
+
     if (robot.getMyColor() == PMXVIOLET) {
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
         robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-        int dist_1 = robot.actions().sensors().rightSide();
-        int dist_2 = robot.actions().sensors().rightSide();
-        int dist_3 = robot.actions().sensors().rightSide();
-        float moy = (dist_1 + dist_2 + dist_3) / 3.0;
+
+        float moy = robot.actions().sensors().multipleRightSide(10);
+
+        /*
+         int dist_0 = robot.actions().sensors().rightSide();
+         usleep(200000);
+         int dist_1 = robot.actions().sensors().rightSide();
+         usleep(200000);
+         int dist_2 = robot.actions().sensors().rightSide();
+         usleep(200000);
+         int dist_3 = robot.actions().sensors().rightSide();
+         usleep(200000);
+
+         int dist_4 = robot.actions().sensors().rightSide();
+
+
+
+         float moy = (dist_1 + dist_2 + dist_3) / 3.0;
+         robot.logger().error() << "recalage dist_1 =" << dist_1 << "recalage dist_2 =" << dist_2 << "recalage dist_3 ="
+         << dist_3 << logs::end;*/
         bool change = robot.asserv().calculateDriftRightSideAndSetPos(dest_blue - 30, moy, 70, 450 + 13);
         if (change) {
             if (moy > dest_blue - 30)
@@ -124,21 +200,36 @@ bool O_push_blue()
                 robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
         }
     } else {
-        /*
+
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
         robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-        int dist_1 = robot.actions().sensors().leftSide();
-        int dist_2 = robot.actions().sensors().leftSide();
-        int dist_3 = robot.actions().sensors().leftSide();
-        float moy = (dist_1 + dist_2 + dist_3) / 3.0;
+
+        float moy = robot.actions().sensors().multipleLeftSide(10);
+        /*
+         int dist_0 = robot.actions().sensors().leftSide();
+         usleep(200000);
+         int dist_1 = robot.actions().sensors().leftSide();
+         usleep(200000);
+         int dist_2 = robot.actions().sensors().leftSide();
+         usleep(200000);
+         int dist_3 = robot.actions().sensors().leftSide();
+         int dist_4 = robot.actions().sensors().leftSide();
+
+         float moy = (dist_1 + dist_2 + dist_3) / 3.0;
+         robot.logger().error() << "recalage dist_1 =" << dist_1 << "recalage dist_2 =" << dist_2 << "recalage dist_3 ="
+         << dist_3 << logs::end;*/
         bool change = robot.asserv().calculateDriftLeftSideAndSetPos(dest_blue - 30, moy, 70, 450 + 13);
         if (change) {
             if (moy > dest_blue - 30)
                 robot.asserv().doMoveBackwardAndRotateTo(zone.x, zone.y, zone.theta);
             else
                 robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-        }*/
+        }
     }
+    robot.svgPrintPosition();
+    robot.logger().error() << "POS2 : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
+            << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
+
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.logger().info() << "on leve le bras" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
@@ -150,7 +241,7 @@ bool O_push_blue()
     robot.logger().info() << "on pousse le bleu" << logs::end;
 //    robot.asserv().ignoreFrontCollision(true);
 //    robot.asserv().ignoreRearCollision(true);
-    robot.asserv().doLineAbs(150);
+    robot.asserv().doLineAbs(180);
     robot.svgPrintPosition();
 
     robot.logger().info() << "on retracte le bras" << logs::end;
@@ -165,7 +256,7 @@ bool O_push_blue()
 
     robot.blue_done = true;
     return false; //return true si ok sinon false si interruption
-    //return true;
+//return true;
 }
 
 bool O_take_gold()
@@ -211,24 +302,26 @@ bool O_take_gold()
     robot.svgPrintPosition();
     robot.logger().error() << "POS : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
             << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
+    /*
+     //test si porte goldenium
+     robot.logger().info() << "on teste la porte du goldenium" << logs::end;
+     int dist_porte1 = robot.actions().sensors().sensorDist("fC");
+     int dist_porte2 = robot.actions().sensors().sensorDist("fC");
+     int dist_porte3 = robot.actions().sensors().sensorDist("fC");
 
-//test si porte goldenium
-    robot.logger().info() << "on teste la porte du goldenium" << logs::end;
-    int dist_porte1 = robot.actions().sensors().sensorDist("fC");
-    int dist_porte2 = robot.actions().sensors().sensorDist("fC");
-    int dist_porte3 = robot.actions().sensors().sensorDist("fC");
+     int corr = robot.asserv().pos_getY_mm() - 333.0;
+     robot.logger().info() << "dist_porte1= " << dist_porte1 << " dist_porte2= " << dist_porte2 << " dist_porte3= "
+     << dist_porte3 << " corr= " << corr << logs::end;
+     if ((dist_porte1 + corr) <= 290) //255 et 290
+     {
+     robot.logger().info() << "PORTE FERMEE !!!!" << logs::end;
+     robot.gold_door_opened = false;
+     return false; // ne marche pas en simu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     } else {
+     robot.gold_door_opened = true;
+     }*/
+    robot.gold_door_opened = true;
 
-    int corr = robot.asserv().pos_getY_mm() - 333.0;
-    robot.logger().info() << "dist_porte1= " << dist_porte1 << " dist_porte2= " << dist_porte2 << " dist_porte3= "
-            << dist_porte3 << " corr= " << corr << logs::end;
-    if ((dist_porte1 + corr) <= 290) //255 et 290
-            {
-        robot.logger().info() << "PORTE FERMEE !!!!" << logs::end;
-        robot.gold_door_opened = false;
-        return false; // ne marche pas en simu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    } else {
-        robot.gold_door_opened = true;
-    }
     robot.actions().ax12_left_cil_retract_more(0);
     robot.actions().ax12_right_cil_retract_more();
 
@@ -239,7 +332,7 @@ bool O_take_gold()
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.asserv().resetDisplayTS();
     ts = robot.asserv().doLineAbs(60);
-    robot.asserv().doCalage(80, 35);//80
+    robot.asserv().doCalage(80, 35);    //80
     ts = robot.asserv().doLineAbs(-10);
 
     robot.asserv().displayTS(ts);
@@ -258,8 +351,32 @@ bool O_take_gold()
 //    robot.asserv().ignoreRearCollision(true);
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    robot.asserv().doLineAbs(-130);
-    robot.svgPrintPosition();
+    robot.asserv().doLineAbs(-60);
+    //robot.asserv().doLineAbs(-20);
+    //robot.asserv().doLineAbs(-20);
+    int x_temp = robot.asserv().pos_getX_mm();
+    int y_temp = robot.asserv().pos_getY_mm() + 130;
+    while ((ts = robot.asserv().doMoveBackwardTo(x_temp, y_temp , true))
+            != TRAJ_FINISHED) {
+        robot.svgPrintPosition();
+        robot.asserv().displayTS(ts);
+        if (ts == TRAJ_NEAR_OBSTACLE) {
+            robot.logger().error() << " O_take_gold ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+//            if (f > 2)
+//                return false;
+            f++;
+
+        }
+        if (ts == TRAJ_COLLISION) {
+            robot.logger().error() << " O_take_gold ===== COLLISION essai n°" << f << logs::end;
+//            if (f >= 1)
+//                return false;
+            f++;
+        }
+        usleep(200000);
+        robot.asserv().resetDisplayTS();
+
+    }
 
     robot.points += 20;
     robot.displayPoints();
@@ -313,10 +430,10 @@ bool O_drop_gold()
     robot.logger().error() << "POS : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
             << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
 
-    int sec = 45;
+    int sec = 60;
     int time = robot.chrono().getElapsedTimeInSec();
     if (time < sec) {
-        sleep(45 - time);
+        sleep(sec - time);
     }
 
     robot.logger().info() << "go...doMoveForwardAndRotateTo(1320, 1230, 77);" << logs::end;
@@ -351,8 +468,11 @@ bool O_drop_gold()
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+    robot.asserv().setLowSpeedForward(false, 0); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
+
     robot.logger().info() << "doCalage..." << logs::end;
-    robot.asserv().doCalage(230, 45);
+    robot.asserv().doCalage(350, 75);
     robot.svgPrintPosition();
 
     robot.logger().info() << "on lache le goldenium..." << logs::end;
@@ -360,8 +480,8 @@ bool O_drop_gold()
 //robot.actions().ax12_left_cil_retract(0);
 //robot.actions().ax12_right_cil_retract();
     robot.actions().ax12_left_cil_release(-1);
-
-
+    robot.actions().ax12_left_cil_release(-1);
+    robot.actions().ax12_left_cil_release(-1);
 
     robot.points += 24;
     robot.displayPoints();
@@ -546,7 +666,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_blue", 810, 0, 200, 200, 740, 230 + 30, 0);
     robot.ia().iAbyPath().ia_createZone("zone_fake_blue", 810, 800, 200, 200, 810, 800, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_gold", 1300, 0, 200, 200, 1330.0, 333.0, -90.0);
+    robot.ia().iAbyPath().ia_createZone("zone_gold", 1300, 0, 200, 200, 1325.0, 333.0, -90.0);
 
     robot.ia().iAbyPath().ia_addAction("push_blue", &O_push_blue);
     robot.ia().iAbyPath().ia_addAction("take_gold", &O_take_gold);

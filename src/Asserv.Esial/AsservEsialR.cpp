@@ -347,7 +347,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     int timeout = 0;
     //attente du running status
     while (p_.asservStatus != 1) {
-//        logger().debug() << " 111 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
+//        logger().info() << " 111 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
 //                << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI
 //                << std::setw(10) << " s=" << p_.asservStatus << logs::end;
 
@@ -379,7 +379,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     } else if (p_.asservStatus == 0) {
         return TRAJ_FINISHED;
     } else if (p_.asservStatus == 2) {
-        //logger().info() << "_______________________waitEndOfTraj() pathStatus_= " << pathStatus_<< logs::end;
+        logger().info() << "_______________________waitEndOfTraj() COLLISION  pathStatus_= " << pathStatus_<< logs::end;
         return pathStatus_;
     } else
         return TRAJ_ERROR;
@@ -392,7 +392,7 @@ TRAJ_STATE AsservEsialR::motion_DoLine(float dist_meters)
     path_ResetEmergencyStop();
     commandM_->addStraightLine(dist_meters * 1000.0f);
     //pathStatus_ = TRAJ_OK;
-
+printf("____AsservEsialR::motion_DoLine_________pathStatus_=%d \n",pathStatus_);
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFace(float x_m, float y_m)

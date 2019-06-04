@@ -73,7 +73,7 @@ PARAM(int32_t, pinCodeurDchB)
 //--------------------------//
 
 //Période de l'asservissement en sec : T=1/f
-PARAM(double, asservPeriod)
+PARAM(float, asservPeriod)
 
 // Désactivation du command manager (le robot n'est plus asservi mais l'odométrie est toujours active)
 PARAM(bool, disableAsserv)
@@ -98,7 +98,7 @@ PARAM(bool, disableAngleRegu)
 //--------------------------//
 
 // Fenêtre de l'angle dans lequel on considère que le GoTo peut commencer à avancer
-PARAM(double, angleThreshold)
+PARAM(float, angleThreshold)
 
 // Distance en dessous de laquelle on revient en marche arriere si on dépasse, sinon demi-tour
 PARAM(int32_t, returnThreshold)
@@ -116,11 +116,11 @@ PARAM(int32_t, placementOrigineY)
 
 // Nombre de tics codeurs en 1m pour codeur gauche
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-PARAM(double, frontParMetreCodeurG)
+PARAM(float, frontParMetreCodeurG)
 
 // Nombre de tics codeurs en 1m pour codeur droite
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-PARAM(double, frontParMetreCodeurD)
+PARAM(float, frontParMetreCodeurD)
 
 // Distance entre les roues codeuses en mm
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
@@ -187,7 +187,7 @@ PARAM(int32_t, DIST_KI)
 PARAM(int32_t, DIST_KD)
 
 // Coeff permettant de diminuer les valeurs du PID
-PARAM(double, DIST_OUT_RATIO)
+PARAM(float, DIST_OUT_RATIO)
 
 // Valeur de sortie maximum pour le moteur
 PARAM(int32_t, DIST_MAX_OUTPUT)
@@ -209,7 +209,7 @@ PARAM(int32_t, ANGLE_KI)
 PARAM(int32_t, ANGLE_KD)
 
 // Coeff permettant de diminuer les valeurs du PID
-PARAM(double, ANGLE_OUT_RATIO)
+PARAM(float, ANGLE_OUT_RATIO)
 
 // Valeur de sortie maximum pour le moteur
 PARAM(int32_t, ANGLE_MAX_OUTPUT)

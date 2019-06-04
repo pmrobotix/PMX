@@ -26,7 +26,7 @@ private:
 
     //Ratios & Saturation
     /* Coeffs venant de config.h */
-    double outRatio; // Ratio de sortie
+    float outRatio; // Ratio de sortie
     int32_t maxIntegral; // Valeur maximale de l'intégrale
     int32_t maxOutput; // Valeur maximale de la sortie
 

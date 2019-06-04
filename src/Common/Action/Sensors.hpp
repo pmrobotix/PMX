@@ -80,8 +80,13 @@ public:
         return robot_;
     }
 
+    float MultipleRightSide(int nb);
+    float MultipleLeftSide(int nb);
+
     int rightSide();
     int leftSide();
+    float multipleRightSide(int nb);
+    float multipleLeftSide(int nb);
 
     //acces directement aux capteurs
     int sensorDist(std::string sensorname);

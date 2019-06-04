@@ -51,8 +51,8 @@ private:
     int64_t derivee_2nd_neg_ar; // Vient de config.h
 
     //On ajoute de l' "anticipation " pour eviter que la vitesse ne chute brutalement à zéro quand on atteint le point d'arrivée
-    double gainAnticipation_av; // En avant // Vient de config.h
-    double gainAnticipation_ar; // En arrière // Vient de config.h
+    float gainAnticipation_av; // En avant // Vient de config.h
+    float gainAnticipation_ar; // En arrière // Vient de config.h
 
     // Sauvegarde de la vitesse précédente
     int64_t prevConsigneVitesse; // Stocke la vitesse de l'itération précédente

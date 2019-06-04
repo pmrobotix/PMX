@@ -57,8 +57,8 @@ private:
 
     CommandStatus commandStatus;
 
-    double computeDeltaTheta(double deltaX, double deltaY); // Calcul de l'angle à parcourir
-    int64_t computeDeltaDist(double deltaX, double deltaY); // Calcul de la distance à parcourir
+    float computeDeltaTheta(float deltaX, float deltaY); // Calcul de l'angle à parcourir
+    int64_t computeDeltaDist(float deltaX, float deltaY); // Calcul de la distance à parcourir
     // GoTo là où on veut
     void computeGoTo();
     void computeGoToBack();

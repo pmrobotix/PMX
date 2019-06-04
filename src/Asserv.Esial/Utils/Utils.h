@@ -17,7 +17,7 @@ public:
     // Conversions
     int64_t static mmToUO(Odometrie *odo, int32_t valeur);
     int64_t static degToUO(Odometrie *odo, int32_t valeur);
-    int64_t static radToUO(Odometrie *odo, double valeur);
+    int64_t static radToUO(Odometrie *odo, float valeur);
     int32_t static UOTomm(Odometrie *odo, int64_t valeur);
     float static UOToDeg(Odometrie *odo, int64_t valeur);
 

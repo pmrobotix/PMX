@@ -94,15 +94,30 @@ void ConsignController::perform()
         // On vérifie si on n'est pas bloqué. Note: on utilise les getters
         // du MotorsController parce qu'il peut mettre les vitesses à 0
         // si elles sont trop faibles.
-//printf("VitG=%d VitD=%d absA=%ld absD=%ld ",motors->getVitesseG(), motors->getVitesseD(), abs(odometrie->getDeltaThetaBrut()), abs(odometrie->getDeltaDist()));
-        if (motors->getVitesseG() != 0 && motors->getVitesseD() != 0
-                && abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD
-                && abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD) {
+//printf("VitG=%d VitD=%d absA=%d absD=%d \n",motors->getVitesseG(), motors->getVitesseD(), abs(odometrie->getDeltaThetaBrut()), abs(odometrie->getDeltaDist()));
+//        if ((abs(VmoteurG) >= 10 || abs(VmoteurD)  >= 10)
+//                && (abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD
+//                || abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD
+//                        )
+//                )
+//
+//            if ((abs(VmoteurG) >= 10 || abs(VmoteurD)  >= 10)
+//                            && ( ((VmoteurG*VmoteurD >0) && (abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD))
+//                            || ( (VmoteurG*VmoteurD <0) && (abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD))
+//                            )
+//                )
+        if ((abs(VmoteurG) >= 10 || abs(VmoteurD) >= 10)
+                && (((VmoteurG * VmoteurD > 0) && (abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD))
+                        || ((VmoteurG * VmoteurD < 0)
+                                && (abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD))))
+
+                {
             // Bloqué !
             if (blocked_ticks < INT32_MAX) {
                 // On n'incrémente pas en continue pour éviter l'overflow (au bout de 124 jours...)
                 blocked_ticks++;
-                //printf(" blocked_ticks++ %d \n", blocked_ticks);
+                //printf(" blocked_ticks++ %d  (getDeltaThetaBrut())=%lld (getDeltaDist())=%lld , (getVitesseG())=%d , (getVitesseD()=%d\n", blocked_ticks, (odometrie->getDeltaThetaBrut()), (odometrie->getDeltaDist()), motors->getVitesseG(), motors->getVitesseD() );
+                //printf(" blocked_ticks++ %d  (getDeltaThetaBrut())=%lld (getDeltaDist())=%lld , VmoteurG=%d , VmoteurD=%d\n", blocked_ticks, (odometrie->getDeltaThetaBrut()), (odometrie->getDeltaDist()), VmoteurG, VmoteurD );
             }
         } else {
             // Moteurs arrêtés ou robot qui bouge: on n'est pas bloqué
@@ -131,16 +146,16 @@ void ConsignController::setLowSpeed(bool b)
     setLowSpeedBackward(b, Config::DIST_QUAD_AR_LOW_DIV);
 }
 /*
-void ConsignController::setLowSpeed(bool b, unsigned char factor_div_back, unsigned char factor_div_forward)
-{
-    if (b) {
-        dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG / factor_div_back);
-        dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS / factor_div_forward);
-    } else {
-        dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG);
-        dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS);
-    }
-}*/
+ void ConsignController::setLowSpeed(bool b, unsigned char factor_div_back, unsigned char factor_div_forward)
+ {
+ if (b) {
+ dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG / factor_div_back);
+ dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS / factor_div_forward);
+ } else {
+ dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG);
+ dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS);
+ }
+ }*/
 
 void ConsignController::setLowSpeedForward(bool b, int percent)
 {
@@ -162,5 +177,9 @@ void ConsignController::setLowSpeedBackward(bool b, int percent)
 bool ConsignController::isBlocked()
 {
     // Si on est bloqué pendant un certain temps, on le signale
-    return blocked_ticks >= Config::BLOCK_TICK_THRESHOLD;
+    bool b = blocked_ticks >= Config::BLOCK_TICK_THRESHOLD;
+    if (b) {
+        blocked_ticks = 0;
+    }
+    return b;
 }

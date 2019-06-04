@@ -46,17 +46,17 @@ unsigned long long utils::Chronometer::getElapsedTimeInMicroSec()
     return seconds * 1000000 + (endCount_.tv_usec - startCount_.tv_usec);
 }
 
-double utils::Chronometer::getElapsedTimeInMilliSec()
+float utils::Chronometer::getElapsedTimeInMilliSec()
 {
     return this->getElapsedTimeInMicroSec() * 0.001;
 }
 
-double utils::Chronometer::getElapsedTimeInSec()
+float utils::Chronometer::getElapsedTimeInSec()
 {
     return this->getElapsedTimeInMicroSec() * 0.000001;
 }
 
-double utils::Chronometer::getElapsedTime()
+float utils::Chronometer::getElapsedTime()
 {
     return this->getElapsedTimeInSec();
 }

@@ -116,7 +116,7 @@ void SvgWriter::endHeader()
     }
 }
 
-void SvgWriter::writeText(double x, double y, std::string text)
+void SvgWriter::writeText(float x, float y, std::string text)
 {
     if (!done_) {
         if (logger().isActive(logs::Level::INFO)) {
@@ -127,7 +127,7 @@ void SvgWriter::writeText(double x, double y, std::string text)
     }
 }
 
-void SvgWriter::writeTextCustom(double x, double y, std::string text, std::string color, std::string fontsize)
+void SvgWriter::writeTextCustom(float x, float y, std::string text, std::string color, std::string fontsize)
 {
     if (!done_) {
         if (logger().isActive(logs::Level::INFO)) {

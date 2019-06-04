@@ -8,7 +8,7 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
     lcd2x16_.init();
 
     //config des sensors
-    sensors_.addConfigFront(true, true, true);
+    sensors_.addConfigFront(true, false, true);
     sensors_.addConfigBack(false, true, false);
 
     sensors_.addThresholdFront(340, 345, 340);

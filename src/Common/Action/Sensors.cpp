@@ -1,8 +1,11 @@
 #include "Sensors.hpp"
 
+#include <bits/stl_algo.h>
+#include <unistd.h>
 #include <sstream>
 
 #include "../Action.Driver/ASensorsDriver.hpp"
+#include "../Arguments.hpp"
 #include "../Asserv/Asserv.hpp"
 #include "../Asserv/MotorControl.hpp"
 #include "../Asserv/MovingBase.hpp"
@@ -130,6 +133,82 @@ int Sensors::sensorDist(std::string sensorname)
     return -1;
 }
 
+float Sensors::multipleRightSide(int nb)
+{
+    int max = 0;
+    int min = 0;
+    int value = 0;
+
+    int data[nb];
+    int nb_moy = 0;
+    float moy = 0.0;
+    for (int ii = 0; ii < nb; ii++) {
+        data[ii] = rightSide();
+        logger().info() << "Right= " << data[ii] << logs::end;
+        usleep(50000);
+    }
+
+    //Now we call the sort function
+    std::sort(data, data + nb);
+
+    for (int ii = 0; ii < nb; ii++) {
+        logger().info() << "rtrie= " << data[ii] << logs::end;
+        //usleep(50000);
+    }
+
+    moy = (data[3] + data[4] + data[5] + data[6]) / 4;
+
+    return moy;
+}
+
+float Sensors::multipleLeftSide(int nb)
+{
+    int max = 0;
+    int min = 9999999;
+    int value = 0;
+
+    int data[nb];
+    int nb_moy = 0;
+    float moy = 0.0;
+    for (int ii = 0; ii < nb; ii++) {
+        data[ii] = leftSide();
+        logger().info() << "Left= " << data[ii] << logs::end;
+        usleep(50000);
+    }
+
+    //Now we call the sort function
+    std::sort(data, data + nb);
+
+    for (int ii = 0; ii < nb; ii++) {
+        logger().info() << "ltrie= " << data[ii] << logs::end;
+        //usleep(50000);
+    }
+
+    moy = (data[3] + data[4] + data[5] + data[6]) / 4;
+
+    /*
+     for (int ii = 0; ii < nb; ii++) {
+     if (data[ii] > max)
+     max = data[ii];
+     if (data[ii] < min)
+     min = data[ii];
+     }
+     if (min != max) {
+     for (int ii = 0; ii < nb; ii++) {
+     if ((value != max) && (value != min)) {
+     value += data[ii];
+     nb_moy++;
+     }
+     }
+     logger().info() << "nb_moy= " << nb_moy << " min= " << min << " max= " << max << logs::end;
+     moy = value * 1.0 / nb_moy;
+     } else {
+     moy = min;
+     }*/
+
+    return moy;
+}
+
 int Sensors::rightSide()
 {
     return sensorsdriver_->rightSide();
@@ -149,53 +228,53 @@ int Sensors::front(bool display)
     //logger().info() << " L " << enableFrontLeft_ << " C " << enableFrontCenter_ << " R " << enableFrontRight_ << logs::end;
     int level = 0;
     if (enableFrontLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fL, -1)) { //negatif = capteur placé à gauche
-        if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
-            if (display)
-                logger().info() << "1 frontLeft= " << fL << logs::end;
-            level = 1;
+        if (this->robot()->asserv()->filtre_IsInsideTable(fL, -1)) { //negatif = capteur placé à gauche
+            if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
+                if (display)
+                    logger().info() << "1 frontLeft= " << fL << logs::end;
+                level = 1;
+            }
         }
-    }
     if (enableFrontCenter_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fC, 0)) {
-        if ((!ignoreFrontCenter_ && (fC < frontCenterThreshold_))) {
-            if (display)
-                logger().info() << "1 frontCenter= " << fC << logs::end;
-            level = 1;
+        if (this->robot()->asserv()->filtre_IsInsideTable(fC, 0)) {
+            if ((!ignoreFrontCenter_ && (fC < frontCenterThreshold_))) {
+                if (display)
+                    logger().info() << "1 frontCenter= " << fC << logs::end;
+                level = 1;
+            }
         }
-    }
     if (enableFrontRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fR, 1)) {
-        if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
-            if (display)
-                logger().info() << "1 frontRight= " << fR << logs::end;
-            level = 1;
+        if (this->robot()->asserv()->filtre_IsInsideTable(fR, 1)) {
+            if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
+                if (display)
+                    logger().info() << "1 frontRight= " << fR << logs::end;
+                level = 1;
+            }
         }
-    }
     if (enableFrontLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fL, -1)) { //negatif = capteur placé à gauche
-        if ((!ignoreFrontLeft_ && (fL < frontLeftVeryClosedThreshold_))) {
-            if (display)
-                logger().info() << "2 frontLeft= " << fL << logs::end;
-            level = 2;
+        if (this->robot()->asserv()->filtre_IsInsideTable(fL, -1)) { //negatif = capteur placé à gauche
+            if ((!ignoreFrontLeft_ && (fL < frontLeftVeryClosedThreshold_))) {
+                if (display)
+                    logger().info() << "2 frontLeft= " << fL << logs::end;
+                level = 2;
+            }
         }
-    }
     if (enableFrontCenter_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fC, 0)) {
-        if ((!ignoreFrontCenter_ && (fC < frontCenterVeryClosedThreshold_))) {
-            if (display)
-                logger().info() << "2 frontCenter= " << fC << logs::end;
-            level = 2;
+        if (this->robot()->asserv()->filtre_IsInsideTable(fC, 0)) {
+            if ((!ignoreFrontCenter_ && (fC < frontCenterVeryClosedThreshold_))) {
+                if (display)
+                    logger().info() << "2 frontCenter= " << fC << logs::end;
+                level = 2;
+            }
         }
-    }
     if (enableFrontRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(fR, +1)) {
-        if ((!ignoreFrontRight_ && (fR < frontRightVeryClosedThreshold_))) {
-            if (display)
-                logger().info() << "2 frontRight= " << fR << logs::end;
-            level = 2;
+        if (this->robot()->asserv()->filtre_IsInsideTable(fR, +1)) {
+            if ((!ignoreFrontRight_ && (fR < frontRightVeryClosedThreshold_))) {
+                if (display)
+                    logger().info() << "2 frontRight= " << fR << logs::end;
+                level = 2;
+            }
         }
-    }
 
     return level;
 }
@@ -207,47 +286,47 @@ int Sensors::back(bool display)
     int bR = sensorDist("bR");
     int level = 0;
     if (enableBackLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -1)) { //negatif = capteur placé à gauche
-        if ((!ignoreBackLeft_ && (bL < backLeftThreshold_))) {
-            logger().info() << "1 backLeft= " << bL << logs::end;
-            level = 1;
+        if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -1)) { //negatif = capteur placé à gauche
+            if ((!ignoreBackLeft_ && (bL < backLeftThreshold_))) {
+                logger().info() << "1 backLeft= " << bL << logs::end;
+                level = 1;
+            }
         }
-    }
     if (enableBackCenter_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bC, 0)) {
-        if ((!ignoreBackCenter_ && (bC < backCenterThreshold_))) {
-            logger().info() << "1 backCenter= " << bC << logs::end;
-            level = 1;
+        if (this->robot()->asserv()->filtre_IsInsideTable(-bC, 0)) {
+            if ((!ignoreBackCenter_ && (bC < backCenterThreshold_))) {
+                logger().info() << "1 backCenter= " << bC << logs::end;
+                level = 1;
+            }
         }
-    }
     if (enableBackRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 1)) {
-        if ((!ignoreBackRight_ && (bR < backRightThreshold_))) {
-            logger().info() << "1 backRight= " << bR << logs::end;
-            level = 1;
+        if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 1)) {
+            if ((!ignoreBackRight_ && (bR < backRightThreshold_))) {
+                logger().info() << "1 backRight= " << bR << logs::end;
+                level = 1;
+            }
         }
-    }
     if (enableBackLeft_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -1)) {
-        if ((!ignoreBackLeft_ && (bL < backLeftVeryClosedThreshold_))) {
-            logger().info() << "2 backLeft= " << bL << logs::end;
-            level = 2;
+        if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -1)) {
+            if ((!ignoreBackLeft_ && (bL < backLeftVeryClosedThreshold_))) {
+                logger().info() << "2 backLeft= " << bL << logs::end;
+                level = 2;
+            }
         }
-    }
     if (enableBackCenter_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bC, 0)) {
-        if ((!ignoreBackCenter_ && (bC < backCenterVeryClosedThreshold_))) {
-            logger().info() << "2 backCenter= " << bC << logs::end;
-            level = 2;
+        if (this->robot()->asserv()->filtre_IsInsideTable(-bC, 0)) {
+            if ((!ignoreBackCenter_ && (bC < backCenterVeryClosedThreshold_))) {
+                logger().info() << "2 backCenter= " << bC << logs::end;
+                level = 2;
+            }
         }
-    }
     if (enableBackRight_)
-    if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 1)) {
-        if ((!ignoreBackRight_ && (bR < backRightVeryClosedThreshold_))) {
-            logger().info() << "2 backRight= " << bR << logs::end;
-            level = 2;
+        if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 1)) {
+            if ((!ignoreBackRight_ && (bR < backRightVeryClosedThreshold_))) {
+                logger().info() << "2 backRight= " << bR << logs::end;
+                level = 2;
+            }
         }
-    }
 
     return level;
 }

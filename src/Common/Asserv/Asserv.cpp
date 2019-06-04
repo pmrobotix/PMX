@@ -296,7 +296,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
 //    logger().debug() << "END doRotateAbs degrees=" << degrees << " ignorefront=" << temp_ignoreFrontCollision_ << logs::end;
     return ts;
 }
-TRAJ_STATE Asserv::doRotateLeft(float degreesRelative)
+TRAJ_STATE Asserv::doRotateLeft(float degreesRelative) //TODO utiliser doRotateTo (qui contient le modulo ?)
 {
     if (matchColorPosition_ != 0) {
         return doRotateAbs(-degreesRelative); //jaune
@@ -364,7 +364,7 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegreeAbsolute)
 
     return ts;
 }
-TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment_mm)
+TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, float adjustment_mm)
 {
     float dx = getRelativeX(xMM) - pos_getX_mm();
     float dy = yMM - pos_getY_mm();
@@ -381,14 +381,21 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, float adjustment_mm)
 
     TRAJ_STATE ts = doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
     if (ts != TRAJ_FINISHED)
-        return ts;
+    {
+        if(!rotate_ignored)
+            return ts;
+        else
+        {
+            logger().error() << " __on passe au doline !!!"  << logs::end;
+        }
+    }
     float dist = sqrt(dx * dx + dy * dy);
     logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
 
     return doLineAbs(dist + adjustment_mm);
 
 }
-TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
+TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
 {
     xMM = getRelativeX(xMM);
 
@@ -401,7 +408,17 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM)
 
     TRAJ_STATE ts = doRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI));
     if (ts != TRAJ_FINISHED)
-        return ts;
+        {
+            if(!rotate_ignored)
+                return ts;
+            else
+            {
+                //logger().error() << " __on passe au doline !!!"  << logs::end;
+            }
+        }
+
+//    if (ts != TRAJ_FINISHED)
+//        return ts;
     float dist = sqrt(dx * dx + dy * dy);
     return doLineAbs(-dist);
 }
@@ -493,14 +510,14 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
         float y_depart_mm)
 {
     logger().error() << "calculate : " << " d2_theo_bordure_mm= " << d2_theo_bordure_mm << " d2b_bordure_mm= "
-            << d2b_bordure_mm << " x_depart_mm= " << x_depart_mm << " y_depart_mm= " << y_depart_mm << logs::end;
+            << d2b_bordure_mm << " x_depart_mm= " << getRelativeX(x_depart_mm) << " y_depart_mm= " << y_depart_mm << logs::end;
 
     if (abs(d2b_bordure_mm - d2_theo_bordure_mm) >= 5) {
 
 //Partie théorique basé sur la position d'arrivée (que croit le robot)
         RobotPosition p = pos_getPosition();
         //tan teta = d1/l
-        float dx = (p.x * 1000.0) - x_depart_mm;
+        float dx = (p.x * 1000.0) - getRelativeX(x_depart_mm);
         float dy = (p.y * 1000.0) - y_depart_mm;
         float l_theo_mm = std::sqrt(dx * dx + dy * dy);
         float d1_theo = d2_theo_bordure_mm; //TODO a modifier avec cos(beta)
@@ -519,14 +536,14 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
                 << teta_error * 180.0 / M_PI << " p.x=" << p.x << " l_theo_mm / 1000.0=" << (l_theo_mm / 1000.0)
                 << logs::end;
 
-        float alpha = acos((float) ((dx) / (l_theo_mm)));
+        float alpha = acos((float) ((abs(dx)) / (l_theo_mm)));//yellow
         float alpha_error = alpha - teta_error;
 
         logger().error() << "calculate  : " << " teta_b= " << teta_b << " teta_error= " << teta_error << " alpha_deg= "
                 << alpha * 180.0 / M_PI << " alpha_error_deg= " << alpha_error * 180.0 / M_PI << logs::end;
         //changement des coordonnées
-        float new_teta = p.theta + teta_error;
-        float new_x = x_depart_mm + (l_theo_mm * cos(alpha_error));
+        float new_teta = (p.theta - teta_error);
+        float new_x = getRelativeX(x_depart_mm) - (l_theo_mm * cos(alpha_error)); //yellow
         float new_y = y_depart_mm - (l_theo_mm * sin(alpha_error));
 
         logger().error() << "old position : " << " x= " << p.x << " y= " << p.y << " a_deg= " << p.theta * 180.0 / M_PI
@@ -540,7 +557,8 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
                 << " a_deg= " << new_teta * 180.0 / M_PI << logs::end;
         //regle de 3 pour modifier le x (decalage sur aire de depart qui influe sur le x)
 
-        setPositionAndColor(new_x, new_y, new_teta * 180.0 / M_PI, matchColorPosition_);
+        setPositionAndColor(getRelativeX(new_x), new_y, getRelativeAngle(new_teta * 180.0 / M_PI), matchColorPosition_);
+
         return true;
     } else
         return false;

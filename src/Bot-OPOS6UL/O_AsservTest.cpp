@@ -51,7 +51,7 @@ void O_AsservTest::run(int argc, char** argv)
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXVIOLET);
     robot.asserv().startMotionTimerAndOdo(true); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(0.0, 300.0, -90, (robot.getMyColor() != PMXVIOLET));
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
             << p.asservStatus << logs::end;
@@ -60,12 +60,38 @@ void O_AsservTest::run(int argc, char** argv)
     logger().info() << "GO distance mm=" << d << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
+//    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
+//    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+int f=0;
+    while ((ts = robot.asserv().doMoveBackwardTo(robot.asserv().pos_getX_mm(), robot.asserv().pos_getY_mm() + d))
+                != TRAJ_FINISHED) {
+            robot.svgPrintPosition();
+            robot.asserv().displayTS(ts);
+            if (ts == TRAJ_NEAR_OBSTACLE) {
+                robot.logger().error() << " O_take_gold ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+    //            if (f > 2)
+    //                return false;
+                f++;
+
+            }
+            if (ts == TRAJ_COLLISION) {
+                robot.logger().error() << " O_take_gold ===== COLLISION essai n°" << f << logs::end;
+    //            if (f >= 1)
+    //                return false;
+                f++;
+            }
+            usleep(200000);
+            robot.asserv().resetDisplayTS();
+
+        }
+
+    exit(0);
 
     robot.asserv().resetDisplayTS();
     int c = 0;
-    int f = 0;
+    f = 0;
     while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_OK) {
 
         logger().info() << "Interruption dist TRAJ_STATE=" << ts << logs::end;
@@ -92,7 +118,6 @@ void O_AsservTest::run(int argc, char** argv)
         }
         robot.asserv().resetDisplayTS();
     }
-
 
     p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "

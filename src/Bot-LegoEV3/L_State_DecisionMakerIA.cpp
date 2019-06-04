@@ -60,9 +60,9 @@ bool L_take_grand_distributeur()
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
     f = 0;
+    robot.logger().info() << "while zone  L_take_grand_distributeur." << logs::end;
     while ((ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
-
 
         robot.logger().info() << "L_take_grand_distributeur doMoveForwardAndRotateTo trajstate=" << ts << logs::end;
 
@@ -74,20 +74,20 @@ bool L_take_grand_distributeur()
             //            if (f > 2)
             //                return false;
             f++;
-            usleep(400000);
+            usleep(100000);
         }
         if (ts == TRAJ_COLLISION) {
             robot.logger().error() << " zone_grand_distributeur  ===== COLLISION essai n°" << f << logs::end;
             //            if (f >= 1)
             //                return false;
             f++;
-            usleep(400000);
+            usleep(100000);
         }
         robot.asserv().displayTS(ts);
     }
 
     robot.svgPrintPosition();
-
+    robot.logger().info() << "ARMsssss" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.actions().right_arm_take();
@@ -113,21 +113,21 @@ bool L_take_grand_distributeur()
     }
     f = 0;
     robot.logger().info() << "go to vert1" << logs::end;
-    while ((ts = robot.asserv().doMoveForwardTo(510, pos)) != TRAJ_FINISHED) {
+    while ((ts = robot.asserv().doMoveForwardTo(510, pos, true)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " position vert1 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
 //            if (f > 2)
 //                return false;
             f++;
-            usleep(400000);
+            usleep(100000);
         }
         if (ts == TRAJ_COLLISION) {
             robot.logger().error() << " position vert1 ===== COLLISION essai n°" << f << logs::end;
-//            if (f >= 1)
-//                return false;
+            if (f >= 3)
+                break;
             f++;
-            usleep(400000);
+            usleep(100000);
         }
     }
     robot.svgPrintPosition();
@@ -151,7 +151,9 @@ bool L_take_grand_distributeur()
 
     f = 0;
     robot.logger().info() << "go to bleu" << logs::end;
-    while ((ts = robot.asserv().doMoveForwardTo(520 + 190, pos)) != TRAJ_FINISHED) {
+    robot.asserv().doLineAbs(190);
+    /*
+    while ((ts = robot.asserv().doMoveForwardTo(520 + 190, pos, true)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " position bleu ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
@@ -160,10 +162,12 @@ bool L_take_grand_distributeur()
         }
         if (ts == TRAJ_COLLISION) {
             robot.logger().error() << " position bleu ===== COLLISION essai n°" << f << logs::end;
+            if (f >= 3)
+                break;
             f++;
         }
-        usleep(400000);
-    }
+        usleep(100000);
+    }*/
 
     robot.logger().info() << "prendre bleu " << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
@@ -182,7 +186,9 @@ bool L_take_grand_distributeur()
     //position vert2
     robot.logger().info() << "go to vert2" << logs::end;
     f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(520 + 190 + 190, pos)) != TRAJ_FINISHED) {
+    robot.asserv().doLineAbs(190);
+    /*
+    while ((ts = robot.asserv().doMoveForwardTo(520 + 190 + 190, pos, true)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " position vert2 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
@@ -191,11 +197,13 @@ bool L_take_grand_distributeur()
         }
         if (ts == TRAJ_COLLISION) {
             robot.logger().error() << " position vert2 ===== COLLISION essai n°" << f << logs::end;
+            if (f >= 3)
+                break;
             f++;
         }
-        if (f >= 5)
-            usleep(200000);
-    }
+
+        usleep(100000);
+    }*/
     robot.logger().info() << " prendre vert2" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
         //robot.asserv().doLineAbs(205);
@@ -214,9 +222,12 @@ bool L_take_grand_distributeur()
     //Calage balance
     f = 0;
     if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.asserv().doLineAbs(200);
+        /*
         float temp_x = robot.asserv().pos_getX_mm();
         float temp_y = robot.asserv().pos_getY_mm();
-        while ((ts = robot.asserv().doMoveForwardTo(temp_x + 200, temp_y)) != TRAJ_FINISHED) {
+        while ((ts = robot.asserv().doMoveForwardTo(temp_x + 200, temp_y, true)) != TRAJ_FINISHED) {
             robot.svgPrintPosition();
             if (ts == TRAJ_NEAR_OBSTACLE) {
                 robot.logger().error() << " position +200 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
@@ -225,13 +236,15 @@ bool L_take_grand_distributeur()
             }
             if (ts == TRAJ_COLLISION) {
                 robot.logger().error() << " position +200 ===== COLLISION essai n°" << f << logs::end;
+                if (f >= 3)
+                    break;
                 f++;
             }
-            usleep(1000000);
-        }
+            usleep(100000);
+        }*/
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
         robot.logger().info() << " turn 6 degres" << logs::end;
-        robot.asserv().doRotateLeft(12);
+        robot.asserv().doRotateLeft(8);
 
         robot.logger().info() << " do calage" << logs::end;
         robot.actions().conveyorBelt_Right_low(true);
@@ -243,19 +256,31 @@ bool L_take_grand_distributeur()
         robot.asserv().doLineAbs(-60);
         robot.actions().left_eject_all(0);
 
-        robot.asserv().doRotateRight(15);
-        robot.asserv().doRotateLeft(2);
-        robot.asserv().doRotateRight(15);
-        robot.asserv().doRotateLeft(15);
+        /*robot.asserv().doRotateRight(2);
+         robot.asserv().doRotateLeft(15);
+         robot.asserv().doRotateRight(2);
+         robot.asserv().doRotateLeft(5);*/
+        //robot.asserv().doRotateLeft(15);
+        sleep(5);
+
+        robot.points += 28;
 
         robot.asserv().doLineAbs(-120);
         robot.svgPrintPosition();
         //robot.actions().init_servos();
-        robot.asserv().doRotateRight(165);
+        f = 0;
+        while (robot.asserv().doRotateRight(165) != TRAJ_FINISHED) {
+
+            f++;
+            robot.logger().info() << "doRotateRight(165) f=" << f << logs::end;
+            if (f > 10)
+                break;
+            usleep(200000);
+        }
 
     } else {
         robot.asserv().doLineAbs(200);
-        robot.asserv().doRotateRight(12);
+        robot.asserv().doRotateRight(8);
 
         robot.actions().conveyorBelt_Left_low(true);
 
@@ -267,10 +292,14 @@ bool L_take_grand_distributeur()
         robot.asserv().doLineAbs(-60);
         robot.actions().right_eject_all(0);
         //sleep(2);
-        robot.asserv().doRotateLeft(15);
-        robot.asserv().doRotateRight(2);
-        robot.asserv().doRotateLeft(15);
-        robot.asserv().doRotateRight(15);
+        /*robot.asserv().doRotateLeft(2);
+         robot.asserv().doRotateRight(15);
+         robot.asserv().doRotateLeft(2);
+         robot.asserv().doRotateRight(5);*/
+        //robot.asserv().doRotateRight(15);
+        sleep(5);
+
+        robot.points += 28;
 
         robot.asserv().doLineAbs(-120);
         robot.svgPrintPosition();
@@ -287,51 +316,133 @@ bool L_take_grand_distributeur()
 //        robot.asserv().doRotateLeft(170);
     }
 
-    robot.logger().info() << " position rouge3" << logs::end;
+    robot.logger().info() << " position move1" << logs::end;
     f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(1100, pos - 5)) != TRAJ_FINISHED) {
+    while ((ts = robot.asserv().doMoveForwardTo(640, 1250)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
-            robot.logger().error() << " position rouge3 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+            robot.logger().error() << " position move1 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+            if (f >= 1)
+                break;
             f++;
 
         }
         if (ts == TRAJ_COLLISION) {
-            robot.logger().error() << " position rouge3 ===== COLLISION essai n°" << f << logs::end;
+            robot.logger().error() << " position move1 ===== COLLISION essai n°" << f << logs::end;
+            if (f >= 1)
+                break;
             f++;
         }
 
-        if (f >= 5)
+        if (f >= 1)
             usleep(200000);
     }
-    robot.actions().init_servos();
-    while ((ts = robot.asserv().doMoveForwardTo(810, pos)) != TRAJ_FINISHED) {
+    //sleep(10);
+
+    robot.logger().info() << " position move2" << logs::end;
+    f = 0;
+    while ((ts = robot.asserv().doMoveForwardTo(440, 800)) != TRAJ_FINISHED) {
+        robot.svgPrintPosition();
+        if (ts == TRAJ_NEAR_OBSTACLE) {
+            robot.logger().error() << " position move2 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+            if (f >= 1)
+                break;
+            f++;
+
+        }
+        if (ts == TRAJ_COLLISION) {
+            robot.logger().error() << " position move2 ===== COLLISION essai n°" << f << logs::end;
+            if (f >= 1)
+                break;
+            f++;
+        }
+
+        if (f >= 1)
+            usleep(200000);
+    }
+
+    robot.logger().info() << " position -90" << logs::end;
+    f = 0;
+    while ((ts = robot.asserv().doRotateTo(-90)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot.logger().error() << " position rouge3 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+            if (f >= 1)
+                break;
             f++;
 
         }
         if (ts == TRAJ_COLLISION) {
             robot.logger().error() << " position rouge3 ===== COLLISION essai n°" << f << logs::end;
+            if (f >= 1)
+                break;
             f++;
         }
-        usleep(100000);
-    }
-    robot.asserv().doRotateLeft(170);
 
-    if (robot.getMyColor() == PMXVIOLET) {
-
-        robot.logger().info() << "left_prendre_palet rouge 3" << logs::end;
-        robot.actions().left_prendre_palet(1500, 2);
-
-    } else {
-
-        robot.logger().info() << "right_prendre_palet rouge 3" << logs::end;
-        robot.actions().right_prendre_palet(1500, 2);
-
+        if (f >= 1)
+            usleep(200000);
     }
 
+    robot.points += 12;
+
+    ts = robot.asserv().doLineAbs(-600);
+    robot.actions().init_servos();
+
+    /*
+     robot.logger().info() << " position rouge3" << logs::end;
+     f = 0;
+     while ((ts = robot.asserv().doMoveForwardTo(1100, pos)) != TRAJ_FINISHED) {
+     robot.svgPrintPosition();
+     if (ts == TRAJ_NEAR_OBSTACLE) {
+     robot.logger().error() << " position rouge3 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+     if (f >= 1)
+     break;
+     f++;
+
+     }
+     if (ts == TRAJ_COLLISION) {
+     robot.logger().error() << " position rouge3 ===== COLLISION essai n°" << f << logs::end;
+     if (f >= 1)
+     break;
+     f++;
+     }
+
+     if (f >= 1)
+     usleep(200000);
+     }
+     robot.actions().init_servos();
+
+     while ((ts = robot.asserv().doMoveForwardTo(810, pos)) != TRAJ_FINISHED) {
+     robot.svgPrintPosition();
+     if (ts == TRAJ_NEAR_OBSTACLE) {
+     robot.logger().error() << " position rouge3 ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+     if (f >= 1)
+     break;
+     f++;
+
+     }
+     if (ts == TRAJ_COLLISION) {
+     robot.logger().error() << " position rouge3 ===== COLLISION essai n°" << f << logs::end;
+     if (f >= 1)
+     break;
+     f++;
+     }
+     usleep(100000);
+     }
+     robot.asserv().doRotateLeft(170);
+
+     if (robot.getMyColor() == PMXVIOLET) {
+
+     robot.logger().info() << "left_prendre_palet rouge 3" << logs::end;
+     robot.actions().left_prendre_palet(1500, 2);
+
+     } else {
+
+     robot.logger().info() << "right_prendre_palet rouge 3" << logs::end;
+     robot.actions().right_prendre_palet(1500, 2);
+
+     }
+     */
     /*
      robot.asserv().doMoveForwardTo(700, 1300);
      robot.svgPrintPosition();
@@ -371,9 +482,9 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_palet", 400, 700, 100, 100, 700, 750, -180);
     if (robot.getMyColor() == PMXVIOLET)
-        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1420, 90);
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1415, 90);
     else
-        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1420, 90);
+        robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 300, 1415, 90);
 
     //robot.ia().iAbyPath().ia_addAction("push_palet", &L_push_palet);
     robot.ia().iAbyPath().ia_addAction("take_grand_distributeur", &L_take_grand_distributeur);

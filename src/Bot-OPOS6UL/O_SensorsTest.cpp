@@ -28,7 +28,7 @@ void O_SensorsTest::run(int argc, char** argv)
             << p.asservStatus << logs::end;
 
     //execution sans le actionTimer
-    int front, back, left, right;
+    int front, back, left, right, mright, mleft;
     utils::Chronometer chrono("O_SensorsTest");
     chrono.start();
     robot.actions().sensors().setIgnoreAllFrontNearObstacle(false);
@@ -40,9 +40,14 @@ void O_SensorsTest::run(int argc, char** argv)
         front = robot.actions().sensors().front(true);
         back = robot.actions().sensors().back(true);
 
-        usleep(600000);
+        mright = robot.actions().sensors().multipleRightSide(10);
+        mleft = robot.actions().sensors().multipleLeftSide(10);
+
+        usleep(100000);
         logger().info() << " front=" << front << "   back=" << back << "                       left=" << left
                 << "   right=" << right << logs::end;
+        logger().info() << "                                         " << "                       mleft=" << mleft << "   mright=" << mright<< logs::end;
+        logger().info() << logs::end;
     }
 
     //TODO execution avec l'actionTimer

@@ -171,7 +171,7 @@ void AsservDriver::setMotorRightPower(int value, int timems)
             _motor_right_.set_speed_sp(value).set_time_sp(timems).run_timed();
         } else {
             limit(value, MAXVALUE_duty_cycle_sp);
-            //logger().debug() << "RIGHT percent = " << value << logs::end;
+            //logger().error() << "RIGHT percent = " << value << logs::end;
             //_motor_right_.set_duty_cycle_sp(value).run_direct();
             _motor_right_.set_duty_cycle_sp_run_direct(value);
         }

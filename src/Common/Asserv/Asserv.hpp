@@ -117,9 +117,9 @@ public:
     TRAJ_STATE doFaceTo(float xMM, float yMM);
     //relative motion (depends on current position of the robot)
     TRAJ_STATE doRotateTo(float thetaInDegreeAbsolute);
-    TRAJ_STATE doMoveForwardTo(float xMM, float yMM, float adjustment = 0);
+    TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);
     TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
-    TRAJ_STATE doMoveBackwardTo(float xMM, float yMM);
+    TRAJ_STATE doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored= false);
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
@@ -165,7 +165,6 @@ public:
                 limit -= 360;
             return limit;
         }
-
         return degrees;
     }
 
