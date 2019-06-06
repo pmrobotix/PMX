@@ -93,7 +93,7 @@ public:
     bool addOption(TCHAR chOptionName, tstring strDescription = _T(""));
     bool addOption(Option &option);
     bool addArgument(tstring strName, tstring strDescription = _T(""), tstring strDefault = _T(""));
-    bool parse(int argc, TCHAR* argv[]);
+    bool parse(int argc, TCHAR* argv[], bool stopWithErrors = true);
     void setDescription(tstring desc);
 
     tstring &operator[](int n);

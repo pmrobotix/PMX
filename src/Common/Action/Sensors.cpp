@@ -186,26 +186,6 @@ float Sensors::multipleLeftSide(int nb)
 
     moy = (data[3] + data[4] + data[5] + data[6]) / 4;
 
-    /*
-     for (int ii = 0; ii < nb; ii++) {
-     if (data[ii] > max)
-     max = data[ii];
-     if (data[ii] < min)
-     min = data[ii];
-     }
-     if (min != max) {
-     for (int ii = 0; ii < nb; ii++) {
-     if ((value != max) && (value != min)) {
-     value += data[ii];
-     nb_moy++;
-     }
-     }
-     logger().info() << "nb_moy= " << nb_moy << " min= " << min << " max= " << max << logs::end;
-     moy = value * 1.0 / nb_moy;
-     } else {
-     moy = min;
-     }*/
-
     return moy;
 }
 

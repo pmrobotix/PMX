@@ -32,7 +32,7 @@ public:
      * \brief Constructeur de la classe.
      */
     L_AsservRunTest() :
-            FunctionalTest("Asserv_Run", "AV/AR en xy avec sensors.")
+            FunctionalTest("Asserv_Run", "Suite de points en xy avec/sans sensors.")
     {
     }
 
@@ -51,61 +51,5 @@ public:
     virtual void configureConsoleArgs(int argc, char** argv);
 
 };
-//
-///*!
-// * \brief Cette action permet de
-// *
-// */
-//class TestActionRun: public IAction
-//{
-//private:
-//
-//    /*!
-//     * \brief Retourne le \ref Logger associé à la classe \ref TestActionRun.
-//     */
-//    static const logs::Logger & logger()
-//    {
-//        static const logs::Logger & instance = logs::LoggerFactory::logger("TestActionRun");
-//        return instance;
-//    }
-//
-//    /*!
-//     * \brief Référence vers le test.
-//     */
-//    L_AsservRunTest & amt_;
-//
-//    utils::Chronometer chrono_;
-//
-//    int i_;
-//
-//public:
-//
-//    /*!
-//     * \brief Constructeur de la classe.
-//     * \param amt
-//     *        Reference vers l'objet associée.
-//     */
-//    TestActionRun(L_AsservRunTest & amt);
-//
-//    /*!
-//     * \brief Destructeur de la classe.
-//     */
-//    virtual inline ~TestActionRun()
-//    {
-//    }
-//
-//    /*!
-//     * \brief Execution de l'action.
-//     */
-//    virtual bool execute();
-//
-//    /*!
-//     * \brief Retourne la description de l'action.
-//     */
-//    virtual inline std::string info()
-//    {
-//        return "TestAction";
-//    }
-//};
 
 #endif

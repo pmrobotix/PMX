@@ -21,35 +21,35 @@ SensorsDriver::~SensorsDriver()
 
 int SensorsDriver::rightSide()
 {
-    return 0;
+    return 100;
 }
 int SensorsDriver::leftSide()
 {
-    return 0;
+    return 100;
 }
 
 int SensorsDriver::frontLeft()
 {
-    return 0;
+    return 999;
 }
 int SensorsDriver::frontCenter()
 {
-    return 0;
+    return 999;
 }
 int SensorsDriver::frontRight()
 {
-    return 0;
+    return 999;
 }
 
 int SensorsDriver::backLeft()
 {
-    return 0;
+    return 999;
 }
 int SensorsDriver::backCenter()
 {
-    return 0;
+    return 999;
 }
 int SensorsDriver::backRight()
 {
-    return 0;
+    return 999;
 }

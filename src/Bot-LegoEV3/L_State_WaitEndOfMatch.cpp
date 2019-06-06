@@ -27,11 +27,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     logger().debug() << "Start Chronometer" << logs::end;
     robot.chrono().start();
 
-    bool front = false;
-    bool rear = false;
     uint c = 0;
-    uint lastdetect_front_nb_ = 0;
-    uint lastdetect_rear_nb_ = 0;
     bool stop = false;
     while (robot.chrono().getElapsedTimeInSec() <= 98) {
 
@@ -45,110 +41,11 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             break;
         }
 
-        //test sensors
-//        front = false;
-//        rear = false;
-//
-//        front = robot.actions().sensors().front();
-//        if (front) {
-//            robot.asserv().setFrontCollision();
-//        }
-//
-//        rear = robot.actions().sensors().rear();
-//        if (rear) {
-//            robot.asserv().setRearCollision();
-//        }
-        //AVANT
-
-//        bool front = robot.actions().sensors().front();
-//        bool frontVeryclosed = robot.actions().sensors().frontVeryClosed();
-//
-//        if (front) {
-//            if (!robot.asserv_default->getIgnoreFrontCollision()) {
-//                robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-//                robot.asserv_default->setFrontCollision();
-//                robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-//
-//                //robot.asserv_default->setLowSpeed(true);
-//            }
-//
-//            //exit(0);
-//
-//        }
-        /*
-         if (front) {
-         //send collision to asserv
-         if (lastdetect_front_nb_ == 0) {
-
-         if (!robot.asserv_default->getIgnoreFrontCollision()) {
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-         robot.asserv_default->setFrontCollision();
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-
-         robot.asserv_default->setLowSpeed(true);
-         }
-         }
-         lastdetect_front_nb_++;
-         } else {
-         lastdetect_front_nb_ = 0;
-         robot.asserv_default->setLowSpeed(false);
-         }
-         if (lastdetect_front_nb_ > 0) {
-         if (frontVeryclosed) {
-         this->logger().error() << "====> setFrontCollision frontVeryclosed! nb="<< lastdetect_front_nb_
-         << " ignorefrontdefault=" << robot.asserv_default->getIgnoreFrontCollision()
-         << " ignorefront=" << robot.asserv().getIgnoreFrontCollision()
-         << logs::end;
-         //if (!robot.asserv_default->getIgnoreFrontCollision()) {
-         this->logger().error() << "====> non ignored setFrontCollision frontVeryclosed! nb="<< lastdetect_front_nb_<< logs::end;
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-         robot.asserv_default->setFrontCollision();
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-         // }
-         }
-         }
-         */
-        //ARRIERE
-        //bool rear = robot.actions().sensors().rear();
-        //bool rearVeryclosed = robot.actions().sensors().rearVeryClosed();
-        /*        if (rear) {
-         //send collision to asserv
-         if (lastdetect_rear_nb_ == 0) {
-
-         if (!robot.asserv_default->getIgnoreRearCollision()) {
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-         robot.asserv_default->setRearCollision();
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-
-         //robot.asserv_default->setLowSpeed(true);//TODO a faire en arrière parceque ca interfere avec la partie au dessus
-         }
-         }
-         lastdetect_rear_nb_++;
-         } else {
-         lastdetect_rear_nb_ = 0;
-         //robot.asserv_default->setLowSpeed(false);//TODO a faire en arrière parceque ca interfere avec la partie au dessus
-         }
-         if (lastdetect_rear_nb_ > 0) {
-         if (rearVeryclosed) {
-
-         if (!robot.asserv_default->getIgnoreRearCollision()) {
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-         robot.asserv_default->setRearCollision();
-         robot.asserv_default->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-         }
-         }
-         }
-         */
         usleep(100000);
         if (c % 20 == 0)
         {
             robot.displayPoints();
             this->logger().error() << "chrono " << robot.chrono().getElapsedTimeInSec()
-//            << " nb="
-//                    << lastdetect_front_nb_ << " front=" << front << " frontV=" << frontVeryclosed << "    nb="
-//                    << lastdetect_rear_nb_ << " rear=" << rear << " rearV=" << rearVeryclosed << "    ignorefrontd="
-//                    << robot.asserv_default->getIgnoreFrontCollision() << "    ignorefront="
-//                    << robot.asserv().getIgnoreFrontCollision()
                     << logs::end;
         }
         c++;

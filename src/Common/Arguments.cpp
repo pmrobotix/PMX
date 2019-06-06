@@ -30,7 +30,7 @@ Arguments::~Arguments()
 {
 }
 
-bool Arguments::parse(int argc, TCHAR *argv[])
+bool Arguments::parse(int argc, TCHAR *argv[], bool stopWithErrors)
 {
     if (m_strCommandName.empty())
         m_strCommandName = argv[0];
@@ -47,9 +47,11 @@ bool Arguments::parse(int argc, TCHAR *argv[])
             OptionMap::iterator it = m_mOptions.find(chOptionName);
 
             if (it == m_mOptions.end()) {
-                cerr << m_strCommandName << " error: Unknown option " << strArgument << "." << endl;
-                usage();
-                return false;
+                if (stopWithErrors) {
+                    cerr << m_strCommandName << " error: Unknown option " << strArgument << "." << endl;
+                    usage();
+                    return false;
+                }
             } else {
                 it->second.m_bSet = true;
 
@@ -67,10 +69,12 @@ bool Arguments::parse(int argc, TCHAR *argv[])
                     for (uint nOptArg = 0; nOptArg < it->second.m_vArguments.size(); i++, nOptArg++) {
                         if (i >= argc || m_strOptionmarkers.find(tstring(argv[i]).substr(0, 1)) != tstring::npos) {
                             if (nOptArg < nNonOptionalArgs) {
+
                                 cerr << m_strCommandName << " error: Too few arguments for option " << strArgument
                                         << "." << endl;
                                 usage();
                                 return false;
+
                             } else {
                                 break;
                             }
@@ -85,12 +89,15 @@ bool Arguments::parse(int argc, TCHAR *argv[])
         {
             if (nArg >= m_vArguments.size()) {
                 //DO Nothing - let many arguments for further functional tests
-
-                //cerr << m_strCommandName << " error: Too much arguments. " << endl;
-                //usage();
-                //return false;
+//                if (stopWithErrors) {
+//                    cerr << m_strCommandName << " error: Too much arguments. " << endl;
+//                    usage();
+//                    return false;
+//                }
             } else
+            {
                 m_vArguments[nArg++].m_strValue = strArgument;
+            }
         }
     }
 
@@ -130,7 +137,7 @@ bool Arguments::addOption(Option &option)
 
 bool Arguments::usage()
 {
-    usleep(200000); //pour laisser les messages d'erreurs s'afficher auparavant.
+    usleep(100000); //pour laisser les messages d'erreurs s'afficher auparavant.
     cerr << "Usage: " << m_strCommandName;
 
     for (OptionMap::iterator it = m_mOptions.begin(); it != m_mOptions.end(); it++) {

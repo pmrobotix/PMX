@@ -290,6 +290,7 @@ bool L_take_grand_distributeur()
         robot.logger().info() << "left_eject_all" << logs::end;
 
         robot.asserv().doLineAbs(-60);
+        robot.svgPrintPosition();
         robot.actions().right_eject_all(0);
         //sleep(2);
         /*robot.asserv().doRotateLeft(2);
@@ -305,6 +306,7 @@ bool L_take_grand_distributeur()
         robot.svgPrintPosition();
 //        robot.actions().init_servos();
         robot.asserv().doRotateLeft(165);
+        robot.svgPrintPosition();
 
 //        robot.asserv().doLineAbs(210);l
 //        robot.asserv().doRotateRight(15);
@@ -337,6 +339,7 @@ bool L_take_grand_distributeur()
         if (f >= 1)
             usleep(200000);
     }
+    robot.svgPrintPosition();
     //sleep(10);
 
     robot.logger().info() << " position move2" << logs::end;
@@ -360,6 +363,7 @@ bool L_take_grand_distributeur()
         if (f >= 1)
             usleep(200000);
     }
+    robot.svgPrintPosition();
 
     robot.logger().info() << " position -90" << logs::end;
     f = 0;
@@ -382,10 +386,12 @@ bool L_take_grand_distributeur()
         if (f >= 1)
             usleep(200000);
     }
+    robot.svgPrintPosition();
 
     robot.points += 12;
 
     ts = robot.asserv().doLineAbs(-600);
+
     robot.actions().init_servos();
 
     /*

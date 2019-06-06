@@ -8,12 +8,12 @@ struct Parameter {
     enum Type {
         INT32,
         BOOL,
-        DOUBLE
+        FLOAT
     };
 
     Parameter(std::string name, int32_t *ptr) : name(name), ptr(ptr), type(INT32) { *int_ptr = 0; }
     Parameter(std::string name, bool *ptr) : name(name), ptr(ptr), type(BOOL) { *bool_ptr = false; }
-    Parameter(std::string name, float *ptr) : name(name), ptr(ptr), type(DOUBLE) { *float_ptr = 0; }
+    Parameter(std::string name, float *ptr) : name(name), ptr(ptr), type(FLOAT) { *float_ptr = 0; }
 
     template <typename T>
     void set(T val) const {
@@ -28,7 +28,7 @@ struct Parameter {
             case BOOL:
                 *bool_ptr = (value == "true" || value == "1");
                 break;
-            case DOUBLE:
+            case FLOAT:
                 *float_ptr = atof(value.c_str());
                 break;
         }
@@ -45,7 +45,7 @@ struct Parameter {
                 out << std::boolalpha << get<bool>();
                 break;
 
-            case DOUBLE:
+            case FLOAT:
                 out << get<float>();
                 break;
         }

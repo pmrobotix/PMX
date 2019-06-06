@@ -48,7 +48,8 @@ int main(int argc, char** argv)
     robot.getConsoleManager().add(new L_ActionManagerTimerTest());
     robot.getConsoleManager().add(new L_Asserv_CalageTest());
 
-    robot.parseConsoleArgs(argc, argv);
+    //parse default to retrieve default parameter (t or m)
+    robot.parseConsoleArgs(argc, argv, false);
 
     //start the Robot (functional tests or match)
     robot.begin(argc, argv);

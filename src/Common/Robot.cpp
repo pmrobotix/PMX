@@ -53,7 +53,6 @@ Robot::~Robot()
     logs::LoggerFactory::instance().stopLog();
 }
 
-
 void Robot::svgPrintPosition()
 {
     if (asserv_default_ != NULL)
@@ -99,21 +98,23 @@ void Robot::configureDefaultConsoleArgs()
     }
 }
 
-void Robot::parseConsoleArgs(int argc, char** argv)
+void Robot::parseConsoleArgs(int argc, char** argv, bool stopWithErrors)
 {
+    if (stopWithErrors) {
+        // request option "h" and print out manual if set...
+        if (cArgs_['h']) {
+            cArgs_.usage();
+            std::cout << "Available functional tests: " << std::endl;
+            cmanager_.displayAvailableTests("", -1);
+            exit(0);
+        }
+    }
 
-    if (!cArgs_.parse(argc, argv)) {
-        logger().error() << "Error parsing" << logs::end;
+    if (!cArgs_.parse(argc, argv, stopWithErrors)) {
+        logger().debug() << "Error parsing DEFAULT" << logs::end;
         exit(-1);
     }
 
-    // request option "h" and print out manual if set...
-    if (cArgs_['h']) {
-        cArgs_.usage();
-        std::cout << "Available functional tests: " << std::endl;
-        cmanager_.displayAvailableTests("", -1);
-        exit(0);
-    }
 }
 
 void Robot::begin(int argc, char** argv)
@@ -139,11 +140,11 @@ void Robot::begin(int argc, char** argv)
             char cInput;
             cInput = ConsoleKeyInput::mygetch(); //wait a user action
             //printf("button= %d<\n", cInput);
-            if (cInput == 27)// if ch is the escape sequence with num code 27, k turns 1 to signal the next
-            {
+            if (cInput == 27)            // if ch is the escape sequence with num code 27, k turns 1 to signal the next
+                    {
                 cInput = ConsoleKeyInput::mygetch();
                 if (cInput == 91) // if the previous char was 27, and the current 91, k turns 2 for further use
-                {
+                        {
                     cInput = ConsoleKeyInput::mygetch();
                 }
             }
@@ -151,26 +152,26 @@ void Robot::begin(int argc, char** argv)
             printf("final button= %d \n", cInput);
 
             switch (cInput) {
-                case 10:
+            case 10:
                 strcpy(msg_ipc.mtext, "enter");
                 break;
-                case 127:
+            case 127:
                 strcpy(msg_ipc.mtext, "back");
                 break;
-                case 65:
+            case 65:
                 strcpy(msg_ipc.mtext, "up");
                 break;
-                case 66:
+            case 66:
                 strcpy(msg_ipc.mtext, "down");
                 break;
-                case 67:
+            case 67:
                 strcpy(msg_ipc.mtext, "right");
                 break;
-                case 68:
+            case 68:
                 strcpy(msg_ipc.mtext, "left");
                 break;
 
-                default:
+            default:
 
                 break;
 

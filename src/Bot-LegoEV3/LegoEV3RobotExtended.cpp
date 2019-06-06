@@ -42,8 +42,9 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
 void LegoEV3RobotExtended::displayPoints()
 {
     this->actions().lcd().clear();
-    this->actions().lcd().display_content_string("Points = ", 4);
-    this->actions().lcd().display_content_integer(this->points, 5);
+    std::string p = "Points=";
+    this->actions().lcd().display_content_string(p, 4);
+    this->actions().lcd().display_content_integer(this->points, 4, 9);
 
 }
 
@@ -56,10 +57,10 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
 {
     Robot::begin(argc, argv);
 
-    logger().debug() << "LegoEV3RobotExtended::begin" << logs::end;
+    logger().debug() << "LegoEV3RobotExtended::begin cArgs_.isOption('t')=" << cArgs_.isOption('t')<< logs::end;
 
     //specific match case ands strategies
-    if (cArgs_["type"] == "m" or cArgs_["type"] == "M") {
+    if (cArgs_["type"] == "m" or cArgs_["type"] == "M") {    //if (cArgs_.isOption('t') == 0) {
 
         this->isEmpty(true);
         decisionMaker_ = new L_State_DecisionMakerIA(*this);

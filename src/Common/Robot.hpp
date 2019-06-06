@@ -223,7 +223,7 @@ public:
     /*!
      * \brief Parse console parameters (console for tests or main program)..
      */
-    void parseConsoleArgs(int argc, char** argv);
+    void parseConsoleArgs(int argc, char** argv, bool stopWithErrors = true);
 
     /*!
      * \brief Start the robot (console for tests or main program)..

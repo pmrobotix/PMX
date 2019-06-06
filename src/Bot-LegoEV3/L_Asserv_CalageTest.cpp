@@ -60,19 +60,7 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
 
     //ts = robot.asserv().doLineAbs(-d);
     ts = robot.asserv().doRotateTo(90);
-/*
-    //2eme technique
 
-
-    ts = robot.asserv().doMoveForwardTo(200, 20);
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << " ts=" << ts << logs::end;
-    robot.svgPrintPosition();
-
-    ts = robot.asserv().doMoveForwardTo(400, 60);
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << " ts=" << ts << logs::end;
-    robot.svgPrintPosition();*/
 
     logger().info() << "Happy End." << logs::end;
 }

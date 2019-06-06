@@ -20,71 +20,78 @@ void L_AsservRunTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-    //match color
+    robot.getArgs().addArgument("nb", "nbr position", "1");
     robot.getArgs().addArgument("x", "x mm");
-    //robot.getArgs().addArgument("y", "y mm");
-    //robot.getArgs().addArgument("d", "distance");
+    robot.getArgs().addArgument("y", "y mm");
 
-    //reparse arguments
+    Arguments::Option cOpt('+', "Coordinates x,y,a");
+    cOpt.addArgument("coordx", "coord x mm", "0.0");
+    cOpt.addArgument("coordy", "coord y mm", "300.0");
+    cOpt.addArgument("coorda", "coord teta mm", "0.0");
+    robot.getArgs().addOption(cOpt);
+
+    //reparse again arguments for the specific test
     robot.parseConsoleArgs(argc, argv);
+
 }
 
 void L_AsservRunTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
     utils::Chronometer chrono("L_AsservRunTest");
     long left;
     long right;
 
+    int nb = 0;
     float x = 0.0;
-    //float y = 0.0;
-    //float a = 0.0;
+    float y = 0.0;
+    float coordx = 0.0;
+    float coordy = 0.0;
+    float coorda_deg = 0.0;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
     Arguments args = robot.getArgs();
+    if (args["nb"] != "0") {
+        nb = atoi(args["nb"].c_str());
+        logger().debug() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
+    }
 
     if (args["x"] != "0") {
         x = atof(args["x"].c_str());
         logger().debug() << "Arg x set " << args["x"] << ", x = " << x << logs::end;
     }
-    /*if (args["y"] != "0")
-     {
-     y = atof(args["y"].c_str());
-     logger().debug() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
-     }
-     if (args["d"] != "0")
-     {
-     a = atof(args["d"].c_str());
-     logger().debug() << "Arg a set " << args["d"] << ", a = " << a << logs::end;
-     }*/
+    if (args["y"] != "0") {
+        y = atof(args["y"].c_str());
+        logger().debug() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
+    }
+
+
+
+    coordx = atof(args['+']["coordx"].c_str());
+    coordy = atof(args['+']["coordy"].c_str());
+    coorda_deg = atof(args['+']["coorda"].c_str());
 
     robot.asserv().startMotionTimerAndOdo(true);
 
-    logger().info() << "COORD 0,300" << logs::end;
-    robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+    logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
+
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXVIOLET));
 
     robot.svgPrintPosition();
 
     chrono.start();
 
-    logger().info() << "COORD x,300 avec x=" << x << logs::end;
-
     robot.actions().start();
     robot.actions().sensors().addTimerSensors(50);
 
-    //robot.actions().addAction(new TestActionRun(*this));
-
-    //level 0 - pas d'ignore
-    //level 1 - on ignore le level 1 et inferieur
-    //level 2 - on ignore le level 2 et inferieur
-    //robot.actions().sensors().setIgnoreNearObstacleMinLevel(0,0,0,0,0,0);
+    logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
 
     TRAJ_STATE ts;
     int f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(x, 300)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveForwardTo(x, y)) != TRAJ_OK) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
 
@@ -101,7 +108,6 @@ void L_AsservRunTest::run(int argc, char** argv)
         }
         robot.asserv().resetDisplayTS();
 
-
     }
 
     left = robot.asserv().base()->encoders().getLeftEncoder();
@@ -114,28 +120,3 @@ void L_AsservRunTest::run(int argc, char** argv)
 
     logger().info() << "Happy End." << logs::end;
 }
-//
-//TestActionRun::TestActionRun(L_AsservRunTest & amt) :
-//        amt_(amt), chrono_("TestActionRun")
-//{
-//    chrono_.start();
-//    i_ = 0;
-//}
-//
-////execution de la tâche
-//bool TestActionRun::execute()
-//{
-//    logger().info() << " !!!!! execution time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
-//    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-//    logger().info() << "ACTIVATION DETECTION ADVERSAIRE !" << logs::end;
-//
-//    //robot.actions().sensors().startSensors();
-//
-//    Automate automate;
-//    IAutomateState* stateWaitEndOfMatch = new L_State_WaitEndOfMatch();
-//    // Start the automate and wait for its return
-//    automate.run(robot, stateWaitEndOfMatch);
-//
-//    return false;
-//
-//}
