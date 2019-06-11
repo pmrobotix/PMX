@@ -44,26 +44,26 @@ void L_AsservEsialTest::run(int argc, char** argv)
         logger().debug() << "Arg step set " << args["step"] << ", step = " << step << logs::end;
     }
 
-    utils::Chronometer chrono("L_AsservEsialTest");
+    //utils::Chronometer chrono("L_AsservEsialTest");
 
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
-    LegoEV3AsservExtended asserv = robot.asserv();
-    ExtEncoderControl extEncoders = asserv.base()->extEncoders();
-    chrono.start();
+    //LegoEV3AsservExtended asserv = robot.asserv();
+    //ExtEncoderControl extEncoders = asserv.base()->extEncoders();
+    robot.chrono().start();
 
     if (step == 1) {
         logger().info() << "ETAPE 1 : TEST CODEURS - compter sur un mètre" << logs::end;
         //test1 les codeurs sur 1m
         while (1) {
 
-            left = extEncoders.getLeftEncoder();
-            right = extEncoders.getRightEncoder();
+            left = robot.asserv().base()->extEncoders().getLeftEncoder();
+            right = robot.asserv().base()->extEncoders().getRightEncoder();
 
-            logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
-                    << " ; right= " << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
-                    << asserv.pos_getThetaInDegree() << logs::end;
+            logger().info() << nb << " time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left
+                    << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
+                    << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
             usleep(100000);
             nb++;
         }
@@ -73,15 +73,15 @@ void L_AsservEsialTest::run(int argc, char** argv)
         logger().info() << "ETAPE 2 : TEST MOTEURS ET CODEURS" << logs::end;
         //test2 moteurs et codeurs dans le bon sens
         while (1) {
-            asserv.base()->motors().runMotorLeft(25, 0);
-            asserv.base()->motors().runMotorRight(25, 0);
+            robot.asserv().base()->motors().runMotorLeft(25, 0);
+            robot.asserv().base()->motors().runMotorRight(25, 0);
 
-            left = extEncoders.getLeftEncoder();
-            right = extEncoders.getRightEncoder();
+            left = robot.asserv().base()->extEncoders().getLeftEncoder();
+            right = robot.asserv().base()->extEncoders().getRightEncoder();
 
-            logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-                    << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
-                    << asserv.pos_getThetaInDegree() << logs::end;
+            logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left
+                    << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
+                    << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
             usleep(100000);
             nb++;
             if (nb > 50)
@@ -94,6 +94,7 @@ void L_AsservEsialTest::run(int argc, char** argv)
     if (step == 3) {
         logger().info() << "ETAPE 3 : assistedHandling pour regler P" << logs::end;
         while (1) {
+            robot.asserv().disablePID(); //TODO deactivate QuadRamp
             robot.asserv().assistedHandling();
             sleep(1);
         }
@@ -103,6 +104,7 @@ void L_AsservEsialTest::run(int argc, char** argv)
     //reste dans la boucle d'attente sir le quadramp n'est pas activée pour terminer
     if (step == 4) {
         logger().info() << "ETAPE 4 : on avance pour regler D" << logs::end;
+        robot.asserv().disablePID(); //deactivate QuadRamp
         robot.asserv().assistedHandling();
         robot.asserv().doLineAbs(200);
         sleep(1);
@@ -110,18 +112,22 @@ void L_AsservEsialTest::run(int argc, char** argv)
 
     if (step == 5) {
         logger().info() << "ETAPE 5 : on tourne pour regler D" << logs::end;
+        robot.asserv().disablePID(); //deactivate QuadRamp
         robot.asserv().assistedHandling();
         robot.asserv().doRotateAbs(90);
         sleep(1);
 
     }
-    //test4 quadramp
 
-    logger().info() << "END t= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
-            << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a=" << asserv.pos_getThetaInDegree()
-            << logs::end;
+    left = robot.asserv().base()->extEncoders().getLeftEncoder();
+    right = robot.asserv().base()->extEncoders().getRightEncoder();
+    logger().info() << "END t= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+            << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+            << robot.asserv().pos_getThetaInDegree() << logs::end;
+
     robot.svgPrintPosition();
 
     logger().info() << "Happy End." << logs::end;
+
 }
 

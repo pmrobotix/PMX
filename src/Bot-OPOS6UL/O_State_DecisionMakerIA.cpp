@@ -356,8 +356,7 @@ bool O_take_gold()
     //robot.asserv().doLineAbs(-20);
     int x_temp = robot.asserv().pos_getX_mm();
     int y_temp = robot.asserv().pos_getY_mm() + 130;
-    while ((ts = robot.asserv().doMoveBackwardTo(x_temp, y_temp , true))
-            != TRAJ_FINISHED) {
+    while ((ts = robot.asserv().doMoveBackwardTo(x_temp, y_temp , true)) != TRAJ_FINISHED) {
         robot.svgPrintPosition();
         robot.asserv().displayTS(ts);
         if (ts == TRAJ_NEAR_OBSTACLE) {

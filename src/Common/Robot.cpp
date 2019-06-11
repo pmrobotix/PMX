@@ -33,7 +33,7 @@ using namespace std;
 Robot::Robot() :
         chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2019", "/") // use character "/" instead of "-" for arguments
 {
-
+    points = 0;
     actions_default_ = NULL;
     asserv_default_ = NULL;
 
@@ -48,9 +48,13 @@ Robot::Robot() :
 
 Robot::~Robot()
 {
+    svgPrintEndOfFile();
+
     stopMotionTimerAndActionManager();
+
     //Tue le log s'il existe (core dump sinon)
     logs::LoggerFactory::instance().stopLog();
+
 }
 
 void Robot::svgPrintPosition()
@@ -283,18 +287,25 @@ void Robot::begin(int argc, char** argv)
             cmanager_.displayMenuFunctionalTestsAndRun(argc, argv);
         }
     }
+
 }
 
 void Robot::stopMotionTimerAndActionManager()
 {
+
     if (asserv_default_ != NULL) {
         this->asserv_default_->stopMotionTimerAndOdo();
+        logger().error() << "asserv_default_ stopMotionTimerAndOdo OK! " << logs::end;
     } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
 
     if (actions_default_ != NULL) {
-        this->actions_default_->stop();
+        this->actions_default_->stop(); //clear actions and timers
+
+        logger().error() << "actions_default stop OK! " << logs::end;
         this->actions_default_->cancel(); //stop devices and wait manager to finish
+
+        logger().error() << "actions_default cancel OK! " << logs::end;
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
 }
@@ -303,5 +314,24 @@ void Robot::freeMotion()
 {
     this->asserv_default_->freeMotion();
     this->asserv_default_->base()->motors().stopMotors();
+}
 
+void Robot::resetDisplayTS()
+{
+    logger().error() << "resetDisplayTS ! (To be surcharged) " << logs::end;
+
+}
+
+void Robot::displayTS(TRAJ_STATE ts)
+{
+    logger().error() << "displayTS ! (To be surcharged) " << logs::end;
+}
+void Robot::resetDisplayObstacle()
+{
+    logger().error() << "resetDisplayObstacle ! (To be surcharged) " << logs::end;
+}
+
+void Robot::displayObstacle(int level)
+{
+    logger().error() << "displayObstacle ! (To be surcharged) " << logs::end;
 }

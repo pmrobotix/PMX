@@ -1,7 +1,7 @@
 #include "Asserv.hpp"
 
-#include <unistd.h>
 #include <cmath>
+#include <cstdlib>
 
 #include "../../Asserv.Esial/AsservEsialR.hpp"
 #include "../../Asserv.Insa/AsservInsa.hpp"
@@ -23,7 +23,7 @@ Asserv::Asserv(std::string botId, Robot * robot)
         pAsservInsa_ = NULL;
 
     if (useAsservType_ == ASSERV_INT_ESIALR)
-        pAsservEsialR_ = new AsservEsialR(robot);
+        pAsservEsialR_ = new AsservEsialR(robot); //TODO necessaire pour svg, botcodeur, et motors, essayer de donner uniquement l'asserv avec ce qu'il faut... a reflechir
     else
         pAsservEsialR_ = NULL;
 
@@ -98,7 +98,7 @@ void Asserv::setLowSpeedForward(bool enable, int percent)
 
 void Asserv::setLowSpeedBackward(bool enable, int percent)
 {
-    logger().error() << "Surcharge à faire par config Robot!!!!!!!! percent "<< percent << logs::end;
+    logger().error() << "Surcharge à faire par config Robot!!!!!!!! percent " << percent << logs::end;
     if (useAsservType_ == ASSERV_INT_INSA) {
         logger().error() << "TODO setLowSpeed ASSERV_INT_INSA NOT EXIST!!!" << logs::end;
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
@@ -106,9 +106,16 @@ void Asserv::setLowSpeedBackward(bool enable, int percent)
     } else if (useAsservType_ == 0)
         asservdriver_->motion_setLowSpeedBackward(enable, percent);
 }
-void Asserv::disablePID() //deprecated
+void Asserv::disablePID() //deprecated and ActivateQuanramp to be defined
 {
-    freeMotion();
+
+    if (useAsservType_ == ASSERV_INT_INSA) {
+        freeMotion();
+    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+        pAsservEsialR_->motion_ActivateQuadRamp(false);
+    } else if (useAsservType_ == 0) {
+        freeMotion();
+    }
 }
 
 void Asserv::freeMotion()
@@ -197,13 +204,11 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm)
 
 }
 
-void Asserv::resetFrontCollisionOnTraj()
+void Asserv::resetEmergencyOnTraj()
 {
-    if (useAsservType_ == ASSERV_INT_INSA)
-    {
+    if (useAsservType_ == ASSERV_INT_INSA) {
         //pAsservInsa_->path_ResetEmergencyStop();
-    }
-    else if (useAsservType_ == ASSERV_EXT)
+    } else if (useAsservType_ == ASSERV_EXT)
         asservdriver_->path_ResetEmergencyStop();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->path_ResetEmergencyStop();
@@ -276,8 +281,6 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
 
 TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
 {
-    //logger().debug() << "doRotateAbs degrees=" << degrees << " ignorefront=" << temp_ignoreFrontCollision_ << logs::end;
-
     temp_forceRotation_ = true;
 
     TRAJ_STATE ts;
@@ -293,22 +296,16 @@ TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
         ts = TRAJ_ERROR;
 
     temp_forceRotation_ = false;
-//    logger().debug() << "END doRotateAbs degrees=" << degrees << " ignorefront=" << temp_ignoreFrontCollision_ << logs::end;
+
     return ts;
 }
-TRAJ_STATE Asserv::doRotateLeft(float degreesRelative) //TODO utiliser doRotateTo (qui contient le modulo ?)
+
+TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
 {
     if (matchColorPosition_ != 0) {
-        return doRotateAbs(-degreesRelative); //jaune
+        return doRotateAbs(-thetaInDegreeRelative); //jaune
     } else
-        return doRotateAbs(degreesRelative); //violet
-}
-TRAJ_STATE Asserv::doRotateRight(float degreesRelative)
-{
-    if (matchColorPosition_ != 0) {
-        return doRotateAbs(degreesRelative); //jaune
-    } else
-        return doRotateAbs(-degreesRelative); //violet
+        return doRotateAbs(thetaInDegreeRelative); //violet
 }
 
 TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
@@ -331,8 +328,8 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
     return ts;
 }
 
-//relative motion (depends on current position of the robot)
-TRAJ_STATE Asserv::doRotateTo(float thetaInDegreeAbsolute)
+//relative motion (depends on current position of the robot, thinking in the first color of match)
+TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored)
 {
 //logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
 
@@ -340,10 +337,9 @@ TRAJ_STATE Asserv::doRotateTo(float thetaInDegreeAbsolute)
     float degrees = getRelativeAngle(thetaInDegreeAbsolute) - currentThetaInDegree;
 
 // force it to be the positive remainder, so that 0 <= angle < 360
-//degrees = (degrees + 360) % 360;
+
     degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
 
-// reduce the angle
 //reduction sur une plage de [0 à 360]
     if (degrees >= 360.0) {
         degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
@@ -379,18 +375,19 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
             << getRelativeAngle((aRadian * 180.0f) / M_PI) << " xMM=" << xMM << " yMM=" << yMM << " getX="
             << pos_getX_mm() << " getY=" << pos_getY_mm() << logs::end;
 
-    TRAJ_STATE ts = doRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI));
-    if (ts != TRAJ_FINISHED)
-    {
-        if(!rotate_ignored)
+    TRAJ_STATE ts = doAbsoluteRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI), rotate_ignored);
+    //TRAJ_STATE ts = doRelativeRotateBy((aRadian * 180.0f) / M_PI);
+    if (ts != TRAJ_FINISHED) {
+        if (!rotate_ignored)
             return ts;
-        else
-        {
-            logger().error() << " __on passe au doline !!!"  << logs::end;
+        else {
+            //on resete
+            resetEmergencyOnTraj();
+            logger().error() << " __on passe au doline !!!" << logs::end;
         }
     }
     float dist = sqrt(dx * dx + dy * dy);
-    logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+    logger().error() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
 
     return doLineAbs(dist + adjustment_mm);
 
@@ -406,30 +403,28 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
     }
     float aRadian = atan2(dy, dx);
 
-    TRAJ_STATE ts = doRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI));
-    if (ts != TRAJ_FINISHED)
-        {
-            if(!rotate_ignored)
-                return ts;
-            else
-            {
-                //logger().error() << " __on passe au doline !!!"  << logs::end;
-            }
+    TRAJ_STATE ts = doAbsoluteRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI));
+    if (ts != TRAJ_FINISHED) {
+        if (!rotate_ignored)
+            return ts;
+        else {
+            //logger().error() << " __on passe au doline !!!"  << logs::end;
         }
+    }
 
 //    if (ts != TRAJ_FINISHED)
 //        return ts;
     float dist = sqrt(dx * dx + dy * dy);
     return doLineAbs(-dist);
 }
-TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
+TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignored)
 {
     TRAJ_STATE ts;
-    ts = doMoveForwardTo(xMM, yMM);
+    ts = doMoveForwardTo(xMM, yMM, rotate_ignored);
     if (ts != TRAJ_FINISHED)
         return ts;
 
-    ts = doRotateTo(thetaInDegree);
+    ts = doAbsoluteRotateTo(thetaInDegree);
     return ts;
 }
 TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
@@ -438,7 +433,7 @@ TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaIn
     ts = doMoveBackwardTo(xMM, yMM);
     if (ts != TRAJ_FINISHED)
         return ts;
-    ts = doRotateTo(thetaInDegree);
+    ts = doAbsoluteRotateTo(thetaInDegree);
     return ts;
 }
 TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
@@ -510,7 +505,8 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
         float y_depart_mm)
 {
     logger().error() << "calculate : " << " d2_theo_bordure_mm= " << d2_theo_bordure_mm << " d2b_bordure_mm= "
-            << d2b_bordure_mm << " x_depart_mm= " << getRelativeX(x_depart_mm) << " y_depart_mm= " << y_depart_mm << logs::end;
+            << d2b_bordure_mm << " x_depart_mm= " << getRelativeX(x_depart_mm) << " y_depart_mm= " << y_depart_mm
+            << logs::end;
 
     if (abs(d2b_bordure_mm - d2_theo_bordure_mm) >= 5) {
 
@@ -536,7 +532,7 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
                 << teta_error * 180.0 / M_PI << " p.x=" << p.x << " l_theo_mm / 1000.0=" << (l_theo_mm / 1000.0)
                 << logs::end;
 
-        float alpha = acos((float) ((abs(dx)) / (l_theo_mm)));//yellow
+        float alpha = acos((float) ((abs(dx)) / (l_theo_mm)));    //yellow
         float alpha_error = alpha - teta_error;
 
         logger().error() << "calculate  : " << " teta_b= " << teta_b << " teta_error= " << teta_error << " alpha_deg= "
@@ -564,19 +560,19 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
         return false;
 
 }
-
-void Asserv::doActivateReguAngle(bool enable)
-{
-    if (useAsservType_ == ASSERV_INT_ESIALR) {
-        pAsservEsialR_->motion_ActivateReguAngle(enable);
-    } else if (useAsservType_ == ASSERV_EXT) {
-        asservdriver_->motion_ActivateReguAngle(enable);
-    }
-}
+/*
+ void Asserv::doActivateReguAngle(bool enable)
+ {
+ if (useAsservType_ == ASSERV_INT_ESIALR) {
+ pAsservEsialR_->motion_ActivateReguAngle(enable);
+ } else if (useAsservType_ == ASSERV_EXT) {
+ asservdriver_->motion_ActivateReguAngle(enable);
+ }
+ }*/
 
 TRAJ_STATE Asserv::doCalage(int dist, int percent)
 {
-    logger().info() << "doCalage" << logs::end;
+
     if (useAsservType_ == ASSERV_INT_ESIALR) {
         if (dist > 0)
             pAsservEsialR_->motion_setLowSpeedForward(true, percent);
@@ -588,13 +584,14 @@ TRAJ_STATE Asserv::doCalage(int dist, int percent)
         pAsservEsialR_->motion_AssistedHandling();
 
         TRAJ_STATE ts = pAsservEsialR_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
-        logger().error() << "calage ts=" << ts << logs::end;
 
-        pAsservEsialR_->path_CancelTrajectory();
+
+        //pAsservEsialR_->path_CancelTrajectory();
         pAsservEsialR_->motion_setLowSpeedForward(false);
         pAsservEsialR_->motion_setLowSpeedBackward(false);
         pAsservEsialR_->motion_ActivateReguAngle(true);
         pAsservEsialR_->motion_ActivateReguDist(true);
+        resetEmergencyOnTraj();
 
         return ts;
     } else if (useAsservType_ == ASSERV_EXT) {
@@ -609,78 +606,15 @@ TRAJ_STATE Asserv::doCalage(int dist, int percent)
         asservdriver_->motion_AssistedHandling();
 
         TRAJ_STATE ts = asservdriver_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
-        logger().error() << "ts=" << ts << logs::end;
-        //sleep(3);
-        asservdriver_->path_CancelTrajectory();
+
+        //asservdriver_->path_CancelTrajectory();
         asservdriver_->motion_setLowSpeedForward(false);
         asservdriver_->motion_setLowSpeedBackward(false);
         asservdriver_->motion_ActivateReguAngle(true);
         asservdriver_->motion_ActivateReguDist(true);
+        resetEmergencyOnTraj();
 
         return ts;
     } else
         return TRAJ_ERROR;
-
 }
-
-TRAJ_STATE Asserv::doCalage2(int dist, int tempo, int percent)
-{
-    logger().info() << "doCalage2" << logs::end;
-
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        logger().error() << "TODO doCalage ASSERV_INT_INSA !!!" << logs::end;
-    } else if (useAsservType_ == ASSERV_EXT) {
-        //set low speed
-        asservdriver_->motion_setLowSpeedForward(true, percent);
-        asservdriver_->motion_setLowSpeedBackward(true, percent);
-
-        asservdriver_->motion_ActivateReguAngle(false);
-        //asservdriver->motion_ActivateReguDist(true);
-
-        //TRAJ_STATE ts = asservdriver->motion_DoLine(dist);
-        //logger().info() << "ts=" << ts<< logs::end;
-        asservdriver_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
-        sleep(tempo);
-        asservdriver_->path_CancelTrajectory();
-        asservdriver_->path_ResetEmergencyStop();
-
-        //reset
-        asservdriver_->motion_ResetReguAngle();
-        asservdriver_->motion_ResetReguDist();
-
-        //reactive
-
-        asservdriver_->motion_setLowSpeedForward(false, 0);
-        asservdriver_->motion_setLowSpeedBackward(false, 0);
-        asservdriver_->motion_ActivateReguAngle(true);
-
-        assistedHandling();
-    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
-        logger().error() << "TODO doCalage ASSERV_INT_ESIALR !!!" << logs::end;
-        //set low speed
-        pAsservEsialR_->motion_setLowSpeedForward(true, percent);
-        pAsservEsialR_->motion_setLowSpeedBackward(true, percent);
-
-        pAsservEsialR_->motion_ActivateReguAngle(false);
-
-        pAsservEsialR_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
-        sleep(tempo);
-        pAsservEsialR_->path_CancelTrajectory();
-        pAsservEsialR_->path_ResetEmergencyStop();
-
-        //reset
-        pAsservEsialR_->motion_ResetReguAngle();
-        pAsservEsialR_->motion_ResetReguDist();
-
-        //reactive
-
-        pAsservEsialR_->motion_setLowSpeedForward(false, 0);
-        pAsservEsialR_->motion_setLowSpeedBackward(false, 0);
-        pAsservEsialR_->motion_ActivateReguAngle(true);
-
-        assistedHandling();
-    }
-
-    return TRAJ_ERROR;
-}
-

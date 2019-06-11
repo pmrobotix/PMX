@@ -12,10 +12,10 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
     sensors_.addConfigFront(true, false, true);
     sensors_.addConfigBack(true, false, true);
 
-    sensors_.addThresholdFront(330, 0, 330);
-    sensors_.addThresholdFrontVeryClosed(200, 0, 200);
+    sensors_.addThresholdFront(360, 0, 360);
+    sensors_.addThresholdFrontVeryClosed(230, 0, 230);
 
-    sensors_.addThresholdBack(200, 0, 200);
+    sensors_.addThresholdBack(210, 0, 210);
     sensors_.addThresholdBackVeryClosed(130, 0, 130);
 
     releaseAll();

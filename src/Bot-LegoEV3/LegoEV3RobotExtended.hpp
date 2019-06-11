@@ -26,6 +26,12 @@ public:
         stopExtraActions();
     }
 
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3RobotExtended");
+        return instance;
+    }
+
     inline LegoEV3ActionsExtended& actions()
     {
         LegoEV3ActionsExtended& r_actions = *p_actions_;
@@ -44,23 +50,21 @@ public:
         return r_ia;
     }
 
-    L_State_DecisionMakerIA* decisionMaker_; //TODO mettre un accesseur
-
-    int points;
-
     void begin(int argc, char** argv);
 
     void stopExtraActions();
 
     void displayPoints();
 
+    void resetDisplayTS();
+    void displayTS(TRAJ_STATE ts);
+    void resetDisplayObstacle();
+    void displayObstacle(int level);
 
-    static inline const logs::Logger & logger()
-    {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3RobotExtended");
-        return instance;
-    }
+    L_State_DecisionMakerIA* decisionMaker_; //TODO mettre un accesseur
+
 private:
+
     LegoEV3ActionsExtended * p_actions_;
 
     LegoEV3AsservExtended * p_asserv_;

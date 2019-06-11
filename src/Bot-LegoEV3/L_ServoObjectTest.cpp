@@ -47,7 +47,7 @@ void L_ServoObjectTest::run(int argc, char** argv)
         if (m == "L" || m == "ALLL") {
 
             logger().info() << "conveyorBelt_Left_low" << logs::end;
-            robot.actions().conveyorBelt_Left_low(true);
+            robot.actions().conveyorBelt_Left_low();
 
             logger().info() << "left_arm_take" << logs::end;
             robot.actions().left_arm_take();
@@ -72,7 +72,7 @@ void L_ServoObjectTest::run(int argc, char** argv)
         } else if (m == "R" || m == "ALLR") {
 
             logger().info() << "conveyorBelt_Right_low" << logs::end;
-            robot.actions().conveyorBelt_Right_low(true);
+            robot.actions().conveyorBelt_Right_low();
 
             logger().info() << "right_arm_take" << logs::end;
             robot.actions().right_arm_take();

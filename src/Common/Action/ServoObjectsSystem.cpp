@@ -22,7 +22,7 @@ void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
     hold(servo);
     servodriver_->setPosition(servo, percent); // percentage
     if (keep_millisec > 0) {
-        sleep(keep_millisec * 1000);
+        usleep(keep_millisec * 1000);
         release(servo);
     } else if (keep_millisec <= -1) {
 

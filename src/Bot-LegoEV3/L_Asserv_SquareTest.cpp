@@ -74,7 +74,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
     robot.actions().start();
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    robot.actions().sensors().addTimerSensors(50);
+    robot.actions().sensors().addTimerSensors(100);
 
     chrono.start();
     TRAJ_STATE ts = TRAJ_OK;
@@ -99,7 +99,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
         f = 0;
         logger().info() << "doMoveForwardTo " << " x=" << x + d << " y=" << y << logs::end;
-        while ((ts = robot.asserv().doMoveForwardTo(x + d, y)) != TRAJ_OK) {
+        while ((ts = robot.asserv().doMoveForwardTo(x + d, y)) != TRAJ_FINISHED) {
             f++;
             logger().info() << f << " doMoveForwardTo " << " x=" << x + d << " y=" << y << logs::end;
             logger().info() << f << " pos " << " x=" << robot.asserv().pos_getX_mm() << " y="
@@ -118,7 +118,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
         f = 0;
         logger().info() << "doMoveForwardTo " << " x=" << x + d << " y=" << y + d << logs::end;
-        while ((ts = robot.asserv().doMoveForwardTo(x + d, y + d)) != TRAJ_OK) {
+        while ((ts = robot.asserv().doMoveForwardTo(x + d, y + d)) != TRAJ_FINISHED) {
             f++;
             logger().info() << f << " doMoveForwardTo " << " x=" << x + d << " y=" << y + d << logs::end;
             logger().info() << f << " pos " << " x=" << robot.asserv().pos_getX_mm() << " y="
@@ -135,7 +135,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
         f = 0;
         logger().info() << "doMoveForwardTo " << " x=" << x << " y=" << y + d << logs::end;
-        while ((ts = robot.asserv().doMoveForwardTo(x, y + d)) != TRAJ_OK) {
+        while ((ts = robot.asserv().doMoveForwardTo(x, y + d)) != TRAJ_FINISHED) {
             f++;
             logger().info() << f << " doMoveForwardTo " << " x=" << x + d << " y=" << y + d << logs::end;
             logger().info() << f << " pos " << " x=" << robot.asserv().pos_getX_mm() << " y="
@@ -151,7 +151,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
 
         f = 0;
         logger().info() << "doMoveForwardTo " << " x=" << x << " y=" << y << " a=0.0" << logs::end;
-        while ((ts = robot.asserv().doMoveForwardAndRotateTo(x, y, 0.0)) != TRAJ_OK) {
+        while ((ts = robot.asserv().doMoveForwardAndRotateTo(x, y, 0.0)) != TRAJ_FINISHED) {
             f++;
             logger().info() << f << " doMoveForwardTo " << " x=" << x + d << " y=" << y + d << logs::end;
             logger().info() << f << " pos " << " x=" << robot.asserv().pos_getX_mm() << " y="

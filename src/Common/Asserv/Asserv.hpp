@@ -109,32 +109,29 @@ public:
     //modes d'arret de l'asservissement
     void freeMotion();
     void assistedHandling();
-    //absolute motion
+
+    //relative motion (depends on current position of the robot)
     TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
     TRAJ_STATE doRotateAbs(float degreesRelative);
-    TRAJ_STATE doRotateLeft(float degreesRelative);
-    TRAJ_STATE doRotateRight(float degreesRelative);
+    TRAJ_STATE doRelativeRotateBy(float thetaInDegreeRelative); //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
+    TRAJ_STATE doCalage(int d, int percent);
+
+    //absolute motion (coordinates thinking in the first color of match)
     TRAJ_STATE doFaceTo(float xMM, float yMM);
-    //relative motion (depends on current position of the robot)
-    TRAJ_STATE doRotateTo(float thetaInDegreeAbsolute);
+    TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored = false);
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);
-    TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
+    TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignored = false);
     TRAJ_STATE doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored= false);
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
-    TRAJ_STATE doCalage(int d, int percent);
-    TRAJ_STATE doCalage2(int d, int tempo, int percent); //old version
-    void doActivateReguAngle(bool enable);
+    //void doActivateReguAngle(bool enable);
 
     //attentionLa couleur de match doit deja etre effectué !
     bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
     bool calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
 
-    //void findPidAD(float degrees, int mm, int sec);
-    //void findPidLR(float posl, int posr, int sec);
-    //void configureAlphaPID(float Ap, float Ai, float Ad);
-    //void configureDeltaPID(float Dp, float Di, float Dd);
+
 
     /*!
      * Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot
@@ -183,7 +180,7 @@ public:
 
     virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
 
-    void resetFrontCollisionOnTraj();
+    void resetEmergencyOnTraj();
     virtual void warnFrontCollisionOnTraj();
     virtual void warnBackCollisionOnTraj();
 
@@ -195,18 +192,7 @@ public:
     // angle in degrees
     float pos_getThetaInDegree();
 
-    /*
-     //Near obstacle
-     void setIgnoreFrontNearObstacle(bool ignore);
-     void setIgnoreBackNearObstacle(bool ignore);
-     bool getIgnoreFrontNearObstacle();
-     bool getIgnoreBackNearObstacle();*/
 
-    //TODO Collision a faire sur l'asserv car c'est elle qui donne l'info!
-//    void setIgnoreFrontColl(bool ignore);
-//    void setIgnoreBackColl(bool ignore);
-//    bool getIgnoreFrontColl();
-//    bool getIgnoreBackColl();
 };
 
 #endif

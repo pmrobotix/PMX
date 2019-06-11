@@ -41,8 +41,8 @@ void L_AsservInsaTest::run(int argc, char** argv)
 	configureConsoleArgs(argc, argv);
 
 	utils::Chronometer chrono("L_AsservInsaTest");
-	long left;
-	long right;
+	//long left;
+	//long right;
 
 	//PID values
 	float Dp = 0.0;

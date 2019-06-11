@@ -137,6 +137,8 @@ public:
     void motion_ResetReguAngle();
     TRAJ_STATE motion_DoDirectLine(float dist_meters);
 
+    void motion_ActivateQuadRamp(bool enable);
+
 };
 
 #endif /* ASSERV_ESIALR_ASSERVESIALR_H_ */

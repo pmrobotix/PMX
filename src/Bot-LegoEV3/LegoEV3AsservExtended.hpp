@@ -4,7 +4,6 @@
 #include <string>
 
 #include "../Common/Asserv/Asserv.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 class LegoEV3RobotExtended;
@@ -20,7 +19,7 @@ private:
         static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3AsservExtended");
         return instance;
     }
-    LegoEV3RobotExtended * robot_extended_;
+    //LegoEV3RobotExtended * robot_extended_;
 
 public:
     LegoEV3AsservExtended(std::string botId, LegoEV3RobotExtended * robot);
@@ -30,9 +29,6 @@ public:
     }
 
     void startMotionTimerAndOdo(bool assistedHandlingEnabled);
-
-    void resetDisplayTS();
-    void displayTS(TRAJ_STATE ts);
 
     bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
 

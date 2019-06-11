@@ -14,7 +14,7 @@ int64_t Utils::constrain(int64_t value, int64_t valeurMin, int64_t valeurMax)
 }
 
 // Conversion mm vers UO
-int64_t Utils::mmToUO(Odometrie *odo, int32_t valeur)
+int64_t Utils::mmToUO(Odometrie *odo, int32_t valeur) //TODO supprimer odo et prendre la config?
 {
     return (int64_t)((valeur * (odo->getFrontParMetre()) * Config::uOParFront * 1.0) / 1000.0);
 }

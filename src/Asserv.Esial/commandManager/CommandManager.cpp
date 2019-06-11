@@ -68,13 +68,12 @@ bool CommandManager::addGoToAngle(int32_t posXInmm, int32_t posYInmm)
  */
 void CommandManager::perform()
 {
-
+//printf("commandStatus= %d\n", commandStatus);
     // Arrêt d'urgence! On n'accepte aucune commande.
-    if (commandStatus == STATUS_HALTED) {
+    if (commandStatus == STATUS_HALTED || commandStatus == STATUS_BLOCKED) {    //Ajouter cho 2019
         while (currCMD.type != CMD_NULL) { //On s'assure que la liste des commandes est vide
             currCMD = liste->dequeue();
         }
-
         nextCMD.type = CMD_NULL;
         return;
     }
@@ -87,6 +86,13 @@ void CommandManager::perform()
         // On est forcément en train d'exécuter une consigne, on vérifie
         // si on est pas bloqué
         if (cnsgCtrl->isBlocked()) {
+
+            cnsgCtrl->setQuadRamp_Angle(false); //Ajouter cho 2019
+            cnsgCtrl->setQuadRamp_Dist(false);
+
+            cnsgCtrl->set_dist_consigne(cnsgCtrl->getAccuDist());
+            cnsgCtrl->set_angle_consigne(cnsgCtrl->getAccuAngle());
+
             commandStatus = STATUS_BLOCKED;
             printf("STATUS_BLOCKED\n");
 
@@ -304,7 +310,6 @@ int64_t CommandManager::computeDeltaDist(float deltaX, float deltaY)
 
 void CommandManager::computeEnchainement()
 {
-
     // Ok, on est dans un Goto, alors, on calcule le Goto.
     computeGoTo();
 
@@ -324,7 +329,6 @@ void CommandManager::computeEnchainement()
 
         // Le reste, c'est pas grave, on le calculera à la prochaine itération
     }
-
 }
 
 void CommandManager::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgence
@@ -338,24 +342,27 @@ void CommandManager::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgen
     while (currCMD.type != CMD_NULL) {
         currCMD = liste->dequeue();
     }
+    nextCMD.type = CMD_NULL;
+
+    //printf("===== commandStatus = STATUS_HALTED!!!\n");
     commandStatus = STATUS_HALTED;
 }
 
 void CommandManager::resetEmergencyStop()
 {
-    if (commandStatus == STATUS_HALTED) {
-        commandStatus = STATUS_IDLE;
-    }
-    cnsgCtrl->setQuadRamp_Angle(true); //Ajouter cho 2019
-    cnsgCtrl->setQuadRamp_Dist(true);
-/*
-    printf("resetEmergencyStop____________________1 getPendingCommandCount %d\n", getPendingCommandCount());
 
     while (currCMD.type != CMD_NULL) {
         currCMD = liste->dequeue();
     }
-    printf("resetEmergencyStop____________________2 getPendingCommandCount %d\n", getPendingCommandCount());
-*/
+    nextCMD.type = CMD_NULL;
+
+
+    if (commandStatus == STATUS_HALTED || commandStatus == STATUS_BLOCKED) { //Ajouter cho 2019
+        commandStatus = STATUS_IDLE;
+    }
+    cnsgCtrl->setQuadRamp_Angle(true); //Ajouter cho 2019
+    cnsgCtrl->setQuadRamp_Dist(true);
+    cnsgCtrl->reset_blocked_ticks();
 
 }
 

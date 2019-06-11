@@ -5,11 +5,9 @@
 
 #include "AsservEsialR.hpp"
 
-#include <stddef.h>
 #include <unistd.h>
 #include <cmath>
-#include <iomanip>
-#include <iostream>
+#include <cstdio>
 
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"
@@ -32,6 +30,8 @@ AsservEsialR::AsservEsialR(Robot * robot) :
     periodNb_ = 0;
     loopDelayInMillisec_ = 0;
     pathStatus_ = TRAJ_OK;
+
+    p_= {0, 0 , 0, 0};
 
     codeurs_ = NULL;
     odo_ = NULL;
@@ -82,12 +82,12 @@ void AsservEsialR::stopAsserv()
     //On arrête le traitement de l'asserv
     run_ = false; //afin de pouvoir supprimer les objets
 
+    usleep(10000); //attndre la fin de la boucle d'asserv ?
+    //this->cancel();
+
     // On détruit tout les objets
     delete odo_;
     odo_ = NULL;
-
-    delete codeurs_;
-    codeurs_ = NULL;
 
     delete consignC_;
     consignC_ = NULL;
@@ -95,8 +95,12 @@ void AsservEsialR::stopAsserv()
     delete commandM_;
     commandM_ = NULL;
 
+    delete codeurs_;
+    codeurs_ = NULL;
+
     delete motorC_;
     motorC_ = NULL;
+
 }
 
 void AsservEsialR::resetAsserv()
@@ -169,8 +173,12 @@ void AsservEsialR::execute()
 //                               << " => worktime=t6-t1=" << t6 - current
 //                               << logs::flush;
 //            }
+        }
+        if (run_) {
             chronoTimer_.waitTimer();
             last = current;
+        }else {
+            usleep(50000); //attente de reactivation
         }
     }
 }
@@ -278,22 +286,27 @@ void AsservEsialR::resetExternalEncoders()
 
 void AsservEsialR::odo_SetPosition(float x_m, float y_m, float angle_rad)
 {
-    logger().debug() << "odo_SetPosition x_m=" << x_m << " y_m=" << y_m << " angle_rad=" << angle_rad << logs::end;
-    lock();
-    odo_->setX(Utils::mmToUO(odo_, (long) floor(x_m * 1000.0f))); //UO
-    odo_->setY(Utils::mmToUO(odo_, (long) floor(y_m * 1000.0f)));
-    odo_->setTheta(angle_rad);
-    unlock();
-    odo_GetPosition();
+    if (odo_ != NULL) {
+        logger().debug() << "odo_SetPosition x_m=" << x_m << " y_m=" << y_m << " angle_rad=" << angle_rad << logs::end;
+        lock();
+        odo_->setX(Utils::mmToUO(odo_, (long) floor(x_m * 1000.0f))); //UO
+        odo_->setY(Utils::mmToUO(odo_, (long) floor(y_m * 1000.0f)));
+        odo_->setTheta(angle_rad);
+        unlock();
+        odo_GetPosition();
+    }
 }
 RobotPosition AsservEsialR::odo_GetPosition()
 {
-    lock();
-    p_.x = (float) (odo_->getXmm() / 1000.0f);
-    p_.y = (float) (odo_->getYmm() / 1000.0f);
-    p_.theta = (float) odo_->getTheta();
-    p_.asservStatus = commandM_->getCommandStatus();
-    unlock();
+    if (odo_ != NULL) {
+        lock();
+        p_.x = (float) (odo_->getXmm() / 1000.0f);
+        p_.y = (float) (odo_->getYmm() / 1000.0f);
+        p_.theta = (float) odo_->getTheta();
+        p_.asservStatus = commandM_->getCommandStatus();
+        unlock();
+    } else
+        logger().error() << "odo_GetPosition odo_ is NULL!" << logs::end;
     return p_;
 }
 
@@ -306,36 +319,30 @@ int AsservEsialR::path_GetLastCommandStatus()
 }
 void AsservEsialR::path_InterruptTrajectory()
 {
+    //printf("path_InterruptTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_INTERRUPTED;
-    //usleep(500000);
-    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CollisionOnTrajectory()
 {
-    printf("path_CollisionOnTrajectory() sent !!!!!\n");
+    //printf("path_CollisionOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
-    //usleep(500000);
-    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CollisionRearOnTrajectory()
 {
+    //printf("path_CollisionRearOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
-    //usleep(500000);
-    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_CancelTrajectory()
 {
+    //printf("path_CancelTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_CANCELLED;
-    //usleep(500000);
-    //path_ResetEmergencyStop();
 }
 void AsservEsialR::path_ResetEmergencyStop()
 {
-
     logger().error() << "______________________path_ResetEmergencyStop() !!!!!!!!!!!!!! "<< logs::end;
     commandM_->resetEmergencyStop();
     pathStatus_ = TRAJ_OK;
@@ -379,7 +386,8 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     } else if (p_.asservStatus == 0) {
         return TRAJ_FINISHED;
     } else if (p_.asservStatus == 2) {
-        logger().info() << "_______________________waitEndOfTraj() COLLISION  pathStatus_= " << pathStatus_<< logs::end;
+        logger().info() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
+                << pathStatus_ << logs::end;
         return pathStatus_;
     } else
         return TRAJ_ERROR;
@@ -387,27 +395,22 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
 TRAJ_STATE AsservEsialR::motion_DoLine(float dist_meters)
 {
-//    if (pathStatus_ != TRAJ_OK)
-//        return pathStatus_;
-    path_ResetEmergencyStop();
-    commandM_->addStraightLine(dist_meters * 1000.0f);
     //pathStatus_ = TRAJ_OK;
-printf("____AsservEsialR::motion_DoLine_________pathStatus_=%d \n",pathStatus_);
+    commandM_->addStraightLine(dist_meters * 1000.0f);
+
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFace(float x_m, float y_m)
 {
-    path_ResetEmergencyStop();
-    commandM_->addGoToAngle(x_m * 1000.0f, y_m * 1000.0f);
     //pathStatus_ = TRAJ_OK;
+    commandM_->addGoToAngle(x_m * 1000.0f, y_m * 1000.0f);
 
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoRotate(float angle_radians)
 {
-    path_ResetEmergencyStop();
-    commandM_->addTurn((angle_radians * 180.0) / M_PI);
     //pathStatus_ = TRAJ_OK;
+    commandM_->addTurn((angle_radians * 180.0) / M_PI);
 
     return waitEndOfTraj();
 }
@@ -419,13 +422,13 @@ TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius)
 
 TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_meters)
 {
-//    if (pathStatus_ != TRAJ_OK)
-//        return pathStatus_;
-    path_ResetEmergencyStop();
-    consignC_->add_dist_consigne(Utils::mmToUO(odo_, dist_meters * 1000.0f));
-    //pathStatus_ = TRAJ_OK;
+    if (odo_ != NULL) {
+        //pathStatus_ = TRAJ_OK;
+        consignC_->add_dist_consigne(Utils::mmToUO(odo_, dist_meters * 1000.0f));
 
-    return waitEndOfTraj();
+        return waitEndOfTraj();
+    } else
+        return TRAJ_ERROR;
 }
 
 void AsservEsialR::motion_FreeMotion(void)
@@ -478,4 +481,10 @@ void AsservEsialR::motion_ResetReguDist()
 void AsservEsialR::motion_ResetReguAngle()
 {
     consignC_->reset_regu_angle();
+}
+
+void AsservEsialR::motion_ActivateQuadRamp(bool enable)
+{
+    consignC_->setQuadRamp_Angle(enable);
+    consignC_->setQuadRamp_Dist(enable);
 }

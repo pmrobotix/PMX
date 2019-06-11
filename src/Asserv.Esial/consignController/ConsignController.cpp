@@ -107,8 +107,8 @@ void ConsignController::perform()
 //                            )
 //                )
         if ((abs(VmoteurG) >= 10 || abs(VmoteurD) >= 10)
-                && (((VmoteurG * VmoteurD > 0) && (abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD))
-                        || ((VmoteurG * VmoteurD < 0)
+                && (((VmoteurG * VmoteurD >= 0) && (abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD))
+                        || ((VmoteurG * VmoteurD <= 0)
                                 && (abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD))))
 
                 {
@@ -178,8 +178,8 @@ bool ConsignController::isBlocked()
 {
     // Si on est bloqué pendant un certain temps, on le signale
     bool b = blocked_ticks >= Config::BLOCK_TICK_THRESHOLD;
-    if (b) {
-        blocked_ticks = 0;
-    }
+//    if (b) {
+//        blocked_ticks = 0;
+//    }
     return b;
 }

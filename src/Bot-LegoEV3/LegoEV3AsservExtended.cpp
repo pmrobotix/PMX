@@ -2,38 +2,20 @@
 
 #include <stdio.h>
 #include <cmath>
+#include <string>
 
 #include "../Asserv.Esial/AsservEsialR.hpp"
 #include "../Asserv.Esial/config/config.h"
 #include "../Asserv.Insa/AsservInsa.hpp"
-#include "../Common/Action/LedBar.hpp"
-#include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Log/Logger.hpp"
-#include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
 LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, LegoEV3RobotExtended * robot) :
-        Asserv(botId, robot) //on appelle le constructeur pere
+       Asserv(botId, robot) //on appelle le constructeur pere
 {
     botId_ = botId;
     useAsservType_ = ASSERV_INT_ESIALR;
-    robot_extended_ = robot;
-}
-
-
-void LegoEV3AsservExtended::resetDisplayTS()
-{
-    robot_extended_->actions().ledBar().resetAll();
-    //robot_extended_->actions().ledBar().setOff(0);
-
-}
-
-void LegoEV3AsservExtended::displayTS(TRAJ_STATE ts)
-{
-    if (ts== TRAJ_NEAR_OBSTACLE)
-        robot_extended_->actions().ledBar().set(0, LED_AMBER);
-    if (ts== TRAJ_COLLISION)
-        robot_extended_->actions().ledBar().set(1, LED_RED);
+    //robot_extended_ = robot;
 }
 
 
@@ -131,14 +113,12 @@ bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral
 
 void LegoEV3AsservExtended::setLowSpeedForward(bool enable, int)
 {
-    logger().error() << "LegoEV3AsservExtended::setLowSpeedForward 40!" << logs::end;
-    //Asserv::setLowSpeedForward(enable, 40);
-    pAsservEsialR_->motion_setLowSpeedForward(enable, 55);
+    //logger().error() << "LegoEV3AsservExtended::setLowSpeedForward 40!" << logs::end;
+    pAsservEsialR_->motion_setLowSpeedForward(enable, 50);
 
 }
 void LegoEV3AsservExtended::setLowSpeedBackward(bool enable, int)
 {
-    logger().error() << "LegoEV3AsservExtended::setLowSpeedBackward 40!" << logs::end;
-    //Asserv::setLowSpeedBackward(enable, 50);
-    pAsservEsialR_->motion_setLowSpeedBackward(enable, 55);
+    //logger().error() << "LegoEV3AsservExtended::setLowSpeedBackward 40!" << logs::end;
+    pAsservEsialR_->motion_setLowSpeedBackward(enable, 50);
 }

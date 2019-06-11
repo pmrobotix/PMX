@@ -17,7 +17,7 @@ void L_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharg
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.getArgs().addArgument("d", "dist en mm");
-    //robot.getArgs().addArgument("a", "angle en degrees", "0");
+    robot.getArgs().addArgument("a", "angle en degrees", "0");
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
@@ -35,13 +35,13 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
         d = atof(args["d"].c_str());
         logger().info() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
     }
-    /*
-     float a = 0.0;
-     if (args["a"] != "0") {
-     a = atof(args["a"].c_str());
-     logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
-     }*/
-    TRAJ_STATE ts;
+
+    float a = 0.0;
+    if (args["a"] != "0") {
+        a = atof(args["a"].c_str());
+        logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
+    }
+    TRAJ_STATE ts = TRAJ_OK;
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXVIOLET);
     robot.asserv().startMotionTimerAndOdo(true);
@@ -51,16 +51,34 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
             << p.asservStatus << logs::end;
     robot.svgPrintPosition();
 
+    ts = TRAJ_OK;
     logger().info() << "GO distance calage mm=" << d << logs::end;
     ts = robot.asserv().doCalage(d, 40);
+    logger().info() << "TRAJ= " << ts << logs::end;
+    if (ts != TRAJ_FINISHED) {
+        robot.asserv().resetEmergencyOnTraj();
+    }
 
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
             << p.asservStatus << " ts=" << ts << logs::end;
     robot.svgPrintPosition();
 
-    //ts = robot.asserv().doLineAbs(-d);
-    ts = robot.asserv().doRotateTo(90);
+    logger().info() << "doRotateTo " << logs::end;
+    ts = TRAJ_OK;
+    ts = robot.asserv().doAbsoluteRotateTo(a);
+    logger().info() << "TRAJ= " << ts << logs::end;
+    if (ts != TRAJ_FINISHED) {
+        robot.asserv().resetEmergencyOnTraj();
+    }
 
+    logger().info() << "doLineAbs " << logs::end;
+
+    ts = TRAJ_OK;
+    ts = robot.asserv().doLineAbs(-d);
+    logger().info() << "TRAJ= " << ts << logs::end;
+    if (ts != TRAJ_FINISHED) {
+        robot.asserv().resetEmergencyOnTraj();
+    }
 
     logger().info() << "Happy End." << logs::end;
 }

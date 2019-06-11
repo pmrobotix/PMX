@@ -92,7 +92,7 @@ int f=0;
     robot.asserv().resetDisplayTS();
     int c = 0;
     f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_OK) {
+    while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_FINISHED) {
 
         logger().info() << "Interruption dist TRAJ_STATE=" << ts << logs::end;
         robot.svgPrintPosition();

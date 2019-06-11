@@ -62,6 +62,8 @@ private:
     bool ignoreBackCenter_;
     bool ignoreBackRight_;
 
+
+
 public:
 
     /*!
@@ -143,6 +145,9 @@ private:
 
     int lastdetect_front_nb_;
     int lastdetect_back_nb_;
+
+    bool lastfrontl2_temp_;
+    bool lastbackl2_temp_;
 
 public:
 

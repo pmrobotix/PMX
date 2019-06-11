@@ -107,6 +107,10 @@ public:
     {
         return angle_consigne;
     }
+    void reset_blocked_ticks()
+    {
+        blocked_ticks = 0;
+    }
 
 
     //Méthode permettant de réduire la vitesse du robot, en cas de calage bordure par exemple

@@ -19,23 +19,21 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
     myColor_ = PMXNOCOLOR;
     cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 
-    p_svg_ = new LegoEV3SvgWriterExtended(id_);
+    p_svg_ = new LegoEV3SvgWriterExtended(id_); // TODO simplify
     svg_ = p_svg_;
 
-    p_asserv_ = new LegoEV3AsservExtended(id_, this);
+    p_asserv_ = new LegoEV3AsservExtended(id_, this); // TODO simplify and use directly asserv_default_
     asserv_default_ = p_asserv_;
 
     //on ecrase les versions par default avec la version extended
-    p_actions_ = new LegoEV3ActionsExtended(id_, this);
+    p_actions_ = new LegoEV3ActionsExtended(id_, this); // TODO simplify and use directly actions_default_
     actions_default_ = p_actions_;
 
-    p_ia_ = new LegoEV3IAExtended(id_, this);
+    p_ia_ = new LegoEV3IAExtended(id_, this); //TODO create an IA on the default robot
 
     decisionMaker_ = NULL;
 
     svg_->beginHeader();
-
-    points = 0;
 
 }
 
@@ -57,7 +55,7 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
 {
     Robot::begin(argc, argv);
 
-    logger().debug() << "LegoEV3RobotExtended::begin cArgs_.isOption('t')=" << cArgs_.isOption('t')<< logs::end;
+    logger().debug() << "LegoEV3RobotExtended::begin cArgs_.isOption('t')=" << cArgs_.isOption('t') << logs::end;
 
     //specific match case ands strategies
     if (cArgs_["type"] == "m" or cArgs_["type"] == "M") {    //if (cArgs_.isOption('t') == 0) {
@@ -82,3 +80,32 @@ void LegoEV3RobotExtended::begin(int argc, char** argv)
     logger().info() << "PMX LegoEV3Robot - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec" << logs::end;
 }
 
+void LegoEV3RobotExtended::resetDisplayTS()
+{
+    actions().ledBar().setOff(1);
+
+}
+
+void LegoEV3RobotExtended::displayTS(TRAJ_STATE ts)
+{
+    if (ts == TRAJ_NEAR_OBSTACLE)
+        actions().ledBar().set(1, LED_AMBER);
+    if (ts == TRAJ_COLLISION)
+        actions().ledBar().set(1, LED_RED);
+    if (ts == TRAJ_FINISHED)
+        actions().ledBar().set(1, LED_GREEN);
+}
+
+void LegoEV3RobotExtended::resetDisplayObstacle()
+{
+    actions().ledBar().setOff(0);
+
+}
+
+void LegoEV3RobotExtended::displayObstacle(int level)
+{
+    if (level == 1)
+        actions().ledBar().set(0, LED_YELLOW);
+    if (level == 2)
+        actions().ledBar().set(0, LED_RED);
+}

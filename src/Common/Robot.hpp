@@ -1,10 +1,12 @@
 #ifndef COMMON_ROBOT_HPP_
 #define COMMON_ROBOT_HPP_
 
+#include <stdio.h>
 #include <string>
 
 #include "../Log/LoggerFactory.hpp"
 #include "Arguments.hpp"
+#include "Asserv.Driver/AAsservDriver.hpp"
 #include "ConsoleManager.hpp"
 #include "State/Automate.hpp"
 #include "Utils/Chronometer.hpp"
@@ -36,6 +38,8 @@ public:
         return instance;
     }
 
+    int points;
+
 protected:
 
     utils::Chronometer chrono_;
@@ -54,6 +58,8 @@ protected:
 
     //id of the robot
     std::string id_;
+
+
 
     //DATA
     bool empty_ = true;
@@ -156,19 +162,30 @@ public:
     }
 
     ///DATA
-
-    inline Asserv * asserv()
-    {
-        if(asserv_default_ == NULL)
-            printf("ERROR asserv() NULL ! \n");
-        return asserv_default_;
-    }
-
     std::string getID()
     {
         return id_;
     }
 
+    inline Asserv * asserv()
+    {
+        if (asserv_default_ == NULL)
+            printf("ERROR asserv() NULL ! \n");
+        return asserv_default_;
+    }
+/*
+    inline Actions& actions()
+    {
+        Actions& r_actions = *actions_default_;
+        return r_actions;
+    }
+
+    inline Asserv& asserv()
+    {
+        Asserv& r_asserv = *asserv_default_;
+        return r_asserv;
+    }
+*/
     inline SvgWriter& svgw()
     {
         SvgWriter & r_svg = *svg_;
@@ -233,6 +250,12 @@ public:
     virtual void stopMotionTimerAndActionManager();
 
     virtual void freeMotion();
+
+    virtual void resetDisplayTS();
+    virtual void displayTS(TRAJ_STATE ts);
+
+    virtual void resetDisplayObstacle();
+    virtual void displayObstacle(int level);
 
 };
 

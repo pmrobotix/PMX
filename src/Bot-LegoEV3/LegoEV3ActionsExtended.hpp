@@ -187,27 +187,27 @@ public:
         left_arm_retract();
         right_arm_retract();
     }
-    void right_eject_all(int sleeptime)
+    void right_eject_all(int sleeptimems)
     {
         logger().info() << "conveyorBelt_Left_low" << logs::end;
-        conveyorBelt_Left_low(true);
+        conveyorBelt_Left_low(0);
 
         logger().info() << "conveyorBelt_EjectRight" << logs::end;
-        conveyorBelt_EjectRight(sleeptime);
+        conveyorBelt_EjectRight(sleeptimems);
     }
 
-    void left_eject_all(int sleeptime)
+    void left_eject_all(int sleeptimems)
     {
         logger().info() << "conveyorBelt_Right_low" << logs::end;
-        conveyorBelt_Right_low(true);
+        conveyorBelt_Right_low(0);
 
         logger().info() << "conveyorBelt_EjectLeft" << logs::end;
-        conveyorBelt_EjectLeft(sleeptime);
+        conveyorBelt_EjectLeft(sleeptimems);
     }
 
     void left_prendre_palet(int push, int nb)
     {
-        conveyorBelt_Left_low(1);
+        conveyorBelt_Left_low(0);
 
         for (int i = 1; i <= nb; i++) {
             logger().info() << "left_arm_take" << logs::end;
@@ -225,7 +225,7 @@ public:
     }
     void right_prendre_palet(int push, int nb)
     {
-        conveyorBelt_Right_low(1);
+        conveyorBelt_Right_low(0);
         for (int i = 1; i <= nb; i++) {
             logger().info() << "right_arm_take" << logs::end;
             right_arm_take();
@@ -248,62 +248,62 @@ public:
         usleep(1000000);
         servosStd().release(SERVO_7);
     }
-    void left_arm_take()
+    void left_arm_take(int keep_ms = 1500)
     {
-        servosStd().deploy(SERVO_7, -90, 0);
-        usleep(1500000);
-        servosStd().release(SERVO_7);
+        servosStd().deploy(SERVO_7, -90, keep_ms);
+        //usleep(1500000);
+        //servosStd().release(SERVO_7);
     }
-    void left_arm_retract()
+    void left_arm_retract(int keep_ms = 1000)
     {
-        servosStd().deploy(SERVO_7, 90, 0);
-        usleep(1000000);
-        servosStd().release(SERVO_7);
+        servosStd().deploy(SERVO_7, 90, keep_ms);
+//        usleep(1000000);
+//        servosStd().release(SERVO_7);
     }
 
-    void right_arm_center(int keep = 0)
+    void right_arm_center()
     {
-        servosStd().deploy(SERVO_5, 0, 0);
-        usleep(1000000);
-        servosStd().release(SERVO_5);
+        servosStd().deploy(SERVO_5, 0, 1000);
+//        usleep(1000000);
+//        servosStd().release(SERVO_5);
     }
-    void right_arm_take(int keep = 0)
+    void right_arm_take(int keep_ms = 1500)
     {
-        servosStd().deploy(SERVO_5, 90, 0);
-        usleep(1500000);
-        servosStd().release(SERVO_5);
+        servosStd().deploy(SERVO_5, 90, keep_ms);
+        //usleep(1500000);
+        //servosStd().release(SERVO_5);
     }
-    void right_arm_retract()
+    void right_arm_retract(int keep_ms = 1000)
     {
-        servosStd().deploy(SERVO_5, -90, 0);
-        usleep(1000000);
-        servosStd().release(SERVO_5);
+        servosStd().deploy(SERVO_5, -90, keep_ms);
+//        usleep(1000000);
+//        servosStd().release(SERVO_5);
     }
 
     void conveyorBelt_Left_center()
     {
-        servosStd().deploy(SERVO_1, 0, 0);
-        usleep(1000000);
-        servosStd().release(SERVO_1);
+        servosStd().deploy(SERVO_1, 0, 1000);
+//        usleep(1000000);
+//        servosStd().release(SERVO_1);
     }
-    void conveyorBelt_Right_low(bool keep_activated = false)
+    void conveyorBelt_Right_low(int keep_ms = 2000)
     {
-        servosStd().deploy(SERVO_1, -90, 0);
+        servosStd().deploy(SERVO_1, -90, keep_ms);
 
-        if (!keep_activated) {
-            usleep(2000000);
-            servosStd().release(SERVO_1);
-        }
+//        if (!keep_activated) {
+//            usleep(2000000);
+//            servosStd().release(SERVO_1);
+//        }
     }
 
-    void conveyorBelt_Left_low(bool keep_activated = false)
+    void conveyorBelt_Left_low(int keep_ms = 2000)
     {
-        servosStd().deploy(SERVO_1, 90, 0);
+        servosStd().deploy(SERVO_1, 90, keep_ms);
 
-        if (!keep_activated) {
-            usleep(2000000);
-            servosStd().release(SERVO_1);
-        }
+//        if (!keep_activated) {
+//            usleep(2000000);
+//            servosStd().release(SERVO_1);
+//        }
 
     }
     void conveyorBelt_PushRight(int nb_position)
@@ -317,15 +317,15 @@ public:
         servoUsingMotor().moveLeft(nb_position);
         sleep(1);
     }
-    void conveyorBelt_EjectLeft(int sleeptime)
+    void conveyorBelt_EjectLeft(int sleeptimems)
     {
         servoUsingMotor().ejectLeft();
-        sleep(sleeptime);
+        usleep(sleeptimems*1000.0);
     }
-    void conveyorBelt_EjectRight(int sleeptime)
+    void conveyorBelt_EjectRight(int sleeptimems)
     {
         servoUsingMotor().ejectRight();
-        sleep(sleeptime);
+        usleep(sleeptimems * 1000.0);
     }
 
 };
