@@ -11,37 +11,37 @@ class O_AsservTest: public FunctionalTest
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref O_AsservTest.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("O_AsservTest");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref O_AsservTest.
+     */
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("O_AsservTest");
+        return instance;
+    }
 public:
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	O_AsservTest()
-			: FunctionalTest("Asserv run dist/angle", "faire une distance d et tourner de a")
-	{
-	}
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    O_AsservTest() :
+            FunctionalTest("Asserv run test", "go to different positions")
+    {
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual ~O_AsservTest()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual ~O_AsservTest()
+    {
+    }
 
-	/*!
-	 * \brief Execute le test.
-	 */
-	virtual void run(int argc, char** argv);
+    /*!
+     * \brief Execute le test.
+     */
+    virtual void run(int argc, char** argv);
 
-	virtual void configureConsoleArgs(int argc, char** argv);
+    virtual void configureConsoleArgs(int argc, char** argv);
 
 };
 

@@ -32,7 +32,7 @@ private:
         return instance;
     }
 
-    AAsservDriver* asservdriver_;
+
 
 protected:
 
@@ -56,6 +56,7 @@ protected:
     std::string botId_;
 
 
+    AAsservDriver* asservdriver_;
 
     /*!
      * \brief asservissement interne INSA.
@@ -73,12 +74,13 @@ protected:
     bool temp_ignoreFrontCollision_;
     bool temp_forceRotation_;
 
-
     //0=>LEFT with coordinate x, y, angle
     //1=>RIGHT with coordinate 3000-x, y , -angle
     bool matchColorPosition_;
 
     Robot * probot_; //reference du parent
+
+    RobotPosition adv_pos_centre_;
 
 public:
 
@@ -86,7 +88,7 @@ public:
      * \brief Constructor.
      *
      */
-    Asserv(std::string botId, Robot * robot); //TODO robot is deprecated
+    Asserv(std::string botId, Robot * robot); //TODO robot is deprecated ?
 
     /*!
      * \brief Destructor.
@@ -101,14 +103,30 @@ public:
 
     //Gestion de l'asservissement
     virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);
-    virtual void stopMotionTimerAndOdo();
-    void disablePID(); //TODO deprecated
+
     virtual void setLowSpeedForward(bool enable, int percent = 0);
     virtual void setLowSpeedBackward(bool enable, int percent = 0);
+    virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
+    virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
+    virtual void warnFrontCollisionOnTraj(float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
+    virtual void warnBackCollisionOnTraj(float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
+
+    void resetEmergencyOnTraj();
 
     //modes d'arret de l'asservissement
+    virtual void stopMotionTimerAndOdo();
+    void disablePID(); //TODO deprecated
     void freeMotion();
     void assistedHandling();
+
+    RobotPosition pos_getAdvPosition();
+    RobotPosition pos_getPosition();
+    float pos_getX_mm();
+    float pos_getY_mm();
+    // angle in radian
+    float pos_getTheta();
+    // angle in degrees
+    float pos_getThetaInDegree();
 
     //relative motion (depends on current position of the robot)
     TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
@@ -121,22 +139,17 @@ public:
     TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored = false);
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);
     TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignored = false);
-    TRAJ_STATE doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored= false);
+    TRAJ_STATE doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored = false);
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
     //void doActivateReguAngle(bool enable);
 
     //attentionLa couleur de match doit deja etre effectué !
-    bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
-    bool calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
-
-
-
-    /*!
-     * Attention startMotionTimerAndOdo() est necessaire auparavant pour configurer vTops et donc la position du robot
-     */
-    virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
+    bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
+            float y_depart_mm);
+    bool calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
+            float y_depart_mm);
 
     void setMatchColorPosition(bool c)
     {
@@ -177,21 +190,6 @@ public:
         }
         return degrees;
     }
-
-    virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
-
-    void resetEmergencyOnTraj();
-    virtual void warnFrontCollisionOnTraj();
-    virtual void warnBackCollisionOnTraj();
-
-    RobotPosition pos_getPosition();
-    float pos_getX_mm();
-    float pos_getY_mm();
-    // angle in radian
-    float pos_getTheta();
-    // angle in degrees
-    float pos_getThetaInDegree();
-
 
 };
 

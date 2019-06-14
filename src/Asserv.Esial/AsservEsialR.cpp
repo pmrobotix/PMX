@@ -395,21 +395,18 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
 TRAJ_STATE AsservEsialR::motion_DoLine(float dist_meters)
 {
-    //pathStatus_ = TRAJ_OK;
     commandM_->addStraightLine(dist_meters * 1000.0f);
 
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFace(float x_m, float y_m)
 {
-    //pathStatus_ = TRAJ_OK;
     commandM_->addGoToAngle(x_m * 1000.0f, y_m * 1000.0f);
 
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoRotate(float angle_radians)
 {
-    //pathStatus_ = TRAJ_OK;
     commandM_->addTurn((angle_radians * 180.0) / M_PI);
 
     return waitEndOfTraj();
@@ -423,7 +420,6 @@ TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius)
 TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_meters)
 {
     if (odo_ != NULL) {
-        //pathStatus_ = TRAJ_OK;
         consignC_->add_dist_consigne(Utils::mmToUO(odo_, dist_meters * 1000.0f));
 
         return waitEndOfTraj();

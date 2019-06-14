@@ -32,7 +32,7 @@ void L_ServoStepTest::run(int argc, char** argv)
 
     Arguments args = robot.getArgs();
 
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     //args.usage();
 
     int pos = 0;

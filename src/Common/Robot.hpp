@@ -77,6 +77,8 @@ protected:
     Asserv * asserv_default_;
 
     SvgWriter * svg_;
+
+
 public:
 #ifdef SIMU
     int CLEF_REQUETES = 0x00012345;
@@ -192,7 +194,7 @@ public:
         return r_svg;
     }
 
-    void svgPrintPosition();
+    void svgPrintPosition(int color=0);
 
     void svgPrintEndOfFile();
 

@@ -331,7 +331,7 @@ void IAbyPath::playgroundFindPath(FoundPath * & path, Point& start, Point& end)
     p_->find_path(path, start, end);
 }
 
-TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM) //renommer doMoveForwardbyPathTo
+TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection) //TODO utiliser la fonction goto xy de l'asserv
 {
     TRAJ_STATE ts = TRAJ_OK;
     logger().info() << "position p = x " << robot_->asserv()->pos_getX_mm() << " y " << robot_->asserv()->pos_getY_mm()
@@ -349,13 +349,14 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM) //renommer doMoveForw
         if (found_path->cost == 0) {
             logger().info() << "PATH NOT FOUND - CANCELLED " << ", " << found_path->cost << logs::end;
             delete found_path;
-            return TRAJ_CANCELLED;
+            return TRAJ_CANCELLED; //TODO A Renommer IMPOSSIBLE
         }
 
         int count = 0;
         for (nodes_it = found_path->path.begin(); nodes_it < found_path->path.end(); nodes_it++) {
 
             Node* node = *nodes_it;
+            ts = TRAJ_OK;
 
             path_polyline << node->x << "," << -node->y << " ";
 
@@ -363,7 +364,8 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM) //renommer doMoveForw
 
                 logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
 
-                ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y); //inversement de x car doMoveForwardTo va aussi le refaire.
+                ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y,
+                        rotate_ignored_detection); //inversement de x car doMoveForwardTo va aussi le refaire.
                 if (ts != TRAJ_FINISHED) {
                     return ts;
                 }
@@ -407,46 +409,133 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
 }
 
 TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
-        int nb_near_obstacle, int nb_collision)
+        int nb_near_obstacle, int nb_collision, bool byPathfinding)
 {
-    TRAJ_STATE ts;
+    TRAJ_STATE ts = TRAJ_OK;
     int f = 0;
     int c = 0;
+    if (byPathfinding) {
+        while ((ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection)) != TRAJ_FINISHED) {
 
-    while ((ts = robot_->asserv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection)) != TRAJ_FINISHED) {
+            if (ts != TRAJ_FINISHED) {
+                robot_->logger().info() << " TS = " << ts << logs::end;
+                robot_->svgPrintPosition(1);
+                robot_->displayTS(ts);
 
-        robot_->logger().info() << " TS = " << ts << logs::end;
-        robot_->svgPrintPosition(); //TODO change color of the print
-        robot_->displayTS(ts);
+                if (ts == TRAJ_NEAR_OBSTACLE) {
+                    robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+                    f++;
+                    if (f < 2)
+                        robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection 1 puis 2
+                    if (f > nb_near_obstacle) {
+                        break;
+                    }
+                }
+                if (ts == TRAJ_COLLISION) {
+                    robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
+                    c++;
+                    robot_->asserv()->resetEmergencyOnTraj();
+                    if (c > nb_collision) {
+                        break;
+                    }
+                }
+                if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
+                    robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
 
-        if (ts == TRAJ_NEAR_OBSTACLE) {
-            robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+                    robot_->asserv()->resetEmergencyOnTraj();
 
+                    break;
 
-            f++;
-            if(f<2)
-                robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection
-            if (f > nb_near_obstacle) {
+                }
+                usleep(wait_tempo_us);
+                robot_->resetDisplayTS();
+                logger().info() << "AGAIN GOTO x=" << xMM << " y=" << yMM << logs::end;
 
-                break;
             }
         }
-        if (ts == TRAJ_COLLISION) {
-            robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
+    } else {
+        while ((ts = robot_->asserv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection)) != TRAJ_FINISHED) {
 
+            if (ts != TRAJ_FINISHED) {
+                robot_->logger().info() << " TS = " << ts << logs::end;
+                robot_->svgPrintPosition(1);
+                robot_->displayTS(ts);
 
-            c++;
-            robot_->asserv()->resetEmergencyOnTraj();
-            if (c > nb_collision) {
+                if (ts == TRAJ_NEAR_OBSTACLE) {
+                    robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+                    f++;
+                    if (f < 2)
+                        robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection 1 puis 2
+                    if (f > nb_near_obstacle) {
+                        break;
+                    }
+                }
+                if (ts == TRAJ_COLLISION) {
+                    robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
+                    c++;
+                    robot_->asserv()->resetEmergencyOnTraj();
+                    if (c > nb_collision) {
+                        break;
+                    }
+                }
+                if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
+                    robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
 
-                break;
+                    robot_->asserv()->resetEmergencyOnTraj();
+
+                    break;
+
+                }
+                usleep(wait_tempo_us);
+                robot_->resetDisplayTS();
+                logger().info() << "AGAIN GOTO x=" << xMM << " y=" << yMM << logs::end;
+
             }
         }
-        usleep(wait_tempo_us);
-        robot_->resetDisplayTS();
-        logger().info() << "AGAIN GOTO x=" << xMM << " y=" << yMM << logs::end;
-
     }
+    /*
+     while (ts != TRAJ_FINISHED) {
+     if (!byPathfinding) {
+     ts = robot_->asserv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
+     } else {
+     ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
+     }
+     if (ts != TRAJ_FINISHED) {
+     robot_->logger().info() << " TS = " << ts << logs::end;
+     robot_->svgPrintPosition(1);
+     robot_->displayTS(ts);
+
+     if (ts == TRAJ_NEAR_OBSTACLE) {
+     robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+     f++;
+     if (f < 2)
+     robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection 1 puis 2
+     if (f > nb_near_obstacle) {
+     break;
+     }
+     }
+     if (ts == TRAJ_COLLISION) {
+     robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
+     c++;
+     robot_->asserv()->resetEmergencyOnTraj();
+     if (c > nb_collision) {
+     break;
+     }
+     }
+     if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
+     robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
+
+     robot_->asserv()->resetEmergencyOnTraj();
+
+     break;
+
+     }
+     usleep(wait_tempo_us);
+     robot_->resetDisplayTS();
+     logger().info() << "AGAIN GOTO x=" << xMM << " y=" << yMM << logs::end;
+     }
+     }
+     */
     robot_->displayTS(ts);
     logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
             << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
@@ -456,16 +545,79 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
 
     return ts;
 }
+
+TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
+        int nb_near_obstacle, int nb_collision, bool byPathfinding)
+{
+    TRAJ_STATE ts = TRAJ_OK;
+    int f = 0;
+    int c = 0;
+
+    while (ts != TRAJ_FINISHED) {
+        if (!byPathfinding) {
+            ts = robot_->asserv()->doMoveBackwardTo(xMM, yMM, rotate_ignored_detection);
+        } else {
+            ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
+        }
+        if (ts != TRAJ_FINISHED) {
+            robot_->logger().info() << " TS = " << ts << logs::end;
+            robot_->svgPrintPosition(1);
+            robot_->displayTS(ts);
+
+            if (ts == TRAJ_NEAR_OBSTACLE) {
+                robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
+                f++;
+                if (f < 2)
+                    robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection
+                if (f > nb_near_obstacle) {
+                    break;
+                }
+            }
+            if (ts == TRAJ_COLLISION) {
+                robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
+                c++;
+                robot_->asserv()->resetEmergencyOnTraj();
+                if (c > nb_collision) {
+                    break;
+                }
+            }
+            if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
+                robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
+
+                robot_->asserv()->resetEmergencyOnTraj();
+
+                break;
+
+            }
+            usleep(wait_tempo_us);
+            robot_->resetDisplayTS();
+            logger().info() << "AGAIN GOTO BAKWARD x=" << xMM << " y=" << yMM << logs::end;
+        }
+    }
+
+    robot_->displayTS(ts);
+    logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
+            << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
+            << robot_->asserv()->pos_getThetaInDegree() << logs::end;
+
+    robot_->svgPrintPosition();
+
+    return ts;
+}
+
 TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tempo_us, int nb_collision)
 {
-    TRAJ_STATE ts;
+    robot_->svgPrintPosition(1);
+    robot_->logger().info() << " ===== whileMoveRotateTo" << logs::end;
+
+    TRAJ_STATE ts = TRAJ_OK;
     int f = 0;
     int c = 0;
 
     while ((ts = robot_->asserv()->doAbsoluteRotateTo(AbsoluteThetaInDegree)) != TRAJ_FINISHED) {
 
         robot_->logger().info() << " TS = " << ts << logs::end;
-        robot_->svgPrintPosition(); //TODO change color of the print
+        robot_->svgPrintPosition(1);
         robot_->displayTS(ts);
 
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -503,13 +655,15 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
 }
 
 TRAJ_STATE IAbyPath::whileMoveForwardAndRotateTo(float xMM, float yMM, float absoluteThetaInDegree,
-        bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision)
+        bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision, bool byPathfinding)
 {
-    TRAJ_STATE ts;
-    ts = whileMoveForwardTo(xMM, yMM, rotate_ignored_detection, wait_tempo_us, nb_near_obstacle, nb_collision);
+    TRAJ_STATE ts = TRAJ_OK;
+    ts = whileMoveForwardTo(xMM, yMM, rotate_ignored_detection, wait_tempo_us, nb_near_obstacle, nb_collision,
+            byPathfinding);
     if (ts != TRAJ_FINISHED) {
         return ts;
     }
+    ts = TRAJ_OK;
     ts = whileMoveRotateTo(absoluteThetaInDegree, wait_tempo_us, nb_collision);
     return ts;
 }

@@ -1,7 +1,7 @@
 #ifndef LegoEV3_IAEXTENDED_HPP_
 #define LegoEV3_IAEXTENDED_HPP_
 
-#include <src/pmr_playground.h>
+#include <src/pmr_symmetrical_pg.h>
 #include <string>
 
 #include "../Common/IA/IAbyPath.hpp"
@@ -17,7 +17,7 @@ private:
     IAbyZone iaz_;
     IAbyPath iap_;
 
-    Playground *p_;
+    SymmetricalPlayground *p_;
 
 public:
 

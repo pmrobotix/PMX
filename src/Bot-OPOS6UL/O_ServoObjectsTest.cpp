@@ -28,25 +28,31 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 
     Arguments args = robot.getArgs();
 
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     robot.actions().servosAx12().detect();
     robot.actions().ax12_left_cil_retract(0);
     robot.actions().ax12_right_cil_retract();
 
+    robot.actions().ax12_rightHand_retract();
+    robot.actions().ax12_leftHand_retract();
+
     robot.actions().ax12_left_cil(0);
     robot.actions().ax12_right_cil();
 
-    logger().info() << "goldenium = " <<robot.actions().ax12_goldenium_in_cil() << logs::end;
+    robot.actions().ax12_rightHand();
+    robot.actions().ax12_leftHand();
+
+    logger().info() << "goldenium = " << robot.actions().ax12_goldenium_in_cil() << logs::end;
 
     sleep(3);
-    logger().info() << "goldenium = " <<robot.actions().ax12_goldenium_in_cil() << logs::end;
-
-
+    logger().info() << "goldenium = " << robot.actions().ax12_goldenium_in_cil() << logs::end;
 
     robot.actions().ax12_left_cil_retract(0);
     robot.actions().ax12_right_cil_retract();
 
+    robot.actions().ax12_rightHand_retract(0);
+    robot.actions().ax12_leftHand_retract();
 
     robot.stopExtraActions();
     logger().info() << "Happy End." << logs::end;

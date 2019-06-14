@@ -28,7 +28,7 @@ void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler
 
 void L_AsservEsialTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° "<< this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 

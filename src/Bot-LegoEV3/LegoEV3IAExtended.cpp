@@ -8,7 +8,7 @@ LegoEV3IAExtended::LegoEV3IAExtended(std::string botId, Robot *robot) :
         iaz_(robot), iap_(robot)
 {
     //p_ = new Playground(0.0, 0.0, 3000.0, 2000.0, 1.0, 1.0);
-    p_ = new Playground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0);
+    p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
 
     initPlayground();
 
@@ -16,19 +16,20 @@ LegoEV3IAExtended::LegoEV3IAExtended(std::string botId, Robot *robot) :
 
 void LegoEV3IAExtended::initPlayground()
 {
+
     //bordure terrain
-    p_->add_rectangle(1500, 0, 3000, 140, 0); //bottom
-    p_->add_rectangle(1500, 2000, 3000, 140, 0); //top
-    p_->add_rectangle(0, 1000, 140, 2000, 0); //left
-    p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
+        p_->add_rectangle(1500, 0, 3000, 140, 0); //bottom
+        p_->add_rectangle(1500, 2000, 3000, 140, 0); //top
+        p_->add_rectangle(0, 1000, 140, 2000, 0); //left
+        p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
-    //zone aleatoire
-    p_->add_circle(this->area_alea_violet, 1000.0, 1050.0, 300.0, 6);
-    p_->add_circle(this->area_alea_yellow, 2000.0, 1050.0, 300.0, 6);
+        //zone aleatoire
+        p_->add_circle_symmetrical(this->area_alea_violet, this->area_alea_yellow, 1000.0, 1050.0, 300.0, 6);
 
-    //zone palets depart
-    p_->add_rectangle(this->area_palet_start_violet, 500.0, 600.0, 300.0, 1400.0, 0.0);
-    p_->add_rectangle(this->area_palet_start_yellow, 3000-500.0, 600.0, 300.0, 1400.0, 0.0);
+        //zone palets depart
+        p_->add_rectangle_lower_left_symmetrical(this->area_palet_start_violet, this->area_palet_start_yellow, 350.0, 600.0, 300.0, 600.0, 0.0);
+
+
 
     /*
      //orange parts

@@ -17,39 +17,6 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
     robot_extended_ = robot;
 }
 
-void OPOS6UL_AsservExtended::resetDisplayTS() //tod a remonter sur le robot ???
-{
-    robot_extended_->actions().ledBar().resetAll();
-    //robot_extended_->actions().lcd2x16().clear();
-
-}
-
-void OPOS6UL_AsservExtended::displayTS(TRAJ_STATE ts)
-{
-    robot_extended_->actions().ledBar().setOn(ts);
-    /*
-     robot_extended_->actions().lcd2x16().home();
-     if (ts == TRAJ_OK) {
-     robot_extended_->actions().lcd2x16().println("TRAJ_OK");
-     }
-     if (ts == TRAJ_ERROR) {
-     robot_extended_->actions().lcd2x16().println("TRAJ_ERROR");
-     }
-     if (ts == TRAJ_COLLISION) {
-     robot_extended_->actions().lcd2x16().println("TRAJ_COLLISION");
-     }
-     if (ts == TRAJ_CANCELLED) {
-     robot_extended_->actions().lcd2x16().println("TRAJ_CANCELLED");
-     }
-     if (ts == TRAJ_INTERRUPTED) {
-     robot_extended_->actions().lcd2x16().println("TRAJ_INTERRUPTED");
-     }
-     if (ts == TRAJ_NEAR_OBSTACLE) {
-     robot_extended_->actions().lcd2x16().println("TRAJ_NEAR_OBSTACLE");
-     }*/
-
-    //sleep(1);
-}
 
 bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm)
 {
@@ -77,13 +44,13 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
 
 void OPOS6UL_AsservExtended::setLowSpeedForward(bool enable, int)
 {
-    logger().error() << "LegoEV3AsservExtended::setLowSpeedForward = " << enable << logs::end;
-    Asserv::setLowSpeedForward(enable, 45);
-
+    logger().debug() << "LegoEV3AsservExtended::setLowSpeedForward = " << enable << logs::end;
+    //Asserv::setLowSpeedForward(enable, 45);
+    asservdriver_->motion_setLowSpeedForward(enable, 55);
 }
 void OPOS6UL_AsservExtended::setLowSpeedBackward(bool enable, int)
 {
-    logger().error() << "LegoEV3AsservExtended::setLowSpeedBackward =" << enable << logs::end;
-
-    Asserv::setLowSpeedBackward(enable, 45);
+    logger().debug() << "LegoEV3AsservExtended::setLowSpeedBackward =" << enable << logs::end;
+    //Asserv::setLowSpeedBackward(enable, 45);
+    asservdriver_->motion_setLowSpeedBackward(enable, 55);
 }

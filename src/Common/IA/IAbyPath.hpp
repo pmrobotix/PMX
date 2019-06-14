@@ -85,13 +85,17 @@ public:
     void playgroundFindPath(FoundPath * & path, Point& start, Point& end);
     void enable(PlaygroundObjectID id, bool enable);
 
-
     TRAJ_STATE doMoveForwardAndRotateTo(float x, float y, float theta);
-    TRAJ_STATE doMoveForwardTo(float xMM, float yMM);
+    TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection = false);
 
-    TRAJ_STATE whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision);
+    TRAJ_STATE whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
+            int nb_near_obstacle, int nb_collision, bool byPathfinding = false);
+    TRAJ_STATE whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
+            int nb_near_obstacle, int nb_collision, bool byPathfinding = false);
     TRAJ_STATE whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tempo_us, int nb_collision);
-    TRAJ_STATE whileMoveForwardAndRotateTo(float xMM, float yMM, float AbsoluteThetaInDegree, bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision);
+    TRAJ_STATE whileMoveForwardAndRotateTo(float xMM, float yMM, float AbsoluteThetaInDegree,
+            bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision,
+            bool byPathfinding = false);
 
 };
 

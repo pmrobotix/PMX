@@ -277,8 +277,6 @@ void AsservDriver::path_InterruptTrajectory()
     else {
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_INTERRUPTED;
-        //usleep(300000);
-        //mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_CollisionOnTrajectory()
@@ -288,11 +286,9 @@ void AsservDriver::path_CollisionOnTrajectory()
     if (!asservMbedStarted_)
         logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
-        //logger().info() << "path_CollisionOnTrajectory() HALT " << asservMbedStarted_ << logs::end;
+        logger().error() << "path_CollisionOnTrajectory() HALT " << asservMbedStarted_ << logs::end;
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_NEAR_OBSTACLE;
-        //usleep(300000);
-        //mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_CollisionRearOnTrajectory()
@@ -305,8 +301,6 @@ void AsservDriver::path_CollisionRearOnTrajectory()
     else {
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_NEAR_OBSTACLE;
-        //usleep(300000);
-        //mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_CancelTrajectory()
@@ -318,8 +312,6 @@ void AsservDriver::path_CancelTrajectory()
     else {
         mbed_writeI2c('h', 0, NULL);
         pathStatus_ = TRAJ_CANCELLED;
-        //usleep(300000);
-        //mbed_writeI2c('r', 0, NULL); //reset de l'arret d'urgence
     }
 }
 void AsservDriver::path_ResetEmergencyStop()
@@ -329,6 +321,7 @@ void AsservDriver::path_ResetEmergencyStop()
     if (!asservMbedStarted_)
         logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
+        logger().error() << "path_ResetEmergencyStop() !! " << logs::end;
         mbed_writeI2c('r', 0, NULL);
         pathStatus_ = TRAJ_OK;
     }
@@ -341,10 +334,6 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) //v4 +d
         logger().debug() << "motion_DoLine() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
         return TRAJ_ERROR;
     } else {
-
-//        if (pathStatus_ != TRAJ_OK)
-//            return pathStatus_;
-        path_ResetEmergencyStop();
 
         unsigned char d[4];
         float2bytes_t mm;
@@ -392,6 +381,8 @@ TRAJ_STATE AsservDriver::mbed_waitEndOfTraj()
     } else if (p_.asservStatus == 0) {
         return TRAJ_FINISHED;
     } else if (p_.asservStatus == 2) {
+        logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
+                        << pathStatus_ << logs::end;
         return pathStatus_;
     } else
         return TRAJ_ERROR;
@@ -405,7 +396,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_m, float y_m) // f8 +x+y
         logger().error() << "motion_DoFace() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
         return TRAJ_ERROR;
     } else {
-        path_ResetEmergencyStop();
+
         unsigned char d[8];
         float2bytes_t x, y;
         x.f = x_m * 1000.0;
@@ -432,7 +423,6 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) //t4 +d
         logger().error() << "motion_DoRotate() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
         return TRAJ_ERROR;
     } else {
-        path_ResetEmergencyStop();
         float angle_degrees = (angle_radians * 180.0) / M_PI;
         unsigned char d[4];
         float2bytes_t deg;
@@ -460,7 +450,6 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
         logger().debug() << "motion_DoDirectLine() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
         return TRAJ_ERROR;
     } else {
-        path_ResetEmergencyStop();
         unsigned char d[4];
         float2bytes_t mm;
         mm.f = (dist_meters * 1000.0);

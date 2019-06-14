@@ -311,7 +311,7 @@ void O_State_Init::setPos()
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
-    robot.asserv().resetDisplayTS();
+    //robot.asserv().resetDisplayTS();
     robot.asserv().assistedHandling();
     TRAJ_STATE ts;
     ts = robot.asserv().doLineAbs(150);
@@ -322,7 +322,7 @@ void O_State_Init::setPos()
     robot.actions().ax12_init();
     ts = robot.asserv().doMoveBackwardAndRotateTo(70 + 150, 450 + 13, 0.0);
      */
-    robot.asserv().displayTS(ts);
+    //robot.asserv().displayTS(ts);
     robot.svgPrintPosition();
     robot.actions().lcd2x16().println("SET POSITION : OK");
 }

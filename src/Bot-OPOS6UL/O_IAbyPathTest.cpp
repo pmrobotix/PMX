@@ -125,7 +125,7 @@ bool O_IAByPathTest_action2()
 
 void O_IAByPathTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 

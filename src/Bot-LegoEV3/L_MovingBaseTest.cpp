@@ -30,7 +30,7 @@ void L_MovingBaseTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 void L_MovingBaseTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();

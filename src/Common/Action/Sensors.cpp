@@ -30,6 +30,9 @@ Sensors::Sensors(Actions & actions, Robot * robot) :
     setIgnoreAllFrontNearObstacle(false);
     setIgnoreAllBackNearObstacle(false);
 
+    x_adv_mm = -1.0;
+    y_adv_mm = -1.0;
+
 }
 Sensors::~Sensors()
 {
@@ -142,15 +145,15 @@ float Sensors::multipleRightSide(int nb)
     float moy = 0.0;
     for (int ii = 0; ii < nb; ii++) {
         data[ii] = rightSide();
-        logger().info() << "Right= " << data[ii] << logs::end;
-        usleep(50000);
+        logger().debug() << "Right= " << data[ii] << logs::end;
+        usleep(40000);
     }
 
     //Now we call the sort function
     std::sort(data, data + nb);
 
     for (int ii = 0; ii < nb; ii++) {
-        logger().info() << "rtrie= " << data[ii] << logs::end;
+        logger().debug() << "rtrie= " << data[ii] << logs::end;
         //usleep(50000);
     }
 
@@ -166,15 +169,15 @@ float Sensors::multipleLeftSide(int nb)
     float moy = 0.0;
     for (int ii = 0; ii < nb; ii++) {
         data[ii] = leftSide();
-        logger().info() << "Left= " << data[ii] << logs::end;
-        usleep(50000);
+        logger().debug() << "Left= " << data[ii] << logs::end;
+        usleep(40000);
     }
 
     //Now we call the sort function
     std::sort(data, data + nb);
 
     for (int ii = 0; ii < nb; ii++) {
-        logger().info() << "ltrie= " << data[ii] << logs::end;
+        logger().debug() << "ltrie= " << data[ii] << logs::end;
         //usleep(50000);
     }
 
@@ -199,13 +202,20 @@ int Sensors::front(bool display)
     int fC = sensorDist("fC");
     int fR = sensorDist("fR");
 
+    int tfL = 0;
+    int tfC = 0;
+    int tfR = 0;
+    int tfMin = 0;
+
     //logger().info() << " L " << enableFrontLeft_ << " C " << enableFrontCenter_ << " R " << enableFrontRight_ << logs::end;
     int level = 0;
-    if (enableFrontLeft_)
+    if (enableFrontLeft_) //existance
         if (this->robot()->asserv()->filtre_IsInsideTable(fL, -1)) { //negatif = capteur placé à gauche
             if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
                 if (display)
                     logger().info() << "1 frontLeft= " << fL << logs::end;
+                tfL = fL;
+                tfMin = fL;
                 level = 1;
             }
         }
@@ -214,6 +224,9 @@ int Sensors::front(bool display)
             if ((!ignoreFrontCenter_ && (fC < frontCenterThreshold_))) {
                 if (display)
                     logger().info() << "1 frontCenter= " << fC << logs::end;
+                tfC = fC;
+                if (tfMin > fC)
+                    tfMin = fC;
                 level = 1;
             }
         }
@@ -222,6 +235,9 @@ int Sensors::front(bool display)
             if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
                 if (display)
                     logger().info() << "1 frontRight= " << fR << logs::end;
+                tfR = fR;
+                if (tfMin > fR)
+                    tfMin = fR;
                 level = 1;
             }
         }
@@ -250,6 +266,15 @@ int Sensors::front(bool display)
             }
         }
 
+    //Mise à jour de la position de l'adversaire
+    if (level >= 1) {
+        if (tfMin != 0) {
+            //au centre
+            x_adv_mm = tfMin;
+            y_adv_mm = 0.0;
+        }
+    }
+
     return level;
 }
 
@@ -258,18 +283,24 @@ int Sensors::back(bool display)
     int bL = sensorDist("bL");
     int bC = sensorDist("bC");
     int bR = sensorDist("bR");
+    int tfMin = 0;
     int level = 0;
     if (enableBackLeft_)
         if (this->robot()->asserv()->filtre_IsInsideTable(-bL, -1)) { //negatif = capteur placé à gauche
             if ((!ignoreBackLeft_ && (bL < backLeftThreshold_))) {
-                logger().info() << "1 backLeft= " << bL << logs::end;
+                if (display)
+                    logger().info() << "1 backLeft= " << bL << logs::end;
+                tfMin = bL;
                 level = 1;
             }
         }
     if (enableBackCenter_)
         if (this->robot()->asserv()->filtre_IsInsideTable(-bC, 0)) {
             if ((!ignoreBackCenter_ && (bC < backCenterThreshold_))) {
-                logger().info() << "1 backCenter= " << bC << logs::end;
+                if (display)
+                    logger().info() << "1 backCenter= " << bC << logs::end;
+                if (tfMin > bC)
+                    tfMin = bC;
                 level = 1;
             }
         }
@@ -277,6 +308,8 @@ int Sensors::back(bool display)
         if (this->robot()->asserv()->filtre_IsInsideTable(-bR, 1)) {
             if ((!ignoreBackRight_ && (bR < backRightThreshold_))) {
                 logger().info() << "1 backRight= " << bR << logs::end;
+                if (tfMin > bR)
+                    tfMin = bR;
                 level = 1;
             }
         }
@@ -301,7 +334,14 @@ int Sensors::back(bool display)
                 level = 2;
             }
         }
-
+    //Mise à jour de la position de l'adversaire
+    if (level >= 1) {
+        if (tfMin != 0) {
+            //au centre
+            x_adv_mm = -tfMin;
+            y_adv_mm = 0.0;
+        }
+    }
     return level;
 }
 
@@ -319,19 +359,20 @@ void Sensors::stopTimerSensors()
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-    int frontLevel = sensors_.front(false);
+    int frontLevel = sensors_.front(true);
     if (frontLevel == 1) {
         if (lastfrontl2_temp_ == true) //si on vient de descendre du level 2
                 {
+            logger().error() << "front : si on vient de descendre du level 2" << logs::end;
             lastdetect_front_nb_ = 1;
             lastfrontl2_temp_ = false;
             sensors_.robot()->asserv()->resetEmergencyOnTraj();
         }
 
-        //send collision to asserv
+//send collision to asserv
         if (lastdetect_front_nb_ == 0) {
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->warnFrontCollisionOnTraj();
+            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(sensors_.x_adv_mm, sensors_.y_adv_mm);
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->setLowSpeedForward(true);
 
@@ -343,7 +384,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
     if (lastdetect_front_nb_ > 0) {
         if (frontLevel >= 2) {
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->warnFrontCollisionOnTraj();
+            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(sensors_.x_adv_mm, sensors_.y_adv_mm);
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             lastfrontl2_temp_ = true;
         }
@@ -361,26 +402,27 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
     if (backLevel == 1) {
         if (lastbackl2_temp_ == true) //si on vient de descendre du level 2
                 {
+            logger().error() << "back : si on vient de descendre du level 2" << logs::end;
             lastdetect_back_nb_ = 1;
             lastbackl2_temp_ = false;
             sensors_.robot()->asserv()->resetEmergencyOnTraj();
         }
-        //send collision to asserv
+//send collision to asserv
 
         if (lastdetect_back_nb_ == 0) {
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->warnBackCollisionOnTraj();
+            sensors_.robot()->asserv()->warnBackCollisionOnTraj(sensors_.x_adv_mm, sensors_.y_adv_mm);
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->setLowSpeedBackward(true);
 
         }
         lastdetect_back_nb_++;
     }
-    //sensors_.robot()->displayObstacle(backLevel); //fusioner avec le display front ?
+//sensors_.robot()->displayObstacle(backLevel); //fusioner avec le display front ?
     if (lastdetect_back_nb_ > 0) {
         if (backLevel >= 2) {
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->warnBackCollisionOnTraj();
+            sensors_.robot()->asserv()->warnBackCollisionOnTraj(sensors_.x_adv_mm, sensors_.y_adv_mm);
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             lastbackl2_temp_ = true;
         }
@@ -388,7 +430,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
             lastdetect_back_nb_ = 0;
             sensors_.robot()->asserv()->setLowSpeedBackward(false); //surcharge par robot utilisée
             sensors_.robot()->asserv()->resetEmergencyOnTraj();
-            //sensors_.robot()->resetDisplayObstacle();
+//sensors_.robot()->resetDisplayObstacle();
         }
     }
 

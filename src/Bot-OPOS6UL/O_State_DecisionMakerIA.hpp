@@ -24,7 +24,6 @@ private:
      */
     Robot & robot_;
 
-    Playground *p_; //for new ia
 
 public:
 
@@ -46,9 +45,6 @@ public:
 
     void IASetupActivitiesZone();
     void IASetupActivitiesZoneTableTest();
-    void initPlayground();
-
-
 
 };
 

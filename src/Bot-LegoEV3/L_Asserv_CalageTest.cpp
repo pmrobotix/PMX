@@ -25,7 +25,7 @@ void L_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharg
 
 void L_Asserv_CalageTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° "<< this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     Arguments args = robot.getArgs();

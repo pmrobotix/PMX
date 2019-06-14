@@ -80,10 +80,8 @@ void ConsignController::perform()
         //long t3 = chrono.getElapsedTimeInMicroSec();
 
         //Calcul des vitesses à appliquer en les bornant évidemment
-        int32_t VmoteurD = Utils::constrain(dist_output + angle_output, Config::V_MAX_NEG_MOTOR,
-                Config::V_MAX_POS_MOTOR);
-        int32_t VmoteurG = Utils::constrain(dist_output - angle_output, Config::V_MAX_NEG_MOTOR,
-                Config::V_MAX_POS_MOTOR);
+        int32_t VmoteurD = Utils::constrain(dist_output + angle_output, Config::V_MAX_NEG_MOTOR, Config::V_MAX_POS_MOTOR);
+        int32_t VmoteurG = Utils::constrain(dist_output - angle_output, Config::V_MAX_NEG_MOTOR, Config::V_MAX_POS_MOTOR);
 
         //long t4 = chrono.getElapsedTimeInMicroSec();
         // On donne l'ordre aux moteurs et roulez jeunesse !!
@@ -111,7 +109,7 @@ void ConsignController::perform()
                         || ((VmoteurG * VmoteurD <= 0)
                                 && (abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD))))
 
-                {
+            {
             // Bloqué !
             if (blocked_ticks < INT32_MAX) {
                 // On n'incrémente pas en continue pour éviter l'overflow (au bout de 124 jours...)
@@ -145,17 +143,7 @@ void ConsignController::setLowSpeed(bool b)
     setLowSpeedForward(b, Config::DIST_QUAD_AV_LOW_DIV);
     setLowSpeedBackward(b, Config::DIST_QUAD_AR_LOW_DIV);
 }
-/*
- void ConsignController::setLowSpeed(bool b, unsigned char factor_div_back, unsigned char factor_div_forward)
- {
- if (b) {
- dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG / factor_div_back);
- dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS / factor_div_forward);
- } else {
- dist_regu.setVitesseMarcheArriere(Config::DIST_QUAD_1ST_NEG);
- dist_regu.setVitesseMarcheAvant(Config::DIST_QUAD_1ST_POS);
- }
- }*/
+
 
 void ConsignController::setLowSpeedForward(bool b, int percent)
 {

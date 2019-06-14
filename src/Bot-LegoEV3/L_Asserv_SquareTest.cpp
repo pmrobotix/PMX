@@ -32,12 +32,10 @@ void L_Asserv_SquareTest::configureConsoleArgs(int argc, char** argv) //surcharg
 
 void L_Asserv_SquareTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
 
     utils::Chronometer chrono("L_Asserv_SquareTest");
-    long left;
-    long right;
 
     float x = 0.0;
     float y = 0.0;

@@ -54,13 +54,17 @@ public:
     /*!
      * \brief Enumération des libellés des servos associés au numéro de servo
      */
-    enum ServoAx12Label
+    enum ServoAx12Label //TODO se servir de cette liste
     {
         AX12_SERVO_1 = 5,
 
-        AX12_SERVO_2 = 51,
+        AX12_SERVO_2 = 7,
 
-        AX12_SERVO_4 = 1,
+        AX12_SERVO_3 = 51,
+
+        AX12_SERVO_4 = 180,
+
+        AX12_SERVO_5 = 181,
 
         AX12_enumTypeEnd
     };
@@ -148,17 +152,22 @@ public:
     //--------------------------------------------------------------
     void releaseAll()
     {
-        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++) {
-            ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
-            //servosAx12().setPosition(foo, 0);
-            servosAx12().release(foo);
-        }
-
+        servosAx12().release(51);
+        servosAx12().release(5);
+        servosAx12().release(7);
+        servosAx12().release(180);
+        servosAx12().release(181);
+//        for (int fooInt = AX12_SERVO_1; fooInt != AX12_enumTypeEnd; fooInt++) {
+//            ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
+//            //servosAx12().setPosition(foo, 0);
+//            servosAx12().release(foo);
+//        }
+/*
         for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
             ServoStdLabel foo = static_cast<ServoStdLabel>(fooInt);
             //servosStd().setPosition(foo, 0);
             servosStd().release(foo);
-        }
+        }*/
 
     }
 
@@ -233,7 +242,7 @@ public:
         sensors_.addConfigFront(true, false, true);
 
         servosAx12().setSpeed(180, speed);
-        servosAx12().deploy(180, 232, keep);
+        servosAx12().deploy(180, 152, keep);//232 142
     }
 
     void ax12_right_cil_retract(int keep = 0, int speed = 512)
@@ -251,7 +260,7 @@ public:
     void ax12_right_cil(int keep = 0, int speed = 512)
     {
         servosAx12().setSpeed(181, speed);
-        servosAx12().deploy(181, 792, keep);
+        servosAx12().deploy(181, 842, keep);//792 852
     }
 
     bool ax12_goldenium_in_cil()

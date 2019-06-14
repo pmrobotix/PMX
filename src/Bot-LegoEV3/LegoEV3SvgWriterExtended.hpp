@@ -10,8 +10,6 @@ class LegoEV3SvgWriterExtended: public SvgWriter
 {
 private:
     logs::Logger::LoggerBuffer *fLogBuffer; //optimisation des logs pour ecrire sans recréer un objet
-
-
 public:
 
     LegoEV3SvgWriterExtended(std::string botId);
@@ -20,7 +18,7 @@ public:
     {
     }
 
-    void writePosition_Bot(float x, float y, float a_rad);
+    void writePosition_Bot(float x, float y, float a_rad, int color = 0);
 
     void writePosition_BotPos(float x, float y, float a_rad);
 

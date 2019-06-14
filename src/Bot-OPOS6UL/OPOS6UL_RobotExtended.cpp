@@ -37,7 +37,6 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     //init SVG log file
     svg_->beginHeader();
 
-
     points = 0;
 
     blue_done = false;
@@ -89,3 +88,42 @@ void OPOS6UL_RobotExtended::begin(int argc, char** argv)
             << logs::end;
 }
 
+void OPOS6UL_RobotExtended::resetDisplayTS()
+{
+    actions().ledBar().resetAll();
+
+}
+
+void OPOS6UL_RobotExtended::displayTS(TRAJ_STATE ts)
+{
+    if (ts == TRAJ_NEAR_OBSTACLE) {
+
+        actions().ledBar().setOn(4);
+    }
+    if (ts == TRAJ_COLLISION) {
+        actions().ledBar().setOn(2);
+        actions().ledBar().setOn(1);
+    }
+    if (ts == TRAJ_FINISHED) {
+        actions().ledBar().setOn(0);
+
+    }
+}
+
+void OPOS6UL_RobotExtended::resetDisplayObstacle()
+{
+    actions().ledBar().resetAll();
+
+}
+
+void OPOS6UL_RobotExtended::displayObstacle(int level)
+{
+    if (level == 1)
+
+        actions().ledBar().setOn(5);
+    if (level == 2)
+    {
+        actions().ledBar().setOn(6);
+        actions().ledBar().setOn(7);
+    }
+}

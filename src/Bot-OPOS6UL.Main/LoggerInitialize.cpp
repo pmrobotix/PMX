@@ -45,18 +45,19 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_State_WaitEndOfMatch", "console");
 
     //TESTS
-    add(logs::Level::INFO, "O_LedBarTest", "console");
-    add(logs::Level::INFO, "O_ButtonBarTest", "console");
-    add(logs::Level::INFO, "O_LcdBoardTest", "console");
-    add(logs::Level::INFO, "O_GroveColorTest", "console");
-    add(logs::Level::INFO, "O_AsservTest", "console");
-    add(logs::Level::INFO, "O_AsservEsialTest", "console");
-    add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
     add(logs::Level::INFO, "O_Asserv_CalageTest", "console");
-    add(logs::Level::INFO, "O_ServoStepTest", "console");
-    add(logs::Level::INFO, "O_ServoObjectsTest", "console");
-    add(logs::Level::INFO, "O_SensorsTest", "console");
+    add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
+    add(logs::Level::INFO, "O_LedBarTest", "console");
+    add(logs::Level::INFO, "O_AsservEsialTest", "console");
+    add(logs::Level::INFO, "O_AsservLineRotateTest", "console");
+    add(logs::Level::INFO, "O_AsservTest", "console");
+    add(logs::Level::INFO, "O_ButtonBarTest", "console");
+    add(logs::Level::INFO, "O_GroveColorTest", "console");
     add(logs::Level::INFO, "O_IAByPathTest", "console");
+    add(logs::Level::INFO, "O_LcdBoardTest", "console");
+    add(logs::Level::INFO, "O_SensorsTest", "console");
+    add(logs::Level::INFO, "O_ServoObjectsTest", "console");
+    add(logs::Level::INFO, "O_ServoStepTest", "console");
 
     //DRIVERS SIMU
     add(logs::Level::INFO, "LedDriver.SIMU", "console");

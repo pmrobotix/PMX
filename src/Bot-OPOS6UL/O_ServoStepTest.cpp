@@ -42,7 +42,7 @@ void O_ServoStepTest::run(int argc, char** argv)
     ServoObjectsSystem servoObjects = robot.actions().servosAx12();
 
 
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N°" << this->position() << " - Executing - " << this->desc() << logs::end;
 
 
     int pos = 512;

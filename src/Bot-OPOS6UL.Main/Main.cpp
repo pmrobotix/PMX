@@ -1,6 +1,7 @@
 #include "../Bot-OPOS6UL/O_Asserv_CalageTest.hpp"
 #include "../Bot-OPOS6UL/O_Asserv_SquareTest.hpp"
 #include "../Bot-OPOS6UL/O_AsservEsialTest.hpp"
+#include "../Bot-OPOS6UL/O_AsservLineRotateTest.hpp"
 #include "../Bot-OPOS6UL/O_AsservTest.hpp"
 #include "../Bot-OPOS6UL/O_ButtonBarTest.hpp"
 #include "../Bot-OPOS6UL/O_GroveColorTest.hpp"
@@ -18,28 +19,28 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-	//Specific Robot BigPMX
-	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    //Specific Robot BigPMX
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-	//add specific tests for this robot
-	robot.getConsoleManager().add(new O_LedBarTest());
-	robot.getConsoleManager().add(new O_ButtonBarTest());
-	robot.getConsoleManager().add(new O_LcdBoardTest());
-	robot.getConsoleManager().add(new O_GroveColorTest());
-	robot.getConsoleManager().add(new O_AsservEsialTest());
-	robot.getConsoleManager().add(new O_AsservTest());
-	robot.getConsoleManager().add(new O_Asserv_SquareTest());
-	robot.getConsoleManager().add(new O_Asserv_CalageTest());
-	robot.getConsoleManager().add(new O_IAByPathTest());
-	robot.getConsoleManager().add(new O_ServoStepTest);
-	robot.getConsoleManager().add(new O_ServoObjectsTest);
-	robot.getConsoleManager().add(new O_SensorsTest);
+    //add specific tests for this robot
+    robot.getConsoleManager().add(new O_LedBarTest());
+    robot.getConsoleManager().add(new O_ButtonBarTest());
+    robot.getConsoleManager().add(new O_LcdBoardTest());
+    robot.getConsoleManager().add(new O_GroveColorTest());
+    robot.getConsoleManager().add(new O_AsservEsialTest());
+    robot.getConsoleManager().add(new O_AsservLineRotateTest());
+    robot.getConsoleManager().add(new O_AsservTest());
+    robot.getConsoleManager().add(new O_Asserv_SquareTest());
+    robot.getConsoleManager().add(new O_Asserv_CalageTest());
+    robot.getConsoleManager().add(new O_IAByPathTest());
+    robot.getConsoleManager().add(new O_ServoStepTest);
+    robot.getConsoleManager().add(new O_ServoObjectsTest);
+    robot.getConsoleManager().add(new O_SensorsTest);
 
-	robot.parseConsoleArgs(argc, argv);
+    robot.parseConsoleArgs(argc, argv, false);
 
+    //start the Robot (functional tests or match)
+    robot.begin(argc, argv);
 
-	//start the Robot (functional tests or match)
-	robot.begin(argc, argv);
-
-	return 0;
+    return 0;
 }

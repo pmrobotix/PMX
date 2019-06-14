@@ -8,14 +8,15 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
     lcd2x16_.init();
 
     //config des sensors
-    sensors_.addConfigFront(true, false, true);
+    //TODO ajouter la configuration de la position des capteurs sensors_.addConfigPosFront(-140, 0, +140);
+    sensors_.addConfigFront(true, true, true);
     sensors_.addConfigBack(false, true, false);
 
-    sensors_.addThresholdFront(340, 345, 340);
-    sensors_.addThresholdFrontVeryClosed(240, 240, 240);
+    sensors_.addThresholdFront(350, 350, 350);
+    sensors_.addThresholdFrontVeryClosed(290, 290, 290);
 
-    sensors_.addThresholdBack(0, 200, 0);
-    sensors_.addThresholdBackVeryClosed(0, 130, 0);
+    sensors_.addThresholdBack(0, 220, 0);
+    sensors_.addThresholdBackVeryClosed(0, 160, 0);
 
 }
 

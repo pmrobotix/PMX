@@ -42,6 +42,7 @@ Robot::Robot() :
     skipSetup_ = 0;
     end90s_ = 0;
 
+
     configureDefaultConsoleArgs();
 
 }
@@ -57,11 +58,11 @@ Robot::~Robot()
 
 }
 
-void Robot::svgPrintPosition()
+void Robot::svgPrintPosition(int color)
 {
     if (asserv_default_ != NULL)
         this->svgw().writePosition_Bot(this->asserv_default_->pos_getX_mm(), this->asserv_default_->pos_getY_mm(),
-                this->asserv_default_->pos_getTheta());
+                this->asserv_default_->pos_getTheta(), color);
     else
         logger().error() << "asserv_default is NULL !" << logs::end;
 }
@@ -319,7 +320,6 @@ void Robot::freeMotion()
 void Robot::resetDisplayTS()
 {
     logger().error() << "resetDisplayTS ! (To be surcharged) " << logs::end;
-
 }
 
 void Robot::displayTS(TRAJ_STATE ts)

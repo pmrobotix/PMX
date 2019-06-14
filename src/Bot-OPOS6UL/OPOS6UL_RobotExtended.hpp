@@ -58,18 +58,15 @@ public:
 
     void displayPoints();
 
-    int points;
+    void resetDisplayTS();
+    void displayTS(TRAJ_STATE ts);
+    void resetDisplayObstacle();
+    void displayObstacle(int level);
 
     bool blue_done;
-
     bool gold_taken;
-
     bool gold_door_opened;
-
     bool gold_dropped;
-
-    //int todo_alea;
-
 
 private:
 

@@ -63,8 +63,11 @@ private:
     bool ignoreBackRight_;
 
 
-
 public:
+
+    //distance par rapport au centre du robot
+    float x_adv_mm;
+    float y_adv_mm;
 
     /*!
      * \brief Constructor.

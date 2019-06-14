@@ -1,17 +1,22 @@
 #include "O_AsservTest.hpp"
 
-#include <stdlib.h>
+#include <bits/basic_string.h>
 #include <unistd.h>
-#include <cmath>
-#include <string>
+#include <cstdlib>
+#include <iostream>
 
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
+#include "../Common/Asserv/EncoderControl.hpp"
+#include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
+#include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "OPOS6UL_ActionsExtended.hpp"
 #include "OPOS6UL_AsservExtended.hpp"
+#include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
 using namespace std;
@@ -19,157 +24,101 @@ using namespace std;
 void O_AsservTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.getArgs().addArgument("d", "dist en mm");
-    robot.getArgs().addArgument("a", "angle en degrees", "0");
 
-    //reparse arguments
+    //robot.getArgs().addArgument("nb", "nbr position", "1");
+    robot.getArgs().addArgument("x", "x mm");
+    robot.getArgs().addArgument("y", "y mm");
+    robot.getArgs().addArgument("x2", "x2 mm", "0");
+    robot.getArgs().addArgument("y2", "y2 mm", "0");
+    //TODO mettre plus de points x,y
+
+    Arguments::Option cOpt('+', "Coordinates x,y,a");
+    cOpt.addArgument("coordx", "coord x mm", "300.0");
+    cOpt.addArgument("coordy", "coord y mm", "300.0");
+    cOpt.addArgument("coorda", "coord teta mm", "0.0");
+    robot.getArgs().addOption(cOpt);
+
+    //reparse again arguments for the specific test
     robot.parseConsoleArgs(argc, argv);
+
 }
 
 void O_AsservTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
-    configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
-    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    Arguments args = robot.getArgs();
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
+    configureConsoleArgs(argc, argv);
 
-    float d = 0.0;
-    if (args["d"] != "0") {
-        d = atof(args["d"].c_str());
-        logger().info() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
+    float x = 0.0;
+    float y = 0.0;
+    float x2 = 0.0;
+    float y2 = 0.0;
+    float coordx = 0.0;
+    float coordy = 0.0;
+    float coorda_deg = 0.0;
+
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+
+    Arguments args = robot.getArgs();
+//    if (args["nb"] != "0") {
+//        nb = atoi(args["nb"].c_str());
+//        logger().debug() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
+//    }
+
+    if (args["x"] != "0") {
+        x = atof(args["x"].c_str());
+        logger().debug() << "Arg x set " << args["x"] << ", x = " << x << logs::end;
     }
-    float a = 0.0;
-    if (args["a"] != "0") {
-        a = atof(args["a"].c_str());
-        logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
+    if (args["y"] != "0") {
+        y = atof(args["y"].c_str());
+        logger().debug() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
     }
+
+    if (args["x2"] != "0") {
+        x2 = atof(args["x2"].c_str());
+        logger().debug() << "Arg x2 set " << args["x2"] << ", x2 = " << x2 << logs::end;
+    }
+    if (args["y2"] != "0") {
+        y2 = atof(args["y2"].c_str());
+        logger().debug() << "Arg y2 set " << args["y2"] << ", y2 = " << y2 << logs::end;
+    }
+
+    coordx = atof(args['+']["coordx"].c_str());
+    coordy = atof(args['+']["coordy"].c_str());
+    coorda_deg = atof(args['+']["coorda"].c_str());
+
+    robot.asserv().startMotionTimerAndOdo(true);
+
+    logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
+
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXVIOLET));
+
+    robot.svgPrintPosition();
 
     //detection adverse
     robot.actions().start();
     robot.actions().sensors().addTimerSensors(50);
+    robot.chrono().start();
 
-    logger().info() << "Start Asserv " << logs::end;
-    robot.setMyColor(PMXVIOLET);
-    robot.asserv().startMotionTimerAndOdo(true); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(0.0, 300.0, -90, (robot.getMyColor() != PMXVIOLET));
-    RobotPosition p = robot.asserv().pos_getPosition();
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << logs::end;
-    robot.svgPrintPosition();
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
 
-    logger().info() << "GO distance mm=" << d << logs::end;
-    TRAJ_STATE ts = TRAJ_OK;
+    logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
 
-//    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
-//    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-int f=0;
-    while ((ts = robot.asserv().doMoveBackwardTo(robot.asserv().pos_getX_mm(), robot.asserv().pos_getY_mm() + d))
-                != TRAJ_FINISHED) {
-            robot.svgPrintPosition();
-            robot.asserv().displayTS(ts);
-            if (ts == TRAJ_NEAR_OBSTACLE) {
-                robot.logger().error() << " O_take_gold ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
-    //            if (f > 2)
-    //                return false;
-                f++;
+    TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 1000000, 3, 3, true);
+    logger().info() << "END GOTO ts=" << ts << logs::end;
 
-            }
-            if (ts == TRAJ_COLLISION) {
-                robot.logger().error() << " O_take_gold ===== COLLISION essai n°" << f << logs::end;
-    //            if (f >= 1)
-    //                return false;
-                f++;
-            }
-            usleep(200000);
-            robot.asserv().resetDisplayTS();
+    if (x2 != 0 && y2 != 0) {
+        sleep(3);
+        logger().info() << "GOTO2 x2=" << x2 << " y2=" << y2 << logs::end;
 
-        }
-
-    exit(0);
-
-    robot.asserv().resetDisplayTS();
-    int c = 0;
-    f = 0;
-    while ((ts = robot.asserv().doMoveForwardTo(d, 300)) != TRAJ_FINISHED) {
-
-        logger().info() << "Interruption dist TRAJ_STATE=" << ts << logs::end;
-        robot.svgPrintPosition();
-        robot.asserv().displayTS(ts);
-        if (ts == TRAJ_NEAR_OBSTACLE) {
-            logger().error() << "===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
-
-            if (f >= 5)
-                break; //return
-            f++;
-            printf("f=%d\n", f);
-            usleep(1000000);
-        }
-
-        if (ts == TRAJ_COLLISION) {
-            logger().error() << "===== COLLISION ASSERV essai n°" << c << logs::end;
-
-            if (c >= 2)
-                break; // ou return;
-            c++;
-            printf("c=%d\n", c);
-            usleep(1000000);
-        }
-        robot.asserv().resetDisplayTS();
+        TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x2, y2, false, 1000000, 3, 3, true);
+        logger().info() << "END GOTO2 ts=" << ts << logs::end;
     }
 
-    p = robot.asserv().pos_getPosition();
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << logs::end;
-    robot.svgPrintPosition();
-
-    ts = TRAJ_OK;
-    c = 0;
-    f = 0;
-    logger().info() << "GO turn angle=" << a << logs::end;
-
-    while ((ts = robot.asserv().doRotateAbs(a)) != TRAJ_OK) {
-        robot.svgPrintPosition();
-        robot.asserv().displayTS(ts);
-        if (ts == TRAJ_NEAR_OBSTACLE) {
-            logger().error() << "===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
-
-            if (f >= 5)
-                break; //return
-            f++;
-            printf("f=%d\n", f);
-            usleep(1000000);
-        }
-
-        if (ts == TRAJ_COLLISION) {
-            logger().error() << "===== COLLISION ASSERV essai n°" << c << logs::end;
-
-            if (c >= 2)
-                break; // ou return;
-            c++;
-            printf("c=%d\n", c);
-            usleep(1000000);
-        }
-        robot.asserv().resetDisplayTS();
-    }
-//    if ((ts = robot.asserv().doRotateAbs(a)) != TRAJ_OK) {
-//        logger().info() << "Interruption turn !! TRAJ_STATE=" << ts << logs::end;
-//
-//    }
-
-    p = robot.asserv().pos_getPosition();
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << logs::end;
-    sleep(1);
-    p = robot.asserv().pos_getPosition();
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << logs::end;
+    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms " << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+            << robot.asserv().pos_getThetaInDegree() << logs::end;
 
     robot.svgPrintPosition();
 
-    robot.asserv().freeMotion();
-    robot.stopExtraActions();
     logger().info() << "Happy End." << logs::end;
 }
-

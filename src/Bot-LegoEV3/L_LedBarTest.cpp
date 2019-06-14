@@ -15,7 +15,7 @@ void L_LedBarTest::run(int argc, char** argv)
 {
     configureConsoleArgs(argc, argv);
 
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 

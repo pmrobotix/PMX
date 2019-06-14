@@ -25,8 +25,6 @@ private:
      */
     Robot & robot_;
 
-    Playground *p_; //for new ia
-
 public:
 
     L_State_DecisionMakerIA(Robot& robot);
@@ -47,7 +45,6 @@ public:
 
     void IASetupActivitiesZone();
     void IASetupActivitiesZoneTableTest();
-    //void initPlayground();
 
 };
 

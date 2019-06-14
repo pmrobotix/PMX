@@ -12,7 +12,8 @@ LegoEV3SvgWriterExtended::LegoEV3SvgWriterExtended(std::string botId) :
 
     std::ostringstream symbol;
 
-    symbol << "<symbol id=\"bot-legoev3\">" << "<circle cx=\"45\" cy=\"120\" r=\"120\" fill=\"none\" stroke=\"orange\" />"
+    symbol << "<symbol id=\"bot-legoev3\">"
+            << "<circle cx=\"45\" cy=\"120\" r=\"120\" fill=\"none\" stroke=\"orange\" />"
             << "<circle cx=\"45\" cy=\"120\" r=\"10\" fill=\"none\" stroke=\"orange\" stroke-width=\"4\"/>"
             << "<rect x=\"0\" y=\"0\" width=\"200\" height=\"240\" style=\"fill:none;stroke:orange;stroke-width:3px;\" />"
             //<< "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
@@ -41,14 +42,13 @@ void LegoEV3SvgWriterExtended::writePosition_BotPos(float x, float y, float angl
                 << "\" stroke-width=\"0.1\" stroke=\"grey\"/>" << logs::flush;
     }
 }
-void LegoEV3SvgWriterExtended::writePosition_Bot(float x, float y, float angle_rad)
+void LegoEV3SvgWriterExtended::writePosition_Bot(float x, float y, float angle_rad, int color)
 {
     if (!done_) {
 
         *fLogBuffer << "<use x=\"" << x - 45 << "\" y=\"" << -y - 120
                 << "\" xlink:href=\"#bot-legoev3\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x
                 << "," << -y << ")\" />" << logs::flush;
-
 
     }
 }
@@ -113,6 +113,8 @@ void LegoEV3SvgWriterExtended::writeIaPath(const char* zone1Name, const char* zo
 
 void LegoEV3SvgWriterExtended::pathPolyline(std::string points) //TODO mettre dans SVGWriter ?
 {
-
-    *fLogBuffer << "<polyline points='" << points << "' style='fill:none;stroke:red;stroke-width:4' />" << logs::flush;
+    if (!done_) {
+        *fLogBuffer << "<polyline points='" << points << "' style='fill:none;stroke:red;stroke-width:4' />"
+                << logs::flush;
+    }
 }

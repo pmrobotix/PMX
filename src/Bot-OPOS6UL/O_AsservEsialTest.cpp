@@ -28,7 +28,7 @@ void O_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler
 
 void O_AsservEsialTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 

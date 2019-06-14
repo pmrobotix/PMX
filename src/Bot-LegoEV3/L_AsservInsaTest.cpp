@@ -37,7 +37,7 @@ void L_AsservInsaTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 void L_AsservInsaTest::run(int argc, char** argv)
 {
-    logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
 
 	utils::Chronometer chrono("L_AsservInsaTest");

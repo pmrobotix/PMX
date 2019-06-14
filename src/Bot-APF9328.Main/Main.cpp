@@ -23,32 +23,32 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-	//Specific Robot BigPMX
-	APF9328RobotExtended &robot = APF9328RobotExtended::instance();
+    //Specific Robot BigPMX
+    APF9328RobotExtended &robot = APF9328RobotExtended::instance();
 
-	//add specific tests for this robot
-	robot.getConsoleManager().add(new A_LedBarTest());
-	robot.getConsoleManager().add(new A_ButtonBarTest());
-	robot.getConsoleManager().add(new A_LcdBoardTest());
-	robot.getConsoleManager().add(new A_TiretteTest());
-	robot.getConsoleManager().add(new A_SensorsTest());
-	robot.getConsoleManager().add(new A_ServoTest());
-	robot.getConsoleManager().add(new A_ServoStepTest());
-	robot.getConsoleManager().add(new A_MovingBaseTest());
-	robot.getConsoleManager().add(new A_Asserv_SetResolutionTest());
-	robot.getConsoleManager().add(new A_Asserv_FindPIDTest());
-	robot.getConsoleManager().add(new A_AsservInsaTest());
-	robot.getConsoleManager().add(new A_AsservRunTest());
-	robot.getConsoleManager().add(new A_Asserv_SquareTest());
-	robot.getConsoleManager().add(new A_IATest());
+    //add specific tests for this robot
+    robot.getConsoleManager().add(new A_LedBarTest());
+    robot.getConsoleManager().add(new A_ButtonBarTest());
+    robot.getConsoleManager().add(new A_LcdBoardTest());
+    robot.getConsoleManager().add(new A_TiretteTest());
+    robot.getConsoleManager().add(new A_SensorsTest());
+    robot.getConsoleManager().add(new A_ServoTest());
+    robot.getConsoleManager().add(new A_ServoStepTest());
+    robot.getConsoleManager().add(new A_MovingBaseTest());
+    robot.getConsoleManager().add(new A_Asserv_SetResolutionTest());
+    robot.getConsoleManager().add(new A_Asserv_FindPIDTest());
+    robot.getConsoleManager().add(new A_AsservInsaTest());
+    robot.getConsoleManager().add(new A_AsservRunTest());
+    robot.getConsoleManager().add(new A_Asserv_SquareTest());
+    robot.getConsoleManager().add(new A_IATest());
 
-	robot.parseConsoleArgs(argc, argv);
+    robot.parseConsoleArgs(argc, argv, false);
 
-	//start the Robot (functional tests or match)
-	robot.begin(argc, argv);
+    //start the Robot (functional tests or match)
+    robot.begin(argc, argv);
 
-	sleep(1); //TODO wait and verify end of logger ?
+    sleep(1); //TODO wait and verify end of logger ?
 
-	cout << "HappyEnd Bot-APF9328." << endl;
-	return 0;
+    cout << "HappyEnd Bot-APF9328." << endl;
+    return 0;
 }
