@@ -49,11 +49,15 @@ void OPOS6UL_IAExtended::initPlayground()
     p_->add_circle_symmetrical(this->area_palet_start2_violet, this->area_palet_start2_yellow, 500, 1050, 180, 8);
 
     //opponent
-    p_->add_circle(this->opponent_1, 1000.0, -500.0, 350.0, 8);
+    p_->add_circle(this->opponent_1, -100.0, -100.0, 350.0, 8);
 
     p_->compute_edges();
     iap_.addPlayground(p_);
     iap_.toSVG();
 
 }
-
+void OPOS6UL_IAExtended::move_adv(float x_mm, float y_mm)
+{
+    //p->move(me, 200.0, 0.0)->synchronize();
+    //p_->movexy(this->opponent_1, x_mm, y_mm)->synchronize();
+}

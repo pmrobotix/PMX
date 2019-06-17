@@ -104,18 +104,27 @@ void O_AsservTest::run(int argc, char** argv)
 
     logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
 
-    TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 1000000, 3, 3, true);
+    TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, true, 1000000, 3, 3, true);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " whileMoveForwardTo  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
     logger().info() << "END GOTO ts=" << ts << logs::end;
 
     if (x2 != 0 && y2 != 0) {
         sleep(3);
         logger().info() << "GOTO2 x2=" << x2 << " y2=" << y2 << logs::end;
 
-        TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x2, y2, false, 1000000, 3, 3, true);
+        TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x2, y2, true, 1000000, 3, 3, true);
+        if (ts != TRAJ_FINISHED) {
+                robot.logger().error() << " whileMoveForwardTo x2,y2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+                robot.asserv().resetEmergencyOnTraj();
+            }
         logger().info() << "END GOTO2 ts=" << ts << logs::end;
     }
 
-    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms " << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
+    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms " << " x="
+            << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
             << robot.asserv().pos_getThetaInDegree() << logs::end;
 
     robot.svgPrintPosition();

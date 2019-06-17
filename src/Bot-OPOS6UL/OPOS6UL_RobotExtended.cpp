@@ -96,6 +96,8 @@ void OPOS6UL_RobotExtended::resetDisplayTS()
 
 void OPOS6UL_RobotExtended::displayTS(TRAJ_STATE ts)
 {
+    svgPrintPosition(2);
+
     if (ts == TRAJ_NEAR_OBSTACLE) {
 
         actions().ledBar().setOn(4);

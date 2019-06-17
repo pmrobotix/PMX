@@ -152,6 +152,11 @@ private:
     bool lastfrontl2_temp_;
     bool lastbackl2_temp_;
 
+    int nb_sensor_front_a_zero;
+    int nb_sensor_back_a_zero;
+
+    int nb_sensor_level2;
+
 public:
 
     /*!

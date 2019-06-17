@@ -95,7 +95,7 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
 
     //detection adverse
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(50);
+    robot.actions().sensors().addTimerSensors(100);
     robot.chrono().start();
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
@@ -110,15 +110,16 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
         if (d != 0) {
             logger().info() << "go Forward..." << d << ",300 mm" << logs::end;
             while (ts != TRAJ_FINISHED) {
+                ts = TRAJ_OK;
                 ts = robot.ia().iAbyPath().whileMoveForwardTo(d, 300, false, 2000000, 3, 3);
 
                 if (ts == TRAJ_NEAR_OBSTACLE) {
                     logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
-                    robot.asserv().resetEmergencyOnTraj();
+                    robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_NEAR_OBSTACLE");
                 }
                 if (ts == TRAJ_COLLISION) {
                     logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
-                    robot.asserv().resetEmergencyOnTraj();
+                    robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
                 }
                 //sleep(2);
                 break;
@@ -129,7 +130,7 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
         if (a != 0) {
             logger().info() << "go Rotate..." << a << " deg" << logs::end;
             while (ts != TRAJ_FINISHED) {
-
+                ts = TRAJ_OK;
                 ts = robot.ia().iAbyPath().whileMoveRotateTo(a, 1000000, 2);
 
                 if (ts == TRAJ_NEAR_OBSTACLE) {

@@ -28,6 +28,8 @@ public:
 
     void setLowSpeedForward(bool enable, int);
     void setLowSpeedBackward(bool enable, int);
+
+    void update_adv();
 };
 
 #endif

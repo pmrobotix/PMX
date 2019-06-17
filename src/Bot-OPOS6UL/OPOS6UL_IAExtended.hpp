@@ -50,6 +50,8 @@ public:
 
     void initPlayground();
 
+    void move_adv(float x_mm, float y_mm);
+
 };
 
 #endif

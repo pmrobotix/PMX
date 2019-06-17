@@ -108,10 +108,12 @@ public:
     virtual void setLowSpeedBackward(bool enable, int percent = 0);
     virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
     virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
-    virtual void warnFrontCollisionOnTraj(float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
+    virtual void warnFrontCollisionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void warnBackCollisionOnTraj(float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
+    virtual void update_adv();
 
-    void resetEmergencyOnTraj();
+
+    void resetEmergencyOnTraj(std::string message = "default");
 
     //modes d'arret de l'asservissement
     virtual void stopMotionTimerAndOdo();

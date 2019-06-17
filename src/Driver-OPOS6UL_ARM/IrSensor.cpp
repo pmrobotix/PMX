@@ -5,9 +5,9 @@
 
 #include "IrSensor.hpp"
 
+#include <unistd.h>
 #include <cmath>
 
-#include "../Log/Exception.hpp"
 #include "../Log/Logger.hpp"
 #include "CCAx12Adc.hpp"
 
@@ -40,6 +40,7 @@ int IrSensor::getDistanceMm()
     for (int i = 0; i < nb; i++) {
         tab_[i] = gp2Convert(type_, getVoltage());
         moy += tab_[i];
+        usleep(5000);
     }
     moy = (moy + distanceMm_) / (nb + 1);
 

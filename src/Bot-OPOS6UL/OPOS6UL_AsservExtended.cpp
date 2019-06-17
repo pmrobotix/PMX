@@ -3,9 +3,8 @@
 #include <cmath>
 #include <string>
 
-#include "../Common/Action/LedBar.hpp"
 #include "../Log/Logger.hpp"
-#include "OPOS6UL_ActionsExtended.hpp"
+#include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
 OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotExtended * robot) :
@@ -53,4 +52,11 @@ void OPOS6UL_AsservExtended::setLowSpeedBackward(bool enable, int)
     logger().debug() << "LegoEV3AsservExtended::setLowSpeedBackward =" << enable << logs::end;
     //Asserv::setLowSpeedBackward(enable, 45);
     asservdriver_->motion_setLowSpeedBackward(enable, 55);
+}
+
+void OPOS6UL_AsservExtended::update_adv()
+{
+
+    robot_extended_->ia().move_adv(pos_getAdvPosition().x, pos_getAdvPosition().y);
+
 }

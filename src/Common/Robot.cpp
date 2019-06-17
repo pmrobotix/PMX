@@ -296,17 +296,17 @@ void Robot::stopMotionTimerAndActionManager()
 
     if (asserv_default_ != NULL) {
         this->asserv_default_->stopMotionTimerAndOdo();
-        logger().error() << "asserv_default_ stopMotionTimerAndOdo OK! " << logs::end;
+        logger().debug() << "asserv_default_ stopMotionTimerAndOdo OK! " << logs::end;
     } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
 
     if (actions_default_ != NULL) {
         this->actions_default_->stop(); //clear actions and timers
 
-        logger().error() << "actions_default stop OK! " << logs::end;
+        logger().debug() << "actions_default stop OK! " << logs::end;
         this->actions_default_->cancel(); //stop devices and wait manager to finish
 
-        logger().error() << "actions_default cancel OK! " << logs::end;
+        logger().debug() << "actions_default cancel OK! " << logs::end;
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
 }

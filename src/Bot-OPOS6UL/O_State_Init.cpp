@@ -301,6 +301,8 @@ void O_State_Init::setPos()
 
     robot.asserv().startMotionTimerAndOdo(false);
 
+    robot.actions().ax12_init();
+
     robot.actions().lcd2x16().clear();
     robot.asserv().setPositionAndColor(70, 450+13, 0.0, (robot.getMyColor() != PMXVIOLET));
     //robot.asserv().setPositionAndColor(1902, 105, 90.0, (robot.getMyColor() != PMXVIOLET));
@@ -313,7 +315,7 @@ void O_State_Init::setPos()
 
     //robot.asserv().resetDisplayTS();
     robot.asserv().assistedHandling();
-    TRAJ_STATE ts;
+    TRAJ_STATE ts = TRAJ_OK;
     ts = robot.asserv().doLineAbs(150);
     /*
     ts = robot.asserv().doLineAbs(200);

@@ -85,7 +85,7 @@ bool L_take_grand_distributeur()
         pos = 1425;
     } else {
         robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, true);
-        pos = 1425;
+        pos = 1435;
     }
 
     robot.logger().info() << "go to distrib" << logs::end;
@@ -144,7 +144,7 @@ bool L_take_grand_distributeur()
     //position vert2
     robot.logger().info() << "go to vert2" << logs::end;
 
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(510 + 200 + 190, pos, true, 1000000, 10, 5);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(510 + 200 + 185, pos, true, 1000000, 10, 5);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to vert2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();

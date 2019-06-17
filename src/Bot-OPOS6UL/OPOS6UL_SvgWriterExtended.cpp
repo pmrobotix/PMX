@@ -47,6 +47,19 @@ OPOS6UL_SvgWriterExtended::OPOS6UL_SvgWriterExtended(std::string botId) :
             << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"red\" stroke-width=\"4\"/>"
             //<< "<circle cx=\"150\" cy=\"150\" r=\"250\" fill=\"none\" stroke=\"red\" stroke-width=\"1\"/>"
             << "</symbol>";
+
+    symbol << "<symbol id=\"bot-OPOS6UL-ORANGE\">"
+                << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"orange\" />"
+                << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"orange\" />"
+
+                << "<rect x=\"80\" y=\"0\" width=\"70\" height=\"300\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
+                //arriere du robot en position 0,0
+                << "<line x1=\"150\" y1=\"0\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
+                << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
+                //devant du robot en position 300,0
+                << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"orange\" stroke-width=\"4\"/>"
+                //<< "<circle cx=\"150\" cy=\"150\" r=\"250\" fill=\"none\" stroke=\"red\" stroke-width=\"1\"/>"
+                << "</symbol>";
     addDefsSymbol(symbol.str());
 
     //optimisation du log pour ne créer qu'un seul objet
@@ -63,7 +76,11 @@ void OPOS6UL_SvgWriterExtended::writePosition_Bot(float x, float y, float angle_
             *fLogBuffer << "<use x=\"" << x - 150 << "\" y=\"" << -y - 150
                     << "\" xlink:href=\"#bot-OPOS6UL\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x
                     << "," << -y << ")\" />" << logs::flush;
-        } else {
+        } else if (color == 1) {
+            *fLogBuffer << "<use x=\"" << x - 150 << "\" y=\"" << -y - 150
+                    << "\" xlink:href=\"#bot-OPOS6UL-ORANGE\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << ","
+                    << x << "," << -y << ")\" />" << logs::flush;
+        }else if (color == 2) {
             *fLogBuffer << "<use x=\"" << x - 150 << "\" y=\"" << -y - 150
                     << "\" xlink:href=\"#bot-OPOS6UL-RED\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << ","
                     << x << "," << -y << ")\" />" << logs::flush;

@@ -33,7 +33,7 @@ Asserv::Asserv(std::string botId, Robot * robot)
 
     matchColorPosition_ = false;
 
-    adv_pos_centre_ = {0,0,0,0};
+    adv_pos_centre_ = {-100.0,-100.0,0,0};
 
 }
 Asserv::~Asserv()
@@ -213,8 +213,9 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm)
 
 }
 
-void Asserv::resetEmergencyOnTraj()
+void Asserv::resetEmergencyOnTraj(std::string message)
 {
+    logger().debug() << "resetEmergencyOnTraj message = " << message << logs::end;
     if (useAsservType_ == ASSERV_INT_INSA) {
         //pAsservInsa_->path_ResetEmergencyStop();
     } else if (useAsservType_ == ASSERV_EXT)
@@ -223,7 +224,12 @@ void Asserv::resetEmergencyOnTraj()
         pAsservEsialR_->path_ResetEmergencyStop();
 }
 
-void Asserv::warnFrontCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_mm)
+void Asserv::update_adv()
+{
+    logger().info() << "update_adv tob surcharged = " << logs::end;
+}
+
+void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
     //logger().error() << "warnFrontCollisionOnTraj forceRotation_ = " << temp_forceRotation_ << logs::end;
     if (temp_forceRotation_) {
@@ -240,19 +246,41 @@ void Asserv::warnFrontCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->path_CollisionOnTrajectory();
 
+    if (frontlevel >= 2) {
+        if (useAsservType_ == ASSERV_INT_INSA) {
+
+        }
+
+        else if (useAsservType_ == ASSERV_EXT) {
+            //resetEmergencyOnTraj();
+//doLineAbs(-30);
+//resetEmergencyOnTraj();
+        } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+
+        }
+    }
+
     //conversion de la position du le terrain et determination du centre du robot adverse
     float dist_centre_robot_mm = 200.0;
+    float x_adv = 0.0;
+    float y_adv = 0.0;
+    if (x_adv_detect_mm >= 1.0 || y_adv_detect_mm > 1.0) {
 
-    RobotPosition p_current = pos_getPosition();
-    float x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
-            - (y_adv_detect_mm * sin(p_current.theta));
-    float y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
-            + (y_adv_detect_mm * cos(p_current.theta));
-    adv_pos_centre_ = {x_adv, y_adv, 0.0,0};
-    logger().info() << "warnFrontCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
+        RobotPosition p_current = pos_getPosition();
+        x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
+                - (y_adv_detect_mm * sin(p_current.theta));
+        y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
+                + (y_adv_detect_mm * cos(p_current.theta));
+        adv_pos_centre_ = {x_adv, y_adv, 0.0,0};
+
+    }
+    else
+    {
+        adv_pos_centre_ = {-100.0, -100.0, 0.0,0};
+    }
+    logger().debug() << "warnFrontCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
             << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
             << logs::end;
-
 }
 
 void Asserv::warnBackCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_mm) //x positif devant le robot, y positif le coté gauche
@@ -269,18 +297,26 @@ void Asserv::warnBackCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_m
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->path_CollisionRearOnTrajectory();
 
-    //conversion de la position du le terrain et determination du centre du robot adverse
+//conversion de la position du le terrain et determination du centre du robot adverse
     float dist_centre_robot_mm = 350.0;
+    float x_adv = 0.0;
+    float y_adv = 0.0;
 
-    RobotPosition p_current = pos_getPosition();
-    float x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
-            - (y_adv_detect_mm * sin(p_current.theta));
-    float y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
-            + (y_adv_detect_mm * cos(p_current.theta));
-    adv_pos_centre_ = {x_adv, y_adv, 0.0,0};
+    if (x_adv_detect_mm >= 1.0 || y_adv_detect_mm > 1.0) {
+        RobotPosition p_current = pos_getPosition();
+        x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
+                - (y_adv_detect_mm * sin(p_current.theta));
+        y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
+                + (y_adv_detect_mm * cos(p_current.theta));
+        adv_pos_centre_ = {x_adv, y_adv, 0.0,0};
+
+    } else
+    {
+        adv_pos_centre_ = {-100.0, -100.0, 0.0,0};
+    }
     logger().info() << "warnBackCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
-                << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
-                << logs::end;
+            << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
+            << logs::end;
 }
 
 TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
@@ -293,7 +329,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
     }
 
     float meters = distance_mm / 1000.0f;
-    //logger().info() << "Asserv::doLineAbs meters=" << meters << " mm=" << distance_mm << logs::end;
+//logger().info() << "Asserv::doLineAbs meters=" << meters << " mm=" << distance_mm << logs::end;
     TRAJ_STATE ts;
 
     if (useAsservType_ == ASSERV_INT_INSA)
@@ -304,7 +340,7 @@ TRAJ_STATE Asserv::doLineAbs(float distance_mm) // if distance <0, move backward
         ts = pAsservEsialR_->motion_DoLine(meters);
     else
         ts = TRAJ_ERROR;
-    //logger().info() << "Asserv::doLineAbs f=" << f << " r=" << r << logs::end;
+//logger().info() << "Asserv::doLineAbs f=" << f << " r=" << r << logs::end;
 
     if (distance_mm > 0) {
         temp_ignoreRearCollision_ = false;
@@ -417,12 +453,12 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
             return ts;
         else {
             //on resete
-            resetEmergencyOnTraj();
+            resetEmergencyOnTraj("doMoveForwardTo rotate_ignored");
             logger().error() << " __on passe au doline !!!" << logs::end;
         }
     }
     float dist = sqrt(dx * dx + dy * dy);
-    //logger().error() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+//logger().error() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment_mm);
 
 }
@@ -442,7 +478,7 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
         if (!rotate_ignored)
             return ts;
         else {
-            resetEmergencyOnTraj();
+            resetEmergencyOnTraj("doMoveBackwardTo rotate_ignored");
             //logger().error() << " __on passe au doline !!!"  << logs::end;
         }
     }
@@ -453,7 +489,7 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
 //deprecated
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignored)
 {
-    logger().error() << "doMoveForwardAndRotateTo deprecated !!!"  << logs::end;
+    logger().error() << "doMoveForwardAndRotateTo deprecated !!!" << logs::end;
     TRAJ_STATE ts;
     ts = doMoveForwardTo(xMM, yMM, rotate_ignored);
     if (ts != TRAJ_FINISHED)
@@ -465,7 +501,7 @@ TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInD
 //deprecated
 TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
-    logger().error() << "doMoveBackwardAndRotateTo deprecated !!!"  << logs::end;
+    logger().error() << "doMoveBackwardAndRotateTo deprecated !!!" << logs::end;
     TRAJ_STATE ts;
     ts = doMoveBackwardTo(xMM, yMM);
     if (ts != TRAJ_FINISHED)
@@ -627,7 +663,7 @@ TRAJ_STATE Asserv::doCalage(int dist, int percent)
         pAsservEsialR_->motion_setLowSpeedBackward(false);
         pAsservEsialR_->motion_ActivateReguAngle(true);
         pAsservEsialR_->motion_ActivateReguDist(true);
-        resetEmergencyOnTraj();
+        resetEmergencyOnTraj("doCalage");
 
         return ts;
     } else if (useAsservType_ == ASSERV_EXT) {
@@ -648,7 +684,7 @@ TRAJ_STATE Asserv::doCalage(int dist, int percent)
         asservdriver_->motion_setLowSpeedBackward(false);
         asservdriver_->motion_ActivateReguAngle(true);
         asservdriver_->motion_ActivateReguDist(true);
-        resetEmergencyOnTraj();
+        resetEmergencyOnTraj("doCalage");
 
         return ts;
     } else
