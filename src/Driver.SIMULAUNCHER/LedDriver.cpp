@@ -5,6 +5,7 @@
 #include <SDL2/SDL_pixels.h>
 #include <sstream>
 
+#include "../Log/Logger.hpp"
 #include "../SimuLauncher.Main/IWindow.hpp"
 #include "../SimuLauncher.Main/LWindows.hpp"
 #include "../SimuLauncher.Main/SDLTool.hpp"

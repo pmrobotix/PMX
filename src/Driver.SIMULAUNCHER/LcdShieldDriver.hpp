@@ -46,6 +46,10 @@ public:
 
 	size_t write(uint8_t value);
 
+	void print_content_string(std::string str, int row, int col=1);
+
+	void print_content_integer(int value, int row, int col=1);
+
 };
 
 #endif

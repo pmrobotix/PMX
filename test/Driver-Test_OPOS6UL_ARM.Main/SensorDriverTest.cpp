@@ -17,7 +17,7 @@ void test::SensorDriverTest::suite()
 void test::SensorDriverTest::firstTest()
 {
 
-	sensordriver->front();
+	sensordriver->frontLeft();
 
 	this->assert(true, "OK");
 }

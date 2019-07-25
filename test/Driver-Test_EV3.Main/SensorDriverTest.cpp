@@ -20,8 +20,8 @@ void test::SensorDriverTest::testSensors()
     bool back = false;
 
     for (int i = 0; i < 10; i++) {
-        front = sensordriver_->front();
-        back = sensordriver_->rear();
+        front = sensordriver_->frontCenter();
+        back = sensordriver_->backCenter();
         logger().info() << "front=" << front<< "  back=" << back << logs::end;
         //usleep(500000);
     }

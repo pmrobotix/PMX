@@ -117,7 +117,7 @@ public:
     float odo_GetY_mm();
     float odo_GetTheta_Rad();		// angle in radian
     float odo_GetTheta_Degree();		// angle in degrees
-    void odo_SetPosition(double x_m, double y_m, double angle_rad);
+    void odo_SetPosition(float x_m, float y_m, float angle_rad);
     RobotPosition odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
@@ -134,7 +134,8 @@ public:
     void motion_DisablePID();		//! Stop motion control and disable PID
     void motion_AssistedHandling();		//! Assisted movement mode =)
     void motion_ActivateManager(bool enable);
-    void motion_setLowSpeed(bool enable);
+    void motion_setLowSpeedForward(bool enable, int percent=0);
+    void motion_setLowSpeedBackward(bool enable, int percent=0);
 
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);

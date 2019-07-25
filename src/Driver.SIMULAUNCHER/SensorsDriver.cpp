@@ -23,12 +23,37 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
-bool SensorsDriver::front()
+int SensorsDriver::rightSide()
 {
-	return 0;
+
+}
+int SensorsDriver::leftSide()
+{
+
 }
 
-bool SensorsDriver::rear()
+int SensorsDriver::frontLeft()
 {
-	return 0;
+
+}
+int SensorsDriver::frontCenter()
+{
+
+}
+int SensorsDriver::frontRight()
+{
+
+}
+
+int SensorsDriver::backLeft()
+{
+
+}
+int SensorsDriver::backCenter()
+{
+
+}
+int SensorsDriver::backRight()
+{
+
 }

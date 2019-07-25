@@ -377,7 +377,7 @@ float AsservDriver::odo_GetTheta_Rad()
 float AsservDriver::odo_GetTheta_Degree()
 {
 }
-void AsservDriver::odo_SetPosition(double x_m, double y_m, double angle_rad)
+void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
 {
 }
 RobotPosition AsservDriver::odo_GetPosition()
@@ -426,7 +426,11 @@ void AsservDriver::motion_AssistedHandling()
 void AsservDriver::motion_ActivateManager(bool enable)
 {
 }
-void AsservDriver::motion_setLowSpeed(bool enable)
+void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
+{
+
+}
+void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
 {
 
 }

@@ -4,8 +4,8 @@
 
 #include <string>
 
-#include "../Bot-OPOS6UL/OPOS6UL_AsservExtended.hpp"
-#include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
+//#include "../Bot-OPOS6UL/OPOS6UL_AsservExtended.hpp"
+//#include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
 
 using namespace std;
 
@@ -39,10 +39,12 @@ int SensorsDriver::frontLeft()
 int SensorsDriver::frontCenter()
 {
     return 999;
+
 }
 int SensorsDriver::frontRight()
 {
-    //TODO temp mettre un ifdef pour gros robot et petit robot
+    //TODO temp mettre un ifdef pour simulation gros robot et petit robot
+	/*
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
     if (robot.asserv().pos_getX_mm() > 800)
@@ -50,7 +52,7 @@ int SensorsDriver::frontRight()
         robot.svgPrintPosition(3);
         return 300;
     }
-    else
+    else*/
         return 999;
 }
 

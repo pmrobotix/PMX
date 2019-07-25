@@ -8,6 +8,13 @@
 
 #include <unistd.h>
 #include <sstream>
+#include <string>
+
+#include "../../src/Common/Action/IAction.hpp"
+#include "../../src/Common/Action/ITimerListener.hpp"
+#include "../../src/Common/Utils/Chronometer.hpp"
+#include "../../src/Log/Logger.hpp"
+#include "../../src/Log/LoggerFactory.hpp"
 
 class MockAction: public IAction
 {
@@ -95,7 +102,7 @@ public:
 			actionManagerTimerTest_(actionManagerTimerTest)
 	{
 		timeSpan_ms_ = timeSpan_ms;
-		name_ = label;
+		nameListener_ = label;
 	}
 
 	virtual ~MockTimer()
@@ -104,13 +111,13 @@ public:
 
 	void onTimer(utils::Chronometer chrono)
 	{
-		logger().info() << "onTimer executing " << name_ << "... t="
+		logger().info() << "onTimer executing " << nameListener_ << "... t="
 				<< chrono.getElapsedTimeInMicroSec() << " us" << logs::end;
 	}
 
 	void onTimerEnd(utils::Chronometer chrono)
 	{
-		logger().info() << "onTimerEnd executing " << name_ << "... t="
+		logger().info() << "onTimerEnd executing " << nameListener_ << "... t="
 				<< chrono.getElapsedTimeInMicroSec() << " us" << logs::end;
 	}
 };

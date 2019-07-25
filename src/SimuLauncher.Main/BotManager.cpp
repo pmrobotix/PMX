@@ -11,10 +11,10 @@
 #include <unistd.h>
 #include <cstdio>
 
-#include "../Bot-APF9328/A_LedBarTest.hpp"
-#include "../Bot-APF9328/APF9328RobotExtended.hpp"
 #include "../Bot-LegoEV3/L_LedBarTest.hpp"
 #include "../Bot-LegoEV3/LegoEV3RobotExtended.hpp"
+#include "../Bot-OPOS6UL/O_LedBarTest.hpp"
+#include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"
@@ -49,9 +49,9 @@ int threadLegoEV3RobotExtended(void* data)
 	char *ptest[4];
 	ptest[0] = "LegoEV3";
 	ptest[1] = "m";
-	ptest[2] = "_c";
-	ptest[3] = "green";
-	ptest[4] = "_s";
+	ptest[2] = "/c";
+	ptest[3] = "violet";
+	ptest[4] = "/k";
 	robotlegoev3.parseConsoleArgs(4, ptest);
 
 	//launch automate
@@ -71,9 +71,9 @@ int threadAPF9328RobotExtended(void* data)
 {
 	BotManager* botm = (BotManager*) data;
 
-	APF9328RobotExtended &robotapf = APF9328RobotExtended::instance();
+	OPOS6UL_RobotExtended &robotapf = OPOS6UL_RobotExtended::instance();
 
-	botm->logger().info() << "Starting threadAPF9328RobotExtended... " << botm->start() << logs::end;
+	botm->logger().info() << "Starting threadAPFRobotExtended... " << botm->start() << logs::end;
 	while (!botm->start())
 	{
 		usleep(100000);
@@ -84,13 +84,13 @@ int threadAPF9328RobotExtended(void* data)
 		//DO something
 		usleep(100000);
 	}
-	botm->logger().debug() << "End threadAPF9328RobotExtended " << logs::end;
+	botm->logger().debug() << "End threadAPFRobotExtended " << logs::end;
 	return 0;
 }
 
 int threadLedBarLegoEV3(void* data)
 {
-	BotManager* botm = (BotManager*) data;
+	//BotManager* botm = (BotManager*) data;
 	LegoEV3RobotExtended &robotlegoev3 = LegoEV3RobotExtended::instance();
 
 	//add specific tests for this robot
@@ -116,11 +116,11 @@ int threadLedBarLegoEV3(void* data)
 //		ptest[5] = "-c";
 //		ptest[6] = "green";
 	char *ptest[] =
-	{ "LegoEV3", "t", "_n", "1", "_s", "_c", "green", NULL };
-	robotlegoev3.parseConsoleArgs(7, ptest);
+	{ "LegoEV3", "t", "/n", "1", NULL };
+	robotlegoev3.parseConsoleArgs(4, ptest);
 
 	//launch automate
-	robotlegoev3.begin(7, ptest);
+	robotlegoev3.begin(4, ptest);
 
 	return 0;
 }
@@ -128,10 +128,10 @@ int threadLedBarLegoEV3(void* data)
 int threadLedBarAPF(void* data)
 {
 
-	BotManager* botm = (BotManager*) data;
-	APF9328RobotExtended &robotapf = APF9328RobotExtended::instance();
+	//BotManager* botm = (BotManager*) data;
+	OPOS6UL_RobotExtended &robotapf = OPOS6UL_RobotExtended::instance();
 
-	robotapf.getConsoleManager().add(new A_LedBarTest());
+	robotapf.getConsoleManager().add(new O_LedBarTest());
 
 	//		 Arguments &args = robotapf.getArgs();
 	//		 args["type"] = "t";
@@ -144,10 +144,10 @@ int threadLedBarAPF(void* data)
 	//		 args['s'].set(true);
 
 	char *ptest[] =
-	{ "APF9328", "t", "_n", "1", "_s", "_c", "green", NULL };
-	robotapf.parseConsoleArgs(7, ptest);
+	{ "OPOS6UL", "t", "/n", "1", NULL };
+	robotapf.parseConsoleArgs(4, ptest);
 	//launch automate
-	robotapf.begin(7, ptest);
+	robotapf.begin(4, ptest);
 
 	return 0;
 }

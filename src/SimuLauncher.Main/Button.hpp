@@ -1,6 +1,7 @@
 #ifndef SIMULAUNCHER_MAIN_BUTTON_HPP_
 #define SIMULAUNCHER_MAIN_BUTTON_HPP_
 
+
 #include <SDL2/SDL_rect.h>
 #include <string>
 

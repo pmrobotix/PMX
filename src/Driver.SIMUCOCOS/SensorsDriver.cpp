@@ -1,17 +1,14 @@
 //drivers...SIMU
 
-#include "SensorsDriver.hpp"
-
+#include <Driver.SIMUCOCOS/SensorsDriver.hpp>
 #include <string>
-
-
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create(std::string)
+ASensorsDriver* ASensorsDriver::create(std::string)
 {
 
-	return new SensorsDriver();
+    return new SensorsDriver();
 }
 
 SensorsDriver::SensorsDriver()
@@ -22,13 +19,37 @@ SensorsDriver::SensorsDriver()
 SensorsDriver::~SensorsDriver()
 {
 }
-
-bool SensorsDriver::front()
+int SensorsDriver::rightSide()
 {
-	return 0;
+    return 99;
+}
+int SensorsDriver::leftSide()
+{
+    return 99;
 }
 
-bool SensorsDriver::rear()
+int SensorsDriver::frontLeft()
 {
-	return 0;
+    return 99;
+}
+int SensorsDriver::frontCenter()
+{
+    return 99;
+}
+int SensorsDriver::frontRight()
+{
+    return 99;
+}
+
+int SensorsDriver::backLeft()
+{
+    return 99;
+}
+int SensorsDriver::backCenter()
+{
+    return 99;
+}
+int SensorsDriver::backRight()
+{
+    return 99;
 }

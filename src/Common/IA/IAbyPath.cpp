@@ -667,7 +667,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardAndRotateTo(float xMM, float yMM, float abs
     if (ts != TRAJ_FINISHED) {
         return ts;
     }
-    TRAJ_STATE tsr = TRAJ_OK;
-    tsr = whileMoveRotateTo(absoluteThetaInDegree, wait_tempo_us, nb_collision); //TODO que faire de cette info ???
+
+    whileMoveRotateTo(absoluteThetaInDegree, wait_tempo_us, nb_collision); //TODO que faire de cette info ???
     return TRAJ_FINISHED;
 }
