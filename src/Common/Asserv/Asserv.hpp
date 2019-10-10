@@ -2,6 +2,7 @@
 #define COMMON_ASSERV_HPP_
 
 #include <string>
+#include <tuple>
 
 #include "../../Log/LoggerFactory.hpp"
 #include "../Asserv.Driver/AAsservDriver.hpp"
@@ -146,6 +147,15 @@ public:
     TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
 
     //void doActivateReguAngle(bool enable);
+
+
+    //http://nains-games.com/2014/12/intersection-de-deux-cercles.html
+    std::tuple<int, float, float> eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2, float d2, float robot_size_l_mm);
+    std::tuple<int, float, float> eq_2nd_deg_getXY(float a, float b, float A, float B, float C, float robot_size_l_mm);
+    float eq_2nd_deg_getDelta(float A, float B, float C);
+
+    bool adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p,
+            float delta_j_mm, float delta_k_mm, float mesure_mm, float robot_size_l_mm);
 
     //attentionLa couleur de match doit deja etre effectué !
     bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,

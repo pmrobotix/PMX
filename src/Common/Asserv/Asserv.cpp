@@ -8,7 +8,7 @@
 #include "../../Log/Logger.hpp"
 #include "MovingBase.hpp"
 
-Asserv::Asserv(std::string botId, Robot * robot)
+Asserv::Asserv(std::string botId, Robot *robot)
 {
     pMovingBase_ = new MovingBase(botId);
     asservdriver_ = AAsservDriver::create(botId);
@@ -33,7 +33,7 @@ Asserv::Asserv(std::string botId, Robot * robot)
 
     matchColorPosition_ = false;
 
-    adv_pos_centre_ = {-100.0,-100.0,0,0};
+    adv_pos_centre_ = { -100.0, -100.0, 0, 0 };
 
 }
 Asserv::~Asserv()
@@ -44,7 +44,7 @@ Asserv::~Asserv()
     delete pAsservEsialR_;
 }
 
-MovingBase * Asserv::base()
+MovingBase* Asserv::base()
 {
     return pMovingBase_;
 }
@@ -271,12 +271,10 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
                 - (y_adv_detect_mm * sin(p_current.theta));
         y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
                 + (y_adv_detect_mm * cos(p_current.theta));
-        adv_pos_centre_ = {x_adv, y_adv, 0.0,0};
+        adv_pos_centre_ = { x_adv, y_adv, 0.0, 0 };
 
-    }
-    else
-    {
-        adv_pos_centre_ = {-100.0, -100.0, 0.0,0};
+    } else {
+        adv_pos_centre_ = { -100.0, -100.0, 0.0, 0 };
     }
     logger().debug() << "warnFrontCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
             << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
@@ -308,11 +306,10 @@ void Asserv::warnBackCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_m
                 - (y_adv_detect_mm * sin(p_current.theta));
         y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
                 + (y_adv_detect_mm * cos(p_current.theta));
-        adv_pos_centre_ = {x_adv, y_adv, 0.0,0};
+        adv_pos_centre_ = { x_adv, y_adv, 0.0, 0 };
 
-    } else
-    {
-        adv_pos_centre_ = {-100.0, -100.0, 0.0,0};
+    } else {
+        adv_pos_centre_ = { -100.0, -100.0, 0.0, 0 };
     }
     logger().info() << "warnBackCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
             << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
@@ -516,6 +513,157 @@ TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
     return TRAJ_ERROR;
 }
 
+std::tuple<int, float, float> Asserv::eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2,
+        float d2, float robot_size_l_mm)
+{
+    logger().debug() << "eq_2CirclesCrossed_getXY x1=" << x1
+            << " y1=" << y1
+            << " d1=" << d1
+            << "  x2=" << x2
+            << " y2=" << y2
+            << " d2=" << d2
+            << logs::end;
+    //On définit y en fonction de x : y = ax +b
+    float b = (((x2 * x2) + (y2 * y2) + (d1 * d1) - (d2 * d2) - (x1 * x1) - (y1 * y1)) / (2.0 * (y2 - y1)));
+
+    float a = (x2 - x1) / (y2 - y1);
+
+    //resolution de l'equation du second degré Ax² + Bx + C = 0
+    float A = (a * a) + 1.0;
+
+    float B = ((2.0 * y1 * a) - (2 * x1) - (2.0 * a * b));
+
+    float C = ((x1 * x1) + (y1 * y1) - (2.0 * y1 * b) + (b * b) - (d1 * d1));
+
+    return eq_2nd_deg_getXY(a, b, A, B, C, robot_size_l_mm);
+
+}
+
+float Asserv::eq_2nd_deg_getDelta(float A, float B, float C)
+{
+    return ((B * B) - (4.0 * A * C));
+}
+
+std::tuple<int, float, float> Asserv::eq_2nd_deg_getXY(float a, float b, float A, float B, float C, float robot_size_l_mm)
+{
+    logger().debug() << "eq_2nd_deg_getXY a=" << a
+                << " b=" << b
+                << " A=" << A
+                << " B=" << B
+                << " C=" << C
+                << logs::end;
+    float coord_x = 0.0, coord_y = 0.0;
+    float delta = eq_2nd_deg_getDelta(A, B, C);
+    if (delta < 0) {
+        return std::make_tuple(0, -1, -1);
+    }
+    if (delta == 0) {
+        coord_x = (-1.0 * B / (2.0 * A));
+        coord_y = b - (a * coord_x);
+
+        return std::make_tuple(1, coord_x, coord_y);
+    }
+    if (delta > 0) {
+        float x1 = (((-1.0 * B) + std::sqrt(delta)) / (2.0 * A));
+        float y1 = b - (a * x1); //b- ax
+        float x2 = ((-1.0 * B - std::sqrt(delta)) / (2.0 * A));
+        float y2 = b - (a * x2); //b- ax
+
+        logger().debug() << " solutions : x1=" << x1 << " y1=" << y1
+                << "   x2=" << x2 << " y2=" << y2
+                << logs::end;
+        //filtrage de la table et de la largeur du robot !!
+        if (y1 < robot_size_l_mm && y2 > robot_size_l_mm) {
+            coord_x = x2;
+            coord_y = y2;
+            return std::make_tuple(2, coord_x, coord_y);
+        } else if (y2 < robot_size_l_mm && y1 > robot_size_l_mm) {
+            coord_x = x1;
+            coord_y = y1;
+            return std::make_tuple(3, coord_x, coord_y);
+        } else
+        {
+
+            //double solution impossible à déterminer
+            return std::make_tuple(-2, -1, -1);
+        }
+    } else
+        return std::make_tuple(-1, -1, -1);
+
+}
+
+bool Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_jx_mm,
+        float delta_ky_mm, float mesure_mm, float robot_size_l_mm)
+{
+
+    logger().debug() << "adjustRealPosition : pos_x_start_mm=" << pos_x_start_mm
+            << " pos_y_start_mm=" << pos_y_start_mm
+            << " p.x=" << p.x
+            << " p.y=" << p.y
+            << " p.theta=" << p.theta << " degrees=" << p.theta * 180 / M_PI
+            << " delta_jx_mm=" << delta_jx_mm
+            << " delta_ky_mm=" << delta_ky_mm
+            << " mesure_mm=" << mesure_mm
+
+            << logs::end;
+
+    float dist_real_mm = std::sqrt( (((p.x*1000.0)-pos_x_start_mm) * ((p.x*1000.0)-pos_x_start_mm)) + (((p.y*1000.0) - pos_y_start_mm) * ((p.y*1000.0) - pos_y_start_mm)) );
+
+    float dist_x_when_mesuring_mm = p.x*1000.0 - pos_x_start_mm;
+    float position_theta_when_mesuring_rad = p.theta;
+
+    //calcul de l'angle entre les 2 rayons de cercle
+    float alphap_rad = acos((dist_x_when_mesuring_mm / dist_real_mm));
+    float gamma_rad = atan2(delta_jx_mm, (delta_ky_mm + mesure_mm));
+    float angle_rad = M_PI_2 + alphap_rad + gamma_rad + position_theta_when_mesuring_rad; //TODO attention dans l'autre couleur !!!
+
+    //calcul de BCprim (distance centre robot au point de mesure)
+    float BCprim_mm = std::sqrt((delta_jx_mm * delta_jx_mm) + ((delta_ky_mm + mesure_mm) * (delta_ky_mm + mesure_mm)));
+
+    //calcul de la distance entre les 2 centres de cercle DCprim
+    float DCprim_mm = std::sqrt(
+            (dist_real_mm * dist_real_mm) + (BCprim_mm * BCprim_mm) - (2.0 * dist_real_mm * BCprim_mm * cos(angle_rad)));
+
+    //calcul de l'abcisse du 2eme centre de cercle
+    float xC_mm = std::sqrt((DCprim_mm * DCprim_mm) - (pos_y_start_mm * pos_y_start_mm));
+
+    //on determine le croisement des 2 cercles en fct des coord et des rayons
+    auto r = eq_2CirclesCrossed_getXY(pos_x_start_mm, pos_y_start_mm, dist_real_mm, xC_mm+pos_x_start_mm, 0.0, BCprim_mm, robot_size_l_mm);
+
+    float err = std::get<0>(r);
+
+    logger().debug() << "alphap_rad=" << alphap_rad << " deg=" << alphap_rad * 180 / M_PI
+            << " gamma_rad=" << gamma_rad << " deg=" << gamma_rad * 180 / M_PI
+            << " angle_rad=" << angle_rad << " deg=" << angle_rad * 180 / M_PI
+            << " dist_real_mm=" << dist_real_mm
+            << " BCprim=" << BCprim_mm
+            << " DCprim=" << DCprim_mm
+            << " xC=" << xC_mm
+            << " err=" << err
+            << " new_x_mm=" << std::get<1>(r)
+            << " new_y_mm=" << std::get<2>(r)
+                                    << logs::end;
+
+    if (err <= 0)
+        return false;
+
+    float new_x_mm = std::get<1>(r);
+    float new_y_mm = std::get<2>(r);
+
+//calcul de l'angle de correction
+    //ajouter la difference entre ancien alphap et le nouveau calculé à la position Theta
+    float new_alphap = std::acos((new_x_mm-pos_x_start_mm)/dist_real_mm);
+    float new_teta = position_theta_when_mesuring_rad + (alphap_rad-new_alphap);
+
+    logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta
+            << " degrees=" << new_teta * 180 / M_PI
+            << logs::end;
+//set de la nouvelle position et angle
+    setPositionAndColor(new_x_mm, new_y_mm, new_teta * 180.0 / M_PI, matchColorPosition_);
+
+    return true; // il y a un resultat viable.
+}
+
 bool Asserv::calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
         float y_depart_mm)
 {
@@ -581,12 +729,15 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
             << d2b_bordure_mm << " x_depart_mm= " << getRelativeX(x_depart_mm) << " y_depart_mm= " << y_depart_mm
             << logs::end;
 
+    x_depart_mm = getRelativeX(x_depart_mm);
+
     if (abs(d2b_bordure_mm - d2_theo_bordure_mm) >= 5) {
 
 //Partie théorique basé sur la position d'arrivée (que croit le robot)
         RobotPosition p = pos_getPosition();
         //tan teta = d1/l
-        float dx = (p.x * 1000.0) - getRelativeX(x_depart_mm);
+        //float dx = (p.x * 1000.0) - getRelativeX(x_depart_mm);
+        float dx = (p.x * 1000.0) - x_depart_mm;
         float dy = (p.y * 1000.0) - y_depart_mm;
         float l_theo_mm = std::sqrt(dx * dx + dy * dy);
         float d1_theo = d2_theo_bordure_mm; //TODO a modifier avec cos(beta)
@@ -612,7 +763,8 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
                 << alpha * 180.0 / M_PI << " alpha_error_deg= " << alpha_error * 180.0 / M_PI << logs::end;
         //changement des coordonnées
         float new_teta = (p.theta - teta_error);
-        float new_x = getRelativeX(x_depart_mm) - (l_theo_mm * cos(alpha_error)); //yellow
+        //float new_x = getRelativeX(x_depart_mm) - (l_theo_mm * cos(alpha_error)); //yellow
+        float new_x = x_depart_mm - (l_theo_mm * cos(alpha_error)); //yellow
         float new_y = y_depart_mm - (l_theo_mm * sin(alpha_error));
 
         logger().error() << "old position : " << " x= " << p.x << " y= " << p.y << " a_deg= " << p.theta * 180.0 / M_PI
