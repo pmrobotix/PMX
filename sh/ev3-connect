@@ -17,18 +17,30 @@ IP5GHZ="192.168.3.102" #WIFI PMX5G
 
 all()
 {
-	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/pmx
+	scp "../Bot_LegoMindstorm_EV3/linaro_Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/pmx
 }
 
-main()
+mainold()
+{
+	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
+	scp "../Bot_LegoMindstorm_EV3/linaro_Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
+}
+
+arm()
 {
 	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
 }
 
+linaro()
+{
+	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
+	scp "../Bot_LegoMindstorm_EV3/Linaro_Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
+}
+
 driver()
 {
-	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
+	scp "../Driver-UnitTest_EV3/Linaro_Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
 }
 
 tests()
@@ -82,8 +94,10 @@ case "$2" in
 		all;;
 	driver)
 		driver;;
-	main)
-		main;;
+	arm)
+		arm;;
+	linaro)
+		linaro;;
 	svg)
 		recupsvg;;
 	csv)
@@ -92,7 +106,7 @@ case "$2" in
 		tests;;
 
 	*)
-		echo "Usage: $0 {5g|usb|wifi|home} {connect|all|main|driver|csv|svg|tests}" >&2
+		echo "Usage: $0 {5g|usb|wifi|home} {connect|all|arm|linaro|driver|csv|svg|tests}" >&2
 		exit 1
 	;;
 esac

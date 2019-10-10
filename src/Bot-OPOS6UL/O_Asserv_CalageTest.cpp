@@ -15,17 +15,17 @@
 
 using namespace std;
 
-void O_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void O_Asserv_CalageTest::configureConsoleArgs(int argc, char **argv) //surcharge
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.getArgs().addArgument("d", "dist en mm");
-    robot.getArgs().addArgument("ty", "type de calage", "B");
+    robot.getArgs().addArgument("ty", "type de calage B, R, D", "B");
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
 }
 
-void O_Asserv_CalageTest::run(int argc, char** argv)
+void O_Asserv_CalageTest::run(int argc, char **argv)
 {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
@@ -43,7 +43,8 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
         type = args["ty"];
         logger().info() << "Arg type set " << args["ty"] << ", type = " << type << logs::end;
     }
-    if (type == "B") {
+    if (type == "B") { //bordure
+
         logger().info() << "Start Asserv " << logs::end;
         robot.setMyColor(PMXVIOLET);
         robot.asserv().startMotionTimerAndOdo(true);
@@ -60,17 +61,92 @@ void O_Asserv_CalageTest::run(int argc, char** argv)
         robot.svgPrintPosition();
 
     }
-    if (type == "R") {
+    if (type == "R") { //right sensor
 
         robot.setMyColor(PMXVIOLET);
         robot.asserv().startMotionTimerAndOdo(true);
         robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
-        robot.asserv().doMoveForwardTo(1680, 255);
+        //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
+        robot.asserv().doMoveForwardAndRotateTo(1680, 255, 0); // avec un angle supplémentaire
 
-        float calage = robot.actions().sensors().rightSide();
-        robot.asserv().calculateDriftRightSideAndSetPos(100, calage, 70, 450);
+        //on trouve la position reelle xB, yB, et la direction à corriger, angle teta à partir du point de depart x,y, la distance d'avancée et l'angle de fin
+        //float mesure_mm = robot.actions().sensors().rightSide();
+        float mesure_mm = d;
 
+        float pos_x_start_mm = 70;
+        float pos_y_start_mm = 450;
+        float delta_j_mm = 100;
+        float delta_k_mm = 100;
+        float robot_size_l_mm = 150;
+        RobotPosition p = robot.asserv().pos_getPosition();
+        logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
+                << p.theta * 180 / M_PI << logs::end;
+
+        robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm, mesure_mm,
+                robot_size_l_mm);
+        logger().info() << "POS after : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
+                << p.theta * 180 / M_PI << logs::end;
+    }
+
+    if (type == "L") { //left sensor
+
+            robot.setMyColor(PMXVIOLET);
+            robot.asserv().startMotionTimerAndOdo(true);
+            robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+
+            //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
+            robot.asserv().doMoveForwardAndRotateTo(1680, 255, 0); // avec un angle supplémentaire
+
+            //on trouve la position reelle xB, yB, et la direction à corriger, angle teta à partir du point de depart x,y, la distance d'avancée et l'angle de fin
+            //float mesure_mm = robot.actions().sensors().leftSide();
+            float mesure_mm = d;
+
+            float pos_x_start_mm = 70;
+            float pos_y_start_mm = 450;
+            float delta_j_mm = 100;
+            float delta_k_mm = 100;
+            float robot_size_l_mm = 150;
+            RobotPosition p = robot.asserv().pos_getPosition();
+            logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
+                    << p.theta * 180 / M_PI << logs::end;
+
+            robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm, mesure_mm,
+                    robot_size_l_mm);
+            logger().info() << "POS after : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
+                    << p.theta * 180 / M_PI << logs::end;
+        }
+
+    //demo theorique
+    if (type == "D") {
+
+        robot.setMyColor(PMXVIOLET);
+        robot.asserv().startMotionTimerAndOdo(true);
+        robot.asserv().setPositionAndColor(470, 1000.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+
+        //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
+        robot.asserv().doMoveForwardAndRotateTo(1780, 280, 0); // avec un angle supplémentaire ou pas.
+
+        RobotPosition p = robot.asserv().pos_getPosition();
+        logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
+                << p.theta * 180 / M_PI << logs::end;
+
+        //on trouve la position reelle xB, yB, et la direction à corriger, angle teta à partir du point de depart x,y, la distance d'avancée et l'angle de fin
+        float mesure_mm = d;
+
+        float pos_x_start_mm = 470;
+        float pos_y_start_mm = 1000;
+        float delta_j_mm = 200;
+        float delta_k_mm = 100;
+        float robot_size_l_mm = 150;
+
+        p = robot.asserv().pos_getPosition();
+
+        robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm, mesure_mm,
+                robot_size_l_mm);
+
+        logger().info() << "POS after : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
+                << p.theta * 180 / M_PI << logs::end;
     }
 
     logger().info() << "Happy End." << logs::end;

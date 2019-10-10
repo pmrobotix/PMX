@@ -30,13 +30,13 @@ SensorsDriver::~SensorsDriver()
 int SensorsDriver::leftSide()
 {
     int dist_from_center_mm = 90;
-    int d = gp2_2_.getDistanceMm() + dist_from_center_mm;
+    int d = gp2_2_.getDistanceMm() + dist_from_center_mm; //TODO  true if only 90° !!!!
     return d;
 }
 int SensorsDriver::rightSide()
 {
     int dist_from_center_mm = 103;
-    int d = gp2_1_.getDistanceMm() + dist_from_center_mm;
+    int d = gp2_1_.getDistanceMm() + dist_from_center_mm; //TODO  true if only 90° !!!!
     return d;
 }
 
