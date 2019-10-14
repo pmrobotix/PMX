@@ -27,20 +27,18 @@ private:
     /*!
      * \brief Return \ref Logger linked to \ref Asserv.
      */
-    static inline const logs::Logger & logger()
+    static inline const logs::Logger& logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("Asserv");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("Asserv");
         return instance;
     }
-
-
 
 protected:
 
     /*!
      * \brief motorisation = motors + encoders
      */
-    MovingBase * pMovingBase_;
+    MovingBase *pMovingBase_;
 
     /*!
      * \brief type d'asservissement utilisé
@@ -56,20 +54,19 @@ protected:
 
     std::string botId_;
 
-
-    AAsservDriver* asservdriver_;
+    AAsservDriver *asservdriver_;
 
     /*!
      * \brief asservissement interne INSA.
      * NULL si non defini
      */
-    AsservInsa * pAsservInsa_;
+    AsservInsa *pAsservInsa_;
 
     /*!
      * \brief asservissement interne ESIAL.
      * NULL si non defini
      */
-    AsservEsialR * pAsservEsialR_;
+    AsservEsialR *pAsservEsialR_;
 
     bool temp_ignoreRearCollision_;
     bool temp_ignoreFrontCollision_;
@@ -79,7 +76,7 @@ protected:
     //1=>RIGHT with coordinate 3000-x, y , -angle
     bool matchColorPosition_;
 
-    Robot * probot_; //reference du parent
+    Robot *probot_; //reference du parent
 
     RobotPosition adv_pos_centre_;
 
@@ -89,7 +86,7 @@ public:
      * \brief Constructor.
      *
      */
-    Asserv(std::string botId, Robot * robot); //TODO robot is deprecated ?
+    Asserv(std::string botId, Robot *robot); //TODO robot is deprecated ?
 
     /*!
      * \brief Destructor.
@@ -100,7 +97,7 @@ public:
      * \brief return objet movingBase.
      * \return movingBase_.
      */
-    MovingBase * base();
+    MovingBase* base();
 
     //Gestion de l'asservissement
     virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);
@@ -108,11 +105,11 @@ public:
     virtual void setLowSpeedForward(bool enable, int percent = 0);
     virtual void setLowSpeedBackward(bool enable, int percent = 0);
     virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
+    virtual void setPositionReal(float x_mm, float y_mm, float thetaInRad);
     virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
     virtual void warnFrontCollisionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void warnBackCollisionOnTraj(float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void update_adv();
-
 
     void resetEmergencyOnTraj(std::string message = "default");
 
@@ -148,14 +145,23 @@ public:
 
     //void doActivateReguAngle(bool enable);
 
-
     //http://nains-games.com/2014/12/intersection-de-deux-cercles.html
-    std::tuple<int, float, float> eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2, float d2, float robot_size_l_mm);
+    std::tuple<int, float, float> eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2, float d2,
+            float robot_size_l_mm);
     std::tuple<int, float, float> eq_2nd_deg_getXY(float a, float b, float A, float B, float C, float robot_size_l_mm);
     float eq_2nd_deg_getDelta(float A, float B, float C);
 
-    bool adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p,
-            float delta_j_mm, float delta_k_mm, float mesure_mm, float robot_size_l_mm);
+    /*!
+     * pos_x_start_mm
+     * pos_y_start_mm
+     * p
+     * delta_j_mm
+     * delta_k_mm
+     * mesure_mm
+     * robot_size_l_mm largeur du robot à partir du centre
+     */
+    bool adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_j_mm,
+            float delta_k_mm, float mesure_mm, float robot_size_l_mm);
 
     //attentionLa couleur de match doit deja etre effectué !
     bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
@@ -176,8 +182,19 @@ public:
         if (matchColorPosition_ != 0) {
             return 3000 - x_mm - width;
         }
+        return x_mm + width;
+    }
+
+    inline float getRelativeXMin(float x_mm, float width = 0.0)
+    {
+        //printf("matchcolor:%d", matchColorPosition_);
+        //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
+        if (matchColorPosition_ != 0) {
+            return 3000 - x_mm - width;
+        }
         return x_mm;
     }
+
     //transformation suivant la couleur de match
     inline float getRelativeAngle(float degrees)
     {

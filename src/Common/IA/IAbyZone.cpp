@@ -53,8 +53,8 @@ void IAbyZone::ia_createZone(const char* name, float minX, float minY, float wid
     z->startAngle = startAngleDeg;
 
     if (robot_ != NULL) {
-        z->startX = robot_->asserv()->getRelativeX(z->startX);
-        z->minX = robot_->asserv()->getRelativeX(z->minX, z->width);
+        z->startX = robot_->asserv()->getRelativeXMin(z->startX);
+        z->minX = robot_->asserv()->getRelativeXMin(z->minX, z->width);
         z->startAngle = robot_->asserv()->getRelativeAngle(z->startAngle);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;

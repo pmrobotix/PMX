@@ -153,8 +153,8 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     x_mm = getRelativeX(x_mm);
     float thetaInDegrees = getRelativeAngle(thetaInDegrees_);
 
-    logger().debug() << "matchcolor VIOLET=0 YELLOW=1 : " << matchColor << "thetaInDegrees=" << thetaInDegrees_
-            << "get=" << thetaInDegrees << logs::end;
+    logger().debug() << "matchcolor [VIOLET=0 YELLOW=1]=" << matchColor << " thetaInDegrees=" << thetaInDegrees_
+            << " getRelativeAngle=" << thetaInDegrees << " x_mm=" << x_mm << " y_mm=" << y_mm<< logs::end;
 
     if (useAsservType_ == ASSERV_INT_INSA)
         pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
@@ -162,6 +162,16 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
         asservdriver_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
+}
+
+void Asserv::setPositionReal(float x_mm, float y_mm, float thetaInRad)
+{
+    if (useAsservType_ == ASSERV_INT_INSA)
+            pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
+        else if (useAsservType_ == ASSERV_EXT)
+            asservdriver_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
+        else if (useAsservType_ == ASSERV_INT_ESIALR)
+            pAsservEsialR_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
 }
 
 RobotPosition Asserv::pos_getAdvPosition()
@@ -516,13 +526,8 @@ TRAJ_STATE Asserv::doMoveArcRotate(int degrees, float radiusMM)
 std::tuple<int, float, float> Asserv::eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2,
         float d2, float robot_size_l_mm)
 {
-    logger().debug() << "eq_2CirclesCrossed_getXY x1=" << x1
-            << " y1=" << y1
-            << " d1=" << d1
-            << "  x2=" << x2
-            << " y2=" << y2
-            << " d2=" << d2
-            << logs::end;
+    logger().debug() << "eq_2CirclesCrossed_getXY x1=" << x1 << " y1=" << y1 << " d1=" << d1 << "  x2=" << x2 << " y2="
+            << y2 << " d2=" << d2 << logs::end;
     //On définit y en fonction de x : y = ax +b
     float b = (((x2 * x2) + (y2 * y2) + (d1 * d1) - (d2 * d2) - (x1 * x1) - (y1 * y1)) / (2.0 * (y2 - y1)));
 
@@ -544,14 +549,10 @@ float Asserv::eq_2nd_deg_getDelta(float A, float B, float C)
     return ((B * B) - (4.0 * A * C));
 }
 
-std::tuple<int, float, float> Asserv::eq_2nd_deg_getXY(float a, float b, float A, float B, float C, float robot_size_l_mm)
+std::tuple<int, float, float> Asserv::eq_2nd_deg_getXY(float a, float b, float A, float B, float C,
+        float robot_size_l_mm)
 {
-    logger().debug() << "eq_2nd_deg_getXY a=" << a
-                << " b=" << b
-                << " A=" << A
-                << " B=" << B
-                << " C=" << C
-                << logs::end;
+    logger().debug() << "eq_2nd_deg_getXY a=" << a << " b=" << b << " A=" << A << " B=" << B << " C=" << C << logs::end;
     float coord_x = 0.0, coord_y = 0.0;
     float delta = eq_2nd_deg_getDelta(A, B, C);
     if (delta < 0) {
@@ -569,9 +570,7 @@ std::tuple<int, float, float> Asserv::eq_2nd_deg_getXY(float a, float b, float A
         float x2 = ((-1.0 * B - std::sqrt(delta)) / (2.0 * A));
         float y2 = b - (a * x2); //b- ax
 
-        logger().debug() << " solutions : x1=" << x1 << " y1=" << y1
-                << "   x2=" << x2 << " y2=" << y2
-                << logs::end;
+        logger().debug() << " solutions : x1=" << x1 << " y1=" << y1 << "   x2=" << x2 << " y2=" << y2 << logs::end;
         //filtrage de la table et de la largeur du robot !!
         if (y1 < robot_size_l_mm && y2 > robot_size_l_mm) {
             coord_x = x2;
@@ -581,8 +580,7 @@ std::tuple<int, float, float> Asserv::eq_2nd_deg_getXY(float a, float b, float A
             coord_x = x1;
             coord_y = y1;
             return std::make_tuple(3, coord_x, coord_y);
-        } else
-        {
+        } else {
 
             //double solution impossible à déterminer
             return std::make_tuple(-2, -1, -1);
@@ -596,53 +594,50 @@ bool Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robo
         float delta_ky_mm, float mesure_mm, float robot_size_l_mm)
 {
 
-    logger().debug() << "adjustRealPosition : pos_x_start_mm=" << pos_x_start_mm
-            << " pos_y_start_mm=" << pos_y_start_mm
-            << " p.x=" << p.x
-            << " p.y=" << p.y
-            << " p.theta=" << p.theta << " degrees=" << p.theta * 180 / M_PI
-            << " delta_jx_mm=" << delta_jx_mm
-            << " delta_ky_mm=" << delta_ky_mm
-            << " mesure_mm=" << mesure_mm
+    float pos_x_start_mm_conv = getRelativeX(pos_x_start_mm);
+    logger().debug() << "adjustRealPosition : pos_x_start_mm=" << pos_x_start_mm_conv << " pos_y_start_mm="
+            << pos_y_start_mm << " p.x=" << p.x << " p.y=" << p.y << " p.theta=" << p.theta << " degrees="
+            << p.theta * 180 / M_PI << " delta_jx_mm=" << delta_jx_mm << " delta_ky_mm=" << delta_ky_mm << " mesure_mm="
+            << mesure_mm
 
             << logs::end;
 
-    float dist_real_mm = std::sqrt( (((p.x*1000.0)-pos_x_start_mm) * ((p.x*1000.0)-pos_x_start_mm)) + (((p.y*1000.0) - pos_y_start_mm) * ((p.y*1000.0) - pos_y_start_mm)) );
+    float dist_real_mm = std::sqrt(
+            (((p.x * 1000.0) - pos_x_start_mm_conv) * ((p.x * 1000.0) - pos_x_start_mm_conv))
+                    + (((p.y * 1000.0) - pos_y_start_mm) * ((p.y * 1000.0) - pos_y_start_mm)));
 
-    float dist_x_when_mesuring_mm = p.x*1000.0 - pos_x_start_mm;
-    float position_theta_when_mesuring_rad = p.theta;
+    float dist_x_when_mesuring_mm = std::abs(p.x * 1000.0 - pos_x_start_mm_conv);
+    float position_rel_theta_when_mesuring_rad = getRelativeAngle(p.theta * 180.0 / M_PI) * M_PI / 180.0; //on cherche juste l'angle relatif qu'on soit en couleur A ou B
 
-    //calcul de l'angle entre les 2 rayons de cercle
+
+    //calcul de l'angle entre les 2 rayons de cercle = angle_rad
     float alphap_rad = acos((dist_x_when_mesuring_mm / dist_real_mm));
     float gamma_rad = atan2(delta_jx_mm, (delta_ky_mm + mesure_mm));
-    float angle_rad = M_PI_2 + alphap_rad + gamma_rad + position_theta_when_mesuring_rad; //TODO attention dans l'autre couleur !!!
+    float angle_rad = M_PI_2 + alphap_rad + gamma_rad + position_rel_theta_when_mesuring_rad;
 
     //calcul de BCprim (distance centre robot au point de mesure)
     float BCprim_mm = std::sqrt((delta_jx_mm * delta_jx_mm) + ((delta_ky_mm + mesure_mm) * (delta_ky_mm + mesure_mm)));
 
     //calcul de la distance entre les 2 centres de cercle DCprim
     float DCprim_mm = std::sqrt(
-            (dist_real_mm * dist_real_mm) + (BCprim_mm * BCprim_mm) - (2.0 * dist_real_mm * BCprim_mm * cos(angle_rad)));
+            (dist_real_mm * dist_real_mm) + (BCprim_mm * BCprim_mm)
+                    - (2.0 * dist_real_mm * BCprim_mm * cos(angle_rad)));
 
-    //calcul de l'abcisse du 2eme centre de cercle
-    float xC_mm = std::sqrt((DCprim_mm * DCprim_mm) - (pos_y_start_mm * pos_y_start_mm));
+    //calcul de l'abcisse du 2eme centre de cercle par rapport au premier
+    float dist_xDCp_mm = std::sqrt((DCprim_mm * DCprim_mm) - (pos_y_start_mm * pos_y_start_mm));
 
     //on determine le croisement des 2 cercles en fct des coord et des rayons
-    auto r = eq_2CirclesCrossed_getXY(pos_x_start_mm, pos_y_start_mm, dist_real_mm, xC_mm+pos_x_start_mm, 0.0, BCprim_mm, robot_size_l_mm);
+    auto r = eq_2CirclesCrossed_getXY(pos_x_start_mm_conv, pos_y_start_mm, dist_real_mm,
+            getRelativeX(pos_x_start_mm, dist_xDCp_mm), 0.0, BCprim_mm, robot_size_l_mm);
 
     float err = std::get<0>(r);
 
-    logger().debug() << "alphap_rad=" << alphap_rad << " deg=" << alphap_rad * 180 / M_PI
-            << " gamma_rad=" << gamma_rad << " deg=" << gamma_rad * 180 / M_PI
-            << " angle_rad=" << angle_rad << " deg=" << angle_rad * 180 / M_PI
-            << " dist_real_mm=" << dist_real_mm
-            << " BCprim=" << BCprim_mm
-            << " DCprim=" << DCprim_mm
-            << " xC=" << xC_mm
-            << " err=" << err
-            << " new_x_mm=" << std::get<1>(r)
-            << " new_y_mm=" << std::get<2>(r)
-                                    << logs::end;
+    logger().debug() << "alphap_rad=" << alphap_rad << " deg=" << alphap_rad * 180 / M_PI << " gamma_rad=" << gamma_rad
+            << " deg=" << gamma_rad * 180 / M_PI << " angle_rad=" << angle_rad << " deg=" << angle_rad * 180 / M_PI
+            << " position_rel_theta_when_mesuring_rad=" << position_rel_theta_when_mesuring_rad << " dist_x_when_mesuring_mm="
+            << dist_x_when_mesuring_mm << " dist_real_mm=" << dist_real_mm << " BCprim=" << BCprim_mm << " DCprim="
+            << DCprim_mm << " dist_xDCprim_mm=" << dist_xDCp_mm << " err=" << err << " new_x_mm=" << std::get<1>(r)
+            << " new_y_mm=" << std::get<2>(r) << logs::end;
 
     if (err <= 0)
         return false;
@@ -652,14 +647,13 @@ bool Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robo
 
 //calcul de l'angle de correction
     //ajouter la difference entre ancien alphap et le nouveau calculé à la position Theta
-    float new_alphap = std::acos((new_x_mm-pos_x_start_mm)/dist_real_mm);
-    float new_teta = position_theta_when_mesuring_rad + (alphap_rad-new_alphap);
+    float new_alphap = std::acos(std::abs((new_x_mm - pos_x_start_mm_conv)) / dist_real_mm);
+    float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
 
-    logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta
-            << " degrees=" << new_teta * 180 / M_PI
-            << logs::end;
+    logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta << " degrees="
+            << new_teta * 180 / M_PI << logs::end;
 //set de la nouvelle position et angle
-    setPositionAndColor(new_x_mm, new_y_mm, new_teta * 180.0 / M_PI, matchColorPosition_);
+    setPositionReal(new_x_mm, new_y_mm, new_teta);
 
     return true; // il y a un resultat viable.
 }
