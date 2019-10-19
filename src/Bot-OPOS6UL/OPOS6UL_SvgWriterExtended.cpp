@@ -34,7 +34,6 @@ OPOS6UL_SvgWriterExtended::OPOS6UL_SvgWriterExtended(std::string botId) :
             //<< "<circle cx=\"150\" cy=\"150\" r=\"250\" fill=\"none\" stroke=\"red\" stroke-width=\"1\"/>"
             << "</symbol>";
 
-
     symbol << "<symbol id=\"bot-OPOS6UL-RED\">"
             << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"red\" />"
             << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"red\" />"
@@ -45,21 +44,33 @@ OPOS6UL_SvgWriterExtended::OPOS6UL_SvgWriterExtended(std::string botId) :
             << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"red\" stroke-width=\"4\"/>"
             //devant du robot en position 300,0
             << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"red\" stroke-width=\"4\"/>"
-            //<< "<circle cx=\"150\" cy=\"150\" r=\"250\" fill=\"none\" stroke=\"red\" stroke-width=\"1\"/>"
+
             << "</symbol>";
 
     symbol << "<symbol id=\"bot-OPOS6UL-ORANGE\">"
-                << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"orange\" />"
-                << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"orange\" />"
+            << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"orange\" />"
+            << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"orange\" />"
 
-                << "<rect x=\"80\" y=\"0\" width=\"70\" height=\"300\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
-                //arriere du robot en position 0,0
-                << "<line x1=\"150\" y1=\"0\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
-                << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
-                //devant du robot en position 300,0
-                << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"orange\" stroke-width=\"4\"/>"
-                //<< "<circle cx=\"150\" cy=\"150\" r=\"250\" fill=\"none\" stroke=\"red\" stroke-width=\"1\"/>"
-                << "</symbol>";
+            << "<rect x=\"80\" y=\"0\" width=\"70\" height=\"300\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
+            //arriere du robot en position 0,0
+            << "<line x1=\"150\" y1=\"0\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
+            << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
+            //devant du robot en position 300,0
+            << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"orange\" stroke-width=\"4\"/>"
+
+            << "</symbol>";
+    symbol << "<symbol id=\"bot-OPOS6UL-GREEN\">"
+            << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"green\" />"
+            << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"green\" />"
+
+            << "<rect x=\"80\" y=\"0\" width=\"70\" height=\"300\" style=\"fill:none;stroke:green;stroke-width:2px;\" />"
+            //arriere du robot en position 0,0
+            << "<line x1=\"150\" y1=\"0\" x2=\"400\" y2=\"150\" stroke=\"green\" stroke-width=\"4\"/>"
+            << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"green\" stroke-width=\"4\"/>"
+            //devant du robot en position 300,0
+            << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"green\" stroke-width=\"4\"/>"
+
+            << "</symbol>";
     addDefsSymbol(symbol.str());
 
     //optimisation du log pour ne créer qu'un seul objet
@@ -80,9 +91,13 @@ void OPOS6UL_SvgWriterExtended::writePosition_Bot(float x, float y, float angle_
             *fLogBuffer << "<use x=\"" << x - 150 << "\" y=\"" << -y - 150
                     << "\" xlink:href=\"#bot-OPOS6UL-ORANGE\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << ","
                     << x << "," << -y << ")\" />" << logs::flush;
-        }else if (color == 2) {
+        } else if (color == 2) {
             *fLogBuffer << "<use x=\"" << x - 150 << "\" y=\"" << -y - 150
                     << "\" xlink:href=\"#bot-OPOS6UL-RED\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << ","
+                    << x << "," << -y << ")\" />" << logs::flush;
+        } else if (color == 3) {
+            *fLogBuffer << "<use x=\"" << x - 150 << "\" y=\"" << -y - 150
+                    << "\" xlink:href=\"#bot-OPOS6UL-GREEN\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << ","
                     << x << "," << -y << ")\" />" << logs::flush;
         }
     }
@@ -104,7 +119,7 @@ void OPOS6UL_SvgWriterExtended::writePosition_BotPos(float x, float y, float ang
 
     }
 }
-void OPOS6UL_SvgWriterExtended::writeZone(const char* name, float minX, float minY, float width, float height,
+void OPOS6UL_SvgWriterExtended::writeZone(const char *name, float minX, float minY, float width, float height,
         float startX, float startY, float startAngle_rad)
 {
     if (!done_) {
@@ -155,7 +170,7 @@ void OPOS6UL_SvgWriterExtended::writeZone(const char* name, float minX, float mi
 }
 
 //display path for IAbyZone
-void OPOS6UL_SvgWriterExtended::writeIaPath(const char* zone1Name, const char* zone2Name, float x_mm, float y_mm)
+void OPOS6UL_SvgWriterExtended::writeIaPath(const char *zone1Name, const char *zone2Name, float x_mm, float y_mm)
 {
     if (!done_) {
         *fLogBuffer << "<circle cx='" << x_mm << "' cy='" << -y_mm << "' r='15' fill='none' stroke='green' />"

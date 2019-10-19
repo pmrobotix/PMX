@@ -61,8 +61,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
                 << p.asservStatus << logs::end;
         robot.svgPrintPosition();
 
-    }else
-    if (type == "R") { //right sensor
+    } else if (type == "R") { //right sensor
 
         robot.setMyColor(PMXVIOLET);
         robot.asserv().startMotionTimerAndOdo(true);
@@ -78,21 +77,23 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         float pos_x_start_mm = 70;
         float pos_y_start_mm = 450;
         float delta_j_mm = 100;
-        float delta_k_mm = 100;
+        float delta_k_mm = 0;
         float robot_size_l_mm = 150; //largeur du robot à partir du centre
         RobotPosition p = robot.asserv().pos_getPosition();
         logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
                 << p.theta * 180 / M_PI << logs::end;
 
-        robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm, mesure_mm,
-                robot_size_l_mm);
-        logger().info() << "POS after : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
-                << p.theta * 180 / M_PI << logs::end;
-    }else
+        int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
+                mesure_mm, robot_size_l_mm);
+        sleep(1);
+        RobotPosition pnew = robot.asserv().pos_getPosition();
+        logger().info() << "succeed=" << succeed << " POS after : x=" << pnew.x * 1000.0 << " y=" << pnew.y * 1000.0
+                << " a=" << pnew.theta << " degrees=" << pnew.theta * 180 / M_PI << logs::end;
+    } else
 
     if (type == "L") { //left sensor
 
-        robot.setMyColor(PMXVIOLET);
+        robot.setMyColor(PMXYELLOW);
         robot.asserv().startMotionTimerAndOdo(true);
         robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
@@ -106,17 +107,19 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         float pos_x_start_mm = 70;
         float pos_y_start_mm = 450;
         float delta_j_mm = 100;
-        float delta_k_mm = 100;
+        float delta_k_mm = 0;
         float robot_size_l_mm = 150;
         RobotPosition p = robot.asserv().pos_getPosition();
         logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
                 << p.theta * 180 / M_PI << logs::end;
 
-        robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm, mesure_mm,
-                robot_size_l_mm);
-        logger().info() << "POS after : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
-                << p.theta * 180 / M_PI << logs::end;
-    }else
+        int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
+                mesure_mm, robot_size_l_mm);
+        sleep(1);
+        RobotPosition pnew = robot.asserv().pos_getPosition();
+        logger().info() << "succeed=" << succeed << " POS after : x=" << pnew.x * 1000.0 << " y=" << pnew.y * 1000.0
+                << " a=" << pnew.theta << " degrees=" << pnew.theta * 180 / M_PI << logs::end;
+    } else
 
     if (type == "DR") {            //demo theorique sensor left
 
@@ -140,14 +143,14 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         float delta_k_mm = 100;
         float robot_size_l_mm = 150;
 
-        bool succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
+        int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
                 mesure_mm, robot_size_l_mm);
 
         RobotPosition pnew = robot.asserv().pos_getPosition();
 
         logger().info() << "succeed=" << succeed << " POS after : x=" << pnew.x * 1000.0 << " y=" << pnew.y * 1000.0
                 << " a=" << pnew.theta << " degrees=" << pnew.theta * 180 / M_PI << logs::end;
-    }else
+    } else
 
     if (type == "DL") { //demo theorique sensor right
 
@@ -171,7 +174,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         float delta_k_mm = 100;
         float robot_size_l_mm = 150;
 
-        bool succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
+        int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
                 mesure_mm, robot_size_l_mm);
 
         RobotPosition pnew = robot.asserv().pos_getPosition();

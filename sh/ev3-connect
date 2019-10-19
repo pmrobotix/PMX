@@ -20,27 +20,32 @@ all()
 	scp "../Bot_LegoMindstorm_EV3/linaro_Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/pmx
 }
 
-mainold()
-{
-	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
-	scp "../Bot_LegoMindstorm_EV3/linaro_Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
-}
-
 arm()
 {
 	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
 }
 
-linaro()
+maingnueabihf()
+{
+	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
+	scp "../Bot_LegoMindstorm_EV3/Linaro_gnueabihf/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
+}
+
+mainlinaro()
 {
 	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
 	scp "../Bot_LegoMindstorm_EV3/Linaro_Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
 }
 
-driver()
+driverlinaro()
 {
 	scp "../Driver-UnitTest_EV3/Linaro_Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
+}
+
+commonlinaro()
+{
+	scp "../Common-UnitTest_EV3/Linaro_Debug/Common-UnitTest_EV3" robot@$IP:/home/robot/pmx
 }
 
 tests()
@@ -96,8 +101,14 @@ case "$2" in
 		driver;;
 	arm)
 		arm;;
-	linaro)
-		linaro;;
+	maingnueabihf)
+		maingnueabihf;;
+	mainlinaro)
+		mainlinaro;;
+	driverlinaro)
+		driverlinaro;;
+	commonlinaro)
+		commonlinaro;;
 	svg)
 		recupsvg;;
 	csv)

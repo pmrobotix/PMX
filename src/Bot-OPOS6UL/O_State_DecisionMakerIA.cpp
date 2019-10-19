@@ -17,7 +17,7 @@
 #include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
-O_State_DecisionMakerIA::O_State_DecisionMakerIA(Robot& robot) :
+O_State_DecisionMakerIA::O_State_DecisionMakerIA(Robot &robot) :
         robot_(robot)
 {
 }
@@ -39,7 +39,8 @@ bool O_fake_blue()
 
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, false, 1000000, 0, 0, true);
     if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " zone_fake_blue  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+        robot.logger().error() << " zone_fake_blue  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts
+                << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
     /*
@@ -120,11 +121,25 @@ bool O_push_blue()
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
         robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
-        float moy = robot.actions().sensors().multipleRightSide(10);
-        robot.logger().error() << "--------------moy right: " << moy << logs::end;
-        bool change = robot.asserv().calculateDriftRightSideAndSetPos(260, moy, 70, 450 + 13);
-        //if (change) {
-            if (moy > 260) {
+        float mesure_mm_moy = robot.actions().sensors().multipleRightSide(10);
+        robot.logger().error() << "--------------moy right: " << mesure_mm_moy << logs::end;
+        //bool change = robot.asserv().calculateDriftRightSideAndSetPos(260, moy, 70, 450 + 13);
+
+        RobotPosition p = robot.asserv().pos_getPosition();
+        float pos_x_start_mm = 70;
+        float pos_y_start_mm = 450;
+        float delta_j_mm = 100;
+        float delta_k_mm = 100;
+        float robot_size_l_mm = 150;
+        int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
+                mesure_mm_moy, robot_size_l_mm);
+
+        robot.svgPrintPosition();
+        robot.logger().error() << "POS REAL : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm()
+                << " " << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
+        if (succeed > 0) {
+            //if (change) {
+            if (mesure_mm_moy > 260) {
                 ts = robot.asserv().doMoveBackwardAndRotateTo(zonex, 265.0, zone.theta);
                 if (ts != TRAJ_FINISHED) {
                     robot.logger().error()
@@ -141,17 +156,37 @@ bool O_push_blue()
                     robot.asserv().resetEmergencyOnTraj();
                 }
             }
-        //}
+        } else {
+            robot.logger().error() << "succeed=" << succeed << " TODO try AGAIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                    << logs::end;
+            //TODO try again !!!
+        }
+
     } else {
 
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
         robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
-        float moy = robot.actions().sensors().multipleLeftSide(10);
-        robot.logger().error() << "--------------moy left: " << moy << logs::end;
-        bool change = robot.asserv().calculateDriftLeftSideAndSetPos(260, moy, 70, 450 + 13);
+        float mesure_mm_moy = robot.actions().sensors().multipleLeftSide(10);
+        robot.logger().error() << "--------------moy left: " << mesure_mm_moy << logs::end;
+        //bool change = robot.asserv().calculateDriftLeftSideAndSetPos(260, moy, 70, 450 + 13);
         //if (change) {
-            if (moy > 260) {
+
+        RobotPosition p = robot.asserv().pos_getPosition();
+        float pos_x_start_mm = 70;
+        float pos_y_start_mm = 450;
+        float delta_j_mm = 100;
+        float delta_k_mm = 100;
+        float robot_size_l_mm = 150;
+        int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
+                mesure_mm_moy, robot_size_l_mm);
+
+        robot.svgPrintPosition();
+        robot.logger().error() << "POS REAL : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm()
+                << " " << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
+
+        if (succeed > 0) {
+            if (mesure_mm_moy > 260) {
                 ts = robot.asserv().doMoveBackwardAndRotateTo(zonex, 245.0, zone.theta);
                 if (ts != TRAJ_FINISHED) {
                     robot.logger().error()
@@ -168,7 +203,12 @@ bool O_push_blue()
                     robot.asserv().resetEmergencyOnTraj();
                 }
             }
-        //}
+
+        } else {
+            robot.logger().error() << "succeed=" << succeed << " TODO try AGAIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                    << logs::end;
+            //TODO try again !!!
+        }
     }
     robot.svgPrintPosition();
     robot.logger().error() << "POS2 : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "

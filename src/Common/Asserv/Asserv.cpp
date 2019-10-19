@@ -530,14 +530,11 @@ std::tuple<int, float, float> Asserv::eq_2CirclesCrossed_getXY(float x1, float y
             << y2 << " d2=" << d2 << logs::end;
     //On définit y en fonction de x : y = ax +b
     float b = (((x2 * x2) + (y2 * y2) + (d1 * d1) - (d2 * d2) - (x1 * x1) - (y1 * y1)) / (2.0 * (y2 - y1)));
-
     float a = (x2 - x1) / (y2 - y1);
 
     //resolution de l'equation du second degré Ax² + Bx + C = 0
     float A = (a * a) + 1.0;
-
     float B = ((2.0 * y1 * a) - (2 * x1) - (2.0 * a * b));
-
     float C = ((x1 * x1) + (y1 * y1) - (2.0 * y1 * b) + (b * b) - (d1 * d1));
 
     return eq_2nd_deg_getXY(a, b, A, B, C, robot_size_l_mm);
@@ -590,7 +587,7 @@ std::tuple<int, float, float> Asserv::eq_2nd_deg_getXY(float a, float b, float A
 
 }
 
-bool Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_jx_mm,
+int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_jx_mm,
         float delta_ky_mm, float mesure_mm, float robot_size_l_mm)
 {
 
@@ -640,7 +637,7 @@ bool Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robo
             << " new_y_mm=" << std::get<2>(r) << logs::end;
 
     if (err <= 0)
-        return false;
+        return err;
 
     float new_x_mm = std::get<1>(r);
     float new_y_mm = std::get<2>(r);
@@ -655,7 +652,7 @@ bool Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robo
 //set de la nouvelle position et angle
     setPositionReal(new_x_mm, new_y_mm, new_teta);
 
-    return true; // il y a un resultat viable.
+    return 1; // il y a un resultat viable.
 }
 
 bool Asserv::calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,

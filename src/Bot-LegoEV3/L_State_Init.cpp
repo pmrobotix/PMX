@@ -2,7 +2,9 @@
 
 #include <unistd.h>
 #include <cstdlib>
-
+#include "../Common/Asserv/MovingBase.hpp"
+#include "../Common/Asserv/EncoderControl.hpp"
+#include "../Common/Asserv/ExtEncoderControl.hpp"
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Tirette.hpp"
@@ -265,6 +267,7 @@ L_State_Init::execute(Robot&)
         logger().info() << "Strategy is " << robot.strategy() << logs::end;
 
         logger().info() << "setPos() executing" << logs::end;
+
         setPos();
 
         robot.waitForInit(true);
@@ -290,6 +293,8 @@ void L_State_Init::setPos()
 
     //init des objects
     robot.actions().init_servos();
+    robot.asserv().base()->encoders().reset();
+    robot.asserv().base()->extEncoders().reset();
 
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(450 + 120, 1543 - 50, -90.0, (robot.getMyColor() != PMXVIOLET)); //au coin du distributeur
@@ -298,10 +303,15 @@ void L_State_Init::setPos()
     //active l'asservissement
     robot.asserv().assistedHandling();
     robot.svgPrintPosition();
-    //init
+    /*
+     //init Old
+     robot.asserv().doLineAbs(150);
+     robot.asserv().doMoveBackwardTo(300, robot.asserv().pos_getY_mm());
+     robot.asserv().doMoveBackwardTo(300, 730);
+     */
     robot.asserv().doLineAbs(150);
     robot.asserv().doMoveBackwardTo(300, robot.asserv().pos_getY_mm());
-    robot.asserv().doMoveBackwardTo(300, 730);
+    robot.asserv().doMoveForwardTo(300, 810);
 
     robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;

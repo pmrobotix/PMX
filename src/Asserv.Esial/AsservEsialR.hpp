@@ -15,7 +15,7 @@ class MotorsController;
 class Odometrie;
 
 class Robot;
-/*
+/*//TODO replace all uint / be careful with AsservInsa which already define them
  #define uint8 unsigned char
  #define uint16 unsigned short
  #define uint32 unsigned int

@@ -25,11 +25,11 @@ SensorsDriver::~SensorsDriver()
 
 int SensorsDriver::rightSide()
 {
-    return 100;
+    return 400;
 }
 int SensorsDriver::leftSide()
 {
-    return 100;
+    return 400;
 }
 
 int SensorsDriver::frontLeft()

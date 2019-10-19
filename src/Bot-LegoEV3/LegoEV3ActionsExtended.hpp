@@ -288,7 +288,7 @@ public:
     }
     void conveyorBelt_Right_low(int keep_ms = 2000)
     {
-        servosStd().deploy(SERVO_1, -90, keep_ms);
+        servosStd().deploy(SERVO_1, -100, keep_ms);
 
 //        if (!keep_activated) {
 //            usleep(2000000);
@@ -298,7 +298,7 @@ public:
 
     void conveyorBelt_Left_low(int keep_ms = 2000)
     {
-        servosStd().deploy(SERVO_1, 90, keep_ms);
+        servosStd().deploy(SERVO_1, 100, keep_ms);
 
 //        if (!keep_activated) {
 //            usleep(2000000);

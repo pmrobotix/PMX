@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void L_ServoObjectTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void L_ServoObjectTest::configureConsoleArgs(int argc, char **argv) //surcharge
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
@@ -26,7 +26,7 @@ void L_ServoObjectTest::configureConsoleArgs(int argc, char** argv) //surcharge
     robot.parseConsoleArgs(argc, argv);
 }
 
-void L_ServoObjectTest::run(int argc, char** argv)
+void L_ServoObjectTest::run(int argc, char **argv)
 {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
@@ -39,6 +39,10 @@ void L_ServoObjectTest::run(int argc, char** argv)
         m = args["m"];
         logger().info() << "Arg m set " << args["m"] << ", m = " << m << logs::end;
     }
+
+    logger().info() << "conveyorBelt_Left_center" << logs::end;
+    robot.actions().conveyorBelt_Left_center();
+
     int nb = 1;
     if (m == "ALLR" || m == "ALLL")
         nb = 3;
@@ -121,10 +125,9 @@ void L_ServoObjectTest::run(int argc, char** argv)
         robot.actions().conveyorBelt_EjectLeft(3);
     }
 
-    /*
-     logger().info() << "conveyorBelt_Left_center" << logs::end;
-     robot.actions().conveyorBelt_Left_center();
-     */
+    logger().info() << "conveyorBelt_Left_center" << logs::end;
+    robot.actions().conveyorBelt_Left_center();
+
     robot.actions().releaseAll();
 
     logger().info() << "Happy End." << logs::end;

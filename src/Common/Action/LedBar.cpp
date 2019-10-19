@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <sys/types.h>
 
 #include "../../Log/Logger.hpp"
 #include "Actions.hpp"

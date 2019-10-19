@@ -671,3 +671,17 @@ TRAJ_STATE IAbyPath::whileMoveForwardAndRotateTo(float xMM, float yMM, float abs
     whileMoveRotateTo(absoluteThetaInDegree, wait_tempo_us, nb_collision); //TODO que faire de cette info ???
     return TRAJ_FINISHED;
 }
+
+TRAJ_STATE IAbyPath::whileMoveBackwardAndRotateTo(float xMM, float yMM, float absoluteThetaInDegree,
+        bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision, bool byPathfinding)
+{
+    TRAJ_STATE ts = TRAJ_OK;
+    ts = whileMoveBackwardTo(xMM, yMM, rotate_ignored_detection, wait_tempo_us, nb_near_obstacle, nb_collision,
+            byPathfinding);
+    if (ts != TRAJ_FINISHED) {
+        return ts;
+    }
+
+    whileMoveRotateTo(absoluteThetaInDegree, wait_tempo_us, nb_collision); //TODO que faire de cette info ???
+    return TRAJ_FINISHED;
+}

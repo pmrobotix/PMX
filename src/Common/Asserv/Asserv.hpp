@@ -160,7 +160,7 @@ public:
      * mesure_mm
      * robot_size_l_mm largeur du robot à partir du centre
      */
-    bool adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_j_mm,
+    int adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_j_mm,
             float delta_k_mm, float mesure_mm, float robot_size_l_mm);
 
     //attentionLa couleur de match doit deja etre effectué !

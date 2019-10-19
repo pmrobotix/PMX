@@ -96,6 +96,9 @@ public:
     TRAJ_STATE whileMoveForwardAndRotateTo(float xMM, float yMM, float AbsoluteThetaInDegree,
             bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision,
             bool byPathfinding = false);
+    TRAJ_STATE whileMoveBackwardAndRotateTo(float xMM, float yMM, float AbsoluteThetaInDegree,
+                bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision,
+                bool byPathfinding = false);
 
 };
 
