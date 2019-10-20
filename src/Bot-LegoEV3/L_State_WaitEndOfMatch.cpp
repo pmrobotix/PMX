@@ -29,7 +29,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 
     uint c = 0;
     bool stop = false;
-    while (robot.chrono().getElapsedTimeInSec() <= 98) {
+    while (robot.chrono().getElapsedTimeInSec() <= 100) {
 
 
         //test ARU
@@ -42,7 +42,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         }
 
         usleep(100000);
-        if (c % 20 == 0)
+        if (c % 2 == 0)
         {
             robot.displayPoints();
             this->logger().error() << "chrono " << robot.chrono().getElapsedTimeInSec()

@@ -49,9 +49,9 @@ private:
     /*!
      * \brief Return \ref Logger linked to \ref LegoEV3ActionsExtended.
      */
-    static inline const logs::Logger & logger()
+    static inline const logs::Logger& logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3ActionsExtended");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("LegoEV3ActionsExtended");
         return instance;
     }
 
@@ -93,7 +93,7 @@ private:
     ServoUsingMotor servoUsingMotor_;
 
 public:
-    LegoEV3ActionsExtended(std::string botId, Robot * robot);
+    LegoEV3ActionsExtended(std::string botId, Robot *robot);
 
     ~LegoEV3ActionsExtended()
     {
@@ -104,7 +104,7 @@ public:
      * \brief Cette methode retourne l'objet ledbar.
      * \return ledbar_.
      */
-    LedBar & ledBar()
+    LedBar& ledBar()
     {
         return ledbar_;
     }
@@ -113,7 +113,7 @@ public:
      * \brief Cette methode retourne l'objet buttonBar.
      * \return buttonbar_.
      */
-    ButtonBar & buttonBar()
+    ButtonBar& buttonBar()
     {
         return buttonbar_;
     }
@@ -122,7 +122,7 @@ public:
      * \brief Cette methode retourne l'objet soundBar.
      * \return soundbar_.
      */
-    SoundBar & soundBar()
+    SoundBar& soundBar()
     {
         return soundbar_;
     }
@@ -131,7 +131,7 @@ public:
      * \brief Cette methode retourne l'objet tirette.
      * \return tirette_.
      */
-    Tirette & tirette()
+    Tirette& tirette()
     {
         return tirette_;
     }
@@ -140,22 +140,22 @@ public:
      * \brief Cette methode retourne l'objet sensors.
      * \return sensors_.
      */
-    Sensors & sensors()
+    Sensors& sensors()
     {
         return sensors_;
     }
 
-    LcdShield & lcd()
+    LcdShield& lcd()
     {
         return lcd_;
     }
 
-    ServoObjectsSystem & servosStd()
+    ServoObjectsSystem& servosStd()
     {
         return servos_std_;
     }
 
-    ServoUsingMotor & servoUsingMotor()
+    ServoUsingMotor& servoUsingMotor()
     {
         return servoUsingMotor_;
     }
@@ -205,7 +205,7 @@ public:
         conveyorBelt_EjectLeft(sleeptimems);
     }
 
-    void left_prendre_palet(int push, int nb)
+    void left_prendre_palet(int push, int nb, bool bleu = false)
     {
         conveyorBelt_Left_low(0);
 
@@ -213,7 +213,13 @@ public:
             logger().info() << "left_arm_take" << logs::end;
             left_arm_take();
             logger().info() << "left_arm_retract" << logs::end;
-            left_arm_retract();
+
+            if (bleu) {
+                logger().info() << "bleu!!!!!!!!!!!!!!!!" << logs::end;
+                conveyorBelt_PushRightTremble();
+            }
+            left_arm_retract(0);
+            conveyorBelt_PushRight(push);
         }
         //2nd time
         //logger().info() << "left_arm_take" << logs::end;
@@ -221,9 +227,8 @@ public:
         //logger().info() << "left_arm_retract" << logs::end;
         //left_arm_retract();
 
-        conveyorBelt_PushRight(push);
     }
-    void right_prendre_palet(int push, int nb)
+    void right_prendre_palet(int push, int nb, bool bleu = false)
     {
         conveyorBelt_Right_low(0);
         for (int i = 1; i <= nb; i++) {
@@ -231,7 +236,12 @@ public:
             right_arm_take();
 
             logger().info() << "right_arm_retract" << logs::end;
-            right_arm_retract();
+            if (bleu) {
+                logger().info() << "bleu!!!!!!!!!!!!!!!!" << logs::end;
+                conveyorBelt_PushLeftTremble();
+            }
+            right_arm_retract(0);
+            conveyorBelt_PushLeft(push);
         }
         //2nd time
         //logger().info() << "right_arm_take" << logs::end;
@@ -239,7 +249,6 @@ public:
         //logger().info() << "right_arm_retract" << logs::end;
         //right_arm_retract();
 
-        conveyorBelt_PushLeft(push);
     }
 
     void left_arm_center(int speed = 512)
@@ -248,13 +257,13 @@ public:
         usleep(1000000);
         servosStd().release(SERVO_7);
     }
-    void left_arm_take(int keep_ms = 1500)
+    void left_arm_take(int keep_ms = 1000) //1500
     {
         servosStd().deploy(SERVO_7, -90, keep_ms);
         //usleep(1500000);
         //servosStd().release(SERVO_7);
     }
-    void left_arm_retract(int keep_ms = 1000)
+    void left_arm_retract(int keep_ms = 500)
     {
         servosStd().deploy(SERVO_7, 90, keep_ms);
 //        usleep(1000000);
@@ -267,13 +276,13 @@ public:
 //        usleep(1000000);
 //        servosStd().release(SERVO_5);
     }
-    void right_arm_take(int keep_ms = 1500)
+    void right_arm_take(int keep_ms = 1000) //1500
     {
         servosStd().deploy(SERVO_5, 90, keep_ms);
         //usleep(1500000);
         //servosStd().release(SERVO_5);
     }
-    void right_arm_retract(int keep_ms = 1000)
+    void right_arm_retract(int keep_ms = 500)
     {
         servosStd().deploy(SERVO_5, -90, keep_ms);
 //        usleep(1000000);
@@ -306,6 +315,29 @@ public:
 //        }
 
     }
+
+    void conveyorBelt_PushRightTremble()
+    {
+        servoUsingMotor().moveRight(400);
+        usleep(400000);
+        servoUsingMotor().moveRight(-400);
+        usleep(400000);
+        //servoUsingMotor().moveRight(400);
+        //usleep(300000);
+
+    }
+
+    void conveyorBelt_PushLeftTremble()
+    {
+        servoUsingMotor().moveLeft(400);
+        usleep(400000);
+        servoUsingMotor().moveLeft(-400);
+        usleep(400000);
+        //servoUsingMotor().moveRight(400);
+        //usleep(300000);
+
+    }
+
     void conveyorBelt_PushRight(int nb_position)
     {
         servoUsingMotor().moveRight(nb_position);
@@ -320,7 +352,7 @@ public:
     void conveyorBelt_EjectLeft(int sleeptimems)
     {
         servoUsingMotor().ejectLeft();
-        usleep(sleeptimems*1000.0);
+        usleep(sleeptimems * 1000.0);
     }
     void conveyorBelt_EjectRight(int sleeptimems)
     {

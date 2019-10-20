@@ -87,7 +87,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 
 }
 
-bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm)
+bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
     //logger().error() << "==== filtreInsideTable" << logs::end;
     float distmetre = dist_detect_mm / 1000.0;

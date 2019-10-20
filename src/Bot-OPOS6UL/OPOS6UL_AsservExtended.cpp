@@ -17,7 +17,7 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 }
 
 
-bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm)
+bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
     //logger().error() << "==== filtreInsideTable" << logs::end;
     float distmetre = dist_detect_mm / 1000.0;
@@ -32,10 +32,16 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
         result = true;
     else
         result = false;
-    logger().debug() << "filtreInsideTable" << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
+    logger().debug() << desc << " filtreInsideTable : dist=" << dist_detect_mm
+            << " capteur:" << lateral_pos_sensor_mm
+            << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
             << " y=" << y << " result = " << result << logs::end;
 
     if (result) {
+        logger().error() << desc << " filtreInsideTable : dist=" << dist_detect_mm
+                    << " capteur:" << lateral_pos_sensor_mm
+                    << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
+                    << " y=" << y << " result = " << result << logs::end;
         return true; //si ok
     } else
         return false; //si en dehors de la table*/

@@ -106,7 +106,7 @@ public:
     virtual void setLowSpeedBackward(bool enable, int percent = 0);
     virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
     virtual void setPositionReal(float x_mm, float y_mm, float thetaInRad);
-    virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm);
+    virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
     virtual void warnFrontCollisionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void warnBackCollisionOnTraj(float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void update_adv();
@@ -133,6 +133,10 @@ public:
     TRAJ_STATE doRotateAbs(float degreesRelative);
     TRAJ_STATE doRelativeRotateBy(float thetaInDegreeRelative); //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
     TRAJ_STATE doCalage(int d, int percent);
+    TRAJ_STATE doCalage2(int d, int percent);
+
+    void doRunPivotLeft(int powerL, int powerR, int timemsR);
+    void doRunPivotRight(int powerL, int powerR, int timemsL);
 
     //absolute motion (coordinates thinking in the first color of match)
     TRAJ_STATE doFaceTo(float xMM, float yMM);

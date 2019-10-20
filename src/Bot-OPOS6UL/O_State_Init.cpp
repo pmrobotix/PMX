@@ -285,7 +285,7 @@ O_State_Init::execute(Robot&)
 //    robot.actions().ax12_left_cil(0);
 //    robot.actions().ax12_right_cil();
 
-    robot.points += 5;
+    robot.points += 5; //init
     robot.displayPoints();
 
     logger().info() << "O_StateInit executed" << logs::end;

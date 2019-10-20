@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <cmath>
 #include <string>
+#include <unistd.h>
 
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
@@ -13,7 +14,7 @@
 
 using namespace std;
 
-void L_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void L_Asserv_CalageTest::configureConsoleArgs(int argc, char **argv) //surcharge
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.getArgs().addArgument("d", "dist en mm");
@@ -23,9 +24,9 @@ void L_Asserv_CalageTest::configureConsoleArgs(int argc, char** argv) //surcharg
     robot.parseConsoleArgs(argc, argv);
 }
 
-void L_Asserv_CalageTest::run(int argc, char** argv)
+void L_Asserv_CalageTest::run(int argc, char **argv)
 {
-    logger().info() << "N° "<< this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     Arguments args = robot.getArgs();
@@ -51,9 +52,13 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
             << p.asservStatus << logs::end;
     robot.svgPrintPosition();
 
+
+    robot.asserv().doRunPivotRight(600, 520, 2500);
+
+
     ts = TRAJ_OK;
     logger().info() << "GO distance calage mm=" << d << logs::end;
-    ts = robot.asserv().doCalage(d, 40);
+    ts = robot.asserv().doCalage2(d, 50);
     logger().info() << "TRAJ= " << ts << logs::end;
     if (ts != TRAJ_FINISHED) {
         robot.asserv().resetEmergencyOnTraj();
@@ -63,6 +68,10 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
             << p.asservStatus << " ts=" << ts << logs::end;
     robot.svgPrintPosition();
 
+    logger().info() << "GO distance calage mm=" << d << logs::end;
+    robot.asserv().doRunPivotLeft(520, 600, 2500);
+
+/*
     logger().info() << "doRotateTo " << logs::end;
     ts = TRAJ_OK;
     ts = robot.asserv().doAbsoluteRotateTo(a);
@@ -70,8 +79,8 @@ void L_Asserv_CalageTest::run(int argc, char** argv)
     if (ts != TRAJ_FINISHED) {
         robot.asserv().resetEmergencyOnTraj();
     }
-
-    logger().info() << "doLineAbs " << logs::end;
+*/
+    logger().info() << "doLineAbs inverse" << logs::end;
 
     ts = TRAJ_OK;
     ts = robot.asserv().doLineAbs(-d);

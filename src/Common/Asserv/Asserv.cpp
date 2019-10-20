@@ -2,7 +2,7 @@
 
 #include <cmath>
 #include <cstdlib>
-
+#include <unistd.h>
 #include "../../Asserv.Esial/AsservEsialR.hpp"
 #include "../../Asserv.Insa/AsservInsa.hpp"
 #include "../../Log/Logger.hpp"
@@ -154,7 +154,7 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     float thetaInDegrees = getRelativeAngle(thetaInDegrees_);
 
     logger().debug() << "matchcolor [VIOLET=0 YELLOW=1]=" << matchColor << " thetaInDegrees=" << thetaInDegrees_
-            << " getRelativeAngle=" << thetaInDegrees << " x_mm=" << x_mm << " y_mm=" << y_mm<< logs::end;
+            << " getRelativeAngle=" << thetaInDegrees << " x_mm=" << x_mm << " y_mm=" << y_mm << logs::end;
 
     if (useAsservType_ == ASSERV_INT_INSA)
         pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
@@ -167,11 +167,11 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
 void Asserv::setPositionReal(float x_mm, float y_mm, float thetaInRad)
 {
     if (useAsservType_ == ASSERV_INT_INSA)
-            pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
-        else if (useAsservType_ == ASSERV_EXT)
-            asservdriver_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
-        else if (useAsservType_ == ASSERV_INT_ESIALR)
-            pAsservEsialR_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
+        pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
+    else if (useAsservType_ == ASSERV_EXT)
+        asservdriver_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
+    else if (useAsservType_ == ASSERV_INT_ESIALR)
+        pAsservEsialR_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
 }
 
 RobotPosition Asserv::pos_getAdvPosition()
@@ -215,7 +215,7 @@ float Asserv::pos_getThetaInDegree()
 }
 
 //doit etre surcharger par robot
-bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm)
+bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
 
     logger().error() << "Asserv::filtre_IsInsideTable Surcharge à faire par config Robot!!!!!!!!" << logs::end;
@@ -459,7 +459,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
         if (!rotate_ignored)
             return ts;
         else {
-            //on resete
+            //on resette
             resetEmergencyOnTraj("doMoveForwardTo rotate_ignored");
             logger().error() << " __on passe au doline !!!" << logs::end;
         }
@@ -606,7 +606,6 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robot
     float dist_x_when_mesuring_mm = std::abs(p.x * 1000.0 - pos_x_start_mm_conv);
     float position_rel_theta_when_mesuring_rad = getRelativeAngle(p.theta * 180.0 / M_PI) * M_PI / 180.0; //on cherche juste l'angle relatif qu'on soit en couleur A ou B
 
-
     //calcul de l'angle entre les 2 rayons de cercle = angle_rad
     float alphap_rad = acos((dist_x_when_mesuring_mm / dist_real_mm));
     float gamma_rad = atan2(delta_jx_mm, (delta_ky_mm + mesure_mm));
@@ -631,10 +630,10 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robot
 
     logger().debug() << "alphap_rad=" << alphap_rad << " deg=" << alphap_rad * 180 / M_PI << " gamma_rad=" << gamma_rad
             << " deg=" << gamma_rad * 180 / M_PI << " angle_rad=" << angle_rad << " deg=" << angle_rad * 180 / M_PI
-            << " position_rel_theta_when_mesuring_rad=" << position_rel_theta_when_mesuring_rad << " dist_x_when_mesuring_mm="
-            << dist_x_when_mesuring_mm << " dist_real_mm=" << dist_real_mm << " BCprim=" << BCprim_mm << " DCprim="
-            << DCprim_mm << " dist_xDCprim_mm=" << dist_xDCp_mm << " err=" << err << " new_x_mm=" << std::get<1>(r)
-            << " new_y_mm=" << std::get<2>(r) << logs::end;
+            << " position_rel_theta_when_mesuring_rad=" << position_rel_theta_when_mesuring_rad
+            << " dist_x_when_mesuring_mm=" << dist_x_when_mesuring_mm << " dist_real_mm=" << dist_real_mm << " BCprim="
+            << BCprim_mm << " DCprim=" << DCprim_mm << " dist_xDCprim_mm=" << dist_xDCp_mm << " err=" << err
+            << " new_x_mm=" << std::get<1>(r) << " new_y_mm=" << std::get<2>(r) << logs::end;
 
     if (err <= 0)
         return err;
@@ -645,7 +644,8 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robot
 //calcul de l'angle de correction
     //ajouter la difference entre ancien alphap et le nouveau calculé à la position Theta
     float new_alphap = std::acos(std::abs((new_x_mm - pos_x_start_mm_conv)) / dist_real_mm);
-    float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
+    float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI)
+            * M_PI / 180.0;
 
     logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta << " degrees="
             << new_teta * 180 / M_PI << logs::end;
@@ -786,6 +786,105 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
  }
  }*/
 
+void Asserv::doRunPivotLeft(int powerL, int powerR, int timems) //tourner en pivot sur la roue gauche
+{
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
+        pAsservEsialR_->motion_FreeMotion();
+        pAsservEsialR_->motion_ActivateReguAngle(false);
+        pAsservEsialR_->motion_ActivateReguDist(false);
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+
+        base()->motors().runMotorRight(powerR, timems);
+        base()->motors().runMotorLeft(powerL, timems);
+        usleep(timems * 1000);
+
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+        pAsservEsialR_->motion_ActivateReguAngle(true);
+        pAsservEsialR_->motion_ActivateReguDist(true);
+        pAsservEsialR_->motion_AssistedHandling();
+        resetEmergencyOnTraj("doRunPivotLeft");
+    } else if (useAsservType_ == ASSERV_EXT) {
+
+        //TODO
+    }
+}
+
+void Asserv::doRunPivotRight(int powerL, int powerR, int timems) //tourner en pivot sur la roue gauche
+{
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
+        pAsservEsialR_->motion_FreeMotion();
+        pAsservEsialR_->motion_ActivateReguAngle(false);
+        pAsservEsialR_->motion_ActivateReguDist(false);
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+
+        base()->motors().runMotorRight(powerR, timems);
+        base()->motors().runMotorLeft(powerL, timems);
+        usleep(timems * 1000);
+
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+        pAsservEsialR_->motion_ActivateReguAngle(true);
+        pAsservEsialR_->motion_ActivateReguDist(true);
+        pAsservEsialR_->motion_AssistedHandling();
+        resetEmergencyOnTraj("doRunPivotRight");
+    } else if (useAsservType_ == ASSERV_EXT) {
+
+        //TODO
+    }
+}
+
+TRAJ_STATE Asserv::doCalage2(int dist, int percent)
+{
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
+        if (dist > 0)
+            pAsservEsialR_->motion_setLowSpeedForward(true, percent);
+        else if (dist < 0)
+            pAsservEsialR_->motion_setLowSpeedBackward(true, percent);
+
+        pAsservEsialR_->motion_ActivateReguAngle(true);
+        pAsservEsialR_->motion_ActivateReguDist(true);
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+
+        pAsservEsialR_->motion_AssistedHandling();
+        TRAJ_STATE ts = TRAJ_OK;
+        while (ts == TRAJ_OK) {
+            ts = pAsservEsialR_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
+        }
+
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+        pAsservEsialR_->motion_ActivateReguAngle(false);
+        pAsservEsialR_->motion_ActivateReguDist(true);
+        resetEmergencyOnTraj("doCalage phase 1");
+
+        ts = pAsservEsialR_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
+
+        //pAsservEsialR_->path_CancelTrajectory();
+        pAsservEsialR_->motion_setLowSpeedForward(false);
+        pAsservEsialR_->motion_setLowSpeedBackward(false);
+
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
+        pAsservEsialR_->motion_ActivateReguAngle(true);
+        pAsservEsialR_->motion_ActivateReguDist(true);
+        resetEmergencyOnTraj("doCalage phase 2");
+
+        return ts;
+    } else if (useAsservType_ == ASSERV_EXT) {
+
+        //TODO
+    }
+
+}
+
 TRAJ_STATE Asserv::doCalage(int dist, int percent)
 {
 
@@ -797,13 +896,19 @@ TRAJ_STATE Asserv::doCalage(int dist, int percent)
 
         pAsservEsialR_->motion_ActivateReguAngle(false);
         pAsservEsialR_->motion_ActivateReguDist(true);
-        pAsservEsialR_->motion_AssistedHandling();
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
 
+        pAsservEsialR_->motion_AssistedHandling();
+        //TRAJ_STATE ts = TRAJ_OK;
         TRAJ_STATE ts = pAsservEsialR_->motion_DoDirectLine(dist / 1000.0); //sans asservissement L/R
 
         //pAsservEsialR_->path_CancelTrajectory();
         pAsservEsialR_->motion_setLowSpeedForward(false);
         pAsservEsialR_->motion_setLowSpeedBackward(false);
+
+        pAsservEsialR_->motion_ResetReguAngle();
+        pAsservEsialR_->motion_ResetReguDist();
         pAsservEsialR_->motion_ActivateReguAngle(true);
         pAsservEsialR_->motion_ActivateReguDist(true);
         resetEmergencyOnTraj("doCalage");
@@ -816,7 +921,7 @@ TRAJ_STATE Asserv::doCalage(int dist, int percent)
         else if (dist < 0)
             asservdriver_->motion_setLowSpeedBackward(true, percent);
 
-        asservdriver_->motion_ActivateReguAngle(false);
+        asservdriver_->motion_ActivateReguAngle(false); //TODO A VERIFIER SI NON INVERSE POUR GROS ROBOT !!!!!!!!!!!!!!!!!!!!!!!
         asservdriver_->motion_ActivateReguDist(true);
         asservdriver_->motion_AssistedHandling();
 

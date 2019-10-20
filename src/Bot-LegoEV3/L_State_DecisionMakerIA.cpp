@@ -192,7 +192,7 @@ bool L_take_grand_distributeurOld()
         robot.actions().conveyorBelt_Left_low(0);
     }
 
-    robot.asserv().doCalage(240, 60);
+    robot.asserv().doCalage2(240, 60);
     robot.svgPrintPosition();
 
     robot.logger().info() << "left_eject_all" << logs::end;
@@ -441,7 +441,7 @@ bool L_take_grand_distributeurOptimised()
         robot.actions().conveyorBelt_Left_low(0);
     }
 
-    robot.asserv().doCalage(240, 60);
+    robot.asserv().doCalage2(240, 60);
     robot.svgPrintPosition();
 
     robot.logger().info() << "left_eject_all" << logs::end;
@@ -542,6 +542,127 @@ bool L_take_grand_distributeurOptimised()
     return true; //return true si ok sinon false si interruption
 }
 
+int nbbalance = 0;
+void depose_balance()
+{
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    TRAJ_STATE ts = TRAJ_OK;
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.actions().conveyorBelt_Right_low(0);
+    } else {
+        robot.actions().conveyorBelt_Left_low(0);
+    }
+
+    robot.logger().info() << " go to 200" << logs::end;
+    //Calage balance
+
+    //float temp_x = robot.asserv().pos_getX_mm();
+    float temp_y = robot.asserv().pos_getY_mm();
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(510 + 200 + 200 + 200 + 80, temp_y, true, 1000000, 8, 1);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " go to 200  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+    robot.logger().info() << " turn 15 degres" << logs::end;
+    robot.asserv().doRelativeRotateBy(15);
+    robot.logger().info() << " do calage" << logs::end;
+//    if (robot.getMyColor() == PMXVIOLET) {
+//        robot.actions().conveyorBelt_Right_low(0);
+//    } else {
+//        robot.actions().conveyorBelt_Left_low(0);
+//    }
+
+    robot.asserv().doLineAbs(50);
+    robot.svgPrintPosition();
+
+    robot.logger().info() << "left_eject_all" << logs::end;
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.actions().left_eject_all(0);
+        //sleep(5); //on laisse le temps d'ejecter
+    } else {
+        robot.actions().right_eject_all(0);
+    }
+
+    int dist = 60 + nbbalance * 50;
+    robot.asserv().doCalage2(dist, 40);
+    nbbalance++;
+    //    robot.svgPrintPosition();
+
+//    ts = robot.asserv().doLineAbs(-30);
+//    if (ts != TRAJ_FINISHED) {
+//        robot.logger().error() << " go to -30  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+//        robot.asserv().resetEmergencyOnTraj();
+//    }
+//    ts = robot.asserv().doLineAbs(-30);
+//    if (ts != TRAJ_FINISHED) {
+//        robot.logger().error() << " go to -30  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+//        robot.asserv().resetEmergencyOnTraj();
+//    }
+//    ts = robot.asserv().doLineAbs(-30);
+//    if (ts != TRAJ_FINISHED) {
+//        robot.logger().error() << " go to -30  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+//        robot.asserv().resetEmergencyOnTraj();
+//    }
+
+    /*
+     ts = robot.asserv().doRelativeRotateBy(10);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     ts = robot.asserv().doRelativeRotateBy(-10);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     ts = robot.asserv().doRelativeRotateBy(10);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     //ts = robot.asserv().doRelativeRotateBy(-10);
+     */
+
+    if (nbbalance == 0)
+        robot.points += 32; //3 palets
+    else
+        robot.points += 16; //2 palets
+
+    //robot.asserv().doRunPivotRight(-200, 50, 2000);
+
+    ts = robot.asserv().doLineAbs(-40);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " go to -100  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    robot.svgPrintPosition();
+
+    ts = robot.ia().iAbyPath().whileMoveRotateTo(-160, 200000, 1); //Absolute angle
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " go to -165deg  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.logger().info() << "doRunPivotRight clothoid like" << logs::end;
+        robot.asserv().doRunPivotRight(600, 530, 1500);
+    } else {
+        robot.logger().info() << "doRunPivotLeft clothoid like" << logs::end;
+        robot.asserv().doRunPivotLeft(530, 600, 1500);
+    }
+    /*
+     ts = robot.asserv().doLineAbs(100);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " go +100 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }*/
+}
+
 bool L_take_grand_distributeur()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -555,38 +676,86 @@ bool L_take_grand_distributeur()
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.logger().info() << "while zone  small distrib." << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveBackwardAndRotateTo(200, 1870, -12.0, false, 400000, 2, 2);
+    //ts = robot.ia().iAbyPath().whileMoveBackwardAndRotateTo(200, 1950, -90, false, 200000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveBackwardTo(200, 1960, false, 200000, 0, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "go small distrib  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
+
+    //robot.asserv().doCalage2(-100, 40);
+    robot.svgPrintPosition();
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        ts = robot.asserv().doLineAbs(94);
+
+    } else {
+        ts = robot.asserv().doLineAbs(100);
+    }
+
+    if (ts != TRAJ_FINISHED) {
+        robot.asserv().resetEmergencyOnTraj();
+    }
+
+    ts = robot.asserv().doAbsoluteRotateTo(0);
+    if (ts != TRAJ_FINISHED) {
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    robot.svgPrintPosition();
+
+    robot.logger().info() << "ARMs retracting" << logs::end;
+    if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.actions().right_arm_retract(0);
+        robot.actions().left_arm_retract(0);
+        robot.actions().conveyorBelt_Left_low(0);
+    } else {
+
+        robot.actions().right_arm_retract(0);
+        robot.actions().left_arm_retract(0);
+        robot.actions().conveyorBelt_Right_low(0);
+    }
+
+    robot.logger().info() << "calage -200" << logs::end;
     //calage
     robot.svgPrintPosition();
-    robot.asserv().doCalage(-200, 70);
+    robot.asserv().doCalage2(-220, 50);
     robot.svgPrintPosition();
+
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.logger().info() << "doRunPivotLeft" << logs::end;
+        robot.asserv().doRunPivotLeft(-50, 200, 1000);
+    } else {
+        robot.logger().info() << "doRunPivotLeft" << logs::end;
+        robot.asserv().doRunPivotRight(200, -50, 1000);
+    }
 
     //Prise du bleu
     robot.logger().info() << "prendre bleu " << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 2);
+        robot.actions().left_prendre_palet(2500, 1, true);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 2);
+        robot.actions().right_prendre_palet(2500, 1, true);
 
     }
     robot.svgPrintPosition();
+
+    robot.logger().info() << "go to vert" << logs::end;
     /*
-     robot.logger().info() << "go to vert" << logs::end;
      ts = robot.ia().iAbyPath().whileMoveForwardTo(90, 1885, true, 400000, 2, 2);
      if (ts != TRAJ_FINISHED) {
      robot.logger().error() << " go to vert  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
      robot.asserv().resetEmergencyOnTraj();
      }*/
-    robot.asserv().doLineAbs(90);
+    ts = robot.asserv().doLineAbs(85);
+    if (ts != TRAJ_FINISHED) {
+        robot.asserv().resetEmergencyOnTraj();
+    }
     robot.svgPrintPosition();
     robot.logger().info() << "prendre vert" << logs::end;
     //prendre vert
@@ -599,56 +768,167 @@ bool L_take_grand_distributeur()
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
         robot.actions().right_prendre_palet(1500, 1);
-
     }
     //degagement
-    robot.asserv().doRelativeRotateBy(-3);
-    robot.asserv().doLineAbs(20);
-    robot.asserv().doRelativeRotateBy(-5);
-    robot.asserv().doLineAbs(30);
-    robot.asserv().doRelativeRotateBy(-7);
-    robot.asserv().doLineAbs(40);
+    //robot.asserv().doRelativeRotateBy(-3);
+    //robot.asserv().doLineAbs(20);
+//    robot.asserv().doRelativeRotateBy(-5);
+//    robot.asserv().doLineAbs(30);
+    //robot.asserv().doRelativeRotateBy(-7);
+    //robot.asserv().doLineAbs(40);
+    robot.logger().info() << "doRelativeRotateBy(-90)" << logs::end;
+    ts = robot.asserv().doRelativeRotateBy(-90);
 
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
     robot.logger().info() << "while zone  L_take_grand_distributeur." << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, 0, false, 400000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, 0, false, 200000, 2, 2);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " zone_grand_distributeur  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+                << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    /*
+     robot.logger().info() << "ARMsssss" << logs::end;
+     if (robot.getMyColor() == PMXVIOLET) {
+
+     robot.actions().right_arm_take(0);
+     robot.actions().conveyorBelt_Left_low(0);
+     } else {
+
+     robot.actions().left_arm_take(0);
+     robot.actions().conveyorBelt_Right_low(0);
+     }
+     */
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+    //position vert1
+    int pos = 0;
+    if (robot.getMyColor() == PMXVIOLET) {
+        robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
+        pos = 1435;
+    } else {
+        robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, true);
+        pos = 1435;
+    }
+    /*
+     robot.logger().info() << "go to distrib" << logs::end;
+     ts = robot.ia().iAbyPath().whileMoveForwardTo(370, 1410, false, 200000, 2, 2);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " go to distrib  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     */
+    /*
+     robot.logger().info() << "go to vert1" << logs::end;
+     ts = robot.ia().iAbyPath().whileMoveForwardTo(500, pos, true, 400000, 2, 2);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " go to vert1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+
+     robot.logger().info() << "prendre vert1" << logs::end;
+     //prendre vert1
+     if (robot.getMyColor() == PMXVIOLET) {
+
+     robot.logger().info() << "left_prendre_palet" << logs::end;
+     robot.actions().left_prendre_palet(1500, 1);
+
+     } else {
+
+     robot.logger().info() << "right_prendre_palet" << logs::end;
+     robot.actions().right_prendre_palet(1500, 1);
+
+     }
+     */
+    //position bleu
+    //f = 0;
+    robot.logger().info() << "go to bleu distrib" << logs::end;
+
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(500 + 190, pos, true, 200000, 2, 2);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " go to bleu distrib ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+
+    robot.logger().info() << "prendre bleu distrib" << logs::end;
+    if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.logger().info() << "left_prendre_palet" << logs::end;
+        robot.actions().left_prendre_palet(1600, 1, true);
+
+    } else {
+
+        robot.logger().info() << "right_prendre_palet" << logs::end;
+        robot.actions().right_prendre_palet(1600, 1, true);
+
+    }
+    robot.svgPrintPosition();
+    /*
+     //position vert2
+     robot.logger().info() << "go to vert2" << logs::end;
+
+     ts = robot.ia().iAbyPath().whileMoveForwardTo(510 + 200 + 185, pos, true, 400000, 2, 2);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " go to vert2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+
+     robot.logger().info() << " prendre vert2" << logs::end;
+     if (robot.getMyColor() == PMXVIOLET) {
+     //robot.asserv().doLineAbs(205);
+     robot.logger().info() << "left_prendre_palet" << logs::end;
+     robot.actions().left_prendre_palet(1300, 1);
+
+     } else {
+     //robot.asserv().doLineAbs(200);
+     robot.logger().info() << "right_prendre_palet" << logs::end;
+     robot.actions().right_prendre_palet(1300, 1);
+
+     }
+     robot.svgPrintPosition();
+     */
+
+    depose_balance();
+
+    //2ème passe pour les verts
+
+    robot.logger().info() << "ARMs retracting" << logs::end;
+    if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.actions().right_arm_retract(0);
+        robot.actions().left_arm_retract(0);
+        robot.actions().conveyorBelt_Left_low(0);
+    } else {
+
+        robot.actions().right_arm_retract(0);
+        robot.actions().left_arm_retract(0);
+        robot.actions().conveyorBelt_Right_low(0);
+    }
+
+    robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
+    robot.logger().info() << "while zone  L_take_grand_distributeur." << logs::end;
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, false, 200000, 1, 1);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " zone_grand_distributeur  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
 
-    robot.logger().info() << "ARMsssss" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
-
-        robot.actions().right_arm_take(0);
-        robot.actions().conveyorBelt_Left_low(0);
-    } else {
-
-        robot.actions().left_arm_take(0);
-        robot.actions().conveyorBelt_Right_low(0);
-    }
-
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    //position vert1
-    int pos = 0;
     if (robot.getMyColor() == PMXVIOLET) {
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
-        pos = 1425;
+
     } else {
         robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, true);
-        pos = 1435;
     }
-
-    robot.logger().info() << "go to distrib" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(370, 1410, false, 400000, 2, 2);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to distrib  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-
+    /*
+     robot.logger().info() << "go to distrib" << logs::end;
+     ts = robot.ia().iAbyPath().whileMoveForwardTo(370, 1410, false, 200000, 2, 2);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " go to distrib  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     */
     robot.logger().info() << "go to vert1" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(500, pos, true, 400000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(495, pos, true, 200000, 2, 2);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to vert1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -659,44 +939,22 @@ bool L_take_grand_distributeur()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 1);
+        robot.actions().left_prendre_palet(2100, 1);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 1);
+        robot.actions().right_prendre_palet(2100, 1);
 
     }
 
-    //position bleu
+    sleep(2);
 
-    //f = 0;
-    robot.logger().info() << "go to bleu" << logs::end;
-
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(510 + 190, pos, true, 400000, 2, 2);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to bleu  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-
-    robot.logger().info() << "prendre bleu " << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
-
-        robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 2);
-
-    } else {
-
-        robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 2);
-
-    }
     robot.svgPrintPosition();
-
     //position vert2
     robot.logger().info() << "go to vert2" << logs::end;
 
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(510 + 200 + 185, pos, true, 400000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(500 + 200 + 200, pos, true, 200000, 20, 3);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to vert2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -716,115 +974,39 @@ bool L_take_grand_distributeur()
     }
     robot.svgPrintPosition();
 
-    if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().conveyorBelt_Right_low(0);
-    } else {
-        robot.actions().conveyorBelt_Left_low(0);
-    }
+    //depose again
+    depose_balance();
 
-    robot.logger().info() << " go to 200" << logs::end;
-    //Calage balance
-
-    //float temp_x = robot.asserv().pos_getX_mm();
-    float temp_y = robot.asserv().pos_getY_mm();
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(510 + 200 + 200 + 200, temp_y, true, 400000, 2, 2);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to 200  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    robot.logger().info() << " turn 6 degres" << logs::end;
-    robot.asserv().doRelativeRotateBy(10);
-    robot.logger().info() << " do calage" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().conveyorBelt_Right_low(0);
-    } else {
-        robot.actions().conveyorBelt_Left_low(0);
-    }
-
-    robot.asserv().doCalage(240, 60);
-    robot.svgPrintPosition();
-
-    robot.logger().info() << "left_eject_all" << logs::end;
+//    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+//    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().left_eject_all(0);
-        //sleep(5); //on laisse le temps d'ejecter
+        robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, true);
+
     } else {
-        robot.actions().right_eject_all(0);
+        robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
     }
 
-    ts = robot.asserv().doLineAbs(-30);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to -30  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    ts = robot.asserv().doLineAbs(-30);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to -30  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    ts = robot.asserv().doLineAbs(-30);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to -30  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    /*
-     ts = robot.asserv().doRelativeRotateBy(10);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     }
-     ts = robot.asserv().doRelativeRotateBy(-10);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     }
-     ts = robot.asserv().doRelativeRotateBy(10);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     }
-     //ts = robot.asserv().doRelativeRotateBy(-10);
-     */
-    robot.points += 28;
-
-    ts = robot.asserv().doLineAbs(-120);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to -120  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    robot.svgPrintPosition();
-
-    ts = robot.ia().iAbyPath().whileMoveRotateTo(-165, 1000000, 1); //Absolute angle
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " go to 200  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
     robot.logger().info() << " position move1" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(640, 1250, false, 400000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(640, 1250, false, 200000, 20, 2);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to move1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
 
+    //reprise fin
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
 
     robot.logger().info() << " position move2" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(440, 800, false, 400000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(440, 800, false, 200000, 20, 2);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to move2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
 
     robot.logger().info() << " position -90" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveRotateTo(-90.0, 1000000, 1);
+    ts = robot.ia().iAbyPath().whileMoveRotateTo(-90.0, 200000, 1);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to -90  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
