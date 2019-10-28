@@ -79,7 +79,7 @@ public:
         SERVO_enumTypeEnd
     };
 
-    OPOS6UL_ActionsExtended(std::string botId, Robot * robot);
+    OPOS6UL_ActionsExtended(std::string botId, Robot *robot);
 
     ~OPOS6UL_ActionsExtended()
     {
@@ -89,12 +89,12 @@ public:
      * \brief Cette methode retourne l'objet ledbar.
      * \return ledbar_.
      */
-    LedBar & ledBar()
+    LedBar& ledBar()
     {
         return ledbar_;
     }
 
-    ButtonBar & buttonBar()
+    ButtonBar& buttonBar()
     {
         return buttonbar_;
     }
@@ -103,7 +103,7 @@ public:
      * \brief Cette methode retourne l'objet LcdShield.
      * \return lcd2x16_.
      */
-    LcdShield & lcd2x16()
+    LcdShield& lcd2x16()
     {
         return lcd2x16_;
     }
@@ -112,7 +112,7 @@ public:
      * \brief Cette methode retourne l'objet tirette.
      * \return tirette_.
      */
-    Tirette & tirette()
+    Tirette& tirette()
     {
         return tirette_;
     }
@@ -121,17 +121,17 @@ public:
      * \brief Cette methode retourne l'objet sensors.
      * \return sensors_.
      */
-    Sensors & sensors()
+    Sensors& sensors()
     {
         return sensors_;
     }
 
-    ServoObjectsSystem & servosAx12()
+    ServoObjectsSystem& servosAx12()
     {
         return servos_ax12_;
     }
 
-    ServoObjectsSystem & servosStd()
+    ServoObjectsSystem& servosStd()
     {
         return servos_std_;
     }
@@ -162,12 +162,12 @@ public:
 //            //servosAx12().setPosition(foo, 0);
 //            servosAx12().release(foo);
 //        }
-/*
-        for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
-            ServoStdLabel foo = static_cast<ServoStdLabel>(fooInt);
-            //servosStd().setPosition(foo, 0);
-            servosStd().release(foo);
-        }*/
+        /*
+         for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
+         ServoStdLabel foo = static_cast<ServoStdLabel>(fooInt);
+         //servosStd().setPosition(foo, 0);
+         servosStd().release(foo);
+         }*/
 
     }
 
@@ -227,6 +227,17 @@ public:
         servosAx12().deploy(180, 512, keep);
 
     }
+
+    void ax12_left_cil_retract_less(int keep = 0, int speed = 512)
+    {
+        //activation du capteur central
+        sensors_.addConfigFront(true, true, true);
+
+        servosAx12().setSpeed(180, speed);
+        servosAx12().deploy(180, 350, keep);
+
+    }
+
     void ax12_left_cil_retract_more(int keep = 0, int speed = 512)
     {
         //activation du capteur central
@@ -242,13 +253,20 @@ public:
         sensors_.addConfigFront(true, false, true);
 
         servosAx12().setSpeed(180, speed);
-        servosAx12().deploy(180, 152, keep);//232 142
+        servosAx12().deploy(180, 152, keep);    //232 142
     }
 
     void ax12_right_cil_retract(int keep = 0, int speed = 512)
     {
         servosAx12().setSpeed(181, speed);
         servosAx12().deploy(181, 512, keep);
+
+    }
+
+    void ax12_right_cil_retract_less(int keep = 0, int speed = 512)
+    {
+        servosAx12().setSpeed(181, speed);
+        servosAx12().deploy(181, 650, keep);
 
     }
     void ax12_right_cil_retract_more(int keep = 0, int speed = 512)
@@ -260,7 +278,7 @@ public:
     void ax12_right_cil(int keep = 0, int speed = 512)
     {
         servosAx12().setSpeed(181, speed);
-        servosAx12().deploy(181, 842, keep);//792 852
+        servosAx12().deploy(181, 842, keep);    //792 852
     }
 
     bool ax12_goldenium_in_cil()

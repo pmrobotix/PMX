@@ -346,10 +346,9 @@ bool O_drop_gold()
     robot.logger().error() << "POS : " << robot.asserv().pos_getX_mm() << " " << robot.asserv().pos_getY_mm() << " "
             << robot.asserv().pos_getTheta() * 180.0 / M_PI << logs::end;
 
-
     //le gros a besoin de 14sec
     //pause jusqu'à 50 sec
-    int sec_min = 46;
+    int sec_min = 45;
     int sec_min2 = 76;
     int time = robot.chrono().getElapsedTimeInSec();
     if (time < sec_min) {
@@ -391,12 +390,12 @@ bool O_drop_gold()
     //usleep(500000); //3
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().ax12_right_cil_retract(-1, 50);
+        robot.actions().ax12_right_cil_retract_less(-1, 50);
     } else {
-        robot.actions().ax12_left_cil_retract(-1, 50);
+        robot.actions().ax12_left_cil_retract_less(-1, 50);
     }
     //sleep(1);
-    usleep(500000);
+    //usleep(500000);
 
     robot.actions().ax12_left_cil(0);
     robot.actions().ax12_right_cil();
@@ -406,7 +405,7 @@ bool O_drop_gold()
 
     //sleep(1);
 //on recule
-    ts = robot.asserv().doLineAbs(-220);
+    ts = robot.asserv().doLineAbs(-120);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to doLineAbs(-120)  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -491,10 +490,22 @@ bool O_push_alea()
         robot.ia().iAbyPath().enable(robot.ia().area_palet_start_yellow, 0);
     }
 
+    /*
+    int time = robot.chrono().getElapsedTimeInSec();
+    if (time < 77) {
+        ts = robot.ia().iAbyPath().whileMoveForwardTo(1300, 1000, true, 500000, 5, 5, true);
+        if (ts != TRAJ_FINISHED) {
+            robot.logger().error() << " zone fake 1300,1000  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+                    << logs::end;
+            robot.asserv().resetEmergencyOnTraj();
+            return false;
+        }
+    }*/
+
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.ia().iAbyPath().goToZone("zone_alea_violet", &zone);
 
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, false, 500000, 5, 5, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 500000, 5, 5, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " zone_alea_violet  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -528,7 +539,7 @@ bool O_push_alea()
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
     robot.logger().info() << "pousse zone depart" << logs::end;
 
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(620, 650, 180, false, 500000, 5, 5, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(620, 650, 180, true, 500000, 5, 5, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " pousse zone depart  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;

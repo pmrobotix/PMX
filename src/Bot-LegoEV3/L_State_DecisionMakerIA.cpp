@@ -590,8 +590,10 @@ void depose_balance()
 
     int dist = 60 + nbbalance * 50;
     robot.asserv().doCalage2(dist, 40);
-    nbbalance++;
-    //    robot.svgPrintPosition();
+
+    robot.svgPrintPosition();
+
+    usleep(1500000);
 
 //    ts = robot.asserv().doLineAbs(-30);
 //    if (ts != TRAJ_FINISHED) {
@@ -633,7 +635,16 @@ void depose_balance()
     else
         robot.points += 16; //2 palets
 
-    //robot.asserv().doRunPivotRight(-200, 50, 2000);
+
+    nbbalance++;
+    //on fait l'inverse
+    if (robot.getMyColor() == PMXVIOLET) {
+
+        robot.actions().right_eject_all(0);
+    } else {
+
+        robot.actions().left_eject_all(0);
+    }
 
     ts = robot.asserv().doLineAbs(-40);
     if (ts != TRAJ_FINISHED) {
@@ -690,7 +701,7 @@ bool L_take_grand_distributeur()
         ts = robot.asserv().doLineAbs(94);
 
     } else {
-        ts = robot.asserv().doLineAbs(100);
+        ts = robot.asserv().doLineAbs(97);
     }
 
     if (ts != TRAJ_FINISHED) {
@@ -779,9 +790,16 @@ bool L_take_grand_distributeur()
     robot.logger().info() << "doRelativeRotateBy(-90)" << logs::end;
     ts = robot.asserv().doRelativeRotateBy(-90);
 
+    int plus = 0;
+    if (robot.getMyColor() == PMXVIOLET) {
+        plus = 0;
+    } else {
+        plus = 10;
+    }
+
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
     robot.logger().info() << "while zone  L_take_grand_distributeur." << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, 0, false, 200000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y - plus, 0, false, 200000, 2, 2);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " zone_grand_distributeur  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -928,7 +946,7 @@ bool L_take_grand_distributeur()
      }
      */
     robot.logger().info() << "go to vert1" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(495, pos, true, 200000, 2, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(495, pos, true, 1000000, 4, 4);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to vert1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -948,13 +966,13 @@ bool L_take_grand_distributeur()
 
     }
 
-    sleep(2);
+    //sleep(3);
 
     robot.svgPrintPosition();
     //position vert2
     robot.logger().info() << "go to vert2" << logs::end;
 
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(500 + 200 + 200, pos, true, 200000, 20, 3);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(500 + 200 + 200, pos, true, 300000, 6, 25);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to vert2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -988,7 +1006,7 @@ bool L_take_grand_distributeur()
     }
 
     robot.logger().info() << " position move1" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(640, 1250, false, 200000, 20, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(640, 1250, true, 2000000, 6, 6);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to move1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -999,7 +1017,7 @@ bool L_take_grand_distributeur()
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
 
     robot.logger().info() << " position move2" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(440, 800, false, 200000, 20, 2);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(440, 820, false, 200000, 10, 2);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " go to move2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();

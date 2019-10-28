@@ -644,8 +644,12 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robot
 //calcul de l'angle de correction
     //ajouter la difference entre ancien alphap et le nouveau calculé à la position Theta
     float new_alphap = std::acos(std::abs((new_x_mm - pos_x_start_mm_conv)) / dist_real_mm);
-    float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI)
-            * M_PI / 180.0;
+
+
+    //float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
+
+    //TODO essaie de correction de l'angle
+    float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad - (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
 
     logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta << " degrees="
             << new_teta * 180 / M_PI << logs::end;
