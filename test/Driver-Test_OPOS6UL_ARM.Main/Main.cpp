@@ -13,20 +13,22 @@ using namespace std;
 
 int main()
 {
-	cout << "!!!Hello TEST World!!!" << endl; // prints !!!Hello World!!!
+    utils::set_realtime_priority(); //priority MAX 99
 
-	//Assert/fail
-	UnitTestSuite suite;
+    cout << "!!!Hello TEST World!!!" << endl; // prints !!!Hello World!!!
 
-	//suite.addTest(new test::ColorDriverTest());
-	//suite.addTest(new test::LcdShieldDriverTest());
-	//suite.addTest(new test::LedDriverTest());
-	suite.addTest(new test::AsservDriverTest());
-	//suite.addTest(new test::SwitchDriverTest());
-	//suite.addTest(new test::SensorDriverTest());
-	//suite.addTest(new test::ServoDriverTest());
+    //Assert/fail
+    UnitTestSuite suite;
 
-	suite.run();
+    //suite.addTest(new test::ColorDriverTest());
+    //suite.addTest(new test::LcdShieldDriverTest());
+    //suite.addTest(new test::LedDriverTest());
+    suite.addTest(new test::AsservDriverTest());
+    //suite.addTest(new test::SwitchDriverTest());
+    //suite.addTest(new test::SensorDriverTest());
+    //suite.addTest(new test::ServoDriverTest());
 
-	return 0;
+    suite.run();
+
+    return 0;
 }

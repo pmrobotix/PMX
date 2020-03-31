@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 #include "../Log/Logger.hpp"
+#include "ev3dev.h"
 
 using namespace std;
 using namespace ev3dev;

@@ -24,6 +24,7 @@
 
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "CocosSVGSprite-master/SVGSprite.h"
 
 USING_NS_CC;
 
@@ -115,6 +116,22 @@ bool HelloWorld::init()
         // add the sprite as a child to this layer
         this->addChild(sprite, 0);
     }
+/*
+    SVGSprite* pmxSVG = SVGSprite::create("tiger.svg", 0.5f);
+    //auto spritePMX = Sprite::create("Log/resources-svg/table2019.svg");
+    if (pmxSVG == nullptr)
+    {
+        problemLoading("'table2019'");
+    }
+    else
+    {
+        // position the sprite on the center of the screen
+        pmxSVG->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+
+        // add the sprite as a child to this layer
+        this->addChild(pmxSVG, 0);
+    }
+    */
     return true;
 }
 

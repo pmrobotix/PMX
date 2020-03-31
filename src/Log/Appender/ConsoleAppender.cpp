@@ -14,7 +14,9 @@ void logs::ConsoleAppender::flush()
 
     while (this->messages_.size() > 0) {
         std::string message = this->messages_.front();
-        (*this->out_) << message << std::endl;
+        //printf("%s\n", message.c_str());
+        std::cout << message << std::endl;
+
         this->messages_.pop_front();
     }
     unlockMessages();
@@ -29,8 +31,8 @@ void logs::ConsoleAppender::flush()
  * \param message
  *        Message à tracer.
  */
-void logs::ConsoleAppender::writeMessage(const logs::Logger & logger, const logs::Level & level,
-        const std::string & message)
+void logs::ConsoleAppender::writeMessage(const logs::Logger &logger, const logs::Level &level,
+        const std::string &message)
 {
     logs::MemoryAppender::writeMessage(logger, level, message);
 }

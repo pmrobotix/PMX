@@ -298,7 +298,7 @@ void test::ChronometerTest::testTimerTickMin()
     double tick1 = timer.getElapsedTimeInMicroSec();
     double tick2 = tick1;
 
-    while (timer.getElapsedTimeInMilliSec() < 1) // boucle sur 1 ms
+    while (timer.getElapsedTimeInMicroSec() < 100) // boucle sur 100us
     {
         oss << (tick2 - tick1) << " ";
         us += (tick2 - tick1);

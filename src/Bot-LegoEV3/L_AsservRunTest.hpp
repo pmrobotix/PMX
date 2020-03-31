@@ -1,15 +1,8 @@
 #ifndef LEGOEV3ASSERVRUNTEST_HPP_
 #define	LEGOEV3ASSERVRUNTEST_HPP_
 
-#include <string>
-
-#include "../Common/Action/IAction.hpp"
 #include "../Common/FunctionalTest.hpp"
-#include "../Common/Utils/Chronometer.hpp"
-#include "../Log/Logger.hpp"
 #include "../Log/LoggerFactory.hpp"
-
-class L_ActionManagerTimerTest;
 
 /*!
  * \brief Effectue un test de l'asservissement sur plusieurs positions.

@@ -9,10 +9,12 @@
 #include <list>
 #include <sstream>
 #include <string>
-
+#include <chrono>
 #include "../../Log/Level.hpp"
 #include "../../Log/Logger.hpp"
 #include "../../Thread/Mutex.hpp"
+
+using namespace std::chrono;
 
 namespace logs {
 /*!
@@ -30,8 +32,11 @@ protected:
      * \brief Liste des messages enregistrés.
      */
     std::list<std::string> messages_;
+    long long duration_;
     void lockMessages();
     void unlockMessages();
+
+    system_clock::time_point start_;
 
 public:
 

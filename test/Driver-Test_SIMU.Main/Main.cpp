@@ -9,15 +9,17 @@ using namespace std;
 
 int main()
 {
-	cout << "!!!Driver-SIMU-Test!!!" << endl;
+    cout << "!!!Driver-SIMU-Test!!!" << endl;
 
-	UnitTestSuite suite;
+    utils::set_realtime_priority(); //set priority MAX 99
 
-	//suite.addTest(new test::LedDriverTest());
-	suite.addTest(new test::ButtonDriverTest());
-	//suite.addTest(new test::AsservDriverTest());
+    UnitTestSuite suite;
 
-	suite.run();
+    //suite.addTest(new test::LedDriverTest());
+    //suite.addTest(new test::ButtonDriverTest());
+    suite.addTest(new test::AsservDriverTest());
 
-	return 0;
+    suite.run();
+
+    return 0;
 }

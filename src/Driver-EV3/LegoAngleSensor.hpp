@@ -1,22 +1,15 @@
-/*
- * LegoAngleSensor.hpp
- *
- *  Created on: 29 mars 2019
- *      Author: pmx
- */
-
 #ifndef DRIVER_EV3_LEGOANGLESENSOR_HPP_
 #define DRIVER_EV3_LEGOANGLESENSOR_HPP_
 
-#include <cstdint>
-#include <iostream>
+#include <string>
 
 #include "../Log/LoggerFactory.hpp"
+#include "ev3dev_extend.hpp"
 #include "ev3dev.h"
 
 using namespace ev3dev;
 
-class LegoAngleSensor: public i2c_sensor
+class LegoAngleSensor: public i2c_sensor, device_extend
 {
 private:
     /*!
@@ -30,7 +23,7 @@ private:
 
 protected:
     std::string address_;
-    mutable std::ifstream *_ifs_value;
+    int fd_value0_;
 
 public:
 
@@ -46,6 +39,7 @@ public:
      */
     ~LegoAngleSensor()
     {
+        //this->close_posix(fd_value0_);
     }
 
     /*!
@@ -53,12 +47,7 @@ public:
      */
     void reset();
 
-    long getValueDegrees();
-
-    void openIfstreamFile(const std::string &name) const;
-    int get_attr_int_optimized() const;
-
-    uintmax_t wc(char const *fname); //static ??
+    int getValueDegrees();
 
 };
 

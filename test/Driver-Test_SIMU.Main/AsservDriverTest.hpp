@@ -10,8 +10,7 @@
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
-namespace test
-{
+namespace test {
 
 /*!
  * \brief Teste la classe \ref AsservDriverTest.
@@ -20,38 +19,39 @@ class AsservDriverTest: public UnitTest
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverTest.SIMU.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriverTest.SIMU");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverTest.SIMU.
+     */
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("AsservDriverTest.SIMU");
+        return instance;
+    }
 
 public:
 
-	AAsservDriver* asservdriver;
+    AAsservDriver *asservdriver;
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	AsservDriverTest()
-			: UnitTest("AsservDriverTest")
-	{
-		asservdriver = AAsservDriver::create("AsservDriverTest");
-	}
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    AsservDriverTest() :
+            UnitTest("AsservDriverTest")
+    {
+        //test LegoEV3Robot ID
+        asservdriver = AAsservDriver::create("LegoEV3Robot");
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual ~AsservDriverTest()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual ~AsservDriverTest()
+    {
+    }
 
-	virtual void suite();
+    virtual void suite();
 
-	void testSet();
+    void testSet();
 
 };
 }

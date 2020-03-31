@@ -30,28 +30,13 @@ class ConsoleAppender: public MemoryAppender
 {
 private:
 
-    /*!
-     * Flux de sortie associé.
-     */
-    std::ostream * out_;
-
 public:
 
     /*!
      * \brief Constructeur par défaut.
      * L'appender sera associé au flux de sortie standard.
      */
-    ConsoleAppender() :
-            out_(&std::cout)
-    {
-    }
-
-    /*!
-     * \brief Constructeur initialisé de la classe.
-     * \param out Le flux de sortie associé à cet Appender.
-     */
-    ConsoleAppender(std::ostream * out) :
-            out_(out)
+    ConsoleAppender()
     {
     }
 
@@ -62,7 +47,7 @@ public:
     {
     }
 
-    virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message);
+    virtual void writeMessage(const logs::Logger &logger, const logs::Level &level, const std::string &message);
 
     virtual void flush();
 };

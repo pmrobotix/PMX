@@ -6,27 +6,36 @@
 #include "../../src/Log/Appender/ConsoleAppender.hpp"
 #include "../../src/Log/Level.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
+#include "../../src/Thread/Thread.hpp"
 #include "../Suite/UnitTestAppender.hpp"
 
 void logs::LoggerFactory::initialize()
 {
-	add("log", new ConsoleAppender());
-	//add("memory", new MemoryAppender());
+    //set minimum thread priority FIFO
+    utils::set_realtime_priority(1);
 
-	this->add("console", new UnitTestAppender());
+    add("log", new ConsoleAppender());
+    //add("log", new MemoryAppender());
 
-	add(logs::Level::ERROR, "", "console");
-	//add(logs::Level::INFO, "", "console");
+    this->add("console", new UnitTestAppender());
 
-	//DEBUG
-	add(logs::Level::DEBUG, "AsservDriverTest.EV3", "log");
-	add(logs::Level::DEBUG, "SensorDriverTest.EV3", "log");
-	add(logs::Level::DEBUG, "ServoDriverTest.EV3", "log");
+    add(logs::Level::ERROR, "", "console");
+    //add(logs::Level::INFO, "", "console");
 
-	add(logs::Level::DEBUG, "SensorsDriver.EV3", "log");
-	add(logs::Level::DEBUG, "AsservDriver.EV3", "log");
-	add(logs::Level::DEBUG, "LegoIRSensor.EV3", "log");
-	add(logs::Level::DEBUG, "ServoDriver.EV3", "log");
+    //DEBUG
+    add(logs::Level::DEBUG, "AsservDriverTest.EV3", "log");
+    add(logs::Level::DEBUG, "SensorDriverTest.EV3", "log");
+    add(logs::Level::DEBUG, "ServoDriverTest.EV3", "log");
 
+    add(logs::Level::DEBUG, "SensorsDriver.EV3", "log");
+    add(logs::Level::DEBUG, "AsservDriver.EV3", "log");
+    add(logs::Level::DEBUG, "LegoIRSensor.EV3", "log");
+    add(logs::Level::DEBUG, "ServoDriver.EV3", "log");
+
+    add(logs::Level::DEBUG, "LegoAngleSensor.EV3", "log");
+    add(logs::Level::DEBUG, "LegoMotor.EV3", "log");
+
+
+    add(logs::Level::DEBUG, "UnitTestSuite", "log");
 
 }

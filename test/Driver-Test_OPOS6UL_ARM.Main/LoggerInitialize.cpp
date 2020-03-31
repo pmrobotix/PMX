@@ -9,8 +9,11 @@
 
 void logs::LoggerFactory::initialize()
 {
-	add("console", new UnitTestAppender());
+    //set minimum thread priority FIFO
+    utils::set_realtime_priority(1);
 
-	add(logs::Level::ERROR, "", "console");
-	add(logs::Level::INFO, "", "console");
+    add("console", new UnitTestAppender());
+
+    add(logs::Level::ERROR, "", "console");
+    add(logs::Level::INFO, "", "console");
 }

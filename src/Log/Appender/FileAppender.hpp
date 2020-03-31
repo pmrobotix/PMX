@@ -6,14 +6,10 @@
 #ifndef LOGS_FILEAPPENDER_HPP
 #define	LOGS_FILEAPPENDER_HPP
 
-#include <sstream>
-#include <string>
 #include <fstream>
+#include <string>
 
-#include "../../Log/Level.hpp"
-#include "../../Log/Logger.hpp"
-#include "../../Thread/Thread.hpp"
-#include "../Appender/MemoryAppender.hpp"
+#include "MemoryAppender.hpp"
 
 namespace logs {
 /*!
@@ -22,7 +18,7 @@ namespace logs {
  * Cette implémentation se base sur un thread secondaire pour l'écriture
  * dans le fichier des informations.
  */
-class FileAppender: public MemoryAppender//, public utils::Thread
+class FileAppender: public MemoryAppender
 {
 private:
 

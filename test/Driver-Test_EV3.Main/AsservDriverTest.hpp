@@ -52,9 +52,14 @@ public:
 
     virtual void suite();
 
-    void test();
+    void benchmarkSpeedMotor();
+
+    void benchmarkPosix();
 
     void testcodeurs();
+    void testcodeurs2();
+
+
 
 };
 }

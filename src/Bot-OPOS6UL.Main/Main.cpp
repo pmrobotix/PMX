@@ -19,6 +19,8 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
+    utils::set_realtime_priority(); //set priority MAX 99
+
     //Specific Robot BigPMX
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 

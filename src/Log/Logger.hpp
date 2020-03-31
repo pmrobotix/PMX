@@ -47,7 +47,7 @@ public:
      * \param message
      *        Message a tracer.
      */
-    virtual void writeMessage(const logs::Logger & logger, const logs::Level & level, const std::string & message)=0;
+    virtual void writeMessage(const logs::Logger &logger, const logs::Level &level, const std::string &message)=0;
 
     /*!
      * \brief Méthode générique pour l'ecriture des traces.
@@ -87,17 +87,17 @@ public:
         /*!
          * \brief Le logger de référence.
          */
-        const Logger & logger_;
+        const Logger &logger_;
 
         /*!
          * \brief Le niveau de référence pour ce message.
          */
-        const Level & level_;
+        const Level &level_;
 
         /*!
          * \brief Buffer pour la construction du message.
          */
-        std::ostringstream * stream_;
+        std::ostringstream *stream_;
 
     public:
 
@@ -108,7 +108,7 @@ public:
          * \param level
          *        Le niveau de référence pour le message à construire.
          */
-        LoggerBuffer(const Logger & logger, const Level & level);
+        LoggerBuffer(const Logger &logger, const Level &level);
 
         /*!
          * \brief Destructeur de la classe.
@@ -154,7 +154,7 @@ public:
          * chainage des opérateurs \c <<.
          */
         template<class A>
-        inline LoggerBuffer & operator <<(const A & value)
+        inline LoggerBuffer& operator <<(const A &value)
         {
             if (stream_ != NULL) {
                 this->lock();
@@ -174,7 +174,7 @@ public:
          * \return Un lien vers le \c LoggerBuffer pour permettre le
          * chainage des opérateurs \c <<.
          */
-        LoggerBuffer & operator <<(void (*f)(LoggerBuffer &))
+        LoggerBuffer& operator <<(void (*f)(LoggerBuffer&))
         {
             (*f)(*this);
             return *this;
@@ -188,7 +188,7 @@ private:
      *
      * Tous les messages dont le niveau est inférieur à ce niveau ne sont pas tracés.
      */
-    const Level & level_;
+    const Level &level_;
 
     /*!
      * \brief Nom associé à ce Logger.
@@ -198,7 +198,7 @@ private:
     /*!
      * \brief Appender associé.
      */
-    Appender & appender_;
+    Appender &appender_;
 
 public:
 
@@ -211,7 +211,7 @@ public:
      * \param appender
      *        Appender associé.
      */
-    Logger(const Level & level, const std::string & name, Appender & appender);
+    Logger(const Level &level, const std::string &name, Appender &appender);
 
     /*!
      * \brief Constructeur de la classe par copie des infos d'un autre logger.
@@ -220,7 +220,7 @@ public:
      * \param name
      *        Nom du Logger.
      */
-    Logger(const Logger & parent, const std::string & name);
+    Logger(const Logger &parent, const std::string &name);
 
     /*!
      * \brief Destructeur de la classe.
@@ -236,7 +236,7 @@ public:
      * \param message
      *        Message a tracer.
      */
-    void writeMessage(const logs::Level & level, const std::string & message) const;
+    void writeMessage(const logs::Level &level, const std::string &message) const;
 
     /*!
      * \brief Cette méthode vérifie si le logger est actif pour un niveau
@@ -246,7 +246,7 @@ public:
      *        Niveau de référence.
      * \return \c true si le logger est actif pour le niveau donné.
      */
-    inline bool isActive(const logs::Level & level) const
+    inline bool isActive(const logs::Level &level) const
     {
         return level >= level_;
     }
@@ -254,7 +254,7 @@ public:
     /*!
      * \brief Cette méthode retourne le nom associé au Logger.
      */
-    inline const std::string & name() const
+    inline const std::string& name() const
     {
         return name_;
     }
@@ -262,7 +262,7 @@ public:
     /*!
      * \brief Cette méthode retourne le niveau associé au Logger.
      */
-    inline const logs::Level & level() const
+    inline const logs::Level& level() const
     {
         return level_;
     }
@@ -270,7 +270,7 @@ public:
     /*!
      * \brief Cette méthode retourne l'appender au Logger.
      */
-    inline const logs::Appender & appender() const
+    inline const logs::Appender& appender() const
     {
         return appender_;
     }
@@ -285,7 +285,7 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void debug(const std::string & message) const
+    inline void debug(const std::string &message) const
     {
         writeMessage(Level::DEBUG, message);
     }
@@ -295,7 +295,7 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void info(const std::string & message) const
+    inline void info(const std::string &message) const
     {
         writeMessage(Level::INFO, message);
     }
@@ -305,7 +305,7 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void warn(const std::string & message) const
+    inline void warn(const std::string &message) const
     {
         writeMessage(Level::WARN, message);
     }
@@ -315,7 +315,7 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void error(const std::string & message) const
+    inline void error(const std::string &message) const
     {
         writeMessage(Level::ERROR, message);
     }
@@ -397,10 +397,10 @@ public:
  * Bien que ce concept puisse paraitre étrange, c'est sur cette même
  * fonctionnalité que std::endl est basée.
  */
-void end(logs::Logger::LoggerBuffer & buffer);
+void end(logs::Logger::LoggerBuffer &buffer);
 
 //for optimisation and not delete the buffer
-void flush(logs::Logger::LoggerBuffer & buffer);
+void flush(logs::Logger::LoggerBuffer &buffer);
 
 }
 

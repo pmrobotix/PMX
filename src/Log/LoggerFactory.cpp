@@ -5,12 +5,12 @@
 
 #include "LoggerFactory.hpp"
 
-#include <unistd.h>
-#include <cstdio>
+//#include <cstdio>
 #include <cstdlib>
 #include <iostream>
 #include <utility>
 
+//#include "../Common/Utils/Chronometer.hpp"
 #include "Level.hpp"
 
 logs::LoggerFactory::LoggerFactory() :
@@ -83,8 +83,7 @@ void logs::LoggerFactory::add(Logger * logger)
     if (logger->name() == "") {
 
         this->rootLogger_ = logger;
-        this->start("LoggerFactory");
-
+        this->start("LoggerFactory", 0); //Ne pas mettre de priorité FIFO sinon les lecture EV3 sont très lentes
     } else {
         loggers_.insert(std::make_pair(logger->name(), logger));
     }
@@ -109,13 +108,24 @@ void logs::LoggerFactory::add(const Level & level, const std::string & loggerNam
 
 void logs::LoggerFactory::execute()
 {
+    //utils::Chronometer chrono("LoggerFactory::execute()");
+    //chrono.start();
+
     while (!stop_) {
         std::map<std::string, Appender *>::iterator it = appenders_.begin();
         for (it = appenders_.begin(); it != appenders_.end(); ++it) {
             //std::cout << it->first << " :: " << it->second << std::endl;
+
+            //long t0 = chrono.getElapsedTimeInMicroSec();
             it->second->flush();
-            usleep(50000);
+            //long t1 = chrono.getElapsedTimeInMicroSec();
+
+            //std::cout << it->first << " ::flushtime = " << t1-t0<< std::endl;
+            //usleep(10000);
+            this->yield();
         }
+        this->yield();
     }
+    //std::cout << "stop !" << std::endl;
 }
 

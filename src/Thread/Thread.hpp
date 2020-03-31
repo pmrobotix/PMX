@@ -21,6 +21,14 @@ enum ThreadState
 };
 
 /*!
+ * \brief met la priorité du thread à 99 (max en SCHED_FIFO).
+ *
+ * Cette méthode met la plus haute priorité sur le thread courant. en dehors de la classe pour etre utiliser pour les autres threads (Prog princ et Logs, etc)
+ * http://www.yonch.com/tech/82-linux-thread-priority
+ */
+int set_realtime_priority(int p = 99);
+
+/*!
  * \brief Cette classe encapsule l'implémentation des threads.
  *
  * \todo Ajouter les méthodes join() et kill().
@@ -36,18 +44,9 @@ protected:
      * \param object
      *        Instance de Thread qui doit être lancé.
      */
-    static void *entryPoint(void *object);
+    static void* entryPoint(void *object);
 
 private:
-
-    /*!
-     * \brief Retourne le \ref Logger associé à la classe \ref Thread.
-     */
-//    static inline const logs::Logger & logger()
-//    {
-//        static const logs::Logger & instance = logs::LoggerFactory::logger("Thread");
-//        return instance;
-//    }
 
     typedef pthread_t ThreadId;
 
@@ -61,6 +60,8 @@ private:
      */
     ThreadState state_;
 
+    int priority_;
+
 protected:
 
     /*!
@@ -73,6 +74,8 @@ protected:
      * appelant de traiter un autre thread.
      */
     void yield();
+
+    void sched_yield();
 
     /*!
      * \brief L'implementation de cette méthode détaille le traitement
@@ -94,7 +97,7 @@ public:
      *
      * Cette méthode initialise le thread et appelle la méthode ::execute().
      */
-    bool start(std::string name);
+    bool start(std::string name, int priority=0);
 
     /*!
      * \brief Cette méthode retourne l'état du thread.
@@ -138,7 +141,9 @@ public:
     {
         pthread_cancel(threadId_);
     }
+
 };
+
 }
 
 #endif

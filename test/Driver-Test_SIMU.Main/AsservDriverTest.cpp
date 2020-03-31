@@ -12,58 +12,46 @@
 
 void test::AsservDriverTest::suite()
 {
-	this->testSet();
+    this->testSet();
 
 }
 
 void test::AsservDriverTest::testSet()
 {
-	logger().debug() << "Starting..." << logs::end;
+    logger().debug() << "Starting..." << logs::end;
 
-	asservdriver->motion_ActivateManager(true);
+    asservdriver->motion_ActivateManager(true);
 
-	int power = 800;
-	int timems = 3000;
-	utils::Chronometer chrono("testSet");
+    int power = 800;
+    int timems = 3000;
+    utils::Chronometer chrono("testSet");
 
-	asservdriver->resetEncoders();
-	long left = asservdriver->getLeftInternalEncoder();
-	long right = asservdriver->getRightInternalEncoder();
+    asservdriver->resetEncoders();
+    long left = asservdriver->getLeftInternalEncoder();
+    long right = asservdriver->getRightInternalEncoder();
 
-	asservdriver->setMotorLeftPower(power, timems);
-	asservdriver->setMotorRightPower(power, timems);
-	chrono.start();
-	while (chrono.getElapsedTimeInMilliSec() < timems + 1000)
-	{
-		left = asservdriver->getLeftInternalEncoder();
-		right = asservdriver->getRightInternalEncoder();
-		logger().debug() << "left="
-				<< left
-				<< " right="
-				<< right
-				<< " timems="
-				<< chrono.getElapsedTimeInMilliSec()
-				<< logs::end;
-		usleep(90000);
-	}
+    asservdriver->setMotorLeftPower(power, timems);
+    asservdriver->setMotorRightPower(power, timems);
+    chrono.start();
+    while (chrono.getElapsedTimeInMilliSec() < timems + 1000) {
+        left = asservdriver->getLeftInternalEncoder();
+        right = asservdriver->getRightInternalEncoder();
+        logger().debug() << "left=" << left << " right=" << right << " timems=" << chrono.getElapsedTimeInMilliSec()
+                << logs::end;
+        usleep(90000);
+    }
 
-	asservdriver->setMotorLeftPosition(power, 300);
-	asservdriver->setMotorRightPosition(power, 300);
-	chrono.start();
-	while (chrono.getElapsedTimeInMilliSec() < timems + 2000)
-	{
-		left = asservdriver->getLeftInternalEncoder();
-		right = asservdriver->getRightInternalEncoder();
-		logger().debug() << "left="
-				<< left
-				<< " right="
-				<< right
-				<< " timems="
-				<< chrono.getElapsedTimeInMilliSec()
-				<< logs::end;
-		usleep(90000);
-	}
+    asservdriver->setMotorLeftPosition(power, 300);
+    asservdriver->setMotorRightPosition(power, 300);
+    chrono.start();
+    while (chrono.getElapsedTimeInMilliSec() < timems + 2000) {
+        left = asservdriver->getLeftInternalEncoder();
+        right = asservdriver->getRightInternalEncoder();
+        logger().debug() << "left=" << left << " right=" << right << " timems=" << chrono.getElapsedTimeInMilliSec()
+                << logs::end;
+        usleep(90000);
+    }
 
-	this->assert(true, "OK");
+    this->assert(true, "OK");
 }
 

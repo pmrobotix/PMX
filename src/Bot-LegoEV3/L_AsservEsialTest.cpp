@@ -16,7 +16,7 @@
 
 using namespace std;
 
-void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler dans le run ci-dessous
+void L_AsservEsialTest::configureConsoleArgs(int argc, char **argv) // a appeler dans le run ci-dessous
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     //step
@@ -26,14 +26,14 @@ void L_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler
     robot.parseConsoleArgs(argc, argv);
 }
 
-void L_AsservEsialTest::run(int argc, char** argv)
+void L_AsservEsialTest::run(int argc, char **argv)
 {
-    logger().info() << "N° "<< this->position() << " - Executing - " << this->desc() << logs::end;
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-    long left;
-    long right;
+    long left = 0, mleft = 0;
+    long right = 0, mright = 0;
     int nb = 0;
     int step = 0;
 
@@ -61,9 +61,16 @@ void L_AsservEsialTest::run(int argc, char** argv)
             left = robot.asserv().base()->extEncoders().getLeftEncoder();
             right = robot.asserv().base()->extEncoders().getRightEncoder();
 
+            mleft = robot.asserv().base()->encoders().getLeftEncoder();
+            mright = robot.asserv().base()->encoders().getRightEncoder();
+
             logger().info() << nb << " time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left
-                    << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
-                    << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
+            << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y="
+            << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
+
+            << " mleft= " << mleft
+            << " ; mright= " << mright
+            << logs::end;
             usleep(100000);
             nb++;
         }

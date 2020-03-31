@@ -884,9 +884,9 @@ TRAJ_STATE Asserv::doCalage2(int dist, int percent)
         return ts;
     } else if (useAsservType_ == ASSERV_EXT) {
 
-        //TODO
+        //TODO A finir
     }
-
+    return TRAJ_ERROR;
 }
 
 TRAJ_STATE Asserv::doCalage(int dist, int percent)

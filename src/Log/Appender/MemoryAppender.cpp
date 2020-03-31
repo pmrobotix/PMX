@@ -6,10 +6,14 @@
 #include "../Appender/MemoryAppender.hpp"
 
 #include <iostream>
+#include <chrono>
+using namespace std::chrono;
 
 logs::MemoryAppender::MemoryAppender() :
         messages_()
 {
+    start_ = system_clock::now();
+    duration_=0;
 }
 
 logs::MemoryAppender::~MemoryAppender()
@@ -41,8 +45,11 @@ void logs::MemoryAppender::writeMessage(const logs::Logger & logger, const logs:
         const std::string & message)
 {
 
+    system_clock::time_point t = system_clock::now();
+    duration_ = (duration_cast<microseconds>(t - start_).count());
+
     std::ostringstream out;
-    out << logger.name() << " " << level.name() << " " << message;
+    out << duration_ << "|" << logger.name() << " " << level.name() << " " << message;
     this->lockMessages();
     this->messages_.push_back(out.str());
     this->unlockMessages();

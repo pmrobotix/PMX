@@ -67,6 +67,7 @@ file(GLOB_RECURSE GAME_SOURCE
      Classes/Driver.SIMUCOCOS/*.cpp
 	 Classes/Bot-LegoEV3/*.cpp
 	 Classes/Bot-OPOS6UL/*.cpp
+	 Classes/CocosSVGSprite-master/*.cpp
      )
 file(GLOB_RECURSE GAME_HEADER
 	 Classes/*.hpp
@@ -78,9 +79,10 @@ file(GLOB_RECURSE GAME_HEADER
      Classes/Log/*.hpp
      Classes/Thread/*.hpp
      Classes/Common/*.hpp
-     Classes/Driver.SIMUCOCOS/*.cpp
-	 Classes/Bot-LegoEV3/*.cpp
-	 Classes/Bot-OPOS6UL/*.cpp
+     Classes/Driver.SIMUCOCOS/*.hpp
+	 Classes/Bot-LegoEV3/*.hpp
+	 Classes/Bot-OPOS6UL/*.hpp
+	 Classes/CocosSVGSprite-master/*.h
      )
 
 if(ANDROID)

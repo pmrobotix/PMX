@@ -3,16 +3,19 @@
  * \brief Ce fichier contient l'initialisation du système de Log.
  */
 
-#include "../../src/Log/Appender/SvgAppender.hpp"
 #include "../../src/Log/Level.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
+#include "../../src/Thread/Thread.hpp"
 #include "../Suite/UnitTestAppender.hpp"
 
 void logs::LoggerFactory::initialize()
 {
-	this->add("console", new UnitTestAppender());
+    //set minimum thread priority FIFO
+    utils::set_realtime_priority(1);
 
-	add(logs::Level::DEBUG, "", "console");
+    this->add("console", new UnitTestAppender());
+
+    add(logs::Level::DEBUG, "", "console");
 
 }
 

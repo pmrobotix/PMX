@@ -26,6 +26,8 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
+    utils::set_realtime_priority(); //set priority MAX 99
+
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
     //add specific tests for this robot
