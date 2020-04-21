@@ -12,7 +12,7 @@ AServoDriver * AServoDriver::create(ServoType type)
     if (type == SERVO_DYNAMIXEL) {
         static DynamixelDriver *instance = new DynamixelDriver();
         return instance;
-    } else { //type == SERVO_DYNAMIXEL
+    } else { //type != SERVO_DYNAMIXEL
         static ServoDriver *instance = new ServoDriver();
         return instance;
     }
