@@ -22,7 +22,7 @@ namespace logs {
 class TelemetryAppender: public MemoryAppender
 {
 private:
-    int t_fd; //static ??
+    int t_fd; //todo static or not ??
     std::string id_;
 public:
 

@@ -1,16 +1,15 @@
 #!/bin/sh
 
-#par wifi PMX
+#par wifi PMX 2.6Ghz
 #scp git/PMX/sh/S90opos6ulstart.sh   root@192.168.2.107:/root/.
-#par wifi HOME
+#par wifi HOME 2.6Ghz
 #scp git/PMX/sh/S90opos6ulstart.sh   root@192.168.0.223:/root/.
-#par eth0 HOME
+#par eth0 HOME 2.6Ghz
 #scp git/PMX/sh/S90opos6ulstart.sh   root@192.168.0.222:/root/.
-#par eth0 PMX
+#par eth0 PMX 2.6Ghz
 #scp git/PMX/sh/S90opos6ulstart.sh   root@192.168.2.105:/root/.
 
 #ln -s /root/S90opos6ulstart.sh /etc/init.d/.
-
 
 
 echo set eth0 network
@@ -41,7 +40,10 @@ ifconfig wlan0 up
 #lister les reseaux disponible
 #iwlist wlan0 s 
 wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
+
+#pour eviter une connexion à internet.. les DNS sont ajoutés après l'activation du wifi...
 #echo "nameserver 127.0.0.1" > /etc/resolv.conf
+
 #configuration du dhcp
 #dhclient wlan0
 #ifconfig wlan0 192.168.3.104 netmask 255.255.255.0 up
@@ -56,6 +58,8 @@ echo check I2c address
 i2cdetect -y -a 0
 #I2C UART5
 i2cdetect -y -a 1
+i2cdetect -y -a 2
+i2cdetect -y -a 3
 
 #liste des i2c
 #bus 0
@@ -68,16 +72,18 @@ i2cdetect -y -a 1
 #ADDRESS_gp2y0e02b 40
 
 
+# modprobe spidev
+# ls /dev/spidev*
+
 #thread info linuxthreads/NPTL //TODO A verifier sur opos6ul !!!
 #getconf GNU_LIBPTHREAD_VERSION
 
 #change info processor
 echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
 
-#pour eviter une connexion à internet.. les DNS sont ajoutés après l'activation du wifi...
-echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
 #pour ajouter de la place sur la partition 2
 # resize2fs /dev/mmcblk0p2
@@ -86,16 +92,19 @@ echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
 #mount  /dev/mmcblk0p3 /media/data/
 
+#F2FS
+# mettre un # dans /etc/fstab sur la ligne /dev/mmcblk0p3 
 #mkdir /root/pmx
 #formater en f2fs
 #umount /dev/mmcblk0p3
 #mkfs.f2fs /dev/mmcblk0p3
-mount -t f2fs /dev/mmcblk0p3 /root/pmx
+#mount -t f2fs /dev/mmcblk0p3 /root/pmx
 
-#nano etc/fstab
+#nano /etc/fstab
 #/dev/mmcblk0p3   /root/pmx   f2fs    rw,acl,active_logs=6,background_gc=on,user_xattr           0 1
 
 #cd /root/pmx
-
 #start PMX
 #/root/pmx/Bot_ArmadeusOPOS6UL_ARM m
+#/root/pmx/Bot_ArmadeusOPOS6UL_ARM m > log.txt &
+

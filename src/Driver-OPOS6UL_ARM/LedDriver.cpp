@@ -16,6 +16,7 @@ ALedDriver * ALedDriver::create(std::string, int nb)
 
 LedDriver::LedDriver(int nb)
 {
+    //GPIO1_2 = (0 x 32) + 2 = 2
 
     nb_ = 8; //Force number of leds.
 
