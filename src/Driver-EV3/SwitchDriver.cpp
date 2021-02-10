@@ -10,14 +10,12 @@
 using namespace std;
 using namespace ev3dev;
 
-ASwitchDriver * ASwitchDriver::create(std::string botName)
-{
+ASwitchDriver * ASwitchDriver::create(std::string botName) {
     static SwitchDriver *instance = new SwitchDriver();
     return instance;
 }
 
-SwitchDriver::SwitchDriver()
-{
+SwitchDriver::SwitchDriver() {
     string input = "ev3-ports:in3:i2c81:mux2";
 
     logger().debug() << "TOUCH MUX has to be set to lego-ev3-touch" << logs::end;
@@ -36,16 +34,17 @@ SwitchDriver::SwitchDriver()
             temp = p.get_attr_string(string(input + string(":lego-ev3-color/modalias")));
 
             logger().debug() << "exist driver temp ==  " << temp << logs::end;
-        } catch (...) {
+        }
+        catch (...) {
             //logger().error() << "SwitchDriver()  access to " << temp << logs::end;
         }
 
-        if (temp != "nop")
-            todo = 1;
+        if (temp != "nop") todo = 1;
 
         if (todo == 0) {
             logger().debug() << "port already set to lego-ev3-touch on " << p.address() << logs::end;
-        } else {
+        }
+        else {
 
             logger().debug() << "set uart and device=lego-ev3-touch on " << p.address() << logs::end;
 
@@ -66,15 +65,22 @@ SwitchDriver::SwitchDriver()
     //touch_ = touch_sensor(INPUT_AUTO);
 
     if (touch_.connected()) {
-        logger().debug() << touch_.type_name() << " connected (device " << touch_.driver_name() << ", port "
-                << touch_.address() << ", mode " << touch_.mode() << ")" << logs::end;
-    } else {
+        logger().debug() << touch_.type_name()
+                << " connected (device "
+                << touch_.driver_name()
+                << ", port "
+                << touch_.address()
+                << ", mode "
+                << touch_.mode()
+                << ")"
+                << logs::end;
+    }
+    else {
         logger().error() << "INPUT_1 (Tirette) not Connected !!" << logs::end;
     }
 }
 
-SwitchDriver::~SwitchDriver()
-{
+SwitchDriver::~SwitchDriver() {
 }
 //
 //int SwitchDriver::tirettePressedFiltered()
@@ -83,33 +89,31 @@ SwitchDriver::~SwitchDriver()
 //
 //}
 
-int SwitchDriver::tirettePressed()
-{
+int SwitchDriver::tirettePressed() {
     usleep(250000);
-    if (touch_.value() == 257) //in case of MUX
-    {
-        return 1;
-    }
-    else if (touch_.value() == 256)
-    {
-        return 0;
-    }
-    else
-    {
-        return -1;
+    if (touch_.connected()) {
+        if (touch_.value() == 257) //in case of MUX
+                {
+            return 1;
+        }
+        else if (touch_.value() == 256) {
+            return 0;
+        }
+        else {
+            return -1;
+        }
+    }else {
+        return -2;
     }
 }
 
-int SwitchDriver::backLeftPressed()
-{
+int SwitchDriver::backLeftPressed() {
     return 0;
 }
-int SwitchDriver::backRightPressed()
-{
+int SwitchDriver::backRightPressed() {
     return 0;
 }
 
-int SwitchDriver::pressed(unsigned char pin)
-{
-    return 0;
-}
+//int SwitchDriver::pressed(unsigned char pin) {
+//    return 0;
+//}

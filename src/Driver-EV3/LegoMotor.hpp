@@ -1,4 +1,3 @@
-
 #ifndef DRIVER_EV3_LEGOMOTOR_HPP_
 #define DRIVER_EV3_LEGOMOTOR_HPP_
 
@@ -8,14 +7,12 @@
 
 using namespace ev3dev;
 
-class LegoMotor: public large_motor, device_extend
-{
+class LegoMotor: public large_motor, device_extend {
 private:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref LegoMotor(EV3).
      */
-    static inline const logs::Logger & logger()
-    {
+    static inline const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("LegoMotor.EV3");
         return instance;
     }
@@ -37,11 +34,12 @@ public:
     /*!
      * \brief Destructor.
      */
-    ~LegoMotor()
-    {
-        close_posix(fd_duty_cycle_sp_);
-        close_posix(fd_command_);
-        close_posix(fd_pos_);
+    ~LegoMotor() {
+        if (this->connected()) {
+            close_posix(fd_duty_cycle_sp_);
+            close_posix(fd_command_);
+            close_posix(fd_pos_);
+        }
 
     }
 

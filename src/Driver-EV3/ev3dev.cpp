@@ -217,7 +217,7 @@ int device::device_index() const {
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+        throw system_error(make_error_code(errc::function_not_supported), "no device connected "+ _path);
 
     if (_device_index < 0) {
         unsigned f = 1;
@@ -241,9 +241,9 @@ int device::get_attr_int(const std::string &name) const {
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+        throw system_error(make_error_code(errc::function_not_supported), "get_attr_int no device connected "+ _path + name);
 
-    for(int attempt = 0; attempt < 2; ++attempt) {
+    for(int attempt = 0; attempt < 3; ++attempt) {
         ifstream &is = ifstream_open(_path + name);
         if (is.is_open()) {
             int result = 0;
@@ -259,35 +259,44 @@ int device::get_attr_int(const std::string &name) const {
                 is.close();
                 is.clear();
             }
-        } else break;
+        } //else break;
+        printf("\n get_attr_int try n°%d",attempt);
     }
-    throw system_error(make_error_code(errc::no_such_device), _path+name);
+    throw system_error(make_error_code(errc::no_such_device), "get_attr_int "+_path+name);
 }
 
 //-----------------------------------------------------------------------------
 void device::set_attr_int(const std::string &name, int value) {
     using namespace std;
 
-    if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+//    if (_path.empty())
+//        throw system_error(make_error_code(errc::function_not_supported), "set_attr_int no device connected "+_path+name);
 
-    for(int attempt = 0; attempt < 2; ++attempt) {
+    for(int attempt = 0; attempt < 50; ++attempt) {
         ofstream &os = ofstream_open(_path + name);
         if (os.is_open()) {
-            if (os << value) return;
+            if (os << value) {
+                os.close();
+                os.clear();
+                return;
+            }
 
             // An error could mean that sysfs attribute was recreated and the cached
             // file handle is stale. Lets close the file and try again (once):
             if (attempt == 0 && errno == ENODEV) {
                 os.close();
                 os.clear();
+                usleep(10000);
             } else {
-                throw system_error(std::error_code(errno, std::system_category()));
+                //throw system_error(std::error_code(errno, std::system_category()), "close error set_attr_int "+_path+name);
             }
         } else {
-            throw system_error(make_error_code(errc::no_such_device), _path + name);
+            //throw system_error(make_error_code(errc::no_such_device), "set_attr_int " + _path + name);
         }
+        printf("\n set_attr_int try n°%d",attempt);
+        //usleep(10000);
     }
+    throw system_error(make_error_code(errc::no_such_device), "tried 3 times- set_attr_int " + _path + name);
 }
 
 //-----------------------------------------------------------------------------
@@ -295,16 +304,38 @@ std::string device::get_attr_string(const std::string &name) const {
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+        throw system_error(make_error_code(errc::function_not_supported), "get_attr_string no device connected "+_path+name);
 
-    ifstream &is = ifstream_open(_path + name);
-    if (is.is_open()) {
-        string result;
-        is >> result;
-        return result;
+//    ifstream &is = ifstream_open(_path + name);
+//    if (is.is_open()) {
+//        string result;
+//        is >> result;
+//        return result;
+//    }
+
+    for(int attempt = 0; attempt < 10; ++attempt) {
+        ifstream &is = ifstream_open(_path + name);
+        if (is.is_open()) {
+            string result;
+            try {
+                is >> result;
+                is.close();
+                is.clear();
+                return result;
+            } catch(...) {
+                // This could mean the sysfs attribute was recreated and the
+                // corresponding file handle got stale. Lets close the file and try
+                // again (once):
+                if (attempt != 0) throw;
+
+                is.close();
+                is.clear();
+            }
+        } //else break;
+        printf("\n get_attr_string try n°%d",attempt);
     }
 
-    throw system_error(make_error_code(errc::no_such_device), _path+name);
+    throw system_error(make_error_code(errc::no_such_device), "get_attr_string " +_path+name);
 }
 
 //-----------------------------------------------------------------------------
@@ -312,15 +343,15 @@ void device::set_attr_string(const std::string &name, const std::string &value) 
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+        throw system_error(make_error_code(errc::function_not_supported), "set_attr_string no device connected "+_path+name);
 
     ofstream &os = ofstream_open(_path + name);
     if (os.is_open()) {
-        if (!(os << value)) throw system_error(std::error_code(errno, std::system_category()));
+        if (!(os << value)) throw system_error(std::error_code(errno, std::system_category()), "set_attr_string " + _path+name);
         return;
     }
 
-    throw system_error(make_error_code(errc::no_such_device), _path+name);
+    throw system_error(make_error_code(errc::no_such_device), "set_attr_string " + _path+name);
 }
 
 //-----------------------------------------------------------------------------
@@ -328,7 +359,7 @@ std::string device::get_attr_line(const std::string &name) const {
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+        throw system_error(make_error_code(errc::function_not_supported), "get_attr_line no device connected " +_path+name);
 
     ifstream &is = ifstream_open(_path + name);
     if (is.is_open()) {
@@ -337,7 +368,7 @@ std::string device::get_attr_line(const std::string &name) const {
         return result;
     }
 
-    throw system_error(make_error_code(errc::no_such_device), _path+name);
+    throw system_error(make_error_code(errc::no_such_device), "get_attr_line "+_path+name);
 }
 
 //-----------------------------------------------------------------------------
@@ -491,7 +522,7 @@ const std::vector<char>& sensor::bin_data() const {
     using namespace std;
 
     if (_path.empty())
-        throw system_error(make_error_code(errc::function_not_supported), "no device connected");
+        throw system_error(make_error_code(errc::function_not_supported), "bin_data no device connected " + _path);
 
     if (_bin_data.empty()) {
         static const map<string, int> lookup_table {

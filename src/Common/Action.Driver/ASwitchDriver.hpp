@@ -19,7 +19,7 @@ public:
     virtual int backLeftPressed()= 0;
     virtual int backRightPressed()= 0;
 
-    virtual int pressed(unsigned char pin) = 0;
+    //virtual int pressed(unsigned char pin) = 0;
 
     /*!
      * \brief Destructor.

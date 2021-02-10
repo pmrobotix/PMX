@@ -195,6 +195,12 @@ public:
         this->stop_ = true;
     }
 
+    inline bool getEnd()
+    {
+        return stop_;
+    }
+
+
     inline void pause(bool value)
     {
         logger().debug() << "pause " << value << logs::end;

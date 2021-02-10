@@ -16,7 +16,7 @@ void L_ServoStepTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
-    robot.getArgs().addArgument("num", "Numero du servo");
+    robot.getArgs().addArgument("num", "Numero du servo", "0");
     robot.getArgs().addArgument("step", "nombre à augmenter ou diminuer (en %)", "2");
 
     //reparse arguments
@@ -49,9 +49,12 @@ void L_ServoStepTest::run(int argc, char** argv)
         step = atoi(args["step"].c_str());
         logger().info() << "Arg step set " << args["step"] << ", step = " << step << logs::end;
     }
-    //robot.actions().servoObjects().leftDeploy(0, true);
 
-    //robot.actions().servoObjects().deploy((ServoLabel) num, 0.0, 0);
+    robot.actions().servosStd().setMinPulse(num, 0); ////default 600 [300 to 700]
+    robot.actions().servosStd().setMidPulse(num, 1500); //default 1500 [1300 to 1700]
+    robot.actions().servosStd().setMaxPulse(num, 3000); //default 2400 [2300 to 2700]
+
+    robot.actions().servosStd().hold(num);
 
     ButtonTouch touch = BUTTON_NONE;
 
@@ -79,9 +82,29 @@ void L_ServoStepTest::run(int argc, char** argv)
         }
 
         if (touch == BUTTON_ENTER_KEY) {
-            logger().info() << "-" << step << " pos=" << pos << logs::end;
+
             //robot.actions().servoObjects().release((ServoLabel) num);
             robot.actions().servosStd().release(num);
+
+            switch(step)
+            {
+                case 1:
+                    step = 2; break;
+                case 2:
+                    step = 5; break;
+                case 5:
+                    step = 10; break;
+                case 10:
+                    step = 15; break;
+                case 15:
+                    step = 20; break;
+                case 20:
+                    step = 1; break;
+                default:
+                    step = 1;
+            }
+            logger().info() << "-" << step << " pos=" << pos << logs::end;
+            usleep(200000);
         }
 
         if (touch == BUTTON_RIGHT_KEY) {
@@ -92,8 +115,14 @@ void L_ServoStepTest::run(int argc, char** argv)
             if (num >= SERVO_enumTypeEnd)
                 num--;
 
+            robot.actions().servosStd().hold(num);
+
+            robot.actions().servosStd().setMinPulse(num, 0);
+            robot.actions().servosStd().setMidPulse(num, 1500);
+            robot.actions().servosStd().setMaxPulse(num, 3000);
+
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-            usleep(300000);
+            usleep(200000);
         }
 
         if (touch == BUTTON_LEFT_KEY) {
@@ -104,13 +133,20 @@ void L_ServoStepTest::run(int argc, char** argv)
             if (num < 0)
                 num++;
 
+            robot.actions().servosStd().hold(num);
+
+            robot.actions().servosStd().setMinPulse(num, 0);
+            robot.actions().servosStd().setMidPulse(num, 1500);
+            robot.actions().servosStd().setMaxPulse(num, 3000);
+
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-            usleep(300000);
+            usleep(200000);
         }
-        usleep(10000);
+
+        usleep(20000);
     }
 
-    //robot.actions().servoObjects().releaseAll();
+    robot.actions().releaseAll();
 
     logger().info() << "Happy End." << logs::end;
 }

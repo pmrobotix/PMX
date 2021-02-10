@@ -4,6 +4,7 @@
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "ev3dev.h"
+#include "ev3dev_extend.hpp"
 
 using namespace std;
 using namespace ev3dev;
@@ -13,7 +14,7 @@ using namespace ev3dev;
  #define FSTREAM_CACHE_SIZE 16
  #endif*/
 
-class ServoDriver: public AServoDriver
+class ServoDriver: public AServoDriver, device_extend
 {
 private:
 
@@ -25,8 +26,8 @@ private:
         static const logs::Logger & instance = logs::LoggerFactory::logger("ServoDriver.EV3");
         return instance;
     }
-
     int connected_;
+    int connected_servo[8];
     servo_motor servo_motors_[8];
 
 protected:
@@ -57,6 +58,7 @@ public:
 
     int getMoving(int servo);
 
+    //pos : (-100% to 100%)
     int getPos(int servo);
 
     int ping(int);

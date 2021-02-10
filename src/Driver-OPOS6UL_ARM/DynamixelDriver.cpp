@@ -40,26 +40,26 @@ void DynamixelDriver::hold(int servo)
 
 void DynamixelDriver::setPosition(int servo, int pos)
 {
-    if (pos >= 1023)
-        pos = 1023;
-    if (pos <= 0)
-        pos = 0;
+//    if (pos >= 1023)
+//        pos = 1023;
+//    if (pos <= 0)
+//        pos = 0;
 
-    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_POSITION, pos);
+    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_POSITION, constrain(pos, 0, 1023));
     logger().debug() << "setPosition P_GOAL_POSITION =" << r << logs::end;
 
 }
 
 void DynamixelDriver::turn(int servo, int speed)
 {
-    if (speed >= 1023)
-        speed = 1023;
-    if (speed <= 0)
-        speed = 0;
+//    if (speed >= 1023)
+//        speed = 1023;
+//    if (speed <= 0)
+//        speed = 0;
 
     //int rcw = CCAx12Adc::instance().writeAXData(servo, P_CW_ANGLE_LIMIT, 0);
     //int rccw = CCAx12Adc::instance().writeAXData(servo, P_CCW_ANGLE_LIMIT, 0);
-    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, speed);
+    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, constrain(speed, 0, 1023));
     logger().debug() << "setPosition P_GOAL_SPEED =" << r << logs::end;
     logger().debug() << "setPosition P_GOAL_POSITION =" << r << logs::end;
 
@@ -73,12 +73,12 @@ void DynamixelDriver::release(int servo)
 
 void DynamixelDriver::setRate(int servo, int speed)
 {
-    if (speed >= 1023)
-        speed = 1023;
-    if (speed <= 0)
-        speed = 0;
+//    if (speed >= 1023)
+//        speed = 1023;
+//    if (speed <= 0)
+//        speed = 0;
 
-    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, speed);
+    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_SPEED, constrain(speed, 0, 1023));
     logger().debug() << "setPosition P_GOAL_SPEED =" << r << logs::end;
 
 }

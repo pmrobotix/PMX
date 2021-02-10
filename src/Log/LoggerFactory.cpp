@@ -6,7 +6,8 @@
 #include "LoggerFactory.hpp"
 
 //#include <cstdio>
-#include <cstdlib>
+#include <unistd.h>
+//#include <cstdlib>
 #include <iostream>
 #include <utility>
 
@@ -121,9 +122,10 @@ void logs::LoggerFactory::execute()
             //long t1 = chrono.getElapsedTimeInMicroSec();
 
             //std::cout << it->first << " ::flushtime = " << t1-t0<< std::endl;
-            //usleep(10000);
+            //usleep(1000);
             this->yield();
         }
+        usleep(1000);//usleep necesaire pour laisser le temps au reste
         this->yield();
     }
     //std::cout << "stop !" << std::endl;

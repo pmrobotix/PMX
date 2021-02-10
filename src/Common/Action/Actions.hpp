@@ -13,15 +13,13 @@ class IAction;
 /*!
  * List of robot actions. It contains all common RobotElement.
  */
-class Actions
-{
+class Actions {
 private:
 
     /*!
      * \brief Return \ref Logger linked to \ref Actions.
      */
-    static inline const logs::Logger & logger()
-    {
+    static inline const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("Actions");
         return instance;
     }
@@ -44,8 +42,7 @@ public:
     /*!
      * \brief Destructor.
      */
-    ~Actions()
-    {
+    ~Actions() {
     }
 
     /*!
@@ -53,18 +50,15 @@ public:
      * \param action
      *        L'action à ajouter.
      */
-    inline void addAction(IAction * action)
-    {
+    inline void addAction(IAction * action) {
         actionManagerTimer_.addAction(action);
     }
 
-    inline void addTimer(ITimerListener * timer)
-    {
+    inline void addTimer(ITimerListener * timer) {
         actionManagerTimer_.addTimer(timer);
     }
 
-    inline void stopTimer(std::string name)
-    {
+    inline void stopTimer(std::string name) {
         actionManagerTimer_.stopTimer(name);
     }
 
@@ -78,9 +72,12 @@ public:
     /*!
      * \brief Arrete le robot et libère les ressources associés.
      */
-    void stop();
     void emergencyStop();
 
+    /*!
+     * \brief supprime toutes les actions et les timers.
+     */
+    void clearAll();
     /*!
      * \brief Arrete le thread sensorManager et actionManager.
      */

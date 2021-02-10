@@ -113,13 +113,13 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(int argc, char** argv)
                 std::cout << color << ">" << tab[lindex + 1] << std::flush;
             }
             break;
-            /*
-             case 67:
-             printf("Right arrow key!\n");
-             break;
-             case 68:
-             printf("Left arrow key!\n");
-             break;*/
+
+//             case 67:
+//             printf("Right arrow key!\n");
+//             break;
+//             case 68:
+//             printf("Left arrow key!\n");
+//             break;
         case 10:
             //printf("Enter key!\n");
             break;
@@ -130,7 +130,7 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(int argc, char** argv)
             break;
         }
 
-        usleep(1000);
+        usleep(5000);
     } while (cInput != 10);
 
     cout << default_console << flush;

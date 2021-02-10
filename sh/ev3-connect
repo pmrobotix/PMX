@@ -5,58 +5,47 @@
 IPUSB="10.42.0.71" #USB LINUX
 #IPUSB="169.254.230.22" #USB LINUX
 #IPWIFI="192.168.2.102" #WIFI anciennce clef wifi
-IPHOME="192.168.0.219" #WIFI HOME CHO INDEED2G anciennce clef wifi
+#IPHOME="192.168.0.219" #WIFI HOME CHO INDEED2G anciennce clef wifi
 IPWIFI="192.168.2.104"
-#IPHOME="192.168.0.217" #WIFI HOME CHO INDEED2G
+IPHOME="192.168.0.123" #WIFI HOME CHO INDEED2G
 #IPHOME="192.168.0.220" #WIFI HOME CHO INDEED
-IP5GHZ="192.168.3.102" #WIFI PMX5G
+#IP5GHZ="192.168.3.102" #WIFI1 PMX5G 
+IP5GHZ="192.168.4.102" #WIFI2 PMX5G 
 
-#EV3 ChristopheD
-#IPWIFI="192.168.2.102" #WIFI
 
 
 
 all()
 {
-	scp "../Bot_LegoMindstorm_EV3/linaro_Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/pmx
+	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../Driver-EV3-UnitTest/Debug/Driver-EV3-UnitTest" robot@$IP:/home/robot/pmx
 }
-
 arm()
 {
 	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
 }
-
-maingnueabihf()
+common()
 {
-	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
-	scp "../Bot_LegoMindstorm_EV3/Linaro_gnueabihf/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
+	scp "../Common-UnitTest_EV3/Debug/Common-UnitTest_EV3" robot@$IP:/home/robot/pmx
 }
-
-mainlinaro()
-{
-	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
-	scp "../Bot_LegoMindstorm_EV3/Linaro_Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
-}
-
-driverlinaro()
-{
-	scp "../Driver-UnitTest_EV3/Linaro_Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
-}
-
 driver()
 {
 	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
 }
 
-commonlinaro()
-{
-	scp "../Common-UnitTest_EV3/Linaro_Debug/Common-UnitTest_EV3" robot@$IP:/home/robot/pmx
-}
 
-common()
+arm-2014.05-29()
 {
-	scp "../Common-UnitTest_EV3/Debug/Common-UnitTest_EV3" robot@$IP:/home/robot/pmx
+	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
+	scp "../Bot_LegoMindstorm_EV3/Release-arm-2014.05-29/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
+}
+driver-arm-2014.05-29()
+{
+	scp "../Driver-UnitTest_EV3/Debug-arm-2014.05-29/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
+}
+common-arm-2014.05-29()
+{
+	scp "../Common-UnitTest_EV3/Debug-arm-2014.05-29/Common-UnitTest_EV3" robot@$IP:/home/robot/pmx
 }
 
 tests()
@@ -114,14 +103,12 @@ case "$2" in
 		common;;
 	arm)
 		arm;;
-	maingnueabihf)
-		maingnueabihf;;
-	mainlinaro)
-		mainlinaro;;
-	driverlinaro)
-		driverlinaro;;
-	commonlinaro)
-		commonlinaro;;
+	arm-2014.05-29)
+		arm-2014.05-29;;
+	driver-arm-2014.05-29)
+		driver-arm-2014.05-29;;
+	common-arm-2014.05-29)
+		common-arm-2014.05-29;;
 	svg)
 		recupsvg;;
 	csv)
@@ -130,7 +117,7 @@ case "$2" in
 		tests;;
 
 	*)
-		echo "Usage: $0 {5g|usb|wifi|home} {connect|all|arm|linaro|driver|csv|svg|tests}" >&2
+		echo "Usage: $0 {5g|usb|wifi|home} {connect|all|arm|driver|common|arm-2014.05-29|csv|svg|tests}" >&2
 		exit 1
 	;;
 esac

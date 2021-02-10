@@ -5,13 +5,11 @@
 #ifndef ASERVODRIVER_HPP_
 #define ASERVODRIVER_HPP_
 
-class AServoDriver
-{
+class AServoDriver {
 
 public:
 
-    enum ServoType
-    {
+    enum ServoType {
         SERVO_STANDARD, SERVO_DYNAMIXEL
     };
 
@@ -23,37 +21,42 @@ public:
     /*!
      * \brief Destructor.
      */
-    virtual ~AServoDriver()
-    {
+    virtual ~AServoDriver() {
     }
 
     /*!
      * \brief Constructor.
      */
-    AServoDriver()
-    {
+    AServoDriver() {
     }
 
     //Limitation d'une valeur à un intervalle [valeurMin , valeurMax]
-    long constrain(long value, long valeurMin, long valeurMax)
-    {
-        if (value <= valeurMin)
-            return valeurMin;
+    long constrain(long value, long valeurMin, long valeurMax) {
+        if (value <= valeurMin) return valeurMin;
 
-        if (value >= valeurMax)
-            return valeurMax;
+        if (value >= valeurMax) return valeurMax;
 
         return value;
     }
-
-    virtual void hold(int) = 0;
-
+    /*!
+     * \brief Tenir la position sur un servo.
+     */
+    virtual void hold(int servo) = 0;
+    /*!
+     * \brief Définit la vitesse de rotation du servo.
+     */
     virtual void setPosition(int servo, int pos) = 0;
-
+    /*!
+     * \brief Relache un servo.
+     */
     virtual void release(int servo) = 0;
-
-    virtual void setRate(int servo, int speed) = 0;
-
+    /*!
+     * \brief Définit la vitesse de rotation du servo.
+     */
+    virtual void setRate(int servo, int milli) = 0;
+    /*!
+     * \brief Tourne en mode moteur à une vitesse donnée.
+     */
     virtual void turn(int servo, int speed) = 0;
 
     virtual int getMoving(int servo) = 0;

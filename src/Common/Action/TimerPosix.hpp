@@ -12,7 +12,7 @@
 
 /*
  * https://quirk.ch/2009/07/how-to-use-posix-timer-within-c-classes
- *l
+ *
  * https://www.softprayog.in/tutorials/alarm-sleep-and-high-resolution-timers
  *
  */

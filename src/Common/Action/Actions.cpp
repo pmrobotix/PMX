@@ -11,7 +11,7 @@ Actions::Actions()
 
 void Actions::start()
 {
-    actionManagerTimer_.start("ActionManagerTimer");
+    actionManagerTimer_.start("ActionManagerTimer", 50);
     started_ = true;
     logger().debug("Actions is started");
 }
@@ -21,13 +21,11 @@ void Actions::emergencyStop()
     if (!started_)
         return;
     actionManagerTimer_.cancel();
-    //actionManagerTimer_.waitForEnd();
 }
 
-void Actions::stop() //TODO rename Clear
+void Actions::clearAll()
 {
-//    if (!started_)
-//        return;
+
     actionManagerTimer_.clearActions();
     actionManagerTimer_.clearTimers();
 
@@ -58,7 +56,12 @@ void Actions::waitAndStopManagers() //ne fct pas
      */
     //TODO parcourir toutes les timers ??si parametre force == true
     actionManagerTimer_.stop();
-
+    while (1)
+    {
+        if (actionManagerTimer_.getEnd())
+            break;
+        printf("\n Actions wait...");
+    }
     //usleep(5000); //TODO  créer une Attente avec timeout de la fin de l'actionManager à la place du usleep
 
     logger().error() << "END waitAndStopManagers() : NbActions= " << actionManagerTimer_.countActions() << "NbTimers= "

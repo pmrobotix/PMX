@@ -69,12 +69,12 @@ bool L_take_grand_distributeurOld()
     robot.logger().info() << "ARMsssss" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
 
-        robot.actions().right_arm_take(0);
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().right_arm_take(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     } else {
 
-        robot.actions().left_arm_take(0);
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().left_arm_take(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     }
 
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
@@ -107,12 +107,12 @@ bool L_take_grand_distributeurOld()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 1);
+//        robot.actions().left_prendre_palet(1500, 1);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 1);
+//        robot.actions().right_prendre_palet(1500, 1);
 
     }
 
@@ -131,12 +131,12 @@ bool L_take_grand_distributeurOld()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 2);
+//        robot.actions().left_prendre_palet(1500, 2);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 2);
+//        robot.actions().right_prendre_palet(1500, 2);
 
     }
     robot.svgPrintPosition();
@@ -154,20 +154,20 @@ bool L_take_grand_distributeurOld()
     if (robot.getMyColor() == PMXVIOLET) {
         //robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1300, 1);
+//        robot.actions().left_prendre_palet(1300, 1);
 
     } else {
         //robot.asserv().doLineAbs(200);
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1300, 1);
+//        robot.actions().right_prendre_palet(1300, 1);
 
     }
     robot.svgPrintPosition();
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     } else {
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     }
 
     robot.logger().info() << " go to 200" << logs::end;
@@ -187,9 +187,9 @@ bool L_take_grand_distributeurOld()
     robot.asserv().doRelativeRotateBy(10);
     robot.logger().info() << " do calage" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     } else {
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     }
 
     robot.asserv().doCalage2(240, 60);
@@ -198,10 +198,10 @@ bool L_take_grand_distributeurOld()
     robot.logger().info() << "left_eject_all" << logs::end;
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().left_eject_all(0);
+//        robot.actions().left_eject_all(0);
         //sleep(5); //on laisse le temps d'ejecter
     } else {
-        robot.actions().right_eject_all(0);
+//        robot.actions().right_eject_all(0);
     }
 
     ts = robot.asserv().doLineAbs(-30);
@@ -287,7 +287,7 @@ bool L_take_grand_distributeurOld()
         robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
-    robot.actions().init_servos();
+//    robot.actions().init_servos();
 
     robot.svgPrintPosition();
     return true; //return true si ok sinon false si interruption
@@ -318,12 +318,12 @@ bool L_take_grand_distributeurOptimised()
     robot.logger().info() << "ARMsssss" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
 
-        robot.actions().right_arm_take(0);
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().right_arm_take(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     } else {
 
-        robot.actions().left_arm_take(0);
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().left_arm_take(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     }
 
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
@@ -356,12 +356,12 @@ bool L_take_grand_distributeurOptimised()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 1);
+//        robot.actions().left_prendre_palet(1500, 1);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 1);
+//        robot.actions().right_prendre_palet(1500, 1);
 
     }
 
@@ -380,12 +380,12 @@ bool L_take_grand_distributeurOptimised()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 2);
+//        robot.actions().left_prendre_palet(1500, 2);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 2);
+//        robot.actions().right_prendre_palet(1500, 2);
 
     }
     robot.svgPrintPosition();
@@ -403,20 +403,20 @@ bool L_take_grand_distributeurOptimised()
     if (robot.getMyColor() == PMXVIOLET) {
         //robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1300, 1);
+//        robot.actions().left_prendre_palet(1300, 1);
 
     } else {
         //robot.asserv().doLineAbs(200);
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1300, 1);
+//        robot.actions().right_prendre_palet(1300, 1);
 
     }
     robot.svgPrintPosition();
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     } else {
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     }
 
     robot.logger().info() << " go to 200" << logs::end;
@@ -436,9 +436,9 @@ bool L_take_grand_distributeurOptimised()
     robot.asserv().doRelativeRotateBy(10);
     robot.logger().info() << " do calage" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     } else {
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     }
 
     robot.asserv().doCalage2(240, 60);
@@ -447,10 +447,10 @@ bool L_take_grand_distributeurOptimised()
     robot.logger().info() << "left_eject_all" << logs::end;
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().left_eject_all(0);
+//        robot.actions().left_eject_all(0);
         //sleep(5); //on laisse le temps d'ejecter
     } else {
-        robot.actions().right_eject_all(0);
+//        robot.actions().right_eject_all(0);
     }
 
     ts = robot.asserv().doLineAbs(-30);
@@ -536,7 +536,7 @@ bool L_take_grand_distributeurOptimised()
         robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
-    robot.actions().init_servos();
+//    robot.actions().init_servos();
 
     robot.svgPrintPosition();
     return true; //return true si ok sinon false si interruption
@@ -549,9 +549,9 @@ void depose_balance()
     TRAJ_STATE ts = TRAJ_OK;
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     } else {
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     }
 
     robot.logger().info() << " go to 200" << logs::end;
@@ -582,10 +582,10 @@ void depose_balance()
     robot.logger().info() << "left_eject_all" << logs::end;
 
     if (robot.getMyColor() == PMXVIOLET) {
-        robot.actions().left_eject_all(0);
+//        robot.actions().left_eject_all(0);
         //sleep(5); //on laisse le temps d'ejecter
     } else {
-        robot.actions().right_eject_all(0);
+//        robot.actions().right_eject_all(0);
     }
 
     int dist = 60 + nbbalance * 50;
@@ -640,10 +640,10 @@ void depose_balance()
     //on fait l'inverse
     if (robot.getMyColor() == PMXVIOLET) {
 
-        robot.actions().right_eject_all(0);
+//        robot.actions().right_eject_all(0);
     } else {
 
-        robot.actions().left_eject_all(0);
+//        robot.actions().left_eject_all(0);
     }
 
     ts = robot.asserv().doLineAbs(-40);
@@ -717,14 +717,14 @@ bool L_take_grand_distributeur()
     robot.logger().info() << "ARMs retracting" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
 
-        robot.actions().right_arm_retract(0);
-        robot.actions().left_arm_retract(0);
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().right_arm_retract(0);
+//        robot.actions().left_arm_retract(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     } else {
 
-        robot.actions().right_arm_retract(0);
-        robot.actions().left_arm_retract(0);
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().right_arm_retract(0);
+//        robot.actions().left_arm_retract(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     }
 
     robot.logger().info() << "calage -200" << logs::end;
@@ -746,12 +746,12 @@ bool L_take_grand_distributeur()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(2500, 1, true);
+//        robot.actions().left_prendre_palet(2500, 1, true);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(2500, 1, true);
+//        robot.actions().right_prendre_palet(2500, 1, true);
 
     }
     robot.svgPrintPosition();
@@ -773,12 +773,12 @@ bool L_take_grand_distributeur()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1500, 1);
+//        robot.actions().left_prendre_palet(1500, 1);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1500, 1);
+//        robot.actions().right_prendre_palet(1500, 1);
     }
     //degagement
     //robot.asserv().doRelativeRotateBy(-3);
@@ -871,12 +871,12 @@ bool L_take_grand_distributeur()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1600, 1, true);
+//        robot.actions().left_prendre_palet(1600, 1, true);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1600, 1, true);
+//        robot.actions().right_prendre_palet(1600, 1, true);
 
     }
     robot.svgPrintPosition();
@@ -912,14 +912,14 @@ bool L_take_grand_distributeur()
     robot.logger().info() << "ARMs retracting" << logs::end;
     if (robot.getMyColor() == PMXVIOLET) {
 
-        robot.actions().right_arm_retract(0);
-        robot.actions().left_arm_retract(0);
-        robot.actions().conveyorBelt_Left_low(0);
+//        robot.actions().right_arm_retract(0);
+//        robot.actions().left_arm_retract(0);
+//        robot.actions().conveyorBelt_Left_low(0);
     } else {
 
-        robot.actions().right_arm_retract(0);
-        robot.actions().left_arm_retract(0);
-        robot.actions().conveyorBelt_Right_low(0);
+//        robot.actions().right_arm_retract(0);
+//        robot.actions().left_arm_retract(0);
+//        robot.actions().conveyorBelt_Right_low(0);
     }
 
     robot.ia().iAbyPath().goToZone("zone_grand_distributeur", &zone);
@@ -957,12 +957,12 @@ bool L_take_grand_distributeur()
     if (robot.getMyColor() == PMXVIOLET) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(2100, 1);
+        //robot.actions().left_prendre_palet(2100, 1);
 
     } else {
 
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(2100, 1);
+        //robot.actions().right_prendre_palet(2100, 1);
 
     }
 
@@ -982,12 +982,12 @@ bool L_take_grand_distributeur()
     if (robot.getMyColor() == PMXVIOLET) {
         //robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
-        robot.actions().left_prendre_palet(1300, 1);
+        //robot.actions().left_prendre_palet(1300, 1);
 
     } else {
         //robot.asserv().doLineAbs(200);
         robot.logger().info() << "right_prendre_palet" << logs::end;
-        robot.actions().right_prendre_palet(1300, 1);
+        //robot.actions().right_prendre_palet(1300, 1);
 
     }
     robot.svgPrintPosition();
@@ -1039,7 +1039,7 @@ bool L_take_grand_distributeur()
         robot.logger().error() << "  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
     }
-    robot.actions().init_servos();
+    //robot.actions().init_servos();
 
     robot.svgPrintPosition();
     return true; //return true si ok sinon false si interruption

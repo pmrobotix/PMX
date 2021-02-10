@@ -41,7 +41,7 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
 
     step = atoi(args["step"].c_str());
     logger().debug() << "Arg step set " << args["step"] << ", step = " << step << logs::end;
-
+/*
     robot.actions().servoUsingMotor().moveLeft(1);
     sleep(2);
     robot.actions().servoUsingMotor().moveLeft(1);
@@ -55,7 +55,7 @@ void L_ServoUsingMotorTest::run(int argc, char** argv)
     sleep(2);
     robot.actions().servoUsingMotor().moveRight(1);
     sleep(2);
-
+*/
     /*
      robot.actions().servoUsingMotor().moveLeft(1);
      sleep(1);

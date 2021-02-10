@@ -32,13 +32,13 @@ void ServoDriver::hold(int servo)
 
 void ServoDriver::setPosition(int servo, int percent)
 {
-    constrain(percent, -100, 100);
+    //constrain(percent, -100, 100);
     logger().error() << "ServoDriver::setPosition() NOT IMPLEMENTED !" << logs::end;
 }
 
 void ServoDriver::turn(int servo, int speed)
 {
-    constrain(speed, -100, 100);
+    //constrain(speed, -100, 100);
     logger().error() << "ServoDriver::turn() NOT IMPLEMENTED !" << logs::end;
 }
 
@@ -52,7 +52,7 @@ void ServoDriver::setRate(int servo, int speed)
     if (!testIf(servo, 0, 127))
         return;
 
-    constrain(speed, -100, 100);
+    //constrain(speed, -100, 100);
     logger().error() << "ServoDriver::setRate() NOT IMPLEMENTED !" << logs::end;
 }
 //return 1 when moving

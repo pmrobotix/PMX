@@ -23,11 +23,6 @@ void ActionManagerTimer::execute()
 
     chronoTimer_.start();
     while (!stop_) {
-        /*while (pause_)
-         {
-         //this->yield();
-         usleep(10);
-         }*/
 
         //on traite les timers
         mtimer_.lock();
@@ -52,11 +47,9 @@ void ActionManagerTimer::execute()
             }
         }
         mtimer_.unlock();
-        /*while (pause_)
-         {
-         //this->yield();
-         usleep(10);
-         }*/
+
+        //on laisse le temps de faire autre chose si besoin
+        this->yield();
 
         //on traite les actions
         maction_.lock();
@@ -72,6 +65,7 @@ void ActionManagerTimer::execute()
             maction_.unlock();
 
             bool persist = action->execute();
+            this->yield();
 
             maction_.lock();
             if (persist) {
@@ -80,6 +74,9 @@ void ActionManagerTimer::execute()
 
         }
         maction_.unlock();
+        //on laisse le temps de faire autre chose si besoin
+        this->yield();
+        //usleep(1); //TODO sleep_for ?
     }
     stop_ = false; //on reinitialise le stop.
     logger().debug("ActionManagerTimer is stopped and finished");

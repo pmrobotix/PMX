@@ -56,6 +56,7 @@ Robot::~Robot()
     //Tue le log s'il existe (core dump sinon)
     logs::LoggerFactory::instance().stopLog();
 
+    //printf("\n ~Robot()");
 }
 
 void Robot::svgPrintPosition(int color)
@@ -296,17 +297,12 @@ void Robot::stopMotionTimerAndActionManager()
 
     if (asserv_default_ != NULL) {
         this->asserv_default_->stopMotionTimerAndOdo();
-        logger().debug() << "asserv_default_ stopMotionTimerAndOdo OK! " << logs::end;
     } else
         logger().error() << "asserv_default is NULL ! " << logs::end;
 
     if (actions_default_ != NULL) {
-        this->actions_default_->stop(); //clear actions and timers
-
-        logger().debug() << "actions_default stop OK! " << logs::end;
-        this->actions_default_->cancel(); //stop devices and wait manager to finish
-
-        logger().debug() << "actions_default cancel OK! " << logs::end;
+        this->actions_default_->clearAll(); //clear actions and timers
+        this->actions_default_->cancel(); //cancel actions thread
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
 }

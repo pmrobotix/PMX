@@ -8,15 +8,14 @@
 
 #include <pthread.h>
 #include <string>
-
+#include <thread>
 #include "Mutex.hpp"
 
 namespace utils {
 /*!
  * \brief Enumération des états des threads.
  */
-enum ThreadState
-{
+enum ThreadState {
     CREATED, STARTING, STARTED, STOPPED
 };
 
@@ -33,8 +32,7 @@ int set_realtime_priority(int p = 99);
  *
  * \todo Ajouter les méthodes join() et kill().
  */
-class Thread: public utils::Mutex
-{
+class Thread: public utils::Mutex {
 protected:
 
     /*!
@@ -75,6 +73,10 @@ protected:
      */
     void yield();
 
+    /*!
+     * \brief Cette méthode libère le controle du thread et permet au processus
+     * appelant de traiter un autre thread de même priorité
+     */
     void sched_yield();
 
     /*!
@@ -88,8 +90,7 @@ public:
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual inline ~Thread()
-    {
+    virtual inline ~Thread() {
     }
 
     /*!
@@ -97,23 +98,21 @@ public:
      *
      * Cette méthode initialise le thread et appelle la méthode ::execute().
      */
-    bool start(std::string name, int priority=0);
+    bool start(std::string name, int priority = 0);
 
     /*!
      * \brief Cette méthode retourne l'état du thread.
      *
      * \return l'état du thread.
      */
-    inline ThreadState state()
-    {
+    inline ThreadState state() {
         lock();
         ThreadState s = state_;
         unlock();
         return s;
     }
 
-    inline void setState(ThreadState state)
-    {
+    inline void setState(ThreadState state) {
         lock();
         state_ = state;
         unlock();
@@ -123,8 +122,7 @@ public:
      *
      * \return \c true si le thread est terminé ou simplement créé.
      */
-    inline bool isFinished()
-    {
+    inline bool isFinished() {
         // printf("Thread.hpp:  is finished()\n");
         return (state() == utils::STOPPED || state() == utils::CREATED);
     }
@@ -132,13 +130,11 @@ public:
     /*
      * Will not return until the internal thread has exited.
      */
-    void waitForEnd()
-    {
+    void waitForEnd() {
         pthread_join(threadId_, NULL);
     }
 
-    void cancel()
-    {
+    void cancel() {
         pthread_cancel(threadId_);
     }
 

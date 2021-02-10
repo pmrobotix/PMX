@@ -126,6 +126,7 @@ void AsservEsialR::execute()
     long nb = 0;
 
     while (1) {
+
         if (run_) {
 
             nb++;
@@ -174,6 +175,7 @@ void AsservEsialR::execute()
 //                               << logs::flush;
 //            }
         }
+
         if (run_) {
             chronoTimer_.waitTimer();
             last = current;

@@ -4,7 +4,7 @@
  */
 
 #include "Thread.hpp"
-
+#include <thread>
 #include <sched.h>
 #include <iostream>
 
@@ -34,10 +34,19 @@ void utils::Thread::yield()
 {
     pthread_yield();
 }
+/*!
+ * \brief Donne la main à un autre thread de meme priorité
+ * \The sched_yield() function checks to see if other processes at the same priority as that of the calling process are READY to run. If so, the calling process yields to them and places itself at the end of the READY process queue. The sched_yield() function never yields to a lower priority process.
+ *
+ */
 void utils::Thread::sched_yield()
 {
     sched_yield();
 }
+//void utils::Thread::sleep_for()
+//{
+//    sleep_for();
+//}
 
 
 /*!
@@ -46,9 +55,8 @@ void utils::Thread::sched_yield()
  */
 bool utils::Thread::start(std::string name, int priority)
 {
-
     //logger().debug() << "start() with id=" << &threadId_ << " name=" << name << logs::end;
-    std::cout << "start() with id=" << &threadId_ << " name=" << name << std::endl;
+    std::cout << "THREAD start() with id=" << &threadId_ << " name=" << name << std::endl;
     this->setState(utils::STARTING);
 
     int code = pthread_create(&threadId_, NULL, utils::Thread::entryPoint, (void*) this);
@@ -96,10 +104,11 @@ bool utils::Thread::start(std::string name, int priority)
     }
 }
 //http://www.yonch.com/tech/82-linux-thread-priority
-// To be able to run the program with a user, got to https://stackoverflow.com/questions/10704983/operation-not-permitted-while-setting-new-priority-for-thread
+// To be able to run the program with a user, got to
+// https://stackoverflow.com/questions/10704983/operation-not-permitted-while-setting-new-priority-for-thread
 // Edit /etc/security/limits.conf then add 2 lines
-// pmx hard rtprio 99
-// pmx soft rtprio 99
+// robot hard rtprio 99
+// robot soft rtprio 99
 //then reboot.
 //verify by:
 // > ulimit -Hr # show hard limit
@@ -122,7 +131,7 @@ int utils::set_realtime_priority(int p)
 
         // We'll set the priority to the maximum.
         params.sched_priority = p;
-        std::cout << "Trying to set thread realtime prio = " << params.sched_priority << std::endl;
+        //std::cout << "Trying to set thread realtime prio = " << params.sched_priority << std::endl;
 
         // Attempt to set thread real-time priority to the SCHED_FIFO policy
         ret = pthread_setschedparam(this_thread, SCHED_FIFO, &params);
@@ -143,11 +152,11 @@ int utils::set_realtime_priority(int p)
         if (policy != SCHED_FIFO) {
             std::cout << "Scheduling is NOT SCHED_FIFO!" << std::endl;
         } else {
-            std::cout << "SCHED_FIFO OK" << std::endl;
+            //std::cout << "SCHED_FIFO OK" << std::endl;
         }
 
         // Print thread scheduling priority
-        std::cout << "Thread priority is " << params.sched_priority << std::endl;
+        //std::cout << "Thread priority is " << params.sched_priority << std::endl;
         return params.sched_priority;
     } else
         return -1;

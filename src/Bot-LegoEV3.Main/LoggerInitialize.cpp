@@ -15,14 +15,14 @@ void logs::LoggerFactory::initialize()
     //set minimum thread priority FIFO
     utils::set_realtime_priority(1);
 
-    add("console", new ConsoleAppender());
+    add("net", new ConsoleAppender());
     add("svg", new SvgAppender("svgEV3.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));
     //add("memory", new MemoryAppender());
     //add("fileAsserv", new FileAppender("logAsserv.csv"));
     //add("fileRegul", new FileAppender("logRegul.csv"));
 
-    add("net", new TelemetryAppender("MSG|SML"));
+    add("nettel", new TelemetryAppender("MSG|SML"));
 
     add(logs::Level::ERROR, "", "net");
 

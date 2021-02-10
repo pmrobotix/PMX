@@ -35,7 +35,7 @@ void L_SoundBarTest::run(int argc, char** argv)
 
     sleep(1);
 
-    robot.actions().stop();
+    robot.actions().clearAll();
 
     logger().info() << "ImperialMarchDarthVader" << logs::end;
     robot.actions().soundBar().toneImperialMarchDarthVader();

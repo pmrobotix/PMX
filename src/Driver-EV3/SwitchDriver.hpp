@@ -8,22 +8,19 @@
 using namespace std;
 using namespace ev3dev;
 
-class SwitchDriver: public ASwitchDriver
-{
+class SwitchDriver: public ASwitchDriver {
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref SwitchDriver(EV3).
      */
-    static inline const logs::Logger & logger()
-    {
+    static inline const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("SwitchDriver.EV3");
         return instance;
     }
 
     touch_sensor touch_;
 
-//    int prec_;
 public:
 
     /*!
@@ -36,12 +33,11 @@ public:
      */
     ~SwitchDriver();
 
-//    int tirettePressedFiltered();
     int tirettePressed();
     int backLeftPressed();
     int backRightPressed();
 
-    int pressed(unsigned char pin);
+    //int pressed(unsigned char pin);
 
 };
 

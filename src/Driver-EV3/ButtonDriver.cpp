@@ -25,7 +25,7 @@ ButtonDriver::~ButtonDriver()
 
 bool ButtonDriver::pressed(ButtonTouch button)
 {
-    usleep(20000);
+    usleep(10000);
     switch (button) {
     case BUTTON_ENTER_KEY:
         return button::enter.pressed();

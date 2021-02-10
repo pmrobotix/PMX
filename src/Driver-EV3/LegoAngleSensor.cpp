@@ -14,9 +14,9 @@ LegoAngleSensor::LegoAngleSensor(address_type address) :
         //Mise à jour du polling pour mettre a jour en i2c toutes les n ms
         this->set_poll_ms(1);
         this->set_mode("ANGLE-ACC");
-    }
 
-    fd_value0_ = this->open_posix_in(_path +"value0");
+        fd_value0_ = this->open_posix_in(_path +"value0");
+    }
 }
 
 void LegoAngleSensor::reset()

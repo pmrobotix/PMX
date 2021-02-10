@@ -40,6 +40,7 @@ void L_ServoObjectTest::run(int argc, char **argv)
         logger().info() << "Arg m set " << args["m"] << ", m = " << m << logs::end;
     }
 
+    /*
     logger().info() << "conveyorBelt_Left_center" << logs::end;
     robot.actions().conveyorBelt_Left_center();
     logger().info() << "left_arm_retract" << logs::end;
@@ -59,26 +60,26 @@ void L_ServoObjectTest::run(int argc, char **argv)
 
             robot.actions().left_prendre_palet(2100, 1, true);
 
-            /*
-            logger().info() << "left_arm_take" << logs::end;
-            robot.actions().left_arm_take();
 
-            logger().info() << "left_arm_retract" << logs::end;
-            robot.actions().left_arm_retract();
-
-            //2nd time
-            logger().info() << "left_arm_take" << logs::end;
-            robot.actions().left_arm_take();
-
-            logger().info() << "left_arm_retract" << logs::end;
-            robot.actions().left_arm_retract();
-
-            logger().info() << "conveyorBelt_PushRight" << logs::end;
-
-            if (i == 3)
-                robot.actions().conveyorBelt_PushRight(200);
-            else
-                robot.actions().conveyorBelt_PushRight(1200);*/
+//            logger().info() << "left_arm_take" << logs::end;
+//            robot.actions().left_arm_take();
+//
+//            logger().info() << "left_arm_retract" << logs::end;
+//            robot.actions().left_arm_retract();
+//
+//            //2nd time
+//            logger().info() << "left_arm_take" << logs::end;
+//            robot.actions().left_arm_take();
+//
+//            logger().info() << "left_arm_retract" << logs::end;
+//            robot.actions().left_arm_retract();
+//
+//            logger().info() << "conveyorBelt_PushRight" << logs::end;
+//
+//            if (i == 3)
+//                robot.actions().conveyorBelt_PushRight(200);
+//            else
+//                robot.actions().conveyorBelt_PushRight(1200);
 
         } else if (m == "R" || m == "ALLR") {
 
@@ -109,19 +110,19 @@ void L_ServoObjectTest::run(int argc, char **argv)
     if (m == "ER" || m == "ALLR") {
 
         robot.actions().right_eject_all(3000);
-        /*
-         logger().info() << "conveyorBelt_Left_low" << logs::end;
-         robot.actions().conveyorBelt_Left_low();
-         logger().info() << "conveyorBelt_EjectRight" << logs::end;
-         robot.actions().conveyorBelt_EjectRight(3);*/
+
+//         logger().info() << "conveyorBelt_Left_low" << logs::end;
+//         robot.actions().conveyorBelt_Left_low();
+//         logger().info() << "conveyorBelt_EjectRight" << logs::end;
+//         robot.actions().conveyorBelt_EjectRight(3);
     } else if (m == "EL" || m == "ALLL") {
 
         robot.actions().left_eject_all(3000);
-        /*
-         logger().info() << "conveyorBelt_Right_low" << logs::end;
-         robot.actions().conveyorBelt_Right_low();
-         logger().info() << "conveyorBelt_EjectLeft" << logs::end;
-         robot.actions().conveyorBelt_EjectLeft(3);*/
+
+//         logger().info() << "conveyorBelt_Right_low" << logs::end;
+//         robot.actions().conveyorBelt_Right_low();
+//         logger().info() << "conveyorBelt_EjectLeft" << logs::end;
+//         robot.actions().conveyorBelt_EjectLeft(3);
     }
 
     if (m == "DR") {
@@ -142,7 +143,7 @@ void L_ServoObjectTest::run(int argc, char **argv)
     robot.actions().conveyorBelt_Left_center();
 
     robot.actions().releaseAll();
-
+*/
     logger().info() << "Happy End." << logs::end;
 
 }

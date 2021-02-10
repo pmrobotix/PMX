@@ -172,13 +172,16 @@ void test::ActionManagerTimerTest::testExecute()
     manager.addTimer(timer2);
     manager.addAction(action1);
 
-    manager.start("actionsAndTimers");
+    manager.start("actionsAndTimers", 50);
+    logger().debug() << "manager.start(actionsAndTimers)... wait 1sec" << logs::end;
     sleep(1);
+    logger().debug() << "sleep(1) done" << logs::end;
     manager.stopTimer("timer1");
     manager.addAction(action2);
     manager.addAction(action1);
 
-    //manager.debugTimers();
+    manager.debugTimers();
+    logger().debug() << "wait 120ms" << logs::end;
     usleep(120000);/*
      //manager.pause(true);
      usleep(500000);

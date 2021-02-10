@@ -1183,8 +1183,8 @@ class servo_motor : protected device {
 
         // Max Pulse SP: read/write
         // Used to set the pulse size in milliseconds for the signal that tells the
-        // servo to drive to the maximum (clockwise) position_sp. Default value is 2400.
-        // Valid values are 2300 to 2700. You must write to the position_sp attribute for
+        // servo to drive to the maximum (clockwise) position_sp. Default value is 2500.
+        // Valid values are 2000 to 3000. You must write to the position_sp attribute for
         // changes to this attribute to take effect.
         int max_pulse_sp() const { return get_attr_int("max_pulse_sp"); }
         servo_motor& set_max_pulse_sp(int v) {
@@ -1195,7 +1195,7 @@ class servo_motor : protected device {
         // Mid Pulse SP: read/write
         // Used to set the pulse size in milliseconds for the signal that tells the
         // servo to drive to the mid position_sp. Default value is 1500. Valid
-        // values are 1300 to 1700. For example, on a 180 degree servo, this would be
+        // values are 1000 to 2000. For example, on a 180 degree servo, this would be
         // 90 degrees. On continuous rotation servo, this is the 'neutral' position_sp
         // where the motor does not turn. You must write to the position_sp attribute for
         // changes to this attribute to take effect.
@@ -1208,7 +1208,7 @@ class servo_motor : protected device {
         // Min Pulse SP: read/write
         // Used to set the pulse size in milliseconds for the signal that tells the
         // servo to drive to the miniumum (counter-clockwise) position_sp. Default value
-        // is 600. Valid values are 300 to 700. You must write to the position_sp
+        // is 500. Valid values are 0 to 1000. You must write to the position_sp
         // attribute for changes to this attribute to take effect.
         int min_pulse_sp() const { return get_attr_int("min_pulse_sp"); }
         servo_motor& set_min_pulse_sp(int v) {

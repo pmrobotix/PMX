@@ -158,7 +158,7 @@ L_State_Init::execute(Robot&)
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_UP_KEY) {
                 //logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
-                robot.actions().init_servos();
+//                robot.actions().init_servos();
                 usleep(300000);
             }
             if (b == BUTTON_DOWN_KEY) {
@@ -292,7 +292,7 @@ void L_State_Init::setPos()
     robot.actions().lcd().display_content_string("SET POSITION...", 5);
 
     //init des objects
-    robot.actions().init_servos();
+//    robot.actions().init_servos();
     robot.asserv().base()->encoders().reset();
     robot.asserv().base()->extEncoders().reset();
 

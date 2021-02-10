@@ -152,9 +152,9 @@ public:
         return actionStopped_;
     }
 
-    inline void stopAndWait(bool value)
+    inline void stopAndWait(bool stopAction)
     {
-        this->actionStopped_ = value;
+        this->actionStopped_ = stopAction;
         while (this->actionRunning_) {
             usleep(1000);
         }

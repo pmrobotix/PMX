@@ -15,8 +15,6 @@ namespace logs {
 /*!
  * \brief Implémentation de Appender pour une sortie sur fichier.
  *
- * Cette implémentation se base sur un thread secondaire pour l'écriture
- * dans le fichier des informations.
  */
 class FileAppender: public MemoryAppender
 {
