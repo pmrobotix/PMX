@@ -23,6 +23,8 @@ BotCodeurs::~BotCodeurs()
 
 void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
 {
+    // TODO !!! A OPTIMISER avec un seul appel ?
+
     /*
      * On récupère le compte des codeurs depuis le dernier refresh.
      * Pour ne pas avoir à resetter les compteurs à chaque refresh (et

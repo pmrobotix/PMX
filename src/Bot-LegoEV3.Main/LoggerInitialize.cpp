@@ -96,6 +96,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SwitchDriver.EV3", "net");
     add(logs::Level::INFO, "AsservDriver.EV3", "net");
     add(logs::Level::INFO, "ServoDriver.EV3", "net");
+    add(logs::Level::INFO, "ServoMotorExtend.EV3", "net");
     add(logs::Level::INFO, "SensorsDriver.EV3", "net");
     add(logs::Level::INFO, "LegoIRSensor.EV3", "net");
     add(logs::Level::INFO, "LegoAngleSensor.EV3", "net");

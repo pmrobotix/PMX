@@ -10,6 +10,7 @@
 #include <string>
 #include <thread>
 #include "Mutex.hpp"
+#include <chrono>
 
 namespace utils {
 /*!
@@ -78,6 +79,14 @@ protected:
      * appelant de traiter un autre thread de même priorité
      */
     void sched_yield();
+
+//TODO sleep_for()
+//    void sleep_for()
+//        {
+//        std::this_thread::sleep_for(std::chrono::seconds(1));
+//        }
+
+
 
     /*!
      * \brief L'implementation de cette méthode détaille le traitement

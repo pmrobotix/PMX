@@ -120,6 +120,7 @@ void L_ServoStepTest::run(int argc, char** argv)
             robot.actions().servosStd().setMinPulse(num, 0);
             robot.actions().servosStd().setMidPulse(num, 1500);
             robot.actions().servosStd().setMaxPulse(num, 3000);
+            robot.actions().servosStd().setSpeed(num, 100);
 
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
             usleep(200000);
@@ -143,7 +144,7 @@ void L_ServoStepTest::run(int argc, char** argv)
             usleep(200000);
         }
 
-        usleep(20000);
+        usleep(100000);
     }
 
     robot.actions().releaseAll();

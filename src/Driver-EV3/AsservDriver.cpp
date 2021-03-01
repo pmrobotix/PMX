@@ -3,84 +3,118 @@
 #include "AsservDriver.hpp"
 
 #include <unistd.h>
-#include <map>
-#include <set>
-#include <sstream>
 #include <string>
 
 #include "../Log/Logger.hpp"
+#include "ev3dev.h"
 
 using namespace std;
 using namespace ev3dev;
+using namespace std::chrono;
 
-AAsservDriver* AAsservDriver::create(std::string)
-{
+AAsservDriver* AAsservDriver::create(std::string) {
     static AsservDriver *instance = new AsservDriver();
     return instance;
 }
 
-void AsservDriver::reset()
-{
-    if (_motor_left_.connected())
-        _motor_left_.reset();
+void AsservDriver::reset() {
+    if (_motor_left_.connected()) _motor_left_.reset();
 
-    if (_motor_right_.connected())
-        _motor_right_.reset();
+    if (_motor_right_.connected()) _motor_right_.reset();
 }
 
 AsservDriver::AsservDriver() :
-        _motor_right_(OUTPUT_D), _motor_left_(OUTPUT_B), angleR_("ev3-ports:in2:i2c1"), angleL_("ev3-ports:in1:i2c1")
+        _motor_right_(OUTPUT_D), _motor_left_(OUTPUT_B), mag_(true, false, false)
 {
     logger().debug() << "AsservDriver()" << logs::end;
+    m_encoderLSum = 0;
+    m_encoderRSum = 0;
+    m_encoder1Previous = 0.0;
+    m_encoder2Previous = 0.0;
 
-    if (angleR_.connected()) {
-        logger().debug() << "[" << angleR_.address() << "] (" << angleR_.driver_name() << ") type_name="
-                << angleR_.type_name() << logs::end;
-    } else {
-        logger().error() << "NOT CONNECTED! NO angleR_ !" << logs::end;
-    }
-    if (angleL_.connected()) {
-        logger().debug() << "[" << angleL_.address() << "] (" << angleL_.driver_name() << ") type_name="
-                << angleL_.type_name() << logs::end;
-    } else {
-        logger().error() << "NOT CONNECTED! NO angleL_ !" << logs::end;
-    }
+    mag_.init();
 
-//    if (_motor_right_.connected()) //if both motors are connected, then initialize each motor.
-//    {
-//        //_motor_right_.
-//        _motor_right_.reset();
+//    while (1) {
+//        usleep(1000000);
+//        uint8_t d1 = mag_.getDiag1();
+//        printf("\nd=%d \n", d1);
 //
-//        _motor_right_.set_polarity(motor::polarity_inversed);
+//        uint8_t g1 = mag_.getAutoGain1();
+//        printf("\ng=%d \n", g1);
 //
-//        _motor_right_.set_ramp_down_sp(0);
-//        _motor_right_.set_ramp_up_sp(0);
-//        _motor_right_.set_stop_action("brake");
+//        uint16_t l1 = mag_.getAngle1();
+//        printf("\nl=%d \n", l1);
+//
+//        uint16_t m1 = mag_.getMag1();
+//        printf("\nm=%d \n", m1);
 //    }
+
+/*
+     while (1) {
+     //auto start = std::chrono::system_clock::now();
+     //long test = getLeftExternalEncoder();
+     //        auto end = system_clock::now();
+     //        logger().debug()
+     //                        << "  duration= " << (duration_cast<microseconds>(end - start).count()) << logs::end;
+     //std::this_thread::sleep_for(std::chrono::microseconds(500));
+
+
+
+     auto start = std::chrono::system_clock::now();
+     float left = 0.0;
+     float right = 0.0;
+     mag_.getValues(&right, &left);
+     int ll = 0;
+     int rr = 0;
+     mag_.getEncodersTotalCount(&rr, &ll);
+     auto end = system_clock::now();
+
+     logger().debug()  << "L= " << ll<< "\tR= " << rr << "\tl= " << left << "\tr= " << right
+     << "  duration= " << (duration_cast<microseconds>(end - start).count()) << logs::end;
+     std::this_thread::sleep_for(std::chrono::microseconds(3000));
+
+     //        auto start = std::chrono::system_clock::now();
+     //        long l1 = (long) mag_.getAccumulatedDirectValueEncoder1();
+     //        long l2 = (long) mag_.getAccumulatedDirectValueEncoder2();
+     //        auto end = system_clock::now();
+     //        logger().debug() << " l1= " << l1 << " l2= " << l2
+     //                << " duration= " << (duration_cast<microseconds>(end - start).count()) << logs::end;
+     //        std::this_thread::sleep_for(std::chrono::microseconds(3000));
+     }
+
+     exit(0);
+*/
+
 
     if (_motor_right_.connected()) {
 
-        logger().debug() << "(" << "RIGHT" << ") " << _motor_right_.driver_name() << " motor on port "
-                << _motor_right_.address() << " Pol=" << _motor_right_.polarity() << logs::end;
-    } else {
+        logger().debug() << "("
+                << "RIGHT"
+                << ") "
+                << _motor_right_.driver_name()
+                << " motor on port "
+                << _motor_right_.address()
+                << " Pol="
+                << _motor_right_.polarity()
+                << logs::end;
+    }
+    else {
         logger().error() << "NOT CONNECTED! NO _motor_right_ !" << logs::end;
     }
 
-//    if (_motor_left_.connected()) //if both motors are connected, then initialize each motor.
-//    {
-//        _motor_left_.reset();
-//        _motor_left_.set_polarity(motor::polarity_inversed);
-//        _motor_left_.set_ramp_down_sp(0);
-//        _motor_left_.set_ramp_up_sp(0);
-//        _motor_left_.set_stop_action("brake");
-//
-//    }
-
     if (_motor_left_.connected()) {
 
-        logger().debug() << "(" << "LEFT " << ") " << _motor_left_.driver_name() << " motor on port "
-                << _motor_left_.address() << " Pol=" << _motor_left_.polarity() << logs::end;
-    } else {
+        logger().debug() << "("
+                << "LEFT "
+                << ") "
+                << _motor_left_.driver_name()
+                << " motor on port "
+                << _motor_left_.address()
+                << " Pol="
+                << _motor_left_.polarity()
+                << logs::end;
+    }
+    else {
         logger().error() << "NOT CONNECTED! NO _motor_left_ !" << logs::end;
     }
 
@@ -88,8 +122,7 @@ AsservDriver::AsservDriver() :
 
 }
 
-void AsservDriver::setMotorLeftPosition(int ticks_per_second, long ticks)
-{
+void AsservDriver::setMotorLeftPosition(int ticks_per_second, long ticks) {
     limit(ticks_per_second, MAXVALUE_speed_sp);
     if (_motor_left_.connected()) {
 
@@ -98,8 +131,7 @@ void AsservDriver::setMotorLeftPosition(int ticks_per_second, long ticks)
     }
 }
 
-void AsservDriver::setMotorRightPosition(int ticks_per_second, long ticks)
-{
+void AsservDriver::setMotorRightPosition(int ticks_per_second, long ticks) {
     limit(ticks_per_second, MAXVALUE_speed_sp);
     if (_motor_right_.connected()) {
         //the units are in tachometer pulse counts, so if you are not using a LEGO motor, then you will need to do some math to convert to/from degrees.
@@ -107,12 +139,12 @@ void AsservDriver::setMotorRightPosition(int ticks_per_second, long ticks)
     }
 }
 
-int AsservDriver::limit(int power, int max)
-{
+int AsservDriver::limit(int power, int max) {
     if ((power < -max)) {
         logger().info() << "ERROR Motor power " << power << " exceeded minimum " << -max << "!!" << logs::end;
         power = -max;
-    } else if (power > max) {
+    }
+    else if (power > max) {
         logger().info() << "ERROR Motor power " << power << "exceeded maximum " << max << "!!" << logs::end;
         power = max;
     }
@@ -144,17 +176,18 @@ int AsservDriver::limit(int power, int max)
 //   This will also have the effect of stopping the motor.
 
 //http://www.ev3dev.org/docs/tutorials/tacho-motors/
-void AsservDriver::setMotorLeftPower(int value, int timems)
-{
+void AsservDriver::setMotorLeftPower(int value, int timems) {
     if (_motor_left_.connected()) {
         if (timems == 0) {
             limit(value, MAXVALUE_speed_sp);
             _motor_left_.set_speed_sp(value).run_forever();
-        } else if (timems > 0) {
+        }
+        else if (timems > 0) {
             limit(value, MAXVALUE_speed_sp);
             //logger().debug() << "LEFT  value = " << value << logs::end;
             _motor_left_.set_speed_sp(value).set_time_sp(timems).run_timed();
-        } else {
+        }
+        else {
             limit(value, MAXVALUE_duty_cycle_sp);
             //logger().debug() << "LEFT  percent = " << value << logs::end;
             //_motor_left_.set_duty_cycle_sp(value).run_direct();
@@ -163,17 +196,18 @@ void AsservDriver::setMotorLeftPower(int value, int timems)
     }
 }
 
-void AsservDriver::setMotorRightPower(int value, int timems)
-{
+void AsservDriver::setMotorRightPower(int value, int timems) {
     if (_motor_right_.connected()) {
         if (timems == 0) {
             limit(value, MAXVALUE_speed_sp);
             _motor_right_.set_speed_sp(value).run_forever();
-        } else if (timems > 0) {
+        }
+        else if (timems > 0) {
             limit(value, MAXVALUE_speed_sp);
             //logger().debug() << "RIGHT value = " << value << logs::end;
             _motor_right_.set_speed_sp(value).set_time_sp(timems).run_timed();
-        } else {
+        }
+        else {
             limit(value, MAXVALUE_duty_cycle_sp);
             //logger().error() << "RIGHT percent = " << value << logs::end;
             //_motor_right_.set_duty_cycle_sp(value).run_direct();
@@ -182,73 +216,105 @@ void AsservDriver::setMotorRightPower(int value, int timems)
     }
 }
 
-long AsservDriver::getLeftExternalEncoder()
-{
-    if (angleL_.connected()) {
-        long ticks = -1 * angleL_.getValueDegrees();
+void AsservDriver::getCountsExternal(int32_t* countG, int32_t* countD) {
 
-        return ticks;
-    } else
-        return -999999;
+    //        //chprintf(outputStream,"MagEncoders::getValues() done; %d %d\r\n", m_encoder1Previous, m_encoder2Previous);
+    //            //utilisation du depassement d'un int16
+    //            //[0;16383] -8192 * 4 = [-32768;32764]
+    //            float encoder1 = (m_mysensor1.angleR(U_RAW, true) - 8192.0) * 4.0;
+    //            float encoder2 = (m_mysensor2.angleR(U_RAW, true) - 8192.0) * 4.0;
+    //
+    //            if (m_is1EncoderRight) {
+    //                *deltaEncoderRight = encoder1 - m_encoder1Previous;
+    //                *deltaEncoderLeft = encoder2 - m_encoder2Previous;
+    //            } else {
+    //                *deltaEncoderRight = encoder2 - m_encoder2Previous;
+    //                *deltaEncoderLeft = encoder1 - m_encoder1Previous;
+    //            }
+    //
+    //            if (m_invertEncoderR)
+    //                *deltaEncoderRight = -*deltaEncoderRight;
+    //            if (m_invertEncoderL)
+    //                *deltaEncoderLeft = -*deltaEncoderLeft;
+    //
+    //            *deltaEncoderRight = (int16_t)(*deltaEncoderRight / 4.0);
+    //            *deltaEncoderLeft = (int16_t)(*deltaEncoderLeft / 4.0);
+    //
+    //            m_encoderRSum += (int32_t)(*deltaEncoderRight);
+    //            m_encoderLSum += (int32_t)(*deltaEncoderLeft);
+    //
+    //            m_encoder1Previous = encoder1;
+    //            m_encoder2Previous = encoder2;
+
 }
-long AsservDriver::getRightExternalEncoder()
-{
-    if (angleR_.connected()) {
-        long ticks = angleR_.getValueDegrees();
 
-        return ticks;
-    } else
-        return -999999;
+long AsservDriver::getLeftExternalEncoder() {
+
+    mag_.pingtest();
+
+//    if (encoderL_.connected()) {
+//
+//        long ticks = -1 * encoderL_.getAccumulatedValue();
+//
+//        return ticks;
+//    }
+//    else return -999999;
 }
 
-long AsservDriver::getLeftInternalEncoder()
-{
+long AsservDriver::getRightExternalEncoder() {
+//    if (encoderR_.connected()) {
+//        long ticks = encoderR_.getAccumulatedValue();
+//
+//        return ticks;
+//    }
+//    else return -999999;
+}
+
+void AsservDriver::getCountsInternal(int32_t* countG, int32_t* countD) {
+
+}
+
+long AsservDriver::getLeftInternalEncoder() {
     if (_motor_left_.connected()) {
         //+/- 2,147,483,648
         return _motor_left_.custom_get_position();
-    } else
-        return 0;
-
+    }
+    else return 0;
 }
-long AsservDriver::getRightInternalEncoder()
-{
+
+long AsservDriver::getRightInternalEncoder() {
     if (_motor_right_.connected()) {
 
         return _motor_right_.custom_get_position();
 
-    } else
-        return 0;
+    }
+    else return 0;
 }
 
-void AsservDriver::stopMotorLeft()
-{
+void AsservDriver::stopMotorLeft() {
     setMotorLeftPower(0, 0);
     if (_motor_left_.connected()) {
         //_motor_left_.stop();
         _motor_left_.custom_set_command("stop");
-    } else
-        logger().error() << "NOT CONNECTED! NO stopMotorLeft" << logs::end;
-
+    }
+    else logger().error() << "NOT CONNECTED! NO stopMotorLeft" << logs::end;
 }
-void AsservDriver::stopMotorRight()
-{
 
+void AsservDriver::stopMotorRight() {
     setMotorRightPower(0, 0);
     if (_motor_right_.connected()) {
         //_motor_right_.stop();
         _motor_right_.custom_set_command("stop");
-    } else
-        logger().error() << "NOT CONNECTED! NO stopMotorRight" << logs::end;
+    }
+    else logger().error() << "NOT CONNECTED! NO stopMotorRight" << logs::end;
 }
 
-void AsservDriver::resetEncoders()
-{
+void AsservDriver::resetEncoders() {
     resetInternalEncoders();
     resetExternalEncoders();
 }
 
-void AsservDriver::resetInternalEncoders()
-{
+void AsservDriver::resetInternalEncoders() {
     if (_motor_left_.connected()) {
         _motor_left_.set_position(0);
     }
@@ -256,111 +322,94 @@ void AsservDriver::resetInternalEncoders()
         _motor_right_.set_position(0);
     }
 }
-void AsservDriver::resetExternalEncoders()
-{
-    if (angleR_.connected()) {
-        angleR_.reset();
-    }
 
-    if (angleL_.connected()) {
-        angleL_.reset();
-    }
+void AsservDriver::resetExternalEncoders() {
+//    if (encoderL_.connected()) {
+//        encoderL_.reset();
+//    }
+//
+//    if (encoderL_.connected()) {
+//        encoderL_.reset();
+//    }
 }
 
-int AsservDriver::getMotorLeftCurrent()
-{
-    return 0;
-}
-int AsservDriver::getMotorRightCurrent()
-{
+int AsservDriver::getMotorLeftCurrent() {
     return 0;
 }
 
-void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
-{
+int AsservDriver::getMotorRightCurrent() {
+    return 0;
 }
-RobotPosition AsservDriver::odo_GetPosition()
-{
+
+void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad) {
+}
+
+RobotPosition AsservDriver::odo_GetPosition() {
 
     return {0,0,0,0};
 }
-int AsservDriver::path_GetLastCommandStatus()
-{
+
+int AsservDriver::path_GetLastCommandStatus() {
     return 0;
 }
-void AsservDriver::path_InterruptTrajectory()
-{
-}
-void AsservDriver::path_CollisionOnTrajectory()
-{
-}
-void AsservDriver::path_CollisionRearOnTrajectory()
-{
-}
-void AsservDriver::path_CancelTrajectory()
-{
-}
-void AsservDriver::path_ResetEmergencyStop()
-{
+
+void AsservDriver::path_InterruptTrajectory() {
 }
 
-TRAJ_STATE AsservDriver::motion_DoFace(float x_m, float y_m)
-{
+void AsservDriver::path_CollisionOnTrajectory() {
+}
+
+void AsservDriver::path_CollisionRearOnTrajectory() {
+}
+
+void AsservDriver::path_CancelTrajectory() {
+}
+
+void AsservDriver::path_ResetEmergencyStop() {
+}
+
+TRAJ_STATE AsservDriver::motion_DoFace(float x_m, float y_m) {
     return TRAJ_ERROR;
 }
-TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
-{
+TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) {
 
     return TRAJ_ERROR;
 }
-TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
-{
+TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) {
     return TRAJ_ERROR;
 }
-TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
-{
+TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius) {
     return TRAJ_ERROR;
 }
-void AsservDriver::motion_FreeMotion()
-{
+void AsservDriver::motion_FreeMotion() {
 }
-void AsservDriver::motion_DisablePID()
-{
+void AsservDriver::motion_DisablePID() {
 }
-void AsservDriver::motion_AssistedHandling()
-{
+void AsservDriver::motion_AssistedHandling() {
 }
-void AsservDriver::motion_ActivateManager(bool enable)
-{
+void AsservDriver::motion_ActivateManager(bool enable) {
 }
 
-void AsservDriver::motion_setLowSpeedForward(bool enable, int)
-{
+void AsservDriver::motion_setLowSpeedForward(bool enable, int) {
 
 }
 
-void AsservDriver::motion_setLowSpeedBackward(bool enable, int)
-{
+void AsservDriver::motion_setLowSpeedBackward(bool enable, int) {
 
 }
 
-void AsservDriver::motion_ActivateReguDist(bool enable)
-{
+void AsservDriver::motion_ActivateReguDist(bool enable) {
 
 }
-void AsservDriver::motion_ActivateReguAngle(bool enable)
-{
+void AsservDriver::motion_ActivateReguAngle(bool enable) {
 
 }
-void AsservDriver::motion_ResetReguDist()
-{
+void AsservDriver::motion_ResetReguDist() {
 
 }
-void AsservDriver::motion_ResetReguAngle()
-{
+void AsservDriver::motion_ResetReguAngle() {
 
 }
-TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
-{
+TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters) {
     return TRAJ_ERROR;
 }

@@ -1,14 +1,13 @@
-#include <unistd.h>
 #include <iostream>
 
-#include "../../src/Log/LoggerFactory.hpp"
+#include "../../src/Thread/Thread.hpp"
 #include "../Suite/UnitTestSuite.hpp"
 #include "AsservDriverTest.hpp"
+#include "ServoDriverTest.hpp"
 
 using namespace std;
 
-int main()
-{
+int main() {
     utils::set_realtime_priority(); //priority MAX 99
 
     cout << "!!!Hello TEST World!!!" << endl; // prints !!!Hello World!!!
@@ -19,7 +18,7 @@ int main()
     //suite.addTest(new test::SensorDriverTest());
     suite.addTest(new test::AsservDriverTest());
     //suite.addTest(new test::SoundDriverTest());
-    //suite.addTest(new test::ServoDriverTest());
+    suite.addTest(new test::ServoDriverTest());
     //sleep(2);
     suite.run();
 

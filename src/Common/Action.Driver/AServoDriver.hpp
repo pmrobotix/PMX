@@ -32,9 +32,9 @@ public:
 
     //Limitation d'une valeur à un intervalle [valeurMin , valeurMax]
     long constrain(long value, long valeurMin, long valeurMax) {
-        if (value <= valeurMin) return valeurMin;
+        if (value < valeurMin) return valeurMin;
 
-        if (value >= valeurMax) return valeurMax;
+        if (value > valeurMax) return valeurMax;
 
         return value;
     }

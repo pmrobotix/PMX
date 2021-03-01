@@ -37,9 +37,10 @@ void device_extend::set_attr_int_posix(int fd, int value)
         ::lseek(fd, 0, SEEK_SET);
         ::write(fd, tmp, strlen(tmp));
         if (errno == ENODEV) {
-            printf("[set_attr_int_posix] ENODEV !!!\n");
+            printf("\n[set_attr_int_posix] ENODEV !!!\n");
         }
     } catch (...) {
+        printf("\n[set_attr_int_posix] catch throw !!!\n");
         throw;
     }
 }
@@ -51,7 +52,7 @@ void device_extend::set_attr_string_posix(int fd, std::string name)
         ::lseek(fd, 0, SEEK_SET);
         ::write(fd, tmp, strlen(tmp));
         if (errno == ENODEV) {
-            printf("[set_attr_string_posix] ENODEV !!!\n");
+            printf("\n[set_attr_string_posix] ENODEV !!!\n");
         }
     } catch (...) {
         throw;
@@ -81,8 +82,7 @@ std::string device_extend::get_attr_string_posix(int fd)
 int device_extend::get_attr_int_posix(int fd)
 {
     std::string s = get_attr_string_posix(fd);
-
-    int data = std::stoi(s, nullptr, 0); //convert to int
+    int data = std::stoi(s);//, nullptr, 0); //convert to int
     return data;
 }
 

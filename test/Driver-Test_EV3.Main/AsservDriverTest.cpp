@@ -16,11 +16,11 @@ using namespace std::chrono;
 
 void test::AsservDriverTest::suite()
 {
-    //testcodeurs();
+    testcodeurs();
     //testcodeurs2();
     //this->benchmarkPosix();
 
-    benchmarkSpeedMotor();
+    //benchmarkSpeedMotor();
 }
 void test::AsservDriverTest::benchmarkSpeedMotor()
 {

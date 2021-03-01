@@ -39,7 +39,7 @@ public:
      */
     ~LegoAngleSensor()
     {
-        //this->close_posix(fd_value0_);
+        this->close_posix(fd_value0_);
     }
 
     /*!

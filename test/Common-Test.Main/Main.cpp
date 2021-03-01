@@ -1,7 +1,7 @@
-#include <unistd.h>
+#include <chrono>
 #include <iostream>
+#include <thread>
 
-#include "../../src/Common/Utils/ConsoleKeyInput.hpp"
 #include "../../src/Thread/Thread.hpp"
 #include "../Suite/UnitTestSuite.hpp"
 #include "ActionManagerTimerTest.hpp"
@@ -21,6 +21,8 @@ int main()
     //suite.addTest(new test::ChronometerTest());
     suite.addTest(new test::ActionManagerTimerTest()); //utilise les chronos et les threads
     //suite.addTest(new test::ReadWriteTest());
+
+    //this_thread::sleep_for(2000ms);
 
     suite.run();
 

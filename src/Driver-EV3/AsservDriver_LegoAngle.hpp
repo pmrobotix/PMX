@@ -1,43 +1,35 @@
-#ifndef EV3_ASSERVDRIVER_HPP_
-#define EV3_ASSERVDRIVER_HPP_
-
-#include <cstdint>
+#ifndef EV3_ASSERVDRIVER_lEGOANGLE_HPP_
+#define EV3_ASSERVDRIVER_lEGOANGLE_HPP_
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
+#include "LegoAngleSensor.hpp"
 #include "LegoMotor.hpp"
-#include "MagEncoders.hpp"
 
 #define MAXVALUE_speed_sp 	1049 //power
 #define MAXVALUE_duty_cycle_sp 100 //percentage
 
 using namespace std;
-//using namespace ev3dev;
+using namespace ev3dev;
 
-class AsservDriver: public AAsservDriver {
+class AsservDriver_LegoAngle: public AAsservDriver
+{
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref AsservDriver(EV3).
      */
-    static inline const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.EV3");
+    static inline const logs::Logger & logger()
+    {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver_LegoAngle.EV3");
         return instance;
     }
 
-    LegoMotor _motor_right_;
-    LegoMotor _motor_left_;
+    LegoMotor _motor_right_ ;
+    LegoMotor _motor_left_ ;
 
-//    AMS_AS5048B encoderL_;
-//    AMS_AS5048B encoderR_;
-    MagEncoders mag_;
-
-    //bool m_invertEncoderL;
-    //bool m_invertEncoderR;
-    int32_t m_encoderLSum;
-    int32_t m_encoderRSum;
-    float m_encoder1Previous;
-    float m_encoder2Previous;
+    LegoAngleSensor angleR_;
+    LegoAngleSensor angleL_;
 
 protected:
 
@@ -45,13 +37,16 @@ public:
     /*!
      * \brief Constructor.
      */
-    AsservDriver();
+    AsservDriver_LegoAngle();
 
     /*!
      * \brief Destructor.
      */
-    inline ~AsservDriver() {
+    inline ~AsservDriver_LegoAngle()
+    {
     }
+
+
 
     void reset(); //motor reset!
 
@@ -68,11 +63,9 @@ public:
 
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countG, int32_t* countD);
 
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
-    void getCountsInternal(int32_t* countG, int32_t* countD);
 
     void resetEncoders();
     void resetInternalEncoders();

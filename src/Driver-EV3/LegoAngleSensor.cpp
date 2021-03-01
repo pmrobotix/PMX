@@ -32,6 +32,11 @@ int LegoAngleSensor::getValueDegrees()
     if (this->connected()) {
 
         int accumulatedAngleDegrees = this->get_attr_int_posix(fd_value0_);
+
+
+//        std::string s = get_attr_string_posix(fd_value0_);
+//        int accumulatedAngleDegrees = std::stoi(s, nullptr, 0); //convert to int
+
         //int accumulatedAngleDegrees =  this->get_attr_int("value0");
         //int accumulatedAngleDegrees =  this->value();
 
