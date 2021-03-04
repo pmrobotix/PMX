@@ -6,13 +6,12 @@
 #ifndef LOGS_MEMORYAPPENDER_HPP_
 #define	LOGS_MEMORYAPPENDER_HPP_
 
-#include <list>
-#include <sstream>
-#include <string>
 #include <chrono>
-#include "../../Log/Level.hpp"
-#include "../../Log/Logger.hpp"
+#include <list>
+#include <string>
+
 #include "../../Thread/Mutex.hpp"
+#include "../Logger.hpp"
 
 using namespace std::chrono;
 

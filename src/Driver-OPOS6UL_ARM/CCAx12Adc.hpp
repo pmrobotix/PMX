@@ -7,10 +7,9 @@
 #ifndef OPOS6UL_CCAX12ADC_HPP
 #define OPOS6UL_CCAX12ADC_HPP
 
-#include <as_devices/cpp/as_i2c.hpp>
+#include <cpp/as_i2c.hpp>
 
 #include "../Log/LoggerFactory.hpp"
-#include "../Thread/Mutex.hpp"
 
 #define AX12ADC_ADDR		 0x08
 

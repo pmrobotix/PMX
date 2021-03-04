@@ -6,14 +6,9 @@
 #ifndef LOGS_CONSOLEAPPENDER_HPP_
 #define	LOGS_CONSOLEAPPENDER_HPP_
 
-#include <iostream>
-#include <sstream>
 #include <string>
 
-#include "../../Log/Level.hpp"
-#include "../../Log/Logger.hpp"
-#include "../../Thread/Thread.hpp"
-#include "../Appender/MemoryAppender.hpp"
+#include "MemoryAppender.hpp"
 
 namespace logs {
 /*!

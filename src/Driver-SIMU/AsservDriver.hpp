@@ -105,6 +105,8 @@ public:
     void setMotorRightPower(int power, int time);
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
+    void getCountsExternal(int32_t* countR, int32_t* countL){} //TODO
+    void getCountsInternal(int32_t* countR, int32_t* countL){} //TODO
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
     void resetEncoders();

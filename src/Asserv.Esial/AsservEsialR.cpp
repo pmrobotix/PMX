@@ -180,7 +180,9 @@ void AsservEsialR::execute()
             chronoTimer_.waitTimer();
             last = current;
         }else {
-            usleep(50000); //attente de reactivation
+            utils::Thread::sleep_for_micros(50000);
+            //std::this_thread::sleep_for(std::chrono::microseconds(50000));
+            //usleep(50000); //attente de reactivation
         }
     }
 }
@@ -252,6 +254,12 @@ long AsservEsialR::getLeftExternalEncoder()
     return -99;
     //TODO
 }
+
+void AsservEsialR::getCountsExternal(int32_t* countR, int32_t* countL)
+{
+
+}
+
 long AsservEsialR::getRightExternalEncoder()
 {
     logger().error() << "TODO getRightExternalEncoder !!!" << logs::end;
@@ -270,6 +278,11 @@ long AsservEsialR::getRightInternalEncoder()
     return -99;
     //TODO
 }
+void AsservEsialR::getCountsInternal(int32_t* countR, int32_t* countL)
+{
+
+}
+
 void AsservEsialR::resetEncoders()
 {
     resetInternalEncoders();

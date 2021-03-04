@@ -24,7 +24,9 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     while (robot.chrono().getElapsedTimeInSec() <= 99) {
 
-        usleep(1000000);
+
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+
         long time = robot.chrono().getElapsedTimeInSec();
         this->logger().info() << "O_State_Wait90SecAction::execute chrono " << time << logs::end;
 
@@ -75,7 +77,8 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
         if (b == BUTTON_ENTER_KEY) {
             break;
         }
-        usleep(1000);
+        std::this_thread::sleep_for(std::chrono::microseconds(1000));
+        //usleep(1000);
     }
 
     logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec"

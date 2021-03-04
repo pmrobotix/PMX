@@ -5,8 +5,11 @@
 
 #include "Chronometer.hpp"
 
-#include <unistd.h>
-#include <cstdio>
+#include <chrono>
+#include <thread>
+
+#include "../../Log/Logger.hpp"
+#include "../../Thread/Thread.hpp"
 
 utils::Chronometer::Chronometer(std::string name) :
         stopped_(1), timerPeriod_us_(0), name_(name), periodNb_(0), endSetTime_us(0), timerStartTime_us_(0), lastTime_(
@@ -97,7 +100,8 @@ int utils::Chronometer::waitTimer(bool debug)
 
     if (workTime < timerPeriod_us_) {
 
-        usleep(timerPeriod_us_ - workTime);
+        //usleep(timerPeriod_us_ - workTime);
+        std::this_thread::sleep_for(std::chrono::microseconds(timerPeriod_us_ - workTime));
     } else {
         logger().debug() << "!!! (diff)workTime=" << workTime << " > " << timerPeriod_us_ << "!!!" << logs::end;
     }
@@ -107,7 +111,7 @@ int utils::Chronometer::waitTimer(bool debug)
 
     return periodNb_;
 }
-
+/*
 int utils::Chronometer::waitTimer_OLD()
 {
     periodNb_++;
@@ -130,7 +134,7 @@ int utils::Chronometer::waitTimer_OLD()
     }
 
     return periodNb_;
-}
+}*/
 
 void utils::Chronometer::setTimer(unsigned int usec)
 {

@@ -36,7 +36,7 @@ private:
 protected:
 
     /*!
-     * \brief motorisation = motors + encoders
+     * \brief motorisation = motors + encoders // TODO A configurer dans Extended avec les parametres appropriés de chaque robot
      */
     MovingBase *pMovingBase_;
 

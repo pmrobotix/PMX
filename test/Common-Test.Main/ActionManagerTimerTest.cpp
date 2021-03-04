@@ -15,6 +15,9 @@
 #include "../../src/Common/Utils/Chronometer.hpp"
 #include "../../src/Log/Logger.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
+#include "../../src/Thread/Thread.hpp"
+
+using namespace utils;
 
 class MockAction: public IAction
 {
@@ -109,6 +112,9 @@ public:
     {
         logger().info() << "onTimer executing " << nameListener_ << "... t=" << chrono.getElapsedTimeInMicroSec()
                 << " us" << logs::end;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        logger().info() << "onTimer executing finished " << nameListener_ << "... t=" << chrono.getElapsedTimeInMicroSec()
+                        << " us" << logs::end;
     }
 
     void onTimerEnd(utils::Chronometer chrono)
@@ -134,7 +140,7 @@ void test::ActionManagerTimerTest::testCount()
     this->assert(manager.countTimers() == 0,
             "ActionManagerTimer::countTimers() ne renvoie pas 0 pour un nouvel ActionManagerTimer");
 
-    MockAction *action = new MockAction(1, 1);
+    MockAction *action = new MockAction(1, 10);
     manager.addAction(action);
     this->assert(manager.countActions() == 1, "ActionManagerTimer::countActions() ne renvoie pas 1 après un ajout");
 
@@ -145,7 +151,7 @@ void test::ActionManagerTimerTest::testCount()
     this->assert(manager.countTimers() == 1, "ActionManagerTimer::countTimers() ne renvoie pas 1 après un ajout");
 
     manager.debugTimers();
-
+    std::this_thread::sleep_for(std::chrono::seconds(2));
     manager.clearActions();
     this->assert(manager.countActions() == 0,
             "ActionManagerTimer::countActions() ne renvoie pas 0 après clearActions()");
@@ -174,7 +180,7 @@ void test::ActionManagerTimerTest::testExecute()
 
     manager.start("actionsAndTimers", 50);
     logger().debug() << "manager.start(actionsAndTimers)... wait 1sec" << logs::end;
-    sleep(1);
+    std::this_thread::sleep_for(std::chrono::seconds(3));
     logger().debug() << "sleep(1) done" << logs::end;
     manager.stopTimer("timer1");
     manager.addAction(action2);
@@ -182,16 +188,16 @@ void test::ActionManagerTimerTest::testExecute()
 
     manager.debugTimers();
     logger().debug() << "wait 120ms" << logs::end;
-    usleep(120000);/*
-     //manager.pause(true);
-     usleep(500000);
-     //manager.pause(false);
-     //manager.addAction(action1);
+    std::this_thread::sleep_for(std::chrono::milliseconds(120));
+     manager.pause(true);
+     std::this_thread::sleep_for(std::chrono::seconds(4));
+     manager.pause(false);
+     manager.addAction(action1);
      manager.addTimer(timer1);
-     usleep(1000000);
+     std::this_thread::sleep_for(std::chrono::seconds(2));
      manager.stopTimer("timer2");
-     //manager.debugTimers();
-     */
+     manager.debugTimers();
+
     manager.stop(); //remplacer par pause et reprendre
     logger().info() << "ActionManagerTimerTest::testExecute()... OK" << logs::end;
 }

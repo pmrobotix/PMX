@@ -2,7 +2,7 @@
 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
 #EV3 CHO
-IPUSB="10.42.0.71" #USB LINUX
+IPUSB="10.42.0.199" #USB LINUX
 #IPUSB="169.254.230.22" #USB LINUX
 #IPWIFI="192.168.2.102" #WIFI anciennce clef wifi
 #IPHOME="192.168.0.219" #WIFI HOME CHO INDEED2G anciennce clef wifi
@@ -10,8 +10,8 @@ IPWIFI="192.168.2.104"
 IPHOME="192.168.0.123" #WIFI HOME CHO INDEED2G
 #IPHOME="192.168.0.220" #WIFI HOME CHO INDEED
 #IP5GHZ="192.168.3.102" #WIFI1 PMX5G 
-IP5GHZ="192.168.4.102" #WIFI2 PMX5G 
-
+#IP5GHZ="192.168.4.102" #WIFI2 PMX5G 
+IP5GHZ="192.168.4.101" #WIFI2 PMX2G 
 
 
 
@@ -33,7 +33,10 @@ driver()
 	scp "../Driver-UnitTest_EV3/Debug/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
 }
 
-
+driver-arm-8.3()
+{
+	scp "../Driver-UnitTest_EV3/Debug-gcc-arm-linux-gnueabihf-8.3/Driver-UnitTest_EV3" robot@$IP:/home/robot/pmx
+}
 arm-2014.05-29()
 {
 	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
@@ -109,6 +112,8 @@ case "$2" in
 		driver-arm-2014.05-29;;
 	common-arm-2014.05-29)
 		common-arm-2014.05-29;;
+	driver-arm-8.3)
+		driver-arm-8.3;;
 	svg)
 		recupsvg;;
 	csv)
@@ -117,7 +122,7 @@ case "$2" in
 		tests;;
 
 	*)
-		echo "Usage: $0 {5g|usb|wifi|home} {connect|all|arm|driver|common|arm-2014.05-29|csv|svg|tests}" >&2
+		echo "Usage: $0 {5g|usb|wifi|home} {connect|all|arm|driver|common|arm-2014.05-29|driver-arm-8.3|csv|svg|tests}" >&2
 		exit 1
 	;;
 esac

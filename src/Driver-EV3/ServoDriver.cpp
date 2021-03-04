@@ -33,19 +33,20 @@ ServoDriver::ServoDriver() :
     *servo_rate_= {0};
     pwm_.begin();
 
-//    setMinPulse(0,500);
-//    setMaxPulse(0,2600);
-//    while (1) {
-//
-//        setRate(0, 0);
-//        setPositionWithRate(0, 500);
-//        usleep(800000);
-//
-//        setRate(0, 2000);
-//        setPositionWithRate(0, 2600);
-//
-//        usleep(800000);
-//    }
+    /*
+    setMinPulse(0,500);
+    setMaxPulse(0,2600);
+    while (1) {
+
+        setRate(0, 0);
+        setPositionWithRate(0, 500);
+        usleep(800000);
+
+        setRate(0, 2000);
+        setPositionWithRate(0, 2600);
+
+        usleep(800000);
+    }*/
 
 }
 
@@ -82,12 +83,12 @@ void ServoDriver::setPositionWithRate(int servo, int pos_microsec) {
             long tf = t;
             while (t <= timing_of_move_ms) {
                 t = chrono.getElapsedTimeInMilliSec();
-                if ((t - tf) > 20) {
+                if ((t - tf) > 10) {
                     //calcul de la position pour t
                     int cur_pos = t * 1000.0 / rate_ms_per_1000;
-                    std::cout << " t= "<< t
-                            << " tf= "<< tf
-                            << " cur_pos=" << cur_pos
+                    std::cout << " t= "<< std::dec << t
+                            << " tf= "<< std::dec << tf
+                            << " cur_pos=" << std::dec << cur_pos
                             << std::endl;
                     setPosition(servo, current_pos_+ cur_pos);
                     tf = t;

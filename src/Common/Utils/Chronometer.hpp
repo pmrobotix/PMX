@@ -121,7 +121,7 @@ public:
     //int checkTimer(unsigned int usec);
 
     int waitTimer(bool debug = false);
-    int waitTimer_OLD();
+    //int waitTimer_OLD();
 
     /*!
      * \brief Un alias pour la méthode getElapsedTimeInSec().

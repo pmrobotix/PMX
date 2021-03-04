@@ -25,10 +25,11 @@ MagEncoders::MagEncoders(bool is1EncoderRight, bool invertEncoderRight, bool inv
 MagEncoders::~MagEncoders() {
 }
 
-void MagEncoders::pingtest() {
+int MagEncoders::pingtest() {
 
-    m_mysensor1.ping();
+    return m_mysensor1.ping();
 }
+
 void MagEncoders::init() {
 
     m_mysensor1.begin();
@@ -96,15 +97,15 @@ int32_t MagEncoders::getAccumulatedDirectValueEncoder1() {
     err = m_mysensor1.getAllData(&agc, &diag, &mag, &raw);
     if (err < 0) {
         std::cout << "MagEncoders::ERROR encoder1 err=" << err << std::endl;
-        return getFiltered(encoder1Sum_, 3);
+        return encoder1Sum_;
     }
     if (((diag & 0x02) >> 1) == 1) {
         std::cout << "MagEncoders::ERROR encoder1 diag invalid data" << std::endl;
-        return getFiltered(encoder1Sum_, 3);
+        return encoder1Sum_;
     }
     if (agc <= 30 && agc >= 70) {
         std::cout << "MagEncoders::ERROR encoder1 out of range agc=" << agc << std::endl;
-        return getFiltered(encoder1Sum_, 3);
+        return encoder1Sum_;
     }
 
 //    std::cout << "MagEncoders::encoder1_ "
@@ -131,7 +132,7 @@ int32_t MagEncoders::getAccumulatedDirectValueEncoder1() {
     encoder1Previous_ = val;
 
     //filtrage de stabilité
-    return getFiltered(encoder1Sum_, 3);
+    return encoder1Sum_;
 }
 
 int32_t MagEncoders::getAccumulatedDirectValueEncoder2() {
@@ -145,15 +146,15 @@ int32_t MagEncoders::getAccumulatedDirectValueEncoder2() {
     err = m_mysensor2.getAllData(&agc, &diag, &mag, &raw);
     if (err < 0) {
         std::cout << "MagEncoders::ERROR encoder2 err=" << err << std::endl;
-        return getFiltered(encoder2Sum_, 3);
+        return encoder2Sum_;
     }
     if (((diag & 0x02) >> 1) == 1) {
         std::cout << "MagEncoders::ERROR encoder2 diag invalid data" << std::endl;
-        return getFiltered(encoder2Sum_, 3);
+        return encoder2Sum_;
     }
     if (agc <= 30 && agc >= 70) {
         std::cout << "MagEncoders::ERROR encoder2 out of range agc=" << agc << std::endl;
-        return getFiltered(encoder2Sum_, 3);
+        return encoder2Sum_;
     }
 //    std::cout << "MagEncoders::encoder2_ "
 //            << " agc="
@@ -178,8 +179,8 @@ int32_t MagEncoders::getAccumulatedDirectValueEncoder2() {
     encoder2Sum_ += (int32_t) (delta);
     encoder2Previous_ = val;
 
-    //filtrage de stabilité
-    return getFiltered(encoder2Sum_, 3);
+
+    return encoder2Sum_;
 }
 
 int32_t MagEncoders::getFiltered(int32_t value, int8_t shift) {

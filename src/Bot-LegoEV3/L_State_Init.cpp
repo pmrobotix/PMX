@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
-#include "../Common/Asserv/ExtEncoderControl.hpp"
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Tirette.hpp"

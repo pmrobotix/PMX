@@ -34,22 +34,25 @@ AsservDriver::AsservDriver() :
 
     mag_.init();
 
-//    while (1) {
-//        usleep(1000000);
-//        uint8_t d1 = mag_.getDiag1();
-//        printf("\nd=%d \n", d1);
-//
-//        uint8_t g1 = mag_.getAutoGain1();
-//        printf("\ng=%d \n", g1);
-//
-//        uint16_t l1 = mag_.getAngle1();
-//        printf("\nl=%d \n", l1);
-//
-//        uint16_t m1 = mag_.getMag1();
-//        printf("\nm=%d \n", m1);
-//    }
 
 /*
+    mag_.pingtest();
+    while (1) {
+        usleep(1000);
+        uint8_t d1 = mag_.getDiag1();
+        printf("\nd=%d ", d1);
+
+        uint8_t g1 = mag_.getAutoGain1();
+        printf("\ng=%d ", g1);
+
+        uint16_t l1 = mag_.getAngle1();
+        printf("\nl=%d ", l1);
+
+        uint16_t m1 = mag_.getMag1();
+        printf("\nm=%d \n", m1);
+    }
+
+
      while (1) {
      //auto start = std::chrono::system_clock::now();
      //long test = getLeftExternalEncoder();
@@ -71,7 +74,7 @@ AsservDriver::AsservDriver() :
 
      logger().debug()  << "L= " << ll<< "\tR= " << rr << "\tl= " << left << "\tr= " << right
      << "  duration= " << (duration_cast<microseconds>(end - start).count()) << logs::end;
-     std::this_thread::sleep_for(std::chrono::microseconds(3000));
+     std::this_thread::sleep_for(std::chrono::microseconds(1000));
 
      //        auto start = std::chrono::system_clock::now();
      //        long l1 = (long) mag_.getAccumulatedDirectValueEncoder1();
@@ -84,7 +87,6 @@ AsservDriver::AsservDriver() :
 
      exit(0);
 */
-
 
     if (_motor_right_.connected()) {
 
@@ -216,61 +218,31 @@ void AsservDriver::setMotorRightPower(int value, int timems) {
     }
 }
 
-void AsservDriver::getCountsExternal(int32_t* countG, int32_t* countD) {
+void AsservDriver::getCountsExternal(int32_t* countR, int32_t* countL) {
 
-    //        //chprintf(outputStream,"MagEncoders::getValues() done; %d %d\r\n", m_encoder1Previous, m_encoder2Previous);
-    //            //utilisation du depassement d'un int16
-    //            //[0;16383] -8192 * 4 = [-32768;32764]
-    //            float encoder1 = (m_mysensor1.angleR(U_RAW, true) - 8192.0) * 4.0;
-    //            float encoder2 = (m_mysensor2.angleR(U_RAW, true) - 8192.0) * 4.0;
-    //
-    //            if (m_is1EncoderRight) {
-    //                *deltaEncoderRight = encoder1 - m_encoder1Previous;
-    //                *deltaEncoderLeft = encoder2 - m_encoder2Previous;
-    //            } else {
-    //                *deltaEncoderRight = encoder2 - m_encoder2Previous;
-    //                *deltaEncoderLeft = encoder1 - m_encoder1Previous;
-    //            }
-    //
-    //            if (m_invertEncoderR)
-    //                *deltaEncoderRight = -*deltaEncoderRight;
-    //            if (m_invertEncoderL)
-    //                *deltaEncoderLeft = -*deltaEncoderLeft;
-    //
-    //            *deltaEncoderRight = (int16_t)(*deltaEncoderRight / 4.0);
-    //            *deltaEncoderLeft = (int16_t)(*deltaEncoderLeft / 4.0);
-    //
-    //            m_encoderRSum += (int32_t)(*deltaEncoderRight);
-    //            m_encoderLSum += (int32_t)(*deltaEncoderLeft);
-    //
-    //            m_encoder1Previous = encoder1;
-    //            m_encoder2Previous = encoder2;
-
+    float R= 0.0;
+    float L = 0.0;
+    mag_.getValues(&R, &L);
+    *countR = (int)R;
+    *countL = (int)L;
 }
 
 long AsservDriver::getLeftExternalEncoder() {
 
-    mag_.pingtest();
+    return (-1 * mag_.getAccumulatedDirectValueEncoder1());
 
-//    if (encoderL_.connected()) {
-//
-//        long ticks = -1 * encoderL_.getAccumulatedValue();
-//
-//        return ticks;
-//    }
-//    else return -999999;
 }
 
 long AsservDriver::getRightExternalEncoder() {
-//    if (encoderR_.connected()) {
-//        long ticks = encoderR_.getAccumulatedValue();
-//
-//        return ticks;
-//    }
-//    else return -999999;
+
+    return (mag_.getAccumulatedDirectValueEncoder2());
+
 }
 
-void AsservDriver::getCountsInternal(int32_t* countG, int32_t* countD) {
+void AsservDriver::getCountsInternal(int32_t* countR, int32_t* countL) {
+
+    *countR = getRightExternalEncoder();
+    *countL = getLeftExternalEncoder();
 
 }
 
@@ -324,13 +296,7 @@ void AsservDriver::resetInternalEncoders() {
 }
 
 void AsservDriver::resetExternalEncoders() {
-//    if (encoderL_.connected()) {
-//        encoderL_.reset();
-//    }
-//
-//    if (encoderL_.connected()) {
-//        encoderL_.reset();
-//    }
+    mag_.reset();
 }
 
 int AsservDriver::getMotorLeftCurrent() {

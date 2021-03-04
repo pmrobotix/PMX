@@ -5,26 +5,34 @@
 
 using namespace std;
 
-EncoderControl::EncoderControl(std::string botid)//Asserv & asserv) :	AAsservElement(asserv)
+EncoderControl::EncoderControl(std::string botid, bool isExternalEncoders)
 {
-	asservdriver = AAsservDriver::create(botid);
+    isExternalEncoders_ = isExternalEncoders;
+    asservdriver = AAsservDriver::create(botid);
 }
 
-EncoderControl::~EncoderControl()
-{
+EncoderControl::~EncoderControl() {
 }
 
-long EncoderControl::getLeftEncoder()
-{
-	return asservdriver->getLeftInternalEncoder();
+long EncoderControl::getLeftEncoder() {
+    if (isExternalEncoders_) return asservdriver->getLeftExternalEncoder();
+    else return asservdriver->getLeftInternalEncoder();
 }
 
-long EncoderControl::getRightEncoder()
-{
-	return asservdriver->getRightInternalEncoder();
+long EncoderControl::getRightEncoder() {
+    if (isExternalEncoders_) return asservdriver->getRightExternalEncoder();
+    else return asservdriver->getRightInternalEncoder();
 }
 
-void EncoderControl::reset()
+void EncoderControl::reset() {
+    if (isExternalEncoders_) return asservdriver->resetExternalEncoders();
+    else return asservdriver->resetInternalEncoders();
+}
+
+void EncoderControl::getCounts(int * countR, int * countL)
 {
-	return asservdriver->resetEncoders();
+    if (isExternalEncoders_)
+        asservdriver->getCountsExternal(countR, countL);
+    else
+        asservdriver->getCountsInternal(countR, countL);
 }

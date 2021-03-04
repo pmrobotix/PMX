@@ -12,7 +12,7 @@ public:
     MagEncoders(bool is1EncoderRight, bool invertEncoderRight = false, bool invertEncoderLeft = false);
     ~MagEncoders();
 
-    void pingtest();
+    int pingtest();
     void init();
     void reset();
 

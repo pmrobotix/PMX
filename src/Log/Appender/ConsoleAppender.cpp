@@ -3,9 +3,9 @@
  * \brief Implémentation de la classe ConsoleAppender.
  */
 
-#include "../Appender/ConsoleAppender.hpp"
+#include "ConsoleAppender.hpp"
 
-#include <unistd.h>
+#include <iostream>
 #include <list>
 
 void logs::ConsoleAppender::flush()

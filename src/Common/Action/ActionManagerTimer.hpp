@@ -137,7 +137,7 @@ public:
      * \param name
      *        Le label du timer.
      */
-    inline void stopTimer(std::string timerNameToDelete) //TODO Move in the loop
+    inline void stopTimer(std::string timerNameToDelete)
     {
         bool found = false;
         utils::PointerList<ITimerListener *>::iterator save;

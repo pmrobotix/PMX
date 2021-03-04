@@ -80,13 +80,9 @@ protected:
      */
     void sched_yield();
 
-//TODO sleep_for()
-//    void sleep_for()
-//        {
-//        std::this_thread::sleep_for(std::chrono::seconds(1));
-//        }
-
-
+    void sleep_for_micros(int64_t usec);
+    void sleep_for_millis(int64_t msec);
+    void sleep_for_secs(int64_t sec);
 
     /*!
      * \brief L'implementation de cette méthode détaille le traitement

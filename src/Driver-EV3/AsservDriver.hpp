@@ -28,12 +28,8 @@ private:
     LegoMotor _motor_right_;
     LegoMotor _motor_left_;
 
-//    AMS_AS5048B encoderL_;
-//    AMS_AS5048B encoderR_;
     MagEncoders mag_;
 
-    //bool m_invertEncoderL;
-    //bool m_invertEncoderR;
     int32_t m_encoderLSum;
     int32_t m_encoderRSum;
     float m_encoder1Previous;
@@ -68,11 +64,11 @@ public:
 
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countG, int32_t* countD);
+    void getCountsExternal(int32_t* countR, int32_t* countL);
 
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
-    void getCountsInternal(int32_t* countG, int32_t* countD);
+    void getCountsInternal(int32_t* countR, int32_t* countL);
 
     void resetEncoders();
     void resetInternalEncoders();

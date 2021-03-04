@@ -5,7 +5,6 @@
 #include <string>
 
 #include "../Common/Arguments.hpp"
-#include "../Common/Asserv/ExtEncoderControl.hpp"
 #include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
@@ -50,7 +49,7 @@ void O_AsservEsialTest::run(int argc, char** argv)
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
     OPOS6UL_AsservExtended asserv = robot.asserv();
-    ExtEncoderControl extEncoders = asserv.base()->extEncoders();
+    EncoderControl extEncoders = asserv.base()->extEncoders();
     chrono.start();
 
     if (step == 1) {

@@ -125,7 +125,8 @@ void logs::LoggerFactory::execute()
             //usleep(1000);
             this->yield();
         }
-        usleep(1000);//usleep necesaire pour laisser le temps au reste
+
+        utils::Thread::sleep_for_millis(5); //usleep(1000);//usleep necesaire pour laisser le temps au reste
         this->yield();
     }
     //std::cout << "stop !" << std::endl;

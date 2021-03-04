@@ -43,14 +43,30 @@ void utils::Thread::sched_yield()
 {
     sched_yield();
 }
-//void utils::Thread::sleep_for()
-//{
-//    sleep_for();
-//}
+
+void utils::Thread::sleep_for_micros(int64_t usec)
+{
+    std::this_thread::sleep_for(std::chrono::microseconds(usec));
+}
+
+void utils::Thread::sleep_for_millis(int64_t msec)
+{
+    std::this_thread::sleep_for(std::chrono::milliseconds(msec));
+}
+
+void utils::Thread::sleep_for_secs(int64_t sec)
+{
+    std::this_thread::sleep_for(std::chrono::seconds(sec));
+}
 
 
 /*!
  * \brief Start thread
+ *
+ * name of the thread
+ *
+ * priority :0 is low priority ; 99 is high priority ;  default 0
+ *
  * return Returns false if the thread was successfully started, true if there was an error starting the thread
  */
 bool utils::Thread::start(std::string name, int priority)

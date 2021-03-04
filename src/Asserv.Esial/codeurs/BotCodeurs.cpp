@@ -4,7 +4,6 @@
 #if CONFIG_MOTORCTRL_BOTMOTORS
 
 #include "../../Common/Asserv/Asserv.hpp"
-#include "../../Common/Asserv/ExtEncoderControl.hpp"
 #include "../../Common/Asserv/MovingBase.hpp"
 #include "../../Common/Robot.hpp"
 #include "../config/config.h"
@@ -23,7 +22,7 @@ BotCodeurs::~BotCodeurs()
 
 void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
 {
-    // TODO !!! A OPTIMISER avec un seul appel ?
+    // TODO !!! A OPTIMISER
 
     /*
      * On récupère le compte des codeurs depuis le dernier refresh.
@@ -34,17 +33,21 @@ void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
      * refresh, càd si le robot dépasse le mur du son...
      */
 
+    //TODO recuperer plus rapidement
+
 //    utils::Chronometer chrono;
 //    chrono.start();
-
 //    long long t0 = chrono.getElapsedTimeInMicroSec();
-    int32_t tempD = robot_->asserv()->base()->extEncoders().getRightEncoder();
-
+//    int32_t tempD = robot_->asserv()->base()->extEncoders().getRightEncoder();
 //    long long t1 = chrono.getElapsedTimeInMicroSec();
-
-    int32_t tempG = robot_->asserv()->base()->extEncoders().getLeftEncoder();
-
+//    int32_t tempG = robot_->asserv()->base()->extEncoders().getLeftEncoder();
 //    long long t2 = chrono.getElapsedTimeInMicroSec();
+
+    int32_t tempD = 0;
+    int32_t tempG = 0;
+    robot_->asserv()->base()->extEncoders().getCounts(&tempD, &tempG);
+
+
 
     *countD = tempD - lastCountD;
     lastCountD = tempD;

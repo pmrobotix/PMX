@@ -47,7 +47,7 @@ public:
     }
     bool connected();
 
-    void ping();
+    int ping();
 
     void begin(void); // to init the object, must be called in the setup loop
     void reset(void);

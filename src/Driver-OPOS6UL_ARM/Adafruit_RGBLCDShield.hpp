@@ -22,7 +22,6 @@
 #include <stdint.h>
 
 #include "../Log/LoggerFactory.hpp"
-#include "../Thread/Mutex.hpp"
 #include "Adafruit_MCP23017.hpp"
 
 //COLOR LCD

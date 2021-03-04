@@ -27,7 +27,6 @@
 
 #include "../Common/Asserv/Asserv.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
-#include "../Common/Asserv/ExtEncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"

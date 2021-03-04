@@ -1,8 +1,10 @@
 #include "OPOS6UL_RobotExtended.hpp"
 
-#include <bits/basic_string.h>
 #include <string>
 
+#include "../Common/Action/LcdShield.hpp"
+#include "../Common/Action/LedBar.hpp"
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "../Thread/Thread.hpp"

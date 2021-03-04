@@ -4,17 +4,17 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#include "../Common/Action/ButtonBar.hpp"
+#include "../Common/Action/LcdShield.hpp"
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/Tirette.hpp"
-#include "../Common/Asserv/MotorControl.hpp"
-#include "../Common/Asserv/MovingBase.hpp"
+#include "../Common/Action.Driver/AButtonDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "../Thread/Thread.hpp"
 #include "L_State_DecisionMakerIA.hpp"
 #include "LegoEV3ActionsExtended.hpp"
-#include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
 IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
@@ -41,7 +41,10 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             break;
         }
 
-        usleep(100000);
+        //usleep(100000);
+        //utils::Thread::sleep_for_millis(100);
+        std::this_thread::sleep_for(std::chrono::microseconds(100000));
+
         if (c % 2 == 0)
         {
             robot.displayPoints();
@@ -83,7 +86,8 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             if (b == BUTTON_ENTER_KEY) {
                 break;
             }
-            usleep(1000);
+            std::this_thread::sleep_for(std::chrono::microseconds(1000));
+            //usleep(1000);
         }
     }
 

@@ -5,50 +5,54 @@
 
 #include "../../Log/LoggerFactory.hpp"
 
-
 class AAsservDriver;
 
-class EncoderControl
-{
+class EncoderControl {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref EncoderControl.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("EncoderControl");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref EncoderControl.
+     */
+    static inline const logs::Logger & logger() {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("EncoderControl");
+        return instance;
+    }
 
-	AAsservDriver* asservdriver;
+    AAsservDriver* asservdriver;
+
+    bool isExternalEncoders_;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	EncoderControl(std::string botid); //Asserv & asserv
+    /*!
+     * \brief Constructor.
+     */
+    EncoderControl(std::string botid, bool isExternalEncoders);
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~EncoderControl();
+    /*!
+     * \brief Destructor.
+     */
+    ~EncoderControl();
 
-	/*!
-	 * \brief getEncoderLeft.
-	 */
-	long getLeftEncoder();
+    /*!
+     * \brief getEncoderLeft.
+     */
+    long getLeftEncoder();
 
-	/*!
-	 * \brief getEncoderRight.
-	 */
-	long getRightEncoder();
+    /*!
+     * \brief getEncoderRight.
+     */
+    long getRightEncoder();
 
-	/*!
-	 * \brief reset encoders.
-	 */
-	void reset();
+    /*!
+     * \brief Recupere les 2 encoders de facon optimisée.
+     */
+    void getCounts(int * countR, int * countL);
+
+    /*!
+     * \brief reset encoders.
+     */
+    void reset();
 
 };
 

@@ -5,7 +5,6 @@
 #include <string>
 
 #include "../Common/Arguments.hpp"
-#include "../Common/Asserv/ExtEncoderControl.hpp"
 #include "../Common/Asserv/MotorControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"

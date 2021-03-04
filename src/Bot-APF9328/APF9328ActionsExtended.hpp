@@ -113,7 +113,7 @@ public:
 		servoObjects_.rightRelease();
 		servoObjects_.centreRelease();
 */
-		Actions::stop(); //stop devices and wait manager to finish
+		//Actions::stop(); //stop devices and wait manager to finish
 	}
 
 };

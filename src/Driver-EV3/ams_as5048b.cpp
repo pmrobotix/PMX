@@ -76,8 +76,8 @@ bool AMS_AS5048B::connected() {
  none
  */
 /**************************************************************************/
-void AMS_AS5048B::ping(){
-    i2c_.ping();
+int AMS_AS5048B::ping(){
+    return i2c_.ping();
 }
 
 void AMS_AS5048B::begin(void) {

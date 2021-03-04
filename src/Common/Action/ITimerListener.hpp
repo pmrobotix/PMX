@@ -10,58 +10,53 @@
 
 namespace utils {
 class Chronometer;
-} /* namespace utils */
+}
 
 /*!
  * \brief Cette interface représente une action executée par un timer lorsqu'il
  * atteint son seuil d'execution.
  */
-class ITimerListener
-{
+class ITimerListener {
 public:
 
     /*!
-     * \brief Getter sur les infos permettant d'identifier le timer.
+     * \brief Actions à executer pour le timer.
      */
     virtual void onTimer(utils::Chronometer chrono) = 0;
 
     /*!
-     * \brief Getter sur les infos permettant d'identifier le timer.
+     * \brief Actions de fin à executer pour le timer.
      */
     virtual void onTimerEnd(utils::Chronometer chrono) = 0;
 
     /*!
      * \brief Getter sur les infos permettant d'identifier le timer.
      */
-    virtual std::string name()
-    {
+    virtual std::string name() {
         return nameListener_;
     }
 
-    inline int timeSpan()
-    {
+    inline int timeSpan() {
         return timeSpan_ms_;
     }
 
     //last execution time
-    inline int getLastTime()
-    {
+    inline int getLastTime() {
         return lasttime_;
     }
 
-    inline void setLastTime(long l)
-    {
+    inline void setLastTime(long l) {
         lasttime_ = l;
     }
 
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual inline ~ ITimerListener()
-    {
+    virtual inline ~ ITimerListener() {
     }
 
 protected:
+    bool hasToStop_;
 
     long timeSpan_ms_; //for Timer tasks
 
@@ -72,8 +67,7 @@ protected:
     /*!
      * \brief Constructeur de la classe.
      */
-    ITimerListener()
-    {
+    ITimerListener() {
         timeSpan_ms_ = 0;
         lasttime_ = 0;
         nameListener_ = "iTimerListener_default";

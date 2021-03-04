@@ -7,7 +7,6 @@
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
-#include "../Common/Asserv/ExtEncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
