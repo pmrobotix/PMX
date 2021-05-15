@@ -1,3 +1,4 @@
+#include "../Bot-OPOS6UL/O_TiretteTest.hpp"
 #include "../Bot-OPOS6UL/O_Asserv_CalageTest.hpp"
 #include "../Bot-OPOS6UL/O_Asserv_SquareTest.hpp"
 #include "../Bot-OPOS6UL/O_AsservEsialTest.hpp"
@@ -14,6 +15,7 @@
 #include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
 #include "../Common/ConsoleManager.hpp"
 #include "../Common/Robot.hpp"
+#include "../Thread/Thread.hpp"
 
 using namespace std;
 
@@ -26,6 +28,7 @@ int main(int argc, char** argv)
 
     //add specific tests for this robot
     robot.getConsoleManager().add(new O_LedBarTest());
+    robot.getConsoleManager().add(new O_TiretteTest());
     robot.getConsoleManager().add(new O_ButtonBarTest());
     robot.getConsoleManager().add(new O_LcdBoardTest());
     robot.getConsoleManager().add(new O_GroveColorTest());

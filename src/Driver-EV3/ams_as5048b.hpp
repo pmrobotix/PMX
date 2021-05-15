@@ -94,7 +94,7 @@ private:
     uint8_t readReg8(uint8_t address);
     uint16_t readReg16(uint8_t address); //16 bit value got from 2x8bits registers (7..0 MSB + 5..0 LSB) => 14 bits value
     int readRegs(uint8_t address, uint8_t len, uint8_t* data);
-    void writeReg(uint8_t address, uint8_t value);
+    int writeReg(uint8_t address, uint8_t value);
     float convertAngle(int unit, float angle); //RAW, TRN, DEG, RAD, GRAD, MOA, SOA, MILNATO, MILSE, MILRU
     float getExpAvgRawAngle(void);
     void printDebug(void);

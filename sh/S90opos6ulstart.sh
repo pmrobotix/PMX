@@ -47,7 +47,9 @@ wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
 #configuration du dhcp
 #dhclient wlan0
 #ifconfig wlan0 192.168.3.104 netmask 255.255.255.0 up
-ifconfig wlan0 192.168.3.103 netmask 255.255.255.0 up
+
+#IP for PMX_AP_5G (box 6137)
+ifconfig wlan0 192.168.4.103 netmask 255.255.255.0 up
 
 
 echo ifconfig

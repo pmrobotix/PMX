@@ -1,6 +1,6 @@
 /*!
  * \file
- * \brief Implémentation de la classe LedBarTest.
+ * \brief Implémentation de la classe O_ButtonBarTest.
  */
 
 #include "O_ButtonBarTest.hpp"

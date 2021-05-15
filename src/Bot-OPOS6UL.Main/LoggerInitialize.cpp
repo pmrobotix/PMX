@@ -50,6 +50,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_State_WaitEndOfMatch", "net");
 
     //TESTS
+
+    add(logs::Level::INFO, "O_TiretteTest", "net");
     add(logs::Level::INFO, "O_Asserv_CalageTest", "net");
     add(logs::Level::INFO, "O_Asserv_SquareTest", "net");
     add(logs::Level::INFO, "O_LedBarTest", "net");

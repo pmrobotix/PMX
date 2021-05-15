@@ -45,6 +45,7 @@ public:
 //    int i2cRead(uint8_t *data, uint8_t length);
     int readReg(uint8_t byte_reg, uint8_t *data, uint8_t length_data);
 
+    //return 0; <0 if errors
     int ping();
 
     //Function: i2cWrite - First parameter is a pointer to a char array.containing the data to send.

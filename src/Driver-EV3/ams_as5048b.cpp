@@ -68,7 +68,7 @@ bool AMS_AS5048B::connected() {
 
 /**************************************************************************/
 /*!
- @brief  init i2c and reset
+ @brief  ping
 
  @params
  none
@@ -478,9 +478,9 @@ int AMS_AS5048B::readRegs(uint8_t reg_address, uint8_t len, uint8_t* data) {
     return err;
 }
 
-void AMS_AS5048B::writeReg(uint8_t reg_address, uint8_t value) {
+int AMS_AS5048B::writeReg(uint8_t reg_address, uint8_t value) {
 
-    if (!connected_) return;
+    if (!connected_) return -1;
     uint8_t values[] = { value };
 
     int err = i2c_.writeReg(reg_address, values, sizeof(values));
@@ -488,7 +488,7 @@ void AMS_AS5048B::writeReg(uint8_t reg_address, uint8_t value) {
         printf("\nError AMS_AS5048B i2c writeReg writeReg\n");
         //exit(0);
     }
-    return;
+    return err;
 }
 
 float AMS_AS5048B::convertAngle(int unit, float angle) {

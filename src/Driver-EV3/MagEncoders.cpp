@@ -27,12 +27,12 @@ MagEncoders::~MagEncoders() {
 
 int MagEncoders::pingtest() {
 
-    return m_mysensor1.ping();
+    return m_mysensor1.ping(); //TODO à gérer
 }
 
 void MagEncoders::init() {
 
-    m_mysensor1.begin();
+    m_mysensor1.begin(); //TODO inclure le PING
 
     m_mysensor2.begin();
 
@@ -229,9 +229,9 @@ void MagEncoders::getEncodersTotalCount(int32_t *encoderRight, int32_t *encoderL
     *encoderLeft = getFiltered(m_encoderLSum, 3);
 }
 
-void MagEncoders::getValuesStatus(uint16_t *rawR, uint16_t *rawL, uint8_t *agcR, uint8_t *agcL, uint8_t *diagR, uint8_t *diagL, uint16_t *magR,
-        uint16_t *magL)
+void MagEncoders::getValuesStatus(uint16_t *raw1, uint16_t *raw2, uint8_t *agc1, uint8_t *agc2, uint8_t *diag1, uint8_t *diag2, uint16_t *mag1,
+        uint16_t *mag2)
 {
-    m_mysensor1.getAllData(agcR, diagR, magR, rawR);
-    m_mysensor2.getAllData(agcL, diagL, magL, rawL);
+    m_mysensor1.getAllData(agc1, diag1, mag1, raw1);
+    m_mysensor2.getAllData(agc2, diag2, mag2, raw2);
 }
