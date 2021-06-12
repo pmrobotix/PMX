@@ -17,12 +17,11 @@
 
 #include "Adafruit_PWMServoDriver.h"
 
-#include <unistd.h>
-#include <algorithm>
 #include <cmath>
 #include <cstdint>
-#include <initializer_list>
-#include <algorithm>    // std::min
+
+#include "../Thread/Thread.hpp"
+
 /*#include <Wire.h>
  #if defined(ARDUINO_SAM_DUE)
  #define WIRE Wire1
@@ -73,7 +72,7 @@ void Adafruit_PWMServoDriver::setPWMFreq(float freq)
 	write8(PCA9685_MODE1, newmode); // go to sleep
 	write8(PCA9685_PRESCALE, prescale); // set the prescaler
 	write8(PCA9685_MODE1, oldmode);
-	usleep(5000);//delay(5);
+	utils::sleep_for_micros(5000);//delay(5);
 	write8(PCA9685_MODE1, oldmode | 0xa1); //  This sets the MODE1 register to turn on auto increment.
 										   // This is why the beginTransmission below was not working.
 	//  Serial.print("Mode now 0x"); Serial.println(read8(PCA9685_MODE1), HEX);

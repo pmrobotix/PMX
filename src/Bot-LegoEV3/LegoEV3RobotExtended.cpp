@@ -69,12 +69,11 @@ void LegoEV3RobotExtended::begin(int argc, char** argv) {
         //attente du thread decisionMaker
         decisionMaker_->waitForEnd();
     }
-
-    logger().info() << "PMX LegoEV3Robot - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec" << logs::end;
+    logger().info() << "PMX " << this->getID() << " Happy End - " << this->chrono().getElapsedTimeInSec() << " sec" << logs::end;
 }
 
 void LegoEV3RobotExtended::resetDisplayTS() {
-    actions().ledBar().setOff(1);
+    actions().ledBar().setOff(1); //TODO all ?
 
 }
 

@@ -10,11 +10,15 @@
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
 
+
+void logs::LoggerFactory::setPriority()
+{
+    //set minimum thread priority FIFO for Logs
+    utils::set_realtime_priority(1);
+}
+
 void logs::LoggerFactory::initialize()
 {
-    //set minimum thread priority FIFO
-    utils::set_realtime_priority(1);
-
     add("net", new ConsoleAppender());
     add("svg", new SvgAppender("svgEV3.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));

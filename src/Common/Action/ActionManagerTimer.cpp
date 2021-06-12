@@ -5,7 +5,6 @@
 
 #include "ActionManagerTimer.hpp"
 
-
 ActionManagerTimer::ActionManagerTimer() :
         stop_(false), pause_(false), chronoTimer_("ActionManagerTimer")
 {
@@ -21,12 +20,13 @@ void ActionManagerTimer::execute() {
 
     chronoTimer_.start();
     while (!stop_) {
+
         //on traite les timers
         mtimer_.lock();
         // On teste s'il y a un timer à executer
         sizeT = timers_.size();
+        logger().debug() << "TIMERS sizeT=" << sizeT << logs::end;
         if (sizeT > 0 && !stop_) {
-            //logger().debug() << "TIMERS sizeT=" << sizeT << logs::end;
             starttime = chronoTimer_.getElapsedTimeInMicroSec();
             utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
             while (i != timers_.end() && !stop_) {
@@ -74,7 +74,7 @@ void ActionManagerTimer::execute() {
         if (!stop_ && (sizeA == 0) && (sizeT == 0)) {
             //on laisse le temps de faire autre chose s'il n'y a rien à faire
             //std::this_thread::sleep_for(std::chrono::microseconds(2000));
-            utils::Thread::sleep_for_millis(2);
+            utils::Thread::sleep_for_millis(5);
         }
         else {
             this->yield();
@@ -84,8 +84,31 @@ void ActionManagerTimer::execute() {
             //std::this_thread::sleep_for(std::chrono::microseconds(10000));
         }
     }
+
     stop_ = false; //on reinitialise le stop.
     //logger().debug("ActionManagerTimer is stopped and finished");
+}
+
+void ActionManagerTimer::stopTimer(std::string timerNameToDelete) {
+    bool found = false;
+    utils::PointerList<ITimerListener *>::iterator save;
+    utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
+    mtimer_.lock();
+    while (i != timers_.end()) {
+        ITimerListener * timer = *i;
+
+        if (timer->name() == timerNameToDelete) {
+
+            save = i;
+            found = true;
+            timer->onTimerEnd(chronoTimer_);
+        }
+        i++;
+    }
+    if (found) timers_.erase(save);
+    else logger().debug() << "Timer [" << timerNameToDelete << "] not found or already deleted !!" << logs::end;
+
+    mtimer_.unlock();
 }
 
 void ActionManagerTimer::debugActions() {

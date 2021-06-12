@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <iterator>
 #include <utility>
+#include "../Thread/Thread.hpp"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -137,7 +138,7 @@ bool Arguments::addOption(Option &option)
 
 bool Arguments::usage()
 {
-    usleep(100000); //pour laisser les messages d'erreurs s'afficher auparavant.
+    utils::sleep_for_micros(100000); //pour laisser les messages d'erreurs s'afficher auparavant.
     cerr << "Usage: " << m_strCommandName;
 
     for (OptionMap::iterator it = m_mOptions.begin(); it != m_mOptions.end(); it++) {

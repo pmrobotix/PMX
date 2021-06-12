@@ -62,8 +62,8 @@ private:
 
     float rightCounter_; //real ticks
     float leftCounter_; //real ticks
-    float rightMeters_;
-    float leftMeters_;
+    float rightMm_;
+    float leftMm_;
 
     float currentRightCounter_;
     float currentLeftCounter_;
@@ -86,18 +86,23 @@ protected:
     virtual void execute();
     RobotPosition p_; //position SIMU du robot
 
+    float convertPowerToSpeed(int power);
+    float convertMmToTicks(float meters);
+
+
+
 public:
+
+    void computeCounterL();
+    void computeCounterR();
+
     float leftSpeed_; //real speed in m/s
     float rightSpeed_;
 
     float wantedRightSpeed_;
     float wantedLeftSpeed_;
 
-    float convertPowerToSpeed(int power);
-    float convertMetersToTicks(float meters);
-
-    void computeCounterL();
-    void computeCounterR();
+    void endWhatTodo();
 
     void setMotorLeftPosition(int power, long ticks);
     void setMotorRightPosition(int power, long ticks);
@@ -117,14 +122,9 @@ public:
     int getMotorLeftCurrent();
     int getMotorRightCurrent();
 
-    //void enableHardRegulation(bool enable);
 
     //fonctions asservissements externe par defaut
-    /*float odo_GetX_mm();
-     float odo_GetY_mm();
-     float odo_GetTheta_Rad();		// angle in radian
-     float odo_GetTheta_Degree();		// angle in degrees*/
-    void odo_SetPosition(float x_m, float y_m, float angle_rad);
+    void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
     RobotPosition odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
@@ -134,9 +134,14 @@ public:
     void path_ResetEmergencyStop();
 
     TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
-    TRAJ_STATE motion_DoLine(float dist_meters);
+    TRAJ_STATE motion_DoLine(float dist_mm);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
+    TRAJ_STATE motion_Goto(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoReverse(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoChain(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoReverseChain(float x_mm, float y_mm);
+
     void motion_FreeMotion();
     void motion_DisablePID();		//! disable PID
     void motion_AssistedHandling();		//! Assisted movement mode =)
@@ -148,7 +153,7 @@ public:
     void motion_ActivateReguAngle(bool enable);
     void motion_ResetReguDist();
     void motion_ResetReguAngle();
-    TRAJ_STATE motion_DoDirectLine(float dist_meters); //uniquement en consigne sans le command manager
+    TRAJ_STATE motion_DoDirectLine(float dist_mm); //uniquement en consigne sans le command manager
 
     /*!
      * \brief Constructor.

@@ -79,6 +79,9 @@ public:
      */
     ~AsservDriver();
 
+    void endWhatTodo();
+
+
     float convertPowerToSpeed(int power);
     float convertMetersToTicks(float meters);
 
@@ -130,6 +133,11 @@ public:
     TRAJ_STATE motion_DoLine(float dist_meters);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
+    TRAJ_STATE motion_Goto(float x_m, float y_m);
+    TRAJ_STATE motion_GotoReverse(float x_m, float y_m);
+    TRAJ_STATE motion_GotoChain(float x_m, float y_m);
+    TRAJ_STATE motion_GotoReverseChain(float x_m, float y_m);
+
     void motion_FreeMotion();
     void motion_DisablePID();		//! Stop motion control and disable PID
     void motion_AssistedHandling();		//! Assisted movement mode =)

@@ -29,11 +29,11 @@ int CCAx12Adc::begin()
         int present = pingAX(51);
         if (present == 0) {
             setLedOn(2);
-            //connected_ = true;
+            connected_ = true;
         } else {
             logger().error() << "CCAx12Adc::begin() AX 51 NOT present !! " << present << logs::end;
             setLedOff(2);
-            //connected_ = false;
+            connected_ = false;
         }
         /*
          //test read ax

@@ -4,56 +4,51 @@
 
 #include <string>
 
-
-
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create(std::string)
-{
+ASensorsDriver * ASensorsDriver::create(std::string) {
 
-	return new SensorsDriver();
+    return new SensorsDriver();
 }
 
-SensorsDriver::SensorsDriver()
-{
-
-}
-
-SensorsDriver::~SensorsDriver()
-{
-}
-
-int SensorsDriver::rightSide()
-{
-
-}
-int SensorsDriver::leftSide()
-{
+SensorsDriver::SensorsDriver() {
 
 }
 
-int SensorsDriver::frontLeft()
-{
-
-}
-int SensorsDriver::frontCenter()
-{
-
-}
-int SensorsDriver::frontRight()
-{
-
+SensorsDriver::~SensorsDriver() {
 }
 
-int SensorsDriver::backLeft()
-{
+ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
+    ASensorsDriver::bot_positions pos;
+    return pos;
+}
+int SensorsDriver::sync() {
+    return 0;
+}
+
+int SensorsDriver::rightSide() {
 
 }
-int SensorsDriver::backCenter()
-{
+int SensorsDriver::leftSide() {
 
 }
-int SensorsDriver::backRight()
-{
+
+int SensorsDriver::frontLeft() {
+
+}
+int SensorsDriver::frontCenter() {
+
+}
+int SensorsDriver::frontRight() {
+
+}
+
+int SensorsDriver::backLeft() {
+
+}
+int SensorsDriver::backCenter() {
+
+}
+int SensorsDriver::backRight() {
 
 }

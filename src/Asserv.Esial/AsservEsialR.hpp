@@ -91,6 +91,8 @@ public:
     void resetAsserv();
     TRAJ_STATE waitEndOfTraj();
 
+    void endWhatTodo();
+
     //commandes directes concernant les moteurs
     void setMotorLeftPosition(int power, long ticks);
     void setMotorRightPosition(int power, long ticks);
@@ -113,7 +115,7 @@ public:
     void resetExternalEncoders();
 
     //fonctions asservissements externe par defaut
-    void odo_SetPosition(float x_m, float y_m, float angle_rad);
+    void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
     RobotPosition odo_GetPosition();
 
     int path_GetLastCommandStatus();
@@ -122,10 +124,16 @@ public:
     void path_CollisionRearOnTrajectory();
     void path_CancelTrajectory();
     void path_ResetEmergencyStop();
-    TRAJ_STATE motion_DoLine(float dist_meters);
-    TRAJ_STATE motion_DoFace(float x_m, float y_m);
+    TRAJ_STATE motion_DoLine(float dist_mm);
+    TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
+
+    TRAJ_STATE motion_Goto(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoReverse(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoChain(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoReverseChain(float x_mm, float y_mm);
+
     void motion_FreeMotion(void);
     void motion_DisablePID();           //! just disable PID
     void motion_AssistedHandling(void);           //! Assisted movement mode =)
@@ -137,7 +145,7 @@ public:
     void motion_ActivateReguAngle(bool enable);
     void motion_ResetReguDist();
     void motion_ResetReguAngle();
-    TRAJ_STATE motion_DoDirectLine(float dist_meters);
+    TRAJ_STATE motion_DoDirectLine(float dist_mm);
 
     void motion_ActivateQuadRamp(bool enable);
 

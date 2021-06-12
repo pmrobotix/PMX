@@ -80,14 +80,14 @@ public:
     /*!
      * \brief Destructeur de la classe.
      */
-    inline virtual ~ActionManagerTimer()
+    virtual ~ActionManagerTimer()
     {
     }
 
     /*!
      * \brief Retourne le nombre d'actions.
      */
-    inline int countActions()
+    int countActions()
     {
         maction_.lock();
         int size = this->actions_.size();
@@ -98,7 +98,7 @@ public:
     /*!
      * \brief Retourne le nombre d'actions.
      */
-    inline int countTimers()
+    int countTimers()
     {
         mtimer_.lock();
         int size = this->timers_.size();
@@ -111,7 +111,7 @@ public:
      * \param action
      *        L'action à ajouter.
      */
-    inline void addAction(IAction * action)
+    void addAction(IAction * action)
     {
         maction_.lock();
         actions_.push_back(action);
@@ -123,7 +123,7 @@ public:
      * \param timer
      *        le timer à ajouter.
      */
-    inline void addTimer(ITimerListener * timer)
+    void addTimer(ITimerListener * timer)
     {
         if (timer->timeSpan() != 0) {
             mtimer_.lock();
@@ -137,35 +137,12 @@ public:
      * \param name
      *        Le label du timer.
      */
-    inline void stopTimer(std::string timerNameToDelete)
-    {
-        bool found = false;
-        utils::PointerList<ITimerListener *>::iterator save;
-        utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
-        mtimer_.lock();
-        while (i != timers_.end()) {
-            ITimerListener * timer = *i;
-
-            if (timer->name() == timerNameToDelete) {
-
-                save = i;
-                found = true;
-                timer->onTimerEnd(chronoTimer_);
-            }
-            i++;
-        }
-        if (found)
-            timers_.erase(save);
-        else
-            logger().debug() << "Timer [" << timerNameToDelete << "] not found or already deleted !!" << logs::end;
-
-        mtimer_.unlock();
-    }
+    void stopTimer(std::string timerNameToDelete);
 
     /*!
      * \brief Vide la liste des actions actuellement enregistrées.
      */
-    inline void clearActions()
+    void clearActions()
     {
         maction_.lock();
         actions_.clear();
@@ -175,7 +152,7 @@ public:
     /*!
      * \brief Vide la liste des actions actuellement enregistrées.
      */
-    inline void clearTimers()
+    void clearTimers()
     {
         maction_.lock();
         timers_.clear();
@@ -189,19 +166,19 @@ public:
      * L'utilisation de la méthode ActionManager::stop() permet de
      * savoir si le thread associé est arrêté.
      */
-    inline void stop()
+    void stop()
     {
         logger().debug() << "stop true" << logs::end;
         this->stop_ = true;
     }
 
-    inline bool getEnd()
+    bool getEnd()
     {
         return stop_;
     }
 
 
-    inline void pause(bool value)
+    void pause(bool value)
     {
         logger().debug() << "pause " << value << logs::end;
         this->pause_ = value;

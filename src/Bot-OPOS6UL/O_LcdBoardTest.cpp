@@ -11,6 +11,7 @@
 #include "../Common/Action/LcdShield.hpp"
 #include "../Log/Logger.hpp"
 #include "OPOS6UL_ActionsExtended.hpp"
+#include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
 using namespace std;
@@ -21,26 +22,27 @@ void O_LcdBoardTest::run(int argc, char** argv)
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
+    robot.asserv().startMotionTimerAndOdo(true);
+
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().home();
     robot.actions().lcd2x16().print("PM-ROBOTIX start");
     sleep(1);
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().setCursor(0, 0);
-    //robot.actions().lcd2x16().print("Hi, I'm PMX.");
-    robot.actions().lcd2x16().print("Inna...");
+    robot.actions().lcd2x16().print("Hi, I'm PMX.");
+
     sleep(1);
     robot.actions().lcd2x16().setCursor(0, 1);
 
-    robot.actions().lcd2x16().print("I happy with you !!");
+    robot.actions().lcd2x16().print("Yeahhh !");
 
-    sleep(2);
-    robot.actions().lcd2x16().setCursor(7, 0);
-    robot.actions().lcd2x16().print("ooooxxyyyy !");
-    sleep(2);
+    sleep(1);
+    robot.actions().lcd2x16().setCursor(0, 0);
+    robot.actions().lcd2x16().print("ooooxxyyyy  !");
+    sleep(10);
 
-    robot.stopExtraActions();
 
-    logger().info() << "OPOS6UL_RobotExtended Happy End." << logs::end;
+    logger().info() << this->name() << " Happy End." << logs::end;
 }
 

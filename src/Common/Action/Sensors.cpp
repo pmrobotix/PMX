@@ -33,9 +33,10 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
     x_adv_mm = -1.0;
     y_adv_mm = -1.0;
 
+
+
 }
-Sensors::~Sensors()
-{
+Sensors::~Sensors() {
     delete sensorsdriver_;
 }
 
@@ -57,100 +58,107 @@ SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) 
     nb_sensor_level2 = 0;
 }
 
-void Sensors::addThresholdFront(int left, int center, int right)
-{
+void Sensors::addThresholdFront(int left, int center, int right) {
     frontLeftThreshold_ = left;
     frontCenterThreshold_ = center;
     frontRightThreshold_ = right;
 }
-void Sensors::addThresholdFrontVeryClosed(int left, int center, int right)
-{
+void Sensors::addThresholdFrontVeryClosed(int left, int center, int right) {
     frontLeftVeryClosedThreshold_ = left;
     frontCenterVeryClosedThreshold_ = center;
     frontRightVeryClosedThreshold_ = right;
 }
-void Sensors::addThresholdBack(int left, int center, int right)
-{
+void Sensors::addThresholdBack(int left, int center, int right) {
     backLeftThreshold_ = left;
     backCenterThreshold_ = center;
     backRightThreshold_ = right;
 }
-void Sensors::addThresholdBackVeryClosed(int left, int center, int right)
-{
+void Sensors::addThresholdBackVeryClosed(int left, int center, int right) {
     backLeftVeryClosedThreshold_ = left;
     backCenterVeryClosedThreshold_ = center;
     backRightVeryClosedThreshold_ = right;
 }
 
-void Sensors::addConfigFront(bool left, bool center, bool right)
-{
+void Sensors::addConfigFront(bool left, bool center, bool right) {
     enableFrontLeft_ = left;
     enableFrontCenter_ = center;
     enableFrontRight_ = right;
 }
-void Sensors::addConfigBack(bool left, bool center, bool right)
-{
+void Sensors::addConfigBack(bool left, bool center, bool right) {
     enableBackLeft_ = left;
     enableBackCenter_ = center;
     enableBackRight_ = right;
 }
 
-void Sensors::setIgnoreFrontNearObstacle(bool ignoreLeft, bool ignoreCenter, bool ignoreRight)
-{
+void Sensors::setIgnoreFrontNearObstacle(bool ignoreLeft, bool ignoreCenter, bool ignoreRight) {
     ignoreFrontLeft_ = ignoreLeft;
     ignoreFrontCenter_ = ignoreCenter;
     ignoreFrontRight_ = ignoreRight;
 }
-void Sensors::setIgnoreBackNearObstacle(bool ignoreLeft, bool ignoreCenter, bool ignoreRight)
-{
+void Sensors::setIgnoreBackNearObstacle(bool ignoreLeft, bool ignoreCenter, bool ignoreRight) {
     ignoreBackLeft_ = ignoreLeft;
     ignoreBackCenter_ = ignoreCenter;
     ignoreBackRight_ = ignoreRight;
 }
-void Sensors::setIgnoreAllFrontNearObstacle(bool ignore)
-{
+void Sensors::setIgnoreAllFrontNearObstacle(bool ignore) {
     ignoreFrontLeft_ = ignore;
     ignoreFrontCenter_ = ignore;
     ignoreFrontRight_ = ignore;
 }
-void Sensors::setIgnoreAllBackNearObstacle(bool ignore)
-{
+void Sensors::setIgnoreAllBackNearObstacle(bool ignore) {
     ignoreBackLeft_ = ignore;
     ignoreBackCenter_ = ignore;
     ignoreBackRight_ = ignore;
 }
 
-int Sensors::sensorDist(std::string sensorname)
+ASensorsDriver::bot_positions Sensors::getPositionsAdv()
 {
+    //recupere les données qui ont ete enregistrées par le sync
+    return sensorsdriver_->getvPositionsAdv();
+}
+
+int Sensors::sync(std::string sensorname) {
+    //synchronise les données sur les sensors drivers
+    if (sensorname == "beacon_sync") {
+        return sensorsdriver_->sync(); //renvoi -1 si erreur
+    }
+
+    if (sensorname == "right") {
+        multipleRightSide(10);
+    }
+
+    if (sensorname == "left") {
+        multipleLeftSide(10);
+    }
+
     if (sensorname == "fL") {
-        return sensorsdriver_->frontLeft();
+        return sensorsdriver_->frontLeft(); //renvoi la distance mini
     }
-    if (sensorname == "fC") {
-        return sensorsdriver_->frontCenter();
-    }
+//    if (sensorname == "fC") {
+//        return sensorsdriver_->frontCenter();
+//    }
     if (sensorname == "fR") {
-        return sensorsdriver_->frontRight();
+        return sensorsdriver_->frontRight(); //renvoi la distance mini
     }
     if (sensorname == "bL") {
-        return sensorsdriver_->backLeft();
+        return sensorsdriver_->backLeft(); //renvoi la distance mini
     }
-    if (sensorname == "bC") {
-        return sensorsdriver_->backCenter();
-    }
+//    if (sensorname == "bC") {
+//        return sensorsdriver_->backCenter();
+//    }
     if (sensorname == "bR") {
-        return sensorsdriver_->backRight();
+        return sensorsdriver_->backRight(); //renvoi la distance mini
     }
     return -1;
 }
 
-float Sensors::multipleRightSide(int nb)
-{
+float Sensors::multipleRightSide(int nb) {
     int data[nb];
     float moy = 0.0;
     for (int ii = 0; ii < nb; ii++) {
         data[ii] = rightSide();
         //logger().debug() << "Right= " << data[ii] << logs::end;
-        usleep(40000);
+        utils::sleep_for_micros(40000);
     }
 
     //Now we call the sort function
@@ -166,15 +174,14 @@ float Sensors::multipleRightSide(int nb)
     return moy;
 }
 
-float Sensors::multipleLeftSide(int nb)
-{
+float Sensors::multipleLeftSide(int nb) {
     int data[nb];
 
     float moy = 0.0;
     for (int ii = 0; ii < nb; ii++) {
         data[ii] = leftSide();
         logger().debug() << "Left= " << data[ii] << logs::end;
-        usleep(40000);
+        utils::sleep_for_micros(40000);
     }
 
     //Now we call the sort function
@@ -190,25 +197,21 @@ float Sensors::multipleLeftSide(int nb)
     return moy;
 }
 
-int Sensors::rightSide()
-{
+int Sensors::rightSide() {
     return sensorsdriver_->rightSide();
 }
-int Sensors::leftSide()
-{
+int Sensors::leftSide() {
     return sensorsdriver_->leftSide();
 }
 
+
 //retourne 0, sinon le niveau detecté 2 veryClosed, 1 first level
-int Sensors::front(bool display)
-{
-    int fL = sensorDist("fL");
-    int fC = sensorDist("fC");
-    int fR = sensorDist("fR");
+int Sensors::front(bool display) {
 
-
-
-
+    //on recupere les distances de detection
+    int fL = sync("fL");
+    int fC = sync("fC");
+    int fR = sync("fR");
 
 //    int tfL = 0;
 //    int tfC = 0;
@@ -217,64 +220,53 @@ int Sensors::front(bool display)
 
     //logger().info() << " L " << enableFrontLeft_ << " C " << enableFrontCenter_ << " R " << enableFrontRight_ << logs::end;
     int level = 0;
+
     if (enableFrontLeft_) //existance
     {
         bool fL_filter = this->robot()->asserv()->filtre_IsInsideTable(fL, -1, "fL"); //negatif = capteur placé à gauche
         if (fL_filter) {
             {
                 if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
-                    if (display)
-                        logger().info() << "1 frontLeft= " << fL << logs::end;
+                    if (display) logger().info() << "1 frontLeft= " << fL << logs::end;
 //                tfL = fL;
-                    if (fL > 60)
-                        if (tfMin > fL)
-                            tfMin = fL;
+                    if (fL > 60) if (tfMin > fL) tfMin = fL;
                     //tfMin = fL;
                     level = 1;
                 }
                 if ((!ignoreFrontLeft_ && (fL < frontLeftVeryClosedThreshold_))) {
-                    if (display)
-                        logger().info() << "2 frontLeft= " << fL << logs::end;
+                    if (display) logger().info() << "2 frontLeft= " << fL << logs::end;
                     level = 2;
                 }
             }
+
         }
     }
     if (enableFrontCenter_) {
         bool fC_filter = this->robot()->asserv()->filtre_IsInsideTable(fC, 0, "fC");
         if (fC_filter) {
             if ((!ignoreFrontCenter_ && (fC < frontCenterThreshold_))) {
-                if (display)
-                    logger().info() << "1 frontCenter= " << fC << logs::end;
+                if (display) logger().info() << "1 frontCenter= " << fC << logs::end;
 //                tfC = fC;
-                if (fC > 60)
-                    if (tfMin > fC)
-                        tfMin = fC;
+                if (fC > 60) if (tfMin > fC) tfMin = fC;
                 level = 1;
             }
             if ((!ignoreFrontCenter_ && (fC < frontCenterVeryClosedThreshold_))) {
-                if (display)
-                    logger().info() << "2 frontCenter= " << fC << logs::end;
+                if (display) logger().info() << "2 frontCenter= " << fC << logs::end;
                 level = 2;
             }
         }
     }
-    if (enableFrontRight_)
-    {
+    if (enableFrontRight_) {
         bool fR_filter = this->robot()->asserv()->filtre_IsInsideTable(fR, 1, "fR");
         if (fR_filter) {
             if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
-                if (display)
-                    logger().info() << "1 frontRight= " << fR << logs::end;
+                if (display) logger().info() << "1 frontRight= " << fR << logs::end;
 //                tfR = fR;
-                if (fR > 60)
-                    if (tfMin > fR)
-                        tfMin = fR;
+                if (fR > 60) if (tfMin > fR) tfMin = fR;
                 level = 1;
             }
             if ((!ignoreFrontRight_ && (fR < frontRightVeryClosedThreshold_))) {
-                if (display)
-                    logger().info() << "2 frontRight= " << fR << logs::end;
+                if (display) logger().info() << "2 frontRight= " << fR << logs::end;
                 level = 2;
             }
         }
@@ -313,7 +305,8 @@ int Sensors::front(bool display)
             //logger().info() << "front         tfMin= " << tfMin << logs::end;
             x_adv_mm = (float) tfMin;
             y_adv_mm = 0.0;
-        } else {
+        }
+        else {
             x_adv_mm = -1.0;
             y_adv_mm = -1.0;
         }
@@ -322,11 +315,11 @@ int Sensors::front(bool display)
     return level;
 }
 
-int Sensors::back(bool display)
-{
-    int bL = sensorDist("bL");
-    int bC = sensorDist("bC");
-    int bR = sensorDist("bR");
+int Sensors::back(bool display) {
+    //on recupere les distances de detection
+    int bL = sync("bL");
+    int bC = sync("bC");
+    int bR = sync("bR");
 
     int tfMin = 0;
     int level = 0;
@@ -334,8 +327,7 @@ int Sensors::back(bool display)
         bool bL_filter = this->robot()->asserv()->filtre_IsInsideTable(-bL, -1, "bL");
         if (bL_filter) { //negatif = capteur placé à gauche
             if ((!ignoreBackLeft_ && (bL < backLeftThreshold_))) {
-                if (display)
-                    logger().info() << "1 backLeft= " << bL << logs::end;
+                if (display) logger().info() << "1 backLeft= " << bL << logs::end;
                 tfMin = bL;
                 level = 1;
             }
@@ -349,10 +341,8 @@ int Sensors::back(bool display)
         bool bC_filter = this->robot()->asserv()->filtre_IsInsideTable(-bC, 0, "bC");
         if (bC_filter) {
             if ((!ignoreBackCenter_ && (bC < backCenterThreshold_))) {
-                if (display)
-                    logger().info() << "1 backCenter= " << bC << logs::end;
-                if (tfMin > bC)
-                    tfMin = bC;
+                if (display) logger().info() << "1 backCenter= " << bC << logs::end;
+                if (tfMin > bC) tfMin = bC;
                 level = 1;
             }
             if ((!ignoreBackCenter_ && (bC < backCenterVeryClosedThreshold_))) {
@@ -366,8 +356,7 @@ int Sensors::back(bool display)
         if (bR_filter) {
             if ((!ignoreBackRight_ && (bR < backRightThreshold_))) {
                 logger().info() << "1 backRight= " << bR << logs::end;
-                if (tfMin > bR)
-                    tfMin = bR;
+                if (tfMin > bR) tfMin = bR;
                 level = 1;
             }
             if ((!ignoreBackRight_ && (bR < backRightVeryClosedThreshold_))) {
@@ -409,29 +398,42 @@ int Sensors::back(bool display)
     return level;
 }
 
-void Sensors::addTimerSensors(int timeSpan_ms)
-{
+void Sensors::addTimerSensors(int timeSpan_ms) {
     logger().debug() << "startSensors" << logs::end;
-
     this->actions().addTimer(new SensorsTimer(*this, timeSpan_ms, "sensors"));
-
 }
-void Sensors::stopTimerSensors()
-{
+
+void Sensors::stopTimerSensors() {
+    logger().debug() << "stopSensors" << logs::end;
     this->actions().stopTimer("sensors");
 }
 
-void SensorsTimer::onTimer(utils::Chronometer chrono)
-{
+void SensorsTimer::onTimer(utils::Chronometer chrono) {
+    //logger().debug() << ">> SensorsTimer::onTimer" << logs::end;
+
+    //get all data sync
+    int err = sensors_.sync("beacon_sync");
+    if(err < 0 )
+    {
+        logger().error() << ">> SYNC BAD DATA!" << logs::end;
+        return;
+    }
+
+    //TODO mODIFIER LE FRONT POUR INCLURE LES POSITIONS adv
+    //TODO mettre a jour les zones adv
+
     int frontLevel = sensors_.front(true);
+
     if (frontLevel == 0) {
         nb_sensor_front_a_zero++;
-    } else {
+    }
+    else {
         nb_sensor_front_a_zero = 0;
     }
     if (frontLevel >= 2) {
         nb_sensor_level2++;
-    } else {
+    }
+    else {
         nb_sensor_level2 = 0;
     }
 
@@ -477,7 +479,8 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
     int backLevel = sensors_.back(false);
     if (backLevel == 0) {
         nb_sensor_back_a_zero++;
-    } else {
+    }
+    else {
         nb_sensor_back_a_zero = 0;
     }
     if (backLevel == 1) {
@@ -518,17 +521,16 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 //    logger().error() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
 //            << " us lastdetect_front_nb_ =" << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel
 //            << logs::end;
+
 }
 
-void SensorsTimer::onTimerEnd(utils::Chronometer chrono)
-{
+void SensorsTimer::onTimerEnd(utils::Chronometer chrono) {
 //    logger().debug() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us"
 //            << logs::end;
 
 }
 
-std::string SensorsTimer::info()
-{
+std::string SensorsTimer::info() {
     std::ostringstream oss;
     oss << "SensorsTimer [" << nameListener_ << "] for " << sensors_.robot()->getID();
     return oss.str();

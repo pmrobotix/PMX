@@ -35,7 +35,7 @@ int SwitchDriver::pressed(unsigned char pin)
 
 int SwitchDriver::tirettePressed()
 {
-    usleep(30000);
+    utils::sleep_for_micros(30000);
     return pressed(7);
 }
 

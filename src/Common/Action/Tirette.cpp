@@ -42,12 +42,12 @@ void Tirette::monitor(int nb)
     int n = 0;
     while (n <= nb) {
         while (!pressed()) {
-            usleep(10000);
+            utils::sleep_for_micros(10000);
         }
         logger().info() << "pressed" << logs::end;
 
         while (pressed()) {
-            usleep(10000);
+            utils::sleep_for_micros(10000);
         }
         logger().info() << "unpressed" << logs::end;
         n++;
@@ -57,7 +57,7 @@ void Tirette::monitor(int nb)
 bool Tirette::waitPressed()
 {
     while (!pressed()) {
-        usleep(100000);
+        utils::sleep_for_micros(100000);
     }
     return true;
 }
@@ -65,7 +65,7 @@ bool Tirette::waitPressed()
 bool Tirette::waitUnpressed()
 {
     while (pressed()) {
-        usleep(100000);
+        utils::sleep_for_micros(100000);
     }
     return true;
 }

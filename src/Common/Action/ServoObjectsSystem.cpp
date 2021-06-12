@@ -22,7 +22,7 @@ void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
     hold(servo);
     servodriver_->setPosition(servo, percent); // percentage
     if (keep_millisec > 0) {
-        usleep(keep_millisec * 1000);
+        utils::sleep_for_micros(keep_millisec * 1000);
         release(servo);
     } else if (keep_millisec <= -1) {
 
@@ -32,7 +32,7 @@ void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
                 break;
             }
             //logger().info() << "wait "<< r << logs::end;
-            usleep(10000);
+            utils::sleep_for_micros(10000);
         }
     }
     int torque = getTorque(servo);

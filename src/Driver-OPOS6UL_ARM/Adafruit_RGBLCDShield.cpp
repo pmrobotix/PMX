@@ -97,7 +97,7 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
         // SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
         // according to datasheet, we need at least 40ms after power rises above 2.7V
         // before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
-        usleep(50000);
+        utils::sleep_for_micros(50000);
 
         // Now we pull both RS and R/W low to begin commands
         _digitalWrite(_rs_pin, 0);  //LOW
@@ -113,15 +113,15 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
 
             // we start in 8bit mode, try to set 4 bit mode
             write4bits(0x03);
-            usleep(4500); // wait min 4.1ms
+            utils::sleep_for_micros(4500); // wait min 4.1ms
 
             // second try
             write4bits(0x03);
-            usleep(4500); // wait min 4.1ms
+            utils::sleep_for_micros(4500); // wait min 4.1ms
 
             // third go!
             write4bits(0x03);
-            usleep(150);
+            utils::sleep_for_micros(150);
 
             // finally, set to 8-bit interface
             write4bits(0x02);
@@ -131,11 +131,11 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
 
             // Send function set command sequence
             command(LCD_FUNCTIONSET | _displayfunction);
-            usleep(4500);  // wait more than 4.1ms
+            utils::sleep_for_micros(4500);  // wait more than 4.1ms
 
             // second try
             command(LCD_FUNCTIONSET | _displayfunction);
-            usleep(150);
+            utils::sleep_for_micros(150);
 
             // third go
             command(LCD_FUNCTIONSET | _displayfunction);
@@ -168,7 +168,7 @@ void Adafruit_RGBLCDShield::clear()
     }
     mutex_.lock();
     command(LCD_CLEARDISPLAY);  // clear display, set cursor position to zero
-    usleep(2000);  // this command takes a long time!
+    utils::sleep_for_micros(2000);  // this command takes a long time!
     mutex_.unlock();
 }
 
@@ -180,7 +180,7 @@ void Adafruit_RGBLCDShield::home()
     }
     mutex_.lock();
     command(LCD_RETURNHOME);  // set cursor position to zero
-    usleep(2000);  // this command takes a long time!
+    utils::sleep_for_micros(2000);  // this command takes a long time!
     mutex_.unlock();
 }
 

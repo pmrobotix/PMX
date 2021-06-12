@@ -17,11 +17,6 @@ AAsservDriver* AAsservDriver::create(std::string) {
     return instance;
 }
 
-void AsservDriver::reset() {
-    if (_motor_left_.connected()) _motor_left_.reset();
-
-    if (_motor_right_.connected()) _motor_right_.reset();
-}
 
 AsservDriver::AsservDriver() :
         _motor_right_(OUTPUT_D), _motor_left_(OUTPUT_B), mag_(true, false, false)
@@ -121,6 +116,18 @@ AsservDriver::AsservDriver() :
     }
 
     resetEncoders();
+
+}
+
+
+void AsservDriver::reset() {
+    if (_motor_left_.connected()) _motor_left_.reset();
+
+    if (_motor_right_.connected()) _motor_right_.reset();
+}
+
+void AsservDriver::endWhatTodo()
+{
 
 }
 
@@ -307,7 +314,7 @@ int AsservDriver::getMotorRightCurrent() {
     return 0;
 }
 
-void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad) {
+void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad) {
 }
 
 RobotPosition AsservDriver::odo_GetPosition() {
@@ -334,10 +341,10 @@ void AsservDriver::path_CancelTrajectory() {
 void AsservDriver::path_ResetEmergencyStop() {
 }
 
-TRAJ_STATE AsservDriver::motion_DoFace(float x_m, float y_m) {
+TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
     return TRAJ_ERROR;
 }
-TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters) {
+TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
 
     return TRAJ_ERROR;
 }
@@ -347,6 +354,28 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) {
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius) {
     return TRAJ_ERROR;
 }
+
+
+TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
 void AsservDriver::motion_FreeMotion() {
 }
 void AsservDriver::motion_DisablePID() {
@@ -376,6 +405,6 @@ void AsservDriver::motion_ResetReguDist() {
 void AsservDriver::motion_ResetReguAngle() {
 
 }
-TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters) {
+TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm) {
     return TRAJ_ERROR;
 }

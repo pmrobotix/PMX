@@ -10,14 +10,13 @@
 using namespace std;
 
 LedBar::LedBar(std::string botId, Actions & actions, int nbLed) :
-        AActionsElement(actions), nbLed_(nbLed), actionStopped_(false), actionRunning_(false), position_(0), color_(
-                LED_OFF), nb_(0), timeus_(0), hex_(0), hexNext_(0), echap_(100), botId_(botId)
+        AActionsElement(actions), nbLed_(nbLed), actionStopped_(false), actionRunning_(false), position_(0), color_(LED_OFF), nb_(0), timeus_(0), hex_(
+                0), hexNext_(0), echap_(1000), botId_(botId)
 {
     leddriver_ = ALedDriver::create(botId, nbLed);
 }
 
-LedBar::~LedBar()
-{
+LedBar::~LedBar() {
     delete leddriver_;
 }
 
@@ -27,82 +26,77 @@ LedBarAction::LedBarAction(LedBar & ledBar, LedBarActionName action) :
     chrono_.start();
 }
 
-void LedBar::set(int pos, LedColor color)
-{
+void LedBar::stopAndWait(bool stopAction) {
+    this->actionStopped_ = stopAction;
+    while (this->actionRunning_) {
+        utils::sleep_for_micros(1000);
+    }
+}
+
+void LedBar::set(int pos, LedColor color) {
     leddriver_->setBit(pos, color);
 }
 
-void LedBar::rainbow(uint nb, uint timeus)
-{
+void LedBar::rainbow(uint nb, uint timeus) {
     for (uint i = 0; i < nb; i++) {
         for (int c = LED_BLACK; c < LED_OFF; c++) {
             for (int k = 0; k <= nbLed_ - 1; k++) {
                 set(k, (LedColor) c);
                 set(k, (LedColor) c);
             }
-            usleep(timeus);
+            utils::sleep_for_micros(timeus);
         }
     }
 }
 
-void LedBar::blink(uint nb, uint timeus, LedColor color)
-{
+void LedBar::blink(uint nb, uint timeus, LedColor color) {
     for (uint i = 0; i < nb; i++) {
         resetAll();
-        usleep(timeus);
-        if (i >= nb - 1)
-            break;
+        utils::sleep_for_micros(timeus);
+        if (i >= nb - 1) break;
 
         flashAll(color);
-        usleep(timeus);
+        utils::sleep_for_micros(timeus);
     }
 }
 
-void LedBar::flash(uint hexPosition, LedColor color)
-{
+void LedBar::flash(uint hexPosition, LedColor color) {
     leddriver_->setBytes(hexPosition, color);
 }
 
-void LedBar::resetAll()
-{
+void LedBar::resetAll() {
     flash(pow(2, nbLed_) - 1, LED_OFF);
 }
 
-void LedBar::flashAll(LedColor color)
-{
+void LedBar::flashAll(LedColor color) {
     flash(pow(2, nbLed_) - 1, color);
 }
 
-void LedBar::blinkPin(uint nb, uint timeus, int position, LedColor color)
-{
+void LedBar::blinkPin(uint nb, uint timeus, int position, LedColor color) {
     logger().debug() << "blinkPin" << logs::end;
     for (uint i = 1; i <= nb; i++) {
         this->set(position, color);
-        usleep(timeus);
+        utils::sleep_for_micros(timeus);
         this->set(position, LED_OFF);
         i++;
-        if (i > nb)
-            break;
-        usleep(timeus);
+        if (i > nb) break;
+        utils::sleep_for_micros(timeus);
     }
 }
 
-void LedBar::alternate(uint nb, uint timeus, uint beginVal, uint endVal, LedColor beginColor)
-{
+void LedBar::alternate(uint nb, uint timeus, uint beginVal, uint endVal, LedColor beginColor) {
     logger().debug() << "alternate" << logs::end;
     for (uint i = 1; i <= nb; i++) {
         flash(beginVal, beginColor);
-        usleep(timeus);
+        utils::sleep_for_micros(timeus);
         flash(endVal, LED_OFF);
         i++;
-        if (i > nb)
-            break;
-        usleep(timeus);
+        if (i > nb) break;
+        utils::sleep_for_micros(timeus);
     }
 }
 
-void LedBar::k2mil(uint nb, uint timeus, LedColor color)
-{
+void LedBar::k2mil(uint nb, uint timeus, LedColor color) {
     logger().debug() << "k2mil nbLed_=" << nbLed_ << logs::end;
     int j = -1;
 
@@ -110,27 +104,23 @@ void LedBar::k2mil(uint nb, uint timeus, LedColor color)
         //inc
         for (int k = 0; k <= nbLed_ - 1; k++) {
             set(k, color);
-            if (j >= 0)
-                if (j != k)
-                    set(j, LED_OFF);
+            if (j >= 0) if (j != k) set(j, LED_OFF);
             j = k;
-            usleep(timeus);
+            utils::sleep_for_micros(timeus);
         }
         //dec
         for (int k = nbLed_ - 1; k >= 0; k--) {
             set(k, color);
-            if (j != k)
-                set(j, LED_OFF);
+            if (j != k) set(j, LED_OFF);
             j = k;
-            usleep(timeus);
+            utils::sleep_for_micros(timeus);
         }
     }
     //off
     set(0, LED_OFF);
 }
 
-void LedBar::startSet(ushort index, LedColor color)
-{
+void LedBar::startSet(ushort index, LedColor color) {
     stop(true);
     logger().debug() << "startSet" << logs::end;
     this->actionStopped_ = false;
@@ -141,24 +131,21 @@ void LedBar::startSet(ushort index, LedColor color)
 
 }
 
-void LedBar::startReset()
-{
+void LedBar::startReset() {
     stop(true);
     logger().debug() << "startReset" << logs::end;
     this->actionStopped_ = false;
     this->actions().addAction(new LedBarAction(*this, LEDBARRESET));
 }
 
-void LedBar::startFlash()
-{
+void LedBar::startFlash() {
     stop(true);
     logger().debug() << "startFlash" << logs::end;
     this->actionStopped_ = false;
     this->actions().addAction(new LedBarAction(*this, LEDBARFLASH));
 }
 
-void LedBar::startFlashValue(uint hexValue)
-{
+void LedBar::startFlashValue(uint hexValue) {
     stop(true);
     logger().debug() << "startFlashValue" << logs::end;
     this->actionStopped_ = false;
@@ -166,12 +153,11 @@ void LedBar::startFlashValue(uint hexValue)
     this->actions().addAction(new LedBarAction(*this, LEDBARFLASHVALUE));
 }
 
-void LedBar::startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color, bool wait)
-{
+void LedBar::startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color, bool wait) {
     stop(true);
     logger().debug() << "startAlternate" << logs::end;
     while (this->actionRunning_) {
-        usleep(1000);
+        utils::sleep_for_micros(1000);
     }
     this->actionStopped_ = false;
     this->nb_ = nb;
@@ -183,12 +169,11 @@ void LedBar::startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNe
     waiting(wait);
 }
 
-void LedBar::startBlink(uint nb, uint timeus, LedColor color, bool wait)
-{
+void LedBar::startBlink(uint nb, uint timeus, LedColor color, bool wait) {
     stop(true);
     logger().debug() << "startBlink before while" << logs::end;
     while (this->actionRunning_) {
-        usleep(1000);
+        utils::sleep_for_micros(1000);
     }
     logger().debug() << "startBlink after while" << logs::end;
     this->actionStopped_ = false;
@@ -199,11 +184,10 @@ void LedBar::startBlink(uint nb, uint timeus, LedColor color, bool wait)
     waiting(wait);
 }
 
-void LedBar::startBlinkPin(uint nb, uint timeus, int position, LedColor color, bool wait)
-{
+void LedBar::startBlinkPin(uint nb, uint timeus, int position, LedColor color, bool wait) {
     stop(true);
     while (this->actionRunning_) {
-        usleep(1000);
+        utils::sleep_for_micros(1000);
     }
     this->position_ = position;
     this->actionStopped_ = false;
@@ -214,11 +198,10 @@ void LedBar::startBlinkPin(uint nb, uint timeus, int position, LedColor color, b
     waiting(wait);
 }
 
-void LedBar::startK2mil(uint nb, uint timeus, LedColor color, bool wait)
-{
+void LedBar::startK2mil(uint nb, uint timeus, LedColor color, bool wait) {
     stop(true);
     while (this->actionRunning_) {
-        usleep(1000);
+        utils::sleep_for_micros(1000);
     }
     this->actionStopped_ = false;
     this->timeus_ = timeus;
@@ -229,150 +212,140 @@ void LedBar::startK2mil(uint nb, uint timeus, LedColor color, bool wait)
     waiting(wait);
 }
 
-void LedBar::waiting(bool wait)
-{
+void LedBar::waiting(bool wait) {
     uint echap = 0;
     if (wait && echap < echap_) {
         while (!this->actionRunning_ && echap < echap_) {
             echap++;
-            usleep(1000);
+            utils::sleep_for_micros(1000);
         }
         while (this->actionRunning_ && echap < echap_) {
             echap++;
-            usleep(1000);
+            utils::sleep_for_micros(1000);
         }
     }
 }
 
-bool LedBarAction::execute()
-{
+bool LedBarAction::execute() {
     switch (this->action_) {
-    case LEDBARSET:
-        ledBar_.set(ledBar_.position(), ledBar_.color());
-        return 0; //suppression de l'action
-        break;
+        case LEDBARSET:
+            ledBar_.set(ledBar_.position(), ledBar_.color());
+            return 0; //suppression de l'action
+            break;
 
-    case LEDBARRESET:
-        ledBar_.resetAll();
-        return 0; //suppression de l'action
-        break;
+        case LEDBARRESET:
+            ledBar_.resetAll();
+            return 0; //suppression de l'action
+            break;
 
-    case LEDBARFLASH:
-        ledBar_.flashAll();
-        return 0; //suppression de l'action
-        break;
+        case LEDBARFLASH:
+            ledBar_.flashAll();
+            return 0; //suppression de l'action
+            break;
 
-    case LEDBARFLASHVALUE:
-        ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
-        return 0; //suppression de l'action
-        break;
+        case LEDBARFLASHVALUE:
+            ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
+            return 0; //suppression de l'action
+            break;
 
-    case LEDBARALTERNATE:
-        ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus())
-                || i_ == 1) {
-            if ((i_ % 2)) {
-                ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
-            } else {
-                ledBar_.flash(ledBar_.hexValueNext(), ledBar_.color());
+        case LEDBARALTERNATE:
+            ledBar_.actionRunning(true);
+            if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
+                if ((i_ % 2)) {
+                    ledBar_.flash(ledBar_.hexValue(), ledBar_.color());
+                }
+                else {
+                    ledBar_.flash(ledBar_.hexValueNext(), ledBar_.color());
+                }
+                i_++;
+                lastTime_ = chrono_.getElapsedTimeInMicroSec();
             }
-            i_++;
-            lastTime_ = chrono_.getElapsedTimeInMicroSec();
-        }
-        if (i_ >= ledBar_.nb() + 1) {
-            ledBar_.stop(true);
-            ledBar_.nb(0);
-        }
-        if (ledBar_.stop())
-            ledBar_.actionRunning(false);
-        return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-        break;
-
-    case LEDBARBLINK:
-        ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus())
-                || i_ == 1) {
-            //ledBar_.flash((255 * (i_ % 2)), ledBar_.color());
-            ledBar_.flash(((std::pow(2, ledBar_.nbLed()) - 1) * (i_ % 2)), ledBar_.color());
-
-            i_++;
-            lastTime_ = chrono_.getElapsedTimeInMicroSec();
-        }
-        if (i_ >= ledBar_.nb() + 1) {
-            ledBar_.stop(true);
-            ledBar_.nb(0);
-        }
-        if (ledBar_.stop())
-            ledBar_.actionRunning(false);
-        return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-        break;
-
-    case LEDBARBLINKPIN:
-        ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus())
-                || i_ == 1) {
-            LedColor temp;
-            if (i_ % 2)
-                temp = ledBar_.color();
-            else
-                temp = LED_OFF;
-
-            ledBar_.set(ledBar_.position(), temp);
-            i_++;
-
-            lastTime_ = chrono_.getElapsedTimeInMicroSec();
-
-        }
-        if (i_ >= ledBar_.nb() + 1) {
-            ledBar_.stop(true);
-            ledBar_.nb(0);
-        }
-        if (ledBar_.stop())
-            ledBar_.actionRunning(false);
-        return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-        break;
-
-    case LEDBARK2MIL:
-        ledBar_.actionRunning(true);
-        if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus())
-                || i_ == 1) {
-            if (i_ >= ledBar_.nb() + 2) {
+            if (i_ >= ledBar_.nb() + 1) {
                 ledBar_.stop(true);
                 ledBar_.nb(0);
-            } else {
-                ledBar_.set(k_, ledBar_.color());
             }
+            if (ledBar_.stop()) ledBar_.actionRunning(false);
+            return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+            break;
 
-            ledBar_.setOff(j_);
+        case LEDBARBLINK:
+            ledBar_.actionRunning(true);
+            if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
+                //ledBar_.flash((255 * (i_ % 2)), ledBar_.color());
+                ledBar_.flash(((std::pow(2, ledBar_.nbLed()) - 1) * (i_ % 2)), ledBar_.color());
 
-            if ((k_ == ledBar_.nbLed() - 1 && !inc_) || (k_ == 0 && inc_))
                 i_++;
-            j_ = k_;
-            if (inc_) {
-                k_++;
-            } else {
-                k_--;
+                lastTime_ = chrono_.getElapsedTimeInMicroSec();
             }
-            if (k_ >= ledBar_.nbLed() - 1) {
-                k_ = ledBar_.nbLed() - 1;
-                inc_ = false;
+            if (i_ >= ledBar_.nb() + 1) {
+                ledBar_.stop(true);
+                ledBar_.nb(0);
             }
-            if (k_ <= 0) {
-                k_ = 0;
-                inc_ = true;
-            }
-            lastTime_ = chrono_.getElapsedTimeInMicroSec();
-        }
+            if (ledBar_.stop()) ledBar_.actionRunning(false);
+            return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+            break;
 
-        if (ledBar_.stop())
-            ledBar_.actionRunning(false);
-        return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
-        break;
+        case LEDBARBLINKPIN:
+            ledBar_.actionRunning(true);
+            if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
+                LedColor temp;
+                if (i_ % 2) temp = ledBar_.color();
+                else temp = LED_OFF;
 
-    default:
-        logger().error() << "Bad execute command !!" << logs::end;
-        return false;
-        break;
+                ledBar_.set(ledBar_.position(), temp);
+                i_++;
+
+                lastTime_ = chrono_.getElapsedTimeInMicroSec();
+
+            }
+            if (i_ >= ledBar_.nb() + 1) {
+                ledBar_.stop(true);
+                ledBar_.nb(0);
+            }
+            if (ledBar_.stop()) ledBar_.actionRunning(false);
+            return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+            break;
+
+        case LEDBARK2MIL:
+            ledBar_.actionRunning(true);
+            if (chrono_.getElapsedTimeInMicroSec() >= (unsigned long long) (lastTime_ + (long) ledBar_.timeus()) || i_ == 1) {
+                if (i_ >= ledBar_.nb() + 2) {
+                    ledBar_.stop(true);
+                    ledBar_.nb(0);
+                }
+                else {
+                    ledBar_.set(k_, ledBar_.color());
+                }
+
+                ledBar_.setOff(j_);
+
+                if ((k_ == ledBar_.nbLed() - 1 && !inc_) || (k_ == 0 && inc_)) i_++;
+                j_ = k_;
+                if (inc_) {
+                    k_++;
+                }
+                else {
+                    k_--;
+                }
+                if (k_ >= ledBar_.nbLed() - 1) {
+                    k_ = ledBar_.nbLed() - 1;
+                    inc_ = false;
+                }
+                if (k_ <= 0) {
+                    k_ = 0;
+                    inc_ = true;
+                }
+                lastTime_ = chrono_.getElapsedTimeInMicroSec();
+            }
+
+            if (ledBar_.stop()) ledBar_.actionRunning(false);
+            return !ledBar_.stop(); //renvoi 0 pour supprimer l'action
+            break;
+
+        default:
+            logger().error() << "Bad execute command !!" << logs::end;
+            return false;
+            break;
     }
     return false;
 }

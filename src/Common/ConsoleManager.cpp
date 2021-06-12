@@ -5,13 +5,13 @@
 
 #include "ConsoleManager.hpp"
 
+#include <stdlib.h>
 #include <sys/types.h>
-#include <unistd.h>
-#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 #include <sstream>
 
+#include "../Thread/Thread.hpp"
 #include "Utils/ConsoleKeyInput.hpp"
 
 using namespace std;
@@ -130,7 +130,7 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(int argc, char** argv)
             break;
         }
 
-        usleep(5000);
+        utils::sleep_for_micros(5000);
     } while (cInput != 10);
 
     cout << default_console << flush;
@@ -188,7 +188,7 @@ string ConsoleManager::displayMenuFirstArgu()
             exit(0);
             break;
         }
-        usleep(1000);
+        utils::sleep_for_micros(1000);
     } while (cInput != 10);
     cout << default_console << endl;
     ConsoleKeyInput::clearScreen();

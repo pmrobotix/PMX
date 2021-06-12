@@ -1,6 +1,6 @@
 /*
  * Robot.cpp
- * test
+ *
  *
  */
 
@@ -15,8 +15,8 @@
 #include "Utils/ConsoleKeyInput.hpp"
 
 #ifdef SIMU
-#include <sys/ipc.h>
-#include <sys/msg.h>
+    #include <sys/ipc.h>
+    #include <sys/msg.h>
 #endif
 #include <unistd.h>
 #include <cstdio>
@@ -31,7 +31,7 @@
 using namespace std;
 
 Robot::Robot() :
-        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2019", "/") // use character "/" instead of "-" for arguments
+        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2021", "/") // use character "/" instead of "-" for arguments
 {
     points = 0;
     actions_default_ = NULL;
@@ -56,7 +56,7 @@ Robot::~Robot()
     //Tue le log s'il existe (core dump sinon)
     logs::LoggerFactory::instance().stopLog();
 
-    //printf("\n ~Robot()");
+    //printf("\n ~Robot() end");
 }
 
 void Robot::svgPrintPosition(int color)
@@ -86,7 +86,7 @@ void Robot::configureDefaultConsoleArgs()
 
     cArgs_.addArgument("type", "Type of match (p)pause/(t)est/(m)atch", "m");
     {
-        Arguments::Option cOpt('n', "");
+        Arguments::Option cOpt('n', ""); //TODO delete the /n, the t is enough
         cOpt.addArgument("num", "number of the functional test");
         cArgs_.addOption(cOpt);
     }
@@ -122,6 +122,12 @@ void Robot::parseConsoleArgs(int argc, char** argv, bool stopWithErrors)
     }
 
 }
+
+
+//TODO creer le tableau de parametre
+//
+//
+//
 
 void Robot::begin(int argc, char** argv)
 {
@@ -219,7 +225,7 @@ void Robot::begin(int argc, char** argv)
                     exit(0);
                     break;
                 }
-                usleep(1000);
+                utils::sleep_for_micros(1000);
             } while (cInput != 10);
             //---------------fin Pour debug
         }
@@ -289,7 +295,6 @@ void Robot::begin(int argc, char** argv)
             cmanager_.displayMenuFunctionalTestsAndRun(argc, argv);
         }
     }
-
 }
 
 void Robot::stopMotionTimerAndActionManager()

@@ -5,7 +5,6 @@
 
 #include "AsservEsialR.hpp"
 
-#include <unistd.h>
 #include <cmath>
 #include <cstdio>
 
@@ -77,12 +76,16 @@ void AsservEsialR::initAsserv()
 
 }
 
+void  AsservEsialR::endWhatTodo(){
+
+}
+
 void AsservEsialR::stopAsserv()
 {
     //On arrête le traitement de l'asserv
     run_ = false; //afin de pouvoir supprimer les objets
 
-    usleep(10000); //attndre la fin de la boucle d'asserv ?
+    utils::sleep_for_micros(10000); //attndre la fin de la boucle d'asserv ?
     //this->cancel();
 
     // On détruit tout les objets
@@ -299,13 +302,13 @@ void AsservEsialR::resetExternalEncoders()
     //TODO
 }
 
-void AsservEsialR::odo_SetPosition(float x_m, float y_m, float angle_rad)
+void AsservEsialR::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
 {
     if (odo_ != NULL) {
-        logger().debug() << "odo_SetPosition x_m=" << x_m << " y_m=" << y_m << " angle_rad=" << angle_rad << logs::end;
+        logger().debug() << "odo_SetPosition x_mm=" << x_mm << " y_mm=" << y_mm << " angle_rad=" << angle_rad << logs::end;
         lock();
-        odo_->setX(Utils::mmToUO(odo_, (long) floor(x_m * 1000.0f))); //UO
-        odo_->setY(Utils::mmToUO(odo_, (long) floor(y_m * 1000.0f)));
+        odo_->setX(Utils::mmToUO(odo_, (long) floor(x_mm))); //UO
+        odo_->setY(Utils::mmToUO(odo_, (long) floor(y_mm)));
         odo_->setTheta(angle_rad);
         unlock();
         odo_GetPosition();
@@ -315,8 +318,8 @@ RobotPosition AsservEsialR::odo_GetPosition()
 {
     if (odo_ != NULL) {
         lock();
-        p_.x = (float) (odo_->getXmm() / 1000.0f);
-        p_.y = (float) (odo_->getYmm() / 1000.0f);
+        p_.x = (float) (odo_->getXmm());
+        p_.y = (float) (odo_->getYmm());
         p_.theta = (float) odo_->getTheta();
         p_.asservStatus = commandM_->getCommandStatus();
         unlock();
@@ -373,7 +376,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 //                << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI
 //                << std::setw(10) << " s=" << p_.asservStatus << logs::end;
 
-        usleep(10000);
+        utils::sleep_for_micros(10000);
         timeout++;
         if (timeout > 10) {
             break;
@@ -384,7 +387,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     //attente de l'interruption ou fin de trajectoire
     while (p_.asservStatus == 1) {
         //logger().info() << "222 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
-        usleep(1000);
+        utils::sleep_for_micros(1000);
         timeout++;
         if (timeout > 10 && p_.asservStatus != 1) {
             break;
@@ -408,15 +411,15 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
         return TRAJ_ERROR;
 }
 
-TRAJ_STATE AsservEsialR::motion_DoLine(float dist_meters)
+TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm)
 {
-    commandM_->addStraightLine(dist_meters * 1000.0f);
+    commandM_->addStraightLine(dist_mm);
 
     return waitEndOfTraj();
 }
-TRAJ_STATE AsservEsialR::motion_DoFace(float x_m, float y_m)
+TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm)
 {
-    commandM_->addGoToAngle(x_m * 1000.0f, y_m * 1000.0f);
+    commandM_->addGoToAngle(x_mm, y_mm);
 
     return waitEndOfTraj();
 }
@@ -432,15 +435,37 @@ TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius)
     return TRAJ_ERROR;
 }
 
-TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_meters)
+TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_mm)
 {
     if (odo_ != NULL) {
-        consignC_->add_dist_consigne(Utils::mmToUO(odo_, dist_meters * 1000.0f));
+        consignC_->add_dist_consigne(Utils::mmToUO(odo_, dist_mm));
 
         return waitEndOfTraj();
     } else
         return TRAJ_ERROR;
 }
+
+
+TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservEsialR::motion_GotoReverse(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservEsialR::motion_GotoChain(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservEsialR::motion_GotoReverseChain(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
 
 void AsservEsialR::motion_FreeMotion(void)
 {

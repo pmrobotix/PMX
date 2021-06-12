@@ -3,15 +3,15 @@
 
 #include <string>
 
-#include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
+#include "../Action.Driver/ASensorsDriver.hpp"
 #include "../Utils/Chronometer.hpp"
+#include "../Utils/PointerList.hpp"
 #include "AActionsElement.hpp"
 #include "ITimerListener.hpp"
 
-class Robot;
-
 class ASensorsDriver;
+class Robot;
 
 class Sensors: public AActionsElement
 {
@@ -65,9 +65,10 @@ private:
 
 public:
 
-    //distance par rapport au centre du robot
+    //distance de ce qu'il y a devant le robot
     float x_adv_mm;
     float y_adv_mm;
+
 
     /*!
      * \brief Constructor.
@@ -94,10 +95,12 @@ public:
     float multipleLeftSide(int nb);
 
     //acces directement aux capteurs
-    int sensorDist(std::string sensorname);
+    int sync(std::string sensorname);
 
+    //get la liste des positions adverses
+    ASensorsDriver::bot_positions getPositionsAdv();
     //accès detection
-    int front(bool display = false);
+    int front(bool display = false); //retourne le niveau de detection
     int back(bool display = false);
 
     //activation des capteurs

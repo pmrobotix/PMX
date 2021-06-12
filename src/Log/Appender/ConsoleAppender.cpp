@@ -15,7 +15,7 @@ void logs::ConsoleAppender::flush()
     while (this->messages_.size() > 0) {
         std::string message = this->messages_.front();
         //printf("%s\n", message.c_str());
-        std::cout << "test cch "<< message << std::endl;
+        std::cout << message << std::endl;
 
         this->messages_.pop_front();
     }

@@ -71,7 +71,7 @@ void A_AsservRunTest::run(int argc, char** argv)
 
 	chrono.start();
 	robot.actions().start();
-	robot.actions().sensors().startSensors();
+	//robot.actions().sensors().startSensors();
 
 	TRAJ_STATE ts = robot.asserv().doMoveForwardAndRotateTo(x, 300, 0);
 

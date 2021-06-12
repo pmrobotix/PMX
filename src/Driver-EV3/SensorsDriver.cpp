@@ -27,6 +27,16 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
+
+ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
+    ASensorsDriver::bot_positions pos;
+    return pos;
+}
+int SensorsDriver::sync() {
+    return 0;
+}
+
+
 int SensorsDriver::rightSide()
 {
     return -1;

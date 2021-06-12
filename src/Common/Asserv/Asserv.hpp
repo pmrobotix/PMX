@@ -99,6 +99,8 @@ public:
      */
     MovingBase* base();
 
+    virtual void endWhatTodo();
+
     //Gestion de l'asservissement
     virtual void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 
@@ -109,7 +111,8 @@ public:
     virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
     virtual void warnFrontCollisionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void warnBackCollisionOnTraj(float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
-    virtual void update_adv();
+
+    virtual void update_adv();//TODO remove
 
     void resetEmergencyOnTraj(std::string message = "default");
 
@@ -128,26 +131,32 @@ public:
     // angle in degrees
     float pos_getThetaInDegree();
 
+
+
+
+    TRAJ_STATE gotoChain(float xMM, float yMM);
+    TRAJ_STATE gotoXY(float xMM, float yMM);
+    TRAJ_STATE gotoReverse(float xMM, float yMM);
+    TRAJ_STATE gotoReverseChain(float xMM, float yMM);
+
     //relative motion (depends on current position of the robot)
-    TRAJ_STATE doLineAbs(float distance_mm); // if distance <0, move backward
+    TRAJ_STATE doLineAbs(float dist_mm); // if distance <0, move backward
     TRAJ_STATE doRotateAbs(float degreesRelative);
     TRAJ_STATE doRelativeRotateBy(float thetaInDegreeRelative); //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
     TRAJ_STATE doCalage(int d, int percent);
     TRAJ_STATE doCalage2(int d, int percent);
-
+    //pivot motion
     void doRunPivotLeft(int powerL, int powerR, int timemsR);
     void doRunPivotRight(int powerL, int powerR, int timemsL);
-
     //absolute motion (coordinates thinking in the first color of match)
     TRAJ_STATE doFaceTo(float xMM, float yMM);
     TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored = false);
-    TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);
+
     TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignored = false);
     TRAJ_STATE doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored = false);
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
-    TRAJ_STATE doMoveArcRotate(int degrees, float radiusMM);
+    TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);
 
-    //void doActivateReguAngle(bool enable);
 
     //http://nains-games.com/2014/12/intersection-de-deux-cercles.html
     std::tuple<int, float, float> eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2, float d2,

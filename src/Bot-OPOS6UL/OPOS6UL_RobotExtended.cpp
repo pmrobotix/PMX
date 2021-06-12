@@ -50,6 +50,8 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
 void OPOS6UL_RobotExtended::stopExtraActions()
 {
+    this->asserv().endWhatTodo(); //on termine le thread d'asserv qui lie la position
+
     this->actions().stopExtra(); //extra devices
 }
 
@@ -86,14 +88,12 @@ void OPOS6UL_RobotExtended::begin(int argc, char** argv)
         decisionMaker_->waitForEnd();
     }
 
-    logger().info() << "PMX OPOS6UL_RobotExtended - Happy End - " << this->chrono().getElapsedTimeInSec() << " sec"
-            << logs::end;
+    logger().info() << "PMX " << this->getID() << " Happy End - " << this->chrono().getElapsedTimeInSec() << " sec" << logs::end;
 }
 
 void OPOS6UL_RobotExtended::resetDisplayTS()
 {
     actions().ledBar().resetAll();
-
 }
 
 void OPOS6UL_RobotExtended::displayTS(TRAJ_STATE ts)

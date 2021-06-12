@@ -72,8 +72,8 @@ AsservDriver::AsservDriver(std::string botid) :
 
     rightCounter_ = 0.0;
     leftCounter_ = 0.0;
-    rightMeters_ = 0.0;
-    leftMeters_ = 0.0;
+    rightMm_ = 0.0;
+    leftMm_ = 0.0;
 
     //timesMultiplicator_ = 1000.0;
 
@@ -110,20 +110,34 @@ void AsservDriver::execute()
             p = odo_GetPosition();
             m_pos.unlock();
 
-            loggerSvg().info() << "<circle cx=\"" << p.x * 1000.0 << "\" cy=\"" << -p.y * 1000.0
-                    << "\" r=\"1\" fill=\"blue\" />" << "<line x1=\"" << p.x * 1000.0 << "\" y1=\"" << -p.y * 1000.0
-                    << "\" x2=\"" << p.x * 1000.0 + cos(p.theta) * 25 << "\" y2=\"" << -p.y * 1000.0 - sin(p.theta) * 25
+            loggerSvg().info() << "<circle cx=\"" << p.x  << "\" cy=\"" << -p.y
+                    << "\" r=\"1\" fill=\"blue\" />" << "<line x1=\"" << p.x  << "\" y1=\"" << -p.y
+                    << "\" x2=\"" << p.x  + cos(p.theta) * 25 << "\" y2=\"" << -p.y - sin(p.theta) * 25
                     << "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::end;
         }
         chrono.waitTimer();
     }
 }
 
-//conversion 1 meter = n ticks
-float AsservDriver::convertMetersToTicks(float meters)
+void AsservDriver::endWhatTodo()
 {
-    float ticks = (float) std::rint(meters * simuTicksPerMeter_);
-    logger().debug() << " meters=" << meters << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_
+    if (!this->isFinished())
+            this->cancel();
+}
+
+////conversion 1 meter = n ticks
+//float AsservDriver::convertMetersToTicks(float meters)
+//{
+//    float ticks = (float) std::rint(meters * simuTicksPerMeter_);
+//    logger().debug() << " meters=" << meters << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_
+//            << logs::end;
+//    return ticks;
+//}
+
+float AsservDriver::convertMmToTicks(float mm)
+{
+    float ticks = (float) std::rint(mm * 1000.0f * simuTicksPerMeter_);
+    logger().debug() << " mm=" << mm << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_
             << logs::end;
     return ticks;
 }
@@ -166,11 +180,11 @@ void AsservDriver::computeCounterL()
     float deltaT_ms = tps - tLeft_ms_;
     tLeft_ms_ = tps;
 
-    float currentLeftMeters = inverseCodeurG_ * (deltaT_ms * leftSpeed_) / 1000.0f;
+    float currentLeftMm = inverseCodeurG_ * (deltaT_ms * leftSpeed_);
     mutexL_.lock();
-    currentLeftCounter_ = convertMetersToTicks(currentLeftMeters);	//conversion Metre  n Ticks/metres
-    leftMeters_ += currentLeftMeters;
-    leftCounter_ = convertMetersToTicks(leftMeters_);
+    currentLeftCounter_ = convertMmToTicks(currentLeftMm);	//conversion Metre  n Ticks/metres
+    leftMm_ += currentLeftMm;
+    leftCounter_ = convertMmToTicks(leftMm_);
     mutexL_.unlock();
 
 //	logger().info() << "computeCounterL "
@@ -217,15 +231,15 @@ void AsservDriver::computeCounterR()
     float tps = chrono_.getElapsedTimeInMilliSec();	//* timesMultiplicator_;
     float deltaT_ms = tps - tRight_ms_;
     tRight_ms_ = tps;
-    float currentRightMeters = inverseCodeurD_ * (deltaT_ms * rightSpeed_) / 1000.0f;
+    float currentRightMm = inverseCodeurD_ * (deltaT_ms * rightSpeed_);
 
     mutexR_.lock();
-    currentRightCounter_ = convertMetersToTicks(currentRightMeters);	//conversion 1 meter = n ticks
+    currentRightCounter_ = convertMmToTicks(currentRightMm);	//conversion 1 meter = n ticks
     //logger().error() <<  "cho currentRightCounter_=" << currentRightCounter_ << " currentRightMeters=" << currentRightMeters << " rightMeters_="<< rightMeters_ <<logs::end;
 
-    rightMeters_ += currentRightMeters;
+    rightMm_ += currentRightMm;
 
-    rightCounter_ = convertMetersToTicks(rightMeters_);
+    rightCounter_ = convertMmToTicks(rightMm_);
     mutexR_.unlock();
 
 //	logger().info() << "computeCounterR "
@@ -364,14 +378,14 @@ void AsservDriver::resetEncoders()
 {
     mutexL_.lock();
     leftCounter_ = 0.0;
-    leftMeters_ = 0.0;
+    leftMm_ = 0.0;
     currentLeftCounter_ = 0.0;
     mutexL_.unlock();
     computeCounterL();
 
     mutexR_.lock();
     rightCounter_ = 0.0;
-    rightMeters_ = 0.0;
+    rightMm_ = 0.0;
     currentRightCounter_ = 0.0;
     mutexR_.unlock();
     computeCounterR();
@@ -421,11 +435,11 @@ int AsservDriver::getMotorRightCurrent()
     return 0;
 }
 
-void AsservDriver::odo_SetPosition(float x_m, float y_m, float angle_rad)
+void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
 {
     m_pos.lock();
-    p_.x = x_m;
-    p_.y = y_m;
+    p_.x = x_mm;
+    p_.y = y_mm;
     p_.theta = angle_rad;
     m_pos.unlock();
 }
@@ -472,7 +486,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
     return TRAJ_FINISHED;
 }
 
-TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
+TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
 {
 
 //calcul du point d'arrivé
@@ -483,48 +497,48 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
     m_pos.unlock();
 
 //le delta
-    double deltaXm = cos(t_init) * dist_meters;
-    if (abs(deltaXm) < 0.0001)
-        deltaXm = 0;
+    double deltaXmm = cos(t_init) * dist_mm;
+    if (abs(deltaXmm) < 0.0001)
+        deltaXmm = 0;
 
-    double deltaYm = sin(t_init) * dist_meters;
-    if (abs(deltaYm) < 0.0001)
-        deltaYm = 0;
+    double deltaYmm = sin(t_init) * dist_mm;
+    if (abs(deltaYmm) < 0.0001)
+        deltaYmm = 0;
 
 //Ax+b
     double a = 0, b = 0;
-    if (deltaXm != 0) //cas droite verticale
+    if (deltaXmm != 0) //cas droite verticale
             {
-        a = deltaYm / deltaXm;
+        a = deltaYmm / deltaXmm;
         b = y_init - (a * x_init);
     }
 
-    logger().debug() << "dist_meters=" << dist_meters << "deltaXm=" << deltaXm << " deltaYm=" << deltaYm << " a=" << a
+    logger().debug() << "dist_mm=" << dist_mm << "deltaXmm=" << deltaXmm << " deltaYmm=" << deltaYmm << " a=" << a
             << " b=" << b << "  !!!!!" << logs::end;
 
 //While à une certaine vitesse
 //set des valeurs
 //TODO break si path_collision
-    float speedms = 0.3; //m/s
+    float speedm_s = 0.3; //m/s
     int increment_time_us = 5000;
-    double tps_sec = abs(dist_meters / speedms);
-    float increment_m = ((increment_time_us / 1000000.0) * speedms);
-    int nb_increment = dist_meters / increment_m;
+    double tps_sec = abs(dist_mm / speedm_s * 1000.0f);
+    float increment_mm = ((increment_time_us / 1000.0) * speedm_s);
+    int nb_increment = dist_mm / increment_mm;
 
-    logger().debug() << "tps=" << tps_sec << " increment_m=" << increment_m << "  !!!!!" << logs::end;
+    logger().debug() << "tps=" << tps_sec << " increment_mm=" << increment_mm << "  !!!!!" << logs::end;
 
     asservStarted_ = true;
     for (int nb = 0; nb < nb_increment; nb++) {
 
         m_pos.lock();
-        if (deltaXm == 0) //cas droite verticale
+        if (deltaXmm == 0) //cas droite verticale
                 {
-            if (deltaYm > 0)
-                p_.y += increment_m;
-            else if (deltaYm < 0)
-                p_.y -= increment_m;
+            if (deltaYmm > 0)
+                p_.y += increment_mm;
+            else if (deltaYmm < 0)
+                p_.y -= increment_mm;
         } else {
-            float x_increment_m = cos(t_init) * increment_m;
+            float x_increment_m = cos(t_init) * increment_mm;
             p_.x += x_increment_m;
             p_.y = (a * p_.x) + b;
         }
@@ -533,12 +547,12 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_meters)
     }
 
     m_pos.lock();
-    if (deltaXm == 0) //cas droite verticale
+    if (deltaXmm == 0) //cas droite verticale
             {
-        p_.y = y_init + deltaYm;
+        p_.y = y_init + deltaYmm;
     } else {
-        p_.x = x_init + deltaXm;
-        p_.y = y_init + deltaYm;
+        p_.x = x_init + deltaXmm;
+        p_.y = y_init + deltaYmm;
     }
     m_pos.unlock();
     usleep(increment_time_us * 5);
@@ -575,6 +589,28 @@ TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
     logger().error() << "TODO motion_DoArcRotate !!!!!" << logs::end;
     return TRAJ_ERROR;
 }
+
+
+TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
+
+    return TRAJ_ERROR;
+}
+
 void AsservDriver::motion_FreeMotion()
 {
     stopMotorLeft();
@@ -620,7 +656,7 @@ void AsservDriver::motion_ResetReguAngle()
 {
     logger().debug() << "TODO motion_ResetReguAngle !!!!!" << logs::end;
 }
-TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_meters)
+TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm)
 {
     //TODO
     logger().debug() << "TODO motion_DoDirectLine !!!!!" << logs::end;

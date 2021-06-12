@@ -34,7 +34,7 @@ void GpioPCA9555::setup()
         write_i2c(OUT_P0, 0x00); //clears all relays
         write_i2c(CONFIG_P1, 0xFF); //defines all pins on Port1 are inputs
         write_i2c(IN_P1, 0x00); //clears all relays
-        usleep(PAUSE);
+        utils::sleep_for_micros(PAUSE);
     }
 
 }

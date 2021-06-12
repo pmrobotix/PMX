@@ -19,10 +19,10 @@ APF9328RobotExtended::APF9328RobotExtended()
 	svg_ = p_svg_;
 
 	p_asserv_ = new APF9328AsservExtended(id_, this);
-	asserv_default = p_asserv_;
+	asserv_default_ = p_asserv_;
 
 	p_actions_ = new APF9328ActionsExtended(id_, this);
-	actions_default = p_actions_;
+	actions_default_ = p_actions_;
 
 	p_ia_ = new APF9328IAExtended(id_, this);
 
@@ -32,7 +32,7 @@ APF9328RobotExtended::APF9328RobotExtended()
 
 void APF9328RobotExtended::stop()
 {
-	Robot::stopAll();
+	//Robot::stopAll();
 	this->actions().stop(); //extra devices
 	this->asserv().freeMotion();
 	this->asserv().base()->motors().stopMotors();

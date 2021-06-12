@@ -60,6 +60,7 @@ void OPOS6UL_AsservExtended::setLowSpeedBackward(bool enable, int)
     asservdriver_->motion_setLowSpeedBackward(enable, 55);
 }
 
+//TODO a deplacer dans les actions avec l'update des sensors
 void OPOS6UL_AsservExtended::update_adv()
 {
 

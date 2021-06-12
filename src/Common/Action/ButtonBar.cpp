@@ -27,7 +27,7 @@ bool ButtonBar::pressed(ButtonTouch button)
 bool ButtonBar::waitPressed(ButtonTouch button)
 {
     while (!pressed(button)) {
-        usleep(500);
+        utils::sleep_for_micros(500);
     }
     return true;
 }

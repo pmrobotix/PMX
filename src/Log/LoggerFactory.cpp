@@ -84,7 +84,7 @@ void logs::LoggerFactory::add(Logger * logger)
     if (logger->name() == "") {
 
         this->rootLogger_ = logger;
-        this->start("LoggerFactory", 0); //Ne pas mettre de priorité FIFO sinon les lecture EV3 sont très lentes
+        this->start("LoggerFactory"); //Ne pas mettre de priorité FIFO sinon les lecture EV3 sont très lentes, la config est mise dans  logs::LoggerFactory::initialize() pour chaque robot
     } else {
         loggers_.insert(std::make_pair(logger->name(), logger));
     }
@@ -109,6 +109,8 @@ void logs::LoggerFactory::add(const Level & level, const std::string & loggerNam
 
 void logs::LoggerFactory::execute()
 {
+    this->setPriority();
+
     //utils::Chronometer chrono("LoggerFactory::execute()");
     //chrono.start();
 
@@ -122,11 +124,11 @@ void logs::LoggerFactory::execute()
             //long t1 = chrono.getElapsedTimeInMicroSec();
 
             //std::cout << it->first << " ::flushtime = " << t1-t0<< std::endl;
-            //usleep(1000);
+
             this->yield();
         }
 
-        utils::Thread::sleep_for_millis(5); //usleep(1000);//usleep necesaire pour laisser le temps au reste
+        utils::Thread::sleep_for_millis(5); // 5ms? usleep necesaire pour laisser le temps au reste
         this->yield();
     }
     //std::cout << "stop !" << std::endl;

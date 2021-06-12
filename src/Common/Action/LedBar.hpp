@@ -152,13 +152,6 @@ public:
         return actionStopped_;
     }
 
-    inline void stopAndWait(bool stopAction)
-    {
-        this->actionStopped_ = stopAction;
-        while (this->actionRunning_) {
-            usleep(1000);
-        }
-    }
 
     inline void actionRunning(bool value)
     {
@@ -228,6 +221,8 @@ public:
     {
         return nbLed_;
     }
+
+    void stopAndWait(bool stopAction);
 
     /*!
      * \brief Change le statut d'une led.

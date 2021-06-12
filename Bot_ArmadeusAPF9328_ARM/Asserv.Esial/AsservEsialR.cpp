@@ -225,12 +225,12 @@ void AsservEsialR::resetExternalEncoders()
     //TODO
 }
 
-void AsservEsialR::odo_SetPosition(double x_m, double y_m, double angle_rad)
+void AsservEsialR::odo_SetPosition(double x_mm, double y_mm, double angle_rad)
 {
-    logger().info() << "odo_SetPosition x_m=" << x_m << " y_m=" << y_m << " angle_rad=" << angle_rad << logs::end;
+    logger().info() << "odo_SetPosition x_mm=" << x_mm << " y_mm=" << y_mm << " angle_rad=" << angle_rad << logs::end;
     lock();
-    odo_->setX(Utils::mmToUO(odo_, (long) floor(x_m * 1000.0f))); //UO
-    odo_->setY(Utils::mmToUO(odo_, (long) floor(y_m * 1000.0f)));
+    odo_->setX(Utils::mmToUO(odo_, (long) floor(x_mm))); //UO
+    odo_->setY(Utils::mmToUO(odo_, (long) floor(y_mm)));
     odo_->setTheta(angle_rad);
     unlock();
     odo_GetPosition();
@@ -321,9 +321,9 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     return pathStatus_;
 }
 
-TRAJ_STATE AsservEsialR::motion_DoLine(float dist_meters)
+TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm)
 {
-    commandM_->addStraightLine(dist_meters * 1000.0f);
+    commandM_->addStraightLine(dist_mm);
     pathStatus_ = TRAJ_OK;
     return waitEndOfTraj();
 }

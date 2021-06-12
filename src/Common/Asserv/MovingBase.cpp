@@ -25,7 +25,7 @@ void MovingBase::moveDTime(int power, int timems)
 {
     motors_.runMotorLeft(power, timems);
     motors_.runMotorRight(power, timems);
-    usleep(1000 * timems);
+    utils::sleep_for_micros(1000 * timems);
 }
 
 void MovingBase::moveD(long destTick, long restTick, int power) //TODO backward ?
@@ -66,7 +66,7 @@ long MovingBase::moveDWaitTrajectory()
             return (distTicks_ - m);
         }
 
-        usleep(10000);
+        utils::sleep_for_micros(10000);
     }
 
     //TODO use external encoders if needed
@@ -117,7 +117,7 @@ void MovingBase::turn(float degree, int power)
         if (((abs(l) + abs(r)) / 2) + 1 >= abs(ticks)) {
             arrived = 1;
         }
-        usleep(500);
+        utils::sleep_for_micros(500);
     }
 
     l = encoders_.getLeftEncoder();
@@ -143,14 +143,14 @@ void MovingBase::turnRightTime(int power, int timems)
 {
     motors_.runMotorLeft(power, timems);
     motors_.runMotorRight(power, timems);
-    usleep(1000 * timems);
+    utils::sleep_for_micros(1000 * timems);
 }
 
 void MovingBase::turnLeftTime(int power, int timems)
 {
     motors_.runMotorLeft(power, timems);
     motors_.runMotorRight(power, timems);
-    usleep(1000 * timems);
+    utils::sleep_for_micros(1000 * timems);
 }
 
 void MovingBase::emergencyStop()

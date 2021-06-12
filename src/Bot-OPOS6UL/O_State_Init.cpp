@@ -166,7 +166,7 @@ O_State_Init::execute(Robot&)
                 logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
 
                 robot.actions().ax12_init();
-                usleep(300000);
+                utils::sleep_for_micros(300000);
             }
             if (b == BUTTON_DOWN_KEY) {
                 mode++;
@@ -200,7 +200,7 @@ O_State_Init::execute(Robot&)
                 robot.actions().lcd2x16().print("EXIIIIIIT !");
                 robot.actions().ledBar().resetAll();
                 robot.actions().ledBar().stopAndWait(true);
-                usleep(200000);
+                utils::sleep_for_micros(200000);
                 logger().info() << "Exit by User request! " << logs::end;
                 robot.actions().lcd2x16().clear();
                 //on quitte le programme!!
@@ -209,7 +209,7 @@ O_State_Init::execute(Robot&)
             if (b == BUTTON_ENTER_KEY) {
                 break;
             }
-            usleep(1000);
+            utils::sleep_for_micros(1000);
         }
 
 

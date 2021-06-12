@@ -30,9 +30,9 @@ void O_AsservEsialTest::run(int argc, char** argv)
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-
-    long left;
-    long right;
+    //OPOS6UL_AsservExtended &asserv = robot.asserv();
+    long left = 0;
+    long right = 0;
     int nb = 0;
     int step = 0;
 
@@ -44,13 +44,28 @@ void O_AsservEsialTest::run(int argc, char** argv)
     }
 
     utils::Chronometer chrono("L_AsservEsialTest");
-
+    /*
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
-    OPOS6UL_AsservExtended asserv = robot.asserv();
+    //OPOS6UL_AsservExtended asserv = robot.asserv();
     EncoderControl extEncoders = asserv.base()->extEncoders();
     chrono.start();
+
+    if (step == 0) {
+        //set position
+        logger().info() << "set position..."<< logs::end;
+        robot.asserv().setPositionAndColor(300, 500, 0.0, (robot.getMyColor() != PMXVIOLET));
+
+        while (1) {
+
+            logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ;  x="
+                    << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
+                    << asserv.pos_getThetaInDegree() << logs::end;
+            utils::sleep_for_micros(100000);
+            nb++;
+        }
+    }
 
     if (step == 1) {
         logger().info() << "ETAPE 1 : TEST CODEURS - compter sur un mètre" << logs::end;
@@ -63,7 +78,7 @@ void O_AsservEsialTest::run(int argc, char** argv)
             logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
                     << " ; right= " << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
                     << asserv.pos_getThetaInDegree() << logs::end;
-            usleep(100000);
+            utils::sleep_for_micros(100000);
             nb++;
         }
     }
@@ -81,7 +96,7 @@ void O_AsservEsialTest::run(int argc, char** argv)
             logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
                     << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
                     << asserv.pos_getThetaInDegree() << logs::end;
-            usleep(100000);
+            utils::sleep_for_micros(100000);
             nb++;
             if (nb > 50)
                 break;
@@ -103,7 +118,7 @@ void O_AsservEsialTest::run(int argc, char** argv)
     if (step == 4) {
         logger().info() << "ETAPE 4 : on avance pour regler D" << logs::end;
         robot.asserv().assistedHandling();
-        robot.asserv().doLineAbs(200);
+        robot.asserv().doLineAbs(100);
         sleep(1);
     }
 
@@ -115,11 +130,11 @@ void O_AsservEsialTest::run(int argc, char** argv)
 
     }
     //test4 quadramp
-
-    logger().info() << "END t= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
-            << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a=" << asserv.pos_getThetaInDegree()
-            << logs::end;
-    robot.svgPrintPosition();
+*/
+//    logger().info() << "END t= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
+//            << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
+//            << logs::end;
+    //robot.svgPrintPosition();
 
     logger().info() << "Happy End." << logs::end;
 }

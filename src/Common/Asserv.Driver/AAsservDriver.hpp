@@ -1,10 +1,11 @@
 #ifndef COMMON_ASSERVDRIVER_AASSERVDRIVER_HPP_
 #define COMMON_ASSERVDRIVER_AASSERVDRIVER_HPP_
 
+#include <sys/types.h>
 #include <string>
+#include <cmath>
 
-enum TRAJ_STATE
-{
+enum TRAJ_STATE {
     TRAJ_OK,			//init before trajectory
     TRAJ_FINISHED,                      //trajectory successfully completed
     TRAJ_ERROR,			//unknown error (not implemented !)
@@ -12,31 +13,42 @@ enum TRAJ_STATE
     TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision (sensors)
     TRAJ_CANCELLED,			//trajectory cancelled by remote user or not found
     TRAJ_INTERRUPTED,		//trajectory interrupted by software
-    //TRAJ_NEAR_OBSTACLE_REAR //TRAJ_COLLISION_REAR
+    TRAJ_NEAR_OBSTACLE_REAR,
+    TRAJ_COLLISION_REAR
 };
 
-enum MOTION_STATE
-{
+enum MOVEMENT_DIRECTION {
+    NONE, FORWARD, BACKWARD, TURN
+};
+
+enum MOTION_STATE {
     TRAJECTORY_RUNNING, ASSISTED_HANDLING, FREE_MOTION, DISABLE_PID,
 };
 
-typedef struct RobotPosition
-{
-    float x; //metres
-    float y; //metres
+typedef struct RobotPosition {
+    float x; //millimetres
+    float y; //millimetres
     float theta; //radians
 
-    //asser mbed status
+    //asserv status
     //0 idle
     //1 running
     //2 emergency stop
-    //3 blocked
-
+    //3 blocked/halted
     int asservStatus;
+
+    int queueSize;
+    int l_motor_speed;
+    int r_motor_speed;
+    MOVEMENT_DIRECTION direction;
+
 } RobotPosition;
 
-class AAsservDriver
-{
+class AAsservDriver {
+protected:
+    inline float degToRad(float deg) {
+        return deg * M_PI / 180.0;
+    }
 
 public:
 
@@ -48,16 +60,19 @@ public:
     /*!
      * \brief Destructor.
      */
-    virtual ~AAsservDriver()
-    {
+    virtual ~AAsservDriver() {
     }
 
     /*!
      * \brief Constructor.
      */
-    AAsservDriver()
-    {
+    AAsservDriver() {
     }
+
+    /*!
+     * \brief actions à faire avant de quitter le programme.
+     */
+    virtual void endWhatTodo() = 0;
 
     /*!
      * \brief Fonctions utilisées par la movingBase et permettant un simple control des moteurs et codeurs.
@@ -84,7 +99,7 @@ public:
      * \brief Fonctions permettant d'utiliser un asservissement externe.
      */
 
-    virtual void odo_SetPosition(float x_m, float y_m, float angle_rad) = 0;
+    virtual void odo_SetPosition(float x_mm, float y_mm, float angle_rad) = 0;
     virtual RobotPosition odo_GetPosition() = 0; //pos in metre/radian
 
     virtual int path_GetLastCommandStatus() = 0;
@@ -94,22 +109,27 @@ public:
     virtual void path_CancelTrajectory()= 0;
     virtual void path_ResetEmergencyStop() = 0;
 
-    virtual TRAJ_STATE motion_DoFace(float x_m, float y_m) = 0;
+    virtual TRAJ_STATE motion_DoFace(float x_mm, float y_mm) = 0;
     virtual TRAJ_STATE motion_DoLine(float dist_meters) = 0;
     virtual TRAJ_STATE motion_DoRotate(float angle_radians) = 0;
     virtual TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius) = 0;
+    virtual TRAJ_STATE motion_Goto(float x_mm, float y_mm)= 0;
+    virtual TRAJ_STATE motion_GotoReverse(float x_mm, float y_mm)= 0;
+    virtual TRAJ_STATE motion_GotoChain(float x_mm, float y_mm)= 0;
+    virtual TRAJ_STATE motion_GotoReverseChain(float x_mm, float y_mm)= 0;
+
     virtual void motion_FreeMotion(void) = 0;
     virtual void motion_DisablePID(void) = 0;		//! Stop motion control and disable PID
     virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =) (activate PID)
     virtual void motion_ActivateManager(bool enable) = 0;		//! Enable or Stop motion control timer, used to shutdown motion control
-    virtual void motion_setLowSpeedForward(bool enable, int percent=0)=0;
-    virtual void motion_setLowSpeedBackward(bool enable, int percent=0)=0;
+    virtual void motion_setLowSpeedForward(bool enable, int percent = 0)=0;
+    virtual void motion_setLowSpeedBackward(bool enable, int percent = 0)=0;
 
     virtual void motion_ActivateReguDist(bool enable) = 0;
     virtual void motion_ActivateReguAngle(bool enable) = 0;
     virtual void motion_ResetReguDist() = 0;
     virtual void motion_ResetReguAngle() = 0;
-    virtual TRAJ_STATE motion_DoDirectLine(float dist_meters) = 0; //uniquement en consigne sans le command manager
+    virtual TRAJ_STATE motion_DoDirectLine(float dist_mm) = 0; //uniquement en consigne sans le command manager
 };
 
 #endif

@@ -453,7 +453,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                 break;
 
             }
-            usleep(wait_tempo_us);
+            utils::sleep_for_micros(wait_tempo_us);
             robot_->resetDisplayTS();
             logger().info() << "AGAIN GOTO x=" << xMM << " y=" << yMM << logs::end;
 
@@ -490,7 +490,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                 break;
 
             }
-            usleep(wait_tempo_us);
+            utils::sleep_for_micros(wait_tempo_us);
             robot_->resetDisplayTS();
             logger().info() << "AGAIN GOTO x=" << xMM << " y=" << yMM << logs::end;
 
@@ -592,7 +592,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
                 break;
 
             }
-            usleep(wait_tempo_us);
+            utils::sleep_for_micros(wait_tempo_us);
             robot_->resetDisplayTS();
             logger().info() << "AGAIN GOTO BAKWARD x=" << xMM << " y=" << yMM << logs::end;
         }
@@ -627,7 +627,7 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot_->logger().info() << " ===== NE DOIT PAS ARRIVER !!! TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
 
-            usleep(wait_tempo_us);
+            utils::sleep_for_micros(wait_tempo_us);
             f++;
             robot_->asserv()->resetEmergencyOnTraj();
 
@@ -637,7 +637,7 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
         if (ts == TRAJ_COLLISION) {
             robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
 
-            usleep(wait_tempo_us);
+            utils::sleep_for_micros(wait_tempo_us);
             c++;
             robot_->asserv()->resetEmergencyOnTraj();
             if (c > nb_collision) {

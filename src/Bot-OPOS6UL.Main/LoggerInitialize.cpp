@@ -10,10 +10,14 @@
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
 
+
+void logs::LoggerFactory::setPriority()
+{
+    //set minimum thread priority FIFO for Logs
+    utils::set_realtime_priority(1);
+}
 void logs::LoggerFactory::initialize()
 {
-    //set minimum thread priority FIFO
-    utils::set_realtime_priority(1);
 
     add("console", new ConsoleAppender());
     add("svg", new SvgAppender("svgAPF.svg"));
@@ -50,7 +54,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_State_WaitEndOfMatch", "net");
 
     //TESTS
-
+    add(logs::Level::INFO, "O_ActionManagerTimerTest", "net");
     add(logs::Level::INFO, "O_TiretteTest", "net");
     add(logs::Level::INFO, "O_Asserv_CalageTest", "net");
     add(logs::Level::INFO, "O_Asserv_SquareTest", "net");
@@ -81,9 +85,11 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SoundDriver.OPO", "net");
     add(logs::Level::INFO, "SwitchDriver.OPO", "net");
     add(logs::Level::INFO, "SensorsDriver.OPO", "net");
-    add(logs::Level::INFO, "AsservDriver.OPO", "net");
+    add(logs::Level::DEBUG, "AsservDriver.OPO", "net");
     add(logs::Level::INFO, "CCAx12Adc.OPO", "net");
     add(logs::Level::INFO, "SensorsDriver.OPO", "net");
     add(logs::Level::INFO, "IrSensor.OPO", "net");
+    add(logs::Level::INFO, "BeaconSensors.OPO", "net");
+
 
 }

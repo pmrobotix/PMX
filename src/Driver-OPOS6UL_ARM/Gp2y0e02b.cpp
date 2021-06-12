@@ -112,7 +112,7 @@ void Gp2y0e02b::EFuseSlaveID(unsigned char desiredAddress, bool pin_activated)
     r = writeRegByte(0xCA, 0x01);
     logger().info() << "Data = 0x01 is set in Address = 0xCA" << logs::end;
     logger().info() << "Wait for 500 us" << logs::end;
-    usleep(500);
+    utils::sleep_for_micros(500);
 //    Serial.println("Stage 5 started.");
 //    writeSequence(byte(ADDRESS), byte(0xCA), byte(0x01));
 //    Serial.println("Data = 0x01 is set in Address = 0xCA");

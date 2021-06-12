@@ -17,44 +17,41 @@ class Actions;
  * d'accéder simplement au manager associé et donc de pouvoir ajouter de nouvelles
  * actions dans la pile des actions à effectuer.
  */
-class AActionsElement
-{
+class AActionsElement {
 private:
-	/*!
-	 * \brief Référence aux différentes Actions.
-	 */
-	Actions & actions_;
+    /*!
+     * \brief Référence aux différentes Actions.
+     */
+    Actions & actions_;
 
 protected:
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 * \param actions Référence à l'objet Actions associé.
-	 *
-	 * Ce constructeur est \c protected pour éviter toute instantiation
-	 * de la classe abstraite.
-	 */
-	AActionsElement(Actions & actions) :
-		actions_(actions)
-	{
-	}
+    /*!
+     * \brief Constructeur de la classe.
+     * \param actions Référence à l'objet Actions associé.
+     *
+     * Ce constructeur est \c protected pour éviter toute instantiation
+     * de la classe abstraite.
+     */
+    AActionsElement(Actions & actions) :
+            actions_(actions)
+    {
+    }
 
 public:
 
-	/*!
-	 * \brief Retourne une référence sur le Actions associé.
-	 */
-	inline Actions & actions()
-	{
-		return actions_;
-	}
+    /*!
+     * \brief Retourne une référence sur le Actions associé.
+     */
+    inline Actions & actions() {
+        return actions_;
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual inline ~AActionsElement()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~AActionsElement() {
+    }
 };
 
 #endif

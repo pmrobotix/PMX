@@ -20,13 +20,19 @@ enum ThreadState {
     CREATED, STARTING, STARTED, STOPPED
 };
 
+typedef pthread_t ThreadId;
+
 /*!
  * \brief met la priorité du thread à 99 (max en SCHED_FIFO).
  *
  * Cette méthode met la plus haute priorité sur le thread courant. en dehors de la classe pour etre utiliser pour les autres threads (Prog princ et Logs, etc)
  * http://www.yonch.com/tech/82-linux-thread-priority
  */
-int set_realtime_priority(int p = 99);
+int set_realtime_priority(int p = 0, ThreadId this_thread = pthread_self());
+
+void sleep_for_micros(int64_t usec);
+void sleep_for_millis(int64_t msec);
+void sleep_for_secs(int64_t sec);
 
 /*!
  * \brief Cette classe encapsule l'implémentation des threads.
@@ -47,7 +53,7 @@ protected:
 
 private:
 
-    typedef pthread_t ThreadId;
+
 
     /*!
      * \brief Identifiant du thread lié.
@@ -60,6 +66,8 @@ private:
     ThreadState state_;
 
     int priority_;
+
+    std::string name_;
 
 protected:
 
@@ -141,6 +149,10 @@ public:
 
     void cancel() {
         pthread_cancel(threadId_);
+    }
+
+    std::string name() {
+        return name_;
     }
 
 };

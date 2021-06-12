@@ -38,6 +38,9 @@ public:
      */
     ~SensorsDriver();
 
+    int sync(); //synchronise les données avec la balise
+    ASensorsDriver::bot_positions getvPositionsAdv(); //retourne les dernieres positions connues
+
     int rightSide();
     int leftSide();
 

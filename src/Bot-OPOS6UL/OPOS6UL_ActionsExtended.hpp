@@ -2,6 +2,7 @@
 #define OPOS6UL_ACTIONSEXTENDED_HPP_
 
 #include <string>
+#include <iostream>
 
 #include "../Common/Action/Actions.hpp"
 #include "../Common/Action/ButtonBar.hpp"
@@ -138,13 +139,16 @@ public:
 
     void stopExtra()
     {
+        //std::cout << "stopExtra..." << std::endl;
         sensors_.stopTimerSensors();
+        //std::cout << "stopTimerSensors done." << std::endl;
         ledbar_.stop(true);
         ledbar_.resetAll();
+        //std::cout << "ledbar_ done." << std::endl;
         lcd2x16_.reset();
-
+        //std::cout << "lcd2x16_ done." << std::endl;
         releaseAll();
-
+        //std::cout << "servosAx12 done." << std::endl;
     }
 
     //--------------------------------------------------------------
@@ -179,7 +183,7 @@ public:
         ax12_rightHand();
         ax12_left_cil_retract();
         ax12_right_cil_retract(-1);
-        usleep(200000);
+        utils::sleep_for_micros(200000);
         ax12_leftHand_retract();
         ax12_rightHand_retract();
         ax12_left_cil();

@@ -3,21 +3,18 @@
  * \brief Définition de la classe AsservDriver (OPOS6UL).
  */
 
-#ifndef OPOS6UL_ASSERVDRIVER_HPP_
-#define OPOS6UL_ASSERVDRIVER_HPP_
+#ifndef OPOS6UL_ASSERVDRIVER_MBED_I2C_HPP_
+#define OPOS6UL_ASSERVDRIVER_MBED_I2C_HPP_
 
-
+#include <as_devices/cpp/as_i2c.hpp>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
-#include <include/CppLinuxSerial/SerialPort.hpp>
-#include <vector>
 
 using namespace std;
-using namespace mn::CppLinuxSerial;
 
-#define	SERIAL_ADDRESS      "/dev/ttymxc1"
+#define	MBED_ADDRESS    0x05
 
 // convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
 union float2bytes_t   // union consists of one variable represented in a number of different ways
@@ -31,7 +28,7 @@ union float2bytes_t   // union consists of one variable represented in a number 
     } //initialisation
 };
 
-class AsservDriver: public AAsservDriver, utils::Thread
+class AsservDriver_mbed_i2c: public AAsservDriver, utils::Thread
 {
 
 private:
@@ -50,41 +47,27 @@ private:
         return instance;
     }
 
-    SerialPort serialPort_;
-
+    AsI2c mbedI2c_;
     bool connected_;
     int errorCount_;
 
-    bool asservCardStarted_;
-
-    int statusCountDown_;
+    bool asservMbedStarted_;
 
     TRAJ_STATE pathStatus_;
-
-    //Mutex m_mbed; //mutex pour i2c mbed
+    Mutex m_mbed; //mutex pour i2c mbed
     Mutex m_pos; //mutex pour la mise à jour de la position
-    Mutex m_statusCountDown;
 
+    int mbed_ack();
+    int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
+    int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write, unsigned char* data);
 
-    int nucleo_ack();
-    int nucleo_writeSerial(string str);
-    //int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
-    //int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write, unsigned char* data);
-
-    RobotPosition nucleo_GetPosition();
-    TRAJ_STATE nucleo_waitEndOfTraj();
-
-    void parseAsservPosition(string str);
-
-    void tokenize(std::string const &str, const char delim, std::vector<std::string> &out);
-
+    RobotPosition mbed_GetPosition();
+    TRAJ_STATE mbed_waitEndOfTraj();
 protected:
 
     virtual void execute();
     RobotPosition p_;
 public:
-
-    void endWhatTodo();
 
     //commandes directes concernant les moteurs
     void setMotorLeftPosition(int power, long ticks);
@@ -112,7 +95,7 @@ public:
     //void enableHardRegulation(bool enable);
 
     //fonctions asservissements externe par defaut
-    void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
+    void odo_SetPosition(float x_m, float y_m, float angle_rad);
     RobotPosition odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
@@ -120,40 +103,33 @@ public:
     void path_CollisionRearOnTrajectory();
     void path_CancelTrajectory();
     void path_ResetEmergencyStop();
-    TRAJ_STATE motion_DoLine(float dist_mm);
-    TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+    TRAJ_STATE motion_DoLine(float dist_meters);
+    TRAJ_STATE motion_DoFace(float x_m, float y_m);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
-    TRAJ_STATE motion_Goto(float x_mm, float y_mm);
-    TRAJ_STATE motion_GotoReverse(float x_mm, float y_mm);
-    TRAJ_STATE motion_GotoChain(float x_mm, float y_mm);
-    TRAJ_STATE motion_GotoReverseChain(float x_mm, float y_mm);
-
     void motion_FreeMotion(void);
-    void motion_DisablePID();		//! just disable PID Deprecated
+    void motion_DisablePID();		//! just disable PID
     void motion_AssistedHandling(void);		//! Assisted movement mode =)
     void motion_ActivateManager(bool enable);
     //void motion_setLowSpeed(bool enable);
-    void motion_setLowSpeedForward(bool enable, int percent); //TODO remove enable
-    void motion_setLowSpeedBackward(bool enable, int percent); //TODO remove enable
+    void motion_setLowSpeedForward(bool enable, int percent);
+    void motion_setLowSpeedBackward(bool enable, int percent);
 
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);
     void motion_ResetReguDist();
     void motion_ResetReguAngle();
-    TRAJ_STATE motion_DoDirectLine(float dist_mm);
-
-
+    TRAJ_STATE motion_DoDirectLine(float dist_meters);
 
     /*!
      * \brief Constructor.
      */
-    AsservDriver();
+    AsservDriver_mbed_i2c();
 
     /*!
      * \brief Destructor.
      */
-    ~AsservDriver();
+    ~AsservDriver_mbed_i2c();
 
 };
 

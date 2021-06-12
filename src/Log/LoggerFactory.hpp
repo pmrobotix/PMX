@@ -28,8 +28,7 @@ namespace logs {
  *
  * \todo Documenter et coder la notion de hierarchie.
  */
-class LoggerFactory: public utils::Thread
-{
+class LoggerFactory: public utils::Thread {
 public:
 
     /*!
@@ -37,8 +36,7 @@ public:
      * LoggerFactory.
      * \return L'instance unique de la classe.
      */
-    static LoggerFactory & instance()
-    {
+    static LoggerFactory & instance() {
         static LoggerFactory instance;
 
         return instance;
@@ -89,6 +87,11 @@ private:
      * \todo Documenter l'initialisation en fonction des noms.
      */
     void initialize();
+
+    /*!
+     * \brief set the priority of this thread (can be different per robot).
+     */
+    void setPriority();
 
 protected:
 
@@ -142,7 +145,6 @@ protected:
 
 public:
 
-
     /*!
      * \brief Destructeur de la classe.
      */
@@ -153,8 +155,7 @@ public:
      * niveau de trace par défaut.
      * \return Le logger principal du système.
      */
-    Logger * rootLogger() const
-    {
+    Logger * rootLogger() const {
         return rootLogger_;
     }
 

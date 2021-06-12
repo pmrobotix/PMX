@@ -48,6 +48,13 @@ AsservDriver::~AsservDriver()
         twRight_.join();
 }
 
+
+
+void AsservDriver::endWhatTodo()
+{
+
+}
+
 float AsservDriver::convertMetersToTicks(float meters)
 {
     //conversion 1 meter = 3640 ticks
@@ -370,6 +377,28 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 {
 }
+
+
+TRAJ_STATE AsservDriver::motion_Goto(float x_m, float y_m) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoReverse(float x_m, float y_m) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoChain(float x_m, float y_m) {
+
+    return TRAJ_ERROR;
+}
+
+TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_m, float y_m) {
+
+    return TRAJ_ERROR;
+}
+
 void AsservDriver::motion_FreeMotion()
 {
 }

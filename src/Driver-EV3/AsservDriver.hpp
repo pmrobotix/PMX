@@ -49,6 +49,8 @@ public:
     inline ~AsservDriver() {
     }
 
+    void endWhatTodo();
+
     void reset(); //motor reset!
 
     int limit(int power, int max);
@@ -81,7 +83,7 @@ public:
     int getMotorRightCurrent();
 
     //fonctions asservissements externe par defaut
-    void odo_SetPosition(float x_m, float y_m, float angle_rad);
+    void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
     RobotPosition odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
@@ -90,10 +92,15 @@ public:
     void path_CancelTrajectory();
     void path_ResetEmergencyStop();
 
-    TRAJ_STATE motion_DoFace(float x_m, float y_m);
-    TRAJ_STATE motion_DoLine(float dist_meters);
+    TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+    TRAJ_STATE motion_DoLine(float dist_mm);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
+    TRAJ_STATE motion_Goto(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoReverse(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoChain(float x_mm, float y_mm);
+    TRAJ_STATE motion_GotoReverseChain(float x_mm, float y_mm);
+
     void motion_FreeMotion();
     void motion_DisablePID();		//! Stop motion control and disable PID
     void motion_AssistedHandling();		//! Assisted movement mode =)
@@ -105,7 +112,7 @@ public:
     void motion_ActivateReguAngle(bool enable);
     void motion_ResetReguDist();
     void motion_ResetReguAngle();
-    TRAJ_STATE motion_DoDirectLine(float dist_meters); //uniquement en consigne sans le command manager
+    TRAJ_STATE motion_DoDirectLine(float dist_mm); //uniquement en consigne sans le command manager
 
 };
 

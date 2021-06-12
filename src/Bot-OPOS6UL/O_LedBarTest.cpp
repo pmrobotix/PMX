@@ -29,48 +29,62 @@ void O_LedBarTest::run(int argc, char** argv)
     int wait = 100000;
     robot.actions().ledBar().resetAll();
 
-
+    //test avec asserv
+    robot.asserv().startMotionTimerAndOdo(false);
 
 
     robot.actions().ledBar().setOff(0);
     robot.actions().ledBar().setOff(1);
-    usleep(wait);
+    utils::sleep_for_micros(wait);
     robot.actions().ledBar().setOn(0);
     robot.actions().ledBar().setOn(1);
-    usleep(wait);
+    utils::sleep_for_micros(wait);
     robot.actions().ledBar().setOff(0);
     robot.actions().ledBar().setOff(1);
-    usleep(wait);
+    utils::sleep_for_micros(wait);
+
 
     robot.actions().ledBar().set(0, LED_ORANGE);
-    usleep(wait);
+    utils::sleep_for_micros(wait);
     robot.actions().ledBar().set(0, LED_GREEN);
-    usleep(wait);
+    utils::sleep_for_micros(wait);
     robot.actions().ledBar().setOff(0);
-    usleep(wait);
+    utils::sleep_for_micros(wait);
 
     robot.actions().ledBar().blink(5, 100000, LED_ORANGE);
 
     robot.actions().ledBar().k2mil(4, 100000, LED_GREEN);
 
 
+
+
+    //TODO corriger le problème du Wait !!
+
+
     //START ActionTimer
     robot.actions().start(); //start ActionTimer
+    logger().info() << "robot.actions().started" << logs::end;
 
-
-
+    logger().info() << "startSet" << logs::end;
     robot.actions().ledBar().startSet(0, LED_RED);
-    sleep(1);
 
-    robot.actions().ledBar().startAlternate(20, 100000, 0x55, 0xAA, LED_GREEN, true);
+    utils::sleep_for_micros(1);
+    robot.actions().ledBar().startSet(1, LED_RED);
+       robot.actions().ledBar().startSet(2, LED_RED);
+       utils::sleep_for_micros(1);
 
+    logger().info() << "startAlternate" << logs::end;
+    robot.actions().ledBar().startAlternate(20, 1000000, 0x55, 0xAA, LED_GREEN, true);
+    //sleep(2);
+
+    logger().info() << "startBlinkPin" << logs::end;
     robot.actions().ledBar().startBlinkPin(20, 100000, 0, LED_RED, true);
-    sleep(2);
+    //sleep(2);
 
-    robot.actions().ledBar().startK2mil(10, 50000, LED_ORANGE, true);
+    logger().info() << "startK2mil" << logs::end;
+    robot.actions().ledBar().startK2mil(40, 50000, LED_ORANGE, true);
+    //sleep(2);
 
-
-
-    logger().info() << "O_LedBarTest Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End." << logs::end;
 }
 

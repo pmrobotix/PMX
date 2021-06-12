@@ -163,7 +163,7 @@ public:
         this->waitForInit_ = init;
     }
 
-    ///DATA
+    //Label of the Robot
     std::string getID()
     {
         return id_;
