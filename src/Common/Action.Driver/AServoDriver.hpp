@@ -58,7 +58,10 @@ public:
      * \brief Tourne en mode moteur à une vitesse donnée.
      */
     virtual void turn(int servo, int speed) = 0;
-
+    /*!
+         * \brief donne le statut
+         * \return 1 when in progress, 0 when completed, -1 on error
+         */
     virtual int getMoving(int servo) = 0;
 
     virtual int getPos(int servo) = 0;

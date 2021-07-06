@@ -47,15 +47,18 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
         return false; //si en dehors de la table*/
 }
 
-void OPOS6UL_AsservExtended::setLowSpeedForward(bool enable, int)
+void OPOS6UL_AsservExtended::setLowSpeedForward(bool enable, int percent)
 {
-    logger().debug() << "LegoEV3AsservExtended::setLowSpeedForward = " << enable << logs::end;
+    if (percent < 0) percent = 1;
+    if (percent > 100) percent = 100;
+
+    logger().debug() << "OPOS6UL_AsservExtended::setLowSpeedForward = " << enable << logs::end;
     //Asserv::setLowSpeedForward(enable, 45);
-    asservdriver_->motion_setLowSpeedForward(enable, 55);
+    asservdriver_->motion_setLowSpeedForward(enable, percent);
 }
 void OPOS6UL_AsservExtended::setLowSpeedBackward(bool enable, int)
 {
-    logger().debug() << "LegoEV3AsservExtended::setLowSpeedBackward =" << enable << logs::end;
+    logger().debug() << "OPOS6UL_AsservExtended::setLowSpeedBackward =" << enable << logs::end;
     //Asserv::setLowSpeedBackward(enable, 45);
     asservdriver_->motion_setLowSpeedBackward(enable, 55);
 }

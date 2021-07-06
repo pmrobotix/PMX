@@ -44,10 +44,14 @@ void O_AsservEsialTest::run(int argc, char** argv)
     }
 
     utils::Chronometer chrono("L_AsservEsialTest");
-    /*
-    robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
 
+    robot.asserv().setPositionAndColor(100.0, 150.0, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().startMotionTimerAndOdo(true);
+    robot.asserv().doLineAbs(1000);
+    //robot.asserv().doFaceTo(300, 300);
+
+    utils::sleep_for_secs(2);
+/*
     //OPOS6UL_AsservExtended asserv = robot.asserv();
     EncoderControl extEncoders = asserv.base()->extEncoders();
     chrono.start();
@@ -55,7 +59,7 @@ void O_AsservEsialTest::run(int argc, char** argv)
     if (step == 0) {
         //set position
         logger().info() << "set position..."<< logs::end;
-        robot.asserv().setPositionAndColor(300, 500, 0.0, (robot.getMyColor() != PMXVIOLET));
+        robot.asserv().setPositionAndColor(300, 500, 0.0, (robot.getMyColor() != PMXYELLOW));
 
         while (1) {
 

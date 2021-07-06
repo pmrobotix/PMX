@@ -41,6 +41,7 @@ typedef struct RobotPosition {
     int l_motor_speed;
     int r_motor_speed;
     MOVEMENT_DIRECTION direction;
+    unsigned int debug_nb;
 
 } RobotPosition;
 

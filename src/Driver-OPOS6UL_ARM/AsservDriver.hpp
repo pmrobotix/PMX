@@ -52,6 +52,7 @@ private:
 
     SerialPort serialPort_;
 
+    int read_error_;
     bool connected_;
     int errorCount_;
 

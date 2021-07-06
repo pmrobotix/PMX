@@ -29,41 +29,28 @@ AsservDriver::AsservDriver() :
 {
     errorCount_ = 0;
     statusCountDown_ = 0;
+    read_error_ = -1;
 
     // Create serial port object and open serial port
     //serialPort_(SERIAL_ADDRESS, BaudRate::B_115200);
     // SerialPort serialPort("/dev/ttyACM0", 13000);
     serialPort_.SetTimeout(500); // Block when reading until any data is received
     serialPort_.Open();
-
+/*
 //    // Write some ASCII datae
-//    serialPort_.Write("p\r\n");
+    serialPort_.Write("p");
 //
 //    // Read some data back
-//    while (1) {
-//        string readData;
-//        serialPort_.Read(readData);
-//        cout << readData; //TODO test que la carte repond ?
-//        if (readData == "\r\n") break;
-//    }
-
+    while (1) {
+        string readData;
+        serialPort_.Read(readData);
+        cout << readData; //TODO timeout
+        if (readData == "\r\n") break;
+    }
+*/
     //on demarre le check de positionnement...
-   // this->start("AsservDriver::AsservDriver()", 1); //TODO ajouter une priorité
-    //connected_ = true;
-
-    /*
-     if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
-     {
-
-     logger().error() << "AsservDriver() : ERROR setSlaveAddr !" << logs::end;
-     connected_ = false;
-     }
-     else {
-
-     //on demarre le check de positionnement...
-     this->start("AsservDriver::AsservDriver()");
-     connected_ = true;
-     }*/
+    this->start("AsservDriver::AsservDriver()", 80); //TODO ajouter une priorité
+    connected_ = true;
 
 }
 
@@ -103,6 +90,14 @@ void AsservDriver::parseAsservPosition(string str) {
         int rSpeed = std::stoi(out.operator[](6));
         int debg = std::stoi(out.operator[](7));
 
+        if (p_.debug_nb != debg-1)
+        {
+            read_error_++;
+        }else
+            read_error_ = -1;
+        if(read_error_ > 0)
+            logger().error() << ">> debug number missed !!"<< logs::end;
+
         m_pos.lock();
         p_.x = (float) x; //mm
         p_.y = (float) y; //mm
@@ -111,6 +106,7 @@ void AsservDriver::parseAsservPosition(string str) {
         p_.queueSize = PendingCommandCount;
         p_.l_motor_speed = lSpeed;
         p_.r_motor_speed = rSpeed;
+        p_.debug_nb = debg;
         m_pos.unlock();
 
 //        logger().debug() << " ok# "
@@ -241,7 +237,7 @@ int AsservDriver::getMotorRightCurrent() {
 void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad) {
     if (!connected_) return;
 
-    nucleo_writeSerial("P" + to_string((int)x_mm) + "#" + to_string((int)y_mm) + "#" + to_string(angle_rad)+ "\0");
+    nucleo_writeSerial("P" + to_string((int)x_mm) + "#" + to_string((int)y_mm) + "#" + to_string(angle_rad)+ "\n");
 
 }
 RobotPosition AsservDriver::odo_GetPosition() //en metre
@@ -254,9 +250,9 @@ RobotPosition AsservDriver::odo_GetPosition() //en metre
 
 RobotPosition AsservDriver::nucleo_GetPosition() //en metre
 {
-    m_pos.lock();
+    //m_pos.lock();
     return p_;
-    m_pos.unlock();
+    //m_pos.unlock();
     /*
      RobotPosition p;
      p.x = -1;
@@ -403,7 +399,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("v" + (int) (dist_mm));
+        serialPort_.Write("v" + to_string((int) (dist_mm)) + "\n");
 
         return nucleo_waitEndOfTraj();
     }
@@ -450,7 +446,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)));
+        serialPort_.Write("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
 
         return nucleo_waitEndOfTraj();
     }
@@ -471,7 +467,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("t" + to_string(AAsservDriver::degToRad(angle_radians)));
+        serialPort_.Write("t" + to_string(AAsservDriver::degToRad(angle_radians))+"\n");
 
         return nucleo_waitEndOfTraj();
     }
@@ -497,7 +493,7 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)));
+        serialPort_.Write("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
 
         return nucleo_waitEndOfTraj();
     }
@@ -519,7 +515,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)));
+        serialPort_.Write("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
 
         return nucleo_waitEndOfTraj();
     }
@@ -541,7 +537,7 @@ TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)));
+        serialPort_.Write("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
 
         return nucleo_waitEndOfTraj();
     }
@@ -563,7 +559,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)));
+        serialPort_.Write("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
 
         return nucleo_waitEndOfTraj();
     }
@@ -592,76 +588,32 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm) {
 }
 
 void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent) {
-    serialPort_.Write("S" + to_string(percent));
+    serialPort_.Write("S" + to_string(percent)+"\n");
 
 }
 void AsservDriver::motion_setLowSpeedForward(bool enable, int percent) {
-    serialPort_.Write("S" + to_string(percent));
+    serialPort_.Write("S" + to_string(percent)+"\n");
 
 }
 
 void AsservDriver::motion_ActivateReguDist(bool enable) {
-    /*
-     unsigned char d[4];
-     if (enable) {
-     d[0] = 1;
-     d[1] = 0;
-     d[2] = 0;
-     d[3] = 0;
-     }
-     else {
-     d[0] = 0;
-     d[1] = 0;
-     d[2] = 0;
-     d[3] = 0;
-     }
-     mbed_writeI2c('D', 4, d);*/
+
 }
 void AsservDriver::motion_ActivateReguAngle(bool enable) {
-    /*
-     unsigned char d[4];
-     if (enable) {
-     d[0] = 1;
-     d[1] = 0;
-     d[2] = 0;
-     d[3] = 0;
-     }
-     else {
-     d[0] = 0;
-     d[1] = 0;
-     d[2] = 0;
-     d[3] = 0;
-     }
-     mbed_writeI2c('A', 4, d);*/
+
 }
 void AsservDriver::motion_ResetReguDist() {
-    /*
-     unsigned char d[4];
 
-     d[0] = 1;
-     d[1] = 0;
-     d[2] = 0;
-     d[3] = 0;
-
-     mbed_writeI2c('R', 4, d);*/
 }
 void AsservDriver::motion_ResetReguAngle() {
-    /*
-     unsigned char d[4];
 
-     d[0] = 0;
-     d[1] = 0;
-     d[2] = 0;
-     d[3] = 0;
-
-     mbed_writeI2c('R', 4, d);*/
 }
 
 void AsservDriver::motion_FreeMotion(void) {
     if (!connected_) return;
     if (!asservCardStarted_) logger().debug() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
-        serialPort_.Write("M0\0");
+        serialPort_.Write("M0\n");
     }
 }
 void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotion ???
@@ -672,14 +624,14 @@ void AsservDriver::motion_AssistedHandling(void) {
     if (!connected_) return;
     if (!asservCardStarted_) logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
-        serialPort_.Write("M1\0");
+        serialPort_.Write("M1\n");
     }
 }
 void AsservDriver::motion_ActivateManager(bool enable) {
     if (!connected_) return;
     if (enable) {
         serialPort_.Write("r");
-        serialPort_.Write("M1\0");
+        serialPort_.Write("M1\n");
 
         /*
          mbed_writeI2c('I', 0, NULL);
@@ -690,7 +642,7 @@ void AsservDriver::motion_ActivateManager(bool enable) {
     else {
         asservCardStarted_ = false;
 
-        serialPort_.Write("M0\0");
+        serialPort_.Write("M0\n");
         /*
          usleep(100000);
          mbed_writeI2c('!', 0, NULL);*/

@@ -90,13 +90,13 @@ void O_AsservTest::run(int argc, char** argv)
 
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
-    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
 
     robot.svgPrintPosition();
 
     //detection adverse
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(50);
+    robot.actions().sensors().addTimerSensors(100);
     robot.chrono().start();
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);

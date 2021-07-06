@@ -368,22 +368,25 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
 
                 logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
 
-                ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y,
-                        rotate_ignored_detection); //inversement de x car doMoveForwardTo va aussi le refaire.
+//                ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y,
+//                        rotate_ignored_detection); //inversement de x car doMoveForwardTo va aussi le refaire.
+
+                ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
+
                 if (ts != TRAJ_FINISHED) {
                     return ts;
                 }
-                logger().debug() << "222 p = x " << robot_->asserv()->pos_getX_mm() << " y "
-                        << robot_->asserv()->pos_getY_mm() << " a " << robot_->asserv()->pos_getThetaInDegree()
-                        << logs::end;
+//                logger().debug() << "222 p = x " << robot_->asserv()->pos_getX_mm() << " y "
+//                        << robot_->asserv()->pos_getY_mm() << " a " << robot_->asserv()->pos_getThetaInDegree()
+//                        << logs::end;
                 robot_->svgPrintPosition();
             }
             count++;
 
         }
 
-        logger().debug() << "333 p = x " << robot_->asserv()->pos_getX_mm() << " y " << robot_->asserv()->pos_getY_mm()
-                << " a " << robot_->asserv()->pos_getThetaInDegree() << logs::end;
+//        logger().debug() << "333 p = x " << robot_->asserv()->pos_getX_mm() << " y " << robot_->asserv()->pos_getY_mm()
+//                << " a " << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
         robot_->svgw().pathPolyline(path_polyline.str());
 
@@ -395,6 +398,25 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
     return ts;
 }
 
+
+TRAJ_STATE IAbyPath::doMoveForwardAndFaceTo(float xMM, float yMM, float f_x, float f_y)
+{
+    TRAJ_STATE ts = TRAJ_OK;
+    ts = doMoveForwardTo(xMM, yMM);
+    if (ts != TRAJ_FINISHED) {
+        return ts;
+    }
+
+    ts = robot_->asserv()->doFaceTo( f_x,  f_y);
+    robot_->svgPrintPosition();
+    if (ts != TRAJ_FINISHED) {
+        return ts;
+    }
+    return ts;
+
+}
+
+//TODO deprecated
 TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
     TRAJ_STATE ts = TRAJ_OK;

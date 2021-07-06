@@ -61,9 +61,12 @@ Robot::~Robot()
 
 void Robot::svgPrintPosition(int color)
 {
+
     if (asserv_default_ != NULL)
+    {
         this->svgw().writePosition_Bot(this->asserv_default_->pos_getX_mm(), this->asserv_default_->pos_getY_mm(),
                 this->asserv_default_->pos_getTheta(), color);
+    }
     else
         logger().error() << "asserv_default is NULL !" << logs::end;
 }
@@ -239,8 +242,8 @@ void Robot::begin(int argc, char** argv)
 
     if (cArgs_['c']) {
         color = cArgs_['c']["color"];
-        if (color == "violet" || color == "v")
-            this->setMyColor(PMXVIOLET);
+        if (color == "blue" || color == "b")
+            this->setMyColor(PMXBLUE);
         else if (color == "yellow" || color == "jaune" || color == "j" || color == "y")
             this->setMyColor(PMXYELLOW);
         else {
@@ -251,7 +254,7 @@ void Robot::begin(int argc, char** argv)
         logger().debug() << "setMyColor DONE : " << this->getMyColor() << logs::end;
     } else {
         //defaut si aucune couleur n'est specifiée
-        this->setMyColor(PMXVIOLET);
+        this->setMyColor(PMXYELLOW);
     }
     logger().debug() << "setMyColor done; getMyColor() = " << getMyColor() << logs::end;
 

@@ -29,7 +29,7 @@
 #define P_RETURN_DELAY_TIME			5
 #define P_CW_ANGLE_LIMIT			6
 #define P_CCW_ANGLE_LIMIT			8
-#define P_SYSTEM_DATA2				10ter
+#define P_SYSTEM_DATA2				10
 #define P_LIMIT_TEMPERATURE			11
 #define P_DOWN_LIMIT_VOLTAGE		12
 #define P_UP_LIMIT_VOLTAGE			13

@@ -63,16 +63,13 @@ void Asserv::endWhatTodo() {
 
 void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled) {
     if (useAsservType_ == ASSERV_INT_INSA) {
-
         //TO BE surcharged because of the specific config file per robot
         logger().error() << "TODO startMotionTimerAndOdo  ASSERV_INT_INSA  TO BE surcharged !!!" << logs::end;
-
     }
     else if (useAsservType_ == ASSERV_INT_ESIALR) {
 
         //TO BE surcharged because of the specific config file per robot
         logger().error() << "TODO startMotionTimerAndOdo  ASSERV_INT_ESIALR  TO BE surcharged !!!" << logs::end;
-
     }
     else if (useAsservType_ == ASSERV_EXT) {
 
@@ -148,15 +145,13 @@ void Asserv::assistedHandling() {
 
 //WARNING matchColor = 0 => en bas à gauche
 void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, bool matchColor = 0) {
-    //printf("matchcolor ORANGE=0 GREEN=1 : %d\n", matchColor);
-    //logger().error() << "matchcolor VIOLET=0 YELLOWs=1 : " << matchColor << logs::end;
 
     setMatchColorPosition(matchColor);
 
     x_mm = getRelativeX(x_mm);
     float thetaInDegrees = getRelativeAngle(thetaInDegrees_);
 
-    logger().debug() << "matchcolor [VIOLET=0 YELLOW=1]="
+    logger().error() << "matchcolor [YELLOW=0 BLUE=1]="
             << matchColor
             << " thetaInDegrees="
             << thetaInDegrees_
@@ -320,34 +315,43 @@ void Asserv::warnBackCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_m
 }
 
 TRAJ_STATE Asserv::gotoChain(float xMM, float yMM) {
+    float x_match = getRelativeX(xMM);
     temp_ignoreRearCollision_ = true;
     TRAJ_STATE ts;
-    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_GotoChain(xMM, yMM);
+    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_GotoChain(x_match, yMM);
     else ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
     return ts;
 }
 
 TRAJ_STATE Asserv::gotoXY(float xMM, float yMM) {
+    float x_match = getRelativeX(xMM);
     temp_ignoreRearCollision_ = true;
     TRAJ_STATE ts;
-    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_Goto(xMM, yMM);
+    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_Goto(x_match, yMM);
     else ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
     return ts;
 }
 
 TRAJ_STATE Asserv::gotoReverse(float xMM, float yMM) {
+    float x_match = getRelativeX(xMM);
     temp_ignoreFrontCollision_ = true;
     TRAJ_STATE ts;
-    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_Goto(xMM, yMM);
+    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_Goto(x_match, yMM);
     else ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
     return ts;
 }
 
 TRAJ_STATE Asserv::gotoReverseChain(float xMM, float yMM) {
-
+    float x_match = getRelativeX(xMM);
+    temp_ignoreFrontCollision_ = true;
+    TRAJ_STATE ts;
+    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_GotoReverseChain(x_match, yMM);
+    else ts = TRAJ_ERROR;
+    temp_ignoreRearCollision_ = false;
+    return ts;
 }
 
 TRAJ_STATE Asserv::doLineAbs(float dist_mm) // if distance <0, move backward
@@ -402,6 +406,7 @@ TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //prend autom
 }
 
 TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) {
+    float x_match = getRelativeX(xMM);
     logger().debug() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
 
     TRAJ_STATE ts;
@@ -411,8 +416,8 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) {
         ts = TRAJ_ERROR;
         logger().error() << "TODO doFaceTo ASSERV_INT_INSA !!!" << logs::end;
     }
-    else if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_DoFace(getRelativeX(xMM), yMM);
-    else if (useAsservType_ == ASSERV_INT_ESIALR) ts = pAsservEsialR_->motion_DoFace(getRelativeX(xMM), yMM);
+    else if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_DoFace(x_match, yMM);
+    else if (useAsservType_ == ASSERV_INT_ESIALR) ts = pAsservEsialR_->motion_DoFace(x_match, yMM);
     else ts = TRAJ_ERROR;
 
     return ts;
@@ -449,7 +454,20 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
     return ts;
 }
 
-//TODO le getPos n'est pas precis, donc il faut utiliser l'asserv ext
+
+
+
+
+
+
+
+
+
+
+
+
+
+//TODO ATTENTION le getPos n'est pas precis puisque les positions sont recup toutes les n ms, donc il faut utiliser l'asserv ext qui possede l'odometrie
 TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, float adjustment_mm) {
     float dx = getRelativeX(xMM) - pos_getX_mm();
     float dy = yMM - pos_getY_mm();

@@ -80,11 +80,11 @@ O_State_Init::execute(Robot&)
                     robot.setMyColor(PMXYELLOW);
                 }
                 if (b == BUTTON_RIGHT_KEY) {
-                    logger().info() << "BUTTON_RIGHT_KEY - VIOLET selected" << logs::end;
+                    logger().info() << "BUTTON_RIGHT_KEY - BLUE selected" << logs::end;
 
                     robot.actions().lcd2x16().setCursor(2, 0);
-                    robot.actions().lcd2x16().print("VIOLET ");
-                    robot.setMyColor(PMXVIOLET);
+                    robot.actions().lcd2x16().print("BLUE ");
+                    robot.setMyColor(PMXBLUE);
                 }
             } else if (mode == 2) {
                 logger().info() << "MODE VRR selected" << logs::end;
@@ -175,17 +175,19 @@ O_State_Init::execute(Robot&)
                 logger().info() << "BUTTON_DOWN_KEY - MODE changed to " << mode << logs::end;
 
             }
-
+            utils::sleep_for_micros(500);
         }
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
 
         robot.actions().ledBar().stopAndWait(true);
 
-        robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
 
         //position et init servo
         setPos();
+
+        robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
+
 
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd2x16().home();
@@ -197,6 +199,13 @@ O_State_Init::execute(Robot&)
             if (b == BUTTON_BACK_KEY) {
                 robot.actions().lcd2x16().home();
                 robot.actions().lcd2x16().clear();
+
+                robot.actions().lcd2x16().print("RESTART !");
+                robot.actions().ledBar().resetAll();
+                                robot.actions().ledBar().stopAndWait(true);
+                goto begin;
+/*
+                //version on quitte le prog
                 robot.actions().lcd2x16().print("EXIIIIIIT !");
                 robot.actions().ledBar().resetAll();
                 robot.actions().ledBar().stopAndWait(true);
@@ -204,12 +213,12 @@ O_State_Init::execute(Robot&)
                 logger().info() << "Exit by User request! " << logs::end;
                 robot.actions().lcd2x16().clear();
                 //on quitte le programme!!
-                exit(0);
+                exit(0);*/
             }
-            if (b == BUTTON_ENTER_KEY) {
-                break;
-            }
-            utils::sleep_for_micros(1000);
+//            if (b == BUTTON_ENTER_KEY) {
+//                break;
+//            }
+            utils::sleep_for_micros(500);
         }
 
 
@@ -220,14 +229,14 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().setCursor(0, 1);
         robot.actions().lcd2x16().print("WAITING TIRETT...");
         logger().info() << "PMX...WAIT TIRETTE !!!!!!!!!!!!!!!";
-        if (robot.getMyColor() == PMXVIOLET) {
-            robot.actions().lcd2x16().setCursor(0, 0);
-            robot.actions().lcd2x16().print("VIO");
-            logger().info() << " VIOLET";
-        } else {
+        if (robot.getMyColor() == PMXYELLOW) {
             robot.actions().lcd2x16().setCursor(0, 0);
             robot.actions().lcd2x16().print("YEL");
             logger().info() << "YELLOW";
+        } else {
+            robot.actions().lcd2x16().setCursor(0, 0);
+            robot.actions().lcd2x16().print("BLU");
+            logger().info() << "BLUE  ";
         }
         logger().info() << logs::end;
 
@@ -257,7 +266,7 @@ O_State_Init::execute(Robot&)
             robot.actions().lcd2x16().print("NO COLOR... => EXIT !!");
             exit(0);
         } else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXVIOLET ? "VIOLET" : "YELLOW") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "BLUE ") << logs::end;
         }
 
         robot.actions().lcd2x16().home();
@@ -295,17 +304,24 @@ O_State_Init::execute(Robot&)
 
 void O_State_Init::setPos()
 {
+    logger().info() << "O_State_Init::setPos() executing" << logs::end;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(false);
 
+
     robot.actions().ax12_init();
 
     robot.actions().lcd2x16().clear();
-    robot.asserv().setPositionAndColor(70, 450+13, 0.0, (robot.getMyColor() != PMXVIOLET));
-    //robot.asserv().setPositionAndColor(1902, 105, 90.0, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(70, 450+13, 0.0, (robot.getMyColor() != PMXYELLOW));
+
+    logger().info() << "O_State_Init::setPos() svgPrintPosition x="
+            << robot.asserv().pos_getX_mm()
+            << " y=" << robot.asserv().pos_getY_mm()
+            << " a=" << robot.asserv().pos_getThetaInDegree()
+            << logs::end;
     robot.svgPrintPosition();
 
     robot.asserv().setLowSpeedForward(false, 0); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
@@ -313,10 +329,13 @@ void O_State_Init::setPos()
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
+
     //robot.asserv().resetDisplayTS();
     robot.asserv().assistedHandling();
     TRAJ_STATE ts = TRAJ_OK;
-    ts = robot.asserv().doLineAbs(150);
+    robot.asserv().setLowSpeedForward(true, 15);
+    ts = robot.asserv().doLineAbs(100);
+    robot.asserv().setLowSpeedForward(true, 100);
     /*
     ts = robot.asserv().doLineAbs(200);
     robot.actions().ax12_init();
@@ -325,6 +344,7 @@ void O_State_Init::setPos()
     ts = robot.asserv().doMoveBackwardAndRotateTo(70 + 150, 450 + 13, 0.0);
      */
     //robot.asserv().displayTS(ts);
+
     robot.svgPrintPosition();
     robot.actions().lcd2x16().println("SET POSITION : OK");
 }

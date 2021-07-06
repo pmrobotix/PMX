@@ -20,7 +20,7 @@ void O_SensorsTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.setMyColor(PMXVIOLET);
+    robot.setMyColor(PMXYELLOW);
     //robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
     utils::Chronometer chrono("O_SensorsTest");
     chrono.start();

@@ -14,13 +14,13 @@ using namespace std;
 void O_ServoObjectsTest::configureConsoleArgs(int argc, char** argv) //surcharge
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    robot.getArgs().addArgument("action", "action a faire");
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
 }
 
-void O_ServoObjectsTest::run(int argc, char** argv)
-{
+void O_ServoObjectsTest::run(int argc, char** argv) {
 
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
 
@@ -28,33 +28,98 @@ void O_ServoObjectsTest::run(int argc, char** argv)
 
     Arguments args = robot.getArgs();
 
+    string action = "";
+    if (args["action"] != "0") {
+        action = args["action"].c_str();
+        logger().info() << "Arg action set " << args["action"] << ", action = " << action << logs::end;
+    }
+
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
-    robot.actions().servosAx12().detect();
-    robot.actions().ax12_left_cil_retract(0);
-    robot.actions().ax12_right_cil_retract();
+    if (action == "D") {
+        robot.actions().ax12_drapeaux_init();
+        //usleep(1000000);
+        robot.actions().ax12_drapeaux();
+        //usleep(1000000);
+    }
 
-    robot.actions().ax12_rightHand_retract();
-    robot.actions().ax12_leftHand_retract();
+    if (action == "BD") {
+        robot.actions().ax12_bras_droit_init();
+        usleep(1000000);
+        robot.actions().ax12_bras_droit();
+        usleep(1000000);
+        robot.actions().ax12_bras_droit_init();
+    }
 
-    robot.actions().ax12_left_cil(0);
-    robot.actions().ax12_right_cil();
+    if (action == "BG") {
+        robot.actions().ax12_bras_gauche_init();
+        usleep(1000000);
+        robot.actions().ax12_gauche_droit();
+        usleep(1000000);
+        robot.actions().ax12_bras_gauche_init();
+    }
 
-    robot.actions().ax12_rightHand();
-    robot.actions().ax12_leftHand();
+    if (action == "UP") {
+        robot.actions().ax12_elevator_up(false);
+        //usleep(1000000);
 
-    logger().info() << "goldenium = " << robot.actions().ax12_goldenium_in_cil() << logs::end;
+    }
+    if (action == "DW") {
+        robot.actions().ax12_elevator_down(false);
+        //usleep(1000000);
+    }
 
-    sleep(3);
-    logger().info() << "goldenium = " << robot.actions().ax12_goldenium_in_cil() << logs::end;
+    if (action == "RN") {
+        robot.actions().ax12_elevator_up(true);
+        robot.actions().ax12_rotation_black_side(true);
+        robot.actions().ax12_elevator_up(false);
+        robot.actions().ax12_rotation_black_side(false);
+        //usleep(1000000);
+    }
 
-    robot.actions().ax12_left_cil_retract(0);
-    robot.actions().ax12_right_cil_retract();
+    if (action == "RB") {
+        robot.actions().ax12_elevator_up(true);
+        robot.actions().ax12_rotation_blue_side(true);
+        robot.actions().ax12_elevator_up(false);
+        robot.actions().ax12_rotation_blue_side(false);
+        //usleep(1000000);
+    }
 
-    robot.actions().ax12_rightHand_retract(0);
-    robot.actions().ax12_leftHand_retract();
 
-    robot.stopExtraActions();
+    if (action == "P") {
+            robot.actions().ax12_pince_au_centre(true);
+            robot.actions().ax12_pince_a_droite(true);
+            robot.actions().ax12_pince_a_gauche(true);
+            robot.actions().ax12_pince_au_centre(false);
+            //usleep(1000000);
+        }
+
+    /*
+     robot.actions().servosAx12().detect();
+     robot.actions().ax12_left_cil_retract(0);
+     robot.actions().ax12_right_cil_retract();
+
+     robot.actions().ax12_rightHand_retract();
+     robot.actions().ax12_leftHand_retract();
+
+     robot.actions().ax12_left_cil(0);
+     robot.actions().ax12_right_cil();
+
+     robot.actions().ax12_rightHand();
+     robot.actions().ax12_leftHand();
+
+     logger().info() << "goldenium = " << robot.actions().ax12_goldenium_in_cil() << logs::end;
+
+     sleep(3);
+     logger().info() << "goldenium = " << robot.actions().ax12_goldenium_in_cil() << logs::end;
+
+     robot.actions().ax12_left_cil_retract(0);
+     robot.actions().ax12_right_cil_retract();
+
+     robot.actions().ax12_rightHand_retract(0);
+     robot.actions().ax12_leftHand_retract();
+     */
+    //robot.stopExtraActions();
     logger().info() << "Happy End." << logs::end;
 }
 

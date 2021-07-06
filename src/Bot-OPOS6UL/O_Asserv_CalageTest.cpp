@@ -47,9 +47,9 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
     if (type == "B") { //calage bordure
 
         logger().info() << "Start Asserv " << logs::end;
-        robot.setMyColor(PMXVIOLET);
+        robot.setMyColor(PMXYELLOW);
         robot.asserv().startMotionTimerAndOdo(true);
-        robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+        robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));
         RobotPosition p = robot.asserv().pos_getPosition();
         logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
                 << p.asservStatus << logs::end;
@@ -63,9 +63,9 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
 
     } else if (type == "R") { //right sensor
 
-        robot.setMyColor(PMXVIOLET);
+        robot.setMyColor(PMXYELLOW);
         robot.asserv().startMotionTimerAndOdo(true);
-        robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+        robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
         //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
         robot.asserv().doMoveForwardAndRotateTo(1680, 255, 0); // avec un angle supplémentaire
@@ -93,9 +93,9 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
 
     if (type == "L") { //left sensor
 
-        robot.setMyColor(PMXYELLOW);
+        robot.setMyColor(PMXBLUE);
         robot.asserv().startMotionTimerAndOdo(true);
-        robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+        robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
         //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
         robot.asserv().doMoveForwardAndRotateTo(1680, 255, 0); // avec un angle supplémentaire
@@ -123,9 +123,9 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
 
     if (type == "DR") {            //demo theorique sensor left
 
-        robot.setMyColor(PMXVIOLET);
+        robot.setMyColor(PMXYELLOW);
         robot.asserv().startMotionTimerAndOdo(true);
-        robot.asserv().setPositionAndColor(470, 1000.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+        robot.asserv().setPositionAndColor(470, 1000.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
         //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
         robot.asserv().doMoveForwardAndRotateTo(1780, 280, 0); // avec un angle supplémentaire ou pas.
@@ -154,9 +154,9 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
 
     if (type == "DL") { //demo theorique sensor right
 
-        robot.setMyColor(PMXYELLOW);
+        robot.setMyColor(PMXBLUE);
         robot.asserv().startMotionTimerAndOdo(true);
-        robot.asserv().setPositionAndColor(470, 1000.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+        robot.asserv().setPositionAndColor(470, 1000.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
         //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
         robot.asserv().doMoveForwardAndRotateTo(1780, 280, 0); // avec un angle supplémentaire ou pas.
