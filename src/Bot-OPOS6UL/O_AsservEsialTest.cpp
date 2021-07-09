@@ -45,10 +45,10 @@ void O_AsservEsialTest::run(int argc, char** argv)
 
     utils::Chronometer chrono("L_AsservEsialTest");
 
-    robot.asserv().setPositionAndColor(100.0, 150.0, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(100.0, 800.0, 0.0, (robot.getMyColor() != PMXYELLOW));
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().doLineAbs(1000);
-    //robot.asserv().doFaceTo(300, 300);
+    robot.asserv().doLineAbs(200);
+    robot.asserv().doFaceTo(300, 300);
 
     utils::sleep_for_secs(2);
 /*

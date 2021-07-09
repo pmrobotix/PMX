@@ -12,9 +12,10 @@
 
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
-#include <include/CppLinuxSerial/SerialPort.hpp>
+#include "serialib.hpp"
+//#include <include/CppLinuxSerial/SerialPort.hpp>
 
-using namespace mn::CppLinuxSerial;
+//using namespace mn::CppLinuxSerial;
 using namespace std;
 
 AAsservDriver * AAsservDriver::create(string) {
@@ -23,63 +24,131 @@ AAsservDriver * AAsservDriver::create(string) {
 }
 
 AsservDriver::AsservDriver() :
-        //mbedI2c_(0) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
-        serialPort_(SERIAL_ADDRESS, BaudRate::B_115200), connected_(false), asservCardStarted_(false), pathStatus_(TRAJ_OK),
-        p_({ 0.0, 0.0, 0.0, -1 })
+        // //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
+        //serialPort_(SERIAL_ADDRESS, BaudRate::B_115200),
+        connected_(true), asservCardStarted_(true), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1 })
 {
     errorCount_ = 0;
     statusCountDown_ = 0;
     read_error_ = -1;
 
     // Create serial port object and open serial port
-    //serialPort_(SERIAL_ADDRESS, BaudRate::B_115200);
-    // SerialPort serialPort("/dev/ttyACM0", 13000);
-    serialPort_.SetTimeout(500); // Block when reading until any data is received
-    serialPort_.Open();
-/*
-//    // Write some ASCII datae
-    serialPort_.Write("p");
-//
-//    // Read some data back
-    while (1) {
-        string readData;
-        serialPort_.Read(readData);
-        cout << readData; //TODO timeout
-        if (readData == "\r\n") break;
-    }
-*/
-    //on demarre le check de positionnement...
-    this->start("AsservDriver::AsservDriver()", 80); //TODO ajouter une priorité
-    connected_ = true;
+    char errorOpening = serial_.openDevice(SERIAL_PORT, 115200);
+    // If connection fails, return the error code otherwise, display a success message
+    if (errorOpening != 1) printf("Error connection to %s errorOpening=%c\n", SERIAL_PORT, errorOpening);
+
+    // Set DTR
+    serial_.DTR(true);
+    // Clear RTS
+    serial_.RTS(false);
+
+    // Read and display the status of each pin
+    // DTR should be 1
+    // RTS should be 0
+    printf("4-DTR=%d\t", serial_.isDTR());
+    printf("7-RTS=%d\t", serial_.isRTS());
+
+    printf("1-DCD=%d\t", serial_.isDCD());
+    printf("8-CTS=%d\t", serial_.isCTS());
+    printf("6-DSR=%d\t", serial_.isDSR());
+    printf("9-RING=%d\n", serial_.isRI());
+    /*
+     //TEST OK
+     std::string readData = "";
+     std::string sdata = "";
+
+     while (1) {
+
+     char readData[100] = { 0 };
+     //serialPort_.Read(readData);
+     int err = serial_.readString(readData, '\n', 100, 1000);
+
+     //                \return  >0 success, return the number of bytes read
+     //                    \return  0 timeout is reached
+     //                    \return -1 error while setting the Timeout
+     //                    \return -2 error while reading the byte
+     //                    \return -3 MaxNbBytes is reached
+     if (err < 0) {
+     printf("serial_.readString error=%d", err);
+
+     }
+     else {
+     printf("serial_.readString SUCCESS : %s", readData);
+     sdata = sdata + *readData;
+
+     int idx = sdata.find("\r\n");
+
+     if (idx >= 0) {
+     //on coupe la string à idx+2
+     string str2analyse = sdata.substr(0, idx + 2);
+     sdata = sdata.substr(idx + 2);
+
+     //logger().debug() << " => (" << sdata  << ") tobeanalysed:" << str2analyse << "!!!"<< logs::end;
+     parseAsservPosition(str2analyse);
+
+     }
+     }
+     odo_SetPosition(100, 500, 1.6);
+     utils::Thread::sleep_for_millis(100);
+
+     this->yield();
+
+     motion_AssistedHandling();
+     utils::Thread::sleep_for_millis(2000);
+     }*/
+
+// Loop forever
+//    while (1) {
+//        //
+//        logger().error() << ">> debug number missed !!" << logs::end;
+//        //serial_.writeChar('p');
+//        //int err = nucleo_writeSerial("p");
+//        //int err = serial_.writeChar('p');
+//        int err = serial_.writeString("p\0");
+//        if (err < 0) printf("nucleo_writeSerial nucleo_writeSerial(p); error: %d\n", err);
+//        char readData[100];
+//        serial_.readString(readData, '\n\r', 100, 100000);
+//        printf("\n==>readString=%s\n", readData);
+//        usleep(1000000);
+//    }
+//printf("--- readdata %s\n", readData);
+//    serialPort_.SetTimeout(500); // Block when reading until any data is received
+//    serialPort_.Open();
+    /*
+     //    // Write some ASCII datae
+     serialPort_.Write("p");
+     //
+     //    // Read some data back
+     while (1) {
+     string readData;
+     serialPort_.Read(readData);
+     cout << readData; //TODO timeout
+     if (readData == "\r\n") break;
+     }
+     */
 
 }
 
 AsservDriver::~AsservDriver() {
-    endWhatTodo();
-    serialPort_.Close();
+
+//serialPort_.Close();
+    serial_.closeDevice();
 }
 
 void AsservDriver::endWhatTodo() {
+    motion_FreeMotion();
     asservCardStarted_ = false;
     if (!this->isFinished()) this->cancel();
 }
 
 void AsservDriver::parseAsservPosition(string str) {
-    //chprintf(outputStreamSd4, "#%d;%d;%f;%d;%d;%d;%d\r\n",
-//    (int32_t)odometry->getX(), (int32_t)odometry->getY(), odometry->getTheta(),
-//    commandManager->getCommandStatus(), commandManager->getPendingCommandCount(),
-//    md22MotorController->getLeftSpeed(), md22MotorController->getRightSpeed());
 
-    if ((str.rfind("#", 0) == 0) && (str.find("\r\n") == (str.length() - 2))) {
+    if ((str.rfind("#", 0) == 0)) { // && (str.find("\r\n") == (str.length() - 2))
         str = str.substr(1);
 
         const char delim = ';';
         vector<string> out;
         tokenize(str, delim, out);
-
-//        for (auto &s: out) {
-//            std::cout << s << std::endl;
-//        }
 
         int x = std::stoi(out.operator[](0));
         int y = std::stoi(out.operator[](1));
@@ -90,13 +159,25 @@ void AsservDriver::parseAsservPosition(string str) {
         int rSpeed = std::stoi(out.operator[](6));
         int debg = std::stoi(out.operator[](7));
 
-        if (p_.debug_nb != debg-1)
-        {
+        if (p_.debug_nb != debg - 1) {
             read_error_++;
-        }else
-            read_error_ = -1;
-        if(read_error_ > 0)
-            logger().error() << ">> debug number missed !!"<< logs::end;
+        }
+        else read_error_ = -1;
+        if (read_error_ > 0) logger().error() << ">> parseAsservPosition : debug number missed !!" << logs::end;
+
+        if (CommandStatus == 0) {
+            m_statusCountDown.lock();
+            statusCountDown_--;
+
+            if (statusCountDown_ <= 0) {
+                CommandStatus = 0; //idle
+
+            }
+            else {
+                CommandStatus = 1; //running
+            }
+            m_statusCountDown.unlock();
+        }
 
         m_pos.lock();
         p_.x = (float) x; //mm
@@ -109,26 +190,26 @@ void AsservDriver::parseAsservPosition(string str) {
         p_.debug_nb = debg;
         m_pos.unlock();
 
-//        logger().debug() << " ok# "
-//                << x
-//                << " "
-//                << y
-//                << " "
-//                << a_rad * 180.0 / M_PI
-//                << " "
-//                << CommandStatus
-//                << " "
-//                << PendingCommandCount
-//                << " "
-//                << lSpeed
-//                << " "
-//                << rSpeed
-//                << " "
-//                << debg
-//                << logs::end;
+        logger().debug() << " ok# "
+                << x
+                << " "
+                << y
+                << " "
+                << a_rad * 180.0 / M_PI
+                << " "
+                << CommandStatus
+                << " "
+                << PendingCommandCount
+                << " "
+                << lSpeed
+                << " "
+                << rSpeed
+                << " "
+                << debg
+                << logs::end;
     }
     else {
-        logger().error() << " >> BAD LINE : " << str << logs::end;
+        logger().error() << " >> parseAsservPosition BAD LINE : " << str << logs::end;
     }
 }
 
@@ -144,30 +225,40 @@ void AsservDriver::tokenize(std::string const &str, const char delim, vector<str
 
 void AsservDriver::execute() {
     std::string readData = "";
-    std::string sdata = "";
+    //std::string sdata = "";
 
-    //recuperation de la ligne d'asserv
-//    chprintf(outputStreamSd4, "#%d;%d;%f;%d;%d;%d;%d\r\n",
-//                (int32_t)odometry->getX(), (int32_t)odometry->getY(), odometry->getTheta(),
-//                commandManager->getCommandStatus(), commandManager->getPendingCommandCount(),
-//                md22MotorController->getLeftSpeed(), md22MotorController->getRightSpeed());
-
+    printf("execute() START ASSERV POSITION!!\n");
+    nucleo_flushSerial();
     while (1) {
         if (asservCardStarted_) {
-            //std::string readData;
-            serialPort_.Read(readData);
-            sdata = sdata + readData;
 
-            int idx = sdata.find("\r\n");
+            char readData[50] = { 0 };
 
-            if (idx >= 0) {
-                //on coupe la string à idx+2
-                string str2analyse = sdata.substr(0, idx + 2);
-                sdata = sdata.substr(idx + 2);
+            int err = serial_.readString(readData, '\n', 50, 1000);
+            //                \return  >0 success, return the number of bytes read
+            //                    \return  0 timeout is reached
+            //                    \return -1 error while setting the Timeout
+            //                    \return -2 error while reading the byte
+            //                    \return -3 MaxNbBytes is reached
+            if (err < 0) {
+                printf("AsservDriver::execute() ERRROR serial_.readString error=%d", err);
 
-                //logger().debug() << " => (" << sdata  << ") tobeanalysed:" << str2analyse << "!!!"<< logs::end;
-                parseAsservPosition(str2analyse);
+            }
+            else {
 
+                std::string sdata(readData);            //sdata + *readData;
+
+                int idx = sdata.find("#");
+                //printf("---serial_.readString SUCCESS : %s idx=%d", readData, idx);
+                if (idx >= 0) {
+                    //on coupe la string à idx+2
+//                    string str2analyse = sdata.substr(0, idx + 2);
+//                    sdata = sdata.substr(idx + 2);
+
+                    //logger().debug() << " => (" << sdata  << ") tobeanalysed:" << readData << "!!!"<< logs::end;
+                    parseAsservPosition(sdata);
+
+                }
             }
 
             this->yield();
@@ -180,19 +271,19 @@ void AsservDriver::execute() {
 }
 
 void AsservDriver::setMotorLeftPosition(int power, long ticks) {
-    //TODO
+//TODO
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticks) {
-    //TODO
+//TODO
 }
 
 void AsservDriver::setMotorLeftPower(int power, int timems) {
-    //TODO
+//TODO
 }
 
 void AsservDriver::setMotorRightPower(int power, int timems) {
-    //TODO
+//TODO
 }
 
 long AsservDriver::getLeftExternalEncoder() {
@@ -210,21 +301,24 @@ long AsservDriver::getRightInternalEncoder() {
 }
 
 void AsservDriver::resetEncoders() {
-    //TODO
+//TODO
 }
 
 void AsservDriver::resetInternalEncoders() {
-    //TODO
+//TODO
 }
 void AsservDriver::resetExternalEncoders() {
-    //TODO
+//TODO
 }
 
 void AsservDriver::stopMotorLeft() {
-    //TODO
+//TODO
+    nucleo_writeSerial('h');
+
 }
 void AsservDriver::stopMotorRight() {
-    //TODO
+//TODO
+    nucleo_writeSerial('h');
 }
 
 int AsservDriver::getMotorLeftCurrent() {
@@ -235,96 +329,28 @@ int AsservDriver::getMotorRightCurrent() {
 }
 
 void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad) {
-    if (!connected_) return;
-
-    nucleo_writeSerial("P" + to_string((int)x_mm) + "#" + to_string((int)y_mm) + "#" + to_string(angle_rad)+ "\n");
-
-}
-RobotPosition AsservDriver::odo_GetPosition() //en metre
-{
-
-    RobotPosition p = nucleo_GetPosition();
-
-    return p;
-}
-
-RobotPosition AsservDriver::nucleo_GetPosition() //en metre
-{
-    //m_pos.lock();
-    return p_;
-    //m_pos.unlock();
     /*
-     RobotPosition p;
-     p.x = -1;
-     p.y = -1;
-     p.theta = -1;
-     if (!connected_) return p;
-
-
-     // Write some ASCII datae
+     //TODO mutex ??????
      serialPort_.Write("p");
-
-     // Read some data back
-     while(1) {
-     std::string readData;
+     //
+     //    // Read some data back
+     while (1) {
+     string readData;
      serialPort_.Read(readData);
-     std::cout  << readData;
-     if (readData == "\n")
-     break;
-     }
-     RobotPosition p; //in m
-     p.x = x_mm.f / 1000.0;
-     p.y = y_mm.f / 1000.0;
-     p.theta = rad.f;
-     p.asservStatus = status;
-     */
-
-    /*
-     int status = -1;
-
-     unsigned char data[13];
-
-     if (int r = mbed_readI2c('p', 13, data) < 0) {
-     logger().error() << "mbed_GetPosition - p13 - ERROR " << r << logs::end;
-     errorCount_++;
-     if (errorCount_ > 20) {
-     logger().error() << "mbed_GetPosition Too many Error ==> EXIT !!! " << r << logs::end;
-     exit(1);
-     }
-     return p;
-     }
-     else {
-     //printf("read %d %d %d %d\n", data[0], data[1], data[2], data[3]);
-     float2bytes_t x_mm;
-     x_mm.b[0] = data[0];
-     x_mm.b[1] = data[1];
-     x_mm.b[2] = data[2];
-     x_mm.b[3] = data[3];
-
-     float2bytes_t y_mm;
-     y_mm.b[0] = data[4];
-     y_mm.b[1] = data[5];
-     y_mm.b[2] = data[6];
-     y_mm.b[3] = data[7];
-
-     float2bytes_t rad;
-     rad.b[0] = data[8];
-     rad.b[1] = data[9];
-     rad.b[2] = data[10];
-     rad.b[3] = data[11];
-
-     status = data[12];
-
-     logger().debug() << "mbed_GetPosition p13 " << x_mm.f << " " << y_mm.f << " " << rad.f << " " << status << logs::end;
-
-     RobotPosition p; //in m
-     p.x = x_mm.f / 1000.0;
-     p.y = y_mm.f / 1000.0;
-     p.theta = rad.f;
-     p.asservStatus = status;
-
-     return p;
+     cout << readData; //TODO timeout
+     if (readData == "\r\n") break;
      }*/
+    nucleo_flushSerial();
+    nucleo_writeSerialSTR("P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+    nucleo_writeSerialSTR("P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+    nucleo_writeSerialSTR("P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+    nucleo_writeSerialSTR("P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+
+
+    usleep(100000);
+}
+RobotPosition AsservDriver::odo_GetPosition() {
+    return p_;
 }
 
 //TODO path_GetLastCommandStatus deprecated ? A supprimer
@@ -333,44 +359,48 @@ int AsservDriver::path_GetLastCommandStatus() {
 }
 
 void AsservDriver::path_InterruptTrajectory() {
-    if (!connected_) return;
+
     if (!asservCardStarted_) logger().debug() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
 
-        serialPort_.Write("h");
+        //serialPort_.Write("h");
+        nucleo_writeSerial('h');
         pathStatus_ = TRAJ_INTERRUPTED;
     }
 }
 void AsservDriver::path_CollisionOnTrajectory() {
-    if (!connected_) return;
+
     if (!asservCardStarted_) logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
         logger().error() << "path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
 
-        serialPort_.Write("h");
+        //serialPort_.Write("h");
+        nucleo_writeSerial('h');
         pathStatus_ = TRAJ_NEAR_OBSTACLE;
     }
 }
 void AsservDriver::path_CollisionRearOnTrajectory() {
-    if (!connected_) return;
+
     if (!asservCardStarted_) logger().info() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
 
-        serialPort_.Write("h");
+        //serialPort_.Write("h");
+        nucleo_writeSerial('h');
         pathStatus_ = TRAJ_NEAR_OBSTACLE;
     }
 }
 void AsservDriver::path_CancelTrajectory() {
-    if (!connected_) return;
+
     if (!asservCardStarted_) logger().debug() << "path_CancelTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
         //TODO ? p_.asservStatus = 3;
-        serialPort_.Write("h");
+        //serialPort_.Write("h");
+        nucleo_writeSerial('h');
         pathStatus_ = TRAJ_CANCELLED;
     }
 }
 void AsservDriver::path_ResetEmergencyStop() {
-    if (!connected_) return;
+
     if (!asservCardStarted_) logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
         logger().error() << "path_ResetEmergencyStop() !! " << logs::end;
@@ -378,13 +408,14 @@ void AsservDriver::path_ResetEmergencyStop() {
         m_pos.lock();
         p_.asservStatus = 0;
         m_pos.unlock();
-        serialPort_.Write("r");
+        //serialPort_.Write("r");
+        nucleo_writeSerial('r');
         pathStatus_ = TRAJ_OK;
     }
 }
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
 {
-    if (!connected_) return TRAJ_ERROR;
+
     if (!asservCardStarted_) {
         logger().debug() << "motion_DoLine() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -395,12 +426,13 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
         p_.asservStatus = 1;
         p_.direction = dist_mm > 0 ? MOVEMENT_DIRECTION::FORWARD : MOVEMENT_DIRECTION::BACKWARD;
         m_pos.unlock();
+
         m_statusCountDown.lock();
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("v" + to_string((int) (dist_mm)) + "\n");
-
+        //serialPort_.Write("v" + to_string((int) (dist_mm)) + "\n");
+        nucleo_writeSerialSTR("v" + to_string((int) (dist_mm))+ "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -412,9 +444,9 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
 TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj() {
 
     while (!(p_.queueSize == 0 && p_.asservStatus == 0)) {
+        //logger().debug() << "nucleo_waitEndOfTraj p_.asservStatus= " << p_.asservStatus << " p_.queueSize=" << p_.queueSize << logs::end;
         utils::Thread::sleep_for_millis(5);
     }
-
     if (p_.asservStatus == 3) {
         return TRAJ_COLLISION;
     }
@@ -426,13 +458,16 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj() {
         logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= " << pathStatus_ << logs::end;
         return pathStatus_;
     }
-    else return TRAJ_ERROR;
-
+    else {
+        logger().error() << "nucleo_waitEndOfTraj else ERROR !!!" << logs::end;
+        return TRAJ_ERROR;
+    }
+    logger().error() << "nucleo_waitEndOfTraj Never happened !!!" << logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
-    if (!connected_) return TRAJ_ERROR;
+
     if (!asservCardStarted_) {
         logger().error() << "motion_DoFace() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -446,14 +481,16 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
-
+        //serialPort_.Write("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
+        nucleo_writeSerialSTR("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
         return nucleo_waitEndOfTraj();
     }
 }
 
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) {
-    if (!connected_) return TRAJ_ERROR;
+
+    logger().error() << "motion_DoRotate() angle_radians=" << angle_radians << logs::end;
+
     if (!asservCardStarted_) {
         logger().error() << "motion_DoRotate() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -467,8 +504,8 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("t" + to_string(AAsservDriver::degToRad(angle_radians))+"\n");
-
+        //serialPort_.Write("t" + to_string(AAsservDriver::degToRad(angle_radians)) + "\n");
+        nucleo_writeSerialSTR("t" + to_string(AAsservDriver::radToDeg(angle_radians))+ "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -479,7 +516,6 @@ TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius) {
 
 TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
 
-    if (!connected_) return TRAJ_ERROR;
     if (!asservCardStarted_) {
         logger().error() << "motion_Goto() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -493,15 +529,14 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
-
+        //serialPort_.Write("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
+        nucleo_writeSerialSTR("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
         return nucleo_waitEndOfTraj();
     }
 }
 
 TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
 
-    if (!connected_) return TRAJ_ERROR;
     if (!asservCardStarted_) {
         logger().error() << "motion_GotoReverse() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -515,15 +550,14 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
-
+        //serialPort_.Write("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
+        nucleo_writeSerialSTR("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
         return nucleo_waitEndOfTraj();
     }
 }
 
 TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
 
-    if (!connected_) return TRAJ_ERROR;
     if (!asservCardStarted_) {
         logger().error() << "motion_GotoReverse() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -537,15 +571,14 @@ TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
-
+        //serialPort_.Write("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
+        nucleo_writeSerialSTR("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
         return nucleo_waitEndOfTraj();
     }
 }
 
 TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
 
-    if (!connected_) return TRAJ_ERROR;
     if (!asservCardStarted_) {
         logger().error() << "motion_GotoReverse() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -559,14 +592,14 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
-        serialPort_.Write("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+"\n");
-
+        //serialPort_.Write("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
+        nucleo_writeSerialSTR("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
         return nucleo_waitEndOfTraj();
     }
 }
 
 TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm) {
-    if (!connected_) return TRAJ_ERROR;
+
     if (!asservCardStarted_) {
         logger().debug() << "motion_DoDirectLine() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -588,11 +621,13 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm) {
 }
 
 void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent) {
-    serialPort_.Write("S" + to_string(percent)+"\n");
+//serialPort_.Write("S" + to_string(percent) + "\n");
+    nucleo_writeSerialSTR("S" + to_string(percent)+ "\n");
 
 }
 void AsservDriver::motion_setLowSpeedForward(bool enable, int percent) {
-    serialPort_.Write("S" + to_string(percent)+"\n");
+//serialPort_.Write("S" + to_string(percent) + "\n");
+    nucleo_writeSerialSTR("S" + to_string(percent)+ "\n");
 
 }
 
@@ -610,107 +645,69 @@ void AsservDriver::motion_ResetReguAngle() {
 }
 
 void AsservDriver::motion_FreeMotion(void) {
-    if (!connected_) return;
-    if (!asservCardStarted_) logger().debug() << "motion_FreeMotion() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
-    else {
-        serialPort_.Write("M0\n");
-    }
+//serialPort_.Write("M0\n");
+    nucleo_writeSerialSTR("M0\n");
 }
 void AsservDriver::motion_DisablePID() //TODO deprecated  mm chose que Freemotion ???
 {
     motion_FreeMotion();
 }
 void AsservDriver::motion_AssistedHandling(void) {
-    if (!connected_) return;
-    if (!asservCardStarted_) logger().error() << "motion_AssistedHandling() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
-    else {
-        serialPort_.Write("M1\n");
-    }
+//serialPort_.Write("M1\n");
+    nucleo_writeSerialSTR("M1\n");
 }
 void AsservDriver::motion_ActivateManager(bool enable) {
-    if (!connected_) return;
+
     if (enable) {
-        serialPort_.Write("r");
-        serialPort_.Write("M1\n");
+        //effectuer la position de depart apres
+        nucleo_writeSerial('R'); //Reset
 
-        /*
-         mbed_writeI2c('I', 0, NULL);
-         usleep(100000); //???*/
-        asservCardStarted_ = true;
-
+        //on demarre le check de positionnement...
+        this->start("AsservDriver::AsservDriver()", 80);
     }
     else {
-        asservCardStarted_ = false;
-
-        serialPort_.Write("M0\n");
-        /*
-         usleep(100000);
-         mbed_writeI2c('!', 0, NULL);*/
+        //stop the thread
+        endWhatTodo();
     }
 }
+
 
 //------------------------------------------------------------------------
-
-int AsservDriver::nucleo_writeSerial(string str) {
+void AsservDriver::nucleo_flushSerial() {
+    int err =  serial_.flushReceiver();
+    if (err == 0)
+        printf("nucleo_flushSerial ERROR !\n");
+}
+int AsservDriver::nucleo_writeSerial(char c) {
     try {
-        serialPort_.Write(str);
+
+        int err = serial_.writeChar(c);
+        if (err < 0) {
+            printf("nucleo_writeSerial() ERRROR serial_.writeChar error=%d on %c\n", err, c);
+        }
+
     }
     catch (...) {
+        printf("nucleo_writeSerial errorCount_=%d\n", errorCount_);
         errorCount_++;
     }
-
+    return errorCount_;
 }
-//int AsservDriver::mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write, unsigned char * data) {
-/*
- m_mbed.lock();
- if (int r = mbedI2c_.writeRegByte(cmd, nbBytes2Write) < 0) {
- printf("ERROR AsservDriver::mbed_writeI2c > writeRegByte > %c%d > %d!\n", cmd, nbBytes2Write, r);
- m_mbed.unlock();
- return -1;
- }
- if (nbBytes2Write != 0) if (int r = mbedI2c_.write(data, nbBytes2Write) < 0) {
- printf("ERROR AsservDriver::mbed_writeI2c > write > %c%d > %d!\n", cmd, nbBytes2Write, r);
- m_mbed.unlock();
- return -1;
- }
- m_mbed.unlock();*/
-//    return 0;
-//}
-//int AsservDriver::mbed_readI2c(unsigned char command, unsigned char nbBytes2Read, unsigned char* data) {
-/*
- m_mbed.lock();
- if (mbedI2c_.writeRegByte(command, nbBytes2Read) < 0) {
- printf("ERROR AsservDriver::mbed_readI2c > writeRegByte > %c%d > error!\n", command, nbBytes2Read);
- m_mbed.unlock();
- return -1;
- }
 
- //Read the data back from the slave
- if (mbedI2c_.read(data, nbBytes2Read) < 0) {
- printf("ERROR AsservDriver::mbed_readI2c > read > %c%d > error!\n", command, nbBytes2Read);
- m_mbed.unlock();
- return -1;
- }
- m_mbed.unlock();*/
-//    return 0;
-//}
-int AsservDriver::nucleo_ack() {
-    /*
-     m_mbed.lock();
-     unsigned char ack[1];
+int AsservDriver::nucleo_writeSerialSTR(string str) {
+    try {
 
-     //ACK
-     memset(ack, 0, sizeof(ack));
-     if (int r = mbedI2c_.read(ack, 1) < 0) {
-     printf("ERROR AsservDriver::mbed_ack() error! %d\n", r);
-     m_mbed.unlock();
-     return -1;
-     }
-     m_mbed.unlock();
-     //printf("mbed_ack 0x%02hhX\n", ack[0]); // hh pour indiquer que c'est un char (pas int)
-     if (ack[0] == MBED_ADDRESS) return 0;
-     else return -1;
+        //string strr = str + "\n";
+        int err = serial_.writeString(str.c_str());
+        if (err < 0) {
+            printf("nucleo_writeSerial() ERRROR serial_.writeString error=%d on %s\n", err, str);
+        } //else printf("nucleo_writeSerial() SUCCESS on %s", strr);
 
-     */
+    }
+    catch (...) {
+        printf("nucleo_writeSerialSTR errorCount_=%d\n", errorCount_);
+        errorCount_++;
+    }
+    return errorCount_;
 }
 

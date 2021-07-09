@@ -51,6 +51,10 @@ protected:
         return deg * M_PI / 180.0;
     }
 
+    inline float radToDeg(float rad) {
+           return rad * 180.0 / M_PI;
+       }
+
 public:
 
     /*!
@@ -122,7 +126,7 @@ public:
     virtual void motion_FreeMotion(void) = 0;
     virtual void motion_DisablePID(void) = 0;		//! Stop motion control and disable PID
     virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =) (activate PID)
-    virtual void motion_ActivateManager(bool enable) = 0;		//! Enable or Stop motion control timer, used to shutdown motion control
+    virtual void motion_ActivateManager(bool enablethread) = 0; //true to create thread and false to kill thread
     virtual void motion_setLowSpeedForward(bool enable, int percent = 0)=0;
     virtual void motion_setLowSpeedBackward(bool enable, int percent = 0)=0;
 

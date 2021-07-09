@@ -17,10 +17,17 @@ BeaconSensors::BeaconSensors(int bus, unsigned char i2c_addr) :
 
     //i2c_address_ = i2c_addr;
     i2c_BeaconSensors_.setSlaveAddr(i2c_addr);
-
+    connected_BeaconSensors_ = true;
+/*
+    while(1)
+    {
+        int nbofbot = readRegByte(NUMOFBOTS_BeaconSensors);
+            logger().error() << "BeaconSensors nbofbot=" << nbofbot << logs::end;
+    }*/
+    /*
     //read shift
     int nbofbot = readRegByte(NUMOFBOTS_BeaconSensors);
-    logger().debug() << "BeaconSensors nbofbot=" << nbofbot << logs::end;
+    logger().error() << "BeaconSensors nbofbot=" << nbofbot << logs::end;
     if (nbofbot >= 250) {
         logger().error() << "BeaconSensors(" << reinterpret_cast<void*>(i2c_addr) << ") : BeaconSensors NOT CONNECTED !" << logs::end;
         connected_BeaconSensors_ = false;
@@ -30,7 +37,7 @@ BeaconSensors::BeaconSensors(int bus, unsigned char i2c_addr) :
         connected_BeaconSensors_ = true;
         logger().debug() << "Beacon available" << logs::end;
 
-    }
+    }*/
 }
 
 Registers BeaconSensors::getData() {
@@ -47,14 +54,14 @@ Registers BeaconSensors::getData() {
 
     regs.flags = buf[0];
     regs.nbDetectedBots = buf[1];
-    regs.c1_mm = buf[2] | (buf[3] << 8);
-    regs.c2_mm = buf[4] | (buf[5] << 8);
-    regs.c3_mm = buf[6] | (buf[7] << 8);
-    regs.c4_mm = buf[8] | (buf[9] << 8);
-    regs.c5_mm = buf[10] | (buf[11] << 8);
-    regs.c6_mm = buf[12] | (buf[13] << 8);
-    regs.c7_mm = buf[14] | (buf[15] << 8);
-    regs.c8_mm = buf[16] | (buf[17] << 8);
+    regs.c1_mm = buf[2] | (buf[3] << 8); //front
+    regs.c2_mm = buf[4] | (buf[5] << 8); //front
+    regs.c3_mm = buf[6] | (buf[7] << 8); //front
+    regs.c4_mm = buf[8] | (buf[9] << 8); //front
+    regs.c5_mm = buf[10] | (buf[11] << 8); //back
+    regs.c6_mm = buf[12] | (buf[13] << 8); //back
+    regs.c7_mm = buf[14] | (buf[15] << 8); //back
+    regs.c8_mm = buf[16] | (buf[17] << 8); //back
 
     logger().debug() << "data = FLAGS:"
             << (int) regs.flags

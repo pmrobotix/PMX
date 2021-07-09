@@ -33,8 +33,8 @@ void O_AsservTest::configureConsoleArgs(int argc, char** argv) //surcharge
     //TODO mettre plus de points x,y
 
     Arguments::Option cOpt('+', "Coordinates x,y,a");
-    cOpt.addArgument("coordx", "coord x mm", "300.0");
-    cOpt.addArgument("coordy", "coord y mm", "300.0");
+    cOpt.addArgument("coordx", "coord x mm", "150.0");
+    cOpt.addArgument("coordy", "coord y mm", "800.0");
     cOpt.addArgument("coorda", "coord teta mm", "0.0");
     robot.getArgs().addOption(cOpt);
 
@@ -43,8 +43,7 @@ void O_AsservTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 }
 
-void O_AsservTest::run(int argc, char** argv)
-{
+void O_AsservTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
@@ -86,46 +85,77 @@ void O_AsservTest::run(int argc, char** argv)
     coordy = atof(args['+']["coordy"].c_str());
     coorda_deg = atof(args['+']["coorda"].c_str());
 
-    robot.asserv().startMotionTimerAndOdo(true);
-
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
+    robot.asserv().startMotionTimerAndOdo(true); //reset et lancement du thread position, attente et moteur à 1 attente
+    robot.setMyColor(PMXYELLOW);
+while (robot.asserv().pos_getX_mm() <10)
+{
     robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
+}
+//    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
+//    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
+//    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
 
+    logger().info() << "setposition done:"
+            << " x="
+            << robot.asserv().pos_getX_mm()
+            << " y="
+            << robot.asserv().pos_getY_mm()
+            << " a="
+            << robot.asserv().pos_getThetaInDegree()
+            << " color="
+            << robot.getMyColor()
+            << logs::end;
     robot.svgPrintPosition();
 
-    //detection adverse
-    robot.actions().start();
-    robot.actions().sensors().addTimerSensors(100);
-    robot.chrono().start();
+//    robot.asserv().assistedHandling();
+    robot.asserv().setLowSpeedForward(true, 40);
+    robot.asserv().doLineAbs(200);
+    robot.svgPrintPosition();
+    robot.asserv().doFaceTo(600, 200);
+    robot.asserv().doRotateAbs(90);
+    robot.svgPrintPosition();
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
+     //detection adverse
+     robot.actions().start();
+     //robot.actions().sensors().addTimerSensors(100);
+     robot.chrono().start();
 
-    logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
+     //robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
+     //robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
 
-    TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, true, 1000000, 3, 3, true);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " whileMoveForwardTo  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    logger().info() << "END GOTO ts=" << ts << logs::end;
+     logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
 
-    if (x2 != 0 && y2 != 0) {
-        sleep(3);
-        logger().info() << "GOTO2 x2=" << x2 << " y2=" << y2 << logs::end;
+     TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, true, 1000000, 3, 3, true);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " whileMoveForwardTo  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     logger().info() << "END GOTO ts=" << ts << logs::end;
 
-        TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x2, y2, true, 1000000, 3, 3, true);
-        if (ts != TRAJ_FINISHED) {
-                robot.logger().error() << " whileMoveForwardTo x2,y2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-                robot.asserv().resetEmergencyOnTraj();
-            }
-        logger().info() << "END GOTO2 ts=" << ts << logs::end;
-    }
+     if (x2 != 0 && y2 != 0) {
+     sleep(3);
+     logger().info() << "GOTO2 x2=" << x2 << " y2=" << y2 << logs::end;
 
-    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms " << " x="
-            << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
-            << robot.asserv().pos_getThetaInDegree() << logs::end;
+     TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x2, y2, true, 1000000, 3, 3, true);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " whileMoveForwardTo x2,y2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     logger().info() << "END GOTO2 ts=" << ts << logs::end;
+     }
+
+    logger().info() << "time= "
+            << robot.chrono().getElapsedTimeInMilliSec()
+            << "ms "
+            << " x="
+            << robot.asserv().pos_getX_mm()
+            << " y="
+            << robot.asserv().pos_getY_mm()
+            << " a="
+            << robot.asserv().pos_getThetaInDegree()
+            << logs::end;
 
     robot.svgPrintPosition();
 

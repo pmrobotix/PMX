@@ -467,7 +467,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
 
 
 
-    return TRAJ_;
+    return TRAJ_FINISHED;
 }
 
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
@@ -581,8 +581,8 @@ TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius) {
 }
 
 TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
-    float dx = x_mm - p_.x();
-    float dy = y_mm - p_.y();
+    float dx = x_mm - p_.x;
+    float dy = y_mm - p_.y;
 
     float aRadian = atan2(dy, dx);
 //    logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy=" << dy
@@ -600,16 +600,21 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
 
 TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
 
+    //TODO
+    return motion_Goto(x_mm, y_mm);
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
 
-    return TRAJ_ERROR;
+    return motion_Goto(x_mm, y_mm);
+
 }
 
 TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
 
+    //TODO
+    return motion_Goto(x_mm, y_mm);
     return TRAJ_ERROR;
 }
 

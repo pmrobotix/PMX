@@ -73,7 +73,7 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled) {
     }
     else if (useAsservType_ == ASSERV_EXT) {
 
-        asservdriver_->motion_ActivateManager(true); //on active la carte d'asserv externe
+        asservdriver_->motion_ActivateManager(true); //on active la carte d'asserv externe et le thread de position
         if (assistedHandlingEnabled) asservdriver_->motion_AssistedHandling();
         else asservdriver_->motion_FreeMotion();
 
@@ -87,7 +87,7 @@ void Asserv::stopMotionTimerAndOdo() {
     }
     else if (useAsservType_ == ASSERV_EXT) {
         //asservdriver_->path_InterruptTrajectory(); //TODO path_InterruptTrajectory() utile ? car caresh en coredump sur le lego en SIMU
-        asservdriver_->motion_ActivateManager(false);
+        asservdriver_->motion_ActivateManager(false); //cancel the thread
     }
     else if (useAsservType_ == ASSERV_INT_ESIALR) {
         //pAsservEsialR_->path_InterruptTrajectory();//TODO path_InterruptTrajectory() utile ?
@@ -227,7 +227,7 @@ void Asserv::update_adv() {
 }
 
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm) {
-    //logger().error() << "warnFrontCollisionOnTraj forceRotation_ = " << temp_forceRotation_ << logs::end;
+    logger().error() << "warnFrontCollisionOnTraj forceRotation_ = " << temp_forceRotation_ << logs::end;
     if (temp_forceRotation_) {
         //logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
         return;
@@ -242,10 +242,9 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
         if (useAsservType_ == ASSERV_INT_INSA) {
 
         }
-
         else if (useAsservType_ == ASSERV_EXT) {
-            //resetEmergencyOnTraj();
-//doLineAbs(-30);
+//            resetEmergencyOnTraj();
+//doLineAbs(-50);
 //resetEmergencyOnTraj();
         }
         else if (useAsservType_ == ASSERV_INT_ESIALR) {
@@ -268,7 +267,7 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
     else {
         adv_pos_centre_ = {-100.0, -100.0, 0.0, 0};
     }
-    logger().debug() << "warnFrontCollisionOnTraj x_adv = "
+    logger().error() << "warnFrontCollisionOnTraj x_adv = "
             << x_adv
             << " y_adv = "
             << y_adv
@@ -278,6 +277,7 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
             << y_adv_detect_mm
             << logs::end;
 }
+
 
 void Asserv::warnBackCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_mm) //x positif devant le robot, y positif le coté gauche
 {
@@ -400,9 +400,10 @@ TRAJ_STATE Asserv::doRotateAbs(float degreesRelative) {
 TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
 {
     if (matchColorPosition_ != 0) {
-        return doRotateAbs(-thetaInDegreeRelative); //jaune
+        return doRotateAbs(-thetaInDegreeRelative); //bleu
     }
-    else return doRotateAbs(thetaInDegreeRelative); //violet
+    else return doRotateAbs(thetaInDegreeRelative); //jaune
+
 }
 
 TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) {
@@ -471,7 +472,7 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
 TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, float adjustment_mm) {
     float dx = getRelativeX(xMM) - pos_getX_mm();
     float dy = yMM - pos_getY_mm();
-    if (std::abs(dx) < 1.0 && std::abs(dy) < 1.0) { //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
+    if (std::abs(dx) < 3.0 && std::abs(dy) < 3.0) { //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
         logger().debug() << "___ TRAJ_FINISHED __doMoveForwardTo (std::abs(dx) < 1.0 && std::abs(dy) < 1.0)" << logs::end;
         return TRAJ_FINISHED;
     }
@@ -506,7 +507,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
         }
     }
     float dist = sqrt(dx * dx + dy * dy);
-//logger().error() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+logger().error() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment_mm);
 
 }

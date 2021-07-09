@@ -224,6 +224,7 @@ int Sensors::front(bool display) {
     if (enableFrontLeft_) //existance
     {
         bool fL_filter = this->robot()->asserv()->filtre_IsInsideTable(fL, -1, "fL"); //negatif = capteur placé à gauche
+        //logger().info() << " fL_filter= " << fL_filter << logs::end;
         if (fL_filter) {
             {
                 if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
@@ -238,7 +239,6 @@ int Sensors::front(bool display) {
                     level = 2;
                 }
             }
-
         }
     }
     if (enableFrontCenter_) {
@@ -409,20 +409,29 @@ void Sensors::stopTimerSensors() {
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono) {
-    //logger().debug() << ">> SensorsTimer::onTimer" << logs::end;
+    logger().debug() << ">> SensorsTimer::onTimer" << logs::end;
 
     //get all data sync
     int err = sensors_.sync("beacon_sync");
     if(err < 0 )
     {
         logger().error() << ">> SYNC BAD DATA!" << logs::end;
-        return;
+
     }
 
     //TODO mODIFIER LE FRONT POUR INCLURE LES POSITIONS adv
     //TODO mettre a jour les zones adv
 
     int frontLevel = sensors_.front(true);
+    //logger().error() << "frontLevel=="<< frontLevel << logs::end;
+
+
+//    if (frontLevel >= 1) {
+//        //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+//                    sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+//                    //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+//                    sensors_.robot()->asserv()->setLowSpeedForward(true, 10);
+//    }
 
     if (frontLevel == 0) {
         nb_sensor_front_a_zero++;
@@ -438,23 +447,25 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
     }
 
     if (frontLevel == 1) {
+
         if (lastfrontl2_temp_ == true) //si on vient de descendre du level 2
-                {
+        {
             logger().error() << "front : si on vient de descendre du level 2" << logs::end;
             lastdetect_front_nb_ = 1;
             lastfrontl2_temp_ = false;
             sensors_.robot()->asserv()->resetEmergencyOnTraj("front descendre du level 2");
             sensors_.robot()->resetDisplayObstacle();
         }
-
+        logger().error() << "front :send collision to asserv!!!!!!!!!!!!!!!!!!!!!!" << logs::end;
 //send collision to asserv
-        if (lastdetect_front_nb_ == 0) {
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->setLowSpeedForward(true);
+        if (lastdetect_front_nb_ ==0) {
 
-        }
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            sensors_.robot()->asserv()->setLowSpeedForward(true, 5);
+
+       }
         lastdetect_front_nb_++;
     }
 
@@ -497,7 +508,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnBackCollisionOnTraj(sensors_.x_adv_mm, sensors_.y_adv_mm);
             sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->setLowSpeedBackward(true);
+            sensors_.robot()->asserv()->setLowSpeedBackward(true, 20);
 
         }
         lastdetect_back_nb_++;
@@ -518,9 +529,9 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
         }
     }
 
-//    logger().error() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
-//            << " us lastdetect_front_nb_ =" << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel
-//            << logs::end;
+    logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
+           // << " us lastdetect_front_nb_ =" << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel
+            << logs::end;
 
 }
 

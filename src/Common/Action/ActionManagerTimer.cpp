@@ -32,7 +32,7 @@ void ActionManagerTimer::execute() {
             while (i != timers_.end() && !stop_) {
                 ITimerListener * timer = *i;
                 tps = starttime - timer->getLastTime();
-//				logger().debug() <<  " size=" << size << " - " << timer->info()
+//				logger().debug() <<  " sizeT=" << sizeT << " - " << timer->name()
 //						<< " tps=" << tps
 //						<< " starttime=" << starttime
 //						<< " timer->lastTime()=" << timer->getLastTime()

@@ -30,11 +30,11 @@ void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
     } else if (keep_millisec <= -1) {
 
         while (int r = servodriver_->getMoving(servo) >= 1) {
-            if (r<0)
-            {
-                logger().info() << "servo=" << servo << " deploy getMoving break"  << logs::end;
-                break;
-            }
+//            if (r<0)
+//            {
+//                logger().info() << "servo=" << servo << " deploy getMoving break"  << logs::end;
+//                break;
+//            }
             r = servodriver_->getMoving(servo);
 
 //            if (r <= 0 || r >=200) {

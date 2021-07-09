@@ -11,7 +11,7 @@ Actions::Actions()
 
 void Actions::start()
 {
-    actionManagerTimer_.start("ActionManagerTimer", 20); //TODO si superieur à 1, ca bloque le programme
+    actionManagerTimer_.start("ActionManagerTimer", 1); //TODO si superieur à 1, ca bloque le programme sur OPOSUL
     started_ = true;
     logger().debug("Actions is started");
 }

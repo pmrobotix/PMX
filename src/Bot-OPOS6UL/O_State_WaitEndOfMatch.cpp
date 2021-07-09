@@ -22,7 +22,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "Start Chronometer" << logs::end;
     robot.chrono().start();
 
-    while (robot.chrono().getElapsedTimeInSec() <= 5) {
+    while (robot.chrono().getElapsedTimeInSec() <= 95) {
 
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -42,8 +42,28 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 //    robot.actions().ax12_left_cil_release(-1);
 
     robot.actions().ax12_drapeaux();
+    robot.points += 10;
+    robot.displayPoints();
 
-    this->logger().info() << "O_State_Wait90SecAction::execute end95s...stop... "
+/*
+    //TODO danse de fin ?
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+    robot.actions().ax12_bras_droit_init(0);
+    robot.actions().ax12_bras_gauche_init(-1);
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+    robot.actions().ax12_bras_droit_init(0);
+    robot.actions().ax12_bras_gauche_init(-1);
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+    robot.actions().ax12_bras_droit_init(0);
+    robot.actions().ax12_bras_gauche_init(-1);*/
+
+    this->logger().info() << "O_State_Wait90SecAction::stop... "
             << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.freeMotion();
 
@@ -60,6 +80,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "Display Points after 100sec" << logs::end;
 
     robot.actions().lcd2x16().clear();
+
     robot.actions().lcd2x16().setBacklightOn();
     robot.actions().lcd2x16().setCursor(0, 0);
     robot.actions().lcd2x16().print(robot.points);
@@ -76,14 +97,16 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     ButtonTouch b = BUTTON_NONE;
     while (1) {
         b = robot.actions().buttonBar().checkOneOfAllPressed();
+
         if (b == BUTTON_BACK_KEY) {
+            logger().info() << "BUTTON_BACK_KEY" << logs::end;
             break;
         }
         if (b == BUTTON_ENTER_KEY) {
+            logger().info() << "BUTTON_BACK_KEY" << logs::end;
             break;
         }
-        if (b)
-            break;
+
 
         std::this_thread::sleep_for(std::chrono::microseconds(1000));
         //usleep(1000);

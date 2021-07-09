@@ -62,17 +62,17 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
 
     if (args["d"] != "0") {
         d = atof(args["d"].c_str());
-        logger().error() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
+        logger().info() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
     }
 
     if (args["a"] != "0") {
         a = atof(args["a"].c_str());
-        logger().error() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
+        logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
     }
 
     if (args["nb"] != "0") {
         nb = atoi(args["nb"].c_str());
-        logger().error() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
+        logger().info() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
     }
     coordx = atof(args['+']["coordx"].c_str());
     coordy = atof(args['+']["coordy"].c_str());
@@ -94,11 +94,14 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
 
     //detection adverse
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(100);
+    robot.actions().sensors().addTimerSensors(200);
     robot.chrono().start();
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(false, true, false);
+
+
+    robot.asserv().setLowSpeedForward(true, 40);
 
     TRAJ_STATE ts = TRAJ_OK;
     //int f = 0;
@@ -107,7 +110,7 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
     for (int num = 1; num <= nb; num++) {
         ts = TRAJ_OK;
         if (d != 0) {
-            logger().info() << "go Forward..." << d << ",300 mm" << logs::end;
+            logger().info() << "go Forward..." << d << ", y=" << coordy << logs::end;
             while (ts != TRAJ_FINISHED) {
                 ts = TRAJ_OK;
                 ts = robot.ia().iAbyPath().whileMoveForwardTo(d, 300, false, 2000000, 3, 3);

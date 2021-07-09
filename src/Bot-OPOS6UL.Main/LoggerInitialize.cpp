@@ -38,6 +38,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SensorsTimer", "net");
     add(logs::Level::INFO, "Sensors", "net");
     add(logs::Level::INFO, "ServoObjectsSystem", "net");
+    add(logs::Level::INFO, "ActionManagerTimer", "net");
 
     //SVG
     add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
@@ -85,7 +86,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SoundDriver.OPO", "net");
     add(logs::Level::INFO, "SwitchDriver.OPO", "net");
     add(logs::Level::INFO, "SensorsDriver.OPO", "net");
-    add(logs::Level::DEBUG, "AsservDriver.OPO", "net");
+    add(logs::Level::INFO, "AsservDriver.OPO", "net");
     add(logs::Level::INFO, "CCAx12Adc.OPO", "net");
     add(logs::Level::INFO, "SensorsDriver.OPO", "net");
     add(logs::Level::INFO, "IrSensor.OPO", "net");

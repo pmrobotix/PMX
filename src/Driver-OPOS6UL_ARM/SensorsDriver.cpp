@@ -18,22 +18,26 @@ SensorsDriver::SensorsDriver() :
 {
     regs_ = {};
     settings_ = {};
+    vadv_.clear();
 }
 
 SensorsDriver::~SensorsDriver() {
 }
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
-    msync_.lock();
-    bot_positions tmp = vadv_;
-    msync_.unlock();
-    return tmp;
+    //msync_.lock();
+    //bot_positions tmp = vadv_;
+    //msync_.unlock();
+    return vadv_;
 }
 int SensorsDriver::sync() {
     //logger().debug() << "beaconSensors_.getData()"<< logs::end;
     msync_.lock();
     regs_ = beaconSensors_.getData();
-    if (regs_.flags == 0xFF) return -1;
+    if (regs_.flags == 0xFF) {
+        printf("ERROR regs_.flags == 0xFF!!");
+        return -1;
+    }
 
     vadv_.clear();
 
@@ -84,17 +88,31 @@ int SensorsDriver::rightSide() {
 //    return lmm;
 //}
 
+//retourne la distance minimum du dernier sync
 int SensorsDriver::frontLeft() {
-    //TODO filtrage minimum a faire ?
-    int res = -1;
-    msync_.lock();
-    if (regs_.c1_mm == 0) res = -1;
-    if (regs_.c2_mm == 0) res = -1;
-    //int dist = 0;
-    if (regs_.c1_mm < regs_.c2_mm) res = regs_.c1_mm;
-    if (regs_.c1_mm >= regs_.c2_mm) res = regs_.c2_mm;
-    msync_.unlock();
-    return res;
+    //TODO filtrage minimum a faire ici aussi?
+
+    //int res = -1;
+    //msync_.lock();
+    //if (regs_.c1_mm == 0) res = -1;
+    //if (regs_.c2_mm == 0) res = -1;
+
+    if (regs_.c2_mm == 0) return 500;
+
+    //seuil minimum
+    if (regs_.c2_mm > 500) //regs_.c1_mm > 30 &&
+            {
+//        //int dist = 0;
+//        if (regs_.c1_mm < regs_.c2_mm) res = regs_.c1_mm;
+//        if (regs_.c1_mm >= regs_.c2_mm) res = regs_.c2_mm;
+//    }else
+//    {
+        //msync_.unlock();
+        return 500;
+    }
+
+    //msync_.unlock();
+    return regs_.c2_mm;
 }
 
 int SensorsDriver::frontCenter() {
@@ -103,17 +121,30 @@ int SensorsDriver::frontCenter() {
     return -1;
 }
 int SensorsDriver::frontRight() {
-//TODO filtrage minimum a faire ?
+//TODO filtrage minimum a faire ici aussi?
 
-    int res = -1;
-    msync_.lock();
-    if (regs_.c3_mm == 0) res = -1;
-    if (regs_.c4_mm == 0) res = -1;
-    //int dist = 0;
-    if (regs_.c3_mm < regs_.c4_mm) res = regs_.c3_mm;
-    if (regs_.c3_mm >= regs_.c4_mm) res = regs_.c4_mm;
-    msync_.unlock();
-    return res;
+//    int res = -1;
+//    msync_.lock();
+//    if (regs_.c3_mm == 0) res = -1;
+//    if (regs_.c4_mm == 0) res = -1;
+//    //int dist = 0;
+//    if (regs_.c3_mm < regs_.c4_mm) res = regs_.c3_mm;
+//    if (regs_.c3_mm >= regs_.c4_mm) res = regs_.c4_mm;
+//    msync_.unlock();
+//    return res;
+//    int res = -1;
+//    msync_.lock();
+
+    if (regs_.c4_mm == 0) return 500;
+
+    //seuil minimum
+    if (regs_.c4_mm > 500) {
+
+        return 500;
+    }
+
+    //msync_.unlock();
+    return regs_.c4_mm;
 }
 
 int SensorsDriver::backLeft() {

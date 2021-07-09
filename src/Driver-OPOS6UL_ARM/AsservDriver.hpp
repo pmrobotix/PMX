@@ -11,13 +11,17 @@
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
-#include <include/CppLinuxSerial/SerialPort.hpp>
+//#include <include/CppLinuxSerial/SerialPort.hpp>
+#include "serialib.hpp"
+#include <unistd.h>
+#include <stdio.h>
 #include <vector>
 
 using namespace std;
-using namespace mn::CppLinuxSerial;
+//using namespace mn::CppLinuxSerial;
 
-#define	SERIAL_ADDRESS      "/dev/ttymxc1"
+//#define	SERIAL_ADDRESS      "/dev/ttymxc1"
+#define SERIAL_PORT "/dev/ttymxc1"
 
 // convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
 union float2bytes_t   // union consists of one variable represented in a number of different ways
@@ -50,7 +54,8 @@ private:
         return instance;
     }
 
-    SerialPort serialPort_;
+    //SerialPort serialPort_;
+    serialib serial_;
 
     int read_error_;
     bool connected_;
@@ -62,17 +67,13 @@ private:
 
     TRAJ_STATE pathStatus_;
 
-    //Mutex m_mbed; //mutex pour i2c mbed
     Mutex m_pos; //mutex pour la mise à jour de la position
     Mutex m_statusCountDown;
 
+    void nucleo_flushSerial();
+    int nucleo_writeSerial(char c);
+    int nucleo_writeSerialSTR(string str);
 
-    int nucleo_ack();
-    int nucleo_writeSerial(string str);
-    //int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
-    //int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write, unsigned char* data);
-
-    RobotPosition nucleo_GetPosition();
     TRAJ_STATE nucleo_waitEndOfTraj();
 
     void parseAsservPosition(string str);

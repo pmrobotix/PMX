@@ -64,9 +64,8 @@ public:
     void displayObstacle(int level);
 
     bool blue_done;
-    bool gold_taken;
-    bool gold_door_opened;
-    bool gold_dropped;
+
+
 
 private:
 

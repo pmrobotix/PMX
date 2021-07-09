@@ -36,14 +36,14 @@ struct Registers {
     //default config settings is changed by master or not. in case of reset, the master can know and reconfigure
 
     uint8_t nbDetectedBots = 0; //Register 5.Nombre de balises détectées.
-    int16_t c1_mm = 0;        // Register 6.
-    int16_t c2_mm = 0;        // Register 8.
-    int16_t c3_mm = 0;        // Register 10.
-    int16_t c4_mm = 0;        // Register 12.
-    int16_t c5_mm = 0;        // Register 14.
-    int16_t c6_mm = 0;        // Register 16.
-    int16_t c7_mm = 0;        // Register 18.
-    int16_t c8_mm = 0;        // Register 20.
+    int16_t c1_mm = 0;        // Register 6. //AV GAUCHE BAS
+    int16_t c2_mm = 0;        // Register 8. //AV GAUCHE HAUT
+    int16_t c3_mm = 0;        // Register 10. //AV DROIT BAS
+    int16_t c4_mm = 0;        // Register 12. //AV DROIT HAUT
+    int16_t c5_mm = 0;        // Register 14. //AR GAUCHE BAS
+    int16_t c6_mm = 0;        // Register 16. //AR GAUCHE HAUT
+    int16_t c7_mm = 0;        // Register 18. //AR DROIT BAS
+    int16_t c8_mm = 0;        // Register 20. //AR DROIT HAUT
 
     int16_t reserved = 0;        // Register 22.
 

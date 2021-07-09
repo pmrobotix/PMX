@@ -10,11 +10,11 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
     //config des sensors
     //TODO ajouter la configuration de la position des capteurs sensors_.addConfigPosFront(-140, 0, +140);
 
-    sensors_.addConfigFront(false, false, false);
+    sensors_.addConfigFront(true, false, true);
     sensors_.addConfigBack(false, false, false);
 
-    sensors_.addThresholdFront(360, 360, 360);
-    sensors_.addThresholdFrontVeryClosed(310, 310, 310);
+    sensors_.addThresholdFront(450, 450, 450);
+    sensors_.addThresholdFrontVeryClosed(300, 300, 300);
 
     sensors_.addThresholdBack(0, 220, 0);
     sensors_.addThresholdBackVeryClosed(0, 160, 0);

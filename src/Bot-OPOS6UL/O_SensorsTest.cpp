@@ -27,15 +27,15 @@ void O_SensorsTest::run(int argc, char** argv) {
     int front, back, left, right, mright, mleft;
     ASensorsDriver::bot_positions vadv;
 
- /*
+/*
     //TEST en direct
     while (chrono.getElapsedTimeInSec() < 200) {
-        robot.actions().sensors().sync("beacon_sync");
+        int err = robot.actions().sensors().sync("beacon_sync");
 
         vadv = robot.actions().sensors().getPositionsAdv();
 
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
-            logger().info() << "vadv nb=" << vadv.size()
+            logger().info() << "TEST en direct : vadv nb=" << vadv.size()
         << " detected=" << vadv[i].nbDetectedBots
         << " x=" << vadv[i].x
         << " y=" << vadv[i].y
@@ -46,37 +46,54 @@ void O_SensorsTest::run(int argc, char** argv) {
 
 
         //std::this_thread::sleep_for(chrono::nanoseconds(100000000));
-        utils::sleep_for_micros(100000);
+        utils::sleep_for_micros(200000);
         //usleep(100000);
-    }*/
+    }
+*/
+    //il faut mettre une position pour le filtre table
+    //robot.asserv().setPositionAndColor(800, 200, 0,(robot.getMyColor() != PMXYELLOW));
 
     //TEST par timer
-    robot.actions().sensors().setIgnoreAllFrontNearObstacle(true);
-    robot.actions().sensors().setIgnoreAllBackNearObstacle(true);
+    robot.actions().sensors().setIgnoreAllFrontNearObstacle(false);
+    robot.actions().sensors().setIgnoreAllBackNearObstacle(false);
 
-        robot.actions().start();
-        robot.actions().sensors().addTimerSensors(100);
+    robot.actions().start();
+    robot.actions().sensors().addTimerSensors(200);
 
-        while (chrono.getElapsedTimeInSec() < 200) {
-            vadv = robot.actions().sensors().getPositionsAdv();
-
-            for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
-                        logger().info() << "vadv nb=" << vadv.size()
-                    << " detected=" << vadv[i].nbDetectedBots
-                    << " x=" << vadv[i].x
-                    << " y=" << vadv[i].y
-                    << " a=" << vadv[i].theta
-                    << " d=" << vadv[i].d
-                                        << logs::end;
-            }
-
-            utils::sleep_for_micros(100000);
+    while (chrono.getElapsedTimeInSec() < 200) {
+        vadv = robot.actions().sensors().getPositionsAdv();
+        logger().info() << "TEST par timer : "<< logs::end;
+        for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
+            logger().info() << " vadv nb="
+                    << vadv.size()
+                    << " detected="
+                    << vadv[i].nbDetectedBots
+                    << " x="
+                    << vadv[i].x
+                    << " y="
+                    << vadv[i].y
+                    << " a="
+                    << vadv[i].theta
+                    << " d="
+                    << vadv[i].d
+                    << logs::end;
         }
 
+        int f = robot.actions().sensors().front(1);
+        logger().info() << " f=" << f<< logs::end;
+
+        utils::sleep_for_micros(200000);
+    }
+
+    //TEST par front recu
+
+
+
+
 //    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-//    robot.setMyColor(PMXVIOLET);
+//    robot.setMyColor(PMXVIOLET);//YELLOW
 //    robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
-//    robot.asserv().setPositionAndColor(400.0, 400.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+//    robot.asserv().setPositionAndColor(400.0, 400.0, 0.0, (robot.getMyColor() != PMXVIOLET));//YELLOW
 //    RobotPosition p = robot.asserv().pos_getPosition();
 //    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
 //            << p.asservStatus << logs::end;

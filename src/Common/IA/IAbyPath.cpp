@@ -368,10 +368,13 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
 
                 logger().info() << "GOTO - PATH to " << node->x << "," << node->y << logs::end;
 
-//                ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y,
-//                        rotate_ignored_detection); //inversement de x car doMoveForwardTo va aussi le refaire.
+                //ts = robot_->asserv()->doMoveForwardTo(robot_->asserv()->getRelativeX(node->x), node->y,
+                //        rotate_ignored_detection); //inversement de x car doMoveForwardTo va aussi le refaire.
 
-                ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
+                //TODO SIMU A coder par l'asserv driver
+
+               ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
+               ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
 
                 if (ts != TRAJ_FINISHED) {
                     return ts;
@@ -431,8 +434,14 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
         return ts;
     }
     return ts;
-
 }
+
+//goto avec l'asserv
+//TRAJ_STATE IAbyPath::whileAsservMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
+//        int nb_near_obstacle, int nb_collision, bool byPathfinding)
+//{
+//
+//}
 
 TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
         int nb_near_obstacle, int nb_collision, bool byPathfinding)
@@ -463,6 +472,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                 robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
                 c++;
                 robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_COLLISION");
+                robot_->asserv()->doLineAbs(-60);
                 if (c > nb_collision) {
                     break;
                 }

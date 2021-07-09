@@ -10,12 +10,25 @@ OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
     opponent_1 = Playground::INVALID;
     //opponent_2 = Playground::INVALID;
 
-    area_alea_violet = Playground::INVALID;
+    area_alea_blue = Playground::INVALID;
     area_alea_yellow = Playground::INVALID;
-    area_palet_start_violet = Playground::INVALID;
-    area_palet_start_yellow = Playground::INVALID;
-    area_palet_start2_violet = Playground::INVALID;
-    area_palet_start2_yellow = Playground::INVALID;
+
+    area_v_vert_gauche_yellow = Playground::INVALID;
+    area_v_rouge_droite_yellow = Playground::INVALID;
+    area_v_vert_gauche_blue = Playground::INVALID;
+    area_v_rouge_droite_blue = Playground::INVALID;
+    area_v_vert_droite_zoneNS_yellow = Playground::INVALID;
+    area_v_vert_droite_zoneNS_blue = Playground::INVALID;
+    area_v_rouge_gauche_zoneSN_yellow = Playground::INVALID;
+    area_v_rouge_gauche_zoneSN_blue = Playground::INVALID;
+
+    area_v_vert_devant_yellow = Playground::INVALID;
+    area_v_vert_devant_blue = Playground::INVALID;
+    area_v_rouge_devant_droite_yellow = Playground::INVALID;
+    area_v_rouge_devant_droite_blue = Playground::INVALID;
+    area_v_rouge_devant_gauche_milieu_terrain_yellow = Playground::INVALID;
+    area_v_rouge_devant_gouche_milieu_terrain_blue = Playground::INVALID;
+
 
     p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
 
@@ -26,10 +39,10 @@ OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
 void OPOS6UL_IAExtended::initPlayground()
 {
     //bordure terrain
-    p_->add_rectangle_lower_left(0, 0, 140, 2000, 0);
-    p_->add_rectangle_lower_left(3000, 0, -140, 2000, 0);
-    p_->add_rectangle_lower_left(0, 0, 3000, 140, 0);
-    p_->add_rectangle_lower_left(350, 1450, 2300, 550, 0);
+    p_->add_rectangle_lower_left(0, 0, 129, 2000, 0); //cote gauche
+    p_->add_rectangle_lower_left(3000, 0, -129, 2000, 0); //cote droit
+    p_->add_rectangle_lower_left(0, 0, 3000, 129, 0); //bas
+    p_->add_rectangle_lower_left(0, 2000-129, 3000, 2000, 0);//haut
     /*
      std::vector<Point*> relative_point_refs = std::vector<Point*>(3);
      Point p1={0,2000};
@@ -42,15 +55,27 @@ void OPOS6UL_IAExtended::initPlayground()
      p_->add_convex_body(0.0, 0.0, relative_point_refs, 0);
      */
     //zone aleatoire
-    p_->add_circle_symmetrical(this->area_alea_violet, this->area_alea_yellow, 1000.0, 1050.0, 300.0, 6);
+    p_->add_rectangle_lower_left_symmetrical(this->area_alea_yellow, this->area_alea_blue, 1000.0, 0.0, 500.0, 30.0, 0.0);
 
-    //zone palets depart
-    p_->add_circle_symmetrical(this->area_palet_start_violet, this->area_palet_start_yellow, 500, 750, 180, 8);
-    p_->add_circle_symmetrical(this->area_palet_start2_violet, this->area_palet_start2_yellow, 500, 1050, 180, 8);
+    //zone depart
+    p_->add_circle_symmetrical(this->area_v_vert_gauche_yellow, this->area_v_vert_gauche_blue, 450, 510, 210, 5);
+    p_->add_circle_symmetrical(this->area_v_rouge_droite_yellow, this->area_v_rouge_droite_blue, 450, 1080, 200, 4);
+    p_->add_circle_symmetrical(this->area_v_vert_droite_zoneNS_yellow, this->area_v_vert_droite_zoneNS_blue, 300, 400, 200, 4);
+    //p_->add_circle_symmetrical(this->area_v_rouge_gauche_zoneSN_yellow, this->area_v_rouge_gauche_zoneSN_blue, 300, 1200, 200, 4);
+
+    //centre terrain
+    p_->add_circle_symmetrical(this->area_v_vert_devant_yellow, this->area_v_vert_devant_blue, 1100, 800, 200, 5);
+    p_->add_circle_symmetrical(this->area_v_rouge_devant_droite_yellow, this->area_v_rouge_devant_droite_blue, 950, 400, 200, 5);
+    p_->add_circle_symmetrical(this->area_v_rouge_devant_gauche_milieu_terrain_yellow, this->area_v_rouge_devant_gouche_milieu_terrain_blue, 1270, 1200, 200, 5);
+
+
+
 
     //opponent
     p_->add_circle(this->opponent_1, -100.0, -100.0, 350.0, 8);
-
+    p_->add_circle(this->opponent_2, -100.0, -100.0, 350.0, 8);
+    p_->add_circle(this->opponent_3, -100.0, -100.0, 350.0, 8);
+    p_->add_circle(this->opponent_4, -100.0, -100.0, 350.0, 8);
     p_->compute_edges();
     iap_.addPlayground(p_);
     iap_.toSVG();

@@ -54,46 +54,51 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
     if (action == "BG") {
         robot.actions().ax12_bras_gauche_init();
         usleep(1000000);
-        robot.actions().ax12_gauche_droit();
+        robot.actions().ax12_bras_gauche();
         usleep(1000000);
         robot.actions().ax12_bras_gauche_init();
     }
 
     if (action == "UP") {
         robot.actions().ax12_elevator_up(false);
-        //usleep(1000000);
+
 
     }
     if (action == "DW") {
         robot.actions().ax12_elevator_down(false);
-        //usleep(1000000);
+
     }
 
     if (action == "RN") {
         robot.actions().ax12_elevator_up(true);
         robot.actions().ax12_rotation_black_side(true);
-        robot.actions().ax12_elevator_up(false);
-        robot.actions().ax12_rotation_black_side(false);
-        //usleep(1000000);
+        robot.actions().ax12_elevator_up(false); //release elevator
+
+    }
+    if (action == "RNDW") {
+        robot.actions().ax12_elevator_up(true);
+        robot.actions().ax12_rotation_black_side(true);
+        robot.actions().ax12_elevator_down(true);
+
     }
 
     if (action == "RB") {
         robot.actions().ax12_elevator_up(true);
         robot.actions().ax12_rotation_blue_side(true);
-        robot.actions().ax12_elevator_up(false);
-        robot.actions().ax12_rotation_blue_side(false);
+
+    }
+
+    if (action == "P") {
+        robot.actions().ax12_pince_au_centre(true);
+        robot.actions().ax12_pince_a_droite(true);
+        robot.actions().ax12_pince_a_gauche(true);
+        robot.actions().ax12_pince_au_centre(false);
         //usleep(1000000);
     }
 
-
-    if (action == "P") {
-            robot.actions().ax12_pince_au_centre(true);
-            robot.actions().ax12_pince_a_droite(true);
-            robot.actions().ax12_pince_a_gauche(true);
-            robot.actions().ax12_pince_au_centre(false);
-            //usleep(1000000);
-        }
-
+    if (action == "RR") {
+        robot.actions().releaseAll();
+    }
     /*
      robot.actions().servosAx12().detect();
      robot.actions().ax12_left_cil_retract(0);
