@@ -10,8 +10,8 @@
 
 void logs::LoggerFactory::initialize()
 {
-    //set minimum thread priority FIFO
-    utils::set_realtime_priority(1);
+    //on ecrase la priorité du loggerFactory
+    setPriority(1); //set priority for log per robot !!
 
     this->add("console", new UnitTestAppender());
 

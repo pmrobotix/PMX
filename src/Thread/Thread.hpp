@@ -28,7 +28,7 @@ typedef pthread_t ThreadId;
  * Cette méthode met la plus haute priorité sur le thread courant. en dehors de la classe pour etre utiliser pour les autres threads (Prog princ et Logs, etc)
  * http://www.yonch.com/tech/82-linux-thread-priority
  */
-int set_realtime_priority(int p = 0, ThreadId this_thread = pthread_self());
+int set_realtime_priority(int p = 0, std::string name = "", ThreadId this_thread = pthread_self());
 
 void sleep_for_micros(int64_t usec);
 void sleep_for_millis(int64_t msec);
@@ -52,8 +52,6 @@ protected:
     static void* entryPoint(void *object);
 
 private:
-
-
 
     /*!
      * \brief Identifiant du thread lié.
@@ -144,7 +142,7 @@ public:
      * Will not return until the internal thread has exited.
      */
     void waitForEnd() {
-        pthread_join(threadId_, NULL);
+        pthread_tryjoin_np(threadId_, NULL);
     }
 
     void cancel() {
@@ -153,6 +151,10 @@ public:
 
     std::string name() {
         return name_;
+    }
+
+    ThreadId id() {
+        return threadId_;
     }
 
 };

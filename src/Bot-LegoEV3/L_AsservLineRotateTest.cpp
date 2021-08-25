@@ -77,12 +77,12 @@ void L_AsservLineRotateTest::run(int argc, char** argv)
     coordx = atof(args['+']["coordx"].c_str());
     coordy = atof(args['+']["coordy"].c_str());
     coorda_deg = atof(args['+']["coorda"].c_str());
-    robot.setMyColor(PMXVIOLET);
+    robot.setMyColor(PMXYELLOW);
     robot.asserv().startMotionTimerAndOdo(true);
 
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
-    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
 
     left = robot.asserv().base()->extEncoders().getLeftEncoder();
     right = robot.asserv().base()->extEncoders().getRightEncoder();

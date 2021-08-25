@@ -9,10 +9,9 @@
 #include <string>
 
 #include "../Common/Action/IAction.hpp"
-#include "../Common/Action/ITimerListener.hpp"
 #include "../Common/FunctionalTest.hpp"
 #include "../Common/Utils/Chronometer.hpp"
-#include "../Log/Logger.hpp"
+#include "../Common/Utils/ITimerPosixListener.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 /*!
@@ -76,6 +75,8 @@ private:
      */
     L_ActionManagerTimerTest & amt_;
 
+    std::string name_;
+
     utils::Chronometer chrono_;
 
     int i_;
@@ -87,14 +88,14 @@ public:
      * \param amt
      *        Reference vers l'objet associée.
      */
-    TestAction(L_ActionManagerTimerTest & amt);
+    TestAction(L_ActionManagerTimerTest & amt, std::string label);
 
     /*!
      * \brief Destructeur de la classe.
      */
     virtual inline ~TestAction()
     {
-        logger().debug() << "~TestAction()" << logs::end;
+        //logger().debug() << "~TestAction()" << logs::end;
     }
 
     /*!
@@ -107,7 +108,7 @@ public:
      */
     virtual inline std::string info()
     {
-        return "TestAction";
+        return name_;
     }
 };
 
@@ -115,7 +116,7 @@ public:
  * \brief Ce timer
  *
  */
-class TestTimer: public ITimerListener
+class TestTimer: public ITimerPosixListener
 {
 private:
 
@@ -149,7 +150,7 @@ public:
      */
     virtual inline ~TestTimer()
     {
-        logger().debug() << "~TestTimer()" << logs::end;
+        //logger().debug() << "~TestTimer()" << logs::end;
     }
 
     virtual void onTimer(utils::Chronometer chrono);
@@ -161,7 +162,7 @@ public:
      */
     virtual inline std::string info()
     {
-        return nameListener_;
+        return name();
     }
 };
 

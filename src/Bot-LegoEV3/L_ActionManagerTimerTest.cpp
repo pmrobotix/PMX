@@ -13,65 +13,62 @@
 
 using namespace std;
 
-void L_ActionManagerTimerTest::run(int argc, char** argv)
-{
+void L_ActionManagerTimerTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
     robot.actions().start();
 
-    robot.actions().addAction(new TestAction(*this));
-    robot.actions().addAction(new TestAction(*this));
-    robot.actions().addTimer(new TestTimer(*this, 100, "timer1"));
-    robot.actions().addTimer(new TestTimer(*this, 500, "timer2"));
+    robot.actions().addAction(new TestAction(*this, "action1"));
+    robot.actions().addAction(new TestAction(*this, "action2"));
+    robot.actions().addAction(new TestAction(*this, "action3"));
+    robot.actions().addAction(new TestAction(*this, "action4"));
 
-    sleep(1);
-    robot.actions().addAction(new TestAction(*this));
+    utils::sleep_for_secs(2);
+    robot.actions().addTimer(new TestTimer(*this, 100, "timer1"));
+    robot.actions().addAction(new TestAction(*this, "action5"));
+    robot.actions().addTimer(new TestTimer(*this, 500, "timer2"));
+    robot.actions().addAction(new TestAction(*this, "action6"));
+
+    utils::sleep_for_secs(7);
     robot.actions().stopTimer("timer1");
+    robot.actions().addAction(new TestAction(*this, "action7"));
     robot.actions().stopTimer("timer2");
-    sleep(1);
-    robot.actions().addAction(new TestAction(*this));
-    sleep(1);
+
 
     logger().info() << "Happy End." << logs::end;
 }
 
-TestAction::TestAction(L_ActionManagerTimerTest & amt) :
-        amt_(amt), chrono_("TestAction")
+TestAction::TestAction(L_ActionManagerTimerTest & amt, std::string label) :
+        amt_(amt), name_(label), chrono_("TestAction")
 {
     chrono_.start();
     i_ = 0;
 }
 
 //execution de la tâche
-bool TestAction::execute()
-{
+bool TestAction::execute() {
     logger().info() << " !!!!! execution time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
 
     i_++;
-    if (i_ >= 5)
-        return false;
+    if (i_ >= 5) return false;
     return true;
 }
 
 TestTimer::TestTimer(L_ActionManagerTimerTest & amt, int timeSpan_ms, std::string name) :
         amt_(amt), chrono_("TestTimer")
 {
-    nameListener_ = name;
-    lasttime_ = 0;
-    timeSpan_ms_ = timeSpan_ms;
-    logger().debug() << "timeSpan_ms=" << timeSpan_ms << logs::end;
+    name_ = name;
+    timeSpan_us_ = timeSpan_ms * 1000;
+    this->init(name_, timeSpan_us_);
 }
 
-void TestTimer::onTimer(utils::Chronometer chrono)
-{
+void TestTimer::onTimer(utils::Chronometer chrono) {
     logger().info() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us" << logs::end;
 }
 
-void TestTimer::onTimerEnd(utils::Chronometer chrono)
-{
-    logger().info() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us"
-            << logs::end;
+void TestTimer::onTimerEnd(utils::Chronometer chrono) {
+    logger().info() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us" << logs::end;
 
 }

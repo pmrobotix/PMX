@@ -11,45 +11,41 @@
 /*!
  * \brief Cette interface représente une action executée.
  */
-class IAction
-{
+class IAction {
 public:
 
-	/*!
-	 * \brief Execute une action.
-	 * \retval true
-	 *         Si l'éxecution doit être conservée.
-	 * \retval false
-	 *         Si l'action doit être supprimée après son execution.
-	 */
-	virtual bool execute() = 0;
+    /*!
+     * \brief Execute une action. Attention toujours renvoyer un bool, sinon seg fault ;)
+     * \retval true
+     *         Si l'éxecution doit être conservée.
+     * \retval false
+     *         Si l'action doit être supprimée après son execution.
+     */
+    virtual bool execute() = 0;
 
-	/*!
-	 * \brief Getter sur les infos permettant d'identifier l'action.
-	 */
-	virtual std::string info()
-	{
-		return name_;
-	}
+    /*!
+     * \brief Getter sur les infos permettant d'identifier l'action.
+     */
+    virtual std::string info() {
+        return name_;
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual inline ~ IAction()
-	{
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~ IAction() {
+    }
 
 protected:
 
-	std::string name_;
+    std::string name_;
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	IAction()
-	{
-		name_ = "iAction_default";
-	}
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    IAction() {
+        name_ = "iAction_default";
+    }
 };
 
 #endif

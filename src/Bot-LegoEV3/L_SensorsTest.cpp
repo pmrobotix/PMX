@@ -20,9 +20,9 @@ void L_SensorsTest::run(int argc, char** argv)
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-    robot.setMyColor(PMXVIOLET);
+    robot.setMyColor(PMXYELLOW);
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(1000.0, 400.0, 0.0, (robot.getMyColor() != PMXVIOLET)); //pour mettre une position dans la table
+    robot.asserv().setPositionAndColor(1000.0, 400.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //pour mettre une position dans la table
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
             << p.asservStatus << logs::end;

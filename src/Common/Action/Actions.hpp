@@ -29,8 +29,6 @@ private:
      */
     ActionManagerTimer actionManagerTimer_;
 
-    bool started_;
-
 public:
 
     /*!
@@ -54,12 +52,16 @@ public:
         actionManagerTimer_.addAction(action);
     }
 
-    inline void addTimer(ITimerListener * timer) {
+//    inline void addTimer(ITimerListener * timer) {
+//        actionManagerTimer_.addTimer(timer);
+//    }
+
+    inline void addTimer(ITimerPosixListener * timer) {
         actionManagerTimer_.addTimer(timer);
     }
 
     inline void stopTimer(std::string name) {
-        actionManagerTimer_.stopTimer(name);
+        actionManagerTimer_.stopPTimer(name);
     }
 
     /*!
@@ -68,11 +70,6 @@ public:
      * Cette méthode lance le thread gérant le ActionManager.
      */
     void start();
-
-    /*!
-     * \brief Arrete le robot et libère les ressources associés.
-     */
-    void emergencyStop();
 
     /*!
      * \brief supprime toutes les actions et les timers.

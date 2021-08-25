@@ -51,7 +51,7 @@ O_State_Init::execute(Robot&)
 //
 //        robot.actions().lcd2x16().clear();
 
-        robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
+        //robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
 
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().home();
@@ -185,18 +185,19 @@ O_State_Init::execute(Robot&)
             robot.actions().lcd2x16().print("NO COLOR... => EXIIIIT !!");
 
             robot.actions().ledBar().resetAll();
-            robot.actions().ledBar().stopAndWait(true);
+            robot.actions().ledBar().stop(true);
             utils::sleep_for_micros(060000);
             logger().info() << "Exit user - No color! " << logs::end;
             robot.actions().lcd2x16().clear();
             //on quitte le programme!!
             exit(0);
         }
-        robot.actions().ledBar().stopAndWait(true);
+        robot.actions().ledBar().stop(true);
 
         //position et init servo
         setPos();
 
+//TODO TESTER pk ca pose problème ???
         //robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
 
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
@@ -218,7 +219,7 @@ O_State_Init::execute(Robot&)
                 //version on quitte le prog
                 robot.actions().lcd2x16().print("EXIIIIIIT !");
                 robot.actions().ledBar().resetAll();
-                robot.actions().ledBar().stopAndWait(true);
+                robot.actions().ledBar().stop(true);
                 utils::sleep_for_micros(200000);
                 logger().info() << "Exit by User request! " << logs::end;
                 robot.actions().lcd2x16().clear();
@@ -231,9 +232,9 @@ O_State_Init::execute(Robot&)
             utils::sleep_for_micros(500);
         }
 
-        //ATTENTE TIRETTE
-        robot.waitForInit(true);
+        //ATTENTE TIRETT
 
+        robot.waitForInit(true);
         robot.actions().lcd2x16().clear();
         robot.actions().lcd2x16().setCursor(0, 1);
         robot.actions().lcd2x16().print("WAITING TIRETT...");
@@ -257,12 +258,12 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().setCursor(8, 0);
         robot.actions().lcd2x16().print(robot.strategy());
 
-        //ATTENTE TIRETTE !!!!
+        //ATTENTE TIRETTE LOOP !!!!
         bool bb = false;
         while (robot.actions().tirette().pressed()) { //WARNING renvoi toujours 0 en SIMU
             bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
             if (bb) {
-                robot.actions().ledBar().stopAndWait(true);
+                robot.actions().ledBar().stop(true);
                 robot.actions().lcd2x16().clear();
                 robot.asserv().freeMotion();
                 goto begin;
@@ -277,7 +278,7 @@ O_State_Init::execute(Robot&)
             robot.actions().lcd2x16().print("NO COLOR... => EXIIIIT !!");
 
             robot.actions().ledBar().resetAll();
-            robot.actions().ledBar().stopAndWait(true);
+            robot.actions().ledBar().stop(true);
             utils::sleep_for_micros(600000);
             logger().info() << "Exit by No color! " << logs::end;
             robot.actions().lcd2x16().clear();
@@ -300,7 +301,7 @@ O_State_Init::execute(Robot&)
         //usleep(2000000); //simulation attente tirette pour avoir les logs sequentiels
     }
 
-    robot.actions().ledBar().stopAndWait(true);
+    robot.actions().ledBar().stop(true);
 
     robot.actions().ledBar().resetAll();
     robot.actions().lcd2x16().clear();
@@ -352,7 +353,7 @@ void O_State_Init::setPos() {
     TRAJ_STATE ts = TRAJ_OK;
     robot.asserv().setLowSpeedForward(true, 25); //35 battery et 50 secteur
     ts = robot.asserv().doLineAbs(100);
-    robot.asserv().setLowSpeedForward(true, 40);
+    robot.asserv().setLowSpeedForward(true, 70);
     /*
      ts = robot.asserv().doLineAbs(200);
      robot.actions().ax12_init();

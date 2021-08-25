@@ -5,6 +5,7 @@
 #include "../../src/Thread/Thread.hpp"
 #include "../Suite/UnitTestSuite.hpp"
 #include "ActionManagerTimerTest.hpp"
+#include "TimerFactoryTest.hpp"
 
 using namespace std;
 
@@ -12,7 +13,7 @@ int main()
 {
     cout << "!!!Common-Test!!!" << endl;
 
-    utils::set_realtime_priority(); //set priority MAX 99
+    utils::set_realtime_priority(3); //set priority MAX 99
 
     UnitTestSuite suite;
 
@@ -21,11 +22,12 @@ int main()
     //suite.addTest(new test::ChronometerTest());
     suite.addTest(new test::ActionManagerTimerTest()); //utilise les chronos et les threads
     //suite.addTest(new test::ReadWriteTest());
+    //suite.addTest(new test::TimerFactoryTest());
 
     //this_thread::sleep_for(2000ms);
 
     suite.run();
-
-    cout << "!!! End main()" << endl;
+//    this_thread::sleep_for(1s);
+//    cout << "!!! End main()" << endl;
     return 0;
 }

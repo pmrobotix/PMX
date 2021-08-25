@@ -24,7 +24,7 @@ using namespace std::chrono;
 
 logs::TelemetryAppender::TelemetryAppender(std::string ID)
 {
-    std::cout << "setup telemetry" << std::endl;
+    //std::cout << "setup telemetry" << std::endl;
     id_ = ID;
     //setup telemetry
     t_fd = socket(AF_INET, SOCK_DGRAM, 0);

@@ -35,7 +35,7 @@ L_State_Init::execute(Robot&)
 //        //logger().info() << "METTRE LA TIRETTE ! " << logs::end;
 //        robot.actions().lcd().display_content_string("METTRE LA TIRETTE", 4);
 //
-        robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
+        robot.actions().ledBar().startTimerK2mil(50000, 50000, LED_GREEN, false);
 //        int nb_tirette = 0;
         ButtonTouch b = BUTTON_NONE;
 //        while (nb_tirette < 3) {
@@ -78,7 +78,7 @@ L_State_Init::execute(Robot&)
                 if (b == BUTTON_LEFT_KEY) {
                     //logger().info() << "BUTTON_LEFT_KEY - YELLOW" << logs::end;
                     robot.actions().lcd().display_content_string("YELLOW", 3, 3);
-                    robot.actions().ledBar().stopAndWait(true);
+                    robot.actions().ledBar().stop(true);
                     robot.actions().ledBar().set(1, LED_YELLOW);
                     robot.actions().ledBar().set(0, LED_OFF);
                     robot.setMyColor(PMXYELLOW);
@@ -86,10 +86,10 @@ L_State_Init::execute(Robot&)
                 if (b == BUTTON_RIGHT_KEY) {
                     //logger().info() << "BUTTON_RIGHT_KEY - VIOLET" << logs::end;
                     robot.actions().lcd().display_content_string("VIOLET", 3, 3);
-                    robot.actions().ledBar().stopAndWait(true);
+                    robot.actions().ledBar().stop(true);
                     robot.actions().ledBar().set(0, LED_RED);
                     robot.actions().ledBar().set(1, LED_OFF);
-                    robot.setMyColor(PMXVIOLET);
+                    robot.setMyColor(PMXYELLOW);
                 }
             } else if (mode == 2) {
                 logger().debug() << "MODE VRR selected" << logs::end;
@@ -194,7 +194,7 @@ L_State_Init::execute(Robot&)
             if (b == BUTTON_BACK_KEY) {
                 logger().info() << "Exit by User request! " << logs::end;
                 robot.actions().ledBar().resetAll();
-                robot.actions().ledBar().stopAndWait(true);
+                robot.actions().ledBar().stop(true);
                 robot.actions().lcd().clear();
                 //on quitte le programme!!
                 exit(0);
@@ -206,16 +206,16 @@ L_State_Init::execute(Robot&)
         }
 
         //tirette
-        if (robot.getMyColor() == PMXVIOLET)
-            robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_RED, false);
+        if (robot.getMyColor() == PMXYELLOW)
+            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_YELLOW, false);
         else
-            robot.actions().ledBar().startAlternate(100000, 100000, 0x81, 0x3C, LED_YELLOW, false);
+            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
 
         robot.waitForInit(true);
 
         robot.actions().lcd().clear();
         //logger().info() << "PMX...WAIT TIRETTE !";
-        if (robot.getMyColor() == PMXVIOLET) {
+        if (robot.getMyColor() == PMXYELLOW) {
             //logger().info() << " VIOLET";
             robot.actions().lcd().display_content_string("VIOLET", 3, 2);
         } else {
@@ -241,7 +241,7 @@ L_State_Init::execute(Robot&)
                 nb_tirette = 0;
             bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
             if (bb) {
-                robot.actions().ledBar().stopAndWait(true);
+                robot.actions().ledBar().stop(true);
                 robot.asserv().freeMotion();
                 robot.actions().lcd().clear();
                 goto begin;
@@ -256,7 +256,7 @@ L_State_Init::execute(Robot&)
             logger().error() << "PMXNOCOLOR !!!" << logs::end;
             exit(0);
         } else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXVIOLET ? "VIOLET" : "YELLOW") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "BLUE  ") << logs::end;
         }
 
         logger().info() << "ENLEVER TIRETTE !!!" << logs::end;
@@ -274,7 +274,7 @@ L_State_Init::execute(Robot&)
     }
     robot.actions().lcd().clear();
 
-    robot.actions().ledBar().stopAndWait(true);
+    robot.actions().ledBar().stop(true);
 
     robot.actions().ledBar().resetAll();
 
@@ -296,7 +296,7 @@ void L_State_Init::setPos()
     robot.asserv().base()->extEncoders().reset();
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(450 + 120, 1543 - 50, -90.0, (robot.getMyColor() != PMXVIOLET)); //au coin du distributeur
+    robot.asserv().setPositionAndColor(450 + 120, 1543 - 50, -90.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
     robot.svgPrintPosition();
 
     //active l'asservissement

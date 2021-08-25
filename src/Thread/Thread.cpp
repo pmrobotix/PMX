@@ -16,8 +16,14 @@ utils::Thread::entryPoint(void *pthis)
 {
     utils::Thread *pt = (utils::Thread*) pthis;
     pt->setState(utils::STARTED);
+    //A supprimer
     //std::cout << "utils::Thread::entryPoint " << pt->name() << " p=" << pt->priority_ << std::endl;
-    if (pt->priority_ > 0) set_realtime_priority(pt->priority_);
+//    if (pt->priority_ > 0) {
+//        int err = set_realtime_priority(pt->priority_);
+//        if (err < 0) {
+//            std::cout << "THREAD " << " entryPoint-set_realtime_priority FAILED with priority=" << " p=" << priority << std::endl;
+//        }
+//    }
     pt->execute();
     pt->setState(utils::STOPPED);
 
@@ -36,7 +42,8 @@ void utils::Thread::yield() {
 }
 /*!
  * \brief Donne la main à un autre thread de meme priorité
- * \The sched_yield() function checks to see if other processes at the same priority as that of the calling process are READY to run. If so, the calling process yields to them and places itself at the end of the READY process queue. The sched_yield() function never yields to a lower priority process.
+ * \The sched_yield() function checks to see if other processes at the same priority as that of the calling process are READY to run.
+ * If so, the calling process yields to them and places itself at the end of the READY process queue. The sched_yield() function never yields to a lower priority process.
  *
  */
 void utils::Thread::sched_yield() {
@@ -82,10 +89,9 @@ bool utils::Thread::start(std::string name, int priority) {
          << name << std::endl;
          */
         //end log
-//        if (priority != 0) {
-//            priority_ = priority;
-//            utils::set_realtime_priority(priority, threadId_);
-//        }
+        if (priority != 0) {
+            utils::set_realtime_priority(priority, name, threadId_);
+        }
         return false;
     }
     else {
@@ -129,7 +135,7 @@ bool utils::Thread::start(std::string name, int priority) {
 //> ulimit -r # show soft limit
 //99
 //ulimit -Sr 99 # set soft limit
-int utils::set_realtime_priority(int p, ThreadId thread) {
+int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
     if (p >= 0) {
         //priority test
         int ret;
@@ -140,7 +146,7 @@ int utils::set_realtime_priority(int p, ThreadId thread) {
 
         if (p >= sched_get_priority_max(SCHED_FIFO)) p = sched_get_priority_max(SCHED_FIFO);
 
-        std::cout << "THREAD " << thread << " priority changed to " << p << std::endl;
+        std::cout << "THREAD " << thread << " " << name <<" priority changed to " << p << std::endl;
 
         // We'll set the priority to the maximum.
         params.sched_priority = p;

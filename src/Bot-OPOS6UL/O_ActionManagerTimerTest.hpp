@@ -9,9 +9,9 @@
 #include <string>
 
 #include "../Common/Action/IAction.hpp"
-#include "../Common/Action/ITimerListener.hpp"
 #include "../Common/FunctionalTest.hpp"
 #include "../Common/Utils/Chronometer.hpp"
+#include "../Common/Utils/ITimerPosixListener.hpp"
 #include "../Log/Logger.hpp"
 #include "../Log/LoggerFactory.hpp"
 
@@ -67,7 +67,7 @@ private:
      */
     static const logs::Logger & logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("TestAction");
+        static const logs::Logger & instance = logs::LoggerFactory::logger("O_ActionManagerTimerTest-Action");
         return instance;
     }
 
@@ -75,6 +75,8 @@ private:
      * \brief Référence vers le test.
      */
     O_ActionManagerTimerTest & amt_;
+
+    std::string name_;
 
     utils::Chronometer chrono_;
 
@@ -87,7 +89,7 @@ public:
      * \param amt
      *        Reference vers l'objet associée.
      */
-    TestAction(O_ActionManagerTimerTest & amt);
+    TestAction(O_ActionManagerTimerTest & amt, std::string name);
 
     /*!
      * \brief Destructeur de la classe.
@@ -107,7 +109,7 @@ public:
      */
     virtual inline std::string info()
     {
-        return "TestAction";
+        return name_;
     }
 };
 
@@ -115,7 +117,7 @@ public:
  * \brief Ce timer
  *
  */
-class TestTimer: public ITimerListener
+class TestTimer: public ITimerPosixListener
 {
 private:
 
@@ -124,7 +126,7 @@ private:
      */
     static const logs::Logger & logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("TestTimer");
+        static const logs::Logger & instance = logs::LoggerFactory::logger("O_ActionManagerTimerTest-Timer");
         return instance;
     }
 
@@ -134,6 +136,8 @@ private:
     O_ActionManagerTimerTest & amt_;
 
     utils::Chronometer chrono_;
+
+   int lasttime_;
 
 public:
 
@@ -149,7 +153,7 @@ public:
      */
     virtual inline ~TestTimer()
     {
-        logger().debug() << "~TestTimer()" << logs::end;
+        //logger().debug() << "~TestTimer()" << logs::end;
     }
 
     virtual void onTimer(utils::Chronometer chrono);
@@ -161,7 +165,7 @@ public:
      */
     virtual inline std::string info()
     {
-        return nameListener_;
+        return name();
     }
 };
 

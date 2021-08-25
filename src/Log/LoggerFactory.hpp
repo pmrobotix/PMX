@@ -76,6 +76,8 @@ private:
 
     bool stop_;
 
+    int priority_;
+
     /*!
      * \brief constructeur de la classe.
      */
@@ -88,12 +90,12 @@ private:
      */
     void initialize();
 
+protected:
+
     /*!
      * \brief set the priority of this thread (can be different per robot).
      */
-    void setPriority();
-
-protected:
+    void setPriority(int p);
 
     /*!
      * \brief Cette méthode ajoute un appender au système.

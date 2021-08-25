@@ -208,13 +208,13 @@ float Asserv::pos_getThetaInDegree() {
 //doit etre surcharger par robot
 bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc) {
 
-    logger().error() << "Asserv::filtre_IsInsideTable Surcharge à faire par config Robot!!!!!!!!" << logs::end;
+    logger().debug() << "Asserv::filtre_IsInsideTable Surcharge à faire par config Robot!!!!!!!!" << logs::end;
     return false;
 
 }
 
 void Asserv::resetEmergencyOnTraj(std::string message) {
-    logger().debug() << "resetEmergencyOnTraj message = " << message << logs::end;
+    logger().error() << "resetEmergencyOnTraj message = " << message << logs::end;
     if (useAsservType_ == ASSERV_INT_INSA) {
         //pAsservInsa_->path_ResetEmergencyStop();
     }

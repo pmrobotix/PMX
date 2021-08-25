@@ -56,7 +56,6 @@ Robot::~Robot()
     //Tue le log s'il existe (core dump sinon)
     logs::LoggerFactory::instance().stopLog();
 
-    //printf("\n ~Robot() end");
 }
 
 void Robot::svgPrintPosition(int color)
@@ -310,9 +309,11 @@ void Robot::stopMotionTimerAndActionManager()
 
     if (actions_default_ != NULL) {
         this->actions_default_->clearAll(); //clear actions and timers
-        this->actions_default_->cancel(); //cancel actions thread
+        this->actions_default_->waitAndStopManagers();
+        //this->actions_default_->cancel(); //cancel actions thread
     } else
         logger().error() << "actions_default is NULL ! " << logs::end;
+
 }
 
 void Robot::freeMotion()

@@ -42,6 +42,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 //    robot.actions().ax12_left_cil_release(-1);
 
     robot.actions().ax12_drapeaux();
+
     robot.points += 10;
     robot.displayPoints();
 
@@ -63,7 +64,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     robot.actions().ax12_bras_droit_init(0);
     robot.actions().ax12_bras_gauche_init(-1);*/
 
-    this->logger().info() << "O_State_Wait90SecAction::stop... "
+    this->logger().info() << "O_State_Wait90SecAction::stopping... "
             << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.freeMotion();
 

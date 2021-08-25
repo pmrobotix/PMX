@@ -22,7 +22,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    utils::set_realtime_priority(99); //set priority MAX 99
+    utils::set_realtime_priority(50, "Main"); //set priority MAX 99
 
     //Specific Robot BigPMX
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
@@ -48,6 +48,7 @@ int main(int argc, char** argv)
 
     //start the Robot (functional tests or match)
     robot.begin(argc, argv);
+
 
     return 0;
 }

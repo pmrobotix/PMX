@@ -46,7 +46,7 @@ void L_AsservEsialTest::run(int argc, char **argv)
     //utils::Chronometer chrono("L_AsservEsialTest");
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXVIOLET));
+    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
     //LegoEV3AsservExtended asserv = robot.asserv();
     //ExtEncoderControl extEncoders = asserv.base()->extEncoders();

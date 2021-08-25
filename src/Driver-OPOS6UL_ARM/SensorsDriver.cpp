@@ -35,7 +35,7 @@ int SensorsDriver::sync() {
     msync_.lock();
     regs_ = beaconSensors_.getData();
     if (regs_.flags == 0xFF) {
-        printf("ERROR regs_.flags == 0xFF!!");
+        printf("ERROR regs_.flags == 0xFF!!\n");
         return -1;
     }
 

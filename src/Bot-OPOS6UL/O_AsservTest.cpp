@@ -89,13 +89,13 @@ void O_AsservTest::run(int argc, char** argv) {
 
     robot.asserv().startMotionTimerAndOdo(true); //reset et lancement du thread position, attente et moteur à 1 attente
     robot.setMyColor(PMXYELLOW);
-while (robot.asserv().pos_getX_mm() <10)
-{
-    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
-}
+    while (robot.asserv().pos_getX_mm() < 10) {
+        robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
+    }
 //    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
 //    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
 //    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
+
 
     logger().info() << "setposition done:"
             << " x="
@@ -111,40 +111,53 @@ while (robot.asserv().pos_getX_mm() <10)
 
 //    robot.asserv().assistedHandling();
     robot.asserv().setLowSpeedForward(true, 40);
-    robot.asserv().doLineAbs(200);
-    robot.svgPrintPosition();
-    robot.asserv().doFaceTo(600, 200);
-    robot.asserv().doRotateAbs(90);
-    robot.svgPrintPosition();
 
-     //detection adverse
-     robot.actions().start();
-     //robot.actions().sensors().addTimerSensors(100);
-     robot.chrono().start();
 
-     //robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
-     //robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
+    //detection adverse
+    robot.actions().start();
+    robot.actions().sensors().addTimerSensors(200);
+    robot.chrono().start();
 
-     logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(false, true, false);
 
-     TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, true, 1000000, 3, 3, true);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().error() << " whileMoveForwardTo  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     }
-     logger().info() << "END GOTO ts=" << ts << logs::end;
+    logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
+/*
+    robot.asserv().gotoChain(300, 800);
+    robot.asserv().gotoChain(400, 800);
+    robot.asserv().gotoChain(500, 800);
+    robot.asserv().gotoChain(600, 800);
+     TRAJ_STATE ts = robot.asserv().gotoXY(700, 800);
 
-     if (x2 != 0 && y2 != 0) {
-     sleep(3);
-     logger().info() << "GOTO2 x2=" << x2 << " y2=" << y2 << logs::end;
 
-     TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x2, y2, true, 1000000, 3, 3, true);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().error() << " whileMoveForwardTo x2,y2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     }
-     logger().info() << "END GOTO2 ts=" << ts << logs::end;
-     }
+        if (ts != TRAJ_FINISHED) {
+                robot.logger().error() << " whileMoveForwardTo  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+                robot.asserv().resetEmergencyOnTraj();
+
+            }
+*/
+
+
+
+
+    TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 2000000, 5, 5, false);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " whileMoveForwardTo  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    logger().info() << "END GOTO ts=" << ts << logs::end;
+
+    if (x2 != 0 && y2 != 0) {
+        sleep(3);
+        logger().info() << "GOTO2 x2=" << x2 << " y2=" << y2 << logs::end;
+
+        TRAJ_STATE ts = robot.ia().iAbyPath().whileMoveForwardTo(x2, y2, false, 1000000, 3, 3, false);
+        if (ts != TRAJ_FINISHED) {
+            robot.logger().error() << " whileMoveForwardTo x2,y2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+            robot.asserv().resetEmergencyOnTraj();
+        }
+        logger().info() << "END GOTO2 ts=" << ts << logs::end;
+    }
 
     logger().info() << "time= "
             << robot.chrono().getElapsedTimeInMilliSec()

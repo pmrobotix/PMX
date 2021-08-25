@@ -50,30 +50,24 @@ void L_LedBarTest::run(int argc, char** argv)
     logger().info() << "Startset..." << logs::end;
     robot.actions().ledBar().startSet(0, LED_ORANGE);
 
-    robot.actions().ledBar().startAlternate(10, 200000, 0x03, 0x01, LED_GREEN, true);
+    logger().info() << "startTimerAlternate..." << logs::end;
+    robot.actions().ledBar().startTimerAlternate(10, 200000, 0x03, 0x01, LED_GREEN, true);
 
-    robot.actions().ledBar().startK2mil(5, 100000, LED_RED, true);
 
+    robot.actions().ledBar().startTimerK2mil(50, 100000, LED_RED, true);
 
-    robot.actions().ledBar().startK2mil(20, 100000, LED_GREEN, false);
-    sleep(1);
+    logger().info() << "startTimerK2mil false..." << logs::end;
+    robot.actions().ledBar().startTimerK2mil(20, 100000, LED_GREEN, false);
+    utils::sleep_for_micros(1000000);
 
-    robot.actions().ledBar().startBlinkPin(15, 100000, 0, LED_RED, false);
-    sleep(1);
+    robot.actions().ledBar().startTimerBlinkPin(15, 100000, 0, LED_RED, false);
+    utils::sleep_for_micros(1000000);
 
     logger().info() << "stopAndWait..." << logs::end;
-    robot.actions().ledBar().stopAndWait(true);
-    logger().info() << "stopAndWait done" << logs::end;
-    //lancement du tache sans arret de fin
-    logger().info() << "lancement du tache sans arret de fin" << logs::end;
-    robot.actions().ledBar().startK2mil(20, 200000, LED_ORANGE, false);
-    sleep(1);
-    logger().info() << "clearAll" << logs::end;
+    robot.actions().ledBar().stop(true);
+
+
     robot.actions().clearAll();
-    logger().info() << "clear done" << logs::end;
-
-
-    //robot.actions().ledBar().k2mil(4, 70000, LED_RED);
     robot.actions().ledBar().resetAll();
 
     logger().info() << "Happy End." << logs::end;

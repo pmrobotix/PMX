@@ -16,6 +16,11 @@
 class OPOS6UL_ActionsExtended: public Actions {
 private:
 
+    static inline const logs::Logger & logger() {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("OPOS6UL_ActionsExtended");
+        return instance;
+    }
+
     /*!
      * \brief LED Bar.
      */
@@ -134,16 +139,14 @@ public:
     }
 
     void stopExtra() {
-        //std::cout << "stopExtra..." << std::endl;
-        sensors_.stopTimerSensors();
-        //std::cout << "stopTimerSensors done." << std::endl;
+        logger().debug() << "stopExtra - ledbar" << logs::end;
         ledbar_.stop(true);
+        sensors_.stopTimerSensors(); //TODO rename stop
         ledbar_.resetAll();
-        //std::cout << "ledbar_ done." << std::endl;
         lcd2x16_.reset();
-        //std::cout << "lcd2x16_ done." << std::endl;
+
         releaseAll();
-        //std::cout << "servosAx12 done." << std::endl;
+
     }
 
     //--------------------------------------------------------------
@@ -176,7 +179,6 @@ public:
 //          //servosStd().setPosition(foo, 0);
 //          servosStd().release(foo);
 //          }
-
     }
 
     void ax12_init() {
@@ -200,7 +202,7 @@ public:
     }
     void ax12_drapeaux() {
         servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
-        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 204, 0);
+        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 204, -1);
     }
 
     void ax12_bras_droit_init(int keep = 0, int speed = 1024) {

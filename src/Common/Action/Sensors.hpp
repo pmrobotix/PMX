@@ -8,7 +8,7 @@
 #include "../Utils/Chronometer.hpp"
 #include "../Utils/PointerList.hpp"
 #include "AActionsElement.hpp"
-#include "ITimerListener.hpp"
+#include "../Utils/ITimerPosixListener.hpp"
 
 class ASensorsDriver;
 class Robot;
@@ -129,7 +129,7 @@ public:
  * \brief Le timer associé aux sensors
  *
  */
-class SensorsTimer: public ITimerListener
+class SensorsTimer: public ITimerPosixListener
 {
 private:
 
@@ -147,7 +147,7 @@ private:
      */
     Sensors & sensors_;
 
-    utils::Chronometer chrono_;
+    //utils::Chronometer chrono_;
 
     int lastdetect_front_nb_;
     int lastdetect_back_nb_;

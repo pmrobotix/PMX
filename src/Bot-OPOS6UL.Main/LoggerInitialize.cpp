@@ -11,13 +11,10 @@
 #include "../Thread/Thread.hpp"
 
 
-void logs::LoggerFactory::setPriority()
-{
-    //set minimum thread priority FIFO for Logs
-    utils::set_realtime_priority(1);
-}
 void logs::LoggerFactory::initialize()
 {
+    //on ecrase la priorité du loggerFactory
+    setPriority(1); //set priority for log per robot !!
 
     add("console", new ConsoleAppender());
     add("svg", new SvgAppender("svgAPF.svg"));
@@ -31,6 +28,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Robot", "net");
     add(logs::Level::INFO, "OPOS6UL_RobotExtended", "net");
     add(logs::Level::INFO, "OPOS6UL_AsservExtended", "net");
+    add(logs::Level::INFO, "OPOS6UL_ActionsExtended", "net");
 
     //COMMON
     add(logs::Level::INFO, "Asserv", "net");
@@ -39,6 +37,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Sensors", "net");
     add(logs::Level::INFO, "ServoObjectsSystem", "net");
     add(logs::Level::INFO, "ActionManagerTimer", "net");
+    add(logs::Level::INFO, "LedBar", "net");
 
     //SVG
     add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
@@ -55,7 +54,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_State_WaitEndOfMatch", "net");
 
     //TESTS
-    add(logs::Level::INFO, "O_ActionManagerTimerTest", "net");
+    add(logs::Level::INFO, "O_ActionManagerTimerTest-Action", "net");
+    add(logs::Level::INFO, "O_ActionManagerTimerTest-Timer", "net");
     add(logs::Level::INFO, "O_TiretteTest", "net");
     add(logs::Level::INFO, "O_Asserv_CalageTest", "net");
     add(logs::Level::INFO, "O_Asserv_SquareTest", "net");

@@ -43,7 +43,7 @@ void LegoEV3IAExtended::initPlayground()
 
      //zone de construction
      p_->add_rectangle(robot.ia().oarea_buildzone, 650, 180, 500.0, 220.0, 0);
-     if (robot.getMyColor() == PMXVIOLET)
+     if (robot.getMyColor() == PMXYELLOW)
      p_->enable(robot.ia().oarea_buildzone, 0);
 
      //Green parts
@@ -57,7 +57,7 @@ void LegoEV3IAExtended::initPlayground()
 
      //zone de construction
      p_->add_rectangle(robot.ia().garea_buildzone, 2350, 180, 500.0, 220.0, 0);
-     if (robot.getMyColor() != PMXVIOLET)
+     if (robot.getMyColor() != PMXYELLOW)
      p_->enable(robot.ia().garea_buildzone, 0);
 
      //stations d'épuration

@@ -53,7 +53,7 @@ void AsservEsialR::startAsserv(int freqHz)
     setSamplingFrequency(freqHz); //Hz
 
     //create motion control task thread
-    start("AsservEsialR");
+    start("AsservEsialR", 2);
 }
 void AsservEsialR::initAsserv()
 {
@@ -180,10 +180,10 @@ void AsservEsialR::execute()
         }
 
         if (run_) {
-            chronoTimer_.waitTimer();
+            chronoTimer_.waitTimer(); //TODO ITimerPosix ?
             last = current;
         }else {
-            utils::Thread::sleep_for_micros(50000);
+            utils::Thread::sleep_for_micros(100000);
             //std::this_thread::sleep_for(std::chrono::microseconds(50000));
             //usleep(50000); //attente de reactivation
         }

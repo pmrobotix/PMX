@@ -2,42 +2,28 @@
 #define LEDBAR_HPP_
 
 #include <sys/types.h>
-#include <unistd.h>
 #include <sstream>
 #include <string>
 
 #include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
 #include "../Action.Driver/ALedDriver.hpp"
+#include "../Arguments.hpp"
 #include "../Utils/Chronometer.hpp"
 #include "AActionsElement.hpp"
 #include "IAction.hpp"
+#include "../Utils/ITimerPosixListener.hpp"
 
 /*!
  * \brief Enumération des libellés des actions de la barre de leds.
  */
-enum LedBarActionName
-{
-    /*!
-     * \brief Libellé de l'action permettant d'allumer/eteindre une led.
-     */
-    LEDBARSET,
+enum LedBarTimerName {
+
     /*!
      * \brief Libellé de l'action permettant un clignotement à la "K2000".
      */
     LEDBARK2MIL,
-    /*!
-     * \brief Libellé de l'action permettant un reset de toute la barre de led.
-     */
-    LEDBARRESET,
-    /*!
-     * \brief Libellé de l'action permettant d'allumer toutes les leds.
-     */
-    LEDBARFLASH,
-    /*!
-     * \brief Libellé de l'action permettant d'allumer les leds par rapport à une valeur hexa.
-     */
-    LEDBARFLASHVALUE,
+
     /*!
      * \brief Libellé de l'action permettant un clignotement de la barre de led.
      */
@@ -52,84 +38,103 @@ enum LedBarActionName
     LEDBARALTERNATE
 };
 
-class LedBar: public AActionsElement
-{
+/*!
+ * \brief Enumération des libellés des actions de la barre de leds.
+ */
+enum LedBarActionName {
+    /*!
+     * \brief Libellé de l'action permettant d'allumer/eteindre une led.
+     */
+    LEDBARSET,
+
+    /*!
+     * \brief Libellé de l'action permettant un reset de toute la barre de led.
+     */
+    LEDBARRESET,
+    /*!
+     * \brief Libellé de l'action permettant d'allumer toutes les leds.
+     */
+    LEDBARFLASH,
+    /*!
+     * \brief Libellé de l'action permettant d'allumer les leds par rapport à une valeur hexa.
+     */
+    LEDBARFLASHVALUE
+
+};
+
+class LedBar: public AActionsElement {
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref LedBar.
      */
-    static inline const logs::Logger & logger()
-    {
+    static inline const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("LedBar");
         return instance;
     }
-
-    /*!
-     * Number of led in the LedBar.
-     */
-    int nbLed_;
-
-    /*!
-     * \brief Permet de stopper l'action et qu'elle se termine à la prochaine itération des actions.
-     */
-    bool actionStopped_;
-
-    /*!
-     * \brief Permet de savoir si une action est en cours.
-     */
-    bool actionRunning_;
-
-    /*!
-     * \brief Position de la led.
-     */
-    ushort position_;
-
-    /*!
-     * \brief Color de la led a appliquer.
-     */
-    LedColor color_;
-
-    /*!
-     * \brief Nombre de clignotement à faire.
-     */
-    uint nb_;
-
-    /*!
-     * \brief Temps de pause (en us).
-     */
-    uint timeus_;
-
-    /*!
-     * \brief Première Valeur de clignotement.
-     */
-    uint hex_;
-
-    /*!
-     * \brief 2ème valeur de clignotement.
-     */
-    uint hexNext_;
-
-    /*!
-     * \brief valeur d'echapement pour ne pas rester bloquer si l'actionmanager n'est pas lancé
-     */
-    uint echap_;
-
-    /*!
-     * \brief attente avec boucle d'echapement
-     */
-    void waiting(bool wait);
-
-    ALedDriver* leddriver_;
-
-public:
 
     /*!
      * \brief ID du robot.
      */
     std::string botId_;
 
+    /*!
+     * Number of led in the LedBar.
+     */
+    int nbLed_;
 
+//    /*!
+//     * \brief Permet de stopper l'action et qu'elle se termine à la prochaine itération des actions.
+//     */
+//    bool actionStopped_;
+
+    /*!
+     * \brief Permet de savoir si une action ou un timer est en cours.
+     */
+    bool running_;
+
+//    /*!
+//     * \brief Position de la led.
+//     */
+//    ushort position_;
+//
+//    /*!
+//     * \brief Color de la led a appliquer.
+//     */
+//    LedColor color_;
+
+//    /*!
+//     * \brief Nombre de clignotement à faire.
+//     */
+//    uint nb_;
+//
+//    /*!
+//     * \brief Temps de pause (en us).
+//     */
+//    uint timeus_;
+
+//    /*!
+//     * \brief Première Valeur de clignotement.
+//     */
+//    uint hex_;
+//
+//    /*!
+//     * \brief 2ème valeur de clignotement.
+//     */
+//    uint hexNext_;
+
+    bool a_requestToStop_;
+
+    bool t_requestToStop_;
+
+    ALedDriver* leddriver_;
+
+    /*!
+     * \brief attente avec boucle d'echapement
+     */
+    void waiting(bool wait, uint limit_ms = 10000);
+
+public:
 
     /*!
      * \brief Constructor.
@@ -143,86 +148,77 @@ public:
      */
     ~LedBar();
 
-    inline void stop(bool value)
-    {
-        this->actionStopped_ = value;
-    }
-    inline bool stop() const
-    {
-        return actionStopped_;
+    std::string id() {
+        return botId_;
     }
 
-
-    inline void actionRunning(bool value)
-    {
-        this->actionRunning_ = value;
-
-    }
-    inline bool actionRunning() const
-    {
-        return actionRunning_;
+    void resetStop() {
+        t_requestToStop_ = false;
+        a_requestToStop_ = false;
     }
 
-    inline void position(ushort value)
-    {
-        this->position_ = value;
-    }
-    inline ushort position() const
-    {
-        return position_;
+    bool hasToStop() {
+        return t_requestToStop_;
     }
 
-    inline void color(LedColor value)
-    {
-        this->color_ = value;
+    void running(bool value) {
+        this->running_ = value;
+
     }
-    inline LedColor color() const
-    {
-        return color_;
+    bool running() const {
+        return running_;
     }
 
-    inline void hexValue(uint value)
-    {
-        this->hex_ = value;
-    }
-    inline uint hexValue() const
-    {
-        return hex_;
-    }
+//    void position(ushort value) {
+//        this->position_ = value;
+//    }
+//    ushort position() const {
+//        return position_;
+//    }
+//
+//    void color(LedColor value) {
+//        this->color_ = value;
+//    }
+//    LedColor color() const {
+//        return color_;
+//    }
+//
+//    void hexValue(uint value) {
+//        this->hex_ = value;
+//    }
+//    uint hexValue() const {
+//        return hex_;
+//    }
+//
+//    void hexValueNext(uint value) {
+//        this->hexNext_ = value;
+//    }
+//    uint hexValueNext() const {
+//        return hexNext_;
+//    }
+//
+//    void timeus(uint value) {
+//        this->timeus_ = value;
+//    }
+//    uint timeus() const {
+//        return timeus_;
+//    }
+//
+//    void nb(uint value) {
+//        this->nb_ = value;
+//    }
+//    uint nb() const {
+//        return nb_;
+//    }
 
-    inline void hexValueNext(uint value)
-    {
-        this->hexNext_ = value;
-    }
-    inline uint hexValueNext() const
-    {
-        return hexNext_;
-    }
-
-    inline void timeus(uint value)
-    {
-        this->timeus_ = value;
-    }
-    inline uint timeus() const
-    {
-        return timeus_;
-    }
-
-    inline void nb(uint value)
-    {
-        this->nb_ = value;
-    }
-    inline uint nb() const
-    {
-        return nb_;
-    }
-
-    inline uint nbLed() const
-    {
+    int nbLed() const {
         return nbLed_;
     }
 
-    void stopAndWait(bool stopAction);
+    /*!
+     * \brief Donne l'ordre d'arreter et attend au moins 1 ms
+     */
+    void stop(bool wait = true);
 
     /*!
      * \brief Change le statut d'une led.
@@ -237,8 +233,7 @@ public:
      * \brief Active une led spécifique.
      * \param position La position de la led.
      */
-    inline void setOn(int position)
-    {
+    inline void setOn(int position) {
         this->set(position, LED_GREEN);
     }
 
@@ -246,8 +241,7 @@ public:
      * \brief Désactive une led spécifique.
      * \param position La position de la led.
      */
-    inline void setOff(int position)
-    {
+    inline void setOff(int position) {
         this->set(position, LED_OFF);
     }
 
@@ -287,12 +281,28 @@ public:
     void k2mil(uint nb, uint timeus, LedColor color = LED_GREEN);
 
     /*!
-     * \brief Lance l'action de changer le statut d'une led.
+     * \brief Lance l'action de changer le statut d'une led en tache parallele sur l'actionmanager.
      *
      * \param position La position de la led (de 0 à 7).
      * \param status Le statut de la led.
      */
-    void startSet(ushort position, LedColor color = LED_GREEN);
+    void startSet(uint position, LedColor color = LED_GREEN);
+
+    /*!
+     * \brief Active une led spécifique.
+     * \param position La position de la led (de 0 à 7).
+     */
+    inline void startSetOn(uint position) {
+        this->startSet(position, LED_GREEN);
+    }
+
+    /*!
+     * \brief Désactive une led spécifique.
+     * \param position La position de la led (de 0 à 7).
+     */
+    inline void startSetOff(uint position) {
+        this->startSet(position, LED_OFF);
+    }
 
     /*!
      * \brief Lance l'action d'éteindre toutes les leds.
@@ -307,62 +317,143 @@ public:
     /*!
      * \brief Lance l'action d'allumer les leds selon la valeur hexValue.
      */
-    void startFlashValue(uint hexValue);
+    void startFlashValue(uint hexValue, LedColor color);
 
     /*!
      * \brief Lance l'action de faire alterner les leds selon les valeurs hexValue et hexValueNext.
      *
      */
-    void startAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color = LED_GREEN, bool wait =
-            false);
+    void startTimerAlternate(uint nb, uint timeus, uint hexValue, uint hexValueNext, LedColor color = LED_GREEN, bool wait = false);
 
     /*!
      * \brief Lance l'action de faire clignoter toutes les leds nb fois tous les timeus.
      */
-    void startBlink(uint nb, uint timeus, LedColor color = LED_GREEN, bool wait = false);
+    void startTimerBlink(uint nb, uint timeus, LedColor color = LED_GREEN, bool wait = false);
 
     /*!
      * \brief Lance l'action de faire clignoter une led nb fois tous les timeus.
      */
-    void startBlinkPin(uint nb, uint timeus, int position, LedColor color = LED_GREEN, bool wait = false);
+    void startTimerBlinkPin(uint nb, uint timeus, int position, LedColor color = LED_GREEN, bool wait = false);
 
     /*!
      * \brief Lance l'action d'allumer alternativement les leds à la "K2000".
      */
-    void startK2mil(uint nb, uint timeus, LedColor color = LED_GREEN, bool wait = false);
+    void startTimerK2mil(uint nb, uint timeus, LedColor color = LED_GREEN, bool wait = false);
+
+};
+
+/*!
+ * \brief Cette action permet de definir les timers concernant la barre de leds.
+ *
+ */
+class LedBarTimer: public ITimerPosixListener {
+private:
 
     /*!
-     * \brief Active une led spécifique.
-     * \param position La position de la led (de 0 à 7).
+     * \brief Retourne le \ref Logger associé à la classe \ref LedBarTimer.
      */
-    inline void startSetOn(ushort position)
-    {
-        this->startSet(position, LED_GREEN);
+    static const logs::Logger & logger() {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("LedBarTimer");
+        return instance;
     }
 
     /*!
-     * \brief Désactive une led spécifique.
-     * \param position La position de la led (de 0 à 7).
+     * \brief Référence vers le ledbar.
      */
-    inline void startSetOff(ushort position)
-    {
-        this->startSet(position, LED_OFF);
+    LedBar & ledBar_;
+
+    /*!
+     * \brief libellé de l'action à exécuter sur le timer.
+     */
+    LedBarTimerName timerAction_;
+
+    /*!
+     * \brief Temps de pause (en us).
+     */
+    uint timeus_;
+
+    /*!
+     * \brief Nombre de clignotement à faire.
+     */
+    uint nb_;
+
+    /*!
+     * \brief Coleur de la led a setter.
+     */
+    LedColor color_;
+
+    /*!
+     * \brief Première Valeur de clignotement ou de position.
+     */
+    uint hex_;
+
+    /*!
+     * \brief 2ème valeur de clignotement.
+     */
+    uint hexNext_;
+
+    /*!
+     * \brief valeurs temporaire durant le clignotement.
+     */
+    uint tmp_nb_current_;
+    int tmp_pos_current_;
+    bool tmp_pos_inc_;
+
+public:
+
+    /*!
+     * \brief Constructeur de la classe.
+     * \param sensors
+     *        Reference vers l'objet associée.
+     * \param name
+     *        Libellé du timer.
+     * \param timeSpan_us
+     *        Temps interval en microsecondes.
+     * \param nb
+     *        Le nombre d'execution à effectuer.
+     * \param color
+     *        La couleur de la led
+     * \param hexValue
+     *        La position ou la valeur en hexadecimale à appliquer
+     * \param hexValueNext
+     *        La 2eme valeur en hexa à appliquer
+     */
+    LedBarTimer(LedBar & ledBar, LedBarTimerName name, uint timeSpan_us, uint nb, LedColor color, uint hexValue, uint hexValueNext);
+
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual inline ~LedBarTimer() {
     }
+
+    /*!
+     * \brief fonction qui sera executer à chaque traitement du timer.
+     */
+    virtual void onTimer(utils::Chronometer chrono);
+
+    /*!
+     * \brief fonction qui sera executer en dernière action à faire pour ce timer.
+     */
+    virtual void onTimerEnd(utils::Chronometer chrono);
+
+    /*!
+     * \brief nom du timer.
+     */
+    virtual std::string info();
+
 };
 
 /*!
  * \brief Cette action permet de definir les actions concernant la barre de leds.
  *
  */
-class LedBarAction: public IAction
-{
+class LedBarAction: public IAction {
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref LedBarAction.
      */
-    static const logs::Logger & logger()
-    {
+    static const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("LedBarAction");
         return instance;
     }
@@ -373,21 +464,24 @@ private:
     LedBar & ledBar_;
 
     /*!
-     * \brief libellé de l'action à exécuter.
+     * \brief libellé de l'action à exécuter et en cours.
      */
     LedBarActionName action_;
 
-    utils::Chronometer chrono_;
-
-    long lastTime_;
-
-    uint i_;
-
-    uint j_;
-
-    uint k_;
-
+    /*!
+     * \brief valeur temporaire d'incrementation ou decrémentation .
+     */
     bool inc_;
+
+    /*!
+     * \brief Position de la led à setter.
+     */
+    ushort position_;
+
+    /*!
+     * \brief Coleur de la led a setter.
+     */
+    LedColor color_;
 
 public:
 
@@ -396,14 +490,13 @@ public:
      * \param ledBar
      *        Reference vers la LedBar associée.
      */
-    LedBarAction(LedBar & ledBar, LedBarActionName action);
+    LedBarAction(LedBar & ledBar, LedBarActionName action, uint hex_pos, LedColor color);
 
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual inline ~LedBarAction()
-    {
-        logger().debug() << "~LedBarAction() for " << ledBar_.botId_ << logs::end;
+    virtual inline ~LedBarAction() {
+        //logger().debug() << "~LedBarAction() for " << ledBar_.id() << logs::end;
     }
 
     /*!
@@ -412,12 +505,11 @@ public:
     virtual bool execute();
 
     /*!
-     * \brief Retourne la description de l'action.
+     * \brief Retourne la description du timer.
      */
-    virtual inline std::string info()
-    {
+    virtual inline std::string info() {
         std::ostringstream oss;
-        oss << "LedBarAction for " << ledBar_.botId_;
+        oss << "LedBarAction for " << ledBar_.id();
         return oss.str();
     }
 };

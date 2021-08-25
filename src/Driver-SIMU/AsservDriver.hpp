@@ -1,20 +1,20 @@
 #ifndef SIMU_ASSERVDRIVER_HPP_
 #define SIMU_ASSERVDRIVER_HPP_
 
-#include <unistd.h>
+#include <bits/stdint-intn.h>
+#include <cmath>
 #include <cstdio>
-#include <cstdlib>
 #include <string>
 #include <thread>
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
+#include "../Common/Utils/ITimerPosixListener.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "../Thread/Thread.hpp"
 
 using namespace std;
 
-class AsservDriver: public AAsservDriver, utils::Thread
+class AsservDriver: public AAsservDriver, utils::Thread //, ITimerPosixListener
 {
 
 public:
@@ -101,6 +101,9 @@ public:
 
     float wantedRightSpeed_;
     float wantedLeftSpeed_;
+
+//    void onTimer(utils::Chronometer chrono);
+//    void onTimerEnd(utils::Chronometer chrono);
 
     void endWhatTodo();
 

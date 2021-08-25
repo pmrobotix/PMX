@@ -83,7 +83,7 @@ AsservDriver::AsservDriver(std::string botid) :
     //resetEncoders();
 
     //on demarre le thread
-    this->start("AsservDriver::AsservDriver()" + botid);
+    this->start("AsservDriver::AsservDriver()" + botid, 1);
 
     chrono_.start();
     logger().debug() << "BOT ID started !!  botid_=" << botid_ << logs::end;
@@ -124,9 +124,44 @@ void AsservDriver::execute() {
                     << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
                     << logs::end;
         }
-        chrono.waitTimer();
+        chrono.waitTimer(); //TODO ITimerPosix ?
     }
 }
+
+//void AsservDriver::execute() {
+//    //start the timer in this thread
+//
+//}
+//
+//void AsservDriver::onTimer(utils::Chronometer chrono) {
+//    RobotPosition p;
+//    if (asservStarted_) {
+//        //logger().error() << "nb=" << nb << " chrono=" << chrono.getElapsedTimeInMicroSec()    << logs::end;
+//        m_pos.lock();
+//        p = odo_GetPosition();
+//        m_pos.unlock();
+//
+//        loggerSvg().info() << "<circle cx=\""
+//                << p.x
+//                << "\" cy=\""
+//                << -p.y
+//                << "\" r=\"1\" fill=\"blue\" />"
+//                << "<line x1=\""
+//                << p.x
+//                << "\" y1=\""
+//                << -p.y
+//                << "\" x2=\""
+//                << p.x + cos(p.theta) * 25
+//                << "\" y2=\""
+//                << -p.y - sin(p.theta) * 25
+//                << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+//                << logs::end;
+//    }
+//}
+//
+//void AsservDriver::onTimerEnd(utils::Chronometer chrono) {
+//
+//}
 
 void AsservDriver::endWhatTodo() {
     if (!this->isFinished()) this->cancel();
@@ -464,9 +499,6 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
 //motion_DoRotate(x_init +);
     //TODO motion_DoFace
 
-
-
-
     return TRAJ_FINISHED;
 }
 
@@ -590,7 +622,6 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
 //            << xMM << " yMM=" << yMM << " getX=" << pos_getX_mm() << " getY=" << pos_getY_mm() << logs::end;
 
     TRAJ_STATE ts = motion_DoRotate((aRadian * 180.0f) / M_PI); //  TODO ATTENTION getRelativeAngle a ajouter
-
 
     float dist = sqrt(dx * dx + dy * dy);
     //logger().error() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;

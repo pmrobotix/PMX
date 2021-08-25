@@ -11,14 +11,11 @@
 #include "../Thread/Thread.hpp"
 
 
-void logs::LoggerFactory::setPriority()
-{
-    //set minimum thread priority FIFO for Logs
-    utils::set_realtime_priority(1);
-}
 
 void logs::LoggerFactory::initialize()
 {
+    setPriority(1);
+
     add("net", new ConsoleAppender());
     add("svg", new SvgAppender("svgEV3.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));
@@ -83,7 +80,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_Asserv_CalageTest", "net");
 
     //DRIVERS SIMU
-    add(logs::Level::INFO, "LedDriver.SIMU", "net");
+    add(logs::Level::DEBUG, "LedDriver.SIMU", "net");
     add(logs::Level::INFO, "ButtonDriver.SIMU", "net");
     add(logs::Level::INFO, "SoundDriver.SIMU", "net");
     add(logs::Level::INFO, "SwitchDriver.SIMU", "net");

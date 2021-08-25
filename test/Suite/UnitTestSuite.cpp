@@ -3,13 +3,15 @@
  * \brief Implementation de la classe UnitTestSuite.
  */
 
-#include <cstdio>
+#include "UnitTestSuite.hpp"
+
+#include <unistd.h>
 #include <sstream>
+#include <string>
 
 #include "../../src/Log/Appender/MemoryAppender.hpp"
 #include "../../src/Log/Exception.hpp"
 #include "../../src/Log/Logger.hpp"
-#include "UnitTestSuite.hpp"
 #include "UnitTestAppender.hpp"
 
 UnitTestSuite::UnitTestSuite() :
@@ -61,6 +63,6 @@ void UnitTestSuite::run()
             appender->flush();
         }
     }
-
+    //usleep(1000000);
     logger().info("End of Unit tests");
 }

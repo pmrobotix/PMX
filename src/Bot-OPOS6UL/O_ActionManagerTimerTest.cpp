@@ -21,24 +21,28 @@ void O_ActionManagerTimerTest::run(int argc, char** argv)
 
     robot.actions().start();
 
-    robot.actions().addAction(new TestAction(*this));
-    robot.actions().addAction(new TestAction(*this));
-    robot.actions().addTimer(new TestTimer(*this, 100, "timer1"));
-    robot.actions().addTimer(new TestTimer(*this, 500, "timer2"));
+    robot.actions().addAction(new TestAction(*this,"action1"));
+    robot.actions().addAction(new TestAction(*this,"action2"));
+    robot.actions().addAction(new TestAction(*this,"action3"));
+    robot.actions().addAction(new TestAction(*this,"action4"));
 
-    sleep(1);
-    robot.actions().addAction(new TestAction(*this));
-    robot.actions().stopTimer("timer1");
-    robot.actions().stopTimer("timer2");
-    sleep(1);
-    robot.actions().addAction(new TestAction(*this));
+    sleep(5);
+    //robot.actions().addTimer(new TestTimer(*this, 100, "timer1"));
+    robot.actions().addAction(new TestAction(*this, "action5"));
+    //robot.actions().addTimer(new TestTimer(*this, 500, "timer2"));
+    robot.actions().addAction(new TestAction(*this,"action6"));
+    sleep(5);
+
+    //robot.actions().stopTimer("timer1");
+    robot.actions().addAction(new TestAction(*this,"action7"));
+    //robot.actions().stopTimer("timer2");
     sleep(1);
 
-    logger().info() << "Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End." << logs::end;
 }
 
-TestAction::TestAction(O_ActionManagerTimerTest & amt) :
-        amt_(amt), chrono_("TestAction")
+TestAction::TestAction(O_ActionManagerTimerTest & amt, std::string name) :
+        amt_(amt), name_(name), chrono_("TestAction")
 {
     chrono_.start();
     i_ = 0;
@@ -47,10 +51,10 @@ TestAction::TestAction(O_ActionManagerTimerTest & amt) :
 //execution de la tâche
 bool TestAction::execute()
 {
-    logger().info() << " !!!!! execution time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
+    logger().info() << name_ << " executing time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
 
     i_++;
-    if (i_ >= 5)
+    if (i_ >= 10)
         return false;
     return true;
 }
@@ -58,15 +62,18 @@ bool TestAction::execute()
 TestTimer::TestTimer(O_ActionManagerTimerTest & amt, int timeSpan_ms, std::string name) :
         amt_(amt), chrono_("TestTimer")
 {
-    nameListener_ = name;
     lasttime_ = 0;
-    timeSpan_ms_ = timeSpan_ms;
+    name_ = name;
+    timeSpan_us_ = timeSpan_ms  * 1000;
     logger().debug() << "timeSpan_ms=" << timeSpan_ms << logs::end;
 }
 
 void TestTimer::onTimer(utils::Chronometer chrono)
 {
-    logger().info() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us" << logs::end;
+
+    int diff = chrono.getElapsedTimeInMicroSec() - lasttime_;
+    logger().info() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us "<< " diff=" << diff  << logs::end;
+    lasttime_=chrono.getElapsedTimeInMicroSec();
 }
 
 void TestTimer::onTimerEnd(utils::Chronometer chrono)

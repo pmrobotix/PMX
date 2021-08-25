@@ -413,6 +413,7 @@ void AsservDriver::path_ResetEmergencyStop() {
         pathStatus_ = TRAJ_OK;
     }
 }
+
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
 {
 
@@ -443,8 +444,9 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
 //3 blocked
 TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj() {
 
-    while (!(p_.queueSize == 0 && p_.asservStatus == 0)) {
-        //logger().debug() << "nucleo_waitEndOfTraj p_.asservStatus= " << p_.asservStatus << " p_.queueSize=" << p_.queueSize << logs::end;
+    //on attend la fin de la queue et statut different de running
+    while (!(p_.queueSize == 0 && p_.asservStatus != 1)) {
+        //logger().error() << "nucleo_waitEndOfTraj statusCountDown_= " << statusCountDown_ << "  p_.asservStatus= " << p_.asservStatus << " p_.queueSize=" << p_.queueSize << logs::end;
         utils::Thread::sleep_for_millis(5);
     }
     if (p_.asservStatus == 3) {
@@ -459,15 +461,14 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj() {
         return pathStatus_;
     }
     else {
-        logger().error() << "nucleo_waitEndOfTraj else ERROR !!!" << logs::end;
+        logger().error() << "nucleo_waitEndOfTraj else ERROR !!! p_.asservStatus=" << p_.asservStatus << " pathStatus_=" << pathStatus_ << logs::end;
         return TRAJ_ERROR;
     }
-    logger().error() << "nucleo_waitEndOfTraj Never happened !!!" << logs::end;
+    logger().error() << "nucleo_waitEndOfTraj Never happened !!! p_.asservStatus=" << p_.asservStatus << " pathStatus_=" << pathStatus_<< logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
-
     if (!asservCardStarted_) {
         logger().error() << "motion_DoFace() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
         return TRAJ_ERROR;
@@ -556,6 +557,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
     }
 }
 
+//add
 TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
 
     if (!asservCardStarted_) {
@@ -574,6 +576,7 @@ TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
         //serialPort_.Write("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
         nucleo_writeSerialSTR("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
         return nucleo_waitEndOfTraj();
+        //return TRAJ_OK;
     }
 }
 
@@ -663,14 +666,13 @@ void AsservDriver::motion_ActivateManager(bool enable) {
         nucleo_writeSerial('R'); //Reset
 
         //on demarre le check de positionnement...
-        this->start("AsservDriver::AsservDriver()", 80);
+        this->start("AsservDriver::AsservDriver()", 3);
     }
     else {
         //stop the thread
         endWhatTodo();
     }
 }
-
 
 //------------------------------------------------------------------------
 void AsservDriver::nucleo_flushSerial() {

@@ -87,6 +87,7 @@ timeval utils::Chronometer::getTime()
  return 0;
  }*/
 
+
 int utils::Chronometer::waitTimer(bool debug)
 {
     periodNb_++;

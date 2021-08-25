@@ -41,11 +41,10 @@ Sensors::~Sensors() {
 }
 
 SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) :
-        sensors_(sensors), chrono_("SensorsTimerChrono")
+        sensors_(sensors)
 {
-    nameListener_ = name;
-    lasttime_ = 0;
-    timeSpan_ms_ = timeSpan_ms;
+    name_ = name;
+    timeSpan_us_ = timeSpan_ms * 1000;
 
     lastdetect_front_nb_ = 0;
     lastdetect_back_nb_ = 0;
@@ -228,14 +227,14 @@ int Sensors::front(bool display) {
         if (fL_filter) {
             {
                 if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
-                    if (display) logger().info() << "1 frontLeft= " << fL << logs::end;
+                    if (display) logger().debug() << "1 frontLeft= " << fL << logs::end;
 //                tfL = fL;
                     if (fL > 60) if (tfMin > fL) tfMin = fL;
                     //tfMin = fL;
                     level = 1;
                 }
                 if ((!ignoreFrontLeft_ && (fL < frontLeftVeryClosedThreshold_))) {
-                    if (display) logger().info() << "2 frontLeft= " << fL << logs::end;
+                    if (display) logger().debug() << "2 frontLeft= " << fL << logs::end;
                     level = 2;
                 }
             }
@@ -245,13 +244,13 @@ int Sensors::front(bool display) {
         bool fC_filter = this->robot()->asserv()->filtre_IsInsideTable(fC, 0, "fC");
         if (fC_filter) {
             if ((!ignoreFrontCenter_ && (fC < frontCenterThreshold_))) {
-                if (display) logger().info() << "1 frontCenter= " << fC << logs::end;
+                if (display) logger().debug() << "1 frontCenter= " << fC << logs::end;
 //                tfC = fC;
                 if (fC > 60) if (tfMin > fC) tfMin = fC;
                 level = 1;
             }
             if ((!ignoreFrontCenter_ && (fC < frontCenterVeryClosedThreshold_))) {
-                if (display) logger().info() << "2 frontCenter= " << fC << logs::end;
+                if (display) logger().debug() << "2 frontCenter= " << fC << logs::end;
                 level = 2;
             }
         }
@@ -260,13 +259,13 @@ int Sensors::front(bool display) {
         bool fR_filter = this->robot()->asserv()->filtre_IsInsideTable(fR, 1, "fR");
         if (fR_filter) {
             if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
-                if (display) logger().info() << "1 frontRight= " << fR << logs::end;
+                if (display) logger().debug() << "1 frontRight= " << fR << logs::end;
 //                tfR = fR;
                 if (fR > 60) if (tfMin > fR) tfMin = fR;
                 level = 1;
             }
             if ((!ignoreFrontRight_ && (fR < frontRightVeryClosedThreshold_))) {
-                if (display) logger().info() << "2 frontRight= " << fR << logs::end;
+                if (display) logger().debug() << "2 frontRight= " << fR << logs::end;
                 level = 2;
             }
         }
@@ -400,7 +399,7 @@ int Sensors::back(bool display) {
 
 void Sensors::addTimerSensors(int timeSpan_ms) {
     logger().debug() << "startSensors" << logs::end;
-    this->actions().addTimer(new SensorsTimer(*this, timeSpan_ms, "sensors"));
+    this->actions().addTimer(new SensorsTimer(*this, timeSpan_ms, "Sensors"));
 }
 
 void Sensors::stopTimerSensors() {
@@ -456,14 +455,14 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
             sensors_.robot()->asserv()->resetEmergencyOnTraj("front descendre du level 2");
             sensors_.robot()->resetDisplayObstacle();
         }
-        logger().error() << "front :send collision to asserv!!!!!!!!!!!!!!!!!!!!!!" << logs::end;
+
 //send collision to asserv
         if (lastdetect_front_nb_ ==0) {
-
+            //logger().error() << "front :send collision to asserv!!!!!!!!!!!!!!!!!!!!!!" << logs::end;
             //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
             //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
-            sensors_.robot()->asserv()->setLowSpeedForward(true, 5);
+            sensors_.robot()->asserv()->setLowSpeedForward(true, 20);
 
        }
         lastdetect_front_nb_++;
@@ -472,9 +471,9 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
 //cas nearest
     if (lastdetect_front_nb_ > 0) {
         if (nb_sensor_level2 >= 2) {
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             lastfrontl2_temp_ = true;
         }
         if (nb_sensor_front_a_zero >= 3) {
@@ -505,9 +504,9 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
 //send collision to asserv
 
         if (lastdetect_back_nb_ == 0) {
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnBackCollisionOnTraj(sensors_.x_adv_mm, sensors_.y_adv_mm);
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->setLowSpeedBackward(true, 20);
 
         }
@@ -516,9 +515,9 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
 //sensors_.robot()->displayObstacle(backLevel); //fusioner avec le display front ?
     if (lastdetect_back_nb_ > 0) {
         if (backLevel >= 2) {
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnBackCollisionOnTraj(sensors_.x_adv_mm, sensors_.y_adv_mm);
-            sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
+            //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             lastbackl2_temp_ = true;
         }
         if (nb_sensor_back_a_zero >= 3) {
@@ -543,7 +542,7 @@ void SensorsTimer::onTimerEnd(utils::Chronometer chrono) {
 
 std::string SensorsTimer::info() {
     std::ostringstream oss;
-    oss << "SensorsTimer [" << nameListener_ << "] for " << sensors_.robot()->getID();
+    oss << "SensorsTimer [" << name() << "] for " << sensors_.robot()->getID();
     return oss.str();
 }
 

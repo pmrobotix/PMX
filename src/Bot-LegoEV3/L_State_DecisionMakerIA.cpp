@@ -67,7 +67,7 @@ bool L_take_grand_distributeurOld()
     }
 
     robot.logger().info() << "ARMsssss" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
 //        robot.actions().right_arm_take(0);
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -80,7 +80,7 @@ bool L_take_grand_distributeurOld()
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     //position vert1
     int pos = 0;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
         pos = 1425;
     } else {
@@ -104,7 +104,7 @@ bool L_take_grand_distributeurOld()
 
     robot.logger().info() << "prendre vert1" << logs::end;
     //prendre vert1
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1500, 1);
@@ -128,7 +128,7 @@ bool L_take_grand_distributeurOld()
     }
 
     robot.logger().info() << "prendre bleu " << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1500, 2);
@@ -151,7 +151,7 @@ bool L_take_grand_distributeurOld()
     }
 
     robot.logger().info() << " prendre vert2" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         //robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1300, 1);
@@ -164,7 +164,7 @@ bool L_take_grand_distributeurOld()
     }
     robot.svgPrintPosition();
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().conveyorBelt_Right_low(0);
     } else {
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -186,7 +186,7 @@ bool L_take_grand_distributeurOld()
     robot.logger().info() << " turn 6 degres" << logs::end;
     robot.asserv().doRelativeRotateBy(10);
     robot.logger().info() << " do calage" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().conveyorBelt_Right_low(0);
     } else {
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -197,7 +197,7 @@ bool L_take_grand_distributeurOld()
 
     robot.logger().info() << "left_eject_all" << logs::end;
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().left_eject_all(0);
         //sleep(5); //on laisse le temps d'ejecter
     } else {
@@ -316,7 +316,7 @@ bool L_take_grand_distributeurOptimised()
     }
 
     robot.logger().info() << "ARMsssss" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
 //        robot.actions().right_arm_take(0);
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -329,7 +329,7 @@ bool L_take_grand_distributeurOptimised()
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     //position vert1
     int pos = 0;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
         pos = 1425;
     } else {
@@ -353,7 +353,7 @@ bool L_take_grand_distributeurOptimised()
 
     robot.logger().info() << "prendre vert1" << logs::end;
     //prendre vert1
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1500, 1);
@@ -377,7 +377,7 @@ bool L_take_grand_distributeurOptimised()
     }
 
     robot.logger().info() << "prendre bleu " << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1500, 2);
@@ -400,7 +400,7 @@ bool L_take_grand_distributeurOptimised()
     }
 
     robot.logger().info() << " prendre vert2" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         //robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1300, 1);
@@ -413,7 +413,7 @@ bool L_take_grand_distributeurOptimised()
     }
     robot.svgPrintPosition();
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().conveyorBelt_Right_low(0);
     } else {
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -435,7 +435,7 @@ bool L_take_grand_distributeurOptimised()
     robot.logger().info() << " turn 6 degres" << logs::end;
     robot.asserv().doRelativeRotateBy(10);
     robot.logger().info() << " do calage" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().conveyorBelt_Right_low(0);
     } else {
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -446,7 +446,7 @@ bool L_take_grand_distributeurOptimised()
 
     robot.logger().info() << "left_eject_all" << logs::end;
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().left_eject_all(0);
         //sleep(5); //on laisse le temps d'ejecter
     } else {
@@ -548,7 +548,7 @@ void depose_balance()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     TRAJ_STATE ts = TRAJ_OK;
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().conveyorBelt_Right_low(0);
     } else {
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -570,7 +570,7 @@ void depose_balance()
     robot.logger().info() << " turn 15 degres" << logs::end;
     robot.asserv().doRelativeRotateBy(15);
     robot.logger().info() << " do calage" << logs::end;
-//    if (robot.getMyColor() == PMXVIOLET) {
+//    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().conveyorBelt_Right_low(0);
 //    } else {
 //        robot.actions().conveyorBelt_Left_low(0);
@@ -581,7 +581,7 @@ void depose_balance()
 
     robot.logger().info() << "left_eject_all" << logs::end;
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().left_eject_all(0);
         //sleep(5); //on laisse le temps d'ejecter
     } else {
@@ -638,7 +638,7 @@ void depose_balance()
 
     nbbalance++;
     //on fait l'inverse
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
 //        robot.actions().right_eject_all(0);
     } else {
@@ -659,7 +659,7 @@ void depose_balance()
         robot.asserv().resetEmergencyOnTraj();
     }
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.logger().info() << "doRunPivotRight clothoid like" << logs::end;
         robot.asserv().doRunPivotRight(600, 530, 1500);
     } else {
@@ -697,7 +697,7 @@ bool L_take_grand_distributeur()
     //robot.asserv().doCalage2(-100, 40);
     robot.svgPrintPosition();
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         ts = robot.asserv().doLineAbs(94);
 
     } else {
@@ -715,7 +715,7 @@ bool L_take_grand_distributeur()
     robot.svgPrintPosition();
 
     robot.logger().info() << "ARMs retracting" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
 //        robot.actions().right_arm_retract(0);
 //        robot.actions().left_arm_retract(0);
@@ -733,7 +733,7 @@ bool L_take_grand_distributeur()
     robot.asserv().doCalage2(-220, 50);
     robot.svgPrintPosition();
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.logger().info() << "doRunPivotLeft" << logs::end;
         robot.asserv().doRunPivotLeft(-50, 200, 1000);
     } else {
@@ -743,7 +743,7 @@ bool L_take_grand_distributeur()
 
     //Prise du bleu
     robot.logger().info() << "prendre bleu " << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(2500, 1, true);
@@ -770,7 +770,7 @@ bool L_take_grand_distributeur()
     robot.svgPrintPosition();
     robot.logger().info() << "prendre vert" << logs::end;
     //prendre vert
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1500, 1);
@@ -791,7 +791,7 @@ bool L_take_grand_distributeur()
     ts = robot.asserv().doRelativeRotateBy(-90);
 
     int plus = 0;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         plus = 0;
     } else {
         plus = 10;
@@ -807,7 +807,7 @@ bool L_take_grand_distributeur()
     }
     /*
      robot.logger().info() << "ARMsssss" << logs::end;
-     if (robot.getMyColor() == PMXVIOLET) {
+     if (robot.getMyColor() == PMXYELLOW) {
 
      robot.actions().right_arm_take(0);
      robot.actions().conveyorBelt_Left_low(0);
@@ -820,7 +820,7 @@ bool L_take_grand_distributeur()
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     //position vert1
     int pos = 0;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
         pos = 1435;
     } else {
@@ -845,7 +845,7 @@ bool L_take_grand_distributeur()
 
      robot.logger().info() << "prendre vert1" << logs::end;
      //prendre vert1
-     if (robot.getMyColor() == PMXVIOLET) {
+     if (robot.getMyColor() == PMXYELLOW) {
 
      robot.logger().info() << "left_prendre_palet" << logs::end;
      robot.actions().left_prendre_palet(1500, 1);
@@ -868,7 +868,7 @@ bool L_take_grand_distributeur()
     }
 
     robot.logger().info() << "prendre bleu distrib" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
 //        robot.actions().left_prendre_palet(1600, 1, true);
@@ -891,7 +891,7 @@ bool L_take_grand_distributeur()
      }
 
      robot.logger().info() << " prendre vert2" << logs::end;
-     if (robot.getMyColor() == PMXVIOLET) {
+     if (robot.getMyColor() == PMXYELLOW) {
      //robot.asserv().doLineAbs(205);
      robot.logger().info() << "left_prendre_palet" << logs::end;
      robot.actions().left_prendre_palet(1300, 1);
@@ -910,7 +910,7 @@ bool L_take_grand_distributeur()
     //2ème passe pour les verts
 
     robot.logger().info() << "ARMs retracting" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
 //        robot.actions().right_arm_retract(0);
 //        robot.actions().left_arm_retract(0);
@@ -931,7 +931,7 @@ bool L_take_grand_distributeur()
         robot.asserv().resetEmergencyOnTraj();
     }
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
 
     } else {
@@ -954,7 +954,7 @@ bool L_take_grand_distributeur()
 
     robot.logger().info() << "prendre vert1" << logs::end;
     //prendre vert1
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
 
         robot.logger().info() << "left_prendre_palet" << logs::end;
         //robot.actions().left_prendre_palet(2100, 1);
@@ -979,7 +979,7 @@ bool L_take_grand_distributeur()
     }
 
     robot.logger().info() << " prendre vert2" << logs::end;
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         //robot.asserv().doLineAbs(205);
         robot.logger().info() << "left_prendre_palet" << logs::end;
         //robot.actions().left_prendre_palet(1300, 1);
@@ -998,7 +998,7 @@ bool L_take_grand_distributeur()
 //    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 //    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
 
-    if (robot.getMyColor() == PMXVIOLET) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, true);
 
     } else {
@@ -1054,7 +1054,7 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     //definition des zones en zone ORANGE uniquement
     robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
     robot.ia().iAbyPath().ia_createZone("zone_push_palet", 400, 700, 100, 100, 700, 750, -180);
-    if (robot.getMyColor() == PMXVIOLET)
+    if (robot.getMyColor() == PMXYELLOW)
         robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 290, 1405, 90);
     else
         robot.ia().iAbyPath().ia_createZone("zone_grand_distributeur", 500, 1500, 500, 100, 290, 1405, 90);

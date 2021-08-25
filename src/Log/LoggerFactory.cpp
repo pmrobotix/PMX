@@ -15,7 +15,7 @@
 #include "Level.hpp"
 
 logs::LoggerFactory::LoggerFactory() :
-        appenders_(), loggers_(), rootLogger_(), stop_(false)
+        appenders_(), loggers_(), rootLogger_(), stop_(false), priority_(0)
 {
     this->initialize();
 
@@ -23,6 +23,11 @@ logs::LoggerFactory::LoggerFactory() :
         printf("ERROR Exception logs::LoggerFactory::LoggerFactory() NO default rootLogger() \n Exit!\n");
         exit(1);
     }
+}
+
+void logs::LoggerFactory::setPriority(int p)
+{
+    priority_ = p;
 }
 
 void logs::LoggerFactory::stopLog()
@@ -84,7 +89,7 @@ void logs::LoggerFactory::add(Logger * logger)
     if (logger->name() == "") {
 
         this->rootLogger_ = logger;
-        this->start("LoggerFactory"); //Ne pas mettre de priorité FIFO sinon les lecture EV3 sont très lentes, la config est mise dans  logs::LoggerFactory::initialize() pour chaque robot
+        this->start("LoggerFactory", priority_); //la config de priority est mise dans  logs::LoggerFactory::initialize() pour chaque robot
     } else {
         loggers_.insert(std::make_pair(logger->name(), logger));
     }
@@ -109,7 +114,6 @@ void logs::LoggerFactory::add(const Level & level, const std::string & loggerNam
 
 void logs::LoggerFactory::execute()
 {
-    this->setPriority();
 
     //utils::Chronometer chrono("LoggerFactory::execute()");
     //chrono.start();
@@ -128,7 +132,8 @@ void logs::LoggerFactory::execute()
             this->yield();
         }
 
-        utils::Thread::sleep_for_millis(5); // 5ms? usleep necesaire pour laisser le temps au reste
+        utils::Thread::sleep_for_millis(5); //usleep necessaire pour laisser le temps au reste
+
         this->yield();
     }
     //std::cout << "stop !" << std::endl;
