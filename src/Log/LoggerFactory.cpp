@@ -114,7 +114,6 @@ void logs::LoggerFactory::add(const Level & level, const std::string & loggerNam
 
 void logs::LoggerFactory::execute()
 {
-
     //utils::Chronometer chrono("LoggerFactory::execute()");
     //chrono.start();
 
@@ -132,7 +131,7 @@ void logs::LoggerFactory::execute()
             this->yield();
         }
 
-        utils::Thread::sleep_for_millis(5); //usleep necessaire pour laisser le temps au reste
+        utils::Thread::sleep_for_millis(300); //usleep necessaire pour laisser le temps au reste
 
         this->yield();
     }

@@ -11,6 +11,8 @@ logs::Level logs::Level::INFO(10, "INFO");
 
 logs::Level logs::Level::WARN(15, "WARN");
 
+logs::Level logs::Level::TELEM(18, "TELEM");
+
 logs::Level logs::Level::ERROR(20, "ERROR");
 
 logs::Level logs::Level::ALL(0, "ALL");

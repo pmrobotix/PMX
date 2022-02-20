@@ -21,8 +21,7 @@ namespace logs {
  * Le constructeur par défaut de cette classe permet de créer un Appender
  * vers la sortie standard.
  */
-class ConsoleAppender: public MemoryAppender
-{
+class ConsoleAppender: public MemoryAppender {
 private:
 
 public:
@@ -31,20 +30,26 @@ public:
      * \brief Constructeur par défaut.
      * L'appender sera associé au flux de sortie standard.
      */
-    ConsoleAppender()
-    {
+    ConsoleAppender() {
     }
 
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual ~ConsoleAppender()
-    {
-    }
+    virtual ~ConsoleAppender();
 
-    virtual void writeMessage(const logs::Logger &logger, const logs::Level &level, const std::string &message);
+    /*!
+     * \brief Méthode de trace d'un message.
+     * \param logger
+     *        Logger de référence du message.
+     * \param level
+     *        Niveau de référence du message.
+     * \param message
+     *        Message à tracer.
+     */
+    void writeMessage(const logs::Logger &logger, const logs::Level &level, const std::string &message);
 
-    virtual void flush();
+    void flush();
 };
 }
 

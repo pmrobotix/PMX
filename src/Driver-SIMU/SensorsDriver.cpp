@@ -2,6 +2,7 @@
 
 #include "SensorsDriver.hpp"
 
+#include <unistd.h>
 #include <string>
 
 //#include "../Bot-OPOS6UL/OPOS6UL_AsservExtended.hpp"
@@ -28,6 +29,7 @@ ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
     return pos;
 }
 int SensorsDriver::sync() {
+    usleep(100000); //temps de mise a jour des données //TODO temps à mesurer avec la balise ??
     return 0;
 }
 

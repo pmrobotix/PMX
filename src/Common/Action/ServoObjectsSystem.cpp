@@ -1,13 +1,12 @@
 #include "ServoObjectsSystem.hpp"
 
-#include <unistd.h>
-
 #include "../../Log/Logger.hpp"
+#include "../../Thread/Thread.hpp"
 
 using namespace std;
 
-ServoObjectsSystem::ServoObjectsSystem(Actions & actions, AServoDriver::ServoType type) :
-        AActionsElement(actions)
+ServoObjectsSystem::ServoObjectsSystem(std::string botId, Actions & actions, AServoDriver::ServoType type) :
+        AActionsElement(actions), botId_(botId), type_(type)
 {
     servodriver_ = AServoDriver::create(type);
 }
@@ -16,6 +15,7 @@ ServoObjectsSystem::~ServoObjectsSystem()
 {
     delete servodriver_;
 }
+
 
 //keep_millisec = -1 : wait moving until position
 //keep_millisec > 0 : time to wait
@@ -124,3 +124,44 @@ void ServoObjectsSystem::detect()
 //        logger().error() << "ERROR AX12 CONNECTION !!!" << logs::end;
 //    }
 }
+
+ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem & sOsS, string name, uint timeSpan_us):
+        servoObjectsSystem_(sOsS)
+{
+    this->init(name, timeSpan_us);
+}
+
+//void ServoObjectsSystem::deployByTimerTask(int servo, int percent, int keep_millisec)
+//{
+// //add the timer to move and wait until arrive at position.
+//
+//}
+void ServoObjectsSystem::move_1_servo(int servo1, int pos1, int torque1, int time_eta_ms, bool keep_torque)
+{
+
+
+}
+
+void ServoObjectsSystem::move_2_servos(int servo1, int pos1, int torque1, int servo2, int pos2, int torque2, int time_eta_ms, bool keep_torque)
+{
+
+
+}
+
+void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
+{
+
+
+}
+
+void ServoObjectsTimer::onTimerEnd(utils::Chronometer chrono)
+{
+
+}
+
+std::string ServoObjectsTimer::info() {
+    std::ostringstream oss;
+    oss << "ServoObjectsTimer [" << name() << "] for " << servoObjectsSystem_.id();
+    return oss.str();
+}
+

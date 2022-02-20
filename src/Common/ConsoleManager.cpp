@@ -92,6 +92,7 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(int argc, char** argv)
 
     do {
         cInput = ConsoleKeyInput::mygetch();
+        //printf("key=%d\n", cInput);
         switch (cInput) {
         case 65:
             //printf("Up arrow key!\n");
@@ -120,12 +121,15 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(int argc, char** argv)
 //             case 68:
 //             printf("Left arrow key!\n");
 //             break;
+
         case 10:
             //printf("Enter key!\n");
             break;
+        case 8:
         case 127:
             //printf("BACK key!\n");
             cout << default_console << endl;
+            ConsoleKeyInput::clearScreen();
             exit(0);
             break;
         }
@@ -202,10 +206,12 @@ void ConsoleManager::run(uint nTest, int argc, char** argv)
 
 void ConsoleManager::executeTest(uint nTest, int argc, char** argv)
 {
-
     if (nTest > 0 && nTest <= tests_.size()) {
         tests_[nTest - 1]->run(argc, argv);
     } else {
         std::cout << "The N° must be between 0 and " << tests_.size() << std::endl;
+        //sleep(1);
+        cout << "Exit !\n" << endl;
+        exit(0);
     }
 }

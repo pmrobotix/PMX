@@ -8,8 +8,12 @@
 #include <iostream>
 #include <list>
 
-void logs::ConsoleAppender::flush()
-{
+
+logs::ConsoleAppender::~ConsoleAppender() {
+    flush();
+}
+
+void logs::ConsoleAppender::flush() {
     lockMessages();
 
     while (this->messages_.size() > 0) {
@@ -22,17 +26,6 @@ void logs::ConsoleAppender::flush()
     unlockMessages();
 }
 
-/*!
- * \brief Méthode générique de trace d'un message.
- * \param logger
- *        Logger de référence du message.
- * \param level
- *        Niveau de référence du message.
- * \param message
- *        Message à tracer.
- */
-void logs::ConsoleAppender::writeMessage(const logs::Logger &logger, const logs::Level &level,
-        const std::string &message)
-{
+void logs::ConsoleAppender::writeMessage(const logs::Logger &logger, const logs::Level &level, const std::string &message) {
     logs::MemoryAppender::writeMessage(logger, level, message);
 }

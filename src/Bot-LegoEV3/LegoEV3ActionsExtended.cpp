@@ -7,7 +7,7 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
         ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot)
 , lcd_(botId, *this)
 , servoUsingMotor_(*this)
-, servos_std_(*this, AServoDriver::SERVO_STANDARD)
+, servos_std_(botId, *this, AServoDriver::SERVO_STANDARD)
 {
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
 

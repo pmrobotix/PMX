@@ -55,6 +55,8 @@ void ServoDriver::hold(int servo) // 0 à 7
     pwm_.fastWriteMicroseconds(constrain(servo, 0, NB_SERVO - 1), servo_current_usec_[constrain(servo, 0, NB_SERVO - 1)]);
 }
 
+
+
 void ServoDriver::setPositionWithRate(int servo, int pos_microsec) {
     //version 3
         utils::Chronometer chrono("ServoDriver::setPositionWithRate");
@@ -73,7 +75,6 @@ void ServoDriver::setPositionWithRate(int servo, int pos_microsec) {
                 << " rate_ms_per_1000= "<< rate_ms_per_1000
                 << " diff_pos= "<< diff_pos
                 << " timing_of_move_ms= "<< timing_of_move_ms
-
                 << std::endl;
 
         if (diff_pos > 0) {
@@ -159,6 +160,8 @@ void ServoDriver::setPositionWithRate(int servo, int pos_microsec) {
      */
 
 }
+
+
 void ServoDriver::setPosition(int servo, int microsec) {
 
     int microsec_ = constrain(microsec, servo_min_[constrain(servo, 0, NB_SERVO - 1)], servo_max_[constrain(servo, 0, NB_SERVO - 1)]);
@@ -195,8 +198,10 @@ int ServoDriver::getMoving(int servo) {
     return -1;
 }
 
+//TODO utiliser getpwm pour avoir un vrai retour d'information
 int ServoDriver::getPos(int servo) {
     return servo_current_usec_[constrain(servo, 0, NB_SERVO - 1)];
+
 }
 
 int ServoDriver::ping(int servo) {

@@ -11,19 +11,20 @@
 #include "../Thread/Thread.hpp"
 
 
-
 void logs::LoggerFactory::initialize()
 {
     setPriority(1);
 
-    add("net", new ConsoleAppender());
+    add("console", new ConsoleAppender());
     add("svg", new SvgAppender("svgEV3.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));
     //add("memory", new MemoryAppender());
     //add("fileAsserv", new FileAppender("logAsserv.csv"));
     //add("fileRegul", new FileAppender("logRegul.csv"));
 
-    add("nettel", new TelemetryAppender("MSG|SML"));
+
+    add("net", new TelemetryAppender("LegoEV3", "pmx-vm")); //net =TELEMETRY+CONSOLE ERROR>TELEM>INFO>DEBUG
+
 
     add(logs::Level::ERROR, "", "net");
 
@@ -39,6 +40,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SensorsTimer", "net");
     add(logs::Level::INFO, "Chronometer", "net");
     add(logs::Level::INFO, "IAbyPath", "net");
+    add(logs::Level::INFO, "LedBar", "net");
 
     //STATE
     add(logs::Level::INFO, "L_State_Init", "net");

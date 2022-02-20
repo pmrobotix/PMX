@@ -23,19 +23,21 @@ namespace logs {
  * sortie standard. Cette méthode est automatiquement appelé lors de la
  * destruction de l'objet.
  */
-class MemoryAppender: public Appender, public utils::Mutex
-{
+class MemoryAppender: public Appender, public utils::Mutex {
 protected:
 
     /*!
      * \brief Liste des messages enregistrés.
      */
     std::list<std::string> messages_;
-    long long duration_;
+
+    /*!
+     * \brief Temps de démarrage de l'appender.
+     */
+    system_clock::time_point start_;
+
     void lockMessages();
     void unlockMessages();
-
-    system_clock::time_point start_;
 
 public:
 
@@ -52,8 +54,7 @@ public:
     /*!
      * \return Liste des messages enregistrés.
      */
-    inline const std::list<std::string> & messages() const
-    {
+    inline const std::list<std::string> & messages() const {
         return messages_;
     }
 
@@ -73,7 +74,9 @@ public:
      * \param message
      *        Message à tracer.
      */
-    virtual void writeMessageOnly(const std::string & message);
+    void writeMessageOnly(const std::string & message);
+    //void writeMessageWithTime(const std::string & message);
+    //void writeMessageWithJsonTime(std::string id, const logs::Logger & logger, const logs::Level &level, const std::string & message);
 
     /*!
      * \brief Cette méthode affiche tous les messages engistrés sur le

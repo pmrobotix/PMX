@@ -31,6 +31,10 @@ public:
      */
     ~SensorsDriver();
 
+    /*!
+         * \brief Synch.ronise les données des capteurs.
+         * \result renvoi -1 si erreur, zero sinon
+         */
     int sync(); //synchronise les données avec la balise
     ASensorsDriver::bot_positions getvPositionsAdv(); //retourne les dernieres positions connues
 

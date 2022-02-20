@@ -4,6 +4,7 @@
 
 #include "../../Thread/Thread.hpp"
 #include "Actions.hpp"
+#include "../../Common/Utils/json.hpp"
 
 using namespace std;
 
@@ -33,6 +34,20 @@ void LedBar::stop(bool wait) {
 
 void LedBar::set(int pos, LedColor color) {
     leddriver_->setBit(pos, color);
+    //telemetry log
+    nlohmann::json j;
+    j["pos"] = pos;
+    j["color"] = color;
+    logger().telemetry(j.dump());
+}
+
+void LedBar::flash(uint hexPosition, LedColor color) {
+    leddriver_->setBytes(hexPosition, color);
+    //telemetry log
+    nlohmann::json j;
+    j["hex"] = hexPosition;
+    j["hexcolor"] = color;
+    logger().telemetry(j.dump());
 }
 
 void LedBar::rainbow(uint nb, uint timeus) {
@@ -67,10 +82,6 @@ void LedBar::blink(uint nb, uint timeus, LedColor color) {
     a_requestToStop_ = false;
 }
 
-void LedBar::flash(uint hexPosition, LedColor color) {
-    leddriver_->setBytes(hexPosition, color);
-}
-
 void LedBar::resetAll() {
     flash(pow(2, nbLed_) - 1, LED_OFF);
 }
@@ -97,7 +108,6 @@ void LedBar::blinkPin(uint nb, uint timeus, int position, LedColor color) {
 }
 
 void LedBar::alternate(uint nb, uint timeus, uint beginVal, uint endVal, LedColor beginColor) {
-    logger().debug() << "alternate" << logs::end;
     running(true);
     for (uint i = 1; i <= nb; i++) {
 
@@ -115,7 +125,6 @@ void LedBar::alternate(uint nb, uint timeus, uint beginVal, uint endVal, LedColo
 }
 
 void LedBar::k2mil(uint nb, uint timeus, LedColor color) {
-    logger().debug() << "k2mil nbLed_=" << nbLed_ << logs::end;
     int j = -1;
     running(true);
     for (uint i = 1; i <= nb; i++) {

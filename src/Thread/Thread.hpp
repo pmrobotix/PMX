@@ -142,7 +142,8 @@ public:
      * Will not return until the internal thread has exited.
      */
     void waitForEnd() {
-        pthread_tryjoin_np(threadId_, NULL);
+
+        pthread_join(threadId_, NULL);
     }
 
     void cancel() {

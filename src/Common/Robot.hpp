@@ -38,6 +38,19 @@ public:
         return instance;
     }
 
+    /*!
+     * \brief Retourne le \ref Logger RobotTelemetry4[ID] associé à la classe \ref Robot.
+     * public car utilisé dans Main.
+     */
+
+    inline const logs::Logger & telemetry()
+    {
+        std::ostringstream s;
+        s << "RobotTelemetry4" << id_;
+        const logs::Logger & telem_ = logs::LoggerFactory::logger(s.str());
+        return telem_;
+    }
+
     int points;
 
 protected:

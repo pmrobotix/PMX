@@ -15,6 +15,7 @@
 #include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_SvgWriterExtended.hpp"
+#include "../Common/Utils/json.hpp"
 
 OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 {
@@ -41,11 +42,8 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
     points = 0;
 
-    blue_done = false;
-//    gold_taken = false;
-//    gold_dropped = false;
-//    gold_door_opened = false;
-    //todo_alea = 1;
+    blue_done = false; //TODO deprecated
+
 }
 
 void OPOS6UL_RobotExtended::stopExtraActions()

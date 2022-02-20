@@ -18,15 +18,13 @@ class Logger;
 /*!
  * \brief Classe de gestion des flux de sortie pour les logs.
  */
-class Appender
-{
+class Appender {
 protected:
 
     /*!
      * \brief Constructeur de la classe.
      */
-    Appender()
-    {
+    Appender() {
     }
 
 public:
@@ -34,8 +32,7 @@ public:
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual ~ Appender()
-    {
+    virtual ~ Appender() {
     }
 
     /*!
@@ -63,8 +60,7 @@ public:
  * d'une instance de cette classe doit toujours être faite via la méthode
  * LoggerFactory::logger().
  */
-class Logger
-{
+class Logger {
 public:
     /*!
      * \brief Classe de délégation pour faciliter la création des traces.
@@ -80,8 +76,7 @@ public:
      *
      * \sa Logger::info()
      */
-    class LoggerBuffer: public utils::Mutex
-    {
+    class LoggerBuffer: public utils::Mutex {
     private:
 
         /*!
@@ -119,8 +114,7 @@ public:
          * \brief Cette méthode valide le message en cours de construction
          * et le transmet au Logger de référence.
          */
-        inline void end()
-        {
+        inline void end() {
             if (stream_ != NULL) {
                 this->lock();
                 logger_.writeMessage(level_, stream_->str());
@@ -130,8 +124,7 @@ public:
             }
         }
 
-        inline void flush()
-        {
+        inline void flush() {
             if (stream_ != NULL) {
                 this->lock();
                 stream_->flush();
@@ -154,8 +147,7 @@ public:
          * chainage des opérateurs \c <<.
          */
         template<class A>
-        inline LoggerBuffer& operator <<(const A &value)
-        {
+        inline LoggerBuffer& operator <<(const A &value) {
             if (stream_ != NULL) {
                 this->lock();
                 (*stream_) << value;
@@ -174,8 +166,7 @@ public:
          * \return Un lien vers le \c LoggerBuffer pour permettre le
          * chainage des opérateurs \c <<.
          */
-        LoggerBuffer& operator <<(void (*f)(LoggerBuffer&))
-        {
+        LoggerBuffer& operator <<(void (*f)(LoggerBuffer&)) {
             (*f)(*this);
             return *this;
         }
@@ -225,8 +216,7 @@ public:
     /*!
      * \brief Destructeur de la classe.
      */
-    inline virtual ~ Logger()
-    {
+    inline virtual ~ Logger() {
     }
 
     /*!
@@ -246,32 +236,28 @@ public:
      *        Niveau de référence.
      * \return \c true si le logger est actif pour le niveau donné.
      */
-    inline bool isActive(const logs::Level &level) const
-    {
+    inline bool isActive(const logs::Level &level) const {
         return level >= level_;
     }
 
     /*!
      * \brief Cette méthode retourne le nom associé au Logger.
      */
-    inline const std::string& name() const
-    {
+    inline const std::string& name() const {
         return name_;
     }
 
     /*!
      * \brief Cette méthode retourne le niveau associé au Logger.
      */
-    inline const logs::Level& level() const
-    {
+    inline const logs::Level& level() const {
         return level_;
     }
 
     /*!
      * \brief Cette méthode retourne l'appender au Logger.
      */
-    inline const logs::Appender& appender() const
-    {
+    inline const logs::Appender& appender() const {
         return appender_;
     }
 
@@ -285,8 +271,7 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void debug(const std::string &message) const
-    {
+    inline void debug(const std::string &message) const {
         writeMessage(Level::DEBUG, message);
     }
 
@@ -295,8 +280,7 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void info(const std::string &message) const
-    {
+    inline void info(const std::string &message) const {
         writeMessage(Level::INFO, message);
     }
 
@@ -305,9 +289,17 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void warn(const std::string &message) const
-    {
+    inline void warn(const std::string &message) const {
         writeMessage(Level::WARN, message);
+    }
+
+    /*!
+     * \brief Trace un message de niveau WARN.
+     * \param message
+     *        Message de référence.
+     */
+    inline void telemetry(const std::string &message) const {
+        writeMessage(Level::TELEM, message);
     }
 
     /*!
@@ -315,8 +307,7 @@ public:
      * \param message
      *        Message de référence.
      */
-    inline void error(const std::string &message) const
-    {
+    inline void error(const std::string &message) const {
         writeMessage(Level::ERROR, message);
     }
 
@@ -334,8 +325,7 @@ public:
      * << logs::end \endcode
      * \sa Logger::info()
      */
-    inline LoggerBuffer debug() const
-    {
+    inline LoggerBuffer debug() const {
         return LoggerBuffer(*this, Level::DEBUG);
     }
 
@@ -350,8 +340,7 @@ public:
      * << logs::end \endcode
      */
 
-    inline LoggerBuffer info() const
-    {
+    inline LoggerBuffer info() const {
         return LoggerBuffer(*this, Level::INFO);
     }
 
@@ -360,11 +349,21 @@ public:
      * WARN.
      * \return Le flux de construction devant se terminer par \code
      * << logs::end \endcode
-     * \sa Logger::info()
+     * \sa Logger::warn()
      */
-    inline LoggerBuffer warn() const
-    {
+    inline LoggerBuffer warn() const {
         return LoggerBuffer(*this, Level::WARN);
+    }
+
+    /*!
+     * \brief Création d'un flux de construction pour les messages de type
+     * TELEMETRY.
+     * \return Le flux de construction devant se terminer par \code
+     * << logs::end \endcode
+     * \sa Logger::telem()
+     */
+    inline LoggerBuffer telemetry() const {
+        return LoggerBuffer(*this, Level::TELEM);
     }
 
     /*!
@@ -372,12 +371,12 @@ public:
      * ERROR.
      * \return Le flux de construction devant se terminer par \code
      * << logs::end \endcode
-     * \sa Logger::info()
+     * \sa Logger::error()
      */
-    inline LoggerBuffer error() const
-    {
+    inline LoggerBuffer error() const {
         return LoggerBuffer(*this, Level::ERROR);
     }
+
     /*!
      * \}
      */

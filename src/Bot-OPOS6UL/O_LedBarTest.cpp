@@ -11,7 +11,9 @@
 #include "../Common/Action.Driver/ALedDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
+#include "../Common/Utils/json.hpp"
 #include "../Log/Logger.hpp"
+#include "../Thread/Thread.hpp"
 #include "OPOS6UL_ActionsExtended.hpp"
 #include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
@@ -23,8 +25,11 @@ void O_LedBarTest::run(int argc, char** argv) {
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
+    int wait = 2000000;
+
     robot.chrono().start();
-    int wait = 100000;
+
+
     robot.actions().ledBar().resetAll();
 
     //test avec asserv
@@ -38,6 +43,7 @@ void O_LedBarTest::run(int argc, char** argv) {
     robot.actions().ledBar().setOff(0);
     robot.actions().ledBar().setOff(1);
 
+
     robot.actions().ledBar().set(0, LED_ORANGE);
     robot.actions().ledBar().set(0, LED_GREEN);
     robot.actions().ledBar().setOff(0);
@@ -47,6 +53,14 @@ void O_LedBarTest::run(int argc, char** argv) {
     robot.actions().ledBar().k2mil(4, 100000, LED_GREEN);
 
     robot.actions().ledBar().resetAll();
+
+
+//    //telemetry log
+//        nlohmann::json j;
+//        j["pi"] = 3.14;
+//        logger().telemetry() << j.dump() << logs::end;
+//    logger().error() << "errorSTARTEEE ActionTimer" << logs::end;
+
 
     //START ActionTimer
     robot.actions().start(); //start ActionTimer
@@ -63,6 +77,7 @@ void O_LedBarTest::run(int argc, char** argv) {
         robot.actions().ledBar().startSet(5, LED_RED);
         robot.actions().ledBar().startSet(6, LED_RED);
         robot.actions().ledBar().startSet(7, LED_RED);
+        utils::sleep_for_micros(100000);
         robot.actions().ledBar().startSet(0, LED_BLACK);
         robot.actions().ledBar().startSet(1, LED_BLACK);
         robot.actions().ledBar().startSet(2, LED_BLACK);

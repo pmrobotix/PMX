@@ -21,22 +21,24 @@ void logs::LoggerFactory::initialize()
     add("svgia", new SvgAppender("svgIA.svg"));
     add("memory", new MemoryAppender());
     //add("file", new FileAppender("logAPF.csv"));
-    add("net", new TelemetryAppender("MSG|BIG"));
 
-    add(logs::Level::ERROR, "", "net");
+    add("net", new TelemetryAppender("OPOS6UL", "pmx-vm")); //net =TELEMETRY+CONSOLE ERROR>TELEM>INFO>DEBUG
 
-    add(logs::Level::INFO, "Robot", "net");
+    add(logs::Level::ERROR, "", "net"); //TELEMETRY + CONSOLE
+
+    //INFO
+    add(logs::Level::INFO, "Robot", "console");
     add(logs::Level::INFO, "OPOS6UL_RobotExtended", "net");
-    add(logs::Level::INFO, "OPOS6UL_AsservExtended", "net");
-    add(logs::Level::INFO, "OPOS6UL_ActionsExtended", "net");
+    add(logs::Level::INFO, "OPOS6UL_AsservExtended", "console");
+    add(logs::Level::INFO, "OPOS6UL_ActionsExtended", "console");
 
     //COMMON
-    add(logs::Level::INFO, "Asserv", "net");
-    add(logs::Level::INFO, "IAbyPath", "net");
-    add(logs::Level::INFO, "SensorsTimer", "net");
-    add(logs::Level::INFO, "Sensors", "net");
-    add(logs::Level::INFO, "ServoObjectsSystem", "net");
-    add(logs::Level::INFO, "ActionManagerTimer", "net");
+    add(logs::Level::INFO, "Asserv", "console");
+    add(logs::Level::INFO, "IAbyPath", "console");
+    add(logs::Level::INFO, "SensorsTimer", "console");
+    add(logs::Level::INFO, "Sensors", "console");
+    add(logs::Level::INFO, "ServoObjectsSystem", "console");
+    add(logs::Level::INFO, "ActionManagerTimer", "console");
     add(logs::Level::INFO, "LedBar", "net");
 
     //SVG
@@ -49,48 +51,48 @@ void logs::LoggerFactory::initialize()
     //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
 
     //State
-    add(logs::Level::INFO, "O_State_Init", "net");
-    add(logs::Level::INFO, "O_State_DecisionMakerIA", "net");
-    add(logs::Level::INFO, "O_State_WaitEndOfMatch", "net");
+    add(logs::Level::INFO, "O_State_Init", "console");
+    add(logs::Level::INFO, "O_State_DecisionMakerIA", "console");
+    add(logs::Level::INFO, "O_State_WaitEndOfMatch", "console");
 
     //TESTS
-    add(logs::Level::INFO, "O_ActionManagerTimerTest-Action", "net");
-    add(logs::Level::INFO, "O_ActionManagerTimerTest-Timer", "net");
-    add(logs::Level::INFO, "O_TiretteTest", "net");
-    add(logs::Level::INFO, "O_Asserv_CalageTest", "net");
-    add(logs::Level::INFO, "O_Asserv_SquareTest", "net");
+    add(logs::Level::INFO, "O_ActionManagerTimerTest-Action", "console");
+    add(logs::Level::INFO, "O_ActionManagerTimerTest-Timer", "console");
+    add(logs::Level::INFO, "O_TiretteTest", "console");
+    add(logs::Level::INFO, "O_Asserv_CalageTest", "console");
+    add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
     add(logs::Level::INFO, "O_LedBarTest", "net");
-    add(logs::Level::INFO, "O_AsservEsialTest", "net");
-    add(logs::Level::INFO, "O_AsservLineRotateTest", "net");
-    add(logs::Level::INFO, "O_AsservTest", "net");
-    add(logs::Level::INFO, "O_ButtonBarTest", "net");
-    add(logs::Level::INFO, "O_GroveColorTest", "net");
-    add(logs::Level::INFO, "O_IAByPathTest", "net");
-    add(logs::Level::INFO, "O_LcdBoardTest", "net");
-    add(logs::Level::INFO, "O_SensorsTest", "net");
-    add(logs::Level::INFO, "O_ServoObjectsTest", "net");
-    add(logs::Level::INFO, "O_ServoStepTest", "net");
+    add(logs::Level::INFO, "O_AsservEsialTest", "console");
+    add(logs::Level::INFO, "O_AsservLineRotateTest", "console");
+    add(logs::Level::INFO, "O_AsservTest", "console");
+    add(logs::Level::INFO, "O_ButtonBarTest", "console");
+    add(logs::Level::INFO, "O_GroveColorTest", "console");
+    add(logs::Level::INFO, "O_IAByPathTest", "console");
+    add(logs::Level::INFO, "O_LcdBoardTest", "console");
+    add(logs::Level::INFO, "O_SensorsTest", "console");
+    add(logs::Level::INFO, "O_ServoObjectsTest", "console");
+    add(logs::Level::INFO, "O_ServoStepTest", "console");
 
     //DRIVERS SIMU
-    add(logs::Level::INFO, "LedDriver.SIMU", "net");
-    add(logs::Level::INFO, "ButtonDriver.SIMU", "net");
-    add(logs::Level::INFO, "SoundDriver.SIMU", "net");
-    add(logs::Level::INFO, "SwitchDriver.SIMU", "net");
-    add(logs::Level::INFO, "AsservDriver.SIMU", "net");
+    add(logs::Level::INFO, "LedDriver.SIMU", "console");
+    add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
+    add(logs::Level::INFO, "SoundDriver.SIMU", "console");
+    add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
+    add(logs::Level::INFO, "AsservDriver.SIMU", "console");
     add(logs::Level::INFO, "AsservDriverMemory.SIMU", "memory");
     add(logs::Level::INFO, "LcdShieldDriver.SIMU", "memory");
 
     //DRIVERS OPOS
-    add(logs::Level::INFO, "LedDriver.OPO", "net");
-    add(logs::Level::INFO, "ButtonDriver.OPO", "net");
-    add(logs::Level::INFO, "SoundDriver.OPO", "net");
-    add(logs::Level::INFO, "SwitchDriver.OPO", "net");
-    add(logs::Level::INFO, "SensorsDriver.OPO", "net");
-    add(logs::Level::INFO, "AsservDriver.OPO", "net");
-    add(logs::Level::INFO, "CCAx12Adc.OPO", "net");
-    add(logs::Level::INFO, "SensorsDriver.OPO", "net");
-    add(logs::Level::INFO, "IrSensor.OPO", "net");
-    add(logs::Level::INFO, "BeaconSensors.OPO", "net");
+    add(logs::Level::INFO, "LedDriver.OPO", "console");
+    add(logs::Level::INFO, "ButtonDriver.OPO", "console");
+    add(logs::Level::INFO, "SoundDriver.OPO", "console");
+    add(logs::Level::INFO, "SwitchDriver.OPO", "console");
+    add(logs::Level::INFO, "SensorsDriver.OPO", "console");
+    add(logs::Level::INFO, "AsservDriver.OPO", "console");
+    add(logs::Level::INFO, "CCAx12Adc.OPO", "console");
+    add(logs::Level::INFO, "SensorsDriver.OPO", "console");
+    add(logs::Level::INFO, "IrSensor.OPO", "console");
+    add(logs::Level::INFO, "BeaconSensors.OPO", "console");
 
 
 }
