@@ -51,9 +51,7 @@ void Asserv::endWhatTodo() {
     }
     else if (useAsservType_ == ASSERV_INT_ESIALR) {
 
-        //TO BE surcharged because of the specific config file per robot
-        logger().error() << "TODO endWhatTodo  ASSERV_INT_ESIALR  TO BE surcharged !!!" << logs::end;
-
+        pAsservEsialR_->endWhatTodo();
     }
     else if (useAsservType_ == ASSERV_EXT) {
 
@@ -70,6 +68,10 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled) {
 
         //TO BE surcharged because of the specific config file per robot
         logger().error() << "TODO startMotionTimerAndOdo  ASSERV_INT_ESIALR  TO BE surcharged !!!" << logs::end;
+
+        asservdriver_->motion_ActivateManager(true); //on active le thread
+                if (assistedHandlingEnabled) asservdriver_->motion_AssistedHandling();
+                else asservdriver_->motion_FreeMotion();
     }
     else if (useAsservType_ == ASSERV_EXT) {
 
@@ -151,7 +153,7 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     x_mm = getRelativeX(x_mm);
     float thetaInDegrees = getRelativeAngle(thetaInDegrees_);
 
-    logger().error() << "matchcolor [YELLOW=0 BLUE=1]="
+    logger().debug() << "matchcolor [YELLOW=0 BLUE=1]="
             << matchColor
             << " thetaInDegrees="
             << thetaInDegrees_
@@ -319,6 +321,7 @@ TRAJ_STATE Asserv::gotoChain(float xMM, float yMM) {
     temp_ignoreRearCollision_ = true;
     TRAJ_STATE ts;
     if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_GotoChain(x_match, yMM);
+    else if (useAsservType_ == ASSERV_INT_ESIALR) ts = pAsservEsialR_->motion_GotoChain(x_match, yMM);
     else ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
     return ts;
@@ -329,6 +332,8 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM) {
     temp_ignoreRearCollision_ = true;
     TRAJ_STATE ts;
     if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_Goto(x_match, yMM);
+    else if (useAsservType_ == ASSERV_INT_ESIALR) ts = pAsservEsialR_->motion_Goto(x_match, yMM);
+
     else ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
     return ts;
@@ -338,7 +343,9 @@ TRAJ_STATE Asserv::gotoReverse(float xMM, float yMM) {
     float x_match = getRelativeX(xMM);
     temp_ignoreFrontCollision_ = true;
     TRAJ_STATE ts;
-    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_Goto(x_match, yMM);
+    if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_GotoReverse(x_match, yMM);
+    else if (useAsservType_ == ASSERV_INT_ESIALR) ts = pAsservEsialR_->motion_GotoReverse(x_match, yMM);
+
     else ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
     return ts;
@@ -349,6 +356,8 @@ TRAJ_STATE Asserv::gotoReverseChain(float xMM, float yMM) {
     temp_ignoreFrontCollision_ = true;
     TRAJ_STATE ts;
     if (useAsservType_ == ASSERV_EXT) ts = asservdriver_->motion_GotoReverseChain(x_match, yMM);
+    else if (useAsservType_ == ASSERV_INT_ESIALR) ts = pAsservEsialR_->motion_GotoReverseChain(x_match, yMM);
+
     else ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
     return ts;
@@ -503,11 +512,11 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
         else {
             //on resette
             resetEmergencyOnTraj("doMoveForwardTo rotate_ignored");
-            logger().error() << " __on passe au doline !!!" << logs::end;
+            //logger().debug() << " __on passe au doline !!!" << logs::end;
         }
     }
     float dist = sqrt(dx * dx + dy * dy);
-logger().error() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+    //logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment_mm);
 
 }

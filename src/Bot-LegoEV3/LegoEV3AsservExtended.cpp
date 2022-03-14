@@ -15,7 +15,6 @@ LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, LegoEV3RobotExte
 {
     botId_ = botId;
     useAsservType_ = ASSERV_INT_ESIALR;
-    //robot_extended_ = robot;
 }
 
 
@@ -33,8 +32,13 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 
         float periodSec = Config::asservPeriod;
 
+        //on active le thread de check de position et les drivers
+        asservdriver_->motion_ActivateManager(true);
+
+
         //start asserv thread
         pAsservEsialR_->startAsserv(1.0f/periodSec); //f=20 Hz => every 50ms
+
         pAsservEsialR_->motion_ActivateManager(true); //init and start
         if(assistedHandlingEnabled)
         {
@@ -48,7 +52,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
     }else if (useAsservType_ == ASSERV_INT_INSA) {//Real EV3 for internal ASSERVINSA config
 
 
-        printf("---LegoEV3AsservExtended > Real EV3\n");
+        printf("---LegoEV3AsservExtended > ASSERV_INT_INSA\n");
 
         pAsservInsa_->encoder_SetResolution(1398, 1398, 114); //1398, 1398, 134
         pAsservInsa_->motion_SetDefaultAccel(0.2);

@@ -55,6 +55,9 @@ SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) 
     nb_sensor_front_a_zero = 0;
     nb_sensor_back_a_zero = 0;
     nb_sensor_level2 = 0;
+
+    //initialise le timer avec le nom et la periode.
+    this->init(name_, timeSpan_us_);
 }
 
 void Sensors::addThresholdFront(int left, int center, int right) {
@@ -408,7 +411,7 @@ void Sensors::stopTimerSensors() {
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono) {
-    logger().debug() << ">> SensorsTimer::onTimer" << logs::end;
+    //logger().debug() << ">> SensorsTimer::onTimer" << logs::end;
 
     //get all data sync
     int err = sensors_.sync("beacon_sync");

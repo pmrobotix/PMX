@@ -93,7 +93,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
 
     if (type == "L") { //left sensor
 
-        robot.setMyColor(PMXBLUE);
+        robot.setMyColor(PMXVIOLET);
         robot.asserv().startMotionTimerAndOdo(true);
         robot.asserv().setPositionAndColor(70, 450.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
@@ -154,7 +154,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
 
     if (type == "DL") { //demo theorique sensor right
 
-        robot.setMyColor(PMXBLUE);
+        robot.setMyColor(PMXVIOLET);
         robot.asserv().startMotionTimerAndOdo(true);
         robot.asserv().setPositionAndColor(470, 1000.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 

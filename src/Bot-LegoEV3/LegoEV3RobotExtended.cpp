@@ -35,6 +35,13 @@ LegoEV3RobotExtended::LegoEV3RobotExtended() {
     svg_->beginHeader();
 }
 
+LegoEV3RobotExtended::~LegoEV3RobotExtended()
+{
+    this->asserv().endWhatTodo(); //on termine le thread d'asserv qui lie la position
+
+    this->actions().stopExtra(); //extra devices
+}
+
 void LegoEV3RobotExtended::displayPoints() {
     this->actions().lcd().clear();
     std::string p = "Points=";

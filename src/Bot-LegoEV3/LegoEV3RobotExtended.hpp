@@ -21,16 +21,13 @@ public:
         return instance;
     }
 
-    ~LegoEV3RobotExtended()
-    {
-        stopExtraActions();
-    }
-
     static inline const logs::Logger & logger()
     {
         static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3RobotExtended");
         return instance;
     }
+
+    ~LegoEV3RobotExtended();
 
     inline LegoEV3ActionsExtended& actions()
     {

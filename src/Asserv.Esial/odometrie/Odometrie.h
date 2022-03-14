@@ -34,7 +34,7 @@ public:
      */
     int64_t getX()
     {
-        printf("\ngetXmm()= %d \n", getXmm());
+        //printf("\ngetXmm()= %d \n", getXmm());
         return x;   // Renvoie la position en X en UO par rapport au point de départ
     }
     int64_t getY()
@@ -70,7 +70,7 @@ public:
     }
 
     // Getteurs config
-    float getFrontParMetre()
+    int getFrontParMetre()
     {
         return frontParMetre;
     }
@@ -82,7 +82,7 @@ public:
 private:
 
     // Données sur les codeurs
-    float frontParMetre; // Nombre de tics codeurs pour un mètre parcouru
+    int frontParMetre; // Nombre de tics codeurs pour un mètre parcouru
     int64_t distanceRouesUO; // Distance entre les roues en UO
     float ratioCodeurs; // Ratio frontParMetreCodeurMax / frontParMetreCodeurMin pour compenser la différence physique entre codeur
     bool applyRatioOnG; // Si vrai, le ratio s'applique au codeur Gauche, sinon le Droit

@@ -58,7 +58,7 @@ public:
     ~SensorsDriver();
 
 
-    int sync(); //synchronise les données avec la balise
+    int sync(); //synchronise les données avec la balise, return 0 if success, -1 if error.
     ASensorsDriver::bot_positions getvPositionsAdv(); //retourne les dernieres positions connues
 
     int frontLeft(); //retourne la dernière distance minimum gauche (en mm) apres le sync

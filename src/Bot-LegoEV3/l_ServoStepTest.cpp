@@ -25,7 +25,7 @@ void L_ServoStepTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
 void L_ServoStepTest::run(int argc, char** argv)
 {
-
+    logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();

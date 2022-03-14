@@ -353,9 +353,9 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
     std::vector<Node*>::iterator nodes_it;
     if (found_path != NULL) {
         if (found_path->cost == 0) {
-            logger().info() << "PATH NOT FOUND - CANCELLED " << ", " << found_path->cost << logs::end;
+            logger().info() << "PATH NOT FOUND - IMPOSSIBLE " << ", " << found_path->cost << logs::end;
             delete found_path;
-            return TRAJ_CANCELLED; //TODO A Renommer IMPOSSIBLE
+            return TRAJ_IMPOSSIBLE;
         }
         int count = 0;
         for (nodes_it = found_path->path.begin(); nodes_it < found_path->path.end(); nodes_it++) {
@@ -452,7 +452,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
     TRAJ_STATE ts = TRAJ_OK;
     int f = 0;
     int c = 0;
-    if (byPathfinding) { //TODO deprecated ?
+    if (byPathfinding) {
         while ((ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection)) != TRAJ_FINISHED) {
 
             robot_->logger().error() << "---- TS = " << ts << logs::end;
@@ -485,10 +485,10 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                     break;
                 }
             }
-            if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
+            if (ts == TRAJ_IMPOSSIBLE) {
                 robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
 
-                robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_CANCELLED");
+                robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_IMPOSSIBLE");
                 break;
 
             }
@@ -521,10 +521,10 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                     break;
                 }
             }
-            if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
+            if (ts == TRAJ_IMPOSSIBLE) {
                 robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
 
-                robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_CANCELLED");
+                robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_IMPOSSIBLE");
 
                 break;
 
@@ -535,49 +535,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
 
         }
     }
-    /*
-     while (ts != TRAJ_FINISHED) {
-     if (!byPathfinding) {
-     ts = robot_->asserv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
-     } else {
-     ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
-     }
-     if (ts != TRAJ_FINISHED) {
-     robot_->logger().info() << " TS = " << ts << logs::end;
-     robot_->svgPrintPosition(1);
-     robot_->displayTS(ts);
 
-     if (ts == TRAJ_NEAR_OBSTACLE) {
-     robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
-     f++;
-     if (f < 2)
-     robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection 1 puis 2
-     if (f > nb_near_obstacle) {
-     break;
-     }
-     }
-     if (ts == TRAJ_COLLISION) {
-     robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
-     c++;
-     robot_->asserv()->resetEmergencyOnTraj();
-     if (c > nb_collision) {
-     break;
-     }
-     }
-     if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
-     robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
-
-     robot_->asserv()->resetEmergencyOnTraj();
-
-     break;
-
-     }
-     usleep(wait_tempo_us);
-     robot_->resetDisplayTS();
-     logger().info() << "AGAIN GOTO x=" << xMM << " y=" << yMM << logs::end;
-     }
-     }
-     */
     robot_->displayTS(ts);
     logger().info() << "time= "
             << robot_->chrono().getElapsedTimeInMilliSec()
@@ -630,7 +588,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
                     break;
                 }
             }
-            if (ts == TRAJ_CANCELLED) { //TODO a renommer TRAJ_IMPOSSIBLE
+            if (ts == TRAJ_IMPOSSIBLE) {
                 robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
 
                 robot_->asserv()->resetEmergencyOnTraj();

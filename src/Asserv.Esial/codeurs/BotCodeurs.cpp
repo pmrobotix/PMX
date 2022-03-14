@@ -22,7 +22,6 @@ BotCodeurs::~BotCodeurs()
 
 void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
 {
-    // TODO !!! A OPTIMISER
 
     /*
      * On récupère le compte des codeurs depuis le dernier refresh.
@@ -33,7 +32,6 @@ void BotCodeurs::getCounts(int32_t* countG, int32_t* countD)
      * refresh, càd si le robot dépasse le mur du son...
      */
 
-    //TODO recuperer plus rapidement
 
 //    utils::Chronometer chrono;
 //    chrono.start();

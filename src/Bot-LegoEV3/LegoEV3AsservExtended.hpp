@@ -19,7 +19,6 @@ private:
         static const logs::Logger & instance = logs::LoggerFactory::logger("LegoEV3AsservExtended");
         return instance;
     }
-    //LegoEV3RobotExtended * robot_extended_;
 
 public:
     LegoEV3AsservExtended(std::string botId, LegoEV3RobotExtended * robot);
@@ -28,6 +27,7 @@ public:
     {
     }
 
+    //surcharged function
     void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 
     bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");

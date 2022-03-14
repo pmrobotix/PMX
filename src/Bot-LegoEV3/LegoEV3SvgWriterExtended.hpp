@@ -18,9 +18,9 @@ public:
     {
     }
 
-    void writePosition_Bot(float x, float y, float a_rad, int color = 0);
+    void writePosition_Bot(float x_mm, float y_mm, float a_rad, int color = 0);
 
-    void writePosition_BotPos(float x, float y, float a_rad);
+    void writePosition_BotPos(float x_mm, float y_mm, float a_rad);
 
     void writeZone(const char* name, float minX, float minY, float width, float height, float startX, float startY,
             float startAngle_rad);

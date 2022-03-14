@@ -7,6 +7,8 @@
 
 #include <cmath>
 #include <cstdio>
+#include <iomanip>
+#include <iostream>
 
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"
@@ -77,7 +79,7 @@ void AsservEsialR::initAsserv()
 }
 
 void  AsservEsialR::endWhatTodo(){
-
+    stopAsserv();
 }
 
 void AsservEsialR::stopAsserv()
@@ -137,7 +139,8 @@ void AsservEsialR::execute()
 
             current = chronoTimer_.getElapsedTimeInMicroSec();
             odo_->refresh();
-            p = odo_GetPosition();
+            p = odo_GetPosition(); //maj de la position avec l'odo
+
 
             //long t2 = chronoTimer_.getElapsedTimeInMicroSec();
             //long t3 =0;
@@ -150,11 +153,14 @@ void AsservEsialR::execute()
 
             //long t4 = chronoTimer_.getElapsedTimeInMicroSec();
             //svg log
-            if (nb % 10 == 0) {
+            if (nb % 4 == 0) {
 
-                //info << nb << " us=" << (long) (current - last) << " xmm=" << p.x * 1000 << std::setw(10) << " ymm="                << p.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI << std::setw(10) << " s=" << p.asservStatus << logs::flush;
+//                info << nb << " us=" << (long) (current - last) << " xmm=" << p.x
+//                        << std::setw(10) << " ymm=" << p.y
+//                        << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI
+//                        << std::setw(10) << " s=" << p.asservStatus << logs::flush;
 
-                robot_->svgw().writePosition_BotPos(p.x * 1000, p.y * 1000, p.theta);
+                robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
             }
             //long t5 = chronoTimer_.getElapsedTimeInMicroSec();
 
@@ -305,13 +311,19 @@ void AsservEsialR::resetExternalEncoders()
 void AsservEsialR::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
 {
     if (odo_ != NULL) {
-        logger().debug() << "odo_SetPosition x_mm=" << x_mm << " y_mm=" << y_mm << " angle_rad=" << angle_rad << logs::end;
+        //logger().debug() << "BEFORE odo_SetPosition x_mm=" << x_mm << " y_mm=" << y_mm << " angle_rad=" << angle_rad << logs::end;
+
         lock();
-        odo_->setX(Utils::mmToUO(odo_, (long) floor(x_mm))); //UO
-        odo_->setY(Utils::mmToUO(odo_, (long) floor(y_mm)));
+        odo_->setX(Utils::mmToUO(odo_, (int) floor(x_mm))); //UO
+        odo_->setY(Utils::mmToUO(odo_, (int) floor(y_mm)));
         odo_->setTheta(angle_rad);
+
+        p_.x = x_mm;
+        p_.y = y_mm;
+        p_.theta = angle_rad;
+        p_.asservStatus = commandM_->getCommandStatus();
+
         unlock();
-        odo_GetPosition();
     }
 }
 RobotPosition AsservEsialR::odo_GetPosition()
@@ -323,8 +335,11 @@ RobotPosition AsservEsialR::odo_GetPosition()
         p_.theta = (float) odo_->getTheta();
         p_.asservStatus = commandM_->getCommandStatus();
         unlock();
+//        logger().debug() << "odo_GetPosition p_.x=" << p_.x << " p_.y=" << p_.y << " p_.theta=" << p_.theta
+//                << " p_.asservStatus=" << p_.asservStatus << logs::end;
+
     } else
-        logger().error() << "odo_GetPosition odo_ is NULL!" << logs::end;
+        logger().error() << "odo_GetPosition odo_ is NULL!!!!!!!!!!!" << logs::end;
     return p_;
 }
 
@@ -357,24 +372,24 @@ void AsservEsialR::path_CancelTrajectory()
 {
     //printf("path_CancelTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
-    pathStatus_ = TRAJ_CANCELLED;
+    pathStatus_ = TRAJ_IMPOSSIBLE;
 }
 void AsservEsialR::path_ResetEmergencyStop()
 {
-    logger().error() << "______________________path_ResetEmergencyStop() !!!!!!!!!!!!!! "<< logs::end;
+    logger().debug() << "______________________path_ResetEmergencyStop() !!!!!!!!!!!!!! "<< logs::end;
     commandM_->resetEmergencyStop();
     pathStatus_ = TRAJ_OK;
 }
 
 TRAJ_STATE AsservEsialR::waitEndOfTraj()
 {
-    //logger().info() << "_______________________waitEndOfTraj() "<< logs::end;
+    //logger().debug() << "_______________________waitEndOfTraj() "<< logs::end;
     int timeout = 0;
     //attente du running status
     while (p_.asservStatus != 1) {
 //        logger().info() << " 111 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
 //                << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI
-//                << std::setw(10) << " s=" << p_.asservStatus << logs::end;
+//                << std::setw(10) << " s=" << p_.asservStatus << " timeout=" << timeout<< logs::end;
 
         utils::sleep_for_micros(10000);
         timeout++;
@@ -431,6 +446,7 @@ TRAJ_STATE AsservEsialR::motion_DoRotate(float angle_radians)
 }
 TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius)
 {
+    logger().error() << "motion_DoArcRotate TODO !"<< logs::end;
     //TODO motion_DoArcRotate
     return TRAJ_ERROR;
 }
@@ -447,22 +463,22 @@ TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_mm)
 
 
 TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm) {
-
+    logger().error() << "motion_Goto TODO !"<< logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoReverse(float x_mm, float y_mm) {
-
+    logger().error() << "motion_GotoReverse TODO !"<< logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoChain(float x_mm, float y_mm) {
-
+    logger().error() << "motion_GotoChain TODO !"<< logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoReverseChain(float x_mm, float y_mm) {
-
+    logger().error() << "motion_GotoReverseChain TODO !"<< logs::end;
     return TRAJ_ERROR;
 }
 
@@ -473,10 +489,12 @@ void AsservEsialR::motion_FreeMotion(void)
     commandM_->perform_On(false);
 }
 
+//DEPRECEATED
 void AsservEsialR::motion_DisablePID()
 {
     motion_FreeMotion();
 }
+
 void AsservEsialR::motion_AssistedHandling(void)
 {
     consignC_->perform_On(true);

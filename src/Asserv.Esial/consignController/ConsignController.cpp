@@ -92,7 +92,7 @@ void ConsignController::perform()
         // On vérifie si on n'est pas bloqué. Note: on utilise les getters
         // du MotorsController parce qu'il peut mettre les vitesses à 0
         // si elles sont trop faibles.
-//printf("VitG=%d VitD=%d absA=%d absD=%d \n",motors->getVitesseG(), motors->getVitesseD(), abs(odometrie->getDeltaThetaBrut()), abs(odometrie->getDeltaDist()));
+//printf("ConsignController::perform() VitG=%d VitD=%d absA=%d absD=%d \n",motors->getVitesseG(), motors->getVitesseD(), abs(odometrie->getDeltaThetaBrut()), abs(odometrie->getDeltaDist()));
 //        if ((abs(VmoteurG) >= 10 || abs(VmoteurD)  >= 10)
 //                && (abs(odometrie->getDeltaThetaBrut()) < Config::BLOCK_ANGLE_SPEED_THRESHOLD
 //                || abs(odometrie->getDeltaDist()) < Config::BLOCK_DIST_SPEED_THRESHOLD
@@ -164,8 +164,15 @@ void ConsignController::setLowSpeedBackward(bool b, int percent)
 
 bool ConsignController::isBlocked()
 {
+    return 0;
+
     // Si on est bloqué pendant un certain temps, on le signale
     bool b = blocked_ticks >= Config::BLOCK_TICK_THRESHOLD;
+    printf("isBlocked %d  %d\n", blocked_ticks, Config::BLOCK_TICK_THRESHOLD);
+    if (b) {
+        //blocked_ticks = 0;
+        printf("ConsignController::isBlocked() true\n");
+    }
 //    if (b) {
 //        blocked_ticks = 0;
 //    }

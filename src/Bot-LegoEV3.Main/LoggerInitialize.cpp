@@ -13,7 +13,7 @@
 
 void logs::LoggerFactory::initialize()
 {
-    setPriority(1);
+    setPriority(1); //set lowest priority of the Log //99 is high priority
 
     add("console", new ConsoleAppender());
     add("svg", new SvgAppender("svgEV3.svg"));
@@ -82,7 +82,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_Asserv_CalageTest", "net");
 
     //DRIVERS SIMU
-    add(logs::Level::DEBUG, "LedDriver.SIMU", "net");
+    add(logs::Level::INFO, "LedDriver.SIMU", "net");
     add(logs::Level::INFO, "ButtonDriver.SIMU", "net");
     add(logs::Level::INFO, "SoundDriver.SIMU", "net");
     add(logs::Level::INFO, "SwitchDriver.SIMU", "net");

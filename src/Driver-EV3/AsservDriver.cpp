@@ -129,6 +129,9 @@ void AsservDriver::reset() {
 void AsservDriver::endWhatTodo()
 {
 
+
+    //TODO ????
+
 }
 
 void AsservDriver::setMotorLeftPosition(int ticks_per_second, long ticks) {
@@ -378,11 +381,15 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
 
 void AsservDriver::motion_FreeMotion() {
 }
+
+//TODO deprecated  mm chose que Freemotion ???
 void AsservDriver::motion_DisablePID() {
 }
 void AsservDriver::motion_AssistedHandling() {
 }
 void AsservDriver::motion_ActivateManager(bool enable) {
+
+   //TODO ???
 }
 
 void AsservDriver::motion_setLowSpeedForward(bool enable, int) {

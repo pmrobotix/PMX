@@ -113,8 +113,8 @@ public:
     void setMotorRightPower(int power, int time);
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countR, int32_t* countL){} //TODO
-    void getCountsInternal(int32_t* countR, int32_t* countL){} //TODO
+    void getCountsExternal(int32_t* countR, int32_t* countL);
+    void getCountsInternal(int32_t* countR, int32_t* countL);
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
     void resetEncoders();
@@ -137,6 +137,7 @@ public:
     void path_ResetEmergencyStop();
 
     TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+    TRAJ_STATE motion_DoFaceReverse(float x_mm, float y_mm);
     TRAJ_STATE motion_DoLine(float dist_mm);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);

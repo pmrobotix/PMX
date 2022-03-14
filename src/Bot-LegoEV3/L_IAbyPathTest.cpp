@@ -158,7 +158,7 @@ void L_IAByPathTest::IASetup()
     robot.ia().iAbyPath().ia_createZone("depart", 710, 0, 300, 300, 800, 200, 90);
     robot.ia().iAbyPath().ia_createZone("zone_plot1", 900, 500, 200, 100, 1000, 400, 90);
 
-    if (robot.getMyColor() == PMXBLUE) {
+    if (robot.getMyColor() == PMXVIOLET) {
         robot.ia().iAbyPath().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 770, 180);
         robot.ia().iAbyPath().ia_createZone("zone_plot2", 100, 500, 200, 100, 280, 600, -135);
     } else if (robot.getMyColor() == PMXYELLOW) {

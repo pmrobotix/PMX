@@ -14,7 +14,7 @@
 void logs::LoggerFactory::initialize()
 {
     //on ecrase la priorité du loggerFactory
-    setPriority(1); //set priority for log per robot !!
+    setPriority(1); //set priority for log per robot !! //99 is high priority
 
     add("console", new ConsoleAppender());
     add("svg", new SvgAppender("svgAPF.svg"));

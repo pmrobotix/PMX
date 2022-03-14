@@ -107,7 +107,7 @@ void AsservInsa::path_CancelTrajectory()
 	if (waitingSemaphore)
 	{
 		motion_FreeMotion();
-		path_TriggerWaypoint(TRAJ_CANCELLED);
+		path_TriggerWaypoint(TRAJ_IMPOSSIBLE);
 	}
 }
 

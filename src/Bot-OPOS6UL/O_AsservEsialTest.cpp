@@ -47,9 +47,26 @@ void O_AsservEsialTest::run(int argc, char** argv)
 
     robot.asserv().setPositionAndColor(100.0, 800.0, 0.0, (robot.getMyColor() != PMXYELLOW));
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().doLineAbs(200);
-    robot.asserv().doFaceTo(300, 300);
 
+    robot.svgPrintPosition();
+
+
+    robot.asserv().doLineAbs(200);
+    robot.svgPrintPosition();
+    robot.asserv().doRelativeRotateBy(20);
+    robot.svgPrintPosition();
+    robot.asserv().doLineAbs(100);
+    robot.svgPrintPosition();
+    robot.asserv().doFaceTo(step, 1200);
+    robot.svgPrintPosition();
+    robot.asserv().doLineAbs(300);
+    robot.svgPrintPosition();
+    robot.asserv().gotoXY(1000,1000);
+    robot.svgPrintPosition();
+    robot.asserv().doAbsoluteRotateTo(-45);
+    robot.svgPrintPosition();
+    robot.asserv().gotoReverse(1200, 1400);
+    robot.svgPrintPosition();
     utils::sleep_for_secs(2);
 /*
     //OPOS6UL_AsservExtended asserv = robot.asserv();

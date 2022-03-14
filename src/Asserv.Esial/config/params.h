@@ -116,11 +116,11 @@ PARAM(int32_t, placementOrigineY)
 
 // Nombre de tics codeurs en 1m pour codeur gauche
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-PARAM(float, frontParMetreCodeurG)
+PARAM(int32_t, frontParMetreCodeurG)
 
 // Nombre de tics codeurs en 1m pour codeur droite
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!
-PARAM(float, frontParMetreCodeurD)
+PARAM(int32_t, frontParMetreCodeurD)
 
 // Distance entre les roues codeuses en mm
 // !!! ATTENTION : redémarrer l'asserv pour prendre en compte les changements !!

@@ -26,6 +26,9 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
 
     //distance
     robot.getArgs().addArgument("d", "distance mm");
+    //coord
+    robot.getArgs().addArgument("x", "x mm", "0");
+    robot.getArgs().addArgument("y", "y mm", "0");
     //angle
     robot.getArgs().addArgument("a", "angle degre", "0");
 
@@ -33,7 +36,7 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
 
     Arguments::Option cOpt('+', "Coordinates x,y,a");
     cOpt.addArgument("coordx", "coord x mm", "300.0");
-    cOpt.addArgument("coordy", "coord y mm", "300.0");
+    cOpt.addArgument("coordy", "coord y mm", "1300.0");
     cOpt.addArgument("coorda", "coord teta mm", "0.0");
     robot.getArgs().addOption(cOpt);
 
@@ -41,8 +44,7 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
     robot.parseConsoleArgs(argc, argv);
 }
 
-void O_AsservLineRotateTest::run(int argc, char** argv)
-{
+void O_AsservLineRotateTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
@@ -50,6 +52,8 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
     long right;
 
     float d = 0.0;
+    float x = 0.0;
+    float y = 0.0;
     int nb = 0.0;
     float a = 0.0;
     float coordx = 0.0;
@@ -65,6 +69,16 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
         logger().info() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
     }
 
+    if (args["x"] != "0") {
+        x = atof(args["x"].c_str());
+        logger().info() << "Arg x set " << args["x"] << ", x = " << x << logs::end;
+    }
+
+    if (args["y"] != "0") {
+        y = atof(args["y"].c_str());
+        logger().info() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
+    }
+
     if (args["a"] != "0") {
         a = atof(args["a"].c_str());
         logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
@@ -77,7 +91,7 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
     coordx = atof(args['+']["coordx"].c_str());
     coordy = atof(args['+']["coordy"].c_str());
     coorda_deg = atof(args['+']["coorda"].c_str());
-    robot.setMyColor(PMXYELLOW);
+
     robot.asserv().startMotionTimerAndOdo(true);
 
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
@@ -86,9 +100,19 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
 
     left = robot.asserv().base()->extEncoders().getLeftEncoder();
     right = robot.asserv().base()->extEncoders().getRightEncoder();
-    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-            << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
-            << robot.asserv().pos_getThetaInDegree() << logs::end;
+    logger().info() << "time= "
+            << robot.chrono().getElapsedTimeInMilliSec()
+            << "ms ; left= "
+            << left
+            << " ; right= "
+            << right
+            << " x="
+            << robot.asserv().pos_getX_mm()
+            << " y="
+            << robot.asserv().pos_getY_mm()
+            << " a="
+            << robot.asserv().pos_getThetaInDegree()
+            << logs::end;
 
     robot.svgPrintPosition();
 
@@ -97,11 +121,11 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
     robot.actions().sensors().addTimerSensors(200);
     robot.chrono().start();
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
-    robot.actions().sensors().setIgnoreBackNearObstacle(false, true, false);
-
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.asserv().setLowSpeedForward(true, 40);
+    bool byPathfinding = false;
 
     TRAJ_STATE ts = TRAJ_OK;
     //int f = 0;
@@ -110,10 +134,10 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
     for (int num = 1; num <= nb; num++) {
         ts = TRAJ_OK;
         if (d != 0) {
-            logger().info() << "go Forward..." << d << ", y=" << coordy << logs::end;
+            logger().info() << "go Forward... d=" << d << ", y=" << coordy << logs::end;
             while (ts != TRAJ_FINISHED) {
                 ts = TRAJ_OK;
-                ts = robot.ia().iAbyPath().whileMoveForwardTo(d, 300, false, 2000000, 3, 3);
+                ts = robot.ia().iAbyPath().whileMoveForwardTo(d, robot.asserv().pos_getY_mm(), false, 2000000, 3, 3, byPathfinding);
 
                 if (ts == TRAJ_NEAR_OBSTACLE) {
                     logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
@@ -128,8 +152,32 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
             }
             robot.svgPrintPosition();
         }
-        ts = TRAJ_OK;
+
+
+        if (!(x == 0 && y==0)) {
+            ts = TRAJ_OK;
+            logger().info() << "go Forward... x=" << x << ", y=" << y << logs::end;
+            while (ts != TRAJ_FINISHED) {
+                ts = TRAJ_OK;
+                ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 2000000, 3, 3, byPathfinding);
+
+                if (ts == TRAJ_NEAR_OBSTACLE) {
+                    logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
+                    robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_NEAR_OBSTACLE");
+                }
+                if (ts == TRAJ_COLLISION) {
+                    logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
+                    robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
+                }
+                //sleep(2);
+                break;
+            }
+            robot.svgPrintPosition();
+        }
+
+
         if (a != 0) {
+            ts = TRAJ_OK;
             logger().info() << "go Rotate..." << a << " deg" << logs::end;
             while (ts != TRAJ_FINISHED) {
                 ts = TRAJ_OK;
@@ -153,9 +201,19 @@ void O_AsservLineRotateTest::run(int argc, char** argv)
     sleep(1);
     left = robot.asserv().base()->encoders().getLeftEncoder();
     right = robot.asserv().base()->encoders().getRightEncoder();
-    logger().info() << "End time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left
-            << " ; right= " << right << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm()
-            << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
+    logger().info() << "End time= "
+            << robot.chrono().getElapsedTimeInMilliSec()
+            << "ms ; left= "
+            << left
+            << " ; right= "
+            << right
+            << " x="
+            << robot.asserv().pos_getX_mm()
+            << " y="
+            << robot.asserv().pos_getY_mm()
+            << " a="
+            << robot.asserv().pos_getThetaInDegree()
+            << logs::end;
 
     robot.svgPrintPosition();
 

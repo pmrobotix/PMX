@@ -31,7 +31,7 @@ Odometrie::Odometrie(CodeursInterface *cdrs)
 
     // Calcul de frontParMetre et de ratioCodeur
     if (Config::frontParMetreCodeurG != Config::frontParMetreCodeurD) {
-        float min, max;
+        int min, max;
 
         if (Config::frontParMetreCodeurG > Config::frontParMetreCodeurD) {
             min = Config::frontParMetreCodeurD;
@@ -43,7 +43,7 @@ Odometrie::Odometrie(CodeursInterface *cdrs)
             applyRatioOnG = true;
         }
 
-        ratioCodeurs = max / min;
+        ratioCodeurs = max * 1.0 / min;
         frontParMetre = max;
 
     } else {

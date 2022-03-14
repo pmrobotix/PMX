@@ -667,6 +667,9 @@ void AsservDriver::motion_ActivateManager(bool enable) {
 
         //on demarre le check de positionnement...
         this->start("AsservDriver::AsservDriver()", 3);
+
+        //TODO reset and  asservCardStarted_ = true; ????? en mettant a false par defaut ?
+
     }
     else {
         //stop the thread

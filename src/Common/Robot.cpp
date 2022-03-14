@@ -15,8 +15,8 @@
 #include "Utils/ConsoleKeyInput.hpp"
 
 #ifdef SIMU
-    #include <sys/ipc.h>
-    #include <sys/msg.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
 #endif
 #include <unistd.h>
 #include <cstdio>
@@ -42,13 +42,11 @@ Robot::Robot() :
     skipSetup_ = 0;
     end90s_ = 0;
 
-
     configureDefaultConsoleArgs();
 
 }
 
-Robot::~Robot()
-{
+Robot::~Robot() {
     svgPrintEndOfFile();
 
     stopMotionTimerAndActionManager();
@@ -58,26 +56,21 @@ Robot::~Robot()
 
 }
 
-void Robot::svgPrintPosition(int color)
-{
+void Robot::svgPrintPosition(int color) {
 
-    if (asserv_default_ != NULL)
-    {
+    if (asserv_default_ != NULL) {
         this->svgw().writePosition_Bot(this->asserv_default_->pos_getX_mm(), this->asserv_default_->pos_getY_mm(),
                 this->asserv_default_->pos_getTheta(), color);
     }
-    else
-        logger().error() << "asserv_default is NULL !" << logs::end;
+    else logger().error() << "asserv_default is NULL !" << logs::end;
 }
 
-void Robot::svgPrintEndOfFile()
-{
+void Robot::svgPrintEndOfFile() {
     //end SVG file
     svg_->endHeader();
 }
 
-void Robot::configureDefaultConsoleArgs()
-{
+void Robot::configureDefaultConsoleArgs() {
 #ifdef SIMU
     cArgs_.addOption('z', "Simulate button in a separate linux console, please execute this separately");
 #endif
@@ -86,18 +79,20 @@ void Robot::configureDefaultConsoleArgs()
 
     cArgs_.addOption('k', "skip setup");
 
-    cArgs_.addArgument("type", "Type of match (p)pause/(t)est/(m)atch", "m");
+    cArgs_.addOption('v', "color VIOLET (without YELLOW)");
+
+    cArgs_.addArgument("type", "Type of match (t)est/(m)atch/(p)ause", "m");
     {
         Arguments::Option cOpt('n', ""); //TODO delete the /n, the t is enough
         cOpt.addArgument("num", "number of the functional test");
         cArgs_.addOption(cOpt);
     }
 
-    {
-        Arguments::Option cOpt('c', "");
-        cOpt.addArgument("color", "color of robot [y]ellow/[v]iolet", "v");
-        cArgs_.addOption(cOpt);
-    }
+//    {
+//        Arguments::Option cOpt('c', "");
+//        cOpt.addArgument("color", "color of robot [y]ellow/[v]iolet", "y");
+//        cArgs_.addOption(cOpt);
+//    }
 
     {
         Arguments::Option cOpt('s', "");
@@ -106,14 +101,13 @@ void Robot::configureDefaultConsoleArgs()
     }
 }
 
-void Robot::parseConsoleArgs(int argc, char** argv, bool stopWithErrors)
-{
+void Robot::parseConsoleArgs(int argc, char** argv, bool stopWithErrors) {
     if (stopWithErrors) {
         // request option "h" and print out manual if set...
         if (cArgs_['h']) {
-            cArgs_.usage();
             std::cout << "Available functional tests: " << std::endl;
             cmanager_.displayAvailableTests("", -1);
+            cArgs_.usage();
             exit(0);
         }
     }
@@ -122,17 +116,11 @@ void Robot::parseConsoleArgs(int argc, char** argv, bool stopWithErrors)
         logger().debug() << "Error parsing DEFAULT" << logs::end;
         exit(-1);
     }
-
 }
 
 
-//TODO creer le tableau de parametre
-//
-//
-//
 
-void Robot::begin(int argc, char** argv)
-{
+void Robot::begin(int argc, char** argv) {
     int num = -1;
     string select = "-";
     string color = "-";
@@ -166,30 +154,30 @@ void Robot::begin(int argc, char** argv)
             printf("final button= %d \n", cInput);
 
             switch (cInput) {
-            case 10:
-                strcpy(msg_ipc.mtext, "enter");
-                break;
-            case 127:
-                strcpy(msg_ipc.mtext, "back");
-                break;
-            case 65:
-                strcpy(msg_ipc.mtext, "up");
-                break;
-            case 66:
-                strcpy(msg_ipc.mtext, "down");
-                break;
-            case 67:
-                strcpy(msg_ipc.mtext, "right");
-                break;
-            case 68:
-                strcpy(msg_ipc.mtext, "left");
-                break;
+                case 10:
+                    strcpy(msg_ipc.mtext, "enter");
+                    break;
+                case 127:
+                    strcpy(msg_ipc.mtext, "back");
+                    break;
+                case 65:
+                    strcpy(msg_ipc.mtext, "up");
+                    break;
+                case 66:
+                    strcpy(msg_ipc.mtext, "down");
+                    break;
+                case 67:
+                    strcpy(msg_ipc.mtext, "right");
+                    break;
+                case 68:
+                    strcpy(msg_ipc.mtext, "left");
+                    break;
 
-            default:
+                default:
 
-                break;
+                    break;
 
-                usleep(1000);
+                    usleep(1000);
             }
 
             msg_ipc.mtype = getpid();
@@ -217,51 +205,59 @@ void Robot::begin(int argc, char** argv)
                 cInput = ConsoleKeyInput::mygetch();
                 switch (cInput) {
 
-                case 10:
-                    //printf("Enter key!\n");
-                    break;
-                case 127:
-                    //printf("Back key!\n");
-                    cout << "Exit !\n" << endl;
-                    //cout << default_console << endl;
-                    exit(0);
-                    break;
+                    case 10:
+                        //printf("Enter key!\n");
+                        break;
+                    case 127:
+                        //printf("Back key!\n");
+                        cout << "Exit !\n" << endl;
+                        //cout << default_console << endl;
+                        exit(0);
+                        break;
                 }
                 utils::sleep_for_micros(1000);
             } while (cInput != 10);
             //---------------fin Pour debug
         }
     }
-    logger().debug() << "" << logs::end;
+    //logger().debug() << "" << logs::end;
 
-    logger().debug() << "type = " << cArgs_["type"] << logs::end;
+    //logger().debug() << "type = " << cArgs_["type"] << logs::end;
 
-    logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"]
-            << logs::end;
+    //logger().debug() << "Option c set " << (int) cArgs_['c'] << ", color = " << " " << cArgs_['c']["color"] << logs::end;
 
-    if (cArgs_['c']) {
-        color = cArgs_['c']["color"];
-        if (color == "blue" || color == "b")
-            this->setMyColor(PMXBLUE);
-        else if (color == "yellow" || color == "jaune" || color == "j" || color == "y")
-            this->setMyColor(PMXYELLOW);
-        else {
-            this->setMyColor(PMXNOCOLOR);
-            logger().error() << "setMyColor(NOCOLOR)" << logs::end;
-            exit(-1);
-        }
-        logger().debug() << "setMyColor DONE : " << this->getMyColor() << logs::end;
-    } else {
-        //defaut si aucune couleur n'est specifiée
-        this->setMyColor(PMXYELLOW);
+//    if (cArgs_['c']) {
+//        color = cArgs_['c']["color"];
+//        if (color == "violet" || color == "v") this->setMyColor(PMXVIOLET);
+//        else if (color == "yellow" || color == "jaune" || color == "j" || color == "y") this->setMyColor(PMXYELLOW);
+//        else {
+//            this->setMyColor(PMXNOCOLOR);
+//            logger().error() << "setMyColor(NOCOLOR)" << logs::end;
+//            exit(-1);
+//        }
+//        logger().debug() << "setMyColor DONE : " << this->getMyColor() << logs::end;
+//    }
+//    else {
+//        //defaut si aucune couleur n'est specifiée
+//        this->setMyColor(PMXYELLOW);
+//    }
+
+    if (cArgs_['v']) {
+        logger().debug() << "v = " << (int) cArgs_['v'] << logs::end;
+        this->setMyColor(PMXVIOLET);
     }
+    else this->setMyColor(PMXYELLOW);//defaut si aucune couleur n'est specifiée
     logger().debug() << "setMyColor done; getMyColor() = " << getMyColor() << logs::end;
+
+
+
 
     if (cArgs_['s']) {
         strat = cArgs_['s']["strategy"];
         logger().info() << "strategy selected = " << strat << logs::end;
         this->strategy(strat);
-    } else {
+    }
+    else {
         this->strategy("all");
     }
 
@@ -275,8 +271,8 @@ void Robot::begin(int argc, char** argv)
     if (cArgs_['k']) {
         logger().debug() << "skip = " << (int) cArgs_['k'] << logs::end;
         this->skipSetup(true);
-    } else
-        this->skipSetup(false);
+    }
+    else this->skipSetup(false);
 
     if (cArgs_["type"] != "m" && cArgs_["type"] != "t" && cArgs_["type"] != "T" && cArgs_["type"] != "M") {
         select = cmanager_.displayMenuFirstArgu();
@@ -292,51 +288,46 @@ void Robot::begin(int argc, char** argv)
         if (num > 0) {
             //execute defined test
             cmanager_.run(num, argc, argv);
-        } else {
+        }
+        else {
             //ask param
             cmanager_.displayMenuFunctionalTestsAndRun(argc, argv);
         }
     }
 }
 
-void Robot::stopMotionTimerAndActionManager()
-{
+void Robot::stopMotionTimerAndActionManager() {
 
     if (asserv_default_ != NULL) {
         this->asserv_default_->stopMotionTimerAndOdo();
-    } else
-        logger().error() << "asserv_default is NULL ! " << logs::end;
+    }
+    else logger().error() << "asserv_default is NULL ! " << logs::end;
 
     if (actions_default_ != NULL) {
         this->actions_default_->clearAll(); //clear actions and timers
         this->actions_default_->waitAndStopManagers();
         //this->actions_default_->cancel(); //cancel actions thread
-    } else
-        logger().error() << "actions_default is NULL ! " << logs::end;
+    }
+    else logger().error() << "actions_default is NULL ! " << logs::end;
 
 }
 
-void Robot::freeMotion()
-{
+void Robot::freeMotion() {
     this->asserv_default_->freeMotion();
     this->asserv_default_->base()->motors().stopMotors();
 }
 
-void Robot::resetDisplayTS()
-{
+void Robot::resetDisplayTS() {
     logger().error() << "resetDisplayTS ! (To be surcharged) " << logs::end;
 }
 
-void Robot::displayTS(TRAJ_STATE ts)
-{
+void Robot::displayTS(TRAJ_STATE ts) {
     logger().error() << "displayTS ! (To be surcharged) " << logs::end;
 }
-void Robot::resetDisplayObstacle()
-{
+void Robot::resetDisplayObstacle() {
     logger().error() << "resetDisplayObstacle ! (To be surcharged) " << logs::end;
 }
 
-void Robot::displayObstacle(int level)
-{
+void Robot::displayObstacle(int level) {
     logger().error() << "displayObstacle ! (To be surcharged) " << logs::end;
 }

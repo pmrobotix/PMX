@@ -38,6 +38,10 @@ public:
      */
     static ASensorsDriver * create(std::string botName);
 
+    /*!
+     * \brief synchronise les données de la balise.
+     * \return 0 if success, -1 if error.
+     */
     virtual int sync() = 0;
 
     virtual bot_positions getvPositionsAdv() = 0;

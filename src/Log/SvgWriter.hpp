@@ -63,8 +63,8 @@ public:
 
     void writeTextCustom(float x_mm, float y_mm, std::string text, std::string color, std::string fontsize);
 
-    virtual void writePosition_Bot(float x, float y, float a_rad, int color = 0) = 0;
-    virtual void writePosition_BotPos(float x, float y, float a_rad) = 0;
+    virtual void writePosition_Bot(float x_mm, float y_mm, float a_rad, int color = 0) = 0;
+    virtual void writePosition_BotPos(float x_mm, float y_mm, float a_rad) = 0;
 
     virtual void writeZone(const char* name, float minX_mm, float minY_mm, float width_mm, float height_mm,
             float startX_mm, float startY_mm, float startAngle_rad) = 0;

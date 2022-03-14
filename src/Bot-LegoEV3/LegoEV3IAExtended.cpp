@@ -24,10 +24,10 @@ void LegoEV3IAExtended::initPlayground()
         p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
         //zone aleatoire
-        p_->add_circle_symmetrical(this->area_alea_violet, this->area_alea_yellow, 1000.0, 1050.0, 300.0, 6);
+        //p_->add_circle_symmetrical(this->area_alea_violet, this->area_alea_yellow, 1000.0, 1050.0, 300.0, 6);
 
         //zone palets depart
-        p_->add_rectangle_lower_left_symmetrical(this->area_palet_start_violet, this->area_palet_start_yellow, 350.0, 600.0, 300.0, 600.0, 0.0);
+        //p_->add_rectangle_lower_left_symmetrical(this->area_palet_start_violet, this->area_palet_start_yellow, 350.0, 600.0, 300.0, 600.0, 0.0);
 
 
 

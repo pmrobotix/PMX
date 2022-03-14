@@ -68,7 +68,7 @@ bool CommandManager::addGoToAngle(int32_t posXInmm, int32_t posYInmm)
  */
 void CommandManager::perform()
 {
-//printf("commandStatus= %d\n", commandStatus);
+//printf("\nCommandManager::perform() commandStatus= %d\n", commandStatus);
     // Arrêt d'urgence! On n'accepte aucune commande.
     if (commandStatus == STATUS_HALTED || commandStatus == STATUS_BLOCKED) {    //Ajouter cho 2019
         while (currCMD.type != CMD_NULL) { //On s'assure que la liste des commandes est vide

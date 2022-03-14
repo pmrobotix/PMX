@@ -84,7 +84,7 @@ O_State_Init::execute(Robot&)
 
                     robot.actions().lcd2x16().setCursor(2, 0);
                     robot.actions().lcd2x16().print("BLUE ");
-                    robot.setMyColor(PMXBLUE);
+                    robot.setMyColor(PMXVIOLET);
                 }
             }
             else if (mode == 2) {

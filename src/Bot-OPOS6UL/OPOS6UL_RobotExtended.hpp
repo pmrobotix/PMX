@@ -50,8 +50,6 @@ public:
         return r_ia;
     }
 
-    O_State_DecisionMakerIA* decisionMaker_;
-
     void begin(int argc, char** argv);
 
     void stopExtraActions();
@@ -63,9 +61,8 @@ public:
     void resetDisplayObstacle();
     void displayObstacle(int level);
 
+    O_State_DecisionMakerIA* decisionMaker_;
     bool blue_done;
-
-
 
 private:
 

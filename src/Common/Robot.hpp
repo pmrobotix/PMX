@@ -21,7 +21,7 @@ class ConsoleManager;
 
 enum RobotColor
 {
-    PMXNOCOLOR, PMXYELLOW, PMXBLUE
+    PMXNOCOLOR, PMXYELLOW, PMXVIOLET
 };
 
 class Robot
@@ -188,19 +188,7 @@ public:
             printf("ERROR asserv() NULL ! \n");
         return asserv_default_;
     }
-/*
-    inline Actions& actions()
-    {
-        Actions& r_actions = *actions_default_;
-        return r_actions;
-    }
 
-    inline Asserv& asserv()
-    {
-        Asserv& r_asserv = *asserv_default_;
-        return r_asserv;
-    }
-*/
     inline SvgWriter& svgw()
     {
         SvgWriter & r_svg = *svg_;

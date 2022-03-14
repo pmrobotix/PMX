@@ -13,16 +13,92 @@ LegoEV3SvgWriterExtended::LegoEV3SvgWriterExtended(std::string botId) :
     std::ostringstream symbol;
 
     symbol << "<symbol id=\"bot-legoev3\">"
-            << "<circle cx=\"45\" cy=\"120\" r=\"120\" fill=\"none\" stroke=\"orange\" />"
-            << "<circle cx=\"45\" cy=\"120\" r=\"10\" fill=\"none\" stroke=\"orange\" stroke-width=\"4\"/>"
-            << "<rect x=\"0\" y=\"0\" width=\"200\" height=\"240\" style=\"fill:none;stroke:orange;stroke-width:3px;\" />"
-            //<< "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
-            //arriere du robot en position 0,0
-            //<< "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"orange\" stroke-width=\"4\"/>"
-            //<< "<line x1=\"0\" y1=\"150\" x2=\"50\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
-            << "<line x1=\"200\" y1=\"0\" x2=\"200\" y2=\"240\" stroke=\"red\" stroke-width=\"4\"/>"
-            //devant du robot en position 180,0
+            << "<circle cx=\"140\" cy=\"140\" r=\"140\" fill=\"none\" stroke=\"slategray\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
+            << "<circle cx=\"140\" cy=\"140\" r=\"10\" fill=\"none\" stroke=\"slategray\" />"
+            << "<line x1=\"100\" y1=\"15\" x2=\"180\" y2=\"15\" stroke=\"slategray\"/>"
+            << "<line x1=\"100\" y1=\"265\" x2=\"180\" y2=\"265\" stroke=\"slategray\"/>"
+            << "<line x1=\"15\" y1=\"100\" x2=\"15\" y2=\"180\" stroke=\"slategray\"/>"
+            << "<line x1=\"265\" y1=\"100\" x2=\"265\" y2=\"180\" stroke=\"slategray\" stroke-width=\"2\"/>"
+            << "<path d=\"M100,15A85,85 0 0,0 15,100\" fill=\"none\" stroke=\"slategray\" ></path>"
+            << "<path d=\"M180,15A85,85 0 0,1 265,100\" fill=\"none\" stroke=\"slategray\" ></path>"
+            << "<path d=\"M265,180A85,85 0 0,1 180,265\" fill=\"none\" stroke=\"slategray\" ></path>"
+            << "<path d=\"M15,180A85,85 0 0,0 100,265\" fill=\"none\" stroke=\"slategray\" ></path>"
             << "</symbol>";
+    symbol << "<symbol id=\"bot-legoev3-RED\">"
+                << "<circle cx=\"140\" cy=\"140\" r=\"140\" fill=\"none\" stroke=\"red\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
+                << "<circle cx=\"140\" cy=\"140\" r=\"8\" fill=\"none\" stroke=\"red\" />"
+                << "<line x1=\"100\" y1=\"15\" x2=\"180\" y2=\"15\" stroke=\"red\" stroke-width=\"2\"/>"
+                << "<line x1=\"100\" y1=\"265\" x2=\"180\" y2=\"265\" stroke=\"red\" stroke-width=\"2\"/>"
+                << "<line x1=\"15\" y1=\"100\" x2=\"15\" y2=\"180\" stroke=\"red\" stroke-width=\"2\"/>"
+                << "<line x1=\"265\" y1=\"100\" x2=\"265\" y2=\"180\" stroke=\"red\" stroke-width=\"4\"/>"
+                << "<path d=\"M100,15A85,85 0 0,0 15,100\" fill=\"none\" stroke=\"red\" ></path>"
+                << "<path d=\"M180,15A85,85 0 0,1 265,100\" fill=\"none\" stroke=\"red\" ></path>"
+                << "<path d=\"M265,180A85,85 0 0,1 180,265\" fill=\"none\" stroke=\"red\" ></path>"
+                << "<path d=\"M15,180A85,85 0 0,0 100,265\" fill=\"none\" stroke=\"red\" ></path>"
+                << "</symbol>";
+    symbol << "<symbol id=\"bot-legoev3-ORANGE\">"
+                << "<circle cx=\"140\" cy=\"140\" r=\"140\" fill=\"none\" stroke=\"orange\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
+                << "<circle cx=\"140\" cy=\"140\" r=\"7\" fill=\"none\" stroke=\"orange\" />"
+                << "<line x1=\"100\" y1=\"15\" x2=\"180\" y2=\"15\" stroke=\"orange\" stroke-width=\"2\"/>"
+                << "<line x1=\"100\" y1=\"265\" x2=\"180\" y2=\"265\" stroke=\"orange\" stroke-width=\"2\"/>"
+                << "<line x1=\"15\" y1=\"100\" x2=\"15\" y2=\"180\" stroke=\"orange\" stroke-width=\"2\"/>"
+                << "<line x1=\"265\" y1=\"100\" x2=\"265\" y2=\"180\" stroke=\"orange\" stroke-width=\"4\"/>"
+                << "<path d=\"M100,15A85,85 0 0,0 15,100\" fill=\"none\" stroke=\"orange\" ></path>"
+                << "<path d=\"M180,15A85,85 0 0,1 265,100\" fill=\"none\" stroke=\"orange\" ></path>"
+                << "<path d=\"M265,180A85,85 0 0,1 180,265\" fill=\"none\" stroke=\"orange\" ></path>"
+                << "<path d=\"M15,180A85,85 0 0,0 100,265\" fill=\"none\" stroke=\"orange\" ></path>"
+                << "</symbol>";
+    symbol << "<symbol id=\"bot-legoev3-GREEN\">"
+                << "<circle cx=\"140\" cy=\"140\" r=\"140\" fill=\"none\" stroke=\"green\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
+                << "<circle cx=\"140\" cy=\"140\" r=\"6\" fill=\"none\" stroke=\"green\" />"
+                << "<line x1=\"100\" y1=\"15\" x2=\"180\" y2=\"15\" stroke=\"green\" stroke-width=\"2\"/>"
+                << "<line x1=\"100\" y1=\"265\" x2=\"180\" y2=\"265\" stroke=\"green\" stroke-width=\"2\"/>"
+                << "<line x1=\"15\" y1=\"100\" x2=\"15\" y2=\"180\" stroke=\"green\" stroke-width=\"2\"/>"
+                << "<line x1=\"265\" y1=\"100\" x2=\"265\" y2=\"180\" stroke=\"green\" stroke-width=\"4\"/>"
+                << "<path d=\"M100,15A85,85 0 0,0 15,100\" fill=\"none\" stroke=\"green\" ></path>"
+                << "<path d=\"M180,15A85,85 0 0,1 265,100\" fill=\"none\" stroke=\"green\" ></path>"
+                << "<path d=\"M265,180A85,85 0 0,1 180,265\" fill=\"none\" stroke=\"green\" ></path>"
+                << "<path d=\"M15,180A85,85 0 0,0 100,265\" fill=\"none\" stroke=\"green\" ></path>"
+                << "</symbol>";
+    symbol << "<symbol id=\"bot-legoev3-BLUE\">"
+                << "<circle cx=\"140\" cy=\"140\" r=\"140\" fill=\"none\" stroke=\"blue\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
+                << "<circle cx=\"140\" cy=\"140\" r=\"5\" fill=\"none\" stroke=\"blue\" />"
+                << "<line x1=\"100\" y1=\"15\" x2=\"180\" y2=\"15\" stroke=\"blue\" stroke-width=\"2\"/>"
+                << "<line x1=\"100\" y1=\"265\" x2=\"180\" y2=\"265\" stroke=\"blue\" stroke-width=\"2\"/>"
+                << "<line x1=\"15\" y1=\"100\" x2=\"15\" y2=\"180\" stroke=\"blue\" stroke-width=\"2\"/>"
+                << "<line x1=\"265\" y1=\"100\" x2=\"265\" y2=\"180\" stroke=\"blue\" stroke-width=\"4\"/>"
+                << "<path d=\"M100,15A85,85 0 0,0 15,100\" fill=\"none\" stroke=\"blue\" ></path>"
+                << "<path d=\"M180,15A85,85 0 0,1 265,100\" fill=\"none\" stroke=\"blue\" ></path>"
+                << "<path d=\"M265,180A85,85 0 0,1 180,265\" fill=\"none\" stroke=\"blue\" ></path>"
+                << "<path d=\"M15,180A85,85 0 0,0 100,265\" fill=\"none\" stroke=\"blue\" ></path>"
+                << "</symbol>";
+    symbol << "<symbol id=\"bot-legoev3-BLACK\">"
+                    << "<circle cx=\"140\" cy=\"140\" r=\"140\" fill=\"none\" stroke=\"black\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
+                    << "<circle cx=\"140\" cy=\"140\" r=\"4\" fill=\"none\" stroke=\"black\" />"
+                    << "<line x1=\"100\" y1=\"15\" x2=\"180\" y2=\"15\" stroke=\"black\" stroke-width=\"2\"/>"
+                    << "<line x1=\"100\" y1=\"265\" x2=\"180\" y2=\"265\" stroke=\"black\" stroke-width=\"2\"/>"
+                    << "<line x1=\"15\" y1=\"100\" x2=\"15\" y2=\"180\" stroke=\"black\" stroke-width=\"2\"/>"
+                    << "<line x1=\"265\" y1=\"100\" x2=\"265\" y2=\"180\" stroke=\"black\" stroke-width=\"4\"/>"
+                    << "<path d=\"M100,15A85,85 0 0,0 15,100\" fill=\"none\" stroke=\"black\" ></path>"
+                    << "<path d=\"M180,15A85,85 0 0,1 265,100\" fill=\"none\" stroke=\"black\" ></path>"
+                    << "<path d=\"M265,180A85,85 0 0,1 180,265\" fill=\"none\" stroke=\"black\" ></path>"
+                    << "<path d=\"M15,180A85,85 0 0,0 100,265\" fill=\"none\" stroke=\"black\" ></path>"
+                    << "</symbol>";
+//<circle cx="140" cy="140" r="140" fill="none" stroke="slategray" stroke-width="0.5" stroke-dasharray="4,8"/>
+//<circle cx="140" cy="140" r="4" fill="none" stroke="slategray" />
+//<!--rect x="15" y="15" width="250" height="250" style="fill:none;stroke:orange;stroke-width:2px;" /-->
+//<line x1="100" y1="15" x2="180" y2="15" stroke="slategray"/>
+//<line x1="100" y1="265" x2="180" y2="265" stroke="slategray"/>
+//
+//<line x1="15" y1="100" x2="15" y2="180" stroke="slategray"/>
+//
+//<line x1="265" y1="100" x2="265" y2="180" stroke="slategray" stroke-width="4"/>
+//
+//<path d="M100,15A85,85 0 0,0 15,100" fill="none" stroke="slategray" ></path>
+//<path d="M180,15A85,85 0 0,1 265,100" fill="none" stroke="slategray" ></path>
+//<path d="M265,180A85,85 0 0,1 180,265" fill="none" stroke="slategray" ></path>
+//<path d="M15,180A85,85 0 0,0 100,265" fill="none" stroke="slategray" ></path>
+
     addDefsSymbol(symbol.str());
 
     //optimisation du log pour ne créer qu'un seul objet
@@ -46,7 +122,7 @@ void LegoEV3SvgWriterExtended::writePosition_Bot(float x, float y, float angle_r
 {
     if (!done_) {
 
-        *fLogBuffer << "<use x=\"" << x - 45 << "\" y=\"" << -y - 120
+        *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
                 << "\" xlink:href=\"#bot-legoev3\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x
                 << "," << -y << ")\" />" << logs::flush;
 

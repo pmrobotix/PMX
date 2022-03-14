@@ -11,29 +11,54 @@ OPOS6UL_SvgWriterExtended::OPOS6UL_SvgWriterExtended(std::string botId) :
 
     std::ostringstream symbol;
 
-//    symbol << "<symbol id=\"bot-OPOS6UL\">" << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"slategray\" />"
-//            << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"slategray\" />"
-//            << "<rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" style=\"fill:none;stroke:slategray;stroke-width:2px;\" />"
-//            //arriere du robot en position 0,0
-//            << "<line x1=\"0\" y1=\"30\" x2=\"0\" y2=\"300\" stroke=\"slategray\" stroke-width=\"4\"/>"
-//            << "<line x1=\"0\" y1=\"30\" x2=\"50\" y2=\"0\" stroke=\"slategray\" stroke-width=\"4\"/>"
-//            << "<line x1=\"0\" y1=\"270\" x2=\"50\" y2=\"300\" stroke=\"slategray\" stroke-width=\"4\"/>"
-//            //devant du robot en position 300,0
-//            << "<line x1=\"300\" y1=\"0\" x2=\"300\" y2=\"300\" stroke=\"blue\" stroke-width=\"4\"/>"
-
     symbol << "<symbol id=\"bot-OPOS6UL\">"
-            << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"slategray\" />"
+            << "<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"none\" stroke=\"slategray\" />"
             << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"slategray\" />"
-
-            << "<rect x=\"80\" y=\"0\" width=\"70\" height=\"300\" style=\"fill:none;stroke:slategray;stroke-width:2px;\" />"
-            //arriere du robot en position 0,0
-            << "<line x1=\"150\" y1=\"0\" x2=\"400\" y2=\"150\" stroke=\"slategray\" stroke-width=\"4\"/>"
-            << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"slategray\" stroke-width=\"4\"/>"
-            //devant du robot en position 300,0
-            << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"blue\" stroke-width=\"4\"/>"
-            //<< "<circle cx=\"150\" cy=\"150\" r=\"250\" fill=\"none\" stroke=\"red\" stroke-width=\"1\"/>"
+            << "<line x1=\"95\" y1=\"21\" x2=\"205\" y2=\"21\" stroke=\"slategray\"/>"
+            << "<line x1=\"95\" y1=\"279\" x2=\"205\" y2=\"279\" stroke=\"slategray\"/>"
+            << "<line x1=\"22\" y1=\"95\" x2=\"22\" y2=\"205\" stroke=\"slategray\" stroke-width=\"2px\"/>"
             << "</symbol>";
 
+    symbol << "<symbol id=\"bot-OPOS6UL-RED\">"
+                << "<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"none\" stroke=\"red\" stroke-width=\"2px\"/>"
+                << "<circle cx=\"150\" cy=\"150\" r=\"5\" fill=\"none\" stroke=\"red\" />"
+                << "<line x1=\"95\" y1=\"21\" x2=\"205\" y2=\"21\" stroke=\"red\"/>"
+                << "<line x1=\"95\" y1=\"279\" x2=\"205\" y2=\"279\" stroke=\"red\"/>"
+                << "<line x1=\"23\" y1=\"95\" x2=\"23\" y2=\"205\" stroke=\"red\" stroke-width=\"4px\"/>"
+                << "</symbol>";
+
+    symbol << "<symbol id=\"bot-OPOS6UL-ORANGE\">"
+                << "<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"none\" stroke=\"orange\" stroke-width=\"2px\"/>"
+                << "<circle cx=\"150\" cy=\"150\" r=\"5\" fill=\"none\" stroke=\"orange\" />"
+                << "<line x1=\"95\" y1=\"21\" x2=\"205\" y2=\"21\" stroke=\"orange\"/>"
+                << "<line x1=\"95\" y1=\"279\" x2=\"205\" y2=\"279\" stroke=\"orange\"/>"
+                << "<line x1=\"23\" y1=\"95\" x2=\"23\" y2=\"205\" stroke=\"orange\" stroke-width=\"4px\"/>"
+                << "</symbol>";
+
+    symbol << "<symbol id=\"bot-OPOS6UL-GREEN\">"
+                << "<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"none\" stroke=\"green\" stroke-width=\"2px\"/>"
+                << "<circle cx=\"150\" cy=\"150\" r=\"5\" fill=\"none\" stroke=\"green\" />"
+                << "<line x1=\"95\" y1=\"21\" x2=\"205\" y2=\"21\" stroke=\"green\"/>"
+                << "<line x1=\"95\" y1=\"279\" x2=\"205\" y2=\"279\" stroke=\"green\"/>"
+                << "<line x1=\"23\" y1=\"95\" x2=\"23\" y2=\"205\" stroke=\"green\" stroke-width=\"4px\"/>"
+                << "</symbol>";
+
+    symbol << "<symbol id=\"bot-OPOS6UL-BLUE\">"
+                << "<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"none\" stroke=\"blue\" stroke-width=\"2px\"/>"
+                << "<circle cx=\"150\" cy=\"150\" r=\"5\" fill=\"none\" stroke=\"blue\" />"
+                << "<line x1=\"95\" y1=\"21\" x2=\"205\" y2=\"21\" stroke=\"blue\"/>"
+                << "<line x1=\"95\" y1=\"279\" x2=\"205\" y2=\"279\" stroke=\"blue\"/>"
+                << "<line x1=\"23\" y1=\"95\" x2=\"23\" y2=\"205\" stroke=\"blue\" stroke-width=\"4px\"/>"
+                << "</symbol>";
+
+    symbol << "<symbol id=\"bot-OPOS6UL-BLACK\">"
+                << "<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"none\" stroke=\"black\" stroke-width=\"2px\"/>"
+                << "<circle cx=\"150\" cy=\"150\" r=\"5\" fill=\"none\" stroke=\"black\" />"
+                << "<line x1=\"95\" y1=\"21\" x2=\"205\" y2=\"21\" stroke=\"black\"/>"
+                << "<line x1=\"95\" y1=\"279\" x2=\"205\" y2=\"279\" stroke=\"black\"/>"
+                << "<line x1=\"23\" y1=\"95\" x2=\"23\" y2=\"205\" stroke=\"black\" stroke-width=\"4px\"/>"
+                << "</symbol>";
+    /*
     symbol << "<symbol id=\"bot-OPOS6UL-RED\">"
             << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"red\" />"
             << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"red\" />"
@@ -50,13 +75,14 @@ OPOS6UL_SvgWriterExtended::OPOS6UL_SvgWriterExtended(std::string botId) :
     symbol << "<symbol id=\"bot-OPOS6UL-ORANGE\">"
             << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"orange\" />"
             << "<circle cx=\"150\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"orange\" />"
+            << "<rect x=\"-140\" y=\"-140\" width=\"140\" height=\"140\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
 
-            << "<rect x=\"80\" y=\"0\" width=\"70\" height=\"300\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
+//            << "<rect x=\"80\" y=\"0\" width=\"70\" height=\"300\" style=\"fill:none;stroke:orange;stroke-width:2px;\" />"
             //arriere du robot en position 0,0
-            << "<line x1=\"150\" y1=\"0\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
-            << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
-            //devant du robot en position 300,0
-            << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"orange\" stroke-width=\"4\"/>"
+//            << "<line x1=\"150\" y1=\"0\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
+//            << "<line x1=\"150\" y1=\"300\" x2=\"400\" y2=\"150\" stroke=\"orange\" stroke-width=\"4\"/>"
+//            //devant du robot en position 300,0
+//            << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"orange\" stroke-width=\"4\"/>"
 
             << "</symbol>";
     symbol << "<symbol id=\"bot-OPOS6UL-GREEN\">"
@@ -70,7 +96,7 @@ OPOS6UL_SvgWriterExtended::OPOS6UL_SvgWriterExtended(std::string botId) :
             //devant du robot en position 300,0
             << "<line x1=\"400\" y1=\"60\" x2=\"400\" y2=\"240\" stroke=\"green\" stroke-width=\"4\"/>"
 
-            << "</symbol>";
+            << "</symbol>";*/
     addDefsSymbol(symbol.str());
 
     //optimisation du log pour ne créer qu'un seul objet

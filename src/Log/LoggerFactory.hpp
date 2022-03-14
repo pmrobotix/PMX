@@ -93,7 +93,7 @@ private:
 protected:
 
     /*!
-     * \brief set the priority of this thread (can be different per robot).
+     * \brief set the priority of this thread (can be different per robot using LoogerInitialize.cpp).
      */
     void setPriority(int p);
 
