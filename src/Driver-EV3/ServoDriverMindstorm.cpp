@@ -106,6 +106,13 @@ void ServoDriverMindstorm::setRate(int servo, int millisec0To90) {
 
 }
 
+void ServoDriverMindstorm::setType(int servo, AServoDriver::ServoType)
+{
+    logger().error() << "setType() NOT IMPLEMENTED servo=" << servo << logs::end;
+
+ //TODO
+}
+
 void ServoDriverMindstorm::turn(int servo, int speed) {
     if (!connected_servo[constrain(servo, 0, 7)]) return;
 }

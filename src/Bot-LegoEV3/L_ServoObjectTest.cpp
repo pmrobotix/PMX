@@ -40,6 +40,9 @@ void L_ServoObjectTest::run(int argc, char **argv)
         logger().info() << "Arg m set " << args["m"] << ", m = " << m << logs::end;
     }
 
+    logger().info() << "test_servo" << logs::end;
+    robot.actions().test_servo();
+
     /*
     logger().info() << "conveyorBelt_Left_center" << logs::end;
     robot.actions().conveyorBelt_Left_center();

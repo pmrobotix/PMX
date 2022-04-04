@@ -8,11 +8,12 @@
 #include "../Log/LoggerFactory.hpp"
 
 //#define ADDRESS_BeaconSensors   0x2D
-#define DATA_BeaconSensors      0x04
+#define DATA_BeaconSensors      0x04 //addresse des données à recupérer
 #define NUMOFBOTS_BeaconSensors 0x00
 
 
-// convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
+//WEBSITE REFERENCE : convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
+
 union float2bytes_t // union consists of one variable represented in a number of different ways
 {
     float f;

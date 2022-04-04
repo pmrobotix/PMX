@@ -17,7 +17,7 @@ SensorsDriver::SensorsDriver() :
         beaconSensors_(0, ADDRESS_BeaconSensors), gp2_1_(0, ADDRESS_gp2y0e02b), gp2_2_(1, ADDRESS_gp2y0e02b), connected_gp2y0e02b_(false)
 {
     regs_ = {};
-    settings_ = {};
+    settings_ = {}; //TODO à ecrire/initialiser en i2c?
     vadv_.clear();
 }
 

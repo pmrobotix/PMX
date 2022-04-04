@@ -1,4 +1,5 @@
 /*************************************************** 
+ * VERSION 2.3.1
   This is a library for our Adafruit 16-channel PWM & Servo driver
 
   Pick one up today in the adafruit shop!
@@ -13,6 +14,7 @@
 
   Written by Limor Fried/Ladyada for Adafruit Industries.  
   BSD license, all text above must be included in any redistribution
+
  ****************************************************/
 
 #ifndef _ADAFRUIT_PWMServoDriver_H

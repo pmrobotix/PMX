@@ -19,7 +19,48 @@
  * \brief Enumération des libellés des servos.
  */
 enum ServoLabel {
-    SERVO_1, SERVO_2, SERVO_3, SERVO_4, SERVO_5, SERVO_6, SERVO_7, SERVO_8, SERVO_enumTypeEnd
+    SERVO_0 = 0,
+    SERVO_1 = 1,
+    SERVO_2 = 2,
+    SERVO_3 = 3,
+    SERVO_4 = 4,
+    SERVO_5 = 5,
+    SERVO_6 = 6,
+    SERVO_7 = 7,
+    SERVO_8 = 8,
+    SERVO_9 = 9,
+    SERVO_10 = 10,
+    SERVO_11 = 11,
+    SERVO_12 = 12,
+    SERVO_13 = 13,
+    SERVO_14 = 14,
+    SERVO_15 = 15,
+   // SERVO_16 = 16,
+    SERVO_enumTypeEnd
+};
+
+/*!
+ * \brief Enumération des libellés des servos associés au numéro de servo
+ */
+enum ServoAx12Label //TODO se servir de cette liste
+{
+    AX12_SERVO_BRAS_D = 5, //AX12
+
+    AX12_SERVO_BRAS_G = 7, //AX12
+
+    AX12_SERVO_PINCE_SS_ROBOT = 4, //AX12
+
+    AX12_SERVO_ASCENSEUR = 100, //MX28
+
+    AX12_SERVO_ROTATION = 102, //MX28
+
+    AX12_SERVO_PORTES_NOIRE = 61, //AX18
+
+    AX12_SERVO_PORTES_BLEU = 63, //AX18
+
+    AX12_SERVO_DRAPEAUX = 51, //AX12
+
+    AX12_enumTypeEnd
 };
 
 /*
@@ -43,7 +84,7 @@ private:
     Sensors sensors_;
     LcdShield lcd_;
     ServoUsingMotor servoUsingMotor_;
-    ServoObjectsSystem servos_std_;
+    ServoObjectsSystem servos_;
 
 public:
     LegoEV3ActionsExtended(std::string botId, Robot *robot);
@@ -80,8 +121,8 @@ public:
         return servoUsingMotor_;
     }
 
-    ServoObjectsSystem& servosStd() {
-        return servos_std_;
+    ServoObjectsSystem& servos() {
+        return servos_;
     }
 
     void stopExtra() {
@@ -96,10 +137,29 @@ public:
 
         for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
             ServoLabel foo = static_cast<ServoLabel>(fooInt);
-            //servosStd().deploy(foo, 0); //NE PAS FAIRE car utilsier dans la destruction des objets
-            servosStd().release(foo);
+            //servosStd().deploy(foo, 0); //NE PAS FAIRE car cette fonction est utilisée dans la destruction des objets
+            servos().release(foo);
         }
     }
+
+    //--------------------------------------------------------------
+    //Actions 2022
+    //--------------------------------------------------------------
+
+    void test_servo(int speed = 512) {
+        servos().deploy(SERVO_1, 1900, 0);
+        usleep(1000000);
+        servos().deploy(SERVO_1, 500, 0);
+        usleep(1000000);
+        servos().release(SERVO_1);
+
+        servos().deploy(SERVO_2, 1900, 0);
+                usleep(1000000);
+                servos().deploy(SERVO_2, 500, 0);
+                usleep(1000000);
+                servos().release(SERVO_2);
+    }
+
     /*
      //--------------------------------------------------------------
      //Actions 2019

@@ -25,6 +25,12 @@
  *  @section license License
  *
  *  BSD license, all text above must be included in any redistribution
+ *
+ *  PMXlib basé sur la VERSION 2.4.0 avec inclusion des pull requests suivantes:
+ *  https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/pull/81/commits/0e169b0f73382ce4cda1fa32d1213b627bc6bcb6
+ *  https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/pull/84/commits/f22e66bbbe172742074882356f61b9fe307e1bbf
+ *  https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/pull/87/commits/4b71091c32735c4cc930900b8a4e12d3cec59b71
+ *
  */
 
 #include "Adafruit_PWMServoDriver.hpp"
@@ -40,20 +46,20 @@
  *  @brief  Instantiates a new PCA9685 PWM driver chip with the I2C address on a
  * TwoWire interface
  */
-Adafruit_PWMServoDriver::Adafruit_PWMServoDriver() :
-        _i2caddr(PCA9685_I2C_ADDRESS), i2c_(1, false), _connected_(0)
-{
-    _oscillator_freq = FREQUENCY_OSCILLATOR;
-
-}
+//Adafruit_PWMServoDriver::Adafruit_PWMServoDriver() :
+//        _i2caddr(PCA9685_I2C_ADDRESS), i2c_(1, false), _connected_(0)
+//{
+//    _oscillator_freq = FREQUENCY_OSCILLATOR;
+//
+//}
 
 /*!
  *  @brief  Instantiates a new PCA9685 PWM driver chip with the I2C address on a
  * TwoWire interface
  *  @param  addr The 7-bit I2C address to locate this chip, default is 0x40
  */
-Adafruit_PWMServoDriver::Adafruit_PWMServoDriver(const uint8_t addr) :
-        _i2caddr(addr), i2c_(2), _connected_(0)
+Adafruit_PWMServoDriver::Adafruit_PWMServoDriver(uint i2c_bus_num, const uint8_t addr) :
+        _i2caddr(addr), i2c_(i2c_bus_num, true), _connected_(0)
 {
     _oscillator_freq = FREQUENCY_OSCILLATOR;
 
@@ -71,31 +77,37 @@ Adafruit_PWMServoDriver::Adafruit_PWMServoDriver(const uint8_t addr) :
 //    : _i2caddr(addr), _i2c(&i2c) {}
 /*!
  *  @brief  Setups the I2C interface and hardware
+ *  @param  frequence ( limit is 3052=50MHz/(4*4096))
  *  @param  prescale
  *          Sets External Clock (Optional)
  */
-void Adafruit_PWMServoDriver::begin(uint8_t prescale) {
+bool Adafruit_PWMServoDriver::begin(float freq, uint8_t prescale) {
 
-    _connected_ = i2c_.begin(_i2caddr);
-    printf("\nAdafruit_PWMServoDriver::begin CONNECTED = %d! \n", _connected_);
+    int err = i2c_.begin(_i2caddr);
+    if (err >= 0)
+        _connected_ = true;
+
     usleep(10000);
     if (!_connected_) {
         printf("\nAdafruit_PWMServoDriver::begin NOT CONNECTED ! \n");
-        return;
+        return _connected_;
     }
     reset();
 
+
+    // set the default internal frequency
+    setOscillatorFrequency(FREQUENCY_OSCILLATOR);
 
     if (prescale) {
         setExtClk(prescale);
     }
     else {
-        // set a default frequency
-        setPWMFreq(50);
+        setPWMFreq(freq); //Datasheet limit is 3052=50MHz/(4*4096)
     }
 
-    // set the default internal frequency
-    setOscillatorFrequency(FREQUENCY_OSCILLATOR);
+
+
+    return _connected_;
 }
 
 /*!
@@ -279,7 +291,7 @@ uint16_t Adafruit_PWMServoDriver::getPWM(uint8_t num, bool on) {
     uint8_t readArray[2] = { 0, 0 };
     int err = i2c_.readReg(_register_addr, readArray, 2);
     if (err < 0) {
-        printf("\nError AMS_AS5048B i2c readRegs readReg\n");
+        printf("\Adafruit_PWMServoDriver::getPWM readReg ERROR\n");
 
     }
 

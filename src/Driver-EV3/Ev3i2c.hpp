@@ -15,6 +15,7 @@
 
 class Ev3i2c {
 private:
+    int bus_num_;
     bool skipFirstByte_;
     //Var to hold the i2c communications handle,
     //...this will only be needed by the class itself, so it's private
@@ -23,7 +24,12 @@ private:
     std::string filename_str_;
     uint address_;
 
-    utils::Mutex mutex_;
+    //utils::Mutex mutex_;
+
+    utils::Mutex mutex_1;
+    utils::Mutex mutex_2;
+    utils::Mutex mutex_3;
+    utils::Mutex mutex_4;
 
 
 public:
@@ -36,7 +42,12 @@ public:
     //...Returns: Nothing.
     ~Ev3i2c();
 
-    bool begin(uint address);
+    //return 0 if ok, negatif if error
+    int begin(uint address);
+
+    int read(uint8_t *data);
+
+    int write(uint8_t value);
 
     //Function: i2cRead - First parameter is a pointer to a char array. This will also contain the
     //...values passed back from the Arduino.
@@ -61,6 +72,11 @@ public:
     //...Returns: Error value. > 0 is ok. < 0 means there was an error.
     //int i2cWriteArduinoInt(int input);
 
+    //Lock par bus i2c
+    void lock();
+
+    //unlock par bus I2C
+    void unlock();
 
 
 };

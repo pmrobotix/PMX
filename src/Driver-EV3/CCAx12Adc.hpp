@@ -4,10 +4,10 @@
  * Program for the Made by PM-ROBOTIX card to manage servomotor AX12, LED board, and ADC
  */
 
-#ifndef OPOS6UL_CCAX12ADC_HPP
-#define OPOS6UL_CCAX12ADC_HPP
+#ifndef DRIVER_EV3_CCAX12ADC_HPP
+#define DRIVER_EV3_CCAX12ADC_HPP
 
-#include <cpp/as_i2c.hpp>
+#include "Ev3i2c.hpp"
 
 #include "../Log/LoggerFactory.hpp"
 
@@ -68,15 +68,15 @@ class CCAx12Adc: public utils::Mutex
 private:
 
     /*!
-     * \brief Retourne le \ref Logger associé à la classe \ref CCAx12Adc (OPOS6UL).
+     * \brief Retourne le \ref Logger associé à la classe \ref CCAx12Adc (EV3).
      */
     static const logs::Logger & logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("CCAx12Adc.OPO");
+        static const logs::Logger & instance = logs::LoggerFactory::logger("CCAx12Adc.EV3");
         return instance;
     }
 
-    AsI2c i2c_CCAx12Adc_;
+    Ev3i2c i2c_CCAx12Adc_;
 
     bool connected_;
     utils::Mutex mutex_;
@@ -94,13 +94,17 @@ private:
     int write(unsigned char command);
     int read();
 
+    int readRegs(uint8_t reg_address, uint8_t len, uint8_t* data);
+    int writeReg(uint8_t reg_address, uint8_t value);
+    int writeRegs(uint8_t reg_address, uint8_t* values);
 public:
 
     static CCAx12Adc & instance()
     {
-        static CCAx12Adc instance;
+        static CCAx12Adc instance; //static instance pour utilsier ADC+I2C+LED
         return instance;
     }
+
 
     /*!
      * \brief Destructeur de la classe.
@@ -109,8 +113,8 @@ public:
     {
     }
 
-    // configuration and initialisation
-    int begin();
+    // configuration and initialisation avec l'adresse i2c sur le bus
+    int begin(uint i2c_aAddr);
 
     //todo get address i2c //ping de la carte à faire
 

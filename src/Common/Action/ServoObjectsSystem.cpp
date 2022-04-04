@@ -5,10 +5,10 @@
 
 using namespace std;
 
-ServoObjectsSystem::ServoObjectsSystem(std::string botId, Actions & actions, AServoDriver::ServoType type) :
-        AActionsElement(actions), botId_(botId), type_(type)
+ServoObjectsSystem::ServoObjectsSystem(std::string botId, Actions & actions) :
+        AActionsElement(actions), botId_(botId)
 {
-    servodriver_ = AServoDriver::create(type);
+    servodriver_ = AServoDriver::create();
 }
 
 ServoObjectsSystem::~ServoObjectsSystem()
@@ -16,14 +16,24 @@ ServoObjectsSystem::~ServoObjectsSystem()
     delete servodriver_;
 }
 
+void ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed)
+{
+    servodriver_->setType(servo, type);
+    servodriver_->setPolarity(servo, inversed);
+    servodriver_->setMinPulse(servo, valueMinPulse);
+    servodriver_->setMidPulse(servo, valueMidPulse);
+    servodriver_->setMaxPulse(servo, valueMaxPulse);
+}
+
+
 
 //keep_millisec = -1 : wait moving until position
 //keep_millisec > 0 : time to wait
 //keep_millisec = 0 : continue
-void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
+void ServoObjectsSystem::deploy(int servo, int pos, int keep_millisec)
 {
     hold(servo);
-    servodriver_->setPosition(servo, percent); // percentage
+    servodriver_->setPulsePos(servo, pos); // percentage
     if (keep_millisec > 0) {
         utils::sleep_for_micros(keep_millisec * 1000); //TODO verifier la torque
         release(servo);
@@ -59,7 +69,7 @@ void ServoObjectsSystem::deploy(int servo, int percent, int keep_millisec)
         }
     }
     //int torque = getTorque(servo);
-    logger().info() << "servo=" << servo << " percent= "<< percent  << logs::end;
+    logger().info() << "servo=" << servo << " pos= "<< pos  << logs::end;
 }
 
 int ServoObjectsSystem::getTorque(int servo)
@@ -69,7 +79,12 @@ int ServoObjectsSystem::getTorque(int servo)
 
 int ServoObjectsSystem::getPos(int servo)
 {
-    return servodriver_->getPos(servo);
+    return servodriver_->getPulsePos(servo);
+}
+
+int ServoObjectsSystem::getPulseWidth(int servo)
+{
+    return servodriver_->getPulsePos(servo);
 }
 
 void ServoObjectsSystem::release(int servo)
@@ -82,32 +97,32 @@ void ServoObjectsSystem::hold(int servo)
     servodriver_->hold(servo);
 }
 
-void ServoObjectsSystem::setSpeed(int servo, int speed)
-{
-    servodriver_->setRate(servo, speed);
-}
+//void ServoObjectsSystem::setSpeed(int servo, int speed)
+//{
+//    servodriver_->setRate(servo, speed);
+//}
 
 void ServoObjectsSystem::turn(int servo, int speed_percent, int keep_millisec)
 {
-
+    logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
 }
 
-void ServoObjectsSystem::setMinPulse(int servo, int value)
-{
-    servodriver_->setMinPulse(servo, value);
-}
-void ServoObjectsSystem::setMidPulse(int servo, int value)
-{
-    servodriver_->setMidPulse(servo, value);
-}
-void ServoObjectsSystem::setMaxPulse(int servo, int value)
-{
-    servodriver_->setMaxPulse(servo, value);
-}
-void ServoObjectsSystem::setPolarity(int servo, bool inversed)
-{
-    servodriver_->setPolarity(servo, inversed);
-}
+//void ServoObjectsSystem::setMinPulse(int servo, int value)
+//{
+//    servodriver_->setMinPulse(servo, value);
+//}
+//void ServoObjectsSystem::setMidPulse(int servo, int value)
+//{
+//    servodriver_->setMidPulse(servo, value);
+//}
+//void ServoObjectsSystem::setMaxPulse(int servo, int value)
+//{
+//    servodriver_->setMaxPulse(servo, value);
+//}
+//void ServoObjectsSystem::setPolarity(int servo, bool inversed)
+//{
+//    servodriver_->setPolarity(servo, inversed);
+//}
 
 void ServoObjectsSystem::detectAll()
 {
@@ -124,6 +139,13 @@ void ServoObjectsSystem::detect()
 //        logger().error() << "ERROR AX12 CONNECTION !!!" << logs::end;
 //    }
 }
+
+
+//void ServoObjectsSystem::setType(int servo, AServoDriver::ServoType type)
+//{
+//    servodriver_->setType(servo, type);
+//}
+
 
 ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem & sOsS, string name, uint timeSpan_us):
         servoObjectsSystem_(sOsS)
@@ -150,6 +172,7 @@ void ServoObjectsSystem::move_2_servos(int servo1, int pos1, int torque1, int se
 
 void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
 {
+    //check des positions
 
 
 }
@@ -164,4 +187,6 @@ std::string ServoObjectsTimer::info() {
     oss << "ServoObjectsTimer [" << name() << "] for " << servoObjectsSystem_.id();
     return oss.str();
 }
+
+
 

@@ -19,6 +19,12 @@
  *  Limor Fried/Ladyada (Adafruit Industries).
  *
  *  BSD license, all text above must be included in any redistribution
+ *
+ *  PMXlib basé sur la VERSION 2.4.0 avec inclusion des pull requests suivantes:
+ *  https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/pull/81/commits/0e169b0f73382ce4cda1fa32d1213b627bc6bcb6
+ *  https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/pull/84/commits/f22e66bbbe172742074882356f61b9fe307e1bbf
+ *  https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/pull/87/commits/4b71091c32735c4cc930900b8a4e12d3cec59b71
+ *
  */
 #ifndef EV3_ASSERVDRIVER_ADAFRUIT_PWMServoDriver_H
 #define EV3_ASSERVDRIVER_ADAFRUIT_PWMServoDriver_H
@@ -60,8 +66,7 @@
 #define MODE1_RESTART 0x80 /**< Restart enabled */
 // MODE2 bits
 #define MODE2_OUTNE_0 0x01 /**< Active LOW output enable input */
-#define MODE2_OUTNE_1                                                          \
-  0x02 /**< Active LOW output enable input - high impedience */
+#define MODE2_OUTNE_1 0x02 /**< Active LOW output enable input - high impedience */
 #define MODE2_OUTDRV 0x04 /**< totem pole structure vs open-drain */
 #define MODE2_OCH 0x08    /**< Outputs change on ACK vs STOP */
 #define MODE2_INVRT 0x10  /**< Output logic state inverted */
@@ -78,10 +83,10 @@
  */
 class Adafruit_PWMServoDriver {
 public:
-  Adafruit_PWMServoDriver();
-  Adafruit_PWMServoDriver(const uint8_t addr);
+  //Adafruit_PWMServoDriver();
+  Adafruit_PWMServoDriver(uint i2c_bus_num, const uint8_t addr);
   //Adafruit_PWMServoDriver(const uint8_t addr), TwoWire &i2c);
-  void begin(uint8_t prescale = 0);
+  bool begin(float freq = 50.0, uint8_t prescale = 0);
   void reset();
   void sleep();
   void wakeup();

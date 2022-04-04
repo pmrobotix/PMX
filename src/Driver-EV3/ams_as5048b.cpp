@@ -41,9 +41,9 @@
 AMS_AS5048B::AMS_AS5048B(uint8_t chipAddress, uint8_t i2cNum) :
         i2c_(i2cNum, true)
 {
-    //printf("\naddr 0x%02x 0x%02x 0x%02x 0x%02x\n", AS5048B_ADDR(0, 0), AS5048B_ADDR(0, 1), AS5048B_ADDR(1, 0), AS5048B_ADDR(1, 1));
+    //printf("\naddr 0x%02x 0x%02x 0x%02x 0x%02x curent_addr=0x%02x\n", AS5048B_ADDR(0, 0), AS5048B_ADDR(0, 1), AS5048B_ADDR(1, 0), AS5048B_ADDR(1, 1), chipAddress);
 
-    connected_ = 0;
+    connected_ = false;
     _chipAddress = chipAddress;
     _debugFlag = false;
     _zeroRegVal = 0;
@@ -65,7 +65,6 @@ bool AMS_AS5048B::connected() {
     return connected_;
 }
 
-
 /**************************************************************************/
 /*!
  @brief  ping
@@ -73,16 +72,18 @@ bool AMS_AS5048B::connected() {
  @params
  none
  @returns
- none
+ 0
  */
 /**************************************************************************/
-int AMS_AS5048B::ping(){
+int AMS_AS5048B::ping() {
     return i2c_.ping();
 }
 
 void AMS_AS5048B::begin(void) {
     _clockWise = false;
-    connected_ = i2c_.begin(_chipAddress);
+    int err = i2c_.begin(_chipAddress);
+
+    if (err >= 0) connected_ = true;
     if (!connected_) return;
     usleep(10000);
     reset();
@@ -205,7 +206,8 @@ void AMS_AS5048B::doProgZero(void) {
     usleep(10000);    //chThdSleepMilliseconds(10);
 
     //read angle information (equals to 0)
-    AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG);
+    uint16_t data = 0;
+    AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG, &data);
     usleep(10000);    //chThdSleepMilliseconds(10);
 
     //enable verification
@@ -213,7 +215,8 @@ void AMS_AS5048B::doProgZero(void) {
     usleep(10000);    //chThdSleepMilliseconds(10);
 
     //read angle information (equals to 0)
-    AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG);
+    data = 0;
+    AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG, &data);
     usleep(10000);    //chThdSleepMilliseconds(10);
 
     return;
@@ -250,7 +253,10 @@ void AMS_AS5048B::addressRegW(uint8_t regVal) {
  */
 /**************************************************************************/
 uint8_t AMS_AS5048B::addressRegR(void) {
-    return AMS_AS5048B::readReg8(AS5048B_ADDR_REG);
+    uint8_t data = 0;
+    int err = AMS_AS5048B::readReg8(AS5048B_ADDR_REG, &data);
+    if (err < 0) printf("\nError AMS_AS5048B::addressRegR() readReg8 err=%d\n", err);
+    return data;
 }
 
 /**************************************************************************/
@@ -265,7 +271,9 @@ uint8_t AMS_AS5048B::addressRegR(void) {
 /**************************************************************************/
 void AMS_AS5048B::setZeroReg(void) {
     AMS_AS5048B::zeroRegW((uint16_t) 0x00); //Issue closed by @MechatronicsWorkman and @oilXander. The last sequence avoids any offset for the new Zero position
-    uint16_t newZero = AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG);
+    uint16_t newZero = 0;
+    int err = AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG, &newZero);
+    if (err < 0) printf("\nError AMS_AS5048B::setZeroReg() readReg16 err=%d\n", err);
     AMS_AS5048B::zeroRegW(newZero);
     return;
 }
@@ -297,7 +305,10 @@ void AMS_AS5048B::zeroRegW(uint16_t regVal) {
  */
 /**************************************************************************/
 uint16_t AMS_AS5048B::zeroRegR(void) {
-    return AMS_AS5048B::readReg16(AS5048B_ZEROMSB_REG);
+    uint16_t data = 0;
+    int err = AMS_AS5048B::readReg16(AS5048B_ZEROMSB_REG, &data);
+    if (err < 0) printf("\nError AMS_AS5048B::zeroRegR() readReg16 err=%d\n", err);
+    return data;
 }
 
 /**************************************************************************/
@@ -311,11 +322,17 @@ uint16_t AMS_AS5048B::zeroRegR(void) {
  */
 /**************************************************************************/
 uint16_t AMS_AS5048B::magnitudeR(void) {
-    return AMS_AS5048B::readReg16(AS5048B_MAGNMSB_REG);
+    uint16_t data = 0;
+    int err = AMS_AS5048B::readReg16(AS5048B_MAGNMSB_REG, &data);
+    if (err < 0) printf("\nError AMS_AS5048B::magnitudeR() readReg16 err=%d\n", err);
+    return data;
 }
 
 uint16_t AMS_AS5048B::angleRegR(void) {
-    return AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG);
+    uint16_t data = 0;
+    int err = AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG, &data);
+    if (err < 0) printf("\nError AMS_AS5048B::angleRegR() readReg16 err=%d\n", err);
+    return data;
 }
 
 /**************************************************************************/
@@ -329,7 +346,10 @@ uint16_t AMS_AS5048B::angleRegR(void) {
  */
 /**************************************************************************/
 uint8_t AMS_AS5048B::getAutoGain(void) {
-    return AMS_AS5048B::readReg8(AS5048B_GAIN_REG);
+    uint8_t data = 0;
+    int err = AMS_AS5048B::readReg8(AS5048B_GAIN_REG, &data);
+    if (err < 0) printf("\nError AMS_AS5048B::getAutoGain() readReg8 err=%d\n", err);
+    return data;
 }
 
 /**************************************************************************/
@@ -343,7 +363,10 @@ uint8_t AMS_AS5048B::getAutoGain(void) {
  */
 /**************************************************************************/
 uint8_t AMS_AS5048B::getDiagReg(void) {
-    return AMS_AS5048B::readReg8(AS5048B_DIAG_REG);
+    uint8_t data = 0;
+    int err = AMS_AS5048B::readReg8(AS5048B_DIAG_REG, &data);
+    if (err < 0) printf("\nError AMS_AS5048B::getDiagReg() readReg8 err=%d\n", err);
+    return data;
 }
 
 /**************************************************************************/
@@ -359,16 +382,22 @@ uint8_t AMS_AS5048B::getDiagReg(void) {
  */
 /**************************************************************************/
 float AMS_AS5048B::angleR(int unit, bool newVal) {
-    float angleRaw;
+    float angleRaw = 0;
+    uint16_t data = 0;
 
     if (newVal) {
-        if (_clockWise) {
-            angleRaw = (float) (0b11111111111111 - AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG));
+        int err = AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG, &data);
+        if (err == 0) {
+            if (_clockWise) {
+                angleRaw = (float) (0b11111111111111 - data);
+            }
+            else {
+                angleRaw = (float) data;
+            }
+
+            _lastAngleRaw = angleRaw;
         }
-        else {
-            angleRaw = (float) AMS_AS5048B::readReg16(AS5048B_ANGLMSB_REG);
-        }
-        _lastAngleRaw = angleRaw;
+        else printf("\nError AMS_AS5048B::angleR() readReg16 err=%d\n", err);
     }
     else {
         angleRaw = _lastAngleRaw;
@@ -435,59 +464,49 @@ void AMS_AS5048B::resetMovingAvgExp(void) {
 
 int AMS_AS5048B::getAllData(uint8_t *agc, uint8_t *diag, uint16_t *mag, uint16_t *raw) {
     uint8_t data[6] = { 0 };
-    int r = readRegs(AS5048B_GAIN_REG, 6, data);
+    int err = readRegs(AS5048B_GAIN_REG, 6, data);
     //printf("%02X:%02X:%02X:%02X:%02X:%02X\n", data[0], data[1], data[2], data[3], data[4], data[5]);
+    if (err < 0) return err;
     *agc = data[0];
     *diag = data[1];
     *mag = ((uint16_t) (data[2]) << 6) + (data[3] & 0x3F);
     *raw = ((uint16_t) (data[4]) << 6) + (data[5] & 0x3F);
-    return r;
+    return err;
 }
 
 /*========================================================================*/
 /*                           PRIVATE FUNCTIONS                            */
 /*========================================================================*/
 
-uint8_t AMS_AS5048B::readReg8(uint8_t reg_address) {
-    if (!connected_) return 0;
-    uint8_t readValue = 0;
-    readRegs(reg_address, 1, &readValue);
-    return readValue;
+int AMS_AS5048B::readReg8(uint8_t reg_address, uint8_t* readValue) {
+    if (!connected_) return -99;
+    int err = readRegs(reg_address, 1, readValue);
+    return err;
 }
 
-uint16_t AMS_AS5048B::readReg16(uint8_t reg_address) {
-    if (!connected_) return 0;
+int AMS_AS5048B::readReg16(uint8_t reg_address, uint16_t* readValue) {
+    if (!connected_) return -99;
     //16 bit value got from 2 8bits registers (7..0 MSB + 5..0 LSB) => 14 bits value
     uint8_t readArray[2] = { 0, 0 };
-    uint16_t readValue = 0;
-    readRegs(reg_address, 2, readArray);
-    readValue = (((uint16_t) readArray[0]) << 6);
-    readValue += (readArray[1] & 0x3F);
-    return readValue;
-}
-
-int AMS_AS5048B::readRegs(uint8_t reg_address, uint8_t len, uint8_t* data) {
-
-    if (!connected_) return -99;
-    int err = i2c_.readReg(reg_address, data, len);
-    if (err < 0) {
-        printf("\nError AMS_AS5048B i2c readRegs readReg\n");
-        //exit(0);
+    int err = readRegs(reg_address, 2, readArray);
+    if (err >= 0) {
+        *readValue = (((uint16_t) readArray[0]) << 6);
+        *readValue += (readArray[1] & 0x3F);
     }
 
     return err;
 }
 
+int AMS_AS5048B::readRegs(uint8_t reg_address, uint8_t len, uint8_t* data) {
+    if (!connected_) return -99;
+    int err = i2c_.readReg(reg_address, data, len);
+    return err;
+}
+
 int AMS_AS5048B::writeReg(uint8_t reg_address, uint8_t value) {
-
-    if (!connected_) return -1;
+    if (!connected_) return -99;
     uint8_t values[] = { value };
-
     int err = i2c_.writeReg(reg_address, values, sizeof(values));
-    if (err < 0) {
-        printf("\nError AMS_AS5048B i2c writeReg writeReg\n");
-        //exit(0);
-    }
     return err;
 }
 

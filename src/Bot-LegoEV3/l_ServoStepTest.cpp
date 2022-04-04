@@ -35,7 +35,7 @@ void L_ServoStepTest::run(int argc, char** argv)
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     //args.usage();
 
-    int pos = 0;
+    int pos = 1000;
     int step = 2;
 
     int num = 0;
@@ -50,33 +50,36 @@ void L_ServoStepTest::run(int argc, char** argv)
         logger().info() << "Arg step set " << args["step"] << ", step = " << step << logs::end;
     }
 
-    robot.actions().servosStd().setMinPulse(num, 0); ////default 600 [300 to 700]
-    robot.actions().servosStd().setMidPulse(num, 1500); //default 1500 [1300 to 1700]
-    robot.actions().servosStd().setMaxPulse(num, 3000); //default 2400 [2300 to 2700]
+//    robot.actions().servos().setMinPulse(num, 0); ////default 600 [300 to 700]
+//    robot.actions().servos().setMidPulse(num, 1500); //default 1500 [1300 to 1700]
+//    robot.actions().servos().setMaxPulse(num, 3000); //default 2400 [2300 to 2700]
+    //robot.actions().servos().setup(num, AServoDriver::SERVO_STANDARD, 0, 1500, 3000, false);
 
-    robot.actions().servosStd().hold(num);
+    robot.actions().servos().hold(num);
 
     ButtonTouch touch = BUTTON_NONE;
 
     while (touch != BUTTON_BACK_KEY) {
+        robot.actions().servos().setup(num, AServoDriver::SERVO_STANDARD, 0, 1500, 3000, false);
+
         touch = robot.actions().buttonBar().waitOneOfAllPressed();
         //logger().info() << "touch = " << touch << logs::end;
         if (touch == BUTTON_UP_KEY) {
             pos += step;
-            if (pos >= 100)
-                pos = 100;
+//            if (pos >= 100)
+//                pos = 100;
             logger().info() << "+" << step << " pos=" << pos << logs::end;
-            robot.actions().servosStd().deploy(num, pos, 0);
+            robot.actions().servos().deploy(num, pos, 0);
             //robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
 
         }
 
         if (touch == BUTTON_DOWN_KEY) {
             pos -= step;
-            if (pos <= -100)
-                pos = -100;
+//            if (pos <= -100)
+//                pos = -100;
             logger().info() << "-" << step << " pos=" << pos << logs::end;
-            robot.actions().servosStd().deploy(num, pos, 0);
+            robot.actions().servos().deploy(num, pos, 0);
             //robot.actions().servoObjects().deploy((ServoLabel) num, pos, 0);
 
         }
@@ -84,7 +87,7 @@ void L_ServoStepTest::run(int argc, char** argv)
         if (touch == BUTTON_ENTER_KEY) {
 
             //robot.actions().servoObjects().release((ServoLabel) num);
-            robot.actions().servosStd().release(num);
+            robot.actions().servos().release(num);
 
             switch(step)
             {
@@ -108,19 +111,19 @@ void L_ServoStepTest::run(int argc, char** argv)
         }
 
         if (touch == BUTTON_RIGHT_KEY) {
-            pos = 0;
-            robot.actions().servosStd().release(num);
+            pos = 1000;
+            robot.actions().servos().release(num);
             //robot.actions().servoObjects().release((ServoLabel) num);
             num = num + 1;
             if (num >= SERVO_enumTypeEnd)
                 num--;
 
-            robot.actions().servosStd().hold(num);
+            robot.actions().servos().hold(num);
 
-            robot.actions().servosStd().setMinPulse(num, 0);
-            robot.actions().servosStd().setMidPulse(num, 1500);
-            robot.actions().servosStd().setMaxPulse(num, 3000);
-            robot.actions().servosStd().setSpeed(num, 100);
+//            robot.actions().servos().setMinPulse(num, 0);
+//            robot.actions().servos().setMidPulse(num, 1500);
+//            robot.actions().servos().setMaxPulse(num, 3000);
+//            robot.actions().servos().setSpeed(num, 100);
 
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
             usleep(200000);
@@ -128,17 +131,17 @@ void L_ServoStepTest::run(int argc, char** argv)
 
         if (touch == BUTTON_LEFT_KEY) {
             pos = 0;
-            robot.actions().servosStd().release(num);
+            robot.actions().servos().release(num);
             //robot.actions().servoObjects().release((ServoLabel) num);
             num = num - 1;
             if (num < 0)
                 num++;
 
-            robot.actions().servosStd().hold(num);
+            robot.actions().servos().hold(num);
 
-            robot.actions().servosStd().setMinPulse(num, 0);
-            robot.actions().servosStd().setMidPulse(num, 1500);
-            robot.actions().servosStd().setMaxPulse(num, 3000);
+//            robot.actions().servos().setMinPulse(num, 0);
+//            robot.actions().servos().setMidPulse(num, 1500);
+//            robot.actions().servos().setMaxPulse(num, 3000);
 
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
             usleep(200000);

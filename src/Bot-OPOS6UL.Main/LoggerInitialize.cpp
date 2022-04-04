@@ -22,8 +22,10 @@ void logs::LoggerFactory::initialize()
     add("memory", new MemoryAppender());
     //add("file", new FileAppender("logAPF.csv"));
 
-    add("net", new TelemetryAppender("OPOS6UL", "pmx-vm")); //net =TELEMETRY+CONSOLE ERROR>TELEM>INFO>DEBUG
 
+    //order=ERROR>TELEM>WARN>INFO>DEBUG
+    //net =TELEMETRY+CONSOLE
+    add("net", new TelemetryAppender("OPOS6UL", "pmx-vm"));
     add(logs::Level::ERROR, "", "net"); //TELEMETRY + CONSOLE
 
     //INFO

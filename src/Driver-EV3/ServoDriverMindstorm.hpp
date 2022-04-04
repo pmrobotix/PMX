@@ -13,7 +13,7 @@ class ServoDriverMindstorm: public AServoDriver, device_extend
 private:
 
     /*!
-     * \brief Retourne le \ref Logger associé à la classe \ref ServoDriver(EV3).
+     * \brief Retourne le \ref Logger associé à la classe \ref ServoDriverMindstorm(EV3).
      */
     static inline const logs::Logger & logger()
     {
@@ -66,6 +66,7 @@ public:
     void setPolarity(int servo, bool inversed);
 
     int getTorque(int servo);
+    void setType(int servo, AServoDriver::ServoType);
 
     //long constrain(long value, long valeurMin, long valeurMax);
     //bool testIf(long value, long valeurMin, long valeurMax);

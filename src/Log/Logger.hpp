@@ -294,12 +294,12 @@ public:
     }
 
     /*!
-     * \brief Trace un message de niveau WARN.
+     * \brief Trace un message de niveau TELEM.
      * \param message
-     *        Message de référence.
+     *        Message de référence en json.
      */
-    inline void telemetry(const std::string &message) const {
-        writeMessage(Level::TELEM, message);
+    inline void telemetry(const std::string &message_json) const {
+        writeMessage(Level::TELEM, message_json);
     }
 
     /*!

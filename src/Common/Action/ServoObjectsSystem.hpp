@@ -28,22 +28,22 @@ private:
      */
     std::string botId_;
 
-    /*!
-     * \brief type de servo.
-     */
-    AServoDriver::ServoType type_;
-
 public:
 
     /*!
      * \brief Constructor.
      */
-    ServoObjectsSystem(std::string botId, Actions & actions, AServoDriver::ServoType type);
+    ServoObjectsSystem(std::string botId, Actions & actions);
 
     /*!
      * \brief Destructor.
      */
     ~ServoObjectsSystem();
+
+    /*!
+     * \brief setup 1 servo with type, min, mid, max, inv values.
+     */
+    void setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed = false);
 
     /*!
      * \brief move 1 servo.
@@ -60,14 +60,10 @@ public:
     void turn(int servo, int speed, int keep_millisec = 0);
     void release(int servo);
     void hold(int servo);
-    void setSpeed(int servo, int speed);
-    void setMinPulse(int servo, int value);
-    void setMidPulse(int servo, int value);
-    void setMaxPulse(int servo, int value);
-    void setPolarity(int servo, bool inversed = false);
+
     int getTorque(int servo);
     int getPos(int servo);
-
+    int getPulseWidth(int servo);
     void detectAll();
     void detect();
 
@@ -75,6 +71,12 @@ public:
         return botId_;
     }
 
+//    void setType(AServoDriver::ServoType type);
+    //void setSpeed(int servo, int speed);
+//    void setMinPulse(int servo, int value);
+//    void setMidPulse(int servo, int value);
+//    void setMaxPulse(int servo, int value);
+    //void setPolarity(int servo, bool inversed = false);
 };
 
 /*!

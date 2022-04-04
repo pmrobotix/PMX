@@ -4,8 +4,9 @@
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "Adafruit_PWMServoDriver.hpp"
+#include "CCAx12Adc.hpp"
 
-#define NB_SERVO 8
+#define NB_SERVO_STD 16
 
 using namespace std;
 
@@ -21,14 +22,14 @@ private:
     }
 
     Adafruit_PWMServoDriver pwm_;
-    int servo_current_usec_[NB_SERVO];
-    int servo_min_[NB_SERVO];
-    int servo_mid_[NB_SERVO];
-    int servo_max_[NB_SERVO];
-    bool servo_inv_[NB_SERVO];
-    int servo_rate_[NB_SERVO];
 
-protected:
+    int servo_current_usec_[NB_SERVO_STD];
+    int servo_min_[NB_SERVO_STD]; //minPulseWidth
+    int servo_mid_[NB_SERVO_STD]; //midPulseWidth
+    int servo_max_[NB_SERVO_STD]; //maxPulseWidth
+    bool servo_inv_[NB_SERVO_STD];
+    int servo_rate_[NB_SERVO_STD];
+    ServoType servo_type_[NB_SERVO_STD];
 
 public:
     /*!
@@ -44,24 +45,28 @@ public:
 
     void hold(int servo);
 
-    //pos : (from 500us to 2500us)
-    void setPosition(int servo, int microseconds);
-    void setPositionWithRate(int servo, int microsec);
+    /*!
+     * \brief Position du servo en indiquant le pulseWidth en picroseconds.
+     * pulseWidth : (from 500us to 2500us).
+     */
+    void setPulsePos(int servo, int pulse_us);
+    /*!
+     * \brief Position du servo en indiquant le pulseWidth en picroseconds.
+     * Prend en compte la vitesse desirée.
+     * pulseWidth : (from 500us to 2500us)
+     */
+    void setPulsePosWithRate(int servo, int pulse_us);
 
-    void release(int servo);
+    /*!
+     * \brief retourne la Position du servo, le pulseWidth en picroseconds.
+     * pulseWidth : (from 500us to 2500us)
+     * \return pulsewidth du servo (from 0us to 3000us); negatif si erreur
+     */
+    int getPulsePos(int servo);
 
     //0 = deactivate = max speed
     //165ms is the minimum for std servo
     void setRate(int servo, int millisec);
-
-    void turn(int servo, int speed);
-
-    int getMoving(int servo);
-
-    //pos : (from 500us to 2500us)
-    int getPos(int servo);
-
-    int ping(int);
 
     void setMinPulse(int servo, int value = 600); //default 600 [0 to 1000]
 
@@ -71,7 +76,17 @@ public:
 
     void setPolarity(int servo, bool inverted);
 
+    void setType(int servo, ServoType type);
+
+    void release(int servo);
+
+    void turn(int servo, int speed);
+
+    int getMoving(int servo);
+
     int getTorque(int servo);
+
+    int ping(int);
 
 };
 

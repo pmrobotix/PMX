@@ -5,7 +5,7 @@
 #ifndef EV3_ASSERVDRIVER_AMS_AS5048B_H_
 #define EV3_ASSERVDRIVER_AMS_AS5048B_H_
 
-// Address depending on the two DIL switches
+// Address depending on the two DIL switches adress=[0x43 0x42 0x41 0x40]
 #define AS5048B_ADDR(a1,a2)  (uint8_t)(0x40 | ( !a1 ? 0x2 : 0 ) | ( !a2 ? 0x1 : 0 ))
 
 // Default addresses for AS5048B
@@ -91,8 +91,8 @@ private:
     int _movingAvgCountLoop;
 
     //methods
-    uint8_t readReg8(uint8_t address);
-    uint16_t readReg16(uint8_t address); //16 bit value got from 2x8bits registers (7..0 MSB + 5..0 LSB) => 14 bits value
+    int readReg8(uint8_t address, uint8_t* data);
+    int readReg16(uint8_t address, uint16_t* data); //16 bit value got from 2x8bits registers (7..0 MSB + 5..0 LSB) => 14 bits value
     int readRegs(uint8_t address, uint8_t len, uint8_t* data);
     int writeReg(uint8_t address, uint8_t value);
     float convertAngle(int unit, float angle); //RAW, TRN, DEG, RAD, GRAD, MOA, SOA, MILNATO, MILSE, MILRU

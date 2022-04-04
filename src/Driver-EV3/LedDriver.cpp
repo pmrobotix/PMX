@@ -4,6 +4,7 @@
 #include <string>
 
 #include "../Log/Logger.hpp"
+#include "../Common/Utils/json.hpp"
 #include "ev3dev.h"
 
 using namespace std;
@@ -26,9 +27,11 @@ LedDriver::LedDriver(int nb)
 
     if (volts <= 7.6 && volts >= 7.4) {
         setBytes(0xFF, LED_ORANGE);
+        logger().error() << "LOW VOLTAGE => V=" << volts << " A=" << amps << logs::end;
     }
     if (volts < 7.4) {
         setBytes(0xFF, LED_RED);
+        logger().error() << "LOW VOLTAGE => V=" << volts << " A=" << amps << logs::end;
     }
     if (volts > 7.6) {
         setBytes(0xFF, LED_GREEN);
@@ -100,6 +103,12 @@ void LedDriver::setBit(int index, LedColor color)
             break;
         }
     }
+
+    //telemetry log
+    nlohmann::json j;
+    j["pos"] = index;
+    j["color"] = color;
+    logger().telemetry(j.dump());
 }
 
 void LedDriver::setBytes(uint hex, LedColor color)

@@ -7,11 +7,21 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
         ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot)
 , lcd_(botId, *this)
 , servoUsingMotor_(*this)
-, servos_std_(botId, *this, AServoDriver::SERVO_STANDARD)
+, servos_(botId, *this)
 {
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
 
     releaseAll();
+
+    servos().setup(SERVO_1, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+
+
+
+//    servos().setType(SERVO_1, AServoDriver::SERVO_STANDARD)
+//    servos().setMinPulse(SERVO_1, 300); ////default 600 [300 to 700]
+//    servos().setMidPulse(SERVO_1, 1500); //default 1500 [1300 to 1700]
+//    servos().setMaxPulse(SERVO_1, 2700); //default 2400 [2300 to 2700]
+
 /*
     sensors_.addConfigFront(true, false, true);
     sensors_.addConfigBack(true, false, true);
