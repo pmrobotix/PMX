@@ -47,12 +47,9 @@ private:
     Sensors sensors_;
 
     /*!
-     * \brief objets avec servomotors.
+     * \brief objets avec servomotors ax12 et std.
      */
-
-    //new
-    ServoObjectsSystem servos_ax12_;
-    ServoObjectsSystem servos_std_;
+    ServoObjectsSystem servos_;
 
 public:
 
@@ -130,12 +127,12 @@ public:
         return sensors_;
     }
 
-    ServoObjectsSystem& servosAx12() {
-        return servos_ax12_;
-    }
-
-    ServoObjectsSystem& servosStd() {
-        return servos_std_;
+    /*!
+     * \brief Cette methode retourne l'objet servos.
+     * \return servos_.
+     */
+    ServoObjectsSystem& servos() {
+        return servos_;
     }
 
     void stopExtra() {
@@ -153,14 +150,14 @@ public:
     //Actions 2021
     //--------------------------------------------------------------
     void releaseAll() {
-        servosAx12().release(51);
-        servosAx12().release(5);
-        servosAx12().release(7);
-        servosAx12().release(4);
-        servosAx12().release(100);
-        servosAx12().release(102);
-        servosAx12().release(61);
-        servosAx12().release(63);
+//        servosAx12().release(51);
+//        servosAx12().release(5);
+//        servosAx12().release(7);
+//        servosAx12().release(4);
+//        servosAx12().release(100);
+//        servosAx12().release(102);
+//        servosAx12().release(61);
+//        servosAx12().release(63);
 
 //        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++) {
 //            ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
@@ -197,83 +194,83 @@ public:
     }
 
     void ax12_drapeaux_init() {
-        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
-        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 806, -1);
+//        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
+//        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 806, -1);
     }
     void ax12_drapeaux() {
-        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
-        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 204, -1);
+//        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
+//        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 204, -1);
     }
 
     void ax12_bras_droit_init(int keep = 0, int speed = 1024) {
-        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
-        servosAx12().deploy(AX12_SERVO_BRAS_D, 815, keep);
+//        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
+//        servosAx12().deploy(AX12_SERVO_BRAS_D, 815, keep);
     }
     void ax12_bras_droit(int keep = 0, int speed = 1024) {
-        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
-        servosAx12().deploy(AX12_SERVO_BRAS_D, 480, keep);
+//        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
+//        servosAx12().deploy(AX12_SERVO_BRAS_D, 480, keep);
     }
     void ax12_bras_droit_fanion(int keep = 0, int speed = 1024) {
-        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
-        servosAx12().deploy(AX12_SERVO_BRAS_D, 396, keep);
+//        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
+//        servosAx12().deploy(AX12_SERVO_BRAS_D, 396, keep);
     }
 
     void ax12_bras_gauche_init(int keep = 0, int speed = 1024) {
-        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
-        servosAx12().deploy(AX12_SERVO_BRAS_G, 205, keep);
+//        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
+//        servosAx12().deploy(AX12_SERVO_BRAS_G, 205, keep);
     }
     void ax12_bras_gauche(int keep = 0, int speed = 1024) {
-        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
-        servosAx12().deploy(AX12_SERVO_BRAS_G, 512, keep);
+//        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
+//        servosAx12().deploy(AX12_SERVO_BRAS_G, 512, keep);
     }
     void ax12_bras_gauche_fanion(int keep = 0, int speed = 1024) {
-        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
-        servosAx12().deploy(AX12_SERVO_BRAS_G, 598, keep);
+//        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
+//        servosAx12().deploy(AX12_SERVO_BRAS_G, 598, keep);
     }
 
     void ax12_elevator_up(bool keep = true) {
-        int high = 3865;
-        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1023);
-        servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
-        while (servosAx12().getPos(AX12_SERVO_ASCENSEUR) > (high - 5)) {
-            servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
-        }
-        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
+//        int high = 3865;
+//        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1023);
+//        servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
+//        while (servosAx12().getPos(AX12_SERVO_ASCENSEUR) > (high - 5)) {
+//            servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
+//        }
+//        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
     }
     void ax12_elevator_down(bool keep = true) {
-        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1000);
-        servosAx12().deploy(AX12_SERVO_ASCENSEUR, 553, -1);
-        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
+//        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1000);
+//        servosAx12().deploy(AX12_SERVO_ASCENSEUR, 553, -1);
+//        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
     }
 
     void ax12_rotation_black_side(bool keep = true) {
-        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
-        servosAx12().deploy(AX12_SERVO_ROTATION, 3905, -1);
-        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
+//        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
+//        servosAx12().deploy(AX12_SERVO_ROTATION, 3905, -1);
+//        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
     }
 
     void ax12_rotation_blue_side(bool keep = true) {
-        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
-        servosAx12().deploy(AX12_SERVO_ROTATION, 123, -1);
-        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
+//        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
+//        servosAx12().deploy(AX12_SERVO_ROTATION, 123, -1);
+//        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
     }
 
     void ax12_pince_a_droite(bool keep = true) {
-        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
-        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 889, -1);
-        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+//        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
+//        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 889, -1);
+//        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
     }
 
     void ax12_pince_a_gauche(bool keep = true) {
-        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
-        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 108, -1);
-        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+//        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
+//        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 108, -1);
+//        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
     }
 
     void ax12_pince_au_centre(bool keep = true) {
-        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
-        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 486, -1);
-        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+//        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
+//        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 486, -1);
+//        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
     }
     /*
      void ax12_init()

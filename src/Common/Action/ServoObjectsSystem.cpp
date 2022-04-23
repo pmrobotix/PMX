@@ -79,7 +79,7 @@ int ServoObjectsSystem::getTorque(int servo)
 
 int ServoObjectsSystem::getPos(int servo)
 {
-    return servodriver_->getPulsePos(servo);
+    //return servodriver_->getPulsePos(servo);
 }
 
 int ServoObjectsSystem::getPulseWidth(int servo)
@@ -97,10 +97,10 @@ void ServoObjectsSystem::hold(int servo)
     servodriver_->hold(servo);
 }
 
-//void ServoObjectsSystem::setSpeed(int servo, int speed)
-//{
-//    servodriver_->setRate(servo, speed);
-//}
+void ServoObjectsSystem::setSpeed(int servo, int speed)
+{
+    servodriver_->setRate(servo, speed);
+}
 
 void ServoObjectsSystem::turn(int servo, int speed_percent, int keep_millisec)
 {

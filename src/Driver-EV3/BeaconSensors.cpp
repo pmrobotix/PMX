@@ -9,35 +9,27 @@
 #include "../Log/Logger.hpp"
 
 BeaconSensors::BeaconSensors(int bus, unsigned char i2c_addr) :
-        i2c_BeaconSensors_(bus), connected_BeaconSensors_(false) //, shift_(0)
+        i2c_BeaconSensors_(bus, false), connected_BeaconSensors_(false)
 {
     logger().debug() << "BeaconSensors(" << reinterpret_cast<void*>(i2c_addr) << ") : BeaconSensors init" << logs::end;
+    i2c_aAddr_ = i2c_addr;
 
-    //logger().error() << "BeaconSensors(" << reinterpret_cast<void*>(i2c_addr) << ") : BeaconSensors testing...." << logs::end;
+}
 
-    //i2c_address_ = i2c_addr;
-    i2c_BeaconSensors_.setSlaveAddr(i2c_addr);
-    connected_BeaconSensors_ = true;
-/*
-    while(1)
-    {
-        int nbofbot = readRegByte(NUMOFBOTS_BeaconSensors);
-            logger().error() << "BeaconSensors nbofbot=" << nbofbot << logs::end;
-    }*/
-    /*
-    //read shift
-    int nbofbot = readRegByte(NUMOFBOTS_BeaconSensors);
-    logger().error() << "BeaconSensors nbofbot=" << nbofbot << logs::end;
-    if (nbofbot >= 250) {
-        logger().error() << "BeaconSensors(" << reinterpret_cast<void*>(i2c_addr) << ") : BeaconSensors NOT CONNECTED !" << logs::end;
+
+bool BeaconSensors::connect() {
+    if (connected_BeaconSensors_)
+            return connected_BeaconSensors_;
+
+    //open i2c and setslave
+    int err = i2c_BeaconSensors_.begin(i2c_aAddr_);
+    if (err >= 0) connected_BeaconSensors_ = true;
+    else {
         connected_BeaconSensors_ = false;
+        logger().error() << "BeaconSensors::begin() : NOT CONNECTED!" << logs::end;
     }
-    else if ((nbofbot >= 0) && (nbofbot <= 10))
-    {
-        connected_BeaconSensors_ = true;
-        logger().debug() << "Beacon available" << logs::end;
 
-    }*/
+    return connected_BeaconSensors_;
 }
 
 Registers BeaconSensors::getData() {
@@ -45,9 +37,8 @@ Registers BeaconSensors::getData() {
     Registers regs;
 
     int err = readRegnBytes(DATA_BeaconSensors, buf, 18);
-
     if (err < 0) {
-        logger().error() << "BeaconSensors : readRegnBytes ERROR !" << logs::end;
+        logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
         regs.flags = 0xFF; //ERROR
         return regs;
     }
@@ -87,7 +78,7 @@ Registers BeaconSensors::getData() {
 
     err = readRegnBytes(24, buf, 8);
     if (err < 0) {
-        logger().error() << "BeaconSensors : readRegnBytes ERROR !" << logs::end;
+        logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
         regs.flags = 0xFF; //ERROR
         return regs;
     }
@@ -105,7 +96,7 @@ Registers BeaconSensors::getData() {
 
     err = readRegnBytes(32, buf, 8);
     if (err < 0) {
-        logger().error() << "BeaconSensors : readRegnBytes ERROR !" << logs::end;
+        logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
         regs.flags = 0xFF; //ERROR
         return regs;
     }
@@ -122,7 +113,7 @@ Registers BeaconSensors::getData() {
 
     err = readRegnBytes(40, buf, 8);
     if (err < 0) {
-        logger().error() << "BeaconSensors : readRegnBytes ERROR !" << logs::end;
+        logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
         regs.flags = 0xFF; //ERROR
         return regs;
     }
@@ -139,7 +130,7 @@ Registers BeaconSensors::getData() {
 
     err = readRegnBytes(48, buf, 8);
     if (err < 0) {
-        logger().error() << "BeaconSensors : readRegnBytes ERROR !" << logs::end;
+        logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
         regs.flags = 0xFF; //ERROR
         return regs;
     }
@@ -156,7 +147,7 @@ Registers BeaconSensors::getData() {
 
     err = readRegnBytes(56, buf, 8);
     if (err < 0) {
-        logger().error() << "BeaconSensors : readRegnBytes ERROR !" << logs::end;
+        logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
         regs.flags = 0xFF; //ERROR
         return regs;
     }
@@ -175,10 +166,10 @@ Registers BeaconSensors::getData() {
 int BeaconSensors::ScanBus() {
     logger().debug() << "I2C Scanner starting... " << logs::end;
     int nDevices;
-    unsigned char error, address;
+    unsigned char error, address, data;
     nDevices = 0;
     for (address = 0; address < 127; address++) {
-        error = readAddr(address);
+        error = readAddr(address, &data); //TODO TO BE TESTED !!
 
         if (error == 0) {
 
@@ -204,17 +195,34 @@ int BeaconSensors::ScanBus() {
     }
 }
 
-int BeaconSensors::readRegnBytes(unsigned char command, unsigned char *aData, uint nb) {
-    return (int) i2c_BeaconSensors_.readReg(command, aData, nb + 1);
+int BeaconSensors::readRegnBytes(uint8_t command, uint8_t *aData, uint length_data) {
+    //return (int) i2c_BeaconSensors_.readReg(command, aData, nb + 1);
+    int err = i2c_BeaconSensors_.readReg(command, aData, length_data);
+    return err;
 }
 
-unsigned char BeaconSensors::readAddr(unsigned char address) { //TODO a modifier
-    return (unsigned char) i2c_BeaconSensors_.read(&address, 0);
+int BeaconSensors::readAddr(uint8_t address, uint8_t * data) {
+    //return (unsigned char) i2c_BeaconSensors_.read(&address, 0);
+
+    //return i2c_BeaconSensors_.readReg(address, 0, 0);
+/*
+    int err = i2c_BeaconSensors_.write(address);
+    if (err < 0)
+    {
+        logger().error() << "readAddr() write ERROR " << err << logs::end;
+        return err;
+    }
+    err = i2c_BeaconSensors_.read(data);
+    if (err < 0)
+        logger().error() << "readAddr() read ERROR " << err << logs::end;
+    return err * 100;*/
+
 }
 
-unsigned char BeaconSensors::readRegByte(unsigned char command) {
-    return (unsigned char) i2c_BeaconSensors_.readRegByte(command);
-}
+//unsigned char BeaconSensors::readRegByte(unsigned char command) {
+//    return (unsigned char) i2c_BeaconSensors_.readRegByte(command);
+//
+//}
 /*
  int BeaconSensors::readReg2Bytes(unsigned char command, unsigned char *aData)
  {

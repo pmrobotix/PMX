@@ -124,7 +124,7 @@ public:
      * \brief Verifie un timer (après avoir effectué un SetTimer).
      * \return 1 si le timer est dépassé.
      */
-    int waitTimer(bool debug = false);
+    int waitTimer(int delay_us = 0, bool debug = false);
     //int waitTimer_OLD();
 
     /*!

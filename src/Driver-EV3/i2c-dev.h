@@ -147,7 +147,8 @@ union i2c_smbus_data {
 
 #define I2C_RDWR	0x0707	/* Combined R/W transfer (one STOP only) */
 
-#define I2C_PEC		0x0708	/* != 0 to use PEC with SMBus */
+//#define I2C_PEC		0x0708	/* != 0 to use PEC with SMBus */
+#define I2C_PEC               0x00    /* == 0 to NOT use PEC with SMBus */
 #define I2C_SMBUS	0x0720	/* SMBus transfer */
 
 /* This is the structure as used in the I2C_SMBUS ioctl call */

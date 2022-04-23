@@ -25,14 +25,13 @@ void O_AsservEsialTest::configureConsoleArgs(int argc, char** argv) // a appeler
     robot.parseConsoleArgs(argc, argv);
 }
 
-void O_AsservEsialTest::run(int argc, char** argv)
-{
+void O_AsservEsialTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     //OPOS6UL_AsservExtended &asserv = robot.asserv();
-    long left = 0;
-    long right = 0;
+    int left = 0;
+    int right = 0;
     int nb = 0;
     int step = 0;
 
@@ -50,39 +49,51 @@ void O_AsservEsialTest::run(int argc, char** argv)
 
     robot.svgPrintPosition();
 
-
-    robot.asserv().doLineAbs(200);
-    robot.svgPrintPosition();
-    robot.asserv().doRelativeRotateBy(20);
-    robot.svgPrintPosition();
-    robot.asserv().doLineAbs(100);
-    robot.svgPrintPosition();
-    robot.asserv().doFaceTo(step, 1200);
-    robot.svgPrintPosition();
-    robot.asserv().doLineAbs(300);
-    robot.svgPrintPosition();
-    robot.asserv().gotoXY(1000,1000);
-    robot.svgPrintPosition();
-    robot.asserv().doAbsoluteRotateTo(-45);
-    robot.svgPrintPosition();
-    robot.asserv().gotoReverse(1200, 1400);
-    robot.svgPrintPosition();
-    utils::sleep_for_secs(2);
-/*
-    //OPOS6UL_AsservExtended asserv = robot.asserv();
-    EncoderControl extEncoders = asserv.base()->extEncoders();
+    /*
+     robot.asserv().doLineAbs(200);
+     robot.svgPrintPosition();
+     robot.asserv().doRelativeRotateBy(20);
+     robot.svgPrintPosition();
+     robot.asserv().doLineAbs(100);
+     robot.svgPrintPosition();
+     robot.asserv().doFaceTo(step, 1200);
+     robot.svgPrintPosition();
+     robot.asserv().doLineAbs(300);
+     robot.svgPrintPosition();
+     robot.asserv().gotoXY(1000,1000);
+     robot.svgPrintPosition();
+     robot.asserv().doAbsoluteRotateTo(-45);
+     robot.svgPrintPosition();
+     robot.asserv().gotoReverse(1200, 1400);
+     robot.svgPrintPosition();
+     utils::sleep_for_secs(2);
+     */
+//    OPOS6UL_AsservExtended asserv = robot.asserv();
+//    EncoderControl extEncoders = asserv.base()->extEncoders();
     chrono.start();
 
     if (step == 0) {
         //set position
-        logger().info() << "set position..."<< logs::end;
+        logger().info() << "set position..." << logs::end;
         robot.asserv().setPositionAndColor(300, 500, 0.0, (robot.getMyColor() != PMXYELLOW));
 
         while (1) {
 
-            logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ;  x="
-                    << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
-                    << asserv.pos_getThetaInDegree() << logs::end;
+            robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
+            RobotPosition p = robot.asserv().pos_getPosition();
+            logger().info() << "time= "
+                    << robot.chrono().getElapsedTimeInMilliSec()
+                    << "ms ; left= "
+                    << left
+                    << " ; right= "
+                    << right
+                    << " x="
+                    << p.x
+                    << " y="
+                    << p.y
+                    << " deg="
+                    << p.theta * 180.0 / M_PI
+                    << logs::end;
             utils::sleep_for_micros(100000);
             nb++;
         }
@@ -93,12 +104,23 @@ void O_AsservEsialTest::run(int argc, char** argv)
         //test1 les codeurs sur 1m
         while (1) {
 
-            left = extEncoders.getLeftEncoder(); //TODO a coder pour asserv externe !
-            right = extEncoders.getRightEncoder();//TODO a coder pour asserv externe !
+            robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
+            RobotPosition p = robot.asserv().pos_getPosition();
+            logger().info() << nb
+                    << " time= "
+                    << robot.chrono().getElapsedTimeInMilliSec()
+                    << "ms ; left(2)= "
+                    << left
+                    << " ; right(1)= "
+                    << right
+                    << "\tx="
+                    << p.x
+                    << " y="
+                    << p.y
+                    << " deg="
+                    << p.theta * 180.0 / M_PI
 
-            logger().info() << nb << " time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left
-                    << " ; right= " << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
-                    << asserv.pos_getThetaInDegree() << logs::end;
+                    << logs::end;
             utils::sleep_for_micros(100000);
             nb++;
         }
@@ -108,19 +130,27 @@ void O_AsservEsialTest::run(int argc, char** argv)
         logger().info() << "ETAPE 2 : TEST MOTEURS ET CODEURS" << logs::end;
         //test2 moteurs et codeurs dans le bon sens
         while (1) {
-            asserv.base()->motors().runMotorLeft(25, 0);
-            asserv.base()->motors().runMotorRight(25, 0);
+            robot.asserv().runMotorLeft(25, 0);
+            robot.asserv().runMotorRight(25, 0);
 
-            left = extEncoders.getLeftEncoder();
-            right = extEncoders.getRightEncoder();
-
-            logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-                    << right << " x=" << asserv.pos_getX_mm() << " y=" << asserv.pos_getY_mm() << " a="
-                    << asserv.pos_getThetaInDegree() << logs::end;
-            utils::sleep_for_micros(100000);
+            robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
+            RobotPosition p = robot.asserv().pos_getPosition();
+            logger().info() << "time= "
+                    << robot.chrono().getElapsedTimeInMilliSec()
+                    << "ms ; left= "
+                    << left
+                    << " ; right= "
+                    << right
+                    << " x="
+                    << p.x
+                    << " y="
+                    << p.y
+                    << " deg="
+                    << p.theta * 180.0 / M_PI
+                    << logs::end;
+            usleep(100000);
             nb++;
-            if (nb > 50)
-                break;
+            if (nb > 50) break;
         }
     }
     //test2 quadramp desactivé on regle le P
@@ -151,7 +181,7 @@ void O_AsservEsialTest::run(int argc, char** argv)
 
     }
     //test4 quadramp
-*/
+
 //    logger().info() << "END t= " << chrono.getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= " << right
 //            << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree()
 //            << logs::end;

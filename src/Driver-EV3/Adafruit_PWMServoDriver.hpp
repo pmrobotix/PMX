@@ -86,7 +86,7 @@ public:
   //Adafruit_PWMServoDriver();
   Adafruit_PWMServoDriver(uint i2c_bus_num, const uint8_t addr);
   //Adafruit_PWMServoDriver(const uint8_t addr), TwoWire &i2c);
-  bool begin(float freq = 50.0, uint8_t prescale = 0);
+  bool connect(float freq = 50.0, uint8_t prescale = 0);
   void reset();
   void sleep();
   void wakeup();
@@ -115,7 +115,7 @@ private:
   uint8_t _i2caddr;
   //TwoWire *_i2c;
   Ev3i2c i2c_;
-  int _connected_;
+  bool connected_;
 
   uint32_t _oscillator_freq;
   uint8_t read8(uint8_t addr);

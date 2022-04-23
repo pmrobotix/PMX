@@ -28,6 +28,8 @@ AsservEsialR::AsservEsialR(Robot * robot) :
 {
     robot_ = robot; //Reference vers le robot
 
+    asservdriver = AAsservDriver::create(robot_->getID());
+
     periodNb_ = 0;
     loopDelayInMillisec_ = 0;
     pathStatus_ = TRAJ_OK;
@@ -41,54 +43,54 @@ AsservEsialR::AsservEsialR(Robot * robot) :
     commandM_ = NULL;
     run_ = false;
 
-    //première ligne du fichier csv
-    loggerFile().debug() << "nb " << ", usec" << ", time-last" << ", work time" << ", odo_->getDeltaDist()"
-            << ", motorC_->getVitesseG()" << ", motorC_->getVitesseD()" << ", xmm " << ", ymm " << ", degrees"
+    last_ = 0;
 
+    //première ligne du fichier csv
+    loggerFile().debug() << "nb "
+            << ", usec"
+            << ", time-last"
+            << ", work_time"
+            << ", odo_getDeltaDist"
+            << ", getVitesseG"
+            << ", getVitesseD"
+            << ", xmm "
+            << ", ymm "
+            << ", degrees"
             << logs::end;
 
 }
 
-void AsservEsialR::startAsserv(int freqHz)
-{
+void AsservEsialR::startAsserv(int freqHz) {
     logger().debug() << "startAsserv..." << logs::end;
     setSamplingFrequency(freqHz); //Hz
 
-    //create motion control task thread
+    //create motion control task thread execute function
     start("AsservEsialR", 2);
 }
-void AsservEsialR::initAsserv()
-{
+void AsservEsialR::initAsserv() {
     run_ = false;
 
 #if CONFIG_MOTORCTRL_BOTMOTORS
-    if (codeurs_ == NULL)
-        codeurs_ = new BotCodeurs(robot_);
-    if (motorC_ == NULL)
-        motorC_ = new BotMotors(robot_); //CONFIG_MOTORCTRL_BOTMOTORS à activer dans eclipse pour la config de l'asserv
-    if (odo_ == NULL)
-        odo_ = new Odometrie(codeurs_);
-    if (consignC_ == NULL)
-        consignC_ = new ConsignController(odo_, motorC_);
-    if (commandM_ == NULL)
-        commandM_ = new CommandManager(50, consignC_, odo_);
+    if (codeurs_ == NULL) codeurs_ = new BotCodeurs(robot_);
+    if (motorC_ == NULL) motorC_ = new BotMotors(robot_); //CONFIG_MOTORCTRL_BOTMOTORS à activer dans eclipse pour la config de l'asserv
+    if (odo_ == NULL) odo_ = new Odometrie(codeurs_);
+    if (consignC_ == NULL) consignC_ = new ConsignController(odo_, motorC_);
+    if (commandM_ == NULL) commandM_ = new CommandManager(50, consignC_, odo_);
     logger().debug() << "objects created..." << logs::end;
     run_ = true;
 #endif
 
 }
 
-void  AsservEsialR::endWhatTodo(){
+void AsservEsialR::endWhatTodo() {
     stopAsserv();
 }
 
-void AsservEsialR::stopAsserv()
-{
+void AsservEsialR::stopAsserv() {
     //On arrête le traitement de l'asserv
-    run_ = false; //afin de pouvoir supprimer les objets
+    run_ = false; //arret de la boucle d'asserv afin de pouvoir supprimer les objets
 
-    utils::sleep_for_micros(10000); //attndre la fin de la boucle d'asserv ?
-    //this->cancel();
+    utils::sleep_for_micros(10000);
 
     // On détruit tout les objets
     delete odo_;
@@ -108,8 +110,7 @@ void AsservEsialR::stopAsserv()
 
 }
 
-void AsservEsialR::resetAsserv()
-{
+void AsservEsialR::resetAsserv() {
     //printf("Réinitialisation de l'asserv...\r\n");
     logger().debug() << "Réinitialisation de l'asserv..." << logs::end;
     stopAsserv();
@@ -117,8 +118,171 @@ void AsservEsialR::resetAsserv()
     initAsserv();
 }
 
-void AsservEsialR::execute()
-{
+//void AsservEsialR::onTimer(utils::Chronometer chrono) {
+//    logs::Logger::LoggerBuffer info = logger().info();
+//    //info << "onTimer... every " << loopDelayInMillisec_ << " " << chrono.getElapsedTimeInMicroSec() << logs::flush;
+//
+//    RobotPosition p;
+//    unsigned long long current = 0;
+//
+//    if (run_) {
+//        current = chrono.getElapsedTimeInMicroSec();
+//        periodNb_++;
+//        //info << "loop_not_finished_=" << loop_not_finished_ << " " << logs::flush;
+//
+////        if (loop_not_finished_) {
+////            info << "OVERLAPPING !!" << logs::flush;
+////        }else
+////        {
+////            loop_not_finished_ = true;
+////        }
+//
+//        utils::Thread::sleep_for_micros(20000);
+//        long end = chrono.getElapsedTimeInMicroSec();
+////        info << periodNb_
+////                <<" last_=" << last_
+////                <<" current=" << current
+////                <<" jobtime=" << (long) current - last_
+////                <<" tasktime=" << end - current
+////                << logs::flush;
+////
+//        if ((end - current) > (loopDelayInMillisec_ * 1000 )) {
+//            info << "OVERLAPPING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << logs::flush;
+//
+//        }
+//        //loop_not_finished_ = false;
+//        last_ = current;
+//    }
+//
+//}
+//
+//void AsservEsialR::onTimer(utils::Chronometer chrono) {
+//    logs::Logger::LoggerBuffer info = logger().info();
+//    logs::Logger::LoggerBuffer debug = logger().debug();
+//
+//    info << "AsservEsialR::onTimer... every " << loopDelayInMillisec_ << " " << chrono.getElapsedTimeInMicroSec() <<  logs::flush;
+//
+//    logs::Logger::LoggerBuffer debugfile = loggerFile().debug();
+//
+//    RobotPosition p;
+//    unsigned long long current = 0;
+//    bool loop_finished = false;
+//
+//    if (run_) {
+//        periodNb_++;
+//        if (!loop_finished)
+//        {
+//            info << "OVERLAPPING !!" << logs::flush;
+//        }
+///*
+//        current = chrono.getElapsedTimeInMicroSec();
+//        odo_->refresh();
+//        p = odo_GetPosition(); //maj de la position avec l'odo
+//
+//        if (!Config::disableAsserv) {
+//            consignC_->perform();
+//            commandM_->perform();
+//        }
+//*/
+//
+//        //svg log
+//        //if (nb % 4 == 0) {
+////                        info << periodNb_ << " us=" << (long) (current - last_)
+////                                << " xmm=" << p.x
+////                                << std::setw(10) << " ymm=" << p.y
+////                                << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI
+////                                << std::setw(10) << " s=" << p.asservStatus << logs::flush;
+//
+//
+//        /*
+//        robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
+//
+//
+//        //file log for asserv
+//        debugfile << periodNb_
+//                << ", "
+//                << current
+//                << ", "
+//                << (long) (current - last_)
+//                << ", "
+//                << (long) (chrono.getElapsedTimeInMicroSec() - current)
+//                << ", "
+//                << odo_->getDeltaDist()
+//                // distance entre 2
+//                << ", "
+//                << motorC_->getVitesseG()
+//                //-100 à 100
+//                << ", "
+//                << motorC_->getVitesseD()
+//                //-100 à 100
+//                << ", "
+//                << p.x
+//                << ", "
+//                << p.y
+//                << ", "
+//                << p.theta * 180.0 / M_PI
+//                << logs::flush;
+//*/
+//        //            long t6 = chronoTimer_.getElapsedTimeInMicroSec();
+//
+//        //            if (periodNb_ % 40 == 0) {
+//                    info << "___" << periodNb_
+//                            << (long) (current - last_)
+//        //                    << " => ODOt2-current=" << t2 - current
+//        //                               << " => consMt3-t2=" << t3 - t2
+//        //                               << " => cmdMt4-t3=" << t4 - t3
+//        //                               << " => svgt5-t4="  << t5 - t4
+//        //                               << " => excelt6-t5="  << t6 - t5
+//        //                    << " => worktime=t6-t1="
+//        //                    << t6 - current
+//                            << logs::flush;
+////                    }
+//        last_ = current;
+//        loop_finished = true;
+//
+//    }else
+//    {
+//        utils::Thread::sleep_for_micros(10000); //TODO mettre la periode ?
+//    }
+//
+////    if (run_) {
+////        //            chronoTimer_.waitTimer(); //TODO A rempalcer par ITimerPosix ? avec un flag d'overflow à afficher en erreur le cas echeant
+////        last = current;
+////    }
+////    else {
+////        utils::Thread::sleep_for_micros(100000);
+////        //std::this_thread::sleep_for(std::chrono::microseconds(50000));
+////        //usleep(50000); //attente de reactivation
+////    }
+//
+//}
+//void AsservEsialR::onTimerEnd(utils::Chronometer chrono) {
+//
+//}
+
+//void AsservEsialR::execute() {
+//    logger().info() << "execute()::execute demarrage du timer => loopDelayInMillisec_=" << loopDelayInMillisec_ << logs::end;
+//
+//    init("AsservEsialR", loopDelayInMillisec_ * 1000);
+//
+//    periodNb_ = 0;
+//
+//    last_ = chrono.getElapsedTimeInMicroSec();
+//
+//    startTimer();
+//    while (1) {
+//        utils::Thread::sleep_for_millis(1);
+//    }
+////    while (getRunning()) {
+////        logger().debug() << "execute()::getRunning()" << getRunning() << logs::end;
+////
+////        utils::Thread::sleep_for_millis(2);
+////        yield();
+////    }
+//
+//}
+
+void AsservEsialR::execute() {
     logs::Logger::LoggerBuffer info = logger().info();
     logs::Logger::LoggerBuffer debug = logger().debug();
     logs::Logger::LoggerBuffer debugfile = loggerFile().debug();
@@ -131,73 +295,98 @@ void AsservEsialR::execute()
     long nb = 0;
 
     while (1) {
-
         if (run_) {
-
-            nb++;
-            //printf("AsservEsialR::execute %d\n", nb);
-
             current = chronoTimer_.getElapsedTimeInMicroSec();
+            nb++;
             odo_->refresh();
             p = odo_GetPosition(); //maj de la position avec l'odo
 
-
             //long t2 = chronoTimer_.getElapsedTimeInMicroSec();
-            //long t3 =0;
-            if (!Config::disableAsserv) {
 
+            if (!Config::disableAsserv) {
                 consignC_->perform();
-                //t3 = chronoTimer_.getElapsedTimeInMicroSec();
                 commandM_->perform();
             }
 
-            //long t4 = chronoTimer_.getElapsedTimeInMicroSec();
-            //svg log
-            if (nb % 4 == 0) {
+//            long t4 = chronoTimer_.getElapsedTimeInMicroSec();
 
-//                info << nb << " us=" << (long) (current - last) << " xmm=" << p.x
+            //if (nb % 4 == 0) {
+//                debug << nb << " us=" << (long) (current - last_) << " xmm=" << p.x
 //                        << std::setw(10) << " ymm=" << p.y
 //                        << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p.theta * 180 / M_PI
 //                        << std::setw(10) << " s=" << p.asservStatus << logs::flush;
-
-                robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
-            }
+            //svg log
+            robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
+            //}
             //long t5 = chronoTimer_.getElapsedTimeInMicroSec();
 
             //file log for asserv
-//            debugfile << nb << ", " << current << ", " << (long) (current - last) << ", "
-//                    << (long) (chronoTimer_.getElapsedTimeInMicroSec() - current) << ", " << odo_->getDeltaDist() // distance entre 2
-//                    << ", " << motorC_->getVitesseG() //-100 à 100
-//                    << ", " << motorC_->getVitesseD() //-100 à 100
-//                    << ", " << p.x * 1000.0 << ", " << p.y * 1000.0 << ", " << p.theta * 180.0 / M_PI
-//                    << logs::flush;
+            debugfile << nb
+                    << ", "
+                    << current
+                    << ", "
+                    << (long) (current - last)
+                    << ", "
+                    << (long) (chronoTimer_.getElapsedTimeInMicroSec() - current)
+                    << ", "
+                    << odo_->getDeltaDist()
+                    // distance entre 2
+                    << ", "
+                    << motorC_->getVitesseG()
+                    //-100 à 100
+                    << ", "
+                    << motorC_->getVitesseD()
+                    //-100 à 100
+                    << ", "
+                    << p.x
+                    << ", "
+                    << p.y
+                    << ", "
+                    << p.theta * 180.0 / M_PI
+                    << logs::flush;
 
-            //long t6 = chronoTimer_.getElapsedTimeInMicroSec();
-
-//            if (nb % 40 == 0) {
-//            info << nb <<" => ODOt2-current=" << t2 - current
-//                               << " => consMt3-t2=" << t3 - t2
-//                               << " => cmdMt4-t3=" << t4 - t3
-//                               << " => svgt5-t4="  << t5 - t4
-//                               << " => excelt6-t5="  << t6 - t5
-//                               << " => worktime=t6-t1=" << t6 - current
-//                               << logs::flush;
-//            }
-        }
+            //if (nb % 4 == 0) {
+                debug << std::setw(4)
+                        << nb
+                        << " "
+                        << p.asservStatus
+                        << " us="
+                        << (int) (current - last)
+                        << " t="
+                        << std::setw(3)
+                        << (int) (chronoTimer_.getElapsedTimeInMicroSec() - current)
+                        << " GD="
+                        << std::setw(3)
+                        << motorC_->getVitesseG()
+                        << ","
+                        << std::setw(3)
+                        << motorC_->getVitesseD()
+                        << " x="
+                        << std::setw(4)
+                        << (int) p.x
+                        << " y="
+                        << std::setw(4)
+                        << (int) p.y
+                        //<< std::fixed
+                        << " deg="
+                        << std::setw(6)
+                        << std::setprecision(3)
+                        << p.theta * 180 / M_PI
+                        << logs::flush;
+            }
+       // }
 
         if (run_) {
-            chronoTimer_.waitTimer(); //TODO ITimerPosix ?
+            chronoTimer_.waitTimer(150);
             last = current;
-        }else {
-            utils::Thread::sleep_for_micros(100000);
-            //std::this_thread::sleep_for(std::chrono::microseconds(50000));
-            //usleep(50000); //attente de reactivation
+        }
+        else {
+            utils::Thread::sleep_for_micros(20000);
         }
     }
 }
 
-void AsservEsialR::setSamplingFrequency(uint frequencyHz)
-{
+void AsservEsialR::setSamplingFrequency(uint frequencyHz) {
     if (frequencyHz == 0) {
         logger().error() << " frequency= " << frequencyHz << logs::end;
         frequencyHz = 1;
@@ -208,108 +397,76 @@ void AsservEsialR::setSamplingFrequency(uint frequencyHz)
 
 }
 
-void AsservEsialR::loadConfig()
-{
+void AsservEsialR::loadConfig() {
     Config::loadFile("/local/config.txt");
     logger().info() << "Version configuration : " << Config::configVersion << logs::end;
     //printf("Version configuration : %ld\r\n", Config::configVersion);
 }
 
-void AsservEsialR::setMotorLeftPosition(int power, long ticks)
-{
-    //TODO setMotorLeftPosition
+void AsservEsialR::setMotorLeftPosition(int power, long ticks) {
     logger().error() << "TODO setMotorLeftPosition !!!" << logs::end;
 }
-void AsservEsialR::setMotorRightPosition(int power, long ticks)
-{
-    //TODO
+void AsservEsialR::setMotorRightPosition(int power, long ticks) {
     logger().error() << "TODO setMotorRightPosition !!!" << logs::end;
 }
-void AsservEsialR::setMotorLeftPower(int power, int time)
-{
+void AsservEsialR::setMotorLeftPower(int power, int timems) {
     logger().error() << "TODO setMotorLeftPower !!!" << logs::end;
 }
-void AsservEsialR::setMotorRightPower(int power, int time)
-{
+void AsservEsialR::setMotorRightPower(int power, int timems) {
     logger().error() << "TODO setMotorRightPower !!!" << logs::end;
-
 }
-void AsservEsialR::stopMotorLeft()
-{
-    //TODO
+void AsservEsialR::stopMotorLeft() {
     logger().error() << "TODO stopMotorLeft !!!" << logs::end;
 }
-void AsservEsialR::stopMotorRight()
-{
-    //TODO
+void AsservEsialR::stopMotorRight() {
     logger().error() << "TODO stopMotorRight !!!" << logs::end;
 }
-int AsservEsialR::getMotorLeftCurrent()
-{
-    //TODO
+int AsservEsialR::getMotorLeftCurrent() {
     logger().error() << "TODO getMotorLeftCurrent !!!" << logs::end;
     return 0;
 }
-int AsservEsialR::getMotorRightCurrent()
-{
-    //TODO
+int AsservEsialR::getMotorRightCurrent() {
     logger().error() << "TODO getMotorRightCurrent !!!" << logs::end;
     return 0;
 }
-
-long AsservEsialR::getLeftExternalEncoder()
-{
+long AsservEsialR::getLeftExternalEncoder() {
     logger().error() << "TODO getLeftExternalEncoder !!!" << logs::end;
     return -99;
-    //TODO
+}
+void AsservEsialR::getCountsExternal(int32_t* countR, int32_t* countL) {
+    logger().error() << "TODO getCountsExternal !!!" << logs::end;
 }
 
-void AsservEsialR::getCountsExternal(int32_t* countR, int32_t* countL)
-{
-
+void AsservEsialR::getDeltaCountsExternal(int32_t* countR, int32_t* countL) {
+    logger().error() << "TODO getDeltaCountsExternal !!!" << logs::end;
 }
 
-long AsservEsialR::getRightExternalEncoder()
-{
+long AsservEsialR::getRightExternalEncoder() {
     logger().error() << "TODO getRightExternalEncoder !!!" << logs::end;
     return -99;
-    //TODO
 }
-long AsservEsialR::getLeftInternalEncoder()
-{
+long AsservEsialR::getLeftInternalEncoder() {
     logger().error() << "TODO getLeftInternalEncoder !!!" << logs::end;
     return -99;
-    //TODO
 }
-long AsservEsialR::getRightInternalEncoder()
-{
+long AsservEsialR::getRightInternalEncoder() {
     logger().error() << "TODO getRightInternalEncoder !!!" << logs::end;
     return -99;
-    //TODO
 }
-void AsservEsialR::getCountsInternal(int32_t* countR, int32_t* countL)
-{
-
+void AsservEsialR::getCountsInternal(int32_t* countR, int32_t* countL) {
+    logger().error() << "TODO getCountsInternal !!!" << logs::end;
 }
-
-void AsservEsialR::resetEncoders()
-{
-    resetInternalEncoders();
-    resetExternalEncoders();
+void AsservEsialR::resetEncoders() {
+    logger().error() << "TODO resetEncoders !!!" << logs::end;
 }
-void AsservEsialR::resetInternalEncoders()
-{
+void AsservEsialR::resetInternalEncoders() {
     logger().error() << "TODO resetInternalEncoders !!!" << logs::end;
-    //TODO
 }
-void AsservEsialR::resetExternalEncoders()
-{
+void AsservEsialR::resetExternalEncoders() {
     logger().error() << "TODO resetExternalEncoders !!!" << logs::end;
-    //TODO
 }
 
-void AsservEsialR::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
-{
+void AsservEsialR::odo_SetPosition(float x_mm, float y_mm, float angle_rad) {
     if (odo_ != NULL) {
         //logger().debug() << "BEFORE odo_SetPosition x_mm=" << x_mm << " y_mm=" << y_mm << " angle_rad=" << angle_rad << logs::end;
 
@@ -326,8 +483,7 @@ void AsservEsialR::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
         unlock();
     }
 }
-RobotPosition AsservEsialR::odo_GetPosition()
-{
+RobotPosition AsservEsialR::odo_GetPosition() {
     if (odo_ != NULL) {
         lock();
         p_.x = (float) (odo_->getXmm());
@@ -335,54 +491,57 @@ RobotPosition AsservEsialR::odo_GetPosition()
         p_.theta = (float) odo_->getTheta();
         p_.asservStatus = commandM_->getCommandStatus();
         unlock();
-//        logger().debug() << "odo_GetPosition p_.x=" << p_.x << " p_.y=" << p_.y << " p_.theta=" << p_.theta
-//                << " p_.asservStatus=" << p_.asservStatus << logs::end;
-
-    } else
-        logger().error() << "odo_GetPosition odo_ is NULL!!!!!!!!!!!" << logs::end;
+//        logger().debug() << "odo_GetPosition p_.x="
+//                << p_.x
+//                << " p_.y="
+//                << p_.y
+//                << " p_.theta="
+//                << p_.theta
+//                << " p_.asservStatus="
+//                << p_.asservStatus
+//                << " "
+//                << odo_->getX()
+//                << " "
+//                << odo_->getY()
+//                << logs::end;
+    }
+    else logger().error() << "odo_GetPosition odo_ is NULL!!!!!!!!!!!" << logs::end;
     return p_;
 }
 
-int AsservEsialR::path_GetLastCommandStatus()
-{
+int AsservEsialR::path_GetLastCommandStatus() {
     //TODO path_GetLastCommandStatus deprecated ?
 
     logger().error() << "TODO DEPRECATED ? path_GetLastCommandStatus !!!!!!!!!!!!!" << logs::end;
     return -1;
 }
-void AsservEsialR::path_InterruptTrajectory()
-{
+void AsservEsialR::path_InterruptTrajectory() {
     //printf("path_InterruptTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_INTERRUPTED;
 }
-void AsservEsialR::path_CollisionOnTrajectory()
-{
+void AsservEsialR::path_CollisionOnTrajectory() {
     //printf("path_CollisionOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
 }
-void AsservEsialR::path_CollisionRearOnTrajectory()
-{
+void AsservEsialR::path_CollisionRearOnTrajectory() {
     //printf("path_CollisionRearOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_NEAR_OBSTACLE;
 }
-void AsservEsialR::path_CancelTrajectory()
-{
+void AsservEsialR::path_CancelTrajectory() {
     //printf("path_CancelTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
     pathStatus_ = TRAJ_IMPOSSIBLE;
 }
-void AsservEsialR::path_ResetEmergencyStop()
-{
-    logger().debug() << "______________________path_ResetEmergencyStop() !!!!!!!!!!!!!! "<< logs::end;
+void AsservEsialR::path_ResetEmergencyStop() {
+    logger().debug() << "______________________path_ResetEmergencyStop() !!!!!!!!!!!!!! " << logs::end;
     commandM_->resetEmergencyStop();
     pathStatus_ = TRAJ_OK;
 }
 
-TRAJ_STATE AsservEsialR::waitEndOfTraj()
-{
+TRAJ_STATE AsservEsialR::waitEndOfTraj() {
     //logger().debug() << "_______________________waitEndOfTraj() "<< logs::end;
     int timeout = 0;
     //attente du running status
@@ -394,6 +553,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
         utils::sleep_for_micros(10000);
         timeout++;
         if (timeout > 10) {
+            logger().error() << "_______________________waitEndOfTraj() => break" << logs::end;
             break;
         }
     }
@@ -416,96 +576,87 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     //blocage!!
     if (p_.asservStatus == 3) {
         return TRAJ_COLLISION;
-    } else if (p_.asservStatus == 0) {
+    }
+    else if (p_.asservStatus == 0) {
         return TRAJ_FINISHED;
-    } else if (p_.asservStatus == 2) {
-        logger().info() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
-                << pathStatus_ << logs::end;
+    }
+    else if (p_.asservStatus == 2) {
+        logger().info() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= " << pathStatus_ << logs::end;
         return pathStatus_;
-    } else
-        return TRAJ_ERROR;
+    }
+    else return TRAJ_ERROR;
 }
 
-TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm)
-{
+TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm) {
     commandM_->addStraightLine(dist_mm);
 
     return waitEndOfTraj();
 }
-TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm)
-{
+TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm) {
     commandM_->addGoToAngle(x_mm, y_mm);
 
     return waitEndOfTraj();
 }
-TRAJ_STATE AsservEsialR::motion_DoRotate(float angle_radians)
-{
+TRAJ_STATE AsservEsialR::motion_DoRotate(float angle_radians) {
     commandM_->addTurn((angle_radians * 180.0) / M_PI);
 
     return waitEndOfTraj();
 }
-TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius)
-{
-    logger().error() << "motion_DoArcRotate TODO !"<< logs::end;
+TRAJ_STATE AsservEsialR::motion_DoArcRotate(float angle_radians, float radius) {
+    logger().error() << "motion_DoArcRotate TODO !" << logs::end;
     //TODO motion_DoArcRotate
     return TRAJ_ERROR;
 }
 
-TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_mm)
-{
+TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_mm) {
     if (odo_ != NULL) {
         consignC_->add_dist_consigne(Utils::mmToUO(odo_, dist_mm));
 
         return waitEndOfTraj();
-    } else
-        return TRAJ_ERROR;
+    }
+    else return TRAJ_ERROR;
 }
 
-
 TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm) {
-    logger().error() << "motion_Goto TODO !"<< logs::end;
+    logger().error() << "motion_Goto TODO !" << logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoReverse(float x_mm, float y_mm) {
-    logger().error() << "motion_GotoReverse TODO !"<< logs::end;
+    logger().error() << "motion_GotoReverse TODO !" << logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoChain(float x_mm, float y_mm) {
-    logger().error() << "motion_GotoChain TODO !"<< logs::end;
+    logger().error() << "motion_GotoChain TODO !" << logs::end;
     return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoReverseChain(float x_mm, float y_mm) {
-    logger().error() << "motion_GotoReverseChain TODO !"<< logs::end;
+    logger().error() << "motion_GotoReverseChain TODO !" << logs::end;
     return TRAJ_ERROR;
 }
 
-
-void AsservEsialR::motion_FreeMotion(void)
-{
+void AsservEsialR::motion_FreeMotion(void) {
     consignC_->perform_On(false);
     commandM_->perform_On(false);
 }
 
 //DEPRECEATED
-void AsservEsialR::motion_DisablePID()
-{
+void AsservEsialR::motion_DisablePID() {
     motion_FreeMotion();
 }
 
-void AsservEsialR::motion_AssistedHandling(void)
-{
+void AsservEsialR::motion_AssistedHandling(void) {
     consignC_->perform_On(true);
     commandM_->perform_On(true);
 }
-void AsservEsialR::motion_ActivateManager(bool enable)
-{
+void AsservEsialR::motion_ActivateManager(bool enable) {
     if (enable) {
         initAsserv();
         run_ = true;
-    } else {
+    }
+    else {
         stopAsserv();
         run_ = false;
     }
@@ -515,30 +666,24 @@ void AsservEsialR::motion_setLowSpeedForward(bool enable, int percent) //TODO pe
     consignC_->setLowSpeedForward(enable, percent);
 }
 
-void AsservEsialR::motion_setLowSpeedBackward(bool enable, int percent)
-{
+void AsservEsialR::motion_setLowSpeedBackward(bool enable, int percent) {
     consignC_->setLowSpeedBackward(enable, percent);
 }
 
-void AsservEsialR::motion_ActivateReguDist(bool enable)
-{
+void AsservEsialR::motion_ActivateReguDist(bool enable) {
     consignC_->dist_Regu_On(enable);
 }
-void AsservEsialR::motion_ActivateReguAngle(bool enable)
-{
+void AsservEsialR::motion_ActivateReguAngle(bool enable) {
     consignC_->angle_Regu_On(enable);
 }
-void AsservEsialR::motion_ResetReguDist()
-{
+void AsservEsialR::motion_ResetReguDist() {
     consignC_->reset_regu_dist();
 }
-void AsservEsialR::motion_ResetReguAngle()
-{
+void AsservEsialR::motion_ResetReguAngle() {
     consignC_->reset_regu_angle();
 }
 
-void AsservEsialR::motion_ActivateQuadRamp(bool enable)
-{
+void AsservEsialR::motion_ActivateQuadRamp(bool enable) {
     consignC_->setQuadRamp_Angle(enable);
     consignC_->setQuadRamp_Dist(enable);
 }

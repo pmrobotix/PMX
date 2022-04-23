@@ -6,7 +6,7 @@
 
 using namespace std;
 
-AServoDriver * AServoDriver::create(ServoType type)
+AServoDriver * AServoDriver::create()
 {
     static ServoDriver *instance = new ServoDriver();
     return instance;
@@ -19,6 +19,11 @@ ServoDriver::ServoDriver() :
 
 }
 
+void ServoDriver::setType(int servo, ServoType)
+{
+
+}
+
 void ServoDriver::hold(int servo) // 1 à 8
 {
     switch (servo) {
@@ -28,7 +33,7 @@ void ServoDriver::hold(int servo) // 1 à 8
     }
 }
 
-void ServoDriver::setPosition(int servo, int percent)
+void ServoDriver::setPulsePos(int servo, int pos)
 {
     switch (servo) {
 
@@ -63,7 +68,7 @@ int ServoDriver::getMoving(int servo)
 {
     return -1;
 }
-int ServoDriver::getPos(int servo)
+int ServoDriver::getPulsePos(int servo)
 {
     return -1;
 }

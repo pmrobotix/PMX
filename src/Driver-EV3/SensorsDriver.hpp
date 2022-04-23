@@ -3,10 +3,10 @@
 
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "LegoIRSensor.hpp"
+#include "BeaconSensors.hpp"
 
 using namespace std;
-using namespace ev3dev;
+//using namespace ev3dev;
 
 class SensorsDriver: public ASensorsDriver
 {
@@ -21,10 +21,12 @@ private:
         return instance;
     }
 
-    LegoIRSensor IR_1_AV_D;
-    LegoIRSensor IR_2_AV_G;
-    LegoIRSensor IR_3_AR_D;
-    LegoIRSensor IR_4_AR_G;
+    BeaconSensors beacon_;
+
+//    LegoIRSensor IR_1_AV_D;
+//    LegoIRSensor IR_2_AV_G;
+//    LegoIRSensor IR_3_AR_D;
+//    LegoIRSensor IR_4_AR_G;
 
 public:
 

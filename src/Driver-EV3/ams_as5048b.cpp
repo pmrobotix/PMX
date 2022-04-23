@@ -79,15 +79,21 @@ int AMS_AS5048B::ping() {
     return i2c_.ping();
 }
 
-void AMS_AS5048B::begin(void) {
+bool AMS_AS5048B::connect(void) {
+    if (connected_)
+        return connected_;
+
     _clockWise = false;
     int err = i2c_.begin(_chipAddress);
 
     if (err >= 0) connected_ = true;
-    if (!connected_) return;
+    else {
+        connected_ = false;
+        return connected_;
+    }
     usleep(10000);
     reset();
-    return;
+    return connected_;
 }
 
 /**************************************************************************/

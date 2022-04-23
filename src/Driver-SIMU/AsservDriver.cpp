@@ -35,7 +35,7 @@ AsservDriver::AsservDriver(std::string botid) :
     else if (botid == "LegoEV3Robot") {
         //printf("--- AsservDriver - botid == LegoEV3Robot\n");
         //CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
-        simuTicksPerMeter_ = 4100.0f; //nb ticks for 1000mm
+        simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
         simuMaxSpeed_ = 0.5; //m/s
         simuMaxPower_ = 100.0;
         //CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
@@ -45,7 +45,7 @@ AsservDriver::AsservDriver(std::string botid) :
         //printf("--- AsservDriver - botid == OPOS6UL_Robot\n");
         //CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
         simuTicksPerMeter_ = 1470.0; //nb ticks for 1000mm
-        simuMaxSpeed_ = 0.5; //m/s
+        simuMaxSpeed_ = 1.0; //m/s
         simuMaxPower_ = 127.0;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
     }
@@ -79,20 +79,29 @@ AsservDriver::AsservDriver(std::string botid) :
 
     //timesMultiplicator_ = 1000.0;
 
-    asservStarted_ = true; //deprecated ? sert uniquement à enlever le check des positions
-    //resetEncoders();
+    resetEncoders();
 
-    //on demarre le thread// maintenant deplacer dans motion_ActivateManager!!!!
-    //this->start("AsservDriver::AsservDriver()" + botid, 1);
-//    motion_ActivateManager(true);
-//    chrono_.start();
-    logger().debug() << "BOT ID started !!  botid_=" << botid_ << logs::end;
-
+    if (true) {
+        //on demarre le check de positionnement...
+        asservSimuStarted_ = true;
+        this->start("AsservDriver::AsservDriver()" + botid_, 3);
+        chrono_.start();
+    }
+    else {
+        //stop the thread
+        endWhatTodo();
+        asservSimuStarted_ = false;
+        this->cancel();
+    }
 }
 
 AsservDriver::~AsservDriver() {
+    //endWhatTodo();
+    asservSimuStarted_ = false;
     if (twLeft_.joinable()) twLeft_.join();
     if (twRight_.joinable()) twRight_.join();
+
+    this->cancel();
 }
 
 void AsservDriver::execute() {
@@ -103,11 +112,11 @@ void AsservDriver::execute() {
     RobotPosition p;
     while (1) {
 
-        if (asservStarted_) {
-            //logger().error() << "nb=" << nb << " chrono=" << chrono.getElapsedTimeInMicroSec()	<< logs::end;
+        if (asservSimuStarted_) {
             m_pos.lock();
             p = odo_GetPosition();
             m_pos.unlock();
+            //logger().info() << "execute() p.x=" << p.x << " p.y=" << p.y << " chrono=" << chrono.getElapsedTimeInMicroSec() << logs::end;
 
             loggerSvg().info() << "<circle cx=\""
                     << p.x
@@ -170,19 +179,10 @@ void AsservDriver::endWhatTodo() {
     chrono_.stop();
 }
 
-////conversion 1 meter = n ticks
-//float AsservDriver::convertMetersToTicks(float meters)
-//{
-//    float ticks = (float) std::rint(meters * simuTicksPerMeter_);
-//    logger().debug() << " meters=" << meters << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_
-//            << logs::end;
-//    return ticks;
-//}
-
 float AsservDriver::convertMmToTicks(float mm) {
-    //float ticks = (float) std::rint(mm * 1000.0f * simuTicksPerMeter_);
+
     float ticks = (float) std::rint((mm * simuTicksPerMeter_) / 1000.0f);
-    //logger().debug() << " mm=" << mm << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_ << logs::end;
+logger().debug() << " mm=" << mm << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_ << logs::end;
     return ticks;
 }
 
@@ -225,7 +225,7 @@ void AsservDriver::computeCounterL() {
 
     float currentLeftMm = inverseCodeurG_ * (deltaT_ms * leftSpeed_);
     mutexL_.lock();
-    currentLeftCounter_ = convertMmToTicks(currentLeftMm);	//conversion Metre  n Ticks/metres
+    currentLeftCounter_ = convertMmToTicks(currentLeftMm);	//conversion mm to ticks
     leftMm_ += currentLeftMm;
     leftCounter_ = convertMmToTicks(leftMm_);
     mutexL_.unlock();
@@ -275,7 +275,7 @@ void AsservDriver::computeCounterR() {
     float currentRightMm = inverseCodeurD_ * (deltaT_ms * rightSpeed_);
 
     mutexR_.lock();
-    currentRightCounter_ = convertMmToTicks(currentRightMm);	//conversion 1 meter = n ticks
+    currentRightCounter_ = convertMmToTicks(currentRightMm);	//conversion mm to Tick = n ticks
     //logger().error() <<  "cho currentRightCounter_=" << currentRightCounter_ << " currentRightMeters=" << currentRightMeters << " rightMeters_="<< rightMeters_ <<logs::end;
 
     rightMm_ += currentRightMm;
@@ -294,7 +294,9 @@ void AsservDriver::computeCounterR() {
 //			<< rightCounter_
 //			<< " currRCounter_="
 //			<< currentRightCounter_
-//			<< logs::end;
+//			<< " currentRightMm="
+//                              << currentRightMm
+//                              << logs::end;
 
 //	loggerM().debug() << "computeCounterR "
 //			<< " rightCounter_="
@@ -329,7 +331,7 @@ void AsservDriver::setMotorLeftPosition(int power, long ticksToDo) {
 //            << logs::end;
 
     AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-    twLeft_ = w_->positionLeftThread("setMotorLeftPosition", leftCounter_ + (ticksToDo * sens));
+    twLeft_ = w_->positionLeftThread("setMotorLeftPosition", (int) leftCounter_ + (ticksToDo * sens));
 }
 
 void AsservDriver::setMotorRightPosition(int power, long ticksToDo) {
@@ -354,12 +356,12 @@ void AsservDriver::setMotorRightPosition(int power, long ticksToDo) {
 //            << logs::end;
 
     AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
-    twRight_ = w_->positionRightThread("setMotorRightPosition", rightCounter_ + (ticksToDo * sens));
+    twRight_ = w_->positionRightThread("setMotorRightPosition", (int) rightCounter_ + (ticksToDo * sens));
 }
 
 void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 {
-    computeCounterL();
+    //computeCounterL();
     mutexL_.lock();
     wantedLeftSpeed_ = inverseMoteurG_ * convertPowerToSpeed(power);
     tLeft_ms_ = chrono_.getElapsedTimeInMilliSec(); //* timesMultiplicator_;
@@ -374,7 +376,7 @@ void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 }
 void AsservDriver::setMotorRightPower(int power, int time_ms) {
     //logger().info() << "!!!! setMotorRightPower rightMeters_=" << rightMeters_ << logs::end;
-    computeCounterR();
+    //computeCounterR();
     mutexR_.lock();
     wantedRightSpeed_ = inverseMoteurD_ * convertPowerToSpeed(power);
     tRight_ms_ = chrono_.getElapsedTimeInMilliSec(); //* timesMultiplicator_;
@@ -388,6 +390,7 @@ void AsservDriver::setMotorRightPower(int power, int time_ms) {
     }
 }
 
+//recupere les ticks codeurs cumulés
 void AsservDriver::getCountsExternal(int32_t* countR, int32_t* countL) {
 
     computeCounterL();
@@ -397,21 +400,32 @@ void AsservDriver::getCountsExternal(int32_t* countR, int32_t* countL) {
     *countL = (int) leftCounter_;
 }
 
-void AsservDriver::getCountsInternal(int32_t* countR, int32_t* countL) {
+//recupere les ticks codeurs depuis le derniers appels
+void AsservDriver::getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL) {
 
+    computeCounterL();
+    computeCounterR();
+
+    *deltaR = (int) currentRightCounter_;
+    *deltaL = (int) currentLeftCounter_;
+}
+
+//recupere les ticks codeur cummulés
+void AsservDriver::getCountsInternal(int32_t* countR, int32_t* countL) {
     //TODO getCountsInternal
     logger().error() << "TODO getCountsInternal !!!!!" << logs::end;
 }
 
+//recupere les ticks codeur cummulés
 long AsservDriver::getLeftExternalEncoder() {
     computeCounterL();
 //    logger().debug() << "getLeftExternalEncoder=" << leftCounter_ << logs::end;
-    return (long) leftCounter_;
+    return (long) leftCounter_; //ticks
 }
 long AsservDriver::getRightExternalEncoder() {
     computeCounterR();
 //    logger().debug() << "getRightExternalEncoder=" << rightCounter_ << logs::end;
-    return (long) rightCounter_;
+    return (long) rightCounter_; //ticks
 }
 
 //+/- 2,147,483,648
@@ -449,7 +463,7 @@ void AsservDriver::resetExternalEncoders() {
 }
 
 void AsservDriver::stopMotorLeft() {
-    computeCounterL();
+    //computeCounterL();
     mutexL_.lock();
     currentLeftCounter_ = 0.0;
     wantedLeftSpeed_ = 0.0;
@@ -459,7 +473,7 @@ void AsservDriver::stopMotorLeft() {
 }
 
 void AsservDriver::stopMotorRight() {
-    computeCounterR();
+    //computeCounterR();
     mutexR_.lock();
     currentRightCounter_ = 0.0;
     wantedRightSpeed_ = 0.0;
@@ -639,8 +653,6 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
 
     logger().debug() << "tps=" << tps_sec << " increment_mm=" << increment_mm << "  !!!!!" << logs::end;
 
-    //asservStarted_ = true; //deprecated...
-
     for (int nb = 0; nb < nb_increment; nb++) {
 
         m_pos.lock();
@@ -669,8 +681,6 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
     }
     m_pos.unlock();
     usleep(increment_time_us * 5);
-
-    //asservStarted_ = false;
 
     return TRAJ_FINISHED;
 }
@@ -749,15 +759,7 @@ void AsservDriver::motion_AssistedHandling() {
     stopMotorRight();
 }
 void AsservDriver::motion_ActivateManager(bool enable) {
-    if (enable) {
-        //on demarre le check de positionnement...
-        this->start("AsservDriver::AsservDriver()" + botid_, 3);
-        chrono_.start();
-    }
-    else {
-        //stop the thread
-        endWhatTodo();
-    }
+
 }
 
 void AsservDriver::motion_setLowSpeedForward(bool enable, int percent) {

@@ -5,9 +5,6 @@
 #include <string>
 
 #include "../Common/Arguments.hpp"
-#include "../Common/Asserv/EncoderControl.hpp"
-#include "../Common/Asserv/MotorControl.hpp"
-#include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
@@ -61,27 +58,27 @@ void L_MovingBaseTest::run(int argc, char** argv)
 
     utils::Chronometer chrono("L_MovingBaseTest");
 
-    long left = 0;
-    long right = 0;
+    int left = 0;
+    int right = 0;
 
     logger().info() << "runMotor(" << p << ", 1000) " << logs::end;
     if (LR == 0 || LR == 2)
-        robot.asserv().base()->motors().runMotorLeft(p, 1000); //run (power 128) pendant 1s
+        robot.asserv().runMotorLeft(p, 1000); //run (power 128) pendant 1s
     if (LR == 1 || LR == 2)
-        robot.asserv().base()->motors().runMotorRight(p, 1000); //run (power 128) pendant 1s
+        robot.asserv().runMotorRight(p, 1000); //run (power 128) pendant 1s
     chrono.start();
     while (chrono.getElapsedTimeInMilliSec() < 500.0) {
-        left = robot.asserv().base()->encoders().getLeftEncoder();
-        right = robot.asserv().base()->encoders().getRightEncoder();
+        robot.asserv().getEncodersCounts(&right, &left);
         logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << " Lticks= " << left << " Rticks= " << right
                 << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
                 << robot.asserv().pos_getThetaInDegree() << logs::end;
         usleep(200000);
     }
 
+    robot.asserv().getEncodersCounts(&right, &left);
     logger().info() << "STOPPED time= " << chrono.getElapsedTimeInMilliSec() << " Lticks= "
-            << robot.asserv().base()->encoders().getLeftEncoder() << " Rticks= "
-            << robot.asserv().base()->encoders().getRightEncoder() << " x=" << robot.asserv().pos_getX_mm() << " y="
+            << left << " Rticks= "
+            << right << " x=" << robot.asserv().pos_getX_mm() << " y="
             << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
     robot.svgPrintPosition();
 
@@ -89,22 +86,21 @@ void L_MovingBaseTest::run(int argc, char** argv)
 
     logger().info() << "runMotor(-" << p << ", 1000) " << logs::end;
     if (LR == 0 || LR == 2)
-        robot.asserv().base()->motors().runMotorLeft(-p, 1000); //run with power -100 pendant 1s
+        robot.asserv().runMotorLeft(-p, 1000); //run with power -100 pendant 1s
     if (LR == 1 || LR == 2)
-        robot.asserv().base()->motors().runMotorRight(-p, 1000); //run with power -100 pendant 1s
+        robot.asserv().runMotorRight(-p, 1000); //run with power -100 pendant 1s
     chrono.start();
     while (chrono.getElapsedTimeInMilliSec() < 500.0) {
-        left = robot.asserv().base()->encoders().getLeftEncoder();
-        right = robot.asserv().base()->encoders().getRightEncoder();
+        robot.asserv().getEncodersCounts(&right, &left);
         logger().info() << "time= " << chrono.getElapsedTimeInMilliSec() << " Lticks= " << left << " Rticks= " << right
                 << " x=" << robot.asserv().pos_getX_mm() << " y=" << robot.asserv().pos_getY_mm() << " a="
                 << robot.asserv().pos_getThetaInDegree() << logs::end;
         usleep(200000);
     }
-
+    robot.asserv().getEncodersCounts(&right, &left);
     logger().info() << "STOPPED time= " << chrono.getElapsedTimeInMilliSec() << " Lticks= "
-            << robot.asserv().base()->encoders().getLeftEncoder() << " Rticks= "
-            << robot.asserv().base()->encoders().getRightEncoder() << " x=" << robot.asserv().pos_getX_mm() << " y="
+            << left << " Rticks= "
+            << right << " x=" << robot.asserv().pos_getX_mm() << " y="
             << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
 
     robot.svgPrintPosition();

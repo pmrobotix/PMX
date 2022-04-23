@@ -5,28 +5,45 @@
 
 #include "CCAx12Adc.hpp"
 
-#include <sys/time.h>
+#include <stdio.h>
+#include <sys/types.h>
 #include <unistd.h>
-#include <cstdio>
+#include <cstdint>
 
 #include "../Log/Logger.hpp"
 
 CCAx12Adc::CCAx12Adc() : //int i2c_bus_num, uint i2c_aAddr) ://TODO Une SEULE CARTE est possible a mettre en paramettre adresse + port
-        i2c_CCAx12Adc_(1, true), connected_(false), begin_(false)
+        i2c_CCAx12Adc_(1, false), connected_(false)
 {
 }
 
-int CCAx12Adc::begin(uint i2c_aAddr) {
-    if (!begin_) {
-        begin_ = true;
+bool CCAx12Adc::connect(uint i2c_aAddr) {
 
-        //open i2c and setslave
-        int err = i2c_CCAx12Adc_.begin(i2c_aAddr);
-        if (err >= 0) connected_ = true;
-        else {
-            connected_ = false;
-            logger().error() << "CCAx12Adc::begin() : NOT CONNECTED!" << logs::end;
-        }
+    if (connected_)
+        return connected_;
+
+    //open i2c and setslave
+    int err = i2c_CCAx12Adc_.begin(i2c_aAddr);
+    if (err >= 0) connected_ = true;
+    else {
+        connected_ = false;
+        logger().error() << "CCAx12Adc::connect() : NOT CONNECTED!" << logs::end;
+    }
+
+
+//    while(1)
+//    {
+//        setLedOn(2);
+//        int present = pingAX(3);
+//        int getV = readAXData(3, P_PRESENT_VOLTAGE);
+//        logger().error() << "p3 =" << present
+//                <<" V=" << getV
+//                << logs::end;
+//        usleep(200000);
+//        setLedOff(2);
+//        usleep(200000);
+//    }
+
 
         //i2c_CCAx12Adc_.setSlaveAddr(AX12ADC_ADDR);
 //        setLedOn(1);
@@ -109,7 +126,7 @@ int CCAx12Adc::begin(uint i2c_aAddr) {
          logger().error() << "end moving =" << moving << logs::end;
          writeAXData(5, P_TORQUE_ENABLE, 0);
          */
-    }
+   //}
     return connected_;
 }
 
@@ -146,16 +163,17 @@ void CCAx12Adc::setLedOn(int led) {
     int w1 = write(CMD_SET_LED_ON);
     if (w1 < 0) {
         mutex_.unlock();
-        printf("setLedOn (led:%d) I2C bus error (first write), check I2C cables\n", led);
+        logger().error() << "setLedOn (led:"<< led <<") I2C bus error (first write), check I2C cables" << logs::end;
+        //printf("setLedOn (led:%d) I2C bus error (first write), check I2C cables\n", led);
         return;
     }
     int w2 = write(led);
     if (w2 < 0) {
         mutex_.unlock();
-        printf("setLedOn (led:%d) I2C bus error (second write), check I2C cables\n", led);
+        logger().error() << "setLedOn (led:"<< led <<") I2C bus error (second write), check I2C cables" << logs::end;
+        //printf("setLedOn (led:%d) I2C bus error (second write), check I2C cables\n", led);
         return;
     }
-
     mutex_.unlock();
 }
 
@@ -170,24 +188,24 @@ void CCAx12Adc::setLedOff(int led) {
     int w1 = write(CMD_SET_LED_OFF);
     if (w1 < 0) {
         mutex_.unlock();
-        printf("setLedOff (led:%d) I2C bus error (first write), check I2C cables\n", led);
+        logger().error() << "setLedOn (led:"<< led <<") I2C bus error (first write), check I2C cables" << logs::end;
+        //printf("setLedOff (led:%d) I2C bus error (first write), check I2C cables\n", led);
         return;
     }
     int w2 = write(led);
     if (w2 < 0) {
         mutex_.unlock();
-        printf("setLedOff (led:%d) I2C bus error (second write), check I2C cables\n", led);
+        logger().error() << "setLedOn (led:"<< led <<") I2C bus error (second write), check I2C cables" << logs::end;
+        //printf("setLedOff (led:%d) I2C bus error (second write), check I2C cables\n", led);
         return;
     }
     mutex_.unlock();
-
 }
 
 // Get the ADC value (12bits)
 // @param ADC :  0 - 9
 // @returns value : 0 - 4095
 int CCAx12Adc::getADC(int adc) {
-
     if (!connected_) {
         logger().error() << "CCAx12Adc::getADC() : BOARD NOT CONNECTED !" << logs::end;
         return -1;
@@ -203,54 +221,26 @@ int CCAx12Adc::getADC(int adc) {
     err |= write(adc);
     if (err < 0) {
         mutex_.unlock();
-        printf("getADC (id:%d) I2C bus error (write err=%d), check I2C cables\n", adc, err);
+        logger().error() << "getADC (id:"<< adc <<") I2C bus error (write err=" << err << "), check I2C cables" << logs::end;
+        //printf("getADC (id:%d) I2C bus error (write err=%d), check I2C cables\n", adc, err);
         return -10;
     }
 
     int low = read();
     if (low < 0) {
         mutex_.unlock();
-        printf("getADC (id:%d) I2C bus error (read low byte=%d), check I2C cables\n", adc, low);
+        logger().error() << "getADC (id:"<< adc <<") I2C bus error (read low byte=" << low << "), check I2C cables" << logs::end;
+        //printf("getADC (id:%d) I2C bus error (read low byte=%d), check I2C cables\n", adc, low);
         return -3;
     }
     int high = read();
     if (high < 0) {
         mutex_.unlock();
-        printf("getADC (id:%d) I2C bus error (read high byte=%d), check I2C cables\n", adc, high);
+        logger().error() << "getADC (id:"<< adc <<") I2C bus error (read high byte=" << high << "), check I2C cables" << logs::end;
+        //printf("getADC (id:%d) I2C bus error (read high byte=%d), check I2C cables\n", adc, high);
         return -4;
     }
     mutex_.unlock();
-
-
-    /*
-     if (!connected_) {
-     logger().error() << "CCAx12Adc::getADC() : BOARD NOT CONNECTED !" << logs::end;
-     return -1;
-     }
-     if (adc >= 10 || adc < 0) {
-     logger().error() << "CCAx12Adc::getADC() : bad number adc !" << logs::end;
-     return -2;
-     }
-     mutex_.lock();
-     // TODO check apres chaque read/write
-     int w1 = write(CMD_GET_ADC);
-     int w2 = write(adc);
-     if (w1 < 0) {
-     printf("getADC (id:%d) I2C bus error (first write), check I2C cables\n", adc);
-     return -10;
-     }
-     if (w2 < 0) {
-     printf("getADC (id:%d) I2C bus error (second write), check I2C cables\n", adc);
-     return -20;
-     }
-     int low = read();
-     int high = read();
-     mutex_.unlock();
-     if (low < 0 || high < 0) {
-
-     printf("getADC (id:%d) I2C bus error (reads), check I2C cables\n", adc);
-     return -3;
-     }*/
 
     //printf("low:%d, high:%d \n", low, high);
     return convertToVoltage(high * 256 + low);
@@ -261,7 +251,6 @@ int CCAx12Adc::convertToVoltage(int adc_value) {
     double millivolts = adc_value * 5000.0 / 4095.0;
 
     return (int) millivolts;
-
 }
 
 // Ping a Dynamixel Servo
@@ -395,7 +384,6 @@ int CCAx12Adc::readAXData(int id, int address) {
             return -43;
         }
     }
-
 }
 
 // Write data (8bits or 16bits) at a specified address
@@ -478,7 +466,9 @@ int CCAx12Adc::read() {
     return a[0];
 }
 
-int CCAx12Adc::readRegs(uint8_t reg_address, uint8_t len, uint8_t* data) {
+
+
+int CCAx12Adc::readRegs(uint8_t reg_address, uint8_t* data,uint8_t len) {
     int err = i2c_CCAx12Adc_.readReg(reg_address, data, len);
     return err;
 }
@@ -489,9 +479,9 @@ int CCAx12Adc::writeRegs(uint8_t reg_address, uint8_t* values) {
     return err;
 }
 
-int CCAx12Adc::writeReg(uint8_t reg_address, uint8_t value) {
-    uint8_t values[] = { value };
-    int err = i2c_CCAx12Adc_.writeReg(reg_address, values, sizeof(values));
-    return err;
-}
+//int CCAx12Adc::writeReg(uint8_t reg_address, uint8_t value) {
+//    uint8_t values[] = { value };
+//    int err = i2c_CCAx12Adc_.writeReg(reg_address, values, sizeof(values));
+//    return err;
+//}
 

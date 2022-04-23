@@ -6,10 +6,9 @@
 #include "../../Asserv.Esial/AsservEsialR.hpp"
 #include "../../Asserv.Insa/AsservInsa.hpp"
 #include "../../Log/Logger.hpp"
-#include "MovingBase.hpp"
 
 Asserv::Asserv(std::string botId, Robot *robot) {
-    pMovingBase_ = new MovingBase(botId);
+    //pMovingBase_ = new MovingBase(botId); //TODO deprecated
     asservdriver_ = AAsservDriver::create(botId);
     probot_ = robot;
 
@@ -33,14 +32,45 @@ Asserv::Asserv(std::string botId, Robot *robot) {
 }
 Asserv::~Asserv() {
     delete asservdriver_;
-    delete pMovingBase_;
+    //delete pMovingBase_;
     delete pAsservInsa_;
     delete pAsservEsialR_;
 }
 
-MovingBase* Asserv::base() {
-    return pMovingBase_;
+//DEPRECATED
+//MovingBase* Asserv::base() {
+//    return pMovingBase_;
+//}
+
+
+
+void Asserv::resetEncoders() {
+    asservdriver_->resetEncoders();
 }
+void Asserv::getDeltaEncodersCounts(int * deltaCountR, int * deltaCountL) {
+    //Pas de difference de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->getDeltaCountsExternal(deltaCountR, deltaCountL);
+}
+void Asserv::getEncodersCounts(int * countR, int * countL) {
+    //Pas de difference de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->getCountsExternal(countR, countL);
+}
+void Asserv::runMotorLeft(int power, int timems) {
+    //Pas de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->setMotorLeftPower(power, timems);
+}
+void Asserv::runMotorRight(int power, int timems) {
+    //Pas de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->setMotorRightPower(power, timems);
+}
+
+void Asserv::stopMotors() {
+    //Pas de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->stopMotorLeft();
+    asservdriver_->stopMotorRight();
+}
+
+
 
 void Asserv::endWhatTodo() {
     if (useAsservType_ == ASSERV_INT_INSA) {
@@ -69,9 +99,9 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled) {
         //TO BE surcharged because of the specific config file per robot
         logger().error() << "TODO startMotionTimerAndOdo  ASSERV_INT_ESIALR  TO BE surcharged !!!" << logs::end;
 
-        asservdriver_->motion_ActivateManager(true); //on active le thread
-                if (assistedHandlingEnabled) asservdriver_->motion_AssistedHandling();
-                else asservdriver_->motion_FreeMotion();
+//        pAsservEsialR_->motion_ActivateManager(true); //on active le thread
+//        if (assistedHandlingEnabled) pAsservEsialR_->motion_AssistedHandling();
+//        else pAsservEsialR_->motion_FreeMotion();
     }
     else if (useAsservType_ == ASSERV_EXT) {
 
@@ -207,6 +237,7 @@ float Asserv::pos_getThetaInDegree() {
     return (pos_getTheta() * 180.0f) / M_PI;
 }
 
+
 //doit etre surcharger par robot
 bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc) {
 
@@ -254,7 +285,7 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
         }
     }
 
-    //conversion de la position du le terrain et determination du centre du robot adverse
+//conversion de la position du le terrain et determination du centre du robot adverse
     float dist_centre_robot_mm = 200.0;
     float x_adv = 0.0;
     float y_adv = 0.0;
@@ -279,7 +310,6 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
             << y_adv_detect_mm
             << logs::end;
 }
-
 
 void Asserv::warnBackCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_mm) //x positif devant le robot, y positif le coté gauche
 {
@@ -464,19 +494,6 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
     return ts;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //TODO ATTENTION le getPos n'est pas precis puisque les positions sont recup toutes les n ms, donc il faut utiliser l'asserv ext qui possede l'odometrie
 TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, float adjustment_mm) {
     float dx = getRelativeX(xMM) - pos_getX_mm();
@@ -516,7 +533,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
         }
     }
     float dist = sqrt(dx * dx + dy * dy);
-    //logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+//logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment_mm);
 
 }
@@ -576,11 +593,11 @@ std::tuple<int, float, float> Asserv::eq_2CirclesCrossed_getXY(float x1, float y
             << " d2="
             << d2
             << logs::end;
-    //On définit y en fonction de x : y = ax +b
+//On définit y en fonction de x : y = ax +b
     float b = (((x2 * x2) + (y2 * y2) + (d1 * d1) - (d2 * d2) - (x1 * x1) - (y1 * y1)) / (2.0 * (y2 - y1)));
     float a = (x2 - x1) / (y2 - y1);
 
-    //resolution de l'equation du second degré Ax² + Bx + C = 0
+//resolution de l'equation du second degré Ax² + Bx + C = 0
     float A = (a * a) + 1.0;
     float B = ((2.0 * y1 * a) - (2 * x1) - (2.0 * a * b));
     float C = ((x1 * x1) + (y1 * y1) - (2.0 * y1 * b) + (b * b) - (d1 * d1));
@@ -666,21 +683,21 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robot
     float dist_x_when_mesuring_mm = std::abs(p.x - pos_x_start_mm_conv);
     float position_rel_theta_when_mesuring_rad = getRelativeAngle(p.theta * 180.0 / M_PI) * M_PI / 180.0; //on cherche juste l'angle relatif qu'on soit en couleur A ou B
 
-    //calcul de l'angle entre les 2 rayons de cercle = angle_rad
+//calcul de l'angle entre les 2 rayons de cercle = angle_rad
     float alphap_rad = acos((dist_x_when_mesuring_mm / dist_real_mm));
     float gamma_rad = atan2(delta_jx_mm, (delta_ky_mm + mesure_mm));
     float angle_rad = M_PI_2 + alphap_rad + gamma_rad + position_rel_theta_when_mesuring_rad;
 
-    //calcul de BCprim (distance centre robot au point de mesure)
+//calcul de BCprim (distance centre robot au point de mesure)
     float BCprim_mm = std::sqrt((delta_jx_mm * delta_jx_mm) + ((delta_ky_mm + mesure_mm) * (delta_ky_mm + mesure_mm)));
 
-    //calcul de la distance entre les 2 centres de cercle DCprim
+//calcul de la distance entre les 2 centres de cercle DCprim
     float DCprim_mm = std::sqrt((dist_real_mm * dist_real_mm) + (BCprim_mm * BCprim_mm) - (2.0 * dist_real_mm * BCprim_mm * cos(angle_rad)));
 
-    //calcul de l'abcisse du 2eme centre de cercle par rapport au premier
+//calcul de l'abcisse du 2eme centre de cercle par rapport au premier
     float dist_xDCp_mm = std::sqrt((DCprim_mm * DCprim_mm) - (pos_y_start_mm * pos_y_start_mm));
 
-    //on determine le croisement des 2 cercles en fct des coord et des rayons
+//on determine le croisement des 2 cercles en fct des coord et des rayons
     auto r = eq_2CirclesCrossed_getXY(pos_x_start_mm_conv, pos_y_start_mm, dist_real_mm, getRelativeX(pos_x_start_mm, dist_xDCp_mm), 0.0, BCprim_mm,
             robot_size_l_mm);
 
@@ -724,12 +741,12 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, Robot
     float new_y_mm = std::get<2>(r);
 
 //calcul de l'angle de correction
-    //ajouter la difference entre ancien alphap et le nouveau calculé à la position Theta
+//ajouter la difference entre ancien alphap et le nouveau calculé à la position Theta
     float new_alphap = std::acos(std::abs((new_x_mm - pos_x_start_mm_conv)) / dist_real_mm);
 
-    //float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
+//float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
 
-    //TODO essaie de correction de l'angle
+//TODO essaie de correction de l'angle
     float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad - (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
 
     logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta << " degrees=" << new_teta * 180 / M_PI << logs::end;
@@ -941,8 +958,8 @@ void Asserv::doRunPivotLeft(int powerL, int powerR, int timems) //tourner en piv
         pAsservEsialR_->motion_ResetReguAngle();
         pAsservEsialR_->motion_ResetReguDist();
 
-        base()->motors().runMotorRight(powerR, timems);
-        base()->motors().runMotorLeft(powerL, timems);
+        runMotorRight(powerR, timems);
+        runMotorLeft(powerL, timems);
         utils::sleep_for_micros(timems * 1000);
 
         pAsservEsialR_->motion_ResetReguAngle();
@@ -969,8 +986,8 @@ void Asserv::doRunPivotRight(int powerL, int powerR, int timems) //tourner en pi
         pAsservEsialR_->motion_ResetReguAngle();
         pAsservEsialR_->motion_ResetReguDist();
 
-        base()->motors().runMotorRight(powerR, timems);
-        base()->motors().runMotorLeft(powerL, timems);
+        runMotorRight(powerR, timems);
+        runMotorLeft(powerL, timems);
         utils::sleep_for_micros(timems * 1000);
 
         pAsservEsialR_->motion_ResetReguAngle();

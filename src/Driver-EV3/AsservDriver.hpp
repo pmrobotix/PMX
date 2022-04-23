@@ -66,11 +66,12 @@ public:
 
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countR, int32_t* countL);
+    void getCountsExternal(int32_t* countR, int32_t* countL); //ticks cumulés
+    void getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL); //ticks since last call
 
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
-    void getCountsInternal(int32_t* countR, int32_t* countL);
+    void getCountsInternal(int32_t* countR, int32_t* countL); //ticks cumulés
 
     void resetEncoders();
     void resetInternalEncoders();
@@ -81,6 +82,10 @@ public:
 
     int getMotorLeftCurrent();
     int getMotorRightCurrent();
+
+
+
+
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);

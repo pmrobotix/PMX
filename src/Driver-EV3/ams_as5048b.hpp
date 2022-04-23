@@ -49,7 +49,7 @@ public:
 
     int ping();
 
-    void begin(void); // to init the object, must be called in the setup loop
+    bool connect(void); // to init the object, must be called in the setup loop; return true if connected
     void reset(void);
     void toggleDebug(void); // start / stop debug through serial at anytime
     void setClockWise(bool cw = true); //set clockwise counting, default is false (native sensor)

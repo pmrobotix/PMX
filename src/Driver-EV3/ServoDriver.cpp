@@ -10,6 +10,7 @@
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "CCAx12Adc.hpp"
+#include "CCAx12Teensy.hpp"
 #include "../Common/Utils/json.hpp"
 
 using namespace std;
@@ -22,7 +23,6 @@ AServoDriver * AServoDriver::create() {
 ServoDriver::ServoDriver() :
         pwm_(1, 0x60) //ServoStandard card
 {
-    logger().debug() << "ServoDriver()" << logs::end;
 
     *servo_current_usec_ = {1500};
     *servo_min_= {500};
@@ -32,9 +32,61 @@ ServoDriver::ServoDriver() :
     *servo_rate_= {0};
     *servo_type_= {AServoDriver::SERVO_STANDARD};
 
-    pwm_.begin(50); //freq 50 (periode 20ms) pour servo analogique
+    int connected = pwm_.connect(50); //freq 50 (periode 20ms) pour servo analogique
+    if(!connected)
+        logger().error() << "ServoDriver() pwm 0x60 not CONNECTED!" << logs::end;
 
-    CCAx12Adc::instance().begin(0x08);
+
+
+//    CCAx12Adc::instance().connect(0x08);
+//
+//    int conn = CCAx12Teensy::instance().connect(9);
+//
+//    while(1)
+//          {
+//              CCAx12Teensy::instance().setLedOn(4);
+//              usleep(500000);
+//              CCAx12Teensy::instance().setLedOff(4);
+//              usleep(500000);
+//              logger().error() << "CCAx12Teensy..."  << conn << logs::end;
+//          }
+
+
+
+//    CCAx12Adc::instance().setLedOn(1);
+//    CCAx12Adc::instance().setLedOn(2);
+//    CCAx12Adc::instance().setLedOn(3);
+//    CCAx12Adc::instance().setLedOn(4);
+//    CCAx12Adc::instance().setLedOn(5);
+//    CCAx12Adc::instance().setLedOn(6);
+//    CCAx12Adc::instance().setLedOn(7);
+//    CCAx12Adc::instance().setLedOn(8);
+    //CCAx12Adc::instance().setLedOn(9);
+//    sleep(1);
+//    CCAx12Adc::instance().setLedOff(1);
+//    CCAx12Adc::instance().setLedOff(2);
+//    CCAx12Adc::instance().setLedOff(3);
+//    CCAx12Adc::instance().setLedOff(4);
+//    CCAx12Adc::instance().setLedOff(5);
+//    CCAx12Adc::instance().setLedOff(6);
+//    CCAx12Adc::instance().setLedOff(7);
+//    CCAx12Adc::instance().setLedOff(8);
+    //CCAx12Adc::instance().setLedOff(9);
+
+//    int r = CCAx12Adc::instance().readAXData(3, CMD_PING_AX);
+//    logger().info() << "r=" << r << logs::end;
+
+//    while (1)
+//    {
+//    int p = CCAx12Adc::instance().readAXData(3, P_PRESENT_POSITION);
+//    logger().info() << "p=" << p << logs::end;
+//    }
+    //int r = CCAx12Adc::instance().writeAXData(8, P_TORQUE_ENABLE, 1);
+
+
+
+/*
+    CCAx12Adc::instance().connect(0x08);
     CCAx12Adc::instance().setLedOn(1);
     CCAx12Adc::instance().setLedOn(2);
     CCAx12Adc::instance().setLedOn(3);
@@ -64,6 +116,7 @@ ServoDriver::ServoDriver() :
     CCAx12Adc::instance().setLedOn(7);
     CCAx12Adc::instance().setLedOn(8);
     CCAx12Adc::instance().setLedOn(9);
+    */
 //
 //    while (1) {
 //        int adc1 = 0;
@@ -84,30 +137,30 @@ ServoDriver::ServoDriver() :
 
 
 
-    //____________________________________TEST
-    int servo = 0;
-    setMinPulse(servo, 0);
-    setMaxPulse(servo, 3000);
-    setMinPulse(7, 0);
-    setMaxPulse(7, 3000);
-
-     while (1) {
-     std::cout << "800" << std::endl;
-     setRate(servo, 0);
-     setPulsePos(servo, 1000);
-     setRate(7, 0);
-     setPulsePos(7, 1000);
-     usleep(1000000);
-
-     std::cout << "2000" << std::endl;
-     setRate(servo, 0);
-     setPulsePos(servo, 2000);
-
-     setRate(7, 0);
-     setPulsePos(7, 2000);
-     usleep(1000000);
-     }
-     //____________________________________TEST
+//    //____________________________________TEST
+//    int servo = 0;
+//    setMinPulse(servo, 0);
+//    setMaxPulse(servo, 3000);
+//    setMinPulse(7, 0);
+//    setMaxPulse(7, 3000);
+//
+//     while (1) {
+//     std::cout << "800" << std::endl;
+//     setRate(servo, 0);
+//     setPulsePos(servo, 1000);
+//     setRate(7, 0);
+//     setPulsePos(7, 1000);
+//     usleep(1000000);
+//
+//     std::cout << "2000" << std::endl;
+//     setRate(servo, 0);
+//     setPulsePos(servo, 2000);
+//
+//     setRate(7, 0);
+//     setPulsePos(7, 2000);
+//     usleep(1000000);
+//     }
+//     //____________________________________TEST
 
     /*
      while (1) {

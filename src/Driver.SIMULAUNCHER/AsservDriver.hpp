@@ -97,8 +97,9 @@ public:
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
 
-    void getCountsExternal(int32_t* countR, int32_t* countL){} //TODO
-    void getCountsInternal(int32_t* countR, int32_t* countL){} //TODO
+    void getCountsExternal(int32_t* countR, int32_t* countL){} //TODO getCountsExternal
+    void getDeltaCountsExternal(int32_t* countR, int32_t* countL){} //TODO getDeltaCountsExternal
+    void getCountsInternal(int32_t* countR, int32_t* countL){} //TODO getCountsInternal
 
     long getLeftInternalEncoder();
     long getRightInternalEncoder();

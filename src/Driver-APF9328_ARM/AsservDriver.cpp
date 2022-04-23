@@ -52,6 +52,13 @@ void AsservDriver::setMotorRightPower(int power, int timems)
 	md25_.setSpeedReg(power, MD25_SPEED2_REG);
 }
 
+void getCountsExternal(int* countR, int* countL){
+
+}
+void getDeltaCountsExternal(int* deltaR, int* deltaL){
+
+}
+
 long AsservDriver::getLeftExternalEncoder()
 {
 	return extLeftEncoder_.readCounter();

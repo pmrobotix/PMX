@@ -44,7 +44,7 @@ private:
     }
 
     Mutex m_pos; //mutex pour la mise à jour de la position
-    bool asservStarted_;
+    bool asservSimuStarted_;
 
     Mutex mutexL_;
     Mutex mutexR_;
@@ -113,10 +113,11 @@ public:
     void setMotorRightPower(int power, int time);
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countR, int32_t* countL);
-    void getCountsInternal(int32_t* countR, int32_t* countL);
-    long getLeftInternalEncoder();
-    long getRightInternalEncoder();
+    void getCountsExternal(int32_t* countR, int32_t* countL); //ticks cumulés
+    void getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL);
+    void getCountsInternal(int32_t* countR, int32_t* countL); //ticks cumulés
+    long getLeftInternalEncoder(); //ticks cumulés
+    long getRightInternalEncoder(); //ticks cumulés
     void resetEncoders();
     void resetInternalEncoders();
     void resetExternalEncoders();

@@ -52,14 +52,13 @@
 //    _oscillator_freq = FREQUENCY_OSCILLATOR;
 //
 //}
-
 /*!
  *  @brief  Instantiates a new PCA9685 PWM driver chip with the I2C address on a
  * TwoWire interface
  *  @param  addr The 7-bit I2C address to locate this chip, default is 0x40
  */
 Adafruit_PWMServoDriver::Adafruit_PWMServoDriver(uint i2c_bus_num, const uint8_t addr) :
-        _i2caddr(addr), i2c_(i2c_bus_num, true), _connected_(0)
+        _i2caddr(addr), i2c_(i2c_bus_num, false), connected_(false)
 {
     _oscillator_freq = FREQUENCY_OSCILLATOR;
 
@@ -81,19 +80,17 @@ Adafruit_PWMServoDriver::Adafruit_PWMServoDriver(uint i2c_bus_num, const uint8_t
  *  @param  prescale
  *          Sets External Clock (Optional)
  */
-bool Adafruit_PWMServoDriver::begin(float freq, uint8_t prescale) {
+bool Adafruit_PWMServoDriver::connect(float freq, uint8_t prescale) {
+    if (connected_) return connected_;
 
     int err = i2c_.begin(_i2caddr);
-    if (err >= 0)
-        _connected_ = true;
-
-    usleep(10000);
-    if (!_connected_) {
-        printf("\nAdafruit_PWMServoDriver::begin NOT CONNECTED ! \n");
-        return _connected_;
+    if (err >= 0) connected_ = true;
+    else {
+        connected_ = false;
+        //logger().error() << "Adafruit_PWMServoDriver::connect() : NOT CONNECTED!" << logs::end;
     }
-    reset();
 
+    reset();
 
     // set the default internal frequency
     setOscillatorFrequency(FREQUENCY_OSCILLATOR);
@@ -105,9 +102,7 @@ bool Adafruit_PWMServoDriver::begin(float freq, uint8_t prescale) {
         setPWMFreq(freq); //Datasheet limit is 3052=50MHz/(4*4096)
     }
 
-
-
-    return _connected_;
+    return connected_;
 }
 
 /*!
@@ -169,8 +164,6 @@ void Adafruit_PWMServoDriver::setExtClk(uint8_t prescale) {
  */
 void Adafruit_PWMServoDriver::setPWMFreq(float freq) {
 
-    printf("\nconn = %d\n", _connected_);
-
 #ifdef ENABLE_DEBUG_OUTPUT
 //    Serial.print("Attempting to set freq ");
 //    Serial.println(freq);
@@ -199,11 +192,12 @@ void Adafruit_PWMServoDriver::setPWMFreq(float freq) {
     usleep(5000);
     // This sets the MODE1 register to turn on auto increment.
     write8(PCA9685_MODE1, oldmode | MODE1_RESTART | MODE1_AI);
-    usleep(5000);
-    printf("\nverifprescale");
-    uint8_t verifprescale = readPrescale();
-    printf("\nverifprescale: %d", verifprescale);
+
 #ifdef ENABLE_DEBUG_OUTPUT
+    //usleep(5000);
+    //printf("\nverifprescale");
+    //uint8_t verifprescale = readPrescale();
+    //printf("\nverifprescale: %d", verifprescale);
 //    Serial.print("Mode now 0x");
 //    Serial.println(, HEX);
     printf("\nMode now 0x%02x", read8(PCA9685_MODE1));
@@ -254,7 +248,6 @@ uint8_t Adafruit_PWMServoDriver::readPrescale(void) {
 //  _i2c->requestFrom((int)_i2caddr, PCA9685_LED0_ON_L + 4 * num, (int)4);
 //  return _i2c->read();
 //}
-
 /*!
  *  @brief read pulsewidth (bits 0->4096) from spec'd channel
  *  @param num is the channel number
@@ -278,9 +271,9 @@ uint16_t Adafruit_PWMServoDriver::getPWM(uint8_t num, bool on) {
 //  return (_value);
 
     uint16_t _value;
-      // on == true means we want to read ON PWM value; true = 1,
-      // so invert to point to PCA9685_LED0_OFF_L
-      uint8_t _register_addr = PCA9685_LED0_ON_L + 2 * (int)!on + 4 * num;
+    // on == true means we want to read ON PWM value; true = 1,
+    // so invert to point to PCA9685_LED0_OFF_L
+    uint8_t _register_addr = PCA9685_LED0_ON_L + 2 * (int) !on + 4 * num;
 //      _i2c->beginTransmission(_i2caddr);      // set sensor target
 //      _i2c->write(_register_addr);            // set memory pointer
 //      _i2c->endTransmission();
@@ -291,7 +284,7 @@ uint16_t Adafruit_PWMServoDriver::getPWM(uint8_t num, bool on) {
     uint8_t readArray[2] = { 0, 0 };
     int err = i2c_.readReg(_register_addr, readArray, 2);
     if (err < 0) {
-        printf("\Adafruit_PWMServoDriver::getPWM readReg ERROR\n");
+        printf("Adafruit_PWMServoDriver::getPWM readReg ERROR\n");
 
     }
 
@@ -314,8 +307,8 @@ void Adafruit_PWMServoDriver::setPWM(uint8_t num, uint16_t on, uint16_t off) {
 //  Serial.print("->");
 //  Serial.println(off);
 #endif
-    if (!_connected_) {
-        printf("\nAdafruit_PWMServoDriver::setPWM NOT CONNECTED ! \n");
+    if (!connected_) {
+        //printf("\nAdafruit_PWMServoDriver::setPWM in servo%d NOT CONNECTED !", num);
         return;
     }
     uint8_t reg_address = PCA9685_LED0_ON_L + 4 * num;
@@ -323,7 +316,7 @@ void Adafruit_PWMServoDriver::setPWM(uint8_t num, uint16_t on, uint16_t off) {
 
     int err = i2c_.writeReg(reg_address, values, 4);
     if (err < 0) {
-        printf("\nError Adafruit_PWMServoDriver::setPWM writeReg\n");
+        printf("\nError Adafruit_PWMServoDriver::setPWM writeReg");
         //exit(0);
     }
 
@@ -390,10 +383,10 @@ void Adafruit_PWMServoDriver::writeMicroseconds(uint8_t num, uint16_t microsecon
 //    Serial.print(": ");
 //    Serial.print(Microseconds);
 //    Serial.println("->");
-      printf("\nSetting PWM Via Microseconds on output %d :microsec %d", num , microseconds);
+    printf("\nSetting PWM Via Microseconds on output %d :microsec %d", num , microseconds);
 #endif
 
-    double pulse = (double)microseconds;
+    double pulse = (double) microseconds;
     double pulselength;
 
     pulselength = 1000000.0; // 1,000,000 us per second
@@ -427,7 +420,7 @@ void Adafruit_PWMServoDriver::writeMicroseconds(uint8_t num, uint16_t microsecon
 //    Serial.println(" pulse for PWM");
 #endif
 
-    setPWM(num, 0, (uint16_t)pulse);
+    setPWM(num, 0, (uint16_t) pulse);
 }
 
 void Adafruit_PWMServoDriver::fastWriteMicroseconds(uint8_t num, uint16_t microseconds) {
@@ -436,9 +429,9 @@ void Adafruit_PWMServoDriver::fastWriteMicroseconds(uint8_t num, uint16_t micros
     //_oscillator_freq = 25000000
     //freq = 50Hz
 
-    double pulse = (double)microseconds;
+    double pulse = (double) microseconds;
     pulse /= 4.88;
-    setPWM(num, 0, (uint16_t)pulse);
+    setPWM(num, 0, (uint16_t) pulse);
 }
 
 /*!
@@ -462,8 +455,8 @@ void Adafruit_PWMServoDriver::setOscillatorFrequency(uint32_t freq) {
 
 /******************* Low level I2C interface */
 uint8_t Adafruit_PWMServoDriver::read8(uint8_t addr_reg) {
-    if (!_connected_) {
-        printf("\nAdafruit_PWMServoDriver::read8 NOT CONNECTED ! \n");
+    if (!connected_) {
+        //printf("\nAdafruit_PWMServoDriver::read8 NOT CONNECTED ! \n");
         return 0;
     }
     uint8_t readValue = 0;
@@ -478,8 +471,8 @@ uint8_t Adafruit_PWMServoDriver::read8(uint8_t addr_reg) {
 }
 
 void Adafruit_PWMServoDriver::write8(uint8_t addr_reg, uint8_t d) {
-    if (!_connected_) {
-        printf("\nAdafruit_PWMServoDriver::write8 NOT CONNECTED = %d! \n", _connected_);
+    if (!connected_) {
+        //printf("\nAdafruit_PWMServoDriver::write8 NOT CONNECTED = %d! \n", connected_);
         return;
     }
 

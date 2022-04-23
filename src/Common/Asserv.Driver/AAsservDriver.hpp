@@ -88,7 +88,8 @@ public:
     virtual void setMotorRightPower(int power, int time_ms) = 0;
     virtual long getLeftExternalEncoder() = 0;
     virtual long getRightExternalEncoder() = 0;
-    virtual void getCountsExternal(int32_t* countR, int32_t* countL) = 0;
+    virtual void getCountsExternal(int32_t* countR, int32_t* countL) = 0; //ticks cumules
+    virtual void getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL) = 0; //ticks since last call
     virtual long getLeftInternalEncoder() = 0;
     virtual long getRightInternalEncoder() = 0;
     virtual void getCountsInternal(int32_t* countR, int32_t* countL) = 0;

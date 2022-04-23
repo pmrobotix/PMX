@@ -16,7 +16,7 @@
 class Ev3i2c {
 private:
     int bus_num_;
-    bool skipFirstByte_;
+    bool skipPEC_;
     //Var to hold the i2c communications handle,
     //...this will only be needed by the class itself, so it's private
     int i2cHandle_;
@@ -36,7 +36,7 @@ public:
     //Function: Constructor - First parameter is the I2C address of the slave being talked to.
     //...Second parameter is optional. Set true if using a Rev0 Raspberry Pi.
     //...Returns: Nothing.
-    Ev3i2c(uint i2c_bus_num = 1, bool skipFirstByte = false);
+    Ev3i2c(uint i2c_bus_num = 1, bool skipPEC = false);
 
     //Function: Destructor - Closes the I2C File handle.
     //...Returns: Nothing.
@@ -72,10 +72,10 @@ public:
     //...Returns: Error value. > 0 is ok. < 0 means there was an error.
     //int i2cWriteArduinoInt(int input);
 
-    //Lock par bus i2c
+    //Lock par bus i2c suivant l'ID du bus i2c de EV3 (de 1 à 4)
     void lock();
 
-    //unlock par bus I2C
+    //unlock par bus I2C suivant l'ID du bus i2c de EV3 (de 1 à 4)
     void unlock();
 
 

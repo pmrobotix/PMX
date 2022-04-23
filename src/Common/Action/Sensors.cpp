@@ -7,8 +7,6 @@
 #include "../Action.Driver/ASensorsDriver.hpp"
 #include "../Arguments.hpp"
 #include "../Asserv/Asserv.hpp"
-#include "../Asserv/MotorControl.hpp"
-#include "../Asserv/MovingBase.hpp"
 #include "../Robot.hpp"
 #include "Actions.hpp"
 

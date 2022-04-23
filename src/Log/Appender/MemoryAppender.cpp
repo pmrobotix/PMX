@@ -47,7 +47,7 @@ void logs::MemoryAppender::writeMessage(const logs::Logger & logger, const logs:
     long duration = (duration_cast<microseconds>(t - start_).count());
 
     std::ostringstream out;
-    out << duration << "| " << logger.name() << " " << level.name() << " " << message;
+    out << std::setw(9) << duration << "| " << logger.name() << " " << level.name() << " " << message;
     this->lockMessages();
     this->messages_.push_back(out.str());
     this->unlockMessages();

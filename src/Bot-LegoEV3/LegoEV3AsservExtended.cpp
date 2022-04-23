@@ -32,11 +32,11 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 
         float periodSec = Config::asservPeriod;
 
-        //on active le thread de check de position et les drivers
-        asservdriver_->motion_ActivateManager(true);
+        //on active le thread de check de position et les drivers //TODO a faire dans esialR et non dans asservdriver
+        //asservdriver_->motion_ActivateManager(true);
 
 
-        //start asserv thread
+        //start asserv thread et timer
         pAsservEsialR_->startAsserv(1.0f/periodSec); //f=20 Hz => every 50ms
 
         pAsservEsialR_->motion_ActivateManager(true); //init and start

@@ -7,6 +7,7 @@
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
+#include "../Common/Utils/ITimerPosixListener.hpp"
 
 class CodeursInterface;
 class CommandManager;
@@ -24,13 +25,17 @@ class Robot;
  #define int32 int
  //#define BOOL bool*/
 
-class AsservEsialR: public AAsservDriver, public utils::Thread
+class AsservEsialR: public AAsservDriver, public utils::Thread //, public ITimerPosixListener
 {
 
 protected:
-    virtual void execute();
+     void execute();
+//     void onTimer(utils::Chronometer chrono);
+//     void onTimerEnd(utils::Chronometer chrono);
 
 private:
+
+     unsigned long long last_;
 
     /*!
      *\brief Chronomètre lié.
@@ -42,10 +47,13 @@ private:
      */
     Robot * robot_;
 
-    bool run_ = false;
+    AAsservDriver* asservdriver;
+
+    bool run_;
+    //bool loop_not_finished_ ;
 
     //nb of period since the beginning
-    uint periodNb_; //static
+    uint periodNb_;
 
     //loop delay
     uint loopDelayInMillisec_;
@@ -57,13 +65,12 @@ private:
     CommandManager *commandM_;
 
     TRAJ_STATE pathStatus_;
-    RobotPosition p_;
+    RobotPosition p_; //position du robot via cet asservissement
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref AsservEsialR.
      */
-    static inline const logs::Logger & logger()
-    {
+    static inline const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("AsservEsialR");
         return instance;
     }
@@ -71,16 +78,14 @@ private:
     /*!
      * \brief Retourne le \ref Logger file associé à la classe \ref AsservEsialR.
      */
-    static inline const logs::Logger & loggerFile()
-    {
+    static inline const logs::Logger & loggerFile() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("logFileAsservEsialR");
         return instance;
     }
 
 public:
     AsservEsialR(Robot * robot);
-    ~AsservEsialR()
-    {
+    ~AsservEsialR() {
     }
 
     void setSamplingFrequency(uint frequency);
@@ -92,27 +97,6 @@ public:
     TRAJ_STATE waitEndOfTraj();
 
     void endWhatTodo();
-
-    //commandes directes concernant les moteurs
-    void setMotorLeftPosition(int power, long ticks);
-    void setMotorRightPosition(int power, long ticks);
-    void setMotorLeftPower(int power, int time);
-    void setMotorRightPower(int power, int time);
-    void stopMotorLeft();
-    void stopMotorRight();
-    int getMotorLeftCurrent();
-    int getMotorRightCurrent();
-
-    //commandes concernant les codeurs
-    long getLeftExternalEncoder();
-    long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countR, int32_t* countL);
-    long getLeftInternalEncoder();
-    long getRightInternalEncoder();
-    void getCountsInternal(int32_t* countR, int32_t* countL);
-    void resetEncoders();
-    void resetInternalEncoders();
-    void resetExternalEncoders();
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
@@ -148,6 +132,27 @@ public:
     TRAJ_STATE motion_DoDirectLine(float dist_mm);
 
     void motion_ActivateQuadRamp(bool enable);
+
+    //FCT NON utilisée : commandes directes concernant les moteurs et codeurs
+    void setMotorLeftPosition(int power, long ticks);
+    void setMotorRightPosition(int power, long ticks);
+    void setMotorLeftPower(int power, int time);
+    void setMotorRightPower(int power, int time);
+    void stopMotorLeft();
+    void stopMotorRight();
+    int getMotorLeftCurrent();
+    int getMotorRightCurrent();
+    long getLeftExternalEncoder();
+    long getRightExternalEncoder();
+    void getCountsExternal(int32_t* countR, int32_t* countL);
+    void getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL);
+    long getLeftInternalEncoder();
+    long getRightInternalEncoder();
+    void getCountsInternal(int32_t* countR, int32_t* countL);
+
+    void resetEncoders();
+    void resetInternalEncoders();
+    void resetExternalEncoders();
 
 };
 

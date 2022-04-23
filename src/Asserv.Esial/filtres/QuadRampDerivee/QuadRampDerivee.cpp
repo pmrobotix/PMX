@@ -85,9 +85,13 @@ int64_t QuadRampDerivee::filtre(int64_t consigne, int64_t position_actuelle, int
     //float distanceFreinage = (vitesse * deltaT) / derivee_2nd_neg_av;
     int64_t distanceFreinage = 0;
     if (sens == 1) {
-        distanceFreinage = (vitesse * gainAnticipation_av) / derivee_2nd_neg_av;
+        //distanceFreinage = (vitesse * gainAnticipation_av) / (derivee_2nd_neg_av); //chaff
+        ///distanceFreinage = (int64_t)(1.0 * (vitesse/derivee_2nd_neg_av) * (vitesse/derivee_2nd_neg_av) * gainAnticipation_av) ;
+        distanceFreinage = ((((vitesse / 100.0) * vitesse) / derivee_2nd_neg_av) * gainAnticipation_av) ;
+//printf("\n distanceFreinage v=%ld d=%ld distf=%ld", vitesse, derivee_2nd_neg_av, distanceFreinage);
+
     } else {
-        distanceFreinage = (vitesse * gainAnticipation_ar) / derivee_2nd_neg_ar;
+        distanceFreinage = (vitesse * vitesse *  gainAnticipation_ar) / (derivee_2nd_neg_ar * derivee_2nd_neg_ar);
     }
 
     int64_t vitesseConsigne = prevConsigneVitesse;

@@ -48,8 +48,8 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
-    long left;
-    long right;
+    int left;
+    int right;
 
     float d = 0.0;
     float x = 0.0;
@@ -98,8 +98,8 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
 
     robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
 
-    left = robot.asserv().base()->extEncoders().getLeftEncoder();
-    right = robot.asserv().base()->extEncoders().getRightEncoder();
+    robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
+    RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "time= "
             << robot.chrono().getElapsedTimeInMilliSec()
             << "ms ; left= "
@@ -107,11 +107,11 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
             << " ; right= "
             << right
             << " x="
-            << robot.asserv().pos_getX_mm()
+            << p.x
             << " y="
-            << robot.asserv().pos_getY_mm()
-            << " a="
-            << robot.asserv().pos_getThetaInDegree()
+            << p.y
+            << " deg="
+            << p.theta * 180.0 / M_PI
             << logs::end;
 
     robot.svgPrintPosition();
@@ -153,8 +153,7 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
             robot.svgPrintPosition();
         }
 
-
-        if (!(x == 0 && y==0)) {
+        if (!(x == 0 && y == 0)) {
             ts = TRAJ_OK;
             logger().info() << "go Forward... x=" << x << ", y=" << y << logs::end;
             while (ts != TRAJ_FINISHED) {
@@ -174,7 +173,6 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
             }
             robot.svgPrintPosition();
         }
-
 
         if (a != 0) {
             ts = TRAJ_OK;
@@ -199,20 +197,21 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
         d += d;
     }
     sleep(1);
-    left = robot.asserv().base()->encoders().getLeftEncoder();
-    right = robot.asserv().base()->encoders().getRightEncoder();
-    logger().info() << "End time= "
+
+    robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
+    p = robot.asserv().pos_getPosition();
+    logger().info() << "time= "
             << robot.chrono().getElapsedTimeInMilliSec()
             << "ms ; left= "
             << left
             << " ; right= "
             << right
             << " x="
-            << robot.asserv().pos_getX_mm()
+            << p.x
             << " y="
-            << robot.asserv().pos_getY_mm()
-            << " a="
-            << robot.asserv().pos_getThetaInDegree()
+            << p.y
+            << " deg="
+            << p.theta * 180.0 / M_PI
             << logs::end;
 
     robot.svgPrintPosition();

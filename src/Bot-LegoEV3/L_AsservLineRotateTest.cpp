@@ -6,8 +6,6 @@
 
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
-#include "../Common/Asserv/EncoderControl.hpp"
-#include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
@@ -48,8 +46,8 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
-    long left;
-    long right;
+    int left;
+    int right;
 
     float d = 0.0;
     float x = 0.0;
@@ -100,8 +98,8 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
 
     robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
 
-    left = robot.asserv().base()->extEncoders().getLeftEncoder();
-    right = robot.asserv().base()->extEncoders().getRightEncoder();
+    robot.asserv().getEncodersCounts(&right, &left);
+
     logger().info() << "time= "
             << robot.chrono().getElapsedTimeInMilliSec()
             << "ms ; left= "
@@ -190,8 +188,8 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
         d += d;
     }
     sleep(1);
-    left = robot.asserv().base()->encoders().getLeftEncoder();
-    right = robot.asserv().base()->encoders().getRightEncoder();
+    robot.asserv().getEncodersCounts(&right, &left);
+
     logger().info() << "End time= "
             << robot.chrono().getElapsedTimeInMilliSec()
             << "ms ; left= "

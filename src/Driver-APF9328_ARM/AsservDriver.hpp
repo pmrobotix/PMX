@@ -32,6 +32,8 @@ public:
 	void setMotorRightPosition(int power, long ticks);
 	void setMotorLeftPower(int power, int time);
 	void setMotorRightPower(int power, int time);
+	void getCountsExternal(int* countR, int* countL); //ticks cumulés
+	void getDeltaCountsExternal(int* deltaR, int* deltaL);
 	long getLeftExternalEncoder();
 	long getRightExternalEncoder();
 	long getLeftInternalEncoder();

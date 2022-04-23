@@ -33,7 +33,7 @@ int64_t Pid::filtre(int64_t erreur , int64_t feedback_odometrie , int64_t value3
     // Calcul de la Proportionnelle
     int64_t P = erreur * kp;
 
-    //printf("P=%d ", P);
+    //printf("P=%ld ", P);
 
     //Calcul de l'Intégrale que l'on oublie pas de borner
     integrale += erreur;
@@ -48,7 +48,13 @@ int64_t Pid::filtre(int64_t erreur , int64_t feedback_odometrie , int64_t value3
 
     //On calcul la Sortie qui est la somme des trois valeurs multipliée par le ratio de sortie
     int64_t sortie = P + I - D;
+
+
+
     sortie = sortie * outRatio;
+
+    //printf("P=%ld;s=%ld  ", P, sortie);
+    //printf(" sortie=%ld ", sortie);
 
     // Saturation de la sortie pour ne pas allez trop vite non plus
     sortie = Utils::constrain(sortie , -maxOutput , maxOutput);

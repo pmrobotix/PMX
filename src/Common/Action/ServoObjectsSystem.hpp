@@ -62,7 +62,19 @@ public:
     void hold(int servo);
 
     int getTorque(int servo);
+    void setTorque(int servo, int torque){}//TODO
+
+    void setSpeed(int servo, int speed);
+    int getSpeed(int servo){} //TODO
+
+    /*!
+         * \brief move 2 servos.
+         */
     int getPos(int servo);
+
+    /*!
+         * \brief move 2 servos.
+         */
     int getPulseWidth(int servo);
     void detectAll();
     void detect();
@@ -72,7 +84,7 @@ public:
     }
 
 //    void setType(AServoDriver::ServoType type);
-    //void setSpeed(int servo, int speed);
+
 //    void setMinPulse(int servo, int value);
 //    void setMidPulse(int servo, int value);
 //    void setMaxPulse(int servo, int value);

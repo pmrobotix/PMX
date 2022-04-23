@@ -80,7 +80,7 @@ private:
 
     bool connected_;
     utils::Mutex mutex_;
-    bool begin_;
+    //bool begin_;
 
     /*!
      * \brief Constructeur de la classe.
@@ -94,8 +94,7 @@ private:
     int write(unsigned char command);
     int read();
 
-    int readRegs(uint8_t reg_address, uint8_t len, uint8_t* data);
-    int writeReg(uint8_t reg_address, uint8_t value);
+    int readRegs(uint8_t reg_address, uint8_t* data, uint8_t len);
     int writeRegs(uint8_t reg_address, uint8_t* values);
 public:
 
@@ -114,7 +113,8 @@ public:
     }
 
     // configuration and initialisation avec l'adresse i2c sur le bus
-    int begin(uint i2c_aAddr);
+    //return 0 if ok; false if not connected
+    bool connect(uint i2c_aAddr);
 
     //todo get address i2c //ping de la carte à faire
 

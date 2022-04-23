@@ -5,7 +5,6 @@
 
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action.Driver/ALedDriver.hpp"
-#include "../Common/Asserv/MovingBase.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"

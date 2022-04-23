@@ -21,7 +21,8 @@ public:
     int pingSensor1();
     int pingSensor2();
 
-    void init();
+    //return 0 if ok, negative if errors
+    int connect();
     void reset();
 
     //(for testing)
@@ -37,7 +38,6 @@ public:
 
     int getAccumulatedDirectValueEncoder1(int32_t * value);
     int getAccumulatedDirectValueEncoder2(int32_t * value);
-//    int32_t getFiltered(int32_t value, int8_t shift);
 
     /*!
      * \brief Retourne l'avancement(delta) droite et gauche avec le calcul.
@@ -45,14 +45,14 @@ public:
      * \param deltaEncoderLeft.
      * \return retourne 0 si ok, negatif si erreur.
      */
-    int getValues(float *deltaEncoderRight, float *deltaEncoderLeft);
+    int getValues(int32_t *deltaEncoderRight, int32_t *deltaEncoderLeft);
+    int getValuesf(float *deltaEncoderRight, float *deltaEncoderLeft);
 
     /*!
      * \brief Retourne les données raw des codeurs dans les pointeurs.
      * \return retourne 0 si ok, negatif si erreurs.
      */
-    int getValuesStatus(uint16_t *encoderRight, uint16_t *encoderLeft, uint8_t *agcR, uint8_t *agcL, uint8_t *diagR, uint8_t *diagL, uint16_t *magR,
-            uint16_t *magL);
+    //int getValuesStatus(uint16_t *encoderRight, uint16_t *encoderLeft, uint8_t *agcR, uint8_t *agcL, uint8_t *diagR, uint8_t *diagL, uint16_t *magR, uint16_t *magL);
 private:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref MagEncoders(EV3).
@@ -65,14 +65,17 @@ private:
     AMS_AS5048B m_mysensor1;
     AMS_AS5048B m_mysensor2;
 
+    bool m_is1EncoderRight;
     bool m_invertEncoderL;
     bool m_invertEncoderR;
     int32_t m_encoderLSum;
     int32_t m_encoderRSum;
-    float m_encoder1Previous;
-    float m_encoder2Previous;
+    int16_t m_encoder1Previous;
+    int16_t m_encoder2Previous;
 
-    bool m_is1EncoderRight;
+    float f_encoder1Previous;
+    float f_encoder2Previous;
+
 
     //specifique pour enc1 et enc2
     float encoder1Previous_;

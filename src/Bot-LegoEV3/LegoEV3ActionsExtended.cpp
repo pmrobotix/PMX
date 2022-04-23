@@ -11,7 +11,7 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
 {
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
 
-    releaseAll();
+    //releaseAll();
 
     servos().setup(SERVO_1, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
 

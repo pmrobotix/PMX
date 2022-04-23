@@ -4,7 +4,6 @@
 
 #include "../../Common/Asserv/Asserv.hpp"
 #include "../../Common/Asserv/MotorControl.hpp"
-#include "../../Common/Asserv/MovingBase.hpp"
 #include "../../Common/Robot.hpp"
 #include "../config/config.h"
 
@@ -56,7 +55,7 @@ void BotMotors::setVitesseG(int vitMoteurG)
 
     //Apply
     //robot_->logger().error() << "vit = " << temp << "  setVitesseG = " << vitMoteurG << logs::end;
-    robot_->asserv()->base()->motors().runMotorLeft(vitMoteurG, 0);
+    robot_->asserv()->runMotorLeft(vitMoteurG, -1);
 }
 
 void BotMotors::setVitesseD(int vitMoteurD)
@@ -92,7 +91,7 @@ void BotMotors::setVitesseD(int vitMoteurD)
 
     //APPLY
     //robot_->logger().error() << "vit = " << temp << "  setVitesseD = " << vitMoteurD << logs::end;
-    robot_->asserv()->base()->motors().runMotorRight(vitMoteurD, 0);
+    robot_->asserv()->runMotorRight(vitMoteurD, -1);
 }
 
 #endif /* CONFIG_MOTORCTRL_BOTMOTORS */

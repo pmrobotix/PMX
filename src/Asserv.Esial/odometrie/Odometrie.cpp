@@ -52,7 +52,7 @@ Odometrie::Odometrie(CodeursInterface *cdrs)
     }
 
     // Calcul de la distance entre les roues en UO
-    distanceRouesUO = Config::distRoues * frontParMetre * Config::uOParFront / 1000.0;
+    distanceRouesUO = (1.0 * Config::distRoues * frontParMetre * Config::uOParFront) / 1000.0;
 }
 
 // Destructeur
@@ -75,9 +75,11 @@ void Odometrie::setTheta(float thetaVal) {
 // Mise à jour de la position du robot
 void Odometrie::refresh()
 {
-    //Récupération des comptes des codeurs
+    //Récupération des ticks des codeurs pendant l'iteration
     int32_t compteurBrutG = 0, compteurBrutD = 0;
     codeurs->getCounts(&compteurBrutG, &compteurBrutD);
+
+//printf("--refresh getCounts %d %d ", compteurBrutG, compteurBrutD);
 
     if (!Config::reglageCodeurs) {
         //On transforme ces valeurs en Unites Odometrique
@@ -101,7 +103,7 @@ void Odometrie::refresh()
         int64_t diffCount = compteurD - compteurG; // On conserve la différence entre les comptes en UO
         deltaTheta = (float) diffCount / (float) distanceRouesUO; // En radian
 
-        if (labs(diffCount) < 1) {   // On considère le mouvement comme une ligne droite
+        if (labs(diffCount) < 3) {   // On considère le mouvement comme une ligne droite
                                      // Mise à jour de la position
             x += deltaDist * cos(theta);
             y += deltaDist * sin(theta);
@@ -121,8 +123,10 @@ void Odometrie::refresh()
                 theta += 2 * PI;
             }
         }
+//printf("---refresh x=%ld\ty=%ld \t G=%d D=%d  xmm=%d ymm=%d \r\n", x, y,compteurBrutG, compteurBrutD, getXmm(), getYmm());
+
     } else {
-        // TODO Vérifier qu'on ne perd pas l'accumulation dans ce mode
+
         printf("CG=%d \t\tCD=%d\r\n", compteurBrutG, compteurBrutD);
 
     }

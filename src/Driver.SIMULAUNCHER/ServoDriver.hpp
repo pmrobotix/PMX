@@ -38,7 +38,7 @@ public:
 
     void hold(int servo);
 
-    void setPosition(int servo, int percent);
+    void setPulsePos(int servo, int pulse);
 
     void release(int servo);
 
@@ -48,7 +48,7 @@ public:
 
     int getMoving(int servo);
 
-    int getPos(int servo);
+    int getPulsePos(int servo);
 
     int ping(int servo);
 
@@ -61,6 +61,8 @@ public:
     void setPolarity(int servo, bool inversed);
 
     int getTorque(int servo);
+
+    void setType(int servo, ServoType);
 
 };
 

@@ -14,11 +14,10 @@ int64_t Utils::constrain(int64_t value, int64_t valeurMin, int64_t valeurMax)
 }
 
 // Conversion mm vers UO
-int64_t Utils::mmToUO(Odometrie *odo, int32_t valeur) //TODO supprimer odo et prendre la config?
+int64_t Utils::mmToUO(Odometrie *odo, int32_t valeur)
 {
-
     int64_t r = ((valeur * (int)(odo->getFrontParMetre()) * (Config::uOParFront / 1000.0)) );
-    //printf("\nmmToUO %d %f %d %ld\n",valeur, odo->getFrontParMetre(), Config::uOParFront, r);
+    //printf("\nmmToUO %d %d %d %ld\n",valeur, odo->getFrontParMetre(), Config::uOParFront, r);
     return r;
     //return (int64_t)((valeur * (odo->getFrontParMetre()) * Config::uOParFront * 1.0) / 1000.0);
 }
@@ -26,16 +25,16 @@ int64_t Utils::mmToUO(Odometrie *odo, int32_t valeur) //TODO supprimer odo et pr
 // Conversion U0 vers mm
 int32_t Utils::UOTomm(Odometrie *odo, int64_t valeur)
 {
-    int32_t r = (((valeur * (1000.0 / Config::uOParFront)) / (odo->getFrontParMetre() * 1.0)));
-    //printf("\nUOTomm %ld %f %d %d\n",valeur, odo->getFrontParMetre(), Config::uOParFront, r);
-    return r;
+    int32_t mm = (((valeur * (1000.0 / Config::uOParFront)) / (odo->getFrontParMetre() * 1.0)));
+    //printf("\nUOTomm %ld %d %d %d\n",valeur, odo->getFrontParMetre(), Config::uOParFront, mm);
+    return mm;
     //return (int32_t) (((valeur * 1000.0) / (odo->getFrontParMetre() * Config::uOParFront * 1.0)));
 }
 
 // Conversion degres en UO
 int64_t Utils::degToUO(Odometrie *odo, int32_t valeur)
 {
-    return (PI * valeur * odo->getDistanceRouesUO()) / 180;
+    return (PI * valeur * odo->getDistanceRouesUO()) / 180.0;
 }
 
 // Conversion  UO en deg

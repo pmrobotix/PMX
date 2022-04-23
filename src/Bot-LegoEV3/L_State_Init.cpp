@@ -2,8 +2,6 @@
 
 #include <unistd.h>
 #include <cstdlib>
-#include "../Common/Asserv/MovingBase.hpp"
-#include "../Common/Asserv/EncoderControl.hpp"
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Tirette.hpp"
@@ -292,8 +290,7 @@ void L_State_Init::setPos()
 
     //init des objects
 //    robot.actions().init_servos();
-    robot.asserv().base()->encoders().reset();
-    robot.asserv().base()->extEncoders().reset();
+    robot.asserv().resetEncoders();
 
     robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(450 + 120, 1543 - 50, -90.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur

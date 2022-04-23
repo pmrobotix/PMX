@@ -36,8 +36,8 @@ void AsservInsa::encoder_Init()
 {
     if (robot_ != NULL) {
 
-        robot_->asserv()->base()->extEncoders().reset();
-        robot_->asserv()->base()->encoders().reset();
+        robot_->asserv()->resetEncoders();
+
         lastRight_ = 0;
         lastLeft_ = 0;
     } else {
@@ -54,30 +54,17 @@ void AsservInsa::encoder_SetDist(float dist)
 void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, int32 *dDelta, int32 *left,
         int32 *right)
 {
-    //int32 left = 0;
-    //int32 right = 0;
-
-//	if (robot_ != NULL)
-//	{
-//		robot_->asserv()->base()->encoders().getLeftEncoder();
-//	}
     if (robot_ != NULL) {
         //read encoder
         if (useExternalEncoders_) {
-            *left = robot_->asserv()->base()->extEncoders().getLeftEncoder();
+            robot_->asserv()->getEncodersCounts(right, left);
+            //*left = robot_->asserv()->base()->extEncoders().getLeftEncoder();
             //*left = base_->extEncoders().getLeftEncoder();
         } else {
-            *left = robot_->asserv()->base()->encoders().getLeftEncoder();
+            //*left = robot_->asserv()->base()->encoders().getLeftEncoder();
             //*left = base_->encoders().getLeftEncoder();
         }
 
-        if (useExternalEncoders_) {
-            *right = robot_->asserv()->base()->extEncoders().getRightEncoder();
-            //*right = base_->extEncoders().getRightEncoder();
-        } else {
-            *right = robot_->asserv()->base()->encoders().getRightEncoder();
-            //*right = base_->encoders().getRightEncoder();
-        }
 
     } else {
         logger().error() << "encoder_ReadSensor : Base is NULL !" << logs::end;

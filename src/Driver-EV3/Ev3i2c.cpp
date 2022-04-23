@@ -7,20 +7,19 @@
 
 #include "Ev3i2c.hpp"
 
-#include <errno.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
 #include <iostream>
 
 #include "i2c-dev.h"
 
-Ev3i2c::Ev3i2c(uint i2c_bus_num, bool skipFirstByte) {
+
+Ev3i2c::Ev3i2c(uint i2c_bus_num, bool skipPEC) {
     bus_num_ = i2c_bus_num;
-    skipFirstByte_ = skipFirstByte;
+    skipPEC_ = skipPEC;
     address_ = 0;
 
     //Set up the filename of the I2C Bus. Choose appropriate bus for Raspberry Pi Rev.
@@ -39,7 +38,7 @@ Ev3i2c::Ev3i2c(uint i2c_bus_num, bool skipFirstByte) {
     }
     else {
         //bad busnumber
-        std::cout << "Ev3i2c BAD I2C BUS" << std::endl;
+        std::cout << "Ev3i2c BAD I2C BUS !!!!" << std::endl;
         exit(0);
     }
     filename[12] = 0; //Add the null character onto the end of the array to make it a string
@@ -61,20 +60,24 @@ Ev3i2c::Ev3i2c(uint i2c_bus_num, bool skipFirstByte) {
 
 int Ev3i2c::begin(uint address) {
     address_ = address;
+
     lock();
-    if (ioctl(i2cHandle_, I2C_SLAVE, address) < 0) { //Using ioctl set the i2c device to talk to address in the "addr" variable.
-        std::cout << "Ev3i2c Can't set the I2C address for the slave device" << std::endl; //Display error setting the address for the slave.
-    }
-    //std::cout << "I2C_PEC " << std::hex << address << " = " << ioctl(i2cHandle_, I2C_PEC, 0) << std::endl;
+    int err = ioctl(i2cHandle_, I2C_SLAVE, address);
     unlock();
 
-    int err = ping();
+    if (err < 0) { //Using ioctl set the i2c device to talk to address in the "addr" variable.
+        std::cout << "Ev3i2c Can't set the I2C address for the slave device" << std::endl; //Display error setting the address for the slave.
+        return err*100;
+    }
+    //std::cout << "I2C_PEC " << std::hex << address << " = " << ioctl(i2cHandle_, I2C_PEC, 0) << std::endl;
+
+    err = ping();
     if (err < 0) {
         std::cout << "Ev3i2c Oh dear, something went wrong - No ping with 0x" << std::hex << address << " at " << filename_str_ << std::endl;
         //exit(EXIT_FAILURE);
         return err;
     }
-    else return false;
+    else return 0;
 }
 
 Ev3i2c::~Ev3i2c() {
@@ -124,7 +127,7 @@ int Ev3i2c::write(uint8_t value) {
  */
 int Ev3i2c::readReg(uint8_t byte_reg, uint8_t *data, uint8_t length_data) {
 
-    if (skipFirstByte_) {
+    if (skipPEC_) {
         uint8_t lengthWithPEC = length_data + 1;
         uint8_t dataPEC[lengthWithPEC];
         int len = 0;
@@ -228,6 +231,7 @@ int Ev3i2c::writeReg(uint8_t byte_reg, uint8_t *values, uint8_t length_values) {
 //    retval = (i2cWrite(tmp, arr_size) > 0);
 //    return retval;
 //}
+
 
 void Ev3i2c::lock() {
 

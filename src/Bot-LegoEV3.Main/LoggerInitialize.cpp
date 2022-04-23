@@ -4,11 +4,11 @@
  */
 
 #include "../Log/Appender/ConsoleAppender.hpp"
+#include "../Log/Appender/FileAppender.hpp"
 #include "../Log/Appender/SvgAppender.hpp"
 #include "../Log/Appender/TelemetryAppender.hpp"
 #include "../Log/Level.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "../Thread/Thread.hpp"
 
 
 void logs::LoggerFactory::initialize()
@@ -19,7 +19,7 @@ void logs::LoggerFactory::initialize()
     add("svg", new SvgAppender("svgEV3.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));
     //add("memory", new MemoryAppender());
-    //add("fileAsserv", new FileAppender("logAsserv.csv"));
+    add("fileAsserv", new FileAppender("logAsserv.csv"));
     //add("fileRegul", new FileAppender("logRegul.csv"));
 
     //order=ERROR>TELEM>WARN>INFO>DEBUG
@@ -52,7 +52,7 @@ void logs::LoggerFactory::initialize()
 
     //File DEBUG
     //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
-    //add(logs::Level::DEBUG, "logFileAsservEsialR", "fileAsserv");
+    add(logs::Level::DEBUG, "logFileAsservEsialR", "fileAsserv");
     //add(logs::Level::DEBUG, "logFileAsservRegul", "fileRegul");
 
     //TESTS
@@ -92,25 +92,29 @@ void logs::LoggerFactory::initialize()
     //add(logs::Level::INFO, "AsservDriverMemory.SIMU", "console");
 
     //DRIVERS EV3
-    add(logs::Level::INFO, "LedDriver.EV3", "net");
-    add(logs::Level::INFO, "ButtonDriver.EV3", "console");
-    add(logs::Level::INFO, "SoundDriver.EV3", "console");
-    add(logs::Level::INFO, "SwitchDriver.EV3", "console");
+    add(logs::Level::INFO, "ActionManagerTimer", "console");
     add(logs::Level::INFO, "AsservDriver.EV3", "console");
-    add(logs::Level::INFO, "ServoDriver.EV3", "console");
-    add(logs::Level::INFO, "ServoMotorExtend.EV3", "console");
-    add(logs::Level::INFO, "SensorsDriver.EV3", "console");
+    add(logs::Level::INFO, "ButtonDriver.EV3", "console");
+    add(logs::Level::DEBUG, "BeaconSensors.EV3", "console");
+    add(logs::Level::DEBUG, "CCAx12Adc.EV3", "console");
+    add(logs::Level::DEBUG, "CCAx12Teensy.EV3", "console");
+    add(logs::Level::INFO, "LedDriver.EV3", "net");
     add(logs::Level::INFO, "LegoIRSensor.EV3", "console");
     add(logs::Level::INFO, "LegoAngleSensor.EV3", "console");
     add(logs::Level::INFO, "LegoMotor.EV3", "console");
     add(logs::Level::INFO, "LcdShieldDriver.EV3", "console");
     add(logs::Level::INFO, "MagEncoders.EV3", "console");
-    add(logs::Level::INFO, "ActionManagerTimer", "console");
-    add(logs::Level::INFO, "MovingBase", "console");
+    add(logs::Level::INFO, "SoundDriver.EV3", "console");
+    add(logs::Level::INFO, "SwitchDriver.EV3", "console");
+    add(logs::Level::DEBUG, "ServoDriver.EV3", "console");
+    add(logs::Level::INFO, "ServoMotorExtend.EV3", "console");
+    add(logs::Level::DEBUG, "SensorsDriver.EV3", "console");
+
+
 
     add(logs::Level::INFO, "Asserv", "console");
     //add(logs::Level::INFO, "AsservInsa", "console");
-    add(logs::Level::INFO, "AsservEsialR", "console");
+    add(logs::Level::DEBUG, "AsservEsialR", "console");
 
     //DEBUG
 

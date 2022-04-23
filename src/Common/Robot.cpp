@@ -314,7 +314,7 @@ void Robot::stopMotionTimerAndActionManager() {
 
 void Robot::freeMotion() {
     this->asserv_default_->freeMotion();
-    this->asserv_default_->base()->motors().stopMotors();
+    this->asserv_default_->stopMotors();
 }
 
 void Robot::resetDisplayTS() {
