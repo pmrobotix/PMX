@@ -23,7 +23,7 @@ LedDriver::LedDriver(int nb)
 
     //logger().error() << "===> BAT = " << "voltage is " << volts << logs::end;
     //logger().error() << "===> AMP = " << "Current is " << amps << logs::end;
-    logger().info() << "=> V=" << volts << " A=" << amps << logs::end;
+    logger().debug() << "=> V=" << volts << " A=" << amps << logs::end;
 
     if (volts <= 7.6 && volts >= 7.4) {
         setBytes(0xFF, LED_ORANGE);

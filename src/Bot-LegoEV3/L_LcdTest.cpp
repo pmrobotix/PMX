@@ -24,7 +24,7 @@ void L_LcdTest::run(int argc, char** argv)
     robot.actions().lcd().display_content_string("PM-ROBOTIX Go !", 4);
     robot.actions().lcd().display_content_string("points =", 6);
     robot.actions().lcd().display_content_integer(p, 6, 10);
-    sleep(3); //to have time to see it on the EV3
+    sleep(6); //to have time to see it on the EV3
     //robot.actions().lcd().setCursor(1,1); //to change the font
 
     //logger().debug() << "Happy End." << logs::end;

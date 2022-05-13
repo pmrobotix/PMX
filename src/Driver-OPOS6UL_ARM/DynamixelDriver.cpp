@@ -35,18 +35,24 @@ DynamixelDriver::DynamixelDriver() :
     }
 }
 
+void DynamixelDriver::setType(int servo, ServoType type)
+{
+
+}
+
+
 void DynamixelDriver::hold(int servo) {
     int err = CCAx12Adc::instance().writeAXData(servo, P_TORQUE_ENABLE, 1);
     logger().info() << "hold enableax=" << err << logs::end;
 }
 
-void DynamixelDriver::setPosition(int servo, int pos) {
+void DynamixelDriver::setPulsePos(int servo, int pulsewidth) {
 //    if (pos >= 1023)
 //        pos = 1023;
 //    if (pos <= 0)
 //        pos = 0;
 
-    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_POSITION, constrain(pos, 0, 4095));
+    int r = CCAx12Adc::instance().writeAXData(servo, P_GOAL_POSITION, constrain(pulsewidth, 0, 4095));
     logger().debug() << "setPosition P_GOAL_POSITION =" << r << logs::end;
 
 }
@@ -96,7 +102,7 @@ int DynamixelDriver::getMoving(int servo) {
     return r;
 }
 
-int DynamixelDriver::getPos(int servo) {
+int DynamixelDriver::getPulsePos(int servo) {
     int r = CCAx12Adc::instance().readAXData(servo, P_PRESENT_POSITION);
     return r;
 }

@@ -101,8 +101,9 @@ public:
     //commandes concernant les codeurs
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countR, int32_t* countL){} //TODO
-    void getCountsInternal(int32_t* countR, int32_t* countL){} //TODO
+    void getCountsExternal(int32_t* countR, int32_t* countL){} //TODO getCountsExternal
+    void getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL){} //TODO getDeltaCountsExternal
+    void getCountsInternal(int32_t* countR, int32_t* countL){} //TODO getCountsInternal
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
     void resetEncoders();

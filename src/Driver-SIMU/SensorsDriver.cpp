@@ -23,6 +23,10 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
+void SensorsDriver::displayNumber(int number)
+{
+
+}
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
     ASensorsDriver::bot_positions pos;

@@ -16,7 +16,6 @@
 
 #include "i2c-dev.h"
 
-
 Ev3i2c::Ev3i2c(uint i2c_bus_num, bool skipPEC) {
     bus_num_ = i2c_bus_num;
     skipPEC_ = skipPEC;
@@ -52,9 +51,6 @@ Ev3i2c::Ev3i2c(uint i2c_bus_num, bool skipPEC) {
     if (i2cHandle_ < 0) {
         std::cout << "Ev3i2c Can't open I2C BUS" << std::endl; //If there's an error opening this, then display it.
     }
-//    lock();
-//    std::cout << "Ev3i2c I2C_PEC " << " = " << ioctl(i2cHandle_, I2C_PEC, 0) << std::endl;
-//    unlock();
 
 }
 
@@ -64,12 +60,20 @@ int Ev3i2c::begin(uint address) {
     lock();
     int err = ioctl(i2cHandle_, I2C_SLAVE, address);
     unlock();
-
     if (err < 0) { //Using ioctl set the i2c device to talk to address in the "addr" variable.
         std::cout << "Ev3i2c Can't set the I2C address for the slave device" << std::endl; //Display error setting the address for the slave.
-        return err*100;
+        return err * 100;
     }
-    //std::cout << "I2C_PEC " << std::hex << address << " = " << ioctl(i2cHandle_, I2C_PEC, 0) << std::endl;
+
+
+//    //    //deactivate PEC on smbus
+//    lock();
+//    int pec = ioctl(i2cHandle_, I2C_PEC, 0);
+//    unlock();
+//    if (pec < 0) {
+//        std::cout << "Ev3i2c I2C_PEC " << " = " << pec << std::endl;
+//    }
+
 
     err = ping();
     if (err < 0) {
@@ -126,7 +130,6 @@ int Ev3i2c::write(uint8_t value) {
  * @return error if negative
  */
 int Ev3i2c::readReg(uint8_t byte_reg, uint8_t *data, uint8_t length_data) {
-
     if (skipPEC_) {
         uint8_t lengthWithPEC = length_data + 1;
         uint8_t dataPEC[lengthWithPEC];
@@ -134,31 +137,40 @@ int Ev3i2c::readReg(uint8_t byte_reg, uint8_t *data, uint8_t length_data) {
         lock();
         len = i2c_smbus_read_i2c_block_data(i2cHandle_, byte_reg, lengthWithPEC, dataPEC);
         unlock();
+
+//        //Debug
+//        for (int i = 0; i < lengthWithPEC + 8; i++) {
+//            printf("TEST readReg len=%d length_data=%d reg=%02x i=%d dataPEC=%02x\n", len, length_data, byte_reg, i, data[i]);
+//        }
+
         if (len != lengthWithPEC) {
-            printf("\nEv3i2c readReg Error len != length_data)");
+            //printf("Ev3i2c readReg  skipPEC Error len:%d != lengthWithPEC:%d length_data:%d)\n", len, lengthWithPEC, length_data);
             return len; //-1 if error
         }
+
         for (int i = 0; i < length_data; i++) {
-            //printf("\nreadReg len=%d length_data=%d reg=%02x i=%d dataPEC=%02x", len, length_data, byte_reg, i, dataPEC[i]);
+            //Debug
+            //printf("readReg len=%d length_data=%d reg=%02x i=%d dataPEC=%02x\n", len, length_data, byte_reg, i, dataPEC[i]);
+
             data[i] = dataPEC[i + 1];
             //data[i] = dataPEC[i];
-            //printf("\nreadReg data  %02x", data[i]);
+            //printf("readReg data  %02x\n", data[i]);
         }
     }
     else {
-
         int len = 0;
         lock();
         len = i2c_smbus_read_i2c_block_data(i2cHandle_, byte_reg, length_data, data);
         unlock();
         if (len != length_data) {
-            printf("\nEv3i2c readReg Error len != length_data)");
+            //printf("\nEv3i2c readReg Error len:%d != length_data:%d)\n", len, length_data);
             return len; //-1 if error
         }
 
+        //Debug
+        //printf("--readReg i2c_smbus_read_i2c_block_data len=%d\n", len);
 //        for (int i = 0; i < length_data; i++) {
-//            printf("\nreadReg len=%d length_data=%d reg=%02x i=%d data=%02x", len, length_data, byte_reg, i, data[i]);
-//
+//            printf("readReg len=%d length_data=%d reg=%02x i=%d data=%02x\n", len, length_data, byte_reg, i, data[i]);
 //        }
     }
     return 0;
@@ -183,7 +195,6 @@ int Ev3i2c::readReg(uint8_t byte_reg, uint8_t *data, uint8_t length_data) {
 
 }
 
-
 /** @brief Write from given chip at a given register address (ioctl() method).
  *
  * @param byte_reg            register address
@@ -197,6 +208,7 @@ int Ev3i2c::writeReg(uint8_t byte_reg, uint8_t *values, uint8_t length_values) {
     lock();
     er = i2c_smbus_write_i2c_block_data(i2cHandle_, byte_reg, length_values, values);
     unlock();
+    //printf("--writeReg err=%d\n", er);
     return er;
 
 //    int er = 0;
@@ -231,7 +243,6 @@ int Ev3i2c::writeReg(uint8_t byte_reg, uint8_t *values, uint8_t length_values) {
 //    retval = (i2cWrite(tmp, arr_size) > 0);
 //    return retval;
 //}
-
 
 void Ev3i2c::lock() {
 

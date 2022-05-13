@@ -62,19 +62,19 @@ public:
     void hold(int servo);
 
     int getTorque(int servo);
-    void setTorque(int servo, int torque){}//TODO
+    void setTorque(int servo, int torque);
 
     void setSpeed(int servo, int speed);
-    int getSpeed(int servo){} //TODO
+    int getSpeed(int servo);
 
     /*!
-         * \brief move 2 servos.
-         */
-    int getPos(int servo);
+     * \brief fonction avec vitesse reglable
+     */
+    int setPos(int servo, int pos, int milli0to90);
 
     /*!
-         * \brief move 2 servos.
-         */
+     * \brief get the pulsewidth
+     */
     int getPulseWidth(int servo);
     void detectAll();
     void detect();
@@ -83,12 +83,6 @@ public:
         return botId_;
     }
 
-//    void setType(AServoDriver::ServoType type);
-
-//    void setMinPulse(int servo, int value);
-//    void setMidPulse(int servo, int value);
-//    void setMaxPulse(int servo, int value);
-    //void setPolarity(int servo, bool inversed = false);
 };
 
 /*!

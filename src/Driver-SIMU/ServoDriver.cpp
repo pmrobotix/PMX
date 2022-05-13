@@ -16,7 +16,6 @@ ServoDriver::ServoDriver() :
         connected_(0)
 {
     logger().debug() << "ServoDriver()" << logs::end;
-
 }
 
 void ServoDriver::setType(int servo, ServoType)
@@ -33,7 +32,7 @@ void ServoDriver::hold(int servo) // 1 à 8
     }
 }
 
-void ServoDriver::setPulsePos(int servo, int pos)
+void ServoDriver::setPulsePos(int servo, int pos, int rate)
 {
     switch (servo) {
 

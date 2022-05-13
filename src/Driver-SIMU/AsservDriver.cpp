@@ -734,7 +734,6 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
     float dist = sqrt(dx * dx + dy * dy);
     return motion_DoLine(-dist);
 
-    return TRAJ_ERROR;
 }
 
 TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {

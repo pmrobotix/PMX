@@ -25,10 +25,22 @@ public:
     PlaygroundObjectID area_alea_violet;
     PlaygroundObjectID area_alea_yellow;
 
-    PlaygroundObjectID area_palet_start_violet;
-    PlaygroundObjectID area_palet_start_yellow;
+    PlaygroundObjectID area_3_start_violet;
+    PlaygroundObjectID area_3_start_yellow;
+
+    PlaygroundObjectID area_triangle_violet;
+    PlaygroundObjectID area_triangle_yellow;
+
+    PlaygroundObjectID area_distrib_violet;
+    PlaygroundObjectID area_distrib_yellow;
+
+    PlaygroundObjectID area_galerie_violet;
+    PlaygroundObjectID area_galerie_yellow;
 
 
+    PlaygroundObjectID opponent1;
+    PlaygroundObjectID opponent2;
+    PlaygroundObjectID opponent3;
 
 
     LegoEV3IAExtended(std::string botId, Robot *robot);

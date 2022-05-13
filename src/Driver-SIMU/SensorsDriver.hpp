@@ -31,6 +31,9 @@ public:
      */
     ~SensorsDriver();
 
+
+    void displayNumber(int number);
+
     /*!
          * \brief Synch.ronise les données des capteurs.
          * \result renvoi -1 si erreur, zero sinon

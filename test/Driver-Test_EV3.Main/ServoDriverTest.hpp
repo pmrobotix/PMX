@@ -38,7 +38,7 @@ public:
     ServoDriverTest() :
             UnitTest("ServoDriverTest")
     {
-        servodriver_ = AServoDriver::create(AServoDriver::SERVO_STANDARD);
+        servodriver_ = AServoDriver::create();
     }
 
     /*!

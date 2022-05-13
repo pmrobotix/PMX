@@ -1,5 +1,5 @@
-#ifndef CMD_LIST
-#define CMD_LIST
+#ifndef ASSERV_E_CMD_LIST
+#define ASSERV_E_CMD_LIST
 
 #include <sys/types.h>
 
@@ -15,6 +15,7 @@ enum typeCMD {
     CMD_GOTO, // Aller à un point précis
     CMD_GOTO_BACK, // Aller à un point précis en marche arrière
     CMD_GOTOANGLE, // Se tourner vers un point précis
+    CMD_GOTOANGLEREVERSE, // Se tourner vers un point précis en marche arrière
     CMD_GOTOENCHAIN // Aller vers un point précis, mais si la commande suivante est un GOTO ou
     // un GOTOENCHAIN, on s'autorise à ne pas s'arrêter au point de consigne
 };

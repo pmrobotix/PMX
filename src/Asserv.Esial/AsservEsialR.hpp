@@ -1,5 +1,5 @@
-#ifndef ASSERV_ESIALR_ASSERVESIALR_H_
-#define ASSERV_ESIALR_ASSERVESIALR_H_
+#ifndef ASSERV_E_ASSERVESIALR_H_
+#define ASSERV_E_ASSERVESIALR_H_
 
 #include <sys/types.h>
 
@@ -7,10 +7,10 @@
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
-#include "../Common/Utils/ITimerPosixListener.hpp"
+//#include "../Common/Utils/ITimerPosixListener.hpp"
 
 class CodeursInterface;
-class CommandManager;
+class CommandManagerA;
 class ConsignController;
 class MotorsController;
 class Odometrie;
@@ -62,7 +62,7 @@ private:
     Odometrie *odo_;
     MotorsController *motorC_;
     ConsignController *consignC_;
-    CommandManager *commandM_;
+    CommandManagerA *commandM_;
 
     TRAJ_STATE pathStatus_;
     RobotPosition p_; //position du robot via cet asservissement
@@ -110,6 +110,7 @@ public:
     void path_ResetEmergencyStop();
     TRAJ_STATE motion_DoLine(float dist_mm);
     TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+    TRAJ_STATE motion_DoFaceReverse(float x_mm, float y_mm);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
 

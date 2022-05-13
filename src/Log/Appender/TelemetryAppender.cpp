@@ -39,7 +39,7 @@ logs::TelemetryAppender::TelemetryAppender(std::string Id_Robot, std::string Plo
     if (err == 1) {
         //printf("Impossible to resolve PLOTJUGGLER VM on %s ; err=%d => EXIT !\n", hostname, err);
         std::string ip = "192.168.4.104";
-        std::cout << "Impossible to resolve PLOTJUGGLER VM on " << PlotJuggler_hostname << "; err="<< err <<" => ip="<< ip << std::endl;
+        //std::cout << "Impossible to resolve PLOTJUGGLER VM on " << PlotJuggler_hostname << "; err="<< err <<" => ip="<< ip << std::endl;
 
         strcpy(ip_, ip.c_str());
 

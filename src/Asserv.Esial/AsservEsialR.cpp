@@ -14,7 +14,7 @@
 #include "../Log/Logger.hpp"
 #include "../Log/SvgWriter.hpp"
 #include "codeurs/BotCodeurs.h"
-#include "commandManager/CommandManager.h"
+#include "commandManager/CommandManagerA.h"
 #include "config/config.h"
 #include "consignController/ConsignController.h"
 #include "motorsController/BotMotors.h"
@@ -75,7 +75,7 @@ void AsservEsialR::initAsserv() {
     if (motorC_ == NULL) motorC_ = new BotMotors(robot_); //CONFIG_MOTORCTRL_BOTMOTORS à activer dans eclipse pour la config de l'asserv
     if (odo_ == NULL) odo_ = new Odometrie(codeurs_);
     if (consignC_ == NULL) consignC_ = new ConsignController(odo_, motorC_);
-    if (commandM_ == NULL) commandM_ = new CommandManager(50, consignC_, odo_);
+    if (commandM_ == NULL) commandM_ = new CommandManagerA(50, consignC_, odo_);
     logger().debug() << "objects created..." << logs::end;
     run_ = true;
 #endif
@@ -346,35 +346,35 @@ void AsservEsialR::execute() {
                     << logs::flush;
 
             //if (nb % 4 == 0) {
-                debug << std::setw(4)
-                        << nb
-                        << " "
-                        << p.asservStatus
-                        << " us="
-                        << (int) (current - last)
-                        << " t="
-                        << std::setw(3)
-                        << (int) (chronoTimer_.getElapsedTimeInMicroSec() - current)
-                        << " GD="
-                        << std::setw(3)
-                        << motorC_->getVitesseG()
-                        << ","
-                        << std::setw(3)
-                        << motorC_->getVitesseD()
-                        << " x="
-                        << std::setw(4)
-                        << (int) p.x
-                        << " y="
-                        << std::setw(4)
-                        << (int) p.y
-                        //<< std::fixed
-                        << " deg="
-                        << std::setw(6)
-                        << std::setprecision(3)
-                        << p.theta * 180 / M_PI
-                        << logs::flush;
-            }
-       // }
+            debug << std::setw(4)
+                    << nb
+                    << " "
+                    << p.asservStatus
+                    << " us="
+                    << (int) (current - last)
+                    << " t="
+                    << std::setw(3)
+                    << (int) (chronoTimer_.getElapsedTimeInMicroSec() - current)
+                    << " GD="
+                    << std::setw(3)
+                    << motorC_->getVitesseG()
+                    << ","
+                    << std::setw(3)
+                    << motorC_->getVitesseD()
+                    << " x="
+                    << std::setw(4)
+                    << (int) p.x
+                    << " y="
+                    << std::setw(4)
+                    << (int) p.y
+                    //<< std::fixed
+                    << " deg="
+                    << std::setw(6)
+                    << std::setprecision(3)
+                    << p.theta * 180 / M_PI
+                    << logs::flush;
+        }
+        // }
 
         if (run_) {
             chronoTimer_.waitTimer(150);
@@ -553,7 +553,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj() {
         utils::sleep_for_micros(10000);
         timeout++;
         if (timeout > 10) {
-            logger().error() << "_______________________waitEndOfTraj() => break" << logs::end;
+            logger().debug() << "_______________________waitEndOfTraj() => break" << logs::end;
             break;
         }
     }
@@ -581,7 +581,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj() {
         return TRAJ_FINISHED;
     }
     else if (p_.asservStatus == 2) {
-        logger().info() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= " << pathStatus_ << logs::end;
+        logger().debug() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= " << pathStatus_ << logs::end;
         return pathStatus_;
     }
     else return TRAJ_ERROR;
@@ -597,6 +597,12 @@ TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm) {
 
     return waitEndOfTraj();
 }
+TRAJ_STATE AsservEsialR::motion_DoFaceReverse(float x_mm, float y_mm) {
+    commandM_->addGoToAngleReverse(x_mm, y_mm);
+
+    return waitEndOfTraj();
+}
+
 TRAJ_STATE AsservEsialR::motion_DoRotate(float angle_radians) {
     commandM_->addTurn((angle_radians * 180.0) / M_PI);
 
@@ -618,13 +624,27 @@ TRAJ_STATE AsservEsialR::motion_DoDirectLine(float dist_mm) {
 }
 
 TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm) {
-    logger().error() << "motion_Goto TODO !" << logs::end;
-    return TRAJ_ERROR;
+    motion_DoFace(x_mm, y_mm);
+
+    lock();
+    float dx = x_mm - p_.x;
+    float dy = y_mm - p_.y;
+    unlock();
+
+    float dist = sqrt(dx * dx + dy * dy);
+    return motion_DoLine(dist);
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoReverse(float x_mm, float y_mm) {
-    logger().error() << "motion_GotoReverse TODO !" << logs::end;
-    return TRAJ_ERROR;
+    motion_DoFaceReverse(x_mm, y_mm);
+
+    lock();
+    float dx = x_mm - p_.x;
+    float dy = y_mm - p_.y;
+    unlock();
+
+    float dist = sqrt(dx * dx + dy * dy);
+    return motion_DoLine(-dist);
 }
 
 TRAJ_STATE AsservEsialR::motion_GotoChain(float x_mm, float y_mm) {

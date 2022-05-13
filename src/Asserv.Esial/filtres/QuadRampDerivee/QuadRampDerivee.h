@@ -1,5 +1,5 @@
-#ifndef QUADRAMPDERIVEE
-#define QUADRAMPDERIVEE
+#ifndef ASSERV_E_QUADRAMPDERIVEE
+#define ASSERV_E_QUADRAMPDERIVEE
 
 #include "../Filtre.h"
 #include "../../Utils/Utils.h"

@@ -40,8 +40,31 @@ void L_ServoObjectTest::run(int argc, char **argv)
         logger().info() << "Arg m set " << args["m"] << ", m = " << m << logs::end;
     }
 
-    logger().info() << "test_servo" << logs::end;
-    robot.actions().test_servo();
+    logger().info() << "init_servo" << logs::end;
+    robot.actions().init_servos();
+    sleep(1);
+
+    //TEST SQUARE
+    robot.actions().square_push_right(1500);
+        robot.actions().square_middle_init(1500);
+        robot.actions().square_push_right(1500);
+        robot.actions().square_middle_init(1500);
+
+    //TEST CUBE
+    logger().info() << "init_mettre_cube" << logs::end;
+    robot.actions().init_mettre_cube();
+
+    sleep(4);
+
+    logger().info() << "cube_push_and_take_trophy" << logs::end;
+    robot.actions().cube_push_and_take_trophy(0);
+
+    sleep(2);
+    robot.actions().cube_normal_pos(4000);//depose
+//
+//
+//    robot.actions().init_servos();
+//    robot.actions().releaseAll();
 
     /*
     logger().info() << "conveyorBelt_Left_center" << logs::end;

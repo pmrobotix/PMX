@@ -1,5 +1,5 @@
-#ifndef CONSIGN_CONTROLLER
-#define CONSIGN_CONTROLLER
+#ifndef ASSERV_E_CONSIGN_CONTROLLER
+#define ASSERV_E_CONSIGN_CONTROLLER
 
 
 #include "../odometrie/Odometrie.h"

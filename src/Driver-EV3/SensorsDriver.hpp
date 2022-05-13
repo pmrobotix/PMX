@@ -5,6 +5,8 @@
 #include "../Log/LoggerFactory.hpp"
 #include "BeaconSensors.hpp"
 
+#define ADDRESS_BeaconSensors   0x2D
+
 using namespace std;
 //using namespace ev3dev;
 
@@ -21,12 +23,16 @@ private:
         return instance;
     }
 
-    BeaconSensors beacon_;
+    BeaconSensors beaconSensors_;
+    Registers regs_;
 
 //    LegoIRSensor IR_1_AV_D;
 //    LegoIRSensor IR_2_AV_G;
 //    LegoIRSensor IR_3_AR_D;
 //    LegoIRSensor IR_4_AR_G;
+
+    utils::Mutex msync_;
+    bot_positions vadv_;  //tableau des pos des adv
 
 public:
 
@@ -53,6 +59,8 @@ public:
     int backLeft();
     int backCenter();
     int backRight();
+
+    void displayNumber(int number);
 
 };
 

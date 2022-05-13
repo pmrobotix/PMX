@@ -119,7 +119,7 @@ private:
 
   uint32_t _oscillator_freq;
   uint8_t read8(uint8_t addr);
-  void write8(uint8_t addr, uint8_t d);
+  int write8(uint8_t addr, uint8_t d);
 };
 
 #endif

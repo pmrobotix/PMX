@@ -20,22 +20,22 @@
  */
 enum ServoLabel {
     SERVO_0 = 0,
-    SERVO_1 = 1,
+    SERVO_1_ARM_R = 1,
     SERVO_2 = 2,
-    SERVO_3 = 3,
+    SERVO_3_FORK_R = 3,
     SERVO_4 = 4,
     SERVO_5 = 5,
     SERVO_6 = 6,
-    SERVO_7 = 7,
+    SERVO_7_PUSH_SQUARES = 7,
     SERVO_8 = 8,
     SERVO_9 = 9,
     SERVO_10 = 10,
-    SERVO_11 = 11,
+    SERVO_11_TAKE_TROPHY = 11,
     SERVO_12 = 12,
-    SERVO_13 = 13,
+    SERVO_13_FORK_L = 13,
     SERVO_14 = 14,
-    SERVO_15 = 15,
-   // SERVO_16 = 16,
+    SERVO_15_ARM_L = 15,
+    // SERVO_16 = 16,
     SERVO_enumTypeEnd
 };
 
@@ -44,21 +44,7 @@ enum ServoLabel {
  */
 enum ServoAx12Label //TODO se servir de cette liste
 {
-    AX12_SERVO_BRAS_D = 5, //AX12
-
-    AX12_SERVO_BRAS_G = 7, //AX12
-
-    AX12_SERVO_PINCE_SS_ROBOT = 4, //AX12
-
-    AX12_SERVO_ASCENSEUR = 100, //MX28
-
-    AX12_SERVO_ROTATION = 102, //MX28
-
-    AX12_SERVO_PORTES_NOIRE = 61, //AX18
-
-    AX12_SERVO_PORTES_BLEU = 63, //AX18
-
-    AX12_SERVO_DRAPEAUX = 51, //AX12
+    AX12_SERVO_1 = 5, //AX12
 
     AX12_enumTypeEnd
 };
@@ -83,7 +69,7 @@ private:
     Tirette tirette_;
     Sensors sensors_;
     LcdShield lcd_;
-    ServoUsingMotor servoUsingMotor_;
+    //ServoUsingMotor servoUsingMotor_;
     ServoObjectsSystem servos_;
 
 public:
@@ -117,9 +103,9 @@ public:
         return lcd_;
     }
 
-    ServoUsingMotor& servoUsingMotor() {
-        return servoUsingMotor_;
-    }
+//    ServoUsingMotor& servoUsingMotor() {
+//        return servoUsingMotor_;
+//    }
 
     ServoObjectsSystem& servos() {
         return servos_;
@@ -145,20 +131,118 @@ public:
     //--------------------------------------------------------------
     //Actions 2022
     //--------------------------------------------------------------
+    void init_servos() {
+        for (int fooInt = 0; fooInt != SERVO_enumTypeEnd; fooInt++) {
+            ServoLabel foo = static_cast<ServoLabel>(fooInt);
+            servos().getPulseWidth(foo); //afin de mettre la position des servo a jour //TODO pwm renvoi 0 ??
+        }
 
-    void test_servo(int speed = 512) {
-        servos().deploy(SERVO_1, 1900, 0);
-        usleep(1000000);
-        servos().deploy(SERVO_1, 500, 0);
-        usleep(1000000);
-        servos().release(SERVO_1);
-
-        servos().deploy(SERVO_2, 1900, 0);
-                usleep(1000000);
-                servos().deploy(SERVO_2, 500, 0);
-                usleep(1000000);
-                servos().release(SERVO_2);
+        cube_keep(0);
+        square_middle_init(0);
+        fork_front_right_init(0);
+        fork_front_left_init(0);
+        arm_left_init(0);
+        arm_right_init(0);
     }
+    //keep_millisec = -1 : wait moving until position
+    //keep_millisec > 0 : time to wait then release
+    //keep_millisec = 0 : continue and hold
+
+    void init_mettre_cube() {
+        cube_up_trophy(1000); //mode rapide
+        cube_normal_pos(4000);
+        cube_keep(0);
+    }
+
+    //CUBE AND TROPHY
+    void cube_keep(int keep = 0) {
+        servos().deploy(SERVO_11_TAKE_TROPHY, 1500, keep);
+    }
+    void cube_normal_pos(int milli0to90 = 4000) {
+        //servos().deploy(SERVO_11_TAKE_TROPHY, 1650, keep);
+        servos().setPos(SERVO_11_TAKE_TROPHY, 1600, milli0to90); //utilisation du speed
+    }
+    void cube_push_and_take_trophy(int milli0to90 = 4000) {
+        //servos().deploy(SERVO_11_TAKE_TROPHY, 1950, keep);
+        servos().setPos(SERVO_11_TAKE_TROPHY, 2000, milli0to90); //utilisation du speed
+    }
+    //fonction normal
+    void cube_up_trophy(int keep = 0) {
+        servos().deploy(SERVO_11_TAKE_TROPHY, 2000, keep);
+    }
+
+    //PUSH SQUARE
+    void square_push_right(int keep = 0) {
+        servos().deploy(SERVO_7_PUSH_SQUARES, 2400, keep);
+    }
+    void square_middle_init(int keep = 0) {
+        servos().deploy(SERVO_7_PUSH_SQUARES, 1600, keep);
+    }
+    void square_push_left(int keep = 0) {
+        servos().deploy(SERVO_7_PUSH_SQUARES, 900, keep);
+    }
+
+    //FORK
+    void fork_open() {
+        fork_front_right_deploy(0);
+        fork_front_left_deploy(0);
+    }
+    void fork_open_half() {
+        fork_front_right_deploy_half(0);
+        fork_front_left_deploy_half(1000);
+    }
+    void fork_close() {
+        fork_front_left_init(500);
+        fork_front_right_init(0);
+    }
+
+    void fork_front_right_init(int keep = 0) {
+        servos().deploy(SERVO_3_FORK_R, 2450, keep);
+    }
+    void fork_front_right_deploy_half(int keep = 0) {
+        servos().deploy(SERVO_3_FORK_R, 1200, keep);
+    }
+    void fork_front_right_deploy(int keep = 0) {
+        servos().deploy(SERVO_3_FORK_R, 750, keep);
+    }
+    void fork_front_left_init(int keep = 0) {
+        servos().deploy(SERVO_13_FORK_L, 550, keep);
+    }
+    void fork_front_left_deploy_half(int keep = 0) {
+        servos().deploy(SERVO_13_FORK_L, 1900, keep);
+    }
+    void fork_front_left_deploy(int keep = 0) {
+        servos().deploy(SERVO_13_FORK_L, 2200, keep);
+    }
+
+    //ARM
+
+    void arm_left_init(int keep = 0) {
+        servos().deploy(SERVO_15_ARM_L, 1500, keep);
+    }
+    void arm_left_deploy(int keep = 0) {
+        servos().deploy(SERVO_15_ARM_L, 900, keep);
+    }
+    void arm_right_init(int keep = 0) {
+        servos().deploy(SERVO_1_ARM_R, 1500, keep);
+    }
+    void arm_right_deploy(int keep = 0) {
+        servos().deploy(SERVO_1_ARM_R, 2500, keep);
+    }
+
+//    void test_servo(int speed = 512) {
+//        servos().deploy(SERVO_1, 1900, 0);
+//        usleep(1000000);
+//        servos().deploy(SERVO_1, 500, 0);
+//        usleep(1000000);
+//        servos().release(SERVO_1);
+//
+//        servos().deploy(SERVO_2, 1900, 0);
+//                usleep(1000000);
+//                servos().deploy(SERVO_2, 500, 0);
+//                usleep(1000000);
+//                servos().release(SERVO_2);
+//    }
 
     /*
      //--------------------------------------------------------------
@@ -343,7 +427,8 @@ public:
      usleep(sleeptimems * 1000.0);
      }
      */
-};
+}
+;
 
 #endif
 

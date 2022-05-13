@@ -33,6 +33,9 @@ LegoEV3RobotExtended::LegoEV3RobotExtended() {
     decisionMaker_ = NULL;
 
     svg_->beginHeader();
+
+    alea_done = false;
+    trophy_taken = false;
 }
 
 LegoEV3RobotExtended::~LegoEV3RobotExtended()

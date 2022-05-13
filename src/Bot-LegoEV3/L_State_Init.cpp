@@ -16,7 +16,7 @@
 IAutomateState*
 L_State_Init::execute(Robot&)
 {
-    logger().info() << "L_StateInit executing..." << logs::end;
+    logger().debug() << "L_StateInit executing..." << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     //demarre le actionManagerTimer
@@ -30,7 +30,7 @@ L_State_Init::execute(Robot&)
     if (!robot.skipSetup()) {
         robot.actions().lcd().setCursor(1, 1); //to change the font
 
-//        //logger().info() << "METTRE LA TIRETTE ! " << logs::end;
+//        logger().info() << "METTRE LA TIRETTE ! " << logs::end;
 //        robot.actions().lcd().display_content_string("METTRE LA TIRETTE", 4);
 //
         robot.actions().ledBar().startTimerK2mil(50000, 50000, LED_GREEN, false);
@@ -74,20 +74,25 @@ L_State_Init::execute(Robot&)
                 robot.actions().lcd().display_content_string("  ", 4);
                 robot.actions().lcd().display_content_string("  ", 5);
                 if (b == BUTTON_LEFT_KEY) {
+                    robot.actions().lcd().clear();
                     //logger().info() << "BUTTON_LEFT_KEY - YELLOW" << logs::end;
-                    robot.actions().lcd().display_content_string("YELLOW", 3, 3);
+                    robot.actions().lcd().display_content_string("YELLOW ", 3, 3);
+
                     robot.actions().ledBar().stop(true);
                     robot.actions().ledBar().set(1, LED_YELLOW);
                     robot.actions().ledBar().set(0, LED_OFF);
                     robot.setMyColor(PMXYELLOW);
                 }
                 if (b == BUTTON_RIGHT_KEY) {
+
+                    robot.actions().lcd().clear();
                     //logger().info() << "BUTTON_RIGHT_KEY - VIOLET" << logs::end;
-                    robot.actions().lcd().display_content_string("VIOLET", 3, 3);
+                    robot.actions().lcd().display_content_string("VIOLET ", 3, 3);
+                    robot.actions().lcd().setCursor(0,0);
                     robot.actions().ledBar().stop(true);
                     robot.actions().ledBar().set(0, LED_RED);
                     robot.actions().ledBar().set(1, LED_OFF);
-                    robot.setMyColor(PMXYELLOW);
+                    robot.setMyColor(PMXVIOLET);
                 }
             } else if (mode == 2) {
                 logger().debug() << "MODE VRR selected" << logs::end;
@@ -142,21 +147,22 @@ L_State_Init::execute(Robot&)
 
                 if (st == 1) {
                     logger().debug() << "strat1" << logs::end;
-                    robot.strategy("strat1");
+                    robot.strategy("strat1 ");
                 } else if (st == 2) {
                     logger().debug() << "strat2" << logs::end;
-                    robot.strategy("strat2");
+                    robot.strategy("strat2 ");
                 } else if (st == 3) {
                     logger().debug() << "strat3" << logs::end;
-                    robot.strategy("strat3");
+                    robot.strategy("strat3 ");
                 }
                 robot.actions().lcd().display_content_string(robot.strategy(), 5, 3);
             }
             b = robot.actions().buttonBar().waitOneOfAllPressed();
             if (b == BUTTON_UP_KEY) {
                 //logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
-//                robot.actions().init_servos();
-                usleep(300000);
+                robot.actions().init_servos();
+                usleep(2000000);
+                robot.actions().init_mettre_cube();
             }
             if (b == BUTTON_DOWN_KEY) {
                 //logger().info() << "BUTTON_DOWN_KEY - IA" << logs::end;
@@ -171,11 +177,12 @@ L_State_Init::execute(Robot&)
 //                //on quitte le programme!!
 //                exit(0);
 //            }
+            usleep(100000);
         }
 
         setPos();
 
-        //logger().info() << "METTRE LA TIRETTE ! " << logs::end;
+        logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd().display_content_string("METTRE LA TIRETTE", 4);
 
         //robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
@@ -207,18 +214,18 @@ L_State_Init::execute(Robot&)
         if (robot.getMyColor() == PMXYELLOW)
             robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_YELLOW, false);
         else
-            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
+            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_RED, false);
 
         robot.waitForInit(true);
 
         robot.actions().lcd().clear();
         //logger().info() << "PMX...WAIT TIRETTE !";
         if (robot.getMyColor() == PMXYELLOW) {
-            //logger().info() << " VIOLET";
-            robot.actions().lcd().display_content_string("VIOLET", 3, 2);
-        } else {
-            //logger().info() << "YELLOW";
+            //logger().info() << "YELLOW ";
             robot.actions().lcd().display_content_string("YELLOW", 3, 2);
+        } else {
+            //logger().info() << "VIOLET ";
+            robot.actions().lcd().display_content_string("VIOLET", 3, 2);
         }
         robot.actions().lcd().display_content_string(robot.configVRR(), 4, 2);
         robot.actions().lcd().display_content_string(robot.strategy(), 5, 2);
@@ -237,6 +244,10 @@ L_State_Init::execute(Robot&)
                 nb_tirette++;
             else
                 nb_tirette = 0;
+
+            //TODO ajouter le test de servo si bouton up pendant l'attente tirette
+            //robot.actions().init_servos();
+
             bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
             if (bb) {
                 robot.actions().ledBar().stop(true);
@@ -254,7 +265,7 @@ L_State_Init::execute(Robot&)
             logger().error() << "PMXNOCOLOR !!!" << logs::end;
             exit(0);
         } else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "BLUE  ") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "VIOLET  ") << logs::end;
         }
 
         logger().info() << "ENLEVER TIRETTE !!!" << logs::end;
@@ -276,7 +287,7 @@ L_State_Init::execute(Robot&)
 
     robot.actions().ledBar().resetAll();
 
-    logger().debug() << "L_State_Init finished" << logs::end;
+    logger().debug() << "WaitEndOfMatch launched" << logs::end;
     return this->getState("WaitEndOfMatch"); //return NULL; to finish all state
 }
 
@@ -284,33 +295,40 @@ void L_State_Init::setPos()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
+    //largeur robot 247mm (sans les petites roues noires +5mm)
+
     logger().debug() << "setPos() executing" << logs::end;
     robot.actions().lcd().clear();
     robot.actions().lcd().display_content_string("SET POSITION...", 5);
 
     //init des objects
-//    robot.actions().init_servos();
+    robot.actions().init_servos();
+
+    //reset encoders
     robot.asserv().resetEncoders();
 
-    robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(450 + 120, 1543 - 50, -90.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
+    robot.asserv().startMotionTimerAndOdo(false);//demarrage asserv sans assistedhandling
+    robot.asserv().setPositionAndColor(126, 1590 - 247/2.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
     robot.svgPrintPosition();
 
     //active l'asservissement
     robot.asserv().assistedHandling();
     robot.svgPrintPosition();
-    /*
-     //init Old
-     robot.asserv().doLineAbs(150);
-     robot.asserv().doMoveBackwardTo(300, robot.asserv().pos_getY_mm());
-     robot.asserv().doMoveBackwardTo(300, 730);
-     */
-    robot.asserv().doLineAbs(150);
-    robot.asserv().doMoveBackwardTo(300, robot.asserv().pos_getY_mm());
-    robot.asserv().doMoveForwardTo(300, 810);
+
+    robot.asserv().doLineAbs(100);
+
+    robot.asserv().doMoveForwardTo(260 , 1150);
+
+//Faire un faceTo sur le point de destination
+    //    if (robot.getMyColor() == PMXYELLOW) {
+    //    //robot.asserv().doFaceTo(700, 1600); //TODO, pas de transcription de jaune et violet ?
+    //    }else
+    //    {
+    //        //robot.asserv().doFaceTo(700, 1600);
+    //    }
 
     robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;
-    robot.actions().lcd().display_content_string("SET POSITION Done.", 6);
+    robot.actions().lcd().display_content_string("SET POS Done.", 6);
 
 }

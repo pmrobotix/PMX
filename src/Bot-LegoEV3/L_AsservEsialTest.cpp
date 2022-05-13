@@ -55,8 +55,13 @@ void L_AsservEsialTest::run(int argc, char **argv) {
         logger().info() << "ETAPE 0: TEST ASSERVDRIVER - test" << logs::end;
 
         while (1) {
-            robot.asserv().runMotorLeft(dist, -1);
-            robot.asserv().runMotorRight(dist, -1);
+            robot.asserv().freeMotion();
+//            robot.asserv().runMotorLeft(dist, -1);
+//            robot.asserv().runMotorRight(dist, -1);
+
+            robot.asserv().runMotorLeft(dist, 3500);
+            robot.asserv().runMotorRight(150, 3500);
+
             usleep(1000000);
             robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
 

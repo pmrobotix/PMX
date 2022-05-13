@@ -47,6 +47,12 @@ public:
         return r_ia;
     }
 
+    //DATA custom
+    bool trophy_taken;
+    bool alea_done;
+
+
+
     void begin(int argc, char** argv);
 
     void stopExtraActions();

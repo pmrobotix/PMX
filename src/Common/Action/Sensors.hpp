@@ -86,6 +86,8 @@ public:
         return robot_;
     }
 
+    void display(int n);
+
     float MultipleRightSide(int nb);
     float MultipleLeftSide(int nb);
 

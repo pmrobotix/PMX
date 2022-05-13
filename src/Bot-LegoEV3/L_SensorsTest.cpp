@@ -22,7 +22,7 @@ void L_SensorsTest::run(int argc, char** argv)
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.setMyColor(PMXYELLOW);
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(1000.0, 400.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //pour mettre une position dans la table
+    robot.asserv().setPositionAndColor(1000.0, 1000.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //pour mettre une position dans la table
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
             << p.asservStatus << logs::end;
@@ -42,7 +42,7 @@ void L_SensorsTest::run(int argc, char** argv)
 
     //detection adverse
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(100);
+    robot.actions().sensors().addTimerSensors(200);
 
     while (chrono.getElapsedTimeInSec() < 200) {
         front = robot.actions().sensors().front(true);

@@ -1,7 +1,7 @@
 #if CONFIG_CODEUR_DIRECTS
 
-#ifndef CODEUR
-#define CODEUR
+#ifndef ASSERV_E_CODEUR
+#define ASSERV_E_CODEUR
 
 
 #include "../config/config.h"

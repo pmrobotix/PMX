@@ -396,7 +396,7 @@ void AsservDriver::path_CancelTrajectory() {
         //TODO ? p_.asservStatus = 3;
         //serialPort_.Write("h");
         nucleo_writeSerial('h');
-        pathStatus_ = TRAJ_CANCELLED;
+        pathStatus_ = TRAJ_INTERRUPTED;
     }
 }
 void AsservDriver::path_ResetEmergencyStop() {

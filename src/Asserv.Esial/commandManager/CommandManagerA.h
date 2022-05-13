@@ -1,5 +1,5 @@
-#ifndef COMMAND_MANAGER
-#define COMMAND_MANAGER
+#ifndef ASSERV_E_COMMAND_MANAGER
+#define ASSERV_E_COMMAND_MANAGER
 
 
 #include "../consignController/ConsignController.h"
@@ -14,12 +14,12 @@ enum CommandStatus {
     STATUS_BLOCKED  = 3, // Commande en cours, mais le robot ne bouge plus!
 };
 
-class CommandManager
+class CommandManagerA
 {
 
 public:
-    CommandManager(int capacity, ConsignController *ctrlr, Odometrie *odo);
-    ~CommandManager();
+    CommandManagerA(int capacity, ConsignController *ctrlr, Odometrie *odo);
+    ~CommandManagerA();
 
     bool addStraightLine(int32_t valueInmm);
     bool addTurn(int32_t angleInDeg);
@@ -27,6 +27,7 @@ public:
     bool addGoToBack(int32_t posXInmm, int32_t posYInmm);
     bool addGoToEnchainement(int32_t posXInmm, int32_t posYInmm);
     bool addGoToAngle(int32_t posXInmm, int32_t posYInmm);
+    bool addGoToAngleReverse(int32_t posXInmm, int32_t posYInmm);
     void perform();
 
     // Gestion d'un éventuel arrêt d'urgence
@@ -35,7 +36,7 @@ public:
 
     // Statut des commandes
     int getCommandStatus() { return commandStatus; }
-    int getPendingCommandCount();
+    int getPendingCmdCount();
 
     void perform_On(bool enable)
     {
@@ -58,11 +59,13 @@ private:
     CommandStatus commandStatus;
 
     float computeDeltaTheta(float deltaX, float deltaY); // Calcul de l'angle à parcourir
+    float computeDeltaThetaReverse(float deltaX, float deltaY); // Calcul de l'angle à parcourir en arriere
     int64_t computeDeltaDist(float deltaX, float deltaY); // Calcul de la distance à parcourir
     // GoTo là où on veut
     void computeGoTo();
     void computeGoToBack();
     void computeGoToAngle();
+    void computeGoToAngleReverse();
     void computeEnchainement(); // Tentative d'enchainement
 };
 

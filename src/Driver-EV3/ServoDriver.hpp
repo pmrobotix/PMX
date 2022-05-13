@@ -48,14 +48,19 @@ public:
     /*!
      * \brief Position du servo en indiquant le pulseWidth en picroseconds.
      * pulseWidth : (from 500us to 2500us).
+     * millisec0To90 :
      */
-    void setPulsePos(int servo, int pulse_us);
+    void setPulsePos(int servo, int pulse_us, int millisec0To90 = 0);
     /*!
      * \brief Position du servo en indiquant le pulseWidth en picroseconds.
      * Prend en compte la vitesse desirée.
      * pulseWidth : (from 500us to 2500us)
      */
-    void setPulsePosWithRate(int servo, int pulse_us);
+    void setPulsePosWithRate(int servo, int pulse_us, int millisec0To90 = 0);
+
+
+    void setpwm(int servo, int pulsewidth_us);
+
 
     /*!
      * \brief retourne la Position du servo, le pulseWidth en picroseconds.

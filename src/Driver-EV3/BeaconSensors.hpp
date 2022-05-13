@@ -20,7 +20,7 @@ union float2bytes_t // union consists of one variable represented in a number of
 struct Settings {
     int8_t numOfBots;         // Register 0. Number of Robot which may to be detected, default 3.
     int8_t ledDisplay;        // Register 1. Writable. Sets the mode for led display. 0 => OFF. 100 => FULL ON. 50 => Half luminosity.
-    int8_t temp;              // Register 2.//TODO shift_rad angle en parametre ? //TODO ajouter le decalage d'angle en settings ?
+    int8_t tempNumber;        // Register 2.//TODO shift_rad angle en parametre ? //TODO ajouter le decalage d'angle en settings ?
     int8_t reserved = 0;      //NOT use yet
 };
 
@@ -135,6 +135,8 @@ private:
      int writeRegByte(unsigned char command, unsigned char aData1);
      int writeReg2Bytes(unsigned char command, unsigned char aData1, unsigned char aData2);
      */
+
+
 public:
 
     /*!
@@ -158,6 +160,8 @@ public:
      *  //every 250 ms
      */
     Registers getData();
+
+    void display(int number);
 
     int ScanBus();
 };

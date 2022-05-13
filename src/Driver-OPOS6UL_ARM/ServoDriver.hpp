@@ -41,18 +41,20 @@ public:
 
     void hold(int servo);
 
+    void setType(int servo, ServoType type);
+
     //pos AX12 0->1023
-    void setPosition(int servo, int pos);
+    void setPulsePos(int servo, int pulsewidth);
 
     void release(int servo);
 
-    void setRate(int servo, int speed);
+
 
     void turn(int servo, int speed);
 
     int getMoving(int servo);
 
-    int getPos(int servo);
+    int getPulsePos(int servo);
 
     int ping(int servo);
 
@@ -65,6 +67,8 @@ public:
     void setPolarity(int servo, bool inversed);
 
     int getTorque(int servo);
+
+    void setRate(int servo, int speed);
 };
 
 #endif

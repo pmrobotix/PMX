@@ -36,7 +36,7 @@ void SvgWriter::beginHeader()
     int ymax = 300;
     int xmin = -200;
     int xmax = 3200;
-
+    this->lock();
     logger().info() << "<?xml version=\"1.0\" standalone=\"no\"?>" << logs::end;
     logger().info() << "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 20010904//EN\"" << logs::end;
     logger().info() << "\"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\">" << logs::end;
@@ -94,7 +94,7 @@ void SvgWriter::beginHeader()
     }
     logger().info() << "</g>" << logs::end;
     logger().info() << "<g transform=\"translate(" << std::abs(xmin) << "," << std::abs(ymin) << ")\">" << logs::end;
-
+    this->unlock();
     beginDone_ = true;
 }
 
@@ -109,9 +109,10 @@ void SvgWriter::endHeader()
         if (beginDone_) {
             done_ = true;
             //usleep(100000);
-
+            this->lock();
             logger().info() << "</g>" << logs::end;
             logger().info() << "</svg>" << logs::end;
+            this->unlock();
         }
     }
 }
@@ -120,9 +121,11 @@ void SvgWriter::writeText(float x, float y, std::string text)
 {
     if (!done_) {
         if (logger().isActive(logs::Level::INFO)) {
+            this->lock();
             // inversion du y pour affichage dans le bon sens dans le SVG
             logger().info() << "<text x='" << x << "' y='" << -y << "' font-size='5' fill='black'>" << text << "</text>"
                     << logs::end;
+            this->unlock();
         }
     }
 }
@@ -131,9 +134,11 @@ void SvgWriter::writeTextCustom(float x, float y, std::string text, std::string 
 {
     if (!done_) {
         if (logger().isActive(logs::Level::INFO)) {
+            this->lock();
             // inversion du y pour affichage dans le bon sens dans le SVG
             logger().info() << "<text x='" << x << "' y='" << -y << "' font-size='" << fontsize << "' fill='" << color
                     << "'>" << text << "</text>" << logs::end;
+            this->unlock();
         }
     }
 }

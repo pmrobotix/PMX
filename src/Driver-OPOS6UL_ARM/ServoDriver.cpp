@@ -7,15 +7,17 @@
 
 using namespace std;
 
-AServoDriver * AServoDriver::create(ServoType type)
+AServoDriver * AServoDriver::create()
 {
-    if (type == SERVO_DYNAMIXEL) {
-        static DynamixelDriver *instance = new DynamixelDriver();
-        return instance;
-    } else { //type != SERVO_DYNAMIXEL
-        static ServoDriver *instance = new ServoDriver();
-        return instance;
-    }
+//    if (type == SERVO_DYNAMIXEL) {
+//        static DynamixelDriver *instance = new DynamixelDriver();
+//        return instance;
+//    } else { //type != SERVO_DYNAMIXEL
+//        static ServoDriver *instance = new ServoDriver();
+//        return instance;
+//    }
+    static ServoDriver *instance = new ServoDriver();
+    return instance;
 }
 
 ServoDriver::ServoDriver() :
@@ -25,12 +27,17 @@ ServoDriver::ServoDriver() :
 
 }
 
+void ServoDriver::setType(int servo, ServoType type)
+{
+
+}
+
 void ServoDriver::hold(int servo)
 {
     logger().error() << "ServoDriver::hold() NOT IMPLEMENTED !" << logs::end;
 }
 
-void ServoDriver::setPosition(int servo, int percent)
+void ServoDriver::setPulsePos(int servo, int pulsewidth)
 {
     //constrain(percent, -100, 100);
     logger().error() << "ServoDriver::setPosition() NOT IMPLEMENTED !" << logs::end;
@@ -62,7 +69,7 @@ int ServoDriver::getMoving(int servo)
     return -1;
 }
 
-int ServoDriver::getPos(int servo)
+int ServoDriver::getPulsePos(int servo)
 {
     logger().error() << "ServoDriver::getPos() NOT IMPLEMENTED !" << logs::end;
     return -1;

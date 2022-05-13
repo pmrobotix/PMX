@@ -28,6 +28,7 @@
 #define ARM_BBR_TERMFONT_BIG "Lat7-TerminusBold20x10.psf.gz"
 #define ARM_BBR_TERMFONT "Lat15-Terminus12x6.psf.gz"
 #define SYSTEM_TERMFONT "Lat15-TomThumb4x6.psf.gz"
+//TODO try Lat15-TerminusBold14
 
 #define FBCON_TTYNAME  "/dev/tty"
 #define BUFSIZE 64
@@ -236,7 +237,8 @@ void prog_clearscreen(void)
 
 bool prog_set_cursorpos(int col, int row)
 {
-    system("setfont " ARM_BBR_TERMFONT_BIG);
+    //change font EV3 LCD
+    //system("setfont " ARM_BBR_TERMFONT_BIG);
     return term_set_curpos(col, row);
 }
 

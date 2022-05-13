@@ -1,5 +1,5 @@
-#ifndef UTILS
-#define UTILS
+#ifndef ASSERV_E_UTILS
+#define ASSERV_E_UTILS
 
 #include <sys/types.h>
 

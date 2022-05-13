@@ -40,7 +40,7 @@ public:
 
     void hold(int servo);
 
-    void setPulsePos(int servo, int pos);
+    void setPulsePos(int servo, int pos, int rate);
 
     void release(int servo);
 

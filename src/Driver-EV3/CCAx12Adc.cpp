@@ -27,7 +27,7 @@ bool CCAx12Adc::connect(uint i2c_aAddr) {
     if (err >= 0) connected_ = true;
     else {
         connected_ = false;
-        logger().error() << "CCAx12Adc::connect() : NOT CONNECTED!" << logs::end;
+        //logger().error() << "CCAx12Adc::connect() : NOT CONNECTED!" << logs::end;
     }
 
 

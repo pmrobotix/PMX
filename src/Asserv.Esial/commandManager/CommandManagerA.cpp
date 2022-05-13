@@ -1,9 +1,10 @@
-#include "CommandManager.h"
 
-#include <math.h>
+#include <stdio.h>
 #include <sys/types.h>
+#include <cmath>
 
 #include "../odometrie/Odometrie.h"
+#include "CommandManagerA.h"
 
 //--------------------------------------------------------
 //                       COMMAND MANAGER
@@ -13,7 +14,7 @@
  * Fonctions de "commandes"  externes, tout droit, tourner, arc de cercle, aller au point (x,y), ...
  */
 
-CommandManager::CommandManager(int capacity, ConsignController *ctrlr, Odometrie *odo)
+CommandManagerA::CommandManagerA(int capacity, ConsignController *ctrlr, Odometrie *odo)
 {
     liste = new CMDList(capacity);
     cnsgCtrl = ctrlr;
@@ -24,51 +25,56 @@ CommandManager::CommandManager(int capacity, ConsignController *ctrlr, Odometrie
     perform_on = true;
 }
 
-CommandManager::~CommandManager()
+CommandManagerA::~CommandManagerA()
 {
     delete liste;
 }
 
 /*
  * Pour ajouter des commandes à la file, on donne la position à parcourir en mm ou en degré,
- * le commandManager fait les convertion en UO lui même
+ * le CommandManagerA fait les convertion en UO lui même
  */
-bool CommandManager::addStraightLine(int32_t valueInmm)
+bool CommandManagerA::addStraightLine(int32_t valueInmm)
 {
     return liste->enqueue(CMD_GO, Utils::mmToUO(odometrie, valueInmm), 0);
 }
 
-bool CommandManager::addTurn(int32_t angleInDeg)
+bool CommandManagerA::addTurn(int32_t angleInDeg)
 {
     return liste->enqueue(CMD_TURN, Utils::degToUO(odometrie, angleInDeg), 0);
 }
 
-bool CommandManager::addGoTo(int32_t posXInmm, int32_t posYInmm)
+bool CommandManagerA::addGoTo(int32_t posXInmm, int32_t posYInmm)
 {
     return liste->enqueue(CMD_GOTO, Utils::mmToUO(odometrie, posXInmm), Utils::mmToUO(odometrie, posYInmm));
 }
 
-bool CommandManager::addGoToBack(int32_t posXInmm, int32_t posYInmm)
+bool CommandManagerA::addGoToBack(int32_t posXInmm, int32_t posYInmm)
 {
     return liste->enqueue(CMD_GOTO_BACK, Utils::mmToUO(odometrie, posXInmm), Utils::mmToUO(odometrie, posYInmm));
 }
 
-bool CommandManager::addGoToEnchainement(int32_t posXInmm, int32_t posYInmm)
+bool CommandManagerA::addGoToEnchainement(int32_t posXInmm, int32_t posYInmm)
 {
     return liste->enqueue(CMD_GOTOENCHAIN, Utils::mmToUO(odometrie, posXInmm), Utils::mmToUO(odometrie, posYInmm));
 }
 
-bool CommandManager::addGoToAngle(int32_t posXInmm, int32_t posYInmm)
+bool CommandManagerA::addGoToAngle(int32_t posXInmm, int32_t posYInmm)
 {
     return liste->enqueue(CMD_GOTOANGLE, Utils::mmToUO(odometrie, posXInmm), Utils::mmToUO(odometrie, posYInmm));
+}
+
+bool CommandManagerA::addGoToAngleReverse(int32_t posXInmm, int32_t posYInmm)
+{
+    return liste->enqueue(CMD_GOTOANGLEREVERSE, Utils::mmToUO(odometrie, posXInmm), Utils::mmToUO(odometrie, posYInmm));
 }
 
 /*
  * Fonction de mise a jour...
  */
-void CommandManager::perform()
+void CommandManagerA::perform()
 {
-//printf("\nCommandManager::perform() commandStatus= %d\n", commandStatus);
+//printf("\nCommandManagerA::perform() commandStatus= %d\n", commandStatus);
     // Arrêt d'urgence! On n'accepte aucune commande.
     if (commandStatus == STATUS_HALTED || commandStatus == STATUS_BLOCKED) {    //Ajouter cho 2019
         while (currCMD.type != CMD_NULL) { //On s'assure que la liste des commandes est vide
@@ -94,7 +100,7 @@ void CommandManager::perform()
             cnsgCtrl->set_angle_consigne(cnsgCtrl->getAccuAngle());
 
             commandStatus = STATUS_BLOCKED;
-            printf("STATUS_BLOCKED\n");
+            //printf("STATUS_BLOCKED\n");
 
         } else {
             commandStatus = STATUS_RUNNING;
@@ -109,6 +115,8 @@ void CommandManager::perform()
             computeGoToBack();
         } else if (currCMD.type == CMD_GOTOANGLE) { // On est en plein GoTo en angle, donc on est en train de se planter et on ajuste
             computeGoToAngle();
+        } else if (currCMD.type == CMD_GOTOANGLEREVERSE) {
+            computeGoToAngleReverse();
         } else if (currCMD.type == CMD_GOTOENCHAIN) { // Là, on est vraiment en train de se planter parce qu'on veut enchainer les consignes
             computeEnchainement();
         }
@@ -160,7 +168,7 @@ void CommandManager::perform()
  * (0,0) est la position initiale du robot après calage bordure
  * TODO décider de cette connerie
  */
-void CommandManager::computeGoTo()
+void CommandManagerA::computeGoTo()
 {
 
     float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
@@ -212,7 +220,7 @@ void CommandManager::computeGoTo()
 /*
  * On a une commande GoToBack(x,y) avec x et y deux points dans le repère du robot
  */
-void CommandManager::computeGoToBack()
+void CommandManagerA::computeGoToBack()
 {
 
     float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
@@ -255,13 +263,32 @@ void CommandManager::computeGoToBack()
 /*
  * On a une commande GoToAngle(x,y), on veut que le cap du robot pointe vers ce point
  */
-void CommandManager::computeGoToAngle()
+void CommandManagerA::computeGoToAngle()
 {
 
     float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
     float deltaY = currCMD.secValue - odometrie->getY(); // Différence entre la cible et le robot selon Y
 
-            // Angle à parcourir
+    // Angle à parcourir
+    float deltaTheta = computeDeltaTheta(deltaX, deltaY);
+
+    //TODO a tester en conditions réelles et extrêmes de mauvaises utilisations
+    // La consigne à atteindre en angle est la somme du deltaTheta en UO et de l'accumulateur du régu
+    int64_t consigne_angle = Utils::radToUO(odometrie, deltaTheta) + cnsgCtrl->getAccuAngle();
+    cnsgCtrl->set_angle_consigne(consigne_angle);   // On set la consigne
+
+}
+
+/*
+ * On a une commande GoToAngleReverse(x,y), on veut que le cap du robot pointe vers ce point
+ */
+void CommandManagerA::computeGoToAngleReverse()
+{
+
+    float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
+    float deltaY = currCMD.secValue - odometrie->getY(); // Différence entre la cible et le robot selon Y
+
+    // Angle à parcourir
     float deltaTheta = computeDeltaTheta(deltaX, deltaY);
 
     //TODO a tester en conditions réelles et extrêmes de mauvaises utilisations
@@ -274,9 +301,8 @@ void CommandManager::computeGoToAngle()
 /*
  * Calcul de l'angle à parcourir par le robot, ça sert souvent...
  */
-float CommandManager::computeDeltaTheta(float deltaX, float deltaY)
+float CommandManagerA::computeDeltaTheta(float deltaX, float deltaY)
 {
-
     // Cap que doit atteindre le robot
     float thetaCible = atan2(deltaY, deltaX);
 
@@ -294,7 +320,29 @@ float CommandManager::computeDeltaTheta(float deltaX, float deltaY)
     return deltaTheta;
 }
 
-int64_t CommandManager::computeDeltaDist(float deltaX, float deltaY)
+/*
+ * Calcul de l'angle à parcourir par le robot, ça sert souvent...
+ */
+float CommandManagerA::computeDeltaThetaReverse(float deltaX, float deltaY)
+{
+    // Cap que doit atteindre le robot
+    float thetaCible = atan2(deltaY, deltaX);
+
+    // La différence entre le thetaCible (= cap à atteindre) et le theta (= cap actuel du robot) donne l'angle à parcourir
+    float deltaTheta = -(thetaCible - odometrie->getTheta());
+
+    // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
+    // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
+    if (deltaTheta >= PI) {
+        deltaTheta -= 2.0 * PI;
+    } else if (deltaTheta < -PI) {
+        deltaTheta += 2.0 * PI;
+    }
+
+    return deltaTheta;
+}
+
+int64_t CommandManagerA::computeDeltaDist(float deltaX, float deltaY)
 {
     // On a besoin de min et max pour le calcul de la racine carrée
     float max = fabs(deltaX) > fabs(deltaY) ? fabs(deltaX) : fabs(deltaY);
@@ -308,7 +356,7 @@ int64_t CommandManager::computeDeltaDist(float deltaX, float deltaY)
     }
 }
 
-void CommandManager::computeEnchainement()
+void CommandManagerA::computeEnchainement()
 {
     // Ok, on est dans un Goto, alors, on calcule le Goto.
     computeGoTo();
@@ -331,7 +379,7 @@ void CommandManager::computeEnchainement()
     }
 }
 
-void CommandManager::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgence
+void CommandManagerA::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgence
 {
     cnsgCtrl->setQuadRamp_Angle(false); //Ajouter cho 2019
     cnsgCtrl->setQuadRamp_Dist(false);
@@ -348,7 +396,7 @@ void CommandManager::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgen
     commandStatus = STATUS_HALTED;
 }
 
-void CommandManager::resetEmergencyStop()
+void CommandManagerA::resetEmergencyStop()
 {
 
     while (currCMD.type != CMD_NULL) {
@@ -366,7 +414,7 @@ void CommandManager::resetEmergencyStop()
 
 }
 
-int CommandManager::getPendingCommandCount()
+int CommandManagerA::getPendingCmdCount()
 {
     // Nombre de commande dans la file d'attente
     int count = liste->size();

@@ -1,5 +1,5 @@
-#ifndef PID
-#define PID
+#ifndef ASSERV_E_PID
+#define ASSERV_E_PID
 
 #include "../Filtre.h"
 #include "../../Utils/Utils.h"

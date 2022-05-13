@@ -6,75 +6,33 @@
 LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot) :
         ledbar_(botId, *this, 2), buttonbar_(*this), soundbar_(*this), tirette_(*this), sensors_(*this, robot)
 , lcd_(botId, *this)
-, servoUsingMotor_(*this)
+//, servoUsingMotor_(*this)
 , servos_(botId, *this)
 {
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
 
-    //releaseAll();
+    //min mid max, //TODO inversed(NOT IMPLEMENTED YET)
+    servos().setup(SERVO_1_ARM_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    servos().setup(SERVO_3_FORK_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    servos().setup(SERVO_7_PUSH_SQUARES, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    servos().setup(SERVO_11_TAKE_TROPHY, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    servos().setup(SERVO_13_FORK_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    servos().setup(SERVO_15_ARM_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
 
-    servos().setup(SERVO_1, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
 
 
-
-//    servos().setType(SERVO_1, AServoDriver::SERVO_STANDARD)
-//    servos().setMinPulse(SERVO_1, 300); ////default 600 [300 to 700]
-//    servos().setMidPulse(SERVO_1, 1500); //default 1500 [1300 to 1700]
-//    servos().setMaxPulse(SERVO_1, 2700); //default 2400 [2300 to 2700]
-
-/*
     sensors_.addConfigFront(true, false, true);
     sensors_.addConfigBack(true, false, true);
 
-    sensors_.addThresholdFront(360, 0, 360);
-    sensors_.addThresholdFrontVeryClosed(230, 0, 230);
+    sensors_.addThresholdFront(50+360, 0, 50+360);
+    sensors_.addThresholdFrontVeryClosed(50+120, 0, 50+120);
 
-    sensors_.addThresholdBack(210, 0, 210);
-    sensors_.addThresholdBackVeryClosed(130, 0, 130);
+    sensors_.addThresholdBack(50+300, 0, 50+300);
+    sensors_.addThresholdBackVeryClosed(50+120, 0, 50+120);
 
-    releaseAll();
 
-    servosStd().setSpeed(SERVO_7, 200);
-    servosStd().setSpeed(SERVO_5, 200);
-    servosStd().setSpeed(SERVO_1, 400);
 
-    servosStd().setMinPulse(SERVO_1, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_1, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_1, 2700); //default 2400 [2300 to 2700]
 
-    servosStd().setMinPulse(SERVO_2, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_2, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_2, 2700); //default 2400 [2300 to 2700]
 
-    servosStd().setMinPulse(SERVO_3, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_3, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_3, 2700); //default 2400 [2300 to 2700]
-
-    servosStd().setMinPulse(SERVO_4, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_4, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_4, 2700); //default 2400 [2300 to 2700]
-
-    servosStd().setMinPulse(SERVO_5, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_5, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_5, 2700); //default 2400 [2300 to 2700]
-
-    servosStd().setMinPulse(SERVO_6, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_6, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_6, 2700); //default 2400 [2300 to 2700]
-
-    servosStd().setMinPulse(SERVO_7, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_7, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_7, 2700); //default 2400 [2300 to 2700]
-
-    servosStd().setMinPulse(SERVO_8, 300); ////default 600 [300 to 700]
-    servosStd().setMidPulse(SERVO_8, 1500); //default 1500 [1300 to 1700]
-    servosStd().setMaxPulse(SERVO_8, 2700); //default 2400 [2300 to 2700]
-*/
-    /*
-     //Servo config specifique
-     servosStd().setPolarity(0);
-     servosStd().setMinPulse(0, 600);
-     servosStd().setMidPulse(0, 1470);
-     servosStd().setMaxPulse(0, 2350);*/
 
 }

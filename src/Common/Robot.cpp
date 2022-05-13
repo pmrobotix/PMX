@@ -88,6 +88,7 @@ void Robot::configureDefaultConsoleArgs() {
         cArgs_.addOption(cOpt);
     }
 
+    //deprencated, replaced by /v
 //    {
 //        Arguments::Option cOpt('c', "");
 //        cOpt.addArgument("color", "color of robot [y]ellow/[v]iolet", "y");

@@ -69,7 +69,7 @@ AsservDriver::AsservDriver() :
     int L;
     int R;
     getCountsExternal(&R, &L);
-    logger().info() << "ENCODERS R=" << R << " L=" << L << logs::end;
+    logger().debug() << "ENCODERS R=" << R << " L=" << L << logs::end;
 }
 
 void AsservDriver::reset() {

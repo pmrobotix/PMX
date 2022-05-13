@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef ASSERV_E_CONFIG_H
+#define ASSERV_E_CONFIG_H
 
 #define PI 3.14159265358979
 

@@ -114,8 +114,8 @@ void ConsignController::perform()
             if (blocked_ticks < INT32_MAX) {
                 // On n'incrémente pas en continue pour éviter l'overflow (au bout de 124 jours...)
                 blocked_ticks++;
-                //printf(" blocked_ticks++ %d  (getDeltaThetaBrut())=%lld (getDeltaDist())=%lld , (getVitesseG())=%d , (getVitesseD()=%d\n", blocked_ticks, (odometrie->getDeltaThetaBrut()), (odometrie->getDeltaDist()), motors->getVitesseG(), motors->getVitesseD() );
-                //printf(" blocked_ticks++ %d  (getDeltaThetaBrut())=%lld (getDeltaDist())=%lld , VmoteurG=%d , VmoteurD=%d\n", blocked_ticks, (odometrie->getDeltaThetaBrut()), (odometrie->getDeltaDist()), VmoteurG, VmoteurD );
+//                printf(" blocked_ticks++ %d  (getDeltaThetaBrut())=%lld (getDeltaDist())=%lld , (getVitesseG())=%d , (getVitesseD()=%d\n", blocked_ticks, (odometrie->getDeltaThetaBrut()), (odometrie->getDeltaDist()), motors->getVitesseG(), motors->getVitesseD() );
+//                printf(" blocked_ticks++ %d  (getDeltaThetaBrut())=%lld (getDeltaDist())=%lld , VmoteurG=%d , VmoteurD=%d\n", blocked_ticks, (odometrie->getDeltaThetaBrut()), (odometrie->getDeltaDist()), VmoteurG, VmoteurD );
             }
         } else {
             // Moteurs arrêtés ou robot qui bouge: on n'est pas bloqué
@@ -164,17 +164,16 @@ void ConsignController::setLowSpeedBackward(bool b, int percent)
 
 bool ConsignController::isBlocked()
 {
-    return 0;
 
     // Si on est bloqué pendant un certain temps, on le signale
-    bool b = blocked_ticks >= Config::BLOCK_TICK_THRESHOLD;
-    printf("isBlocked %d  %d\n", blocked_ticks, Config::BLOCK_TICK_THRESHOLD);
-    if (b) {
-        //blocked_ticks = 0;
-        printf("ConsignController::isBlocked() true\n");
-    }
+    bool b = (blocked_ticks >= Config::BLOCK_TICK_THRESHOLD);
+//    printf("isBlocked %d  %d\n", blocked_ticks, Config::BLOCK_TICK_THRESHOLD);
 //    if (b) {
-//        blocked_ticks = 0;
+//        //blocked_ticks = 0;
+//        printf("ConsignController::isBlocked() true\n");
 //    }
+    if (b) {
+        blocked_ticks = 0;
+    }
     return b;
 }

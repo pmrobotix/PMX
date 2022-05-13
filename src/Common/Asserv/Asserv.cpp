@@ -247,7 +247,7 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
 }
 
 void Asserv::resetEmergencyOnTraj(std::string message) {
-    logger().error() << "resetEmergencyOnTraj message = " << message << logs::end;
+    logger().debug() << "resetEmergencyOnTraj message = " << message << logs::end;
     if (useAsservType_ == ASSERV_INT_INSA) {
         //pAsservInsa_->path_ResetEmergencyStop();
     }
@@ -260,7 +260,7 @@ void Asserv::update_adv() {
 }
 
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm) {
-    logger().error() << "warnFrontCollisionOnTraj forceRotation_ = " << temp_forceRotation_ << logs::end;
+    logger().debug() << "warnFrontCollisionOnTraj forceRotation_ = " << temp_forceRotation_ << logs::end;
     if (temp_forceRotation_) {
         //logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
         return;
@@ -300,7 +300,7 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
     else {
         adv_pos_centre_ = {-100.0, -100.0, 0.0, 0};
     }
-    logger().error() << "warnFrontCollisionOnTraj x_adv = "
+    logger().debug() << "warnFrontCollisionOnTraj x_adv = "
             << x_adv
             << " y_adv = "
             << y_adv
@@ -503,7 +503,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
         return TRAJ_FINISHED;
     }
     float aRadian = atan2(dy, dx);
-    logger().debug() << "doMoveForwardTo doRotateTo degrees="
+    logger().info() << "doMoveForwardTo doRotateTo degrees="
             << (aRadian * 180.0f) / M_PI
             << " dx="
             << dx

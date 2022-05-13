@@ -7,6 +7,10 @@
 #include <thread>
 #include <sched.h>
 #include <iostream>
+#include <cerrno>
+
+#include <cstring>
+#include <clocale>
 
 //You can't do it the way you've written it because C++ class member functions have a hidden
 //this parameter passed in.  pthread_create() has no idea what value of this to use.
@@ -80,7 +84,8 @@ bool utils::Thread::start(std::string name, int priority) {
 
     int code = pthread_create(&threadId_, NULL, utils::Thread::entryPoint, (void*) this);
     if (code == 0) {
-        std::cout << "THREAD " << threadId_ << " is started name=" << name << " p=" << priority << std::endl;
+        //LOG
+        //std::cout << "THREAD " << threadId_ << " is started name=" << name << " p=" << priority << std::endl;
         //log
         /*
          pid_t tid;
@@ -122,7 +127,9 @@ bool utils::Thread::start(std::string name, int priority) {
         return true;
     }
 }
-//http://www.yonch.com/tech/82-linux-thread-priority
+//chrt -h
+
+
 // To be able to run the program with a user, got to
 // https://stackoverflow.com/questions/10704983/operation-not-permitted-while-setting-new-priority-for-thread
 // Edit /etc/security/limits.conf then add 2 lines
@@ -135,6 +142,11 @@ bool utils::Thread::start(std::string name, int priority) {
 //> ulimit -r # show soft limit
 //99
 //ulimit -Sr 99 # set soft limit
+/*
+ * sudo nano /etc/systemd/system/console-runner@.service
+ * Nice=-20
+ * LimitRTPRIO=90
+ */
 int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
     if (p >= 0) {
         //priority test
@@ -146,7 +158,8 @@ int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
 
         if (p >= sched_get_priority_max(SCHED_FIFO)) p = sched_get_priority_max(SCHED_FIFO);
 
-        std::cout << "THREAD " << thread << " " << name <<" priority changed to " << p << std::endl;
+        //LOG
+        //std::cout << "THREAD " << thread << " " << name << " priority changed to " << p << std::endl;
 
         // We'll set the priority to the maximum.
         params.sched_priority = p;
@@ -156,20 +169,25 @@ int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
         ret = pthread_setschedparam(thread, SCHED_FIFO, &params);
         if (ret != 0) {
             // Print the error
-            std::cout << "Unsuccessful in setting thread realtime prio" << std::endl;
+            std::cout << "THREAD " << thread << " " << name << " ERROR prio" << std::strerror (errno)<< std::endl;
+            //std::cout << "Unsuccessful in setting thread realtime prio" << std::endl;
+//while(1){}
             return -2;
         }
         // Now verify the change in thread priority
         int policy = 0;
         ret = pthread_getschedparam(thread, &policy, &params);
         if (ret != 0) {
-            std::cout << "Couldn't retrieve real-time scheduling paramers" << std::endl;
+            std::cout << "THREAD " << thread << " " << name << " ERROR get parameters" << std::endl;
+            //std::cout << "Couldn't retrieve real-time scheduling paramers" << std::endl;
+//while(1){}
             return -3;
         }
 
         // Check the correct policy was applied
         if (policy != SCHED_FIFO) {
             std::cout << "Scheduling is NOT SCHED_FIFO!" << std::endl;
+//while(1){}
         }
         else {
             //std::cout << "SCHED_FIFO OK" << std::endl;
@@ -177,6 +195,7 @@ int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
 
         // Print thread scheduling priority
         //std::cout << "Thread priority is " << params.sched_priority << std::endl;
+ //while(1){}
         return params.sched_priority;
     }
     else return -1;

@@ -1,8 +1,8 @@
 #include "L_State_WaitEndOfMatch.hpp"
 
-#include <stdio.h>
 #include <sys/types.h>
-#include <unistd.h>
+#include <chrono>
+#include <thread>
 
 #include "../Common/Action/ButtonBar.hpp"
 #include "../Common/Action/LcdShield.hpp"
@@ -15,10 +15,10 @@
 #include "../Thread/Thread.hpp"
 #include "L_State_DecisionMakerIA.hpp"
 #include "LegoEV3ActionsExtended.hpp"
+#include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
-IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
-{
+IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
     logger().info() << "executing..." << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -29,44 +29,42 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 
     uint c = 0;
     bool stop = false;
-    while (robot.chrono().getElapsedTimeInSec() <= 100) {
+    while (robot.chrono().getElapsedTimeInSec() <= 100 || stop == true) {
 
-
-        //test ARU
+        //ARU
         if (robot.actions().tirette().pressed()) {
-            printf("===== ARU pressed !!!!!!\n");
+            //printf("===== ARU pressed !!!!!!\n");
             logger().error() << "ARU pressed !!!!!!" << logs::end;
             //stop all robot
+            robot.asserv().stopMotors();
             stop = true;
             break;
         }
 
-        //usleep(100000);
-        //utils::Thread::sleep_for_millis(100);
-        std::this_thread::sleep_for(std::chrono::microseconds(100000));
+        std::this_thread::sleep_for(std::chrono::microseconds(50000));
 
-        if (c % 2 == 0)
-        {
+        if (c % 20 == 0) {
             robot.displayPoints();
-            this->logger().error() << "chrono " << robot.chrono().getElapsedTimeInSec()
-                    << logs::end;
+            this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
         }
         c++;
     }
 
-    this->logger().info() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
+    this->logger().debug() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
+    robot.asserv().stopMotors();
     robot.freeMotion();
 
     robot.end90s(true); //indique que l'action est effectuée au prog princ
-    logger().info() << "cancel decisionmaker" << logs::end;
 
-    if (robot.decisionMaker_ != NULL)
-        //if (robot.decisionMaker_->state() == utils::CREATED)
+    if (robot.decisionMaker_ != NULL) {
+        logger().debug() << "cancel decisionmaker" << logs::end;
+        //if (robot.decisionMaker_->state() == utils::CREATED) //non necessaire?
         robot.decisionMaker_->cancel();
-
+    }
 
     //init robot for end
     robot.freeMotion(); //stop the robot
+
     robot.actions().sensors().stopTimerSensors();
 
     robot.stopExtraActions(); //stop specific actions, can take time for servos...
@@ -76,20 +74,69 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     robot.actions().lcd().clear();
     robot.actions().lcd().display_content_integer(robot.points, 4);
     robot.actions().lcd().display_content_string("points ?", 5);
-    if (!stop) {
-        ButtonTouch b = BUTTON_NONE;
+
+    robot.actions().sensors().display(robot.points);
+    robot.actions().sensors().display(robot.points);
+
+//    if (!stop) {
+    ButtonTouch b = BUTTON_NONE;
+
+    //cas de ARU pressed
+    if (robot.actions().tirette().pressed()) {
         while (1) {
+            logger().debug() << "cas de ARU pressed" << logs::end;
+
+            //affichage des points
+            robot.actions().lcd().clear();
+            robot.actions().lcd().display_content_integer(robot.points, 4);
+            robot.actions().lcd().display_content_string("points ?", 5);
+
+
             b = robot.actions().buttonBar().checkOneOfAllPressed();
             if (b == BUTTON_BACK_KEY) {
+                stop = true;
                 break;
             }
             if (b == BUTTON_ENTER_KEY) {
+                stop = true;
                 break;
             }
-            std::this_thread::sleep_for(std::chrono::microseconds(1000));
-            //usleep(1000);
+            if (!robot.actions().tirette().pressed()) {
+                stop = true;
+                break;
+            }
+            std::this_thread::sleep_for(std::chrono::microseconds(20000));
         }
     }
+    else {
+
+        while (1) {
+            logger().debug() << "Cas de ARU unpressed" << logs::end;
+
+            //affichage des points
+            robot.actions().lcd().clear();
+            robot.actions().lcd().display_content_integer(robot.points, 4);
+            robot.actions().lcd().display_content_string("points ?", 5);
+
+            b = robot.actions().buttonBar().checkOneOfAllPressed();
+            if (b == BUTTON_BACK_KEY) {
+                stop = true;
+                break;
+            }
+            if (b == BUTTON_ENTER_KEY) {
+                stop = true;
+                break;
+            }
+            if (robot.actions().tirette().pressed()) {
+                stop = true;
+                break;
+            }
+            std::this_thread::sleep_for(std::chrono::microseconds(20000));
+
+        }
+    }
+
+    //   }
 
     return NULL; //finish all state
 }

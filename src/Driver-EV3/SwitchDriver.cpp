@@ -59,7 +59,7 @@ SwitchDriver::SwitchDriver() {
      logger().debug() << "VERIF driver lego-ev3-touch temp ==  " << temp << logs::end;
      }
      }*/
-    string input = "ev3-ports:in3";
+    string input = "ev3-ports:in1";
     touch_ = touch_sensor(input);
 
     //cas NON MUX

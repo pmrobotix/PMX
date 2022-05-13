@@ -9,8 +9,10 @@
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
+#include "../Common/State/Automate.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
+#include "L_State_WaitEndOfMatch.hpp"
 #include "LegoEV3ActionsExtended.hpp"
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3IAExtended.hpp"
@@ -40,6 +42,19 @@ void L_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
+}
+void L_AsservLineRotateTest::execute() {
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    //arret d'urgence
+    Automate automate_;
+    IAutomateState* stateWaitEndOfMatch = new L_State_WaitEndOfMatch();
+    automate_.run(robot, stateWaitEndOfMatch);
+
+
+    logger().info() << "END L_AsservLineRotateTest::execute()" << logs::end;
+
+    this->cancel();
+    //exit(0);
 }
 
 void L_AsservLineRotateTest::run(int argc, char** argv) {
@@ -93,7 +108,6 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
 
     robot.asserv().startMotionTimerAndOdo(true); //true = assistedHandling
 
-
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
     robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
@@ -116,32 +130,50 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
 
     robot.svgPrintPosition();
 
+    this->start("L_AsservLineRotateTest"); //ARU
+
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(100);    //detection adverse
+    robot.actions().sensors().addTimerSensors(200);    //detection adverse toutes les 200ms
     robot.chrono().start();
 
 //    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
 //    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(false, true, false);
 
     for (int num = 1; num <= nb; num++) {
         ts = TRAJ_OK;
         if (d != 0) {
-            logger().info() << "go..." << d << "mm" << logs::end;
-            while (ts != TRAJ_FINISHED) {
-                ts = robot.ia().iAbyPath().whileMoveForwardTo(d, robot.asserv().pos_getY_mm(), false, 1000000, 3, 3, false);
-                if (ts == TRAJ_NEAR_OBSTACLE) {
-                    logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
-                    robot.asserv().resetEmergencyOnTraj();
+            logger().info() << "go...d=" << d << "mm" << logs::end;
+            if (d >= 0) {
+                while (ts != TRAJ_FINISHED) {
+                    ts = robot.ia().iAbyPath().whileMoveForwardTo(d, robot.asserv().pos_getY_mm(), false, 1000000, 4, 4, false);
+                    if (ts == TRAJ_NEAR_OBSTACLE) {
+                        logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    if (ts == TRAJ_COLLISION) {
+                        logger().info() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    //sleep(3);
+                    break;
                 }
-                if (ts == TRAJ_COLLISION) {
-                    logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
-                    robot.asserv().resetEmergencyOnTraj();
+            }
+            else if (d < 0) {
+                while (ts != TRAJ_FINISHED) {
+                    ts = robot.ia().iAbyPath().whileMoveBackwardTo(d, robot.asserv().pos_getY_mm(), false, 1000000, 4, 4, false);
+                    if (ts == TRAJ_NEAR_OBSTACLE) {
+                        logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    if (ts == TRAJ_COLLISION) {
+                        logger().info() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    //sleep(3);
+                    break;
                 }
-                //sleep(3);
-                break;
             }
         }
 
@@ -153,11 +185,11 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
                 ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 2000000, 3, 3);
 
                 if (ts == TRAJ_NEAR_OBSTACLE) {
-                    logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
+                    logger().error() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                     robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_NEAR_OBSTACLE");
                 }
                 if (ts == TRAJ_COLLISION) {
-                    logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
+                    logger().error() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
                     robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
                 }
                 //sleep(2);
@@ -166,7 +198,6 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
             robot.svgPrintPosition();
         }
 
-
         if (a != 0) {
             ts = TRAJ_OK;
             while (ts != TRAJ_FINISHED) {
@@ -174,11 +205,11 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
                 ts = robot.ia().iAbyPath().whileMoveRotateTo(a, 1000000, 2);
 
                 if (ts == TRAJ_NEAR_OBSTACLE) {
-                    logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
+                    logger().error() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                     robot.asserv().resetEmergencyOnTraj();
                 }
                 if (ts == TRAJ_COLLISION) {
-                    logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
+                    logger().error() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
                     robot.asserv().resetEmergencyOnTraj();
                 }
                 //sleep(3);
@@ -187,7 +218,7 @@ void L_AsservLineRotateTest::run(int argc, char** argv) {
         }
         d += d;
     }
-    sleep(1);
+    sleep(3);
     robot.asserv().getEncodersCounts(&right, &left);
 
     logger().info() << "End time= "

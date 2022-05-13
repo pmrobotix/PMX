@@ -49,6 +49,7 @@ void test::ServoDriverTest::testServos() {
      servodriver_->release(7);
      */
 
+    servodriver_->setType(servo, AServoDriver::SERVO_STANDARD);
     servodriver_->setMinPulse(servo, 500);
     servodriver_->setMidPulse(servo, 1525);
     servodriver_->setMaxPulse(servo, 2550);
@@ -59,22 +60,22 @@ void test::ServoDriverTest::testServos() {
     servodriver_->setRate(servo, rate_ms);
     for (int n = 0; n < 60; n++) {
         for (int p = 0; p < 100; p=p+10) {
-            servodriver_->setPosition(servo, p);
+            servodriver_->setPulsePos(servo, p);
             usleep(wait_us);
         }
         //usleep(1000000);
         for (int p = 100; p > 0; p=p-10) {
-            servodriver_->setPosition(servo, p);
+            servodriver_->setPulsePos(servo, p);
             usleep(wait_us);
         }
 
         for (int p = 0; p > -100; p=p-10) {
-            servodriver_->setPosition(servo, p);
+            servodriver_->setPulsePos(servo, p);
             usleep(wait_us);
         }
 
         for (int p = -100; p < 0; p=p+10) {
-            servodriver_->setPosition(servo, p);
+            servodriver_->setPulsePos(servo, p);
             usleep(wait_us);
         }
 

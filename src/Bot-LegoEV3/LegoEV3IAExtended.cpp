@@ -23,52 +23,27 @@ void LegoEV3IAExtended::initPlayground()
         p_->add_rectangle(0, 1000, 140, 2000, 0); //left
         p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
+        //zone de triangle piedestal
+        p_->add_rectangle_symmetrical(this->area_triangle_yellow, this->area_triangle_violet, 200.0, 200.0 , 300.0, 750.0, M_PI/4.0);
+
         //zone aleatoire
-        //p_->add_circle_symmetrical(this->area_alea_violet, this->area_alea_yellow, 1000.0, 1050.0, 300.0, 6);
+        p_->add_rectangle_lower_left_symmetrical(this->area_alea_yellow, this->area_alea_violet, 700.0, 350.0 , 550.0, 550.0, 0);
 
-        //zone palets depart
-        //p_->add_rectangle_lower_left_symmetrical(this->area_palet_start_violet, this->area_palet_start_yellow, 350.0, 600.0, 300.0, 600.0, 0.0);
+        //zone hexa depart
+        p_->add_rectangle_lower_left_symmetrical(this->area_3_start_yellow, this->area_3_start_violet, 700.0, 1000.0, 400.0, 540.0, 0.0);
+
+        //distrib
+        p_->add_rectangle_symmetrical(this->area_distrib_yellow, this->area_distrib_violet, 100.0, 750.0, 200.0, 300.0, 0.0);
+
+        //galerie
+        p_->add_rectangle_lower_left_symmetrical(this->area_galerie_yellow, this->area_galerie_violet, 400.0, 1800.0, 1100.0, 200.0, 0.0);
+        //barre milieu
+        p_->add_rectangle(1500, 1850, 300, 550, 0);
 
 
+        //TODO opponent ?
 
-    /*
-     //orange parts
-     //cubes
-     p_->add_circle(robot.ia().oarea_cube1, 850.0, 530.0, 300.0, 6);
-     p_->add_circle(robot.ia().oarea_cube2high, 1100.0, 1500.0, 300.0, 6);
-     p_->add_circle(robot.ia().oarea_cube3left, 300.0, 1200.0, 250.0, 6);
 
-     //distributeurs
-     p_->add_rectangle(robot.ia().oarea_distribadverse, 600, 1900, 200.0, 200.0, 0);
-
-     //zone de construction
-     p_->add_rectangle(robot.ia().oarea_buildzone, 650, 180, 500.0, 220.0, 0);
-     if (robot.getMyColor() == PMXYELLOW)
-     p_->enable(robot.ia().oarea_buildzone, 0);
-
-     //Green parts
-     //cubes
-     p_->add_circle(robot.ia().garea_cube1, 2150.0, 530.0, 300.0, 6);
-     p_->add_circle(robot.ia().garea_cube2high, 1900.0, 1500.0, 300.0, 6);
-     p_->add_circle(robot.ia().garea_cube3left, 2700.0, 1200.0, 250.0, 6);
-
-     //distributeurs
-     p_->add_rectangle(robot.ia().garea_distribadverse, 2400, 1900, 200.0, 200.0, 0);
-
-     //zone de construction
-     p_->add_rectangle(robot.ia().garea_buildzone, 2350, 180, 500.0, 220.0, 0);
-     if (robot.getMyColor() != PMXYELLOW)
-     p_->enable(robot.ia().garea_buildzone, 0);
-
-     //stations d'épuration
-     p_->add_rectangle(robot.ia().area_stations, 1500.0, 1850.0, 1400.0, 300.0, 0);
-     //p_->add_circle(robot.ia().opponent_1, 1200.0, 1200.0, 100.0, 6);
-
-     p_->compute_edges();
-
-     robot.ia().iAbyPath().addPlayground(p_);
-     robot.ia().iAbyPath().toSVG();
-     */
     p_->compute_edges();
 
     iap_.addPlayground(p_);

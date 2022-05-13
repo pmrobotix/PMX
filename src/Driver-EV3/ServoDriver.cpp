@@ -21,26 +21,25 @@ AServoDriver * AServoDriver::create() {
 }
 
 ServoDriver::ServoDriver() :
-        pwm_(1, 0x60) //ServoStandard card
+        pwm_(3, 0x60) //ServoStandard card
 {
 
-    *servo_current_usec_ = {1500};
-    *servo_min_= {500};
-    *servo_mid_= {1500};
-    *servo_max_= {2500};
-    *servo_inv_= {false};
-    *servo_rate_= {0};
-    *servo_type_= {AServoDriver::SERVO_STANDARD};
+    for (int i = 0; i < NB_SERVO_STD; i++) {
+        servo_current_usec_[i] = 1500;
+        servo_min_[i] = 500;
+        servo_mid_[i] = 1500;
+        servo_max_[i] = 2500;
+        servo_inv_[i] = false;
+        servo_rate_[i] = 0;
+        servo_type_[i] = AServoDriver::SERVO_STANDARD;
+    }
 
     int connected = pwm_.connect(50); //freq 50 (periode 20ms) pour servo analogique
-    if(!connected)
-        logger().error() << "ServoDriver() pwm 0x60 not CONNECTED!" << logs::end;
-
-
+    if (!connected) logger().error() << "ServoDriver() pwm 0x60 not CONNECTED!" << logs::end;
 
 //    CCAx12Adc::instance().connect(0x08);
 //
-//    int conn = CCAx12Teensy::instance().connect(9);
+//    int conn = CCAx12Teensy::instance().connect(0x08);
 //
 //    while(1)
 //          {
@@ -50,8 +49,6 @@ ServoDriver::ServoDriver() :
 //              usleep(500000);
 //              logger().error() << "CCAx12Teensy..."  << conn << logs::end;
 //          }
-
-
 
 //    CCAx12Adc::instance().setLedOn(1);
 //    CCAx12Adc::instance().setLedOn(2);
@@ -83,40 +80,38 @@ ServoDriver::ServoDriver() :
 //    }
     //int r = CCAx12Adc::instance().writeAXData(8, P_TORQUE_ENABLE, 1);
 
-
-
-/*
-    CCAx12Adc::instance().connect(0x08);
-    CCAx12Adc::instance().setLedOn(1);
-    CCAx12Adc::instance().setLedOn(2);
-    CCAx12Adc::instance().setLedOn(3);
-    CCAx12Adc::instance().setLedOn(4);
-    CCAx12Adc::instance().setLedOn(5);
-    CCAx12Adc::instance().setLedOn(6);
-    CCAx12Adc::instance().setLedOn(7);
-    CCAx12Adc::instance().setLedOn(8);
-    CCAx12Adc::instance().setLedOn(9);
-    sleep(1);
-    CCAx12Adc::instance().setLedOff(1);
-    CCAx12Adc::instance().setLedOff(2);
-    CCAx12Adc::instance().setLedOff(3);
-    CCAx12Adc::instance().setLedOff(4);
-    CCAx12Adc::instance().setLedOff(5);
-    CCAx12Adc::instance().setLedOff(6);
-    CCAx12Adc::instance().setLedOff(7);
-    CCAx12Adc::instance().setLedOff(8);
-    CCAx12Adc::instance().setLedOff(9);
-    sleep(1);
-    CCAx12Adc::instance().setLedOn(1);
-    CCAx12Adc::instance().setLedOn(2);
-    CCAx12Adc::instance().setLedOn(3);
-    CCAx12Adc::instance().setLedOn(4);
-    CCAx12Adc::instance().setLedOn(5);
-    CCAx12Adc::instance().setLedOn(6);
-    CCAx12Adc::instance().setLedOn(7);
-    CCAx12Adc::instance().setLedOn(8);
-    CCAx12Adc::instance().setLedOn(9);
-    */
+    /*
+     CCAx12Adc::instance().connect(0x08);
+     CCAx12Adc::instance().setLedOn(1);
+     CCAx12Adc::instance().setLedOn(2);
+     CCAx12Adc::instance().setLedOn(3);
+     CCAx12Adc::instance().setLedOn(4);
+     CCAx12Adc::instance().setLedOn(5);
+     CCAx12Adc::instance().setLedOn(6);
+     CCAx12Adc::instance().setLedOn(7);
+     CCAx12Adc::instance().setLedOn(8);
+     CCAx12Adc::instance().setLedOn(9);
+     sleep(1);
+     CCAx12Adc::instance().setLedOff(1);
+     CCAx12Adc::instance().setLedOff(2);
+     CCAx12Adc::instance().setLedOff(3);
+     CCAx12Adc::instance().setLedOff(4);
+     CCAx12Adc::instance().setLedOff(5);
+     CCAx12Adc::instance().setLedOff(6);
+     CCAx12Adc::instance().setLedOff(7);
+     CCAx12Adc::instance().setLedOff(8);
+     CCAx12Adc::instance().setLedOff(9);
+     sleep(1);
+     CCAx12Adc::instance().setLedOn(1);
+     CCAx12Adc::instance().setLedOn(2);
+     CCAx12Adc::instance().setLedOn(3);
+     CCAx12Adc::instance().setLedOn(4);
+     CCAx12Adc::instance().setLedOn(5);
+     CCAx12Adc::instance().setLedOn(6);
+     CCAx12Adc::instance().setLedOn(7);
+     CCAx12Adc::instance().setLedOn(8);
+     CCAx12Adc::instance().setLedOn(9);
+     */
 //
 //    while (1) {
 //        int adc1 = 0;
@@ -134,80 +129,93 @@ ServoDriver::ServoDriver() :
 //        CCAx12Adc::instance().setLedOff(9);
 ////        r = CCAx12Adc::instance().writeAXData(8, P_GOAL_SPEED, 800);
 //    }
-
-
-
-//    //____________________________________TEST
-//    int servo = 0;
-//    setMinPulse(servo, 0);
-//    setMaxPulse(servo, 3000);
+    /*
+    //____________________________________TEST ok
+    int servo = 11;
+    setMinPulse(servo, 0);
+    setMaxPulse(servo, 3000);
 //    setMinPulse(7, 0);
 //    setMaxPulse(7, 3000);
-//
-//     while (1) {
-//     std::cout << "800" << std::endl;
-//     setRate(servo, 0);
-//     setPulsePos(servo, 1000);
+
+    getPulsePos(servo);
+    setPulsePosWithRate(servo, 1500, 0);
+    getPulsePos(servo);
+
+    while (1) {
+        std::cout << "1600" << std::endl;
+        //setRate(servo, 4000);
+        setPulsePosWithRate(servo, 1600, 4000);
 //     setRate(7, 0);
 //     setPulsePos(7, 1000);
-//     usleep(1000000);
-//
-//     std::cout << "2000" << std::endl;
-//     setRate(servo, 0);
-//     setPulsePos(servo, 2000);
-//
+
+        usleep(1000000);
+        release(servo);
+        usleep(2000000);
+
+        std::cout << "2000" << std::endl;
+        //setRate(servo, 4000);//vitesse
+        //setPulsePos(servo, 2000);
+        setPulsePosWithRate(servo, 2000, 4000);
 //     setRate(7, 0);
 //     setPulsePos(7, 2000);
-//     usleep(1000000);
-//     }
-//     //____________________________________TEST
+        usleep(1000000);
 
-    /*
+    }
+*/
+    //____________________________________TEST nok
+    /*   int servo = 11;
      while (1) {
 
      setRate(servo, 0);
      setPulsePosWithRate(servo, 500);
-     setRate(7, 0);
-     setPulsePosWithRate(7, 500);
-     //usleep(800000);
+     //     setRate(7, 0);
+     //     setPulsePosWithRate(7, 500);
+     usleep(800000);
 
      setRate(servo, 2000);
      setPulsePosWithRate(servo, 2500);
-     setRate(7, 2000);
-     setPulsePosWithRate(7, 2500);
-     //usleep(800000);
+     //     setRate(7, 2000);
+     //     setPulsePosWithRate(7, 2500);
+     usleep(800000);
      }
      */
 }
 
-void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec) { //TODO add the rate here
+void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec, int millisec0To90) {
 
     servo = constrain(servo, 0, NB_SERVO_STD - 1);
+
+    if (millisec0To90 > 0) {
+        setRate(servo, millisec0To90);
+    }
+
     //version 3
     utils::Chronometer chrono("ServoDriver::setPositionWithRate");
     int order_pos_microsec_ = constrain(pos_microsec, servo_min_[servo], servo_max_[servo]);
     int current_pos_ = servo_current_usec_[servo];
     int rate_ms_per_1000 = servo_rate_[servo];
     if (rate_ms_per_1000 == 0) {
-        setPulsePos(servo, pos_microsec);
+        setpwm(servo, order_pos_microsec_);
+        servo_current_usec_[servo] = order_pos_microsec_;
     }
-    int diff_pos = order_pos_microsec_ - current_pos_;
-    //calcul du temps de déplacement souhaité pour diff
-    int timing_of_move_ms = rate_ms_per_1000 * diff_pos / 1000.0;
+    else {
+        int diff_pos = order_pos_microsec_ - current_pos_;
+        //calcul du temps de déplacement souhaité pour diff
+        int timing_of_move_ms = rate_ms_per_1000 * std::abs(diff_pos) / 1000.0;
 
-    std::cout << "order_pos_microsec_= "
-            << order_pos_microsec_
-            << " current_pos_= "
-            << current_pos_
-            << " rate_ms_per_1000= "
-            << rate_ms_per_1000
-            << " diff_pos= "
-            << diff_pos
-            << " timing_of_move_ms= "
-            << timing_of_move_ms
-            << std::endl;
+//        std::cout << "order_pos_microsec_= "
+//                << order_pos_microsec_
+//                << " current_pos_= "
+//                << current_pos_
+//                << " rate_ms_per_1000= "
+//                << rate_ms_per_1000
+//                << " diff_pos= "
+//                << diff_pos
+//                << " timing_of_move_ms= "
+//                << timing_of_move_ms
+//                << std::endl;
 
-    if (diff_pos > 0) {
+        //if (diff_pos > 0) {
         chrono.start();
         long t = chrono.getElapsedTimeInMilliSec();
         //std::cout << "init t= "<< t << std::endl;
@@ -217,8 +225,17 @@ void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec) { //TODO add 
             if ((t - tf) > 10) {
                 //calcul de la position pour t
                 int cur_pos = t * 1000.0 / rate_ms_per_1000;
-                std::cout << " t= " << std::dec << t << " tf= " << std::dec << tf << " cur_pos=" << std::dec << cur_pos << std::endl;
-                setPulsePos(servo, current_pos_ + cur_pos);
+                //std::cout << " t= " << std::dec << t << " tf= " << std::dec << tf << " cur_pos=" << std::dec << cur_pos << std::endl;
+                int newpos = 1500;
+                if (diff_pos > 0) {
+                    newpos = current_pos_ + cur_pos;
+                }
+                else {
+                    newpos = current_pos_ - cur_pos;
+                }
+
+                setpwm(servo, newpos);
+                servo_current_usec_[servo] = newpos;
                 tf = t;
             }
             else std::this_thread::sleep_for(std::chrono::milliseconds(2));
@@ -232,17 +249,22 @@ void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec) { //TODO add 
      int current_pos_ = servo_current_usec_[servo];
      int rate_ms_per_1000 = servo_rate_[servo];
      if (rate_ms_per_1000 == 0) {
-     setPosition(servo, pos_microsec);
+     setpwm(servo, pos_microsec);
      }
      int diff_pos = order_pos_microsec_ - current_pos_;
      //calcul du temps de déplacement souhaité pour diff
      int timing_of_move_ms = rate_ms_per_1000 * diff_pos / 1000.0;
 
-     std::cout << "order_pos_microsec_= "<< order_pos_microsec_
-     << " current_pos_= "<< current_pos_
-     << " rate_ms_per_1000= "<< rate_ms_per_1000
-     << " diff_pos= "<< diff_pos
-     << " timing_of_move_ms= "<< timing_of_move_ms
+     std::cout << "order_pos_microsec_= "
+     << order_pos_microsec_
+     << " current_pos_= "
+     << current_pos_
+     << " rate_ms_per_1000= "
+     << rate_ms_per_1000
+     << " diff_pos= "
+     << diff_pos
+     << " timing_of_move_ms= "
+     << timing_of_move_ms
 
      << std::endl;
 
@@ -256,54 +278,63 @@ void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec) { //TODO add 
      if ((t - tf) > 10) {
      //calcul da la position pour t
      int cur_pos = t * 1000.0 / rate_ms_per_1000;
-     std::cout << " t= "<< t
-     << " tf= "<< tf
-     << " cur_pos=" << cur_pos
-     << std::endl;
-     setPosition(servo, current_pos_+ cur_pos);
+     std::cout << " t= " << t << " tf= " << tf << " cur_pos=" << cur_pos << std::endl;
+     setpwm(servo, current_pos_ + cur_pos);
      tf = t;
-     }else
-     std::this_thread::sleep_for(std::chrono::milliseconds(2));
+     }
+     else std::this_thread::sleep_for(std::chrono::milliseconds(2));
      }
      }
      */
-    /*//version 1
-     int microsec_ = constrain(microsec, servo_min_[servo], servo_max_[servo]);
+    /*
+     //version 1
+     int microsec_ = constrain(pos_microsec, servo_min_[servo], servo_max_[servo]);
      int current_pos_ = servo_current_usec_[servo];
      int rate_ = servo_rate_[servo];
-     if (rate_ == 0)
-     {
-     setPosition(servo, microsec);
+     if (rate_ == 0) {
+     setpwm(servo, pos_microsec);
      }
      int diff = current_pos_ - microsec_;
      //25usec pour laisser au moins 7ms le temps d'une requete i2c
-     if (diff < 0)
-     for (int pos = current_pos_; pos < microsec_; pos += 25) {
-     setPosition(servo, pos);
+     if (diff < 0) for (int pos = current_pos_; pos < microsec_; pos += 25) {
+     setpwm(servo, pos);
      int waitms = rate_ / 1000.0 * 24;
 
-     usleep(waitms*1000.0);
-     }
-     */
+     usleep(waitms * 1000.0);
+     }*/
 
 }
 
-void ServoDriver::setPulsePos(int servo, int pulsewidth_us) {
-    servo = constrain(servo, 0, NB_SERVO_STD - 1);
-    pulsewidth_us = constrain(pulsewidth_us, servo_min_[servo], servo_max_[servo]);
-    servo_current_usec_[servo] = pulsewidth_us;
-    if (servo_type_[servo] == AServoDriver::SERVO_STANDARD) {
-        pwm_.fastWriteMicroseconds(servo, pulsewidth_us);
-    }
-    else if (servo_type_[servo] == AServoDriver::SERVO_DYNAMIXEL) {
-        //TODO
+void ServoDriver::setPulsePos(int servo, int pulsewidth_us, int millisec0To90) {
 
-    }
+    setPulsePosWithRate(servo, pulsewidth_us, millisec0To90);
+    /*
+     servo = constrain(servo, 0, NB_SERVO_STD - 1);
+     pulsewidth_us = constrain(pulsewidth_us, servo_min_[servo], servo_max_[servo]);
 
+     if (millisec0To90 > 0) {
+     setRate(servo, millisec0To90);
+     setPulsePosWithRate(servo, pulsewidth_us);
+     }
+     else {
+     setpwm(servo, pulsewidth_us);
+     }
+     servo_current_usec_[servo] = pulsewidth_us;
+     */
     //telemetry log
 //    nlohmann::json j;
 //    j["servo" + servo] = pulsewidth_us;
 //    logger().telemetry(j.dump());
+}
+
+void ServoDriver::setpwm(int servo, int pulsewidth_us) {
+    if (servo_type_[servo] == AServoDriver::SERVO_STANDARD) {
+        pwm_.fastWriteMicroseconds(servo, pulsewidth_us);
+    }
+    else if (servo_type_[servo] == AServoDriver::SERVO_DYNAMIXEL) {
+        //TODO dynamixel
+
+    }
 }
 
 void ServoDriver::release(int servo) {
@@ -357,9 +388,14 @@ int ServoDriver::getPulsePos(int servo) {
     servo = constrain(servo, 0, NB_SERVO_STD - 1);
 
     if (servo_type_[servo] == AServoDriver::SERVO_STANDARD) {
-        //return servo_current_usec_[servo];
 
+//mets a jour le pwm
         int pwm = pwm_.getPWM(servo, true);
+        if (pwm == 0) {
+            logger().error() << "getPWM servo=" << servo << " pwm=" << pwm << logs::end;
+            pwm = 1500;
+        }
+        servo_current_usec_[servo] = pwm;
         return pwm;
 
     }
@@ -394,7 +430,8 @@ void ServoDriver::setMaxPulse(int servo, int pulse) {
 }
 
 void ServoDriver::setPolarity(int servo, bool inverted) {
-    servo_inv_[constrain(servo, 0, NB_SERVO_STD - 1)] = inverted; //TODO Faire les calculs en inversé sur la position par rapport au milieu
+    servo_inv_[constrain(servo, 0, NB_SERVO_STD - 1)] = inverted;
+    //TODO Faire les calculs en inversé sur la position par rapport au milieu
 }
 
 void ServoDriver::setType(int servo, ServoType type) {

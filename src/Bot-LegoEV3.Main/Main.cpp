@@ -30,6 +30,8 @@ int main(int argc, char** argv)
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
+
+
     //add specific tests for this robot
     robot.getConsoleManager().add(new L_LedBarTest());
     robot.getConsoleManager().add(new L_ButtonBarTest());

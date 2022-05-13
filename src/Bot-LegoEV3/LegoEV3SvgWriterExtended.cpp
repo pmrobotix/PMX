@@ -113,19 +113,21 @@ void LegoEV3SvgWriterExtended::writePosition_BotPos(float x, float y, float angl
         float delta_y = 50.0 * sin(angle_rad);
         float delta_x = 50.0 * cos(angle_rad);
         // inversion du y pour affichage dans le bon sens dans le SVG
+        this->lock();
         *fLogBuffer << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\"1\" fill=\"blue\"/>" "<line x1=\"" << x
                 << "\" y1=\"" << -y << "\" x2=\"" << x + delta_x << "\" y2=\"" << -y - delta_y
                 << "\" stroke-width=\"0.1\" stroke=\"grey\"/>" << logs::flush;
+        this->unlock();
     }
 }
 void LegoEV3SvgWriterExtended::writePosition_Bot(float x, float y, float angle_rad, int color)
 {
     if (!done_) {
-
+        this->lock();
         *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
                 << "\" xlink:href=\"#bot-legoev3\" transform=\"rotate(" << -((angle_rad * 180) / M_PI) << "," << x
                 << "," << -y << ")\" />" << logs::flush;
-
+        this->unlock();
     }
 }
 
@@ -134,6 +136,7 @@ void LegoEV3SvgWriterExtended::writeZone(const char* name, float minX, float min
 {
     if (!done_)
         //ia
+        this->lock();
         *fLogBuffer << "<g transform=\"scale(1,-1) \">" << "<rect x=\"" << minX << "\" y=\"" << minY << "\" width=\""
                 << width << "\" height=\"" << height << "\" fill=\"none\" stroke=\"#33cc33\" stroke-width=\"4\" />"
                 << "<line x1 = \"" << minX << "\" y1 = \"" << minY << "\" x2 = \"" << minX + width << "\" y2 = \""
@@ -176,21 +179,25 @@ void LegoEV3SvgWriterExtended::writeZone(const char* name, float minX, float min
 
                 << "<text x='" << startX + 20 << "' y='" << -startY - 10 << "' font-size='30' fill='#33cc33'>" << name
                 << "</text>" << logs::flush;
-
+        this->unlock();
 }
 
 void LegoEV3SvgWriterExtended::writeIaPath(const char* zone1Name, const char* zone2Name, float x_mm, float y_mm)
 {
     if (!done_)
+        this->lock();
         *fLogBuffer << "<circle cx='" << x_mm << "' cy='" << -y_mm << "' r='15' fill='none' stroke='green' />"
                 << "<text x='" << x_mm + 20 << "' y='" << -y_mm + 20 << "' font-size='30' fill='green'>" << zone1Name
                 << "-" << zone2Name << "</text>" << logs::flush;
+        this->unlock();
 }
 
 void LegoEV3SvgWriterExtended::pathPolyline(std::string points) //TODO mettre dans SVGWriter ?
 {
     if (!done_) {
+        this->lock();
         *fLogBuffer << "<polyline points='" << points << "' style='fill:none;stroke:red;stroke-width:4' />"
                 << logs::flush;
+        this->unlock();
     }
 }

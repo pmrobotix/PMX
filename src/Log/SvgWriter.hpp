@@ -9,6 +9,7 @@
 #include <string>
 
 #include "../Common/Utils/PointerList.hpp"
+#include "../Thread/Mutex.hpp"
 
 namespace logs {
 class Logger;
@@ -17,7 +18,7 @@ class Logger;
 /*!
  * \brief Wrapper pour la génération de fichier svg via le système de log.
  */
-class SvgWriter
+class SvgWriter: public utils::Mutex
 {
 private:
 

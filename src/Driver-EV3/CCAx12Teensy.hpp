@@ -32,6 +32,8 @@
 #define   AXT_ERROR_READ_STATUS         -3000;
 #define AXT_ERROR_CRC                   -4000;
 
+
+
 // AX12 memory address
 #define P_MODEL_NUMBER                                      0
 #define P_VERSION                                 2
@@ -89,6 +91,9 @@ private:
     bool connected_;
     utils::Mutex mutex_;
 
+    int i2cHandle_;
+    short int i2c_aAddr_;
+
 
     /*!
      * \brief Constructeur de la classe.
@@ -96,11 +101,10 @@ private:
     CCAx12Teensy();
 
     int getAddressSize(int address);
-    uint8_t computeCRC(uint8_t c, uint8_t *buf, uint16_t length);
+    uint8_t computeCRC(uint8_t *buf, uint16_t length);
     int checkCRC(uint8_t* buf, uint16_t length);
 
-
-    int writeI2C(uint8_t cmd, uint8_t * data, uint16_t bytesToWrite);
+    int writeI2C(uint8_t * data, uint16_t bytesToWrite);
     uint8_t readI2C(uint8_t cmd, uint8_t * buf, uint16_t bytesToRead);
 
 public:
@@ -118,7 +122,7 @@ public:
 
     // configuration and initialisation avec l'adresse i2c sur le bus
     //return 0 if ok;
-    bool connect(uint i2c_aAddr);
+    bool connect(short int i2c_aAddr);
 
     int setLed(uint8_t led, bool on);
 

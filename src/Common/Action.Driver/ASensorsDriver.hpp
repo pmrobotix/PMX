@@ -57,6 +57,8 @@ public:
     virtual int rightSide() = 0;
     virtual int leftSide() = 0;
 
+    virtual void displayNumber(int number) = 0;
+
     /*!
      * \brief Destructor.
      */

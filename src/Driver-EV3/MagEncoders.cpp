@@ -4,7 +4,7 @@
 #include <iostream>
 
 MagEncoders::MagEncoders(bool is1EncoderRight, bool invertEncoderRight, bool invertEncoderLeft) :
-        m_mysensor1(AS5048B_ADDR(1, 1), 1), m_mysensor2(AS5048B_ADDR(0, 1), 1)
+        m_mysensor1(AS5048B_ADDR(1, 1), 2), m_mysensor2(AS5048B_ADDR(0, 1), 2)
 {
     m_invertEncoderR = invertEncoderRight;
     m_invertEncoderL = invertEncoderLeft;

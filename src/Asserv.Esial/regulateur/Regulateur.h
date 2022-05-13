@@ -1,5 +1,5 @@
-#ifndef REGULATEUR
-#define REGULATEUR
+#ifndef ASSERV_E_REGULATEUR
+#define ASSERV_E_REGULATEUR
 
 #include <sys/types.h>
 

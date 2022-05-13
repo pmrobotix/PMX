@@ -312,7 +312,7 @@ void AsservDriver_mbed_i2c::path_CancelTrajectory()
         logger().debug() << "path_CancelTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
     else {
         mbed_writeI2c('h', 0, NULL);
-        pathStatus_ = TRAJ_CANCELLED;
+        pathStatus_ = TRAJ_INTERRUPTED;
     }
 }
 void AsservDriver_mbed_i2c::path_ResetEmergencyStop()

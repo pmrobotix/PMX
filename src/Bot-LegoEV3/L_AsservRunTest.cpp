@@ -91,11 +91,11 @@ void L_AsservRunTest::run(int argc, char** argv)
 
     //detection adverse
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(100);
+    robot.actions().sensors().addTimerSensors(200);
     chrono.start();
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
+    robot.actions().sensors().setIgnoreBackNearObstacle(false, true, false);
 
     logger().info() << "GOTO x=" << x << " y=" << y << logs::end;
 

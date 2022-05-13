@@ -1,5 +1,5 @@
-#ifndef MOTORCONTROLLER
-#define MOTORCONTROLLER
+#ifndef ASSERV_E_MOTORCONTROLLER
+#define ASSERV_E_MOTORCONTROLLER
 
 
 #include "../config/config.h"

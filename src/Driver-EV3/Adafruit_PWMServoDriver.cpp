@@ -457,7 +457,7 @@ void Adafruit_PWMServoDriver::setOscillatorFrequency(uint32_t freq) {
 uint8_t Adafruit_PWMServoDriver::read8(uint8_t addr_reg) {
     if (!connected_) {
         //printf("\nAdafruit_PWMServoDriver::read8 NOT CONNECTED ! \n");
-        return 0;
+        return -1;
     }
     uint8_t readValue = 0;
     i2c_.readReg(addr_reg, &readValue, 1);
@@ -470,18 +470,18 @@ uint8_t Adafruit_PWMServoDriver::read8(uint8_t addr_reg) {
 //  return _i2c->read();
 }
 
-void Adafruit_PWMServoDriver::write8(uint8_t addr_reg, uint8_t d) {
+int Adafruit_PWMServoDriver::write8(uint8_t addr_reg, uint8_t d) {
     if (!connected_) {
         //printf("\nAdafruit_PWMServoDriver::write8 NOT CONNECTED = %d! \n", connected_);
-        return;
+        return -99;
     }
 
     int err = i2c_.writeReg(addr_reg, &d, 1);
     if (err < 0) {
-        printf("\nError Adafruit_PWMServoDriver i2c write8 writeReg\n");
-        //exit(0);
+        //printf("\nError Adafruit_PWMServoDriver i2c write8 writeReg\n");
+        return -1;
     }
-    return;
+    return 0;
 //  _i2c->beginTransmission(_i2caddr);
 //  _i2c->write(addr);
 //  _i2c->write(d);

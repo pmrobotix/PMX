@@ -50,17 +50,31 @@
 /*
  * I2C Message - used for pure i2c transaction, also from /dev interface
  */
+//struct i2c_msg {
+//    __u16 addr; /* slave address			*/
+//    unsigned short flags;
+//#define I2C_M_TEN	0x10	/* we have a ten bit chip address	*/
+//#define I2C_M_RD	0x01
+//#define I2C_M_NOSTART	0x4000
+//#define I2C_M_REV_DIR_ADDR	0x2000
+//#define I2C_M_IGNORE_NAK	0x1000
+//#define I2C_M_NO_RD_ACK		0x0800
+//    short len; /* msg length				*/
+//    char *buf; /* pointer to msg data			*/
+//};
+
+//modif cho/chaff
 struct i2c_msg {
-    __u16 addr; /* slave address			*/
+    __u16 addr; /* slave address                            */
     unsigned short flags;
-#define I2C_M_TEN	0x10	/* we have a ten bit chip address	*/
-#define I2C_M_RD	0x01
-#define I2C_M_NOSTART	0x4000
-#define I2C_M_REV_DIR_ADDR	0x2000
-#define I2C_M_IGNORE_NAK	0x1000
-#define I2C_M_NO_RD_ACK		0x0800
-    short len; /* msg length				*/
-    char *buf; /* pointer to msg data			*/
+#define I2C_M_TEN   0x10      /* we have a ten bit chip address       */
+#define I2C_M_RD    0x01
+#define I2C_M_NOSTART         0x4000
+#define I2C_M_REV_DIR_ADDR    0x2000
+#define I2C_M_IGNORE_NAK      0x1000
+#define I2C_M_NO_RD_ACK                 0x0800
+    short len; /* msg length                                */
+    char *buf; /* pointer to msg data                       */
 };
 
 /* To determine what functionality is present */
@@ -147,8 +161,8 @@ union i2c_smbus_data {
 
 #define I2C_RDWR	0x0707	/* Combined R/W transfer (one STOP only) */
 
-//#define I2C_PEC		0x0708	/* != 0 to use PEC with SMBus */
-#define I2C_PEC               0x00    /* == 0 to NOT use PEC with SMBus */
+#define I2C_PEC	0x0708	/* != 0 to use PEC with SMBus */
+
 #define I2C_SMBUS	0x0720	/* SMBus transfer */
 
 /* This is the structure as used in the I2C_SMBUS ioctl call */

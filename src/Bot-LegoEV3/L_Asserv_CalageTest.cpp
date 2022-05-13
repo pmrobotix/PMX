@@ -42,6 +42,7 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
         a = atof(args["a"].c_str());
         logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
     }
+
     TRAJ_STATE ts = TRAJ_OK;
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXYELLOW);
@@ -53,12 +54,12 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
     robot.svgPrintPosition();
 
 
-    robot.asserv().doRunPivotRight(600, 520, 2500);
+    //robot.asserv().doRunPivotRight(600, 520, 2500);
 
 
     ts = TRAJ_OK;
     logger().info() << "GO distance calage mm=" << d << logs::end;
-    ts = robot.asserv().doCalage2(d, 50);
+    ts = robot.asserv().doCalage(d, 50);
     logger().info() << "TRAJ= " << ts << logs::end;
     if (ts != TRAJ_FINISHED) {
         robot.asserv().resetEmergencyOnTraj();
@@ -69,7 +70,8 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
     robot.svgPrintPosition();
 
     logger().info() << "GO distance calage mm=" << d << logs::end;
-    robot.asserv().doRunPivotLeft(520, 600, 2500);
+    //robot.asserv().doRunPivotLeft(520, 600, 2500);
+
 
 /*
     logger().info() << "doRotateTo " << logs::end;
@@ -88,6 +90,8 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
     if (ts != TRAJ_FINISHED) {
         robot.asserv().resetEmergencyOnTraj();
     }
+
+    robot.asserv().freeMotion();
 
     logger().info() << "Happy End." << logs::end;
 }

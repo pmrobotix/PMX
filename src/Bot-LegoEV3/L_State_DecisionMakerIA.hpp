@@ -10,7 +10,7 @@ class Playground;
 
 class Robot;
 
-class L_State_DecisionMakerIA: public utils::Thread //todo A FUSIONNER AVEC IAEXTENDED ???
+class L_State_DecisionMakerIA: public utils::Thread //todo pour simplifier, A FUSIONNER AVEC IAEXTENDED ???
 {
 private:
 

@@ -1,5 +1,5 @@
-#ifndef PARAMETER_H
-#define PARAMETER_H
+#ifndef ASSERV_E_PARAMETER_H
+#define ASSERV_E_PARAMETER_H
 
 #include <string>
 #include <sstream>

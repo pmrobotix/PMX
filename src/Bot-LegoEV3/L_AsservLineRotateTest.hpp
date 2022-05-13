@@ -7,7 +7,7 @@
 /*!
  * \brief Effectue un test de l'asservissement sur une ligne droite et une rotation.
  */
-class L_AsservLineRotateTest: public FunctionalTest
+class L_AsservLineRotateTest: public FunctionalTest, public utils::Thread
 {
 private:
 
@@ -42,6 +42,9 @@ public:
 	virtual void run(int argc, char** argv);
 
 	virtual void configureConsoleArgs(int argc, char** argv);
+
+	//execution du thread
+	void execute();
 
 };
 

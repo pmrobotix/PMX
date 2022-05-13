@@ -1,5 +1,5 @@
-#ifndef FILTRE
-#define FILTRE
+#ifndef ASSERV_E_FILTRE
+#define ASSERV_E_FILTRE
 
 
 #include "../config/config.h"
