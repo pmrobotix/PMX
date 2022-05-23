@@ -53,6 +53,8 @@ public:
 
     int points;
 
+    bool tabletest;
+
 protected:
 
     utils::Chronometer chrono_;
@@ -75,6 +77,8 @@ protected:
 
 
     //DATA
+
+
     bool empty_ = true;
     int useExternalEncoder_ = 1;
     int skipSetup_ = 0;

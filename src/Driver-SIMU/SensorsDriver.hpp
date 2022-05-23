@@ -31,7 +31,7 @@ public:
      */
     ~SensorsDriver();
 
-
+    int getAnalogPinData();
     void displayNumber(int number);
 
     /*!

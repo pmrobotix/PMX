@@ -36,6 +36,7 @@ LegoEV3RobotExtended::LegoEV3RobotExtended() {
 
     alea_done = false;
     trophy_taken = false;
+    square_pattern = 0;
 }
 
 LegoEV3RobotExtended::~LegoEV3RobotExtended()

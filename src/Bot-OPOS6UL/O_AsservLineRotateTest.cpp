@@ -35,7 +35,7 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
     robot.getArgs().addArgument("nb", "nb of time", "1");
 
     Arguments::Option cOpt('+', "Coordinates x,y,a");
-    cOpt.addArgument("coordx", "coord x mm", "300.0");
+    cOpt.addArgument("coordx", "coord x mm", "0.0");
     cOpt.addArgument("coordy", "coord y mm", "1300.0");
     cOpt.addArgument("coorda", "coord teta mm", "0.0");
     robot.getArgs().addOption(cOpt);
@@ -124,7 +124,10 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
+    //vitesse reduite
     robot.asserv().setLowSpeedForward(true, 40);
+
+    //Definition du path
     bool byPathfinding = false;
 
     TRAJ_STATE ts = TRAJ_OK;
@@ -134,23 +137,37 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
     for (int num = 1; num <= nb; num++) {
         ts = TRAJ_OK;
         if (d != 0) {
-            logger().info() << "go Forward... d=" << d << ", y=" << coordy << logs::end;
-            while (ts != TRAJ_FINISHED) {
-                ts = TRAJ_OK;
-                ts = robot.ia().iAbyPath().whileMoveForwardTo(d, robot.asserv().pos_getY_mm(), false, 2000000, 3, 3, byPathfinding);
-
-                if (ts == TRAJ_NEAR_OBSTACLE) {
-                    logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
-                    robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_NEAR_OBSTACLE");
+            logger().info() << "go...d=" << d << "mm" << logs::end;
+            if (d >= 0) {
+                while (ts != TRAJ_FINISHED) {
+                    ts = robot.ia().iAbyPath().whileMoveForwardTo(d, robot.asserv().pos_getY_mm(), false, 1000000, 4, 4, false);
+                    if (ts == TRAJ_NEAR_OBSTACLE) {
+                        logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    if (ts == TRAJ_COLLISION) {
+                        logger().info() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    //sleep(3);
+                    break;
                 }
-                if (ts == TRAJ_COLLISION) {
-                    logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
-                    robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
-                }
-                //sleep(2);
-                break;
             }
-            robot.svgPrintPosition();
+            else if (d < 0) {
+                while (ts != TRAJ_FINISHED) {
+                    ts = robot.ia().iAbyPath().whileMoveBackwardTo(d, robot.asserv().pos_getY_mm(), false, 1000000, 4, 4, false);
+                    if (ts == TRAJ_NEAR_OBSTACLE) {
+                        logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    if (ts == TRAJ_COLLISION) {
+                        logger().info() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
+                        robot.asserv().resetEmergencyOnTraj();
+                    }
+                    //sleep(3);
+                    break;
+                }
+            }
         }
 
         if (!(x == 0 && y == 0)) {

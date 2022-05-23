@@ -80,10 +80,10 @@ O_State_Init::execute(Robot&)
                     robot.setMyColor(PMXYELLOW);
                 }
                 if (b == BUTTON_RIGHT_KEY) {
-                    logger().info() << "BUTTON_RIGHT_KEY - BLUE selected" << logs::end;
+                    logger().info() << "BUTTON_RIGHT_KEY - VIOLET selected" << logs::end;
 
                     robot.actions().lcd2x16().setCursor(2, 0);
-                    robot.actions().lcd2x16().print("BLUE ");
+                    robot.actions().lcd2x16().print("VIOLET ");
                     robot.setMyColor(PMXVIOLET);
                 }
             }
@@ -167,7 +167,7 @@ O_State_Init::execute(Robot&)
             if (b == BUTTON_UP_KEY) {
                 logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
 
-                robot.actions().ax12_init();
+                //robot.actions().ax12_init();
                 utils::sleep_for_micros(300000);
             }
             if (b == BUTTON_DOWN_KEY) {
@@ -246,8 +246,8 @@ O_State_Init::execute(Robot&)
         }
         else {
             robot.actions().lcd2x16().setCursor(0, 0);
-            robot.actions().lcd2x16().print("BLU");
-            logger().info() << "BLUE  ";
+            robot.actions().lcd2x16().print("VIO");
+            logger().info() << "VIOLET  ";
         }
         logger().info() << logs::end;
 
@@ -286,7 +286,7 @@ O_State_Init::execute(Robot&)
             exit(0);
         }
         else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "BLUE ") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "VIOLET ") << logs::end;
         }
 
         robot.actions().lcd2x16().home();
@@ -329,7 +329,7 @@ void O_State_Init::setPos() {
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(130, 800, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(130, 1450, 0.0, (robot.getMyColor() != PMXYELLOW));
     logger().info() << "O_State_Init::setPos() svgPrintPosition x="
             << robot.asserv().pos_getX_mm()
             << " y="
@@ -339,7 +339,7 @@ void O_State_Init::setPos() {
             << logs::end;
     robot.svgPrintPosition();
 
-    robot.actions().ax12_init();
+    //robot.actions().ax12_init();
 
     robot.actions().lcd2x16().clear();
 
@@ -365,8 +365,10 @@ void O_State_Init::setPos() {
     robot.svgPrintPosition();
     robot.actions().lcd2x16().println("SET POSITION : OK");
 
+    /*
     robot.actions().ax12_bras_droit_fanion(0);
     robot.actions().ax12_bras_gauche_fanion(-1);
     robot.actions().ax12_bras_droit_init(0);
     robot.actions().ax12_bras_gauche_init(-1);
+    */
 }

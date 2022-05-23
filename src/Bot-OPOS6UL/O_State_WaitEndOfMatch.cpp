@@ -22,7 +22,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "Start Chronometer" << logs::end;
     robot.chrono().start();
 
-    while (robot.chrono().getElapsedTimeInSec() <= 95) {
+    while (robot.chrono().getElapsedTimeInSec() <= 100) {
 
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -41,9 +41,9 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 //    robot.actions().ax12_left_cil_release(-1);
 //    robot.actions().ax12_left_cil_release(-1);
 
-    robot.actions().ax12_drapeaux();
+    //robot.actions().ax12_drapeaux();
 
-    robot.points += 10;
+    //robot.points += 10;
     robot.displayPoints();
 
 /*
@@ -72,10 +72,13 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "cancel decisionmaker" << logs::end;
     robot.decisionMaker_->cancel();
 
-    robot.actions().releaseAll();
+    //robot.asserv().stopMotors(); //TODO to be tested
     robot.freeMotion();
+    robot.actions().releaseAll();
 
     robot.stopExtraActions(); //stop specific actions, sensors, can take time for servos...
+
+
     robot.svgPrintEndOfFile();
 
     logger().info() << "Display Points after 100sec" << logs::end;
@@ -110,7 +113,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
 
         std::this_thread::sleep_for(std::chrono::microseconds(1000));
-        //usleep(1000);
+
     }
 
     logger().info() << "O_State_WaitEndOfMatch executed " << robot.chrono().getElapsedTimeInSec() << " sec"

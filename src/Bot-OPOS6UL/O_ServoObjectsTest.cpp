@@ -36,6 +36,7 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
 
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
+    /*
     if (action == "D") {
         robot.actions().ax12_drapeaux_init();
         //usleep(1000000);
@@ -95,6 +96,7 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
         robot.actions().ax12_pince_au_centre(false);
         //usleep(1000000);
     }
+    */
 
     if (action == "RR") {
         robot.actions().releaseAll();
@@ -125,6 +127,7 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
      robot.actions().ax12_leftHand_retract();
      */
     //robot.stopExtraActions();
-    logger().info() << "Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End" << " N° " << this->position() << logs::end;
+
 }
 

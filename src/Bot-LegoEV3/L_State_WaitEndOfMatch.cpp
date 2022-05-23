@@ -57,7 +57,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
     robot.end90s(true); //indique que l'action est effectuée au prog princ
 
     if (robot.decisionMaker_ != NULL) {
-        logger().debug() << "cancel decisionmaker" << logs::end;
+        logger().info() << "cancel decisionmaker" << logs::end;
         //if (robot.decisionMaker_->state() == utils::CREATED) //non necessaire?
         robot.decisionMaker_->cancel();
     }
@@ -65,9 +65,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
     //init robot for end
     robot.freeMotion(); //stop the robot
 
-    robot.actions().sensors().stopTimerSensors();
-
-    robot.stopExtraActions(); //stop specific actions, can take time for servos...
+    robot.stopExtraActions(); //stop sensors timer, stop specific actions, can take time for servos...
     robot.svgPrintEndOfFile();
 
     logger().info() << "Display Points after 100sec" << logs::end;

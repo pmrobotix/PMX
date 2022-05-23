@@ -24,24 +24,39 @@ public:
     PlaygroundObjectID opponent_3;
     PlaygroundObjectID opponent_4;
 
+    PlaygroundObjectID area_alea_violet;
     PlaygroundObjectID area_alea_yellow;
-    PlaygroundObjectID area_alea_blue;
 
-    PlaygroundObjectID area_v_vert_gauche_yellow;
-    PlaygroundObjectID area_v_rouge_droite_yellow;
-    PlaygroundObjectID area_v_vert_gauche_blue;
-    PlaygroundObjectID area_v_rouge_droite_blue;
-    PlaygroundObjectID area_v_vert_droite_zoneNS_yellow;
-    PlaygroundObjectID area_v_rouge_gauche_zoneSN_blue;
-    PlaygroundObjectID area_v_vert_droite_zoneNS_blue;
-    PlaygroundObjectID area_v_rouge_gauche_zoneSN_yellow;
+    PlaygroundObjectID area_3_start_violet;
+    PlaygroundObjectID area_3_start_yellow;
 
-    PlaygroundObjectID area_v_vert_devant_yellow;
-    PlaygroundObjectID area_v_vert_devant_blue;
-    PlaygroundObjectID area_v_rouge_devant_droite_yellow;
-    PlaygroundObjectID area_v_rouge_devant_droite_blue;
-    PlaygroundObjectID area_v_rouge_devant_gauche_milieu_terrain_yellow;
-    PlaygroundObjectID area_v_rouge_devant_gouche_milieu_terrain_blue;
+    PlaygroundObjectID area_triangle_violet;
+    PlaygroundObjectID area_triangle_yellow;
+
+    PlaygroundObjectID area_distrib_violet;
+    PlaygroundObjectID area_distrib_yellow;
+
+    PlaygroundObjectID area_galerie_violet;
+    PlaygroundObjectID area_galerie_yellow;
+
+//    PlaygroundObjectID area_alea_yellow;
+//    PlaygroundObjectID area_alea_blue;
+//
+//    PlaygroundObjectID area_v_vert_gauche_yellow;
+//    PlaygroundObjectID area_v_rouge_droite_yellow;
+//    PlaygroundObjectID area_v_vert_gauche_blue;
+//    PlaygroundObjectID area_v_rouge_droite_blue;
+//    PlaygroundObjectID area_v_vert_droite_zoneNS_yellow;
+//    PlaygroundObjectID area_v_rouge_gauche_zoneSN_blue;
+//    PlaygroundObjectID area_v_vert_droite_zoneNS_blue;
+//    PlaygroundObjectID area_v_rouge_gauche_zoneSN_yellow;
+//
+//    PlaygroundObjectID area_v_vert_devant_yellow;
+//    PlaygroundObjectID area_v_vert_devant_blue;
+//    PlaygroundObjectID area_v_rouge_devant_droite_yellow;
+//    PlaygroundObjectID area_v_rouge_devant_droite_blue;
+//    PlaygroundObjectID area_v_rouge_devant_gauche_milieu_terrain_yellow;
+//    PlaygroundObjectID area_v_rouge_devant_gouche_milieu_terrain_blue;
 
     OPOS6UL_IAExtended(std::string botId, Robot *robot);
 

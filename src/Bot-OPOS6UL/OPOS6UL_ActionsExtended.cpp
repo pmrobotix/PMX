@@ -11,8 +11,19 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
 {
     lcd2x16_.init();
 
-    //config servos
-    servos().setup(STD_SERVO_3, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    //config servos STD
+    //servos().setup(STD_SERVO_3, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+
+    //config AX12
+    servos().setup(AX12_SERVO_BRAS_D, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+    servos().setup(AX12_SERVO_BRAS_G, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+    servos().setup(AX12_SERVO_ELEVATOR_L, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+    servos().setup(AX12_SERVO_ELEVATOR_R, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+    servos().setup(AX12_SERVO_ARM_L_BOTTOM, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+    servos().setup(AX12_SERVO_ARM_R_BOTTOM, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+    servos().setup(AX12_SERVO_ARM_L_TOP, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+    servos().setup(AX12_SERVO_ARM_R_TOP, AServoDriver::ServoType::SERVO_DYNAMIXEL, 0, 512, 1024, false);
+
 
     //config des sensors
     //TODO ajouter la configuration de la position des capteurs sensors_.addConfigPosFront(-140, 0, +140);

@@ -14,7 +14,7 @@ ASensorsDriver * ASensorsDriver::create(std::string) {
 }
 
 SensorsDriver::SensorsDriver() :
-        beaconSensors_(0, ADDRESS_BeaconSensors), gp2_1_(0, ADDRESS_gp2y0e02b), gp2_2_(1, ADDRESS_gp2y0e02b), connected_gp2y0e02b_(false)
+        beaconSensors_(0, ADDRESS_BeaconSensors), connected_gp2y0e02b_(false) //, gp2_1_(0, ADDRESS_gp2y0e02b), gp2_2_(1, ADDRESS_gp2y0e02b)
 {
     regs_ = {};
     settings_ = {}; //TODO à ecrire/initialiser en i2c?
@@ -22,6 +22,17 @@ SensorsDriver::SensorsDriver() :
 }
 
 SensorsDriver::~SensorsDriver() {
+}
+
+void SensorsDriver::displayNumber(int number)
+{
+    beaconSensors_.display(number);
+}
+
+
+int SensorsDriver::getAnalogPinData()
+{
+    return -1;
 }
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
@@ -33,12 +44,19 @@ ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
 int SensorsDriver::sync() {
     //logger().debug() << "beaconSensors_.getData()"<< logs::end;
     msync_.lock();
-    regs_ = beaconSensors_.getData();
-    if (regs_.flags == 0xFF) {
-        printf("ERROR regs_.flags == 0xFF!!\n");
-        return -1;
-    }
 
+    for (int t = 0; t <= 2; t++) {
+        regs_ = beaconSensors_.getData();
+        if (regs_.flags == 0xFF) {
+            logger().error() << "sync()...try again n° " << t << logs::end;
+            if (t >= 2) {
+                logger().error() << "sync()...try 3 times and regs_.flags == 0xFF!!" << logs::end;
+                //printf("ERROR try 3 times and regs_.flags == 0xFF!!\n");
+                return -1;
+            }
+        }
+        else break;
+    }
     vadv_.clear();
 
     if (vadv_.empty()) {
@@ -62,14 +80,14 @@ int SensorsDriver::sync() {
 }
 
 int SensorsDriver::leftSide() {
-    int dist_from_center_mm = 90;
-    int d = gp2_2_.getDistanceMm() + dist_from_center_mm; //TODO  true if only 90° !!!!
-    return d;
+//    int dist_from_center_mm = 90;
+//    int d = gp2_2_.getDistanceMm() + dist_from_center_mm; //TODO  true if only 90° !!!!
+//    return d;
 }
 int SensorsDriver::rightSide() {
-    int dist_from_center_mm = 103;
-    int d = gp2_1_.getDistanceMm() + dist_from_center_mm; //TODO  true if only 90° !!!!
-    return d;
+//    int dist_from_center_mm = 103;
+//    int d = gp2_1_.getDistanceMm() + dist_from_center_mm; //TODO  true if only 90° !!!!
+//    return d;
 }
 //
 //int SensorsDriver::getFrontDistMmFromObject(int diagonal_dist_mm) //TODO position xy ?

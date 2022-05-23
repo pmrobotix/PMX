@@ -6,6 +6,10 @@
 
 using namespace std;
 
+//#define NB_SERVO_DYN 255
+#define MAX_POS 1023
+#define MAXPORTNUM 4255
+
 class ServoDriver: public AServoDriver
 {
 private:
@@ -20,6 +24,7 @@ private:
     }
 
     int connected_;
+    //ServoType servo_type_[NB_SERVO_DYN];
 
 protected:
 
@@ -41,10 +46,11 @@ public:
 
     void hold(int servo);
 
+    //DEPRECATED
     void setType(int servo, ServoType type);
 
     //pos AX12 0->1023
-    void setPulsePos(int servo, int pulsewidth);
+    void setPulsePos(int servo, int pulse, int rate_milli = 0);
 
     void release(int servo);
 
@@ -52,6 +58,7 @@ public:
 
     void turn(int servo, int speed);
 
+    //return 1 when in progress, 0 when idle, -1 on error
     int getMoving(int servo);
 
     int getPulsePos(int servo);

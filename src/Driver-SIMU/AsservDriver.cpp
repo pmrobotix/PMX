@@ -118,21 +118,24 @@ void AsservDriver::execute() {
             m_pos.unlock();
             //logger().info() << "execute() p.x=" << p.x << " p.y=" << p.y << " chrono=" << chrono.getElapsedTimeInMicroSec() << logs::end;
 
-            loggerSvg().info() << "<circle cx=\""
-                    << p.x
-                    << "\" cy=\""
-                    << -p.y
-                    << "\" r=\"1\" fill=\"blue\" />"
-                    << "<line x1=\""
-                    << p.x
-                    << "\" y1=\""
-                    << -p.y
-                    << "\" x2=\""
-                    << p.x + cos(p.theta) * 25
-                    << "\" y2=\""
-                    << -p.y - sin(p.theta) * 25
-                    << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
-                    << logs::end;
+            //TODO avoir accès au robot pour afficher du SVG
+            //robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
+//
+//            loggerSvg().info() << "<circle cx=\""
+//                    << p.x
+//                    << "\" cy=\""
+//                    << -p.y
+//                    << "\" r=\"1\" fill=\"blue\" />"
+//                    << "<line x1=\""
+//                    << p.x
+//                    << "\" y1=\""
+//                    << -p.y
+//                    << "\" x2=\""
+//                    << p.x + cos(p.theta) * 25
+//                    << "\" y2=\""
+//                    << -p.y - sin(p.theta) * 25
+//                    << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+//                    << logs::end;
         }
         chrono.waitTimer(); //TODO ITimerPosix ?
     }

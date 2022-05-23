@@ -23,6 +23,10 @@ SensorsDriver::~SensorsDriver()
 {
 }
 
+int SensorsDriver::getAnalogPinData()
+{
+
+}
 void SensorsDriver::displayNumber(int number)
 {
 

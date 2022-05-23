@@ -62,6 +62,8 @@ public:
 
     void displayNumber(int number);
 
+    int getAnalogPinData();
+
 };
 
 #endif

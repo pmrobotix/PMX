@@ -42,8 +42,6 @@ Asserv::~Asserv() {
 //    return pMovingBase_;
 //}
 
-
-
 void Asserv::resetEncoders() {
     asservdriver_->resetEncoders();
 }
@@ -69,8 +67,6 @@ void Asserv::stopMotors() {
     asservdriver_->stopMotorLeft();
     asservdriver_->stopMotorRight();
 }
-
-
 
 void Asserv::endWhatTodo() {
     if (useAsservType_ == ASSERV_INT_INSA) {
@@ -237,12 +233,57 @@ float Asserv::pos_getThetaInDegree() {
     return (pos_getTheta() * 180.0f) / M_PI;
 }
 
-
 //doit etre surcharger par robot
 bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc) {
 
     logger().debug() << "Asserv::filtre_IsInsideTable Surcharge à faire par config Robot!!!!!!!!" << logs::end;
     return false;
+
+}
+//TODO doit etre surcharger par robot
+bool Asserv::filtre_IsInFront(int dist_mm, int x_mm, int y_mm, float theta) {
+
+    logger().error() << "filtre_IsInFront dist_mm="<< dist_mm
+            <<" x_mm="<< x_mm
+            <<" y_mm="<< y_mm
+            <<" theta="<< theta
+            << logs::end;
+//    float x = 0.0;
+//    float y = 0.0;
+    bool result = false;
+//    RobotPosition p = pos_getPosition();
+//    x = p.x + ((x_mm) * cos(p.theta - M_PI_2)) + (y_mm * cos(p.theta));
+//    y = p.y + ((x_mm) * sin(p.theta - M_PI_2)) + (y_mm * sin(p.theta));
+    if (y_mm > 0)
+    {
+    if (dist_mm < 600) {
+        if ((x_mm < 150) && (x_mm > -150)) {
+            return true;
+        }else
+            return false;
+    }else
+        return false;
+    }else
+        return false;
+}
+
+bool Asserv::filtre_IsInBack(int dist_mm, int x_mm, int y_mm, float theta) {
+
+    //logger().debug() << "Asserv::filtre_IsInFront Surcharge à faire par config Robot!!!!!!!!" << logs::end;
+    float x = 0.0;
+    float y = 0.0;
+    bool result = false;
+//    RobotPosition p = pos_getPosition();
+//    x = p.x + ((x_mm) * cos(p.theta - M_PI_2)) + (y_mm * cos(p.theta));
+//    y = p.y + ((x_mm) * sin(p.theta - M_PI_2)) + (y_mm * sin(p.theta));
+
+    if (dist_mm > -600) {
+        if ((x < 150) && (x > -150)) {
+            return true;
+        }else
+            return false;
+    }else
+        return false;
 
 }
 

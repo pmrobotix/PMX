@@ -131,6 +131,6 @@ void O_LedBarTest::run(int argc, char** argv) {
         utils::sleep_for_micros(100000);
     }
 
-    logger().info() << robot.getID() << " " << this->name() << " Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End" << " N° " << this->position() << logs::end;
 }
 

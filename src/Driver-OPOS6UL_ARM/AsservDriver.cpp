@@ -45,13 +45,15 @@ AsservDriver::AsservDriver() :
     // Read and display the status of each pin
     // DTR should be 1
     // RTS should be 0
-    printf("4-DTR=%d\t", serial_.isDTR());
-    printf("7-RTS=%d\t", serial_.isRTS());
+//    printf("4-DTR=%d\t", serial_.isDTR());
+//    printf("7-RTS=%d\t", serial_.isRTS());
+//
+//    printf("1-DCD=%d\t", serial_.isDCD());
+//    printf("8-CTS=%d\t", serial_.isCTS());
+//    printf("6-DSR=%d\t", serial_.isDSR());
+//    printf("9-RING=%d\n", serial_.isRI());
 
-    printf("1-DCD=%d\t", serial_.isDCD());
-    printf("8-CTS=%d\t", serial_.isCTS());
-    printf("6-DSR=%d\t", serial_.isDSR());
-    printf("9-RING=%d\n", serial_.isRI());
+
     /*
      //TEST OK
      std::string readData = "";
@@ -227,7 +229,7 @@ void AsservDriver::execute() {
     std::string readData = "";
     //std::string sdata = "";
 
-    printf("execute() START ASSERV POSITION!!\n");
+//printf("execute() START ASSERV POSITION!!\n");
     nucleo_flushSerial();
     while (1) {
         if (asservCardStarted_) {

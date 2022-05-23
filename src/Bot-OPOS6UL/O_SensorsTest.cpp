@@ -53,7 +53,6 @@ void O_SensorsTest::run(int argc, char** argv) {
     //il faut mettre une position pour le filtre table
     //robot.asserv().setPositionAndColor(800, 200, 0,(robot.getMyColor() != PMXYELLOW));
 
-    //TEST par timer
     robot.actions().sensors().setIgnoreAllFrontNearObstacle(false);
     robot.actions().sensors().setIgnoreAllBackNearObstacle(false);
 
@@ -62,7 +61,7 @@ void O_SensorsTest::run(int argc, char** argv) {
 
     while (chrono.getElapsedTimeInSec() < 200) {
         vadv = robot.actions().sensors().getPositionsAdv();
-        logger().info() << "TEST par timer : "<< logs::end;
+
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
             logger().info() << " vadv nb="
                     << vadv.size()
@@ -79,8 +78,9 @@ void O_SensorsTest::run(int argc, char** argv) {
                     << logs::end;
         }
 
-        int f = robot.actions().sensors().front(1);
-        logger().info() << " f=" << f<< logs::end;
+        front = robot.actions().sensors().front(1);
+        front = robot.actions().sensors().back(1);
+        logger().info() << " f=" << front << " b=" << back << logs::end;
 
         utils::sleep_for_micros(200000);
     }
@@ -137,6 +137,6 @@ void O_SensorsTest::run(int argc, char** argv) {
 //                << logs::end;
 //    }
 
-    logger().info() << "Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End" << " N° " << this->position() << logs::end;
 }
 

@@ -25,6 +25,7 @@ void O_LcdBoardTest::run(int argc, char** argv)
     robot.asserv().startMotionTimerAndOdo(true);
 
     robot.actions().lcd2x16().clear();
+    robot.actions().lcd2x16().setBacklightOn();
     robot.actions().lcd2x16().home();
     robot.actions().lcd2x16().print("PM-ROBOTIX start");
     sleep(1);
@@ -40,9 +41,10 @@ void O_LcdBoardTest::run(int argc, char** argv)
     sleep(1);
     robot.actions().lcd2x16().setCursor(0, 0);
     robot.actions().lcd2x16().print("ooooxxyyyy  !");
-    sleep(10);
+    sleep(1);
+    robot.actions().lcd2x16().setBacklightOff();
 
 
-    logger().info() << this->name() << " Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End" << " N° " << this->position() << logs::end;
 }
 

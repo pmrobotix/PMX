@@ -30,7 +30,11 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
     x_adv_mm = -1.0;
     y_adv_mm = -1.0;
 
-
+    recordADC = false;
+    for (int i = 0; i < 100; i++) {
+        tabADC[i] = 0;
+    }
+    index_adc = 0;
 
 }
 Sensors::~Sensors() {
@@ -110,16 +114,29 @@ void Sensors::setIgnoreAllBackNearObstacle(bool ignore) {
     ignoreBackRight_ = ignore;
 }
 
-ASensorsDriver::bot_positions Sensors::getPositionsAdv()
-{
+ASensorsDriver::bot_positions Sensors::getPositionsAdv() {
     //recupere les données qui ont ete enregistrées par le sync
     return sensorsdriver_->getvPositionsAdv();
 }
 
-
-void Sensors::display(int n)
-{
+void Sensors::display(int n) {
     sensorsdriver_->displayNumber(n);
+}
+
+int Sensors::getADC() {
+    return sensorsdriver_->getAnalogPinData();
+}
+
+int Sensors::RecordADC(bool activate) {
+
+    if (activate) { //uniquement en cas d'activation
+        for (int i = 0; i < 100; i++) {
+            tabADC[i] = -1;
+        }
+        index_adc = 0;
+    }
+
+    recordADC = activate;
 }
 
 int Sensors::sync(std::string sensorname) {
@@ -155,10 +172,10 @@ int Sensors::sync(std::string sensorname) {
         return sensorsdriver_->backRight(); //renvoi la distance mini
     }
 
-    if (sensorname == "beaconADV") {
-//        ASensorsDriver::bot_positions
-//            return sensorsdriver_->getvPositionsAdv();
-        }
+//    if (sensorname == "beaconADV") {
+////        ASensorsDriver::bot_positions
+////            return sensorsdriver_->getvPositionsAdv();
+//        }
     return -1;
 }
 
@@ -214,14 +231,15 @@ int Sensors::leftSide() {
     return sensorsdriver_->leftSide();
 }
 
-
 //retourne 0, sinon le niveau detecté 2 veryClosed, 1 first level
 int Sensors::front(bool display) {
 
     //on recupere les distances de detection
     int fL = sync("fL");
-    int fC = sync("fC");
+    //int fC = sync("fC");
     int fR = sync("fR");
+
+    ASensorsDriver::bot_positions vpos;
 
 //    int tfL = 0;
 //    int tfC = 0;
@@ -252,19 +270,47 @@ int Sensors::front(bool display) {
         }
     }
     if (enableFrontCenter_) {
-        bool fC_filter = this->robot()->asserv()->filtre_IsInsideTable(fC, 0, "fC");
-        if (fC_filter) {
-            if ((!ignoreFrontCenter_ && (fC < frontCenterThreshold_))) {
-                if (display) logger().info() << "1 frontCenter= " << fC << logs::end;
-//                tfC = fC;
-                if (fC > 60) if (tfMin > fC) tfMin = fC;
-                level = 1;
+        //trouver la distance de detection
+        vpos = Sensors::getPositionsAdv();
+        bool is_in_front = false;
+
+        for (auto botpos : vpos) {
+            //std::cout << botpos.d << " " << botpos.x << " " << botpos.y << " " << botpos.theta << std::endl;
+            if (botpos.d < frontCenterThreshold_) //seuil de distance
+                    {
+                //test si devant le robot/filtre devant le robot ou pas.
+                is_in_front |= this->robot()->asserv()->filtre_IsInFront(botpos.d, botpos.x, botpos.y, botpos.theta);
+
+                if (is_in_front) {
+                    //TODO filtre dans la table ou non
+                    //bool fC_filter = this->robot()->asserv()->filtre_IsInsideTable(botpos.d, 0, "fC");
+
+                    level = 1;
+                    logger().info() << "1 frontCenter= " << botpos.d << " is_in_front=" << is_in_front << logs::end;
+                    if (botpos.d < frontCenterVeryClosedThreshold_) { //seuil de level 2
+                        level = 2;
+                        logger().info() << "2 frontCenter= " << botpos.d << " is_in_front=" << is_in_front << logs::end;
+
+                    }
+                }
+
             }
-            if ((!ignoreFrontCenter_ && (fC < frontCenterVeryClosedThreshold_))) {
-                if (display) logger().info() << "2 frontCenter= " << fC << logs::end;
-                level = 2;
-            }
+            if (botpos.nbDetectedBots == 1) break;
         }
+
+//        bool fC_filter = this->robot()->asserv()->filtre_IsInsideTable(fC, 0, "fC");
+//        if (fC_filter) {
+//            if ((!ignoreFrontCenter_ && (fC < frontCenterThreshold_))) {
+//                if (display) logger().info() << "1 frontCenter= " << fC << logs::end;
+////                tfC = fC;
+//                if (fC > 60) if (tfMin > fC) tfMin = fC;
+//                level = 1;
+//            }
+//            if ((!ignoreFrontCenter_ && (fC < frontCenterVeryClosedThreshold_))) {
+//                if (display) logger().info() << "2 frontCenter= " << fC << logs::end;
+//                level = 2;
+//            }
+//        }
     }
     if (enableFrontRight_) {
         bool fR_filter = this->robot()->asserv()->filtre_IsInsideTable(fR, 1, "fR");
@@ -334,8 +380,7 @@ int Sensors::back(bool display) {
     int tfMin = 9999;
     int level = 0;
 
-
-
+    ASensorsDriver::bot_positions vpos;
 
     if (enableBackLeft_) {
         bool bL_filter = this->robot()->asserv()->filtre_IsInsideTable(-bL, -1, "bL");
@@ -353,18 +398,45 @@ int Sensors::back(bool display) {
         }
     }
     if (enableBackCenter_) {
-        bool bC_filter = this->robot()->asserv()->filtre_IsInsideTable(-bC, 0, "bC");
-        if (bC_filter) {
-            if ((!ignoreBackCenter_ && (bC < backCenterThreshold_))) {
-                if (display) logger().info() << "1 backCenter= " << bC << logs::end;
-                if (bC > 60) if (tfMin > bC) tfMin = bC;
-                level = 1;
+//        bool bC_filter = this->robot()->asserv()->filtre_IsInsideTable(-bC, 0, "bC");
+//        if (bC_filter) {
+//            if ((!ignoreBackCenter_ && (bC < backCenterThreshold_))) {
+//                if (display) logger().info() << "1 backCenter= " << bC << logs::end;
+//                if (bC > 60) if (tfMin > bC) tfMin = bC;
+//                level = 1;
+//            }
+//            if ((!ignoreBackCenter_ && (bC < backCenterVeryClosedThreshold_))) {
+//                if (display) logger().info() << "2 backCenter= " << bC << logs::end;
+//                level = 2;
+//            }
+//        }
+        //trouver la distance de detection
+        vpos = Sensors::getPositionsAdv();
+        bool is_in_back = false;
+
+        for (auto botpos : vpos) {
+            //std::cout << botpos.d << " " << botpos.x << " " << botpos.y << " " << botpos.theta << std::endl;
+            if (botpos.d < backCenterThreshold_) //seuil de distance
+                    {
+                //test si devant le robot/filtre devant le robot ou pas.
+                is_in_back |= this->robot()->asserv()->filtre_IsInBack(botpos.d, botpos.x, botpos.y, botpos.theta);
+
+                if (is_in_back) {
+                    //TODO filtre dans la table ou non
+
+                    level = 1;
+                    logger().info() << "1 backCenter= " << botpos.d << " is_in_back=" << is_in_back << logs::end;
+                    if (botpos.d < backCenterVeryClosedThreshold_) { //seuil de level 2
+                        level = 2;
+                        logger().info() << "2 backCenter= " << botpos.d << " is_in_back=" << is_in_back << logs::end;
+
+                    }
+                }
+
             }
-            if ((!ignoreBackCenter_ && (bC < backCenterVeryClosedThreshold_))) {
-                if (display) logger().info() << "2 backCenter= " << bC << logs::end;
-                level = 2;
-            }
+            if (botpos.nbDetectedBots == 1) break;
         }
+
     }
     if (enableBackRight_) {
         bool bR_filter = this->robot()->asserv()->filtre_IsInsideTable(-bR, 1, "bR");
@@ -403,31 +475,29 @@ int Sensors::back(bool display) {
      }
      }*/
     /*
-    //Mise à jour de la position de l'adversaire
-    if (level >= 1) {
-        if (tfMin != 0) {
-            //au centre
-            x_adv_mm = -tfMin;
-            y_adv_mm = 0.0;
-        }
-    }*/
+     //Mise à jour de la position de l'adversaire
+     if (level >= 1) {
+     if (tfMin != 0) {
+     //au centre
+     x_adv_mm = -tfMin;
+     y_adv_mm = 0.0;
+     }
+     }*/
 
     //Mise à jour de la position de l'adversaire via les capteurs de proximité
-       if (level >= 1) {
-           //logger().info() << "back  level >=1 tfMin= " << tfMin << logs::end;
-           if (tfMin != 0) {
-               //au centre
-               //logger().info() << "back         tfMin= " << tfMin << logs::end;
-               x_adv_mm = (float) -tfMin;
-               y_adv_mm = 0.0;
-           }
-           else {
-               x_adv_mm = -1.0;
-               y_adv_mm = -1.0;
-           }
-       }
-
-
+    if (level >= 1) {
+        //logger().info() << "back  level >=1 tfMin= " << tfMin << logs::end;
+        if (tfMin != 0) {
+            //au centre
+            //logger().info() << "back         tfMin= " << tfMin << logs::end;
+            x_adv_mm = (float) -tfMin;
+            y_adv_mm = 0.0;
+        }
+        else {
+            x_adv_mm = -1.0;
+            y_adv_mm = -1.0;
+        }
+    }
 
     return level;
 }
@@ -439,7 +509,7 @@ void Sensors::addTimerSensors(int timeSpan_ms) {
 
 void Sensors::stopTimerSensors() {
     logger().debug() << "stopSensors" << logs::end;
-    this->actions().stopTimer("sensors");
+    this->actions().stopTimer("Sensors");
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono) {
@@ -447,10 +517,38 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
 
     //get all data sync
     int err = sensors_.sync("beacon_sync");
-    if(err < 0 )
-    {
+    if (err < 0) {
         logger().error() << ">> SYNC BAD DATA! NO UPDATE" << logs::end;
         return;
+    }
+
+    if (sensors_.robot()->getID() == "LegoEV3Robot") {
+        //traitement 2022 ADC
+        if (sensors_.recordADC == true) {
+            sensors_.index_adc++;
+            int adc = sensors_.getADC();
+            logger().error() << "recordADC index=" << sensors_.index_adc << " adc=" << adc << logs::end;
+
+            //default =>510 => 0
+            //4,7k    =>462 => 99
+            //1k      =>340 =>10
+            //470     =>246 =>10
+            //courcircuit =>0 =>1
+            if (adc < 20) sensors_.tabADC[sensors_.index_adc] = 1;
+
+            else if (adc > 200 && adc < 380) sensors_.tabADC[sensors_.index_adc] = 10;
+            else if (adc > 400 && adc < 486) sensors_.tabADC[sensors_.index_adc] = 99;
+            else if (adc > 490 && adc < 520) sensors_.tabADC[sensors_.index_adc] = 0;
+            else sensors_.tabADC[sensors_.index_adc] = -adc;
+
+            if (sensors_.index_adc > 5 * 20) //si superieur a 5 fois par sec pour 5 secondes
+                    {
+                sensors_.index_adc = 0;
+                sensors_.recordADC = false;
+                logger().error() << " >>>> DEPASSEMENT DES ESSAIS" << logs::end;
+            }
+
+        }
     }
 
     //TODO mODIFIER LE FRONT POUR INCLURE LES POSITIONS adv
@@ -458,7 +556,6 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
 
     int frontLevel = sensors_.front(false);
     //logger().error() << "frontLevel=="<< frontLevel << logs::end;
-
 
 //    if (frontLevel >= 1) {
 //        //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
@@ -483,7 +580,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
     if (frontLevel == 1) {
 
         if (lastfrontl2_temp_ == true) //si on vient de descendre du level 2
-        {
+                {
             logger().error() << "front : si on vient de descendre du level 2" << logs::end;
             lastdetect_front_nb_ = 1;
             lastfrontl2_temp_ = false;
@@ -492,14 +589,14 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
         }
 
 //send collision to asserv
-        if (lastdetect_front_nb_ ==0) {
+        if (lastdetect_front_nb_ == 0) {
             //logger().error() << "front :send collision to asserv!!!!!!!!!!!!!!!!!!!!!!" << logs::end;
             //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
             //sensors_.robot()->asserv()->base()->motors().stopMotors(); //pour etre plus reactif sur l'arret sinon on touche
             sensors_.robot()->asserv()->setLowSpeedForward(true, 20);
 
-       }
+        }
         lastdetect_front_nb_++;
     }
 
@@ -564,7 +661,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
     }
 
     logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
-           // << " us lastdetect_front_nb_ =" << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel
+    // << " us lastdetect_front_nb_ =" << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel
             << logs::end;
 
 }

@@ -15,8 +15,7 @@
 
 using namespace std;
 
-void L_SensorsTest::run(int argc, char** argv)
-{
+void L_SensorsTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -24,10 +23,11 @@ void L_SensorsTest::run(int argc, char** argv)
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
     robot.asserv().setPositionAndColor(1000.0, 1000.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //pour mettre une position dans la table
     RobotPosition p = robot.asserv().pos_getPosition();
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
-            << p.asservStatus << logs::end;
+    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
 
     int front = 0, back = 0;
+    ASensorsDriver::bot_positions vadv;
+
     utils::Chronometer chrono("L_SensorsTest");
     chrono.start();
     /*
@@ -44,12 +44,32 @@ void L_SensorsTest::run(int argc, char** argv)
     robot.actions().start();
     robot.actions().sensors().addTimerSensors(200);
 
+//    robot.actions().arm_right_init();
+//    robot.actions().arm_left_init(1000);
+//
+//    robot.actions().arm_right_deploy();
+//    robot.actions().arm_left_deploy(1000);
+
     while (chrono.getElapsedTimeInSec() < 200) {
+
+        vadv = robot.actions().sensors().getPositionsAdv();
+
+        for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
+            logger().info() << " vadv nb=" << vadv.size() << " detected=" << vadv[i].nbDetectedBots << " x=" << vadv[i].x << " y=" << vadv[i].y
+                    << " a=" << vadv[i].theta << " d=" << vadv[i].d << logs::end;
+        }
+
         front = robot.actions().sensors().front(true);
         back = robot.actions().sensors().back(true);
 
+        //default=>510
+        //4,7k =>462
+        //1k=>340
+        //470=>246
+        int adc = robot.actions().sensors().getADC();
+
         usleep(1000000);
-        logger().info() << " front=" << front << " back=" << back << logs::end;
+        logger().info() << " adc=" << adc << " front=" << front << " back=" << back << logs::end;
     }
 
     logger().info() << "Happy End." << logs::end;

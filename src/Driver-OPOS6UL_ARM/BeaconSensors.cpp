@@ -15,9 +15,10 @@ BeaconSensors::BeaconSensors(int bus, unsigned char i2c_addr) :
 
     //logger().error() << "BeaconSensors(" << reinterpret_cast<void*>(i2c_addr) << ") : BeaconSensors testing...." << logs::end;
 
-    //i2c_address_ = i2c_addr;
-    i2c_BeaconSensors_.setSlaveAddr(i2c_addr);
-    connected_BeaconSensors_ = true;
+    i2c_address_ = i2c_addr;
+    int err = i2c_BeaconSensors_.setSlaveAddr(i2c_addr);
+    if (err >= 0)
+       connected_BeaconSensors_ = true;
 /*
     while(1)
     {
@@ -39,6 +40,16 @@ BeaconSensors::BeaconSensors(int bus, unsigned char i2c_addr) :
 
     }*/
 }
+
+
+void BeaconSensors::display(int number) {
+    uint8_t n = (uint8_t) number;
+    int err = i2c_BeaconSensors_.writeReg(0x02, &n, 1);
+    if (err < 0) {
+        logger().error() << "BeaconSensors::display() : error writereg err=" << err << logs::end;
+    }
+}
+
 
 Registers BeaconSensors::getData() {
     unsigned char buf[18] = { 0 };

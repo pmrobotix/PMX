@@ -26,23 +26,25 @@ bool L_push_3() {
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true); //TODO uniquement centre avec la balise
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.logger().info() << "L_push_3 : move first point" << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(700, 1620, true, 1000000, 50, 50, true);
+    //ts = robot.ia().iAbyPath().whileMoveForwardTo(700, 1620, true, 1000000, 5, 5, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(550, 1700, true, 1000000, 5, 5, true);
     if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << "TAKE 3 / move forward  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.logger().error() << "L_push_3 : move first point  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
+
     }
     robot.svgPrintPosition();
 
     robot.ia().iAbyPath().goToZone("zone_push_3", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 50, 50, true, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 5, true, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_3 : zone_push_3  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
-        //return false; //on change de strat
+        return true; //on oublie cette strat
     }
     robot.svgPrintPosition();
 
@@ -81,7 +83,8 @@ bool L_push_3() {
 
     robot.logger().info() << "runMotorRight like..." << logs::end;
     ts = robot.ia().iAbyPath().whileMoveForwardTo(850, 1100, true, 1000000, 2, 2, false, 0);
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(600, 600, true, 1000000, 2, 2, false, 0);
+    if (robot.tabletest) ts = robot.ia().iAbyPath().whileMoveForwardTo(600, 600 + 300, true, 1000000, 2, 2, false, 0);
+    else ts = robot.ia().iAbyPath().whileMoveForwardTo(600, 600, true, 1000000, 2, 2, false, 0);
 
 //    robot.logger().info() << "L_push_3 : goto zone piedestal+200,+200" << logs::end;
     robot.ia().iAbyPath().goToZone("zone_piedestal", &zone);
@@ -155,12 +158,302 @@ bool L_take_trophy() {
     // take Trophy
     robot.actions().cube_push_and_take_trophy(4000);
 
-    robot.points += 15;
+    robot.points += 15; //POINT - 5+10 prise statuette et depose cube
 
     robot.logger().info() << "L_take_trophy : piedestal on avancede 200" << logs::end;
     ts = robot.asserv().doLineAbs(200);
 
     robot.trophy_taken = true;
+
+    robot.svgPrintPosition();
+    return true; //return true si ok sinon false si interruption
+}
+
+bool L_push_all_carres() {
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    robot.logger().info() << "start L_push_all_carres" << logs::end;
+
+    TRAJ_STATE ts = TRAJ_OK;
+    RobotPosition zone;
+
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+//    if (robot.getMyColor() == PMXYELLOW) {
+//        robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, true);
+//    }
+//    else {
+//        robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, false);
+//    }
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+    robot.ia().iAbyPath().goToZone("zone_first_carre", &zone);
+    int y_carre = zone.y;
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 5, 5, true, 0);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " L_push_all_carres  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+        return false;
+    }
+
+    //tabaisse du bras pour lire la resistance
+    if (robot.getMyColor() == PMXYELLOW) {
+        robot.actions().arm_right_deploy(500);
+    }
+    else {
+        robot.actions().arm_left_deploy(500);
+    }
+
+    robot.actions().sensors().RecordADC(true);
+    robot.asserv().setLowSpeedForward(true, 33);
+
+    //on tourne au meme point sans le pathfnding
+    robot.logger().info() << "L_push_all_carres on tourne au meme point sans le pathfnding" << logs::end;
+
+    ts = robot.asserv().doAbsoluteRotateTo(zone.theta);
+        if (ts != TRAJ_FINISHED) {
+            ts = robot.asserv().doAbsoluteRotateTo(zone.theta);
+            if (ts != TRAJ_FINISHED) {
+                ts = robot.asserv().doAbsoluteRotateTo(zone.theta);
+            }
+        }
+    //ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 100000, 5, 5, false, 0);
+    robot.logger().info() << "L_push_all_carres on avance de 370" << logs::end;
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x + 370, zone.y, zone.theta, true, 100000, 5, 5, false, 0);
+
+    //lecture / ADC / CODE
+    //default =>510 => 0
+    //4,7k    =>462 => 99
+    //1k      =>340 =>10
+    //470     =>246 =>10
+    //courcircuit =>0 =>1
+    robot.actions().sensors().RecordADC(false);
+
+    //analyse
+    int badsquare = 0;
+    for (int i = 0; i < 100; i++) {
+        robot.logger().info() << "ADC " << i << " " << robot.actions().sensors().tabADC[i] << logs::end;
+        if (robot.actions().sensors().tabADC[i] > 90) {
+            badsquare++;
+            //square_pattern = 1;
+            //robot.logger().info() << "L_push_all_carres PATTERN 1" << logs::end;
+        }
+        else if (robot.actions().sensors().tabADC[i] < 15) {
+            //square_pattern = 3;
+            //robot.logger().info() << "L_push_all_carres PATTERN 3" << logs::end;
+        }
+    }
+
+    if (badsquare >= 2) {
+        robot.square_pattern = 1;
+        robot.logger().info() << "L_push_all_carres PATTERN 1" << logs::end;
+    }
+    else {
+        robot.square_pattern = 3;
+        robot.logger().info() << "L_push_all_carres PATTERN 3" << logs::end;
+    }
+
+    exit(0);
+    /*
+     int nb = 5;
+     int val[nb];
+     int sum = 0;
+     for (int i = 0; i < nb; i++) {
+     val[i] = robot.actions().sensors().getADC();
+     std::this_thread::sleep_for(std::chrono::milliseconds(200));
+     }
+     for (int i = 0; i < nb; i++) {
+     sum += (val[i]);
+     robot.logger().error() << " L_push_all_carres v1  val[i]=" << val[i] << logs::end;
+     }
+     int moy = sum / nb;
+
+     robot.logger().error() << " L_push_all_carres v1  moy=" << moy << logs::end;
+
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.actions().arm_right_init(1000);
+     }
+     else {
+     robot.actions().arm_left_init(1000);
+     }
+
+
+
+     int nbtests = 0;
+     while (moy > 500) {
+     nbtests++;
+     //if (moy > 500) {
+     //test de la resistance
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.actions().arm_right_init(1000);
+     }
+     else {
+     robot.actions().arm_left_init(1000);
+     }
+     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 0, 5, 5, false, 0);
+
+     //test de la resistance
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.actions().arm_right_deploy(2000);
+     }
+     else {
+     robot.actions().arm_left_deploy(2000);
+     }
+     //on recom
+     for (int i = 0; i < nb; i++) {
+     val[i] = robot.actions().sensors().getADC();
+     std::this_thread::sleep_for(std::chrono::milliseconds(100));
+     }
+     for (int i = 0; i < nb; i++) {
+     sum += (val[i]);
+     robot.logger().error() << " L_push_all_carres v2  val[i]=" << val[i] << logs::end;
+     }
+     moy = sum / nb;
+
+     robot.logger().error() << " L_push_all_carres v2  moy=" << moy << logs::end;
+
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.actions().arm_right_init(1000);
+     }
+     else {
+     robot.actions().arm_left_init(1000);
+     }
+     if (moy < 500 || nbtests > 3) {
+
+     break;
+     }
+     }
+     */
+    /*
+     //int pattern = 0;
+     if (moy > 430 && moy < 500) pattern = 1;
+     else {
+     pattern = 3;
+
+     //on remonte le bras
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.actions().arm_right_init(1000);
+     }
+     else {
+     robot.actions().arm_left_init(1000);
+     }
+     //carre 1
+     robot.svgPrintPosition();
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.actions().square_push_right(1500);
+     robot.actions().square_middle_init(1500);
+     }
+     else {
+     robot.actions().square_push_left(1500);
+     robot.actions().square_middle_init(1500);
+     }
+
+     robot.points += 5;
+     }
+     */
+    //carre 2
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(852, y_carre, zone.theta, true, 0, 5, 5, false, 0);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " carre 2  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    else {
+        robot.svgPrintPosition();
+        if (robot.getMyColor() == PMXYELLOW) {
+            robot.actions().square_push_right(1500);
+            robot.actions().square_middle_init(1500);
+        }
+        else {
+            robot.actions().square_push_left(1500);
+            robot.actions().square_middle_init(1500);
+        }
+    }
+    robot.points += 5;
+
+    //carre 3
+    if (robot.square_pattern == 1) {
+        ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1037, y_carre, zone.theta, true, 0, 5, 5, false, 0);
+        if (ts != TRAJ_FINISHED) {
+            robot.logger().error() << " carre 3  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+            robot.asserv().resetEmergencyOnTraj();
+        }
+        else {
+            robot.svgPrintPosition();
+            if (robot.getMyColor() == PMXYELLOW) {
+                robot.actions().square_push_right(1500);
+                robot.actions().square_middle_init(1500);
+            }
+            else {
+                robot.actions().square_push_left(1500);
+                robot.actions().square_middle_init(1500);
+            }
+        }
+        robot.points += 5;
+    }
+
+    if (robot.chrono().getElapsedTimeInSec() >= 90) {
+        robot.logger().info() << "zone_carre 3 : t>=90 on ne fait pas l'action" << logs::end;
+
+        return true;
+    }
+
+    //carré 4
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1222, y_carre, zone.theta, true, 0, 5, 5, false, 0);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " zone_carre 4  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    else {
+        robot.svgPrintPosition();
+        if (robot.getMyColor() == PMXYELLOW) {
+            robot.actions().square_push_right(1500);
+            robot.actions().square_middle_init(1500);
+        }
+        else {
+            robot.actions().square_push_left(1500);
+            robot.actions().square_middle_init(1500);
+        }
+        robot.points += 5;
+    }
+
+    //carre 5
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1407, y_carre, zone.theta, true, 0, 5, 5, false, 0);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " zone_carre 5  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    else {
+        robot.svgPrintPosition();
+        if (robot.getMyColor() == PMXYELLOW) {
+            robot.actions().square_push_right(1500);
+            robot.actions().square_middle_init(1500);
+        }
+        else {
+            robot.actions().square_push_left(1500);
+            robot.actions().square_middle_init(1500);
+        }
+    }
+    /*
+     //carre 6
+     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1407 + 185, y_carre, true, 1000000, 5, 5, false, 0);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " zone_carre  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     else {
+     robot.svgPrintPosition();
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.actions().square_push_right(1500);
+     robot.actions().square_middle_init(1500);
+     }
+     else {
+     robot.actions().square_push_left(1500);
+     robot.actions().square_middle_init(1500);
+     }
+     }
+     robot.points += 5;
+     robot.points += 5;
+     */
+
+    robot.asserv().setLowSpeedForward(false, 100);
 
     robot.svgPrintPosition();
     return true; //return true si ok sinon false si interruption
@@ -173,12 +466,12 @@ bool L_push_carre() {
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.ia().iAbyPath().goToZone("zone_carre", &zone);
 
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 10, true, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 5, true, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << " zone_carre  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -194,6 +487,27 @@ bool L_push_carre() {
     else {
         robot.actions().square_push_left(1500);
         robot.actions().square_middle_init(1500);
+    }
+
+    robot.points += 5;
+
+    //carré 4
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1222, zone.y, zone.theta, true, 0, 5, 5, false, 0);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << " zone_carre 4  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+    else {
+        robot.svgPrintPosition();
+        if (robot.getMyColor() == PMXYELLOW) {
+            robot.actions().square_push_right(1500);
+            robot.actions().square_middle_init(1500);
+        }
+        else {
+            robot.actions().square_push_left(1500);
+            robot.actions().square_middle_init(1500);
+        }
+        robot.points += 5;
     }
 
 //    if (robot.trophy_taken) { // TODO a rajouter avec la tache && robot.alea_done) {
@@ -214,11 +528,24 @@ bool L_push_alea() {
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
+    if (robot.chrono().getElapsedTimeInSec() >= 94) {
+        robot.logger().info() << "L_push_alea : t>=94 on ne fait pas l'action" << logs::end;
+        robot.ia().iAbyPath().goToZone("zone_push_alea", &zone);
+        ts = robot.ia().iAbyPath().whileMoveForwardTo(800, zone.y, true, 300000, 2, 2, false, 0);
+        robot.points += 20; //TODO check du x y a la fin du programme
+        if (ts != TRAJ_FINISHED) {
+            robot.logger().error() << "L_push_alea : zone_push_alea  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+            robot.asserv().resetEmergencyOnTraj();
+            return true;
+        }
+        return true;
+    }
+
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.ia().iAbyPath().goToZone("zone_push_alea", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 10, true, 30);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 2, 2, true, 30);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_alea : zone_push_alea  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -236,6 +563,8 @@ bool L_push_alea() {
         robot.ia().iAbyPath().enable(robot.ia().area_alea_violet, 0);
     }
 
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+
     robot.ia().iAbyPath().goToZone("zone_start", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 5, 10, true, 0);
     if (ts != TRAJ_FINISHED) {
@@ -245,8 +574,7 @@ bool L_push_alea() {
     }
     robot.svgPrintPosition();
 
-    robot.points += 3;
-
+    robot.points += 5; //1+1+1 + 1+1
 
     robot.alea_done = true;
 
@@ -284,19 +612,18 @@ bool L_put_trophy() {
     }
     robot.svgPrintPosition();
 
-
     robot.logger().info() << "L_put_trophy : on recule de 140mm" << logs::end;
     ts = robot.asserv().doLineAbs(-120);
     robot.svgPrintPosition();
 
     robot.logger().info() << "L_put_trophy : petit calage pour pousser" << logs::end;
-        ts = robot.asserv().doCalage(-200, 20);
-        robot.svgPrintPosition();
+    ts = robot.asserv().doCalage(-200, 20);
+    robot.svgPrintPosition();
 
     robot.logger().info() << "L_put_trophy : on lache le trophy" << logs::end;
     robot.actions().cube_normal_pos(1000);
 
-    robot.points += 20;
+    robot.points += 20; //POINT - 15 +5 statuette + vitrine allumée
 
     //std::this_thread::sleep_for(std::chrono::seconds(5));
 
@@ -339,12 +666,14 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone() {
     robot.ia().iAbyPath().ia_createZone("zone_piedestal", 0, 0, 350, 350, 400, 400, 45);
     robot.ia().iAbyPath().ia_createZone("zone_vitrine", 0, 1900, 500, 100, 225, 1700, -90);
     robot.ia().iAbyPath().ia_createZone("zone_push_3", 700, 1100, 300, 500, 900, 1550, -90);
-    robot.ia().iAbyPath().ia_createZone("zone_carre", 600, 0, 700, 100, 900, 150, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_carre", 600, 0, 700, 100, 850, 146, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_first_carre", 600, 0, 700, 100, 668, 145, 0);
 
     robot.ia().iAbyPath().ia_addAction("take_trophy", &L_take_trophy);
     robot.ia().iAbyPath().ia_addAction("put_trophy", &L_put_trophy);
     robot.ia().iAbyPath().ia_addAction("push_3", &L_push_3);
     robot.ia().iAbyPath().ia_addAction("push_carre", &L_push_carre);
+    //robot.ia().iAbyPath().ia_addAction("push_all_carres", &L_push_all_carres);
     robot.ia().iAbyPath().ia_addAction("push_alea", &L_push_alea);
     robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
 
@@ -355,6 +684,8 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest() {
     logger().debug() << "IASetup TableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
+
+    robot.tabletest = true;
 
     //pour le test sur TABLETEST on desactive la zone alea
     robot.ia().iAbyPath().enable(robot.ia().area_alea_yellow, 0);
@@ -367,19 +698,16 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest() {
     robot.ia().iAbyPath().ia_createZone("zone_piedestal", 0, 0 + decalagetabletest, 350, 350, 400, 400 + decalagetabletest, 45);
     robot.ia().iAbyPath().ia_createZone("zone_vitrine", 0, 1900, 500, 100, 225, 1700, -90);
     robot.ia().iAbyPath().ia_createZone("zone_push_3", 700, 1100, 300, 500, 900, 1550, -90);
-    robot.ia().iAbyPath().ia_createZone("zone_carre", 600, 0 + decalagetabletest, 700, 100, 900, 150 + decalagetabletest, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_carre", 600, 0 + decalagetabletest, 700, 100, 850, 146 + decalagetabletest, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_first_carre", 600, 0 + decalagetabletest, 700, 100, 668, 145 + decalagetabletest, 0);
 
-//    robot.ia().iAbyPath().ia_addAction("push_3", &L_push_3);
-//    robot.ia().iAbyPath().ia_addAction("take_trophy", &L_take_trophy);
-//    robot.ia().iAbyPath().ia_addAction("push_carre", &L_push_carre);
-//    //robot.ia().iAbyPath().ia_addAction("push_alea", &L_push_alea);
-//    robot.ia().iAbyPath().ia_addAction("put_trophy", &L_put_trophy);
-//    robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
-
-    robot.ia().iAbyPath().ia_addAction("take_trophy", &L_take_trophy);
-    robot.ia().iAbyPath().ia_addAction("put_trophy", &L_put_trophy);
-    robot.ia().iAbyPath().ia_addAction("push_3", &L_push_3);
-    robot.ia().iAbyPath().ia_addAction("push_carre", &L_push_carre);
+    /* TODO TEST TEMPO a retirer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     robot.ia().iAbyPath().ia_addAction("take_trophy", &L_take_trophy);
+     robot.ia().iAbyPath().ia_addAction("put_trophy", &L_put_trophy);
+     robot.ia().iAbyPath().ia_addAction("push_3", &L_push_3);
+     */
+    //robot.ia().iAbyPath().ia_addAction("push_carre", &L_push_carre);
+    robot.ia().iAbyPath().ia_addAction("push_all_carres", &L_push_all_carres);
     robot.ia().iAbyPath().ia_addAction("push_alea", &L_push_alea);
     robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
 
@@ -428,7 +756,7 @@ void L_State_DecisionMakerIA::execute() {
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.actions().sensors().addTimerSensors(200);
 
-    robot.points += 2;
+    robot.points += 4; //POINT - depose statuette + vitrine
 
     //start IA
     robot.ia().iAbyPath().ia_start();

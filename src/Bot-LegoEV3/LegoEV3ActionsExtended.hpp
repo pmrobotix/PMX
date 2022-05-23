@@ -221,13 +221,13 @@ public:
         servos().deploy(SERVO_15_ARM_L, 1500, keep);
     }
     void arm_left_deploy(int keep = 0) {
-        servos().deploy(SERVO_15_ARM_L, 900, keep);
+        servos().deploy(SERVO_15_ARM_L, 450, keep);
     }
     void arm_right_init(int keep = 0) {
         servos().deploy(SERVO_1_ARM_R, 1500, keep);
     }
     void arm_right_deploy(int keep = 0) {
-        servos().deploy(SERVO_1_ARM_R, 2500, keep);
+        servos().deploy(SERVO_1_ARM_R, 2320, keep);
     }
 
 //    void test_servo(int speed = 512) {

@@ -13,15 +13,13 @@
 class ASensorsDriver;
 class Robot;
 
-class Sensors: public AActionsElement
-{
+class Sensors: public AActionsElement {
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref Sensors.
      */
-    static inline const logs::Logger & logger()
-    {
+    static inline const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("Sensors");
         return instance;
     }
@@ -63,12 +61,17 @@ private:
     bool ignoreBackRight_;
 
 
+
 public:
+
+    //2022 specific
+    bool recordADC;
+    int tabADC[100];
+    int index_adc;
 
     //distance de ce qu'il y a devant le robot
     float x_adv_mm;
     float y_adv_mm;
-
 
     /*!
      * \brief Constructor.
@@ -81,10 +84,18 @@ public:
      */
     ~Sensors();
 
-    Robot * robot()
-    {
+    Robot * robot() {
         return robot_;
     }
+
+    int RecordADC(bool activate);
+
+    //default=>510
+    //4,7k =>462
+    //1k=>340
+    //470=>246
+    //courcircuit = >0
+    int getADC();
 
     void display(int n);
 
@@ -131,15 +142,13 @@ public:
  * \brief Le timer associé aux sensors
  *
  */
-class SensorsTimer: public ITimerPosixListener
-{
+class SensorsTimer: public ITimerPosixListener {
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref SensorsTimer.
      */
-    static const logs::Logger & logger()
-    {
+    static const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsTimer");
         return instance;
     }
@@ -178,8 +187,7 @@ public:
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual inline ~SensorsTimer()
-    {
+    virtual inline ~SensorsTimer() {
     }
 
     virtual void onTimer(utils::Chronometer chrono);

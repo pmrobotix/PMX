@@ -55,33 +55,39 @@ public:
 
     /*!
      * \brief Enumération des libellés des servos associés au numéro de servo
+     * port-servo port1-4=1000-4000 servo=1-255 => 1000 à 4255
+     * [num port] * 1000 + [num servo]
      */
-    enum ServoAx12Label //TODO se servir de cette liste
+    enum ServoAx12Label
     {
-        AX12_SERVO_BRAS_D = 5, //AX12
+        AX12_SERVO_BRAS_D = 1*1000+5, //AX12
 
-        AX12_SERVO_BRAS_G = 7, //AX12
+        AX12_SERVO_BRAS_G = 1000+7, //AX12
 
-        AX12_SERVO_PINCE_SS_ROBOT = 4, //AX12
+        AX12_SERVO_ELEVATOR_R = 1000+4, //AX12
 
-        AX12_SERVO_ASCENSEUR = 100, //MX28
+        AX12_SERVO_ELEVATOR_L = 1000+6, //AX12
 
-        AX12_SERVO_ROTATION = 102, //MX28
+        AX12_SERVO_ARM_R_TOP = 1000+182, //AX18
 
-        AX12_SERVO_PORTES_NOIRE = 61, //AX18
+        AX12_SERVO_ARM_L_TOP = 1000+63, //AX18
 
-        AX12_SERVO_PORTES_BLEU = 63, //AX18
+        AX12_SERVO_ARM_R_BOTTOM = 1000+52, //AX12
 
-        AX12_SERVO_DRAPEAUX = 51, //AX12
+        AX12_SERVO_ARM_L_BOTTOM = 1000+3, //AX12
 
         AX12_enumTypeEnd
     };
 
+    /*!
+         * \brief Enumération des libellés des servos STD associés au numéro de servo
+         *  port=10000
+         */
     enum ServoStdLabel {
 
-        STD_SERVO_3 = 5,
+        STD_SERVO_3 = 10000*5,
 
-        STD_SERVO_4,
+        STD_SERVO_4 = 10000*4,
 
         SERVO_enumTypeEnd
     };
@@ -136,9 +142,10 @@ public:
     }
 
     void stopExtra() {
-        logger().debug() << "stopExtra - ledbar" << logs::end;
-        ledbar_.stop(true);
+
         sensors_.stopTimerSensors(); //TODO rename stop
+        ledbar_.stop();
+
         ledbar_.resetAll();
         lcd2x16_.reset();
 
@@ -178,6 +185,11 @@ public:
 //          }
     }
 
+
+
+
+
+ /*
     void ax12_init() {
 
         //on monte le barillet
@@ -272,6 +284,8 @@ public:
 //        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 486, -1);
 //        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
     }
+
+    */
     /*
      void ax12_init()
      {

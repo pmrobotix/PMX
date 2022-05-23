@@ -38,7 +38,7 @@ void O_ActionManagerTimerTest::run(int argc, char** argv)
     //robot.actions().stopTimer("timer2");
     sleep(1);
 
-    logger().info() << robot.getID() << " " << this->name() << " Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End" << " N° " << this->position() << logs::end;
 }
 
 TestAction::TestAction(O_ActionManagerTimerTest & amt, std::string name) :

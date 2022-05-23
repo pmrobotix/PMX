@@ -31,9 +31,11 @@
 using namespace std;
 
 Robot::Robot() :
-        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2021", "/") // use character "/" instead of "-" for arguments
+        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2022", "/") // use character "/" instead of "-" for arguments
 {
     points = 0;
+    tabletest = false;
+
     actions_default_ = NULL;
     asserv_default_ = NULL;
 
@@ -48,12 +50,9 @@ Robot::Robot() :
 
 Robot::~Robot() {
     svgPrintEndOfFile();
-
     stopMotionTimerAndActionManager();
-
-    //Tue le log s'il existe (core dump sinon)
+    //Stop le log s'il existe (core dump sinon)
     logs::LoggerFactory::instance().stopLog();
-
 }
 
 void Robot::svgPrintPosition(int color) {
@@ -305,12 +304,11 @@ void Robot::stopMotionTimerAndActionManager() {
     else logger().error() << "asserv_default is NULL ! " << logs::end;
 
     if (actions_default_ != NULL) {
+
         this->actions_default_->clearAll(); //clear actions and timers
         this->actions_default_->waitAndStopManagers();
-        //this->actions_default_->cancel(); //cancel actions thread
     }
     else logger().error() << "actions_default is NULL ! " << logs::end;
-
 }
 
 void Robot::freeMotion() {

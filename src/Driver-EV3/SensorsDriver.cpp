@@ -142,3 +142,9 @@ void SensorsDriver::displayNumber(int number)
     beaconSensors_.display(number);
 }
 
+
+int SensorsDriver::getAnalogPinData()
+{
+    return regs_.reserved_analog;
+}
+

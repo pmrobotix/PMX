@@ -32,8 +32,8 @@ private:
     Registers regs_;
     Settings settings_;
 
-    Gp2y0e02b gp2_1_;
-    Gp2y0e02b gp2_2_;
+//    Gp2y0e02b gp2_1_;
+//    Gp2y0e02b gp2_2_;
 
     bool connected_gp2y0e02b_;
 
@@ -56,6 +56,11 @@ public:
      * \brief Destructor.
      */
     ~SensorsDriver();
+
+
+    void displayNumber(int number);
+    int getAnalogPinData();
+
 
 
     int sync(); //synchronise les données avec la balise, return 0 if success, -1 if error.

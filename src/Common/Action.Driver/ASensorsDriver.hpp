@@ -59,6 +59,8 @@ public:
 
     virtual void displayNumber(int number) = 0;
 
+    virtual int getAnalogPinData() = 0;
+
     /*!
      * \brief Destructor.
      */

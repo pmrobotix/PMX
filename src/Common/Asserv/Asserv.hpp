@@ -136,7 +136,11 @@ public:
     virtual void setLowSpeedBackward(bool enable, int percent = 0);
     virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
     virtual void setPositionReal(float x_mm, float y_mm, float thetaInRad);
+
     virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
+    virtual bool filtre_IsInFront(int dist_mm, int x_mm, int y_mm, float theta);
+    virtual bool filtre_IsInBack(int dist_mm, int x_mm, int y_mm, float theta);
+
     virtual void warnFrontCollisionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void warnBackCollisionOnTraj(float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
 

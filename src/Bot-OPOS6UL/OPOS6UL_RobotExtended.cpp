@@ -42,14 +42,11 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 
     points = 0;
 
-    blue_done = false; //TODO deprecated
-
 }
 
-void OPOS6UL_RobotExtended::stopExtraActions()
+OPOS6UL_RobotExtended::~OPOS6UL_RobotExtended()
 {
     this->asserv().endWhatTodo(); //on termine le thread d'asserv qui lie la position
-
     this->actions().stopExtra(); //extra devices
 }
 
@@ -59,6 +56,10 @@ void OPOS6UL_RobotExtended::displayPoints()
     this->actions().lcd2x16().setCursor(0, 0);
     this->actions().lcd2x16().print("Points = ");
     this->actions().lcd2x16().print(this->points);
+}
+
+void OPOS6UL_RobotExtended::stopExtraActions() {
+    this->actions().stopExtra(); //extra devices
 }
 
 void OPOS6UL_RobotExtended::begin(int argc, char** argv)

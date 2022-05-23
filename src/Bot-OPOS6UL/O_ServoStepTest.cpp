@@ -96,7 +96,7 @@ void O_ServoStepTest::run(int argc, char** argv) {
     bool deploy = false;
 
     while (touch != BUTTON_BACK_KEY) {
-        current_pos = servoObjects.getPos(num);
+        current_pos = servoObjects.getPulseWidth(num);
         torque = servoObjects.getTorque(num);
         logger().info() << "SERVO " << num << " current_pos= " << current_pos << "  torque= " << torque << logs::end;
         robot.actions().lcd2x16().home();
@@ -167,7 +167,7 @@ void O_ServoStepTest::run(int argc, char** argv) {
 
             //robot.actions().servos().setup(num, aType, 0, 1500, 3000, false);
             //robot.actions().servos().hold(num);
-            current_pos = servoObjects.getPos(num);
+            current_pos = servoObjects.getPulseWidth(num);
             logger().info() << "SERVO " << num << " current_pos=" << current_pos << logs::end;
 
         }
@@ -179,7 +179,7 @@ void O_ServoStepTest::run(int argc, char** argv) {
             if (num < 0) num++;
 //            robot.actions().servos().setup(num, aType, 0, 1500, 3000, false);
 //            robot.actions().servos().hold(num);
-            current_pos = servoObjects.getPos(num);
+            current_pos = servoObjects.getPulseWidth(num);
             logger().info() << "SERVO " << num << " current_pos=" << current_pos << logs::end;
 
         }

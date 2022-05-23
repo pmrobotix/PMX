@@ -50,7 +50,7 @@ public:
     //DATA custom
     bool trophy_taken;
     bool alea_done;
-
+    int square_pattern;
 
 
     void begin(int argc, char** argv);

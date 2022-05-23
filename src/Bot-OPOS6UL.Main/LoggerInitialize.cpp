@@ -28,6 +28,7 @@ void logs::LoggerFactory::initialize()
     add("net", new TelemetryAppender("OPOS6UL", "pmx-vm"));
     add(logs::Level::ERROR, "", "net"); //TELEMETRY + CONSOLE
 
+
     //INFO
     add(logs::Level::INFO, "Robot", "console");
     add(logs::Level::INFO, "OPOS6UL_RobotExtended", "net");
@@ -45,9 +46,10 @@ void logs::LoggerFactory::initialize()
 
     //SVG
     add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
+    add(logs::Level::INFO, "IAbyPath4OPOS6UL_Robot", "svgia");
+    //SVG specific en parallele //TODO ca pose pb de lock
     add(logs::Level::INFO, "AsservDriver.OPO.SVG", "svg");
     add(logs::Level::INFO, "AsservDriver.SIMU.SVG", "svg");
-    add(logs::Level::INFO, "IAbyPath4OPOS6UL_Robot", "svgia");
 
     //File
     //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
@@ -58,6 +60,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_State_WaitEndOfMatch", "console");
 
     //TESTS
+    add(logs::Level::INFO, "O_ActionManagerTimerTest", "console");
     add(logs::Level::INFO, "O_ActionManagerTimerTest-Action", "console");
     add(logs::Level::INFO, "O_ActionManagerTimerTest-Timer", "console");
     add(logs::Level::INFO, "O_TiretteTest", "console");

@@ -16,14 +16,23 @@ ServoObjectsSystem::~ServoObjectsSystem() {
 }
 
 void ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed) {
-    //release
+
+    int p = servodriver_->ping(servo);
+    if (p < 0) logger().info() << "servo=" << servo << " ERROR PING" << logs::end;
+    if (p == 0) {
+        logger().info() << "servo=" << servo << " NO PING" << logs::end;
+        return;
+    }
+
     servodriver_->release(servo);
 
-    servodriver_->setType(servo, type);
-    servodriver_->setPolarity(servo, inversed);
-    servodriver_->setMinPulse(servo, valueMinPulse);
-    servodriver_->setMidPulse(servo, valueMidPulse);
-    servodriver_->setMaxPulse(servo, valueMaxPulse);
+    if (type == AServoDriver::ServoType::SERVO_STANDARD) {
+        servodriver_->setType(servo, type);
+        servodriver_->setPolarity(servo, inversed);
+        servodriver_->setMinPulse(servo, valueMinPulse);
+        servodriver_->setMidPulse(servo, valueMidPulse);
+        servodriver_->setMaxPulse(servo, valueMaxPulse);
+    }
 
 }
 

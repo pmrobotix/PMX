@@ -22,342 +22,39 @@ O_State_DecisionMakerIA::O_State_DecisionMakerIA(Robot &robot) :
 {
 }
 
-bool O_push_exp() {
+bool O_take_distrib_partage() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.logger().info() << "start O_push_exp." << logs::end;
+    robot.logger().info() << "start O_take_distrib_partage." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-
-    robot.ia().iAbyPath().goToZone("zone_exp", &zone);
-
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 5, 5, true);
+    robot.ia().iAbyPath().goToZone("zone_distrib_partage", &zone);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 510, true, 0);
     if (ts != TRAJ_FINISHED) {
-        robot.logger().info() << " O_push_exp  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+        robot.logger().error() << "L_take_trophy : zone_distrib_partage  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
         return false;
     }
     robot.svgPrintPosition();
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    robot.asserv().setLowSpeedForward(true, 35);
-
-    if (robot.getMyColor() == PMXYELLOW) {
-        robot.actions().ax12_bras_droit(0);
-        robot.actions().ax12_bras_gauche(-1);
-
-    }
-    else {
-        robot.actions().ax12_bras_gauche(0);
-        robot.actions().ax12_bras_droit(-1);
-    }
-
-    ts = robot.asserv().doRelativeRotateBy(180);
-    //while (ts == robot.asserv().doRelativeRotateBy(45))
-    //{
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << "on pousse l'exp  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    //}
-    robot.svgPrintPosition();
-
-    robot.points += 15;
-    robot.displayPoints();
-
-    //robot.asserv().setLowSpeedForward(true, 35);
-
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    if (robot.getMyColor() == PMXYELLOW) {
-        robot.actions().ax12_bras_gauche_init(-1);
-        robot.actions().ax12_bras_droit_init(-1);
-
-    }
-    else {
-        robot.actions().ax12_bras_droit_init(-1);
-        robot.actions().ax12_bras_gauche_init(-1);
-
-    }
 
     return true; //return true si ok sinon false si interruption
 }
 
-bool O_push_green() {
+bool O_take_distrib() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.logger().info() << "start O_push_green." << logs::end;
+    robot.logger().info() << "start O_take_distrib." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-
-    robot.ia().iAbyPath().goToZone("zone_green_left", &zone);
-
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, false, 1000000, 5, 5, true);
+    robot.ia().iAbyPath().goToZone("zone_distrib", &zone);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 510, true, 0);
     if (ts != TRAJ_FINISHED) {
-        robot.logger().info() << " zone_green_left  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+        robot.logger().error() << "L_take_trophy : zone_distrib  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
         return false;
     }
     robot.svgPrintPosition();
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    //ts = robot.asserv().doLineAbs(220);
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(300, 1100, false, 1000000, 2, 2, true);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " on pousse le vert  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    robot.svgPrintPosition();
-
-    robot.points += 2;
-    robot.displayPoints();
-
-    ts = robot.asserv().doLineAbs(-80);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " on recule  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    robot.svgPrintPosition();
-
-    robot.points += 13;
-    robot.displayPoints();
-
-    return true; //return true si ok sinon false si interruption
-}
-
-bool O_push_fanion() {
-    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.logger().info() << "start O_push_fanion." << logs::end;
-    TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
-    int xmatch = 0;
-    int ymatch = 0;
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-
-    robot.ia().iAbyPath().goToZone("zone_fanion", &zone);
-
-    //point intermediaire
-    robot.logger().info() << " zone_fanion intermediaire" << ts << logs::end;
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 5, 5, true);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().info() << " zone_fanion intermediaire table test/match  ===== PB COLLISION FINALE - on retourne à la next strat ts="
-                << ts
-                << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-        robot.svgPrintPosition(2);
-        return false;
-    }
-    xmatch = 170;
-    ymatch = 1850;
-
-    //table de test A supp pour match!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//    xmatch = 270;
-//    ymatch = 1410;
-//
-//    robot.logger().info() << " zone_fanion corner" << ts << logs::end;
-//    ts = robot.ia().iAbyPath().whileMoveForwardTo(xmatch, ymatch, true, 1000000, 5, 5, true);
-//    if (ts != TRAJ_FINISHED) {
-//        robot.logger().info() << " zone_fanion corner   ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
-//        robot.asserv().resetEmergencyOnTraj();
-//        robot.svgPrintPosition();
-//        //return false;
-//    }
-
-
-    //on affiche la position
-    RobotPosition p = robot.asserv().pos_getPosition();
-    robot.logger().info() << " POSITION x=" << p.x << " y="<< p.y << " theta=" << p.theta << logs::end;
-
-
-
-
-     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-
-     robot.logger().info() << " zone_fanion corner <<" << xmatch << " " << ymatch << logs::end;
-     //ts = robot.asserv().doMoveForwardAndRotateTo(xmatch, ymatch, 0);
-     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xmatch, ymatch, 0, true, 1000000, 5, 5, false);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().info() << " zone_fanion corner  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     robot.svgPrintPosition(2);
-
-     }
-     robot.svgPrintPosition();
-     //Pour table test
-     robot.logger().info() << " doRelativeRotateBy(0)" << ts << logs::end;
-     ts = robot.asserv().doRelativeRotateBy(0);
-     robot.svgPrintPosition();
-
-     if (robot.getMyColor() == PMXYELLOW) {
-
-     robot.actions().ax12_bras_gauche_fanion(-1);
-     }
-     else {
-
-     robot.actions().ax12_bras_droit_fanion(-1);
-     }
-     robot.svgPrintPosition();
-
-     //robot.asserv().setLowSpeedForward(true, 25);
-
-     ts = robot.asserv().doMoveForwardAndRotateTo(xmatch + 205, ymatch, 0);
-     //ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xmatch+205, ymatch, 0, true, 1000000, 5, 5, false);
-     //ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(390, 1840, 0, true, 1000000, 5, 5, true);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().info() << " zone_fanion 1  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     robot.svgPrintPosition(2);
-     return false;
-     }
-     robot.svgPrintPosition();
-
-     robot.points += 5;
-     robot.displayPoints();
-
-     ts = robot.asserv().doMoveForwardAndRotateTo(xmatch + 440, ymatch, 0);
-     //ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x - 185 + 640, zone.y, false, 1000000, 5, 5, false);
-     //ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xmatch+440, ymatch, 0, true, 1000000, 5, 5, false);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().info() << " zone_fanion 2  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     robot.svgPrintPosition(2);
-     return false;
-     }
-     robot.svgPrintPosition();
-
-     //on tourne doucement
-     robot.asserv().setLowSpeedForward(true, 40);
-     ts = robot.asserv().doRelativeRotateBy(-90);
-     robot.svgPrintPosition();
-     ts = robot.asserv().doLineAbs(100);
-
-     robot.points += 10;
-     robot.displayPoints();
-
-     robot.actions().ax12_bras_gauche_init(0);
-     robot.actions().ax12_bras_droit_init(0);
-
-     //ts = robot.asserv().doLineAbs(100);
-     robot.svgPrintPosition(1);
-
-    return true; //return true si ok sinon false si interruption
-
-}
-
-bool O_goNS() {
-    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.logger().info() << "start O_goNS." << logs::end;
-    TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
-    //si taches finies et temps < 85
-    if (robot.chrono().getElapsedTimeInSec() < 80) {
-        utils::sleep_for_secs(1);
-        return false;
-    }
-    robot.logger().info() << "GOOOOOO O_goNS." << logs::end;
-
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(900, 800, -180, true, 1000000, 1, 1, false);
-    //ts = robot.asserv().doMoveForwardAndRotateTo(900, 800, -180);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().info() << " centre ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-        robot.svgPrintPosition(2);
-
-    }
-    robot.svgPrintPosition();
-    robot.logger().info() << "TEST positions adv...." << logs::end;
-
-    utils::sleep_for_secs(3);
-
-    ASensorsDriver::bot_positions vadv = robot.actions().sensors().getPositionsAdv();
-    bool south = false;
-    int miny = 2000;
-    for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
-
-        robot.logger().info() << "TEST en direct : vadv nb="
-                << vadv.size()
-                << " detected="
-                << vadv[i].nbDetectedBots
-                << " x="
-                << vadv[i].x
-                << " y="
-                << vadv[i].y
-                << " a="
-                << vadv[i].theta
-                << " d="
-                << vadv[i].d
-                << logs::end;
-
-        if (vadv[i].y < miny) {
-            miny = vadv[i].y;
-        }
-    }
-    if (miny > 800) south = true;
-    robot.logger().info() << "south =" << south << logs::end;
-    //si temps >85 on termine par cette tache
-
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-
-    if (south) {
-        robot.logger().info() << " zone_south choosen" << ts << logs::end;
-        //robot.ia().iAbyPath().goToZone("zone_north", &zoneN);
-        robot.ia().iAbyPath().goToZone("zone_south", &zone);
-    }
-    else {
-        robot.logger().info() << " zone_north choosen" << ts << logs::end;
-        robot.ia().iAbyPath().goToZone("zone_north", &zone);
-    }
-
-    //detection de l'adversaire
-
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 2, 2, false);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().info() << " zone_south  ===== PB COLLISION FINALE -  ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-        robot.svgPrintPosition(2);
-    }
-
-    robot.svgPrintPosition();
-
-    robot.points += 20;
-    robot.displayPoints();
-
-    return true; //return true si ok sinon false si interruption
-}
-
-bool O_push_petitport() {
-    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.logger().info() << "start O_push_petitport." << logs::end;
-    TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
-
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-
-    robot.ia().iAbyPath().goToZone("zone_petitport", &zone);
-
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 2, 2, true);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().info() << " zone_green_left  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-        robot.svgPrintPosition(2);
-        return false;
-    }
-    robot.svgPrintPosition();
-
-    ts = robot.asserv().doLineAbs(180);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " on pousse le vert  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-        robot.svgPrintPosition(2);
-    }
-    robot.svgPrintPosition();
-
-    ts = robot.asserv().doLineAbs(-90);
-    if (ts != TRAJ_FINISHED) {
-        robot.logger().error() << " on pousse le vert  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-        robot.asserv().resetEmergencyOnTraj();
-    }
-    robot.svgPrintPosition();
     return true; //return true si ok sinon false si interruption
 }
 
@@ -366,24 +63,14 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-    robot.ia().iAbyPath().ia_createZone("depart", 0, 500, 400, 600, 200, 800, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_exp", 0, 0, 400, 100, 350, 180, -90);
-    robot.ia().iAbyPath().ia_createZone("zone_petitport", 1700, 1800, 200, 200, 1800, 1500, 90);
-    robot.ia().iAbyPath().ia_createZone("zone_south", 0, 1100, 400, 400, 300, 1400, -90 - 45);
-    robot.ia().iAbyPath().ia_createZone("zone_north", 0, 100, 300, 400, 350, 250, -180);
-    robot.ia().iAbyPath().ia_createZone("zone_green_left", 350, 1050, 50, 50, 700, 1100, -180);
+    robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 400, 1150, 0);
 
-    //ancien MATCH
-    //robot.ia().iAbyPath().ia_createZone("zone_fanion", 0, 1900, 800, 100, 180, 1840, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1750, 90);
+    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
+    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
 
-    //point intermediaire fanion!!!! intermediaire
-    robot.ia().iAbyPath().ia_createZone("zone_fanion", 0, 1900, 800, 100, 180 + 400, 1840 - 550, 0);
-
-    robot.ia().iAbyPath().ia_addAction("push_exp", &O_push_exp);
-    //robot.ia().iAbyPath().ia_addAction("push_green", &O_push_green);
-    robot.ia().iAbyPath().ia_addAction("push_fanion", &O_push_fanion);
-    robot.ia().iAbyPath().ia_addAction("goNS", &O_goNS);
-    //robot.ia().iAbyPath().ia_addAction("push_petitport", &O_push_petitport);
+    robot.ia().iAbyPath().ia_addAction("take_distrib_partage", &O_take_distrib_partage);
+    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
 
     logger().debug() << " END IASetupActivitiesZone" << logs::end;
 }
@@ -393,17 +80,439 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-    robot.ia().iAbyPath().ia_createZone("depart", 0, 0, 450, 650, 200, 700, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_push_blue", 810, 0, 200, 200, 740, 230 + 60, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_fake_blue", 810, 800, 200, 200, 810, 800, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_gold", 1300, 0, 200, 200, 1325.0, 333.0, -90.0);
+    robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 400, 1150, 0);
 
-//    robot.ia().iAbyPath().ia_addAction("push_blue", &O_push_blue);
-//    robot.ia().iAbyPath().ia_addAction("take_gold", &O_take_gold);
-//    robot.ia().iAbyPath().ia_addAction("fake_blue", &O_fake_blue);
+    robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1750, 90);
+    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
+    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
+
+    robot.ia().iAbyPath().ia_addAction("take_distrib_partage", &O_take_distrib_partage);
+    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
 
     logger().debug() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
+
+void O_State_DecisionMakerIA::execute() {
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+
+//wait for init!
+    while (!robot.waitForInit()) {
+        usleep(1000);
+        //logger().error() << "waitForInit..." << logs::end;
+    }
+//logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
+
+    logger().info() << "Strategy to be applied = " << robot.strategy() << logs::end;
+
+    if (robot.strategy() == "tabletest") {
+        IASetupActivitiesZoneTableTest();
+
+        //enable zone if necessary
+        //robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
+        //robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
+
+    }
+    else if (robot.strategy() == "all") {
+        IASetupActivitiesZone(); //definit les activities
+
+        //enable zone if necessary
+        //robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
+        //robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
+
+    }
+    else {
+        logger().error() << "NO STRATEGY " << robot.strategy() << " FOUND !!! " << logs::end;
+    }
+
+//wait for the start of the chrono !
+    while (!robot.chrono().started()) {
+        usleep(10000);
+    }
+
+    logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
+    /*
+     //init rouge
+     TRAJ_STATE ts = robot.asserv().doMoveForwardTo(330, 463);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " doMoveForwardTo(330, 463);  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+     << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     ts = robot.asserv().doAbsoluteRotateTo(150);
+
+     robot.points += 6;
+     robot.displayPoints();
+     ts = robot.asserv().doLineAbs(-100);
+     if (ts != TRAJ_FINISHED) {
+     robot.logger().error() << " doLineAbs(-100)  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+     robot.asserv().resetEmergencyOnTraj();
+     }
+     robot.points += 35;
+     robot.displayPoints();
+
+     if (robot.getMyColor() == PMXYELLOW) {
+     robot.ia().iAbyPath().enable(robot.ia().area_alea_yellow, 0);
+     } else {
+     robot.ia().iAbyPath().enable(robot.ia().area_alea_violet, 0);
+     }*/
+
+    //On ajoute le timer de detection
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+    robot.actions().sensors().addTimerSensors(200);
+
+    robot.ia().iAbyPath().ia_start();        //launch IA
+
+    //robot.actions().ledBar().startK2mil(100, 100000, LED_GREEN);
+
+    robot.freeMotion();
+
+    robot.svgPrintEndOfFile();
+    logger().info() << "O_State_DecisionMakerIA svgPrintEndOfFile" << logs::end;
+
+}
+
+/*
+ * 2021
+ bool O_push_exp() {
+ OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+ robot.logger().info() << "start O_push_exp." << logs::end;
+ TRAJ_STATE ts = TRAJ_OK;
+ RobotPosition zone;
+
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+
+ robot.ia().iAbyPath().goToZone("zone_exp", &zone);
+
+ ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 5, 5, true);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " O_push_exp  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ return false;
+ }
+ robot.svgPrintPosition();
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+ robot.asserv().setLowSpeedForward(true, 35);
+
+ if (robot.getMyColor() == PMXYELLOW) {
+ robot.actions().ax12_bras_droit(0);
+ robot.actions().ax12_bras_gauche(-1);
+
+ }
+ else {
+ robot.actions().ax12_bras_gauche(0);
+ robot.actions().ax12_bras_droit(-1);
+ }
+
+ ts = robot.asserv().doRelativeRotateBy(180);
+ //while (ts == robot.asserv().doRelativeRotateBy(45))
+ //{
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().error() << "on pousse l'exp  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ }
+ //}
+ robot.svgPrintPosition();
+
+ robot.points += 15;
+ robot.displayPoints();
+
+ //robot.asserv().setLowSpeedForward(true, 35);
+
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+ if (robot.getMyColor() == PMXYELLOW) {
+ robot.actions().ax12_bras_gauche_init(-1);
+ robot.actions().ax12_bras_droit_init(-1);
+
+ }
+ else {
+ robot.actions().ax12_bras_droit_init(-1);
+ robot.actions().ax12_bras_gauche_init(-1);
+
+ }
+
+ return true; //return true si ok sinon false si interruption
+ }
+
+ bool O_push_green() {
+ OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+ robot.logger().info() << "start O_push_green." << logs::end;
+ TRAJ_STATE ts = TRAJ_OK;
+ RobotPosition zone;
+
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+
+ robot.ia().iAbyPath().goToZone("zone_green_left", &zone);
+
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, false, 1000000, 5, 5, true);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " zone_green_left  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ return false;
+ }
+ robot.svgPrintPosition();
+
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+ //ts = robot.asserv().doLineAbs(220);
+ ts = robot.ia().iAbyPath().whileMoveForwardTo(300, 1100, false, 1000000, 2, 2, true);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().error() << " on pousse le vert  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ }
+ robot.svgPrintPosition();
+
+ robot.points += 2;
+ robot.displayPoints();
+
+ ts = robot.asserv().doLineAbs(-80);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().error() << " on recule  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ }
+ robot.svgPrintPosition();
+
+ robot.points += 13;
+ robot.displayPoints();
+
+ return true; //return true si ok sinon false si interruption
+ }
+
+ bool O_push_fanion() {
+ OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+ robot.logger().info() << "start O_push_fanion." << logs::end;
+ TRAJ_STATE ts = TRAJ_OK;
+ RobotPosition zone;
+ int xmatch = 0;
+ int ymatch = 0;
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+
+ robot.ia().iAbyPath().goToZone("zone_fanion", &zone);
+
+ //point intermediaire
+ robot.logger().info() << " zone_fanion intermediaire" << ts << logs::end;
+ ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 5, 5, true);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " zone_fanion intermediaire table test/match  ===== PB COLLISION FINALE - on retourne à la next strat ts="
+ << ts
+ << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+ return false;
+ }
+ xmatch = 170;
+ ymatch = 1850;
+
+ //table de test A supp pour match!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ //    xmatch = 270;
+ //    ymatch = 1410;
+ //
+ //    robot.logger().info() << " zone_fanion corner" << ts << logs::end;
+ //    ts = robot.ia().iAbyPath().whileMoveForwardTo(xmatch, ymatch, true, 1000000, 5, 5, true);
+ //    if (ts != TRAJ_FINISHED) {
+ //        robot.logger().info() << " zone_fanion corner   ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+ //        robot.asserv().resetEmergencyOnTraj();
+ //        robot.svgPrintPosition();
+ //        //return false;
+ //    }
+
+
+ //on affiche la position
+ RobotPosition p = robot.asserv().pos_getPosition();
+ robot.logger().info() << " POSITION x=" << p.x << " y="<< p.y << " theta=" << p.theta << logs::end;
+
+
+
+
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+
+ robot.logger().info() << " zone_fanion corner <<" << xmatch << " " << ymatch << logs::end;
+ //ts = robot.asserv().doMoveForwardAndRotateTo(xmatch, ymatch, 0);
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xmatch, ymatch, 0, true, 1000000, 5, 5, false);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " zone_fanion corner  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+
+ }
+ robot.svgPrintPosition();
+ //Pour table test
+ robot.logger().info() << " doRelativeRotateBy(0)" << ts << logs::end;
+ ts = robot.asserv().doRelativeRotateBy(0);
+ robot.svgPrintPosition();
+
+ if (robot.getMyColor() == PMXYELLOW) {
+
+ robot.actions().ax12_bras_gauche_fanion(-1);
+ }
+ else {
+
+ robot.actions().ax12_bras_droit_fanion(-1);
+ }
+ robot.svgPrintPosition();
+
+ //robot.asserv().setLowSpeedForward(true, 25);
+
+ ts = robot.asserv().doMoveForwardAndRotateTo(xmatch + 205, ymatch, 0);
+ //ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xmatch+205, ymatch, 0, true, 1000000, 5, 5, false);
+ //ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(390, 1840, 0, true, 1000000, 5, 5, true);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " zone_fanion 1  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+ return false;
+ }
+ robot.svgPrintPosition();
+
+ robot.points += 5;
+ robot.displayPoints();
+
+ ts = robot.asserv().doMoveForwardAndRotateTo(xmatch + 440, ymatch, 0);
+ //ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x - 185 + 640, zone.y, false, 1000000, 5, 5, false);
+ //ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xmatch+440, ymatch, 0, true, 1000000, 5, 5, false);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " zone_fanion 2  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+ return false;
+ }
+ robot.svgPrintPosition();
+
+ //on tourne doucement
+ robot.asserv().setLowSpeedForward(true, 40);
+ ts = robot.asserv().doRelativeRotateBy(-90);
+ robot.svgPrintPosition();
+ ts = robot.asserv().doLineAbs(100);
+
+ robot.points += 10;
+ robot.displayPoints();
+
+ robot.actions().ax12_bras_gauche_init(0);
+ robot.actions().ax12_bras_droit_init(0);
+
+ //ts = robot.asserv().doLineAbs(100);
+ robot.svgPrintPosition(1);
+
+ return true; //return true si ok sinon false si interruption
+
+ }
+
+ bool O_goNS() {
+ OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+ robot.logger().info() << "start O_goNS." << logs::end;
+ TRAJ_STATE ts = TRAJ_OK;
+ RobotPosition zone;
+ //si taches finies et temps < 85
+ if (robot.chrono().getElapsedTimeInSec() < 80) {
+ utils::sleep_for_secs(1);
+ return false;
+ }
+ robot.logger().info() << "GOOOOOO O_goNS." << logs::end;
+
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(900, 800, -180, true, 1000000, 1, 1, false);
+ //ts = robot.asserv().doMoveForwardAndRotateTo(900, 800, -180);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " centre ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+
+ }
+ robot.svgPrintPosition();
+ robot.logger().info() << "TEST positions adv...." << logs::end;
+
+ utils::sleep_for_secs(3);
+
+ ASensorsDriver::bot_positions vadv = robot.actions().sensors().getPositionsAdv();
+ bool south = false;
+ int miny = 2000;
+ for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
+
+ robot.logger().info() << "TEST en direct : vadv nb="
+ << vadv.size()
+ << " detected="
+ << vadv[i].nbDetectedBots
+ << " x="
+ << vadv[i].x
+ << " y="
+ << vadv[i].y
+ << " a="
+ << vadv[i].theta
+ << " d="
+ << vadv[i].d
+ << logs::end;
+
+ if (vadv[i].y < miny) {
+ miny = vadv[i].y;
+ }
+ }
+ if (miny > 800) south = true;
+ robot.logger().info() << "south =" << south << logs::end;
+ //si temps >85 on termine par cette tache
+
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+
+ if (south) {
+ robot.logger().info() << " zone_south choosen" << ts << logs::end;
+ //robot.ia().iAbyPath().goToZone("zone_north", &zoneN);
+ robot.ia().iAbyPath().goToZone("zone_south", &zone);
+ }
+ else {
+ robot.logger().info() << " zone_north choosen" << ts << logs::end;
+ robot.ia().iAbyPath().goToZone("zone_north", &zone);
+ }
+
+ //detection de l'adversaire
+
+ ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 2, 2, false);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " zone_south  ===== PB COLLISION FINALE -  ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+ }
+
+ robot.svgPrintPosition();
+
+ robot.points += 20;
+ robot.displayPoints();
+
+ return true; //return true si ok sinon false si interruption
+ }
+
+ bool O_push_petitport() {
+ OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+ robot.logger().info() << "start O_push_petitport." << logs::end;
+ TRAJ_STATE ts = TRAJ_OK;
+ RobotPosition zone;
+
+ robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+
+ robot.ia().iAbyPath().goToZone("zone_petitport", &zone);
+
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 2, 2, true);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().info() << " zone_green_left  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+ return false;
+ }
+ robot.svgPrintPosition();
+
+ ts = robot.asserv().doLineAbs(180);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().error() << " on pousse le vert  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ robot.svgPrintPosition(2);
+ }
+ robot.svgPrintPosition();
+
+ ts = robot.asserv().doLineAbs(-90);
+ if (ts != TRAJ_FINISHED) {
+ robot.logger().error() << " on pousse le vert  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+ robot.asserv().resetEmergencyOnTraj();
+ }
+ robot.svgPrintPosition();
+ return true; //return true si ok sinon false si interruption
+ }
+ */
 
 /*
  bool O_fake_blue()
@@ -1025,84 +1134,3 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest() {
  robot.ia().iAbyPath().addPlayground(p_);
  robot.ia().iAbyPath().toSVG();
  }*/
-
-void O_State_DecisionMakerIA::execute() {
-    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-
-//wait for init!
-    while (!robot.waitForInit()) {
-        usleep(1000);
-        //logger().error() << "waitForInit..." << logs::end;
-    }
-//logger().debug() << "waitForInit passed !!!!!!!" << logs::end;
-
-    logger().info() << "Strategy to be applied = " << robot.strategy() << logs::end;
-
-    if (robot.strategy() == "tabletest") {
-        IASetupActivitiesZoneTableTest();
-
-        //enable zone if necessary
-        //robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
-        //robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
-
-    }
-    else if (robot.strategy() == "all") {
-        IASetupActivitiesZone(); //definit les activities
-
-        //enable zone if necessary
-        //robot.ia().iAbyPath().enable(robot.ia().oarea_cube3left, 0);
-        //robot.ia().iAbyPath().enable(robot.ia().garea_cube3left, 0);
-
-    }
-    else {
-        logger().error() << "NO STRATEGY " << robot.strategy() << " FOUND !!! " << logs::end;
-    }
-
-//wait for the start of the chrono !
-    while (!robot.chrono().started()) {
-        usleep(10000);
-    }
-
-    logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
-    /*
-     //init rouge
-     TRAJ_STATE ts = robot.asserv().doMoveForwardTo(330, 463);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().error() << " doMoveForwardTo(330, 463);  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
-     << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     }
-     ts = robot.asserv().doAbsoluteRotateTo(150);
-
-     robot.points += 6;
-     robot.displayPoints();
-     ts = robot.asserv().doLineAbs(-100);
-     if (ts != TRAJ_FINISHED) {
-     robot.logger().error() << " doLineAbs(-100)  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
-     robot.asserv().resetEmergencyOnTraj();
-     }
-     robot.points += 35;
-     robot.displayPoints();
-
-     if (robot.getMyColor() == PMXYELLOW) {
-     robot.ia().iAbyPath().enable(robot.ia().area_alea_yellow, 0);
-     } else {
-     robot.ia().iAbyPath().enable(robot.ia().area_alea_violet, 0);
-     }*/
-
-    //On ajoute le timer de detection
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    robot.actions().sensors().addTimerSensors(200);
-
-    robot.ia().iAbyPath().ia_start();        //launch IA
-
-    //robot.actions().ledBar().startK2mil(100, 100000, LED_GREEN);
-
-    robot.freeMotion();
-
-    robot.svgPrintEndOfFile();
-    logger().info() << "O_State_DecisionMakerIA svgPrintEndOfFile" << logs::end;
-
-}
-

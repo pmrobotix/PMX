@@ -27,10 +27,7 @@ public:
         return instance;
     }
 
-    ~OPOS6UL_RobotExtended()
-    {
-        stopExtraActions();
-    }
+    ~OPOS6UL_RobotExtended();
 
     inline OPOS6UL_ActionsExtended& actions()
     {
@@ -52,9 +49,8 @@ public:
 
     void begin(int argc, char** argv);
 
-    void stopExtraActions();
-
     void displayPoints();
+    void stopExtraActions();
 
     void resetDisplayTS();
     void displayTS(TRAJ_STATE ts);
@@ -62,7 +58,9 @@ public:
     void displayObstacle(int level);
 
     O_State_DecisionMakerIA* decisionMaker_;
-    bool blue_done;
+
+    //data 2022
+
 
 private:
 

@@ -12,9 +12,6 @@ BeaconSensors::BeaconSensors(int bus, unsigned char i2c_addr) :
 {
     //logger().debug() << "BeaconSensors(" << reinterpret_cast<void*>(i2c_addr) << ") : BeaconSensors init" << logs::end;
     i2c_aAddr_ = i2c_addr;
-
-
-
 }
 
 bool BeaconSensors::connect() {
@@ -27,37 +24,36 @@ bool BeaconSensors::connect() {
         connected_BeaconSensors_ = false;
         logger().error() << "BeaconSensors::begin() : NOT CONNECTED!" << logs::end;
     }
-    /*
-     while(1)
-     {
-     //logger().debug() << "while1" << logs::end;
 
-     unsigned char buf[18] = { 0 };
-     Registers regs;
-     // regs = getData();
+//    while (1) {
+//        //logger().debug() << "while1" << logs::end;
+//
+//        unsigned char buf[18] = { 0 };
+//        Registers regs;
+//        // regs = getData();
+//
+//        err = readRegnBytes(56, buf, 2);
+//        if (err < 0) {
+//            logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
+//            regs.flags = 0xFF; //ERROR
+//        }else
+//        {
+//        regs.d1_mm = buf[0] | (buf[1] << 8);
+//        logger().error() << " d1:" << regs.d1_mm << logs::end;
+//        }
+//        usleep(200000);
+//    }
 
-     err = readRegnBytes(56, buf, 2);
-     if (err < 0) {
-     logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
-     regs.flags = 0xFF; //ERROR
-     }
-     regs.d1_mm = buf[0] | (buf[1] << 8);
-     logger().debug() << " d1:" << regs.d1_mm
-     << logs::end;
-     usleep(200000);
-     }
-     */
     return connected_BeaconSensors_;
 }
 
-
-void BeaconSensors::display(int number)
-{
-    uint8_t n=(uint8_t)number;
+void BeaconSensors::display(int number) {
+    uint8_t n = (uint8_t) number;
     int err = i2c_BeaconSensors_.writeReg(0x02, &n, 1);
+    if (err < 0) {
+        logger().error() << "BeaconSensors::display() : error writereg err=" << err << logs::end;
+    }
 }
-
-
 
 Registers BeaconSensors::getData() {
 
@@ -103,6 +99,21 @@ Registers BeaconSensors::getData() {
             << " C8:"
             << regs.c8_mm
             << logs::end;
+
+    //cas de l'ADC 2022
+    //default=>510
+    //4,7k =>462
+    //1k=>340
+    //470=>246
+
+    err = readRegnBytes(22, buf, 2);
+    if (err < 0) {
+        logger().error() << "getData() : readRegnBytes ERROR !" << logs::end;
+        regs.flags = 0xFF; //ERROR
+        return regs;
+    }
+    regs.reserved_analog = buf[0] | (buf[1] << 8);
+    ;
 
     err = readRegnBytes(24, buf, 8);
     if (err < 0) {
