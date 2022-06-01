@@ -77,8 +77,6 @@ protected:
 
 
     //DATA
-
-
     bool empty_ = true;
     int useExternalEncoder_ = 1;
     int skipSetup_ = 0;

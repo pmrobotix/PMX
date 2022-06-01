@@ -28,7 +28,7 @@
 #define AXT_AX_MISSING                  8
 
 // Errors
-#define AXT_ERROR_SEND_CMD    -2000;
+#define AXT_ERROR_SEND_CMD              -2000;
 #define   AXT_ERROR_READ_STATUS         -3000;
 #define AXT_ERROR_CRC                   -4000;
 

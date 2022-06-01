@@ -56,6 +56,7 @@ public:
 
     //void deployByTimerTask(int servo, int pos, int keep_millisec = -1);
     void deploy(int servo, int pos, int keep_millisec = -1);
+    void deployWithVelocity(int servo, int pos, int keep_millisec = -1, int velocity = 1023);
 
     void turn(int servo, int speed, int keep_millisec = 0);
     void release(int servo);

@@ -29,6 +29,11 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
 
     uint c = 0;
     bool stop = false;
+
+    //int carre_2_2022_done = 0;
+    int carre_2022_todo = 0;
+    int nb_carre = 0;
+
     while (robot.chrono().getElapsedTimeInSec() <= 100 || stop == true) {
 
         //ARU
@@ -36,12 +41,107 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
             //printf("===== ARU pressed !!!!!!\n");
             logger().error() << "ARU pressed !!!!!!" << logs::end;
             //stop all robot
+            robot.asserv().setEmergencyStop();
             robot.asserv().stopMotors();
+
             stop = true;
             break;
         }
 
-        std::this_thread::sleep_for(std::chrono::microseconds(50000));
+        if (robot.activate_push_2022 > 0) {
+            int x_push = robot.asserv().pos_getX_mm();
+            this->logger().info() << "x_push=" << x_push << logs::end;
+
+            if (robot.getMyColor() == PMXYELLOW) {
+                //carré 2 //852
+                if (x_push > 820 && x_push < 890) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+                //carré 3 //1037
+                if (robot.square_pattern != 3 && (x_push > 1030 && x_push < 1055)) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+                //carré 4 //1222
+                if (x_push > (1200) && x_push < (1240)) {
+                    carre_2022_todo = 1;
+                    //robot.points += 5;
+                }
+                //carré 5 //1222+185
+                if (x_push > (1200 + 185) && x_push < (1240 + 185)) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+                //carré 6 //1222+185+185
+                if (x_push > (1200 + 185 + 185) && x_push < (1240 + 185 + 185)) {
+                    carre_2022_todo = 1;
+                    //robot.points += 5;
+                }
+
+                //carré 7 //1222+185+185+185
+                if (x_push > (1200 + 185 + 185 + 185) && x_push < (1240 + 185 + 185 + 185)) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+            }
+            else {
+                //VIOLET
+
+                //carré 2 //852
+                if (x_push < (3000-820) && x_push > (3000-890)) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+                //carré 3 //1037
+                if (robot.square_pattern != 3 && (x_push < (3000 - 1030) && x_push > (3000-1055))) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+                //carré 4 //1222
+                if (x_push < (3000-1200) && x_push > (3000- 1240)) {
+                    carre_2022_todo = 1;
+                    //robot.points += 5;
+                }
+                //carré 5 //1222+185
+                if (x_push < (3000- (1200 + 185)) && x_push > (3000- (1240 + 185))) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+                //carré 6 //1222+185+185
+                if (x_push < (3000 - (1200 + 185 + 185)) && x_push > (3000 - (1240 + 185 + 185))) {
+                    carre_2022_todo = 1;
+                    //robot.points += 5;
+                }
+
+                //carré 7 //1222+185+185+185
+                if (x_push < (3000 - (1200 + 185 + 185 + 185)) && x_push > (3000 - (1240 + 185 + 185 + 185))) {
+                    carre_2022_todo = 1;
+                    robot.points += 5;
+                }
+
+            }
+
+            if (carre_2022_todo) {
+                nb_carre++;
+                this->logger().info() << "PUSH SQUARE  with x_push=" << x_push << " nb=" << nb_carre << logs::end;
+
+                if (robot.getMyColor() == PMXYELLOW) {
+                    robot.actions().square_push_right(500);
+                    robot.actions().square_middle_init(0);
+                }
+                else {
+                    robot.actions().square_push_left(500);
+                    robot.actions().square_middle_init(0);
+                }
+                carre_2022_todo = 0; //une seule fois
+            }
+
+        }
+        if (robot.activate_push_2022 > 0) {
+            std::this_thread::sleep_for(std::chrono::microseconds(25000));
+        }
+        else std::this_thread::sleep_for(std::chrono::microseconds(50000));
 
         if (c % 20 == 0) {
             robot.displayPoints();
@@ -52,7 +152,6 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
 
     this->logger().debug() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.asserv().stopMotors();
-    robot.freeMotion();
 
     robot.end90s(true); //indique que l'action est effectuée au prog princ
 
@@ -62,7 +161,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
         robot.decisionMaker_->cancel();
     }
 
-    //init robot for end
+//init robot for end
     robot.freeMotion(); //stop the robot
 
     robot.stopExtraActions(); //stop sensors timer, stop specific actions, can take time for servos...
@@ -79,7 +178,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
 //    if (!stop) {
     ButtonTouch b = BUTTON_NONE;
 
-    //cas de ARU pressed
+//cas de ARU pressed
     if (robot.actions().tirette().pressed()) {
         while (1) {
             logger().debug() << "cas de ARU pressed" << logs::end;
@@ -88,7 +187,6 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
             robot.actions().lcd().clear();
             robot.actions().lcd().display_content_integer(robot.points, 4);
             robot.actions().lcd().display_content_string("points ?", 5);
-
 
             b = robot.actions().buttonBar().checkOneOfAllPressed();
             if (b == BUTTON_BACK_KEY) {
@@ -134,7 +232,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
         }
     }
 
-    //   }
+//   }
 
     return NULL; //finish all state
 }

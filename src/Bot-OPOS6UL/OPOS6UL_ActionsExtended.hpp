@@ -58,36 +58,35 @@ public:
      * port-servo port1-4=1000-4000 servo=1-255 => 1000 à 4255
      * [num port] * 1000 + [num servo]
      */
-    enum ServoAx12Label
-    {
-        AX12_SERVO_BRAS_D = 1*1000+5, //AX12
+    enum ServoAx12Label {
+        AX12_SERVO_BRAS_D = 1 * 1000 + 5, //AX12
 
-        AX12_SERVO_BRAS_G = 1000+7, //AX12
+        AX12_SERVO_BRAS_G = 1000 + 7, //AX12
 
-        AX12_SERVO_ELEVATOR_R = 1000+4, //AX12
+        AX12_SERVO_ELEVATOR_R = 1000 + 4, //AX12
 
-        AX12_SERVO_ELEVATOR_L = 1000+6, //AX12
+        AX12_SERVO_ELEVATOR_L = 1000 + 6, //AX12
 
-        AX12_SERVO_ARM_R_TOP = 1000+182, //AX18
+        AX12_SERVO_ARM_R_TOP = 1000 + 182, //AX18
 
-        AX12_SERVO_ARM_L_TOP = 1000+63, //AX18
+        AX12_SERVO_ARM_L_TOP = 1000 + 63, //AX18
 
-        AX12_SERVO_ARM_R_BOTTOM = 1000+52, //AX12
+        AX12_SERVO_ARM_R_BOTTOM = 1000 + 52, //AX12
 
-        AX12_SERVO_ARM_L_BOTTOM = 1000+3, //AX12
+        AX12_SERVO_ARM_L_BOTTOM = 1000 + 3, //AX12
 
         AX12_enumTypeEnd
     };
 
     /*!
-         * \brief Enumération des libellés des servos STD associés au numéro de servo
-         *  port=10000
-         */
+     * \brief Enumération des libellés des servos STD associés au numéro de servo
+     *  port=10000
+     */
     enum ServoStdLabel {
 
-        STD_SERVO_3 = 10000*5,
+        STD_SERVO_3 = 10000 * 5,
 
-        STD_SERVO_4 = 10000*4,
+        STD_SERVO_4 = 10000 * 4,
 
         SERVO_enumTypeEnd
     };
@@ -157,14 +156,15 @@ public:
     //Actions 2021
     //--------------------------------------------------------------
     void releaseAll() {
-//        servosAx12().release(51);
-//        servosAx12().release(5);
-//        servosAx12().release(7);
-//        servosAx12().release(4);
-//        servosAx12().release(100);
-//        servosAx12().release(102);
-//        servosAx12().release(61);
-//        servosAx12().release(63);
+
+        servos().release(AX12_SERVO_BRAS_D);
+        servos().release(AX12_SERVO_BRAS_G);
+        servos().release(AX12_SERVO_ELEVATOR_L);
+        servos().release(AX12_SERVO_ELEVATOR_R);
+        servos().release(AX12_SERVO_ARM_L_BOTTOM);
+        servos().release(AX12_SERVO_ARM_R_BOTTOM);
+        servos().release(AX12_SERVO_ARM_L_TOP);
+        servos().release(AX12_SERVO_ARM_R_TOP);
 
 //        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++) {
 //            ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
@@ -185,107 +185,206 @@ public:
 //          }
     }
 
-
-
-
-
- /*
-    void ax12_init() {
-
-        //on monte le barillet
-        ax12_elevator_up(true);
-        //TODO fermer les portes
-
-        //monter baisser le drapeau
-        //ax12_drapeaux();
-        ax12_drapeaux_init();
-
-        //remonter les bras
-        ax12_bras_droit_init();
-        ax12_bras_gauche_init();
-    }
-
-    void ax12_drapeaux_init() {
-//        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
-//        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 806, -1);
-    }
-    void ax12_drapeaux() {
-//        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
-//        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 204, -1);
-    }
-
     void ax12_bras_droit_init(int keep = 0, int speed = 1024) {
-//        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
-//        servosAx12().deploy(AX12_SERVO_BRAS_D, 815, keep);
+        servos().setSpeed(AX12_SERVO_BRAS_D, speed);
+        servos().deploy(AX12_SERVO_BRAS_D, 815, keep);
     }
     void ax12_bras_droit(int keep = 0, int speed = 1024) {
-//        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
-//        servosAx12().deploy(AX12_SERVO_BRAS_D, 480, keep);
-    }
-    void ax12_bras_droit_fanion(int keep = 0, int speed = 1024) {
-//        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
-//        servosAx12().deploy(AX12_SERVO_BRAS_D, 396, keep);
+        servos().setSpeed(AX12_SERVO_BRAS_D, speed);
+        servos().deploy(AX12_SERVO_BRAS_D, 480, keep);
     }
 
     void ax12_bras_gauche_init(int keep = 0, int speed = 1024) {
-//        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
-//        servosAx12().deploy(AX12_SERVO_BRAS_G, 205, keep);
+        servos().setSpeed(AX12_SERVO_BRAS_G, speed);
+        servos().deploy(AX12_SERVO_BRAS_G, 205, keep);
     }
     void ax12_bras_gauche(int keep = 0, int speed = 1024) {
-//        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
-//        servosAx12().deploy(AX12_SERVO_BRAS_G, 512, keep);
-    }
-    void ax12_bras_gauche_fanion(int keep = 0, int speed = 1024) {
-//        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
-//        servosAx12().deploy(AX12_SERVO_BRAS_G, 598, keep);
+        servos().setSpeed(AX12_SERVO_BRAS_G, speed);
+        servos().deploy(AX12_SERVO_BRAS_G, 512, keep);
     }
 
-    void ax12_elevator_up(bool keep = true) {
-//        int high = 3865;
-//        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1023);
-//        servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
-//        while (servosAx12().getPos(AX12_SERVO_ASCENSEUR) > (high - 5)) {
-//            servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
-//        }
-//        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
-    }
-    void ax12_elevator_down(bool keep = true) {
-//        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1000);
-//        servosAx12().deploy(AX12_SERVO_ASCENSEUR, 553, -1);
-//        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
+    void elevator2022_init(int keep = 0, int speed = 1024) {
+//        servos().setSpeed(AX12_SERVO_ELEVATOR_L, speed);
+//        servos().setSpeed(AX12_SERVO_ELEVATOR_R, speed);
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 459, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 562, keep, speed);
     }
 
-    void ax12_rotation_black_side(bool keep = true) {
-//        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
-//        servosAx12().deploy(AX12_SERVO_ROTATION, 3905, -1);
-//        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
+    //deploy full avec bras devant
+    void elevator2022_deploy(int keep = 0, int speed = 1024) {
+//        servos().setSpeed(AX12_SERVO_ELEVATOR_L, speed);
+//        servos().setSpeed(AX12_SERVO_ELEVATOR_R, speed);
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 766, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 254, keep, speed);
     }
 
-    void ax12_rotation_blue_side(bool keep = true) {
-//        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
-//        servosAx12().deploy(AX12_SERVO_ROTATION, 123, -1);
-//        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
+    void elevator2022_niv1(int keep = 0, int speed = 1024) {
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 627, 0, speed);    //584
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 388, keep, speed);    //432
     }
 
-    void ax12_pince_a_droite(bool keep = true) {
-//        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
-//        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 889, -1);
-//        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+    void elevator2022_niv2(int keep = 0, int speed = 1024) {
+
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 660, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 348, keep, speed);
+    }
+    void elevator2022_niv3(int keep = 0, int speed = 1024) {
+
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 734, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 274, keep, speed);
     }
 
-    void ax12_pince_a_gauche(bool keep = true) {
-//        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
-//        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 108, -1);
-//        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+    void arm_R_take(int keep = 0, int speed = 1024) {
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 463, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 266, keep, speed);
     }
 
-    void ax12_pince_au_centre(bool keep = true) {
-//        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
-//        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 486, -1);
-//        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+    void arm_R_side_init(int keep = 0, int speed = 1024) {
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 575, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 141, keep, speed);
     }
 
-    */
+    void arm_R_deploy1(int keep = 0, int speed = 1024) {
+
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 652, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 124, keep, speed);
+    }
+    void arm_R_deploy2(int keep = 0, int speed = 1024) {
+
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 780, -1, speed);
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 124, keep, speed);
+    }
+
+    void arm_R_deploy3(int keep = 0, int speed = 1024) {
+
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 635, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 380, keep, speed);
+
+    }
+
+    void arm_L_take(int keep = 0, int speed = 1024) {
+        servos().deployWithVelocity(AX12_SERVO_ARM_L_TOP, 539, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ARM_L_BOTTOM, 784, keep, speed);
+    }
+
+    void arm_L_side_init(int keep = 0, int speed = 1024) {
+        servos().deployWithVelocity(AX12_SERVO_ARM_L_TOP, 445, 0, speed);
+        servos().deployWithVelocity(AX12_SERVO_ARM_L_BOTTOM, 876, keep, speed);
+    }
+
+    void pump_R(int activate) {
+        tirette().setGPIO(4, activate);
+    }
+
+    void pump_R_electrov(int activate) {
+        tirette().setGPIO(5, activate);
+    }
+
+    void pump_L(int activate) {
+        tirette().setGPIO(6, activate);
+    }
+
+    void pump_L_electrov(int activate) {
+        tirette().setGPIO(7, activate);
+    }
+
+    /*
+     void ax12_init() {
+
+     //on monte le barillet
+     ax12_elevator_up(true);
+     //TODO fermer les portes
+
+     //monter baisser le drapeau
+     //ax12_drapeaux();
+     ax12_drapeaux_init();
+
+     //remonter les bras
+     ax12_bras_droit_init();
+     ax12_bras_gauche_init();
+     }
+
+     void ax12_drapeaux_init() {
+     //        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
+     //        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 806, -1);
+     }
+     void ax12_drapeaux() {
+     //        servosAx12().setSpeed(AX12_SERVO_DRAPEAUX, 400);
+     //        servosAx12().deploy(AX12_SERVO_DRAPEAUX, 204, -1);
+     }
+
+     void ax12_bras_droit_init(int keep = 0, int speed = 1024) {
+     //        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
+     //        servosAx12().deploy(AX12_SERVO_BRAS_D, 815, keep);
+     }
+     void ax12_bras_droit(int keep = 0, int speed = 1024) {
+     //        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
+     //        servosAx12().deploy(AX12_SERVO_BRAS_D, 480, keep);
+     }
+     void ax12_bras_droit_fanion(int keep = 0, int speed = 1024) {
+     //        servosAx12().setSpeed(AX12_SERVO_BRAS_D, speed);
+     //        servosAx12().deploy(AX12_SERVO_BRAS_D, 396, keep);
+     }
+
+     void ax12_bras_gauche_init(int keep = 0, int speed = 1024) {
+     //        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
+     //        servosAx12().deploy(AX12_SERVO_BRAS_G, 205, keep);
+     }
+     void ax12_bras_gauche(int keep = 0, int speed = 1024) {
+     //        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
+     //        servosAx12().deploy(AX12_SERVO_BRAS_G, 512, keep);
+     }
+     void ax12_bras_gauche_fanion(int keep = 0, int speed = 1024) {
+     //        servosAx12().setSpeed(AX12_SERVO_BRAS_G, speed);
+     //        servosAx12().deploy(AX12_SERVO_BRAS_G, 598, keep);
+     }
+
+     void ax12_elevator_up(bool keep = true) {
+     //        int high = 3865;
+     //        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1023);
+     //        servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
+     //        while (servosAx12().getPos(AX12_SERVO_ASCENSEUR) > (high - 5)) {
+     //            servosAx12().deploy(AX12_SERVO_ASCENSEUR, high, -1);
+     //        }
+     //        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
+     }
+     void ax12_elevator_down(bool keep = true) {
+     //        servosAx12().setSpeed(AX12_SERVO_ASCENSEUR, 1000);
+     //        servosAx12().deploy(AX12_SERVO_ASCENSEUR, 553, -1);
+     //        if (!keep) servosAx12().release(AX12_SERVO_ASCENSEUR);
+     }
+
+     void ax12_rotation_black_side(bool keep = true) {
+     //        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
+     //        servosAx12().deploy(AX12_SERVO_ROTATION, 3905, -1);
+     //        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
+     }
+
+     void ax12_rotation_blue_side(bool keep = true) {
+     //        servosAx12().setSpeed(AX12_SERVO_ROTATION, 1000);
+     //        servosAx12().deploy(AX12_SERVO_ROTATION, 123, -1);
+     //        if (!keep) servosAx12().release(AX12_SERVO_ROTATION);
+     }
+
+     void ax12_pince_a_droite(bool keep = true) {
+     //        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
+     //        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 889, -1);
+     //        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+     }
+
+     void ax12_pince_a_gauche(bool keep = true) {
+     //        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
+     //        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 108, -1);
+     //        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+     }
+
+     void ax12_pince_au_centre(bool keep = true) {
+     //        servosAx12().setSpeed(AX12_SERVO_PINCE_SS_ROBOT, 512);
+     //        servosAx12().deploy(AX12_SERVO_PINCE_SS_ROBOT, 486, -1);
+     //        if (!keep) servosAx12().release(AX12_SERVO_PINCE_SS_ROBOT);
+     }
+
+     */
     /*
      void ax12_init()
      {

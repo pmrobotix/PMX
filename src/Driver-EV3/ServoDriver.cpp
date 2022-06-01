@@ -413,7 +413,7 @@ int ServoDriver::getTorque(int servo) {
 }
 
 int ServoDriver::ping(int servo) {
-    logger().error() << "ping() NOT IMPLEMENTED" << logs::end;
+    logger().debug() << "ping() NOT IMPLEMENTED" << logs::end;
     return 0;
 }
 

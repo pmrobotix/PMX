@@ -22,6 +22,11 @@ private:
 public:
 
     //Configuration per robot and strategy
+
+
+    PlaygroundObjectID area_start_violet;
+    PlaygroundObjectID area_start_yellow;
+
     PlaygroundObjectID area_alea_violet;
     PlaygroundObjectID area_alea_yellow;
 

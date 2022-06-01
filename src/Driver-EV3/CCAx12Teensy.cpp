@@ -63,6 +63,7 @@ bool CCAx12Teensy::connect(short int i2c_aAddr) {
     if (err >= 0) {
         connected_ = true;
 
+        /*
         while (1) {
             //logger().error() << "setLedOn" << logs::end;
 
@@ -87,7 +88,7 @@ bool CCAx12Teensy::connect(short int i2c_aAddr) {
             //
             usleep(200000);
 
-        }
+        }*/
     }
     else {
         connected_ = false;

@@ -21,27 +21,22 @@ ServoDriver::ServoDriver() :
 {
     logger().debug() << "ServoDriver::ServoDriver()" << logs::end;
 
-//    //TODO le type est connu par la denomination port-servo
-//    for (int i = 0; i < NB_SERVO_DYN; i++) {
-//
-//        servo_type_[i] = AServoDriver::SERVO_DYNAMIXEL;
-//    }
-
     int conn = CCAx12Teensy::instance().connect(AX12TEENSY_ADDR);
-    /*
-     //loop
-     while (1) {
-     CCAx12Teensy::instance().setLedOn(4);
-     setPulsePos(1007, 312, 0);
-     usleep(500000);
-     CCAx12Teensy::instance().setLedOff(4);
-     setPulsePos(1007, 512, 0);
-     usleep(500000);
-     //int p = CCAx12Teensy::instance().pingAX(1, 7);
-     int p = ping(1007);
-     logger().error() << "CCAx12Teensy...conn=" << conn << " p=" << p << logs::end;
-     }*/
 
+    /*
+    setRate(1007, 1023);
+    //loop
+    while (1) {
+        CCAx12Teensy::instance().setLedOn(4);
+        setPulsePos(1007, 312, 100);
+        usleep(3000000);
+        CCAx12Teensy::instance().setLedOff(4);
+        setPulsePos(1007, 512, 100);
+        usleep(3000000);
+        //int p = CCAx12Teensy::instance().pingAX(1, 7);
+        int p = ping(1007);
+        logger().error() << "CCAx12Teensy...conn=" << conn << " p=" << p << logs::end;
+    }*/
 }
 
 //DEPRECATED
@@ -63,6 +58,7 @@ void ServoDriver::hold(int servo) {
     }
 }
 
+//TODO rate_milli a refaire, actuellement c'est la velocity
 void ServoDriver::setPulsePos(int servo, int pulsewidth, int rate_milli) {
     if (!testIf(servo, 0, MAXPORTNUM)) return;
     int port = servo / 1000;
@@ -75,7 +71,20 @@ void ServoDriver::setPulsePos(int servo, int pulsewidth, int rate_milli) {
 
         int r = CCAx12Teensy::instance().writeAXData(port, servo, P_GOAL_POSITION, pulsewidth);
         if (r < 0)
-            logger().error() << "setPulsePos() writeAXData ERROR port=" << port << " servo=" << servo << " pulsewidth=" << pulsewidth << logs::end;
+            logger().error() << "setPulsePos() writeAXDataP_GOAL_POSITION ERROR port=" << port << " servo=" << servo << " pulsewidth=" << pulsewidth << logs::end;
+
+        if (rate_milli > 0) {
+            int r = CCAx12Teensy::instance().writeAXData(port, servo, P_GOAL_SPEED, rate_milli);
+            if (r < 0)
+                logger().error() << "setPulsePos() writeAXData P_GOAL_SPEED ERROR port="
+                        << port
+                        << " servo="
+                        << servo
+                        << " rate_milli="
+                        << rate_milli
+                        << logs::end;
+
+        }
     }
 }
 
@@ -97,7 +106,7 @@ void ServoDriver::release(int servo) {
     }
 }
 
-void ServoDriver::setRate(int servo, int speed) {
+void ServoDriver::setRate(int servo, int speed) { //TODO set torque
     if (!testIf(servo, 0, MAXPORTNUM)) return;
     int port = servo / 1000;
     if (port == 10) {

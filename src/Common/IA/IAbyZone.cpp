@@ -191,7 +191,7 @@ void IAbyZone::ia_start()
             }
 
         }
-        //sleep(1);
+
     }
 }
 

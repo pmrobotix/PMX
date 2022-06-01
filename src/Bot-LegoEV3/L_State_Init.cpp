@@ -187,7 +187,9 @@ L_State_Init::execute(Robot&)
                 }
 
                 robot.actions().init_servos();
-                usleep(2000000);
+
+                std::this_thread::sleep_for(std::chrono::microseconds(2000000));
+                //usleep(2000000);
                 robot.actions().init_mettre_cube();
             }
             if (b == BUTTON_DOWN_KEY) {
@@ -202,7 +204,8 @@ L_State_Init::execute(Robot&)
 //                //on quitte le programme!!
 //                exit(0);
 //            }
-            usleep(100000);
+            std::this_thread::sleep_for(std::chrono::microseconds(100000));
+            //usleep(100000);
         }
 
         setPos();
@@ -210,7 +213,10 @@ L_State_Init::execute(Robot&)
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd().display_content_string("METTRE LA TIRETTE", 4);
 
+
+        int sw = 0;
         //robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
+        robot.actions().sensors().addTimerSensors(200);
         int nb_tirette = 0;
         b = BUTTON_NONE;
         while (nb_tirette < 3) {
@@ -230,14 +236,48 @@ L_State_Init::execute(Robot&)
             if (b == BUTTON_ENTER_KEY) {
                 break;
             }
-            usleep(1000);
+
+            //sleep
+            std::this_thread::sleep_for(std::chrono::microseconds(1000));
+
+
+            logger().info() << "ADC=" << robot.actions().sensors().getADC() << logs::end;
+
+            //on bouge le bras si le dialogue avec la balise et les servos.
+            if (robot.actions().sensors().getADC() > 500 && robot.actions().sensors().getADC() < 520) {
+
+                sw++;
+                if (robot.getMyColor() == PMXYELLOW) {
+                    if (sw % 2) {
+
+                        robot.actions().arm_right_deploy(0);
+                    }
+                    else {
+                        robot.actions().arm_right_init(0);
+                    }
+                }
+                else {
+                    if (sw % 2) {
+                        robot.actions().arm_left_deploy(0);
+                    }
+                    else {
+                        robot.actions().arm_left_init(0);
+                    }
+                }
+            }
+
         }
+
+        robot.actions().sensors().stopTimerSensors();
 
         //tirette
         if (robot.getMyColor() == PMXYELLOW) robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_YELLOW, false);
         else robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_RED, false);
 
         robot.waitForInit(true);
+
+        robot.actions().arm_left_init(0);
+        robot.actions().arm_right_init(0);
 
         robot.actions().lcd().clear();
         //logger().info() << "PMX...WAIT TIRETTE !";
@@ -301,7 +341,8 @@ L_State_Init::execute(Robot&)
         setPos();
 
         robot.waitForInit(true);
-        usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
+        std::this_thread::sleep_for(std::chrono::microseconds(500000));
+        //usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
     }
     robot.actions().lcd().clear();
 
@@ -329,7 +370,9 @@ void L_State_Init::setPos() {
     robot.asserv().resetEncoders();
 
     robot.asserv().startMotionTimerAndOdo(false); //demarrage asserv sans assistedhandling
-    robot.asserv().setPositionAndColor(126, 1590 - 247 / 2.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
+    //position Suisse : robot.asserv().setPositionAndColor(126, 1590 - 247 / 2.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
+    int yy = 1010 + 247 / 2.0;
+    robot.asserv().setPositionAndColor(126, yy, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
     robot.svgPrintPosition();
 
     //active l'asservissement
@@ -338,15 +381,12 @@ void L_State_Init::setPos() {
 
     robot.asserv().doLineAbs(100);
 
-    robot.asserv().doMoveForwardTo(260, 1150);
+    robot.asserv().doMoveForwardTo(260, yy);
 
 //Faire un faceTo sur le point de destination
-    //    if (robot.getMyColor() == PMXYELLOW) {
-    //    //robot.asserv().doFaceTo(700, 1600); //TODO, pas de transcription de jaune et violet ?
-    //    }else
-    //    {
-    //        //robot.asserv().doFaceTo(700, 1600);
-    //    }
+    robot.asserv().doFaceTo(430, 430);
+
+    robot.asserv().doLineAbs(-10);
 
     robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;

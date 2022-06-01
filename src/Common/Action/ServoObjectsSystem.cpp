@@ -39,6 +39,51 @@ void ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valu
 //keep_millisec = -1 : wait moving until position
 //keep_millisec > 0 : time to wait
 //keep_millisec = 0 : continue and hold
+void ServoObjectsSystem::deployWithVelocity(int servo, int pos, int keep_millisec , int velocity )
+{
+    hold(servo);
+        servodriver_->setPulsePos(servo, pos, velocity); // percentage
+        if (keep_millisec > 0) {
+            utils::sleep_for_micros(keep_millisec * 1000); //TODO verifier la torque
+            release(servo);
+        }
+        else if (keep_millisec <= -1) {
+
+            while (int r = servodriver_->getMoving(servo) >= 1) {
+    //            if (r<0)
+    //            {
+    //                logger().info() << "servo=" << servo << " deploy getMoving break"  << logs::end;
+    //                break;
+    //            }
+                r = servodriver_->getMoving(servo);
+
+    //            if (r <= 0 || r >=200) {
+    //                r = servodriver_->getMoving(servo);
+    //            }
+    //            if (r <= 0 || r >=200) {
+    //                            r = servodriver_->getMoving(servo);
+    //                        }
+    //            if (r == 0) {
+    //                int torque = servodriver_->getTorque(servo);
+    //                if (torque > 600)
+    //                {
+    //                    logger().info() << "servo=" << servo << " percent= "<< percent << " TOO MUCH TORQUE torque= "<< torque << logs::end;
+    //                    release(servo);
+    //                    break; //TODO try a 2nde time
+    //                }
+    //            }
+
+                //logger().info() << "wait "<< r << logs::end;
+                utils::sleep_for_micros(2000);
+            }
+        }
+        //int torque = getTorque(servo);
+        logger().info() << "servo=" << servo << " pos= " << pos << logs::end;
+}
+
+//keep_millisec = -1 : wait moving until position
+//keep_millisec > 0 : time to wait
+//keep_millisec = 0 : continue and hold
 void ServoObjectsSystem::deploy(int servo, int pos, int keep_millisec) {
     hold(servo);
     servodriver_->setPulsePos(servo, pos); // percentage

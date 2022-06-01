@@ -129,7 +129,7 @@ int Sensors::getADC() {
 
 int Sensors::RecordADC(bool activate) {
 
-    if (activate) { //uniquement en cas d'activation
+    if (activate) { //uniquement en cas d'activation, on reset puis on releve les données
         for (int i = 0; i < 100; i++) {
             tabADC[i] = -1;
         }
@@ -522,6 +522,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
         return;
     }
 
+    //cas du record ADC de LegoEV3Robot pour 2022
     if (sensors_.robot()->getID() == "LegoEV3Robot") {
         //traitement 2022 ADC
         if (sensors_.recordADC == true) {

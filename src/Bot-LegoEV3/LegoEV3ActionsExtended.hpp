@@ -200,7 +200,7 @@ public:
         servos().deploy(SERVO_3_FORK_R, 2450, keep);
     }
     void fork_front_right_deploy_half(int keep = 0) {
-        servos().deploy(SERVO_3_FORK_R, 1200, keep);
+        servos().deploy(SERVO_3_FORK_R, 1300, keep);
     }
     void fork_front_right_deploy(int keep = 0) {
         servos().deploy(SERVO_3_FORK_R, 750, keep);
@@ -209,7 +209,7 @@ public:
         servos().deploy(SERVO_13_FORK_L, 550, keep);
     }
     void fork_front_left_deploy_half(int keep = 0) {
-        servos().deploy(SERVO_13_FORK_L, 1900, keep);
+        servos().deploy(SERVO_13_FORK_L, 1800, keep);
     }
     void fork_front_left_deploy(int keep = 0) {
         servos().deploy(SERVO_13_FORK_L, 2200, keep);
@@ -221,14 +221,16 @@ public:
         servos().deploy(SERVO_15_ARM_L, 1500, keep);
     }
     void arm_left_deploy(int keep = 0) {
-        servos().deploy(SERVO_15_ARM_L, 450, keep);
+        servos().deploy(SERVO_15_ARM_L, 530, keep); //450
     }
     void arm_right_init(int keep = 0) {
         servos().deploy(SERVO_1_ARM_R, 1500, keep);
     }
     void arm_right_deploy(int keep = 0) {
-        servos().deploy(SERVO_1_ARM_R, 2320, keep);
+        servos().deploy(SERVO_1_ARM_R, 2320, keep); //2320
     }
+
+
 
 //    void test_servo(int speed = 512) {
 //        servos().deploy(SERVO_1, 1900, 0);

@@ -167,7 +167,7 @@ void IAbyPath::ia_start() {
             }
 
         }
-        //sleep(1);
+
     }
 }
 

@@ -28,7 +28,6 @@ void logs::LoggerFactory::initialize()
     add("net", new TelemetryAppender("OPOS6UL", "pmx-vm"));
     add(logs::Level::ERROR, "", "net"); //TELEMETRY + CONSOLE
 
-
     //INFO
     add(logs::Level::INFO, "Robot", "console");
     add(logs::Level::INFO, "OPOS6UL_RobotExtended", "net");

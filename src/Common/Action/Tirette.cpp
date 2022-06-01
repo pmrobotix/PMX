@@ -69,3 +69,9 @@ bool Tirette::waitUnpressed()
     }
     return true;
 }
+
+void Tirette::setGPIO(int p, bool activate)
+{
+    switchdriver_->setGPIO(p, activate);
+}
+

@@ -18,9 +18,12 @@ void LegoEV3IAExtended::initPlayground() {
 
     //bordure terrain
     p_->add_rectangle(1500, 0, 3000, 140, 0); //bottom
-    p_->add_rectangle(1500, 2000, 3000, 140, 0); //top
+    p_->add_rectangle(1500, 2000, 3000, 40, 0); //top
     p_->add_rectangle(0, 1000, 140, 2000, 0); //left
     p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
+
+    //zone depart
+    p_->add_rectangle_lower_left_symmetrical(this->area_start_yellow, this->area_start_violet, 0.0, 1000.0, 500.0, 650.0, 0.0);
 
     //zone de triangle piedestal
     p_->add_rectangle_symmetrical(this->area_triangle_yellow, this->area_triangle_violet, 200.0, 200.0, 300.0, 750.0, M_PI / 4.0);

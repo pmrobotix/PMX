@@ -210,7 +210,6 @@ void ConsoleManager::executeTest(uint nTest, int argc, char** argv)
         tests_[nTest - 1]->run(argc, argv);
     } else {
         std::cout << "The N° must be between 0 and " << tests_.size() << std::endl;
-        //sleep(1);
         cout << "Exit !\n" << endl;
         exit(0);
     }

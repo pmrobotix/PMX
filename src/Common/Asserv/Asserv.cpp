@@ -243,7 +243,7 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
 //TODO doit etre surcharger par robot
 bool Asserv::filtre_IsInFront(int dist_mm, int x_mm, int y_mm, float theta) {
 
-    logger().error() << "filtre_IsInFront dist_mm="<< dist_mm
+    logger().debug() << "filtre_IsInFront dist_mm="<< dist_mm
             <<" x_mm="<< x_mm
             <<" y_mm="<< y_mm
             <<" theta="<< theta
@@ -256,7 +256,7 @@ bool Asserv::filtre_IsInFront(int dist_mm, int x_mm, int y_mm, float theta) {
 //    y = p.y + ((x_mm) * sin(p.theta - M_PI_2)) + (y_mm * sin(p.theta));
     if (y_mm > 0)
     {
-    if (dist_mm < 600) {
+    if (dist_mm < 700) {
         if ((x_mm < 150) && (x_mm > -150)) {
             return true;
         }else
@@ -266,7 +266,7 @@ bool Asserv::filtre_IsInFront(int dist_mm, int x_mm, int y_mm, float theta) {
     }else
         return false;
 }
-
+//todo filtre_IsInBack
 bool Asserv::filtre_IsInBack(int dist_mm, int x_mm, int y_mm, float theta) {
 
     //logger().debug() << "Asserv::filtre_IsInFront Surcharge à faire par config Robot!!!!!!!!" << logs::end;
@@ -285,6 +285,14 @@ bool Asserv::filtre_IsInBack(int dist_mm, int x_mm, int y_mm, float theta) {
     }else
         return false;
 
+}
+void Asserv::setEmergencyStop()
+{
+    if (useAsservType_ == ASSERV_INT_INSA) {
+            //pAsservInsa_->path_ResetEmergencyStop();
+        }
+        else if (useAsservType_ == ASSERV_EXT) asservdriver_->path_InterruptTrajectory();
+        else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_InterruptTrajectory();
 }
 
 void Asserv::resetEmergencyOnTraj(std::string message) {
@@ -1130,6 +1138,7 @@ TRAJ_STATE Asserv::doCalage(int distmm, int percent) {
         //asservdriver_->path_CancelTrajectory();
         asservdriver_->motion_setLowSpeedForward(false);
         asservdriver_->motion_setLowSpeedBackward(false);
+
         asservdriver_->motion_ActivateReguAngle(true);
         asservdriver_->motion_ActivateReguDist(true);
         resetEmergencyOnTraj("doCalage");

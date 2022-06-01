@@ -36,14 +36,17 @@ void OPOS6UL_IAExtended::initPlayground() {
 //    p_->add_rectangle(0, 1000, 140, 2000, 0); //left
 //    p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
+
+
     //zone de triangle piedestal
     p_->add_rectangle_symmetrical(this->area_triangle_yellow, this->area_triangle_violet, 200.0, 200.0, 300.0, 750.0, M_PI / 4.0);
 
     //zone aleatoire
     p_->add_rectangle_lower_left_symmetrical(this->area_alea_yellow, this->area_alea_violet, 700.0, 350.0, 550.0, 550.0, 0);
 
-    //zone hexa depart
-    p_->add_rectangle_lower_left_symmetrical(this->area_3_start_yellow, this->area_3_start_violet, 700.0, 1000.0, 400.0, 540.0, 0.0);
+    //zone 3 hexagones devant depart
+    //p_->add_rectangle_lower_left_symmetrical(this->area_3_start_yellow, this->area_3_start_violet, 700.0, 1000.0, 430.0, 640.0, 0.0);
+    p_->add_rectangle_symmetrical(this->area_3_start_yellow, this->area_3_start_violet, 900.0, 1350.0, 400.0, 400.0, M_PI / 4.0);
 
     //distrib
     p_->add_rectangle_symmetrical(this->area_distrib_yellow, this->area_distrib_violet, 100.0, 750.0, 200.0, 300.0, 0.0);

@@ -37,6 +37,7 @@ public:
     int tirettePressed();
     int backLeftPressed();
     int backRightPressed();
+    void setGPIO(int gpio, bool activate);
 
 };
 

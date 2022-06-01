@@ -25,7 +25,8 @@ ButtonDriver::~ButtonDriver()
 
 bool ButtonDriver::pressed(ButtonTouch button)
 {
-    usleep(10000);
+    //usleep(10000);
+    std::this_thread::sleep_for(std::chrono::microseconds(10000));
     switch (button) {
     case BUTTON_ENTER_KEY:
         return button::enter.pressed();

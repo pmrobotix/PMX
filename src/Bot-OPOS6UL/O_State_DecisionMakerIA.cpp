@@ -22,6 +22,49 @@ O_State_DecisionMakerIA::O_State_DecisionMakerIA(Robot &robot) :
 {
 }
 
+bool O_push_3() {
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    robot.logger().info() << "start O_push_3." << logs::end;
+    TRAJ_STATE ts = TRAJ_OK;
+    RobotPosition zone;
+
+    robot.ia().iAbyPath().goToZone("zone_push_3", &zone);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, true, 40);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << "O_push_3 : zone_push_3  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+        return false;
+    }
+    robot.svgPrintPosition();
+
+    robot.logger().info() << "sleep_for_secs 13." << logs::end;
+    utils::sleep_for_secs(13);
+
+
+//    robot.ia().iAbyPath().enable(robot.ia().area_3_start_yellow, 0);
+//    robot.ia().iAbyPath().enable(robot.ia().area_3_start_violet, 0);
+
+    return true; //return true si ok sinon false si interruption
+}
+
+bool O_end_of_match() {
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    robot.logger().info() << "start O_end_of_match." << logs::end;
+    TRAJ_STATE ts = TRAJ_OK;
+    RobotPosition zone;
+
+    robot.ia().iAbyPath().goToZone("zone_start", &zone);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, false, 0);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << "O_end_of_match : zone_start  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+        return false;
+    }
+    robot.svgPrintPosition();
+
+    return true; //return true si ok sinon false si interruption
+}
+
 bool O_take_distrib_partage() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start O_take_distrib_partage." << logs::end;
@@ -29,13 +72,30 @@ bool O_take_distrib_partage() {
     RobotPosition zone;
 
     robot.ia().iAbyPath().goToZone("zone_distrib_partage", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 510, true, 0);
+    int xx= zone.x;
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xx, zone.y, zone.theta, true, 1000000, 3, 3, true, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_take_trophy : zone_distrib_partage  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
         return false;
     }
     robot.svgPrintPosition();
+
+    //abaisser les bras
+
+    robot.asserv().setLowSpeedForward(true, 25);
+    //move against distributor
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(xx, 1640+80, true, 1000000, 0, 0, false, 0);
+
+    //remonter les bras
+
+    //reculer et tourner
+    //ts = robot.asserv().doLineAbs(-150);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xx, zone.y, zone.theta, true, 1000000, 3, 3, true, 0);
+
+    robot.logger().info() << "sleep_for_secs 40." << logs::end;
+    utils::sleep_for_secs(40);
+
 
     return true; //return true si ok sinon false si interruption
 }
@@ -47,13 +107,15 @@ bool O_take_distrib() {
     RobotPosition zone;
 
     robot.ia().iAbyPath().goToZone("zone_distrib", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 5, 510, true, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 3, 3, true, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_take_trophy : zone_distrib  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
         return false;
     }
     robot.svgPrintPosition();
+
+
 
     return true; //return true si ok sinon false si interruption
 }
@@ -63,31 +125,43 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-    robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 400, 1150, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 250, 1450, 0);
+    //robot.ia().iAbyPath().ia_createZone("zone_end", 800, 500, 400, 400, 1100, 800, -90);
+    robot.ia().iAbyPath().ia_createZone("zone_push_3", 1100, 700, 300, 600, 1100, 1300, 180);
+//
+    robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1640, 90);
+//    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
+//    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
 
-    robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1750, 90);
-    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
-    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
-
+    //robot.ia().iAbyPath().ia_addAction("push_3", &O_push_3);
     robot.ia().iAbyPath().ia_addAction("take_distrib_partage", &O_take_distrib_partage);
-    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
+//    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
+
+    robot.ia().iAbyPath().ia_addAction("end_of_match", &O_end_of_match);
 
     logger().debug() << " END IASetupActivitiesZone" << logs::end;
 }
+
 
 void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest() {
     logger().error() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-    robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 400, 1150, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 250, 1450, 0);
+    //robot.ia().iAbyPath().ia_createZone("zone_end", 800, 500, 400, 400, 1100, 800, -90);
+    robot.ia().iAbyPath().ia_createZone("zone_push_3", 900, 700, 100, 100, 1100, 1300, 180);
+//
+    robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1640, 90);
+//    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
+//    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
 
-    robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1750, 90);
-    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
-    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
-
+    //robot.ia().iAbyPath().ia_addAction("push_3", &O_push_3);
     robot.ia().iAbyPath().ia_addAction("take_distrib_partage", &O_take_distrib_partage);
-    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
+//    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
+
+    robot.ia().iAbyPath().ia_addAction("end_of_match", &O_end_of_match);
+
 
     logger().debug() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
@@ -157,7 +231,7 @@ void O_State_DecisionMakerIA::execute() {
      }*/
 
     //On ajoute le timer de detection
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.actions().sensors().addTimerSensors(200);
 

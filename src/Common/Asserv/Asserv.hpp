@@ -148,6 +148,8 @@ public:
 
     void resetEmergencyOnTraj(std::string message = "default");
 
+    void setEmergencyStop();
+
     //modes d'arret de l'asservissement
     virtual void stopMotionTimerAndOdo();
     void disablePID(); //TODO deprecated ? utiliser pour activer la QuadRamp

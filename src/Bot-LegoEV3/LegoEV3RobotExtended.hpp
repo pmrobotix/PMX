@@ -52,6 +52,8 @@ public:
     bool alea_done;
     int square_pattern;
 
+    int activate_push_2022;
+
 
     void begin(int argc, char** argv);
 

@@ -32,6 +32,51 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
     RobotPosition p = pos_getPosition();
     x = p.x + ((lateral_pos_sensor_mm * 140.0 ) * cos(p.theta - M_PI_2)) + (distmm * cos(p.theta));
     y = p.y + ((lateral_pos_sensor_mm * 140.0 ) * sin(p.theta - M_PI_2)) + (distmm * sin(p.theta));
+
+    //TODO utiliser les zones de l'ia ???
+
+    //filtre table
+    if ((x > 150 && x < 2850) && (y > 150 && y < 1850)) //en mm
+        result = true;
+    else
+        result = false;
+
+    //2022 - filtre triangle yellow //todo violet !!!!!!!!!!!!!!!!!!!!!!!!
+    if(y <= (700 - (x)))
+        result = false;
+
+    if(y <= (-2300 + (x)))
+        result = false;
+
+    logger().debug() << desc << " filtreInsideTable : dist=" << dist_detect_mm
+            << " capteur:" << lateral_pos_sensor_mm
+            << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
+            << " y=" << y << " result = " << result << logs::end;
+
+    if (result) {
+        logger().debug() << desc << " filtreInsideTable : dist=" << dist_detect_mm
+                    << " capteur:" << lateral_pos_sensor_mm
+                    << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
+                    << " y=" << y << " result = " << result << logs::end;
+        return true; //si ok
+    } else
+        return false; //si en dehors de la table*/
+
+
+}
+/* old version 2021
+bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
+{
+
+    //logger().error() << "==== filtreInsideTable" << logs::end;
+    float distmm = dist_detect_mm;
+    //On filtre si c'est pas à l'exterieur du terrain
+    float x = 0.0;
+    float y = 0.0;
+    bool result = false;
+    RobotPosition p = pos_getPosition();
+    x = p.x + ((lateral_pos_sensor_mm * 140.0 ) * cos(p.theta - M_PI_2)) + (distmm * cos(p.theta));
+    y = p.y + ((lateral_pos_sensor_mm * 140.0 ) * sin(p.theta - M_PI_2)) + (distmm * sin(p.theta));
     if ((x > 150 && x < 2850) && (y > 150 && y < 1850)) //en mètre
         result = true;
     else
@@ -48,8 +93,8 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
                     << " y=" << y << " result = " << result << logs::end;
         return true; //si ok
     } else
-        return false; //si en dehors de la table*/
-}
+        return false; //si en dehors de la table
+}*/
 
 void OPOS6UL_AsservExtended::setLowSpeedForward(bool enable, int percent)
 {

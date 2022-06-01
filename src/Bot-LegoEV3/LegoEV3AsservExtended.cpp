@@ -112,7 +112,7 @@ bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral
     else
         result = false;
 
-    //filtre triangle yellow
+    //2022 filtre triangle yellow //todo violet !!!!!!!!!!!!!!!!!!!!!!!!
     if(y <= (700 - (x)))
         result = false;
 

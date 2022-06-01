@@ -23,6 +23,13 @@ using namespace std;
 //#define	SERIAL_ADDRESS      "/dev/ttymxc1"
 #define SERIAL_PORT "/dev/ttymxc1"
 
+typedef enum {
+            STATUS_IDLE     = 0,
+            STATUS_RUNNING  = 1,
+            STATUS_HALTED   = 2,
+            STATUS_BLOCKED  = 3,
+        } CommandStatus;
+
 // convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
 union float2bytes_t   // union consists of one variable represented in a number of different ways
 {

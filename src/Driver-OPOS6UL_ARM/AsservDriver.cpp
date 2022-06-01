@@ -35,7 +35,10 @@ AsservDriver::AsservDriver() :
     // Create serial port object and open serial port
     char errorOpening = serial_.openDevice(SERIAL_PORT, 115200);
     // If connection fails, return the error code otherwise, display a success message
-    if (errorOpening != 1) printf("Error connection to %s errorOpening=%c\n", SERIAL_PORT, errorOpening);
+    if (errorOpening != 1) {
+        logger().error() << ">> Error connection to " << SERIAL_PORT << " errorOpening=" << errorOpening << logs::end;
+        printf("Error connection to %s errorOpening=%c\n", SERIAL_PORT, errorOpening);
+    }
 
     // Set DTR
     serial_.DTR(true);
@@ -52,7 +55,6 @@ AsservDriver::AsservDriver() :
 //    printf("8-CTS=%d\t", serial_.isCTS());
 //    printf("6-DSR=%d\t", serial_.isDSR());
 //    printf("9-RING=%d\n", serial_.isRI());
-
 
     /*
      //TEST OK
@@ -167,6 +169,7 @@ void AsservDriver::parseAsservPosition(string str) {
         else read_error_ = -1;
         if (read_error_ > 0) logger().error() << ">> parseAsservPosition : debug number missed !!" << logs::end;
 
+        //test de depart
         if (CommandStatus == 0) {
             m_statusCountDown.lock();
             statusCountDown_--;
@@ -348,7 +351,6 @@ void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad) {
     nucleo_writeSerialSTR("P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
     nucleo_writeSerialSTR("P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
 
-
     usleep(100000);
 }
 RobotPosition AsservDriver::odo_GetPosition() {
@@ -435,7 +437,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
         m_statusCountDown.unlock();
 
         //serialPort_.Write("v" + to_string((int) (dist_mm)) + "\n");
-        nucleo_writeSerialSTR("v" + to_string((int) (dist_mm))+ "\n");
+        nucleo_writeSerialSTR("v" + to_string((int) (dist_mm)) + "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -466,7 +468,7 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj() {
         logger().error() << "nucleo_waitEndOfTraj else ERROR !!! p_.asservStatus=" << p_.asservStatus << " pathStatus_=" << pathStatus_ << logs::end;
         return TRAJ_ERROR;
     }
-    logger().error() << "nucleo_waitEndOfTraj Never happened !!! p_.asservStatus=" << p_.asservStatus << " pathStatus_=" << pathStatus_<< logs::end;
+    logger().error() << "nucleo_waitEndOfTraj Never happened !!! p_.asservStatus=" << p_.asservStatus << " pathStatus_=" << pathStatus_ << logs::end;
     return TRAJ_ERROR;
 }
 
@@ -485,7 +487,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
         m_statusCountDown.unlock();
 
         //serialPort_.Write("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
-        nucleo_writeSerialSTR("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
+        nucleo_writeSerialSTR("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -508,7 +510,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) {
         m_statusCountDown.unlock();
 
         //serialPort_.Write("t" + to_string(AAsservDriver::degToRad(angle_radians)) + "\n");
-        nucleo_writeSerialSTR("t" + to_string(AAsservDriver::radToDeg(angle_radians))+ "\n");
+        nucleo_writeSerialSTR("t" + to_string(AAsservDriver::radToDeg(angle_radians)) + "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -533,7 +535,7 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
         m_statusCountDown.unlock();
 
         //serialPort_.Write("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
-        nucleo_writeSerialSTR("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
+        nucleo_writeSerialSTR("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -554,7 +556,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
         m_statusCountDown.unlock();
 
         //serialPort_.Write("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
-        nucleo_writeSerialSTR("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
+        nucleo_writeSerialSTR("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -576,7 +578,7 @@ TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
         m_statusCountDown.unlock();
 
         //serialPort_.Write("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
-        nucleo_writeSerialSTR("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
+        nucleo_writeSerialSTR("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
         return nucleo_waitEndOfTraj();
         //return TRAJ_OK;
     }
@@ -598,7 +600,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
         m_statusCountDown.unlock();
 
         //serialPort_.Write("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
-        nucleo_writeSerialSTR("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm))+ "\n");
+        nucleo_writeSerialSTR("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -627,12 +629,12 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm) {
 
 void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent) {
 //serialPort_.Write("S" + to_string(percent) + "\n");
-    nucleo_writeSerialSTR("S" + to_string(percent)+ "\n");
+    nucleo_writeSerialSTR("S" + to_string(percent) + "\n");
 
 }
 void AsservDriver::motion_setLowSpeedForward(bool enable, int percent) {
 //serialPort_.Write("S" + to_string(percent) + "\n");
-    nucleo_writeSerialSTR("S" + to_string(percent)+ "\n");
+    nucleo_writeSerialSTR("S" + to_string(percent) + "\n");
 
 }
 
@@ -681,9 +683,8 @@ void AsservDriver::motion_ActivateManager(bool enable) {
 
 //------------------------------------------------------------------------
 void AsservDriver::nucleo_flushSerial() {
-    int err =  serial_.flushReceiver();
-    if (err == 0)
-        printf("nucleo_flushSerial ERROR !\n");
+    int err = serial_.flushReceiver();
+    if (err == 0) printf("nucleo_flushSerial ERROR !\n");
 }
 int AsservDriver::nucleo_writeSerial(char c) {
     try {

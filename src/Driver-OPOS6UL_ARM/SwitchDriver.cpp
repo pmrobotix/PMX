@@ -60,3 +60,11 @@ int SwitchDriver::backRightPressed()
 {
     return pressed(1);
 }
+void SwitchDriver::setGPIO(int gpio, bool activate)
+{
+    if (activate)
+        GpioPCA9555::instance().setOnP0(gpio);
+    else
+        GpioPCA9555::instance().setOffP0(gpio);
+}
+

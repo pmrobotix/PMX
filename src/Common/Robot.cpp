@@ -176,8 +176,8 @@ void Robot::begin(int argc, char** argv) {
                 default:
 
                     break;
-
-                    usleep(1000);
+                    std::this_thread::sleep_for(std::chrono::microseconds(1000));
+                    //usleep(1000);
             }
 
             msg_ipc.mtype = getpid();

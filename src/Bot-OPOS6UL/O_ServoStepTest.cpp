@@ -24,7 +24,7 @@ void O_ServoStepTest::configureConsoleArgs(int argc, char** argv) //surcharge
     robot.getArgs().addArgument("step", "Increment/decrement", "2");
     robot.getArgs().addArgument("pos", "position initiale (0-4095)", "512");
     robot.getArgs().addArgument("speed", "position initiale", "1023");
-    robot.getArgs().addArgument("type", "Std[0] or AX12[12]", "0");
+//    robot.getArgs().addArgument("type", "Std[0] or AX12[12]", "0");
 
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
@@ -68,10 +68,10 @@ void O_ServoStepTest::run(int argc, char** argv) {
         logger().info() << "Arg speed set " << args["speed"] << ", speed = " << speed << logs::end;
     }
 
-    if (args["type"] != "0") {
-        type = atoi(args["type"].c_str());
-        logger().info() << "Arg type set " << args["type"] << ", type = " << type << logs::end;
-    }
+//    if (args["type"] != "0") {
+//        type = atoi(args["type"].c_str());
+//        logger().info() << "Arg type set " << args["type"] << ", type = " << type << logs::end;
+//    }
 
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().home();
@@ -88,8 +88,8 @@ void O_ServoStepTest::run(int argc, char** argv) {
 
     ButtonTouch touch = BUTTON_NONE;
 
-    AServoDriver::ServoType aType = AServoDriver::SERVO_STANDARD;
-    if (type == 12) aType = AServoDriver::SERVO_DYNAMIXEL;
+//    AServoDriver::ServoType aType = AServoDriver::SERVO_STANDARD;
+//    if (type == 12) aType = AServoDriver::SERVO_DYNAMIXEL;
 
     int current_pos = 0;
     int torque = 0;
@@ -114,14 +114,14 @@ void O_ServoStepTest::run(int argc, char** argv) {
         touch = robot.actions().buttonBar().checkOneOfAllPressed();
         //logger().info() << "touch = " << touch << logs::end;
         if (touch == BUTTON_UP_KEY) {
-            pos = +step;
+            pos = current_pos+step;
             if (pos >= 4095) pos = 4095;
             logger().info() << "+" << step << " pos=" << pos << logs::end;
             servoObjects.deploy(num, pos, -1);
         }
 
         if (touch == BUTTON_DOWN_KEY) {
-            pos = -step;
+            pos = current_pos-step;
             if (pos <= 0) pos = 0;
             logger().info() << "-" << step << " pos=" << pos << logs::end;
 
@@ -162,8 +162,8 @@ void O_ServoStepTest::run(int argc, char** argv) {
         if (touch == BUTTON_RIGHT_KEY) {
             //pos = 512;
             servoObjects.release(num);
-            num = num + 1;
-            if (num >= 254) num--;
+            num = num + 1; //TODO passer d'un autre dans la liste
+            if (num >= 10254) num--;
 
             //robot.actions().servos().setup(num, aType, 0, 1500, 3000, false);
             //robot.actions().servos().hold(num);
@@ -183,11 +183,12 @@ void O_ServoStepTest::run(int argc, char** argv) {
             logger().info() << "SERVO " << num << " current_pos=" << current_pos << logs::end;
 
         }
+        //usleep (10000);
 
     }
     logger().info() << "RELEASE ALL " << logs::end;
     robot.actions().releaseAll();
 
-    logger().info() << "Happy End." << logs::end;
+    logger().info() << robot.getID() << " " << this->name() << " Happy End" << " N° " << this->position() << logs::end;
 }
 

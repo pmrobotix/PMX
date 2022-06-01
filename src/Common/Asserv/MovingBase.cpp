@@ -62,7 +62,7 @@ long MovingBase::moveDWaitTrajectory()
             logger().debug() << "moveDWaitTrajectory emergencyStop m =" << m << " distTicks_=" << distTicks_ << "l="
                     << l << "r=" << r << logs::end;
             this->emergencyStop();
-            sleep(1);
+//            sleep(1);
             return (distTicks_ - m);
         }
 

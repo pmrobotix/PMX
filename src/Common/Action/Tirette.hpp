@@ -43,6 +43,8 @@ public:
 
     bool waitUnpressed();
 
+    void setGPIO(int p, bool activate);
+
 };
 
 #endif
