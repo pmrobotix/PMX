@@ -18,6 +18,7 @@ public:
     virtual int tirettePressed() = 0;
     virtual int backLeftPressed()= 0;
     virtual int backRightPressed()= 0;
+
     virtual void setGPIO(int gpio, bool activate) = 0;
 
     //virtual int pressed(unsigned char pin) = 0;

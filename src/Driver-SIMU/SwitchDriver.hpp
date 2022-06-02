@@ -37,6 +37,8 @@ public:
 
 	int pressed(unsigned char pin);
 
+	void setGPIO(int gpio, bool activate);
+
 	int state_;
 
 };

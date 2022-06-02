@@ -38,3 +38,8 @@ int SwitchDriver::pressed(unsigned char pin)
 {
     return 0;
 }
+
+void SwitchDriver::setGPIO(int gpio, bool activate)
+{
+
+}
