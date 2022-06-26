@@ -146,16 +146,16 @@ L_State_Init::execute(Robot&)
                 }
 
                 if (st == 1) {
-                    logger().debug() << "strat1" << logs::end;
-                    robot.strategy("strat1 ");
+                    logger().debug() << "tabletest" << logs::end;
+                    robot.strategy("tabletest");
                 }
                 else if (st == 2) {
                     logger().debug() << "strat2" << logs::end;
-                    robot.strategy("strat2 ");
+                    robot.strategy("strat2");
                 }
                 else if (st == 3) {
                     logger().debug() << "strat3" << logs::end;
-                    robot.strategy("strat3 ");
+                    robot.strategy("strat3");
                 }
                 robot.actions().lcd().display_content_string(robot.strategy(), 5, 3);
             }
