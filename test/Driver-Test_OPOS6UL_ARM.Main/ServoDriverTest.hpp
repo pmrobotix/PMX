@@ -29,7 +29,6 @@ private:
     }
 
     AServoDriver* servodriver_;
-    AServoDriver* servoDynamixelDriver_;
 
 public:
 
@@ -41,8 +40,8 @@ public:
     ServoDriverTest() :
             UnitTest("ServoDriverTest")
     {
-        servodriver_ = AServoDriver::create(AServoDriver::SERVO_STANDARD);
-        servoDynamixelDriver_ = AServoDriver::create(AServoDriver::SERVO_DYNAMIXEL);
+        servodriver_ = AServoDriver::create();
+
     }
 
     /*!

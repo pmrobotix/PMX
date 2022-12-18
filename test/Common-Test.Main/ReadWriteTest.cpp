@@ -383,7 +383,7 @@ void test::ReadWriteTest::suite()
 
 
 
-    do_benchmark_fastest_read_fread_ifstream_or_mmap();
+    //do_benchmark_fastest_read_fread_ifstream_or_mmap(); //commenté a cause du warning: the use of `tmpnam' is dangerous, better use `mkstemp'
     do_io_benchmark("c", "aa.txt", "1");
     do_io_benchmark("c", "aa.txt", "10");
     do_io_benchmark("c", "aa.txt", "100");
@@ -564,6 +564,8 @@ void test::ReadWriteTest::do_io_benchmark(std::string type, std::string filename
     }
 }
 
+// WARNING :warning: the use of `tmpnam' is dangerous, better use `mkstemp'
+/*
 void test::ReadWriteTest::do_benchmark_fastest_read_fread_ifstream_or_mmap()
 {
 
@@ -572,7 +574,9 @@ void test::ReadWriteTest::do_benchmark_fastest_read_fread_ifstream_or_mmap()
     CPUTimer cput;
     WallClockTimer wct;
     for (int T = 0; T < 1; ++T) { //for (int T = 0; T < 30; ++T) {
-        char *name = tmpnam(NULL); // unsafe but for these purposes, ok
+        // WARNING :warning: the use of `tmpnam' is dangerous, better use `mkstemp'
+    	char *name = tmpnam(NULL); // unsafe but for these purposes, ok
+
         fillFile(N, name);
 
         cout << endl;
@@ -672,4 +676,5 @@ void test::ReadWriteTest::do_benchmark_fastest_read_fread_ifstream_or_mmap()
         ::remove(name);
     }
 }
+*/
 

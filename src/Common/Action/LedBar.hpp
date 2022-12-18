@@ -5,14 +5,12 @@
 #include <sstream>
 #include <string>
 
-#include "../../Log/Logger.hpp"
 #include "../../Log/LoggerFactory.hpp"
 #include "../Action.Driver/ALedDriver.hpp"
-#include "../Arguments.hpp"
 #include "../Utils/Chronometer.hpp"
+#include "../Utils/ITimerPosixListener.hpp"
 #include "AActionsElement.hpp"
 #include "IAction.hpp"
-#include "../Utils/ITimerPosixListener.hpp"
 
 /*!
  * \brief Enumération des libellés des actions de la barre de leds.

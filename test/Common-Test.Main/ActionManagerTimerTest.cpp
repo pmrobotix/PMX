@@ -6,17 +6,17 @@
 #include "../../src/Common/Action/ActionManagerTimer.hpp"
 #include "ActionManagerTimerTest.hpp"
 
-#include <unistd.h>
+#include <chrono>
 #include <sstream>
 #include <string>
+#include <thread>
 
 #include "../../src/Common/Action/IAction.hpp"
-#include "../../src/Common/Action/ITimerPosixListener.hpp"
 #include "../../src/Common/Action/ITimerListener.hpp"
 #include "../../src/Common/Utils/Chronometer.hpp"
+#include "../../src/Common/Utils/ITimerPosixListener.hpp"
 #include "../../src/Log/Logger.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
-#include "../../src/Thread/Thread.hpp"
 
 using namespace utils;
 

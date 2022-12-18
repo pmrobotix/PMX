@@ -82,7 +82,7 @@ public:
     };
 
 private:
-    typedef map<TCHAR, Option, less<TCHAR>, allocator<Option> > OptionMap;
+    typedef std::map<TCHAR, Option, less<TCHAR>, allocator<std::map<TCHAR, Option>::value_type > > OptionMap;
 
     OptionMap m_mOptions;
     ArgVector m_vArguments;

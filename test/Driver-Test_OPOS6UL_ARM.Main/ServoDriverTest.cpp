@@ -17,8 +17,6 @@ void test::ServoDriverTest::firstTest()
 
 	servodriver_->hold(0);
 
-	servoDynamixelDriver_->hold(0);
-
 	this->assert(true, "OK");
 }
 

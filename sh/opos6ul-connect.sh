@@ -33,7 +33,7 @@ kill()
 
 main()
 {
-	/install/armadeus-7.0/buildroot/output/host/opt/ext-toolchain/arm-linux-gnueabihf/bin/strip -s ../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM
+	/install/armadeus-git/buildroot/output/host/opt/ext-toolchain/arm-none-linux-gnueabihf/bin/strip -s ../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM
     ssh root@$IP "killall Bot_ArmadeusOPOS6UL_ARM"
 	scp "../Bot_ArmadeusOPOS6UL_ARM/Release/Bot_ArmadeusOPOS6UL_ARM" root@$IP:/root/pmx/.
 	#ssh root@$IP "strip -s Bot_ArmadeusOPOS6UL_ARM"
